@@ -1,35 +1,44 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
 
 import { View } from '../view.component';
 import { defaultProps } from '../view.stories';
+import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 
 describe('View: Component', () => {
   const component = props => <View {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should render correctly', async () => {
+    defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    await Promise.resolve();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render content correctly', async () => {
+    defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render();
+    await Promise.resolve();
+    const content = wrapper.find(LoadingWrapper).dive();
+    expect(content).toMatchSnapshot();
   });
 
   it('should call fetchProject prop on componentDidMount', async () => {
     const projectId = '1';
-    const fetchProject = spy();
     const props = {
-      fetchProject,
+      fetchProject: Function.prototype,
       match: {
         params: {
           projectId,
         },
       },
     };
+    jest.spyOn(props, 'fetchProject');
 
     await render(props);
 
-    expect(fetchProject).to.have.been.calledWith({ projectId });
+    expect(props.fetchProject).toHaveBeenCalledWith({ projectId });
   });
 });

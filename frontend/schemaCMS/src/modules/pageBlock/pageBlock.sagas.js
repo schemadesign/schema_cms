@@ -7,6 +7,7 @@ import { BLOCK_PATH, PAGES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { IMAGE_TYPE } from './pageBlock.constants';
 import { formatFormData } from '../../shared/utils/helpers';
+import { ProjectRoutines } from '../project';
 
 const convertImages = images =>
   images.reverse().reduce((result, { file }, index) => ({ [`image${index}`]: file, ...result }), {});
@@ -24,7 +25,8 @@ function* fetchList({ payload: { pageId } }) {
 
     const { data } = yield api.get(`${PAGES_PATH}/${pageId}${BLOCK_PATH}`);
 
-    yield put(PageBlockRoutines.fetchList.success(data));
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(PageBlockRoutines.fetchList.success(data.results));
   } catch (e) {
     yield put(PageBlockRoutines.fetchList.failure(e));
   } finally {

@@ -243,9 +243,11 @@ describe('DataSource: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: '1', dataSourceId: '1' };
       const responseData = {
-        fields: {
-          id: {},
-          name: {},
+        results: {
+          fields: {
+            id: {},
+            name: {},
+          },
         },
         // eslint-disable-next-line camelcase
         data: [{ id: '1', name: 'test', snake_case_data: 'data' }],
@@ -255,7 +257,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.fetchPreview.success(responseData))
+        .put(DataSourceRoutines.fetchPreview.success(responseData.results))
         .dispatch(DataSourceRoutines.fetchPreview(payload))
         .silentRun();
     });

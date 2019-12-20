@@ -17,3 +17,8 @@ export const selectEditors = createSelector(
   selectProjectDomain,
   prop('editors')
 );
+
+export const selectProjectTitle = createSelector(
+  selectProject,
+  prop('title')
+);

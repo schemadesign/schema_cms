@@ -146,7 +146,7 @@ function* fetchPreview({ payload }) {
     const { dataSourceId } = payload;
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`, { camelize: false });
 
-    yield put(DataSourceRoutines.fetchPreview.success(data));
+    yield put(DataSourceRoutines.fetchPreview.success(data.results));
   } catch (error) {
     yield put(DataSourceRoutines.fetchPreview.failure(error));
   } finally {

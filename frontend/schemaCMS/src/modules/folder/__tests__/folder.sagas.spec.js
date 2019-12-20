@@ -8,6 +8,7 @@ import { FolderRoutines } from '../folder.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import browserHistory from '../../../shared/utils/history';
 import { FOLDERS_PATH } from '../../../shared/utils/api.constants';
+import { ProjectRoutines } from '../../project';
 
 describe('Folder: sagas', () => {
   const defaultState = Immutable({
@@ -23,6 +24,8 @@ describe('Folder: sagas', () => {
     it('should put fetchList.success action', async () => {
       const response = {
         id: 1,
+        results: [],
+        project: { id: 1, name: 'projectName' },
       };
       const payload = {
         projectId: 1,
@@ -32,7 +35,8 @@ describe('Folder: sagas', () => {
 
       await expectSaga(watchFolder)
         .withState(defaultState)
-        .put(FolderRoutines.fetchList.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(FolderRoutines.fetchList.success(response.results))
         .dispatch(FolderRoutines.fetchList(payload))
         .silentRun();
     });

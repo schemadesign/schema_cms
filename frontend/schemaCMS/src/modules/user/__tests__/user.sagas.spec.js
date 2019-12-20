@@ -7,6 +7,7 @@ import { watchUser } from '../user.sagas';
 import { UserRoutines } from '../user.redux';
 import { ROLES } from '../../userProfile/userProfile.constants';
 import { PROJECTS_PATH } from '../../../shared/utils/api.constants';
+import { ProjectRoutines } from '../../project';
 
 expectSaga.DEFAULT_TIMEOUT = 500;
 
@@ -126,6 +127,20 @@ describe('User: sagas', () => {
         .withState(defaultState)
         .put(UserRoutines.makeAdmin.failure())
         .dispatch(UserRoutines.makeAdmin(payload))
+        .silentRun();
+    });
+  });
+
+  describe('when /FETCH_USERS action is fired', () => {
+    it('should put fetchUsers success action', async () => {
+      const responseData = { results: [] };
+      mockApi.get('/users?page_size=1000').reply(OK, responseData);
+
+      await expectSaga(watchUser)
+        .withState(defaultState)
+        .put(ProjectRoutines.clearProject.trigger())
+        .put(UserRoutines.fetchUsers.success(responseData.results))
+        .dispatch(UserRoutines.fetchUsers())
         .silentRun();
     });
   });

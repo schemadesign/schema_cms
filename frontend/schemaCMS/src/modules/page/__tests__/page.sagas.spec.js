@@ -8,6 +8,7 @@ import { PageRoutines } from '../page.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import browserHistory from '../../../shared/utils/history';
 import { PAGES_PATH } from '../../../shared/utils/api.constants';
+import { ProjectRoutines } from '../../project';
 
 describe('Page: sagas', () => {
   const defaultState = Immutable({
@@ -22,6 +23,8 @@ describe('Page: sagas', () => {
     it('should put fetchList.success action', async () => {
       const response = {
         id: 1,
+        results: [],
+        project: { id: 1, name: 'projectName' },
       };
       const payload = {
         folderId: 1,
@@ -31,7 +34,8 @@ describe('Page: sagas', () => {
 
       await expectSaga(watchPage)
         .withState(defaultState)
-        .put(PageRoutines.fetchList.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(PageRoutines.fetchList.success(response.results))
         .dispatch(PageRoutines.fetchList(payload))
         .silentRun();
     });
