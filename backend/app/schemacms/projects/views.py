@@ -53,10 +53,13 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+            response_ = self.get_paginated_response(serializer.data)
+            response_.data["project"] = project.header_info
+            return response_
 
         serializer = self.get_serializer(queryset, many=True)
-        return response.Response(serializer.data)
+        response_data = dict(project=project.header_info, results=serializer.data)
+        return response.Response(response_data)
 
     @decorators.action(detail=True, url_path="users", methods=["get"])
     def users(self, request, **kwargs):
@@ -66,10 +69,13 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         page = self.paginate_queryset(editors)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+            response_ = self.get_paginated_response(serializer.data)
+            response_.data["project"] = project.header_info
+            return response_
 
         serializer = self.get_serializer(editors, many=True)
-        return response.Response(serializer.data)
+        response_data = dict(project=project.header_info, results=serializer.data)
+        return response.Response(response_data)
 
     @decorators.action(detail=True, url_path="remove-editor", methods=["post"])
     def remove_editor(self, request, pk=None, **kwargs):
@@ -116,7 +122,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         if request.method == "GET":
             queryset = project.folders.select_related("created_by").all()
             serializer = self.get_serializer(queryset, many=True)
-            return response.Response(serializer.data, status=status.HTTP_200_OK)
+            data = {"project": project.header_info, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             request.data["project"] = project.id
@@ -163,8 +170,11 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         if not hasattr(data_source, 'meta_data'):
             return response.Response({}, status=status.HTTP_200_OK)
 
-        data = data_source.meta_data.data
-        data["data_source"] = {"name": data_source.name}
+        data = dict(
+            results=data_source.meta_data.data,
+            data_source={"name": data_source.name},
+            project=data_source.project_,
+        )
 
         return response.Response(data, status=status.HTTP_200_OK)
 
@@ -217,10 +227,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
+            response_ = self.get_paginated_response(serializer.data)
+            response_.data["project"] = data_source.project_
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
-        return response.Response(data=serializer.data)
+        response_data = dict(project=data_source.project_, results=serializer.data)
+        return response.Response(response_data, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, url_path="fields-info", methods=["get"])
     def fields_info(self, request, pk=None, **kwargs):
@@ -249,8 +262,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
                 return response.Response(data=[])
 
             serializer = self.get_serializer(instance=data_source.filters, many=True)
-
-            return response.Response(data=serializer.data)
+            data = {"project": data_source.project_, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             request.data["datasource"] = data_source
@@ -327,7 +340,7 @@ class DataSourceJobDetailViewSet(
     viewsets.GenericViewSet,
 ):
     queryset = models.DataSourceJob.objects.none()
-    serializer_class = serializers.DataSourceJobSerializer
+    serializer_class = serializers.JobDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "update_state": serializers.PublicApiDataSourceJobStateSerializer,
@@ -417,7 +430,8 @@ class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mod
         if request.method == "GET":
             queryset = folder.pages.select_related("created_by").all()
             serializer = self.get_serializer(instance=queryset, many=True)
-            return response.Response(serializer.data, status=status.HTTP_200_OK)
+            data = {"project": folder.project_, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             request.data["folder"] = folder.id
@@ -459,7 +473,8 @@ class PageViewSet(
         if request.method == "GET":
             queryset = page.blocks.select_related("page").all()
             serializer = self.get_serializer(instance=queryset, many=True)
-            return response.Response(serializer.data, status=status.HTTP_200_OK)
+            data = {"project": page.project, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             data = request.data.copy()

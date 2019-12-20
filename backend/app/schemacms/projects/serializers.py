@@ -274,7 +274,6 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
     result = serializers.FileField(read_only=True)
     error = serializers.CharField(read_only=True)
     job_state = serializers.CharField(read_only=True)
-    project = serializers.SerializerMethodField(read_only=True)
     datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
@@ -282,7 +281,6 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "datasource",
-            "project",
             "description",
             "steps",
             "job_state",
@@ -292,8 +290,15 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
             "created",
         )
 
+
+class JobDetailSerializer(DataSourceJobSerializer):
+    project = serializers.SerializerMethodField(read_only=True)
+
+    class Meta(DataSourceJobSerializer.Meta):
+        fields = DataSourceJobSerializer.Meta.fields + ("project",)
+
     def get_project(self, obj):
-        return obj.datasource.project_id
+        return obj.project
 
 
 class PublicApiUpdateMetaSerializer(serializers.ModelSerializer):
@@ -424,8 +429,10 @@ class FolderSerializer(serializers.ModelSerializer):
 
 
 class FolderDetailSerializer(FolderSerializer):
-    class Meta(FolderSerializer.Meta):
-        read_only_fields = ("project",)
+    project = serializers.SerializerMethodField(read_only=True)
+
+    def get_project(self, obj):
+        return obj.project_
 
 
 class PageSerializer(serializers.ModelSerializer):
@@ -483,6 +490,13 @@ class PageFolderSerializer(serializers.ModelSerializer):
 
 class PageDetailSerializer(PageSerializer):
     folder = NestedRelatedModelSerializer(serializer=PageFolderSerializer(), read_only=True)
+    project = serializers.SerializerMethodField(read_only=True)
+
+    class Meta(PageSerializer.Meta):
+        fields = PageSerializer.Meta.fields + ("project",)
+
+    def get_project(self, obj):
+        return obj.project
 
 
 class BlockImageSerializer(serializers.ModelSerializer):
@@ -570,3 +584,10 @@ class BlockPageSerializer(serializers.ModelSerializer):
 
 class BlockDetailSerializer(BlockSerializer):
     page = NestedRelatedModelSerializer(serializer=BlockPageSerializer(), read_only=True)
+    project = serializers.SerializerMethodField(read_only=True)
+
+    class Meta(BlockSerializer.Meta):
+        fields = BlockSerializer.Meta.fields + ("project",)
+
+    def get_project(self, obj):
+        return obj.project
