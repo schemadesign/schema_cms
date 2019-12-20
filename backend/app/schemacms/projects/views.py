@@ -142,6 +142,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     )
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
+        "retrieve": serializers.DataSourceDetailSerializer,
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,
@@ -229,7 +230,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             serializer = self.get_serializer(page, many=True)
             response_ = self.get_paginated_response(serializer.data)
             response_.data["project"] = data_source.project_
-            return self.get_paginated_response(serializer.data)
+            return response_
 
         serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
         response_data = dict(project=data_source.project_, results=serializer.data)
@@ -246,10 +247,12 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         fields = json.loads(preview.read())["fields"]
 
-        data = dict(project=data_source.project_)
+        data = dict(project=data_source.project_, results={})
         for key, value in fields.items():
-            data[key] = dict(field_type=value["dtype"], unique=value["unique"])
-            data[key]["filter_type"] = getattr(constants.FilterTypesGroups, data[key]["field_type"])
+            data["results"][key] = dict(field_type=value["dtype"], unique=value["unique"])
+            data["results"][key]["filter_type"] = getattr(
+                constants.FilterTypesGroups, data[key]["field_type"]
+            )
 
         return response.Response(data=data)
 

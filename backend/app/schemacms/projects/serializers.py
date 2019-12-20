@@ -140,6 +140,13 @@ class DataSourceSerializer(serializers.ModelSerializer):
         return obj
 
 
+class DataSourceDetailSerializer(DataSourceSerializer):
+    project = serializers.SerializerMethodField(read_only=True)
+
+    def get_project(self, obj):
+        return obj.project_
+
+
 class ProjectOwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
