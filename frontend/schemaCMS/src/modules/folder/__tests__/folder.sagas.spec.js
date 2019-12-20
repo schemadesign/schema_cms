@@ -46,6 +46,7 @@ describe('Folder: sagas', () => {
     it('should put fetchOne.success action', async () => {
       const response = {
         id: 1,
+        project: {},
       };
       const payload = {
         folderId: 1,
@@ -55,6 +56,7 @@ describe('Folder: sagas', () => {
 
       await expectSaga(watchFolder)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(FolderRoutines.fetchOne.success(response))
         .dispatch(FolderRoutines.fetchOne(payload))
         .silentRun();

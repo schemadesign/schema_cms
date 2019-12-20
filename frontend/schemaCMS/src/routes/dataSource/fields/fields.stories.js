@@ -9,7 +9,7 @@ import { tableFields as fields, tableData as data } from '../../../shared/utils/
 export const noDataProps = {
   fetchPreview: Function.prototype,
   previewData: {},
-  dataSource: {},
+  dataSource: { project: { id: '1' } },
   history,
   intl,
   match: {

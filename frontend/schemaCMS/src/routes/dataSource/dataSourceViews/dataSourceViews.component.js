@@ -23,7 +23,7 @@ export class DataSourceViews extends PureComponent {
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} projectId={dataSource.project} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

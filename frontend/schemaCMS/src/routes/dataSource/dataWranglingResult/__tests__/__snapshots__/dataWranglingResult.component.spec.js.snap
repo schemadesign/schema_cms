@@ -16,6 +16,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -41,6 +42,9 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             },
           ],
           "metaData": Object {},
+          "project": Object {
+            "id": "1",
+          },
         }
       }
       fetchPreview={[Function]}
@@ -143,6 +147,9 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
           },
         ],
         "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     fetchPreview={[Function]}
@@ -244,6 +251,9 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
           },
         ],
         "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     fetchPreview={[Function]}
@@ -350,6 +360,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -375,6 +386,9 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             },
           ],
           "metaData": Object {},
+          "project": Object {
+            "id": "1",
+          },
         }
       }
       fetchPreview={[Function]}
@@ -476,6 +490,9 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
           },
         ],
         "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     fetchPreview={[Function]}
@@ -576,6 +593,9 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
           },
         ],
         "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     fetchPreview={[Function]}

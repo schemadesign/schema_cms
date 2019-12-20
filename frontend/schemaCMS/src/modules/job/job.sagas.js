@@ -55,7 +55,8 @@ function* fetchPreview({ payload: { jobId } }) {
 
     const { data } = yield api.get(`/jobs/${jobId}/preview`, { camelize: false });
 
-    yield put(JobRoutines.fetchPreview.success(data));
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(JobRoutines.fetchPreview.success(data.results));
   } catch (e) {
     yield put(JobRoutines.fetchPreview.failure(e));
   } finally {

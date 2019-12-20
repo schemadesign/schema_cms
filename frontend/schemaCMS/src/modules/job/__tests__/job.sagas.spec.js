@@ -57,8 +57,11 @@ describe('Job: sagas', () => {
   describe('when fetchPreview action is called', () => {
     it('should put fetchPreview.success action', async () => {
       const response = {
-        fields: {},
-        data: [],
+        results: {
+          fields: {},
+          data: [],
+        },
+        project: {},
       };
       const payload = {
         jobId: 1,
@@ -68,7 +71,8 @@ describe('Job: sagas', () => {
 
       await expectSaga(watchJob)
         .withState(defaultState)
-        .put(JobRoutines.fetchPreview.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(JobRoutines.fetchPreview.success(response.results))
         .dispatch(JobRoutines.fetchPreview(payload))
         .silentRun();
     });

@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { always, pathEq } from 'ramda';
+import { always, pathEq, pathOr } from 'ramda';
 
 import { CreateFilter } from './createFilter';
 import { Source } from './source';
@@ -65,14 +65,16 @@ export default class DataSource extends PureComponent {
     const { loading, error } = this.state;
     const {
       match: { path },
+      dataSource,
     } = this.props;
     const sourcePath = `${path}/source`;
     const jobListPath = `${path}/job`;
     const hasActiveJob = pathEq(['dataSource', 'activeJob'], null, this.props);
+    const projectId = pathOr('', ['project', 'id'], dataSource);
 
     return (
       <Fragment>
-        <ProjectTabs active={SOURCES} url={`/project/${this.props.dataSource.project}`} />
+        <ProjectTabs active={SOURCES} url={`/project/${projectId}`} />
         <LoadingWrapper loading={loading} error={error}>
           <Switch>
             <Redirect exact path={path} to={sourcePath} />

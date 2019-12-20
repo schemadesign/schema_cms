@@ -16,7 +16,7 @@ export const defaultProps = {
   dataSource: {
     metaData: {},
     jobs: [],
-    project: 'projectId',
+    project: { id: 'projectId' },
     id: 'dataSourceIdId',
   },
   intl,

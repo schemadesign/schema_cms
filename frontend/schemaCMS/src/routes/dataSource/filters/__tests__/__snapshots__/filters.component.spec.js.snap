@@ -31,7 +31,9 @@ exports[`Filters: Component should render correctly 1`] = `
     <DataSourceNavigation
       dataSource={
         Object {
-          "project": "1",
+          "project": Object {
+            "id": "1",
+          },
         }
       }
       fetchFilters={
@@ -132,7 +134,9 @@ exports[`Filters: Component should render correctly 1`] = `
   <DataSourceNavigation
     dataSource={
       Object {
-        "project": "1",
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     fetchFilters={
@@ -222,7 +226,9 @@ exports[`Filters: Component should render correctly with loader 1`] = `
     <DataSourceNavigation
       dataSource={
         Object {
-          "project": "1",
+          "project": Object {
+            "id": "1",
+          },
         }
       }
       fetchFilters={[Function]}
@@ -307,7 +313,9 @@ exports[`Filters: Component should render correctly with loader 1`] = `
   <DataSourceNavigation
     dataSource={
       Object {
-        "project": "1",
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     fetchFilters={[Function]}

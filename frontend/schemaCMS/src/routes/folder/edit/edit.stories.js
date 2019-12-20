@@ -12,7 +12,7 @@ export const defaultProps = {
   },
   folder: {
     name: 'name',
-    project: '1',
+    project: { id: '1' },
   },
   isValid: true,
   isSubmitting: false,

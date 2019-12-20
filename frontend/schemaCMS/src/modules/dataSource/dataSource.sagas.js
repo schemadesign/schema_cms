@@ -56,6 +56,7 @@ function* fetchOne({ payload: { dataSourceId } }) {
 
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(DataSourceRoutines.fetchOne.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.fetchOne.failure(error));
@@ -163,7 +164,8 @@ function* fetchFieldsInfo({ payload }) {
     const { dataSourceId } = payload;
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/fields-info`);
 
-    yield put(DataSourceRoutines.fetchFieldsInfo.success(data));
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(DataSourceRoutines.fetchFieldsInfo.success(data.results));
   } catch (error) {
     yield put(DataSourceRoutines.fetchFieldsInfo.failure(error));
   } finally {

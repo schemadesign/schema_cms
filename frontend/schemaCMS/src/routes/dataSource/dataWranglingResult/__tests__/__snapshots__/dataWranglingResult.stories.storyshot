@@ -524,6 +524,45 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           </li>
           <li
             className="c5"
+          >
+            <a
+              href="/project/1"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Project details
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1/datasource"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Data Sources
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1/folder"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Pages
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
             id="logoutBtn"
             onClick={[Function]}
           >

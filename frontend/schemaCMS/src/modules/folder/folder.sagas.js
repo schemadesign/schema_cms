@@ -27,6 +27,7 @@ function* fetchOne({ payload: { folderId } }) {
 
     const { data } = yield api.get(`${FOLDERS_PATH}/${folderId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(FolderRoutines.fetchOne.success(data));
   } catch (e) {
     yield put(FolderRoutines.fetchOne.failure(e));

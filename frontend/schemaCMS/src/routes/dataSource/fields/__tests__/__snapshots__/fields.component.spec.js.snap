@@ -16,6 +16,7 @@ exports[`Fields: Component should render correctly 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -28,7 +29,13 @@ exports[`Fields: Component should render correctly 1`] = `
     }
   >
     <DataSourceNavigation
-      dataSource={Object {}}
+      dataSource={
+        Object {
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
       fetchPreview={[Function]}
       hideOnDesktop={false}
       history={
@@ -113,7 +120,13 @@ exports[`Fields: Component should render correctly 1`] = `
     />
   </ContextHeader>
   <DataPreview
-    dataSource={Object {}}
+    dataSource={
+      Object {
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
     fetchPreview={[Function]}
     history={
       Object {
@@ -197,7 +210,13 @@ exports[`Fields: Component should render correctly 1`] = `
     }
   />
   <DataSourceNavigation
-    dataSource={Object {}}
+    dataSource={
+      Object {
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
     fetchPreview={[Function]}
     hideOnDesktop={true}
     history={

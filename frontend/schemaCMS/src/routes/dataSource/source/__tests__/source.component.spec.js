@@ -25,6 +25,7 @@ describe('SourceComponent: Component', () => {
     const props = {
       dataSource: {
         type: 'file',
+        project: { id: 'projectId' },
       },
     };
     const wrapper = render(props).dive();

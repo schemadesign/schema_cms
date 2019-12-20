@@ -46,12 +46,14 @@ describe('DataSource: sagas', () => {
       const responseData = {
         id: 1,
         metaData: {},
+        project: {},
       };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(responseData.project))
         .put(DataSourceRoutines.fetchOne.success(responseData))
         .dispatch(DataSourceRoutines.fetchOne(payload))
         .silentRun();
@@ -270,14 +272,18 @@ describe('DataSource: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = { dataSourceId: '1' };
       const responseData = {
-        field: { data: 'data' },
+        results: {
+          field: { data: 'data' },
+        },
+        project: {},
       };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/fields-info`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.fetchFieldsInfo.success(responseData))
+        .put(ProjectRoutines.setProject.trigger(responseData.project))
+        .put(DataSourceRoutines.fetchFieldsInfo.success(responseData.results))
         .dispatch(DataSourceRoutines.fetchFieldsInfo(payload))
         .silentRun();
     });
