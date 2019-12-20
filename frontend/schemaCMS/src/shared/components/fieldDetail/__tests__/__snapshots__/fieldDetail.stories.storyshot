@@ -240,9 +240,9 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="23.03"
+          title="23.3"
         >
-          23.03
+          23.3
         </span>
       </li>
       <li
@@ -278,9 +278,9 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="100.28k"
+          title="100.3k"
         >
-          100.28k
+          100.3k
         </span>
       </li>
     </ul>

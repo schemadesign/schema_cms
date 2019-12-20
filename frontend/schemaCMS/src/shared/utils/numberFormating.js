@@ -19,7 +19,7 @@ const getRounding = memoizeWith(identity, (decimals = 1) => {
   return rounding;
 });
 
-export const formatPrefixedNumber = (number, decimals = 2) => {
+export const formatPrefixedNumber = (number, decimals = 1) => {
   if (!is(Number, number)) {
     return number;
   }

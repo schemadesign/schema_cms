@@ -120,7 +120,7 @@ export class DataSourceList extends PureComponent {
 
     const list = [
       { name: formatMessage(messages.source), value: <CsvIcon customStyles={getSourceIconStyles(theme, loading)} /> },
-      { name: formatMessage(messages.items), value: formatPrefixedNumber(items, 1) },
+      { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
       { name: formatMessage(messages.views), value: views },
