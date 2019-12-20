@@ -25,7 +25,7 @@ describe('Folder: sagas', () => {
       const response = {
         id: 1,
         results: [],
-        project: { id: 1, name: 'projectName' },
+        project: {},
       };
       const payload = {
         projectId: 1,

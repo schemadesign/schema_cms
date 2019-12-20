@@ -92,7 +92,7 @@ describe('DataSource: sagas', () => {
           },
         },
       ],
-      project: { id: 1, name: 'projectName' },
+      project: {},
     };
 
     beforeEach(() => {

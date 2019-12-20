@@ -65,7 +65,7 @@ function* makeAdmin({ payload: { userId } }) {
   }
 }
 
-function* fetchUsers() {
+function* fetchUsers({ payload = { projectId: false } }) {
   try {
     yield put(UserRoutines.fetchUsers.request());
 
@@ -73,7 +73,9 @@ function* fetchUsers() {
       data: { results },
     } = yield api.get('users?page_size=1000');
 
-    yield put(ProjectRoutines.clearProject.trigger());
+    if (!payload.projectId) {
+      yield put(ProjectRoutines.clearProject());
+    }
     yield put(UserRoutines.fetchUsers.success(results));
   } catch (error) {
     yield put(UserRoutines.fetchUsers.failure());

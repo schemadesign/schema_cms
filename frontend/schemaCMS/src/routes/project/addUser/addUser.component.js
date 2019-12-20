@@ -54,9 +54,9 @@ export class AddUser extends PureComponent {
         return this.props.history.push('/not-authorized');
       }
 
+      await this.props.fetchUsers({ projectId });
       await this.props.fetchProjectEditors({ projectId });
-      this.setState({ loading: false });
-      return await this.props.fetchUsers();
+      return this.setState({ loading: false });
     } catch (e) {
       return this.props.history.push('/');
     }

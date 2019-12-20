@@ -25,7 +25,7 @@ describe('PageBlock: sagas', () => {
       const response = {
         id: 1,
         results: [],
-        project: { id: 1, name: 'projectName' },
+        project: {},
       };
       const payload = {
         pageId: 1,
@@ -46,6 +46,7 @@ describe('PageBlock: sagas', () => {
     it('should put fetchOne.success action', async () => {
       const response = {
         id: 1,
+        project: {},
       };
       const payload = {
         blockId: 1,
@@ -55,6 +56,7 @@ describe('PageBlock: sagas', () => {
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(PageBlockRoutines.fetchOne.success(response))
         .dispatch(PageBlockRoutines.fetchOne(payload))
         .silentRun();

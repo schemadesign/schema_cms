@@ -40,6 +40,7 @@ function* fetchOne({ payload: { blockId } }) {
 
     const { data } = yield api.get(`${BLOCK_PATH}/${blockId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(PageBlockRoutines.fetchOne.success(data));
   } catch (e) {
     yield put(PageBlockRoutines.fetchOne.failure(e));

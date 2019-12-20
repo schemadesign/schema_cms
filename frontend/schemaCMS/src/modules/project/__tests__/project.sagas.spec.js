@@ -195,7 +195,7 @@ describe('Project: sagas', () => {
       const response = {
         id: 1,
         results: [],
-        project: { id: 1, name: 'projectName' },
+        project: {},
       };
 
       mockApi.get(`${PROJECTS_PATH}/${payload.projectId}/users`).reply(OK, response);

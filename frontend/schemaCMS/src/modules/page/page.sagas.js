@@ -27,6 +27,7 @@ function* fetchOne({ payload: { pageId } }) {
 
     const { data } = yield api.get(`${PAGES_PATH}/${pageId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(PageRoutines.fetchOne.success(data));
   } catch (e) {
     yield put(PageRoutines.fetchOne.failure(e));

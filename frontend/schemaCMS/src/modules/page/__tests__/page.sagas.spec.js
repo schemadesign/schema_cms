@@ -24,7 +24,7 @@ describe('Page: sagas', () => {
       const response = {
         id: 1,
         results: [],
-        project: { id: 1, name: 'projectName' },
+        project: {},
       };
       const payload = {
         folderId: 1,
@@ -45,6 +45,7 @@ describe('Page: sagas', () => {
     it('should put fetchOne.success action', async () => {
       const response = {
         id: 1,
+        project: {},
       };
       const payload = {
         pageId: 1,
@@ -54,6 +55,7 @@ describe('Page: sagas', () => {
 
       await expectSaga(watchPage)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(PageRoutines.fetchOne.success(response))
         .dispatch(PageRoutines.fetchOne(payload))
         .silentRun();

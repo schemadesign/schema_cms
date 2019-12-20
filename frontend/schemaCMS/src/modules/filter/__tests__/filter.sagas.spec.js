@@ -20,6 +20,7 @@ describe('Filter: sagas', () => {
     it('should put fetchList.success action', async () => {
       const response = {
         id: 1,
+        results: [],
       };
       const payload = {
         dataSourceId: 1,
@@ -29,7 +30,7 @@ describe('Filter: sagas', () => {
 
       await expectSaga(watchFilter)
         .withState(defaultState)
-        .put(FilterRoutines.fetchList.success(response))
+        .put(FilterRoutines.fetchList.success(response.results))
         .dispatch(FilterRoutines.fetchList(payload))
         .silentRun();
     });
