@@ -227,7 +227,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data_source = self.get_object()
 
         try:
-            preview = data_source.current_job.meta_data.preview
+            preview = data_source.active_job.meta_data.preview
         except Exception as e:
             return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
 

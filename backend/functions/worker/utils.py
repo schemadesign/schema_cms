@@ -35,4 +35,6 @@ class NumpyEncoder(json.JSONEncoder):
             return float(obj)
         elif isinstance(obj, (np.ndarray,)):
             return obj.tolist()
+        elif isinstance(obj, (np.nan,)):
+            return None
         return json.JSONEncoder.default(self, obj)
