@@ -2,11 +2,14 @@ import React, { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
 
+import { Container } from './draggable.styles';
+
 const DRAGGING_OPACITY = 0.4;
 const DEFAULT_OPACITY = 1;
 
 export const Draggable = ({ onMove, children, accept, id, index }) => {
   const ref = useRef(null);
+  const dragRef = useRef(null);
   const [, drop] = useDrop({
     accept,
     hover(item, monitor) {
@@ -55,13 +58,15 @@ export const Draggable = ({ onMove, children, accept, id, index }) => {
     }),
   });
 
+  const makeDraggable = content => <span ref={dragRef}>{content}</span>;
+
   const opacity = isDragging ? DRAGGING_OPACITY : DEFAULT_OPACITY;
-  drag(drop(ref));
+  drag(drop(dragRef));
 
   return (
-    <div ref={ref} style={{ opacity }}>
-      {children}
-    </div>
+    <Container ref={ref} style={{ opacity }}>
+      {children(makeDraggable)}
+    </Container>
   );
 };
 

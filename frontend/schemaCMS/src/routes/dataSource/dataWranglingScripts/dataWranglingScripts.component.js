@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { Form } from 'schemaUI';
+import { Form, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 import {
   always,
@@ -23,7 +23,8 @@ import {
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
-import Backend from 'react-dnd-html5-backend';
+import MultiBackend from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import {
   Dot,
@@ -35,6 +36,9 @@ import {
   Type,
   UploadContainer,
   Warning,
+  CheckboxContent,
+  IconWrapper,
+  CheckBoxStyles,
 } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import {
@@ -52,6 +56,7 @@ import { getMatchParam } from '../../../shared/utils/helpers';
 import { Draggable } from '../../../shared/components/draggable';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
+const { MenuIcon } = Icons;
 
 export class DataWranglingScripts extends PureComponent {
   static propTypes = {
@@ -181,19 +186,34 @@ export class DataWranglingScripts extends PureComponent {
     });
   };
 
-  renderCheckboxes = ({ id, name, specs, type = 'custom' }, index) => (
-    <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
-      <Checkbox id={`checkbox-${index}`} value={id.toString()}>
-        <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>
-          {name}
-          <Dot />
-          <Type>
-            <FormattedMessage {...messages[type]} />
-          </Type>
-        </Link>
-      </Checkbox>
-    </Draggable>
-  );
+  renderCheckboxes = ({ id, name, specs, type = 'custom' }, index) => {
+    return (
+      <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
+        {makeDraggable => {
+          const draggableIcon = makeDraggable(
+            <IconWrapper>
+              <MenuIcon />
+            </IconWrapper>
+          );
+
+          return (
+            <Checkbox id={`checkbox-${index}`} value={id.toString()}>
+              <CheckboxContent>
+                {draggableIcon}
+                <Link to={this.getScriptLink({ id, type })}>
+                  {name}
+                  <Dot />
+                  <Type>
+                    <FormattedMessage {...messages[type]} />
+                  </Type>
+                </Link>
+              </CheckboxContent>
+            </Checkbox>
+          );
+        }}
+      </Draggable>
+    );
+  };
 
   renderUploadingError = errorMessage =>
     renderWhenTrue(() => (
@@ -243,7 +263,7 @@ export class DataWranglingScripts extends PureComponent {
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
-      <DndProvider backend={Backend}>
+      <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project} />
         <ContextHeader title={name} subtitle={headerSubtitle}>
@@ -264,6 +284,7 @@ export class DataWranglingScripts extends PureComponent {
               <Fragment>
                 <CheckboxGroup
                   onChange={e => this.handleChange({ e, setFieldValue, steps })}
+                  customCheckboxStyles={CheckBoxStyles}
                   value={steps}
                   name="steps"
                   id="fieldStepsCheckboxGroup"

@@ -48,3 +48,15 @@ export const Dot = styled.div`
 export const Type = styled.span`
   color: ${({ theme: { secondaryText } }) => secondaryText};
 `;
+
+export const CheckboxContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  cursor: move;
+`;
+
+export const CheckBoxStyles = { width: '100%' };

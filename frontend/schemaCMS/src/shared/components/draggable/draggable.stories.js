@@ -14,6 +14,6 @@ export const defaultProps = {
 
 storiesOf('Draggable', module).add('Default', () => (
   <DndProvider backend={Backend}>
-    <Draggable {...defaultProps} />
+    <Draggable {...defaultProps}>{() => {}}</Draggable>
   </DndProvider>
 ));

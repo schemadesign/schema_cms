@@ -1,133 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Draggable: Component should render correctly 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "dragDropManager": DragDropManagerImpl {
-        "backend": HTML5Backend {
-          "actions": Object {
-            "beginDrag": [Function],
-            "drop": [Function],
-            "endDrag": [Function],
-            "hover": [Function],
-            "publishDragSource": [Function],
-          },
-          "altKeyPressed": false,
-          "asyncEndDragFrameId": null,
-          "currentDragSourceNode": null,
-          "currentNativeHandle": null,
-          "currentNativeSource": null,
-          "dragEnterTargetIds": Array [],
-          "dragOverTargetIds": null,
-          "dragStartSourceIds": null,
-          "dropTargetIds": Array [],
-          "endDragIfSourceWasRemovedFromDOM": [Function],
-          "endDragNativeItem": [Function],
-          "enterLeaveCounter": EnterLeaveCounter {
-            "entered": Array [],
-            "isNodeInDocument": [Function],
-          },
-          "getSourceClientOffset": [Function],
-          "handleSelectStart": [Function],
-          "handleTopDragEndCapture": [Function],
-          "handleTopDragEnter": [Function],
-          "handleTopDragEnterCapture": [Function],
-          "handleTopDragLeaveCapture": [Function],
-          "handleTopDragOver": [Function],
-          "handleTopDragOverCapture": [Function],
-          "handleTopDragStart": [Function],
-          "handleTopDragStartCapture": [Function],
-          "handleTopDrop": [Function],
-          "handleTopDropCapture": [Function],
-          "isNodeInDocument": [Function],
-          "monitor": DragDropMonitorImpl {
-            "registry": HandlerRegistryImpl {
-              "dragSources": Map {},
-              "dropTargets": Map {},
-              "pinnedSource": null,
-              "pinnedSourceId": null,
-              "store": Object {
-                "dispatch": [Function],
-                "getState": [Function],
-                "replaceReducer": [Function],
-                "subscribe": [Function],
-                Symbol(observable): [Function],
-              },
-              "types": Map {},
-            },
-            "store": Object {
-              "dispatch": [Function],
-              "getState": [Function],
-              "replaceReducer": [Function],
-              "subscribe": [Function],
-              Symbol(observable): [Function],
-            },
-          },
-          "mouseMoveTimeoutTimer": null,
-          "options": OptionsReader {
-            "globalContext": [Window],
-          },
-          "registry": HandlerRegistryImpl {
-            "dragSources": Map {},
-            "dropTargets": Map {},
-            "pinnedSource": null,
-            "pinnedSourceId": null,
-            "store": Object {
-              "dispatch": [Function],
-              "getState": [Function],
-              "replaceReducer": [Function],
-              "subscribe": [Function],
-              Symbol(observable): [Function],
-            },
-            "types": Map {},
-          },
-          "sourceNodeOptions": Map {},
-          "sourceNodes": Map {},
-          "sourcePreviewNodeOptions": Map {},
-          "sourcePreviewNodes": Map {},
-        },
-        "handleRefCountChange": [Function],
-        "isSetUp": false,
-        "monitor": DragDropMonitorImpl {
-          "registry": HandlerRegistryImpl {
-            "dragSources": Map {},
-            "dropTargets": Map {},
-            "pinnedSource": null,
-            "pinnedSourceId": null,
-            "store": Object {
-              "dispatch": [Function],
-              "getState": [Function],
-              "replaceReducer": [Function],
-              "subscribe": [Function],
-              Symbol(observable): [Function],
-            },
-            "types": Map {},
-          },
-          "store": Object {
-            "dispatch": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-            Symbol(observable): [Function],
-          },
-        },
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
-      },
-    }
-  }
->
+<span>
   <Draggable
     accept="TYPE"
     id="id"
     index={0}
     onMove={[Function]}
-  />
-</ContextProvider>
+  >
+    <Component />
+  </Draggable>
+</span>
 `;
