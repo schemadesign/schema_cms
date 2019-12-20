@@ -12,7 +12,6 @@ import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import ReactModal from 'react-modal';
 import React from 'react';
-import { useDrag } from 'react-dnd';
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -20,6 +20,8 @@ import {
   toString,
   flatten,
   uniq,
+  filter,
+  includes,
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
@@ -112,9 +114,9 @@ export class DataWranglingScripts extends PureComponent {
   parseSteps = (script, index) =>
     ifElse(
       pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE),
-      always({ script, execOrder: index, options: { columns: this.state.orderedDataWranglingScripts } }),
-      always({ script, execOrder: index })
-    )(find(propEq('id', parseInt(script, 10)), this.state.orderedDataWranglingScripts));
+      always({ script: prop('id', script), execOrder: index, options: { columns: this.props.imageScrapingFields } }),
+      always({ script: prop('id', script), execOrder: index })
+    )(script);
 
   handleUploadScript = async ({ target }) => {
     const [file] = target.files;
@@ -159,7 +161,11 @@ export class DataWranglingScripts extends PureComponent {
       setSubmitting(true);
       this.setState({ errorMessage: '' });
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-      const parsedSteps = steps.map(this.parseSteps);
+      const parsedSteps = pipe(
+        map(script => ({ ...script, id: `${script.id}` })),
+        filter(script => includes(prop('id', script), steps)),
+        steps => steps.map(this.parseSteps)
+      )(this.state.orderedDataWranglingScripts);
 
       await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
     } catch (error) {
