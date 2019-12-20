@@ -1153,7 +1153,6 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           defaultChecked={true}
           id="file"
           name="type"
-          onChange={[Function]}
           style={
             Object {
               "height": 0,

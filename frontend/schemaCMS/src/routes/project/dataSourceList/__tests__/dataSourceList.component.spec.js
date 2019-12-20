@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 
 import { DataSourceList } from '../dataSourceList.component';
 import { defaultProps, propsWithDataSource, propsWithJob } from '../dataSourceList.stories';
-import { ListItemTitle } from '../../../../shared/components/listComponents/listItem.styles';
 import { PlusButton } from '../../../../shared/components/navigation';
+import { ListItemTitle } from '../../../../shared/components/listComponents';
 
 describe('DataSourceList: Component', () => {
   const component = props => <DataSourceList {...defaultProps} {...props} />;

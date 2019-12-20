@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { injectIntl } from 'react-intl';
+import { withTheme } from 'styled-components';
 
 import { compose } from 'ramda';
 import { DataSourceList } from './dataSourceList.component';
@@ -31,5 +32,6 @@ export default compose(
     mapDispatchToProps
   ),
   injectIntl,
-  withRouter
+  withRouter,
+  withTheme
 )(DataSourceList);

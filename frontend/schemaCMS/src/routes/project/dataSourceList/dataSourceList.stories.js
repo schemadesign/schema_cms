@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
-import { DataSourceList } from './dataSourceList.component';
 import { jobs } from '../../../modules/dataSource/jobs.mock';
+import { DataSourceList } from './dataSourceList.component';
 
 const dataSource = {
   created: '2019-09-09T11:23:40+0000',
@@ -43,6 +44,9 @@ export const defaultProps = {
   fetchDataSources: Function.prototype,
   cancelFetchListLoop: Function.prototype,
   dataSources: [],
+  theme: {
+    card: Theme.dark.card,
+  },
   history,
   intl,
   match: {
