@@ -246,7 +246,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         fields = json.loads(preview.read())["fields"]
 
-        data = dict()
+        data = dict(project=data_source.project_)
         for key, value in fields.items():
             data[key] = dict(field_type=value["dtype"], unique=value["unique"])
             data[key]["filter_type"] = getattr(constants.FilterTypesGroups, data[key]["field_type"])
@@ -353,14 +353,16 @@ class DataSourceJobDetailViewSet(
     @decorators.action(detail=True, url_path="preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
         obj = self.get_object()
+
+        response_data = dict(project=obj.project)
         try:
             if not hasattr(obj, 'meta_data') and obj.result:
                 obj.update_meta()
-            result = obj.meta_data.data
+            response_data["results"] = obj.meta_data.data
         except Exception as e:
             return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
-        return response.Response(result, status=status.HTTP_200_OK)
+        return response.Response(response_data, status=status.HTTP_200_OK)
 
     @decorators.action(
         detail=True,
@@ -418,6 +420,7 @@ class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mod
     serializer_class = serializers.FolderSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
+        "retrieve": serializers.FolderDetailSerializer,
         "partial_update": serializers.FolderDetailSerializer,
         "update": serializers.FolderDetailSerializer,
         "pages": serializers.PageSerializer,

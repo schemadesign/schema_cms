@@ -889,7 +889,7 @@ class TestJobResultPreviewView:
         response = api_client.get(self.get_url(job.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == job.meta_data.data
+        assert response.data["results"] == job.meta_data.data
 
     @staticmethod
     def get_url(pk):
@@ -1089,7 +1089,7 @@ class TestFolderDetailView:
         response = api_client.get(self.get_url(folder.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.FolderSerializer(folder).data
+        assert response.data == projects_serializers.FolderDetailSerializer(folder).data
 
     def test_edit_name(self, api_client, admin, folder, faker):
         new_name = faker.word()
