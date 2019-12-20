@@ -45,6 +45,7 @@ export class AddUser extends PureComponent {
     userToBeRemoved: null,
     showConfirmationModal: false,
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -56,6 +57,7 @@ export class AddUser extends PureComponent {
 
       await this.props.fetchUsers({ projectId });
       await this.props.fetchProjectEditors({ projectId });
+
       return this.setState({ loading: false });
     } catch (e) {
       return this.props.history.push('/');
@@ -81,15 +83,24 @@ export class AddUser extends PureComponent {
       showConfirmationModal: false,
     });
 
-  handleConfirmRemove = () => {
+  handleConfirmRemove = async () => {
     const { userToBeRemoved } = this.state;
     const projectId = getMatchParam(this.props, 'projectId');
 
-    this.props.removeUser({ projectId, userId: userToBeRemoved });
     this.setState({
+      loading: true,
       userToBeRemoved: null,
       showConfirmationModal: false,
     });
+
+    try {
+      await this.props.removeUser({ projectId, userId: userToBeRemoved });
+      await this.props.fetchProjectEditors({ projectId });
+    } catch (error) {
+      this.setState({ error });
+    } finally {
+      return this.setState({ loading: false });
+    }
   };
 
   handleBackClick = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
@@ -128,14 +139,14 @@ export class AddUser extends PureComponent {
 
   render() {
     const { users } = this.props;
-    const { showConfirmationModal, loading } = this.state;
+    const { showConfirmationModal, loading, error } = this.state;
     const headerConfig = this.getHeaderConfig();
 
     return (
       <Container>
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <LoadingWrapper loading={loading} noData={!users.length}>
+        <LoadingWrapper loading={loading} error={error} noData={!users.length}>
           {this.props.users.map(this.renderUser)}
         </LoadingWrapper>
         <NavigationContainer fixed>
