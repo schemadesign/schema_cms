@@ -551,17 +551,15 @@ class TestUpdateDataSourceView:
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
         api_client.force_authenticate(admin)
-        data_source.update_meta(
-            preview_data={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"]
-        )
+
+        data_source.update_meta(preview={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"])
+        data_source.meta_data.refresh_from_db()
+
         expected_data = dict(
             results=json.loads(data_source.meta_data.preview.read()),
             data_source={"name": data_source.name},
             project=data_source.project_,
         )
-        data_source.update_meta(preview={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"])
-
-        data_source.meta_data.refresh_from_db()
 
         response = api_client.get(self.get_url(data_source.id))
 

@@ -249,9 +249,10 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         data = dict(project=data_source.project_, results={})
         for key, value in fields.items():
-            data["results"][key] = dict(field_type=value["dtype"], unique=value["unique"])
-            data["results"][key]["filter_type"] = getattr(
-                constants.FilterTypesGroups, data[key]["field_type"]
+            data["results"][key] = dict(
+                field_type=value["dtype"],
+                unique=value["unique"],
+                filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
             )
 
         return response.Response(data=data)
