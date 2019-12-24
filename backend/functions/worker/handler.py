@@ -63,9 +63,9 @@ def read_file_to_data_frame(file):
     buffer = BytesIO()
     buffer.write(dt.fread(file, na_strings=[""], fill=True).to_csv().encode("utf-8"))
 
-    table = pa_csv.read_csv(
-        BufferReader(buffer.getvalue()), convert_options=convert_options
-    ).to_pandas(strings_to_categorical=True)
+    table = pa_csv.read_csv(BufferReader(buffer.getvalue()), convert_options=convert_options).to_pandas(
+        strings_to_categorical=True
+    )
 
     return table
 
@@ -81,11 +81,16 @@ def get_preview_data(data_frame):
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
     mean = data_frame.mean(numeric_only=True).to_dict()
+    median = data_frame.median(numeric_only=True).to_dict()
     min_ = data_frame.min(numeric_only=True).to_dict()
     max_ = data_frame.max(numeric_only=True).to_dict()
     std = data_frame.std(numeric_only=True).to_dict()
     unique = data_frame.nunique().to_dict()
     nan = data_frame.isna().sum()
+    percentile_10th = data_frame.quantile(0.1, numeric_only=True)
+    percentile_25th = data_frame.quantile(0.25, numeric_only=True)
+    percentile_75th = data_frame.quantile(0.75, numeric_only=True)
+    percentile_90th = data_frame.quantile(0.9, numeric_only=True)
     columns = data_frame.columns.to_list()
 
     fields_info = {}
@@ -93,11 +98,16 @@ def get_preview_data(data_frame):
     for i in columns:
         fields_info[i] = {}
         fields_info[i]["mean"] = mean.get(i, None)
+        fields_info[i]["median"] = median.get(i, None)
         fields_info[i]["min"] = min_.get(i, None)
         fields_info[i]["max"] = max_.get(i, None)
         fields_info[i]["std"] = std.get(i, None)
         fields_info[i]["unique"] = unique.get(i, None)
-        fields_info[i]["nan"] = nan.get(i, None)
+        fields_info[i]["number_of_nans"] = nan.get(i, None)
+        fields_info[i]["percentile_10th"] = percentile_10th.get(i, None)
+        fields_info[i]["percentile_25th"] = percentile_25th.get(i, None)
+        fields_info[i]["percentile_75th"] = percentile_75th.get(i, None)
+        fields_info[i]["percentile_90th"] = percentile_90th.get(i, None)
         fields_info[i]["count"] = items
 
     dtypes = {i: k for i, k in zip(columns, data_frame.dtypes)}
@@ -140,7 +150,9 @@ def process_datasource_meta_source_file(data_source: dict):
         logger.info(f"Meta created - DataSource # {datasource.id}")
     except Exception as e:
         api.schemacms_api.update_datasource_meta(
-            datasource_pk=datasource.id, status=db.ProcessState.FAILED, error=f"{e} @ update data source meta"
+            datasource_pk=datasource.id,
+            status=db.ProcessState.FAILED,
+            error=f"{e} @ update data source meta",
         )
         return logging.error(f"Data Source {datasource.id} fail to create meta data - {e}")
 
@@ -160,6 +172,7 @@ def write_data_frame_to_parquet_on_s3(data_frame, file_name):
     services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, file_name.replace(".csv", ".parquet")).put(
         Body=buffer.getvalue()
     )
+
 
 @profile
 def process_job(job_data: dict):
