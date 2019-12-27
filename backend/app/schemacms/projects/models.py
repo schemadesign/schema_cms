@@ -90,7 +90,7 @@ class Project(
         return 0  # just for mock purposes till charts will be implemented
 
     @functional.cached_property
-    def header_info(self):
+    def project_info(self):
         return {"id": self.id, "title": self.title}
 
     def meta_file_serialization(self):
@@ -210,7 +210,7 @@ class DataSource(
         return self.filters.count()
 
     @functional.cached_property
-    def project_(self):
+    def project_info(self):
         return dict(id=self.project.id, title=self.project.title)
 
     @property
@@ -391,7 +391,7 @@ class DataSourceJob(
         return services.s3.generate_presigned_url(ClientMethod='get_object', Params=params)
 
     @functional.cached_property
-    def project(self):
+    def project_info(self):
         project = self.datasource.project
         return dict(id=project.id, title=project.title)
 
@@ -494,7 +494,7 @@ class Filter(
         ]
 
     @functional.cached_property
-    def project(self):
+    def project_info(self):
         project = self.datasource.project
         return dict(id=project.id, title=project.title)
 
@@ -536,7 +536,7 @@ class Folder(
         return self.project
 
     @functional.cached_property
-    def project_(self):
+    def project_info(self):
         return dict(id=self.project.id, title=self.project.title)
 
     def meta_file_serialization(self):
@@ -585,7 +585,7 @@ class Page(
         return self.blocks.count()
 
     @functional.cached_property
-    def project(self):
+    def project_info(self):
         project = self.folder.project
         return dict(id=project.id, title=project.title)
 
@@ -636,7 +636,7 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
         return self.page.folder.project
 
     @functional.cached_property
-    def project(self):
+    def project_info(self):
         project = self.page.folder.project
         return dict(id=project.id, title=project.title)
 

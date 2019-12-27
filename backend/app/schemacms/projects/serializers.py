@@ -144,7 +144,7 @@ class DataSourceDetailSerializer(DataSourceSerializer):
     project = serializers.SerializerMethodField(read_only=True)
 
     def get_project(self, obj):
-        return obj.project_
+        return obj.project_info
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):
@@ -305,7 +305,7 @@ class JobDetailSerializer(DataSourceJobSerializer):
         fields = DataSourceJobSerializer.Meta.fields + ("project",)
 
     def get_project(self, obj):
-        return obj.project
+        return obj.project_info
 
 
 class PublicApiUpdateMetaSerializer(serializers.ModelSerializer):
@@ -439,7 +439,7 @@ class FolderDetailSerializer(FolderSerializer):
     project = serializers.SerializerMethodField(read_only=True)
 
     def get_project(self, obj):
-        return obj.project_
+        return obj.project_info
 
 
 class PageSerializer(serializers.ModelSerializer):
@@ -503,7 +503,7 @@ class PageDetailSerializer(PageSerializer):
         fields = PageSerializer.Meta.fields + ("project",)
 
     def get_project(self, obj):
-        return obj.project
+        return obj.project_info
 
 
 class BlockImageSerializer(serializers.ModelSerializer):
@@ -597,4 +597,4 @@ class BlockDetailSerializer(BlockSerializer):
         fields = BlockSerializer.Meta.fields + ("project",)
 
     def get_project(self, obj):
-        return obj.project
+        return obj.project_info

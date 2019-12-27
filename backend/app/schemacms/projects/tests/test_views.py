@@ -558,7 +558,7 @@ class TestDataSourcePreview:
         expected_data = dict(
             results=json.loads(data_source.meta_data.preview.read()),
             data_source={"name": data_source.name},
-            project=data_source.project_,
+            project=data_source.project_info,
         )
 
         response = api_client.get(self.get_url(data_source.id))
@@ -1139,7 +1139,7 @@ class TestPageListCreateView:
             response.data["results"]
             == projects_serializers.PageSerializer(instance=self.sort_directories(pages), many=True).data
         )
-        assert response.data["project"] == folder.project_
+        assert response.data["project"] == folder.project_info
 
     def test_create(self, api_client, admin, folder, faker):
         payload = dict(title=faker.word())
@@ -1209,7 +1209,7 @@ class TestBlockListCreateView:
             response.data["results"]
             == projects_serializers.BlockSerializer(instance=self.sort_directories(blocks), many=True).data
         )
-        assert response.data["project"] == page.project
+        assert response.data["project"] == page.project_info
 
     def test_create(self, api_client, admin, page, faker):
         payload = dict(name=faker.word(), type=projects_constants.BlockTypes.CODE, content="<p>test</p>")
