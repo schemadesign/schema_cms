@@ -130,11 +130,7 @@ class DataSource(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
     active_job = models.ForeignKey(
-        "projects.DataSourceJob",
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="data_sources",
-        null=True,
+        "projects.DataSourceJob", blank=True, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
 
     objects = managers.DataSourceManager()

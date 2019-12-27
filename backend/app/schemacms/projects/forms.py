@@ -14,6 +14,9 @@ class BlockForm(SoftDeleteObjectAdminForm):
     def clean_type(self, *args, **kwargs):
         type_ = self.cleaned_data["type"]
 
+        if self.has_changed() and "image" not in self.changed_data:
+            return type_
+
         if type_ == BlockTypes.IMAGE and not self.files:
             message = f"Please select at least one image to upload."
             raise forms.ValidationError(message)
