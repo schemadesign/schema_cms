@@ -50,7 +50,7 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Total Count (N)
       </styled.span>
       <styled.span
-        title="127"
+        title={127}
       >
         127
       </styled.span>
@@ -59,48 +59,48 @@ exports[`FieldDetail: Component should render correctly 1`] = `
       key="3"
     >
       <styled.span>
-        Unique
+        NaN
       </styled.span>
       <styled.span
-        title="99"
+        title={2}
       >
-        99
+        2
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
       key="4"
     >
       <styled.span>
-        Mean
+        Unique Items
       </styled.span>
       <styled.span
-        title="4"
+        title={99}
       >
-        4
+        99
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
       key="5"
     >
       <styled.span>
-        Min
+        Mean
       </styled.span>
       <styled.span
-        title="1"
+        title={4}
       >
-        1
+        4
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
       key="6"
     >
       <styled.span>
-        Max
+        Median
       </styled.span>
       <styled.span
-        title="100"
+        title={4.5}
       >
-        100
+        4.5
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
@@ -110,13 +110,37 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Std. Dev.
       </styled.span>
       <styled.span
-        title="23.3"
+        title={23.333282731964}
       >
-        23.3
+        23.33
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
       key="8"
+    >
+      <styled.span>
+        Min
+      </styled.span>
+      <styled.span
+        title={1}
+      >
+        1
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      key="9"
+    >
+      <styled.span>
+        Max
+      </styled.span>
+      <styled.span
+        title={100}
+      >
+        100
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      key="10"
     >
       <styled.span>
         10th Percentile
@@ -136,15 +160,15 @@ exports[`FieldDetail: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      key="9"
+      key="11"
     >
       <styled.span>
         25th Percentile
       </styled.span>
       <styled.span
-        title="100.3k"
+        title={100283.30095}
       >
-        100.3k
+        100283.3
       </styled.span>
     </Styled(styled.li)>
   </styled.ul>
