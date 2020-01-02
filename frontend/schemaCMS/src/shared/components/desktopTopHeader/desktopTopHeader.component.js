@@ -26,6 +26,7 @@ import {
   LogoLink,
   logoutButtonStyles,
   menuStyles,
+  MenuWrapper,
   Overlayer,
   Title,
   TitleWrapper,
@@ -91,7 +92,7 @@ export class DesktopTopHeader extends TopHeader {
   );
 
   render() {
-    const { logoutModalOpen } = this.state;
+    const { logoutModalOpen, isMenuOpen } = this.state;
     const { title, userId } = this.props;
 
     const buttonProps = {
@@ -112,19 +113,21 @@ export class DesktopTopHeader extends TopHeader {
           <Header buttonProps={buttonProps} customStyles={headerCustomStyles} customButtonStyles={customButtonStyles}>
             {this.renderHeaderBar(title, userId)}
           </Header>
-          <Overlayer visible={this.state.isMenuOpen} onClick={this.handleToggleMenu} />
-          <Menu
-            open={this.state.isMenuOpen}
-            onClose={this.handleToggleMenu}
-            customStyles={menuStyles}
-            closeButtonProps={closeButtonProps}
-          >
-            <MenuHeader>{this.renderHeader('SchemaCMS', 'Menu')}</MenuHeader>
-            <Content onClick={this.handleToggleMenu}>
-              {primaryMenu}
-              {secondaryMenu}
-            </Content>
-          </Menu>
+          <Overlayer visible={isMenuOpen} onClick={this.handleToggleMenu} />
+          <MenuWrapper visible={isMenuOpen} onClick={this.handleToggleMenu}>
+            <Menu
+              open={isMenuOpen}
+              onClose={this.handleToggleMenu}
+              customStyles={menuStyles(isMenuOpen)}
+              closeButtonProps={closeButtonProps}
+            >
+              <MenuHeader>{this.renderHeader('SchemaCMS', 'Menu')}</MenuHeader>
+              <Content onClick={this.handleToggleMenu}>
+                {primaryMenu}
+                {secondaryMenu}
+              </Content>
+            </Menu>
+          </MenuWrapper>
         </Container>
         <LogoutModal logoutModalOpen={logoutModalOpen} onAction={this.handleCancelLogout} redirectUrl="/logout" />
       </TopContainer>
