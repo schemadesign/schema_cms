@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
-.c10 {
+.c11 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c11 {
+.c12 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c14 {
+.c15 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -39,27 +39,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   align-items: flex-start;
 }
 
-.c12 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c12 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c12:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
 .c13 {
   line-height: 1.5;
   margin: 2px 0;
@@ -67,7 +46,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
-  display: none;
+  display: block;
 }
 
 .c13 a {
@@ -81,7 +60,28 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c15 {
+.c14 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c14 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c14:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c16 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -93,22 +93,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: inline-block;
 }
 
-.c15 a {
+.c16 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c15:hover {
+.c16:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c8 {
+.c9 {
   word-break: break-word;
 }
 
-.c9 {
+.c10 {
   word-break: break-word;
 }
 
@@ -118,18 +118,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 
 .c1 {
   width: 1000px;
-}
-
-.c7 {
-  display: none;
-  background: #1d1d20;
-  opacity: 0.75;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9900;
 }
 
 .c2 {
@@ -198,22 +186,48 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   height: 16px;
 }
 
+.c8 {
+  width: 1000px;
+  z-index: 9910;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
+.c7 {
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
 @media (min-width:1040px) {
-  .c10 {
+  .c11 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c13 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c14 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -423,182 +437,187 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         onClick={[Function]}
       />
       <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": 595,
-            "minHeight": null,
-            "padding": 50,
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
+        className="c8"
+        onClick={[Function]}
       >
         <div
-          className=""
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "color": "#FFF",
+              "maxWidth": 595,
+              "minHeight": null,
+              "padding": 50,
+              "position": "absolute",
+              "right": 0,
+              "textAlign": "left",
+              "top": 0,
+              "transform": "translateX(100%)",
+              "transition": "transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), visibility 0s 0.4s",
+              "visibility": 0,
+              "width": "100%",
+              "zIndex": 9999,
+            }
+          }
         >
           <div
             className=""
           >
-            <h2
-              className="c8"
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
+            <div
+              className=""
             >
-              SchemaCMS
-            </h2>
-            <h1
-              className="c9"
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
+              <h2
+                className="c9"
+                id="headerTitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 100,
+                    "margin": 0,
+                  }
                 }
-              }
-            >
-              Menu
-            </h1>
+              >
+                SchemaCMS
+              </h2>
+              <h1
+                className="c10"
+                id="headerSubtitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.12px",
+                    "lineHight": 1.25,
+                    "margin": 0,
+                  }
+                }
+              >
+                Menu
+              </h1>
+            </div>
           </div>
-        </div>
-        <div
-          className="c10"
-          onClick={[Function]}
-        >
-          <ul
+          <div
             className="c11"
+            onClick={[Function]}
           >
-            <li
+            <ul
               className="c12"
             >
-              <a
-                href="/project"
-                id={null}
-                onClick={[Function]}
+              <li
+                className="c13"
               >
-                <span>
-                  Projects
-                </span>
-              </a>
-            </li>
-            <li
-              className="c13"
-            >
-              <a
-                href="/user"
-                id="userBtn"
-                onClick={[Function]}
+                <a
+                  href="/project"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Projects
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c14"
               >
-                <span>
-                  Users
-                </span>
-              </a>
-            </li>
-          </ul>
-          <ul
-            className="c14"
-          >
-            <li
+                <a
+                  href="/user"
+                  id="userBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul
               className="c15"
             >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+              <li
+                className="c16"
               >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c15"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    About Schema CMS
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c16"
               >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c15"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    API Doc
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c16"
               >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="desktopTopHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 44,
-              "top": 44,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    GitHub Repository
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button
+            disabled={false}
+            id="desktopTopHeaderCloseMenuButton"
+            onClick={[Function]}
             style={
               Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "position": "absolute",
+                "right": 44,
+                "top": 44,
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -606,14 +625,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
-.c9 {
+.c10 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c10 {
+.c11 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -630,7 +649,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   align-items: flex-start;
 }
 
-.c11 {
+.c12 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -642,22 +661,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   display: inline-block;
 }
 
-.c11 a {
+.c12 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c11:hover {
+.c12:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c7 {
+.c8 {
   word-break: break-word;
 }
 
-.c8 {
+.c9 {
   word-break: break-word;
 }
 
@@ -667,18 +686,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
 
 .c1 {
   width: 1000px;
-}
-
-.c6 {
-  display: none;
-  background: #1d1d20;
-  opacity: 0.75;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9900;
 }
 
 .c2 {
@@ -731,8 +738,34 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   height: 16px;
 }
 
+.c7 {
+  width: 1000px;
+  z-index: 9910;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
+.c6 {
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
 @media (min-width:1040px) {
-  .c9 {
+  .c10 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
@@ -902,152 +935,157 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
         onClick={[Function]}
       />
       <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": 595,
-            "minHeight": null,
-            "padding": 50,
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
+        className="c7"
+        onClick={[Function]}
       >
         <div
-          className=""
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "color": "#FFF",
+              "maxWidth": 595,
+              "minHeight": null,
+              "padding": 50,
+              "position": "absolute",
+              "right": 0,
+              "textAlign": "left",
+              "top": 0,
+              "transform": "translateX(100%)",
+              "transition": "transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), visibility 0s 0.4s",
+              "visibility": 0,
+              "width": "100%",
+              "zIndex": 9999,
+            }
+          }
         >
           <div
             className=""
           >
-            <h2
-              className="c7"
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
+            <div
+              className=""
             >
-              SchemaCMS
-            </h2>
-            <h1
-              className="c8"
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
+              <h2
+                className="c8"
+                id="headerTitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 100,
+                    "margin": 0,
+                  }
                 }
-              }
-            >
-              Menu
-            </h1>
+              >
+                SchemaCMS
+              </h2>
+              <h1
+                className="c9"
+                id="headerSubtitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.12px",
+                    "lineHight": 1.25,
+                    "margin": 0,
+                  }
+                }
+              >
+                Menu
+              </h1>
+            </div>
           </div>
-        </div>
-        <div
-          className="c9"
-          onClick={[Function]}
-        >
-          <ul
+          <div
             className="c10"
+            onClick={[Function]}
           >
-            <li
+            <ul
               className="c11"
             >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+              <li
+                className="c12"
               >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c11"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    About Schema CMS
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c12"
               >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c11"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    API Doc
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c12"
               >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="desktopTopHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 44,
-              "top": 44,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    GitHub Repository
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button
+            disabled={false}
+            id="desktopTopHeaderCloseMenuButton"
+            onClick={[Function]}
             style={
               Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "position": "absolute",
+                "right": 44,
+                "top": 44,
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1055,14 +1093,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`] = `
-.c12 {
+.c13 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c13 {
+.c14 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1076,7 +1114,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   margin-bottom: 30px;
 }
 
-.c16 {
+.c17 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1093,27 +1131,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   align-items: flex-start;
 }
 
-.c14 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c14 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c14:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
 .c15 {
   line-height: 1.5;
   margin: 2px 0;
@@ -1121,7 +1138,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
-  display: none;
+  display: block;
 }
 
 .c15 a {
@@ -1135,7 +1152,28 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   border-top: 2.4px solid #2F2F36;
 }
 
-.c17 {
+.c16 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c16 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c16:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c18 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1147,22 +1185,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: inline-block;
 }
 
-.c17 a {
+.c18 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c17:hover {
+.c18:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c10 {
+.c11 {
   word-break: break-word;
 }
 
-.c11 {
+.c12 {
   word-break: break-word;
 }
 
@@ -1172,18 +1210,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 
 .c1 {
   width: 1000px;
-}
-
-.c9 {
-  display: none;
-  background: #1d1d20;
-  opacity: 0.75;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9900;
 }
 
 .c2 {
@@ -1279,22 +1305,48 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   white-space: nowrap;
 }
 
+.c10 {
+  width: 1000px;
+  z-index: 9910;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
+.c9 {
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
 @media (min-width:1040px) {
-  .c12 {
+  .c13 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -1532,182 +1584,187 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         onClick={[Function]}
       />
       <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": 595,
-            "minHeight": null,
-            "padding": 50,
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
+        className="c10"
+        onClick={[Function]}
       >
         <div
-          className=""
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "color": "#FFF",
+              "maxWidth": 595,
+              "minHeight": null,
+              "padding": 50,
+              "position": "absolute",
+              "right": 0,
+              "textAlign": "left",
+              "top": 0,
+              "transform": "translateX(100%)",
+              "transition": "transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), visibility 0s 0.4s",
+              "visibility": 0,
+              "width": "100%",
+              "zIndex": 9999,
+            }
+          }
         >
           <div
             className=""
           >
-            <h2
-              className="c10"
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
+            <div
+              className=""
             >
-              SchemaCMS
-            </h2>
-            <h1
-              className="c11"
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
+              <h2
+                className="c11"
+                id="headerTitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 100,
+                    "margin": 0,
+                  }
                 }
-              }
-            >
-              Menu
-            </h1>
+              >
+                SchemaCMS
+              </h2>
+              <h1
+                className="c12"
+                id="headerSubtitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.12px",
+                    "lineHight": 1.25,
+                    "margin": 0,
+                  }
+                }
+              >
+                Menu
+              </h1>
+            </div>
           </div>
-        </div>
-        <div
-          className="c12"
-          onClick={[Function]}
-        >
-          <ul
+          <div
             className="c13"
+            onClick={[Function]}
           >
-            <li
+            <ul
               className="c14"
             >
-              <a
-                href="/project"
-                id={null}
-                onClick={[Function]}
+              <li
+                className="c15"
               >
-                <span>
-                  Projects
-                </span>
-              </a>
-            </li>
-            <li
-              className="c15"
-            >
-              <a
-                href="/user"
-                id="userBtn"
-                onClick={[Function]}
+                <a
+                  href="/project"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Projects
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c16"
               >
-                <span>
-                  Users
-                </span>
-              </a>
-            </li>
-          </ul>
-          <ul
-            className="c16"
-          >
-            <li
+                <a
+                  href="/user"
+                  id="userBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul
               className="c17"
             >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+              <li
+                className="c18"
               >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c17"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    About Schema CMS
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c18"
               >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c17"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    API Doc
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c18"
               >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="desktopTopHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 44,
-              "top": 44,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    GitHub Repository
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button
+            disabled={false}
+            id="desktopTopHeaderCloseMenuButton"
+            onClick={[Function]}
             style={
               Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "position": "absolute",
+                "right": 44,
+                "top": 44,
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1715,14 +1772,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
-.c12 {
+.c13 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c13 {
+.c14 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1736,7 +1793,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   margin-bottom: 30px;
 }
 
-.c15 {
+.c16 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1753,7 +1810,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   align-items: flex-start;
 }
 
-.c14 {
+.c15 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1763,18 +1820,18 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   display: block;
 }
 
-.c14 a {
+.c15 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c14:first-of-type {
+.c15:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c16 {
+.c17 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1786,22 +1843,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   display: inline-block;
 }
 
-.c16 a {
+.c17 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c16:hover {
+.c17:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c10 {
+.c11 {
   word-break: break-word;
 }
 
-.c11 {
+.c12 {
   word-break: break-word;
 }
 
@@ -1811,18 +1868,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
 
 .c1 {
   width: 1000px;
-}
-
-.c9 {
-  display: none;
-  background: #1d1d20;
-  opacity: 0.75;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9900;
 }
 
 .c2 {
@@ -1918,15 +1963,41 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   white-space: nowrap;
 }
 
+.c10 {
+  width: 1000px;
+  z-index: 9910;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
+.c9 {
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s;
+  transition: visibility 0s 0.4s;
+}
+
 @media (min-width:1040px) {
-  .c12 {
+  .c13 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -2156,182 +2227,187 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         onClick={[Function]}
       />
       <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": 595,
-            "minHeight": null,
-            "padding": 50,
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
+        className="c10"
+        onClick={[Function]}
       >
         <div
-          className=""
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "color": "#FFF",
+              "maxWidth": 595,
+              "minHeight": null,
+              "padding": 50,
+              "position": "absolute",
+              "right": 0,
+              "textAlign": "left",
+              "top": 0,
+              "transform": "translateX(100%)",
+              "transition": "transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), visibility 0s 0.4s",
+              "visibility": 0,
+              "width": "100%",
+              "zIndex": 9999,
+            }
+          }
         >
           <div
             className=""
           >
-            <h2
-              className="c10"
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
+            <div
+              className=""
             >
-              SchemaCMS
-            </h2>
-            <h1
-              className="c11"
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
+              <h2
+                className="c11"
+                id="headerTitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 100,
+                    "margin": 0,
+                  }
                 }
-              }
-            >
-              Menu
-            </h1>
+              >
+                SchemaCMS
+              </h2>
+              <h1
+                className="c12"
+                id="headerSubtitle"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.12px",
+                    "lineHight": 1.25,
+                    "margin": 0,
+                  }
+                }
+              >
+                Menu
+              </h1>
+            </div>
           </div>
-        </div>
-        <div
-          className="c12"
-          onClick={[Function]}
-        >
-          <ul
+          <div
             className="c13"
+            onClick={[Function]}
           >
-            <li
+            <ul
               className="c14"
             >
-              <a
-                href="/project"
-                id={null}
-                onClick={[Function]}
+              <li
+                className="c15"
               >
-                <span>
-                  Projects
-                </span>
-              </a>
-            </li>
-            <li
-              className="c14"
-            >
-              <a
-                href="/user"
-                id="userBtn"
-                onClick={[Function]}
+                <a
+                  href="/project"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Projects
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c15"
               >
-                <span>
-                  Users
-                </span>
-              </a>
-            </li>
-          </ul>
-          <ul
-            className="c15"
-          >
-            <li
+                <a
+                  href="/user"
+                  id="userBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul
               className="c16"
             >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+              <li
+                className="c17"
               >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c16"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    About Schema CMS
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c17"
               >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c16"
-            >
-              <a
-                href="/"
-                id={null}
-                onClick={[Function]}
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    API Doc
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c17"
               >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="desktopTopHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 44,
-              "top": 44,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    GitHub Repository
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button
+            disabled={false}
+            id="desktopTopHeaderCloseMenuButton"
+            onClick={[Function]}
             style={
               Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "position": "absolute",
+                "right": 44,
+                "top": 44,
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
