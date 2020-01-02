@@ -1,9 +1,26 @@
-import styled from 'styled-components';
+import { prop } from 'ramda';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Typography } from 'schemaUI';
 
 import SchemaLogoSVG from '../../../images/icons/schemaLogo.svg';
 import { media, contentSizes } from '../../../theme/media';
+import { styleWhenTrue } from '../../utils/rendering';
+
+const ANIMATION_TIME = '0.4s';
+const MENU_EASING = 'cubic-bezier(0.86, 0, 0.07, 1)';
+
+const visibiltyTransition = styleWhenTrue(
+  prop('visible'),
+  css`
+    visibility: visible;
+    transition: visibility 0s;
+  `,
+  css`
+    visibility: hidden;
+    transition: visibility 0s ${ANIMATION_TIME};
+  `
+);
 
 export const TopContainer = styled.div`
   display: none;
@@ -19,18 +36,6 @@ export const TopContainer = styled.div`
 
 export const Container = styled.div`
   width: ${contentSizes.desktop}px;
-`;
-
-export const Overlayer = styled.div`
-  display: ${({ visible }) => (visible ? 'block' : 'none')};
-  background: ${({ theme: { card } }) => card.background};
-  opacity: 0.75;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9900;
 `;
 
 export const HeaderWrapper = styled.div`
@@ -101,13 +106,38 @@ export const closeButtonStyles = {
   right: 44,
 };
 
-export const menuStyles = {
+export const menuStyles = visible => ({
   zIndex: 9999,
   maxWidth: 595,
   padding: 50,
   minHeight: null,
-  transform: `translateX(calc((100vw - ${contentSizes.desktop}px) / -2 + 8px))`,
-};
+  transition: visible
+    ? `transform ${ANIMATION_TIME} ${MENU_EASING}, visibility 0s`
+    : `transform ${ANIMATION_TIME} ${MENU_EASING}, visibility 0s ${ANIMATION_TIME}`,
+  position: 'absolute',
+});
+
+export const MenuWrapper = styled.div`
+  width: 1000px;
+  z-index: 9910;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  ${visibiltyTransition}
+`;
+
+export const Overlayer = styled.div`
+  background: ${({ theme: { card } }) => card.background};
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  ${visibiltyTransition}
+`;
 
 export const logoutButtonStyles = {
   display: 'flex',
