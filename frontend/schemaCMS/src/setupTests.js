@@ -40,6 +40,8 @@ jest.mock('react-dnd', () => ({
   useDrag: () => [{ isDragging: false }, Function.prototype],
 }));
 
+window.scrollTo = jest.fn();
+
 afterEach(() => {
   nock.cleanAll();
 });
