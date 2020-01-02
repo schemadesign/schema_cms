@@ -18,6 +18,7 @@ import {
   ascend,
   find,
   defaultTo,
+  descend,
 } from 'ramda';
 
 import { SCRIPT_TYPES } from './dataWranglingScripts.constants';
@@ -71,7 +72,7 @@ const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, da
     pipe(
       map(addScriptType),
       map(addOrder(pathOr([], ['activeJob', 'scripts'], dataSource))),
-      sortWith([ascend(prop('order')), ascend(prop('type'))])
+      sortWith([descend(prop('type')), ascend(prop('order'))])
     )(data)
   );
 
