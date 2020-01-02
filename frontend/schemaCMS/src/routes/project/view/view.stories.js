@@ -8,7 +8,6 @@ import { View } from './view.component';
 
 const emptyProps = {
   fetchProject: Function.prototype,
-  unmountProject: Function.prototype,
   removeProject: Function.prototype,
   user: {
     role: ROLES.ADMIN,

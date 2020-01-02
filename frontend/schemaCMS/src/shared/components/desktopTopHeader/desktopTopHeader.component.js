@@ -61,7 +61,7 @@ export class DesktopTopHeader extends TopHeader {
     renderWhenTrue(
       always(
         <TitleWrapper>
-          <Title>{title}</Title>
+          <Title title={title}>{title}</Title>
         </TitleWrapper>
       )
     )(!!title);

@@ -49,7 +49,10 @@ export class Source extends PureComponent {
 
   handleConfirmRemove = () => {
     const {
-      dataSource: { project: projectId, id: dataSourceId },
+      dataSource: {
+        project: { id: projectId },
+        id: dataSourceId,
+      },
     } = this.props;
 
     this.props.removeDataSource({ projectId, dataSourceId });
@@ -97,7 +100,7 @@ export class Source extends PureComponent {
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} projectId={dataSource.project} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

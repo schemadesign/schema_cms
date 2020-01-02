@@ -29,7 +29,7 @@ export class Fields extends PureComponent {
         <TopHeader
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          projectId={this.props.dataSource.project}
+          projectId={this.props.dataSource.project.id}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />

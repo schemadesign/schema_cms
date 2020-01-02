@@ -58,12 +58,12 @@ export class Edit extends PureComponent {
 
   handleConfirmRemove = () => {
     const folderId = getMatchParam(this.props, 'folderId');
-    const projectId = path(['folder', 'project'], this.props);
+    const projectId = path(['folder', 'project', 'id'], this.props);
 
     this.props.removeFolder({ folderId, projectId });
   };
 
-  handleBackClick = () => this.props.history.push(`/project/${path(['folder', 'project'], this.props)}/folder`);
+  handleBackClick = () => this.props.history.push(`/project/${path(['folder', 'project', 'id'], this.props)}/folder`);
 
   renderContent = () => (
     <TextInput

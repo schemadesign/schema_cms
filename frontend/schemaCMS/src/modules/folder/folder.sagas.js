@@ -4,6 +4,7 @@ import { FolderRoutines } from './folder.redux';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH, FOLDERS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
+import { ProjectRoutines } from '../project';
 
 function* fetchList({ payload: { projectId } }) {
   try {
@@ -11,7 +12,8 @@ function* fetchList({ payload: { projectId } }) {
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${FOLDERS_PATH}`);
 
-    yield put(FolderRoutines.fetchList.success(data));
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(FolderRoutines.fetchList.success(data.results));
   } catch (e) {
     yield put(FolderRoutines.fetchList.failure(e));
   } finally {
@@ -25,6 +27,7 @@ function* fetchOne({ payload: { folderId } }) {
 
     const { data } = yield api.get(`${FOLDERS_PATH}/${folderId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(FolderRoutines.fetchOne.success(data));
   } catch (e) {
     yield put(FolderRoutines.fetchOne.failure(e));

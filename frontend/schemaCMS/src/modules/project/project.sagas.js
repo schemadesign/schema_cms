@@ -106,11 +106,10 @@ function* fetchEditors({ payload: { projectId } }) {
   try {
     yield put(ProjectRoutines.fetchEditors.request());
 
-    const {
-      data: { results },
-    } = yield api.get(`${PROJECTS_PATH}/${projectId}/users`);
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}/users`);
 
-    yield put(ProjectRoutines.fetchEditors.success(results));
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(ProjectRoutines.fetchEditors.success(data.results));
   } catch (error) {
     yield put(ProjectRoutines.fetchEditors.failure());
   } finally {

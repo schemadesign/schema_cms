@@ -9,6 +9,7 @@ import mockApi from '../../../shared/utils/mockApi';
 import { CODE_TYPE, IMAGE_TYPE, MARKDOWN_TYPE } from '../pageBlock.constants';
 import browserHistory from '../../../shared/utils/history';
 import { BLOCK_PATH } from '../../../shared/utils/api.constants';
+import { ProjectRoutines } from '../../project';
 
 describe('PageBlock: sagas', () => {
   const defaultState = Immutable({
@@ -23,6 +24,8 @@ describe('PageBlock: sagas', () => {
     it('should put fetchList.success action', async () => {
       const response = {
         id: 1,
+        results: [],
+        project: {},
       };
       const payload = {
         pageId: 1,
@@ -32,7 +35,8 @@ describe('PageBlock: sagas', () => {
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
-        .put(PageBlockRoutines.fetchList.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(PageBlockRoutines.fetchList.success(response.results))
         .dispatch(PageBlockRoutines.fetchList(payload))
         .silentRun();
     });
@@ -42,6 +46,7 @@ describe('PageBlock: sagas', () => {
     it('should put fetchOne.success action', async () => {
       const response = {
         id: 1,
+        project: {},
       };
       const payload = {
         blockId: 1,
@@ -51,6 +56,7 @@ describe('PageBlock: sagas', () => {
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(PageBlockRoutines.fetchOne.success(response))
         .dispatch(PageBlockRoutines.fetchOne(payload))
         .silentRun();

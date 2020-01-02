@@ -271,7 +271,7 @@ export class DataWranglingScripts extends PureComponent {
     return (
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project} />
+        <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
         <ContextHeader title={name} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

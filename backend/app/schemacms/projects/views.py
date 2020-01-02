@@ -53,10 +53,13 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+            response_ = self.get_paginated_response(serializer.data)
+            response_.data["project"] = project.project_info
+            return response_
 
         serializer = self.get_serializer(queryset, many=True)
-        return response.Response(serializer.data)
+        response_data = dict(project=project.project_info, results=serializer.data)
+        return response.Response(response_data)
 
     @decorators.action(detail=True, url_path="users", methods=["get"])
     def users(self, request, **kwargs):
@@ -66,10 +69,13 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         page = self.paginate_queryset(editors)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+            response_ = self.get_paginated_response(serializer.data)
+            response_.data["project"] = project.project_info
+            return response_
 
         serializer = self.get_serializer(editors, many=True)
-        return response.Response(serializer.data)
+        response_data = dict(project=project.project_info, results=serializer.data)
+        return response.Response(response_data)
 
     @decorators.action(detail=True, url_path="remove-editor", methods=["post"])
     def remove_editor(self, request, pk=None, **kwargs):
@@ -116,7 +122,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         if request.method == "GET":
             queryset = project.folders.select_related("created_by").all()
             serializer = self.get_serializer(queryset, many=True)
-            return response.Response(serializer.data, status=status.HTTP_200_OK)
+            data = {"project": project.project_info, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             request.data["project"] = project.id
@@ -135,6 +142,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     )
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
+        "retrieve": serializers.DataSourceDetailSerializer,
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,
@@ -163,8 +171,11 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         if not hasattr(data_source, 'meta_data'):
             return response.Response({}, status=status.HTTP_200_OK)
 
-        data = data_source.meta_data.data
-        data["data_source"] = {"name": data_source.name}
+        data = dict(
+            results=data_source.meta_data.data,
+            data_source={"name": data_source.name},
+            project=data_source.project_info,
+        )
 
         return response.Response(data, status=status.HTTP_200_OK)
 
@@ -217,10 +228,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+            response_ = self.get_paginated_response(serializer.data)
+            response_.data["project"] = data_source.project_info
+            return response_
 
         serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
-        return response.Response(data=serializer.data)
+        response_data = dict(project=data_source.project_info, results=serializer.data)
+        return response.Response(response_data, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, url_path="fields-info", methods=["get"])
     def fields_info(self, request, pk=None, **kwargs):
@@ -233,10 +247,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         fields = json.loads(preview.read())["fields"]
 
-        data = dict()
+        data = dict(project=data_source.project_info, results={})
         for key, value in fields.items():
-            data[key] = dict(field_type=value["dtype"], unique=value["unique"])
-            data[key]["filter_type"] = getattr(constants.FilterTypesGroups, data[key]["field_type"])
+            data["results"][key] = dict(
+                field_type=value["dtype"],
+                unique=value["unique"],
+                filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
+            )
 
         return response.Response(data=data)
 
@@ -249,8 +266,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
                 return response.Response(data=[])
 
             serializer = self.get_serializer(instance=data_source.filters, many=True)
-
-            return response.Response(data=serializer.data)
+            data = {"project": data_source.project_info, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             request.data["datasource"] = data_source
@@ -327,7 +344,7 @@ class DataSourceJobDetailViewSet(
     viewsets.GenericViewSet,
 ):
     queryset = models.DataSourceJob.objects.none()
-    serializer_class = serializers.DataSourceJobSerializer
+    serializer_class = serializers.JobDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "update_state": serializers.PublicApiDataSourceJobStateSerializer,
@@ -340,14 +357,16 @@ class DataSourceJobDetailViewSet(
     @decorators.action(detail=True, url_path="preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
         obj = self.get_object()
+
+        response_data = dict(project=obj.project_info)
         try:
             if not hasattr(obj, 'meta_data') and obj.result:
                 obj.update_meta()
-            result = obj.meta_data.data
+            response_data["results"] = obj.meta_data.data
         except Exception as e:
             return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
-        return response.Response(result, status=status.HTTP_200_OK)
+        return response.Response(response_data, status=status.HTTP_200_OK)
 
     @decorators.action(
         detail=True,
@@ -405,6 +424,7 @@ class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mod
     serializer_class = serializers.FolderSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
+        "retrieve": serializers.FolderDetailSerializer,
         "partial_update": serializers.FolderDetailSerializer,
         "update": serializers.FolderDetailSerializer,
         "pages": serializers.PageSerializer,
@@ -417,7 +437,8 @@ class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mod
         if request.method == "GET":
             queryset = folder.pages.select_related("created_by").all()
             serializer = self.get_serializer(instance=queryset, many=True)
-            return response.Response(serializer.data, status=status.HTTP_200_OK)
+            data = {"project": folder.project_info, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             request.data["folder"] = folder.id
@@ -459,7 +480,8 @@ class PageViewSet(
         if request.method == "GET":
             queryset = page.blocks.select_related("page").all()
             serializer = self.get_serializer(instance=queryset, many=True)
-            return response.Response(serializer.data, status=status.HTTP_200_OK)
+            data = {"project": page.project_info, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
         else:
             data = request.data.copy()

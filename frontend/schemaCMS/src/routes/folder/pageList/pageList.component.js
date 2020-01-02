@@ -60,7 +60,7 @@ export class PageList extends PureComponent {
     }
   }
 
-  getMatchParam = () => path(['folder', 'project'], this.props);
+  getMatchParam = () => path(['folder', 'project', 'id'], this.props);
   handleEditPage = id => this.props.history.push(`/page/${id}/edit`);
 
   handleCreatePage = () => this.props.history.push(`/folder/${getMatchParam(this.props, 'folderId')}/page`);

@@ -551,11 +551,15 @@ class TestUpdateDataSourceView:
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
         api_client.force_authenticate(admin)
-        data_source.update_meta(preview={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"])
 
+        data_source.update_meta(preview={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"])
         data_source.meta_data.refresh_from_db()
-        expected_data = json.loads(data_source.meta_data.preview.read())
-        expected_data["data_source"] = {"name": data_source.name}
+
+        expected_data = dict(
+            results=json.loads(data_source.meta_data.preview.read()),
+            data_source={"name": data_source.name},
+            project=data_source.project_info,
+        )
 
         response = api_client.get(self.get_url(data_source.id))
 
@@ -833,8 +837,7 @@ class TestJobDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["steps"]) == 2
         assert (
-            response.data
-            == projects_serializers.DataSourceJobSerializer(job, context={"request": request}).data
+            response.data == projects_serializers.JobDetailSerializer(job, context={"request": request}).data
         )
 
     def test_description_is_allowed_to_edit(self, api_client, admin, job_factory, job_step_factory):
@@ -884,7 +887,7 @@ class TestJobResultPreviewView:
         response = api_client.get(self.get_url(job.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == job.meta_data.data
+        assert response.data["results"] == job.meta_data.data
 
     @staticmethod
     def get_url(pk):
@@ -899,8 +902,12 @@ class TestFilterListView:
         response = api_client.get(self.get_url(data_source.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert len(response.data) == 2
-        assert response.data == projects_serializers.FilterSerializer(data_source.filters, many=True).data
+        assert len(response.data["results"]) == 2
+        assert (
+            response.data["results"]
+            == projects_serializers.FilterSerializer(data_source.filters, many=True).data
+        )
+        assert response.data["project"] == {"id": data_source.project.id, "title": data_source.project.title}
 
     @staticmethod
     def get_url(pk):
@@ -1022,9 +1029,9 @@ class TestDirectoryListView:
         response = api_client.get(self.get_project_url(project_1.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert len(response.data) == 3
+        assert len(response.data["results"]) == 3
         assert (
-            response.data
+            response.data["results"]
             == projects_serializers.FolderSerializer(instance=self.sort_directories(folders), many=True).data
         )
 
@@ -1080,7 +1087,7 @@ class TestFolderDetailView:
         response = api_client.get(self.get_url(folder.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.FolderSerializer(folder).data
+        assert response.data == projects_serializers.FolderDetailSerializer(folder).data
 
     def test_edit_name(self, api_client, admin, folder, faker):
         new_name = faker.word()
@@ -1129,9 +1136,10 @@ class TestPageListCreateView:
 
         assert response.status_code == status.HTTP_200_OK
         assert (
-            response.data
+            response.data["results"]
             == projects_serializers.PageSerializer(instance=self.sort_directories(pages), many=True).data
         )
+        assert response.data["project"] == folder.project_info
 
     def test_create(self, api_client, admin, folder, faker):
         payload = dict(title=faker.word())
@@ -1198,9 +1206,10 @@ class TestBlockListCreateView:
 
         assert response.status_code == status.HTTP_200_OK
         assert (
-            response.data
+            response.data["results"]
             == projects_serializers.BlockSerializer(instance=self.sort_directories(blocks), many=True).data
         )
+        assert response.data["project"] == page.project_info
 
     def test_create(self, api_client, admin, page, faker):
         payload = dict(name=faker.word(), type=projects_constants.BlockTypes.CODE, content="<p>test</p>")

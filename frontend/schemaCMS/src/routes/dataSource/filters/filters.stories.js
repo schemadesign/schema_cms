@@ -7,7 +7,7 @@ import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   dataSource: {
-    project: '1',
+    project: { id: '1' },
   },
   filters: [
     {

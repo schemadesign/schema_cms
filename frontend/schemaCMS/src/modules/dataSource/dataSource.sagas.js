@@ -13,6 +13,7 @@ import {
   RESULT_PAGE,
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
+import { ProjectRoutines } from '../project';
 
 const PAGE_SIZE = 1000;
 
@@ -55,6 +56,7 @@ function* fetchOne({ payload: { dataSourceId } }) {
 
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(DataSourceRoutines.fetchOne.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.fetchOne.failure(error));
@@ -85,6 +87,7 @@ function* fetchListLoop(payload) {
         `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=${PAGE_SIZE}`
       );
 
+      yield put(ProjectRoutines.setProject.trigger(data.project));
       yield put(DataSourceRoutines.fetchList.success(data.results));
 
       if (getIfAllDataSourceProcessed(data.results)) {
@@ -146,7 +149,7 @@ function* fetchPreview({ payload }) {
     const { dataSourceId } = payload;
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`, { camelize: false });
 
-    yield put(DataSourceRoutines.fetchPreview.success(data));
+    yield put(DataSourceRoutines.fetchPreview.success(data.results));
   } catch (error) {
     yield put(DataSourceRoutines.fetchPreview.failure(error));
   } finally {
@@ -161,7 +164,8 @@ function* fetchFieldsInfo({ payload }) {
     const { dataSourceId } = payload;
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/fields-info`);
 
-    yield put(DataSourceRoutines.fetchFieldsInfo.success(data));
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(DataSourceRoutines.fetchFieldsInfo.success(data.results));
   } catch (error) {
     yield put(DataSourceRoutines.fetchFieldsInfo.failure(error));
   } finally {

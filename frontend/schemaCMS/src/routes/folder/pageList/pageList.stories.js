@@ -24,7 +24,7 @@ export const defaultProps = {
     },
   ],
   folder: {
-    project: '1',
+    project: { id: '1' },
   },
   history,
   intl,

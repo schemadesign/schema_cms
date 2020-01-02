@@ -13,7 +13,7 @@ function* fetchList({ payload: { dataSourceId } }) {
 
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/filters`);
 
-    yield put(FilterRoutines.fetchList.success(data));
+    yield put(FilterRoutines.fetchList.success(data.results));
   } catch (e) {
     yield put(FilterRoutines.fetchList.failure(e));
   } finally {

@@ -2,6 +2,7 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { JobRoutines } from './job.redux';
 import api from '../../shared/services/api';
+import { ProjectRoutines } from '../project';
 
 function* fetchOne({ payload: { jobId } }) {
   try {
@@ -9,6 +10,7 @@ function* fetchOne({ payload: { jobId } }) {
 
     const { data } = yield api.get(`/jobs/${jobId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(JobRoutines.fetchOne.success(data));
   } catch (e) {
     yield put(JobRoutines.fetchOne.failure(e));
@@ -53,7 +55,8 @@ function* fetchPreview({ payload: { jobId } }) {
 
     const { data } = yield api.get(`/jobs/${jobId}/preview`, { camelize: false });
 
-    yield put(JobRoutines.fetchPreview.success(data));
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(JobRoutines.fetchPreview.success(data.results));
   } catch (e) {
     yield put(JobRoutines.fetchPreview.failure(e));
   } finally {

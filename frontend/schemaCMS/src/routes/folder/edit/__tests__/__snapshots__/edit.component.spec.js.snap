@@ -68,7 +68,9 @@ exports[`Edit: Component should render correctly 1`] = `
         folder={
           Object {
             "name": "name",
-            "project": "1",
+            "project": Object {
+              "id": "1",
+            },
           }
         }
         fullWidth={true}
@@ -272,7 +274,9 @@ exports[`Edit: Component should render correctly with loader 1`] = `
         folder={
           Object {
             "name": "name",
-            "project": "1",
+            "project": Object {
+              "id": "1",
+            },
           }
         }
         fullWidth={true}

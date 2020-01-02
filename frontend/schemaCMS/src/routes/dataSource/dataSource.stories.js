@@ -6,7 +6,7 @@ import { withTheme } from '../../.storybook/decorators';
 
 export const defaultProps = {
   dataSource: {
-    project: '2',
+    project: { id: '2' },
     activeJob: null,
   },
   fetchDataSource: Function.prototype,
@@ -22,7 +22,7 @@ export const defaultProps = {
 export const propsWithActiveJob = {
   ...defaultProps,
   dataSource: {
-    project: '2',
+    project: { id: '2' },
     activeJob: {
       id: 1,
       scripts: [1],

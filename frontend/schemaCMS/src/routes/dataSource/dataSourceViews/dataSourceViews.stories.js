@@ -8,6 +8,7 @@ import { intl } from '../../../.storybook/helpers';
 export const defaultProps = {
   dataSource: {
     name: 'name',
+    project: { id: '1' },
   },
   intl,
   match: {

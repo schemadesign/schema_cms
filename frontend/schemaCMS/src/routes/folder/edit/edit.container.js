@@ -47,7 +47,7 @@ export default compose(
       try {
         setSubmitting(true);
         const folderId = getMatchParam(props, 'folderId');
-        const projectId = path(['folder', 'project'], props);
+        const projectId = path(['folder', 'project', 'id'], props);
 
         await props.updateFolder({ folderId, projectId, ...data });
       } catch (errors) {

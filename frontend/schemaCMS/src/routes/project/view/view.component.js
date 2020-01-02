@@ -14,22 +14,22 @@ import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
 import messages from './view.messages';
 import {
-  Container,
-  CardWrapper,
   CardHeader,
   CardValue,
-  ProjectView,
-  Details,
+  CardWrapper,
+  Container,
   DetailItem,
-  DetailWrapper,
   DetailLabel,
+  Details,
   DetailValue,
+  DetailWrapper,
+  ProjectView,
   Statistics,
   statisticsCardStyles,
 } from './view.styles';
 import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
-import { modalStyles, Modal, ModalTitle, ModalActions } from '../../../shared/components/modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 
 export class View extends PureComponent {
@@ -37,7 +37,6 @@ export class View extends PureComponent {
     isAdmin: PropTypes.bool.isRequired,
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
-    unmountProject: PropTypes.func.isRequired,
     removeProject: PropTypes.func.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
@@ -66,10 +65,6 @@ export class View extends PureComponent {
         error,
       });
     }
-  }
-
-  componentWillUnmount() {
-    return this.props.unmountProject();
   }
 
   formatMessage = value => this.props.intl.formatMessage(value);
@@ -183,13 +178,12 @@ export class View extends PureComponent {
     )
   );
 
-  renderContent = ({ project, isAdmin }) =>
-    renderWhenTrue(() => (
-      <Fragment>
-        {this.renderProject(project)}
-        {this.renderRemoveProjectButton(isAdmin)}
-      </Fragment>
-    ))(!isEmpty(project));
+  renderContent = () => (
+    <Fragment>
+      {this.renderProject(this.props.project)}
+      {this.renderRemoveProjectButton(this.props.isAdmin)}
+    </Fragment>
+  );
 
   render() {
     const { project, isAdmin } = this.props;
@@ -210,7 +204,7 @@ export class View extends PureComponent {
           />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
-            {this.renderContent({ project, isAdmin })}
+            {this.renderContent}
           </LoadingWrapper>
         </div>
         <NavigationContainer fixed>

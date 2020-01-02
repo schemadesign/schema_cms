@@ -6,6 +6,7 @@ import nock from 'nock';
 import { JobRoutines } from '../job.redux';
 import { watchJob } from '../job.sagas';
 import mockApi from '../../../shared/utils/mockApi';
+import { ProjectRoutines } from '../../project';
 
 describe('Job: sagas', () => {
   const defaultState = Immutable({});
@@ -18,6 +19,7 @@ describe('Job: sagas', () => {
     it('should put fetchOne.success action', async () => {
       const response = {
         id: 1,
+        project: {},
       };
       const payload = {
         jobId: 1,
@@ -27,6 +29,7 @@ describe('Job: sagas', () => {
 
       await expectSaga(watchJob)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(JobRoutines.fetchOne.success(response))
         .dispatch(JobRoutines.fetchOne(payload))
         .silentRun();
@@ -54,8 +57,11 @@ describe('Job: sagas', () => {
   describe('when fetchPreview action is called', () => {
     it('should put fetchPreview.success action', async () => {
       const response = {
-        fields: {},
-        data: [],
+        results: {
+          fields: {},
+          data: [],
+        },
+        project: {},
       };
       const payload = {
         jobId: 1,
@@ -65,7 +71,8 @@ describe('Job: sagas', () => {
 
       await expectSaga(watchJob)
         .withState(defaultState)
-        .put(JobRoutines.fetchPreview.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(JobRoutines.fetchPreview.success(response.results))
         .dispatch(JobRoutines.fetchPreview(payload))
         .silentRun();
     });

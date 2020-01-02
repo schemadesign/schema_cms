@@ -34,7 +34,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "id": "dataSourceIdId",
           "jobs": Array [],
           "metaData": Object {},
-          "project": "projectId",
+          "project": Object {
+            "id": "projectId",
+          },
         }
       }
       dirty={false}
@@ -225,7 +227,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "id": "dataSourceIdId",
           "jobs": Array [],
           "metaData": Object {},
-          "project": "projectId",
+          "project": Object {
+            "id": "projectId",
+          },
         }
       }
       handleChange={[Function]}
@@ -448,7 +452,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "id": "dataSourceIdId",
         "jobs": Array [],
         "metaData": Object {},
-        "project": "projectId",
+        "project": Object {
+          "id": "projectId",
+        },
       }
     }
     dirty={false}
@@ -783,6 +789,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="projectId"
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -797,6 +804,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     <DataSourceNavigation
       dataSource={
         Object {
+          "project": Object {
+            "id": "projectId",
+          },
           "type": "file",
         }
       }
@@ -985,6 +995,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     <WithTheme(SourceFormComponent)
       dataSource={
         Object {
+          "project": Object {
+            "id": "projectId",
+          },
           "type": "file",
         }
       }
@@ -1184,6 +1197,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   <DataSourceNavigation
     dataSource={
       Object {
+        "project": Object {
+          "id": "projectId",
+        },
         "type": "file",
       }
     }

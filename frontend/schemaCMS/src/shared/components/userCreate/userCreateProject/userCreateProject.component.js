@@ -22,7 +22,6 @@ export class UserCreateProject extends PureComponent {
     createUserProject: PropTypes.func.isRequired,
     fetchProject: PropTypes.func.isRequired,
     fetchUser: PropTypes.func.isRequired,
-    clearProject: PropTypes.func.isRequired,
     clearUser: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.object.isRequired,
@@ -37,7 +36,6 @@ export class UserCreateProject extends PureComponent {
   async componentDidMount() {
     try {
       const { match } = this.props;
-      this.props.clearProject();
       this.props.clearUser();
 
       const projectId = path(['params', 'projectId'], match);

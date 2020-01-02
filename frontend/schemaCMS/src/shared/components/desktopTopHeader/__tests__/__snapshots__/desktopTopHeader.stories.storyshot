@@ -1381,6 +1381,11 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                     "margin": 0,
                   }
                 }
+                title="
+  Mauris egestas arcu nec diam consectetur vulputate.
+  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
+  Donec suscipit commodo enim. Suspendisse nibh odio
+"
               >
                 
   Mauris egestas arcu nec diam consectetur vulputate.
@@ -2008,6 +2013,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                     "margin": 0,
                   }
                 }
+                title="Projects"
               >
                 Projects
               </h1>

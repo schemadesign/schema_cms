@@ -89,6 +89,10 @@ class Project(
     def charts_count(self):
         return 0  # just for mock purposes till charts will be implemented
 
+    @functional.cached_property
+    def project_info(self):
+        return {"id": self.id, "title": self.title}
+
     def meta_file_serialization(self):
         data = {
             "id": self.id,
@@ -204,6 +208,10 @@ class DataSource(
     @functional.cached_property
     def filters_count(self):
         return self.filters.count()
+
+    @functional.cached_property
+    def project_info(self):
+        return dict(id=self.project.id, title=self.project.title)
 
     @property
     def available_scripts(self):
@@ -382,6 +390,11 @@ class DataSourceJob(
             params['VersionId'] = self.source_file_version
         return services.s3.generate_presigned_url(ClientMethod='get_object', Params=params)
 
+    @functional.cached_property
+    def project_info(self):
+        project = self.datasource.project
+        return dict(id=project.id, title=project.title)
+
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location
         if self.id is None or self.datasource_id is None:
@@ -480,6 +493,11 @@ class Filter(
             )
         ]
 
+    @functional.cached_property
+    def project_info(self):
+        project = self.datasource.project
+        return dict(id=project.id, title=project.title)
+
     def get_fields_info(self):
         last_job = self.datasource.get_last_success_job()
         return json.loads(last_job.meta_data.preview.read())
@@ -516,6 +534,10 @@ class Folder(
 
     def get_project(self):
         return self.project
+
+    @functional.cached_property
+    def project_info(self):
+        return dict(id=self.project.id, title=self.project.title)
 
     def meta_file_serialization(self):
         data = []
@@ -562,6 +584,11 @@ class Page(
     def blocks_count(self):
         return self.blocks.count()
 
+    @functional.cached_property
+    def project_info(self):
+        project = self.folder.project
+        return dict(id=project.id, title=project.title)
+
     @property
     def page_url(self):
         return os.path.join(
@@ -607,6 +634,11 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
 
     def get_project(self):
         return self.page.folder.project
+
+    @functional.cached_property
+    def project_info(self):
+        project = self.page.folder.project
+        return dict(id=project.id, title=project.title)
 
 
 class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):

@@ -17,6 +17,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
     }
     headerTitle="name"
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -33,6 +34,9 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
       dataSource={
         Object {
           "name": "name",
+          "project": Object {
+            "id": "1",
+          },
         }
       }
       hideOnDesktop={false}
@@ -59,6 +63,9 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
     dataSource={
       Object {
         "name": "name",
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     hideOnDesktop={true}

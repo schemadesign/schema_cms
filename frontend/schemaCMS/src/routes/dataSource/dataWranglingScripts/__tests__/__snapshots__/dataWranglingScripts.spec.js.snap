@@ -19,6 +19,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -36,6 +37,9 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       dataSource={
         Object {
           "metaData": Object {},
+          "project": Object {
+            "id": "1",
+          },
         }
       }
       dataWranglingScripts={
@@ -220,6 +224,9 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     dataSource={
       Object {
         "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
       }
     }
     dataWranglingScripts={

@@ -88,9 +88,9 @@ describe('Project: redux', () => {
     });
   });
 
-  describe('when PROJECTS/UNMOUNT_ONE action is received', () => {
-    it('should merge project to list of projects', () => {
-      const resultState = projectReducer(defaultState, ProjectRoutines.unmountOne());
+  describe('when PROJECTS/CLEAR_PROJECT action is received', () => {
+    it('should clear project', () => {
+      const resultState = projectReducer(defaultState, ProjectRoutines.clearProject());
       expect(resultState.project).to.deep.equal(defaultState.project);
     });
   });
