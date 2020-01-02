@@ -14,19 +14,33 @@ def update_meta_file(modeladmin, request, queryset):
 
 def update_meta(modeladmin, request, queryset):
     for obj in queryset.iterator():
-        obj.update_meta()
+        obj.schedule_update_meta(copy_steps=False)
 
 
 @admin.register(models.WranglingScript)
-class WranglingScript(utils_admin.SoftDeleteObjectAdmin):
+class WranglingScriptAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_fields = ("specs",)
 
     def soft_undelete(self, request, queryset):
         self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="Script")
 
+    def get_readonly_fields(self, request, obj=None):
+        return super().get_readonly_fields(request, obj) + ("datasource",)
+
+
+@admin.register(models.Filter)
+class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
+    list_display = ("name", "datasource", "deleted_at")
+
+    def soft_undelete(self, request, queryset):
+        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="Filter")
+
+    def get_readonly_fields(self, request, obj=None):
+        return super().get_readonly_fields(request, obj) + ("datasource",)
+
 
 @admin.register(models.Project)
-class Project(utils_admin.SoftDeleteObjectAdmin):
+class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
     filter_horizontal = ("editors",)
 
@@ -55,12 +69,25 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
 
 
 @admin.register(models.DataSource)
-class DataSource(utils_admin.SoftDeleteObjectAdmin):
-    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta_file]
-    list_display = ("name", "deleted_at")
+class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
+    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta_file, update_meta]
+    list_display = ("name", "project", "deleted_at")
+    fields = ("project", "name", "created_by", "type", "file", "active_job", "deleted")
+    list_filter = ('project', "type", "deleted_at")
 
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="DataSource")
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        form.base_fields['active_job'].queryset = models.DataSourceJob.objects.filter(datasource=obj)
+        return form
+
+    def get_readonly_fields(self, request, obj=None):
+        return super().get_readonly_fields(request, obj) + ("project",)
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related("active_job", "project", "created_by")
 
     @transaction.atomic()
     def save_model(self, request, obj, form, change):
@@ -71,6 +98,8 @@ class DataSource(utils_admin.SoftDeleteObjectAdmin):
             obj.file.save(file.name, file)
         else:
             super().save_model(request, obj, form, change)
+
+        models.DataSourceMeta.objects.create(datasource=obj)
 
 
 class DataSourceJobStepInline(admin.TabularInline):
@@ -83,22 +112,31 @@ class DataSourceJobStepInline(admin.TabularInline):
 class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
     actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta]
     list_display = ('pk', 'datasource', 'job_state', 'created', 'deleted_at')
+    fields = ("datasource", "job_state", "description", "result", "error", "deleted")
     inlines = [DataSourceJobStepInline]
+
+    def get_readonly_fields(self, request, obj=None):
+        return super().get_readonly_fields(request, obj) + ("datasource",)
 
 
 @admin.register(models.Folder)
 class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ('id', 'name', 'project', 'deleted_at')
+    fields = ("project", "name", "created_by", "deleted")
     search_fields = ('name',)
     list_filter = ('project',)
 
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Folder")
 
+    def get_readonly_fields(self, request, obj=None):
+        return super().get_readonly_fields(request, obj) + ("project",)
+
 
 @admin.register(models.Page)
 class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ('id', 'title', 'folder', 'project', 'deleted_at')
+    fields = ("folder", "title", "created_by", "description", "keywords", "deleted")
     search_fields = ('title',)
     list_filter = ('folder',)
 
@@ -107,6 +145,9 @@ class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
 
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(request, queryset, field="title", model_name="Page")
+
+    def get_readonly_fields(self, request, obj=None):
+        return super().get_readonly_fields(request, obj) + ("folder",)
 
 
 class BlockImageInline(admin.TabularInline):
@@ -119,6 +160,7 @@ class BlockImageInline(admin.TabularInline):
 class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
     form = forms.BlockForm
     list_display = ('id', 'name', 'page_title', 'folder', 'project', 'deleted_at')
+    fields = ("page", "name", "type", "content", "is_active", "deleted")
     search_fields = ('name',)
     list_filter = ('page',)
     inlines = (BlockImageInline,)
@@ -134,3 +176,6 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
 
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Block")
+
+    def get_readonly_fields(self, request, obj=None):
+        return super().get_readonly_fields(request, obj) + ("page",)

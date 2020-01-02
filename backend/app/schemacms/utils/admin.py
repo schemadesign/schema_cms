@@ -52,3 +52,8 @@ class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
             return
 
         return SoftDeleteObjectAdmin.soft_undelete(self, request, queryset)
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:
+            return self.readonly_fields + ("deleted",)
+        return self.readonly_fields
