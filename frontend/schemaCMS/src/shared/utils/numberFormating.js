@@ -39,3 +39,13 @@ export const formatPrefixedNumber = (number, decimals = 1) => {
 
   return `${roundedValue}${symbol}`;
 };
+
+export const roundNumber = (number, decimals = 2) => {
+  if (!is(Number, number)) {
+    return number;
+  }
+
+  const rounding = getRounding(decimals);
+
+  return Math.round(number * rounding) / rounding;
+};

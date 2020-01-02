@@ -1,23 +1,24 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
 import {
-  FIELD,
-  SAMPLE,
-  NAME,
-  TYPE,
-  COUNT,
   BLANK,
-  UNIQUE,
-  SUM,
+  COUNT,
+  FIELD,
+  MAX,
   MEAN,
   MEDIAN,
   MIN,
-  MAX,
-  STD,
+  NAME,
+  NAN,
   PERCENTILE_10,
   PERCENTILE_25,
   PERCENTILE_75,
   PERCENTILE_90,
+  SAMPLE,
+  STD,
+  SUM,
+  TYPE,
+  UNIQUE,
 } from './fieldDetail.constants';
 
 export default defineMessages({
@@ -43,11 +44,11 @@ export default defineMessages({
   },
   [BLANK]: {
     id: `shared.components.fieldDetail.${BLANK}`,
-    defaultMessage: 'Blank + NaN',
+    defaultMessage: 'Blank',
   },
   [UNIQUE]: {
     id: `shared.components.fieldDetail.${UNIQUE}`,
-    defaultMessage: 'Unique',
+    defaultMessage: 'Unique Items',
   },
   [SUM]: {
     id: `shared.components.fieldDetail.${SUM}`,
@@ -72,6 +73,10 @@ export default defineMessages({
   [MEDIAN]: {
     id: `shared.components.fieldDetail.${MEDIAN}`,
     defaultMessage: 'Median',
+  },
+  [NAN]: {
+    id: `shared.components.fieldDetail.${NAN}`,
+    defaultMessage: 'NaN',
   },
   [PERCENTILE_10]: {
     id: `shared.components.fieldDetail.${PERCENTILE_10}`,
