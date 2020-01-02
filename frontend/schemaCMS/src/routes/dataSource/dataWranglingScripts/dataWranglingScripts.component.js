@@ -22,6 +22,7 @@ import {
   uniq,
   filter,
   includes,
+  differenceWith,
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
@@ -103,6 +104,17 @@ export class DataWranglingScripts extends PureComponent {
         orderedDataWranglingScripts: this.props.dataWranglingScripts.asMutable({ deep: true }),
       });
     }
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    const byId = (x, y) => equals(prop('id', x), prop('id', y));
+    const asMutableScripts = props.dataWranglingScripts.asMutable({ deep: true });
+    const thatsDifferent = differenceWith(byId, asMutableScripts, state.orderedDataWranglingScripts);
+
+    return {
+      loading: false,
+      orderedDataWranglingScripts: [...thatsDifferent, ...state.orderedDataWranglingScripts],
+    };
   }
 
   getScriptLink = ({ id, type }) => {

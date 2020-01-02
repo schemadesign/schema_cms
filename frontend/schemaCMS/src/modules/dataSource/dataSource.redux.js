@@ -12,7 +12,7 @@ export const DataSourceRoutines = {
   updateOne: createRoutine(`${prefix}UPDATE_ONE`),
   cancelFetchListLoop: createRoutine(`${prefix}CANCEL_FETCH_LIST_LOOP`),
   fetchFieldsInfo: createRoutine(`${prefix}FETCH_FIELDS_INFO`),
-  revertToJob: createRoutine(`${prefix}REVER_TO_JOB`),
+  revertToJob: createRoutine(`${prefix}REVERT_TO_JOB`),
   fetchPreview: createRoutine(`${prefix}FETCH_PREVIEW`),
 };
 

@@ -200,7 +200,35 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     name="steps"
     onChange={[Function]}
     value={Array []}
-  />
+  >
+    <Draggable
+      accept="CHECKBOX"
+      id={1}
+      index={0}
+      key="1"
+      onMove={[Function]}
+    >
+      <Component />
+    </Draggable>
+    <Draggable
+      accept="CHECKBOX"
+      id={2}
+      index={1}
+      key="2"
+      onMove={[Function]}
+    >
+      <Component />
+    </Draggable>
+    <Draggable
+      accept="CHECKBOX"
+      id={3}
+      index={2}
+      key="3"
+      onMove={[Function]}
+    >
+      <Component />
+    </Draggable>
+  </Component>
   <NavigationContainer
     fixed={false}
     hideOnDesktop={false}
