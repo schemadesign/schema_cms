@@ -61,8 +61,13 @@ describe('DataWranglingScripts: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'] };
       const selectedProject = { id: 1, project: 1 };
+      const response = {
+        project: {
+          id: 1,
+        },
+      };
 
-      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
+      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK, response);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
