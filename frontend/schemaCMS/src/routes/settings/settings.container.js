@@ -7,6 +7,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { Settings } from './settings.component';
 import { selectUserData, UserProfileRoutines } from '../../modules/userProfile';
+import { ProjectRoutines } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userData: selectUserData,
@@ -16,6 +17,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       updateMe: promisifyRoutine(UserProfileRoutines.updateMe),
+      clearProject: promisifyRoutine(ProjectRoutines.clearProject),
     },
     dispatch
   ),

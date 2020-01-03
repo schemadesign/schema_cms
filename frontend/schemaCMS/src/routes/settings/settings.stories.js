@@ -8,6 +8,7 @@ import { userData } from '../../modules/userProfile/userProfile.mock';
 
 export const defaultProps = {
   updateMe: Function.prototype,
+  clearProject: Function.prototype,
   userData: {
     ...userData,
     authMethod: AUTH_METHODS.EMAIL,
