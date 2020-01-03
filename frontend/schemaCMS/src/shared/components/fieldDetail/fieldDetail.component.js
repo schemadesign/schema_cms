@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { defaultTo, innerJoin, isNil, pipe } from 'ramda';
 
-import { formatPrefixedNumber } from '../../utils/numberFormating';
+import { roundNumber } from '../../utils/numberFormating';
 import { renderWhenTrue } from '../../utils/rendering';
 import messages from './fieldDetail.messages';
 import { EDITABLE_FIELDS, EMPTY, DEFAULT_STRUCTURE, INFORMATION_FIELDS } from './fieldDetail.constants';
@@ -15,16 +15,21 @@ export class FieldDetail extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  getTextValue = pipe(
-    formatPrefixedNumber,
-    defaultTo('')
+  getTextValue = defaultTo('');
+
+  getRoundedValue = pipe(
+    roundNumber,
+    this.getTextValue
   );
 
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 
   renderItem = (id, index) => {
     const value = this.props.data[id];
-    const textValue = isNil(value) ? EMPTY : this.getTextValue(value);
+    const [titleValue, roundedValue] = isNil(value)
+      ? [EMPTY, EMPTY]
+      : [this.getTextValue(value), this.getRoundedValue(value)];
+
     const isInformationField = INFORMATION_FIELDS.includes(id);
     const isEditable = EDITABLE_FIELDS.includes(id);
     const Item = isInformationField ? FieldInformation : FieldSummary;
@@ -32,7 +37,7 @@ export class FieldDetail extends PureComponent {
     return (
       <Item key={index}>
         <Label>{this.props.intl.formatMessage(messages[id])}</Label>
-        <Value title={textValue}>{textValue}</Value>
+        <Value title={titleValue}>{roundedValue}</Value>
         {this.renderEditIcon(isEditable)}
       </Item>
     );

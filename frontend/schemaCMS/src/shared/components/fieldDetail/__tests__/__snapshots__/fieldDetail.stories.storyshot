@@ -165,7 +165,7 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="127"
+          title={127}
         >
           127
         </span>
@@ -176,11 +176,26 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         <span
           className="c2"
         >
-          Unique
+          NaN
         </span>
         <span
           className="c3 c4"
-          title="99"
+          title={2}
+        >
+          2
+        </span>
+      </li>
+      <li
+        className="c5"
+      >
+        <span
+          className="c2"
+        >
+          Unique Items
+        </span>
+        <span
+          className="c3 c4"
+          title={99}
         >
           99
         </span>
@@ -195,9 +210,39 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="4"
+          title={4}
         >
           4
+        </span>
+      </li>
+      <li
+        className="c5"
+      >
+        <span
+          className="c2"
+        >
+          Median
+        </span>
+        <span
+          className="c3 c4"
+          title={4.5}
+        >
+          4.5
+        </span>
+      </li>
+      <li
+        className="c5"
+      >
+        <span
+          className="c2"
+        >
+          Std. Dev.
+        </span>
+        <span
+          className="c3 c4"
+          title={23.333282731964}
+        >
+          23.33
         </span>
       </li>
       <li
@@ -210,7 +255,7 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="1"
+          title={1}
         >
           1
         </span>
@@ -225,24 +270,9 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="100"
+          title={100}
         >
           100
-        </span>
-      </li>
-      <li
-        className="c5"
-      >
-        <span
-          className="c2"
-        >
-          Std. Dev.
-        </span>
-        <span
-          className="c3 c4"
-          title="23.3"
-        >
-          23.3
         </span>
       </li>
       <li
@@ -278,9 +308,9 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="100.3k"
+          title={100283.30095}
         >
-          100.3k
+          100283.3
         </span>
       </li>
     </ul>

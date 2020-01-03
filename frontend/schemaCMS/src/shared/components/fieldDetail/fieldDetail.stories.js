@@ -4,6 +4,20 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../.storybook/decorators';
 import { intl } from '../../../.storybook/helpers';
 import { FieldDetail } from './fieldDetail.component';
+import {
+  COUNT,
+  MAX,
+  MEAN,
+  MEDIAN,
+  MIN,
+  NAN,
+  PERCENTILE_10,
+  PERCENTILE_25,
+  SAMPLE,
+  STD,
+  TYPE,
+  UNIQUE,
+} from './fieldDetail.constants';
 
 const long = `
   Donec at erat dictum, congue lorem at, gravida magna.
@@ -15,17 +29,19 @@ export const defaultProps = {
   id: 'firstName',
   data: {
     someProp: null,
-    count: 127,
-    dtype: 'Text',
     freq: 6,
-    max: 100,
-    mean: 4,
-    min: 1,
-    std: 23.333282731964,
-    sample: long,
-    unique: 99,
-    percentile10: long,
-    percentile25: 100283.30095,
+    [COUNT]: 127,
+    [TYPE]: 'Text',
+    [MAX]: 100,
+    [MEAN]: 4,
+    [MEDIAN]: 4.5,
+    [MIN]: 1,
+    [NAN]: 2,
+    [STD]: 23.333282731964,
+    [SAMPLE]: long,
+    [UNIQUE]: 99,
+    [PERCENTILE_10]: long,
+    [PERCENTILE_25]: 100283.30095,
   },
   intl,
 };
