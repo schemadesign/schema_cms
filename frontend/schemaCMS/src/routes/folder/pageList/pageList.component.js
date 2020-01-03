@@ -117,7 +117,12 @@ export class PageList extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createPageDesktopBtn" onClick={this.handleCreatePage} />
         </ContextHeader>
-        <LoadingWrapper loading={loading} error={error} noData={!pages.length}>
+        <LoadingWrapper
+          loading={loading}
+          error={error}
+          noData={!pages.length}
+          noDataContent={this.props.intl.formatMessage(messages.noPages)}
+        >
           {this.renderContent(pages)}
         </LoadingWrapper>
         <NavigationContainer fixed>

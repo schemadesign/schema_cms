@@ -67,7 +67,11 @@ export class UserList extends PureComponent {
         <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle}>
           {this.renderCreateUserButton({ id: 'addUserDesktopBtn', isAdmin })}
         </ContextHeader>
-        <LoadingWrapper loading={loading} noData={!users.length}>
+        <LoadingWrapper
+          loading={loading}
+          noData={!users.length}
+          noDataContent={<FormattedMessage {...messages.noUsers} />}
+        >
           <UserListComponent users={this.props.users} projectId={getMatchParam(this.props, 'projectId')} />
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>

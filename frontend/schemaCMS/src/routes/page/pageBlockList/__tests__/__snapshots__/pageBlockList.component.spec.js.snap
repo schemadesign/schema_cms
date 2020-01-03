@@ -50,7 +50,7 @@ exports[`PageBlockList: Component should render correctly 1`] = `
     </styled.div>
     <styled.div>
       <FormattedMessage
-        defaultMessage="{count} {count, plural,one {Block} other {Blocks}}"
+        defaultMessage="{count, plural,one {# Block} other {# Blocks}}"
         id="page.blockList.blocks"
         values={
           Object {
@@ -133,7 +133,7 @@ exports[`PageBlockList: Component should render correctly form 1`] = `
     error={null}
     loading={false}
     noData={false}
-    noDataContent={null}
+    noDataContent="0 Blocks"
   >
     <Component
       id="blocksCheckboxGroup"

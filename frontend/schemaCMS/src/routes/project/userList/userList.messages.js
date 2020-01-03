@@ -30,4 +30,8 @@ export default defineMessages({
     id: 'project.userList.projectDetails',
     defaultMessage: 'Project details',
   },
+  noUsers: {
+    id: 'project.userList.noUsers',
+    defaultMessage: 'No Users',
+  },
 });

@@ -56,7 +56,7 @@ exports[`FolderList: Component should render correctly 1`] = `
     error={null}
     loading={false}
     noData={false}
-    noDataContent={null}
+    noDataContent="0 Folders"
   >
     <styled.section>
       <Styled(Component)
@@ -172,7 +172,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     error={null}
     loading={true}
     noData={false}
-    noDataContent={null}
+    noDataContent="0 Folders"
   >
     <styled.section>
       <Styled(Component)

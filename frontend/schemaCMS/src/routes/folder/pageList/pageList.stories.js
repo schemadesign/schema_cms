@@ -35,6 +35,12 @@ export const defaultProps = {
   },
 };
 
+const emptyPagesProps = {
+  ...defaultProps,
+  pages: [],
+};
+
 storiesOf('Folder|PageList', module)
   .addDecorator(withTheme())
+  .add('No data', () => <PageList {...emptyPagesProps} />)
   .add('Default', () => <PageList {...defaultProps} />);

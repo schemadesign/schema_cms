@@ -105,7 +105,12 @@ export class FolderList extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createFolderDesktopBtn" onClick={this.handleCreateFolder} />
         </ContextHeader>
-        <LoadingWrapper loading={loading} error={error} noData={!folders.length}>
+        <LoadingWrapper
+          loading={loading}
+          error={error}
+          noData={!folders.length}
+          noDataContent={this.props.intl.formatMessage(messages.noFolders)}
+        >
           {this.renderList(folders)}
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
