@@ -20,5 +20,6 @@ EXPOSE 8000
 # Migrates the database, uploads staticfiles, and runs the production server
 CMD ./manage.py migrate && \
     ./manage.py initialuser && \
+    ./manage.py create_dynamo_tables && \
     ./manage.py loadscripts && \
     gunicorn --worker-class=gevent --bind 0.0.0.0:8000 --timeout 180 --graceful-timeout 30  --access-logfile - schemacms.wsgi:application

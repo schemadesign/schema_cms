@@ -93,12 +93,16 @@ class Project(
     def project_info(self):
         return {"id": self.id, "title": self.title}
 
+    @property
+    def dynamo_table_name(self):
+        return "projects"
+
     def meta_file_serialization(self):
         data = {
             "id": self.id,
             "title": self.title,
-            "description": self.description,
-            "owner": self.owner_id,
+            "description": self.description or None,
+            "owner": self.owner.get_full_name(),
             "data_sources": [],
             "pages": [],
         }
@@ -115,10 +119,6 @@ class Project(
             data.update({"pages": list(itertools.chain.from_iterable(pages))})
 
         return data
-
-    def meta_file_path(self):
-        path = super().meta_file_path()
-        return os.path.join("projects", path)
 
 
 class DataSource(
@@ -158,6 +158,44 @@ class DataSource(
     @property
     def meta_file_processing_type(self):
         return constants.WorkerProcessType.DATASOURCE_META_PROCESSING
+
+    @property
+    def available_scripts(self):
+        return WranglingScript.objects.filter(
+            models.Q(is_predefined=True) | models.Q(datasource=self)
+        ).order_by("-is_predefined", "name")
+
+    @property
+    def jobs_history(self):
+        return self.jobs.all().order_by("-created")
+
+    @property
+    def source_file_latest_version(self) -> str:
+        return next(
+            (
+                v.id
+                for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
+                if v.is_latest and v.id != "null"
+            ),
+            "",
+        )
+
+    @property
+    def current_job(self):
+        if self.active_job_id:
+            return self.active_job
+
+    @property
+    def dynamo_table_name(self):
+        return "datasources"
+
+    @functional.cached_property
+    def filters_count(self):
+        return self.filters.count()
+
+    @functional.cached_property
+    def project_info(self):
+        return dict(id=self.project.id, title=self.project.title)
 
     def schedule_update_meta(self, copy_steps):
         file = self.get_source_file()
@@ -201,39 +239,6 @@ class DataSource(
         name, ext = os.path.splitext(os.path.basename(file_name))
         return name, os.path.basename(file_name)
 
-    @functional.cached_property
-    def filters_count(self):
-        return self.filters.count()
-
-    @functional.cached_property
-    def project_info(self):
-        return dict(id=self.project.id, title=self.project.title)
-
-    @property
-    def available_scripts(self):
-        return WranglingScript.objects.filter(
-            models.Q(is_predefined=True) | models.Q(datasource=self)
-        ).order_by("-is_predefined", "name")
-
-    @property
-    def jobs_history(self):
-        return self.jobs.all().order_by("-created")
-
-    @property
-    def source_file_latest_version(self) -> str:
-        return next(
-            (
-                v.id
-                for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
-                if v.is_latest and v.id != "null"
-            ),
-            "",
-        )
-
-    @property
-    def current_job(self):
-        if self.active_job_id:
-            return self.active_job
         return self.get_last_success_job()
 
     def create_job(self, **job_kwargs):
@@ -272,7 +277,7 @@ class DataSource(
             "name": self.name,
             "file": self.file.name,
             "items": 0,
-            "result": "",
+            "result": None,
             "fields": [],
             "filters": [],
         }
@@ -284,7 +289,7 @@ class DataSource(
             data.update(
                 {
                     "items": job_meta.items if job_meta else 0,
-                    "result": current_job.result.name or "",
+                    "result": current_job.result.name or None,
                     "fields": self.result_fields_info(),
                 }
             )
@@ -499,7 +504,12 @@ class Filter(
         return json.loads(last_job.meta_data.preview.read())
 
     def meta_file_serialization(self):
-        data = {"id": self.id, "name": self.name, "type": self.filter_type, "field": self.field}
+        data = {
+            "id": self.id,
+            "name": self.name,
+            "type": self.filter_type or None,
+            "field": self.field or None,
+        }
         return data
 
 
@@ -542,10 +552,8 @@ class Folder(
             page_dict = {
                 "id": page.id,
                 "title": page.title,
-                "description": page.description,
+                "description": page.description or None,
                 "folder": self.name,
-                "keywords": page.keywords,
-                "blocks": page.get_blocks(),
             }
             data.append(page_dict)
 
@@ -553,7 +561,10 @@ class Folder(
 
 
 class Page(
-    ext_models.TitleSlugDescriptionModel, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+    utils_models.MetaGeneratorMixin,
+    ext_models.TitleSlugDescriptionModel,
+    softdelete.models.SoftDeleteObject,
+    ext_models.TimeStampedModel,
 ):
     folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name='pages')
     keywords = models.TextField(blank=True, default="")
@@ -576,6 +587,16 @@ class Page(
         ]
         ordering = ('created',)
 
+    @property
+    def page_url(self):
+        return os.path.join(
+            settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.folder.project_id), "pages", str(self.pk)
+        )
+
+    @property
+    def dynamo_table_name(self):
+        return "pages"
+
     @functional.cached_property
     def blocks_count(self):
         return self.blocks.count()
@@ -584,12 +605,6 @@ class Page(
     def project_info(self):
         project = self.folder.project
         return dict(id=project.id, title=project.title)
-
-    @property
-    def page_url(self):
-        return os.path.join(
-            settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.folder.project_id), "pages", str(self.pk)
-        )
 
     def get_project(self):
         return self.folder.project
@@ -601,13 +616,27 @@ class Page(
             data = {
                 "id": block.id,
                 "name": block.name,
-                "type": block.type,
-                "content": block.content,
+                "type": block.type or None,
+                "content": block.content or None,
                 "images": [] if not hasattr(block, "images") else [i.image.url for i in block.images.all()],
             }
             blocks.append(data)
 
         return blocks
+
+    def meta_file_serialization(self):
+        page_info = {
+            "id": self.id,
+            "title": self.title,
+            "description": self.description or None,
+            "keywords": self.keywords or None,
+            "folder": self.folder.name,
+            "updated": str(self.modified),
+            "creator": self.created_by.get_full_name(),
+            "blocks": self.get_blocks(),
+        }
+
+        return page_info
 
 
 class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):

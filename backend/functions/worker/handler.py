@@ -3,8 +3,6 @@ try:
 except ImportError:
     pass
 
-
-from memory_profiler import profile
 import csv
 import json
 import logging
@@ -25,11 +23,10 @@ from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
 from pyarrow import BufferReader, csv as pa_csv, Table
 
-from common import api, db, services, settings, types
+from common import api, db, services, settings, types, utils
 import errors
 import mocks
 from image_scraping import image_scraping  # noqa
-from utils import FieldType, NumpyEncoder
 
 
 logger = logging.getLogger()
@@ -47,18 +44,17 @@ current_step = None
 
 def map_general_dtypes(dtype):
     if dtype.startswith("float") or dtype.startswith("int"):
-        return FieldType.NUMBER
+        return utils.FieldType.NUMBER
     elif dtype.startswith("str") or dtype.startswith("object") or dtype.startswith("category"):
-        return FieldType.STRING
+        return utils.FieldType.STRING
     elif dtype.startswith("bool"):
-        return FieldType.BOOLEAN
+        return utils.FieldType.BOOLEAN
     elif dtype.startswith("date") or dtype.startswith("time"):
-        return FieldType.DATE_TIME
+        return utils.FieldType.DATE_TIME
     else:
         raise ValueError("Unknown data type")
 
 
-@profile
 def read_file_to_data_frame(file):
     buffer = BytesIO()
     buffer.write(dt.fread(file, na_strings=[""], fill=True).to_csv().encode("utf-8"))
@@ -117,7 +113,7 @@ def get_preview_data(data_frame):
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
 
-    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, cls=NumpyEncoder)
+    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, cls=utils.NumpyEncoder)
 
     del data_frame, sample_of_5
 
@@ -174,7 +170,6 @@ def write_data_frame_to_parquet_on_s3(data_frame, file_name):
     )
 
 
-@profile
 def process_job(job_data: dict):
     global df
     global current_job
@@ -256,6 +251,9 @@ def process_job(job_data: dict):
         return logging.critical(f"Error while saving results - {e}")
 
     except Exception as e:
+        api.schemacms_api.update_job_state(
+            job_pk=current_job.id, state=db.ProcessState.FAILED, error=f"{e} @ undefined error",
+        )
         return logging.critical(str(e), exc_info=True)
 
 

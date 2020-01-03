@@ -9,7 +9,7 @@ from . import models, forms
 
 def update_meta_file(modeladmin, request, queryset):
     for obj in queryset.iterator():
-        obj.create_meta_file()
+        obj.create_dynamo_item()
 
 
 def update_meta(modeladmin, request, queryset):

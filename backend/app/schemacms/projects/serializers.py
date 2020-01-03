@@ -400,7 +400,7 @@ class FilterSerializer(serializers.ModelSerializer):
 
         filter_ = models.Filter(datasource=datasource, **validated_data)
         filter_.save()
-        datasource.create_meta_file()
+        datasource.create_dynamo_item()
 
         return filter_
 

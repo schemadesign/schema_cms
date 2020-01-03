@@ -13,12 +13,11 @@ services:
     image: localstack/localstack:0.10.5
     privileged: true
     ports:
-      - "4567-4585:4567-4585"
-      - '4590-4593:4590-4593'
+      - "4567-4597:4567-4597"
       - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
     environment:
       - SERVICES=sqs,secretsmanager,stepfunctions,serverless
-#      - DEBUG="1"
+#      - DEBUG="1"  # uncomment if you want to see localstack debug info
       - DATA_DIR=/tmp/localstack/data
       - PORT_WEB_UI=${PORT_WEB_UI- }
       - LAMBDA_EXECUTOR=docker
@@ -29,7 +28,7 @@ services:
       - AWS_SECRET_ACCESS_KEY=bar
       - AWS_STORAGE_BUCKET_NAME=schemacms
     volumes:
-      - "localstack_data:/tmp/localstack/data"
+#      - "localstack_data:/tmp/localstack/data"  # uncomment if you want keep data after killing container
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./backend/functions:/app/functions"
 

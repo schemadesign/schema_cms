@@ -1,9 +1,9 @@
-import dataclasses
 import json
+import dataclasses
 import operator
 import typing
 
-from . import settings, services
+from . import services
 
 
 class LoaderMixin:
@@ -16,19 +16,13 @@ class LoaderMixin:
 class FetchMetaFileMixin:
     @classmethod
     def get_by_id(cls, id):
-        response = services.s3.get_object(
-            Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=cls.get_meta_file_path(id)
-        )
-        data = json.load(response["Body"])
-        return cls.from_json(data)
-
-    @classmethod
-    def get_meta_file_path(cls, id):
-        return f"{id}/meta.json"
+        data = services.get_dynamo_item(cls.table_name, id)
+        return cls.from_json(json.loads(data))
 
 
 @dataclasses.dataclass()
 class Project(LoaderMixin, FetchMetaFileMixin):
+    table_name: typing.ClassVar = "projects"
     id: int
     title: str = ""
     description: str = ""
@@ -36,13 +30,23 @@ class Project(LoaderMixin, FetchMetaFileMixin):
     data_sources: list = dataclasses.field(default_factory=list)
     pages: list = dataclasses.field(default_factory=list)
 
-    @classmethod
-    def get_meta_file_path(cls, id):
-        return f"projects/{id}/meta.json"
+
+@dataclasses.dataclass()
+class Page(LoaderMixin, FetchMetaFileMixin):
+    table_name: typing.ClassVar = "pages"
+    id: int
+    title: str = ""
+    description: str = ""
+    keywords: str = ""
+    folder: str = ""
+    updated: str = ""
+    creator: str = ""
+    blocks: list = dataclasses.field(default_factory=list)
 
 
 @dataclasses.dataclass()
 class DataSource(LoaderMixin, FetchMetaFileMixin):
+    table_name: typing.ClassVar = "datasources"
     id: int
     name: str = ""
     file: str = ""
