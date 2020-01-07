@@ -105,7 +105,7 @@ const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, da
       map(addOrderAndChecked(dataSourceScripts)),
       map(mergeResults(state.scripts)),
       addDifference(state.scripts),
-      sortWith([descend(prop('type')), ascend(prop('order'))])
+      sortWith([ascend(prop('order')), descend(prop('type'))])
     )(data)
   );
 };
