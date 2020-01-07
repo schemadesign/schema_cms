@@ -47,7 +47,7 @@ describe('DataWranglingScripts: redux', () => {
       const payload = { data, dataSource };
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(payload));
 
-      expect(resultState.scripts).to.deep.equal([{ ...data[0], order: 0, type: 'custom', checked: true }]);
+      expect(resultState.scripts).to.deep.equal([{ ...data[0], order: 0, type: 1, checked: true }]);
     });
   });
 
