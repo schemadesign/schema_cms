@@ -95,6 +95,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         }
       }
       sendUpdatedDataWranglingScript={[Function]}
+      setScriptsList={[Function]}
       uploadScript={[Function]}
     />
   </ContextHeader>
@@ -310,6 +311,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       }
     }
     sendUpdatedDataWranglingScript={[Function]}
+    setScriptsList={[Function]}
     uploadScript={[Function]}
   />
 </ContextProvider>
