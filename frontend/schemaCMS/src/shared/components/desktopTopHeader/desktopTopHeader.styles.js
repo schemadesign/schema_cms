@@ -36,6 +36,7 @@ export const TopContainer = styled.div`
 
 export const Container = styled.div`
   width: ${contentSizes.desktop}px;
+  height: 62px;
 `;
 
 export const HeaderWrapper = styled.div`

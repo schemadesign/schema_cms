@@ -6,7 +6,6 @@ import { compose } from 'ramda';
 import queryString from 'query-string';
 
 import messages from './notRegistered.messages';
-import { TopHeader } from '../../shared/components/topHeader';
 import { InfoContainer } from '../../shared/components/container/container.styles';
 
 export class NotRegisteredComponent extends PureComponent {
@@ -30,7 +29,6 @@ export class NotRegisteredComponent extends PureComponent {
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader noProject />
         <InfoContainer>
           <FormattedMessage {...messages.info} values={{ email }} />
           <br />

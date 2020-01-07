@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Header, Icons, Menu } from 'schemaUI';
 import { always } from 'ramda';
 
-import { renderWhenTrue } from '../../utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 import { LogoutModal } from '../logoutModal';
 import { TopHeader } from '../topHeader';
 import {
@@ -67,34 +67,40 @@ export class DesktopTopHeader extends TopHeader {
       )
     )(!!title);
 
-  renderUserIcon = userId =>
-    renderWhenTrue(
-      always(
-        <IconLink to="/settings">
-          <UserIcon />
-        </IconLink>
-      )
-    )(!!userId);
-
-  renderHeaderBar = (title, userId) => (
+  renderHeaderBar = () => (
     <HeaderWrapper>
       <LogoLink to="/">
         <Logo />
       </LogoLink>
-      {this.renderTitle(title)}
+      {this.renderTitle(this.props.title)}
       <Actions>
         <Button onClick={this.handleLogout} customStyles={logoutButtonStyles}>
           <ExitIcon />
         </Button>
-        {this.renderUserIcon(userId)}
+        <IconLink to="/settings">
+          <UserIcon />
+        </IconLink>
       </Actions>
     </HeaderWrapper>
   );
 
+  renderHeader = ({ buttonProps, userId }) =>
+    renderWhenTrueOtherwise(
+      always(
+        <Header buttonProps={buttonProps} customStyles={headerCustomStyles} customButtonStyles={customButtonStyles}>
+          {this.renderHeaderBar()}
+        </Header>
+      ),
+      always(
+        <LogoLink to="/">
+          <Logo />
+        </LogoLink>
+      )
+    )(!!userId);
+
   render() {
     const { logoutModalOpen, isMenuOpen } = this.state;
-    const { title, userId } = this.props;
-
+    const { userId } = this.props;
     const buttonProps = {
       onClick: this.handleToggleMenu,
       id: 'desktopTopHeaderOpenMenuButton',
@@ -110,9 +116,7 @@ export class DesktopTopHeader extends TopHeader {
     return (
       <TopContainer>
         <Container>
-          <Header buttonProps={buttonProps} customStyles={headerCustomStyles} customButtonStyles={customButtonStyles}>
-            {this.renderHeaderBar(title, userId)}
-          </Header>
+          {this.renderHeader({ buttonProps, userId })}
           <Overlayer visible={isMenuOpen} onClick={this.handleToggleMenu} />
           <MenuWrapper visible={isMenuOpen} onClick={this.handleToggleMenu}>
             <Menu
