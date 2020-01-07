@@ -35,6 +35,12 @@ export const defaultProps = {
   },
 };
 
+const emptyBlocksProps = {
+  ...defaultProps,
+  pageBlocks: [],
+};
+
 storiesOf('Page|PageBlockList', module)
   .addDecorator(withTheme())
+  .add('No data', () => <PageBlockList {...emptyBlocksProps} />)
   .add('Default', () => <PageBlockList {...defaultProps} />);

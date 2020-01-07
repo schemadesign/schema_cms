@@ -14,4 +14,8 @@ export default defineMessages({
     id: 'project.folderList.projectDetails',
     defaultMessage: 'Project details',
   },
+  noFolders: {
+    id: 'project.folderList.noFolders',
+    defaultMessage: '0 Folders',
+  },
 });

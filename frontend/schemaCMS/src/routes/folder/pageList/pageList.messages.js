@@ -14,4 +14,8 @@ export default defineMessages({
     id: 'folder.pageList.blocks',
     defaultMessage: '{length} {length, plural,one {Block} other {Blocks}}',
   },
+  noPages: {
+    id: 'folder.pageList.noPages',
+    defaultMessage: '0 Pages',
+  },
 });
