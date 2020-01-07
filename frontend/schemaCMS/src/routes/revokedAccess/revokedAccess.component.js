@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl';
+import { FormattedHTMLMessage, injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 import queryString from 'query-string';
 
@@ -32,7 +32,7 @@ export class RevokedAccessComponent extends PureComponent {
         <InfoContainer>
           <FormattedHTMLMessage {...messages.info} values={{ email }} />
           <br />
-          <FormattedMessage {...messages.contact} />
+          <FormattedHTMLMessage {...messages.contact} />
         </InfoContainer>
       </Fragment>
     );

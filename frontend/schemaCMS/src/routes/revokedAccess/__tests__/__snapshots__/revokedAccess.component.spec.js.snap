@@ -18,8 +18,8 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
       }
     />
     <br />
-    <FormattedMessage
-      defaultMessage="If you believe this is an error, please contact your administrator."
+    <FormattedHTMLMessage
+      defaultMessage="If you believe this is an error, please contact your administrator or <a href=\\"/\\">log with different credentials</a>."
       id="revokedAccess.contact"
       values={Object {}}
     />

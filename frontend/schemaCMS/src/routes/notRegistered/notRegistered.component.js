@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { injectIntl, FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedHTMLMessage } from 'react-intl';
 import { compose } from 'ramda';
 import queryString from 'query-string';
 
@@ -20,7 +20,7 @@ export class NotRegisteredComponent extends PureComponent {
     const { search } = this.props.location;
     const { email } = queryString.parse(search);
 
-    return email ? `(${email})` : '';
+    return email ? `${email}` : '';
   }
 
   render() {
@@ -30,9 +30,9 @@ export class NotRegisteredComponent extends PureComponent {
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <InfoContainer>
-          <FormattedMessage {...messages.info} values={{ email }} />
+          <FormattedHTMLMessage {...messages.info} values={{ email }} />
           <br />
-          <FormattedMessage {...messages.contact} />
+          <FormattedHTMLMessage {...messages.contact} />
         </InfoContainer>
       </Fragment>
     );

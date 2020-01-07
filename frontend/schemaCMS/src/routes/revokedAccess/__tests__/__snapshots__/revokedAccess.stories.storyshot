@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots RevokedAccess Default 1`] = `
+.c0 {
+  color: #1d1d20;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #1d1d20;
+    background-color: #FFF;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Access for account with email <b>some-mail@example.com</b> has been revoked.",
+        }
+      }
+    />
+    <br />
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "If you believe this is an error, please contact your administrator or <a href=\\"/\\">log with different credentials</a>.",
+        }
+      }
+    />
+  </div>
+</div>
+`;
