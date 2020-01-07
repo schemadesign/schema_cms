@@ -18,7 +18,6 @@ import {
   ascend,
   find,
   defaultTo,
-  descend,
   equals,
   differenceWith,
   mergeRight,
@@ -105,7 +104,7 @@ const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, da
       map(addOrderAndChecked(dataSourceScripts)),
       map(mergeResults(state.scripts)),
       addDifference(state.scripts),
-      sortWith([ascend(prop('order')), descend(prop('type'))])
+      sortWith([ascend(prop('order')), ascend(prop('type'))])
     )(data)
   );
 };
