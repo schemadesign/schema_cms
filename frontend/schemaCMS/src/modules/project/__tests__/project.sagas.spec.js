@@ -53,6 +53,7 @@ describe('Project: sagas', () => {
     it('should put fetchListSuccess action', async () => {
       await expectSaga(watchProject)
         .withState(defaultState)
+        .put(ProjectRoutines.clearProject())
         .put(ProjectRoutines.fetchList.success([item]))
         .dispatch(ProjectRoutines.fetchList())
         .silentRun();
