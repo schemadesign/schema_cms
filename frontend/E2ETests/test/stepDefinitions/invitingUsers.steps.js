@@ -8,78 +8,80 @@ import GmailPage from './../pageobjects//gmail.page.js';
 import fs from 'fs';
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
-
-
 Given('I am logged in admin panel', () => {
-    DjangoPage.open();
-    DjangoPage.login();
+  DjangoPage.open();
+  DjangoPage.login();
 
-    expect(browser.getTitle()).to.equal(djangoHomeTitle);
+  expect(browser.getTitle()).to.equal(djangoHomeTitle);
 });
 
 Given('Given Admin invited John Doe', () => {
-    DjangoPage.inviteUser('admin');
+  DjangoPage.inviteUser('admin');
 });
 
 Given('John Doe received an invitation email', () => {
-    GmailPage.open();
-    GmailPage.login(LINK_SENT);
-    GmailPage.searchForInvitationEmail();
-    GmailPage.firstUnreadEmail.click();
-    waitForElement(GmailPage, 'invitationUrl');
+  GmailPage.open();
+  GmailPage.login(LINK_SENT);
+  GmailPage.searchForInvitationEmail();
+  GmailPage.firstUnreadEmail.click();
+  waitForElement(GmailPage, 'invitationUrl');
 
-    expect(GmailPage.invitationUrl.getText()).to.equal(INVITATION_URL);
+  expect(GmailPage.invitationUrl.getText()).to.equal(INVITATION_URL);
 });
 
-
 When('I invite John Doe to SchemaCMS', () => {
-    DjangoPage.inviteUser('admin');
+  DjangoPage.inviteUser('admin');
 });
 
 When('John Doe uses an invitation email', () => {
-    waitForElement(GmailPage, 'invitationUrl');
-    GmailPage.invitationUrl.click();
-    //TODO: add remaining logic when Mandrillo is configured
+  waitForElement(GmailPage, 'invitationUrl');
+  GmailPage.invitationUrl.click();
+  //TODO: add remaining logic when Mandrillo is configured
 });
 
-
 Then('I can see confirmation that user was added', () => {
-    waitForElement(DjangoPage, 'successMsg');
+  waitForElement(DjangoPage, 'successMsg');
 
-    expect(DjangoPage.successMsg.getText()).to.equal(
-        `The user "${DjangoPage.username.getValue()}" was added successfully. You may edit it again below.`)
+  expect(DjangoPage.successMsg.getText()).to.equal(
+    `The user "${DjangoPage.username.getValue()}" was added successfully. You may edit it again below.`
+  );
 });
 
 Then('John Doe appears in the list of Users', () => {
-    waitForElement(DjangoPage, 'saveBtn');
-    DjangoPage.saveBtn.click();
-    DjangoPage.searchForInvitedUser();
-    waitForElement(DjangoPage, 'usersListEmail');
+  waitForElement(DjangoPage, 'saveBtn');
+  DjangoPage.saveBtn.click();
+  DjangoPage.searchForInvitedUser();
+  waitForElement(DjangoPage, 'usersListEmail');
 
-    expect(DjangoPage.usersListEmail.getText()).to.equal(creds.inviteUser.email);
+  expect(DjangoPage.usersListEmail.getText()).to.equal(creds.inviteUser.email);
 });
 
 Then('John Doe status is set to inactive', () => {
-    waitForElement(DjangoPage, 'usersListName');
-    DjangoPage.searchForInvitedUser();
-    DjangoPage.usersListName.click();
+  waitForElement(DjangoPage, 'usersListName');
+  DjangoPage.searchForInvitedUser();
+  DjangoPage.usersListName.click();
 
-    assert(!DjangoPage.permissionActive.isSelected(), 'Account is set to active');
+  assert(!DjangoPage.permissionActive.isSelected(), 'Account is set to active');
 });
 
 Then('I can see message that user with this email already exists', () => {
-    waitForElement(DjangoPage, 'userExistsMsg');
+  waitForElement(DjangoPage, 'userExistsMsg');
 
-    expect(DjangoPage.userExistsMsg.getText()).to.equal(`The user with email "${creds.inviteUser.email}" already exists`);
+  expect(DjangoPage.userExistsMsg.getText()).to.equal(
+    `The user with email "${creds.inviteUser.email}" already exists`
+  );
 });
 
 Then('John Doe status is set to active in admin panel', () => {
-    waitForElement(DjangoPage, 'usersListName');
-    DjangoPage.searchForInvitedUser();
-    DjangoPage.usersListName.click();
+  waitForElement(DjangoPage, 'usersListName');
+  DjangoPage.searchForInvitedUser();
+  DjangoPage.usersListName.click();
 
-    assert(DjangoPage.permissionActive.isSelected(), 'Account is set to inactive');
+  assert(
+    DjangoPage.permissionActive.isSelected(),
+    'Account is set to inactive'
+  );
 
-    DjangoPage.deleteInvitedUser();
-    Auth0Page.deleteInvitedUser();
+  DjangoPage.deleteInvitedUser();
+  Auth0Page.deleteInvitedUser();
 });
