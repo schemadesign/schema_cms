@@ -1,8 +1,5 @@
 import pytest
 
-import boto3
-from moto import mock_dynamodb
-
 from schemacms.projects import models
 
 

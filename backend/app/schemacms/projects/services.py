@@ -9,11 +9,20 @@ from schemacms.projects import constants
 
 
 def get_s3():
-    return boto3.res('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL)
+    return boto3.client('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL)
 
 
-def get_dynamodb():
+def get_dynamodb_resource():
     return boto3.resource(
+        'dynamodb',
+        endpoint_url=settings.DYNAMODB_ENDPOINT_URL,
+        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+    )
+
+
+def get_dynamodb_client():
+    return boto3.client(
         'dynamodb',
         endpoint_url=settings.DYNAMODB_ENDPOINT_URL,
         aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
@@ -32,7 +41,7 @@ def get_sqs():
 
 s3 = functional.SimpleLazyObject(get_s3)
 sqs = functional.SimpleLazyObject(get_sqs)
-dynamo = functional.SimpleLazyObject(get_dynamodb)
+dynamo = functional.SimpleLazyObject(get_dynamodb_resource)
 
 
 def get_sqs_queue_url(file_size: int) -> str:
