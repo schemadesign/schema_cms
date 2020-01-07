@@ -83,18 +83,11 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         onClose={[Function]}
       >
         <styled.div>
-          <styled.div>
-            <Styled(H2)
-              id="headerTitle"
-            >
-              SchemaCMS
-            </Styled(H2)>
-            <Styled(H1)
-              id="headerSubtitle"
-            >
-              Menu
-            </Styled(H1)>
-          </styled.div>
+          <Styled(Styled(Link))
+            to="/"
+          >
+            <styled.schemaLogo.svg />
+          </Styled(Styled(Link))>
         </styled.div>
         <styled.div
           onClick={[Function]}
@@ -203,51 +196,11 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
 exports[`DesktopTopHeader: Component should render correctly when no user 1`] = `
 <styled.div>
   <styled.div>
-    <Component
-      buttonProps={
-        Object {
-          "id": "desktopTopHeaderOpenMenuButton",
-          "onClick": [Function],
-        }
-      }
-      customButtonStyles={
-        Object {
-          "flex": "0 0 auto",
-          "position": null,
-        }
-      }
-      customStyles={
-        Object {
-          "padding": null,
-        }
-      }
+    <Styled(Styled(Link))
+      to="/"
     >
-      <styled.div>
-        <Styled(Styled(Link))
-          to="/"
-        >
-          <styled.schemaLogo.svg />
-        </Styled(Styled(Link))>
-        <styled.div>
-          <Component
-            customStyles={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderRadius": null,
-                "display": "flex",
-                "height": "calc(100% - 20px)",
-                "margin": "6px 0 10px 10px",
-                "padding": "0 7px",
-              }
-            }
-            onClick={[Function]}
-          >
-            <Component />
-          </Component>
-        </styled.div>
-      </styled.div>
-    </Component>
+      <styled.schemaLogo.svg />
+    </Styled(Styled(Link))>
     <styled.div
       onClick={[Function]}
     />
@@ -278,18 +231,11 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
         onClose={[Function]}
       >
         <styled.div>
-          <styled.div>
-            <Styled(H2)
-              id="headerTitle"
-            >
-              SchemaCMS
-            </Styled(H2)>
-            <Styled(H1)
-              id="headerSubtitle"
-            >
-              Menu
-            </Styled(H1)>
-          </styled.div>
+          <Styled(Styled(Link))
+            to="/"
+          >
+            <styled.schemaLogo.svg />
+          </Styled(Styled(Link))>
         </styled.div>
         <styled.div
           onClick={[Function]}

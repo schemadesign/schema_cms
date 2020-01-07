@@ -1,26 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotRegistered: Component should render correctly 1`] = `
+exports[`RevokedAccess: Component should render correctly 1`] = `
 <Fragment>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Not registered"
+    title="Revoked access"
   />
   <styled.div>
-    <FormattedMessage
-      defaultMessage="You {email} don't have access to Schema CMS."
-      id="notRegistered.info"
+    <FormattedHTMLMessage
+      defaultMessage="Access for account with email <b>{email}</b> has been revoked."
+      id="revokedAccess.info"
       values={
         Object {
-          "email": "(some-mail@example.com)",
+          "email": "some-mail@example.com",
         }
       }
     />
     <br />
     <FormattedMessage
       defaultMessage="If you believe this is an error, please contact your administrator."
-      id="notRegistered.contact"
+      id="revokedAccess.contact"
       values={Object {}}
     />
   </styled.div>

@@ -3,15 +3,15 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'notRegistered.pageTitle',
-    defaultMessage: 'Not registered',
+    id: 'revokedAccess.pageTitle',
+    defaultMessage: 'Revoked access',
   },
   info: {
-    id: 'notRegistered.info',
-    defaultMessage: "You {email} don't have access to Schema CMS.",
+    id: 'revokedAccess.info',
+    defaultMessage: 'Access for account with email <b>{email}</b> has been revoked.',
   },
   contact: {
-    id: 'notRegistered.contact',
+    id: 'revokedAccess.contact',
     defaultMessage: 'If you believe this is an error, please contact your administrator.',
   },
 });

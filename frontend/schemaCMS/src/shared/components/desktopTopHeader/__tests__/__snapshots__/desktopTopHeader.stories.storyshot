@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
-.c11 {
+.c9 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c12 {
+.c10 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c15 {
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -39,7 +39,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   align-items: flex-start;
 }
 
-.c13 {
+.c11 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -49,18 +49,18 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: block;
 }
 
-.c13 a {
+.c11 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c13:first-of-type {
+.c11:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c14 {
+.c12 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -70,18 +70,18 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: none;
 }
 
-.c14 a {
+.c12 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c14:first-of-type {
+.c12:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c16 {
+.c14 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -93,23 +93,15 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: inline-block;
 }
 
-.c16 a {
+.c14 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c16:hover {
+.c14:hover {
   border-bottom: 1px solid #FFF;
-}
-
-.c9 {
-  word-break: break-word;
-}
-
-.c10 {
-  word-break: break-word;
 }
 
 .c0 {
@@ -118,6 +110,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 
 .c1 {
   width: 1000px;
+  height: 62px;
 }
 
 .c2 {
@@ -213,21 +206,21 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c9 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c11 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c12 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -463,50 +456,25 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
           <div
             className=""
           >
-            <div
-              className=""
+            <a
+              className="c3"
+              href="/"
+              onClick={[Function]}
             >
-              <h2
-                className="c9"
-                id="headerTitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 100,
-                    "margin": 0,
-                  }
-                }
-              >
-                SchemaCMS
-              </h2>
-              <h1
-                className="c10"
-                id="headerSubtitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 600,
-                    "letterSpacing": "-0.12px",
-                    "lineHight": 1.25,
-                    "margin": 0,
-                  }
-                }
-              >
-                Menu
-              </h1>
-            </div>
+              <schemaLogo.svg
+                className="c4"
+              />
+            </a>
           </div>
           <div
-            className="c11"
+            className="c9"
             onClick={[Function]}
           >
             <ul
-              className="c12"
+              className="c10"
             >
               <li
-                className="c13"
+                className="c11"
               >
                 <a
                   href="/project"
@@ -519,7 +487,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </a>
               </li>
               <li
-                className="c14"
+                className="c12"
               >
                 <a
                   href="/user"
@@ -533,10 +501,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </li>
             </ul>
             <ul
-              className="c15"
+              className="c13"
             >
               <li
-                className="c16"
+                className="c14"
               >
                 <a
                   href="/"
@@ -549,7 +517,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </a>
               </li>
               <li
-                className="c16"
+                className="c14"
               >
                 <a
                   href="/"
@@ -562,7 +530,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </a>
               </li>
               <li
-                className="c16"
+                className="c14"
               >
                 <a
                   href="/"
@@ -625,14 +593,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
-.c10 {
+.c6 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c11 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -649,7 +617,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   align-items: flex-start;
 }
 
-.c12 {
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -661,23 +629,15 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   display: inline-block;
 }
 
-.c12 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c12:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
-}
-
-.c8 {
-  word-break: break-word;
-}
-
-.c9 {
-  word-break: break-word;
 }
 
 .c0 {
@@ -686,35 +646,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
 
 .c1 {
   width: 1000px;
+  height: 62px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 965px;
-  height: 62px;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -732,13 +667,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   margin-left: 0;
 }
 
-.c4 {
+.c3 {
   fill: #FFF;
   width: 96px;
   height: 16px;
 }
 
-.c7 {
+.c5 {
   width: 1000px;
   z-index: 9910;
   overflow: hidden;
@@ -750,7 +685,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   transition: visibility 0s 0.4s;
 }
 
-.c6 {
+.c4 {
   background: #1d1d20;
   opacity: 0.75;
   position: fixed;
@@ -765,7 +700,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c6 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
@@ -810,132 +745,21 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
     <div
       className="c1"
     >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "padding": null,
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
-        }
+      <a
+        className="c2"
+        href="/"
+        onClick={[Function]}
       >
-        <div>
-          <div
-            className="c2"
-          >
-            <a
-              className="c3"
-              href="/"
-              onClick={[Function]}
-            >
-              <schemaLogo.svg
-                className="c4"
-              />
-            </a>
-            <div
-              className="c5"
-            >
-              <button
-                disabled={false}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "border": "none",
-                    "borderRadius": null,
-                    "color": "#FFF",
-                    "cursor": "pointer",
-                    "display": "flex",
-                    "fill": "#FFF",
-                    "fontSize": "18px",
-                    "height": "calc(100% - 20px)",
-                    "margin": "6px 0 10px 10px",
-                    "minHeight": "48px",
-                    "outline": "none",
-                    "padding": "0 7px",
-                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  }
-                }
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 21,
-                      "width": 24,
-                    }
-                  }
-                  viewBox="0 0 24 21"
-                >
-                  <path
-                    d="M0 0h15v6h-1V1H1v19h13v-5h1v6H0z"
-                  />
-                  <path
-                    d="M8 10h15v1H8z"
-                  />
-                  <path
-                    d="M24 10.5L19 6l-.5 1 4 3.5-4 3.5.5 1z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          id="desktopTopHeaderOpenMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "flex": "0 0 auto",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": null,
-              "right": 0,
-              "top": 6,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
+        <schemaLogo.svg
+          className="c3"
+        />
+      </a>
       <div
-        className="c6"
+        className="c4"
         onClick={[Function]}
       />
       <div
-        className="c7"
+        className="c5"
         onClick={[Function]}
       >
         <div
@@ -961,50 +785,25 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
           <div
             className=""
           >
-            <div
-              className=""
+            <a
+              className="c2"
+              href="/"
+              onClick={[Function]}
             >
-              <h2
-                className="c8"
-                id="headerTitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 100,
-                    "margin": 0,
-                  }
-                }
-              >
-                SchemaCMS
-              </h2>
-              <h1
-                className="c9"
-                id="headerSubtitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 600,
-                    "letterSpacing": "-0.12px",
-                    "lineHight": 1.25,
-                    "margin": 0,
-                  }
-                }
-              >
-                Menu
-              </h1>
-            </div>
+              <schemaLogo.svg
+                className="c3"
+              />
+            </a>
           </div>
           <div
-            className="c10"
+            className="c6"
             onClick={[Function]}
           >
             <ul
-              className="c11"
+              className="c7"
             >
               <li
-                className="c12"
+                className="c8"
               >
                 <a
                   href="/"
@@ -1017,7 +816,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                 </a>
               </li>
               <li
-                className="c12"
+                className="c8"
               >
                 <a
                   href="/"
@@ -1030,7 +829,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                 </a>
               </li>
               <li
-                className="c12"
+                className="c8"
               >
                 <a
                   href="/"
@@ -1093,14 +892,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`] = `
-.c13 {
+.c11 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c14 {
+.c12 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1114,7 +913,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   margin-bottom: 30px;
 }
 
-.c17 {
+.c15 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1131,7 +930,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   align-items: flex-start;
 }
 
-.c15 {
+.c13 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1141,18 +940,18 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: block;
 }
 
-.c15 a {
+.c13 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c15:first-of-type {
+.c13:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c16 {
+.c14 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1162,18 +961,18 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: none;
 }
 
-.c16 a {
+.c14 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c16:first-of-type {
+.c14:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c18 {
+.c16 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1185,23 +984,15 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: inline-block;
 }
 
-.c18 a {
+.c16 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c18:hover {
+.c16:hover {
   border-bottom: 1px solid #FFF;
-}
-
-.c11 {
-  word-break: break-word;
-}
-
-.c12 {
-  word-break: break-word;
 }
 
 .c0 {
@@ -1210,6 +1001,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 
 .c1 {
   width: 1000px;
+  height: 62px;
 }
 
 .c2 {
@@ -1332,21 +1124,21 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c11 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c13 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c14 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -1610,50 +1402,25 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
           <div
             className=""
           >
-            <div
-              className=""
+            <a
+              className="c3"
+              href="/"
+              onClick={[Function]}
             >
-              <h2
-                className="c11"
-                id="headerTitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 100,
-                    "margin": 0,
-                  }
-                }
-              >
-                SchemaCMS
-              </h2>
-              <h1
-                className="c12"
-                id="headerSubtitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 600,
-                    "letterSpacing": "-0.12px",
-                    "lineHight": 1.25,
-                    "margin": 0,
-                  }
-                }
-              >
-                Menu
-              </h1>
-            </div>
+              <schemaLogo.svg
+                className="c4"
+              />
+            </a>
           </div>
           <div
-            className="c13"
+            className="c11"
             onClick={[Function]}
           >
             <ul
-              className="c14"
+              className="c12"
             >
               <li
-                className="c15"
+                className="c13"
               >
                 <a
                   href="/project"
@@ -1666,7 +1433,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </a>
               </li>
               <li
-                className="c16"
+                className="c14"
               >
                 <a
                   href="/user"
@@ -1680,10 +1447,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </li>
             </ul>
             <ul
-              className="c17"
+              className="c15"
             >
               <li
-                className="c18"
+                className="c16"
               >
                 <a
                   href="/"
@@ -1696,7 +1463,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </a>
               </li>
               <li
-                className="c18"
+                className="c16"
               >
                 <a
                   href="/"
@@ -1709,7 +1476,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </a>
               </li>
               <li
-                className="c18"
+                className="c16"
               >
                 <a
                   href="/"
@@ -1772,14 +1539,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
-.c13 {
+.c11 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.c14 {
+.c12 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1793,7 +1560,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   margin-bottom: 30px;
 }
 
-.c16 {
+.c14 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1810,7 +1577,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   align-items: flex-start;
 }
 
-.c15 {
+.c13 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1820,18 +1587,18 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   display: block;
 }
 
-.c15 a {
+.c13 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c15:first-of-type {
+.c13:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c17 {
+.c15 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1843,23 +1610,15 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   display: inline-block;
 }
 
-.c17 a {
+.c15 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c17:hover {
+.c15:hover {
   border-bottom: 1px solid #FFF;
-}
-
-.c11 {
-  word-break: break-word;
-}
-
-.c12 {
-  word-break: break-word;
 }
 
 .c0 {
@@ -1868,6 +1627,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
 
 .c1 {
   width: 1000px;
+  height: 62px;
 }
 
 .c2 {
@@ -1990,14 +1750,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c11 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c13 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -2253,50 +2013,25 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
           <div
             className=""
           >
-            <div
-              className=""
+            <a
+              className="c3"
+              href="/"
+              onClick={[Function]}
             >
-              <h2
-                className="c11"
-                id="headerTitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 100,
-                    "margin": 0,
-                  }
-                }
-              >
-                SchemaCMS
-              </h2>
-              <h1
-                className="c12"
-                id="headerSubtitle"
-                style={
-                  Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 600,
-                    "letterSpacing": "-0.12px",
-                    "lineHight": 1.25,
-                    "margin": 0,
-                  }
-                }
-              >
-                Menu
-              </h1>
-            </div>
+              <schemaLogo.svg
+                className="c4"
+              />
+            </a>
           </div>
           <div
-            className="c13"
+            className="c11"
             onClick={[Function]}
           >
             <ul
-              className="c14"
+              className="c12"
             >
               <li
-                className="c15"
+                className="c13"
               >
                 <a
                   href="/project"
@@ -2309,7 +2044,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </a>
               </li>
               <li
-                className="c15"
+                className="c13"
               >
                 <a
                   href="/user"
@@ -2323,10 +2058,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </li>
             </ul>
             <ul
-              className="c16"
+              className="c14"
             >
               <li
-                className="c17"
+                className="c15"
               >
                 <a
                   href="/"
@@ -2339,7 +2074,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </a>
               </li>
               <li
-                className="c17"
+                className="c15"
               >
                 <a
                   href="/"
@@ -2352,7 +2087,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </a>
               </li>
               <li
-                className="c17"
+                className="c15"
               >
                 <a
                   href="/"
