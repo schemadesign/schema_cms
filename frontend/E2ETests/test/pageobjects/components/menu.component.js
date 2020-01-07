@@ -1,9 +1,34 @@
 class MenuComponent {
-    get closeBtn() { return $('#topHeaderCloseMenuButton'); }
-    get logoutBtn() { return $('#logoutBtn'); }
-    get deleteProjectBtn() { return $('li=Delete Project'); }
-    get confirmDeleteProjectBtn() { return $('span=Confirm'); }
-    get deletionConfirmationModal() { return $('[aria-label="Confirm Removal"]'); }
-    get editProjectSettingsBtn() { return $(''); }
+  get closeBtn() {
+    return $('#topHeaderCloseMenuButton');
+  }
+
+  get title() {
+    return $('#headerTitle');
+  }
+
+  get subtitle() {
+    return $('#headerSubtitle');
+  }
+
+  get projects() {
+    return $('');
+  }
+
+  get users() {
+    return $('');
+  }
+
+  get aboutSchemaCMS() {
+    return $('');
+  }
+
+  get apiDoc() {
+    return $('');
+  }
+
+  get githubRepo() {
+    return $('');
+  }
 }
 export default new MenuComponent();

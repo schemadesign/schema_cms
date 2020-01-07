@@ -1,12 +1,12 @@
 Feature: CMS-48-Admin
 
     As an Admin
-    I want to see a list of projects with details 
+    I want to see a list of projects with details
     in order to better understand it
 
-    Background: User is on Settings page
+    Background: User is on login page
         Given I am on Login page
-        
+
 
     Scenario: User can see Projects page with all it's elements
         When I log in as 'admin' with valid login and password
@@ -22,16 +22,16 @@ Feature: CMS-48-Admin
         And API path of the project is displayed
         And Create new project button is displayed
 
-    
+
     Scenario: User can see the Settings modal after clicking Menu button
         Given I have logged in as an 'admin'
         When I click on Menu button
         Then I can see the Close button
         And title of header is Projects
-        And subtitle of header is Overview 
+        And subtitle of header is Overview
         And I can see Log Out option
 
-    
+
     Scenario: User can close the Settings modal by clicking Close button
         Given I have logged in as an 'admin'
         And I have opened menu
@@ -39,4 +39,3 @@ Feature: CMS-48-Admin
         Then I am on Projects page
         And menu is closed
 
-    
