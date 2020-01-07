@@ -76,34 +76,43 @@ def get_preview_data(data_frame):
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
-    mean = data_frame.mean(numeric_only=True).to_dict()
-    median = data_frame.median(numeric_only=True).to_dict()
-    min_ = data_frame.min(numeric_only=True).to_dict()
-    max_ = data_frame.max(numeric_only=True).to_dict()
-    std = data_frame.std(numeric_only=True).to_dict()
-    unique = data_frame.nunique().to_dict()
+    mean = data_frame.mean(numeric_only=True).to_json()
+    min_ = data_frame.min(numeric_only=True).to_json()
+    max_ = data_frame.max(numeric_only=True).to_json()
+    std = data_frame.std(numeric_only=True).to_json()
+    unique = data_frame.nunique().to_json()
     nan = data_frame.isna().sum()
-    percentile_10th = data_frame.quantile(0.1, numeric_only=True)
-    percentile_25th = data_frame.quantile(0.25, numeric_only=True)
-    percentile_75th = data_frame.quantile(0.75, numeric_only=True)
-    percentile_90th = data_frame.quantile(0.9, numeric_only=True)
+
+    try:
+        percentile_10th = data_frame.quantile(0.1, numeric_only=True).to_json()
+        percentile_25th = data_frame.quantile(0.25, numeric_only=True).to_json()
+        median = data_frame.quantile(0.5, numeric_only=True).to_json()
+        percentile_75th = data_frame.quantile(0.75, numeric_only=True).to_json()
+        percentile_90th = data_frame.quantile(0.9, numeric_only=True).to_json()
+    except ValueError:
+        percentile_10th = json.dumps({})
+        percentile_25th = json.dumps({})
+        median = json.dumps({})
+        percentile_75th = json.dumps({})
+        percentile_90th = json.dumps({})
+
     columns = data_frame.columns.to_list()
 
     fields_info = {}
 
     for i in columns:
         fields_info[i] = {}
-        fields_info[i]["mean"] = mean.get(i, None)
-        fields_info[i]["median"] = median.get(i, None)
-        fields_info[i]["min"] = min_.get(i, None)
-        fields_info[i]["max"] = max_.get(i, None)
-        fields_info[i]["std"] = std.get(i, None)
-        fields_info[i]["unique"] = unique.get(i, None)
+        fields_info[i]["mean"] = json.loads(mean).get(i, None)
+        fields_info[i]["median"] = json.loads(median).get(i, None)
+        fields_info[i]["min"] = json.loads(min_).get(i, None)
+        fields_info[i]["max"] = json.loads(max_).get(i, None)
+        fields_info[i]["std"] = json.loads(std).get(i, None)
+        fields_info[i]["unique"] = json.loads(unique).get(i, None)
         fields_info[i]["number_of_nans"] = nan.get(i, None)
-        fields_info[i]["percentile_10th"] = percentile_10th.get(i, None)
-        fields_info[i]["percentile_25th"] = percentile_25th.get(i, None)
-        fields_info[i]["percentile_75th"] = percentile_75th.get(i, None)
-        fields_info[i]["percentile_90th"] = percentile_90th.get(i, None)
+        fields_info[i]["percentile_10th"] = json.loads(percentile_10th).get(i, None)
+        fields_info[i]["percentile_25th"] = json.loads(percentile_25th).get(i, None)
+        fields_info[i]["percentile_75th"] = json.loads(percentile_75th).get(i, None)
+        fields_info[i]["percentile_90th"] = json.loads(percentile_90th).get(i, None)
         fields_info[i]["count"] = items
 
     dtypes = {i: k for i, k in zip(columns, data_frame.dtypes)}
@@ -211,6 +220,7 @@ def process_job(job_data: dict):
         try:
             write_data_frame_to_csv_on_s3(df, result_file_name)
             write_data_frame_to_parquet_on_s3(df, result_file_name)
+            logger.info(f"Results saved - Job # {current_job.id}")
         except Exception as e:
             raise errors.JobSavingFilesError(f"{e} @ saving results files")
 

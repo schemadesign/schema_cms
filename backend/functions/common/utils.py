@@ -42,10 +42,10 @@ class NumpyEncoder(json.JSONEncoder):
 
 
 class DecimalEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, decimal.Decimal):
-            if o % 1 > 0:
-                return float(o)
+    def default(self, obj):
+        if isinstance(obj, decimal.Decimal):
+            if obj % 1 > 0:
+                return float(obj)
             else:
-                return int(o)
-        return super().default(o)
+                return int(obj)
+        return super().default(obj)
