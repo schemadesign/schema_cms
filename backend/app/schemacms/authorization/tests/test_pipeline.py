@@ -177,7 +177,7 @@ class TestUserIsActive:
         backend.strategy._session = session_dict
         mgmt = backend_management.user_mgtm_backend
         expected_location = (
-            expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/not-registered")
+            expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/revoked-access")
             + f"?{parse.urlencode(dict(email=user.email))}"
         )
 

@@ -53,7 +53,7 @@ def update_external_id(backend, details, user=None, *args, **kwargs):
 
 def user_is_active(backend, user=None, *args, **kwargs):
     if not user.is_active:
-        return _redirect_user_to_not_registered_page(backend=backend, email=user.email)
+        return _redirect_user_to_page(backend=backend, email=user.email, endpoint="revoked-access")
 
 
 def update_user_full_name(strategy, details, user=None, *args, **kwargs):
@@ -82,13 +82,13 @@ def redirect_with_token(strategy, user=None, *args, **kwargs):
 def user_exist_in_db(backend, details, user=None, *args, **kwargs):
     email = details.get("email")
     if not models.User.objects.filter(email=email).exists():
-        return _redirect_user_to_not_registered_page(backend=backend, email=email)
+        return _redirect_user_to_page(backend=backend, email=email, endpoint="not-registered")
 
 
-def _redirect_user_to_not_registered_page(backend, email):
+def _redirect_user_to_page(backend, email, endpoint="not-registered"):
     uri = backend.strategy.session_get("next", settings.DEFAULT_WEBAPP_HOST)
     if not uri.endswith("/"):
         uri = "{}/".format(uri)
     params = dict(email=email)
-    return_to = parse.urljoin(uri, "auth/not-registered") + f"?{parse.urlencode(params)}"
+    return_to = parse.urljoin(uri, f"auth/{endpoint}") + f"?{parse.urlencode(params)}"
     return shortcuts.redirect(backend_management.user_mgtm_backend.get_logout_url(return_to=return_to))
