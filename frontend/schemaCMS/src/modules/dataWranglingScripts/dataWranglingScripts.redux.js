@@ -92,7 +92,8 @@ const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, da
       'scripts',
       pipe(
         map(mergeResults(data)),
-        stateScripts => addDifference(stateScripts)(data)
+        stateScripts => addDifference(stateScripts)(data),
+        map(addScriptType)
       )(state.scripts)
     );
   }
