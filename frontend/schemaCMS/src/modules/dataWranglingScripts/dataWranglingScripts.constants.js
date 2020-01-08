@@ -4,7 +4,7 @@ export const SCRIPT_NAME_MAX_LENGTH = 50;
 export const IMAGE_SCRAPING_SCRIPT_TYPE = 'image_scraping';
 
 export const SCRIPT_TYPES = {
-  DEFAULT: 'default',
-  CUSTOM: 'custom',
-  UPLOADED: 'uploaded',
+  DEFAULT: 2,
+  CUSTOM: 1,
+  UPLOADED: 0,
 };

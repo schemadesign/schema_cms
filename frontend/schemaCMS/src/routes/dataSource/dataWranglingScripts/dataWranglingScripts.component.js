@@ -9,7 +9,6 @@ import {
   equals,
   find,
   ifElse,
-  insert,
   map,
   pathEq,
   pathOr,
@@ -22,7 +21,6 @@ import {
   uniq,
   filter,
   includes,
-  differenceWith,
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
@@ -64,10 +62,10 @@ const { MenuIcon } = Icons;
 export class DataWranglingScripts extends PureComponent {
   static propTypes = {
     dataWranglingScripts: PropTypes.array.isRequired,
-    customScripts: PropTypes.array.isRequired,
     imageScrapingFields: PropTypes.array.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
+    setScriptsList: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     dataSource: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -85,7 +83,6 @@ export class DataWranglingScripts extends PureComponent {
     uploading: false,
     errorMessage: '',
     error: null,
-    orderedDataWranglingScripts: [],
   };
 
   async componentDidMount() {
@@ -101,20 +98,8 @@ export class DataWranglingScripts extends PureComponent {
     } finally {
       this.setState({
         loading: false,
-        orderedDataWranglingScripts: this.props.dataWranglingScripts.asMutable({ deep: true }),
       });
     }
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    const byId = (x, y) => equals(prop('id', x), prop('id', y));
-    const asMutableScripts = props.dataWranglingScripts.asMutable({ deep: true });
-    const thatsDifferent = differenceWith(byId, asMutableScripts, state.orderedDataWranglingScripts);
-
-    return {
-      loading: false,
-      orderedDataWranglingScripts: [...thatsDifferent, ...state.orderedDataWranglingScripts],
-    };
   }
 
   getScriptLink = ({ id, type }) => {
@@ -158,7 +143,17 @@ export class DataWranglingScripts extends PureComponent {
   handleChange = ({ e, setFieldValue, steps }) => {
     const { value, checked } = e.target;
     const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
-    const script = find(propEq('id', parseInt(value, 10)), this.state.orderedDataWranglingScripts);
+
+    const scripts = this.props.dataWranglingScripts.map(script => {
+      if (script.id.toString() === value) {
+        return { ...script, checked };
+      }
+
+      return script;
+    });
+
+    const script = find(propEq('id', parseInt(value, 10)), scripts);
+    this.props.setScriptsList(scripts);
 
     if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE) {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
@@ -177,7 +172,7 @@ export class DataWranglingScripts extends PureComponent {
         map(script => ({ ...script, id: `${script.id}` })),
         filter(script => includes(prop('id', script), steps)),
         steps => steps.map(this.parseSteps)
-      )(this.state.orderedDataWranglingScripts);
+      )(this.props.dataWranglingScripts);
 
       await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
     } catch (error) {
@@ -191,17 +186,16 @@ export class DataWranglingScripts extends PureComponent {
   };
 
   handleMove = (dragIndex, hoverIndex) => {
-    const { orderedDataWranglingScripts } = this.state;
-    const dragCard = orderedDataWranglingScripts[dragIndex];
+    const { dataWranglingScripts } = this.props;
+    const dragCard = dataWranglingScripts[dragIndex];
 
-    let tempScripts = [...orderedDataWranglingScripts];
+    let tempScripts = [...dataWranglingScripts.asMutable({ deep: true })];
 
     tempScripts.splice(dragIndex, 1);
     tempScripts.splice(hoverIndex, 0, dragCard);
+    tempScripts = tempScripts.map((script, index) => ({ ...script, order: index }));
 
-    this.setState({
-      orderedDataWranglingScripts: tempScripts,
-    });
+    this.props.setScriptsList(tempScripts);
   };
 
   renderCheckboxes = ({ id, name, type = 'custom' }, index) => {
@@ -261,20 +255,19 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { dataSource, isAdmin, customScripts } = this.props;
-    const { errorMessage, loading, error, orderedDataWranglingScripts } = this.state;
+    const { dataSource, isAdmin, dataWranglingScripts } = this.props;
+    const { errorMessage, loading, error } = this.state;
     const steps = pipe(
-      pathOr([], ['activeJob', 'scripts']),
+      filter(propEq('checked', true)),
       map(
         pipe(
           prop('id'),
           toString
         )
       ),
-      insert(0, customScripts),
       flatten,
       uniq
-    )(dataSource);
+    )(dataWranglingScripts);
 
     const { jobsInProcess, name } = dataSource;
 
@@ -291,7 +284,7 @@ export class DataWranglingScripts extends PureComponent {
           <Header>
             <Empty />
             <StepCounter>
-              <FormattedMessage values={{ length: orderedDataWranglingScripts.length }} {...messages.steps} />
+              <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
               {this.renderUploadingError(errorMessage)}
               {this.renderProcessingWarning(jobsInProcess)}
             </StepCounter>
@@ -307,7 +300,7 @@ export class DataWranglingScripts extends PureComponent {
                   name="steps"
                   id="fieldStepsCheckboxGroup"
                 >
-                  {orderedDataWranglingScripts.map(this.renderCheckboxes)}
+                  {dataWranglingScripts.map(this.renderCheckboxes)}
                 </CheckboxGroup>
                 <NavigationContainer right>
                   <NextButton

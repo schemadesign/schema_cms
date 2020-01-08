@@ -18,7 +18,9 @@ import {
   ascend,
   find,
   defaultTo,
-  descend,
+  equals,
+  differenceWith,
+  mergeRight,
 } from 'ramda';
 
 import { SCRIPT_TYPES } from './dataWranglingScripts.constants';
@@ -31,6 +33,7 @@ export const DataWranglingScriptsRoutines = {
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
   fetchList: createRoutine(`${prefix}FETCH_LIST`),
   sendList: createRoutine(`${prefix}SEND_LIST`),
+  setScripts: createRoutine(`${prefix}SET_SCRIPTS`),
   uploadScript: createRoutine(`${prefix}UPLOAD_SCRIPT`),
   setImageScrapingFields: createRoutine(`${prefix}SET_IMAGE_SCRAPING_FIELDS`),
   clearCustomScripts: createRoutine(`${prefix}CLEAR_CUSTOM_SCRIPTS`),
@@ -55,26 +58,56 @@ const addScriptType = script =>
     ])(script)
   )(script);
 
-const addOrder = dataSourceScripts => script => {
+const addOrderAndChecked = dataSourceScripts => script => {
   const dataSourceScript = defaultTo({}, find(propEq('id', script.id))(dataSourceScripts));
 
   return ifElse(
     propEq('id', dataSourceScript.id),
-    set(lensProp('order'), dataSourceScript.execOrder),
+    pipe(
+      set(lensProp('order'), dataSourceScript.execOrder),
+      set(lensProp('checked'), true)
+    ),
     set(lensProp('order'), Number.MAX_SAFE_INTEGER)
   )(script);
 };
 
+const mergeResults = scripts => script => {
+  const foundScript = defaultTo({}, find(propEq('id', script.id), scripts));
+  return mergeRight(foundScript, script);
+};
+
+const addDifference = stateScripts => scripts => {
+  const byId = (x, y) => equals(prop('id', x), prop('id', y));
+  const thatsDifferent = differenceWith(byId, scripts, stateScripts);
+
+  return [...thatsDifferent, ...stateScripts];
+};
+
 const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('script', payload);
-const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, dataSource } }) =>
-  state.set(
+const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, dataSource } }) => {
+  const dataSourceScripts = pathOr([], ['activeJob', 'scripts'], dataSource);
+
+  if (state.scripts.length) {
+    return state.set(
+      'scripts',
+      pipe(
+        map(mergeResults(data)),
+        stateScripts => addDifference(stateScripts)(data)
+      )(state.scripts)
+    );
+  }
+
+  return state.set(
     'scripts',
     pipe(
       map(addScriptType),
-      map(addOrder(pathOr([], ['activeJob', 'scripts'], dataSource))),
-      sortWith([descend(prop('type')), ascend(prop('order'))])
+      map(addOrderAndChecked(dataSourceScripts)),
+      map(mergeResults(state.scripts)),
+      addDifference(state.scripts),
+      sortWith([ascend(prop('order')), ascend(prop('type'))])
     )(data)
   );
+};
 
 const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) =>
   state.set('imageScrapingFields', imageScrapingFields).update('customScripts', x => [...x, scriptId]);
@@ -82,9 +115,12 @@ const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapin
 const clearCustomScripts = (state = INITIAL_STATE) =>
   state.set('imageScrapingFields', INITIAL_STATE.imageScrapingFields).set('customScripts', INITIAL_STATE.customScripts);
 
+const setScriptsHandler = (state = INITIAL_STATE, { payload }) => state.set('scripts', payload);
+
 export const reducer = createReducer(INITIAL_STATE, {
   [DataWranglingScriptsRoutines.fetchOne.SUCCESS]: updateDataWranglingScript,
   [DataWranglingScriptsRoutines.fetchList.SUCCESS]: updateDataWranglingScripts,
   [DataWranglingScriptsRoutines.setImageScrapingFields.SUCCESS]: setImageScrapingFields,
   [DataWranglingScriptsRoutines.clearCustomScripts.TRIGGER]: clearCustomScripts,
+  [DataWranglingScriptsRoutines.setScripts.TRIGGER]: setScriptsHandler,
 });

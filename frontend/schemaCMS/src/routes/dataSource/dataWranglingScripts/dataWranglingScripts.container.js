@@ -30,6 +30,7 @@ export const mapDispatchToProps = dispatch => ({
       fetchDataWranglingScripts: promisifyRoutine(DataWranglingScriptsRoutines.fetchList),
       uploadScript: promisifyRoutine(DataWranglingScriptsRoutines.uploadScript),
       sendUpdatedDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.sendList),
+      setScriptsList: promisifyRoutine(DataWranglingScriptsRoutines.setScripts),
     },
     dispatch
   ),

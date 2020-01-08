@@ -49,14 +49,14 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             "isPredefined": false,
             "name": "name 1",
             "specs": Object {},
-            "type": "uploaded",
+            "type": 0,
           },
           Object {
             "id": 2,
             "isPredefined": true,
             "name": "name 2",
             "specs": Object {},
-            "type": "default",
+            "type": 2,
           },
           Object {
             "id": 3,
@@ -65,7 +65,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             "specs": Object {
               "type": "type",
             },
-            "type": "custom",
+            "type": 1,
           },
         ]
       }
@@ -95,6 +95,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         }
       }
       sendUpdatedDataWranglingScript={[Function]}
+      setScriptsList={[Function]}
       uploadScript={[Function]}
     />
   </ContextHeader>
@@ -264,14 +265,14 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
           "isPredefined": false,
           "name": "name 1",
           "specs": Object {},
-          "type": "uploaded",
+          "type": 0,
         },
         Object {
           "id": 2,
           "isPredefined": true,
           "name": "name 2",
           "specs": Object {},
-          "type": "default",
+          "type": 2,
         },
         Object {
           "id": 3,
@@ -280,7 +281,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
           "specs": Object {
             "type": "type",
           },
-          "type": "custom",
+          "type": 1,
         },
       ]
     }
@@ -310,6 +311,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       }
     }
     sendUpdatedDataWranglingScript={[Function]}
+    setScriptsList={[Function]}
     uploadScript={[Function]}
   />
 </ContextProvider>

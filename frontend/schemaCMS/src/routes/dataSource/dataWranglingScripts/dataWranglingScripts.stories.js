@@ -17,6 +17,7 @@ export const defaultProps = {
   dataWranglingScripts,
   dataSource: { metaData: {}, project: { id: '1' } },
   bindSubmitForm: Function.prototype,
+  setScriptsList: Function.prototype,
   fetchDataWranglingScripts: () => Promise.resolve(),
   uploadScript: Function.prototype,
   imageScrapingFields: [],
