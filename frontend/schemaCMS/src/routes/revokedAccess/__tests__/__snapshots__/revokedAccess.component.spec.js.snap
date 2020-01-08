@@ -9,7 +9,7 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
   />
   <styled.div>
     <FormattedHTMLMessage
-      defaultMessage="Access for account with email <b>{email}</b> has been revoked."
+      defaultMessage="The access for account with email <b>{email}</b> has been revoked."
       id="revokedAccess.info"
       values={
         Object {

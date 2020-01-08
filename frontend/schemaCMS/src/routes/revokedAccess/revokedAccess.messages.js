@@ -8,7 +8,7 @@ export default defineMessages({
   },
   info: {
     id: 'revokedAccess.info',
-    defaultMessage: 'Access for account with email <b>{email}</b> has been revoked.',
+    defaultMessage: 'The access for account with email <b>{email}</b> has been revoked.',
   },
   contact: {
     id: 'revokedAccess.contact',

@@ -31,7 +31,7 @@ exports[`Storyshots RevokedAccess Default 1`] = `
     <span
       dangerouslySetInnerHTML={
         Object {
-          "__html": "Access for account with email <b>some-mail@example.com</b> has been revoked.",
+          "__html": "The access for account with email <b>some-mail@example.com</b> has been revoked.",
         }
       }
     />

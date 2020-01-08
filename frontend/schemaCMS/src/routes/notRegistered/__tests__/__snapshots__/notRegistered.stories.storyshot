@@ -28,13 +28,21 @@ exports[`Storyshots NotRegistered Default 1`] = `
   <div
     className="c0"
   >
-    <span>
-      You (some-mail@example.com) don't have access to Schema CMS.
-    </span>
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Account with email <b>some-mail@example.com</b> is not registered.",
+        }
+      }
+    />
     <br />
-    <span>
-      If you believe this is an error, please contact your administrator.
-    </span>
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "If you believe this is an error, please contact your administrator or <a href=\\"/\\">log in again</a>.",
+        }
+      }
+    />
   </div>
 </div>
 `;

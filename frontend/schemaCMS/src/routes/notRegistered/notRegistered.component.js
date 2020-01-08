@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { injectIntl, FormattedHTMLMessage } from 'react-intl';
 import { compose } from 'ramda';
-import queryString from 'query-string';
 
 import messages from './notRegistered.messages';
 import { InfoContainer } from '../../shared/components/container/container.styles';
+import { getQueryParams } from '../../shared/utils/helpers';
 
 export class NotRegisteredComponent extends PureComponent {
   static propTypes = {
@@ -16,15 +16,8 @@ export class NotRegisteredComponent extends PureComponent {
     }),
   };
 
-  getEmail() {
-    const { search } = this.props.location;
-    const { email } = queryString.parse(search);
-
-    return email ? `${email}` : '';
-  }
-
   render() {
-    const email = this.getEmail();
+    const { email } = getQueryParams(this.props);
 
     return (
       <Fragment>
