@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|UserList List 1`] = `
-.c19 {
+.c20 {
   height: 155px;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|UserList List 1`] = `
   width: 100%;
 }
 
-.c20 {
+.c21 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -58,7 +58,7 @@ exports[`Storyshots Project|UserList List 1`] = `
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -117,7 +117,28 @@ exports[`Storyshots Project|UserList List 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c8 {
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -129,14 +150,14 @@ exports[`Storyshots Project|UserList List 1`] = `
   display: inline-block;
 }
 
-.c8 a {
+.c9 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -148,23 +169,23 @@ exports[`Storyshots Project|UserList List 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c14 {
   display: none;
 }
 
-.c14 {
-  margin-right: 20px;
-}
-
 .c15 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c16 {
   color: #FFF;
 }
 
-.c18 {
+.c17 {
+  color: #FFF;
+}
+
+.c19 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -172,11 +193,11 @@ exports[`Storyshots Project|UserList List 1`] = `
   font-size: 20px;
 }
 
-.c9 {
+.c10 {
   display: none;
 }
 
-.c10 {
+.c11 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -189,11 +210,11 @@ exports[`Storyshots Project|UserList List 1`] = `
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   border-bottom-color: #FFF;
 }
 
-.c12 {
+.c13 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -206,11 +227,11 @@ exports[`Storyshots Project|UserList List 1`] = `
   cursor: pointer;
 }
 
-.c12:hover {
+.c13:hover {
   border-bottom-color: #FFF;
 }
 
-.c11 {
+.c12 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -219,13 +240,13 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c21 {
+  .c22 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c21 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -234,7 +255,7 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     display: block;
   }
 }
@@ -267,7 +288,14 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c7 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -285,7 +313,7 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -543,6 +571,19 @@ exports[`Storyshots Project|UserList List 1`] = `
           </li>
           <li
             className="c5"
+          >
+            <a
+              href="/settings"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
             id="logoutBtn"
             onClick={[Function]}
           >
@@ -552,10 +593,10 @@ exports[`Storyshots Project|UserList List 1`] = `
           </li>
         </ul>
         <ul
-          className="c7"
+          className="c8"
         >
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
@@ -568,7 +609,7 @@ exports[`Storyshots Project|UserList List 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
@@ -581,7 +622,7 @@ exports[`Storyshots Project|UserList List 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
@@ -642,13 +683,13 @@ exports[`Storyshots Project|UserList List 1`] = `
     className=""
   >
     <div
-      className="c9"
+      className="c10"
     >
       <div
-        className="c10"
+        className="c11"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1"
           onClick={[Function]}
         >
@@ -658,10 +699,10 @@ exports[`Storyshots Project|UserList List 1`] = `
         </a>
       </div>
       <div
-        className="c10"
+        className="c11"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -671,10 +712,10 @@ exports[`Storyshots Project|UserList List 1`] = `
         </a>
       </div>
       <div
-        className="c12"
+        className="c13"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -684,10 +725,10 @@ exports[`Storyshots Project|UserList List 1`] = `
         </a>
       </div>
       <div
-        className="c10"
+        className="c11"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1/folder"
           onClick={[Function]}
         >
@@ -699,13 +740,13 @@ exports[`Storyshots Project|UserList List 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
-      className="c14"
+      className="c15"
     >
       <h2
-        className="c15"
+        className="c16"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -721,7 +762,7 @@ exports[`Storyshots Project|UserList List 1`] = `
         </span>
       </h2>
       <h1
-        className="c16"
+        className="c17"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -743,7 +784,7 @@ exports[`Storyshots Project|UserList List 1`] = `
       className=""
     >
       <div
-        className="c17"
+        className="c18"
       >
         <button
           disabled={false}
@@ -789,20 +830,20 @@ exports[`Storyshots Project|UserList List 1`] = `
     </div>
   </div>
   <div
-    className="c18"
+    className="c19"
   >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c19"
+    className="c20"
   >
     <div
-      className="c20"
+      className="c21"
     >
       <div
-        className="c21"
+        className="c22"
       >
         <button
           disabled={false}
@@ -843,7 +884,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           </svg>
         </button>
         <div
-          className="c17"
+          className="c18"
         >
           <button
             disabled={false}
@@ -893,11 +934,11 @@ exports[`Storyshots Project|UserList List 1`] = `
 `;
 
 exports[`Storyshots Project|UserList No data 1`] = `
-.c19 {
+.c20 {
   height: 155px;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -916,7 +957,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
   width: 100%;
 }
 
-.c20 {
+.c21 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -950,7 +991,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1009,7 +1050,28 @@ exports[`Storyshots Project|UserList No data 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c8 {
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1021,14 +1083,14 @@ exports[`Storyshots Project|UserList No data 1`] = `
   display: inline-block;
 }
 
-.c8 a {
+.c9 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -1040,23 +1102,23 @@ exports[`Storyshots Project|UserList No data 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c14 {
   display: none;
 }
 
-.c14 {
-  margin-right: 20px;
-}
-
 .c15 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c16 {
   color: #FFF;
 }
 
-.c18 {
+.c17 {
+  color: #FFF;
+}
+
+.c19 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -1064,11 +1126,11 @@ exports[`Storyshots Project|UserList No data 1`] = `
   font-size: 20px;
 }
 
-.c9 {
+.c10 {
   display: none;
 }
 
-.c10 {
+.c11 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1081,11 +1143,11 @@ exports[`Storyshots Project|UserList No data 1`] = `
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   border-bottom-color: #FFF;
 }
 
-.c12 {
+.c13 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1098,11 +1160,11 @@ exports[`Storyshots Project|UserList No data 1`] = `
   cursor: pointer;
 }
 
-.c12:hover {
+.c13:hover {
   border-bottom-color: #FFF;
 }
 
-.c11 {
+.c12 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -1111,13 +1173,13 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c21 {
+  .c22 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c21 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1126,7 +1188,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     display: block;
   }
 }
@@ -1159,7 +1221,14 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c7 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1177,7 +1246,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1435,6 +1504,19 @@ exports[`Storyshots Project|UserList No data 1`] = `
           </li>
           <li
             className="c5"
+          >
+            <a
+              href="/settings"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
             id="logoutBtn"
             onClick={[Function]}
           >
@@ -1444,10 +1526,10 @@ exports[`Storyshots Project|UserList No data 1`] = `
           </li>
         </ul>
         <ul
-          className="c7"
+          className="c8"
         >
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
@@ -1460,7 +1542,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
@@ -1473,7 +1555,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
@@ -1534,13 +1616,13 @@ exports[`Storyshots Project|UserList No data 1`] = `
     className=""
   >
     <div
-      className="c9"
+      className="c10"
     >
       <div
-        className="c10"
+        className="c11"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1"
           onClick={[Function]}
         >
@@ -1550,10 +1632,10 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </a>
       </div>
       <div
-        className="c10"
+        className="c11"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -1563,10 +1645,10 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </a>
       </div>
       <div
-        className="c12"
+        className="c13"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -1576,10 +1658,10 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </a>
       </div>
       <div
-        className="c10"
+        className="c11"
       >
         <a
-          className="c11"
+          className="c12"
           href="/project/1/folder"
           onClick={[Function]}
         >
@@ -1591,13 +1673,13 @@ exports[`Storyshots Project|UserList No data 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
-      className="c14"
+      className="c15"
     >
       <h2
-        className="c15"
+        className="c16"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1613,7 +1695,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </span>
       </h2>
       <h1
-        className="c16"
+        className="c17"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1635,7 +1717,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
       className=""
     >
       <div
-        className="c17"
+        className="c18"
       >
         <button
           disabled={false}
@@ -1681,20 +1763,20 @@ exports[`Storyshots Project|UserList No data 1`] = `
     </div>
   </div>
   <div
-    className="c18"
+    className="c19"
   >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c19"
+    className="c20"
   >
     <div
-      className="c20"
+      className="c21"
     >
       <div
-        className="c21"
+        className="c22"
       >
         <button
           disabled={false}
@@ -1735,7 +1817,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           </svg>
         </button>
         <div
-          className="c17"
+          className="c18"
         >
           <button
             disabled={false}

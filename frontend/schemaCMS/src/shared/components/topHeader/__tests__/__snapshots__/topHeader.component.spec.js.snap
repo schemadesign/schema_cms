@@ -94,8 +94,25 @@ exports[`TopHeader: Component should render correctly 1`] = `
         <Styled(styled.li)
           active={false}
           hide={false}
-          id="logoutBtn"
           key="2"
+        >
+          <Link
+            id={null}
+            onClick={[Function]}
+            to="/settings"
+          >
+            <FormattedMessage
+              defaultMessage="Settings"
+              id="shared.components.desktopTopHeader.settings"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={true}
+          hide={false}
+          id="logoutBtn"
+          key="3"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -107,7 +124,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
@@ -124,7 +141,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="1"
         >
@@ -141,7 +158,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="2"
         >
@@ -226,7 +243,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
     <styled.div>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
@@ -239,7 +256,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="1"
         >
@@ -288,8 +305,25 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         <Styled(styled.li)
           active={false}
           hide={false}
-          id="logoutBtn"
           key="4"
+        >
+          <Link
+            id={null}
+            onClick={[Function]}
+            to="/settings"
+          >
+            <FormattedMessage
+              defaultMessage="Settings"
+              id="shared.components.desktopTopHeader.settings"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={true}
+          hide={false}
+          id="logoutBtn"
+          key="5"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -301,7 +335,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
@@ -314,7 +348,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           id="id"
           key="1"
@@ -323,7 +357,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           Click action
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="2"
         >
@@ -340,7 +374,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="3"
         >
@@ -357,7 +391,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="4"
         >
@@ -529,8 +563,25 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         <Styled(styled.li)
           active={false}
           hide={false}
-          id="logoutBtn"
           key="5"
+        >
+          <Link
+            id={null}
+            onClick={[Function]}
+            to="/settings"
+          >
+            <FormattedMessage
+              defaultMessage="Settings"
+              id="shared.components.desktopTopHeader.settings"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={true}
+          hide={false}
+          id="logoutBtn"
+          key="6"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -542,7 +593,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
@@ -559,7 +610,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="1"
         >
@@ -576,7 +627,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="2"
         >

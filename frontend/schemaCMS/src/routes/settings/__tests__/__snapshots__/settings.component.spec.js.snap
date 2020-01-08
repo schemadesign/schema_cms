@@ -17,6 +17,7 @@ exports[`Settings: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    isAdmin={false}
     primaryMenuItems={Array []}
     secondaryMenuItems={Array []}
   />
@@ -208,6 +209,7 @@ exports[`Settings: Component should render correctly 2`] = `
         values={Object {}}
       />
     }
+    isAdmin={false}
     primaryMenuItems={Array []}
     secondaryMenuItems={Array []}
   />

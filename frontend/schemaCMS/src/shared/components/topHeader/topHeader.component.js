@@ -48,7 +48,7 @@ export class TopHeader extends PureComponent {
     pipe(
       path(['location', 'pathname']),
       split('/'),
-      ifElse(data => !parseInt(last(data), 10), data => `${last(data)}s`, nth(-2)),
+      ifElse(data => !parseInt(last(data), 10), data => last(data), nth(-2)),
       equals(page)
     )(window);
 
@@ -65,12 +65,12 @@ export class TopHeader extends PureComponent {
         {
           label: <FormattedMessage {...messages.projectDataSources} />,
           to: `/project/${projectId}/datasource`,
-          page: 'datasources',
+          page: 'datasource',
         },
         {
           label: <FormattedMessage {...messages.projectPages} />,
           to: `/project/${projectId}/folder`,
-          page: 'folders',
+          page: 'folder',
         },
       ])
     )(!projectId);
@@ -79,14 +79,14 @@ export class TopHeader extends PureComponent {
     {
       label: <FormattedMessage {...messages.projects} />,
       to: '/project',
-      page: 'projects',
+      page: 'project',
       hide: this.props.hideProjects,
     },
     {
       label: <FormattedMessage {...messages.users} />,
       to: '/user',
       id: 'userBtn',
-      page: 'users',
+      page: 'user',
       hide: !this.props.isAdmin,
     },
   ];
@@ -155,6 +155,11 @@ export class TopHeader extends PureComponent {
       ...primaryMenuItems,
       ...this.primaryMenuItems,
       ...this.getProjectRoutes({ projectId }),
+      {
+        label: <FormattedMessage {...messages.settings} />,
+        to: '/settings',
+        page: 'settings',
+      },
       {
         label: <FormattedMessage {...messages.logOut} />,
         onClick: this.handleLogout,

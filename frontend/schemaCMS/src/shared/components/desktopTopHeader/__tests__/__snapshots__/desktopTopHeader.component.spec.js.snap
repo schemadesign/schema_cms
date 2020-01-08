@@ -130,7 +130,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           </Styled(styled.ul)>
           <Styled(styled.ul)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="0"
             >
@@ -147,7 +147,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="1"
             >
@@ -164,7 +164,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="2"
             >
@@ -242,7 +242,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
         >
           <Styled(styled.ul)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="0"
             >
@@ -259,7 +259,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="1"
             >
@@ -276,7 +276,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="2"
             >
