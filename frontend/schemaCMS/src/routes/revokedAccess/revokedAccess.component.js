@@ -1,14 +1,14 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { injectIntl, FormattedHTMLMessage } from 'react-intl';
+import { FormattedHTMLMessage, injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 
-import messages from './notRegistered.messages';
+import messages from './revokedAccess.messages';
 import { InfoContainer } from '../../shared/components/container/container.styles';
 import { getQueryParams } from '../../shared/utils/helpers';
 
-export class NotRegisteredComponent extends PureComponent {
+export class RevokedAccessComponent extends PureComponent {
   static propTypes = {
     intl: PropTypes.object.isRequired,
     location: PropTypes.shape({
@@ -32,4 +32,4 @@ export class NotRegisteredComponent extends PureComponent {
   }
 }
 
-export const NotRegistered = compose(injectIntl)(NotRegisteredComponent);
+export const RevokedAccess = compose(injectIntl)(RevokedAccessComponent);

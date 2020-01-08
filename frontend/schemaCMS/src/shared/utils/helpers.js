@@ -1,5 +1,6 @@
 import { complement, either, forEach, is, isEmpty, isNil, keys, map, path, pathOr, pickBy, pipe } from 'ramda';
 import { camelize, decamelize } from 'humps';
+import queryString from 'query-string';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
@@ -41,3 +42,8 @@ export const formatFormData = data => {
 };
 
 export const getEventFiles = data => pathOr(data, ['currentTarget', 'files'])(data);
+
+export const getQueryParams = pipe(
+  pathOr('', ['location', 'search']),
+  queryString.parse
+);

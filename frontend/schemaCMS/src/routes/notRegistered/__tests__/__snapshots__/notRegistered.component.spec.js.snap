@@ -5,26 +5,21 @@ exports[`NotRegistered: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Revoked  access"
-  />
-  <TopHeader
-    noProject={true}
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    title="Not registered"
   />
   <styled.div>
-    <FormattedMessage
-      defaultMessage="You {email} don't have access to Schema CMS."
+    <FormattedHTMLMessage
+      defaultMessage="Account with email <b>{email}</b> is not registered."
       id="notRegistered.info"
       values={
         Object {
-          "email": "(some-mail@example.com)",
+          "email": "some-mail@example.com",
         }
       }
     />
     <br />
-    <FormattedMessage
-      defaultMessage="If you believe this is an error, please contact your administrator."
+    <FormattedHTMLMessage
+      defaultMessage="If you believe this is an error, please contact your administrator or <a href=\\"/\\">log in again</a>."
       id="notRegistered.contact"
       values={Object {}}
     />

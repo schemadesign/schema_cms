@@ -15,6 +15,7 @@ import { Logout } from './logout';
 import { NotAuthorized } from './notAuthorized';
 import { NotFound } from './notFound';
 import { NotRegistered } from './notRegistered';
+import { RevokedAccess } from './revokedAccess';
 import { Page } from './page';
 import { PageBlock } from './pageBlock';
 import { Preview as JobPreview } from './jobDetail/preview';
@@ -89,6 +90,8 @@ export default class RootContainer extends Component {
             <Route exact path={`${ROUTES.AUTH}/confirm`} component={JWT} />
 
             <Route exact path={`${ROUTES.AUTH}/not-registered`} component={NotRegistered} />
+
+            <Route exact path={`${ROUTES.AUTH}/revoked-access`} component={RevokedAccess} />
 
             <Route
               exact
