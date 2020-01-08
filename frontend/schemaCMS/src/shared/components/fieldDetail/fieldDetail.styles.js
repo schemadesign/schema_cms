@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Icons } from 'schemaUI';
 
+import { media } from '../../../theme/media';
+
 export const Container = styled.div``;
 
 export const List = styled.ul`
@@ -45,7 +47,11 @@ export const FieldInformation = styled.li`
 
 export const FieldSummary = styled(FieldInformation)`
   display: flex;
-  width: calc(50% - 10px);
+  width: 100%;
+
+  ${media.bigMobile`
+    width: calc(50% - 10px);
+  `};
 `;
 
 export const EditIcon = styled(Icons.EditIcon)`
