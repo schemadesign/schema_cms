@@ -23,9 +23,14 @@ import { errorMessageParser } from '../../shared/utils/helpers';
 export class Settings extends PureComponent {
   static propTypes = {
     updateMe: PropTypes.func.isRequired,
+    clearProject: PropTypes.func.isRequired,
     userData: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
   };
+
+  componentDidMount() {
+    this.props.clearProject();
+  }
 
   handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {

@@ -6,6 +6,7 @@ import { watchUserAuth } from '../userAuth.sagas';
 import { UserAuthActions, INITIAL_STATE } from '../userAuth.redux';
 import { TOKEN_PATH } from '../../../shared/utils/api.constants';
 import { UserProfileRoutines } from '../../userProfile/userProfile.redux';
+import { ProjectRoutines } from '../../project/project.redux';
 
 describe('UserAuth: sagas', () => {
   const defaultState = INITIAL_STATE;
@@ -49,6 +50,7 @@ describe('UserAuth: sagas', () => {
     it('should put UserAuthActions.logoutSuccess action', async () => {
       await expectSaga(watchUserAuth)
         .withState(defaultState)
+        .put(ProjectRoutines.clearProject())
         .put(UserAuthActions.logoutSuccess())
         .dispatch(UserAuthActions.logout())
         .silentRun();
