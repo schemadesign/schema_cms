@@ -10,6 +10,7 @@ from aws_cdk import (
     aws_lambda_event_sources,
     aws_ecs,
     aws_ecs_patterns,
+    aws_iam,
     aws_rds,
     aws_secretsmanager,
     aws_codebuild,
@@ -21,6 +22,7 @@ from aws_cdk import (
     aws_certificatemanager,
     aws_route53,
 )
+
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
@@ -289,6 +291,9 @@ class API(core.Stack):
             self.grant_secret_access(v)
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
+        self.api.task_definition.add_to_task_role_policy(
+            aws_iam.PolicyStatement(resources='arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess')
+        )
 
     def map_secret(self, secret_arn):
         secret = aws_secretsmanager.Secret.from_secret_arn(
