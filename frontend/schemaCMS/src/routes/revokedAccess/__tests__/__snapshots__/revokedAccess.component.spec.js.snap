@@ -7,6 +7,25 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Revoked access"
   />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Error"
+        id="notFound.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="SchemaCMS"
+        id="notFound.title"
+        values={Object {}}
+      />
+    }
+    iconComponent={null}
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
+  />
   <styled.div>
     <FormattedHTMLMessage
       defaultMessage="The access for account with email <b>{email}</b> has been revoked."

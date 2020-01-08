@@ -23,7 +23,7 @@ import {
   when,
 } from 'ramda';
 import queryString from 'query-string';
-import { AUTH_PATH } from '../utils/api.constants';
+import browserHistory from '../utils/history';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL,
@@ -95,10 +95,14 @@ api.interceptors.response.use(
   },
   error => {
     if (error.response.status === UNAUTHORIZED) {
-      return window.location.replace(AUTH_PATH);
+      return browserHistory.push('/not-authorized');
     }
 
-    if ([FORBIDDEN, BAD_REQUEST, NOT_FOUND].includes(error.response.status)) {
+    if (error.response.status === NOT_FOUND) {
+      return browserHistory.push('/not-found');
+    }
+
+    if ([FORBIDDEN, BAD_REQUEST].includes(error.response.status)) {
       return Promise.reject(convertResponseErrors(error));
     }
 

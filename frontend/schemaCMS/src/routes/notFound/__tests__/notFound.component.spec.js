@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { NotFoundComponent as NotFound } from '../notFound.component';
+import { NotFound } from '../notFound.component';
 import { defaultProps } from '../notFound.stories';
 
 describe('NotFound: Component', () => {

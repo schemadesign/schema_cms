@@ -7,7 +7,15 @@ export default defineMessages({
     defaultMessage: 'Not authorized',
   },
   title: {
-    id: 'notAuthorized.title',
+    id: 'notFound.title',
+    defaultMessage: 'SchemaCMS',
+  },
+  subTitle: {
+    id: 'notFound.subTitle',
+    defaultMessage: 'Error',
+  },
+  description: {
+    id: 'notAuthorized.description',
     defaultMessage: "You don't have permissions to see this content.",
   },
 });

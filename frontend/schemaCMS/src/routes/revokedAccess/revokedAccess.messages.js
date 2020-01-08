@@ -15,4 +15,12 @@ export default defineMessages({
     defaultMessage:
       'If you believe this is an error, please contact your administrator or <a href="/">log with different credentials</a>.',
   },
+  title: {
+    id: 'notFound.title',
+    defaultMessage: 'SchemaCMS',
+  },
+  subTitle: {
+    id: 'notFound.subTitle',
+    defaultMessage: 'Error',
+  },
 });

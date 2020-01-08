@@ -7,11 +7,30 @@ exports[`NotFound: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Not found"
   />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Error"
+        id="notFound.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="SchemaCMS"
+        id="notFound.title"
+        values={Object {}}
+      />
+    }
+    isAdmin={true}
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
+  />
   <styled.div>
     <H1>
       <FormattedMessage
-        defaultMessage="Error: 404"
-        id="notFound.title"
+        defaultMessage="The page you are looking for doesn't exist or has been moved."
+        id="notFound.description"
         values={Object {}}
       />
     </H1>

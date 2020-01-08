@@ -7,11 +7,30 @@ exports[`NotAuthorized: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Not authorized"
   />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Error"
+        id="notFound.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="SchemaCMS"
+        id="notFound.title"
+        values={Object {}}
+      />
+    }
+    isAdmin={true}
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
+  />
   <styled.div>
     <H1>
       <FormattedMessage
         defaultMessage="You don't have permissions to see this content."
-        id="notAuthorized.title"
+        id="notAuthorized.description"
         values={Object {}}
       />
     </H1>

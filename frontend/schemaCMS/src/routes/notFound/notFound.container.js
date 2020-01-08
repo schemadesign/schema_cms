@@ -6,7 +6,7 @@ import { hot } from 'react-hot-loader';
 import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 
-import { NotAuthorized } from './notAuthorized.component';
+import { NotFound } from './notFound.component';
 import { selectIsAdmin } from '../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
@@ -23,4 +23,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(NotAuthorized);
+)(NotFound);

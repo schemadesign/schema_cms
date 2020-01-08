@@ -8,6 +8,14 @@ export default defineMessages({
   },
   title: {
     id: 'notFound.title',
-    defaultMessage: 'Error: 404',
+    defaultMessage: 'SchemaCMS',
+  },
+  subTitle: {
+    id: 'notFound.subTitle',
+    defaultMessage: 'Error',
+  },
+  description: {
+    id: 'notFound.description',
+    defaultMessage: "The page you are looking for doesn't exist or has been moved.",
   },
 });
