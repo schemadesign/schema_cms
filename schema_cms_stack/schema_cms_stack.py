@@ -291,9 +291,7 @@ class API(core.Stack):
             self.grant_secret_access(v)
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
-
-        aws_iam.Role.from_role_arn(
-            self, 'DynamoDbRole', 'arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess')
+        self.api.task_definition.add_to_task_role_policy(aws_iam.PolicyStatement(actions=["dynamodb:*"], resource=["*"]))
 
     def map_secret(self, secret_arn):
         secret = aws_secretsmanager.Secret.from_secret_arn(
