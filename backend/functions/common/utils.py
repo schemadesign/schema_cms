@@ -1,3 +1,4 @@
+import decimal
 import json
 
 import numpy as np
@@ -38,3 +39,13 @@ class NumpyEncoder(json.JSONEncoder):
         elif isinstance(obj, (np.nan,)):
             return None
         return json.JSONEncoder.default(self, obj)
+
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, decimal.Decimal):
+            if obj % 1 > 0:
+                return float(obj)
+            else:
+                return int(obj)
+        return super().default(obj)

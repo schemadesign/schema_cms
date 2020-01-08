@@ -288,7 +288,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data_source.filters.filter(id__in=inactive).update(is_active=False)
 
         data_source = self.get_object()
-        data_source.create_meta_file()
+        data_source.create_dynamo_item()
 
         serializer = self.get_serializer(instance=data_source.filters, many=True)
 
@@ -504,7 +504,7 @@ class PageViewSet(
         page.blocks.filter(id__in=inactive).update(is_active=False)
 
         page = self.get_object()
-        page.get_project().create_meta_file()
+        page.create_dynamo_item()
 
         serializer = self.get_serializer(instance=page.blocks, many=True)
 

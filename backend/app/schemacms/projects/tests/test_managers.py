@@ -2,6 +2,7 @@ import pytest
 
 from schemacms.projects import models
 
+
 pytestmark = [pytest.mark.django_db]
 
 

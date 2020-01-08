@@ -969,7 +969,7 @@ class TestRevertJobView:
         )
         payload = dict(id=jobs[1].id)
         old_active_job = data_source.active_job
-        create_meta_file_mock = mocker.patch("schemacms.projects.models.DataSource.create_meta_file")
+        create_meta_file_mock = mocker.patch("schemacms.projects.models.DataSource.create_dynamo_item")
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload)
