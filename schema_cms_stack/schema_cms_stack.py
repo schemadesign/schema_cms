@@ -291,7 +291,9 @@ class API(core.Stack):
             self.grant_secret_access(v)
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
-        self.api.task_definition.add_to_task_role_policy(aws_iam.PolicyStatement(actions=["dynamodb:*"], resource=["*"]))
+        self.api.task_definition.add_to_task_role_policy(
+            aws_iam.PolicyStatement(actions=["dynamodb:*"], resources=["*"])
+        )
 
     def map_secret(self, secret_arn):
         secret = aws_secretsmanager.Secret.from_secret_arn(
@@ -379,20 +381,9 @@ class PublicAPI(core.Stack):
         scope.base.db.secret.grant_read(self.public_api_lambda.role)
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
 
-        # self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(
             self, "rest-api", handler=self.public_api_lambda
         )
-        # self.publicApiGateway.root.add_resource(
-        #     "datasources"
-        # ).add_resource(
-        #     "{data_source_id}"
-        # ).add_method(
-        #     "GET", self.publicApiLambdaIntegration
-        # ).add_proxy(
-        #     default_integration=self.publicApiLambdaIntegration,
-        #     any_method=True
-        # )
 
 
 class ImageResize(core.Stack):
