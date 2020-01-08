@@ -91,7 +91,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             "projectId": "1",
             "step": "3",
           },
-          "url": "/datasource/14/3",
+          "url": "/datasource/1/steps",
         }
       }
       sendUpdatedDataWranglingScript={[Function]}
@@ -285,7 +285,24 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         },
       ]
     }
-    fetchDataWranglingScripts={[Function]}
+    fetchDataWranglingScripts={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "dataSourceId": "1",
+              "fromScript": false,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      }
+    }
     hideOnDesktop={true}
     history={
       Object {
@@ -307,7 +324,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
           "projectId": "1",
           "step": "3",
         },
-        "url": "/datasource/14/3",
+        "url": "/datasource/1/steps",
       }
     }
     sendUpdatedDataWranglingScript={[Function]}

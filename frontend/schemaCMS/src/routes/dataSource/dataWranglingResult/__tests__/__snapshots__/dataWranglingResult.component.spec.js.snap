@@ -31,24 +31,25 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
     <DataSourceNavigation
       dataSource={
         Object {
-          "jobs": Array [
-            Object {
-              "id": 1,
-              "jobState": "failed",
-            },
-            Object {
-              "id": 2,
-              "jobState": "success",
-            },
-          ],
+          "activeJob": Object {
+            "id": 1,
+            "scripts": Array [
+              Object {
+                "id": 1,
+              },
+              Object {
+                "id": 15,
+              },
+            ],
+          },
+          "id": 1,
           "metaData": Object {},
           "project": Object {
             "id": "1",
           },
         }
       }
-      fetchPreview={[Function]}
-      fetchResult={[MockFunction]}
+      fetchPreview={[MockFunction]}
       hideOnDesktop={false}
       history={
         Object {
@@ -68,7 +69,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "projectId": "1",
             "step": "4",
           },
-          "url": "url",
+          "url": "/datasource/1/result",
         }
       }
       previewData={
@@ -136,24 +137,25 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
   <DataPreview
     dataSource={
       Object {
-        "jobs": Array [
-          Object {
-            "id": 1,
-            "jobState": "failed",
-          },
-          Object {
-            "id": 2,
-            "jobState": "success",
-          },
-        ],
+        "activeJob": Object {
+          "id": 1,
+          "scripts": Array [
+            Object {
+              "id": 1,
+            },
+            Object {
+              "id": 15,
+            },
+          ],
+        },
+        "id": 1,
         "metaData": Object {},
         "project": Object {
           "id": "1",
         },
       }
     }
-    fetchPreview={[Function]}
-    fetchResult={[MockFunction]}
+    fetchPreview={[MockFunction]}
     history={
       Object {
         "goBack": [Function],
@@ -165,7 +167,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
-    jobId={null}
+    jobId={1}
     match={
       Object {
         "params": Object {
@@ -173,7 +175,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
           "projectId": "1",
           "step": "4",
         },
-        "url": "url",
+        "url": "/datasource/1/result",
       }
     }
     previewData={
@@ -240,24 +242,25 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
   <DataSourceNavigation
     dataSource={
       Object {
-        "jobs": Array [
-          Object {
-            "id": 1,
-            "jobState": "failed",
-          },
-          Object {
-            "id": 2,
-            "jobState": "success",
-          },
-        ],
+        "activeJob": Object {
+          "id": 1,
+          "scripts": Array [
+            Object {
+              "id": 1,
+            },
+            Object {
+              "id": 15,
+            },
+          ],
+        },
+        "id": 1,
         "metaData": Object {},
         "project": Object {
           "id": "1",
         },
       }
     }
-    fetchPreview={[Function]}
-    fetchResult={[MockFunction]}
+    fetchPreview={[MockFunction]}
     hideOnDesktop={true}
     history={
       Object {
@@ -277,7 +280,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
           "projectId": "1",
           "step": "4",
         },
-        "url": "url",
+        "url": "/datasource/1/result",
       }
     }
     previewData={
@@ -375,16 +378,18 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
     <DataSourceNavigation
       dataSource={
         Object {
-          "jobs": Array [
-            Object {
-              "id": 1,
-              "jobState": "failed",
-            },
-            Object {
-              "id": 2,
-              "jobState": "success",
-            },
-          ],
+          "activeJob": Object {
+            "id": 1,
+            "scripts": Array [
+              Object {
+                "id": 1,
+              },
+              Object {
+                "id": 15,
+              },
+            ],
+          },
+          "id": 1,
           "metaData": Object {},
           "project": Object {
             "id": "1",
@@ -411,7 +416,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "projectId": "1",
             "step": "4",
           },
-          "url": "url",
+          "url": "/datasource/1/result",
         }
       }
       previewData={
@@ -479,16 +484,18 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
   <DataPreview
     dataSource={
       Object {
-        "jobs": Array [
-          Object {
-            "id": 1,
-            "jobState": "failed",
-          },
-          Object {
-            "id": 2,
-            "jobState": "success",
-          },
-        ],
+        "activeJob": Object {
+          "id": 1,
+          "scripts": Array [
+            Object {
+              "id": 1,
+            },
+            Object {
+              "id": 15,
+            },
+          ],
+        },
+        "id": 1,
         "metaData": Object {},
         "project": Object {
           "id": "1",
@@ -507,7 +514,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
         "formatMessage": [Function],
       }
     }
-    jobId={null}
+    jobId={1}
     match={
       Object {
         "params": Object {
@@ -515,7 +522,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
           "projectId": "1",
           "step": "4",
         },
-        "url": "url",
+        "url": "/datasource/1/result",
       }
     }
     previewData={
@@ -582,16 +589,18 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
   <DataSourceNavigation
     dataSource={
       Object {
-        "jobs": Array [
-          Object {
-            "id": 1,
-            "jobState": "failed",
-          },
-          Object {
-            "id": 2,
-            "jobState": "success",
-          },
-        ],
+        "activeJob": Object {
+          "id": 1,
+          "scripts": Array [
+            Object {
+              "id": 1,
+            },
+            Object {
+              "id": 15,
+            },
+          ],
+        },
+        "id": 1,
         "metaData": Object {},
         "project": Object {
           "id": "1",
@@ -618,7 +627,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
           "projectId": "1",
           "step": "4",
         },
-        "url": "url",
+        "url": "/datasource/1/result",
       }
     }
     previewData={

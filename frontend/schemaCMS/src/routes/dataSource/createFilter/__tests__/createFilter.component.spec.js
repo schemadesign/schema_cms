@@ -15,9 +15,17 @@ describe('CreateFilter: Component', () => {
   });
 
   it('should render correctly', async () => {
-    defaultProps.fetchPreview = jest.fn().mockReturnValue(Promise.resolve());
+    defaultProps.fetchFieldsInfo = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render(defaultProps);
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call fetchFieldsInfo on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchFieldsInfo');
+
+    await render();
+
+    expect(defaultProps.fetchFieldsInfo).toHaveBeenCalled();
   });
 });

@@ -16,15 +16,25 @@ describe('DataSource: Component', () => {
 
   it('should render without rest steps', async () => {
     const fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render({ fetchDataSource });
-    await Promise.resolve();
+    const wrapper = await render({ fetchDataSource });
+
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
     const fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render({ ...propsWithActiveJob, fetchDataSource });
-    await Promise.resolve();
+    const wrapper = await render({ ...propsWithActiveJob, fetchDataSource });
+
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call fetchDataSource on componentDidMount', () => {
+    const fetchDataSource = jest.spyOn(defaultProps, 'fetchDataSource');
+
+    render({
+      fetchDataSource,
+    });
+
+    global.expect(fetchDataSource).toHaveBeenCalledTimes(1);
   });
 });
