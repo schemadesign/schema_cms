@@ -198,7 +198,7 @@ export class DataWranglingScripts extends PureComponent {
     this.props.setScriptsList(tempScripts);
   };
 
-  renderCheckboxes = ({ id, name, type = 'custom' }, index) => {
+  renderCheckboxes = ({ id, name, type = SCRIPT_TYPES.CUSTOM }, index) => {
     return (
       <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
         {makeDraggable => {
