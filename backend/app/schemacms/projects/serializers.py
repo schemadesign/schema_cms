@@ -14,7 +14,16 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataSourceMeta
-        fields = ("items", "fields", "fields_names", "preview", "filters", "status", "error")
+        fields = (
+            "items",
+            "fields",
+            "fields_names",
+            "fields_with_urls",
+            "preview",
+            "filters",
+            "status",
+            "error",
+        )
 
     def get_filters(self, meta):
         return meta.datasource.filters_count
@@ -313,7 +322,7 @@ class PublicApiUpdateMetaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceMeta
-        fields = ("items", "fields", "fields_names", "preview", "status", "error")
+        fields = ("items", "fields", "fields_names", "fields_with_urls", "preview", "status", "error")
 
 
 class PublicApiUpdateJobMetaSerializer(serializers.ModelSerializer):
@@ -321,7 +330,7 @@ class PublicApiUpdateJobMetaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceJobMetaData
-        fields = ("items", "fields", "fields_names", "preview")
+        fields = ("items", "fields", "fields_names", "fields_with_urls", "preview")
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):

@@ -26,7 +26,8 @@ from pyarrow import BufferReader, csv as pa_csv, Table
 from common import api, db, services, settings, types, utils
 import errors
 import mocks
-from image_scraping import image_scraping  # noqa
+from image_scraping import image_scraping, is_valid_url  # noqa
+from utils import FieldType, NumpyEncoder
 
 
 logger = logging.getLogger()
@@ -122,11 +123,15 @@ def get_preview_data(data_frame):
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
 
+    random_sample = json.loads(data_frame.sample(n=1).to_json(orient="records"))
+
+    fields_with_urls = [k for k, v in random_sample[0].items() if is_valid_url(v)]
+
     preview_json = json.dumps({"data": table_preview, "fields": fields_info}, cls=utils.NumpyEncoder)
 
     del data_frame, sample_of_5
 
-    return preview_json, items, fields, columns
+    return preview_json, items, fields, columns, fields_with_urls
 
 
 def process_datasource_meta_source_file(data_source: dict):
@@ -142,13 +147,14 @@ def process_datasource_meta_source_file(data_source: dict):
     data_frame = read_file_to_data_frame(s3obj["Body"])
 
     try:
-        preview_data, items, fields, fields_names = get_preview_data(data_frame)
+        preview_data, items, fields, fields_names, fields_with_urls = get_preview_data(data_frame)
         api.schemacms_api.update_datasource_meta(
             datasource_pk=datasource.id,
             items=items,
             fields=fields,
             fields_names=fields_names,
             preview=json.loads(preview_data),
+            fields_with_urls=fields_with_urls,
             copy_steps=data_source["copy_steps"],
             status=db.ProcessState.SUCCESS,
         )
@@ -225,13 +231,14 @@ def process_job(job_data: dict):
             raise errors.JobSavingFilesError(f"{e} @ saving results files")
 
         # Update job's meta data
-        preview_data, items, fields, fields_names = get_preview_data(df)
+        preview_data, items, fields, fields_names, fields_with_urls = get_preview_data(df)
         api.schemacms_api.update_job_meta(
             job_pk=current_job.id,
             items=items,
             fields=fields,
             fields_names=fields_names,
             preview=preview_data,
+            fields_with_urls=fields_with_urls,
         )
 
         logger.info(f"Meta created - Job # {current_job.id}")

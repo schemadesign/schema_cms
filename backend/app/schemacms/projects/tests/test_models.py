@@ -98,7 +98,9 @@ class TestDataSource:
                 'col_2': {'dtype': 'number'},
             }
         }
-        ds.active_job.update_meta(preview=preview_data, items=0, fields=0, fields_names=[])
+        ds.active_job.update_meta(
+            preview=preview_data, items=0, fields=0, fields_names=[], fields_with_urls=[]
+        )
 
         ds.save(update_fields=["active_job"])
         ds.refresh_from_db()

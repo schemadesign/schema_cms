@@ -29,7 +29,7 @@ class SchemaCMSAPI:
         return response
 
     @check_response
-    def update_job_meta(self, job_pk, items, fields, preview, fields_names):
+    def update_job_meta(self, job_pk, items, fields, preview, fields_names, fields_with_urls):
         url = os.path.join(self._job_url(job_pk), "update-meta")
         response = requests.post(
             url,
@@ -38,6 +38,7 @@ class SchemaCMSAPI:
                 "fields": fields,
                 "fields_names": fields_names,
                 "preview": json.loads(preview),
+                "fields_with_urls": fields_with_urls,
             },
             headers=self.get_headers(),
             timeout=self.timeout,
