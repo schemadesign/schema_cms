@@ -385,6 +385,12 @@ class PublicAPI(core.Stack):
             self, "rest-api", handler=self.public_api_lambda
         )
 
+        self.public_api_lambda.add_to_task_role_policy(
+            aws_iam.PolicyStatement(
+                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"],
+                resources=["*"])
+        )
+
 
 class ImageResize(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
