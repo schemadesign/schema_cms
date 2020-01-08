@@ -27,6 +27,7 @@ class MetaDataModel(models.Model):
     fields = models.PositiveSmallIntegerField(null=True)
     preview = models.FileField(null=True, upload_to=file_upload_path)
     fields_names = pg_fields.ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    fields_with_urls = pg_fields.ArrayField(models.CharField(max_length=200), blank=True, default=list)
 
     class Meta:
         abstract = True
@@ -402,10 +403,16 @@ class DataSourceJob(
             raise ValueError("Job or DataSource ID is not set")
         return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
-    def update_meta(self, preview: dict, items: int, fields: int, fields_names: list):
+    def update_meta(self, preview: dict, items: int, fields: int, fields_names: list, fields_with_urls: list):
         with transaction.atomic():
             meta, _ = DataSourceJobMetaData.objects.update_or_create(
-                job=self, defaults={"fields": fields, "items": items, "fields_names": fields_names}
+                job=self,
+                defaults={
+                    "fields": fields,
+                    "items": items,
+                    "fields_names": fields_names,
+                    "fields_with_urls": fields_with_urls,
+                },
             )
 
             meta.preview.save(
