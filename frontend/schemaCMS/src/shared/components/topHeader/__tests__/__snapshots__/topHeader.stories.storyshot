@@ -26,7 +26,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -85,7 +85,28 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c8 {
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -97,14 +118,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   display: inline-block;
 }
 
-.c8 a {
+.c9 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -138,6 +159,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 
 @media (min-width:1040px) {
   .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c7 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -321,7 +349,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -334,7 +362,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -344,7 +372,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           </li>
           <li
             className="c5"
-            id="logoutBtn"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -353,14 +394,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           </li>
         </ul>
         <ul
-          className="c7"
+          className="c8"
         >
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -369,11 +410,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -382,11 +423,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -468,7 +509,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -485,12 +526,54 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
   align-items: flex-start;
 }
 
-.c5 {
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
   padding: 8px 0 13px;
   display: block;
 }
@@ -506,28 +589,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
   border-top: 2.4px solid #2F2F36;
 }
 
-.c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c8 {
+.c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -539,14 +601,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
   display: inline-block;
 }
 
-.c8 a {
+.c9 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -572,14 +634,21 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
 }
 
 @media (min-width:1040px) {
-  .c5 {
+  .c6 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c7 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -763,7 +832,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/path"
-              id={null}
+              id="primaryId"
               onClick={[Function]}
             >
               Primary
@@ -774,18 +843,18 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/path"
-              id={null}
+              id="chartsId"
               onClick={[Function]}
             >
               Charts
             </a>
           </li>
           <li
-            className="c5"
+            className="c6"
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -794,11 +863,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
             </a>
           </li>
           <li
-            className="c6"
+            className="c7"
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -807,8 +876,21 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
             </a>
           </li>
           <li
+            className="c6"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
             className="c5"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -817,32 +899,32 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           </li>
         </ul>
         <ul
-          className="c7"
+          className="c8"
         >
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/path"
-              id={null}
+              id="secondaryId"
               onClick={[Function]}
             >
               Secondary
             </a>
           </li>
           <li
-            className="c8"
-            id="id"
+            className="c9"
+            id="clickId"
             onClick={[Function]}
           >
             Click action
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -851,11 +933,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -864,11 +946,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -950,7 +1032,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1009,7 +1091,28 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   border-top: 2.4px solid #2F2F36;
 }
 
-.c8 {
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1021,14 +1124,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   display: inline-block;
 }
 
-.c8 a {
+.c9 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -1062,6 +1165,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
 
 @media (min-width:1040px) {
   .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c7 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -1261,7 +1371,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1274,7 +1384,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1287,7 +1397,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project/projectId"
-              id={null}
+              id="projectDetailsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1300,7 +1410,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project/projectId/datasource"
-              id={null}
+              id="dataSourceNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1313,7 +1423,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project/projectId/folder"
-              id={null}
+              id="folderNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1323,7 +1433,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           </li>
           <li
             className="c5"
-            id="logoutBtn"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -1332,14 +1455,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           </li>
         </ul>
         <ul
-          className="c7"
+          className="c8"
         >
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1348,11 +1471,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1361,11 +1484,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1447,7 +1570,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1485,7 +1608,28 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1497,14 +1641,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -1531,6 +1675,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
 
 @media (min-width:1040px) {
   .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -1714,7 +1865,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1727,7 +1878,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1737,7 +1888,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           </li>
           <li
             className="c5"
-            id="logoutBtn"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
+            className="c6"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -1746,14 +1910,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           </li>
         </ul>
         <ul
-          className="c6"
+          className="c7"
         >
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1762,11 +1926,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1775,11 +1939,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1861,7 +2025,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1920,7 +2084,28 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
   border-top: 2.4px solid #2F2F36;
 }
 
-.c8 {
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1932,14 +2117,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
   display: inline-block;
 }
 
-.c8 a {
+.c9 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -1973,6 +2158,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
 
 @media (min-width:1040px) {
   .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c7 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -2156,7 +2348,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2169,7 +2361,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2179,7 +2371,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           </li>
           <li
             className="c6"
-            id="logoutBtn"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -2188,14 +2393,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           </li>
         </ul>
         <ul
-          className="c7"
+          className="c8"
         >
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2204,11 +2409,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2217,11 +2422,11 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>

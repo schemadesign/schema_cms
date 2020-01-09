@@ -48,7 +48,7 @@ export class TopHeader extends PureComponent {
     pipe(
       path(['location', 'pathname']),
       split('/'),
-      ifElse(data => !parseInt(last(data), 10), data => `${last(data)}s`, nth(-2)),
+      ifElse(data => !parseInt(last(data), 10), data => last(data), nth(-2)),
       equals(page)
     )(window);
 
@@ -60,17 +60,20 @@ export class TopHeader extends PureComponent {
         {
           label: <FormattedMessage {...messages.projectDetails} />,
           to: `/project/${projectId}`,
+          id: 'projectDetailsNavBtn',
           page: 'project',
         },
         {
           label: <FormattedMessage {...messages.projectDataSources} />,
           to: `/project/${projectId}/datasource`,
-          page: 'datasources',
+          id: 'dataSourceNavBtn',
+          page: 'datasource',
         },
         {
           label: <FormattedMessage {...messages.projectPages} />,
           to: `/project/${projectId}/folder`,
-          page: 'folders',
+          id: 'folderNavBtn',
+          page: 'folder',
         },
       ])
     )(!projectId);
@@ -79,22 +82,23 @@ export class TopHeader extends PureComponent {
     {
       label: <FormattedMessage {...messages.projects} />,
       to: '/project',
-      page: 'projects',
+      id: 'projectNavBtn',
+      page: 'project',
       hide: this.props.hideProjects,
     },
     {
       label: <FormattedMessage {...messages.users} />,
       to: '/user',
-      id: 'userBtn',
-      page: 'users',
+      id: 'userNavBtn',
+      page: 'user',
       hide: !this.props.isAdmin,
     },
   ];
 
   secondaryMenuItems = [
-    { label: <FormattedMessage {...messages.about} />, to: '/' },
-    { label: <FormattedMessage {...messages.api} />, to: '/' },
-    { label: <FormattedMessage {...messages.repository} />, to: '/' },
+    { label: <FormattedMessage {...messages.about} />, to: '/', id: 'aboutNavBtn' },
+    { label: <FormattedMessage {...messages.api} />, to: '/', id: 'apiNavBtn' },
+    { label: <FormattedMessage {...messages.repository} />, to: '/', id: 'repositoryNavBtn' },
   ];
 
   handleLogout = () => {
@@ -156,9 +160,15 @@ export class TopHeader extends PureComponent {
       ...this.primaryMenuItems,
       ...this.getProjectRoutes({ projectId }),
       {
+        label: <FormattedMessage {...messages.settings} />,
+        to: '/settings',
+        id: 'settingsNavBtn',
+        page: 'settings',
+      },
+      {
         label: <FormattedMessage {...messages.logOut} />,
         onClick: this.handleLogout,
-        id: 'logoutBtn',
+        id: 'logoutNavBtn',
       },
     ];
 

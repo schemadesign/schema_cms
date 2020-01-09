@@ -68,7 +68,7 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: calc(50% - 10px);
+  width: 100%;
 }
 
 .c5:first-of-type {
@@ -80,6 +80,12 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
   min-width: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@media (min-width:480px) {
+  .c5 {
+    width: calc(50% - 10px);
+  }
 }
 
 <div

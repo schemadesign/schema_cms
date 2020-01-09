@@ -881,7 +881,9 @@ class TestJobResultPreviewView:
         job_step_factory.create_batch(2, datasource_job=job)
         job.result = faker.csv_upload_file(filename="test_result.csv")
         job.save()
-        job.update_meta(preview={"test": "test"}, items=3, fields=2, fields_names=["col1", "col2"])
+        job.update_meta(
+            preview={"test": "test"}, items=3, fields=2, fields_names=["col1", "col2"], fields_with_urls=[]
+        )
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(job.id))
@@ -969,7 +971,7 @@ class TestRevertJobView:
         )
         payload = dict(id=jobs[1].id)
         old_active_job = data_source.active_job
-        create_meta_file_mock = mocker.patch("schemacms.projects.models.DataSource.create_meta_file")
+        create_meta_file_mock = mocker.patch("schemacms.projects.models.DataSource.create_dynamo_item")
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload)

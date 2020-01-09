@@ -63,7 +63,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           key="0"
         >
           <Link
-            id={null}
+            id="projectNavBtn"
             onClick={[Function]}
             to="/project"
           >
@@ -80,7 +80,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           key="1"
         >
           <Link
-            id="userBtn"
+            id="userNavBtn"
             onClick={[Function]}
             to="/user"
           >
@@ -94,8 +94,25 @@ exports[`TopHeader: Component should render correctly 1`] = `
         <Styled(styled.li)
           active={false}
           hide={false}
-          id="logoutBtn"
           key="2"
+        >
+          <Link
+            id="settingsNavBtn"
+            onClick={[Function]}
+            to="/settings"
+          >
+            <FormattedMessage
+              defaultMessage="Settings"
+              id="shared.components.desktopTopHeader.settings"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={true}
+          hide={false}
+          id="logoutNavBtn"
+          key="3"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -107,12 +124,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
           <Link
-            id={null}
+            id="aboutNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -124,12 +141,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="1"
         >
           <Link
-            id={null}
+            id="apiNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -141,12 +158,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="2"
         >
           <Link
-            id={null}
+            id="repositoryNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -226,12 +243,12 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
     <styled.div>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
           <Link
-            id={null}
+            id="primaryId"
             onClick={[Function]}
             to="/path"
           >
@@ -239,12 +256,12 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="1"
         >
           <Link
-            id={null}
+            id="chartsId"
             onClick={[Function]}
             to="/path"
           >
@@ -257,7 +274,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           key="2"
         >
           <Link
-            id={null}
+            id="projectNavBtn"
             onClick={[Function]}
             to="/project"
           >
@@ -274,7 +291,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           key="3"
         >
           <Link
-            id="userBtn"
+            id="userNavBtn"
             onClick={[Function]}
             to="/user"
           >
@@ -288,8 +305,25 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         <Styled(styled.li)
           active={false}
           hide={false}
-          id="logoutBtn"
           key="4"
+        >
+          <Link
+            id="settingsNavBtn"
+            onClick={[Function]}
+            to="/settings"
+          >
+            <FormattedMessage
+              defaultMessage="Settings"
+              id="shared.components.desktopTopHeader.settings"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={true}
+          hide={false}
+          id="logoutNavBtn"
+          key="5"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -301,12 +335,12 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
           <Link
-            id={null}
+            id="secondaryId"
             onClick={[Function]}
             to="/path"
           >
@@ -314,21 +348,21 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
-          id="id"
+          id="clickId"
           key="1"
           onClick={[Function]}
         >
           Click action
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="2"
         >
           <Link
-            id={null}
+            id="aboutNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -340,12 +374,12 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="3"
         >
           <Link
-            id={null}
+            id="apiNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -357,12 +391,12 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="4"
         >
           <Link
-            id={null}
+            id="repositoryNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -447,7 +481,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           key="0"
         >
           <Link
-            id={null}
+            id="projectNavBtn"
             onClick={[Function]}
             to="/project"
           >
@@ -464,7 +498,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           key="1"
         >
           <Link
-            id="userBtn"
+            id="userNavBtn"
             onClick={[Function]}
             to="/user"
           >
@@ -481,7 +515,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           key="2"
         >
           <Link
-            id={null}
+            id="projectDetailsNavBtn"
             onClick={[Function]}
             to="/project/projectId"
           >
@@ -498,7 +532,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           key="3"
         >
           <Link
-            id={null}
+            id="dataSourceNavBtn"
             onClick={[Function]}
             to="/project/projectId/datasource"
           >
@@ -515,7 +549,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           key="4"
         >
           <Link
-            id={null}
+            id="folderNavBtn"
             onClick={[Function]}
             to="/project/projectId/folder"
           >
@@ -529,8 +563,25 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         <Styled(styled.li)
           active={false}
           hide={false}
-          id="logoutBtn"
           key="5"
+        >
+          <Link
+            id="settingsNavBtn"
+            onClick={[Function]}
+            to="/settings"
+          >
+            <FormattedMessage
+              defaultMessage="Settings"
+              id="shared.components.desktopTopHeader.settings"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={true}
+          hide={false}
+          id="logoutNavBtn"
+          key="6"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -542,12 +593,12 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="0"
         >
           <Link
-            id={null}
+            id="aboutNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -559,12 +610,12 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="1"
         >
           <Link
-            id={null}
+            id="apiNavBtn"
             onClick={[Function]}
             to="/"
           >
@@ -576,12 +627,12 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          active={false}
+          active={true}
           hide={false}
           key="2"
         >
           <Link
-            id={null}
+            id="repositoryNavBtn"
             onClick={[Function]}
             to="/"
           >

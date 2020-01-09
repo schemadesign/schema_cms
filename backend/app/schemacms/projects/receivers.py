@@ -1,11 +1,27 @@
-def update_meta_file(sender, instance, **kwargs):
-    if hasattr(instance, "get_project"):
-        project = instance.get_project()
-        project.create_meta_file()
+from .models import Block, Folder, DataSource, Page, Project
 
-    elif hasattr(instance, "project"):
-        instance.create_meta_file()
-        instance.project.create_meta_file()
+
+def update_meta_file(sender, instance, **kwargs):
+    if isinstance(instance, (Project,)):
+        instance.create_dynamo_item()
+
+    elif isinstance(instance, (DataSource,)):
+        instance.create_dynamo_item()
+        instance.project.create_dynamo_item()
+
+    elif isinstance(instance, (Page,)):
+        instance.create_dynamo_item()
+        project = instance.get_project()
+        project.create_dynamo_item()
+
+    elif isinstance(instance, (Block,)):
+        instance.page.create_dynamo_item()
+
+    elif isinstance(instance, (Folder,)):
+        project = instance.get_project()
+        for page in instance.pages.all():
+            page.create_dynamo_item()
+        project.create_dynamo_item()
 
     else:
-        instance.create_meta_file()
+        raise ValueError("Unexpected instance")

@@ -34,7 +34,7 @@ class TestProject:
             'id': project.id,
             'title': project.title,
             "description": project.description,
-            'owner': admin.id,
+            'owner': admin.get_full_name(),
             'data_sources': [{"id": ds.id, "name": ds.name, "type": ds.type}],
             'pages': folder.meta_file_serialization(),
         }
@@ -98,7 +98,9 @@ class TestDataSource:
                 'col_2': {'dtype': 'number'},
             }
         }
-        ds.active_job.update_meta(preview=preview_data, items=0, fields=0, fields_names=[])
+        ds.active_job.update_meta(
+            preview=preview_data, items=0, fields=0, fields_names=[], fields_with_urls=[]
+        )
 
         ds.save(update_fields=["active_job"])
         ds.refresh_from_db()

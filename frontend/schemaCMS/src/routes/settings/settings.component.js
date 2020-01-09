@@ -11,6 +11,7 @@ import messages from './settings.messages';
 import {
   AUTH_METHODS,
   INITIAL_VALUES,
+  ROLES,
   USER_PROFILE_FORM,
   USER_PROFILE_SCHEMA,
 } from '../../modules/userProfile/userProfile.constants';
@@ -23,9 +24,14 @@ import { errorMessageParser } from '../../shared/utils/helpers';
 export class Settings extends PureComponent {
   static propTypes = {
     updateMe: PropTypes.func.isRequired,
+    clearProject: PropTypes.func.isRequired,
     userData: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
   };
+
+  componentDidMount() {
+    this.props.clearProject();
+  }
 
   handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
@@ -69,12 +75,13 @@ export class Settings extends PureComponent {
   };
 
   render() {
+    const { userData } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} isAdmin={userData.role === ROLES.ADMIN} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Formik
           enableReinitialize
@@ -83,7 +90,7 @@ export class Settings extends PureComponent {
           onSubmit={this.handleSubmit}
           initialValues={{
             ...INITIAL_VALUES,
-            ...this.props.userData,
+            ...userData,
           }}
           render={this.renderContent}
         />

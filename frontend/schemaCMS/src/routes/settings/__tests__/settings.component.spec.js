@@ -37,6 +37,13 @@ describe('Settings: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
+  it('should call clearProject prop on componentDidMount', () => {
+    jest.spyOn(defaultProps, 'clearProject');
+    render();
+
+    expect(defaultProps.clearProject).toHaveBeenCalled();
+  });
+
   it('should call updateMe on Formik submit', async () => {
     jest.spyOn(defaultProps, 'updateMe');
 

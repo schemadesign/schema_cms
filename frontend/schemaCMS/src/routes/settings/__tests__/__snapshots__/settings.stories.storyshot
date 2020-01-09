@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Settings Default 1`] = `
-.c13 {
+.c14 {
   padding-top: 7px;
 }
 
-.c16 {
+.c17 {
   height: 155px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`Storyshots Settings Default 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c18 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -37,12 +37,12 @@ exports[`Storyshots Settings Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c19 {
+.c20 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c15 {
+.c16 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -50,11 +50,11 @@ exports[`Storyshots Settings Default 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c15:hover {
+.c16:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c14 {
+.c15 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -95,7 +95,7 @@ exports[`Storyshots Settings Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -154,7 +154,28 @@ exports[`Storyshots Settings Default 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c8 {
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+  display: block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -166,14 +187,14 @@ exports[`Storyshots Settings Default 1`] = `
   display: inline-block;
 }
 
-.c8 a {
+.c9 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -185,24 +206,24 @@ exports[`Storyshots Settings Default 1`] = `
   word-break: break-word;
 }
 
-.c9 {
+.c10 {
   display: none;
 }
 
-.c10 {
-  margin-right: 20px;
-}
-
 .c11 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c12 {
   color: #FFF;
 }
 
+.c13 {
+  color: #FFF;
+}
+
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -211,7 +232,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -220,7 +241,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     width: 240px;
   }
 }
@@ -253,7 +274,14 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c7 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -456,7 +484,7 @@ exports[`Storyshots Settings Default 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -469,7 +497,7 @@ exports[`Storyshots Settings Default 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -479,7 +507,20 @@ exports[`Storyshots Settings Default 1`] = `
           </li>
           <li
             className="c5"
-            id="logoutBtn"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -488,14 +529,14 @@ exports[`Storyshots Settings Default 1`] = `
           </li>
         </ul>
         <ul
-          className="c7"
+          className="c8"
         >
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -504,11 +545,11 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -517,11 +558,11 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="c8"
+            className="c9"
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -575,13 +616,13 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="c9"
+    className="c10"
   >
     <div
-      className="c10"
+      className="c11"
     >
       <h2
-        className="c11"
+        className="c12"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -597,7 +638,7 @@ exports[`Storyshots Settings Default 1`] = `
         </span>
       </h2>
       <h1
-        className="c12"
+        className="c13"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -686,7 +727,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c14"
           >
             <svg
               style={
@@ -770,7 +811,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c14"
           >
             <svg
               style={
@@ -919,10 +960,10 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className="c14"
+      className="c15"
     >
       <span
-        className="c15"
+        className="c16"
         onClick={[Function]}
         style={
           Object {
@@ -937,16 +978,16 @@ exports[`Storyshots Settings Default 1`] = `
       </span>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
       >
         <div
-          className="c18"
+          className="c19"
         >
           <button
-            className="c19"
+            className="c20"
             disabled={false}
             onClick={[Function]}
             style={
@@ -973,7 +1014,7 @@ exports[`Storyshots Settings Default 1`] = `
             </span>
           </button>
           <button
-            className="c19"
+            className="c20"
             disabled={true}
             style={
               Object {

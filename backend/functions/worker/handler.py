@@ -3,8 +3,6 @@ try:
 except ImportError:
     pass
 
-
-from memory_profiler import profile
 import csv
 import json
 import logging
@@ -25,11 +23,10 @@ from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
 from pyarrow import BufferReader, csv as pa_csv, Table
 
-from common import api, db, services, settings, types
+from common import api, db, services, settings, types, utils
 import errors
 import mocks
-from image_scraping import image_scraping  # noqa
-from utils import FieldType, NumpyEncoder
+from image_scraping import image_scraping, is_valid_url  # noqa
 
 
 logger = logging.getLogger()
@@ -47,18 +44,17 @@ current_step = None
 
 def map_general_dtypes(dtype):
     if dtype.startswith("float") or dtype.startswith("int"):
-        return FieldType.NUMBER
+        return utils.FieldType.NUMBER
     elif dtype.startswith("str") or dtype.startswith("object") or dtype.startswith("category"):
-        return FieldType.STRING
+        return utils.FieldType.STRING
     elif dtype.startswith("bool"):
-        return FieldType.BOOLEAN
+        return utils.FieldType.BOOLEAN
     elif dtype.startswith("date") or dtype.startswith("time"):
-        return FieldType.DATE_TIME
+        return utils.FieldType.DATE_TIME
     else:
         raise ValueError("Unknown data type")
 
 
-@profile
 def read_file_to_data_frame(file):
     buffer = BytesIO()
     buffer.write(dt.fread(file, na_strings=[""], fill=True).to_csv().encode("utf-8"))
@@ -80,34 +76,43 @@ def get_preview_data(data_frame):
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
-    mean = data_frame.mean(numeric_only=True).to_dict()
-    median = data_frame.median(numeric_only=True).to_dict()
-    min_ = data_frame.min(numeric_only=True).to_dict()
-    max_ = data_frame.max(numeric_only=True).to_dict()
-    std = data_frame.std(numeric_only=True).to_dict()
-    unique = data_frame.nunique().to_dict()
+    mean = data_frame.mean(numeric_only=True).to_json()
+    min_ = data_frame.min(numeric_only=True).to_json()
+    max_ = data_frame.max(numeric_only=True).to_json()
+    std = data_frame.std(numeric_only=True).to_json()
+    unique = data_frame.nunique().to_json()
     nan = data_frame.isna().sum()
-    percentile_10th = data_frame.quantile(0.1, numeric_only=True)
-    percentile_25th = data_frame.quantile(0.25, numeric_only=True)
-    percentile_75th = data_frame.quantile(0.75, numeric_only=True)
-    percentile_90th = data_frame.quantile(0.9, numeric_only=True)
+
+    try:
+        percentile_10th = data_frame.quantile(0.1, numeric_only=True).to_json()
+        percentile_25th = data_frame.quantile(0.25, numeric_only=True).to_json()
+        median = data_frame.quantile(0.5, numeric_only=True).to_json()
+        percentile_75th = data_frame.quantile(0.75, numeric_only=True).to_json()
+        percentile_90th = data_frame.quantile(0.9, numeric_only=True).to_json()
+    except ValueError:
+        percentile_10th = json.dumps({})
+        percentile_25th = json.dumps({})
+        median = json.dumps({})
+        percentile_75th = json.dumps({})
+        percentile_90th = json.dumps({})
+
     columns = data_frame.columns.to_list()
 
     fields_info = {}
 
     for i in columns:
         fields_info[i] = {}
-        fields_info[i]["mean"] = mean.get(i, None)
-        fields_info[i]["median"] = median.get(i, None)
-        fields_info[i]["min"] = min_.get(i, None)
-        fields_info[i]["max"] = max_.get(i, None)
-        fields_info[i]["std"] = std.get(i, None)
-        fields_info[i]["unique"] = unique.get(i, None)
+        fields_info[i]["mean"] = json.loads(mean).get(i, None)
+        fields_info[i]["median"] = json.loads(median).get(i, None)
+        fields_info[i]["min"] = json.loads(min_).get(i, None)
+        fields_info[i]["max"] = json.loads(max_).get(i, None)
+        fields_info[i]["std"] = json.loads(std).get(i, None)
+        fields_info[i]["unique"] = json.loads(unique).get(i, None)
         fields_info[i]["number_of_nans"] = nan.get(i, None)
-        fields_info[i]["percentile_10th"] = percentile_10th.get(i, None)
-        fields_info[i]["percentile_25th"] = percentile_25th.get(i, None)
-        fields_info[i]["percentile_75th"] = percentile_75th.get(i, None)
-        fields_info[i]["percentile_90th"] = percentile_90th.get(i, None)
+        fields_info[i]["percentile_10th"] = json.loads(percentile_10th).get(i, None)
+        fields_info[i]["percentile_25th"] = json.loads(percentile_25th).get(i, None)
+        fields_info[i]["percentile_75th"] = json.loads(percentile_75th).get(i, None)
+        fields_info[i]["percentile_90th"] = json.loads(percentile_90th).get(i, None)
         fields_info[i]["count"] = items
 
     dtypes = {i: k for i, k in zip(columns, data_frame.dtypes)}
@@ -117,11 +122,15 @@ def get_preview_data(data_frame):
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
 
-    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, cls=NumpyEncoder)
+    random_sample = json.loads(data_frame.sample(n=1).to_json(orient="records"))
+
+    fields_with_urls = [k for k, v in random_sample[0].items() if is_valid_url(v)]
+
+    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, cls=utils.NumpyEncoder)
 
     del data_frame, sample_of_5
 
-    return preview_json, items, fields, columns
+    return preview_json, items, fields, columns, fields_with_urls
 
 
 def process_datasource_meta_source_file(data_source: dict):
@@ -137,13 +146,14 @@ def process_datasource_meta_source_file(data_source: dict):
     data_frame = read_file_to_data_frame(s3obj["Body"])
 
     try:
-        preview_data, items, fields, fields_names = get_preview_data(data_frame)
+        preview_data, items, fields, fields_names, fields_with_urls = get_preview_data(data_frame)
         api.schemacms_api.update_datasource_meta(
             datasource_pk=datasource.id,
             items=items,
             fields=fields,
             fields_names=fields_names,
             preview=json.loads(preview_data),
+            fields_with_urls=fields_with_urls,
             copy_steps=data_source["copy_steps"],
             status=db.ProcessState.SUCCESS,
         )
@@ -174,7 +184,6 @@ def write_data_frame_to_parquet_on_s3(data_frame, file_name):
     )
 
 
-@profile
 def process_job(job_data: dict):
     global df
     global current_job
@@ -216,17 +225,19 @@ def process_job(job_data: dict):
         try:
             write_data_frame_to_csv_on_s3(df, result_file_name)
             write_data_frame_to_parquet_on_s3(df, result_file_name)
+            logger.info(f"Results saved - Job # {current_job.id}")
         except Exception as e:
             raise errors.JobSavingFilesError(f"{e} @ saving results files")
 
         # Update job's meta data
-        preview_data, items, fields, fields_names = get_preview_data(df)
+        preview_data, items, fields, fields_names, fields_with_urls = get_preview_data(df)
         api.schemacms_api.update_job_meta(
             job_pk=current_job.id,
             items=items,
             fields=fields,
             fields_names=fields_names,
             preview=preview_data,
+            fields_with_urls=fields_with_urls,
         )
 
         logger.info(f"Meta created - Job # {current_job.id}")
@@ -256,6 +267,9 @@ def process_job(job_data: dict):
         return logging.critical(f"Error while saving results - {e}")
 
     except Exception as e:
+        api.schemacms_api.update_job_state(
+            job_pk=current_job.id, state=db.ProcessState.FAILED, error=f"{e} @ undefined error",
+        )
         return logging.critical(str(e), exc_info=True)
 
 

@@ -7,6 +7,7 @@ import { StartupTypes } from '../startup/startup.redux';
 import { LOGOUT_URL, RESET_PASSWORD_PATH, TOKEN_PATH } from '../../shared/utils/api.constants';
 import { selectAuthToken } from './userAuth.selectors';
 import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProfile.redux';
+import { ProjectRoutines } from '../project/project.redux';
 
 export function* setAuthorizationToken(token) {
   if (token) {
@@ -37,6 +38,7 @@ function* startup() {
 
 function* logout() {
   api.defaults.headers.common.Authorization = null;
+  yield put(ProjectRoutines.clearProject());
   yield put(UserProfileActions.clearUserDetails());
 
   yield put(UserAuthActions.logoutSuccess());
