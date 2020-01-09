@@ -81,7 +81,9 @@ describe('DropZone: Component', () => {
   it('should drop zone be visible on dragover', () => {
     const wrapper = mount(component({ hidden: true }));
     const event = new Event('dragenter');
-    event.dataTransfer = {};
+    event.dataTransfer = {
+      types: ['Files'],
+    };
     const dropZoneStyles = wrapper.instance().dropRef.current.style;
     document.dispatchEvent(event);
     expect(dropZoneStyles.opacity).toBe('0.9');
@@ -92,7 +94,9 @@ describe('DropZone: Component', () => {
     const wrapper = mount(component({ hidden: true }));
     const dragEnterEvent = new Event('dragenter');
     const dragLeaveEvent = new Event('dragleave');
-    dragEnterEvent.dataTransfer = {};
+    dragEnterEvent.dataTransfer = {
+      types: ['Files'],
+    };
     const dropZoneStyles = wrapper.instance().dropRef.current.style;
     document.dispatchEvent(dragEnterEvent);
     document.dispatchEvent(dragLeaveEvent);
@@ -104,7 +108,9 @@ describe('DropZone: Component', () => {
     const wrapper = mount(component({ hidden: true }));
     const dragEnterEvent = new Event('dragenter');
     const dropEvent = new Event('drop');
-    dragEnterEvent.dataTransfer = {};
+    dragEnterEvent.dataTransfer = {
+      types: ['Files'],
+    };
     const dropZoneStyles = wrapper.instance().dropRef.current.style;
     document.dispatchEvent(dragEnterEvent);
     document.dispatchEvent(dropEvent);
@@ -116,7 +122,9 @@ describe('DropZone: Component', () => {
     const wrapper = mount(component({ hidden: true }));
     const dragEnterEvent = new Event('dragenter');
     const dragLeaveEvent = new Event('dragleave');
-    dragEnterEvent.dataTransfer = {};
+    dragEnterEvent.dataTransfer = {
+      types: ['Files'],
+    };
     const dropZoneStyles = wrapper.instance().dropRef.current.style;
     document.dispatchEvent(dragEnterEvent);
     document.dispatchEvent(dragEnterEvent);

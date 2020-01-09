@@ -796,6 +796,22 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   position: relative;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
 .c3 {
   position: relative;
 }
@@ -805,7 +821,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   font-size: 18px;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -814,9 +830,11 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  margin-right: 20px;
 }
 
-.c7 {
+.c9 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1378,39 +1396,74 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         Drop here
       </label>
     </div>
-    <div
-      className="c5"
-    >
+    <span>
       <div
-        className="c6"
+        className="c5"
       >
-        <span
-          className="c7"
-        >
-          imageName.png
+        <span>
+          Current files
         </span>
-        <svg
-          id="removeImage-0"
-          onClick={[Function]}
+        <div
+          className="c6"
           style={
             Object {
-              "cursor": "pointer",
-              "fill": "#FFF",
-              "height": 30,
-              "marginLeft": 20,
-              "minWidth": 30,
-              "width": 30,
+              "opacity": 1,
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <div
+            className="c7"
+          >
+            <span>
+              <div
+                className="c8"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "60px",
+                      "width": "60px",
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </span>
+            <span
+              className="c9"
+            >
+              imageName.png
+            </span>
+            <svg
+              id="removeImage-0"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "fill": "#FFF",
+                  "height": 30,
+                  "marginLeft": 20,
+                  "minWidth": 30,
+                  "width": 30,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
-    </div>
+    </span>
   </div>
 </div>
 `;

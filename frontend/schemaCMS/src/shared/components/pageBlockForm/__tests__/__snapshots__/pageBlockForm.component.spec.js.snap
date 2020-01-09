@@ -486,28 +486,27 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
         }
       }
     />
-    <styled.div>
-      <styled.div
-        key="0"
-      >
-        <styled.span>
-          imageName.png
-        </styled.span>
-        <Component
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "height": 30,
-              "marginLeft": 20,
-              "minWidth": 30,
-              "width": 30,
-            }
-          }
-          id="removeImage-0"
-          onClick={[Function]}
+    <DndProvider
+      backend={[Function]}
+      options={Object {}}
+    >
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="Current files"
+          id="shared.components.pageBlockForm.filesTitle"
+          values={Object {}}
         />
+        <Draggable
+          accept="IMAGE"
+          id={1}
+          index={0}
+          key="0"
+          onMove={[Function]}
+        >
+          <Component />
+        </Draggable>
       </styled.div>
-    </styled.div>
+    </DndProvider>
   </styled.div>
   <Styled(Modal)
     contentLabel="Confirm Change"

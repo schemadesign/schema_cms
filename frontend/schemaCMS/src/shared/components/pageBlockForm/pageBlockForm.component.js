@@ -1,8 +1,11 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { addIndex, always, concat, cond, equals, has, ifElse, map, path, pipe } from 'ramda';
+import { addIndex, always, concat, cond, equals, findLast, has, ifElse, map, path, pipe, propEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { Icons } from 'schemaUI';
+import { DndProvider } from 'react-dnd';
+import MultiBackend from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { BackButton, NextButton } from '../navigation';
@@ -27,8 +30,11 @@ import { Select } from '../form/select';
 import { Uploader } from '../form/uploader';
 import { removeIconStyles, UploaderContainer, UploaderItem, UploaderList, ImageName } from './pageBlockForm.styles';
 import { getEventFiles } from '../../utils/helpers';
+import { Draggable } from '../draggable';
+import { IconWrapper } from '../../../routes/dataSource/dataWranglingScripts/dataWranglingScripts.styles';
+import { renderWhenTrue } from '../../utils/rendering';
 
-const { CloseIcon } = Icons;
+const { CloseIcon, MenuIcon } = Icons;
 
 export class PageBlockForm extends PureComponent {
   static propTypes = {
@@ -125,6 +131,19 @@ export class PageBlockForm extends PureComponent {
     });
   };
 
+  handleMove = (dragIndex, hoverIndex) => {
+    let { imageNames, images } = this.props.values;
+    const dragCard = imageNames[dragIndex];
+
+    imageNames.splice(dragIndex, 1);
+    imageNames.splice(hoverIndex, 0, dragCard);
+
+    const files = imageNames.map(({ id }) => findLast(propEq('id', id), images));
+
+    this.props.setFieldValue(BLOCK_IMAGES, files);
+    this.props.setFieldValue(`${this.props.values[BLOCK_TYPE]}-${BLOCK_CONTENT}`, imageNames);
+  };
+
   renderBlock = (messageId, messagePlaceholderId) => (
     <TextInput
       value={this.props.values[`${this.props.values[BLOCK_TYPE]}-${BLOCK_CONTENT}`]}
@@ -139,15 +158,30 @@ export class PageBlockForm extends PureComponent {
   );
 
   renderUploaderItem = ({ imageName, id, image }, index) => (
-    <UploaderItem key={index}>
-      <ImageName>{imageName}</ImageName>
-      <CloseIcon
-        id={`removeImage-${index}`}
-        onClick={this.handleRemoveImage({ id, image })}
-        customStyles={removeIconStyles}
-      />
-    </UploaderItem>
+    <Draggable key={index} accept="IMAGE" onMove={this.handleMove} id={id} index={index}>
+      {makeDraggable => {
+        const draggableIcon = makeDraggable(
+          <IconWrapper>
+            <MenuIcon />
+          </IconWrapper>
+        );
+
+        return (
+          <UploaderItem>
+            {draggableIcon}
+            <ImageName>{imageName}</ImageName>
+            <CloseIcon
+              id={`removeImage-${index}`}
+              onClick={this.handleRemoveImage({ id, image })}
+              customStyles={removeIconStyles}
+            />
+          </UploaderItem>
+        );
+      }}
+    </Draggable>
   );
+
+  renderFilesTitle = renderWhenTrue(always(<FormattedMessage {...messages.filesTitle} />));
 
   renderImage = () => (
     <UploaderContainer>
@@ -164,7 +198,12 @@ export class PageBlockForm extends PureComponent {
         multiple
         {...this.props}
       />
-      <UploaderList>{this.props.values.imageNames.map(this.renderUploaderItem)}</UploaderList>
+      <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+        <UploaderList>
+          {this.renderFilesTitle(!!this.props.values.imageNames.length)}
+          {this.props.values.imageNames.map(this.renderUploaderItem)}
+        </UploaderList>
+      </DndProvider>
     </UploaderContainer>
   );
 

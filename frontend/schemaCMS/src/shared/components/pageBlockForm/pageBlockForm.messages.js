@@ -80,6 +80,10 @@ export default defineMessages({
     id: 'shared.components.pageBlockForm.cancel',
     defaultMessage: 'Cancel',
   },
+  filesTitle: {
+    id: 'shared.components.pageBlockForm.filesTitle',
+    defaultMessage: 'Current files',
+  },
   [NONE]: {
     id: `shared.components.pageBlockForm.${NONE}`,
     defaultMessage: 'Select type',
