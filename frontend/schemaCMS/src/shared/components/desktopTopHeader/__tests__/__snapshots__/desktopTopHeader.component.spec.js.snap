@@ -99,7 +99,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               key="0"
             >
               <Link
-                id={null}
+                id="projectNavBtn"
                 onClick={[Function]}
                 to="/project"
               >
@@ -116,7 +116,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               key="1"
             >
               <Link
-                id="userBtn"
+                id="userNavBtn"
                 onClick={[Function]}
                 to="/user"
               >
@@ -130,12 +130,12 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           </Styled(styled.ul)>
           <Styled(styled.ul)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="0"
             >
               <Link
-                id={null}
+                id="aboutNavBtn"
                 onClick={[Function]}
                 to="/"
               >
@@ -147,12 +147,12 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="1"
             >
               <Link
-                id={null}
+                id="apiNavBtn"
                 onClick={[Function]}
                 to="/"
               >
@@ -164,12 +164,12 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="2"
             >
               <Link
-                id={null}
+                id="repositoryNavBtn"
                 onClick={[Function]}
                 to="/"
               >
@@ -242,12 +242,12 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
         >
           <Styled(styled.ul)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="0"
             >
               <Link
-                id={null}
+                id="aboutNavBtn"
                 onClick={[Function]}
                 to="/"
               >
@@ -259,12 +259,12 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="1"
             >
               <Link
-                id={null}
+                id="apiNavBtn"
                 onClick={[Function]}
                 to="/"
               >
@@ -276,12 +276,12 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               </Link>
             </Styled(styled.li)>
             <Styled(styled.li)
-              active={false}
+              active={true}
               hide={false}
               key="2"
             >
               <Link
-                id={null}
+                id="repositoryNavBtn"
                 onClick={[Function]}
                 to="/"
               >

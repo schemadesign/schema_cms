@@ -15,8 +15,14 @@ export const defaultProps = {
 
 export const customMenuProps = {
   ...header,
-  primaryMenuItems: [{ label: 'Primary', to: '/path' }, { label: 'Charts', to: '/path' }],
-  secondaryMenuItems: [{ label: 'Secondary', to: '/path' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
+  primaryMenuItems: [
+    { label: 'Primary', to: '/path', id: 'primaryId' },
+    { label: 'Charts', to: '/path', id: 'chartsId' },
+  ],
+  secondaryMenuItems: [
+    { label: 'Secondary', to: '/path', id: 'secondaryId' },
+    { label: 'Click action', onClick: () => {}, id: 'clickId' },
+  ],
 };
 
 const longText = `

@@ -38,4 +38,8 @@ export default defineMessages({
     id: 'shared.components.desktopTopHeader.projectPages',
     defaultMessage: 'Pages',
   },
+  settings: {
+    id: 'shared.components.desktopTopHeader.settings',
+    defaultMessage: 'Settings',
+  },
 });
