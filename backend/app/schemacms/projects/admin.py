@@ -113,6 +113,7 @@ class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
     actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta]
     list_display = ('pk', 'datasource', 'job_state', 'created', 'deleted_at')
     fields = ("datasource", "job_state", "description", "result", "error", "deleted")
+    list_filter = ('datasource',)
     inlines = [DataSourceJobStepInline]
 
     def get_readonly_fields(self, request, obj=None):

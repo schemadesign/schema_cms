@@ -143,6 +143,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "retrieve": serializers.DataSourceDetailSerializer,
+        "update": serializers.DataSourceDetailSerializer,
+        "partial_update": serializers.DataSourceDetailSerializer,
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,
