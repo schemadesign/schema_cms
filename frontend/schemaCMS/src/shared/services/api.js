@@ -3,10 +3,13 @@ import { BAD_REQUEST, FORBIDDEN, NOT_FOUND, UNAUTHORIZED } from 'http-status-cod
 import { camelizeKeys, decamelizeKeys, pascalize } from 'humps';
 import {
   __,
+  always,
   anyPass,
   complement,
   concat,
+  cond,
   endsWith,
+  equals,
   evolve,
   ifElse,
   is,
@@ -16,15 +19,16 @@ import {
   mapObjIndexed,
   not,
   path,
+  pathOr,
   pipe,
   propIs,
+  T,
   startsWith,
   toLower,
   when,
 } from 'ramda';
 import queryString from 'query-string';
 import browserHistory from '../utils/history';
-import { AUTH_PATH } from '../utils/api.constants';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL,
@@ -85,6 +89,13 @@ const convertResponseErrors = error =>
     map(name => ({ code: getCode(name)(error), name }))
   )(error);
 
+const getRedirectUrl = cond([
+  [equals(UNAUTHORIZED), always('/logout')],
+  [equals(FORBIDDEN), always('/not-authorized')],
+  [equals(NOT_FOUND), always('/not-found')],
+  [T, always(null)],
+]);
+
 api.interceptors.response.use(
   response => {
     if (response.config.camelize) {
@@ -95,16 +106,11 @@ api.interceptors.response.use(
     return response;
   },
   error => {
-    if (error.response.status === UNAUTHORIZED) {
-      return browserHistory.push('/logout');
-    }
+    const status = pathOr('', ['response', 'status'])(error);
+    const url = getRedirectUrl(status);
 
-    if (error.response.status === NOT_FOUND) {
-      return browserHistory.push('/not-found');
-    }
-
-    if (error.response.status === FORBIDDEN) {
-      return browserHistory.push('/not-authorized');
+    if (url) {
+      return browserHistory.push(url);
     }
 
     if (error.response.status === BAD_REQUEST) {
