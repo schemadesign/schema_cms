@@ -42,4 +42,8 @@ export default defineMessages({
     id: 'imageScrapingScript.ok',
     defaultMessage: 'OK',
   },
+  noFieldFound: {
+    id: 'imageScrapingScript.noFieldFound',
+    defaultMessage: 'No fields containing URLs were found.',
+  },
 });
