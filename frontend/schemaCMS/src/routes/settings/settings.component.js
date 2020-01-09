@@ -54,7 +54,7 @@ export class Settings extends PureComponent {
   renderResetPasswordLink = renderWhenTrue(
     always(
       <LinkContainer>
-        <Link onClick={() => this.props.history.push('/reset-password')}>
+        <Link id={'resetPasswordLink'} onClick={() => this.props.history.push('/reset-password')}>
           <FormattedMessage {...messages.resetPassword} />
         </Link>
       </LinkContainer>
@@ -67,8 +67,8 @@ export class Settings extends PureComponent {
         <UserProfile {...restProps} isCurrentUser />
         {this.renderResetPasswordLink(this.props.userData.authMethod === AUTH_METHODS.EMAIL)}
         <NavigationContainer fixed>
-          <BackButton type="button" onClick={this.handleBack} />
-          <NextButton type="submit" loading={isSubmitting} disabled={!dirty || isSubmitting}>
+          <BackButton id={'settingsBackBtn'} type="button" onClick={this.handleBack} />
+          <NextButton id={'settingsSaveBtn'} type="submit" loading={isSubmitting} disabled={!dirty || isSubmitting}>
             <FormattedMessage {...messages.save} />
           </NextButton>
         </NavigationContainer>

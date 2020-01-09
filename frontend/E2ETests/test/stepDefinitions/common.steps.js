@@ -1,48 +1,62 @@
 import { Then } from 'cucumber';
 import ProjectDetailsPage from '../pageobjects/projectDetails.page';
 import { waitForElement } from '../utils/utils';
+import ProjectsPage from '../pageobjects/projects.page';
 
-Then('Header is displayed', () => {
-  waitForElement(ProjectDetailsPage.Header, 'logo');
-  waitForElement(ProjectDetailsPage.Header, 'menuBtn');
-  waitForElement(ProjectDetailsPage.Header, 'logoutBtn');
-  waitForElement(ProjectDetailsPage.Header, 'settingsBtn');
+Then('top header is displayed', () => {
+  waitForElement(ProjectDetailsPage.TopHeader, 'logo');
+  waitForElement(ProjectDetailsPage.TopHeader, 'menuBtn');
+  waitForElement(ProjectDetailsPage.TopHeader, 'logoutBtn');
+  waitForElement(ProjectDetailsPage.TopHeader, 'settingsBtn');
 
-  assert(ProjectDetailsPage.Header.logo.isDisplayed(), 'Logo is not displayed');
   assert(
-    ProjectDetailsPage.Header.menuBtn.isDisplayed(),
+    ProjectDetailsPage.TopHeader.logo.isDisplayed(),
+    'Logo is not displayed'
+  );
+  assert(
+    ProjectDetailsPage.TopHeader.menuBtn.isDisplayed(),
     'Menu button is not displayed'
   );
   assert(
-    ProjectDetailsPage.Header.logoutBtn.isDisplayed(),
+    ProjectDetailsPage.TopHeader.logoutBtn.isDisplayed(),
     'Logout button is not displayed'
   );
   assert(
-    ProjectDetailsPage.Header.settingsBtn.isDisplayed(),
+    ProjectDetailsPage.TopHeader.settingsBtn.isDisplayed(),
     'Settings button is not displayed'
   );
 });
 
-Then(/^Subheader is displayed$/, function() {
-  waitForElement(ProjectDetailsPage.Subheader, 'settings');
-  waitForElement(ProjectDetailsPage.Subheader, 'sources');
-  waitForElement(ProjectDetailsPage.Subheader, 'users');
-  waitForElement(ProjectDetailsPage.Subheader, 'pages');
+Then(/^I can see menu with all its content$/, function() {
+  waitForElement(ProjectsPage.Menu, 'closeBtn');
+  waitForElement(ProjectsPage.Menu, 'projects');
+  waitForElement(ProjectsPage.Menu, 'users');
+  waitForElement(ProjectsPage.Menu, 'aboutSchemaCMS');
+  waitForElement(ProjectsPage.Menu, 'apiDoc');
+  waitForElement(ProjectsPage.Menu, 'githubRepo');
 
   assert(
-    ProjectDetailsPage.Subheader.settings.isDisplayed(),
-    'Settings tab is not displayed'
+    ProjectsPage.Menu.closeBtn.isDisplayed(),
+    'Close menu button is not displayed'
   );
   assert(
-    ProjectDetailsPage.Subheader.sources.isDisplayed(),
-    'Sources tab is not displayed'
+    ProjectsPage.Menu.projects.isDisplayed(),
+    'Projects option is not displayed'
   );
   assert(
-    ProjectDetailsPage.Subheader.users.isDisplayed(),
-    'Settings tab is not displayed'
+    ProjectsPage.Menu.users.isDisplayed(),
+    'Users option is not displayed'
   );
   assert(
-    ProjectDetailsPage.Subheader.pages.isDisplayed(),
-    'Settings tab is not displayed'
+    ProjectsPage.Menu.aboutSchemaCMS.isDisplayed(),
+    'About SchemaCMS link is not displayed'
+  );
+  assert(
+    ProjectsPage.Menu.apiDoc.isDisplayed(),
+    'API Doc link is not displayed'
+  );
+  assert(
+    ProjectsPage.Menu.githubRepo.isDisplayed(),
+    'Github link is not displayed'
   );
 });

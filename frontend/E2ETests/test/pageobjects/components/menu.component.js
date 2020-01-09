@@ -1,34 +1,26 @@
 class MenuComponent {
   get closeBtn() {
-    return $('#topHeaderCloseMenuButton');
-  }
-
-  get title() {
-    return $('#headerTitle');
-  }
-
-  get subtitle() {
-    return $('#headerSubtitle');
+    return $('#desktopTopHeaderCloseMenuButton');
   }
 
   get projects() {
-    return $('');
+    return $('#projectNavBtn');
   }
 
   get users() {
-    return $('');
+    return $('#userNavBtn');
   }
 
   get aboutSchemaCMS() {
-    return $('');
+    return $('#aboutNavBtn');
   }
 
   get apiDoc() {
-    return $('');
+    return $('#apiNavBtn');
   }
 
   get githubRepo() {
-    return $('');
+    return $('#repositoryNavBtn');
   }
 }
 export default new MenuComponent();

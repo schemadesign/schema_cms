@@ -1,4 +1,4 @@
-export default class SubHeader {
+class SubHeaderComponent {
   get title() {
     return $('#desktopHeaderTitle');
   }
@@ -7,35 +7,32 @@ export default class SubHeader {
     return $('#desktopHeaderSubtitle');
   }
 
-  get itemsCounter() {
-    return $('');
-  }
-
   get createBtn() {
-    return $('');
+    return $('#createDataSourceDesktopBtn');
   }
 
   get sourceBtn() {
-    return $('');
+    return $('#sourceBtn');
   }
 
   get fieldsBtn() {
-    return $('');
+    return $('#fieldsBtn');
   }
 
   get stepsBtn() {
-    return $('');
+    return $('#stepsBtn');
   }
 
   get resultsBtn() {
-    return $('');
+    return $('#resultsBtn');
   }
 
   get filtersBtn() {
-    return $('');
+    return $('#filtersBtn');
   }
 
-  get viewsBtn() {
-    return $('');
+  get tagsBtn() {
+    return $('#tagsBtn');
   }
 }
+export default new SubHeaderComponent();

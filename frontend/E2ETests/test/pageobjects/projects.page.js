@@ -1,11 +1,23 @@
 import Page from './page';
-import HeaderComponent from './components/topHeader.component';
+import TopHeaderComponent from './components/topHeader.component';
 import MenuComponent from './components/menu.component';
-import { waitForElement } from '../utils/utils';
+import { clickElement } from '../utils/utils';
 
 class ProjectsPage extends Page {
-  get Header() {
-    return HeaderComponent;
+  super() {
+    this._projectName = '';
+  }
+
+  get projectName() {
+    return this._projectName;
+  }
+
+  set projectName(projectName) {
+    this._projectName = projectName;
+  }
+
+  get TopHeader() {
+    return TopHeaderComponent;
   }
 
   get Menu() {
@@ -13,7 +25,7 @@ class ProjectsPage extends Page {
   }
 
   get addProjectBtn() {
-    return $('#addProjectBtn');
+    return $('#addProjectDesktopBtn');
   }
 
   get creationDate() {
@@ -41,8 +53,7 @@ class ProjectsPage extends Page {
   }
 
   chooseFirstProject() {
-    waitForElement(this, 'projectTitle');
-    this.projectTitle.click();
+    clickElement(this, 'projectTitle');
   }
 }
 export default new ProjectsPage();

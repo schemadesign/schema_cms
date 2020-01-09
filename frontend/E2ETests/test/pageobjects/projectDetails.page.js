@@ -1,13 +1,13 @@
 import Page from './page';
 import ProjectsPage from './projects.page';
-import { waitForElement } from '../utils/utils';
+import { clickElement } from '../utils/utils';
 import TopHeaderComponent from './components/topHeader.component';
 import MenuComponent from './components/menu.component';
-import SubheaderComponent from './components/tabs.component';
+import TabsComponent from './components/tabs.component';
 import { CREATE_PROJECT_VALID_TITLE } from '../constants/createProject.constants';
 
 class ProjectDetailsPage extends Page {
-  get Header() {
+  get TopHeader() {
     return TopHeaderComponent;
   }
 
@@ -15,19 +15,19 @@ class ProjectDetailsPage extends Page {
     return MenuComponent;
   }
 
-  get Subheader() {
-    return SubheaderComponent;
+  get Tabs() {
+    return TabsComponent;
   }
 
   get dataSourcesTile() {
     return $('#projectDataSources');
   }
 
-  get dataSourcesLabel() {
-    return $('div=Data Sources');
+  get dataSourcesTileLabel() {
+    return $('#projectDataSources span');
   }
 
-  get dataSourcesAmount() {
+  get dataSourcesTileAmount() {
     return $('#projectDataSourcesValue');
   }
 
@@ -35,12 +35,36 @@ class ProjectDetailsPage extends Page {
     return $('#projectUsers');
   }
 
-  get usersLabel() {
-    return $('div=Users');
+  get usersTileLabel() {
+    return $('#projectUsers span');
   }
 
-  get usersAmount() {
+  get usersTileAmount() {
     return $('#projectUsersValue');
+  }
+
+  get chartsTile() {
+    return $('#projectCharts');
+  }
+
+  get chartsTileLabel() {
+    return $('#projectCharts span');
+  }
+
+  get chartsTileAmount() {
+    return $('#projectChartsValue');
+  }
+
+  get pagesTile() {
+    return $('#projectPages');
+  }
+
+  get pagesTileLabel() {
+    return $('#projectPages span');
+  }
+
+  get pagesTileAmount() {
+    return $('#projectPagesValue');
   }
 
   get lastUpdateLabel() {
@@ -92,31 +116,36 @@ class ProjectDetailsPage extends Page {
   }
 
   get backBtn() {
-    return $('#addProjectBtn');
+    return $('#backProjectBtn');
   }
 
   get deleteProjectBtn() {
-    return $('li=Delete Project');
+    return $('#deleteProjectDesktopBtn');
   }
 
-  get confirmDeleteProjectBtn() {
-    return $('span=Confirm');
+  get projectRemovalConfirmationModal() {
+    return $('#projectConfirmationRemovalModal');
   }
 
-  get deletionConfirmationModal() {
-    return $('[aria-label="Confirm Removal"]');
+  get projectRemovalConfirmationModalTitle() {
+    return $('#projectConfirmationRemovalModalTitle');
+  }
+
+  get confirmRemovalProjectBtn() {
+    return $('#projectConfirmationRemovalModalConfirmBtn');
+  }
+
+  get cancelRemovalProjectBtn() {
+    return $('#projectConfirmationRemovalModalCancelBtn');
   }
 
   openMenu() {
-    waitForElement(this.Header, 'menuBtn');
-    this.Header.menuBtn.click();
+    clickElement(this, 'TopHeader.menuBtn');
   }
 
   deleteProject() {
-    waitForElement(this.Menu, 'deleteProjectBtn');
-    this.Menu.deleteProjectBtn.click();
-    waitForElement(this.Menu, 'deletionConfirmationModal');
-    this.Menu.confirmDeleteProjectBtn.click();
+    clickElement(this, 'deleteProjectBtn');
+    clickElement(this, 'confirmRemovalProjectBtn');
 
     expect(ProjectsPage.projectTitle.getText()).to.not.equal(
       CREATE_PROJECT_VALID_TITLE

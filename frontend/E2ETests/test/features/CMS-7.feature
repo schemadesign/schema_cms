@@ -9,38 +9,68 @@ Feature: CMS-7
 
 
     Scenario Outline: User can log in if login and password are valid
-        When I log in as <user> with valid login and password
+        When I log in as <user> with <state1> login and <state2> password
         Then I am on Projects page
 
         Examples:
-            | user     |
-            | 'admin'  |
-            | 'editor' |
+            | user | state1 | state2 |
+            | admin | valid | valid |
+            | editor | valid | valid |
 
 
     # NEGATIVE PATH
 
-    Scenario: User cannot log in if both login and password are invalid
-        When I log in with 'invalid' login and 'invalid' password
+    Scenario Outline: User cannot log in if both login and password are invalid
+        When I log in as <user> with <state1> login and <state2> password
         Then I am informed about invalid login or password
 
+        Examples:
+            | user | state1 | state2 |
+            | admin | invalid | invalid |
+            | editor | invalid | invalid |
 
-    Scenario: User cannot log in if login is invalid
-        When I log in with 'invalid' login and 'valid' password
+
+    Scenario Outline: User cannot log in if login is invalid
+        When I log in as <user> with <state1> login and <state2> password
         Then I am informed about invalid login or password
 
-    Scenario: User cannot log in if password is invalid
-        When I log in with 'valid' login and 'invalid' password
+        Examples:
+            | user | state1 | state2 |
+            | admin | invalid | valid |
+            | editor | invalid | valid |
+
+    Scenario Outline: User cannot log in if password is invalid
+        When I log in as <user> with <state1> login and <state2> password
         Then I am informed about invalid login or password
 
-    Scenario: User cannot log in if both login and password are empty
-        When I log in with 'empty' login and 'empty' password
+        Examples:
+            | user | state1 | state2 |
+            | admin | valid | invalid |
+            | editor | valid | invalid |
+
+    Scenario Outline: User cannot log in if both login and password are empty
+        When I log in as <user> with <state1> login and <state2> password
         Then I am informed about empty login and password
 
-    Scenario: User cannot log in if login is empty
-        When I log in with 'empty' login and 'valid' password
+        Examples:
+            | user | state1 | state2 |
+            | admin | empty | empty  |
+            | editor | empty | empty |
+
+    Scenario Outline: User cannot log in if login is empty
+        When I log in as <user> with <state1> login and <state2> password
         Then I am informed about empty login
 
-    Scenario: User cannot log in if password is empty
-        When I log in with 'valid' login and 'empty' password
+        Examples:
+            | user | state1 | state2 |
+            | admin | empty | valid  |
+            | editor | empty | valid |
+
+    Scenario Outline: User cannot log in if password is empty
+        When I log in as <user> with <state1> login and <state2> password
         Then I am informed about empty password
+
+        Examples:
+            | user | state1 | state2 |
+            | admin | valid | empty  |
+            | editor | valid | empty |

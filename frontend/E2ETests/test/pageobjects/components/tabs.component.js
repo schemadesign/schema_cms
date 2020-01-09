@@ -1,21 +1,22 @@
-export default class TabsComponent {
+class TabsComponent {
   get container() {
-    return $('');
+    return $('#tabsContainer');
   }
 
   get settings() {
-    return $('');
+    return $('#settingsTab');
   }
 
   get sources() {
-    return $('');
+    return $('#sourcesTab');
   }
 
   get users() {
-    return $('');
+    return $('#usersTab');
   }
 
   get pages() {
-    return $('');
+    return $('#folderTab');
   }
 }
+export default new TabsComponent();

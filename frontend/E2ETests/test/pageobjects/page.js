@@ -1,5 +1,9 @@
 export default class Page {
-    open(path) {
-        browser.url(path);
-    }
+  constructor() {
+    this._projectName = '';
+  }
+
+  open(path) {
+    browser.url(path);
+  }
 }

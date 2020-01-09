@@ -1,39 +1,53 @@
-import Page from './page.js';
+import Page from './page';
+import TopHeaderComponent from './components/topHeader.component';
 
 class SettingsPage extends Page {
+  get TopHeader() {
+    return TopHeaderComponent;
+  }
 
-    get closeBtn() { return $(''); }
-    get headerTitle() { return $(''); }
-    
-    //elements available when accessing Settings from Projects page
-    get adminUser() { return $(''); }
-    get aws() { return $(''); }
-    get database() {return $(''); }
-    get apiDocumentation() { return $(''); }
-    get githubRepository() { return $(''); }
-    get about() { return $(''); }
-    get logoutBtn() { return $(''); }
+  get firstNameLabel() {
+    return $('[for="firstName"]');
+  }
 
-    //elements available when accessing Settings from Project Details page
-    get datasources() { return $(''); }
-    get charts() { return $(''); }
-    get pages() { return $(''); }
-    get users() { return $(''); }
-    get projectSummary() { return $(''); }
-    get projectSettings() { return $(''); }
-    get deleteProject() { return $(''); }
-    
+  get firstNameValue() {
+    return $('#firstName');
+  }
 
-    waitForSettingsToLoad() {
-        if(!this.about.isDisplayed()) {
-            this.about.waitForDisplayed();
-        }
-    }
+  get lastNameLabel() {
+    return $('[for="lastName"]');
+  }
 
-    logout() {
-        this.waitForSettingsToLoad();
-        this.logoutBtn.click();
-        browser.pause(1000);
-    }
+  get lastNameValue() {
+    return $('#lastName');
+  }
+
+  get emailLabel() {
+    return $('[for="email"]');
+  }
+
+  get emailValue() {
+    return $('#email');
+  }
+
+  get userRoleLabel() {
+    return $('[for="role"]');
+  }
+
+  get userRoleValue() {
+    return $('#role');
+  }
+
+  get resetPasswordLink() {
+    return $('#resetPasswordLink');
+  }
+
+  get backBtn() {
+    return $('#settingsBackBtn');
+  }
+
+  get saveBtn() {
+    return $('#settingsSaveBtn');
+  }
 }
 export default new SettingsPage();

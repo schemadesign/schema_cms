@@ -79,7 +79,9 @@ export class DesktopHeader extends PureComponent {
     renderWhenTrue(
       always(
         <TitleWrapper>
-          <Title title={title}>{title}</Title>
+          <Title id={'desktopTopHeaderProjectTitle'} title={title}>
+            {title}
+          </Title>
         </TitleWrapper>
       )
     )(!!title);
@@ -89,11 +91,11 @@ export class DesktopHeader extends PureComponent {
       {this.renderLogo}
       {this.renderTitle(this.props.title)}
       <Actions>
-        <Button onClick={this.handleLogout} customStyles={logoutButtonStyles}>
+        <Button id={'desktopTopHeaderLogoutBtn'} onClick={this.handleLogout} customStyles={logoutButtonStyles}>
           <ExitIcon />
         </Button>
         <IconLink to="/settings">
-          <UserIcon />
+          <UserIcon id={'desktopTopHeaderSettingsBtn'} />
         </IconLink>
       </Actions>
     </HeaderWrapper>
@@ -101,7 +103,7 @@ export class DesktopHeader extends PureComponent {
 
   renderLogo = (
     <LogoLink to="/">
-      <Logo />
+      <Logo id={'desktopTopHeaderSchemaLogo'} />
     </LogoLink>
   );
 

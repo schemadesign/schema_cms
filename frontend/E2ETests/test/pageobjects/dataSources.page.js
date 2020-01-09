@@ -1,10 +1,10 @@
 import Page from './page';
-import HeaderComponent from './components/topHeader.component';
+import TopHeaderComponent from './components/topHeader.component';
 import MenuComponent from './components/menu.component';
 
 class DataSourcesPage extends Page {
-  get Header() {
-    return HeaderComponent;
+  get TopHeader() {
+    return TopHeaderComponent;
   }
 
   get Menu() {
@@ -13,6 +13,10 @@ class DataSourcesPage extends Page {
 
   get title() {
     return $('#desktopHeaderTitle');
+  }
+
+  get subtitle() {
+    return $('#desktopHeaderSubtitle');
   }
 
   get createDataSourceBtn() {

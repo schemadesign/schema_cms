@@ -1,14 +1,24 @@
 import Page from './page';
-import HeaderComponent from './components/topHeader.component';
-import { waitForElement, camelCase, clickElement } from '../utils/utils';
+import TopHeaderComponent from './components/topHeader.component';
+import SubHeaderComponent from './components/subHeader.component';
+import {
+  waitForElement,
+  camelCase,
+  clickElement,
+  setValue
+} from '../utils/utils';
 import {
   CREATE_PROJECT_VALID_TITLE,
   CREATE_PROJECT_VALID_DESCRIPTION
 } from '../constants/createProject.constants';
 
 class CreateProjectPage extends Page {
-  get Header() {
-    return HeaderComponent;
+  get TopHeader() {
+    return TopHeaderComponent;
+  }
+
+  get SubHeader() {
+    return SubHeaderComponent;
   }
 
   get titleInput() {
@@ -86,10 +96,8 @@ class CreateProjectPage extends Page {
   }
 
   completeRequiredFields() {
-    waitForElement(this, 'titleInput');
-    this.titleInput.setValue(CREATE_PROJECT_VALID_TITLE);
-    waitForElement(this, 'descriptionInput');
-    this.descriptionInput.setValue(CREATE_PROJECT_VALID_DESCRIPTION);
+    setValue(this, 'titleInput', CREATE_PROJECT_VALID_TITLE);
+    setValue(this, 'descriptionInput', CREATE_PROJECT_VALID_DESCRIPTION);
   }
 }
 export default new CreateProjectPage();

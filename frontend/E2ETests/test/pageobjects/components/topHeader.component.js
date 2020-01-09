@@ -1,22 +1,22 @@
 class TopHeaderComponent {
   get menuBtn() {
-    return $('#topHeaderOpenMenuBtn');
+    return $('#desktopTopHeaderOpenMenuButton');
   }
 
   get projectName() {
-    return $('');
+    return $('#desktopTopHeaderProjectTitle');
   }
 
   get logo() {
-    return $('[href="/"]');
+    return $('#desktopTopHeaderSchemaLogo');
   }
 
   get logoutBtn() {
-    return $('');
+    return $('#desktopTopHeaderLogoutBtn');
   }
 
   get settingsBtn() {
-    return $('[href="/settings"]');
+    return $('#desktopTopHeaderSettingsBtn');
   }
 }
 export default new TopHeaderComponent();

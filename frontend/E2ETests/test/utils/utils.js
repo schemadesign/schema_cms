@@ -4,7 +4,7 @@ export const waitForElement = (that, elemName, timeout = TIMEOUT) => {
   browser.waitUntil(
     () => that[elemName].isDisplayed(),
     timeout,
-    `${elemName} not load after 10 seconds`
+    `${elemName} not load after ${timeout} miliseconds`
   );
 };
 
@@ -41,7 +41,6 @@ export const camelCase = str =>
 
 export const clickElement = (page, elemName) => {
   waitForElement(page, elemName);
-  page[elemName].waitForClickable();
   page[elemName].click();
 };
 
@@ -61,4 +60,20 @@ export const waitForTitle = (title, timeout = TIMEOUT) => {
     timeout,
     `Title of window is not ${title}`
   );
+};
+
+export const setValue = (page, elemName, value) => {
+  waitForElement(page, elemName);
+  page[elemName].setValue(value);
+};
+
+export const generateRandomString = length => {
+  let result = 'X1';
+  const characters =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i += 1) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
 };

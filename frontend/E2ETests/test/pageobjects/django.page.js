@@ -1,12 +1,12 @@
-import fs from 'fs';
 import Page from './page';
-import { clickElement, waitForElement, waitForText } from '../utils/utils';
-import { localDjangoLoginPage } from '../constants/django.constants';
-import { ADMIN, EDITOR } from '../constants/login.constants';
-
-const FIRSTNAME = 'John';
-const LASTNAME = 'Doe';
-const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
+import {
+  djangoLoginPage,
+  FIRST_NAME,
+  LAST_NAME,
+  USERS_PAGE_URL
+} from '../constants/django.constants';
+import { setValue, clickElement, waitForText } from '../utils/utils';
+import { USERS, DJANGO } from '../constants/credentials.constants';
 
 class DjangoPage extends Page {
   get username() {
@@ -22,7 +22,7 @@ class DjangoPage extends Page {
   }
 
   get users() {
-    return $("[href='/admin/users/user/']");
+    return $$('.model-user > td')[1];
   }
 
   get inviteUserLink() {
@@ -49,11 +49,11 @@ class DjangoPage extends Page {
     return $('#id_role');
   }
 
-  get roleAdmin() {
-    return $('[value="admin"]');
+  get adminRole() {
+    return $('#id_role > [value="admin"]');
   }
 
-  get roleEditor() {
+  get editorRole() {
     return $('[value="editor"]');
   }
 
@@ -73,8 +73,8 @@ class DjangoPage extends Page {
     return $('tbody > tr:nth-child(1) > th > a');
   }
 
-  get permissionActive() {
-    return $('#id_is_active');
+  get permissionIcon() {
+    return $('[src*="/static/admin/img/icon"]');
   }
 
   get userExistsMsg() {
@@ -97,8 +97,16 @@ class DjangoPage extends Page {
     return $('#changelist-form > div.actions > label > select');
   }
 
-  get deleteSelectedUsersAction() {
+  get deleteSelectedUser() {
     return $('[value="delete_selected"]');
+  }
+
+  get activateSelectedUser() {
+    return $('[value="activate_users"]');
+  }
+
+  get deactivateSelectedUser() {
+    return $('[value="deactivate_users"]');
   }
 
   get performActionBtn() {
@@ -110,70 +118,72 @@ class DjangoPage extends Page {
   }
 
   open() {
-    browser.url(localDjangoLoginPage);
-    waitForElement(this, 'loginBtn');
+    browser.url(djangoLoginPage);
   }
 
   login() {
-    waitForElement(this, 'username');
-    this.username.setValue(creds.django.username);
-    waitForElement(this, 'password');
-    this.password.setValue(creds.django.password);
+    setValue(this, 'username', DJANGO.username);
+    setValue(this, 'password', DJANGO.password);
     clickElement(this, 'loginBtn');
   }
 
   goToUsers() {
-    waitForElement(this, 'users');
-    this.users.click();
+    browser.url(USERS_PAGE_URL);
   }
 
-  setAdminRole() {
-    waitForElement(this, 'roleDropdown');
-    this.roleDropdown.click();
-    waitForElement(this, 'roleAdmin');
-    this.roleAdmin.click();
-  }
-
-  setEditorRole() {
-    waitForElement(this, 'roleDropdown');
-    this.roleDropdown.click();
-    waitForElement(this, 'roleEditor');
-    this.roleAdmin.click();
+  setUserRole(role) {
+    clickElement(this, 'roleDropdown');
+    `this.${role}Role.waitForClickable()`;
+    clickElement(this, `${role}Role`);
   }
 
   setName() {
-    waitForElement(this, 'firstName');
-    this.firstName.setValue(FIRSTNAME);
-    waitForElement(this, 'lastName');
-    this.lastName.setValue(LASTNAME);
+    setValue(this, 'firstName', FIRST_NAME);
+    setValue(this, 'lastName', LAST_NAME);
   }
 
-  inviteUser(role) {
-    if (role === ADMIN) {
-      this.goToUsers();
-      waitForElement(this, 'inviteUserLink');
-      this.inviteUserLink.click();
-      waitForElement(this, 'email');
-      this.email.setValue(creds.inviteUser.email);
-      this.setName();
-      this.setAdminRole();
-      this.saveBtn.click();
-    }
-    if (role === EDITOR) {
-      this.goToUsers();
-      waitForElement(this, 'email');
-      this.email.setValue(creds.inviteUser.email);
-      this.setName();
-      this.setEditorRole();
-      this.saveBtn.click();
-    }
+  setEmail(email = USERS.invited.login.random) {
+    setValue(this, 'email', email);
+  }
+
+  useInviteUserLink() {
+    browser.pause(1000);
+    clickElement(this, 'inviteUserLink');
+  }
+
+  submitInvitingUser() {
+    clickElement(this, 'saveBtn');
+  }
+
+  inviteUser(role, email) {
+    this.goToUsers();
+    this.useInviteUserLink();
+    this.setEmail(email);
+    this.setName();
+    this.setUserRole(role);
+    this.submitInvitingUser();
   }
 
   searchForInvitedUser() {
-    waitForElement(this, 'searchInput');
-    this.searchInput.setValue(creds.inviteUser.email);
+    setValue(this, 'searchInput', USERS.invited.login.random);
     browser.keys('\uE007');
-    waitForText(this, 'userEmail', `${creds.inviteUser.email}`);
+    waitForText(this, 'userEmail', USERS.invited.login.random);
+  }
+
+  selectUser() {
+    clickElement(this, 'userCheckbox');
+  }
+
+  openActionsDropdown() {
+    clickElement(this, 'actionsDropdown');
+  }
+
+  chooseDropdownAction(action) {
+    clickElement(this, `${action}SelectedUser`);
+  }
+
+  performDropdownAction() {
+    clickElement(this, 'performActionBtn');
   }
 
   deleteInvitedUser() {
@@ -181,14 +191,10 @@ class DjangoPage extends Page {
     this.login();
     this.goToUsers();
     this.searchForInvitedUser();
-    waitForElement(this, 'userCheckbox');
-    this.userCheckbox.click();
-    waitForElement(this, 'actionsDropdown');
-    this.actionsDropdown.click();
-    waitForElement(this, 'deleteSelectedUsersAction');
-    this.deleteSelectedUsersAction.click();
-    waitForElement(this, 'performActionBtn');
-    this.performActionBtn.click();
+    this.selectUser();
+    this.openActionsDropdown();
+    this.chooseDropdownAction('delete');
+    this.performDropdownAction();
   }
 }
 export default new DjangoPage();
