@@ -460,7 +460,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -473,7 +473,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -486,7 +486,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -496,7 +496,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           </li>
           <li
             className="c7"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -512,7 +512,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -525,7 +525,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -538,7 +538,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1170,7 +1170,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1183,7 +1183,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1196,7 +1196,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1206,7 +1206,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           </li>
           <li
             className="c7"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -1222,7 +1222,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1235,7 +1235,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1248,7 +1248,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1880,7 +1880,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1893,7 +1893,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1906,7 +1906,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1916,7 +1916,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           </li>
           <li
             className="c7"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -1932,7 +1932,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1945,7 +1945,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1958,7 +1958,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>

@@ -464,7 +464,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             >
               <a
                 href="/project"
-                id={null}
+                id="projectNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -477,7 +477,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             >
               <a
                 href="/user"
-                id="userBtn"
+                id="userNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -490,7 +490,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             >
               <a
                 href="/settings"
-                id={null}
+                id="settingsNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -500,7 +500,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             </li>
             <li
               className="c7"
-              id="logoutBtn"
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -516,7 +516,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             >
               <a
                 href="/"
-                id={null}
+                id="aboutNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -529,7 +529,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             >
               <a
                 href="/"
-                id={null}
+                id="apiNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -542,7 +542,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             >
               <a
                 href="/"
-                id={null}
+                id="repositoryNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1255,7 +1255,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             >
               <a
                 href="/project"
-                id={null}
+                id="projectNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1268,7 +1268,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             >
               <a
                 href="/user"
-                id="userBtn"
+                id="userNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1281,7 +1281,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             >
               <a
                 href="/settings"
-                id={null}
+                id="settingsNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1291,7 +1291,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             </li>
             <li
               className="c7"
-              id="logoutBtn"
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1307,7 +1307,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             >
               <a
                 href="/"
-                id={null}
+                id="aboutNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1320,7 +1320,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             >
               <a
                 href="/"
-                id={null}
+                id="apiNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1333,7 +1333,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             >
               <a
                 href="/"
-                id={null}
+                id="repositoryNavBtn"
                 onClick={[Function]}
               >
                 <span>

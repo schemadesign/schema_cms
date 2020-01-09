@@ -60,16 +60,19 @@ export class TopHeader extends PureComponent {
         {
           label: <FormattedMessage {...messages.projectDetails} />,
           to: `/project/${projectId}`,
+          id: 'projectDetailsNavBtn',
           page: 'project',
         },
         {
           label: <FormattedMessage {...messages.projectDataSources} />,
           to: `/project/${projectId}/datasource`,
+          id: 'dataSourceNavBtn',
           page: 'datasource',
         },
         {
           label: <FormattedMessage {...messages.projectPages} />,
           to: `/project/${projectId}/folder`,
+          id: 'folderNavBtn',
           page: 'folder',
         },
       ])
@@ -79,22 +82,23 @@ export class TopHeader extends PureComponent {
     {
       label: <FormattedMessage {...messages.projects} />,
       to: '/project',
+      id: 'projectNavBtn',
       page: 'project',
       hide: this.props.hideProjects,
     },
     {
       label: <FormattedMessage {...messages.users} />,
       to: '/user',
-      id: 'userBtn',
+      id: 'userNavBtn',
       page: 'user',
       hide: !this.props.isAdmin,
     },
   ];
 
   secondaryMenuItems = [
-    { label: <FormattedMessage {...messages.about} />, to: '/' },
-    { label: <FormattedMessage {...messages.api} />, to: '/' },
-    { label: <FormattedMessage {...messages.repository} />, to: '/' },
+    { label: <FormattedMessage {...messages.about} />, to: '/', id: 'aboutNavBtn' },
+    { label: <FormattedMessage {...messages.api} />, to: '/', id: 'apiNavBtn' },
+    { label: <FormattedMessage {...messages.repository} />, to: '/', id: 'repositoryNavBtn' },
   ];
 
   handleLogout = () => {
@@ -158,12 +162,13 @@ export class TopHeader extends PureComponent {
       {
         label: <FormattedMessage {...messages.settings} />,
         to: '/settings',
+        id: 'settingsNavBtn',
         page: 'settings',
       },
       {
         label: <FormattedMessage {...messages.logOut} />,
         onClick: this.handleLogout,
-        id: 'logoutBtn',
+        id: 'logoutNavBtn',
       },
     ];
 

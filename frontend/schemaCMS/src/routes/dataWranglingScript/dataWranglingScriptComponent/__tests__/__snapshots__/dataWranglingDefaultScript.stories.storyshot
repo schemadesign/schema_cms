@@ -447,7 +447,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
             >
               <a
                 href="/project"
-                id={null}
+                id="projectNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -460,7 +460,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
             >
               <a
                 href="/user"
-                id="userBtn"
+                id="userNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -473,7 +473,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
             >
               <a
                 href="/settings"
-                id={null}
+                id="settingsNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -483,7 +483,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
             </li>
             <li
               className="c7"
-              id="logoutBtn"
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -499,7 +499,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
             >
               <a
                 href="/"
-                id={null}
+                id="aboutNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -512,7 +512,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
             >
               <a
                 href="/"
-                id={null}
+                id="apiNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -525,7 +525,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
             >
               <a
                 href="/"
-                id={null}
+                id="repositoryNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1881,7 +1881,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
             >
               <a
                 href="/project"
-                id={null}
+                id="projectNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1894,7 +1894,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
             >
               <a
                 href="/user"
-                id="userBtn"
+                id="userNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1907,7 +1907,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
             >
               <a
                 href="/settings"
-                id={null}
+                id="settingsNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1917,7 +1917,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
             </li>
             <li
               className="c7"
-              id="logoutBtn"
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1933,7 +1933,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
             >
               <a
                 href="/"
-                id={null}
+                id="aboutNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1946,7 +1946,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
             >
               <a
                 href="/"
-                id={null}
+                id="apiNavBtn"
                 onClick={[Function]}
               >
                 <span>
@@ -1959,7 +1959,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
             >
               <a
                 href="/"
-                id={null}
+                id="repositoryNavBtn"
                 onClick={[Function]}
               >
                 <span>

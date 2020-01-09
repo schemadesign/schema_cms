@@ -349,7 +349,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -362,7 +362,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -375,7 +375,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -385,7 +385,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           </li>
           <li
             className="c7"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -401,7 +401,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -414,7 +414,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -427,7 +427,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -832,7 +832,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/path"
-              id={null}
+              id="primaryId"
               onClick={[Function]}
             >
               Primary
@@ -843,7 +843,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/path"
-              id={null}
+              id="chartsId"
               onClick={[Function]}
             >
               Charts
@@ -854,7 +854,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -867,7 +867,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -880,7 +880,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -890,7 +890,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           </li>
           <li
             className="c5"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -906,7 +906,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/path"
-              id={null}
+              id="secondaryId"
               onClick={[Function]}
             >
               Secondary
@@ -914,7 +914,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           </li>
           <li
             className="c9"
-            id="id"
+            id="clickId"
             onClick={[Function]}
           >
             Click action
@@ -924,7 +924,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -937,7 +937,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -950,7 +950,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1371,7 +1371,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1384,7 +1384,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1397,7 +1397,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project/projectId"
-              id={null}
+              id="projectDetailsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1410,7 +1410,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project/projectId/datasource"
-              id={null}
+              id="dataSourceNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1423,7 +1423,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/project/projectId/folder"
-              id={null}
+              id="folderNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1436,7 +1436,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1446,7 +1446,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           </li>
           <li
             className="c7"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -1462,7 +1462,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1475,7 +1475,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1488,7 +1488,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1865,7 +1865,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1878,7 +1878,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1891,7 +1891,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1901,7 +1901,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           </li>
           <li
             className="c6"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -1917,7 +1917,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1930,7 +1930,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -1943,7 +1943,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2348,7 +2348,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2361,7 +2361,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2374,7 +2374,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2384,7 +2384,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           </li>
           <li
             className="c7"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -2400,7 +2400,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2413,7 +2413,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -2426,7 +2426,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>

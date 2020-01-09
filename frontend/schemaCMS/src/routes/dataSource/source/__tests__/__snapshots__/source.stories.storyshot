@@ -620,7 +620,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/project"
-              id={null}
+              id="projectNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -633,7 +633,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/user"
-              id="userBtn"
+              id="userNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -646,7 +646,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/project/projectId"
-              id={null}
+              id="projectDetailsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -659,7 +659,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/project/projectId/datasource"
-              id={null}
+              id="dataSourceNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -672,7 +672,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/project/projectId/folder"
-              id={null}
+              id="folderNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -685,7 +685,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/settings"
-              id={null}
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -695,7 +695,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </li>
           <li
             className="c7"
-            id="logoutBtn"
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <span>
@@ -711,7 +711,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -724,7 +724,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="apiNavBtn"
               onClick={[Function]}
             >
               <span>
@@ -737,7 +737,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           >
             <a
               href="/"
-              id={null}
+              id="repositoryNavBtn"
               onClick={[Function]}
             >
               <span>
