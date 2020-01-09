@@ -99,7 +99,7 @@ class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
         else:
             super().save_model(request, obj, form, change)
 
-        models.DataSourceMeta.objects.create(datasource=obj)
+        models.DataSourceMeta.objects.update_or_create(datasource=obj, defaults={"datasource": obj})
 
 
 class DataSourceJobStepInline(admin.TabularInline):
