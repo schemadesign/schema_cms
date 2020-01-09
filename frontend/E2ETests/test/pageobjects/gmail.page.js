@@ -1,52 +1,65 @@
-import Page from './page.js';
-import { waitForElement, waitForText } from './../utils/utils.js';
-import { TIMEOUT } from './../constants/config.constants.js';
+import Page from './page';
+import { waitForElement, waitForText } from '../utils/utils';
+import { TIMEOUT } from '../constants/config.constants';
 import {
   LINK_SENT,
   LINK_NOT_SENT,
   GMAIL,
   RESET_MAIL_TITLE,
   INVITATION_MAIL_TITLE
-} from './../constants/gmail.constants.js';
+} from '../constants/gmail.constants';
+
 const fs = require('fs');
+
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
 class GmailPage extends Page {
   get email() {
     return $('#identifierId');
   }
+
   get emailNextBtn() {
     return $('#identifierNext');
   }
+
   get password() {
     return $("[type='password']");
   }
+
   get passwordNextBtn() {
     return $('#passwordNext');
   }
+
   get received() {
     return $("[href='https://mail.google.com/mail/u/0/#inbox']");
   }
+
   get firstEmail() {
     return $(
       'div > table:nth-child(1) > tbody:nth-child(2) > tr > td:nth-child(6) > div > div > div > span'
     );
   }
+
   get firstUnreadEmail() {
     return $('.bqe:nth-child(1)');
   }
+
   get resetUrl() {
     return $("td:last-child [href*='reset']");
   }
+
   get invitationUrl() {
     return $('');
-  } //TODO: add selector when Mandrillo is configured
+  } // TODO: add selector when Mandrillo is configured
+
   get deleteEmailBtn() {
     return $("[act='10']");
   }
+
   get selectFirstEmail() {
     return $('tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > div');
   }
+
   get searchInput() {
     return $('table:first-child td > div > input');
   }
@@ -60,6 +73,7 @@ class GmailPage extends Page {
       browser.refresh();
     }
   }
+
   searchForInvitationEmail() {
     this.waitForNewEmail();
     waitForElement(this, 'searchInput');
@@ -122,8 +136,8 @@ class GmailPage extends Page {
       this.deleteEmailBtn.moveTo();
       this.deleteEmailBtn.click();
       this.waitForResetEmailToNotExist();
-      //I have to pause the browser for 7 seconds here because of bug in Gmail
-      //otherwise deleted email will reappear and can brake other tests
+      // I have to pause the browser for 7 seconds here because of bug in Gmail
+      // otherwise deleted email will reappear and can brake other tests
       browser.pause(7000);
     }
   }

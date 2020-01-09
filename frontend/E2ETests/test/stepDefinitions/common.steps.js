@@ -3,22 +3,25 @@ import ProjectDetailsPage from '../pageobjects/projectDetails.page';
 import { waitForElement } from '../utils/utils';
 
 Then('Header is displayed', () => {
-  waitForElement(ProjectDetailsPage.Header, 'logo');
-  waitForElement(ProjectDetailsPage.Header, 'menuBtn');
-  waitForElement(ProjectDetailsPage.Header, 'logoutBtn');
-  waitForElement(ProjectDetailsPage.Header, 'settingsBtn');
+  waitForElement(ProjectDetailsPage.TopHeader, 'logo');
+  waitForElement(ProjectDetailsPage.TopHeader, 'menuBtn');
+  waitForElement(ProjectDetailsPage.TopHeader, 'logoutBtn');
+  waitForElement(ProjectDetailsPage.TopHeader, 'settingsBtn');
 
-  assert(ProjectDetailsPage.Header.logo.isDisplayed(), 'Logo is not displayed');
   assert(
-    ProjectDetailsPage.Header.menuBtn.isDisplayed(),
+    ProjectDetailsPage.TopHeader.logo.isDisplayed(),
+    'Logo is not displayed'
+  );
+  assert(
+    ProjectDetailsPage.TopHeader.menuBtn.isDisplayed(),
     'Menu button is not displayed'
   );
   assert(
-    ProjectDetailsPage.Header.logoutBtn.isDisplayed(),
+    ProjectDetailsPage.TopHeader.logoutBtn.isDisplayed(),
     'Logout button is not displayed'
   );
   assert(
-    ProjectDetailsPage.Header.settingsBtn.isDisplayed(),
+    ProjectDetailsPage.TopHeader.settingsBtn.isDisplayed(),
     'Settings button is not displayed'
   );
 });

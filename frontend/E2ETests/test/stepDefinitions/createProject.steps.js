@@ -1,8 +1,8 @@
 import { Given, When, Then } from 'cucumber';
-import { waitForElement } from './../utils/utils.js';
-import CreateProjectPage from './../pageobjects/createProject.page.js';
-import ProjectsPage from './../pageobjects/projects.page.js';
-import ProjectDetailsPage from '../pageobjects/projectDetails.page.js';
+import { waitForElement } from '../utils/utils';
+import CreateProjectPage from '../pageobjects/createProject.page';
+import ProjectsPage from '../pageobjects/projects.page';
+import ProjectDetailsPage from '../pageobjects/projectDetails.page';
 import {
   CREATE_PROJECT_URL,
   CREATE_PROJECT_HEADER_TITLE,
@@ -26,7 +26,7 @@ import {
   CREATE_PROJECT_TITLE_TOO_SHORT,
   CREATE_PROJECT_TITLE_TOO_LONG,
   CREATE_PROJECT_DESCRIPTION_TOO_LONG_ERROR
-} from './../constants/createProject.constants.js';
+} from '../constants/createProject.constants';
 
 Given('I chose to create new project', () => {
   waitForElement(ProjectsPage, 'addProjectBtn');
@@ -76,8 +76,8 @@ When('I submit the form to create new project', () => {
 
 When('I edit the data', () => {
   waitForElement(CreateProjectPage, 'titleInput');
-  CreateProjectPage.titleInput.setValue(CREATE_PROJECT_EDITED_TITLE),
-    waitForElement(CreateProjectPage, 'descriptionInput');
+  CreateProjectPage.titleInput.setValue(CREATE_PROJECT_EDITED_TITLE);
+  waitForElement(CreateProjectPage, 'descriptionInput');
   CreateProjectPage.descriptionInput.setValue(
     CREATE_PROJECT_EDITED_DESCRIPTION
   );

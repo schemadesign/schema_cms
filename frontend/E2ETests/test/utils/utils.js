@@ -62,3 +62,8 @@ export const waitForTitle = (title, timeout = TIMEOUT) => {
     `Title of window is not ${title}`
   );
 };
+
+export const setValue = (page, elemName, value) => {
+  waitForElement(page, elemName);
+  page[elemName].setValue(value);
+};

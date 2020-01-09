@@ -1,5 +1,5 @@
 import Page from './page';
-import HeaderComponent from './components/topHeader.component';
+import TopHeaderComponent from './components/topHeader.component';
 import { waitForElement, camelCase, clickElement } from '../utils/utils';
 import {
   CREATE_PROJECT_VALID_TITLE,
@@ -7,8 +7,8 @@ import {
 } from '../constants/createProject.constants';
 
 class CreateProjectPage extends Page {
-  get Header() {
-    return HeaderComponent;
+  get TopHeader() {
+    return TopHeaderComponent;
   }
 
   get titleInput() {

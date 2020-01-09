@@ -7,7 +7,7 @@ import SubheaderComponent from './components/tabs.component';
 import { CREATE_PROJECT_VALID_TITLE } from '../constants/createProject.constants';
 
 class ProjectDetailsPage extends Page {
-  get Header() {
+  get TopHeader() {
     return TopHeaderComponent;
   }
 
@@ -108,7 +108,7 @@ class ProjectDetailsPage extends Page {
   }
 
   openMenu() {
-    waitForElement(this.Header, 'menuBtn');
+    waitForElement(this.TopHeader, 'menuBtn');
     this.Header.menuBtn.click();
   }
 

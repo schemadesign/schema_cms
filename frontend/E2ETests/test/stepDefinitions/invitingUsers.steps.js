@@ -1,11 +1,12 @@
 import { Given, When, Then } from 'cucumber';
-import { djangoHomeTitle } from './../constants/django.constants.js';
-import { waitForElement } from './../utils/utils.js';
-import { LINK_SENT, INVITATION_URL } from './../constants/gmail.constants.js';
-import DjangoPage from './../pageobjects/django.page.js';
-import Auth0Page from './../pageobjects/auth0.page.js';
-import GmailPage from './../pageobjects//gmail.page.js';
 import fs from 'fs';
+import { djangoHomeTitle } from '../constants/django.constants';
+import { waitForElement } from '../utils/utils';
+import { LINK_SENT, INVITATION_URL } from '../constants/gmail.constants';
+import DjangoPage from '../pageobjects/django.page';
+import Auth0Page from '../pageobjects/auth0.page';
+import GmailPage from '../pageobjects/gmail.page';
+
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
 Given('I am logged in admin panel', () => {
@@ -36,7 +37,7 @@ When('I invite John Doe to SchemaCMS', () => {
 When('John Doe uses an invitation email', () => {
   waitForElement(GmailPage, 'invitationUrl');
   GmailPage.invitationUrl.click();
-  //TODO: add remaining logic when Mandrillo is configured
+  // TODO: add remaining logic when Mandrillo is configured
 });
 
 Then('I can see confirmation that user was added', () => {

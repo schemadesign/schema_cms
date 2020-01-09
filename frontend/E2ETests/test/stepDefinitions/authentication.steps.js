@@ -1,30 +1,31 @@
 import { Given, When, Then } from 'cucumber';
+import fs from 'fs';
 import {
   RESET_PAGE,
   CHANGE_PASSWORD_TITLE,
   CHANGE_PASSWORD_SUCCESS_MSG,
   PASSWORDS_NOT_MATCH_MSG
-} from './../constants/resetPassword.constants.js';
-import { PROJECTS_PAGE } from './../constants/homepage.constants.js';
+} from '../constants/resetPassword.constants';
+import { PROJECTS_PAGE } from '../constants/homepage.constants';
 import {
   LINK_SENT,
   LINK_NOT_SENT,
   RESET_URL
-} from './../constants/gmail.constants.js';
+} from '../constants/gmail.constants';
 import {
   LOGIN_PAGE_TITLE,
   AUTH0_WRONG_CREDS_ERROR,
   AUTH0_EMPTY_INPUT_ERROR,
   RESET_LINK_SENT_MSG
-} from './../constants/login.constants.js';
-import { ASSERT_EMPTY_VALIDATION_MESSAGE } from './../constants/config.constants.js';
-import { djangoHomeTitle } from './../constants/django.constants.js';
-import { waitForElement, waitForText } from './../utils/utils.js';
-import LoginPage from './../pageobjects/login.page.js';
-import ProjectsPage from './../pageobjects/projects.page.js';
-import GmailPage from './../pageobjects/gmail.page.js';
-import DjangoPage from './../pageobjects/django.page.js';
-import fs from 'fs';
+} from '../constants/login.constants';
+import { ASSERT_EMPTY_VALIDATION_MESSAGE } from '../constants/config.constants';
+import { djangoHomeTitle } from '../constants/django.constants';
+import { waitForElement, waitForText } from '../utils/utils';
+import LoginPage from '../pageobjects/login.page';
+import ProjectsPage from '../pageobjects/projects.page';
+import GmailPage from '../pageobjects/gmail.page';
+import DjangoPage from '../pageobjects/django.page';
+
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
 Given('I am on Login page', () => {

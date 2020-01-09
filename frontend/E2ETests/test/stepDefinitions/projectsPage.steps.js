@@ -1,14 +1,14 @@
 import { Given, When, Then } from 'cucumber';
 import {
-  HEADER_TITLE,
-  HEADER_SUBTITLE,
+  TopHeader_TITLE,
+  TopHeader_SUBTITLE,
   HOMEPAGE
-} from './../constants/homepage.constants.js';
-import ProjectsPage from './../pageobjects/projects.page.js';
-import { waitForElement, waitForUrl } from './../utils/utils.js';
+} from '../constants/homepage.constants';
+import ProjectsPage from '../pageobjects/projects.page';
+import { waitForElement, waitForUrl } from '../utils/utils';
 
 Given('I have opened menu', () => {
-  ProjectsPage.Header.menuBtn.click();
+  ProjectsPage.TopHeader.menuBtn.click();
 });
 
 Given('I am on homepage', () => {
@@ -18,8 +18,8 @@ Given('I am on homepage', () => {
 });
 
 When('I click on Menu button', () => {
-  waitForElement(ProjectsPage.Header, 'menuBtn');
-  ProjectsPage.Header.menuBtn.click();
+  waitForElement(ProjectsPage.TopHeader, 'menuBtn');
+  ProjectsPage.TopHeader.menuBtn.click();
 });
 
 When('I close menu', () => {
@@ -38,23 +38,25 @@ Then('I am on Projects page', () => {
   expect(browser.getUrl()).to.equal(HOMEPAGE);
 });
 
-Then('title of header is Projects', () => {
-  waitForElement(ProjectsPage.Header, 'title');
+Then('title of TopHeader is Projects', () => {
+  waitForElement(ProjectsPage.TopHeader, 'title');
 
-  expect(ProjectsPage.Header.title.getText()).to.equal(HEADER_TITLE);
+  expect(ProjectsPage.TopHeader.title.getText()).to.equal(TopHeader_TITLE);
 });
 
-Then('subtitle of header is Overview', () => {
-  waitForElement(ProjectsPage.Header, 'subtitle');
+Then('subtitle of TopHeader is Overview', () => {
+  waitForElement(ProjectsPage.TopHeader, 'subtitle');
 
-  expect(ProjectsPage.Header.subtitle.getText()).to.equal(HEADER_SUBTITLE);
+  expect(ProjectsPage.TopHeader.subtitle.getText()).to.equal(
+    TopHeader_SUBTITLE
+  );
 });
 
 Then('Menu button is displayed', () => {
-  waitForElement(ProjectsPage.Header, 'menuBtn');
+  waitForElement(ProjectsPage.TopHeader, 'menuBtn');
 
   assert(
-    ProjectsPage.Header.menuBtn.isDisplayed(),
+    ProjectsPage.TopHeader.menuBtn.isDisplayed(),
     'Menu btn is not displayed'
   );
 });
@@ -132,7 +134,7 @@ Then('I can see Log Out option', () => {
 });
 
 Then('menu is closed', () => {
-  waitForElement(ProjectsPage.Header, 'menuBtn');
+  waitForElement(ProjectsPage.TopHeader, 'menuBtn');
 
   assert(
     !ProjectsPage.Menu.closeBtn.isDisplayed(),

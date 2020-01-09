@@ -1,11 +1,11 @@
 import Page from './page';
-import HeaderComponent from './components/topHeader.component';
+import TopHeaderComponent from './components/topHeader.component';
 import MenuComponent from './components/menu.component';
 import { waitForElement } from '../utils/utils';
 
 class ProjectsPage extends Page {
-  get Header() {
-    return HeaderComponent;
+  get TopHeader() {
+    return TopHeaderComponent;
   }
 
   get Menu() {
