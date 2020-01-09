@@ -12,6 +12,8 @@ export const UploaderList = styled.div`
 export const UploaderItem = styled.div`
   display: flex;
   align-items: center;
+  overflow: hidden;
+  margin-right: 20px;
 `;
 
 export const ImageName = styled.span`
