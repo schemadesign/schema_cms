@@ -66,9 +66,12 @@ export class DropZoneComponent extends PureComponent {
     }
   };
 
-  handleDragEnter = () => {
+  handleDragEnter = e => {
     this.counter++;
-    this.showDropZone();
+
+    if (e.dataTransfer.types.includes('Files')) {
+      this.showDropZone();
+    }
   };
 
   handleDragOver = e => {

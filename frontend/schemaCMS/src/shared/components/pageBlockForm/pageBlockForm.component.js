@@ -32,6 +32,7 @@ import { removeIconStyles, UploaderContainer, UploaderItem, UploaderList, ImageN
 import { getEventFiles } from '../../utils/helpers';
 import { Draggable } from '../draggable';
 import { IconWrapper } from '../../../routes/dataSource/dataWranglingScripts/dataWranglingScripts.styles';
+import { renderWhenTrue } from '../../utils/rendering';
 
 const { CloseIcon, MenuIcon } = Icons;
 
@@ -180,6 +181,8 @@ export class PageBlockForm extends PureComponent {
     </Draggable>
   );
 
+  renderFilesTitle = renderWhenTrue(always(<FormattedMessage {...messages.filesTitle} />));
+
   renderImage = () => (
     <UploaderContainer>
       <Uploader
@@ -196,7 +199,10 @@ export class PageBlockForm extends PureComponent {
         {...this.props}
       />
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        <UploaderList>{this.props.values.imageNames.map(this.renderUploaderItem)}</UploaderList>
+        <UploaderList>
+          {this.renderFilesTitle(!!this.props.values.imageNames.length)}
+          {this.props.values.imageNames.map(this.renderUploaderItem)}
+        </UploaderList>
       </DndProvider>
     </UploaderContainer>
   );
