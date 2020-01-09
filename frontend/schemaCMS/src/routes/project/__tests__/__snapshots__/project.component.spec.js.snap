@@ -52,5 +52,9 @@ exports[`Project: Component should render correctly 1`] = `
     exact={true}
     path="/project/:projectId/folder/create"
   />
+  <Route
+    component={[Function]}
+    path="*"
+  />
 </Switch>
 `;

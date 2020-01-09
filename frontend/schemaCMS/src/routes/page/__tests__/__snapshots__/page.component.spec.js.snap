@@ -17,5 +17,9 @@ exports[`Page: Component should render correctly 1`] = `
     exact={true}
     path="path/:pageId/edit"
   />
+  <Route
+    component={[Function]}
+    path="*"
+  />
 </Switch>
 `;

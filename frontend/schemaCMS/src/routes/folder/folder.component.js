@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router';
 import { PageList } from './pageList';
 import { CreatePage } from './createPage';
 import { Edit } from './edit';
+import { NotFound } from '../notFound';
 
 export class Folder extends PureComponent {
   static propTypes = {
@@ -25,6 +26,7 @@ export class Folder extends PureComponent {
         <Route exact path={folderPath} component={PageList} />
         <Route exact path={createPagePath} component={CreatePage} />
         <Route exact path={editPath} component={Edit} />
+        <Route path="*" component={NotFound} />
       </Switch>
     );
   }
