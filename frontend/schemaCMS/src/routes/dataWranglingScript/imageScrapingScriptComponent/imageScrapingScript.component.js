@@ -20,6 +20,8 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { InfoContainer } from '../../../shared/components/container/container.styles';
 
 const { CheckboxGroup, Checkbox } = FormUI;
 const { Span } = Typography;
@@ -110,6 +112,24 @@ export class ImageScrapingScript extends PureComponent {
     </Checkbox>
   );
 
+  renderContent = renderWhenTrueOtherwise(
+    () => (
+      <CheckboxGroup
+        onChange={this.handleChange}
+        value={this.state.selectedFields}
+        name="fields"
+        id="fieldCheckboxGroup"
+      >
+        {this.props.fieldNames.map(this.renderCheckboxes)}
+      </CheckboxGroup>
+    ),
+    always(
+      <InfoContainer>
+        <FormattedMessage {...messages.noFieldFound} />
+      </InfoContainer>
+    )
+  );
+
   render() {
     const headerConfig = this.getHeaderAndMenuConfig();
     const { intl, dataWranglingScript, match, history, isAdmin, fieldNames } = this.props;
@@ -138,16 +158,7 @@ export class ImageScrapingScript extends PureComponent {
             {dataWranglingScript.body}
           </SyntaxHighlighter>
           <LoadingWrapper loading={loading} error={error}>
-            {() => (
-              <CheckboxGroup
-                onChange={this.handleChange}
-                value={this.state.selectedFields}
-                name="fields"
-                id="fieldCheckboxGroup"
-              >
-                {fieldNames.map(this.renderCheckboxes)}
-              </CheckboxGroup>
-            )}
+            {this.renderContent(!!fieldNames.length)}
           </LoadingWrapper>
         </Form>
         <NavigationContainer>

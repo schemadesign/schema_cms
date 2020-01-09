@@ -25,5 +25,5 @@ export const selectFieldsInfo = createSelector(
 
 export const selectFieldNames = createSelector(
   selectDataSourceDomain,
-  pathOr([], ['dataSource', 'metaData', 'fieldsNames'])
+  pathOr([], ['dataSource', 'metaData', 'fieldsWithUrls'])
 );

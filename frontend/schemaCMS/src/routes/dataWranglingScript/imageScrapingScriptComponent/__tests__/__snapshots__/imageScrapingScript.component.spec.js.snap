@@ -119,7 +119,13 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       noData={false}
       noDataContent={null}
     >
-      <Component />
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="No fields containing URLs were found."
+          id="imageScrapingScript.noFieldFound"
+          values={Object {}}
+        />
+      </styled.div>
     </LoadingWrapper>
   </styled.form>
   <NavigationContainer
@@ -266,7 +272,13 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       noData={false}
       noDataContent={null}
     >
-      <Component />
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="No fields containing URLs were found."
+          id="imageScrapingScript.noFieldFound"
+          values={Object {}}
+        />
+      </styled.div>
     </LoadingWrapper>
   </styled.form>
   <NavigationContainer
