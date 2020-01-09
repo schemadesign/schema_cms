@@ -13,11 +13,11 @@ import {
 } from '../../modules/dataWranglingScripts';
 import { DataWranglingScript } from './dataWranglingScript.component';
 import { selectIsAdmin } from '../../modules/userProfile';
-import { DataSourceRoutines, selectFieldNames } from '../../modules/dataSource';
+import { DataSourceRoutines, selectFieldsWithUrls } from '../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
   dataWranglingScript: selectDataWranglingScript,
-  fieldNames: selectFieldNames,
+  fieldWithUrls: selectFieldsWithUrls,
   isAdmin: selectIsAdmin,
   imageScrapingFields: selectImageScrapingFields,
 });

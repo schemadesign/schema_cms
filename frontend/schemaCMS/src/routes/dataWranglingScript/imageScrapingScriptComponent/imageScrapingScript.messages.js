@@ -38,9 +38,13 @@ export default defineMessages({
     id: 'imageScrapingScript.save',
     defaultMessage: 'Save',
   },
-  ok: {
-    id: 'imageScrapingScript.ok',
-    defaultMessage: 'OK',
+  noFields: {
+    id: 'imageScrapingScript.noFields',
+    defaultMessage: 'This dataset contains no fields with URLs',
+  },
+  fieldsWithUrls: {
+    id: 'imageScrapingScript.fieldsWithUrls',
+    defaultMessage: 'Fields with URLs',
   },
   noFieldFound: {
     id: 'imageScrapingScript.noFieldFound',
