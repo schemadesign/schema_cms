@@ -27,7 +27,6 @@ from common import api, db, services, settings, types, utils
 import errors
 import mocks
 from image_scraping import image_scraping, is_valid_url  # noqa
-from utils import FieldType, NumpyEncoder
 
 
 logger = logging.getLogger()
