@@ -1,5 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { cond, equals, always, isNil, both, T } from 'ramda';
+import { always, both, cond, equals, isNil, T } from 'ramda';
 
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
@@ -10,12 +10,20 @@ import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
 
 const convertImages = images =>
-  images.reverse().reduce((result, { file }, index) => ({ [`image${index}`]: file, ...result }), {});
+  images.reduce((result, { file }, index) => ({ [`image${index}`]: file, ...result }), {});
+const getImagesOrder = imageNames =>
+  JSON.stringify(imageNames.reduce((prev, { id }, index) => ({ [id]: index, ...prev }), {}));
 
-const getBlockData = ({ name, images, type, deleteImages, ...rest }, blockType) =>
+const getBlockData = ({ name, images, imageNames, type, deleteImages, ...rest }, blockType) =>
   cond([
-    [both(equals(IMAGE_TYPE), () => isNil(images)), always({ name, type, deleteImages })],
-    [equals(IMAGE_TYPE), () => ({ name, type, ...convertImages(images), deleteImages })],
+    [
+      both(equals(IMAGE_TYPE), () => isNil(images)),
+      always({ name, type, imagesOrder: getImagesOrder(imageNames), deleteImages }),
+    ],
+    [
+      equals(IMAGE_TYPE),
+      () => ({ name, type, imagesOrder: getImagesOrder(imageNames), ...convertImages(images), deleteImages }),
+    ],
     [T, always({ name, type, content: rest[`${blockType || type}-content`] })],
   ])(blockType || type);
 
@@ -67,6 +75,7 @@ function* create({ payload: { pageId, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.create.request());
     const fields = getBlockData(restFields);
+
     const formData = formatFormData(fields);
 
     const { data } = yield api.post(`${PAGES_PATH}/${pageId}/blocks`, formData, {
@@ -85,6 +94,7 @@ function* create({ payload: { pageId, ...restFields } }) {
 function* update({ payload: { pageId, blockId, blockType, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.update.request());
+
     const fields = getBlockData(restFields, blockType);
     const formData = formatFormData(fields);
 

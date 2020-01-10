@@ -1,11 +1,12 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { addIndex, always, concat, cond, equals, findLast, has, ifElse, map, path, pipe, propEq } from 'ramda';
+import { addIndex, always, concat, cond, equals, has, ifElse, map, path, pipe } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { Icons } from 'schemaUI';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
+import { asMutable } from 'seamless-immutable';
 
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { BackButton, NextButton } from '../navigation';
@@ -28,7 +29,7 @@ import {
 import messages from './pageBlockForm.messages';
 import { Select } from '../form/select';
 import { Uploader } from '../form/uploader';
-import { removeIconStyles, UploaderContainer, UploaderItem, UploaderList, ImageName } from './pageBlockForm.styles';
+import { ImageName, removeIconStyles, UploaderContainer, UploaderItem, UploaderList } from './pageBlockForm.styles';
 import { getEventFiles } from '../../utils/helpers';
 import { Draggable } from '../draggable';
 import { IconWrapper } from '../../../routes/dataSource/dataWranglingScripts/dataWranglingScripts.styles';
@@ -84,7 +85,7 @@ export class PageBlockForm extends PureComponent {
     const updatedImages = pipe(
       concat(images),
       mapIndexed((item, id) =>
-        ifElse(has('file'), always({ file: item.file, id: `image-${id}` }), always({ file: item, id: `image-${id}` }))(
+        ifElse(has('file'), always({ file: item.file, id: `image${id}` }), always({ file: item, id: `image${id}` }))(
           item
         )
       )
@@ -132,16 +133,14 @@ export class PageBlockForm extends PureComponent {
   };
 
   handleMove = (dragIndex, hoverIndex) => {
-    let { imageNames, images } = this.props.values;
+    let { imageNames } = this.props.values;
     const dragCard = imageNames[dragIndex];
+    const mutableImageNames = asMutable(imageNames);
 
-    imageNames.splice(dragIndex, 1);
-    imageNames.splice(hoverIndex, 0, dragCard);
+    mutableImageNames.splice(dragIndex, 1);
+    mutableImageNames.splice(hoverIndex, 0, dragCard);
 
-    const files = imageNames.map(({ id }) => findLast(propEq('id', id), images));
-
-    this.props.setFieldValue(BLOCK_IMAGES, files);
-    this.props.setFieldValue(`${this.props.values[BLOCK_TYPE]}-${BLOCK_CONTENT}`, imageNames);
+    this.props.setFieldValue(BLOCK_IMAGE_NAMES, mutableImageNames);
   };
 
   renderBlock = (messageId, messagePlaceholderId) => (
