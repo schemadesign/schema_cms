@@ -1,3 +1,5 @@
+import json
+
 from django.db import transaction
 from rest_framework import serializers, exceptions
 
@@ -516,19 +518,20 @@ class PageDetailSerializer(PageSerializer):
 
 
 class BlockImageSerializer(serializers.ModelSerializer):
-    image_name = serializers.CharField(max_length=50, read_only=True)
+    image_name = serializers.CharField(max_length=100, read_only=True)
 
     class Meta:
         model = models.BlockImage
-        fields = ("id", "image", "image_name")
+        fields = ("id", "image", "image_name", "exec_order")
 
 
 class BlockSerializer(serializers.ModelSerializer):
-    images = BlockImageSerializer(many=True, required=False)
+    images = BlockImageSerializer(many=True, read_only=True)
+    images_order = serializers.CharField(write_only=True, default="{}")
 
     class Meta:
         model = models.Block
-        fields = ("id", "page", "name", "type", "content", "images", "is_active")
+        fields = ("id", "page", "name", "type", "content", "images", "images_order", "is_active")
         extra_kwargs = {
             "page": {"required": False, "allow_null": True},
             "content": {"required": False, "allow_null": True, "allow_blank": False},
@@ -557,6 +560,7 @@ class BlockSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, *args, **kwargs):
         images = self.context.get('view').request.FILES
+        images_order = json.loads(self.validated_data.pop("images_order", "{}"))
         block = super().save(**kwargs)
 
         delete_images = self.initial_data.get("delete_images")
@@ -565,22 +569,30 @@ class BlockSerializer(serializers.ModelSerializer):
             block.images.filter(id__in=delete_images.split(",")).delete()
 
         if images:
-            models.BlockImage.objects.bulk_create(self.create_images(images, block))
+            models.BlockImage.objects.bulk_create(self.create_images(images, images_order, block))
 
         return block
 
     @staticmethod
-    def create_images(images, block):
-        for image in images.values():
+    def create_images(images, images_order, block):
+        for key, image in images.items():
             image_instance = models.BlockImage()
             image_instance.image = image
             image_instance.image_name = image.name
             image_instance.block = block
+            image_instance.exec_order = images_order[key]
             yield image_instance
 
     @transaction.atomic()
     def update(self, instance, validated_data):
-        new_type = validated_data.get("type")
+        new_type = validated_data.get("type", None)
+        image_order = json.loads(validated_data.get("images_order", "{}"))
+
+        if image_order:
+            images = instance.images.filter(pk__in=image_order.keys())
+            for image in images:
+                image.exec_order = image_order[str(image.id)]
+                image.save(update_fields=["exec_order"])
 
         if new_type and (instance.type == BlockTypes.IMAGE and new_type != BlockTypes.IMAGE):
             instance.images.all().delete()

@@ -676,7 +676,8 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
 class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     block = models.ForeignKey(Block, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(upload_to=file_upload_path, null=True, blank=True)
-    image_name = models.CharField(max_length=50, blank=True)
+    image_name = models.CharField(max_length=100, blank=True)
+    exec_order = models.IntegerField(default=0)
 
     class Meta:
         ordering = ("created",)

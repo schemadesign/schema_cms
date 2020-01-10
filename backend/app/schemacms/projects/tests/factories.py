@@ -118,3 +118,11 @@ class BlockFactory(factory.django.DjangoModelFactory):
     page = factory.SubFactory(PageFactory)
     name = factory.Faker("text", max_nb_chars=25)
     content = factory.Faker("text", max_nb_chars=25)
+
+
+class BlockImageFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.BlockImage"
+
+    block = factory.SubFactory(BlockFactory)
+    image = factory.django.ImageField(filename="test.png", from_func=utils_test.make_image)
