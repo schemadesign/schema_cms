@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 
 import { Create } from '../create.component';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
+import { BackButton } from '../../../../shared/components/navigation';
 import { defaultProps } from '../create.stories';
 import { Form } from '../create.styles';
 
@@ -45,6 +46,16 @@ describe('Create: Component', () => {
       .prop('handleBlur')();
 
     expect(defaultProps.handleBlur).toHaveBeenCalledTimes(1);
+  });
+
+  it('should redirect on click cancel', () => {
+    jest.spyOn(defaultProps.history, 'push');
+
+    const wrapper = render();
+
+    wrapper.find(BackButton).simulate('click');
+
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/');
   });
 
   it('should redirect to not-authorized page not admin user', () => {

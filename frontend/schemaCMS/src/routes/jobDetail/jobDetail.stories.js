@@ -46,6 +46,7 @@ export const defaultProps = {
   values: { ...INITIAL_VALUES, description: 'description' },
   dirty: true,
   isValid: true,
+  updateJobDetail: Function.prototype,
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   intl,

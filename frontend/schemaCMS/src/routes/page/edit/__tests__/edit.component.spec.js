@@ -16,9 +16,11 @@ describe('Edit: Component', () => {
   });
 
   it('should render correctly', async () => {
-    defaultProps.fetchPage = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render();
-    await Promise.resolve();
+    const fetchPage = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = await render({
+      fetchPage,
+    });
+
     global.expect(wrapper).toMatchSnapshot();
   });
 
@@ -28,6 +30,16 @@ describe('Edit: Component', () => {
     wrapper.find('#backBtn').simulate('click');
 
     expect(defaultProps.history.push).toHaveBeenCalledWith('/folder/1');
+  });
+
+  it('should call fetchFilters on componentDidMount', async () => {
+    const fetchPage = jest.spyOn(defaultProps, 'fetchPage');
+
+    await render({
+      fetchPage,
+    });
+
+    global.expect(fetchPage).toHaveBeenCalledTimes(1);
   });
 
   it('should submit form', () => {

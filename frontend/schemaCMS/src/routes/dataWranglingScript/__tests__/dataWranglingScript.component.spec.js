@@ -46,4 +46,12 @@ describe('DataWranglingScript: Component', () => {
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call fetchDataWranglingScript on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchDataWranglingScript');
+
+    await render();
+
+    expect(defaultProps.fetchDataWranglingScript).toHaveBeenCalled();
+  });
 });

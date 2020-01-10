@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Formik } from 'formik';
+import { Form } from 'schemaUI';
 
 import { Filters } from '../filters.component';
 import { defaultProps } from '../filters.stories';
-import { NextButton } from '../../../../shared/components/navigation';
 
 describe('Filters: Component', () => {
   const component = props => <Filters {...defaultProps} {...props} />;
@@ -35,22 +35,26 @@ describe('Filters: Component', () => {
     global.expect(fetchFilters).toHaveBeenCalledTimes(1);
   });
 
-  it('should call fetchFilters on componentDidMount', async () => {
+  it('should call setFilters on submit', async () => {
     const fetchFilters = jest.fn().mockReturnValue(Promise.resolve());
-    const setFilters = jest.spyOn(defaultProps, 'setFilters').mockImplementation(() => {
-      global.expect(setFilters).toHaveBeenCalledTimes(1);
-    });
+    const setFilters = jest.spyOn(defaultProps, 'setFilters');
+    const active = [];
 
     const wrapper = await render({
       fetchFilters,
       setFilters,
+    }).find(Formik);
+
+    wrapper
+      .dive()
+      .find(Form.CheckboxGroup)
+      .simulate('change', { target: { checked: true } });
+
+    wrapper.prop('onSubmit')(active, {
+      setSubmitting: Function.prototype,
+      setErrors: Function.prototype,
     });
 
-    await wrapper
-      .find(Formik)
-      .dive()
-      .find(NextButton)
-      .at(0)
-      .simulate('click');
+    expect(setFilters).toHaveBeenCalledTimes(1);
   });
 });

@@ -104,6 +104,7 @@ exports[`Edit: Component should render correctly 1`] = `
         placeholder="Name"
         removeFolder={[Function]}
         touched={Object {}}
+        updateFolder={[Function]}
         value="name"
         values={
           Object {
@@ -310,6 +311,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
         placeholder="Name"
         removeFolder={[Function]}
         touched={Object {}}
+        updateFolder={[Function]}
         value="name"
         values={
           Object {

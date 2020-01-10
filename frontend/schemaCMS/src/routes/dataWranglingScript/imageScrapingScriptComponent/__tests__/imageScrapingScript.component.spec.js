@@ -72,4 +72,12 @@ describe('DataWranglingScript: Component', () => {
       imageScriptIndex: 1,
     });
   });
+
+  it('should call fetchDataSource on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchDataSource');
+
+    await render();
+
+    expect(defaultProps.fetchDataSource).toHaveBeenCalled();
+  });
 });

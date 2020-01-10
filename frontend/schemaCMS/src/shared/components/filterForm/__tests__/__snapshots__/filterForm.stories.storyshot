@@ -687,11 +687,11 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   padding-top: 24px;
 }
 
-.c5 {
+.c7 {
   height: 155px;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -710,7 +710,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c8 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -719,13 +719,41 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c8 {
+.c10 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
+.c6 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c6:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c5 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
 @media (min-width:1040px) {
-  .c7 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -734,7 +762,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c8 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -743,7 +771,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c10 {
     width: 240px;
   }
 }
@@ -1234,14 +1262,32 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     <div
       className="c5"
     >
-      <div
+      <span
         className="c6"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        <span>
+          Remove filter
+        </span>
+      </span>
+    </div>
+    <div
+      className="c7"
+    >
+      <div
+        className="c8"
       >
         <div
-          className="c7"
+          className="c9"
         >
           <button
-            className="c8"
+            className="c10"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1264,11 +1310,11 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             type="button"
           >
             <span>
-              Cancel
+              Back
             </span>
           </button>
           <button
-            className="c8"
+            className="c10"
             disabled={true}
             style={
               Object {

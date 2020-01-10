@@ -27,6 +27,8 @@ export const editProps = {
   updateFilter: Function.prototype,
   removeFilter: Function.prototype,
   filter: {
+    id: 2,
+    datasource: { id: 1 },
     name: 'name',
     filterType: 'checkbox',
     field: 'field',

@@ -4,8 +4,9 @@ import { IntlProvider } from 'react-intl';
 
 import { Source } from '../source.component';
 import { defaultProps } from '../source.stories';
-import { Form } from '../source.styles';
+import { Form, Link } from '../source.styles';
 import { DEFAULT_LOCALE } from '../../../../i18n';
+import browserHistory from '../../../../shared/utils/history';
 
 describe('SourceComponent: Component', () => {
   const component = props => (
@@ -72,5 +73,19 @@ describe('SourceComponent: Component', () => {
       dataSourceId: 'dataSourceIdId',
       projectId: 'projectId',
     });
+  });
+
+  it('should redurect on click past versions', () => {
+    jest.spyOn(browserHistory, 'push');
+
+    const wrapper = render().dive();
+    wrapper
+      .find(Form)
+      .dive()
+      .find(Link)
+      .at(0)
+      .simulate('click');
+
+    expect(browserHistory.push).toHaveBeenCalledWith('/datasource/1/job');
   });
 });

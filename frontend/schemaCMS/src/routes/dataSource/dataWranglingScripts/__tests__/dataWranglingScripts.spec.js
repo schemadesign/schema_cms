@@ -3,9 +3,9 @@ import { shallow } from 'enzyme';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 
-import { NextButton } from '../../../../shared/components/navigation';
 import { DataWranglingScripts } from '../dataWranglingScripts.component';
 import { defaultProps } from '../dataWranglingScripts.stories';
+import { Draggable } from '../../../../shared/components/draggable';
 
 describe('DataWranglingScripts: Component', () => {
   const component = props => <DataWranglingScripts {...defaultProps} {...props} />;
@@ -57,21 +57,30 @@ describe('DataWranglingScripts: Component', () => {
   it('should call sendUpdatedDataWranglingScript on save changes', async () => {
     defaultProps.fetchDataWranglingScripts = jest.fn().mockReturnValue(Promise.resolve());
 
-    const sendUpdatedDataWranglingScript = jest
-      .spyOn(defaultProps, 'sendUpdatedDataWranglingScript')
-      .mockImplementation(() => {
-        global.expect(sendUpdatedDataWranglingScript).toHaveBeenCalledTimes(1);
-      });
+    jest.spyOn(defaultProps, 'sendUpdatedDataWranglingScript');
 
-    const wrapper = await render({
-      sendUpdatedDataWranglingScript,
-    })
+    const steps = { steps: [] };
+
+    await render()
       .find(Formik)
-      .dive();
+      .prop('onSubmit')(steps, { setSubmitting: Function.prototype });
+
+    expect(defaultProps.sendUpdatedDataWranglingScript).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call setScriptsList on move item', async () => {
+    jest.spyOn(defaultProps, 'setScriptsList');
+
+    defaultProps.fetchDataWranglingScripts = jest.fn().mockReturnValue(Promise.resolve());
+
+    const wrapper = await render();
 
     wrapper
-      .find(NextButton)
-      .at(0)
-      .simulate('click');
+      .find(Formik)
+      .dive()
+      .find(Draggable)
+      .first()
+      .prop('onMove')(1, 0);
+    global.expect(defaultProps.setScriptsList).toHaveBeenCalledTimes(1);
   });
 });
