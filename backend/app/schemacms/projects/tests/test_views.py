@@ -66,7 +66,6 @@ class TestListCreateProjectView:
         api_client.force_authenticate(user)
 
         self.example_project["editors"].append(user.id)
-
         response = api_client.post(self.get_url(), data=self.example_project)
         project_id = response.data["id"]
         project = projects_models.Project.objects.all().get(pk=project_id)
@@ -269,7 +268,7 @@ class TestProjectDataSourcesView:
         api_client.force_authenticate(user)
         response = api_client.get(self.get_url(user_project.id))
 
-        assert response.status_code == status.HTTP_404_NOT_FOUND
+        assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_invalid_project_id(self, api_client, user):
         api_client.force_authenticate(user)
