@@ -14,7 +14,7 @@ describe('DataWranglingScripts: Component', () => {
 
   it('should render correctly', async () => {
     const wrapper = await render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly form', async () => {
@@ -23,7 +23,7 @@ describe('DataWranglingScripts: Component', () => {
     const wrapper = await render()
       .find(Formik)
       .dive();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call fetchDataWranglingScripts on componentDidMount', () => {
@@ -40,7 +40,7 @@ describe('DataWranglingScripts: Component', () => {
       },
     });
 
-    global.expect(defaultProps.fetchDataWranglingScripts).toBeCalledWith({ dataSourceId: '1', fromScript: true });
+    expect(defaultProps.fetchDataWranglingScripts).toBeCalledWith({ dataSourceId: '1', fromScript: true });
   });
 
   it('should call uploadScript on change of uploader file', () => {
@@ -51,7 +51,33 @@ describe('DataWranglingScripts: Component', () => {
       .find(Form.FileUpload)
       .first()
       .prop('onChange')({ target: { files: [{ name: 'filename.py' }] } });
-    global.expect(defaultProps.uploadScript).toHaveBeenCalledTimes(1);
+    expect(defaultProps.uploadScript).toHaveBeenCalledTimes(1);
+  });
+
+  it('should return error on upload file with too long name', () => {
+    const wrapper = render();
+    const name = 'someverylongfilename-someverylongfilename-someverylongfilename-someverylongfilename.py';
+    wrapper
+      .find(Form.FileUpload)
+      .first()
+      .prop('onChange')({ target: { files: [{ name }] } });
+
+    expect(wrapper.state().errorMessage).toBe('errorTooLongName');
+  });
+
+  it('should return error on failed uploading', async () => {
+    const wrapper = await render({
+      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
+      uploadScript: jest.fn().mockReturnValue(Promise.reject('uploading file failed')),
+    });
+
+    await wrapper
+      .find(Form.FileUpload)
+      .first()
+      .prop('onChange')({ target: { files: [{ name: 'filename.py' }] } });
+
+    expect(wrapper.state().errorMessage).toBe('errorOnUploading');
+    expect(wrapper.state().uploading).toBeFalsy();
   });
 
   it('should call sendUpdatedDataWranglingScript on save changes', async () => {
@@ -59,7 +85,7 @@ describe('DataWranglingScripts: Component', () => {
 
     jest.spyOn(defaultProps, 'sendUpdatedDataWranglingScript');
 
-    const steps = { steps: [] };
+    const steps = { steps: ['1'] };
 
     await render()
       .find(Formik)
@@ -68,12 +94,39 @@ describe('DataWranglingScripts: Component', () => {
     expect(defaultProps.sendUpdatedDataWranglingScript).toHaveBeenCalledTimes(1);
   });
 
+  it('should call setScriptsList on change checkbox', async () => {
+    const dataWranglingScripts = defaultProps.dataWranglingScripts.setIn([0, 'checked'], true);
+    const props = {
+      dataWranglingScripts,
+      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
+      setScriptsList: Function.prototype,
+    }
+    jest.spyOn(props, 'setScriptsList');
+
+    const wrapper = await render(props);
+
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(Form.CheckboxGroup)
+      .first()
+      .prop('onChange')({target:
+        { value: '3', checked: true },
+      });
+
+    expect(props.setScriptsList).toHaveBeenCalledTimes(1);
+  });
+
   it('should call setScriptsList on move item', async () => {
-    jest.spyOn(defaultProps, 'setScriptsList');
+    const dataWranglingScripts = defaultProps.dataWranglingScripts.setIn([0, 'checked'], true);
+    const props = {
+      dataWranglingScripts,
+      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
+      setScriptsList: Function.prototype,
+    }
+    jest.spyOn(props, 'setScriptsList');
 
-    defaultProps.fetchDataWranglingScripts = jest.fn().mockReturnValue(Promise.resolve());
-
-    const wrapper = await render();
+    const wrapper = await render(props);
 
     wrapper
       .find(Formik)
@@ -81,6 +134,7 @@ describe('DataWranglingScripts: Component', () => {
       .find(Draggable)
       .first()
       .prop('onMove')(1, 0);
-    global.expect(defaultProps.setScriptsList).toHaveBeenCalledTimes(1);
+
+    expect(props.setScriptsList).toHaveBeenCalledTimes(1);
   });
 });
