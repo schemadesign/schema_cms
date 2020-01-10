@@ -526,7 +526,7 @@ class BlockImageSerializer(serializers.ModelSerializer):
 
 
 class BlockSerializer(serializers.ModelSerializer):
-    images = BlockImageSerializer(many=True, read_only=True)
+    images = serializers.SerializerMethodField(read_only=True)
     images_order = serializers.CharField(write_only=True, default="{}")
 
     class Meta:
@@ -557,6 +557,10 @@ class BlockSerializer(serializers.ModelSerializer):
 
         return type_
 
+    def get_images(self, instance):
+        images = instance.images.all().order_by('exec_order')
+        return BlockImageSerializer(images, many=True).data
+
     @transaction.atomic()
     def save(self, *args, **kwargs):
         images = self.context.get('view').request.FILES
@@ -586,7 +590,11 @@ class BlockSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def update(self, instance, validated_data):
         new_type = validated_data.get("type", None)
-        image_order = json.loads(validated_data.get("images_order", "{}"))
+        image_order = {
+            key: value
+            for key, value in json.loads(self.initial_data.get("images_order", "{}")).items()
+            if not key.startswith("image")
+        }
 
         if image_order:
             images = instance.images.filter(pk__in=image_order.keys())
