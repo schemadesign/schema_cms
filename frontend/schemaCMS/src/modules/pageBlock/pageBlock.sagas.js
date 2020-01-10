@@ -14,7 +14,7 @@ const convertImages = images =>
 const getImagesOrder = imageNames =>
   JSON.stringify(imageNames.reduce((prev, { id }, index) => ({ [id]: index, ...prev }), {}));
 
-const getBlockData = ({ name, images, imageNames, type, deleteImages, ...rest }, blockType) =>
+const getBlockData = ({ name, images, imageNames = [], type, deleteImages, ...rest }, blockType) =>
   cond([
     [
       both(equals(IMAGE_TYPE), () => isNil(images)),
