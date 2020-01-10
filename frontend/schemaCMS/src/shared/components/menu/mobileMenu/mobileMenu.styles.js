@@ -100,3 +100,5 @@ export const menuStyles = {
 export const closeButtonStyles = {
   backgroundColor: 'transparent',
 };
+
+export const Divider = styled.div``;
