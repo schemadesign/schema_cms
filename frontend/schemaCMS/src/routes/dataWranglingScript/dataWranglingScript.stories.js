@@ -11,9 +11,15 @@ export const defaultProps = {
   // eslint-disable-next-line import/no-named-as-default-member
   dataWranglingScript: mockScripts[BLANK_CELLS],
   fetchDataWranglingScript: Function.prototype,
+  fetchDataWranglingScripts: Function.prototype,
+  setImageScrapingFields: Function.prototype,
+  fetchDataSource: Function.prototype,
   isAdmin: true,
   history,
   intl,
+  dataWranglingScripts: [],
+  imageScrapingFields: [],
+  fieldsWithUrls: [],
   match: {
     params: {
       projectId: '1',

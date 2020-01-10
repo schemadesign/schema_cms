@@ -1396,6 +1396,24 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
     
         </code>
       </pre>
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        <span>
+          Fields with URLs
+        </span>
+      </label>
       <div
         className="c14"
       >
@@ -1442,16 +1460,16 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
           </button>
           <button
             className="c18"
-            disabled={false}
+            disabled={true}
             id="imageScrapingNextBtn"
             onClick={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFF",
+                "backgroundColor": "#1d1d20",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
+                "color": "#71737e",
+                "cursor": "default",
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
@@ -1464,7 +1482,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
             }
           >
             <span>
-              OK
+              Save
             </span>
           </button>
         </div>
@@ -2870,6 +2888,24 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
     
         </code>
       </pre>
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #f0efef",
+            "color": "#a6a7aa",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        <span>
+          Fields with URLs
+        </span>
+      </label>
       <div
         className="c14"
       >
@@ -2916,16 +2952,16 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
           </button>
           <button
             className="c18"
-            disabled={false}
+            disabled={true}
             id="imageScrapingNextBtn"
             onClick={[Function]}
             style={
               Object {
-                "backgroundColor": "#000",
+                "backgroundColor": "#f0efef",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
+                "color": "#a6a7aa",
+                "cursor": "default",
                 "display": "inline-block",
                 "fill": "#1d1d20",
                 "fontSize": "18px",
@@ -2938,7 +2974,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
             }
           >
             <span>
-              OK
+              Save
             </span>
           </button>
         </div>

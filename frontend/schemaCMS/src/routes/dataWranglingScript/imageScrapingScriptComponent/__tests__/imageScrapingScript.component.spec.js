@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import { ImageScrapingScript } from '../imageScrapingScript.component';
 import { defaultProps } from '../imageScrapingScript.stories';
 import { BackButton, NextButton } from '../../../../shared/components/navigation';
-import mockScripts, { CASE_CONVERSION } from '../../../../modules/dataWranglingScripts/scripts.mock';
 import { STEPS_PAGE } from '../../../../modules/dataSource/dataSource.constants';
 
 describe('DataWranglingScript: Component', () => {
@@ -22,40 +21,47 @@ describe('DataWranglingScript: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
-    const wrapper = render(defaultProps);
+    const wrapper = render();
     await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    await Promise.resolve();
+    expect(wrapper).toMatchSnapshot();
   });
 
-  it('should go back on history', async () => {
-    jest.spyOn(defaultProps.history, 'goBack');
-    const wrapper = render(defaultProps);
+  it('should fetchDataSource on mount', async () => {
+    jest.spyOn(defaultProps, 'fetchDataSource');
+    render();
     await Promise.resolve();
-    wrapper.find(BackButton).simulate('click');
+    await Promise.resolve();
+    expect(defaultProps.fetchDataSource).toHaveBeenCalledWith({ dataSourceId: '1', scriptId: '1' });
+  });
 
-    expect(defaultProps.history.goBack).toHaveBeenCalled();
+  it('should fetchDataWranglingScripts on mount ', async () => {
+    jest.spyOn(defaultProps, 'fetchDataWranglingScripts');
+    render({ dataWranglingScripts: [] });
+    await Promise.resolve();
+    await Promise.resolve();
+    expect(defaultProps.fetchDataWranglingScripts).toHaveBeenCalledWith({ dataSourceId: '1' });
   });
 
   it('should go to data wrangling step', async () => {
     jest.spyOn(defaultProps.history, 'push');
-    const dataWranglingScript = {
-      // eslint-disable-next-line import/no-named-as-default-member
-      ...mockScripts[CASE_CONVERSION],
-    };
-    const wrapper = render({ ...defaultProps, dataWranglingScript });
+
+    const wrapper = render();
+    await Promise.resolve();
     await Promise.resolve();
     wrapper.find(BackButton).simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${STEPS_PAGE}`);
+    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/1/${STEPS_PAGE}`, { fromScript: true });
   });
 
   it('should call setImageScrapingFields', async () => {
     jest.spyOn(defaultProps, 'setImageScrapingFields');
-    const wrapper = render(defaultProps);
+    const wrapper = render();
+    await Promise.resolve();
     await Promise.resolve();
     wrapper.find(NextButton).simulate('click');
 
@@ -63,6 +69,7 @@ describe('DataWranglingScript: Component', () => {
       dataSourceId: '1',
       imageScrapingFields: [],
       scriptId: '1',
+      imageScriptIndex: 1,
     });
   });
 });

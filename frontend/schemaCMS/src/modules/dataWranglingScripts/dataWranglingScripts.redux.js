@@ -3,24 +3,24 @@ import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
 import {
   always,
+  ascend,
   cond,
+  defaultTo,
+  differenceWith,
+  equals,
+  find,
+  ifElse,
   isEmpty,
   lensProp,
   map,
-  pipe,
-  propEq,
-  pathOr,
-  T,
-  set,
-  prop,
-  sortWith,
-  ifElse,
-  ascend,
-  find,
-  defaultTo,
-  equals,
-  differenceWith,
   mergeRight,
+  pathOr,
+  pipe,
+  prop,
+  propEq,
+  set,
+  sortWith,
+  T,
 } from 'ramda';
 
 import { SCRIPT_TYPES } from './dataWranglingScripts.constants';
@@ -84,10 +84,9 @@ const addDifference = stateScripts => scripts => {
 };
 
 const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('script', payload);
-const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, dataSource } }) => {
+const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, dataSource, fromScript } }) => {
   const dataSourceScripts = pathOr([], ['activeJob', 'scripts'], dataSource);
-
-  if (state.scripts.length) {
+  if (state.scripts.length && fromScript) {
     return state.set(
       'scripts',
       pipe(
@@ -103,15 +102,19 @@ const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, da
     pipe(
       map(addScriptType),
       map(addOrderAndChecked(dataSourceScripts)),
-      map(mergeResults(state.scripts)),
-      addDifference(state.scripts),
       sortWith([ascend(prop('order')), ascend(prop('type'))])
     )(data)
   );
 };
 
-const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) =>
-  state.set('imageScrapingFields', imageScrapingFields).update('customScripts', x => [...x, scriptId]);
+const setImageScrapingFields = (
+  state = INITIAL_STATE,
+  { payload: { imageScrapingFields, scriptId, imageScriptIndex } }
+) =>
+  state
+    .set('imageScrapingFields', imageScrapingFields)
+    .update('customScripts', x => [...x, scriptId])
+    .updateIn(['scripts', imageScriptIndex], script => ({ ...script, checked: !isEmpty(imageScrapingFields) }));
 
 const clearCustomScripts = (state = INITIAL_STATE) =>
   state.set('imageScrapingFields', INITIAL_STATE.imageScrapingFields).set('customScripts', INITIAL_STATE.customScripts);

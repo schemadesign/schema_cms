@@ -10,14 +10,16 @@ import {
   DataWranglingScriptsRoutines,
   selectDataWranglingScript,
   selectImageScrapingFields,
+  selectDataWranglingScripts,
 } from '../../modules/dataWranglingScripts';
 import { DataWranglingScript } from './dataWranglingScript.component';
 import { selectIsAdmin } from '../../modules/userProfile';
-import { DataSourceRoutines, selectFieldNames } from '../../modules/dataSource';
+import { DataSourceRoutines, selectFieldsWithUrls } from '../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
   dataWranglingScript: selectDataWranglingScript,
-  fieldNames: selectFieldNames,
+  dataWranglingScripts: selectDataWranglingScripts,
+  fieldsWithUrls: selectFieldsWithUrls,
   isAdmin: selectIsAdmin,
   imageScrapingFields: selectImageScrapingFields,
 });
@@ -26,6 +28,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.fetchOne),
+      fetchDataWranglingScripts: promisifyRoutine(DataWranglingScriptsRoutines.fetchList),
       fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
       setImageScrapingFields: promisifyRoutine(DataWranglingScriptsRoutines.setImageScrapingFields),
     },
