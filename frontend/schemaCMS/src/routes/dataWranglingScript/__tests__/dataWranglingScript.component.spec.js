@@ -2,33 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { DataWranglingScript } from '../dataWranglingScript.component';
+import { defaultProps } from '../dataWranglingScript.stories';
 import mockScripts, { CASE_CONVERSION } from '../../../modules/dataWranglingScripts/scripts.mock';
 import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 
 describe('DataWranglingScript: Component', () => {
-  const defaultProps = {
-    // eslint-disable-next-line import/no-named-as-default-member
-    dataWranglingScript: mockScripts[CASE_CONVERSION],
-    fetchDataWranglingScript: Function.prototype,
-    fetchDataSource: Function.prototype,
-    fieldNames: [],
-    imageScrapingFields: [],
-    setImageScrapingFields: Function.prototype,
-    customScripts: [],
-    intl: {},
-    history: {
-      push: Function.prototype,
-    },
-    match: {
-      path: '/',
-      params: {
-        scriptId: '1',
-        dataSourceId: '1',
-      },
-    },
-    isAdmin: false,
-  };
-
   const component = props => <DataWranglingScript {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -40,14 +18,14 @@ describe('DataWranglingScript: Component', () => {
 
   it('should render correctly', async () => {
     defaultProps.fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render(defaultProps);
+    const wrapper = render();
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with link to datasources', async () => {
     defaultProps.fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
-    const props = { ...defaultProps };
+    const props = {};
     const wrapper = render(props);
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
@@ -64,8 +42,7 @@ describe('DataWranglingScript: Component', () => {
       },
     };
 
-    const props = { ...defaultProps, dataWranglingScript };
-    const wrapper = render(props);
+    const wrapper = render({ dataWranglingScript });
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });

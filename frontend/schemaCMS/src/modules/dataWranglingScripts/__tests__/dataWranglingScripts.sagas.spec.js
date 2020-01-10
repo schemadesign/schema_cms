@@ -34,7 +34,7 @@ describe('DataWranglingScripts: sagas', () => {
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`).reply(OK, responseData);
 
-      const successPayload = { data: responseData, dataSource };
+      const successPayload = { data: responseData, dataSource, fromScript: true };
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
@@ -83,7 +83,10 @@ describe('DataWranglingScripts: sagas', () => {
       const options = {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
-      const payload = { dataSourceId: '1', script: new File(['foo'], 'foo.py', { type: 'text/plain' }) };
+      const payload = {
+        dataSourceId: '1',
+        script: new File(['foo'], 'foo.py', { type: 'text/plain' }),
+      };
       const responseData = [
         { id: 1, name: 'name 1', specs: {}, isPredefined: true },
         { id: 2, name: 'name 2', specs: {}, isPredefined: true },
@@ -99,6 +102,7 @@ describe('DataWranglingScripts: sagas', () => {
       const fetchListSuccessPayload = {
         data: responseData,
         dataSource,
+        fromScript: true,
       };
 
       mockApi

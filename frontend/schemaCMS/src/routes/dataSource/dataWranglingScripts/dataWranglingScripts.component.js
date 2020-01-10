@@ -21,6 +21,7 @@ import {
   uniq,
   filter,
   includes,
+  isEmpty,
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
@@ -142,8 +143,6 @@ export class DataWranglingScripts extends PureComponent {
 
   handleChange = ({ e, setFieldValue, steps }) => {
     const { value, checked } = e.target;
-    const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
-
     const scripts = this.props.dataWranglingScripts.map(script => {
       if (script.id.toString() === value) {
         return { ...script, checked };
@@ -151,14 +150,17 @@ export class DataWranglingScripts extends PureComponent {
 
       return script;
     });
-
     const script = find(propEq('id', parseInt(value, 10)), scripts);
-    this.props.setScriptsList(scripts);
 
-    if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE) {
+    if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE && isEmpty(this.props.imageScrapingFields)) {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
+
       return this.props.history.push(`/script/${value}/${dataSourceId}`);
     }
+
+    const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
+
+    this.props.setScriptsList(scripts);
 
     return setFieldValue('steps', setScripts(checked));
   };

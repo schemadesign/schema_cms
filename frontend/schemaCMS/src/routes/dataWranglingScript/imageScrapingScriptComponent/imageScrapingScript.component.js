@@ -8,6 +8,7 @@ import { Form as FormUI, Typography } from 'schemaUI';
 import {
   always,
   append,
+  difference,
   equals,
   find,
   ifElse,
@@ -18,7 +19,6 @@ import {
   pipe,
   propEq,
   reject,
-  difference,
 } from 'ramda';
 
 import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
@@ -28,7 +28,7 @@ import {
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Container, Form, customInputStyles } from './imageScrapingScript.styles';
+import { Container, customInputStyles, Form } from './imageScrapingScript.styles';
 import messages from './imageScrapingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -44,7 +44,9 @@ export class ImageScrapingScript extends PureComponent {
   static propTypes = {
     fetchDataSource: PropTypes.func.isRequired,
     dataWranglingScript: PropTypes.object,
-    fieldWithUrls: PropTypes.array.isRequired,
+    dataWranglingScripts: PropTypes.array.isRequired,
+    fetchDataWranglingScripts: PropTypes.func.isRequired,
+    fieldsWithUrls: PropTypes.array.isRequired,
     imageScrapingFields: PropTypes.array.isRequired,
     setImageScrapingFields: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
@@ -65,12 +67,19 @@ export class ImageScrapingScript extends PureComponent {
 
   async componentDidMount() {
     try {
-      const dataSource = await this.props.fetchDataSource(path(['match', 'params'], this.props));
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const scriptId = parseInt(getMatchParam(this.props, 'scriptId'), 10);
+      const { fetchDataSource, dataWranglingScripts, imageScrapingFields } = this.props;
+      const dataSource = await fetchDataSource(path(['match', 'params'], this.props));
+
+      if (isEmpty(dataWranglingScripts)) {
+        await this.props.fetchDataWranglingScripts({ dataSourceId });
+      }
+
       const selectedFields = pipe(
         pathOr([], ['activeJob', 'scripts']),
         find(propEq('id', scriptId)),
-        ifElse(isNil, always(this.props.imageScrapingFields), path(['options', 'columns']))
+        ifElse(isNil, always(imageScrapingFields), path(['options', 'columns']))
       )(dataSource);
 
       this.setState({ loading: false, selectedFields });
@@ -105,21 +114,23 @@ export class ImageScrapingScript extends PureComponent {
   };
 
   handleGoToDataWranglingList = (match, history) => () => {
-    const { dataWranglingScript } = this.props;
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
-    if (dataWranglingScript.isPredefined) {
-      return history.goBack();
-    }
-
-    return history.push(`/datasource/${dataWranglingScript.datasource}/${STEPS_PAGE}`);
+    return history.push(`/datasource/${dataSourceId}/${STEPS_PAGE}`, { fromScript: true });
   };
 
-  handleSaveClick = () =>
-    this.props.setImageScrapingFields({
+  handleSaveClick = () => {
+    const scriptId = getMatchParam(this.props, 'scriptId');
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
+    const imageScriptIndex = this.props.dataWranglingScripts.findIndex(({ id }) => id.toString() === scriptId);
+
+    return this.props.setImageScrapingFields({
       imageScrapingFields: this.state.selectedFields,
-      scriptId: getMatchParam(this.props, 'scriptId'),
-      dataSourceId: getMatchParam(this.props, 'dataSourceId'),
+      scriptId,
+      imageScriptIndex,
+      dataSourceId,
     });
+  };
 
   renderCheckbox = (name, index) => (
     <Checkbox id={`checkbox-${index}`} value={name} key={index}>
@@ -140,6 +151,7 @@ export class ImageScrapingScript extends PureComponent {
           value={this.state.selectedFields}
           name="fields"
           id="fieldCheckboxGroup"
+          customStyles={{ border: 'none' }}
         >
           {fields.map(this.renderCheckbox)}
         </CheckboxGroup>
@@ -148,7 +160,7 @@ export class ImageScrapingScript extends PureComponent {
 
   render() {
     const headerConfig = this.getHeaderAndMenuConfig();
-    const { intl, dataWranglingScript, match, history, isAdmin, fieldWithUrls, imageScrapingFields } = this.props;
+    const { intl, dataWranglingScript, match, history, isAdmin, fieldsWithUrls, imageScrapingFields } = this.props;
     const { loading, error, selectedFields } = this.state;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
     const isCleanForm = isEmpty([
@@ -181,7 +193,7 @@ export class ImageScrapingScript extends PureComponent {
             <FormattedMessage {...messages.fieldsWithUrls} />
           </Label>
           <LoadingWrapper loading={loading} error={error}>
-            {this.renderContent(fieldWithUrls)}
+            {this.renderContent(fieldsWithUrls)}
           </LoadingWrapper>
         </Form>
         <NavigationContainer>
