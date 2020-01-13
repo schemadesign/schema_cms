@@ -102,7 +102,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
           >
             <FormattedMessage
               defaultMessage="Settings"
-              id="shared.components.desktopTopHeader.settings"
+              id="shared.components.mobileMenu.settings"
               values={Object {}}
             />
           </Link>
@@ -116,7 +116,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
           >
             <FormattedMessage
               defaultMessage="Log out"
-              id="shared.components.desktopTopHeader.logOut"
+              id="shared.components.mobileMenu.logOut"
               values={Object {}}
             />
           </div>
@@ -131,7 +131,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
         >
           <FormattedMessage
             defaultMessage="About Schema CMS"
-            id="shared.components.desktopTopHeader.about"
+            id="shared.components.mobileMenu.about"
             values={Object {}}
           />
         </Styled(Link)>
@@ -143,7 +143,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
         >
           <FormattedMessage
             defaultMessage="API Doc"
-            id="shared.components.desktopTopHeader.api"
+            id="shared.components.mobileMenu.api"
             values={Object {}}
           />
         </Styled(Link)>
@@ -155,7 +155,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
         >
           <FormattedMessage
             defaultMessage="GitHub Repository"
-            id="shared.components.desktopTopHeader.repository"
+            id="shared.components.mobileMenu.repository"
             values={Object {}}
           />
         </Styled(Link)>
