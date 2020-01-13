@@ -23,38 +23,38 @@ describe('Navigation: Component', () => {
 
   it('should render NavigationContainer', () => {
     const wrapper = render(navigationComponent);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render NextButton', () => {
     const wrapper = render(nextButtonComponent);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render BackButton', () => {
     const wrapper = render(backButtonComponent);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render PlusButton', () => {
     const wrapper = render(plusButtonComponent);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render BackArrowButton', () => {
     const wrapper = render(backArrowButtonComponent);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render NextButton with custom children', () => {
     const children = <FormattedMessage {...messages.back} />;
     const wrapper = render(nextButtonComponent, { children });
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render BackButton with custom children', () => {
     const children = <FormattedMessage {...messages.next} />;
     const wrapper = render(backButtonComponent, { children });
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

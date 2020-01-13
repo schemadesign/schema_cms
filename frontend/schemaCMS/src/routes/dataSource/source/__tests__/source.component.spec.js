@@ -19,7 +19,8 @@ describe('SourceComponent: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render().dive();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render file uploader', () => {
@@ -30,13 +31,15 @@ describe('SourceComponent: Component', () => {
       },
     };
     const wrapper = render(props).dive();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call handleSubmit', () => {
     jest.spyOn(defaultProps, 'handleSubmit');
     const wrapper = render().dive();
     wrapper.find(Form).simulate('submit');
+
     expect(defaultProps.handleSubmit).toHaveBeenCalled();
   });
 
@@ -46,6 +49,7 @@ describe('SourceComponent: Component', () => {
     const wrapper = render().dive();
     wrapper.find(Form).simulate('submit');
     wrapper.find('#confirmRunLastJob').simulate('click');
+
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('runLastJob', true);
   });
 
@@ -55,6 +59,7 @@ describe('SourceComponent: Component', () => {
     const wrapper = render().dive();
     wrapper.find(Form).simulate('submit');
     wrapper.find('#declineRunLastJob').simulate('click');
+
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('runLastJob', false);
   });
 

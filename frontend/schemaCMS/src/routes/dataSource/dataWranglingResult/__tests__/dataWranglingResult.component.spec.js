@@ -11,15 +11,15 @@ describe('DataWranglingResult: Component', () => {
 
   it('should render correctly with loading', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
     defaultProps.fetchPreview = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render(defaultProps);
-    await Promise.resolve();
+    const wrapper = await render(defaultProps);
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should redirect on fake job', async () => {

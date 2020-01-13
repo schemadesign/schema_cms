@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
 import { DataWranglingScriptsRoutines, reducer as dataWranglingReducer } from '../dataWranglingScripts.redux';
@@ -15,11 +14,11 @@ describe('DataWranglingScripts: redux', () => {
 
   describe('reducer', () => {
     it('should return initial state', () => {
-      expect(dataWranglingReducer(undefined, {})).to.deep.equal(defaultState);
+      expect(dataWranglingReducer(undefined, {})).toEqual(defaultState);
     });
 
     it('should return state on unknown action', () => {
-      expect(dataWranglingReducer(defaultState, { type: 'unknown-action' })).to.deep.equal(defaultState);
+      expect(dataWranglingReducer(defaultState, { type: 'unknown-action' })).toEqual(defaultState);
     });
   });
 
@@ -31,7 +30,7 @@ describe('DataWranglingScripts: redux', () => {
       };
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchOne.success(script));
 
-      expect(resultState.script).to.deep.equal(script);
+      expect(resultState.script).toEqual(script);
     });
   });
 
@@ -47,7 +46,32 @@ describe('DataWranglingScripts: redux', () => {
       const payload = { data, dataSource };
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(payload));
 
-      expect(resultState.scripts).to.deep.equal([{ ...data[0], order: 0, type: 1, checked: true }]);
+      expect(resultState.scripts).toEqual([{ ...data[0], order: 0, type: 1, checked: true }]);
+    });
+  });
+
+  describe('when FETCH_LIST/SUCCESS action is received with existed scripts', () => {
+    it('should set dataWranglings', () => {
+      const data = [{ id: 1, type: 0 }, { id: 2, type: 1, checked: true }, { id: 3 }];
+      const dataSource = {
+        activeJob: {
+          scripts: [{ id: 2, execOrder: 0 }],
+        },
+      };
+      const payload = { data, dataSource };
+      const stateWithScripts = defaultState
+        .setIn(['scripts', 0], { id: 1, type: 0 })
+        .setIn(['scripts', 1], { id: 2, type: 1 });
+      const resultState = dataWranglingReducer(
+        stateWithScripts,
+        DataWranglingScriptsRoutines.fetchList.success(payload)
+      );
+
+      expect(resultState.scripts).toEqual([
+        { id: 2, type: 1, checked: true, order: 0 },
+        { id: 1, type: 1, order: Number.MAX_SAFE_INTEGER },
+        { id: 3, type: 1, order: Number.MAX_SAFE_INTEGER },
+      ]);
     });
   });
 
@@ -63,7 +87,7 @@ describe('DataWranglingScripts: redux', () => {
         DataWranglingScriptsRoutines.setImageScrapingFields.success(payload)
       );
 
-      expect(resultState.imageScrapingFields).to.deep.equal(payload.imageScrapingFields);
+      expect(resultState.imageScrapingFields).toEqual(payload.imageScrapingFields);
     });
 
     it('should set customScripts', () => {
@@ -77,7 +101,7 @@ describe('DataWranglingScripts: redux', () => {
         DataWranglingScriptsRoutines.setImageScrapingFields.success(payload)
       );
 
-      expect(resultState.customScripts).to.deep.equal([payload.scriptId]);
+      expect(resultState.customScripts).toEqual([payload.scriptId]);
     });
   });
 
@@ -93,7 +117,16 @@ describe('DataWranglingScripts: redux', () => {
       });
       const resultState = dataWranglingReducer(state, DataWranglingScriptsRoutines.clearCustomScripts.trigger());
 
-      expect(defaultState).to.deep.equal(resultState);
+      expect(defaultState).toEqual(resultState);
+    });
+  });
+
+  describe('when SET_SCRIPTS/SUCCESS action is received', () => {
+    it('should set dataWrangling ', () => {
+      const scripts = [{ id: 3, type: 1 }, { id: 1, type: 1 }, { id: 2, type: 1, checked: true }];
+      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.setScripts.trigger(scripts));
+
+      expect(resultState.scripts).toEqual(scripts);
     });
   });
 });

@@ -14,7 +14,7 @@ describe('UserCreateProject: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
@@ -26,7 +26,7 @@ describe('UserCreateProject: Component', () => {
     await Promise.resolve();
     await Promise.resolve();
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call fetchUser and fetchProject on componentDidMount', async () => {
@@ -35,7 +35,7 @@ describe('UserCreateProject: Component', () => {
 
     const wrapper = render();
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call createUserCMS on submit form', async () => {

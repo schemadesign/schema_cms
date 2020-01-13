@@ -100,7 +100,7 @@ describe('DataWranglingScripts: Component', () => {
       dataWranglingScripts,
       fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
       setScriptsList: Function.prototype,
-    }
+    };
     jest.spyOn(props, 'setScriptsList');
 
     const wrapper = await render(props);
@@ -110,9 +110,7 @@ describe('DataWranglingScripts: Component', () => {
       .dive()
       .find(Form.CheckboxGroup)
       .first()
-      .prop('onChange')({target:
-        { value: '3', checked: true },
-      });
+      .prop('onChange')({ target: { value: '3', checked: true } });
 
     expect(props.setScriptsList).toHaveBeenCalledTimes(1);
   });
@@ -123,7 +121,7 @@ describe('DataWranglingScripts: Component', () => {
       dataWranglingScripts,
       fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
       setScriptsList: Function.prototype,
-    }
+    };
     jest.spyOn(props, 'setScriptsList');
 
     const wrapper = await render(props);

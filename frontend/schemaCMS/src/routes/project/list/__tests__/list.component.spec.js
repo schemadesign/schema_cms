@@ -11,7 +11,7 @@ describe('List: Component', () => {
 
   it('should render correctly with loading', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
@@ -21,7 +21,7 @@ describe('List: Component', () => {
     const wrapper = render(props);
     await Promise.resolve();
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render without data', async () => {
@@ -32,7 +32,7 @@ describe('List: Component', () => {
     const wrapper = render(props);
     await Promise.resolve();
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call fetchProjectsList on componentDidMount', async () => {

@@ -13,14 +13,14 @@ describe('FolderList: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
     defaultProps.fetchFolders = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render();
     await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should fetch list', () => {

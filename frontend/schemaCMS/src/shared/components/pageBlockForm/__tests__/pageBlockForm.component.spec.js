@@ -14,27 +14,27 @@ describe('PageBlockForm: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with image type', () => {
     const wrapper = render(imageProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with embed type', () => {
     const wrapper = render(embedProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with code type', () => {
     const wrapper = render(codeProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with markdown type', () => {
     const wrapper = render(markdownProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call handleChange on change of TextInput value', () => {

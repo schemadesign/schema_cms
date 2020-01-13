@@ -12,7 +12,7 @@ describe('Edit: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
@@ -21,7 +21,7 @@ describe('Edit: Component', () => {
       fetchPage,
     });
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should return to folder list', () => {
@@ -39,7 +39,7 @@ describe('Edit: Component', () => {
       fetchPage,
     });
 
-    global.expect(fetchPage).toHaveBeenCalledTimes(1);
+    expect(fetchPage).toHaveBeenCalledTimes(1);
   });
 
   it('should submit form', () => {

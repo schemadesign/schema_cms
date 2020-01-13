@@ -35,6 +35,6 @@ describe('DataSource: Component', () => {
       fetchDataSource,
     });
 
-    global.expect(fetchDataSource).toHaveBeenCalledTimes(1);
+    expect(fetchDataSource).toHaveBeenCalledTimes(1);
   });
 });

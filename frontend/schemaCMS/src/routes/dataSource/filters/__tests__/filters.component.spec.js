@@ -13,7 +13,8 @@ describe('Filters: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
@@ -22,7 +23,7 @@ describe('Filters: Component', () => {
       fetchFilters,
     });
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call fetchFilters on componentDidMount', () => {
@@ -32,7 +33,7 @@ describe('Filters: Component', () => {
       fetchFilters,
     });
 
-    global.expect(fetchFilters).toHaveBeenCalledTimes(1);
+    expect(fetchFilters).toHaveBeenCalledTimes(1);
   });
 
   it('should call setFilters on submit', async () => {

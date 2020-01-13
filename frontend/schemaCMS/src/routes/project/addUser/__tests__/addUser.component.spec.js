@@ -13,12 +13,12 @@ describe('AddUser: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with users', () => {
     const wrapper = render(propsWithUsers);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should redirect to not-authorized page not admin user', () => {
