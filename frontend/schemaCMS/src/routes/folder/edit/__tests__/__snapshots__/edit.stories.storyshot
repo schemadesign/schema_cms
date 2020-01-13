@@ -51,6 +51,7 @@ exports[`Storyshots Folder|Edit Default 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

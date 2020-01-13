@@ -39,6 +39,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -755,6 +756,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

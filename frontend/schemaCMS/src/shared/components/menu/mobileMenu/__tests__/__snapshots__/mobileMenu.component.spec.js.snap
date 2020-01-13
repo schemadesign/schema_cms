@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MobileMenu: Component should render correctly 1`] = `
+<styled.div>
+  <Component
+    buttonProps={
+      Object {
+        "id": "topHeaderOpenMenuBtn",
+        "onClick": [Function],
+      }
+    }
+  >
+    <styled.div>
+      <Styled(H2)
+        id="headerTitle"
+      >
+        <div>
+          Header Title
+        </div>
+      </Styled(H2)>
+      <Styled(H1)
+        id="headerSubtitle"
+      >
+        <div>
+          Header SubTitle
+        </div>
+      </Styled(H1)>
+    </styled.div>
+  </Component>
+  <Component
+    closeButtonProps={
+      Object {
+        "customStyles": Object {
+          "backgroundColor": "transparent",
+        },
+        "id": "topHeaderCloseMenuButton",
+      }
+    }
+    customStyles={
+      Object {
+        "maxWidth": null,
+        "zIndex": 9999,
+      }
+    }
+    onClose={[Function]}
+    open={false}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(H2)
+          id="headerTitle"
+        >
+          <div>
+            Header Title
+          </div>
+        </Styled(H2)>
+        <Styled(H1)
+          id="headerSubtitle"
+        >
+          <div>
+            Header SubTitle
+          </div>
+        </Styled(H1)>
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <styled.div
+          active={false}
+          key="0"
+        >
+          <Link
+            id="1"
+            onClick={[Function]}
+            to="/sample/"
+          >
+            A label
+          </Link>
+        </styled.div>
+        <styled.div
+          active={false}
+          key="1"
+        >
+          <Link
+            id="2"
+            onClick={[Function]}
+            to="/sample/url"
+          >
+            Another label
+          </Link>
+        </styled.div>
+      </styled.div>
+      <styled.div>
+        <styled.div
+          active={false}
+          key="0"
+        >
+          <Link
+            id="settingsNavBtn"
+            onClick={[Function]}
+            to="/settings"
+          >
+            <FormattedMessage
+              defaultMessage="Settings"
+              id="shared.components.desktopTopHeader.settings"
+              values={Object {}}
+            />
+          </Link>
+        </styled.div>
+        <styled.div
+          active={false}
+          key="1"
+        >
+          <div
+            onClick={[Function]}
+          >
+            <FormattedMessage
+              defaultMessage="Log out"
+              id="shared.components.desktopTopHeader.logOut"
+              values={Object {}}
+            />
+          </div>
+        </styled.div>
+      </styled.div>
+      <styled.div>
+        <Styled(Link)
+          id="aboutNavBtn"
+          key="0"
+          onClick={[Function]}
+          to="/"
+        >
+          <FormattedMessage
+            defaultMessage="About Schema CMS"
+            id="shared.components.desktopTopHeader.about"
+            values={Object {}}
+          />
+        </Styled(Link)>
+        <Styled(Link)
+          id="apiNavBtn"
+          key="1"
+          onClick={[Function]}
+          to="/"
+        >
+          <FormattedMessage
+            defaultMessage="API Doc"
+            id="shared.components.desktopTopHeader.api"
+            values={Object {}}
+          />
+        </Styled(Link)>
+        <Styled(Link)
+          id="repositoryNavBtn"
+          key="2"
+          onClick={[Function]}
+          to="/"
+        >
+          <FormattedMessage
+            defaultMessage="GitHub Repository"
+            id="shared.components.desktopTopHeader.repository"
+            values={Object {}}
+          />
+        </Styled(Link)>
+      </styled.div>
+    </styled.div>
+  </Component>
+  <LogoutModal
+    logoutModalOpen={false}
+    onAction={[Function]}
+    redirectUrl="/logout"
+  />
+</styled.div>
+`;

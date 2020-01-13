@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { MobileMenuComponent as MobileMenu } from '../mobileMenu.component';
+import { MobileMenu } from '../mobileMenu.component';
+import { defaultProps } from '../mobileMenu.stories';
 
 describe('MobileMenu: Component', () => {
-  const defaultProps = {};
-
   const component = props => <MobileMenu {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

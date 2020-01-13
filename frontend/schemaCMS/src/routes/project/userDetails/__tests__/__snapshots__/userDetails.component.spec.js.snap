@@ -2,24 +2,6 @@
 
 exports[`UserDetails: Component should render correctly 1`] = `
 <styled.div>
-  <TopHeader
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Profile"
-        id="project.userDetails.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="Project Users"
-        id="project.userDetails.title"
-        values={Object {}}
-      />
-    }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
-  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -34,6 +16,76 @@ exports[`UserDetails: Component should render correctly 1`] = `
         id="project.userDetails.title"
         values={Object {}}
       />
+    }
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Profile"
+        id="project.userDetails.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Project Users"
+        id="project.userDetails.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
     }
   />
   <UserProfile

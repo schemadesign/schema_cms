@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Page|Edit Default 1`] = `
+exports[`Storyshots MobileMenu Default 1`] = `
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -24,24 +24,6 @@ exports[`Storyshots Page|Edit Default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c8 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
 }
 
 .c5 {
@@ -51,83 +33,33 @@ exports[`Storyshots Page|Edit Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
-  display: block;
 }
 
-.c5 a {
+.c5 a,
+.c5 div {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
+  color: rgba(255,255,255,0.75);
   display: block;
-}
-
-.c5:first-of-type {
-  border-top: 2.4px solid #2F2F36;
 }
 
 .c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #2F2F36;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c7 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #FFF;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c7 a {
+  color: #FFF;
+  font-size: 14px;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c7:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c9 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c9 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
+  margin: 12px 0;
 }
 
 .c1 {
@@ -136,30 +68,6 @@ exports[`Storyshots Page|Edit Default 1`] = `
 
 .c2 {
   word-break: break-word;
-}
-
-.c10 {
-  display: none;
-}
-
-.c11 {
-  margin-right: 20px;
-}
-
-.c12 {
-  color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
-}
-
-.c14 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 @media (min-width:1040px) {
@@ -172,45 +80,6 @@ exports[`Storyshots Page|Edit Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c7 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c10 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
   }
 }
 
@@ -261,9 +130,9 @@ exports[`Storyshots Page|Edit Default 1`] = `
               }
             }
           >
-            <span>
-              Page
-            </span>
+            <div>
+              Header Title
+            </div>
           </h2>
           <h1
             className="c2"
@@ -279,9 +148,9 @@ exports[`Storyshots Page|Edit Default 1`] = `
               }
             }
           >
-            <span>
-              Edit
-            </span>
+            <div>
+              Header SubTitle
+            </div>
           </h1>
         </div>
       </div>
@@ -365,9 +234,9 @@ exports[`Storyshots Page|Edit Default 1`] = `
               }
             }
           >
-            <span>
-              Page
-            </span>
+            <div>
+              Header Title
+            </div>
           </h2>
           <h1
             className="c2"
@@ -383,45 +252,45 @@ exports[`Storyshots Page|Edit Default 1`] = `
               }
             }
           >
-            <span>
-              Edit
-            </span>
+            <div>
+              Header SubTitle
+            </div>
           </h1>
         </div>
       </div>
       <div
         className="c3"
       >
-        <ul
+        <div
           className="c4"
         >
-          <li
+          <div
             className="c5"
           >
             <a
-              href="/project"
-              id="projectNavBtn"
+              href="/sample/"
+              id="1"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              A label
             </a>
-          </li>
-          <li
-            className="c6"
+          </div>
+          <div
+            className="c5"
           >
             <a
-              href="/user"
-              id="userNavBtn"
+              href="/sample/url"
+              id="2"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Another label
             </a>
-          </li>
-          <li
+          </div>
+        </div>
+        <div
+          className="c4"
+        >
+          <div
             className="c5"
           >
             <a
@@ -433,60 +302,53 @@ exports[`Storyshots Page|Edit Default 1`] = `
                 Settings
               </span>
             </a>
-          </li>
-          <li
+          </div>
+          <div
+            className="c5"
+          >
+            <div
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <a
             className="c7"
-            id="logoutNavBtn"
+            href="/"
+            id="aboutNavBtn"
             onClick={[Function]}
           >
             <span>
-              Log out
+              About Schema CMS
             </span>
-          </li>
-        </ul>
-        <ul
-          className="c8"
-        >
-          <li
-            className="c9"
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
           >
-            <a
-              href="/"
-              id="aboutNavBtn"
-              onClick={[Function]}
-            >
-              <span>
-                About Schema CMS
-              </span>
-            </a>
-          </li>
-          <li
-            className="c9"
+            <span>
+              API Doc
+            </span>
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
           >
-            <a
-              href="/"
-              id="apiNavBtn"
-              onClick={[Function]}
-            >
-              <span>
-                API Doc
-              </span>
-            </a>
-          </li>
-          <li
-            className="c9"
-          >
-            <a
-              href="/"
-              id="repositoryNavBtn"
-              onClick={[Function]}
-            >
-              <span>
-                GitHub Repository
-              </span>
-            </a>
-          </li>
-        </ul>
+            <span>
+              GitHub Repository
+            </span>
+          </a>
+        </div>
       </div>
       <button
         disabled={false}
@@ -530,58 +392,6 @@ exports[`Storyshots Page|Edit Default 1`] = `
         </svg>
       </button>
     </div>
-  </div>
-  <div
-    className="c10"
-  >
-    <div
-      className="c11"
-    >
-      <h2
-        className="c12"
-        id="desktopHeaderTitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        <span>
-          Page
-        </span>
-      </h2>
-      <h1
-        className="c13"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 600,
-            "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
-            "margin": 0,
-          }
-        }
-      >
-        <span>
-          Edit
-        </span>
-      </h1>
-    </div>
-    <div
-      className=""
-    />
-  </div>
-  <div
-    className="c14"
-  >
-    <span>
-      Loading...
-    </span>
   </div>
 </div>
 `;

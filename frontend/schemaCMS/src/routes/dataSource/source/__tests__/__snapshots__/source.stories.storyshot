@@ -56,6 +56,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

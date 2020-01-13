@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|UserDetails Default 1`] = `
-.c16 {
+.c14 {
   height: 155px;
 }
 
-.c18 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -33,12 +33,12 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c19 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c15 {
+.c13 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -46,11 +46,11 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c15:hover {
+.c13:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c14 {
+.c12 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -67,28 +67,31 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
 }
 
 .c0 {
-  width: calc(100% - 50px);
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+}
+
+.c2 {
+  color: #FFF;
 }
 
 .c3 {
+  color: #FFF;
+}
+
+.c4 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c7 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   padding: 40px 0;
   -webkit-overflow-scrolling: touch;
-}
-
-.c4 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 30px;
 }
 
 .c8 {
@@ -102,124 +105,54 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c5 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c5 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c5:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c7 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #FFF;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c7 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c7:first-of-type {
-  border-top: 2.4px solid #2F2F36;
 }
 
 .c9 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
 }
 
-.c9 a {
+.c9 a,
+.c9 div {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
+  color: rgba(255,255,255,0.75);
   display: block;
 }
 
-.c9:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c1 {
-  word-break: break-word;
-}
-
-.c2 {
-  word-break: break-word;
-}
-
 .c10 {
-  display: none;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c11 {
-  margin-right: 20px;
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
 }
 
-.c12 {
-  color: #FFF;
+.c5 {
+  word-break: break-word;
 }
 
-.c13 {
-  color: #FFF;
+.c6 {
+  word-break: break-word;
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -228,7 +161,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -237,47 +170,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c17 {
     width: 240px;
   }
 }
 
 @media (min-width:1040px) {
   .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c3 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c7 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -291,6 +190,19 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c7 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
   }
 }
 
@@ -316,6 +228,51 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
       className="c0"
     >
       <div
+        className="c1"
+      >
+        <h2
+          className="c2"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Project Users
+          </span>
+        </h2>
+        <h1
+          className="c3"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Profile
+          </span>
+        </h1>
+      </div>
+      <div
+        className=""
+      />
+    </div>
+    <div
+      className="c4"
+    >
+      <div
         style={
           Object {
             "alignItems": "flex-start",
@@ -333,7 +290,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
             className=""
           >
             <h2
-              className="c1"
+              className="c5"
               id="headerTitle"
               style={
                 Object {
@@ -349,7 +306,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               </span>
             </h2>
             <h1
-              className="c2"
+              className="c6"
               id="headerSubtitle"
               style={
                 Object {
@@ -437,7 +394,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
             className=""
           >
             <h2
-              className="c1"
+              className="c5"
               id="headerTitle"
               style={
                 Object {
@@ -453,7 +410,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               </span>
             </h2>
             <h1
-              className="c2"
+              className="c6"
               id="headerSubtitle"
               style={
                 Object {
@@ -473,39 +430,82 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
           </div>
         </div>
         <div
-          className="c3"
+          className="c7"
         >
-          <ul
-            className="c4"
+          <div
+            className="c8"
           >
-            <li
-              className="c5"
+            <div
+              className="c9"
             >
               <a
-                href="/project"
-                id="projectNavBtn"
+                href="/project/"
+                id="projectsNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Projects
                 </span>
               </a>
-            </li>
-            <li
-              className="c6"
+            </div>
+            <div
+              className="c9"
             >
               <a
-                href="/user"
-                id="userNavBtn"
+                href="/project/1"
+                id="projectDetailsNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Project details
+                </span>
+              </a>
+            </div>
+            <div
+              className="c9"
+            >
+              <a
+                href="/project/1/datasource"
+                id="dataSourceNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Data Sources
+                </span>
+              </a>
+            </div>
+            <div
+              className="c9"
+            >
+              <a
+                href="/project/1/user"
+                id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Users
                 </span>
               </a>
-            </li>
-            <li
-              className="c5"
+            </div>
+            <div
+              className="c9"
+            >
+              <a
+                href="/project/1/folder"
+                id="folderNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Pages
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            className="c8"
+          >
+            <div
+              className="c9"
             >
               <a
                 href="/settings"
@@ -516,60 +516,53 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
                   Settings
                 </span>
               </a>
-            </li>
-            <li
-              className="c7"
-              id="logoutNavBtn"
+            </div>
+            <div
+              className="c9"
+            >
+              <div
+                onClick={[Function]}
+              >
+                <span>
+                  Log out
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c10"
+          >
+            <a
+              className="c11"
+              href="/"
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
-                Log out
+                About Schema CMS
               </span>
-            </li>
-          </ul>
-          <ul
-            className="c8"
-          >
-            <li
-              className="c9"
+            </a>
+            <a
+              className="c11"
+              href="/"
+              id="apiNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="aboutNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
+              <span>
+                API Doc
+              </span>
+            </a>
+            <a
+              className="c11"
+              href="/"
+              id="repositoryNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="apiNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
-            >
-              <a
-                href="/"
-                id="repositoryNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
+              <span>
+                GitHub Repository
+              </span>
+            </a>
+          </div>
         </div>
         <button
           disabled={false}
@@ -613,51 +606,6 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
           </svg>
         </button>
       </div>
-    </div>
-    <div
-      className="c10"
-    >
-      <div
-        className="c11"
-      >
-        <h2
-          className="c12"
-          id="desktopHeaderTitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Project Users
-          </span>
-        </h2>
-        <h1
-          className="c13"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Profile
-          </span>
-        </h1>
-      </div>
-      <div
-        className=""
-      />
     </div>
     <div
       className=""
@@ -912,10 +860,10 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
       </div>
     </div>
     <div
-      className="c14"
+      className="c12"
     >
       <span
-        className="c15"
+        className="c13"
         onClick={[Function]}
         style={
           Object {
@@ -930,16 +878,16 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
       </span>
     </div>
     <div
-      className="c16"
+      className="c14"
     >
       <div
-        className="c17"
+        className="c15"
       >
         <div
-          className="c18"
+          className="c16"
         >
           <button
-            className="c19"
+            className="c17"
             disabled={false}
             onClick={[Function]}
             style={

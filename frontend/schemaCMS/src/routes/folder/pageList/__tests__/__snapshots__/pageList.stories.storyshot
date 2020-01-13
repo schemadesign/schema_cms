@@ -34,6 +34,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -825,6 +826,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

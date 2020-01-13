@@ -39,6 +39,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -749,6 +750,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -1459,6 +1461,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
