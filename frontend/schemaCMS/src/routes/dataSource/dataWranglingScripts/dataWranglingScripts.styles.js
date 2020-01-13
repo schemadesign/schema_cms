@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
 
+export const CHECKBOX_HEIGHT = 48;
+export const ANIMATION_SPEED = 200;
+
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
@@ -59,4 +62,9 @@ export const IconWrapper = styled.div`
   cursor: move;
 `;
 
-export const CheckBoxStyles = { width: '100%' };
+export const CheckBoxStyles = {
+  width: '100%',
+  height: CHECKBOX_HEIGHT,
+  overflow: 'hidden',
+  transition: `opacity ${ANIMATION_SPEED}ms linear, height ${ANIMATION_SPEED}ms linear`,
+};

@@ -107,14 +107,11 @@ const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, da
   );
 };
 
-const setImageScrapingFields = (
-  state = INITIAL_STATE,
-  { payload: { imageScrapingFields, scriptId, imageScriptIndex } }
-) =>
+const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId, scripts } }) =>
   state
     .set('imageScrapingFields', imageScrapingFields)
     .update('customScripts', x => [...x, scriptId])
-    .updateIn(['scripts', imageScriptIndex], script => ({ ...script, checked: !isEmpty(imageScrapingFields) }));
+    .set('scripts', scripts);
 
 const clearCustomScripts = (state = INITIAL_STATE) =>
   state.set('imageScrapingFields', INITIAL_STATE.imageScrapingFields).set('customScripts', INITIAL_STATE.customScripts);

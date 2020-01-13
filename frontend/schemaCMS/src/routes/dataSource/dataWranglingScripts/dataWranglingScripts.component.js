@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { createRef, Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form, Icons } from 'schemaUI';
@@ -7,8 +7,13 @@ import {
   always,
   append,
   equals,
+  filter,
   find,
+  findLastIndex,
+  flatten,
   ifElse,
+  includes,
+  isEmpty,
   map,
   pathEq,
   pathOr,
@@ -17,11 +22,7 @@ import {
   propEq,
   reject,
   toString,
-  flatten,
   uniq,
-  filter,
-  includes,
-  isEmpty,
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
@@ -29,18 +30,20 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import {
+  ANIMATION_SPEED,
+  CHECKBOX_HEIGHT,
+  CheckboxContent,
+  CheckBoxStyles,
   Dot,
   Empty,
   Error,
   Header,
+  IconWrapper,
   Link,
   StepCounter,
   Type,
   UploadContainer,
   Warning,
-  CheckboxContent,
-  IconWrapper,
-  CheckBoxStyles,
 } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import {
@@ -109,6 +112,8 @@ export class DataWranglingScripts extends PureComponent {
       : `/script/${id}/${getMatchParam(this.props, 'dataSourceId')}`;
   };
 
+  checkboxesRef = createRef();
+
   parseSteps = (script, index) =>
     ifElse(
       pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE),
@@ -142,12 +147,12 @@ export class DataWranglingScripts extends PureComponent {
 
   handleChange = ({ e, setFieldValue, steps }) => {
     const { value, checked } = e.target;
-    const scripts = this.props.dataWranglingScripts.map(script => {
+    const scripts = this.props.dataWranglingScripts.map((script, index) => {
       if (script.id.toString() === value) {
-        return { ...script, checked };
+        return { ...script, checked, index };
       }
 
-      return script;
+      return { ...script, index };
     });
     const script = find(propEq('id', parseInt(value, 10)), scripts);
 
@@ -156,10 +161,13 @@ export class DataWranglingScripts extends PureComponent {
 
       return this.props.history.push(`/script/${value}/${dataSourceId}`);
     }
-
+    const scriptIndex = script.index;
+    const lastCheckedIndex = findLastIndex(propEq('checked', true), this.props.dataWranglingScripts);
+    const moveIndex = checked ? lastCheckedIndex + 1 : lastCheckedIndex;
+    const animation = moveIndex !== scriptIndex;
     const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
 
-    this.props.setScriptsList(scripts);
+    this.handleMove(scriptIndex, moveIndex, animation, checked, true);
 
     return setFieldValue('steps', setScripts(checked));
   };
@@ -185,17 +193,35 @@ export class DataWranglingScripts extends PureComponent {
     }
   };
 
-  handleMove = (dragIndex, hoverIndex) => {
+  handleMove = (dragIndex, hoverIndex, animation = false, checked, change) => {
     const { dataWranglingScripts } = this.props;
-    const dragCard = dataWranglingScripts[dragIndex];
-
     let tempScripts = [...dataWranglingScripts.asMutable({ deep: true })];
+    const dragCard = tempScripts[dragIndex];
+    if (change) {
+      dragCard.checked = checked;
+    }
 
     tempScripts.splice(dragIndex, 1);
     tempScripts.splice(hoverIndex, 0, dragCard);
     tempScripts = tempScripts.map((script, index) => ({ ...script, order: index }));
 
-    this.props.setScriptsList(tempScripts);
+    if (!animation) {
+      return this.props.setScriptsList(tempScripts);
+    }
+
+    const checkbox = this.checkboxesRef.current.children[dragIndex].children[0];
+    const checkboxStyle = checkbox.style;
+
+    checkboxStyle.opacity = 0;
+    checkboxStyle.height = '0px';
+
+    return setTimeout(() => {
+      this.props.setScriptsList(tempScripts);
+      setTimeout(() => {
+        checkboxStyle.opacity = 1;
+        checkboxStyle.height = `${CHECKBOX_HEIGHT}px`;
+      });
+    }, ANIMATION_SPEED);
   };
 
   renderCheckboxes = ({ id, name, type = SCRIPT_TYPES.CUSTOM }, index) => {
@@ -254,21 +280,6 @@ export class DataWranglingScripts extends PureComponent {
     )
   );
 
-  renderCheckboxGroup = (dataWranglingScripts, steps, setFieldValue) =>
-    renderWhenTrue(
-      always(
-        <CheckboxGroup
-          onChange={e => this.handleChange({ e, setFieldValue, steps })}
-          customCheckboxStyles={CheckBoxStyles}
-          value={steps}
-          name="steps"
-          id="fieldStepsCheckboxGroup"
-        >
-          {dataWranglingScripts.map(this.renderCheckboxes)}
-        </CheckboxGroup>
-      )
-    )(!!dataWranglingScripts.length);
-
   render() {
     const { dataSource, isAdmin, dataWranglingScripts } = this.props;
     const { errorMessage, loading, error } = this.state;
@@ -283,9 +294,7 @@ export class DataWranglingScripts extends PureComponent {
       flatten,
       uniq
     )(dataWranglingScripts);
-
     const { jobsInProcess, name } = dataSource;
-
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
@@ -308,7 +317,15 @@ export class DataWranglingScripts extends PureComponent {
           <Formik initialValues={{ steps }} isInitialValid enableReinitialize onSubmit={this.handleSubmit}>
             {({ values: { steps }, setFieldValue, submitForm, isSubmitting }) => (
               <Fragment>
-                {this.renderCheckboxGroup(dataWranglingScripts, steps, setFieldValue)}
+                <CheckboxGroup
+                  onChange={e => this.handleChange({ e, setFieldValue, steps })}
+                  customCheckboxStyles={CheckBoxStyles}
+                  value={steps}
+                  name="steps"
+                  id="fieldStepsCheckboxGroup"
+                >
+                  <div ref={this.checkboxesRef}>{dataWranglingScripts.map(this.renderCheckboxes)}</div>
+                </CheckboxGroup>
                 <NavigationContainer right>
                   <NextButton
                     onClick={submitForm}
