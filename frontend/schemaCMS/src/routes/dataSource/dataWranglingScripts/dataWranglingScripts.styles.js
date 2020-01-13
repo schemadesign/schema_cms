@@ -3,6 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 export const CHECKBOX_HEIGHT = 48;
 export const ANIMATION_SPEED = 200;
+export const ANIMATION_DELAY = 100;
 
 export const Header = styled.div`
   display: flex;
@@ -64,7 +65,7 @@ export const IconWrapper = styled.div`
 
 export const CheckBoxStyles = {
   width: '100%',
-  height: CHECKBOX_HEIGHT,
+  maxHeight: `${CHECKBOX_HEIGHT}px`,
   overflow: 'hidden',
-  transition: `opacity ${ANIMATION_SPEED}ms linear, height ${ANIMATION_SPEED}ms linear`,
+  transition: `opacity ${ANIMATION_SPEED}ms linear, max-height ${ANIMATION_SPEED}ms linear`,
 };

@@ -30,6 +30,7 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import {
+  ANIMATION_DELAY,
   ANIMATION_SPEED,
   CHECKBOX_HEIGHT,
   CheckboxContent,
@@ -212,16 +213,18 @@ export class DataWranglingScripts extends PureComponent {
     const checkbox = this.checkboxesRef.current.children[dragIndex].children[0];
     const checkboxStyle = checkbox.style;
 
+    document.body.style.overflowAnchor = 'none';
     checkboxStyle.opacity = 0;
-    checkboxStyle.height = '0px';
+    checkboxStyle.maxHeight = '0px';
 
     return setTimeout(() => {
       this.props.setScriptsList(tempScripts);
       setTimeout(() => {
         checkboxStyle.opacity = 1;
-        checkboxStyle.height = `${CHECKBOX_HEIGHT}px`;
+        checkboxStyle.maxHeight = `${CHECKBOX_HEIGHT}px`;
+        document.body.style.overflowAnchor = 'auto';
       });
-    }, ANIMATION_SPEED);
+    }, ANIMATION_SPEED + ANIMATION_DELAY);
   };
 
   renderCheckboxes = ({ id, name, type = SCRIPT_TYPES.CUSTOM }, index) => {
