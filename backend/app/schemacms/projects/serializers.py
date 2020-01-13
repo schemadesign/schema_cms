@@ -518,7 +518,7 @@ class PageDetailSerializer(PageSerializer):
 
 
 class BlockImageSerializer(serializers.ModelSerializer):
-    image_name = serializers.CharField(max_length=100, read_only=True)
+    image_name = serializers.CharField(max_length=255, read_only=True)
 
     class Meta:
         model = models.BlockImage
