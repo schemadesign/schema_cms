@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 
 import { Filters } from '../filters.component';
-import { defaultProps } from '../filters.stories';
+import { defaultProps, noFiltersProps } from '../filters.stories';
 
 describe('Filters: Component', () => {
   const component = props => <Filters {...defaultProps} {...props} />;
@@ -20,6 +20,16 @@ describe('Filters: Component', () => {
   it('should render correctly', async () => {
     const fetchFilters = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = await render({
+      fetchFilters,
+    });
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly when no filters', async () => {
+    const fetchFilters = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = await render({
+      ...noFiltersProps,
       fetchFilters,
     });
 

@@ -33,6 +33,12 @@ export const defaultProps = {
   },
 };
 
+export const noFiltersProps = {
+  ...defaultProps,
+  filters: [],
+};
+
 storiesOf('Data Source|Filters', module)
   .addDecorator(withTheme())
+  .add('No Data', () => <Filters {...noFiltersProps} />)
   .add('Default', () => <Filters {...defaultProps} />);

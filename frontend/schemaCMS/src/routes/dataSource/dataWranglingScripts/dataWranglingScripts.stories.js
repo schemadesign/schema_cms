@@ -36,6 +36,12 @@ export const defaultProps = {
   },
 };
 
+export const noStepsProps = {
+  ...defaultProps,
+  dataWranglingScripts: [],
+};
+
 storiesOf('Data Source|DataWranglingScripts', module)
   .addDecorator(withTheme())
+  .add('No data', () => <DataWranglingScripts {...noStepsProps} />)
   .add('Default', () => <DataWranglingScripts {...defaultProps} />);

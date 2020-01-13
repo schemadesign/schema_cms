@@ -14,6 +14,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -89,6 +90,20 @@ export class Filters extends PureComponent {
     </Checkbox>
   );
 
+  renderCheckboxGroup = (filters, values, setValues) =>
+    renderWhenTrue(
+      always(
+        <CheckboxGroup
+          onChange={e => this.handleChange({ e, setValues, values })}
+          value={values}
+          name="steps"
+          id="fieldStepsCheckboxGroup"
+        >
+          {filters.map(this.renderCheckboxes)}
+        </CheckboxGroup>
+      )
+    )(!!filters.length);
+
   renderContent = () => {
     const { filters = [] } = this.props;
     const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
@@ -102,7 +117,7 @@ export class Filters extends PureComponent {
             </PlusButton>
           </ButtonContainer>
           <FilterCounter>
-            <FormattedMessage values={{ length: filters.length }} {...messages.filters} />
+            <FormattedMessage values={{ filters: filters.length }} {...messages.filters} />
           </FilterCounter>
         </Header>
         <Formik enableReinitialize initialValues={initialValues} onSubmit={this.handleSubmit}>
@@ -113,14 +128,7 @@ export class Filters extends PureComponent {
 
             return (
               <Fragment>
-                <CheckboxGroup
-                  onChange={e => this.handleChange({ e, setValues, values })}
-                  value={values}
-                  name="steps"
-                  id="fieldStepsCheckboxGroup"
-                >
-                  {filters.map(this.renderCheckboxes)}
-                </CheckboxGroup>
+                {this.renderCheckboxGroup(filters, values, setValues)}
                 <NavigationContainer right>
                   <NextButton onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                     <FormattedMessage {...messages.save} />

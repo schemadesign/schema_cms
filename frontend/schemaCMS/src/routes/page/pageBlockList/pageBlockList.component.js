@@ -100,12 +100,7 @@ export class PageBlockList extends PureComponent {
         {({ values: { blocks }, setFieldValue, submitForm, dirty, isSubmitting }) => {
           return (
             <Fragment>
-              <LoadingWrapper
-                loading={loading}
-                error={error}
-                noData={!pageBlocks.length}
-                noDataContent={this.props.intl.formatMessage(messages.noBlocks)}
-              >
+              <LoadingWrapper loading={loading} error={error} noData={!pageBlocks.length} noDataContent={' '}>
                 <CheckboxGroup
                   onChange={e => this.handleChange({ e, setFieldValue, blocks })}
                   value={blocks}
@@ -135,7 +130,7 @@ export class PageBlockList extends PureComponent {
           <FormattedMessage values={{ count }} {...messages.blocks} />
         </BlockCounter>
       )
-    )(count && !loading);
+    )(!loading);
 
   render() {
     const { loading } = this.state;

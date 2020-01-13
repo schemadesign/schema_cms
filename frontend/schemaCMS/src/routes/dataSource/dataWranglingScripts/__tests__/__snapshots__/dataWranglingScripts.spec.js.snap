@@ -109,11 +109,11 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       <styled.div />
       <styled.div>
         <FormattedMessage
-          defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+          defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
           id="dataSource.dataWranglingScripts.steps"
           values={
             Object {
-              "length": 3,
+              "steps": 3,
             }
           }
         />
@@ -285,6 +285,129 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         },
       ]
     }
+    fetchDataWranglingScripts={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "dataSourceId": "1",
+              "fromScript": false,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      }
+    }
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={true}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "3",
+        },
+        "url": "/datasource/1/steps",
+      }
+    }
+    sendUpdatedDataWranglingScript={[Function]}
+    setScriptsList={[Function]}
+    uploadScript={[Function]}
+  />
+</ContextProvider>
+`;
+
+exports[`DataWranglingScripts: Component should render correctly when no steps 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "steps": Array [],
+      },
+      "isSubmitting": false,
+      "isValid": true,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": undefined,
+      "values": Object {
+        "steps": Array [],
+      },
+    }
+  }
+>
+  <NavigationContainer
+    fixed={false}
+    hideOnDesktop={false}
+    right={true}
+  >
+    <NextButton
+      disabled={true}
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="dataSource.dataWranglingScripts.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+  <DataSourceNavigation
+    bindSubmitForm={[Function]}
+    customScripts={Array []}
+    dataSource={
+      Object {
+        "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    dataWranglingScripts={Array []}
     fetchDataWranglingScripts={
       [MockFunction] {
         "calls": Array [
