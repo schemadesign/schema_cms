@@ -26,7 +26,7 @@ from pyarrow import BufferReader, csv as pa_csv, Table
 from common import api, db, services, settings, types, utils
 import errors
 import mocks
-from image_scraping import image_scraping, is_valid_url  # noqa
+from image_scraping import image_scraping, is_valid_url, www_to_https  # noqa
 
 
 logger = logging.getLogger()
@@ -124,7 +124,7 @@ def get_preview_data(data_frame):
 
     random_sample = json.loads(data_frame.sample(n=1).to_json(orient="records"))
 
-    fields_with_urls = [k for k, v in random_sample[0].items() if is_valid_url(v)]
+    fields_with_urls = [k for k, v in random_sample[0].items() if is_valid_url(www_to_https(v))]
 
     preview_json = json.dumps({"data": table_preview, "fields": fields_info}, cls=utils.NumpyEncoder)
 

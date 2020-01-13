@@ -32,6 +32,11 @@ def image_static_url(path):
     return append_path(host_url, path)
 
 
+def www_to_https(url: str) -> str:
+    if url.startswith("www."):
+        url = f"https://{url}"
+    return url
+
 def is_valid_url(url: str) -> bool:
     try:
         return validators.url(url)
@@ -77,6 +82,7 @@ async def upload(s3_client, path, http_response):
 
 async def fetch_and_upload_task(url, current_step, http_session, s3_client, dirpath="images"):
     try:
+        url = www_to_https(url)
         if not is_valid_url(url):
             return url
         http_response = await fetch(http_session, url)
