@@ -133,7 +133,7 @@ exports[`PageBlockList: Component should render correctly form 1`] = `
     error={null}
     loading={false}
     noData={false}
-    noDataContent="0 Blocks"
+    noDataContent=" "
   >
     <Component
       id="blocksCheckboxGroup"

@@ -106,11 +106,11 @@ exports[`Filters: Component should render correctly 1`] = `
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="{length} {length, plural,one {Filter} other {Filters}}"
+          defaultMessage="{filters, plural,one {# Filter} other {# Filters}}"
           id="dataSource.view.filters.filters"
           values={
             Object {
-              "length": 2,
+              "filters": 2,
             }
           }
         />
@@ -170,6 +170,171 @@ exports[`Filters: Component should render correctly 1`] = `
         },
       ]
     }
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+        "url": "/datasource/1/filters",
+      }
+    }
+    setFilters={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`Filters: Component should render correctly when no filters 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Filters"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="dataSource.filters.subTitle"
+        values={Object {}}
+      />
+    }
+    primaryMenuItems={Array []}
+    projectId="1"
+    secondaryMenuItems={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="dataSource.filters.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      fetchFilters={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "dataSourceId": "1",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Promise {},
+            },
+          ],
+        }
+      }
+      filters={Array []}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "/datasource/1/filters",
+        }
+      }
+      setFilters={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(Component)
+          onClick={[Function]}
+        >
+          <Component />
+        </Styled(Component)>
+      </styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{filters, plural,one {# Filter} other {# Filters}}"
+          id="dataSource.view.filters.filters"
+          values={
+            Object {
+              "filters": 0,
+            }
+          }
+        />
+      </styled.div>
+    </styled.div>
+    <Formik
+      enableReinitialize={true}
+      initialValues={Array []}
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    fetchFilters={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "dataSourceId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      }
+    }
+    filters={Array []}
     hideOnDesktop={true}
     history={
       Object {
@@ -285,11 +450,11 @@ exports[`Filters: Component should render correctly with loader 1`] = `
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="{length} {length, plural,one {Filter} other {Filters}}"
+          defaultMessage="{filters, plural,one {# Filter} other {# Filters}}"
           id="dataSource.view.filters.filters"
           values={
             Object {
-              "length": 2,
+              "filters": 2,
             }
           }
         />

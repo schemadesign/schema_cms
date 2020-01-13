@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 
 import { DataWranglingScripts } from '../dataWranglingScripts.component';
-import { defaultProps } from '../dataWranglingScripts.stories';
+import { defaultProps, noStepsProps } from '../dataWranglingScripts.stories';
 import { Draggable } from '../../../../shared/components/draggable';
 
 describe('DataWranglingScripts: Component', () => {
@@ -23,6 +23,17 @@ describe('DataWranglingScripts: Component', () => {
     const wrapper = await render()
       .find(Formik)
       .dive();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly when no steps', async () => {
+    const wrapper = await render({
+      ...noStepsProps,
+      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
+    })
+      .find(Formik)
+      .dive();
+
     expect(wrapper).toMatchSnapshot();
   });
 

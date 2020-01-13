@@ -256,6 +256,21 @@ export class DataWranglingScripts extends PureComponent {
     )
   );
 
+  renderCheckboxGroup = (dataWranglingScripts, steps, setFieldValue) =>
+    renderWhenTrue(
+      always(
+        <CheckboxGroup
+          onChange={e => this.handleChange({ e, setFieldValue, steps })}
+          customCheckboxStyles={CheckBoxStyles}
+          value={steps}
+          name="steps"
+          id="fieldStepsCheckboxGroup"
+        >
+          {dataWranglingScripts.map(this.renderCheckboxes)}
+        </CheckboxGroup>
+      )
+    )(!!dataWranglingScripts.length);
+
   render() {
     const { dataSource, isAdmin, dataWranglingScripts } = this.props;
     const { errorMessage, loading, error } = this.state;
@@ -286,7 +301,7 @@ export class DataWranglingScripts extends PureComponent {
           <Header>
             <Empty />
             <StepCounter>
-              <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
+              <FormattedMessage values={{ steps: dataWranglingScripts.length }} {...messages.steps} />
               {this.renderUploadingError(errorMessage)}
               {this.renderProcessingWarning(jobsInProcess)}
             </StepCounter>
@@ -295,15 +310,7 @@ export class DataWranglingScripts extends PureComponent {
           <Formik initialValues={{ steps }} isInitialValid enableReinitialize onSubmit={this.handleSubmit}>
             {({ values: { steps }, setFieldValue, submitForm, isSubmitting }) => (
               <Fragment>
-                <CheckboxGroup
-                  onChange={e => this.handleChange({ e, setFieldValue, steps })}
-                  customCheckboxStyles={CheckBoxStyles}
-                  value={steps}
-                  name="steps"
-                  id="fieldStepsCheckboxGroup"
-                >
-                  {dataWranglingScripts.map(this.renderCheckboxes)}
-                </CheckboxGroup>
+                {this.renderCheckboxGroup(dataWranglingScripts, steps, setFieldValue)}
                 <NavigationContainer right>
                   <NextButton
                     onClick={submitForm}

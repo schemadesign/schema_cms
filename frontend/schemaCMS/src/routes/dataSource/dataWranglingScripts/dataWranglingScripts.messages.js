@@ -15,7 +15,7 @@ export default defineMessages({
   },
   steps: {
     id: 'dataSource.dataWranglingScripts.steps',
-    defaultMessage: '{length} {length, plural,one {Step} other {Steps}}',
+    defaultMessage: '{steps, plural,one {# Step} other {# Steps}}',
   },
   errorOnUploading: {
     id: 'dataSource.dataWranglingScripts.errorOnUploading',

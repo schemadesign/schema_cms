@@ -18,8 +18,4 @@ export default defineMessages({
     id: 'page.blockList.save',
     defaultMessage: 'Save',
   },
-  noBlocks: {
-    id: 'page.blockList.noBlocks',
-    defaultMessage: '0 Blocks',
-  },
 });
