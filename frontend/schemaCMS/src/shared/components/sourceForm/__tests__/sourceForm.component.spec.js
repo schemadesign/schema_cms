@@ -4,6 +4,7 @@ import { IntlProvider } from 'react-intl';
 
 import { SourceFormComponent } from '../sourceForm.component';
 import { defaultProps } from '../sourceForm.stories';
+import { TextInput } from '../../form/inputs/textInput';
 import { DEFAULT_LOCALE } from '../../../../i18n';
 
 describe('SourceFormComponent: Component', () => {
@@ -17,7 +18,8 @@ describe('SourceFormComponent: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render file uploader', () => {
@@ -27,6 +29,21 @@ describe('SourceFormComponent: Component', () => {
       },
     };
     const wrapper = render(props);
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call handleChange on change of TextInput value', () => {
+    jest.spyOn(defaultProps, 'handleChange');
+
+    const wrapper = render();
+
+    wrapper
+      .dive()
+      .find(TextInput)
+      .first()
+      .prop('onChange')();
+
+    expect(defaultProps.handleChange).toHaveBeenCalledTimes(1);
   });
 });

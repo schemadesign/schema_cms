@@ -142,6 +142,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -506,9 +507,13 @@ exports[`FilterForm: Component should render edit form 1`] = `
       "handleReset": [Function],
       "handleSubmit": [Function],
       "initialValues": Object {
+        "datasource": Object {
+          "id": 1,
+        },
         "field": "field",
         "fieldType": "string",
         "filterType": "checkbox",
+        "id": 2,
         "name": "name",
         "unique": "1",
       },
@@ -604,9 +609,13 @@ exports[`FilterForm: Component should render edit form 1`] = `
         ],
       },
       "values": Object {
+        "datasource": Object {
+          "id": 1,
+        },
         "field": "field",
         "fieldType": "string",
         "filterType": "checkbox",
+        "id": 2,
         "name": "name",
         "unique": "1",
       },
@@ -623,9 +632,13 @@ exports[`FilterForm: Component should render edit form 1`] = `
       handleSubmit={[Function]}
       initialValues={
         Object {
+          "datasource": Object {
+            "id": 1,
+          },
           "field": "field",
           "fieldType": "string",
           "filterType": "checkbox",
+          "id": 2,
           "name": "name",
           "unique": "1",
         }
@@ -713,9 +726,13 @@ exports[`FilterForm: Component should render edit form 1`] = `
         handleSubmit={[Function]}
         initialValues={
           Object {
+            "datasource": Object {
+              "id": 1,
+            },
             "field": "field",
             "fieldType": "string",
             "filterType": "checkbox",
+            "id": 2,
             "name": "name",
             "unique": "1",
           }
@@ -762,9 +779,13 @@ exports[`FilterForm: Component should render edit form 1`] = `
         handleSubmit={[Function]}
         initialValues={
           Object {
+            "datasource": Object {
+              "id": 1,
+            },
             "field": "field",
             "fieldType": "string",
             "filterType": "checkbox",
+            "id": 2,
             "name": "name",
             "unique": "1",
           }
@@ -802,6 +823,17 @@ exports[`FilterForm: Component should render edit form 1`] = `
         value="1"
       />
     </styled.div>
+    <styled.div>
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove filter"
+          id="shared.components.filterForm.deleteFilter"
+          values={Object {}}
+        />
+      </Styled(Span)>
+    </styled.div>
     <NavigationContainer
       fixed={true}
       hideOnDesktop={false}
@@ -813,8 +845,8 @@ exports[`FilterForm: Component should render edit form 1`] = `
         type="button"
       >
         <FormattedMessage
-          defaultMessage="Cancel"
-          id="shared.components.filterForm.cancel"
+          defaultMessage="Back"
+          id="shared.components.filterForm.back"
           values={Object {}}
         />
       </BackButton>

@@ -12,15 +12,15 @@ describe('View: Component', () => {
 
   it('should render correctly', async () => {
     defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render();
-    await Promise.resolve();
+    const wrapper = await render();
+
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render content correctly', async () => {
     defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render();
-    await Promise.resolve();
+    const wrapper = await render();
+
     const content = wrapper.find(LoadingWrapper).dive();
     expect(content).toMatchSnapshot();
   });

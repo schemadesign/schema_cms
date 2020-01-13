@@ -154,7 +154,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
   color: #FFF;
 }
 
-.c18 {
+.c19 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -209,6 +209,23 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 
 .c16 svg {
   opacity: 0.4;
+}
+
+.c18 {
+  background-color: #1d1d20;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c15 {
@@ -298,6 +315,13 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 
 @media (min-width:1040px) {
   .c16 {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c18 {
     width: 60px;
     height: 60px;
   }
@@ -774,7 +798,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             className="c15"
           >
             <div
-              className="c16"
+              className="c18"
               disabled={false}
               onClick={[Function]}
             >
@@ -942,7 +966,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
       </div>
     </div>
     <div
-      className="c18"
+      className="c19"
     >
       <span>
         Loading...

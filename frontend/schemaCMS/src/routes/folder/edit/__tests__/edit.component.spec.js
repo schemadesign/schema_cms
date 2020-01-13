@@ -30,6 +30,14 @@ describe('Edit: Component', () => {
     expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/folder');
   });
 
+  it('should call fetchFolder on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchFolder');
+
+    await render();
+
+    expect(defaultProps.fetchFolder).toHaveBeenCalled();
+  });
+
   it('should submit form', () => {
     jest.spyOn(defaultProps, 'handleSubmit');
     const wrapper = render();

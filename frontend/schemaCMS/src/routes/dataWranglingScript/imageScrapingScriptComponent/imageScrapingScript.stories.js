@@ -11,21 +11,24 @@ import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/
 export const defaultProps = {
   // eslint-disable-next-line import/no-named-as-default-member
   dataWranglingScript: mockScripts[BLANK_CELLS],
-  fetchDataSource: Function.prototype,
-  setImageScrapingFields: Function.prototype,
   fetchDataWranglingScript: Function.prototype,
-  isAdmin: true,
-  history,
+  fetchDataWranglingScripts: Function.prototype,
+  fetchDataSource: Function.prototype,
+  fieldsWithUrls: [],
+  imageScrapingFields: [],
+  dataWranglingScripts: [{ id: 0 }, { id: 1 }],
+  setImageScrapingFields: Function.prototype,
+  customScripts: [],
   intl,
+  history,
   match: {
+    path: '/',
     params: {
-      projectId: '1',
-      dataSourceId: '1',
       scriptId: '1',
+      dataSourceId: '1',
     },
   },
-  fieldNames: [],
-  imageScrapingFields: [],
+  isAdmin: false,
 };
 
 export const editorProps = {

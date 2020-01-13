@@ -113,6 +113,13 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       df = df.dropna(how='any', axis=1)
     
     </SyntaxHighlighter>
+    <Component>
+      <FormattedMessage
+        defaultMessage="Fields with URLs"
+        id="imageScrapingScript.fieldsWithUrls"
+        values={Object {}}
+      />
+    </Component>
     <LoadingWrapper
       error={null}
       loading={false}
@@ -139,13 +146,14 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       onClick={[Function]}
     />
     <NextButton
+      disabled={true}
       id="imageScrapingNextBtn"
       loading={false}
       onClick={[Function]}
     >
       <FormattedMessage
-        defaultMessage="OK"
-        id="imageScrapingScript.ok"
+        defaultMessage="Save"
+        id="imageScrapingScript.save"
         values={Object {}}
       />
     </NextButton>
@@ -266,6 +274,13 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       df = df.dropna(how='any', axis=1)
     
     </SyntaxHighlighter>
+    <Component>
+      <FormattedMessage
+        defaultMessage="Fields with URLs"
+        id="imageScrapingScript.fieldsWithUrls"
+        values={Object {}}
+      />
+    </Component>
     <LoadingWrapper
       error={null}
       loading={true}
@@ -292,13 +307,14 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       onClick={[Function]}
     />
     <NextButton
+      disabled={true}
       id="imageScrapingNextBtn"
       loading={false}
       onClick={[Function]}
     >
       <FormattedMessage
-        defaultMessage="OK"
-        id="imageScrapingScript.ok"
+        defaultMessage="Save"
+        id="imageScrapingScript.save"
         values={Object {}}
       />
     </NextButton>

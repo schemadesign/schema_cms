@@ -1,9 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`UserCreateProject: Component should call fetchUser and fetchProject on componentDidMount 1`] = `
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+>
+  <Component />
+</LoadingWrapper>
+`;
+
 exports[`UserCreateProject: Component should render correctly 1`] = `
 <LoadingWrapper
   error={null}
   loading={false}
+  noData={false}
+  noDataContent={null}
+>
+  <Component />
+</LoadingWrapper>
+`;
+
+exports[`UserCreateProject: Component should render correctly with loader 1`] = `
+<LoadingWrapper
+  error={null}
+  loading={true}
   noData={false}
   noDataContent={null}
 >

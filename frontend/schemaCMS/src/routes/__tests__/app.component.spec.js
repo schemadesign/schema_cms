@@ -1,7 +1,5 @@
 import React from 'react';
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
 
 import { DEFAULT_LOCALE, LOCALES } from '../../i18n';
 import { App } from '../app.component';
@@ -20,20 +18,24 @@ describe('App: Component', () => {
     </App>
   );
 
+  const render = (props = {}) => shallow(component(props));
+
   it('should not render App when language is not set', () => {
-    const wrapper = shallow(component({ language: undefined }));
-    global.expect(wrapper).toMatchSnapshot();
+    const wrapper = render({ language: undefined });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render App when language is set', () => {
-    const wrapper = shallow(component({ language: 'en' }));
-    global.expect(wrapper).toMatchSnapshot();
+    const wrapper = render({ language: 'en' });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call startup on mount', () => {
-    const startup = spy();
-    shallow(component({ startup }));
+    const startup = jest.spyOn(defaultProps, 'startup');
+    render({ startup });
 
-    expect(startup).to.have.been.calledOnce;
+    expect(startup).toHaveBeenCalledTimes(1);
   });
 });

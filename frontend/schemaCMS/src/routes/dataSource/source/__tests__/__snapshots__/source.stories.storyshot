@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Source|Source Default 1`] = `
-.c18 {
+.c19 {
   padding-top: 7px;
 }
 
-.c22 {
+.c23 {
   height: 155px;
 }
 
-.c24 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,18 +28,18 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   width: 100%;
 }
 
-.c23 {
+.c24 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
 }
 
-.c25 {
+.c26 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c20 {
+.c21 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -208,7 +208,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   color: #FFF;
 }
 
-.c21 {
+.c22 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -217,15 +217,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c21:hover {
+.c22:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c21:last-child {
+.c22:last-child {
   margin-bottom: 0;
 }
 
-.c19 {
+.c20 {
   position: relative;
 }
 
@@ -257,7 +257,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   cursor: pointer;
 }
 
-.c26 {
+.c27 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -281,8 +281,29 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c26 svg {
+.c27 svg {
   cursor: pointer;
+}
+
+.c18 {
+  background-color: #1d1d20;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c18 svg {
+  opacity: 0.4;
 }
 
 .c16 {
@@ -300,10 +321,6 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c16 svg {
-  opacity: 0.4;
 }
 
 .c15 {
@@ -328,7 +345,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c24 {
+  .c25 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -337,7 +354,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c23 {
+  .c24 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -346,7 +363,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c25 {
+  .c26 {
     width: 240px;
   }
 }
@@ -416,11 +433,18 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c26 {
+  .c27 {
     position: static;
     background-color: transparent;
     padding: 0;
     display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c18 {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -869,7 +893,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           className="c15"
         >
           <div
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
           >
@@ -901,7 +925,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           className="c15"
         >
           <div
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
           >
@@ -951,7 +975,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           className="c15"
         >
           <div
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
           >
@@ -1001,7 +1025,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           className="c15"
         >
           <div
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
           >
@@ -1035,7 +1059,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           className="c15"
         >
           <div
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
           >
@@ -1131,7 +1155,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           }
         >
           <div
-            className="c18"
+            className="c19"
           >
             <svg
               style={
@@ -1268,7 +1292,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c19"
+      className="c20"
     >
       <div
         style={
@@ -1559,10 +1583,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </label>
     </div>
     <div
-      className="c20"
+      className="c21"
     >
       <span
-        className="c21"
+        className="c22"
         onClick={[Function]}
         style={
           Object {
@@ -1576,7 +1600,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </span>
       </span>
       <span
-        className="c21"
+        className="c22"
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}
         style={
@@ -1592,16 +1616,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </span>
     </div>
     <div
-      className="c22"
+      className="c23"
     >
       <div
-        className="c23"
+        className="c24"
       >
         <div
-          className="c24"
+          className="c25"
         >
           <button
-            className="c25"
+            className="c26"
             disabled={true}
             onClick={[Function]}
             style={
@@ -1632,7 +1656,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     </div>
   </form>
   <div
-    className="c26"
+    className="c27"
   >
     <div
       className="c15"
@@ -1669,7 +1693,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       className="c15"
     >
       <div
-        className="c16"
+        className="c18"
         disabled={false}
         onClick={[Function]}
       >
@@ -1701,7 +1725,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       className="c15"
     >
       <div
-        className="c16"
+        className="c18"
         disabled={false}
         onClick={[Function]}
       >
@@ -1751,7 +1775,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       className="c15"
     >
       <div
-        className="c16"
+        className="c18"
         disabled={false}
         onClick={[Function]}
       >
@@ -1801,7 +1825,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       className="c15"
     >
       <div
-        className="c16"
+        className="c18"
         disabled={false}
         onClick={[Function]}
       >
@@ -1835,7 +1859,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       className="c15"
     >
       <div
-        className="c16"
+        className="c18"
         disabled={false}
         onClick={[Function]}
       >

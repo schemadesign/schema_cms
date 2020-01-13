@@ -5,11 +5,14 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingResult } from './dataWranglingResult.component';
 import { tableData as data, tableFields as fields } from '../../../shared/utils/dataMock';
-import { JOB_STATE_FAILURE, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
 
 export const defaultProps = {
   dataSource: {
-    jobs: [{ id: 1, jobState: JOB_STATE_FAILURE }, { id: 2, jobState: JOB_STATE_SUCCESS }],
+    id: 1,
+    activeJob: {
+      id: 1,
+      scripts: [{ id: 1 }, { id: 15 }],
+    },
     metaData: {},
     project: { id: '1' },
   },
@@ -26,7 +29,7 @@ export const defaultProps = {
       dataSourceId: '1',
       step: '4',
     },
-    url: 'url',
+    url: '/datasource/1/result',
   },
 };
 

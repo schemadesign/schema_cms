@@ -29,7 +29,7 @@ export const defaultProps = {
     params: {
       dataSourceId: '1',
     },
-    url: 'url',
+    url: '/datasource/1/filters',
   },
 };
 

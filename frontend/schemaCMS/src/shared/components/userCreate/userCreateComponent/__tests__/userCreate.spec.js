@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
-import { spy } from 'sinon';
 
 import { UserCreate } from '../userCreate.component';
 import { defaultProps } from '../userCreate.stories';
+import { Form } from '../userCreate.styles';
+import { Select } from '../../../form/select';
 import { TextInput } from '../../../form/inputs/textInput';
 
 describe('UserCreate: Component', () => {
@@ -14,28 +14,51 @@ describe('UserCreate: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call handleSubmit on submit form', () => {
+    const handleSubmit = jest.spyOn(defaultProps, 'handleSubmit');
+    const wrapper = render({ handleSubmit });
+
+    wrapper.find(Form).prop('onSubmit')();
+
+    expect(handleSubmit).toHaveBeenCalledTimes(1);
   });
 
   it('should call handleChange on change of TextInput value', () => {
-    const handleChange = spy();
-
+    const handleChange = jest.spyOn(defaultProps, 'handleChange');
     const wrapper = render({ handleChange });
+
     wrapper
       .find(TextInput)
       .first()
       .prop('handleChange')();
-    expect(handleChange).to.have.been.calledOnce;
+    expect(handleChange).toHaveBeenCalledTimes(1);
   });
 
   it('should call handleBlur on blur of TextInput value', () => {
-    const handleBlur = spy();
-
+    const handleBlur = jest.spyOn(defaultProps, 'handleBlur');
     const wrapper = render({ handleBlur });
+
     wrapper
       .find(TextInput)
       .first()
       .prop('handleBlur')();
-    expect(handleBlur).to.have.been.calledOnce;
+    expect(handleBlur).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call setFieldValue on select of Select value', () => {
+    const setFieldValue = jest.spyOn(defaultProps, 'setFieldValue');
+    const wrapper = render({
+      setFieldValue,
+      isInvitation: true,
+    });
+
+    wrapper
+      .find(Select)
+      .first()
+      .prop('onSelect')({ value: 'value' });
+    expect(setFieldValue).toHaveBeenCalledTimes(1);
   });
 });

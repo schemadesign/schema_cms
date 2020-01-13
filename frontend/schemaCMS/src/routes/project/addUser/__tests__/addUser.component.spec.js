@@ -13,12 +13,12 @@ describe('AddUser: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with users', () => {
     const wrapper = render(propsWithUsers);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should redirect to not-authorized page not admin user', () => {
@@ -27,18 +27,18 @@ describe('AddUser: Component', () => {
     expect(defaultProps.history.push).toHaveBeenCalledWith('/not-authorized');
   });
 
-  it('should fetch project editors', async () => {
-    jest.spyOn(defaultProps, 'fetchProjectEditors');
-    render();
-    await Promise.resolve();
-    expect(defaultProps.fetchProjectEditors).toHaveBeenCalledWith({ projectId: '1' });
-  });
-
   it('should fetch users', async () => {
     jest.spyOn(defaultProps, 'fetchUsers');
     render();
-    await Promise.resolve();
+
     expect(defaultProps.fetchUsers).toHaveBeenCalled();
+  });
+
+  it('should fetch project editors', async () => {
+    jest.spyOn(defaultProps, 'fetchProjectEditors');
+    await render();
+
+    expect(defaultProps.fetchProjectEditors).toHaveBeenCalledWith({ projectId: '1' });
   });
 
   it('should go back', () => {
@@ -70,8 +70,26 @@ describe('AddUser: Component', () => {
       .find(Button)
       .at(0)
       .simulate('click');
+
     wrapper.find(NextButton).simulate('click');
 
     expect(propsWithUsers.removeUser).toHaveBeenCalledWith({ projectId: '1', userId: 1 });
+  });
+
+  it('should clear state after cancel removing user', () => {
+    const wrapper = render(propsWithUsers);
+
+    wrapper
+      .find(Button)
+      .at(0)
+      .simulate('click');
+
+    wrapper
+      .find(BackButton)
+      .at(1)
+      .simulate('click');
+
+    expect(wrapper.state().userToBeRemoved).toBeNull();
+    expect(wrapper.state().showConfirmationModal).toBeFalsy();
   });
 });

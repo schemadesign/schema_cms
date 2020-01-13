@@ -38,9 +38,9 @@ export default defineMessages({
     id: 'imageScrapingScript.save',
     defaultMessage: 'Save',
   },
-  ok: {
-    id: 'imageScrapingScript.ok',
-    defaultMessage: 'OK',
+  fieldsWithUrls: {
+    id: 'imageScrapingScript.fieldsWithUrls',
+    defaultMessage: 'Fields with URLs',
   },
   noFieldFound: {
     id: 'imageScrapingScript.noFieldFound',

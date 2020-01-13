@@ -23,7 +23,7 @@ describe('UserList: Component', () => {
     expect(usersList).toMatchSnapshot();
   });
 
-  it('should call fetchProject prop on componentDidMount', () => {
+  it('should call fetchUsers prop on componentDidMount', () => {
     jest.spyOn(defaultProps, 'fetchUsers');
     render();
 

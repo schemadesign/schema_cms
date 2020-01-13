@@ -11,13 +11,13 @@ describe('Preview: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
     defaultProps.fetchPreview = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render(defaultProps);
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    const wrapper = await render(defaultProps);
+
+    expect(wrapper).toMatchSnapshot();
   });
 });

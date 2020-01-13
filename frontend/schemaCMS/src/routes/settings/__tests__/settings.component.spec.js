@@ -15,26 +15,26 @@ describe('Settings: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly form', () => {
     const wrapper = render()
       .find(Formik)
       .dive();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render form without reset password link', () => {
     const wrapper = render({ userData: { authMethod: AUTH_METHODS.GMAIL } })
       .find(Formik)
       .dive();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call clearProject prop on componentDidMount', () => {

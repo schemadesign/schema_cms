@@ -19,6 +19,7 @@ export const defaultProps = {
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   handleBlur: Function.prototype,
+  updateFolder: Function.prototype,
   fetchFolder: Function.prototype,
   removeFolder: Function.prototype,
   history,

@@ -3,9 +3,23 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { FormattedMessage } from 'react-intl';
-import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { darcula, defaultStyle } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Form as FormUI, Typography } from 'schemaUI';
-import { always, append, equals, ifElse, path, reject, pipe, propEq, find, isNil, pathOr } from 'ramda';
+import {
+  always,
+  append,
+  difference,
+  equals,
+  find,
+  ifElse,
+  isEmpty,
+  isNil,
+  path,
+  pathOr,
+  pipe,
+  propEq,
+  reject,
+} from 'ramda';
 
 import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import {
@@ -14,23 +28,25 @@ import {
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Container, Form, customInputStyles } from './imageScrapingScript.styles';
+import { Container, customInputStyles, Form } from './imageScrapingScript.styles';
 import messages from './imageScrapingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { InfoContainer } from '../../../shared/components/container/container.styles';
 
-const { CheckboxGroup, Checkbox } = FormUI;
+const { CheckboxGroup, Checkbox, Label } = FormUI;
 const { Span } = Typography;
 
 export class ImageScrapingScript extends PureComponent {
   static propTypes = {
     fetchDataSource: PropTypes.func.isRequired,
     dataWranglingScript: PropTypes.object,
-    fieldNames: PropTypes.array.isRequired,
+    dataWranglingScripts: PropTypes.array.isRequired,
+    fetchDataWranglingScripts: PropTypes.func.isRequired,
+    fieldsWithUrls: PropTypes.array.isRequired,
     imageScrapingFields: PropTypes.array.isRequired,
     setImageScrapingFields: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
@@ -51,12 +67,19 @@ export class ImageScrapingScript extends PureComponent {
 
   async componentDidMount() {
     try {
-      const dataSource = await this.props.fetchDataSource(path(['match', 'params'], this.props));
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const scriptId = parseInt(getMatchParam(this.props, 'scriptId'), 10);
+      const { fetchDataSource, dataWranglingScripts, imageScrapingFields } = this.props;
+      const dataSource = await fetchDataSource(path(['match', 'params'], this.props));
+
+      if (isEmpty(dataWranglingScripts)) {
+        await this.props.fetchDataWranglingScripts({ dataSourceId });
+      }
+
       const selectedFields = pipe(
         pathOr([], ['activeJob', 'scripts']),
         find(propEq('id', scriptId)),
-        ifElse(isNil, always(this.props.imageScrapingFields), path(['options', 'columns']))
+        ifElse(isNil, always(imageScrapingFields), path(['options', 'columns']))
       )(dataSource);
 
       this.setState({ loading: false, selectedFields });
@@ -84,57 +107,66 @@ export class ImageScrapingScript extends PureComponent {
     const selectedFields = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)))(
       checked
     );
+
     return this.setState({
       selectedFields,
     });
   };
 
   handleGoToDataWranglingList = (match, history) => () => {
-    const { dataWranglingScript } = this.props;
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
-    if (dataWranglingScript.isPredefined) {
-      return history.goBack();
-    }
-
-    return history.push(`/datasource/${dataWranglingScript.datasource}/${STEPS_PAGE}`);
+    return history.push(`/datasource/${dataSourceId}/${STEPS_PAGE}`, { fromScript: true });
   };
 
-  handleOkClick = () =>
-    this.props.setImageScrapingFields({
-      imageScrapingFields: this.state.selectedFields,
-      scriptId: getMatchParam(this.props, 'scriptId'),
-      dataSourceId: getMatchParam(this.props, 'dataSourceId'),
-    });
+  handleSaveClick = () => {
+    const scriptId = getMatchParam(this.props, 'scriptId');
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
+    const imageScriptIndex = this.props.dataWranglingScripts.findIndex(({ id }) => id.toString() === scriptId);
 
-  renderCheckboxes = (name, index) => (
-    <Checkbox id={`checkbox-${index}`} value={name} key={index} isEdit>
+    return this.props.setImageScrapingFields({
+      imageScrapingFields: this.state.selectedFields,
+      scriptId,
+      imageScriptIndex,
+      dataSourceId,
+    });
+  };
+
+  renderCheckbox = (name, index) => (
+    <Checkbox id={`checkbox-${index}`} value={name} key={index}>
       <Span>{name}</Span>
     </Checkbox>
   );
 
-  renderContent = renderWhenTrueOtherwise(
-    () => (
-      <CheckboxGroup
-        onChange={this.handleChange}
-        value={this.state.selectedFields}
-        name="fields"
-        id="fieldCheckboxGroup"
-      >
-        {this.props.fieldNames.map(this.renderCheckboxes)}
-      </CheckboxGroup>
-    ),
-    always(
-      <InfoContainer>
-        <FormattedMessage {...messages.noFieldFound} />
-      </InfoContainer>
-    )
-  );
+  renderContent = fields =>
+    renderWhenTrueOtherwise(
+      always(
+        <InfoContainer>
+          <FormattedMessage {...messages.noFieldFound} />
+        </InfoContainer>
+      ),
+      always(
+        <CheckboxGroup
+          onChange={this.handleChange}
+          value={this.state.selectedFields}
+          name="fields"
+          id="fieldCheckboxGroup"
+          customStyles={{ border: 'none' }}
+        >
+          {fields.map(this.renderCheckbox)}
+        </CheckboxGroup>
+      )
+    )(isEmpty(fields));
 
   render() {
     const headerConfig = this.getHeaderAndMenuConfig();
-    const { intl, dataWranglingScript, match, history, isAdmin, fieldNames } = this.props;
-    const { loading, error } = this.state;
+    const { intl, dataWranglingScript, match, history, isAdmin, fieldsWithUrls, imageScrapingFields } = this.props;
+    const { loading, error, selectedFields } = this.state;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
+    const isCleanForm = isEmpty([
+      ...difference(imageScrapingFields, selectedFields),
+      ...difference(selectedFields, imageScrapingFields),
+    ]);
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
@@ -149,7 +181,7 @@ export class ImageScrapingScript extends PureComponent {
 
     return (
       <Container>
-        <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
+        <Helmet title={intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form name={DATA_WRANGLING_FORM_NAME}>
@@ -157,14 +189,17 @@ export class ImageScrapingScript extends PureComponent {
           <SyntaxHighlighter language="python" style={syntaxTheme}>
             {dataWranglingScript.body}
           </SyntaxHighlighter>
+          <Label>
+            <FormattedMessage {...messages.fieldsWithUrls} />
+          </Label>
           <LoadingWrapper loading={loading} error={error}>
-            {this.renderContent(!!fieldNames.length)}
+            {this.renderContent(fieldsWithUrls)}
           </LoadingWrapper>
         </Form>
         <NavigationContainer>
           <BackButton id="imageScrapingBackBtn" onClick={this.handleGoToDataWranglingList(match, history)} />
-          <NextButton id="imageScrapingNextBtn" onClick={this.handleOkClick}>
-            <FormattedMessage {...messages.ok} />
+          <NextButton id="imageScrapingNextBtn" onClick={this.handleSaveClick} disabled={isCleanForm || loading}>
+            <FormattedMessage {...messages.save} />
           </NextButton>
         </NavigationContainer>
       </Container>
