@@ -17,6 +17,8 @@ import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { Link } from '../../../theme/typography';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { ListItemTitle, ListItemContent } from '../../../shared/components/listComponents/listItem.styles';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getMenuProjects, PROJECT_DATASOURCE_ID, PROJECT_FOLDER_ID } from '../project.constants';
 
 export class FolderList extends PureComponent {
   static propTypes = {
@@ -90,19 +92,21 @@ export class FolderList extends PureComponent {
   render() {
     const { loading, error } = this.state;
     const { match, folders } = this.props;
-    const headerTitle = <FormattedMessage {...messages.title} />;
-    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const projectId = getMatchParam(this.props, 'projectId');
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <TopHeader
-          headerTitle={headerTitle}
-          headerSubtitle={headerSubtitle}
-          projectId={getMatchParam(this.props, 'projectId')}
+        <MobileMenu
+          headerTitle={<FormattedMessage {...messages.title} />}
+          headerSubtitle={<FormattedMessage {...messages.subTitle} />}
+          options={getMenuProjects(projectId, PROJECT_FOLDER_ID)}
         />
         <ProjectTabs active={FOLDER} url={`/project/${match.params.projectId}`} />
-        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
+        <ContextHeader
+          title={<FormattedMessage {...messages.title} />}
+          subtitle={<FormattedMessage {...messages.subTitle} />}
+        >
           <PlusButton id="createFolderDesktopBtn" onClick={this.handleCreateFolder} />
         </ContextHeader>
         <LoadingWrapper

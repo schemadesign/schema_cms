@@ -11,6 +11,9 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getMenuProjects, NONE } from '../project.constants';
+import { Container } from '../addUser/addUser.styles';
 
 export class CreateDataSource extends PureComponent {
   static propTypes = {
@@ -47,11 +50,16 @@ export class CreateDataSource extends PureComponent {
     const { intl } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const projectId = getMatchParam(this.props, 'projectId');
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={getMenuProjects(projectId, NONE)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Formik enableReinitialize validationSchema={DATA_SOURCE_SCHEMA} onSubmit={this.handleSubmit}>
           {({ values, submitForm, dirty, isValid, isSubmitting, ...rest }) => {

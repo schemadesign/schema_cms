@@ -14,6 +14,9 @@ import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getMenuProjects, PROJECT_USERS_ID } from '../project.constants';
+import { Container } from '../userDetails/userDetails.styles';
 
 export class UserList extends PureComponent {
   static propTypes = {
@@ -54,17 +57,19 @@ export class UserList extends PureComponent {
   render() {
     const { loading } = this.state;
     const { match, isAdmin, users } = this.props;
-    const topHeaderConfig = {
-      headerTitle: <FormattedMessage {...messages.headerTitle} />,
-      headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
-      projectId: getMatchParam(this.props, 'projectId'),
-    };
+    const headerTitle = <FormattedMessage {...messages.headerTitle} />;
+    const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
+    const projectId = getMatchParam(this.props, 'projectId');
 
     return (
       <Fragment>
-        <TopHeader {...topHeaderConfig} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={getMenuProjects(projectId, PROJECT_USERS_ID)}
+        />
         <ProjectTabs active={USERS} url={`/project/${match.params.projectId}`} />
-        <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle}>
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           {this.renderCreateUserButton({ id: 'addUserDesktopBtn', isAdmin })}
         </ContextHeader>
         <LoadingWrapper

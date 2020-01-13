@@ -9,7 +9,7 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { generateApiUrl, getMatchParam } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { TopHeader } from '../../../shared/components/topHeader';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
 import messages from './view.messages';
@@ -31,6 +31,7 @@ import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '..
 
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
+import { getMenuProjects, PROJECT_DETAILS_ID } from '../project.constants';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -186,7 +187,7 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { project, isAdmin } = this.props;
+    const { project } = this.props;
     const { confirmationModalOpen, error, loading } = this.state;
     const projectId = getMatchParam(this.props, 'projectId');
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
@@ -196,11 +197,10 @@ export class View extends PureComponent {
       <Container>
         <div>
           <Helmet title={this.formatMessage(messages.pageTitle)} />
-          <TopHeader
+          <MobileMenu
             headerTitle={headerTitle}
             headerSubtitle={headerSubtitle}
-            projectId={projectId}
-            isAdmin={isAdmin}
+            options={getMenuProjects(projectId, PROJECT_DETAILS_ID)}
           />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>

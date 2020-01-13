@@ -1,7 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from 'schemaUI';
+import { Link } from 'react-router-dom';
+import { ifElse, equals } from 'ramda';
 
-import { media } from '../../../theme/media';
+import { media } from '../../../../theme/media';
+
+const getItemTextColor = ({ active, theme }) =>
+  ifElse(
+    equals(true),
+    () => css`
+      color: ${theme.text};
+    `,
+    () => css`
+      color: rgba(255, 255, 255, 0.75);
+    `
+  )(active);
 
 export const Container = styled.div`
   font-weight: normal;
@@ -28,7 +41,7 @@ export const Content = styled.div`
   `};
 `;
 
-export const List = styled.ul`
+export const List = styled.div`
   list-style: none;
   margin: 0;
   padding: 0;
@@ -36,52 +49,33 @@ export const List = styled.ul`
   flex-direction: column;
 `;
 
-export const PrimaryList = styled(List)`
-  margin-bottom: 30px;
-`;
-
-export const SecondaryList = styled(List)`
-  align-items: flex-start;
-`;
-
-export const Item = styled.li`
+export const Item = styled.div`
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid ${({ theme, active }) => (active ? theme.header.text : theme.header.border)};
+  padding: 8px 0 13px;
 
-  a {
+  a,
+  div {
     text-decoration: none;
-    color: ${({ theme }) => theme.text};
+    ${getItemTextColor};
     display: block;
   }
 `;
 
-export const PrimaryItem = styled(Item)`
-  font-size: 24px;
-  border-bottom: 2.4px solid ${({ theme, active }) => (active ? theme.header.text : theme.header.border)};
-  padding: 8px 0 13px;
-  display: ${({ hide }) => (hide ? 'none' : 'block')};
-
-  &:first-of-type {
-    border-top: 2.4px solid ${({ theme }) => theme.header.border};
-  }
-
-  ${media.desktop`
-    padding: 22px 0 27px;
-    font-size: 20px;
-  `};
+export const HelperList = styled.div`
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
 `;
 
-export const SecondaryItem = styled(Item)`
-  padding: 0;
-  margin: 10px 0;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-
-  &:hover {
-    border-bottom: 1px solid ${({ theme }) => theme.text};
-  }
+export const HelperLink = styled(Link)`
+  color: ${({ theme }) => theme.text};
+  font-size: 14px;
+  text-decoration: none;
+  margin: 12px 0;
 `;
 
 export const Title = styled(Typography.H2)`

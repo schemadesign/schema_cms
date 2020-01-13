@@ -26,18 +26,6 @@ export default defineMessages({
     id: 'shared.components.desktopTopHeader.logOut',
     defaultMessage: 'Log out',
   },
-  projectDetails: {
-    id: 'shared.components.desktopTopHeader.projectDetails',
-    defaultMessage: 'Project details',
-  },
-  projectDataSources: {
-    id: 'shared.components.desktopTopHeader.projectDataSources',
-    defaultMessage: 'Data Sources',
-  },
-  projectPages: {
-    id: 'shared.components.desktopTopHeader.projectPages',
-    defaultMessage: 'Pages',
-  },
   settings: {
     id: 'shared.components.desktopTopHeader.settings',
     defaultMessage: 'Settings',
