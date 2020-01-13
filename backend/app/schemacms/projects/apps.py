@@ -10,28 +10,25 @@ class ProjectsConfig(AppConfig):
         from . import models  # noqa
 
         db_signals.post_save.connect(
-            receivers.update_meta_file,
+            receivers.update_public_api_meta,
             sender=models.DataSource,
-            dispatch_uid="projects.receivers.update_meta_file",
+            dispatch_uid="projects.receivers.update_public_api_meta",
         )
 
         db_signals.post_save.connect(
-            receivers.update_meta_file,
+            receivers.update_public_api_meta,
             sender=models.Project,
-            dispatch_uid="projects.receivers.update_meta_file",
+            dispatch_uid="projects.receivers.update_public_api_meta",
         )
 
         db_signals.post_save.connect(
-            receivers.update_meta_file,
+            receivers.update_public_api_meta,
             sender=models.Folder,
-            dispatch_uid="projects.receivers.update_meta_file",
+            dispatch_uid="projects.receivers.update_public_api_meta",
         )
 
         db_signals.post_save.connect(
-            receivers.update_meta_file, sender=models.Page, dispatch_uid="projects.receivers.update_meta_file"
-        )
-        db_signals.post_save.connect(
-            receivers.update_meta_file,
-            sender=models.Block,
-            dispatch_uid="projects.receivers.update_meta_file",
+            receivers.update_public_api_meta,
+            sender=models.Page,
+            dispatch_uid="projects.receivers.update_public_api_meta",
         )

@@ -625,7 +625,7 @@ class Page(
                 "name": block.name,
                 "type": block.type or None,
                 "content": block.content or None,
-                "images": [] if not hasattr(block, "images") else [i.image.url for i in block.images.all()],
+                "images": block.get_images(),
             }
             blocks.append(data)
 
@@ -666,6 +666,11 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
 
     def get_project(self):
         return self.page.folder.project
+
+    def get_images(self):
+        if not hasattr(self, "images"):
+            return []
+        return [{"url": i.image.url, "order": i.exec_order} for i in self.images.all()]
 
     @functional.cached_property
     def project_info(self):

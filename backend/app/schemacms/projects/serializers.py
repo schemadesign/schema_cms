@@ -561,6 +561,16 @@ class BlockSerializer(serializers.ModelSerializer):
         images = instance.images.all().order_by('exec_order')
         return BlockImageSerializer(images, many=True).data
 
+    @staticmethod
+    def create_images(images, images_order, block):
+        for key, image in images.items():
+            image_instance = models.BlockImage()
+            image_instance.image = image
+            image_instance.image_name = image.name
+            image_instance.block = block
+            image_instance.exec_order = images_order[key]
+            yield image_instance
+
     @transaction.atomic()
     def save(self, *args, **kwargs):
         images = self.context.get('view').request.FILES
@@ -575,17 +585,9 @@ class BlockSerializer(serializers.ModelSerializer):
         if images:
             models.BlockImage.objects.bulk_create(self.create_images(images, images_order, block))
 
-        return block
+        block.page.create_dynamo_item()
 
-    @staticmethod
-    def create_images(images, images_order, block):
-        for key, image in images.items():
-            image_instance = models.BlockImage()
-            image_instance.image = image
-            image_instance.image_name = image.name
-            image_instance.block = block
-            image_instance.exec_order = images_order[key]
-            yield image_instance
+        return block
 
     @transaction.atomic()
     def update(self, instance, validated_data):

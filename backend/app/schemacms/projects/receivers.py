@@ -1,7 +1,7 @@
-from .models import Block, Folder, DataSource, Page, Project
+from .models import Folder, DataSource, Page, Project
 
 
-def update_meta_file(sender, instance, **kwargs):
+def update_public_api_meta(sender, instance, **kwargs):
     if isinstance(instance, (Project,)):
         instance.create_dynamo_item()
 
@@ -13,9 +13,6 @@ def update_meta_file(sender, instance, **kwargs):
         instance.create_dynamo_item()
         project = instance.get_project()
         project.create_dynamo_item()
-
-    elif isinstance(instance, (Block,)):
-        instance.page.create_dynamo_item()
 
     elif isinstance(instance, (Folder,)):
         project = instance.get_project()
