@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
 
 import { List } from '../list.component';
 import { defaultProps } from '../list.stories';
@@ -13,7 +11,7 @@ describe('List: Component', () => {
 
   it('should render correctly with loading', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
@@ -23,7 +21,7 @@ describe('List: Component', () => {
     const wrapper = render(props);
     await Promise.resolve();
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render without data', async () => {
@@ -34,18 +32,14 @@ describe('List: Component', () => {
     const wrapper = render(props);
     await Promise.resolve();
 
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call fetchProjectsList prop on componentDidMount', async () => {
-    const fetchProjectsList = spy();
-    const props = {
-      fetchProjectsList,
-      intl: { formatMessage: ({ id }) => id },
-    };
+  it('should call fetchProjectsList on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchProjectsList');
 
-    await render(props);
+    await render();
 
-    expect(fetchProjectsList).to.have.been.called;
+    expect(defaultProps.fetchProjectsList).toHaveBeenCalled();
   });
 });

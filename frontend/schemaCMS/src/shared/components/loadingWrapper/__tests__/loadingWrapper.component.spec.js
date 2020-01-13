@@ -15,21 +15,21 @@ describe('LoadingWrapper: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when loading', () => {
     const wrapper = render(loadingProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when no data', () => {
     const wrapper = render(noDataProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render error correctly', () => {
     const wrapper = render(errorProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

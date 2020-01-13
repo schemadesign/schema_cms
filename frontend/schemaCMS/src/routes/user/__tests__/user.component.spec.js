@@ -28,12 +28,12 @@ describe('User: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with project id', () => {
     const wrapper = render(propsWithId);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should redirect to not-authorized page not admin user', () => {

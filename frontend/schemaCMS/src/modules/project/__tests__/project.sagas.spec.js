@@ -152,6 +152,23 @@ describe('Project: sagas', () => {
         .silentRun();
     });
 
+    it('should put ProjectRoutines.removeOne.success action', async () => {
+      const payload = {
+        projectId: '1',
+      };
+      const response = { id: '1' };
+
+      mockApi.delete(`${PROJECTS_PATH}/${payload.projectId}`).reply(OK, response);
+
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(ProjectRoutines.removeOne.success())
+        .dispatch(ProjectRoutines.removeOne(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith('/project/');
+    });
+
     it('should put ProjectRoutines.removeEditor.success action and fetch project', async () => {
       const payload = {
         projectId: '1',
@@ -167,6 +184,24 @@ describe('Project: sagas', () => {
         .put(ProjectRoutines.fetchOne.request())
         .dispatch(ProjectRoutines.removeEditor(payload))
         .silentRun();
+    });
+
+    it('should put ProjectRoutines.addEditor.success action', async () => {
+      const payload = {
+        projectId: '1',
+        userId: '1',
+      };
+      const response = [{ id: '1' }];
+
+      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}/add-editor`, { id: payload.userId }).reply(OK, response);
+
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(ProjectRoutines.addEditor.success())
+        .dispatch(ProjectRoutines.addEditor(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/project/${payload.projectId}/user/add`);
     });
 
     it('should put ProjectRoutines.removeEditor.success action and redirect to users list', async () => {

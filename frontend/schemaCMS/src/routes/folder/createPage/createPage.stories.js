@@ -11,6 +11,7 @@ export const defaultProps = {
     description: 'description',
     keywords: 'keywords',
   },
+  createPage: Function.prototype,
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   handleBlur: Function.prototype,

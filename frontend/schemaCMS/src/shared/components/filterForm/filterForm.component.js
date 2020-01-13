@@ -52,7 +52,7 @@ export class FilterForm extends PureComponent {
     filterType: path(['fieldsInfo', value, FILTER_TYPE, 0], this.props),
   });
 
-  getFilerTypes = value => pathOr([], ['fieldsInfo', value, FILTER_TYPE], this.props);
+  getFilterTypes = value => pathOr([], ['fieldsInfo', value, FILTER_TYPE], this.props);
 
   handleSelectField = ({ value, setFieldValue, filterTypes }) => {
     const { uniqueItems, fieldType, filterType } = this.getDependencyValues(value);
@@ -62,7 +62,7 @@ export class FilterForm extends PureComponent {
     setFieldValue(FILTER_FIELD, value);
 
     if (!filterTypes.includes(filterType)) {
-      filterTypes = this.getFilerTypes(value);
+      filterTypes = this.getFilterTypes(value);
       setFieldValue(FILTER_TYPE, filterTypes[0]);
     }
   };
@@ -116,7 +116,7 @@ export class FilterForm extends PureComponent {
       <Fragment>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
           {({ values, handleChange, setFieldValue, dirty, isValid, isSubmitting, ...rest }) => {
-            const filterTypes = this.getFilerTypes(values[FILTER_FIELD]);
+            const filterTypes = this.getFilterTypes(values[FILTER_FIELD]);
             const filterTypeOptions = filterTypes.map(key => ({
               value: key,
               label: key,
@@ -186,7 +186,7 @@ export class FilterForm extends PureComponent {
             <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
+            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

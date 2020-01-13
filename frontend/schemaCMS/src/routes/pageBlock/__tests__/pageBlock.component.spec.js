@@ -19,8 +19,8 @@ describe('PageBlock: Component', () => {
     const props = {
       fetchPageBlock: jest.fn().mockReturnValue(Promise.resolve()),
     };
-    const wrapper = render(props);
-    await Promise.resolve();
+    const wrapper = await render(props);
+
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -31,6 +31,16 @@ describe('PageBlock: Component', () => {
     wrapper.find('#backBtn').simulate('click');
 
     expect(defaultProps.history.push).toHaveBeenCalledWith('/page/1');
+  });
+
+  it('should call fetchFilters on componentDidMount', () => {
+    const fetchPageBlock = jest.spyOn(defaultProps, 'fetchPageBlock');
+
+    render({
+      fetchPageBlock,
+    });
+
+    expect(fetchPageBlock).toHaveBeenCalledTimes(1);
   });
 
   it('should submit form', () => {

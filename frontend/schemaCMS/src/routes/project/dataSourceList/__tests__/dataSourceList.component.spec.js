@@ -68,4 +68,12 @@ describe('DataSourceList: Component', () => {
 
     expect(propsWithDataSources.history.push).toHaveBeenCalledWith('/project/1/datasource/add');
   });
+
+  it('should call fetchDataSources on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchDataSources');
+
+    await render();
+
+    expect(defaultProps.fetchDataSources).toHaveBeenCalled();
+  });
 });

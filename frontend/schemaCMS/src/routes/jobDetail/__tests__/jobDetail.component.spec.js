@@ -5,6 +5,8 @@ import { expect } from 'chai';
 
 import { JobDetail } from '../jobDetail.component';
 import { defaultProps, failureJob, fakeJob } from '../jobDetail.stories';
+import { Form } from '../jobDetail.styles';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 describe('JobDetail: Component', () => {
   const component = props => <JobDetail {...defaultProps} {...props} />;
@@ -41,5 +43,21 @@ describe('JobDetail: Component', () => {
     const fetchOne = spy();
     render({ fetchOne });
     expect(fetchOne).to.have.been.calledWith({ jobId: '1' });
+  });
+
+  it('should submit form', async () => {
+    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
+
+    jest.spyOn(defaultProps, 'handleSubmit');
+    const wrapper = await render();
+
+    wrapper
+      .find(LoadingWrapper)
+      .dive()
+      .find(Form)
+      .dive()
+      .simulate('submit');
+
+    global.expect(defaultProps.handleSubmit).toHaveBeenCalled();
   });
 });

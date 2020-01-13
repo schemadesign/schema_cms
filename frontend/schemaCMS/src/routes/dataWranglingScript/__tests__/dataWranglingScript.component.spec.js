@@ -13,27 +13,29 @@ describe('DataWranglingScript: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
-    defaultProps.fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render();
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    const fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
+
+    const wrapper = await render({ fetchDataWranglingScript });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with link to datasources', async () => {
-    defaultProps.fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
-    const props = {};
-    const wrapper = render(props);
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    const fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = await render({
+      fetchDataWranglingScript,
+    });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with route to custom script', async () => {
-    defaultProps.fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
-
+    const fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
     const dataWranglingScript = {
       // eslint-disable-next-line import/no-named-as-default-member
       ...mockScripts[CASE_CONVERSION],
@@ -41,9 +43,19 @@ describe('DataWranglingScript: Component', () => {
         type: IMAGE_SCRAPING_SCRIPT_TYPE,
       },
     };
+    const wrapper = await render({
+      fetchDataWranglingScript,
+      dataWranglingScript,
+    });
 
-    const wrapper = render({ dataWranglingScript });
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call fetchDataWranglingScript on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchDataWranglingScript');
+
+    await render();
+
+    expect(defaultProps.fetchDataWranglingScript).toHaveBeenCalled();
   });
 });

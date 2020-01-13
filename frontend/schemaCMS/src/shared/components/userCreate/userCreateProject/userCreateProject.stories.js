@@ -8,10 +8,12 @@ import { UserCreateProject } from './userCreateProject.component';
 export const userCreateProjectProps = {
   createUserProject: Function.prototype,
   user: {
+    id: '1',
     firstName: 'Ann',
     lastName: 'Lorem',
   },
   project: {
+    id: '1',
     title: 'Ipsum Project',
   },
   isFetched: false,
@@ -26,6 +28,7 @@ export const userCreateProjectProps = {
   match: {
     params: {
       projectId: '1',
+      userId: '1',
     },
   },
 };

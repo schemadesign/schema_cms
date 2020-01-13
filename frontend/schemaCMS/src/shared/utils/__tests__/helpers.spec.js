@@ -3,11 +3,11 @@ import { errorMessageParser, generateApiUrl } from '../helpers';
 describe('Helpers', () => {
   describe('generateApiUrl', () => {
     it('should generate api url', () => {
-      global.expect(generateApiUrl('slug')).toEqual('schemacms/api/slug');
+      expect(generateApiUrl('slug')).toEqual('schemacms/api/slug');
     });
 
     it('should generate empty string', () => {
-      global.expect(generateApiUrl()).toEqual('');
+      expect(generateApiUrl()).toEqual('');
     });
   });
 
@@ -19,7 +19,7 @@ describe('Helpers', () => {
       const formatMessage = ({ message }) => message;
       const result = { name: message, data: 'Something went wrong.' };
 
-      global.expect(errorMessageParser({ errors, messages, formatMessage })).toEqual(result);
+      expect(errorMessageParser({ errors, messages, formatMessage })).toEqual(result);
     });
 
     it('should return empty object if errors is not a array', () => {
@@ -28,7 +28,7 @@ describe('Helpers', () => {
       const messages = { nameUniqueError: { message } };
       const formatMessage = ({ message }) => message;
 
-      global.expect(errorMessageParser({ errors, messages, formatMessage })).toEqual({});
+      expect(errorMessageParser({ errors, messages, formatMessage })).toEqual({});
     });
   });
 });

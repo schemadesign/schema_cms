@@ -2,6 +2,59 @@
 
 exports[`DataPreview: Component should render correctly 1`] = `
 <styled.div>
+  <styled.div>
+    <styled.div>
+      <styled.div>
+        <Component
+          customStyles={
+            Object {
+              "height": 60,
+              "width": 60,
+            }
+          }
+          disabled={true}
+          onClick={[Function]}
+        >
+          <Component
+            customStyles={
+              Object {
+                "opacity": 0.3,
+              }
+            }
+          />
+        </Component>
+      </styled.div>
+      <styled.div>
+        {countFields, plural,one {# Field} other {# Fields}}
+      </styled.div>
+      <styled.div>
+        <Component
+          customStyles={
+            Object {
+              "height": 60,
+              "width": 60,
+            }
+          }
+          disabled={false}
+          onClick={[Function]}
+        >
+          <Component
+            customStyles={Object {}}
+          />
+        </Component>
+      </styled.div>
+    </styled.div>
+    <Component
+      header={Array []}
+      numberedRows={true}
+      rows={Array []}
+    />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`DataPreview: Component should render correctly with loader 1`] = `
+<styled.div>
   <Loading />
 </styled.div>
 `;

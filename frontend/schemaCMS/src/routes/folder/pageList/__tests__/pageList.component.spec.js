@@ -13,7 +13,8 @@ describe('PageList: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
@@ -24,7 +25,8 @@ describe('PageList: Component', () => {
     const wrapper = render(props);
     await Promise.resolve();
     await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should fetch list', async () => {
@@ -33,6 +35,7 @@ describe('PageList: Component', () => {
     render();
     await Promise.resolve();
     await Promise.resolve();
+
     expect(defaultProps.fetchPages).toBeCalledWith({ folderId: '1' });
     expect(defaultProps.fetchFolder).toBeCalledWith({ folderId: '1' });
   });

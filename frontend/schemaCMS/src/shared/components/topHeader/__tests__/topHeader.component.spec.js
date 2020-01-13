@@ -11,16 +11,16 @@ describe('TopHeader: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with project id', () => {
     const wrapper = render({ projectId: 'projectId' });
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with custom menu', () => {
     const wrapper = render(customMenuProps);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

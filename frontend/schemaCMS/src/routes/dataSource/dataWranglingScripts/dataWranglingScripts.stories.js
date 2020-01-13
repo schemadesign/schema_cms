@@ -27,12 +27,12 @@ export const defaultProps = {
   history,
   intl,
   match: {
-    url: '/datasource/14/3',
     params: {
       dataSourceId: '1',
       projectId: '1',
       step: '3',
     },
+    url: '/datasource/1/steps',
   },
 };
 

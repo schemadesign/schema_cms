@@ -14,14 +14,15 @@ describe('DataWranglingDefaultScript: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
     defaultProps.fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render(defaultProps);
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    const wrapper = await render(defaultProps);
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should go to data wrangling page', async () => {
@@ -32,8 +33,7 @@ describe('DataWranglingDefaultScript: Component', () => {
       // eslint-disable-next-line import/no-named-as-default-member
       ...mockScripts[CASE_CONVERSION],
     };
-    const wrapper = render({ ...defaultProps, dataWranglingScript });
-    await Promise.resolve();
+    const wrapper = await render({ ...defaultProps, dataWranglingScript });
 
     wrapper.find(BackButton).simulate('click');
     expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${STEPS_PAGE}`, { fromScript: true });
@@ -42,8 +42,7 @@ describe('DataWranglingDefaultScript: Component', () => {
   it('should go to data wrangling page with id from match params', async () => {
     jest.spyOn(defaultProps.history, 'push');
     defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render();
-    await Promise.resolve();
+    const wrapper = await render();
 
     wrapper.find(BackButton).simulate('click');
     expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/dataSourceId/${STEPS_PAGE}`, {

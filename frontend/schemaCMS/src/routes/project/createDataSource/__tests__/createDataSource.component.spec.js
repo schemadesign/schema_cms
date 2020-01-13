@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 
 import { CreateDataSource } from '../createDataSource.component';
 import { defaultProps } from '../createDataSource.stories';
+import { BackButton } from '../../../../shared/components/navigation';
 
 describe('CreateDataSource: Component', () => {
   const component = props => <CreateDataSource {...defaultProps} {...props} />;
@@ -16,10 +17,27 @@ describe('CreateDataSource: Component', () => {
   });
 
   it('should call createDataSource', async () => {
-    const values = { data: 'data' };
     jest.spyOn(defaultProps, 'createDataSource');
-    const wrapper = render();
-    await wrapper.find(Formik).prop('onSubmit')(values, { setSubmitting: Function.prototype });
+
+    const values = { data: 'data' };
+    const wrapper = await render();
+
+    wrapper.find(Formik).prop('onSubmit')(values, { setSubmitting: Function.prototype });
+
     expect(defaultProps.createDataSource).toHaveBeenCalledWith({ projectId: '1', requestData: values });
+  });
+
+  it('should go back', () => {
+    jest.spyOn(defaultProps.history, 'push');
+
+    const wrapper = render();
+
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(BackButton)
+      .simulate('click');
+
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/datasource');
   });
 });
