@@ -10,8 +10,6 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import {
-  selectedLabelStyles,
-  labelStyles,
   checkBoxContainerStyles,
   CheckboxContent,
   checkBoxStyles,
@@ -20,7 +18,9 @@ import {
   Error,
   Header,
   IconWrapper,
+  labelStyles,
   Link,
+  selectedLabelStyles,
   StepCounter,
   Type,
   UploadContainer,
@@ -146,11 +146,11 @@ export class DataWranglingScripts extends PureComponent {
   handleSubmit = async () => {
     try {
       this.setState({ errorMessage: '', isSubmitting: true });
-      const { checkedScripts } = this.props;
+      const { checkedScripts, sendUpdatedDataWranglingScript } = this.props;
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const parsedSteps = pipe(steps => steps.map(this.parseSteps))(checkedScripts);
 
-      await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
+      await sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
     } catch (error) {
       reportError(error);
       window.scrollTo(0, 0);
