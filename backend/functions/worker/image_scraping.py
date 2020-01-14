@@ -33,10 +33,12 @@ def image_static_url(path):
 
 
 def www_to_https(url: str) -> str:
-    if url.startswith("www."):
-        url = f"https://{url}"
-    return url
-
+    try:
+        if url.startswith("www."):
+            url = f"https://{url}"
+        return url
+    except AttributeError:
+        return url
 
 def is_valid_url(url: str) -> bool:
     try:
