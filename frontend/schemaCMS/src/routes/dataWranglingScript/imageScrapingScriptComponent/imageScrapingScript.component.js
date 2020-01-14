@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { FormattedMessage } from 'react-intl';
-import { asMutable } from 'seamless-immutable';
 import { darcula, defaultStyle } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Form as FormUI, Typography } from 'schemaUI';
 import {
@@ -12,7 +11,6 @@ import {
   difference,
   equals,
   find,
-  findLastIndex,
   ifElse,
   isEmpty,
   isNil,
@@ -120,23 +118,12 @@ export class ImageScrapingScript extends PureComponent {
 
   handleSaveClick = () => {
     const { selectedFields } = this.state;
-    const { dataWranglingScripts } = this.props;
     const scriptId = getMatchParam(this.props, 'scriptId');
     const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-    const tempScripts = asMutable(dataWranglingScripts, { deep: true });
-    const imageScript = tempScripts.find(({ id }) => id.toString() === scriptId);
-    const imageScriptIndex = tempScripts.findIndex(({ id }) => id.toString() === scriptId);
-    const lastCheckedIndex = findLastIndex(propEq('checked', true), tempScripts);
-    imageScript.checked = !isEmpty(selectedFields);
-    const moveIndex = imageScript.checked ? lastCheckedIndex + 1 : lastCheckedIndex;
 
-    tempScripts.splice(imageScriptIndex, 1);
-    tempScripts.splice(moveIndex, 0, imageScript);
-    const scripts = tempScripts.map((script, index) => ({ ...script, order: index }));
     return this.props.setImageScrapingFields({
       imageScrapingFields: selectedFields,
       scriptId,
-      scripts,
       dataSourceId,
     });
   };

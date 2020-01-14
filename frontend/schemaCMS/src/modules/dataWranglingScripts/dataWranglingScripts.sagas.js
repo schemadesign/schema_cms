@@ -1,4 +1,5 @@
 import { all, put, takeLatest, select } from 'redux-saga/effects';
+import { isEmpty } from 'ramda';
 
 import { DataWranglingScriptsRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
@@ -11,6 +12,7 @@ import browserHistory from '../../shared/utils/history';
 
 import { selectDataSource } from '../dataSource';
 import { STEPS_PAGE } from '../dataSource/dataSource.constants';
+import { selectDataWranglingScripts } from './dataWranglingScripts.selectors';
 
 function* fetchList({ payload: { dataSourceId, fromScript = false } }) {
   try {
@@ -20,10 +22,17 @@ function* fetchList({ payload: { dataSourceId, fromScript = false } }) {
       yield put(DataWranglingScriptsRoutines.clearCustomScripts());
     }
 
+    const scripts = yield select(selectDataWranglingScripts);
+
+    if (fromScript && !isEmpty(scripts)) {
+      yield put(DataWranglingScriptsRoutines.fetchList.success({ fromScript }));
+      return;
+    }
+
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
     const dataSource = yield select(selectDataSource);
 
-    yield put(DataWranglingScriptsRoutines.fetchList.success({ data, dataSource, fromScript }));
+    yield put(DataWranglingScriptsRoutines.fetchList.success({ data, dataSource }));
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.fetchList.failure());
   } finally {

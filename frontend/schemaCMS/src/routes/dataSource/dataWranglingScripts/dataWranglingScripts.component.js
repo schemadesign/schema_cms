@@ -1,40 +1,20 @@
-import React, { createRef, Fragment, PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Formik } from 'formik';
 import { Form, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import {
-  always,
-  append,
-  equals,
-  filter,
-  find,
-  findLastIndex,
-  flatten,
-  ifElse,
-  includes,
-  isEmpty,
-  map,
-  pathEq,
-  pathOr,
-  pipe,
-  prop,
-  propEq,
-  reject,
-  toString,
-  uniq,
-} from 'ramda';
+import { asMutable } from 'seamless-immutable';
+import { always, find, flatten, ifElse, isEmpty, map, pathEq, pathOr, pipe, prop, propEq, toString, uniq } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import {
-  ANIMATION_DELAY,
-  ANIMATION_SPEED,
-  CHECKBOX_HEIGHT,
+  selectedLabelStyles,
+  labelStyles,
+  checkBoxContainerStyles,
   CheckboxContent,
-  CheckBoxStyles,
+  checkBoxStyles,
   Dot,
   Empty,
   Error,
@@ -62,16 +42,19 @@ import { getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { Draggable } from '../../../shared/components/draggable';
 
-const { CheckboxGroup, Checkbox, FileUpload } = Form;
+const { CheckboxGroup, Checkbox, FileUpload, Label } = Form;
 const { MenuIcon } = Icons;
 
 export class DataWranglingScripts extends PureComponent {
   static propTypes = {
     dataWranglingScripts: PropTypes.array.isRequired,
+    checkedScripts: PropTypes.array.isRequired,
+    uncheckedScripts: PropTypes.array.isRequired,
     imageScrapingFields: PropTypes.array.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
     setScriptsList: PropTypes.func.isRequired,
+    setCheckedScripts: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     dataSource: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -87,6 +70,7 @@ export class DataWranglingScripts extends PureComponent {
   state = {
     loading: true,
     uploading: false,
+    isSubmitting: false,
     errorMessage: '',
     error: null,
   };
@@ -112,8 +96,6 @@ export class DataWranglingScripts extends PureComponent {
       ? `/script/${id}`
       : `/script/${id}/${getMatchParam(this.props, 'dataSourceId')}`;
   };
-
-  checkboxesRef = createRef();
 
   parseSteps = (script, index) =>
     ifElse(
@@ -146,43 +128,27 @@ export class DataWranglingScripts extends PureComponent {
     }
   };
 
-  handleChange = ({ e, setFieldValue, steps }) => {
+  handleChange = e => {
     const { value, checked } = e.target;
-    const scripts = this.props.dataWranglingScripts.map((script, index) => {
-      if (script.id.toString() === value) {
-        return { ...script, checked, index };
-      }
-
-      return { ...script, index };
-    });
+    const { imageScrapingFields, history, checkedScripts, uncheckedScripts } = this.props;
+    const scripts = checked ? uncheckedScripts : checkedScripts;
     const script = find(propEq('id', parseInt(value, 10)), scripts);
 
-    if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE && isEmpty(this.props.imageScrapingFields)) {
+    if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE && isEmpty(imageScrapingFields)) {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
-      return this.props.history.push(`/script/${value}/${dataSourceId}`);
+      return history.push(`/script/${value}/${dataSourceId}`);
     }
-    const scriptIndex = script.index;
-    const lastCheckedIndex = findLastIndex(propEq('checked', true), this.props.dataWranglingScripts);
-    const moveIndex = checked ? lastCheckedIndex + 1 : lastCheckedIndex;
-    const animation = moveIndex !== scriptIndex;
-    const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
 
-    this.handleMove(scriptIndex, moveIndex, animation, checked, true);
-
-    return setFieldValue('steps', setScripts(checked));
+    return this.props.setScriptsList({ script, checked });
   };
 
-  handleSubmit = async ({ steps }, { setSubmitting }) => {
+  handleSubmit = async () => {
     try {
-      setSubmitting(true);
-      this.setState({ errorMessage: '' });
+      this.setState({ errorMessage: '', isSubmitting: true });
+      const { checkedScripts } = this.props;
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-      const parsedSteps = pipe(
-        map(script => ({ ...script, id: `${script.id}` })),
-        filter(script => includes(prop('id', script), steps)),
-        steps => steps.map(this.parseSteps)
-      )(this.props.dataWranglingScripts);
+      const parsedSteps = pipe(steps => steps.map(this.parseSteps))(checkedScripts);
 
       await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
     } catch (error) {
@@ -190,44 +156,37 @@ export class DataWranglingScripts extends PureComponent {
       window.scrollTo(0, 0);
       this.setState({ errorMessage: 'errorJobFailed' });
     } finally {
-      setSubmitting(false);
+      this.setState({ isSubmitting: false });
     }
   };
 
-  handleMove = (dragIndex, hoverIndex, animation = false, checked, change) => {
-    const { dataWranglingScripts } = this.props;
-    let tempScripts = [...dataWranglingScripts.asMutable({ deep: true })];
+  handleMove = (dragIndex, hoverIndex) => {
+    const { checkedScripts } = this.props;
+    const tempScripts = asMutable(checkedScripts, { deep: true });
     const dragCard = tempScripts[dragIndex];
-    if (change) {
-      dragCard.checked = checked;
-    }
 
     tempScripts.splice(dragIndex, 1);
     tempScripts.splice(hoverIndex, 0, dragCard);
-    tempScripts = tempScripts.map((script, index) => ({ ...script, order: index }));
 
-    if (!animation) {
-      return this.props.setScriptsList(tempScripts);
-    }
-
-    const checkbox = this.checkboxesRef.current.children[dragIndex].children[0];
-    const checkboxStyle = checkbox.style;
-
-    document.body.style.overflowAnchor = 'none';
-    checkboxStyle.opacity = 0;
-    checkboxStyle.maxHeight = '0px';
-
-    return setTimeout(() => {
-      this.props.setScriptsList(tempScripts);
-      setTimeout(() => {
-        checkboxStyle.opacity = 1;
-        checkboxStyle.maxHeight = `${CHECKBOX_HEIGHT}px`;
-        document.body.style.overflowAnchor = 'auto';
-      });
-    }, ANIMATION_SPEED + ANIMATION_DELAY);
+    return this.props.setCheckedScripts(tempScripts);
   };
 
-  renderCheckboxes = ({ id, name, type = SCRIPT_TYPES.CUSTOM }, index) => {
+  renderCheckbox = ({ id, name, type = SCRIPT_TYPES.CUSTOM, draggableIcon = '', idPrefix = '' }, index) => (
+    <Checkbox id={`${idPrefix}checkbox-${index}`} value={id.toString()}>
+      <CheckboxContent>
+        {draggableIcon}
+        <Link to={this.getScriptLink({ id, type })}>
+          {name}
+          <Dot />
+          <Type>
+            <FormattedMessage {...messages[type]} />
+          </Type>
+        </Link>
+      </CheckboxContent>
+    </Checkbox>
+  );
+
+  renderCheckboxWithDrag = ({ id, name, type = SCRIPT_TYPES.CUSTOM }, index) => {
     return (
       <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
         {makeDraggable => {
@@ -237,20 +196,7 @@ export class DataWranglingScripts extends PureComponent {
             </IconWrapper>
           );
 
-          return (
-            <Checkbox id={`checkbox-${index}`} value={id.toString()}>
-              <CheckboxContent>
-                {draggableIcon}
-                <Link to={this.getScriptLink({ id, type })}>
-                  {name}
-                  <Dot />
-                  <Type>
-                    <FormattedMessage {...messages[type]} />
-                  </Type>
-                </Link>
-              </CheckboxContent>
-            </Checkbox>
-          );
+          return this.renderCheckbox({ id, name, type, draggableIcon, idPrefix: 'drag-' }, index);
         }}
       </Draggable>
     );
@@ -284,10 +230,9 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { dataSource, isAdmin, dataWranglingScripts } = this.props;
-    const { errorMessage, loading, error } = this.state;
+    const { dataSource, isAdmin, dataWranglingScripts, checkedScripts = [], uncheckedScripts = [] } = this.props;
+    const { errorMessage, loading, error, isSubmitting } = this.state;
     const steps = pipe(
-      filter(propEq('checked', true)),
       map(
         pipe(
           prop('id'),
@@ -296,7 +241,7 @@ export class DataWranglingScripts extends PureComponent {
       ),
       flatten,
       uniq
-    )(dataWranglingScripts);
+    )(checkedScripts);
     const { jobsInProcess, name } = dataSource;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -311,37 +256,45 @@ export class DataWranglingScripts extends PureComponent {
           <Header>
             <Empty />
             <StepCounter>
-              <FormattedMessage values={{ steps: dataWranglingScripts.length }} {...messages.steps} />
+              <FormattedMessage values={{ steps: dataWranglingScripts.length }} {...messages.counterSteps} />
               {this.renderUploadingError(errorMessage)}
               {this.renderProcessingWarning(jobsInProcess)}
             </StepCounter>
             <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
           </Header>
-          <Formik initialValues={{ steps }} isInitialValid enableReinitialize onSubmit={this.handleSubmit}>
-            {({ values: { steps }, setFieldValue, submitForm, isSubmitting }) => (
-              <Fragment>
-                <CheckboxGroup
-                  onChange={e => this.handleChange({ e, setFieldValue, steps })}
-                  customCheckboxStyles={CheckBoxStyles}
-                  value={steps}
-                  name="steps"
-                  id="fieldStepsCheckboxGroup"
-                >
-                  <div ref={this.checkboxesRef}>{dataWranglingScripts.map(this.renderCheckboxes)}</div>
-                </CheckboxGroup>
-                <NavigationContainer right>
-                  <NextButton
-                    onClick={submitForm}
-                    disabled={isSubmitting || jobsInProcess || !steps.length}
-                    loading={isSubmitting}
-                  >
-                    <FormattedMessage {...messages.save} />
-                  </NextButton>
-                </NavigationContainer>
-                <DataSourceNavigation {...this.props} hideOnDesktop />
-              </Fragment>
-            )}
-          </Formik>
+          <Fragment>
+            <CheckboxGroup
+              onChange={this.handleChange}
+              customCheckboxStyles={checkBoxStyles}
+              customStyles={checkBoxContainerStyles}
+              value={steps}
+              name="steps"
+              id="fieldStepsCheckboxGroup"
+            >
+              <Label customStyles={selectedLabelStyles}>
+                <FormattedMessage {...messages.selectedScripts} />
+              </Label>
+              <div>{checkedScripts.map(this.renderCheckboxWithDrag)}</div>
+              <Label customStyles={labelStyles}>
+                <FormattedMessage {...messages.steps} />
+              </Label>
+              <div>
+                {uncheckedScripts.map((item, index) => (
+                  <div key={index}>{this.renderCheckbox(item, index)}</div>
+                ))}
+              </div>
+            </CheckboxGroup>
+            <NavigationContainer right>
+              <NextButton
+                onClick={this.handleSubmit}
+                disabled={isSubmitting || jobsInProcess || !steps.length}
+                loading={isSubmitting}
+              >
+                <FormattedMessage {...messages.save} />
+              </NextButton>
+            </NavigationContainer>
+            <DataSourceNavigation {...this.props} hideOnDesktop />
+          </Fragment>
         </LoadingWrapper>
       </DndProvider>
     );

@@ -3,23 +3,19 @@ import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
 import {
   always,
-  ascend,
   cond,
-  defaultTo,
-  differenceWith,
-  equals,
-  find,
+  groupBy,
   ifElse,
+  includes,
   isEmpty,
   lensProp,
   map,
-  mergeRight,
   pathOr,
   pipe,
   prop,
   propEq,
   set,
-  sortWith,
+  sortBy,
   T,
 } from 'ramda';
 
@@ -34,6 +30,7 @@ export const DataWranglingScriptsRoutines = {
   fetchList: createRoutine(`${prefix}FETCH_LIST`),
   sendList: createRoutine(`${prefix}SEND_LIST`),
   setScripts: createRoutine(`${prefix}SET_SCRIPTS`),
+  setCheckedScripts: createRoutine(`${prefix}SET_CHECKED_SCRIPTS`),
   uploadScript: createRoutine(`${prefix}UPLOAD_SCRIPT`),
   setImageScrapingFields: createRoutine(`${prefix}SET_IMAGE_SCRAPING_FIELDS`),
   clearCustomScripts: createRoutine(`${prefix}CLEAR_CUSTOM_SCRIPTS`),
@@ -44,6 +41,8 @@ export const INITIAL_STATE = new Immutable({
     specs: {},
   },
   scripts: [],
+  checkedScripts: [],
+  uncheckedScripts: [],
   imageScrapingFields: [],
   customScripts: [],
 });
@@ -58,65 +57,66 @@ const addScriptType = script =>
     ])(script)
   )(script);
 
-const addOrderAndChecked = dataSourceScripts => script => {
-  const dataSourceScript = defaultTo({}, find(propEq('id', script.id))(dataSourceScripts));
-
-  return ifElse(
-    propEq('id', dataSourceScript.id),
-    pipe(
-      set(lensProp('order'), dataSourceScript.execOrder),
-      set(lensProp('checked'), true)
-    ),
-    set(lensProp('order'), Number.MAX_SAFE_INTEGER)
-  )(script);
-};
-
-const mergeResults = scripts => script => {
-  const foundScript = defaultTo({}, find(propEq('id', script.id), scripts));
-  return mergeRight(foundScript, script);
-};
-
-const addDifference = stateScripts => scripts => {
-  const byId = (x, y) => equals(prop('id', x), prop('id', y));
-  const thatsDifferent = differenceWith(byId, scripts, stateScripts);
-
-  return [...thatsDifferent, ...stateScripts];
-};
+const updateScripts = ifElse(
+  propEq('checked', true),
+  ({ checkedScripts, uncheckedScripts, script }) => ({
+    checkedScripts: checkedScripts.concat(script),
+    uncheckedScripts: uncheckedScripts.filter(({ id }) => id !== script.id),
+  }),
+  ({ checkedScripts, uncheckedScripts, script }) => ({
+    checkedScripts: checkedScripts.filter(({ id }) => id !== script.id),
+    uncheckedScripts: [script].concat(uncheckedScripts),
+  })
+);
 
 const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('script', payload);
 const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, dataSource, fromScript } }) => {
-  const dataSourceScripts = pathOr([], ['activeJob', 'scripts'], dataSource);
-  if (state.scripts.length && fromScript) {
-    return state.set(
-      'scripts',
-      pipe(
-        map(mergeResults(data)),
-        stateScripts => addDifference(stateScripts)(data),
-        map(addScriptType)
-      )(state.scripts)
-    );
+  if (fromScript) {
+    return state;
   }
 
-  return state.set(
-    'scripts',
-    pipe(
-      map(addScriptType),
-      map(addOrderAndChecked(dataSourceScripts)),
-      sortWith([ascend(prop('order')), ascend(prop('type'))])
-    )(data)
-  );
+  const dataSourceScripts = pipe(
+    pathOr([], ['activeJob', 'scripts']),
+    map(prop('id'))
+  )(dataSource);
+
+  const groupedData = pipe(
+    map(addScriptType),
+    sortBy(prop('type')),
+    groupBy(ifElse(({ id }) => includes(id)(dataSourceScripts), always('checked'), always('unchecked')))
+  )(data);
+
+  return state
+    .set('scripts', data)
+    .set('uncheckedScripts', groupedData.unchecked)
+    .set('checkedScripts', groupedData.checked);
 };
 
-const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId, scripts } }) =>
-  state
+const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) => {
+  const script = state.scripts.find(({ id }) => id.toString() === scriptId);
+  const { uncheckedScripts, checkedScripts } = updateScripts({
+    ...state,
+    script,
+    checked: !isEmpty(imageScrapingFields),
+  });
+
+  return state
     .set('imageScrapingFields', imageScrapingFields)
     .update('customScripts', x => [...x, scriptId])
-    .set('scripts', scripts);
+    .set('uncheckedScripts', uncheckedScripts)
+    .set('checkedScripts', checkedScripts);
+};
 
 const clearCustomScripts = (state = INITIAL_STATE) =>
   state.set('imageScrapingFields', INITIAL_STATE.imageScrapingFields).set('customScripts', INITIAL_STATE.customScripts);
 
-const setScriptsHandler = (state = INITIAL_STATE, { payload }) => state.set('scripts', payload);
+const setScriptsHandler = (state = INITIAL_STATE, { payload: { script, checked } }) => {
+  const { uncheckedScripts, checkedScripts } = updateScripts({ ...state, script, checked });
+
+  return state.set('uncheckedScripts', uncheckedScripts).set('checkedScripts', checkedScripts);
+};
+
+const setCheckedScriptsHandler = (state = INITIAL_STATE, { payload }) => state.set('checkedScripts', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataWranglingScriptsRoutines.fetchOne.SUCCESS]: updateDataWranglingScript,
@@ -124,4 +124,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataWranglingScriptsRoutines.setImageScrapingFields.SUCCESS]: setImageScrapingFields,
   [DataWranglingScriptsRoutines.clearCustomScripts.TRIGGER]: clearCustomScripts,
   [DataWranglingScriptsRoutines.setScripts.TRIGGER]: setScriptsHandler,
+  [DataWranglingScriptsRoutines.setCheckedScripts.TRIGGER]: setCheckedScriptsHandler,
 });

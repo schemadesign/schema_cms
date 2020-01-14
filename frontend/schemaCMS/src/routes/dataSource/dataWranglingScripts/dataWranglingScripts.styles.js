@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
 
-export const CHECKBOX_HEIGHT = 48;
-export const ANIMATION_SPEED = 200;
-export const ANIMATION_DELAY = 100;
-
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
@@ -63,9 +59,13 @@ export const IconWrapper = styled.div`
   cursor: move;
 `;
 
-export const CheckBoxStyles = {
+export const checkBoxStyles = {
   width: '100%',
-  maxHeight: `${CHECKBOX_HEIGHT}px`,
-  overflow: 'hidden',
-  transition: `opacity ${ANIMATION_SPEED}ms linear, max-height ${ANIMATION_SPEED}ms linear`,
 };
+
+export const checkBoxContainerStyles = {
+  borderTop: 'none',
+};
+
+export const selectedLabelStyles = { marginBottom: 20 };
+export const labelStyles = { margin: '40px 0 20px 0' };

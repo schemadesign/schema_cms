@@ -13,6 +13,16 @@ export const selectDataWranglingScripts = createSelector(
   prop('scripts')
 );
 
+export const selectCheckedScripts = createSelector(
+  selectDataWranglingScriptsDomain,
+  prop('checkedScripts')
+);
+
+export const selectUncheckedScripts = createSelector(
+  selectDataWranglingScriptsDomain,
+  prop('uncheckedScripts')
+);
+
 export const selectImageScrapingFields = createSelector(
   selectDataWranglingScriptsDomain,
   prop('imageScrapingFields')
