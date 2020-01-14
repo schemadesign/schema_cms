@@ -28,7 +28,7 @@ export const defaultProps = {
       dataSourceId: '1',
     },
   },
-  isAdmin: false,
+  isAdmin: true,
 };
 
 export const editorProps = {

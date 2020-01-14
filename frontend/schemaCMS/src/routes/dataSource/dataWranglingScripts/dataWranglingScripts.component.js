@@ -55,6 +55,7 @@ import { DataSourceNavigation } from '../../../shared/components/dataSourceNavig
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 import { Draggable } from '../../../shared/components/draggable';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
@@ -93,8 +94,7 @@ export class DataWranglingScripts extends PureComponent {
 
       await this.props.fetchDataWranglingScripts({ dataSourceId, fromScript });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
+      reportError(error);
       this.setState({ error });
     } finally {
       this.setState({
@@ -178,8 +178,7 @@ export class DataWranglingScripts extends PureComponent {
 
       await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
+      reportError(error);
       window.scrollTo(0, 0);
       this.setState({ errorMessage: 'errorJobFailed' });
     } finally {

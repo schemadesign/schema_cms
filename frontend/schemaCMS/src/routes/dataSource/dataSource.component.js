@@ -16,6 +16,7 @@ import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constan
 import { ProjectTabs } from '../../shared/components/projectTabs';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../shared/utils/helpers';
+import reportError from '../../shared/utils/reportError';
 import { NotFound } from '../notFound';
 
 export default class DataSource extends PureComponent {
@@ -41,6 +42,7 @@ export default class DataSource extends PureComponent {
 
       await this.props.fetchDataSource({ dataSourceId });
     } catch (error) {
+      reportError(error);
       this.setState({ error });
     } finally {
       this.setState({ loading: false });

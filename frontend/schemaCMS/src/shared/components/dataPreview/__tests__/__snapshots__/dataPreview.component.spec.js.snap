@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataPreview: Component should render correctly 1`] = `
-<styled.div>
+<LoadingWrapper
+  error={null}
+  loading={false}
+  noData={false}
+  noDataContent={null}
+>
   <styled.div>
     <styled.div>
       <styled.div>
@@ -50,11 +55,14 @@ exports[`DataPreview: Component should render correctly 1`] = `
       rows={Array []}
     />
   </styled.div>
-</styled.div>
+</LoadingWrapper>
 `;
 
 exports[`DataPreview: Component should render correctly with loader 1`] = `
-<styled.div>
-  <Loading />
-</styled.div>
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+/>
 `;

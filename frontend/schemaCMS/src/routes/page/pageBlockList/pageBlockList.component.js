@@ -14,6 +14,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 
 const { CheckboxGroup, Checkbox } = Form;
 
@@ -49,6 +50,7 @@ export class PageBlockList extends PureComponent {
       await this.props.fetchPageBlocks({ pageId });
       this.setState({ loading: false });
     } catch (error) {
+      reportError(error);
       this.setState({ loading: false, error });
     }
   }
@@ -123,17 +125,17 @@ export class PageBlockList extends PureComponent {
     );
   };
 
-  renderBlockCounter = (loading, count) =>
+  renderBlockCounter = (loading, error, count) =>
     renderWhenTrue(
       always(
         <BlockCounter>
           <FormattedMessage values={{ count }} {...messages.blocks} />
         </BlockCounter>
       )
-    )(!loading);
+    )(!loading & !error);
 
   render() {
-    const { loading } = this.state;
+    const { error, loading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -146,7 +148,7 @@ export class PageBlockList extends PureComponent {
           <CreateButtonContainer>
             <PlusButton onClick={this.handleCreateBlock} />
           </CreateButtonContainer>
-          {this.renderBlockCounter(loading, this.props.pageBlocks.length)}
+          {this.renderBlockCounter(loading, error, this.props.pageBlocks.length)}
           <Empty />
         </Header>
         {this.renderContent()}

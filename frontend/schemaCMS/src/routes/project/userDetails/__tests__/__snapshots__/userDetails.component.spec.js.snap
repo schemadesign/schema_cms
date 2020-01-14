@@ -88,30 +88,37 @@ exports[`UserDetails: Component should render correctly 1`] = `
       ]
     }
   />
-  <UserProfile
-    handleChange={[Function]}
-    isCurrentUser={false}
-    values={
-      Object {
-        "email": "email@example.com",
-        "firstName": "FirstName",
-        "id": "1",
-        "lastName": "LastName",
-        "role": "editor",
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <UserProfile
+      handleChange={[Function]}
+      isCurrentUser={false}
+      values={
+        Object {
+          "email": "email@example.com",
+          "firstName": "FirstName",
+          "id": "1",
+          "lastName": "LastName",
+          "role": "editor",
+        }
       }
-    }
-  />
-  <styled.div>
-    <Styled(Span)
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Remove user from project"
-        id="project.userDetails.removeEditorFromProject"
-        values={Object {}}
-      />
-    </Styled(Span)>
-  </styled.div>
+    />
+    <styled.div>
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove user from project"
+          id="project.userDetails.removeEditorFromProject"
+          values={Object {}}
+        />
+      </Styled(Span)>
+    </styled.div>
+  </LoadingWrapper>
   <NavigationContainer
     fixed={true}
     hideOnDesktop={false}

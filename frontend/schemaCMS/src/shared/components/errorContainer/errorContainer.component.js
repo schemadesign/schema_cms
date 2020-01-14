@@ -10,7 +10,7 @@ import messages from './errorContainer.messages';
 export class ErrorContainer extends PureComponent {
   static propTypes = {
     type: PropTypes.string,
-    error: PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.bool]),
+    error: PropTypes.any,
   };
 
   static defaultProps = {

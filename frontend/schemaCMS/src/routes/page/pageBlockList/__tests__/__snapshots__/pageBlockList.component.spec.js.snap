@@ -48,17 +48,6 @@ exports[`PageBlockList: Component should render correctly 1`] = `
         onClick={[Function]}
       />
     </styled.div>
-    <styled.div>
-      <FormattedMessage
-        defaultMessage="{count, plural,one {# Block} other {# Blocks}}"
-        id="page.blockList.blocks"
-        values={
-          Object {
-            "count": 2,
-          }
-        }
-      />
-    </styled.div>
     <styled.div />
   </styled.div>
   <Formik

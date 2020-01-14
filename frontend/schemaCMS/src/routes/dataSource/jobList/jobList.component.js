@@ -25,6 +25,7 @@ import { JOB_OPTION, JOB_STATE_SUCCESS } from '../../../modules/job/job.constant
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 
 const { RadioGroup, RadioStyled } = Form;
 
@@ -45,6 +46,7 @@ export class JobList extends PureComponent {
   };
 
   state = {
+    error: null,
     selectedJob: null,
     loading: true,
     canRevert: false,
@@ -54,8 +56,9 @@ export class JobList extends PureComponent {
     try {
       await this.props.fetchJobList(path(['match', 'params'], this.props));
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -128,9 +131,9 @@ export class JobList extends PureComponent {
     );
   };
 
-  renderContent = ({ jobList, canRevert, isLoading }) => (
+  renderContent = ({ jobList, canRevert, isLoading, error }) => (
     <Fragment>
-      <LoadingWrapper loading={isLoading} noData={isEmpty(jobList)}>
+      <LoadingWrapper loading={isLoading} noData={isEmpty(jobList)} error={error}>
         <RadioGroup
           name={JOB_OPTION}
           onChange={this.handleChange}
@@ -152,7 +155,7 @@ export class JobList extends PureComponent {
   );
 
   render() {
-    const { loading, canRevert } = this.state;
+    const { error, loading, canRevert } = this.state;
     const { dataSource, jobList } = this.props;
 
     const headerTitle = <FormattedMessage {...messages.title} />;
@@ -164,7 +167,7 @@ export class JobList extends PureComponent {
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
 
-        {this.renderContent({ jobList, canRevert, isLoading })}
+        {this.renderContent({ jobList, canRevert, isLoading, error })}
       </Container>
     );
   }

@@ -15,6 +15,7 @@ import { ListContainer, ListItem } from '../../../shared/components/listComponen
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { Link } from '../../../theme/typography';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 import { ListItemTitle, ListItemContent } from '../../../shared/components/listComponents/listItem.styles';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getMenuProjects, PROJECT_FOLDER_ID } from '../project.constants';
@@ -45,6 +46,7 @@ export class FolderList extends PureComponent {
       await this.props.fetchFolders({ projectId });
       this.setState({ loading: false });
     } catch (error) {
+      reportError(error);
       this.setState({ loading: false, error });
     }
   }
