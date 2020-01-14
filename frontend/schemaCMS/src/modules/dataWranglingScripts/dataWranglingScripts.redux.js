@@ -4,6 +4,7 @@ import { createRoutine } from 'redux-saga-routines';
 import {
   always,
   cond,
+  differenceWith,
   groupBy,
   ifElse,
   includes,
@@ -70,9 +71,18 @@ const updateScripts = ifElse(
 );
 
 const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('script', payload);
-const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, dataSource, fromScript } }) => {
+const updateDataWranglingScripts = (
+  state = INITIAL_STATE,
+  { payload: { data, dataSource, fromScript, uploadScript } }
+) => {
   if (fromScript) {
     return state;
+  }
+
+  if (uploadScript) {
+    const scripts = differenceWith((x, y) => x.id === y.id, data, state.scripts);
+
+    return state.set('scripts', data).update('checkedScripts', list => list.concat(scripts));
   }
 
   const dataSourceScripts = pipe(

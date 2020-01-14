@@ -9,6 +9,7 @@ import { DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
 import { selectDataSource } from '../../dataSource';
+import { selectDataWranglingScripts } from '../dataWranglingScripts.selectors';
 
 describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});
@@ -23,22 +24,34 @@ describe('DataWranglingScripts: sagas', () => {
         { id: 1, name: 'name 1', specs: {}, isPredefined: true },
         { id: 2, name: 'name 2', specs: {}, isPredefined: true },
       ];
-
       const dataSource = {
         activeJob: {
           scripts: [{ id: 1, execOrder: 0 }],
         },
       };
-
-      const payload = { dataSourceId: 1, fromScript: true };
+      const scripts = [];
+      const payload = { dataSourceId: 1, fromScript: false };
+      const successPayload = { data: responseData, dataSource, uploadScript: false };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`).reply(OK, responseData);
 
-      const successPayload = { data: responseData, dataSource, fromScript: true };
+      await expectSaga(watchDataWranglingScripts)
+        .withState(defaultState)
+        .provide([[select(selectDataSource), dataSource], [select(selectDataWranglingScripts), scripts]])
+        .put(DataWranglingScriptsRoutines.fetchList.success(successPayload))
+        .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
+        .silentRun();
+    });
+
+    it('should dispatch a success action with fromScript', async () => {
+      const payload = { dataSourceId: 1, fromScript: true };
+
+      const successPayload = { fromScript: true };
+      const scripts = [{ id: 1 }];
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .provide([[select(selectDataSource), dataSource]])
+        .provide([[select(selectDataWranglingScripts), scripts]])
         .put(DataWranglingScriptsRoutines.fetchList.success(successPayload))
         .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
         .silentRun();
@@ -102,7 +115,7 @@ describe('DataWranglingScripts: sagas', () => {
       const fetchListSuccessPayload = {
         data: responseData,
         dataSource,
-        fromScript: true,
+        uploadScript: true,
       };
 
       mockApi

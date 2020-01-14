@@ -14,7 +14,7 @@ import { selectDataSource } from '../dataSource';
 import { STEPS_PAGE } from '../dataSource/dataSource.constants';
 import { selectDataWranglingScripts } from './dataWranglingScripts.selectors';
 
-function* fetchList({ payload: { dataSourceId, fromScript = false } }) {
+function* fetchList({ payload: { dataSourceId, fromScript = false, uploadScript = false } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchList.request());
 
@@ -32,7 +32,7 @@ function* fetchList({ payload: { dataSourceId, fromScript = false } }) {
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
     const dataSource = yield select(selectDataSource);
 
-    yield put(DataWranglingScriptsRoutines.fetchList.success({ data, dataSource }));
+    yield put(DataWranglingScriptsRoutines.fetchList.success({ data, dataSource, uploadScript }));
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.fetchList.failure());
   } finally {
@@ -67,7 +67,7 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
 
     yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/script-upload`, formData, { headers });
 
-    yield fetchList({ payload: { dataSourceId, fromScript: true } });
+    yield fetchList({ payload: { dataSourceId, uploadScript: true } });
     yield put(DataWranglingScriptsRoutines.uploadScript.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.uploadScript.failure());
