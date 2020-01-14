@@ -68,4 +68,16 @@ describe('Filters: Component', () => {
 
     expect(setFilters).toHaveBeenCalledTimes(1);
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchFilters should return error';
+    const wrapper = await render({
+      fetchFilters: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

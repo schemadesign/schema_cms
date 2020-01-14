@@ -197,3 +197,201 @@ exports[`UserDetails: Component should render correctly 1`] = `
   </Styled(Modal)>
 </styled.div>
 `;
+
+exports[`UserDetails: Component should render correctly with loading 1`] = `
+<styled.div>
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Profile"
+        id="project.userDetails.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Project Users"
+        id="project.userDetails.title"
+        values={Object {}}
+      />
+    }
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Profile"
+        id="project.userDetails.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Project Users"
+        id="project.userDetails.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <UserProfile
+      handleChange={[Function]}
+      isCurrentUser={false}
+      values={
+        Object {
+          "email": "email@example.com",
+          "firstName": "FirstName",
+          "id": "1",
+          "lastName": "LastName",
+          "role": "editor",
+        }
+      }
+    />
+    <styled.div>
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove user from project"
+          id="project.userDetails.removeEditorFromProject"
+          values={Object {}}
+        />
+      </Styled(Span)>
+    </styled.div>
+  </LoadingWrapper>
+  <NavigationContainer
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    />
+  </NavigationContainer>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the user from the project?"
+        id="project.userDetails.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.userDetails.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.userDetails.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</styled.div>
+`;

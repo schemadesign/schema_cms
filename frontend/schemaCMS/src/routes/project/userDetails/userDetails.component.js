@@ -15,6 +15,7 @@ import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getMenuProjects, NONE } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 export class UserDetails extends PureComponent {
   static propTypes = {
@@ -37,10 +38,10 @@ export class UserDetails extends PureComponent {
     userRemoveModalOpen: false,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     try {
       const userId = getMatchParam(this.props, 'userId');
-      this.props.fetchUser({ userId });
+      await this.props.fetchUser({ userId });
       this.setState({ loading: false });
     } catch (error) {
       reportError(error);

@@ -31,15 +31,16 @@ describe('List: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render error correctly', async () => {
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchProjectsList should return error';
     const wrapper = await render({
-      fetchProjectsList: jest.fn().mockReturnValue(Promise.reject('Error')),
+      fetchProjectsList: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
     });
 
     const { loading, error } = wrapper.state();
 
     expect(loading).toBeFalsy();
-    expect(error).toBe('Error');
+    expect(error).toBe(errorResponse);
   });
 
   it('should call fetchProjectsList on componentDidMount', async () => {

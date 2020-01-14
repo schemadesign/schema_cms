@@ -79,7 +79,7 @@ describe('DataWranglingScripts: Component', () => {
   it('should return error on failed uploading', async () => {
     const wrapper = await render({
       fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
-      uploadScript: jest.fn().mockReturnValue(Promise.reject('uploading file failed')),
+      uploadScript: jest.fn().mockReturnValue(Promise.reject('Uploading file should failed')),
     });
 
     await wrapper
@@ -145,5 +145,17 @@ describe('DataWranglingScripts: Component', () => {
       .prop('onMove')(1, 0);
 
     expect(props.setScriptsList).toHaveBeenCalledTimes(1);
+  });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchDataWranglingScripts should return error';
+    const wrapper = await render({
+      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
   });
 });

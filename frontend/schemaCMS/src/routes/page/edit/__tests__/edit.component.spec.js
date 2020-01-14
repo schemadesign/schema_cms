@@ -57,4 +57,16 @@ describe('Edit: Component', () => {
 
     expect(defaultProps.removePage).toHaveBeenCalledWith({ pageId: '1', folderId: '1' });
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchPage should return error';
+    const wrapper = await render({
+      fetchPage: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });
