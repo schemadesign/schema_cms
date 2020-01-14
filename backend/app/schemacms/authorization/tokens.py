@@ -17,7 +17,14 @@ class ExchangeTokenGenerator(PasswordResetTokenGenerator):
             login_timestamp = ""
         else:
             login_timestamp = user.last_login.replace(microsecond=0, tzinfo=None)
-        return "".join((six.text_type(user.pk), six.text_type(timestamp), six.text_type(login_timestamp)))
+        return "".join(
+            (
+                six.text_type(user.pk),
+                six.text_type(timestamp),
+                six.text_type(login_timestamp),
+                six.text_type(user.role),
+            )
+        )
 
 
 exchange_token = functional.SimpleLazyObject(ExchangeTokenGenerator)

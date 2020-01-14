@@ -56,7 +56,7 @@ class User(AbstractUser):
         return tokens.exchange_token.make_token(self)
 
     def get_jwt_token(self, auth_method=None):
-        token = jwt_payload_handler(self, extra_data={"auth_method": auth_method})
+        token = jwt_payload_handler(self, extra_data={"auth_method": auth_method, "role": self.role})
         return jwt_encode_handler(token)
 
     def send_invitation_email(self) -> bool:
