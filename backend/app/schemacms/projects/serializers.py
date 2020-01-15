@@ -389,7 +389,9 @@ class DataSourceFilterSerializer(serializers.ModelSerializer):
 
 
 class FilterSerializer(serializers.ModelSerializer):
-    datasource = NestedRelatedModelSerializer(serializer=DataSourceFilterSerializer(), read_only=True)
+    datasource = NestedRelatedModelSerializer(
+        serializer=DataSourceFilterSerializer(), queryset=models.DataSource.objects.all()
+    )
 
     class Meta:
         model = models.Filter
@@ -405,13 +407,19 @@ class FilterSerializer(serializers.ModelSerializer):
             "created",
             "modified",
         )
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Filter.objects.all(),
+                fields=("datasource", "name"),
+                key_field_name="name",
+                code="filterNameNotUnique",
+                message="Filter with this name already exist in data source.",
+            )
+        ]
 
     def create(self, validated_data):
-        datasource = self.initial_data["datasource"]
-
-        filter_ = models.Filter(datasource=datasource, **validated_data)
-        filter_.save()
-        datasource.create_dynamo_item()
+        filter_ = super().create(validated_data)
+        filter_.datasource.create_dynamo_item()
 
         return filter_
 
