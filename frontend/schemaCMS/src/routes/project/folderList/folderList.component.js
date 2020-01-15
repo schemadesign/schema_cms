@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 
 import { Container } from './folderList.styles';
 import messages from './folderList.messages';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { FOLDER } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -18,7 +17,7 @@ import { Link } from '../../../theme/typography';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { ListItemTitle, ListItemContent } from '../../../shared/components/listComponents/listItem.styles';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getMenuProjects, PROJECT_DATASOURCE_ID, PROJECT_FOLDER_ID } from '../project.constants';
+import { getMenuProjects, PROJECT_FOLDER_ID } from '../project.constants';
 
 export class FolderList extends PureComponent {
   static propTypes = {

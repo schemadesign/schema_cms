@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots NotRegistered Default 1`] = `
+.c8 {
+  color: #1d1d20;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -23,24 +33,6 @@ exports[`Storyshots NotRegistered Default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c7 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
 }
 
 .c5 {
@@ -50,62 +42,33 @@ exports[`Storyshots NotRegistered Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #f0efef;
   padding: 8px 0 13px;
-  display: block;
 }
 
-.c5 a {
+.c5 a,
+.c5 div {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #1d1d20;
+  color: rgba(255,255,255,0.75);
   display: block;
-}
-
-.c5:first-of-type {
-  border-top: 2.4px solid #f0efef;
 }
 
 .c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #f0efef;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #1d1d20;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #f0efef;
-}
-
-.c8 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
   margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.c8 a {
+.c7 {
+  color: #1d1d20;
+  font-size: 14px;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #1d1d20;
-  display: block;
-}
-
-.c8:hover {
-  border-bottom: 1px solid #1d1d20;
+  margin: 12px 0;
 }
 
 .c1 {
@@ -114,15 +77,6 @@ exports[`Storyshots NotRegistered Default 1`] = `
 
 .c2 {
   word-break: break-word;
-}
-
-.c9 {
-  color: #1d1d20;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-  line-height: 1.5em;
 }
 
 @media (min-width:1040px) {
@@ -135,20 +89,6 @@ exports[`Storyshots NotRegistered Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    padding: 22px 0 27px;
-    font-size: 20px;
   }
 }
 
@@ -314,88 +254,71 @@ exports[`Storyshots NotRegistered Default 1`] = `
       <div
         className="c3"
       >
-        <ul
+        <div
+          className="c4"
+        />
+        <div
           className="c4"
         >
-          <li
+          <div
             className="c5"
           >
             <a
-              href="/project"
-              id={null}
+              href="/settings"
+              id="settingsNavBtn"
               onClick={[Function]}
             >
               <span>
-                Projects
+                Settings
               </span>
             </a>
-          </li>
-          <li
-            className="c6"
-          >
-            <a
-              href="/user"
-              id="userBtn"
-              onClick={[Function]}
-            >
-              <span>
-                Users
-              </span>
-            </a>
-          </li>
-          <li
+          </div>
+          <div
             className="c5"
-            id="logoutBtn"
+          >
+            <div
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <a
+            className="c7"
+            href="/"
+            id="aboutNavBtn"
             onClick={[Function]}
           >
             <span>
-              Log out
+              About Schema CMS
             </span>
-          </li>
-        </ul>
-        <ul
-          className="c7"
-        >
-          <li
-            className="c8"
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
           >
-            <a
-              href="/"
-              id={null}
-              onClick={[Function]}
-            >
-              <span>
-                About Schema CMS
-              </span>
-            </a>
-          </li>
-          <li
-            className="c8"
+            <span>
+              API Doc
+            </span>
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
           >
-            <a
-              href="/"
-              id={null}
-              onClick={[Function]}
-            >
-              <span>
-                API Doc
-              </span>
-            </a>
-          </li>
-          <li
-            className="c8"
-          >
-            <a
-              href="/"
-              id={null}
-              onClick={[Function]}
-            >
-              <span>
-                GitHub Repository
-              </span>
-            </a>
-          </li>
-        </ul>
+            <span>
+              GitHub Repository
+            </span>
+          </a>
+        </div>
       </div>
       <button
         disabled={false}
@@ -441,7 +364,7 @@ exports[`Storyshots NotRegistered Default 1`] = `
     </div>
   </div>
   <div
-    className="c9"
+    className="c8"
   >
     <span
       dangerouslySetInnerHTML={

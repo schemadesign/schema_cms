@@ -5,7 +5,6 @@ import { always } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { USERS } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -16,7 +15,6 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getMenuProjects, PROJECT_USERS_ID } from '../project.constants';
-import { Container } from '../userDetails/userDetails.styles';
 
 export class UserList extends PureComponent {
   static propTypes = {

@@ -7,7 +7,7 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Not registered"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Error"
@@ -23,8 +23,7 @@ exports[`NotRegistered: Component should render correctly 1`] = `
       />
     }
     iconComponent={null}
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={Array []}
   />
   <styled.div>
     <FormattedHTMLMessage

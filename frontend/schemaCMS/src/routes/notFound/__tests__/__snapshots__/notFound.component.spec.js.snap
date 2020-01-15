@@ -7,7 +7,7 @@ exports[`NotFound: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Not found"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Error"
@@ -23,8 +23,7 @@ exports[`NotFound: Component should render correctly 1`] = `
       />
     }
     isAdmin={true}
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={Array []}
   />
   <styled.div>
     <H1>
