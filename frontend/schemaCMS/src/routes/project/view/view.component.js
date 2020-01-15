@@ -187,7 +187,7 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { project } = this.props;
+    const { project, isAdmin } = this.props;
     const { confirmationModalOpen, error, loading } = this.state;
     const projectId = getMatchParam(this.props, 'projectId');
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
@@ -201,6 +201,7 @@ export class View extends PureComponent {
             headerTitle={headerTitle}
             headerSubtitle={headerSubtitle}
             options={getMenuProjects(projectId, PROJECT_DETAILS_ID)}
+            isEditor={!isAdmin}
           />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>

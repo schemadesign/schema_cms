@@ -11,7 +11,7 @@ export const PROJECT_DATASOURCE_ID = 'dataSourceNavBtn';
 export const PROJECT_FOLDER_ID = 'folderNavBtn';
 export const PROJECT_USERS_ID = 'usersNavBtn';
 
-const setActiveMenu = activeId => item => {
+const setActiveMenu = (item, activeId) => {
   if (activeId === item.id) {
     return { ...item, active: true };
   }
@@ -44,6 +44,7 @@ export const getMenuProjects = (projectId, activeId) => {
       to: `/project/${projectId}/user`,
       id: PROJECT_USERS_ID,
       type: LINK_ITEM,
+      hideWhenEditor: true,
     },
     {
       label: <FormattedMessage {...messages.projectPages} />,
