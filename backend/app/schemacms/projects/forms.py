@@ -14,7 +14,7 @@ class BlockForm(SoftDeleteObjectAdminForm):
     def clean_type(self, *args, **kwargs):
         type_ = self.cleaned_data["type"]
 
-        if self.has_changed() and "image" not in self.changed_data:
+        if self.has_changed() and "type" not in self.changed_data:
             return type_
 
         if type_ == BlockTypes.IMAGE and not self.files:

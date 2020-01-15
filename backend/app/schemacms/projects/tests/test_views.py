@@ -932,6 +932,21 @@ class TestFilterCreateView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.FilterSerializer(filter_).data
 
+    def test_unique_together_validation(self, api_client, admin, data_source, filter_):
+        existing_filter_name = filter_.name
+        payload = dict(
+            name=existing_filter_name,
+            filter_type=projects_constants.FilterType.RADIO_BUTTON.value,
+            field="Date of Birth",
+            field_type=projects_constants.FieldType.DATE,
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data["name"][0]["code"] == "filterNameNotUnique"
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-filters", kwargs=dict(pk=pk))
@@ -944,7 +959,7 @@ class TestFilterDetailView:
         response = api_client.get(self.get_url(filter_.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.FilterSerializer(instance=filter_).data
+        assert response.data == projects_serializers.FilterDetailSerializer(instance=filter_).data
 
     def test_update(self, api_client, admin, filter_):
         new_name = "NewFilter"
@@ -956,7 +971,18 @@ class TestFilterDetailView:
 
         assert response.status_code == status.HTTP_200_OK
         assert filter_.name == new_name
-        assert response.data == projects_serializers.FilterSerializer(instance=filter_).data
+        assert response.data == projects_serializers.FilterDetailSerializer(instance=filter_).data
+
+    def test_update_unique_together_validation(self, api_client, admin, filter_, filter_factory):
+        new_filter_name = "new_filter"
+        filter_factory(name=new_filter_name, datasource=filter_.datasource)
+        payload = {"name": new_filter_name}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(filter_.id), data=payload)
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data["name"][0]["code"] == "filterNameNotUnique"
 
     @staticmethod
     def get_url(pk):

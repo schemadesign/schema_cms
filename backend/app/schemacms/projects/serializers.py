@@ -424,7 +424,7 @@ class FilterSerializer(serializers.ModelSerializer):
         return filter_
 
 
-class FilterDetailsSerializer(FilterSerializer):
+class FilterDetailSerializer(FilterSerializer):
     datasource = NestedRelatedModelSerializer(serializer=DataSourceFilterSerializer(), read_only=True)
 
 
