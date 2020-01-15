@@ -90,7 +90,7 @@ const updateDataWranglingScripts = (
     map(prop('id'))
   )(dataSource);
 
-  const groupedData = pipe(
+  const { unchecked = [], checked = [] } = pipe(
     map(addScriptType),
     sortBy(prop('type')),
     groupBy(ifElse(({ id }) => includes(id)(dataSourceScripts), always('checked'), always('unchecked')))
@@ -98,8 +98,8 @@ const updateDataWranglingScripts = (
 
   return state
     .set('scripts', data)
-    .set('uncheckedScripts', groupedData.unchecked)
-    .set('checkedScripts', groupedData.checked);
+    .set('uncheckedScripts', unchecked)
+    .set('checkedScripts', checked);
 };
 
 const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) => {

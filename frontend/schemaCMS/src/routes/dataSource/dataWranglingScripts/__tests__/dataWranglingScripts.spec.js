@@ -25,6 +25,17 @@ describe('DataWranglingScripts: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render only unchecked scripts', async () => {
+    const wrapper = await render({ checkedScripts: [] });
+    const checkboxGroup = wrapper.find(CheckboxGroup);
+    expect(checkboxGroup).toMatchSnapshot();
+  });
+
+  it('should render only checked scripts', async () => {
+    const wrapper = await render({ uncheckedScripts: [] });
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should call fetchDataWranglingScripts', async () => {
     jest.spyOn(defaultProps, 'fetchDataWranglingScripts');
     await render();

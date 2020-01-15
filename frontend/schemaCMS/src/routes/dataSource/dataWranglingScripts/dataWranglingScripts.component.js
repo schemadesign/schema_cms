@@ -202,6 +202,32 @@ export class DataWranglingScripts extends PureComponent {
     );
   };
 
+  renderCheckedScripts = checkedScripts =>
+    renderWhenTrue(
+      always(
+        <Fragment>
+          <Label customStyles={selectedLabelStyles}>
+            <FormattedMessage {...messages.selectedScripts} />
+          </Label>
+          {checkedScripts.map(this.renderCheckboxWithDrag)}
+        </Fragment>
+      )
+    )(!!checkedScripts.length);
+
+  renderUncheckedScripts = uncheckedScripts =>
+    renderWhenTrue(
+      always(
+        <Fragment>
+          <Label customStyles={labelStyles}>
+            <FormattedMessage {...messages.steps} />
+          </Label>
+          {uncheckedScripts.map((item, index) => (
+            <div key={index}>{this.renderCheckbox(item, index)}</div>
+          ))}
+        </Fragment>
+      )
+    )(!!uncheckedScripts.length);
+
   renderCheckboxGroup = steps =>
     renderWhenTrue(
       always(
@@ -213,16 +239,8 @@ export class DataWranglingScripts extends PureComponent {
           name="steps"
           id="fieldStepsCheckboxGroup"
         >
-          <Label customStyles={selectedLabelStyles}>
-            <FormattedMessage {...messages.selectedScripts} />
-          </Label>
-          {this.props.checkedScripts.map(this.renderCheckboxWithDrag)}
-          <Label customStyles={labelStyles}>
-            <FormattedMessage {...messages.steps} />
-          </Label>
-          {this.props.uncheckedScripts.map((item, index) => (
-            <div key={index}>{this.renderCheckbox(item, index)}</div>
-          ))}
+          {this.renderCheckedScripts(this.props.checkedScripts)}
+          {this.renderUncheckedScripts(this.props.uncheckedScripts)}
         </CheckboxGroup>
       )
     )(!!this.props.dataWranglingScripts.length);
