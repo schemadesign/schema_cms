@@ -424,6 +424,10 @@ class FilterSerializer(serializers.ModelSerializer):
         return filter_
 
 
+class FilterDetailsSerializer(FilterSerializer):
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceFilterSerializer(), read_only=True)
+
+
 # Pages
 
 
