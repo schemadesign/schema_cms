@@ -484,7 +484,7 @@ class TestUpdateDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert response.data.keys() == {"name", "type", "file", "project"}
+        assert response.data.keys() == {"name", "type", "file"}
 
     def test_unique_name(self, api_client, faker, admin, data_source_factory):
         other_datasource = data_source_factory(name="test")
