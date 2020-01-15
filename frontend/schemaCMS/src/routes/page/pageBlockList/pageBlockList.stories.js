@@ -6,7 +6,7 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
-  pageBlocks: [
+  values: [
     {
       name: 'block 1',
       isActive: true,

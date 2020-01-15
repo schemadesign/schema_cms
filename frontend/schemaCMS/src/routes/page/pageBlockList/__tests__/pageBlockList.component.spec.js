@@ -62,11 +62,7 @@ describe('PageBlockList: Component', () => {
     const wrapper = render(props);
     await Promise.resolve();
     await Promise.resolve();
-    wrapper
-      .find(Formik)
-      .dive()
-      .find(BackArrowButton)
-      .simulate('click');
+    wrapper.find(BackArrowButton).simulate('click');
 
     expect(defaultProps.history.push).toBeCalledWith('/folder/1');
   });
@@ -87,32 +83,8 @@ describe('PageBlockList: Component', () => {
     const wrapper = render(props);
     await Promise.resolve();
     await Promise.resolve();
-    const link = wrapper
-      .find(Formik)
-      .dive()
-      .find(Link)
-      .at(1);
+    const link = wrapper.find(Link).at(1);
 
     expect(link.props('to').to).toBe('/block/2');
-  });
-
-  it('should submit form', async () => {
-    jest.spyOn(defaultProps, 'setPageBlocks');
-    const props = {
-      fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
-    };
-    const values = {
-      blocks: ['1', '2'],
-    };
-    const wrapper = render(props);
-    await Promise.resolve();
-    await Promise.resolve();
-    await wrapper.find(Formik).prop('onSubmit')(values, { setSubmitting: Function.prototype });
-
-    expect(defaultProps.setPageBlocks).toBeCalledWith({
-      blocks: [{ execOrder: 0, id: 1, isActive: true }, { execOrder: 1, id: 2, isActive: true }],
-      pageId: '1',
-    });
   });
 });

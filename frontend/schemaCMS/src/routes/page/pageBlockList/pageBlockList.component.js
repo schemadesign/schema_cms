@@ -1,12 +1,25 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import { always, append, equals, filter, ifElse, map, path, pipe, prop, propEq, reject, toString } from 'ramda';
-import { Formik } from 'formik';
-import { Form } from 'schemaUI';
+import { always, filter, map, path, pipe, prop, propEq, toString } from 'ramda';
+import { Form, Icons } from 'schemaUI';
+import MultiBackend from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
+import { DndProvider } from 'react-dnd';
+import { asMutable } from 'seamless-immutable';
 
-import { BlockCounter, Container, CreateButtonContainer, Empty, Header, Link } from './pageBlockList.styles';
+import {
+  BlockCounter,
+  CheckboxContent,
+  checkboxStyles,
+  Container,
+  CreateButtonContainer,
+  Empty,
+  Header,
+  IconWrapper,
+  Link,
+} from './pageBlockList.styles';
 import messages from './pageBlockList.messages';
 import { BackArrowButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -14,17 +27,25 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { Draggable } from '../../../shared/components/draggable';
 import reportError from '../../../shared/utils/reportError';
 
 const { CheckboxGroup, Checkbox } = Form;
+const { MenuIcon } = Icons;
 
 export class PageBlockList extends PureComponent {
   static propTypes = {
     pageBlocks: PropTypes.array.isRequired,
     page: PropTypes.object.isRequired,
+    values: PropTypes.array.isRequired,
     fetchPageBlocks: PropTypes.func.isRequired,
     fetchPage: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
     setPageBlocks: PropTypes.func.isRequired,
+    setValues: PropTypes.func.isRequired,
+    submitForm: PropTypes.func.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
+    dirty: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         pageId: PropTypes.string.isRequired,
@@ -60,70 +81,77 @@ export class PageBlockList extends PureComponent {
   handleCreateBlock = () => this.props.history.push(`/page/${getMatchParam(this.props, 'pageId')}/block/create`);
   handleShowPages = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
-  handleSubmit = async ({ blocks: active }, { setSubmitting }) => {
-    try {
-      const pageId = getMatchParam(this.props, 'pageId');
-      const blocks = this.props.pageBlocks.map(({ id }, index) => ({
-        isActive: active.includes(id.toString()),
-        id,
-        execOrder: index,
-      }));
+  handleChange = e => {
+    const { value, checked } = e.target;
+    const { setValues, values } = this.props;
+    const blocks = values.map(block => (block.id.toString() === value ? { ...block, isActive: checked } : block));
 
-      await this.props.setPageBlocks({ pageId, blocks });
-    } catch (error) {
-      this.setState({ error });
-    } finally {
-      setSubmitting(false);
-    }
+    setValues(blocks);
   };
 
-  handleChange = ({ e, setFieldValue, blocks }) => {
-    const { value, checked } = e.target;
-    const setPageBlocks = ifElse(equals(true), always(append(value, blocks)), always(reject(equals(value), blocks)));
+  handleMove = (dragIndex, hoverIndex) => {
+    const { values, setValues } = this.props;
+    const dragCard = values[dragIndex];
+    const mutableValues = asMutable(values);
 
-    setFieldValue('blocks', setPageBlocks(checked));
+    mutableValues.splice(dragIndex, 1);
+    mutableValues.splice(hoverIndex, 0, dragCard);
+
+    setValues(mutableValues);
   };
 
   renderCheckbox = ({ id, name }, index) => (
-    <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index} isEdit>
-      <Link to={`/block/${id}`}>{name}</Link>
-    </Checkbox>
+    <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
+      {makeDraggable => {
+        const draggableIcon = makeDraggable(
+          <IconWrapper>
+            <MenuIcon />
+          </IconWrapper>
+        );
+
+        return (
+          <Checkbox id={`checkbox-${index}`} value={id.toString()} isEdit>
+            <CheckboxContent>
+              {draggableIcon}
+              <Link to={`/block/${id}`}>{name}</Link>
+            </CheckboxContent>
+          </Checkbox>
+        );
+      }}
+    </Draggable>
   );
 
   renderContent = () => {
-    const { pageBlocks } = this.props;
+    const { handleSubmit, values, isSubmitting, dirty } = this.props;
     const { loading, error } = this.state;
-    const activeBlocks = pipe(
+    const blocks = pipe(
       filter(propEq('isActive', true)),
       map(prop('id')),
       map(toString)
-    )(pageBlocks);
+    )(values);
 
     return (
-      <Formik initialValues={{ blocks: activeBlocks }} enableReinitialize onSubmit={this.handleSubmit}>
-        {({ values: { blocks }, setFieldValue, submitForm, dirty, isSubmitting }) => {
-          return (
-            <Fragment>
-              <LoadingWrapper loading={loading} error={error} noData={!pageBlocks.length} noDataContent={' '}>
-                <CheckboxGroup
-                  onChange={e => this.handleChange({ e, setFieldValue, blocks })}
-                  value={blocks}
-                  name="pageBlocks"
-                  id="blocksCheckboxGroup"
-                >
-                  {pageBlocks.map(this.renderCheckbox)}
-                </CheckboxGroup>
-              </LoadingWrapper>
-              <NavigationContainer fixed>
-                <BackArrowButton type="button" onClick={this.handleShowPages} />
-                <NextButton type="submit" onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
-                  <FormattedMessage {...messages.save} />
-                </NextButton>
-              </NavigationContainer>
-            </Fragment>
-          );
-        }}
-      </Formik>
+      <form onSubmit={handleSubmit}>
+        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+          <LoadingWrapper loading={loading} error={error} noData={!values.length} noDataContent={' '}>
+            <CheckboxGroup
+              onChange={this.handleChange}
+              value={blocks}
+              name="pageBlocks"
+              id="blocksCheckboxGroup"
+              customCheckboxStyles={checkboxStyles}
+            >
+              {values.map(this.renderCheckbox)}
+            </CheckboxGroup>
+          </LoadingWrapper>
+          <NavigationContainer fixed>
+            <BackArrowButton type="button" onClick={this.handleShowPages} />
+            <NextButton type="submit" loading={isSubmitting} disabled={!dirty || isSubmitting}>
+              <FormattedMessage {...messages.save} />
+            </NextButton>
+          </NavigationContainer>
+        </DndProvider>
+      </form>
     );
   };
 
