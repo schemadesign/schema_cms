@@ -102,7 +102,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             "projectId": "1",
             "step": "3",
           },
-          "url": "/datasource/14/3",
+          "url": "/datasource/1/steps",
         }
       }
       sendUpdatedDataWranglingScript={[Function]}
@@ -139,11 +139,11 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       <styled.div />
       <styled.div>
         <FormattedMessage
-          defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+          defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
           id="dataSource.dataWranglingScripts.counterSteps"
           values={
             Object {
-              "length": 3,
+              "steps": 3,
             }
           }
         />
@@ -191,17 +191,15 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           values={Object {}}
         />
       </Component>
-      <div>
-        <Draggable
-          accept="CHECKBOX"
-          id={1}
-          index={0}
-          key="1"
-          onMove={[Function]}
-        >
-          <Component />
-        </Draggable>
-      </div>
+      <Draggable
+        accept="CHECKBOX"
+        id={1}
+        index={0}
+        key="1"
+        onMove={[Function]}
+      >
+        <Component />
+      </Draggable>
       <Component
         customStyles={
           Object {
@@ -215,55 +213,53 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           values={Object {}}
         />
       </Component>
-      <div>
-        <div
-          key="0"
+      <div
+        key="0"
+      >
+        <Component
+          id="checkbox-0"
+          value="1"
         >
-          <Component
-            id="checkbox-0"
-            value="1"
-          >
-            <styled.div>
-              <Styled(Link)
-                to="/script/1"
-              >
-                name 1
-                <styled.div />
-                <styled.span>
-                  <FormattedMessage
-                    defaultMessage="Uploaded"
-                    id="dataSource.dataWranglingScripts.0"
-                    values={Object {}}
-                  />
-                </styled.span>
-              </Styled(Link)>
-            </styled.div>
-          </Component>
-        </div>
-        <div
-          key="1"
+          <styled.div>
+            <Styled(Link)
+              to="/script/1"
+            >
+              name 1
+              <styled.div />
+              <styled.span>
+                <FormattedMessage
+                  defaultMessage="Uploaded"
+                  id="dataSource.dataWranglingScripts.0"
+                  values={Object {}}
+                />
+              </styled.span>
+            </Styled(Link)>
+          </styled.div>
+        </Component>
+      </div>
+      <div
+        key="1"
+      >
+        <Component
+          id="checkbox-1"
+          value="2"
         >
-          <Component
-            id="checkbox-1"
-            value="2"
-          >
-            <styled.div>
-              <Styled(Link)
-                to="/script/2/1"
-              >
-                name 2
-                <styled.div />
-                <styled.span>
-                  <FormattedMessage
-                    defaultMessage="Default"
-                    id="dataSource.dataWranglingScripts.2"
-                    values={Object {}}
-                  />
-                </styled.span>
-              </Styled(Link)>
-            </styled.div>
-          </Component>
-        </div>
+          <styled.div>
+            <Styled(Link)
+              to="/script/2/1"
+            >
+              name 2
+              <styled.div />
+              <styled.span>
+                <FormattedMessage
+                  defaultMessage="Default"
+                  id="dataSource.dataWranglingScripts.2"
+                  values={Object {}}
+                />
+              </styled.span>
+            </Styled(Link)>
+          </styled.div>
+        </Component>
       </div>
     </Component>
     <NavigationContainer
@@ -354,7 +350,231 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             "projectId": "1",
             "step": "3",
           },
-          "url": "/datasource/14/3",
+          "url": "/datasource/1/steps",
+        }
+      }
+      sendUpdatedDataWranglingScript={[Function]}
+      setCheckedScripts={[Function]}
+      setScriptsList={[Function]}
+      uncheckedScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+          Object {
+            "id": 2,
+            "isPredefined": true,
+            "name": "name 2",
+            "specs": Object {},
+            "type": 2,
+          },
+        ]
+      }
+      uploadScript={[Function]}
+    />
+  </LoadingWrapper>
+</DndProvider>
+`;
+
+exports[`DataWranglingScripts: Component should render empty list 1`] = `
+<DndProvider
+  backend={[Function]}
+  options={Object {}}
+>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Data Wrangling"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+    primaryMenuItems={Array []}
+    projectId="1"
+    secondaryMenuItems={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      bindSubmitForm={[Function]}
+      checkedScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+        ]
+      }
+      customScripts={Array []}
+      dataSource={
+        Object {
+          "metaData": Object {},
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      dataWranglingScripts={Array []}
+      fetchDataWranglingScripts={[Function]}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      imageScrapingFields={Array []}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAdmin={true}
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "3",
+          },
+          "url": "/datasource/1/steps",
+        }
+      }
+      sendUpdatedDataWranglingScript={[Function]}
+      setCheckedScripts={[Function]}
+      setScriptsList={[Function]}
+      uncheckedScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+          Object {
+            "id": 2,
+            "isPredefined": true,
+            "name": "name 2",
+            "specs": Object {},
+            "type": 2,
+          },
+        ]
+      }
+      uploadScript={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div />
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
+          id="dataSource.dataWranglingScripts.counterSteps"
+          values={
+            Object {
+              "steps": 0,
+            }
+          }
+        />
+      </styled.div>
+      <styled.div>
+        <Component
+          accept=".py"
+          disabled={false}
+          id="fileUpload"
+          onChange={[Function]}
+          type="file"
+        />
+      </styled.div>
+    </styled.div>
+    <NavigationContainer
+      fixed={false}
+      hideOnDesktop={false}
+      right={true}
+    >
+      <NextButton
+        disabled={false}
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="dataSource.dataWranglingScripts.save"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+    <DataSourceNavigation
+      bindSubmitForm={[Function]}
+      checkedScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+        ]
+      }
+      customScripts={Array []}
+      dataSource={
+        Object {
+          "metaData": Object {},
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      dataWranglingScripts={Array []}
+      fetchDataWranglingScripts={[Function]}
+      hideOnDesktop={true}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      imageScrapingFields={Array []}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAdmin={true}
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "3",
+          },
+          "url": "/datasource/1/steps",
         }
       }
       sendUpdatedDataWranglingScript={[Function]}

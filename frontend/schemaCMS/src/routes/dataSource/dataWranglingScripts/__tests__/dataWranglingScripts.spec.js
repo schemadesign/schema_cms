@@ -6,13 +6,19 @@ import { DataWranglingScripts } from '../dataWranglingScripts.component';
 import { defaultProps } from '../dataWranglingScripts.stories';
 import { NextButton } from '../../../../shared/components/navigation';
 import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
+import { Draggable } from '../../../../shared/components/draggable';
 
-const { FileUpload } = Form;
+const { FileUpload, CheckboxGroup } = Form;
 
 describe('DataWranglingScripts: Component', () => {
   const component = props => <DataWranglingScripts {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
+
+  it('should render empty list', async () => {
+    const wrapper = await render({ dataWranglingScripts: [] });
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('should render correctly', async () => {
     const wrapper = await render();
@@ -29,7 +35,10 @@ describe('DataWranglingScripts: Component', () => {
     jest.spyOn(defaultProps, 'setCheckedScripts');
     const checkedScripts = [{ id: 1 }, { id: 2 }];
     const wrapper = await render({ checkedScripts });
-    wrapper.instance().handleMove(0, 1);
+    wrapper
+      .find(Draggable)
+      .first()
+      .prop('onMove')(0, 1);
 
     expect(defaultProps.setCheckedScripts).toBeCalledWith(checkedScripts.reverse());
   });
@@ -39,7 +48,10 @@ describe('DataWranglingScripts: Component', () => {
     const checkedScripts = [{ id: 1 }, { id: 2 }];
     const e = { target: { value: '1', checked: false } };
     const wrapper = await render({ checkedScripts });
-    wrapper.instance().handleChange(e);
+    wrapper
+      .find(CheckboxGroup)
+      .first()
+      .prop('onChange')(e);
 
     expect(defaultProps.setScriptsList).toBeCalledWith({ checked: false, script: { id: 1 } });
   });
@@ -50,7 +62,10 @@ describe('DataWranglingScripts: Component', () => {
     const uncheckedScripts = [{ id: 2, specs: { type: IMAGE_SCRAPING_SCRIPT_TYPE } }];
     const e = { target: { value: '2', checked: true } };
     const wrapper = await render({ checkedScripts, uncheckedScripts, imageScrapingFields: [] });
-    wrapper.instance().handleChange(e);
+    wrapper
+      .find(CheckboxGroup)
+      .first()
+      .prop('onChange')(e);
 
     expect(defaultProps.history.push).toBeCalledWith('/script/2/1');
   });

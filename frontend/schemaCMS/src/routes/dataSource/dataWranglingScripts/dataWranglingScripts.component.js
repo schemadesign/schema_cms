@@ -202,6 +202,31 @@ export class DataWranglingScripts extends PureComponent {
     );
   };
 
+  renderCheckboxGroup = steps =>
+    renderWhenTrue(
+      always(
+        <CheckboxGroup
+          onChange={this.handleChange}
+          customCheckboxStyles={checkBoxStyles}
+          customStyles={checkBoxContainerStyles}
+          value={steps}
+          name="steps"
+          id="fieldStepsCheckboxGroup"
+        >
+          <Label customStyles={selectedLabelStyles}>
+            <FormattedMessage {...messages.selectedScripts} />
+          </Label>
+          {this.props.checkedScripts.map(this.renderCheckboxWithDrag)}
+          <Label customStyles={labelStyles}>
+            <FormattedMessage {...messages.steps} />
+          </Label>
+          {this.props.uncheckedScripts.map((item, index) => (
+            <div key={index}>{this.renderCheckbox(item, index)}</div>
+          ))}
+        </CheckboxGroup>
+      )
+    )(!!this.props.dataWranglingScripts.length);
+
   renderUploadingError = errorMessage =>
     renderWhenTrue(() => (
       <Error>
@@ -230,7 +255,7 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { dataSource, isAdmin, dataWranglingScripts, checkedScripts = [], uncheckedScripts = [] } = this.props;
+    const { dataSource, isAdmin, dataWranglingScripts, checkedScripts } = this.props;
     const { errorMessage, loading, error, isSubmitting } = this.state;
     const steps = pipe(
       map(
@@ -263,27 +288,7 @@ export class DataWranglingScripts extends PureComponent {
             <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
           </Header>
           <Fragment>
-            <CheckboxGroup
-              onChange={this.handleChange}
-              customCheckboxStyles={checkBoxStyles}
-              customStyles={checkBoxContainerStyles}
-              value={steps}
-              name="steps"
-              id="fieldStepsCheckboxGroup"
-            >
-              <Label customStyles={selectedLabelStyles}>
-                <FormattedMessage {...messages.selectedScripts} />
-              </Label>
-              <div>{checkedScripts.map(this.renderCheckboxWithDrag)}</div>
-              <Label customStyles={labelStyles}>
-                <FormattedMessage {...messages.steps} />
-              </Label>
-              <div>
-                {uncheckedScripts.map((item, index) => (
-                  <div key={index}>{this.renderCheckbox(item, index)}</div>
-                ))}
-              </div>
-            </CheckboxGroup>
+            {this.renderCheckboxGroup(steps)}
             <NavigationContainer right>
               <NextButton
                 onClick={this.handleSubmit}
