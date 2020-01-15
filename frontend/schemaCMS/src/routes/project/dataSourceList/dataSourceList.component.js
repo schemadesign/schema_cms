@@ -5,7 +5,6 @@ import { Icons } from 'schemaUI';
 import { always, cond, either, equals, propEq, propOr, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
@@ -36,6 +35,8 @@ import {
 } from '../../../modules/dataSource/dataSource.constants';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getMenuProjects, PROJECT_DATASOURCE_ID } from '../project.constants';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -181,11 +182,16 @@ export class DataSourceList extends PureComponent {
     const title = this.props.intl.formatMessage(messages.title);
     const subtitle = this.props.intl.formatMessage(messages.subTitle);
     const loadingConfig = this.getLoadingConfig(loading, error, dataSources);
+    const projectId = getMatchParam(this.props, 'projectId');
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <TopHeader headerSubtitle={subtitle} headerTitle={title} projectId={getMatchParam(this.props, 'projectId')} />
+        <MobileMenu
+          headerTitle={title}
+          headerSubtitle={subtitle}
+          options={getMenuProjects(projectId, PROJECT_DATASOURCE_ID)}
+        />
         <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>
           <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />

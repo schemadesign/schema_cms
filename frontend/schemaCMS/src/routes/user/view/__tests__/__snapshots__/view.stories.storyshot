@@ -39,6 +39,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -728,6 +729,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -1417,6 +1419,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

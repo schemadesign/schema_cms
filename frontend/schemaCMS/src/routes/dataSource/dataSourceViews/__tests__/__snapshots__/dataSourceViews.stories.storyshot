@@ -2,6 +2,7 @@
 
 exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

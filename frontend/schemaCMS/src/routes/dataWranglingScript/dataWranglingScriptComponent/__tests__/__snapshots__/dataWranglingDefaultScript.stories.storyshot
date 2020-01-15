@@ -39,6 +39,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -1473,6 +1474,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

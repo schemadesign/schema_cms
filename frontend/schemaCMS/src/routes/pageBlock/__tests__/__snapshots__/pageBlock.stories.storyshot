@@ -39,6 +39,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

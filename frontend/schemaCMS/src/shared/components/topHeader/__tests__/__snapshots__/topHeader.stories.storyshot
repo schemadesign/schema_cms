@@ -2,6 +2,7 @@
 
 exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -485,6 +486,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 
 exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1`] = `
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -1008,6 +1010,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
 
 exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1`] = `
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -1546,6 +1549,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
 
 exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -2001,6 +2005,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
 
 exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`] = `
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

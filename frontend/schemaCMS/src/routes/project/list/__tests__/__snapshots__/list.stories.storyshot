@@ -34,6 +34,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -737,6 +738,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -1372,6 +1374,7 @@ exports[`Storyshots Project|List No data 1`] = `
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

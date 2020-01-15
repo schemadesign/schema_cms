@@ -36,6 +36,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 
@@ -1528,6 +1529,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
 }
 
 .c0 {
+  font-weight: normal;
   width: calc(100% - 50px);
 }
 

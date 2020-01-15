@@ -15,13 +15,14 @@ import {
   UserItem,
   UserItemDescription,
 } from './addUser.styles';
-import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getMenuProjects, NONE } from '../project.constants';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class AddUser extends PureComponent {
   static propTypes = {
@@ -63,11 +64,6 @@ export class AddUser extends PureComponent {
       return this.setState({ loading: false });
     }
   }
-
-  getHeaderConfig = () => ({
-    headerTitle: <FormattedMessage {...messages.headerTitle} />,
-    headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
-  });
 
   handleAddUser = userId => this.props.history.push(`/user/${userId}/add/${getMatchParam(this.props, 'projectId')}`);
 
@@ -140,12 +136,18 @@ export class AddUser extends PureComponent {
   render() {
     const { users } = this.props;
     const { showConfirmationModal, loading, error } = this.state;
-    const headerConfig = this.getHeaderConfig();
+    const projectId = getMatchParam(this.props, 'projectId');
+    const headerTitle = <FormattedMessage {...messages.headerTitle} />;
+    const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
 
     return (
       <Container>
-        <TopHeader {...headerConfig} />
-        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={getMenuProjects(projectId, NONE)}
+        />
         <LoadingWrapper loading={loading} error={error} noData={!users.length}>
           {this.props.users.map(this.renderUser)}
         </LoadingWrapper>

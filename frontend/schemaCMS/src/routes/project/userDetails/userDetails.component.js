@@ -7,12 +7,13 @@ import { Container } from './userDetails.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { UserProfile } from '../../../shared/components/userProfile/userProfile.component';
 import messages from './userDetails.messages';
-import { TopHeader } from '../../../shared/components/topHeader';
-import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getMenuProjects, NONE } from '../project.constants';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class UserDetails extends PureComponent {
   static propTypes = {
@@ -65,11 +66,16 @@ export class UserDetails extends PureComponent {
     const { userData, isAdmin } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const projectId = getMatchParam(this.props, 'projectId');
 
     return (
       <Container>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={getMenuProjects(projectId, NONE)}
+        />
         {this.renderContent(userData)}
         {this.renderRemoveUserButton(isAdmin)}
         <NavigationContainer fixed>
