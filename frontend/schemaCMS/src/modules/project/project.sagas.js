@@ -11,13 +11,13 @@ const PAGE_SIZE = 1000;
 
 function* fetchList() {
   try {
+    yield put(ProjectRoutines.clearProject());
     yield put(ProjectRoutines.fetchList.request());
 
     const {
       data: { results = [] },
     } = yield api.get(`${PROJECTS_PATH}?page_size=${PAGE_SIZE}`);
 
-    yield put(ProjectRoutines.clearProject());
     yield put(ProjectRoutines.fetchList.success(results));
   } catch (error) {
     yield put(ProjectRoutines.fetchList.failure(error));
