@@ -543,7 +543,17 @@ class BlockSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Block
-        fields = ("id", "page", "name", "type", "content", "images", "images_order", "is_active")
+        fields = (
+            "id",
+            "page",
+            "name",
+            "type",
+            "content",
+            "images",
+            "images_order",
+            "is_active",
+            "exec_order",
+        )
         extra_kwargs = {
             "page": {"required": False, "allow_null": True},
             "content": {"required": False, "allow_null": True, "allow_blank": False},
@@ -570,7 +580,7 @@ class BlockSerializer(serializers.ModelSerializer):
         return type_
 
     def get_images(self, instance):
-        images = instance.images.all().order_by('exec_order')
+        images = instance.images.all()
         return BlockImageSerializer(images, many=True).data
 
     @staticmethod

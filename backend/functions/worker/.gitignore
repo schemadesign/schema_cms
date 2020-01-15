@@ -1,8 +1,7 @@
 .vscode
 .requirements.zip
 node_modules/**
-.requirements.zip
-
+unzip_requirements.py
 # Distribution / packaging
 .Python
 env/
