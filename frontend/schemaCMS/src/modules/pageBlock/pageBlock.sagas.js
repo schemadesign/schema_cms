@@ -57,11 +57,11 @@ function* fetchOne({ payload: { blockId } }) {
   }
 }
 
-function* setBlocks({ payload: { pageId, active, inactive } }) {
+function* setBlocks({ payload: { pageId, blocks } }) {
   try {
     yield put(PageBlockRoutines.setBlocks.request());
 
-    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/set-blocks`, { active, inactive });
+    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/set-blocks`, blocks);
 
     yield put(PageBlockRoutines.setBlocks.success(data));
   } catch (e) {

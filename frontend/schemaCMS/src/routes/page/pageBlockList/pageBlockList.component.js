@@ -63,11 +63,13 @@ export class PageBlockList extends PureComponent {
   handleSubmit = async ({ blocks: active }, { setSubmitting }) => {
     try {
       const pageId = getMatchParam(this.props, 'pageId');
-      const inactive = this.props.pageBlocks
-        .filter(({ id }) => !active.includes(id.toString()))
-        .map(({ id }) => id.toString());
+      const blocks = this.props.pageBlocks.map(({ id }, index) => ({
+        isActive: active.includes(id.toString()),
+        id,
+        execOrder: index,
+      }));
 
-      await this.props.setPageBlocks({ pageId, active, inactive });
+      await this.props.setPageBlocks({ pageId, blocks });
     } catch (error) {
       this.setState({ error });
     } finally {

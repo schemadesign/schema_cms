@@ -68,15 +68,13 @@ describe('PageBlock: sagas', () => {
       const response = {
         id: 1,
       };
-      const active = ['1'];
-      const inactive = ['2'];
+      const blocks = [{ id: '1' }];
       const payload = {
         pageId: 1,
-        active,
-        inactive,
+        blocks,
       };
 
-      mockApi.post(`/pages/${payload.pageId}/set-blocks`, { active, inactive }).reply(OK, response);
+      mockApi.post(`/pages/${payload.pageId}/set-blocks`, blocks).reply(OK, response);
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)

@@ -110,6 +110,9 @@ describe('PageBlockList: Component', () => {
     await Promise.resolve();
     await wrapper.find(Formik).prop('onSubmit')(values, { setSubmitting: Function.prototype });
 
-    expect(defaultProps.setPageBlocks).toBeCalledWith({ active: ['1', '2'], inactive: [], pageId: '1' });
+    expect(defaultProps.setPageBlocks).toBeCalledWith({
+      blocks: [{ execOrder: 0, id: 1, isActive: true }, { execOrder: 1, id: 2, isActive: true }],
+      pageId: '1',
+    });
   });
 });
