@@ -263,14 +263,14 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         if request.method == 'GET':
             if not data_source.filters.exists():
-                return response.Response(data=[])
+                return response.Response({"project": data_source.project_info, "results": []})
 
             serializer = self.get_serializer(instance=data_source.filters, many=True)
             data = {"project": data_source.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
 
         else:
-            request.data["datasource"] = data_source
+            request.data["datasource"] = data_source.id
 
             serializer = self.get_serializer(data=request.data, context=data_source)
             serializer.is_valid(raise_exception=True)
