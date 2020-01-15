@@ -1226,7 +1226,11 @@ class TestBlockListCreateView:
 
     def test_image_upload(self, api_client, admin, page, faker):
         payload = dict(
-            name=faker.word(), type=projects_constants.BlockTypes.IMAGE, image_0=faker.image_upload_file()
+            name=faker.word(),
+            type=projects_constants.BlockTypes.IMAGE,
+            image_0=faker.image_upload_file(filename="image_0.png"),
+            image_1=faker.image_upload_file(filename="image_1.png"),
+            images_order=json.dumps({"image_0": 1, "image_1": 2}),
         )
 
         api_client.force_authenticate(admin)
@@ -1234,7 +1238,8 @@ class TestBlockListCreateView:
         block = page.blocks.get(pk=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert block.images.filter(image_name='test.png').exists()
+        assert block.images.filter(image_name='image_0.png').exists()
+        assert block.images.get(image_name='image_1.png').exec_order == 2
 
     def test_400_on_image_upload_with_wrong_type(self, api_client, admin, page, faker):
         payload = dict(
@@ -1299,6 +1304,26 @@ class TestBlockDetailView:
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["name"] == new_name
+
+    def test_update_block_images_order(self, api_client, admin, block_factory, block_image_factory, faker):
+        block = block_factory(type=projects_constants.BlockTypes.IMAGE)
+        block_image_factory.create_batch(3, block=block)
+        block_images = block.images.all().values_list("id", flat=True)
+        new_order = {str(id_): 3 for id_ in block_images}
+        new_name = faker.word()
+        payload = dict(
+            name=new_name,
+            image_0=faker.image_upload_file(filename="new_pic.png"),
+            images_order=json.dumps({"image_0": 6, **new_order}),
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(block.id), data=payload, format="multipart")
+        block.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert block.images.filter(image_name='new_pic.png').exists()
+        assert block.images.get(image_name='new_pic.png').exec_order == 6
 
     def test_delete_block(self, api_client, user, block):
         api_client.force_authenticate(user)

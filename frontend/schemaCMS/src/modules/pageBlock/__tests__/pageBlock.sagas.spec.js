@@ -124,6 +124,7 @@ describe('PageBlock: sagas', () => {
         name: 'Title',
         images: [{ file: 'file' }],
         type: IMAGE_TYPE,
+        imageNames: [{ id: 1 }, { id: 'image0' }],
         deleteImages: [],
       };
 
@@ -131,7 +132,13 @@ describe('PageBlock: sagas', () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
 
-      mockApi.post(`/pages/${payload.pageId}/blocks`, /form-data; name="image0"[^]*file/m, options).reply(OK, response);
+      mockApi
+        .post(
+          `/pages/${payload.pageId}/blocks`,
+          /form-data; name="images_order"[^]*{"1":0,"image0":1}[^]*"image0"[^]*file/m,
+          options
+        )
+        .reply(OK, response);
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)

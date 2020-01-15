@@ -625,7 +625,7 @@ class Page(
                 "name": block.name,
                 "type": block.type or None,
                 "content": block.content or None,
-                "images": [] if not hasattr(block, "images") else [i.image.url for i in block.images.all()],
+                "images": block.get_images(),
             }
             blocks.append(data)
 
@@ -667,6 +667,11 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
     def get_project(self):
         return self.page.folder.project
 
+    def get_images(self):
+        if not hasattr(self, "images"):
+            return []
+        return [{"url": i.image.url, "order": i.exec_order} for i in self.images.all()]
+
     @functional.cached_property
     def project_info(self):
         project = self.page.folder.project
@@ -676,7 +681,8 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
 class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     block = models.ForeignKey(Block, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(upload_to=file_upload_path, null=True, blank=True)
-    image_name = models.CharField(max_length=50, blank=True)
+    image_name = models.CharField(max_length=255, blank=True)
+    exec_order = models.IntegerField(default=0)
 
     class Meta:
         ordering = ("created",)
