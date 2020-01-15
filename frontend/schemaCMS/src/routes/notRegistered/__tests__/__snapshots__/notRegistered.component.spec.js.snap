@@ -11,14 +11,14 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Error"
-        id="notFound.subTitle"
+        id="notRegistered.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="SchemaCMS"
-        id="notFound.title"
+        id="notRegistered.title"
         values={Object {}}
       />
     }

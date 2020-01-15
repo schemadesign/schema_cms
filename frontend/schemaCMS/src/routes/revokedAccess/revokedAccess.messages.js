@@ -16,11 +16,11 @@ export default defineMessages({
       'If you believe this is an error, please contact your administrator or <a href="/">log with different credentials</a>.',
   },
   title: {
-    id: 'notFound.title',
+    id: 'revokedAccess.title',
     defaultMessage: 'SchemaCMS',
   },
   subTitle: {
-    id: 'notFound.subTitle',
+    id: 'revokedAccess.subTitle',
     defaultMessage: 'Error',
   },
 });

@@ -11,14 +11,14 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Error"
-        id="notFound.subTitle"
+        id="revokedAccess.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="SchemaCMS"
-        id="notFound.title"
+        id="revokedAccess.title"
         values={Object {}}
       />
     }
