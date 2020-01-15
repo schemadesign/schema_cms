@@ -7,7 +7,7 @@ import { compose } from 'ramda';
 import messages from './revokedAccess.messages';
 import { InfoContainer } from '../../shared/components/container/container.styles';
 import { getQueryParams } from '../../shared/utils/helpers';
-import { TopHeader } from '../../shared/components/topHeader';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 
 export class RevokedAccessComponent extends PureComponent {
   static propTypes = {
@@ -18,14 +18,14 @@ export class RevokedAccessComponent extends PureComponent {
   };
 
   render() {
-    const title = <FormattedMessage {...messages.title} />;
-    const subTitle = <FormattedMessage {...messages.subTitle} />;
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const { email } = getQueryParams(this.props);
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={title} headerSubtitle={subTitle} iconComponent={null} />
+        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} iconComponent={null} />
 
         <InfoContainer>
           <FormattedHTMLMessage {...messages.info} values={{ email }} />

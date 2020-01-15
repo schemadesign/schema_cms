@@ -6,7 +6,7 @@ import { Typography } from 'schemaUI';
 
 import messages from './notFound.messages';
 import { InfoContainer } from '../../shared/components/container/container.styles';
-import { TopHeader } from '../../shared/components/topHeader';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 
 const { H1 } = Typography;
 
@@ -17,13 +17,13 @@ export class NotFound extends PureComponent {
   };
 
   render() {
-    const title = <FormattedMessage {...messages.title} />;
-    const subTitle = <FormattedMessage {...messages.subTitle} />;
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={title} headerSubtitle={subTitle} isAdmin={this.props.isAdmin} />
+        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} isAdmin={this.props.isAdmin} />
         <InfoContainer>
           <H1>
             <FormattedMessage {...messages.description} />
