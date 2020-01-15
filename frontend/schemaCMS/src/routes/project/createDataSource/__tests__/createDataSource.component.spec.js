@@ -27,6 +27,21 @@ describe('CreateDataSource: Component', () => {
     expect(defaultProps.createDataSource).toHaveBeenCalledWith({ projectId: '1', requestData: values });
   });
 
+  it('should render error on failed createDataSource', async () => {
+    const setErrors = jest.fn().mockImplementation(Function.prototype);
+
+    const error = [{ code: 'dataSourceProjectNameUnique', name: 'name' }];
+    const wrapper = await render({
+      createDataSource: jest.fn().mockReturnValue(Promise.reject(error)),
+    });
+
+    await wrapper.find(Formik).prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors });
+
+    expect(setErrors).toHaveBeenCalledWith({
+      name: expect.any(String),
+    });
+  });
+
   it('should go back', () => {
     jest.spyOn(defaultProps.history, 'push');
 
