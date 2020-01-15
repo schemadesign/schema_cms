@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Filter } from './filter.component';
 import { withTheme } from '../../.storybook/decorators';
-import { history } from '../../.storybook/helpers';
+import { history, intl } from '../../.storybook/helpers';
 
 export const defaultProps = {
   updateFilter: Function.prototype,
@@ -24,6 +24,7 @@ export const defaultProps = {
     },
   },
   history,
+  intl,
   match: {
     params: {
       filterId: '1',
