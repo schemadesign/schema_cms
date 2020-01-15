@@ -3,6 +3,7 @@ import operator
 import os
 import uuid
 
+from django.conf import settings
 from django.core.files import base
 from django.urls import reverse
 from rest_framework import status
@@ -547,6 +548,12 @@ class TestUpdateDataSourceView:
         return reverse("projects:datasource-detail", kwargs=dict(pk=pk))
 
 
+class TestDataSourceUpdateMeta:
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-update-meta", kwargs=dict(pk=pk))
+
+
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
         api_client.force_authenticate(admin)
@@ -753,6 +760,57 @@ class TestDataSourceJobUpdateState:
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasourcejob-update-state", kwargs=dict(pk=pk))
+
+
+class TestJobUpdateMeta:
+    @staticmethod
+    def generate_job_and_meta_payload(job_factory):
+        job = job_factory(job_state=projects_constants.ProcessingState.PROCESSING, result=None, error="")
+
+        payload = dict(
+            items=2,
+            fields=2,
+            fields_names=["fields_1", "field2"],
+            fields_with_urls=[],
+            preview={"preview": "test"},
+        )
+        return payload, job
+
+    @pytest.mark.parametrize(
+        "token, response_status",
+        [
+            ("invalidToken", status.HTTP_401_UNAUTHORIZED),
+            (settings.LAMBDA_AUTH_TOKEN, status.HTTP_204_NO_CONTENT),
+        ],
+    )
+    def test_authentication_on_update_meta(self, api_client, job_factory, token, response_status):
+        payload, job = self.generate_job_and_meta_payload(job_factory)
+        response = api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION=f"Token {token}", format="json"
+        )
+
+        assert response.status_code == response_status
+
+    def test_meta_is_updated(self, api_client, job_factory):
+        payload, job = self.generate_job_and_meta_payload(job_factory)
+
+        response = api_client.post(
+            self.get_url(job.pk),
+            payload,
+            HTTP_AUTHORIZATION=f"Token {settings.LAMBDA_AUTH_TOKEN}",
+            format="json",
+        )
+        job.refresh_from_db()
+        job_meta_data = job.meta_data
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert job_meta_data.fields == payload["fields"]
+        assert job_meta_data.items == payload["items"]
+        assert job_meta_data.fields_names == payload["fields_names"]
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasourcejob-update-meta", kwargs=dict(pk=pk))
 
 
 class TestDataSourceScriptsView:
