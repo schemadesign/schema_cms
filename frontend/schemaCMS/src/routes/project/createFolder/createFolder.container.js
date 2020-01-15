@@ -12,12 +12,14 @@ import messages from './createFolder.messages';
 import { FolderRoutines } from '../../../modules/folder';
 import { FOLDER_FORM, FOLDER_SCHEMA, INITIAL_VALUES } from '../../../modules/folder/folder.constants';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({});
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
+      userRole: selectUserRole,
       createFolder: promisifyRoutine(FolderRoutines.create),
     },
     dispatch

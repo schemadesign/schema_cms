@@ -6,13 +6,15 @@ import { Form } from './createFolder.styles';
 import messages from './createFolder.messages';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { FOLDER_NAME } from '../../../modules/folder/folder.constants';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { getProjectMenuOptions, NONE } from '../project.constants';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
 export class CreateFolder extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     intl: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -31,13 +33,19 @@ export class CreateFolder extends PureComponent {
   handleBackClick = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/folder`);
 
   render() {
-    const { intl, values, handleSubmit, handleChange, isValid, isSubmitting, ...restProps } = this.props;
+    const { intl, values, handleSubmit, handleChange, isValid, isSubmitting, userRole, ...restProps } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={parseAndFilterMenuOptions(menuOptions, NONE, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <TextInput

@@ -14,13 +14,14 @@ import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedD
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { Link } from '../../../theme/typography';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
 import { ListItemTitle, ListItemContent } from '../../../shared/components/listComponents/listItem.styles';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getMenuProjects, PROJECT_FOLDER_ID } from '../project.constants';
+import { getProjectMenuOptions, PROJECT_FOLDER_ID } from '../project.constants';
 
 export class FolderList extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     folders: PropTypes.array.isRequired,
     fetchFolders: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
@@ -90,8 +91,9 @@ export class FolderList extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { match, folders } = this.props;
+    const { match, folders, userRole } = this.props;
     const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
@@ -99,7 +101,7 @@ export class FolderList extends PureComponent {
         <MobileMenu
           headerTitle={<FormattedMessage {...messages.title} />}
           headerSubtitle={<FormattedMessage {...messages.subTitle} />}
-          options={getMenuProjects(projectId, PROJECT_FOLDER_ID)}
+          options={parseAndFilterMenuOptions(menuOptions, PROJECT_FOLDER_ID, userRole)}
         />
         <ProjectTabs active={FOLDER} url={`/project/${match.params.projectId}`} />
         <ContextHeader

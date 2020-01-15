@@ -8,13 +8,14 @@ import { SourceForm } from '../../../shared/components/sourceForm';
 import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
-import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getMenuProjects, NONE } from '../project.constants';
+import { getProjectMenuOptions, NONE } from '../project.constants';
 
 export class CreateDataSource extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     intl: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.object.isRequired,
@@ -45,10 +46,11 @@ export class CreateDataSource extends PureComponent {
   handleCancelCreate = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/datasource`);
 
   render() {
-    const { intl } = this.props;
+    const { intl, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Fragment>
@@ -56,7 +58,7 @@ export class CreateDataSource extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={getMenuProjects(projectId, NONE)}
+          options={parseAndFilterMenuOptions(menuOptions, NONE, userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Formik enableReinitialize validationSchema={DATA_SOURCE_SCHEMA} onSubmit={this.handleSubmit}>

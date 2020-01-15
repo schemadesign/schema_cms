@@ -23,7 +23,6 @@ import {
 import messages from './mobileMenu.messages';
 import { LogoutModal } from '../../logoutModal';
 import { DIVIDER, LINK_ITEM, HELPER_LINK } from './mobileMenu.constants';
-import { renderWhenTrue } from '../../../utils/rendering';
 
 const HELPER_LINKS = [
   { label: <FormattedMessage {...messages.about} />, to: '/', id: 'aboutNavBtn', type: HELPER_LINK },
@@ -36,7 +35,6 @@ export class MobileMenu extends PureComponent {
     headerTitle: PropTypes.node,
     headerSubtitle: PropTypes.node,
     options: PropTypes.array,
-    isEditor: PropTypes.bool,
     iconComponent: PropTypes.element,
   };
 
@@ -76,22 +74,19 @@ export class MobileMenu extends PureComponent {
     </HeaderWrapper>
   );
 
-  renderItem = ({ active = false, id, to = '', onClick = this.handleToggleMenu, label, hide }, index) =>
-    renderWhenTrue(
-      always(
-        <Item key={index} active={active} hide={hide}>
-          {ifElse(
-            isEmpty,
-            always(<div onClick={onClick}>{label}</div>),
-            always(
-              <Link id={id} to={to} onClick={onClick}>
-                {label}
-              </Link>
-            )
-          )(to)}
-        </Item>
-      )
-    )(this.props.isEditor);
+  renderItem = ({ active = false, id, to = '', onClick = this.handleToggleMenu, label }, index) => (
+    <Item key={index} active={active}>
+      {ifElse(
+        isEmpty,
+        always(<div onClick={onClick}>{label}</div>),
+        always(
+          <Link id={id} to={to} onClick={onClick}>
+            {label}
+          </Link>
+        )
+      )(to)}
+    </Item>
+  );
 
   renderHelperLink = ({ id, to, label }, index) => (
     <HelperLink key={index} id={id} to={to} onClick={this.handleToggleMenu}>

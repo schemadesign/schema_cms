@@ -6,7 +6,7 @@ import { always, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { generateApiUrl, getMatchParam } from '../../../shared/utils/helpers';
+import { generateApiUrl, getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -31,7 +31,7 @@ import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '..
 
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
-import { getMenuProjects, PROJECT_DETAILS_ID } from '../project.constants';
+import { getProjectMenuOptions, PROJECT_DETAILS_ID } from '../project.constants';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -39,6 +39,7 @@ export class View extends PureComponent {
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
     removeProject: PropTypes.func.isRequired,
+    userRole: PropTypes.string,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }),
@@ -187,11 +188,12 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { project, isAdmin } = this.props;
+    const { project, isAdmin, userRole } = this.props;
     const { confirmationModalOpen, error, loading } = this.state;
-    const projectId = getMatchParam(this.props, 'projectId');
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
+    const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
@@ -200,7 +202,7 @@ export class View extends PureComponent {
           <MobileMenu
             headerTitle={headerTitle}
             headerSubtitle={headerSubtitle}
-            options={getMenuProjects(projectId, PROJECT_DETAILS_ID)}
+            options={parseAndFilterMenuOptions(menuOptions, PROJECT_DETAILS_ID, userRole)}
             isEditor={!isAdmin}
           />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />

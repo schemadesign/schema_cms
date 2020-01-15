@@ -11,7 +11,7 @@ import { Create } from './create.component';
 import messages from './create.messages';
 import { INITIAL_VALUES, PROJECT_SCHEMA, CREATE_PROJECT_FORM } from '../../../modules/project/project.constants';
 import { ProjectRoutines } from '../../../modules/project/project.redux';
-import { selectIsAdmin, selectUserData } from '../../../modules/userProfile';
+import { selectIsAdmin, selectUserData, selectUserRole } from '../../../modules/userProfile';
 import { errorMessageParser } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({
@@ -22,6 +22,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
+      userRole: selectUserRole,
       createProject: promisifyRoutine(ProjectRoutines.createProject),
     },
     dispatch

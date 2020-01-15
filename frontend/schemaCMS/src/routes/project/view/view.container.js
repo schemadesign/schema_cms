@@ -9,11 +9,12 @@ import { compose } from 'ramda';
 import { View } from './view.component';
 import { ProjectRoutines } from '../../../modules/project';
 import { selectProject } from '../../../modules/project/project.selectors';
-import { selectIsAdmin } from '../../../modules/userProfile/userProfile.selectors';
+import { selectIsAdmin, selectUserRole } from '../../../modules/userProfile/userProfile.selectors';
 
 const mapStateToProps = createStructuredSelector({
   isAdmin: selectIsAdmin,
   project: selectProject,
+  userRole: selectUserRole,
 });
 
 export const mapDispatchToProps = dispatch =>
