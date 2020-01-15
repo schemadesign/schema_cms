@@ -480,7 +480,7 @@ class PageViewSet(
         if request.method == "GET":
             queryset = page.blocks.prefetch_related(
                 Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
-            ).all()
+            ).all().order_by('exec_order')
             serializer = self.get_serializer(instance=queryset, many=True)
             data = {"project": page.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
@@ -511,7 +511,7 @@ class PageViewSet(
         page = self.get_object()
         page.create_dynamo_item()
 
-        serializer = self.get_serializer(instance=page.blocks, many=True)
+        serializer = self.get_serializer(instance=page.blocks.order_by('exec_order'), many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
