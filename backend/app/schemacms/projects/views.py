@@ -414,7 +414,7 @@ class FilterDetailViewSet(
     mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     queryset = models.Filter.objects.none()
-    serializer_class = serializers.FilterSerializer
+    serializer_class = serializers.FilterDetailsSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
