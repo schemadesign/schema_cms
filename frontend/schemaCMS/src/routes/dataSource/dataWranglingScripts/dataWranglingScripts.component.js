@@ -134,9 +134,8 @@ export class DataWranglingScripts extends PureComponent {
 
       await this.props.uploadScript({ script: file, dataSourceId });
       this.setState({ uploading: false });
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
+    } catch (error) {
+      reportError(error);
       this.setState({ uploading: false, errorMessage: 'errorOnUploading' });
     }
   };
