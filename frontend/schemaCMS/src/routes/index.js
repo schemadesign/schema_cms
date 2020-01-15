@@ -47,10 +47,10 @@ export default class RootContainer extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/not-found" component={NotFound} anonymous />
-
         <App>
           <Switch>
+            <AuthRoute exact path={ROUTES.NOT_FOUND} component={NotFound} anonymous />
+
             <AuthRoute exact path={ROUTES.NOT_AUTHORIZED} component={NotAuthorized} />
 
             <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
@@ -108,7 +108,7 @@ export default class RootContainer extends Component {
                 return <Redirect to={location} />;
               }}
             />
-            <Route path="*" component={NotFound} />
+            <AuthRoute path="*" component={NotFound} />
           </Switch>
         </App>
       </Switch>

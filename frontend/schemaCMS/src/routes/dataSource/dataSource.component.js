@@ -16,6 +16,7 @@ import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constan
 import { ProjectTabs } from '../../shared/components/projectTabs';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../shared/utils/helpers';
+import { NotFound } from '../notFound';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
@@ -50,14 +51,15 @@ export default class DataSource extends PureComponent {
     renderWhenTrueOtherwise(
       always(<Redirect path={path} to={`${path}/source`} />),
       always(
-        <Fragment>
+        <Switch>
           <Route exact path={`${path}/preview`} component={Fields} />
           <Route exact path={`${path}/steps`} component={DataWranglingScripts} />
           <Route exact path={`${path}/filters/add`} component={CreateFilter} />
           <Route exact path={`${path}/filters`} component={Filters} />
           <Route exact path={`${path}/result`} component={DataWranglingResult} />
           <Route exact path={`${path}/views`} component={DataSourceViews} />
-        </Fragment>
+          <Route exact path={`${path}/*`} component={NotFound} />
+        </Switch>
       )
     )(hasActiveJob);
 

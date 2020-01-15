@@ -8,6 +8,7 @@ import { intl } from '../../.storybook/helpers';
 
 export const defaultProps = {
   intl,
+  isAdmin: true,
 };
 
 storiesOf('NotFound', module)

@@ -31,6 +31,7 @@ export class TopHeader extends PureComponent {
     secondaryMenuItems: PropTypes.array,
     isAdmin: PropTypes.bool,
     hideProjects: PropTypes.bool,
+    iconComponent: PropTypes.element,
     projectId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
 
@@ -192,7 +193,7 @@ export class TopHeader extends PureComponent {
   };
 
   render() {
-    const { headerTitle, headerSubtitle } = this.props;
+    const { headerTitle, headerSubtitle, iconComponent } = this.props;
     const { logoutModalOpen } = this.state;
     const headerContent = this.renderHeader(headerTitle, headerSubtitle);
     const buttonProps = {
@@ -202,7 +203,9 @@ export class TopHeader extends PureComponent {
 
     return (
       <Container>
-        <Header buttonProps={buttonProps}>{headerContent}</Header>
+        <Header buttonProps={buttonProps} iconComponent={iconComponent}>
+          {headerContent}
+        </Header>
         {this.renderMenu({ headerContent })}
         <LogoutModal logoutModalOpen={logoutModalOpen} onAction={this.handleCancelLogout} redirectUrl="/logout" />
       </Container>

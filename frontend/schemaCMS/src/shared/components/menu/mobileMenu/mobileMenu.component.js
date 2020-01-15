@@ -34,8 +34,13 @@ export class MobileMenu extends PureComponent {
   static propTypes = {
     headerTitle: PropTypes.node,
     headerSubtitle: PropTypes.node,
-    options: PropTypes.array.isRequired,
+    options: PropTypes.array,
     isAdmin: PropTypes.bool,
+    iconComponent: PropTypes.element,
+  };
+
+  static defaultProps = {
+    options: [],
   };
 
   state = {
@@ -99,7 +104,7 @@ export class MobileMenu extends PureComponent {
     ])(option);
 
   render() {
-    const { headerTitle, headerSubtitle, options } = this.props;
+    const { headerTitle, headerSubtitle, options, iconComponent } = this.props;
     const { logoutModalOpen, isMenuOpen } = this.state;
     const headerContent = this.renderHeader(headerTitle, headerSubtitle);
 
@@ -131,7 +136,9 @@ export class MobileMenu extends PureComponent {
 
     return (
       <Container>
-        <Header buttonProps={buttonProps}>{headerContent}</Header>
+        <Header buttonProps={buttonProps} iconComponent={iconComponent}>
+          {headerContent}
+        </Header>
         <Menu
           open={isMenuOpen}
           onClose={this.handleToggleMenu}

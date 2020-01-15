@@ -20,7 +20,7 @@ def copy_steps_from_active_job(steps, job):
 
 class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
-    permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
+    permission_classes = (permissions.IsAuthenticated, user_permissions.ProjectAccessPermission)
     queryset = models.Project.objects.none()
     serializer_class_mapping = {
         "datasources": serializers.DataSourceSerializer,
@@ -143,6 +143,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "retrieve": serializers.DataSourceDetailSerializer,
+        "update": serializers.DataSourceDetailSerializer,
+        "partial_update": serializers.DataSourceDetailSerializer,
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,

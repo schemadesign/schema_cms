@@ -23,7 +23,7 @@ class UserViewSet(
 
     queryset = user_models.User.objects.all().app_users().activated()
     serializer_class = user_serializers.UserSerializer
-    permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
+    permission_classes = (permissions.IsAuthenticated, user_permissions.UsersViewSetPermission)
     filter_backends = (django_filters.DjangoFilterBackend,)
     filterset_fields = ("role",)
 

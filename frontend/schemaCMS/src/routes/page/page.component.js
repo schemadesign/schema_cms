@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router';
 import { PageBlockList } from './pageBlockList';
 import { CreatePageBlock } from './createPageBlock';
 import { Edit } from './edit';
+import { NotFound } from '../notFound';
 
 export class Page extends PureComponent {
   static propTypes = {
@@ -25,6 +26,7 @@ export class Page extends PureComponent {
         <Route exact path={pagePath} component={PageBlockList} />
         <Route exact path={createPageBlockPath} component={CreatePageBlock} />
         <Route exact path={editPagePath} component={Edit} />
+        <Route path="*" component={NotFound} />
       </Switch>
     );
   }

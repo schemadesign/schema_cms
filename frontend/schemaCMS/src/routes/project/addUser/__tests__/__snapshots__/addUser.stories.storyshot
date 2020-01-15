@@ -174,12 +174,6 @@ exports[`Storyshots Project|AddUser List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c0 {
-    margin-top: 70px;
-  }
-}
-
-@media (min-width:1040px) {
   .c5 {
     display: none;
   }
@@ -189,6 +183,12 @@ exports[`Storyshots Project|AddUser List 1`] = `
   .c8 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    margin-top: 70px;
   }
 }
 
@@ -816,12 +816,6 @@ exports[`Storyshots Project|AddUser No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c0 {
-    margin-top: 70px;
-  }
-}
-
-@media (min-width:1040px) {
   .c5 {
     display: none;
   }
@@ -831,6 +825,12 @@ exports[`Storyshots Project|AddUser No data 1`] = `
   .c8 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    margin-top: 70px;
   }
 }
 

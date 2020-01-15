@@ -28,36 +28,43 @@ exports[`DataSource: Component should render correctly 1`] = `
         exact={true}
         path="path/job"
       />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/preview"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/steps"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/filters/add"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/filters"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/result"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/views"
-      />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/preview"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/steps"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/filters/add"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/filters"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/result"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/views"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/*"
+        />
+      </Switch>
     </Switch>
   </LoadingWrapper>
 </Fragment>

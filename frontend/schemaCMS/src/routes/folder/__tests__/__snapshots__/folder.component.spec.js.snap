@@ -17,5 +17,9 @@ exports[`Folder: Component should render correctly 1`] = `
     exact={true}
     path="path/:folderId/edit"
   />
+  <Route
+    component={[Function]}
+    path="*"
+  />
 </Switch>
 `;

@@ -6,22 +6,27 @@ import { Typography } from 'schemaUI';
 
 import messages from './notAuthorized.messages';
 import { InfoContainer } from '../../shared/components/container/container.styles';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 
 const { H1 } = Typography;
 
 export class NotAuthorized extends PureComponent {
   static propTypes = {
     intl: PropTypes.object.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
   };
 
   render() {
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-
+        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} isAdmin={this.props.isAdmin} />
         <InfoContainer>
           <H1>
-            <FormattedMessage {...messages.title} />
+            <FormattedMessage {...messages.description} />
           </H1>
         </InfoContainer>
       </Fragment>

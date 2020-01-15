@@ -7,6 +7,24 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Not registered"
   />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Error"
+        id="notRegistered.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="SchemaCMS"
+        id="notRegistered.title"
+        values={Object {}}
+      />
+    }
+    iconComponent={null}
+    options={Array []}
+  />
   <styled.div>
     <FormattedHTMLMessage
       defaultMessage="Account with email <b>{email}</b> is not registered."
