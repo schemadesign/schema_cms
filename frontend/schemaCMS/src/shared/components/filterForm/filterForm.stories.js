@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { FilterForm } from './filterForm.component';
 import { withTheme } from '../../../.storybook/decorators';
-import { history } from '../../../.storybook/helpers';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   fieldsInfo: {
@@ -15,6 +15,7 @@ export const defaultProps = {
   },
   dataSourceId: '1',
   history,
+  intl,
 };
 
 export const createProps = {

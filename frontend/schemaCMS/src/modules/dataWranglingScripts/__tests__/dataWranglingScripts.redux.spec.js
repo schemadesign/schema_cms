@@ -8,6 +8,8 @@ describe('DataWranglingScripts: redux', () => {
       specs: {},
     },
     scripts: [],
+    checkedScripts: [],
+    uncheckedScripts: [],
     imageScrapingFields: [],
     customScripts: [],
   });
@@ -35,8 +37,12 @@ describe('DataWranglingScripts: redux', () => {
   });
 
   describe('when FETCH_LIST/SUCCESS action is received', () => {
-    it('should set dataWranglings', () => {
-      const data = [{ id: 1 }];
+    it('should set scripts', () => {
+      const data = [
+        { id: 1, isPredefined: false },
+        { id: 2, specs: ['1'], isPredefined: true },
+        { id: 3, specs: [], isPredefined: true },
+      ];
       const dataSource = {
         activeJob: {
           scripts: [{ id: 1, execOrder: 0 }],
@@ -46,32 +52,31 @@ describe('DataWranglingScripts: redux', () => {
       const payload = { data, dataSource };
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(payload));
 
-      expect(resultState.scripts).toEqual([{ ...data[0], order: 0, type: 1, checked: true }]);
-    });
-  });
-
-  describe('when FETCH_LIST/SUCCESS action is received with existed scripts', () => {
-    it('should set dataWranglings', () => {
-      const data = [{ id: 1, type: 0 }, { id: 2, type: 1, checked: true }, { id: 3 }];
-      const dataSource = {
-        activeJob: {
-          scripts: [{ id: 2, execOrder: 0 }],
-        },
-      };
-      const payload = { data, dataSource };
-      const stateWithScripts = defaultState
-        .setIn(['scripts', 0], { id: 1, type: 0 })
-        .setIn(['scripts', 1], { id: 2, type: 1 });
-      const resultState = dataWranglingReducer(
-        stateWithScripts,
-        DataWranglingScriptsRoutines.fetchList.success(payload)
-      );
-
-      expect(resultState.scripts).toEqual([
-        { id: 2, type: 1, checked: true, order: 0 },
-        { id: 1, type: 1, order: Number.MAX_SAFE_INTEGER },
-        { id: 3, type: 1, order: Number.MAX_SAFE_INTEGER },
+      expect(resultState.scripts).toEqual(data);
+      expect(resultState.uncheckedScripts).toEqual([
+        { id: 2, isPredefined: true, specs: ['1'], type: 1 },
+        { id: 3, isPredefined: true, specs: [], type: 2 },
       ]);
+      expect(resultState.checkedScripts).toEqual([{ id: 1, isPredefined: false, type: 0 }]);
+    });
+
+    it('should not set scripts', () => {
+      const data = [{ id: 1, isPredefined: false }];
+      const payload = { fromScript: true, data };
+      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(payload));
+      expect(resultState).toEqual(defaultState);
+    });
+
+    it('should add only uploaded script', () => {
+      const scripts = [{ id: 1, isPredefined: false }, { id: 2, specs: ['1'], isPredefined: true }];
+      const state = defaultState.set('scripts', scripts);
+      const uploadedScript = { id: 3, specs: [], isPredefined: true };
+      const data = [...scripts, uploadedScript];
+      const payload = { uploadScript: true, data };
+      const resultState = dataWranglingReducer(state, DataWranglingScriptsRoutines.fetchList.success(payload));
+
+      expect(resultState.scripts).toEqual(data);
+      expect(resultState.checkedScripts).toEqual([uploadedScript]);
     });
   });
 
@@ -103,6 +108,28 @@ describe('DataWranglingScripts: redux', () => {
 
       expect(resultState.customScripts).toEqual([payload.scriptId]);
     });
+
+    it('should set uncheckedScripts and checkedScripts', () => {
+      const state = Immutable({
+        scripts: [{ id: 1 }, { id: 2 }],
+        imageScrapingFields: [],
+        uncheckedScripts: [{ id: 1 }, { id: 2 }],
+        checkedScripts: [],
+        customScripts: [],
+      });
+      const payload = {
+        imageScrapingFields: ['data 1', 'data 2'],
+        scriptId: '1',
+      };
+
+      const resultState = dataWranglingReducer(
+        state,
+        DataWranglingScriptsRoutines.setImageScrapingFields.success(payload)
+      );
+
+      expect(resultState.uncheckedScripts).toEqual([{ id: 2 }]);
+      expect(resultState.checkedScripts).toEqual([{ id: 1 }]);
+    });
   });
 
   describe('when CLEAR_CUSTOM_SCRIPTS/SUCCESS action is received', () => {
@@ -112,6 +139,8 @@ describe('DataWranglingScripts: redux', () => {
           specs: {},
         },
         scripts: [],
+        uncheckedScripts: [],
+        checkedScripts: [],
         imageScrapingFields: [1],
         customScripts: [1],
       });
@@ -121,12 +150,32 @@ describe('DataWranglingScripts: redux', () => {
     });
   });
 
-  describe('when SET_SCRIPTS/SUCCESS action is received', () => {
-    it('should set dataWrangling ', () => {
-      const scripts = [{ id: 3, type: 1 }, { id: 1, type: 1 }, { id: 2, type: 1, checked: true }];
-      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.setScripts.trigger(scripts));
+  describe('when SET_SCRIPTS/TRIGGER action is received', () => {
+    it('should set setScripts', () => {
+      const state = Immutable({
+        uncheckedScripts: [{ id: 2 }, { id: 3 }],
+        checkedScripts: [{ id: 1 }],
+      });
+      const expectedState = Immutable({
+        uncheckedScripts: [{ id: 3 }],
+        checkedScripts: [{ id: 1 }, { id: 2 }],
+      });
+      const payload = { script: { id: 2 }, checked: true };
+      const resultState = dataWranglingReducer(state, DataWranglingScriptsRoutines.setScripts.trigger(payload));
 
-      expect(resultState.scripts).toEqual(scripts);
+      expect(expectedState).toEqual(resultState);
+    });
+  });
+
+  describe('when SET_CHECKED_SCRIPTS/TRIGGER action is received', () => {
+    it('should set setCheckedScripts', () => {
+      const payload = [{ id: 1 }, { id: 2 }];
+      const resultState = dataWranglingReducer(
+        defaultState,
+        DataWranglingScriptsRoutines.setCheckedScripts.trigger(payload)
+      );
+
+      expect(resultState.checkedScripts).toEqual(payload);
     });
   });
 });

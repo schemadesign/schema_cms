@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { CreateFilter } from './createFilter.component';
 import { withTheme } from '../../../.storybook/decorators';
-import { history } from '../../../.storybook/helpers';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   fetchFieldsInfo: Function.prototype,
@@ -19,6 +19,7 @@ export const defaultProps = {
     name: 'name',
   },
   history,
+  intl,
   match: { params: { dataSourceId: '1' } },
 };
 
