@@ -15,6 +15,7 @@ import { selectIsAdmin, selectUserData, selectUserRole } from '../../../modules/
 import { errorMessageParser } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   currentUser: selectUserData,
   isAdmin: selectIsAdmin,
 });

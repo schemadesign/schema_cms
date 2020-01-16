@@ -33,7 +33,7 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
-import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constants';
@@ -192,7 +192,8 @@ export class DataSourceList extends PureComponent {
         <MobileMenu
           headerTitle={title}
           headerSubtitle={subtitle}
-          options={parseAndFilterMenuOptions(menuOptions, PROJECT_DATASOURCE_ID, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECT_DATASOURCE_ID}
         />
         <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>

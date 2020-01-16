@@ -8,7 +8,7 @@ import { SourceForm } from '../../../shared/components/sourceForm';
 import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
-import { errorMessageParser, getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, NONE } from '../project.constants';
@@ -58,7 +58,7 @@ export class CreateDataSource extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={parseAndFilterMenuOptions(menuOptions, NONE, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Formik enableReinitialize validationSchema={DATA_SOURCE_SCHEMA} onSubmit={this.handleSubmit}>

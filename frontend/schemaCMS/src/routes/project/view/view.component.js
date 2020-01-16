@@ -6,7 +6,7 @@ import { always, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { generateApiUrl, getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { generateApiUrl, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -202,8 +202,8 @@ export class View extends PureComponent {
           <MobileMenu
             headerTitle={headerTitle}
             headerSubtitle={headerSubtitle}
-            options={parseAndFilterMenuOptions(menuOptions, PROJECT_DETAILS_ID, userRole)}
-            isEditor={!isAdmin}
+            options={filterMenuOptions(menuOptions, userRole)}
+            active={PROJECT_DETAILS_ID}
           />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>

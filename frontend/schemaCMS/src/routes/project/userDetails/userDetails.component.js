@@ -10,7 +10,7 @@ import messages from './userDetails.messages';
 import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, NONE } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -76,7 +76,7 @@ export class UserDetails extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={parseAndFilterMenuOptions(menuOptions, NONE, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
         />
         {this.renderContent(userData)}
         {this.renderRemoveUserButton(isAdmin)}

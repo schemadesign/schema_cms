@@ -19,7 +19,7 @@ import messages from './addUser.messages';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, NONE } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -148,7 +148,7 @@ export class AddUser extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={parseAndFilterMenuOptions(menuOptions, NONE, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
         />
         <LoadingWrapper loading={loading} error={error} noData={!users.length}>
           {this.props.users.map(this.renderUser)}

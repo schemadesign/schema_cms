@@ -22,7 +22,7 @@ import {
 } from './mobileMenu.styles';
 import messages from './mobileMenu.messages';
 import { LogoutModal } from '../../logoutModal';
-import { DIVIDER, LINK_ITEM, HELPER_LINK } from './mobileMenu.constants';
+import { DIVIDER, LINK_ITEM, HELPER_LINK, SETTINGS_ID } from './mobileMenu.constants';
 
 const HELPER_LINKS = [
   { label: <FormattedMessage {...messages.about} />, to: '/', id: 'aboutNavBtn', type: HELPER_LINK },
@@ -36,6 +36,7 @@ export class MobileMenu extends PureComponent {
     headerSubtitle: PropTypes.node,
     options: PropTypes.array,
     iconComponent: PropTypes.element,
+    active: PropTypes.string,
   };
 
   static defaultProps = {
@@ -74,8 +75,8 @@ export class MobileMenu extends PureComponent {
     </HeaderWrapper>
   );
 
-  renderItem = ({ active = false, id, to = '', onClick = this.handleToggleMenu, label }, index) => (
-    <Item key={index} active={active}>
+  renderItem = ({ id, to = '', onClick = this.handleToggleMenu, label }, index) => (
+    <Item key={index} active={id === this.props.active}>
       {ifElse(
         isEmpty,
         always(<div onClick={onClick}>{label}</div>),
@@ -121,7 +122,7 @@ export class MobileMenu extends PureComponent {
       {
         label: <FormattedMessage {...messages.settings} />,
         to: '/settings',
-        id: 'settingsNavBtn',
+        id: SETTINGS_ID,
         type: LINK_ITEM,
         page: 'settings',
       },

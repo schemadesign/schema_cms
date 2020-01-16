@@ -5,7 +5,7 @@ import { always, isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { generateApiUrl, getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { generateApiUrl, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -115,7 +115,8 @@ export class List extends PureComponent {
         <MobileMenu
           headerTitle={title}
           headerSubtitle={subtitle}
-          options={parseAndFilterMenuOptions(menuOptions, PROJECTS_ID, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECTS_ID}
         />
         <ContextHeader title={title} subtitle={subtitle}>
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}

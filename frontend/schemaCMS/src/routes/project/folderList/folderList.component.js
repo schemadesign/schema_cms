@@ -14,7 +14,7 @@ import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedD
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { Link } from '../../../theme/typography';
-import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { ListItemTitle, ListItemContent } from '../../../shared/components/listComponents/listItem.styles';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_FOLDER_ID } from '../project.constants';
@@ -101,7 +101,8 @@ export class FolderList extends PureComponent {
         <MobileMenu
           headerTitle={<FormattedMessage {...messages.title} />}
           headerSubtitle={<FormattedMessage {...messages.subTitle} />}
-          options={parseAndFilterMenuOptions(menuOptions, PROJECT_FOLDER_ID, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECT_FOLDER_ID}
         />
         <ProjectTabs active={FOLDER} url={`/project/${match.params.projectId}`} />
         <ContextHeader

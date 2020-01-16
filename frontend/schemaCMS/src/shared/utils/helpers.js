@@ -66,16 +66,4 @@ export const getQueryParams = pipe(
 
 const byRole = userRole => item => includes(userRole, item.allowedRoles);
 
-const setActiveMenu = (item, activeId) => {
-  if (activeId === item.id) {
-    return { ...item, active: true };
-  }
-
-  return item;
-};
-
-export const parseAndFilterMenuOptions = (options, activeId, userRole) =>
-  pipe(
-    map(item => setActiveMenu(item, activeId)),
-    filter(byRole(userRole))
-  )(options);
+export const filterMenuOptions = (options, userRole) => filter(byRole(userRole))(options);

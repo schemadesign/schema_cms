@@ -6,10 +6,11 @@ import { compose } from 'ramda';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { Settings } from './settings.component';
-import { selectUserData, UserProfileRoutines } from '../../modules/userProfile';
+import { selectUserData, selectUserRole, UserProfileRoutines } from '../../modules/userProfile';
 import { ProjectRoutines } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   userData: selectUserData,
 });
 

@@ -8,7 +8,7 @@ import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { FOLDER_NAME } from '../../../modules/folder/folder.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { getProjectMenuOptions, NONE } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
@@ -44,7 +44,7 @@ export class CreateFolder extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={parseAndFilterMenuOptions(menuOptions, NONE, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>

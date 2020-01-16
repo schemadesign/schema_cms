@@ -12,7 +12,7 @@ import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam, parseAndFilterMenuOptions } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_USERS_ID } from '../project.constants';
 
@@ -66,7 +66,8 @@ export class UserList extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={parseAndFilterMenuOptions(menuOptions, PROJECT_USERS_ID, userRole)}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECT_USERS_ID}
         />
         <ProjectTabs active={USERS} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>

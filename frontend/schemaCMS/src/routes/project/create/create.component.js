@@ -17,6 +17,9 @@ import {
 import messages from './create.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { getProjectMenuOptions, NONE } from '../project.constants';
 
 export class Create extends PureComponent {
   static propTypes = {
@@ -29,6 +32,7 @@ export class Create extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }),
+    userRole: PropTypes.string,
     isAdmin: PropTypes.bool.isRequired,
     isValid: PropTypes.bool.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
@@ -39,11 +43,6 @@ export class Create extends PureComponent {
       this.props.history.push('/not-authorized');
     }
   }
-
-  getHeaderAndMenuConfig = intl => ({
-    headerTitle: intl.formatMessage(messages.pageTitle),
-    headerSubtitle: intl.formatMessage(messages.pageSubTitle),
-  });
 
   getStatusOptions = intl =>
     PROJECT_STATUSES_LIST.map(status => ({
@@ -58,13 +57,20 @@ export class Create extends PureComponent {
   };
 
   render() {
-    const { values, handleChange, handleSubmit, setFieldValue, intl, isValid, isSubmitting } = this.props;
-    const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
+    const { values, handleChange, handleSubmit, setFieldValue, intl, isValid, isSubmitting, userRole } = this.props;
+    const headerTitle = <FormattedMessage {...messages.pageTitle} />;
+    const headerSubtitle = <FormattedMessage {...messages.pageSubTitle} />;
+    const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
-        <TopHeader {...topHeaderConfig} />
-        <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <TextInput
             value={values[PROJECT_TITLE]}

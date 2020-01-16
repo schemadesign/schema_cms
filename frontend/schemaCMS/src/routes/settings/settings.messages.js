@@ -18,4 +18,12 @@ export default defineMessages({
     id: 'settings.resetPassword',
     defaultMessage: 'Reset password',
   },
+  projectsListPage: {
+    id: 'settings.projectsListPage',
+    defaultMessage: 'Projects',
+  },
+  usersPage: {
+    id: 'settings.usersPage',
+    defaultMessage: 'Users',
+  },
 });
