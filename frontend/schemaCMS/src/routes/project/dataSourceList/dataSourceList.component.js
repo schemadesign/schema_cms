@@ -35,6 +35,7 @@ import {
 } from '../../../modules/dataSource/dataSource.constants';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
+import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constants';
 
@@ -70,10 +71,8 @@ export class DataSourceList extends PureComponent {
       await this.props.fetchDataSources({ projectId });
       this.setState({ loading: false });
     } catch (error) {
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

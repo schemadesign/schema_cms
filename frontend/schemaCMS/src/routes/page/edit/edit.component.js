@@ -13,6 +13,7 @@ import { PageForm } from '../../../shared/components/pageForm';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link } from '../../../theme/typography';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -49,6 +50,7 @@ export class Edit extends PureComponent {
       await this.props.fetchPage({ pageId });
       this.setState({ loading: false });
     } catch (error) {
+      reportError(error);
       this.setState({ loading: false, error });
     }
   }

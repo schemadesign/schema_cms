@@ -11,6 +11,8 @@ import {
   selectDataWranglingScripts,
   selectCustomScripts,
   selectImageScrapingFields,
+  selectCheckedScripts,
+  selectUncheckedScripts,
 } from '../../../modules/dataWranglingScripts';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 import { selectDataSource } from '../../../modules/dataSource';
@@ -19,6 +21,8 @@ import { selectIsAdmin } from '../../../modules/userProfile';
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
   dataWranglingScripts: selectDataWranglingScripts,
+  checkedScripts: selectCheckedScripts,
+  uncheckedScripts: selectUncheckedScripts,
   isAdmin: selectIsAdmin,
   customScripts: selectCustomScripts,
   imageScrapingFields: selectImageScrapingFields,
@@ -31,6 +35,7 @@ export const mapDispatchToProps = dispatch => ({
       uploadScript: promisifyRoutine(DataWranglingScriptsRoutines.uploadScript),
       sendUpdatedDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.sendList),
       setScriptsList: promisifyRoutine(DataWranglingScriptsRoutines.setScripts),
+      setCheckedScripts: promisifyRoutine(DataWranglingScriptsRoutines.setCheckedScripts),
     },
     dispatch
   ),

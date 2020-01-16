@@ -51,4 +51,16 @@ describe('JobList: Component', () => {
 
     expect(updatedProps.revertToJob).toHaveBeenCalledWith({ jobId: 1, dataSourceId: '1' });
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchJobList should return error';
+    const wrapper = await render({
+      fetchJobList: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

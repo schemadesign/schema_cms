@@ -11,6 +11,7 @@ import messages from './list.messages';
 import browserHistory from '../../../shared/utils/history';
 import { USER_MENU_OPTIONS } from '../user.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import reportError from '../../../shared/utils/reportError';
 
 export class List extends PureComponent {
   static propTypes = {
@@ -29,10 +30,8 @@ export class List extends PureComponent {
       await this.props.fetchUsers();
       this.setState({ loading: false });
     } catch (error) {
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

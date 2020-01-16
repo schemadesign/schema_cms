@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import { Button, Icons, Table } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
-import { Loading } from '../loading';
+import { LoadingWrapper } from '../loadingWrapper';
 import { FieldDetail } from '../fieldDetail';
 import messages from './dataPreview.messages';
 import {
   arrowStyles,
   buttonStyles,
-  Container,
   Content,
   Navigation,
   NavigationButton,
   NavigationLabel,
 } from './dataPreview.styles';
 import { getTableData } from '../../utils/helpers';
+import { renderWhenTrue } from '../../utils/rendering';
+import reportError from '../../utils/reportError';
 
 const INITIAL_STEP = 0;
 
@@ -51,6 +52,7 @@ export default class DataPreview extends PureComponent {
   }
 
   state = {
+    error: null,
     loading: true,
     step: INITIAL_STEP,
   };
@@ -61,8 +63,9 @@ export default class DataPreview extends PureComponent {
     try {
       await this.props.fetchPreview({ dataSourceId, jobId });
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -121,22 +124,27 @@ export default class DataPreview extends PureComponent {
 
   renderFieldDetails = props => <FieldDetail {...props} />;
 
-  renderContent() {
-    const { step } = this.state;
-    const tableData = getTableData(this.props.previewData.data);
-    const content = step ? this.renderFieldDetails(this.getFieldDetailsData()) : this.renderTable(tableData);
+  renderContent = loading =>
+    renderWhenTrue(() => {
+      const { step } = this.state;
+      const tableData = getTableData(this.props.previewData.data);
+      const content = step ? this.renderFieldDetails(this.getFieldDetailsData()) : this.renderTable(tableData);
 
-    return (
-      <Content>
-        {this.renderNavigation()}
-        {content}
-      </Content>
-    );
-  }
+      return (
+        <Content>
+          {this.renderNavigation()}
+          {content}
+        </Content>
+      );
+    })(!loading);
 
   render() {
-    const content = this.state.loading ? <Loading /> : this.renderContent();
+    const { loading, error } = this.state;
 
-    return <Container>{content}</Container>;
+    return (
+      <LoadingWrapper loading={loading} error={error}>
+        {this.renderContent(loading)}
+      </LoadingWrapper>
+    );
   }
 }

@@ -92,4 +92,16 @@ describe('AddUser: Component', () => {
     expect(wrapper.state().userToBeRemoved).toBeNull();
     expect(wrapper.state().showConfirmationModal).toBeFalsy();
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchUsers should return error';
+    const wrapper = await render({
+      fetchUsers: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

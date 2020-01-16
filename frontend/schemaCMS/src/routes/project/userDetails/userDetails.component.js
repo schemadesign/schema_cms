@@ -11,9 +11,12 @@ import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/co
 import { Link, LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
+
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getProjectMenuOptions, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 export class UserDetails extends PureComponent {
   static propTypes = {
@@ -32,12 +35,20 @@ export class UserDetails extends PureComponent {
   };
 
   state = {
+    error: null,
+    loading: true,
     userRemoveModalOpen: false,
   };
 
-  componentDidMount() {
-    const userId = getMatchParam(this.props, 'userId');
-    this.props.fetchUser({ userId });
+  async componentDidMount() {
+    try {
+      const userId = getMatchParam(this.props, 'userId');
+      await this.props.fetchUser({ userId });
+      this.setState({ loading: false });
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
+    }
   }
 
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
@@ -65,6 +76,7 @@ export class UserDetails extends PureComponent {
 
   render() {
     const { userData, isAdmin, userRole } = this.props;
+    const { error, loading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const projectId = getMatchParam(this.props, 'projectId');
@@ -78,8 +90,10 @@ export class UserDetails extends PureComponent {
           headerSubtitle={headerSubtitle}
           options={filterMenuOptions(menuOptions, userRole)}
         />
-        {this.renderContent(userData)}
-        {this.renderRemoveUserButton(isAdmin)}
+        <LoadingWrapper loading={loading} error={error}>
+          {this.renderContent(userData)}
+          {this.renderRemoveUserButton(isAdmin)}
+        </LoadingWrapper>
         <NavigationContainer fixed>
           <BackButton type="button" onClick={this.handleBack} />
         </NavigationContainer>

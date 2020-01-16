@@ -69,7 +69,6 @@ describe('DataWranglingScript: Component', () => {
       dataSourceId: '1',
       imageScrapingFields: [],
       scriptId: '1',
-      imageScriptIndex: 1,
     });
   });
 
@@ -79,5 +78,17 @@ describe('DataWranglingScript: Component', () => {
     await render();
 
     expect(defaultProps.fetchDataSource).toHaveBeenCalled();
+  });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchDataSource should return error';
+    const wrapper = await render({
+      fetchDataSource: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
   });
 });

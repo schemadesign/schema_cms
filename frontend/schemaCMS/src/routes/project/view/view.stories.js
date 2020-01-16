@@ -27,6 +27,7 @@ const emptyProps = {
 export const defaultProps = {
   ...emptyProps,
   project: {
+    id: '100',
     title: 'Project Name',
     description: 'Description',
     slug: 'project_title',

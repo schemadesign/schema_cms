@@ -20,8 +20,9 @@ import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/co
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getProjectMenuOptions, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class AddUser extends PureComponent {
@@ -60,6 +61,7 @@ export class AddUser extends PureComponent {
       await this.props.fetchUsers({ projectId });
       await this.props.fetchProjectEditors({ projectId });
     } catch (error) {
+      reportError(error);
       this.setState({ error });
     } finally {
       return this.setState({ loading: false });

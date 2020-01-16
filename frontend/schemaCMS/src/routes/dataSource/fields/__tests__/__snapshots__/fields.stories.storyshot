@@ -978,15 +978,11 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c18"
   >
-    <div
-      className="c18"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
+    <span>
+      Loading...
+    </span>
   </div>
   <div
     className="c19"
@@ -2204,15 +2200,11 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c18"
   >
-    <div
-      className="c18"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
+    <span>
+      Loading...
+    </span>
   </div>
   <div
     className="c19"

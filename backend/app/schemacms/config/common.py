@@ -71,10 +71,11 @@ class Common(Configuration):
     CORS_ORIGIN_ALLOW_ALL = True
 
     # Email
-    EMAIL_BACKEND = "anymail.backends.mandrill.EmailBackend"
-    ANYMAIL = {"MANDRILL_API_KEY": os.getenv("MANDRILL_KEY")}
-    DEFAULT_FROM_EMAIL = os.getenv("DJANGO_DEFAULT_FROM_EMAIL", "webmaster@localhost")
-    SERVER_EMAIL = os.getenv("DJANGO_SERVER_EMAIL", "root@localhost")
+    EMAIL_BACKEND = "django_ses.SESBackend"
+    AWS_SES_REGION_ENDPOINT = os.getenv("SES_ENDPOINT_URL")
+
+    DEFAULT_FROM_EMAIL = os.getenv("DJANGO_DEFAULT_FROM_EMAIL", "info@local")
+    SERVER_EMAIL = os.getenv("DJANGO_SERVER_EMAIL", "info@local")
 
     ADMINS = (("Author", "khanek@apptension.com"),)
 

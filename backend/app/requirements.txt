@@ -22,7 +22,8 @@ django-filter==2.1.0
 djangorestframework-jwt==1.11.0
 
 # Mail
-django-anymail==6.0
+django-anymail==7.0.0
+django-ses==0.8.13
 
 # Auth0
 auth0-python

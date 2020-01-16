@@ -22,6 +22,7 @@ import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.sty
 import { FILTERS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { renderWhenTrue } from '../../utils/rendering';
+import { errorMessageParser } from '../../utils/helpers';
 
 export class FilterForm extends PureComponent {
   static propTypes = {
@@ -34,6 +35,7 @@ export class FilterForm extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
@@ -80,10 +82,21 @@ export class FilterForm extends PureComponent {
     this.props.removeFilter({ dataSourceId: datasource.id, filterId });
   };
 
-  handleSubmit = formData => {
+  handleSubmit = async (formData, { setErrors, setSubmitting }) => {
     const submitFunc = this.props.createFilter || this.props.updateFilter;
     const dataSourceId = this.props.dataSourceId;
-    submitFunc({ dataSourceId, filterId: this.props.filter.id, formData });
+
+    try {
+      setSubmitting(true);
+      await submitFunc({ dataSourceId, filterId: this.props.filter.id, formData });
+    } catch (errors) {
+      const { formatMessage } = this.props.intl;
+      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+      setErrors(errorMessages);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   renderRemoveFilterLink = renderWhenTrue(

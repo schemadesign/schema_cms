@@ -9,6 +9,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
@@ -24,6 +25,7 @@ export class CreateFilter extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   state = {
@@ -37,6 +39,7 @@ export class CreateFilter extends PureComponent {
     try {
       await this.props.fetchFieldsInfo({ dataSourceId });
     } catch (error) {
+      reportError(error);
       this.setState({ error });
     } finally {
       this.setState({ loading: false });
@@ -52,8 +55,9 @@ export class CreateFilter extends PureComponent {
     <FilterForm
       fieldsInfo={this.props.fieldsInfo}
       createFilter={this.props.createFilter}
-      history={this.props.history}
       dataSourceId={getMatchParam(this.props, 'dataSourceId')}
+      history={this.props.history}
+      intl={this.props.intl}
     />
   );
 

@@ -15,6 +15,7 @@ import { NavigationContainer, PlusButton } from '../../../shared/components/navi
 import { ListItem, ListContainer } from '../../../shared/components/listComponents';
 import { getProjectMenuOptions, PROJECTS_ID } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import reportError from '../../../shared/utils/reportError';
 
 const { H1, P } = Typography;
 
@@ -38,10 +39,8 @@ export class List extends PureComponent {
       await this.props.fetchProjectsList();
       this.setState({ loading: false });
     } catch (error) {
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

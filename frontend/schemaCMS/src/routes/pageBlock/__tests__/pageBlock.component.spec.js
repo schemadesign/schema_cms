@@ -58,4 +58,16 @@ describe('PageBlock: Component', () => {
 
     expect(defaultProps.removePageBlock).toHaveBeenCalledWith({ pageId: 1, blockId: '1' });
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchPageBlock should return error';
+    const wrapper = await render({
+      fetchPageBlock: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

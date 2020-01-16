@@ -7,6 +7,7 @@ import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { ImageScrapingScript } from './imageScrapingScriptComponent/imageScrapingScript.component';
+import reportError from '../../shared/utils/reportError';
 
 export class DataWranglingScript extends PureComponent {
   static propTypes = {
@@ -18,17 +19,23 @@ export class DataWranglingScript extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
   };
 
   async componentDidMount() {
-    const {
-      match: {
-        params: { scriptId },
-      },
-    } = this.props;
-    await this.props.fetchDataWranglingScript({ scriptId });
-    this.setState({ loading: false });
+    try {
+      const {
+        match: {
+          params: { scriptId },
+        },
+      } = this.props;
+      await this.props.fetchDataWranglingScript({ scriptId });
+      this.setState({ loading: false });
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
+    }
   }
 
   renderGeneralOrCustomRoute = renderWhenTrueOtherwise(
@@ -38,12 +45,12 @@ export class DataWranglingScript extends PureComponent {
 
   render() {
     const { dataWranglingScript } = this.props;
-    const { loading } = this.state;
+    const { error, loading } = this.state;
     const noData = isEmpty(dataWranglingScript);
     const isImageScraping = !noData && dataWranglingScript.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE;
 
     return (
-      <LoadingWrapper loading={loading} noData={isEmpty(dataWranglingScript)}>
+      <LoadingWrapper loading={loading} noData={isEmpty(dataWranglingScript)} error={error}>
         {this.renderGeneralOrCustomRoute(isImageScraping)}
       </LoadingWrapper>
     );

@@ -69,4 +69,16 @@ describe('FolderList: Component', () => {
 
     expect(defaultProps.history.push).toBeCalledWith('/folder/1');
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchFolders should return error';
+    const wrapper = await render({
+      fetchFolders: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

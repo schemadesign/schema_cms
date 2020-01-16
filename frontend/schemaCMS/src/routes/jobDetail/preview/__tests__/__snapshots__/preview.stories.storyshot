@@ -536,15 +536,11 @@ exports[`Storyshots JobDetail/Preview Default 1`] = `
       />
     </div>
     <div
-      className=""
+      className="c12"
     >
-      <div
-        className="c12"
-      >
-        <span>
-          Loading...
-        </span>
-      </div>
+      <span>
+        Loading...
+      </span>
     </div>
     <div
       className="c13"

@@ -34,6 +34,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import reportError from '../../../shared/utils/reportError';
 import { InfoContainer } from '../../../shared/components/container/container.styles';
 import { DATA_WRANGLING_SCRIPT_MENU_OPTIONS } from '../dataWranglingScript.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -62,6 +63,7 @@ export class ImageScrapingScript extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
     selectedFields: [],
   };
@@ -82,15 +84,10 @@ export class ImageScrapingScript extends PureComponent {
         find(propEq('id', scriptId)),
         ifElse(isNil, always(imageScrapingFields), path(['options', 'columns']))
       )(dataSource);
-
       this.setState({ loading: false, selectedFields });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -121,14 +118,13 @@ export class ImageScrapingScript extends PureComponent {
   };
 
   handleSaveClick = () => {
+    const { selectedFields } = this.state;
     const scriptId = getMatchParam(this.props, 'scriptId');
     const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-    const imageScriptIndex = this.props.dataWranglingScripts.findIndex(({ id }) => id.toString() === scriptId);
 
     return this.props.setImageScrapingFields({
-      imageScrapingFields: this.state.selectedFields,
+      imageScrapingFields: selectedFields,
       scriptId,
-      imageScriptIndex,
       dataSourceId,
     });
   };

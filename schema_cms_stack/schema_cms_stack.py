@@ -292,7 +292,11 @@ class API(core.Stack):
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
         self.api.task_definition.add_to_task_role_policy(
-            aws_iam.PolicyStatement(actions=["dynamodb:*"], resources=["*"])
+            aws_iam.PolicyStatement(actions=["dynamodb:*", "ses:SendRawEmail"], resources=["*"])
+        )
+
+        self.api.task_definition.add_to_task_role_policy(
+            aws_iam.PolicyStatement(actions=["ses:SendRawEmail"], resources=["*"])
         )
 
     def map_secret(self, secret_arn):
@@ -387,8 +391,8 @@ class PublicAPI(core.Stack):
 
         self.public_api_lambda.add_to_role_policy(
             aws_iam.PolicyStatement(
-                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"],
-                resources=["*"])
+                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"], resources=["*"]
+            )
         )
 
 

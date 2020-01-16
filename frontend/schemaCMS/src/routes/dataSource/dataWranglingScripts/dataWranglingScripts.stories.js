@@ -15,9 +15,12 @@ const dataWranglingScripts = new Immutable([
 
 export const defaultProps = {
   dataWranglingScripts,
+  checkedScripts: [dataWranglingScripts[0]],
+  uncheckedScripts: [dataWranglingScripts[0], dataWranglingScripts[1]],
   dataSource: { metaData: {}, project: { id: '1' } },
   bindSubmitForm: Function.prototype,
   setScriptsList: Function.prototype,
+  setCheckedScripts: Function.prototype,
   fetchDataWranglingScripts: () => Promise.resolve(),
   uploadScript: Function.prototype,
   imageScrapingFields: [],

@@ -4,7 +4,6 @@ import { always, complement, isEmpty, path, pathSatisfies } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Download, Form, LinkWrapper, PreviewLink, Step, StepsTitle, StepsWrapper } from './jobDetail.styles';
-import browserHistory from '../../shared/utils/history';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 
 import messages from './jobDetail.messages';
@@ -15,6 +14,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import { JOB_DETAIL_MENU_OPTIONS } from './jobDetail.constants';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
+import reportError from '../../shared/utils/reportError';
 
 export class JobDetail extends PureComponent {
   static propTypes = {
@@ -36,6 +36,7 @@ export class JobDetail extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
   };
 
@@ -44,8 +45,9 @@ export class JobDetail extends PureComponent {
       const payload = path(['match', 'params'], this.props);
       await this.props.fetchOne(payload);
       this.setState({ loading: false });
-    } catch (e) {
-      browserHistory.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -150,7 +152,7 @@ export class JobDetail extends PureComponent {
   ));
 
   render() {
-    const { loading } = this.state;
+    const { error, loading } = this.state;
     const { job } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -159,12 +161,14 @@ export class JobDetail extends PureComponent {
       <Fragment>
         <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} options={JOB_DETAIL_MENU_OPTIONS} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
-        <LoadingWrapper loading={loading}>{this.renderForm(job)}</LoadingWrapper>
+        <LoadingWrapper loading={loading} error={error}>
+          {this.renderForm(job)}
+        </LoadingWrapper>
         <NavigationContainer fixed>
           <BackButton onClick={this.handleGoBack}>
             <FormattedMessage {...messages.back} />
           </BackButton>
-          {this.renderSaveButton(!!job.id)}
+          {this.renderSaveButton(!!job.id && !error)}
         </NavigationContainer>
       </Fragment>
     );

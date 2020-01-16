@@ -14,6 +14,7 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link } from '../../../theme/typography';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -38,6 +39,7 @@ export class Edit extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
     confirmationModalOpen: false,
   };
@@ -47,8 +49,9 @@ export class Edit extends PureComponent {
       const folderId = getMatchParam(this.props, 'folderId');
       await this.props.fetchFolder({ folderId });
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -80,7 +83,7 @@ export class Edit extends PureComponent {
 
   render() {
     const { handleSubmit, isValid, isSubmitting } = this.props;
-    const { loading, confirmationModalOpen } = this.state;
+    const { error, loading, confirmationModalOpen } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -89,7 +92,9 @@ export class Edit extends PureComponent {
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
-          <LoadingWrapper loading={loading}>{this.renderContent()}</LoadingWrapper>
+          <LoadingWrapper loading={loading} error={error}>
+            {this.renderContent()}
+          </LoadingWrapper>
           <Link id="removeFolderDesktopBtn" onClick={this.handleRemoveClick}>
             <FormattedMessage {...messages.removeFolder} />
           </Link>

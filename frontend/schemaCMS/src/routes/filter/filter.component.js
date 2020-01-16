@@ -11,6 +11,7 @@ import { ContextHeader } from '../../shared/components/contextHeader';
 import { getMatchParam } from '../../shared/utils/helpers';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 import { FILTER_MENU_OPTIONS } from './filter.constants';
+import reportError from '../../shared/utils/reportError';
 
 export class Filter extends PureComponent {
   static propTypes = {
@@ -28,9 +29,11 @@ export class Filter extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   state = {
+    error: null,
     loading: true,
   };
 
@@ -41,8 +44,9 @@ export class Filter extends PureComponent {
       await this.props.fetchFieldsInfo({ dataSourceId: data.datasource.id });
 
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -52,7 +56,7 @@ export class Filter extends PureComponent {
   });
 
   render() {
-    const { loading } = this.state;
+    const { error, loading } = this.state;
     const dataSourceId = pathOr('', ['filter', 'datasource', 'id'], this.props);
     const headerConfig = this.getHeaderAndMenuConfig();
 
@@ -60,7 +64,7 @@ export class Filter extends PureComponent {
       <Container>
         <MobileMenu {...headerConfig} options={FILTER_MENU_OPTIONS} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <LoadingWrapper loading={loading}>
+        <LoadingWrapper loading={loading} error={error}>
           <FilterForm
             fieldsInfo={this.props.fieldsInfo}
             updateFilter={this.props.updateFilter}
@@ -68,6 +72,7 @@ export class Filter extends PureComponent {
             removeFilter={this.props.removeFilter}
             history={this.props.history}
             dataSourceId={dataSourceId}
+            intl={this.props.intl}
           />
         </LoadingWrapper>
       </Container>

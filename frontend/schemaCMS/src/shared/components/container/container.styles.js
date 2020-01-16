@@ -7,4 +7,8 @@ export const InfoContainer = styled.div`
   font-weight: 200;
   font-size: 20px;
   line-height: 1.5em;
+
+  a {
+    color: inherit;
+  }
 `;
