@@ -23,7 +23,6 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      userRole: selectUserRole,
       createProject: promisifyRoutine(ProjectRoutines.createProject),
     },
     dispatch
