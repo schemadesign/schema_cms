@@ -41,4 +41,5 @@ export const CheckboxContent = styled.div`
 export const IconWrapper = styled.div`
   display: flex;
   cursor: move;
+  touch-action: none;
 `;
