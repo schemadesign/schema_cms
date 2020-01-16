@@ -4,13 +4,14 @@ import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './preview.styles';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import DataPreview from '../../../shared/components/dataPreview/dataPreview.component';
 import browserHistory from '../../../shared/utils/history';
 import messages from './preview.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { JOB_DETAIL_MENU_OPTIONS } from '../jobDetail.constants';
 
 export class Preview extends PureComponent {
   static propTypes = {
@@ -35,7 +36,7 @@ export class Preview extends PureComponent {
 
     return (
       <Container>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} options={JOB_DETAIL_MENU_OPTIONS} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <DataPreview {...restProps} jobId={jobId} />
         <NavigationContainer fixed>
