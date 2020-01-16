@@ -538,7 +538,6 @@ class BlockImageSerializer(serializers.ModelSerializer):
 
 
 class BlockSerializer(serializers.ModelSerializer):
-    images = serializers.SerializerMethodField(read_only=True)
     images_order = serializers.CharField(write_only=True, default="{}")
 
     class Meta:
@@ -549,7 +548,6 @@ class BlockSerializer(serializers.ModelSerializer):
             "name",
             "type",
             "content",
-            "images",
             "images_order",
             "is_active",
             "exec_order",
@@ -578,10 +576,6 @@ class BlockSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"type": message}, code="invalidType")
 
         return type_
-
-    def get_images(self, instance):
-        images = instance.images.all()
-        return BlockImageSerializer(images, many=True).data
 
     @staticmethod
     def create_images(images, images_order, block):
@@ -643,11 +637,16 @@ class BlockPageSerializer(serializers.ModelSerializer):
 
 
 class BlockDetailSerializer(BlockSerializer):
+    images = serializers.SerializerMethodField(read_only=True)
     page = NestedRelatedModelSerializer(serializer=BlockPageSerializer(), read_only=True)
     project = serializers.SerializerMethodField(read_only=True)
 
     class Meta(BlockSerializer.Meta):
-        fields = BlockSerializer.Meta.fields + ("project",)
+        fields = BlockSerializer.Meta.fields + ("project", "images")
 
     def get_project(self, obj):
         return obj.project_info
+
+    def get_images(self, instance):
+        images = instance.images.all()
+        return BlockImageSerializer(images, many=True).data
