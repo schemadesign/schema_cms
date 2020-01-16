@@ -71,8 +71,12 @@ class Common(Configuration):
     CORS_ORIGIN_ALLOW_ALL = True
 
     # Email
-    EMAIL_BACKEND = "django_ses.SESBackend"
-    AWS_SES_REGION_ENDPOINT = os.getenv("SES_ENDPOINT_URL")
+    EMAIL_BACKEND = "anymail.backends.amazon_ses.EmailBackend"
+    ANYMAIL = {
+        "AMAZON_SES_CLIENT_PARAMS": {
+            "endpoint_url": os.getenv("SES_ENDPOINT_URL")
+        },
+    }
 
     DEFAULT_FROM_EMAIL = os.getenv("DJANGO_DEFAULT_FROM_EMAIL", "info@local")
     SERVER_EMAIL = os.getenv("DJANGO_SERVER_EMAIL", "info@local")
