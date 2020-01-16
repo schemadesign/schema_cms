@@ -8,6 +8,7 @@ exports[`FolderList: Component should render correctly 1`] = `
     title="Folders"
   />
   <MobileMenu
+    active="folderNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -25,6 +26,10 @@ exports[`FolderList: Component should render correctly 1`] = `
     options={
       Array [
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
@@ -35,6 +40,10 @@ exports[`FolderList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectDetailsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project details"
@@ -45,6 +54,10 @@ exports[`FolderList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "dataSourceNavBtn",
           "label": <FormattedMessage
             defaultMessage="Data Sources"
@@ -55,6 +68,9 @@ exports[`FolderList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Users"
@@ -65,7 +81,10 @@ exports[`FolderList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
-          "active": true,
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "folderNavBtn",
           "label": <FormattedMessage
             defaultMessage="Pages"
@@ -176,6 +195,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     title="Folders"
   />
   <MobileMenu
+    active="folderNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -193,6 +213,10 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     options={
       Array [
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
@@ -203,6 +227,10 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectDetailsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project details"
@@ -213,6 +241,10 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "dataSourceNavBtn",
           "label": <FormattedMessage
             defaultMessage="Data Sources"
@@ -223,6 +255,9 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Users"
@@ -233,7 +268,10 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
           "type": "link_item",
         },
         Object {
-          "active": true,
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "folderNavBtn",
           "label": <FormattedMessage
             defaultMessage="Pages"

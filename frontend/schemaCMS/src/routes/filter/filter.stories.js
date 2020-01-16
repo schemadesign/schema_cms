@@ -3,9 +3,11 @@ import { storiesOf } from '@storybook/react';
 
 import { Filter } from './filter.component';
 import { withTheme } from '../../.storybook/decorators';
+import { ROLES } from '../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../.storybook/helpers';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   updateFilter: Function.prototype,
   fetchFieldsInfo: Function.prototype,
   fieldsInfo: {

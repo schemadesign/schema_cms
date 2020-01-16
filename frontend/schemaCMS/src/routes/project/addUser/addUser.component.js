@@ -19,14 +19,15 @@ import messages from './addUser.messages';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getMenuProjects, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class AddUser extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     match: PropTypes.shape({
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
@@ -136,11 +137,12 @@ export class AddUser extends PureComponent {
   );
 
   render() {
-    const { users } = this.props;
+    const { users, userRole } = this.props;
     const { showConfirmationModal, loading, error } = this.state;
     const projectId = getMatchParam(this.props, 'projectId');
     const headerTitle = <FormattedMessage {...messages.headerTitle} />;
     const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
@@ -148,7 +150,7 @@ export class AddUser extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={getMenuProjects(projectId, NONE)}
+          options={filterMenuOptions(menuOptions, userRole)}
         />
         <LoadingWrapper loading={loading} error={error} noData={!users.length}>
           {this.props.users.map(this.renderUser)}

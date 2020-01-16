@@ -8,8 +8,11 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { CreateDataSource } from './createDataSource.component';
 import { DataSourceRoutines } from '../../../modules/dataSource';
+import { selectUserRole } from '../../../modules/userProfile';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
+});
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(

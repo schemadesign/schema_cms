@@ -5,21 +5,23 @@ import { always, isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { generateApiUrl } from '../../../shared/utils/helpers';
+import { generateApiUrl, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './list.messages';
 import { Container, Description, HeaderItem, HeaderList, Footer, descriptionStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { ListItem, ListContainer } from '../../../shared/components/listComponents';
+import { getProjectMenuOptions, PROJECTS_ID } from '../project.constants';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import reportError from '../../../shared/utils/reportError';
 
 const { H1, P } = Typography;
 
 export class List extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     isAdmin: PropTypes.bool.isRequired,
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
@@ -96,18 +98,25 @@ export class List extends PureComponent {
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleNewProject} />))(isAdmin);
 
   render() {
-    const { list = [], isAdmin } = this.props;
+    const { list = [], isAdmin, userRole } = this.props;
     const { loading, error } = this.state;
 
     const title = this.formatMessage(messages.title);
     const subtitle = this.formatMessage(messages.overview);
 
     const loadingConfig = this.getLoadingConfig(list, loading, error);
+    const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={title} headerSubtitle={subtitle} isAdmin={isAdmin} />
+        <MobileMenu
+          headerTitle={title}
+          headerSubtitle={subtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECTS_ID}
+        />
         <ContextHeader title={title} subtitle={subtitle}>
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>

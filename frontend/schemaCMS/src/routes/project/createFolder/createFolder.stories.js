@@ -4,8 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { CreateFolder } from './createFolder.component';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   values: {},
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,

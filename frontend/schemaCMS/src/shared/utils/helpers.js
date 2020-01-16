@@ -1,6 +1,22 @@
-import { complement, either, forEach, is, isEmpty, isNil, keys, map, path, pathOr, pickBy, pipe } from 'ramda';
+import {
+  complement,
+  either,
+  filter,
+  forEach,
+  includes,
+  is,
+  isEmpty,
+  isNil,
+  keys,
+  map,
+  path,
+  pathOr,
+  pickBy,
+  pipe,
+} from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
+import { ROLES } from '../../modules/userProfile/userProfile.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
@@ -47,3 +63,7 @@ export const getQueryParams = pipe(
   pathOr('', ['location', 'search']),
   queryString.parse
 );
+
+const byRole = userRole => item => includes(userRole, item.allowedRoles);
+
+export const filterMenuOptions = (options, userRole) => filter(byRole(userRole))(options);

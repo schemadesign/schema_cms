@@ -4,8 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../.storybook/decorators';
 import { history } from '../../../.storybook/helpers';
 import { AddUser } from './addUser.component';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchUsers: Function.prototype,
   removeUser: Function.prototype,
   fetchProjectEditors: Function.prototype,

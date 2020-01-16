@@ -2,7 +2,7 @@
 
 exports[`User List: Component should render correctly with loader 1`] = `
 <styled.div>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -17,9 +17,24 @@ exports[`User List: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
-    isAdmin={true}
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="user.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -79,7 +94,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
 
 exports[`User List: Component should render correctly with users data 1`] = `
 <styled.div>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -94,9 +109,24 @@ exports[`User List: Component should render correctly with users data 1`] = `
         values={Object {}}
       />
     }
-    isAdmin={true}
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="user.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={

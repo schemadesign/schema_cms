@@ -23,6 +23,11 @@ export const selectIsAdmin = createSelector(
   prop('isAdmin')
 );
 
+export const selectUserRole = createSelector(
+  selectUserProfileDomain,
+  path(['user', 'role'])
+);
+
 export const selectUserId = createSelector(
   selectUserProfileDomain,
   path(['user', 'id'])

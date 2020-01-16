@@ -10,15 +10,17 @@ import messages from './userDetails.messages';
 import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
+
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getMenuProjects, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 export class UserDetails extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     fetchUser: PropTypes.func.isRequired,
     removeEditorFromProject: PropTypes.func.isRequired,
     userData: PropTypes.object.isRequired,
@@ -73,11 +75,12 @@ export class UserDetails extends PureComponent {
   );
 
   render() {
+    const { userData, isAdmin, userRole } = this.props;
     const { error, loading } = this.state;
-    const { userData, isAdmin } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
@@ -85,7 +88,7 @@ export class UserDetails extends PureComponent {
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={getMenuProjects(projectId, NONE)}
+          options={filterMenuOptions(menuOptions, userRole)}
         />
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent(userData)}

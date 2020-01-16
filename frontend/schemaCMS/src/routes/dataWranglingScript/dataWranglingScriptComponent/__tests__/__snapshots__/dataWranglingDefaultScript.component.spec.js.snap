@@ -7,11 +7,27 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="View step"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="jobDetail.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle="View step"
@@ -134,11 +150,27 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     encodeSpecialCharacters={true}
     title="View step"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="jobDetail.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle="View step"

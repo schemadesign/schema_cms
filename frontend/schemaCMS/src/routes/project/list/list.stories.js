@@ -6,8 +6,10 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 import { List } from './list.component';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const emptyListProps = {
+  userRole: ROLES.ADMIN,
   isAdmin: true,
   list: [],
   fetchProjectsList: Function.prototype,

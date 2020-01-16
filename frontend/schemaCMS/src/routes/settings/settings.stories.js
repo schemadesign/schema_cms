@@ -3,10 +3,11 @@ import { storiesOf } from '@storybook/react';
 
 import { Settings } from './settings.component';
 import { withTheme } from '../../.storybook/decorators';
-import { AUTH_METHODS } from '../../modules/userProfile/userProfile.constants';
+import { AUTH_METHODS, ROLES } from '../../modules/userProfile/userProfile.constants';
 import { userData } from '../../modules/userProfile/userProfile.mock';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   updateMe: Function.prototype,
   clearProject: Function.prototype,
   userData: {

@@ -10,12 +10,13 @@ import {
   DESCRIPTION,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { TopHeader } from '../../../shared/components/topHeader';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { Container, customInputStyles, Form } from './dataWranglingDefaultScript.styles';
 import messages from './dataWranglingDefaultScript.messages';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { DATA_WRANGLING_SCRIPT_MENU_OPTIONS } from '../dataWranglingScript.constants';
 
 export class DataWranglingDefaultScript extends PureComponent {
   static propTypes = {
@@ -61,7 +62,7 @@ export class DataWranglingDefaultScript extends PureComponent {
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader {...headerConfig} />
+        <MobileMenu {...headerConfig} options={DATA_WRANGLING_SCRIPT_MENU_OPTIONS} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />

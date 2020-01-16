@@ -9,6 +9,7 @@ import { View } from './view.component';
 const emptyProps = {
   fetchProject: Function.prototype,
   removeProject: Function.prototype,
+  userRole: ROLES.ADMIN,
   user: {
     role: ROLES.ADMIN,
   },

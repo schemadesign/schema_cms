@@ -8,11 +8,16 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     title="Data Sources"
   />
   <MobileMenu
+    active="dataSourceNavBtn"
     headerSubtitle="Overview"
     headerTitle="Data Sources"
     options={
       Array [
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
@@ -23,6 +28,10 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectDetailsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project details"
@@ -33,7 +42,10 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
-          "active": true,
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "dataSourceNavBtn",
           "label": <FormattedMessage
             defaultMessage="Data Sources"
@@ -44,6 +56,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Users"
@@ -54,6 +69,10 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "folderNavBtn",
           "label": <FormattedMessage
             defaultMessage="Pages"
@@ -852,11 +871,16 @@ exports[`DataSourceList: Component should render empty 1`] = `
     title="Data Sources"
   />
   <MobileMenu
+    active="dataSourceNavBtn"
     headerSubtitle="Overview"
     headerTitle="Data Sources"
     options={
       Array [
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
@@ -867,6 +891,10 @@ exports[`DataSourceList: Component should render empty 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectDetailsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project details"
@@ -877,7 +905,10 @@ exports[`DataSourceList: Component should render empty 1`] = `
           "type": "link_item",
         },
         Object {
-          "active": true,
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "dataSourceNavBtn",
           "label": <FormattedMessage
             defaultMessage="Data Sources"
@@ -888,6 +919,9 @@ exports[`DataSourceList: Component should render empty 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Users"
@@ -898,6 +932,10 @@ exports[`DataSourceList: Component should render empty 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "folderNavBtn",
           "label": <FormattedMessage
             defaultMessage="Pages"

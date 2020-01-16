@@ -8,6 +8,7 @@ import { UserList } from './userList.component';
 const { ADMIN, EDITOR } = ROLES;
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchUsers: Function.prototype,
   removeUser: Function.prototype,
   isAdmin: true,

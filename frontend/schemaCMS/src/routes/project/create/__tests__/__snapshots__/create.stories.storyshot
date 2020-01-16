@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|Create Default 1`] = `
-.c15 {
+.c13 {
   padding-top: 7px;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17,21 +17,21 @@ exports[`Storyshots Project|Create Default 1`] = `
   position: relative;
 }
 
-.c16 label {
+.c14 label {
   margin-bottom: 1px;
 }
 
-.c17 {
+.c15 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c18 {
+.c16 {
   height: 155px;
 }
 
-.c20 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@ exports[`Storyshots Project|Create Default 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c17 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -59,9 +59,25 @@ exports[`Storyshots Project|Create Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c21 {
+.c19 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c8 {
+  display: none;
+}
+
+.c9 {
+  margin-right: 20px;
+}
+
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
 }
 
 .c0 {
@@ -87,24 +103,6 @@ exports[`Storyshots Project|Create Default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c8 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
 }
 
 .c5 {
@@ -114,83 +112,33 @@ exports[`Storyshots Project|Create Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
-  display: block;
 }
 
-.c5 a {
+.c5 a,
+.c5 div {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
+  color: rgba(255,255,255,0.75);
   display: block;
-}
-
-.c5:first-of-type {
-  border-top: 2.4px solid #2F2F36;
 }
 
 .c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #2F2F36;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c7 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #FFF;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c7 a {
+  color: #FFF;
+  font-size: 14px;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c7:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c9 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c9 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
+  margin: 12px 0;
 }
 
 .c1 {
@@ -201,28 +149,12 @@ exports[`Storyshots Project|Create Default 1`] = `
   word-break: break-word;
 }
 
-.c10 {
-  display: none;
-}
-
-.c11 {
-  margin-right: 20px;
-}
-
 .c12 {
-  color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
-}
-
-.c14 {
   width: 100%;
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c18 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -231,7 +163,7 @@ exports[`Storyshots Project|Create Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c17 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -240,47 +172,13 @@ exports[`Storyshots Project|Create Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c21 {
+  .c19 {
     width: 240px;
   }
 }
 
 @media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c3 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c7 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c10 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -294,6 +192,19 @@ exports[`Storyshots Project|Create Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
   }
 }
 
@@ -347,7 +258,9 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              Create New Project
+              <span>
+                Create New Project
+              </span>
             </h2>
             <h1
               className="c2"
@@ -363,7 +276,9 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              Project Info
+              <span>
+                Project Info
+              </span>
             </h1>
           </div>
         </div>
@@ -447,7 +362,9 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              Create New Project
+              <span>
+                Create New Project
+              </span>
             </h2>
             <h1
               className="c2"
@@ -463,43 +380,88 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              Project Info
+              <span>
+                Project Info
+              </span>
             </h1>
           </div>
         </div>
         <div
           className="c3"
         >
-          <ul
+          <div
             className="c4"
           >
-            <li
+            <div
               className="c5"
             >
               <a
-                href="/project"
-                id="projectNavBtn"
+                href="/project/"
+                id="projectsNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Projects
                 </span>
               </a>
-            </li>
-            <li
-              className="c6"
+            </div>
+            <div
+              className="c5"
             >
               <a
-                href="/user"
-                id="userNavBtn"
+                href="/project/undefined"
+                id="projectDetailsNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Project details
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/datasource"
+                id="dataSourceNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Data Sources
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/user"
+                id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Users
                 </span>
               </a>
-            </li>
-            <li
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/folder"
+                id="folderNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Pages
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            className="c4"
+          >
+            <div
               className="c5"
             >
               <a
@@ -511,60 +473,53 @@ exports[`Storyshots Project|Create Default 1`] = `
                   Settings
                 </span>
               </a>
-            </li>
-            <li
+            </div>
+            <div
+              className="c5"
+            >
+              <div
+                onClick={[Function]}
+              >
+                <span>
+                  Log out
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
               className="c7"
-              id="logoutNavBtn"
+              href="/"
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
-                Log out
+                About Schema CMS
               </span>
-            </li>
-          </ul>
-          <ul
-            className="c8"
-          >
-            <li
-              className="c9"
+            </a>
+            <a
+              className="c7"
+              href="/"
+              id="apiNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="aboutNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
+              <span>
+                API Doc
+              </span>
+            </a>
+            <a
+              className="c7"
+              href="/"
+              id="repositoryNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="apiNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
-            >
-              <a
-                href="/"
-                id="repositoryNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
+              <span>
+                GitHub Repository
+              </span>
+            </a>
+          </div>
         </div>
         <button
           disabled={false}
@@ -610,13 +565,13 @@ exports[`Storyshots Project|Create Default 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="c8"
     >
       <div
-        className="c11"
+        className="c9"
       >
         <h2
-          className="c12"
+          className="c10"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -627,10 +582,12 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           }
         >
-          Create New Project
+          <span>
+            Create New Project
+          </span>
         </h2>
         <h1
-          className="c13"
+          className="c11"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -643,7 +600,9 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           }
         >
-          Project Info
+          <span>
+            Project Info
+          </span>
         </h1>
       </div>
       <div
@@ -651,7 +610,7 @@ exports[`Storyshots Project|Create Default 1`] = `
       />
     </div>
     <form
-      className="c14"
+      className="c12"
       onSubmit={[Function]}
     >
       <div
@@ -715,7 +674,7 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           >
             <div
-              className="c15"
+              className="c13"
             >
               <svg
                 style={
@@ -796,7 +755,7 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           >
             <div
-              className="c15"
+              className="c13"
             >
               <svg
                 style={
@@ -880,7 +839,7 @@ exports[`Storyshots Project|Create Default 1`] = `
         </div>
       </div>
       <div
-        className="c16"
+        className="c14"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -906,7 +865,7 @@ exports[`Storyshots Project|Create Default 1`] = `
           value="in_progress"
         />
         <div
-          className="c17"
+          className="c15"
         >
           <svg
             style={
@@ -1045,16 +1004,16 @@ exports[`Storyshots Project|Create Default 1`] = `
         </div>
       </div>
       <div
-        className="c18"
+        className="c16"
       >
         <div
-          className="c19"
+          className="c17"
         >
           <div
-            className="c20"
+            className="c18"
           >
             <button
-              className="c21"
+              className="c19"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1082,7 +1041,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               </span>
             </button>
             <button
-              className="c21"
+              className="c19"
               disabled={false}
               id="finishBtn"
               style={

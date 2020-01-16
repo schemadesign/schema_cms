@@ -33,17 +33,18 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getMenuProjects, PROJECT_DATASOURCE_ID } from '../project.constants';
+import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constants';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
 export class DataSourceList extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     createDataSource: PropTypes.func.isRequired,
     fetchDataSources: PropTypes.func.isRequired,
     cancelFetchListLoop: PropTypes.func.isRequired,
@@ -177,11 +178,12 @@ export class DataSourceList extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { dataSources = [], match } = this.props;
+    const { dataSources = [], match, userRole } = this.props;
     const title = this.props.intl.formatMessage(messages.title);
     const subtitle = this.props.intl.formatMessage(messages.subTitle);
     const loadingConfig = this.getLoadingConfig(loading, error, dataSources);
     const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
@@ -189,7 +191,8 @@ export class DataSourceList extends PureComponent {
         <MobileMenu
           headerTitle={title}
           headerSubtitle={subtitle}
-          options={getMenuProjects(projectId, PROJECT_DATASOURCE_ID)}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECT_DATASOURCE_ID}
         />
         <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>

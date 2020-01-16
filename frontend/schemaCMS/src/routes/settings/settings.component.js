@@ -5,13 +5,11 @@ import { Formik } from 'formik';
 import { always } from 'ramda';
 
 import { UserProfile } from '../../shared/components/userProfile/userProfile.component';
-import { TopHeader } from '../../shared/components/topHeader';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import messages from './settings.messages';
 import {
   AUTH_METHODS,
   INITIAL_VALUES,
-  ROLES,
   USER_PROFILE_FORM,
   USER_PROFILE_SCHEMA,
 } from '../../modules/userProfile/userProfile.constants';
@@ -19,10 +17,14 @@ import { Link, LinkContainer } from '../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { Form } from './settings.styles';
 import { renderWhenTrue } from '../../shared/utils/rendering';
-import { errorMessageParser } from '../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../shared/utils/helpers';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
+import { SETTINGS_MENU_OPTIONS } from './settings.constants';
+import { SETTINGS_ID } from '../../shared/components/menu/mobileMenu/mobileMenu.constants';
 
 export class Settings extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     updateMe: PropTypes.func.isRequired,
     clearProject: PropTypes.func.isRequired,
     userData: PropTypes.object.isRequired,
@@ -75,13 +77,19 @@ export class Settings extends PureComponent {
   };
 
   render() {
-    const { userData } = this.props;
+    const { userData, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const filteredOptions = filterMenuOptions(SETTINGS_MENU_OPTIONS, userRole);
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} isAdmin={userData.role === ROLES.ADMIN} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filteredOptions}
+          active={SETTINGS_ID}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Formik
           enableReinitialize

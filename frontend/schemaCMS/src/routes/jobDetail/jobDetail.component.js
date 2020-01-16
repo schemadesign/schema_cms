@@ -10,9 +10,10 @@ import messages from './jobDetail.messages';
 import { DESCRIPTION, ERROR, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
-import { TopHeader } from '../../shared/components/topHeader';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../shared/components/contextHeader';
+import { JOB_DETAIL_MENU_OPTIONS } from './jobDetail.constants';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 import reportError from '../../shared/utils/reportError';
 
 export class JobDetail extends PureComponent {
@@ -158,7 +159,7 @@ export class JobDetail extends PureComponent {
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} options={JOB_DETAIL_MENU_OPTIONS} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
           {this.renderForm(job)}

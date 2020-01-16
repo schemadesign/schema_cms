@@ -8,8 +8,10 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { FolderList } from './folderList.component';
 import { selectFolders, FolderRoutines } from '../../../modules/folder';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   folders: selectFolders,
 });
 

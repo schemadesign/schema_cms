@@ -12,13 +12,14 @@ import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getMenuProjects, PROJECT_USERS_ID } from '../project.constants';
+import { getProjectMenuOptions, PROJECT_USERS_ID } from '../project.constants';
 
 export class UserList extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string,
     fetchUsers: PropTypes.func.isRequired,
     removeUser: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
@@ -57,17 +58,19 @@ export class UserList extends PureComponent {
 
   render() {
     const { error, loading } = this.state;
-    const { match, isAdmin, users } = this.props;
+    const { match, isAdmin, users, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.headerTitle} />;
     const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
     const projectId = getMatchParam(this.props, 'projectId');
+    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Fragment>
         <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          options={getMenuProjects(projectId, PROJECT_USERS_ID)}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECT_USERS_ID}
         />
         <ProjectTabs active={USERS} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>

@@ -47,6 +47,10 @@ export default defineMessages({
     id: 'jobDetail.stepsTitle',
     defaultMessage: 'Steps:',
   },
+  projectsListPage: {
+    id: 'jobDetail.projectsListPage',
+    defaultMessage: 'Projects',
+  },
   [JOB_ID]: {
     id: 'jobDetail.jobId',
     defaultMessage: 'Job Id',

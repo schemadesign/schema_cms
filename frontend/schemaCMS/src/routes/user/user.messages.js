@@ -2,12 +2,8 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  subTitle: {
-    id: 'filter.subTitle',
-    defaultMessage: 'Edit Filter',
-  },
   projectsListPage: {
-    id: 'filter.projectsListPage',
+    id: 'user.projectsListPage',
     defaultMessage: 'Projects',
   },
 });

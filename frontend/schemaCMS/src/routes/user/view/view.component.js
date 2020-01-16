@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { Container, Link } from './view.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { UserProfile } from '../../../shared/components/userProfile/userProfile.component';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './view.messages';
 import { modalStyles, Modal, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
@@ -14,6 +13,8 @@ import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { USER_MENU_OPTIONS } from '../user.constants';
 import reportError from '../../../shared/utils/reportError';
 
 export class View extends PureComponent {
@@ -95,7 +96,7 @@ export class View extends PureComponent {
 
     return (
       <Container>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} options={USER_MENU_OPTIONS} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent(userData, isEditor, isAdmin)}
