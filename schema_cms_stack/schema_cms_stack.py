@@ -296,7 +296,7 @@ class API(core.Stack):
         )
 
         self.api.task_definition.add_to_task_role_policy(
-            aws_iam.PolicyStatement(actions=["ses:SendRawEmail"], resources=["*"])
+            aws_iam.PolicyStatement(actions=["ses:SendRawEmail", "ses:SendBulkTemplatedEmail"], resources=["*"])
         )
 
     def map_secret(self, secret_arn):
