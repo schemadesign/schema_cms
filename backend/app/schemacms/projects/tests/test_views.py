@@ -553,6 +553,71 @@ class TestDataSourceUpdateMeta:
     def get_url(pk):
         return reverse("projects:datasource-update-meta", kwargs=dict(pk=pk))
 
+    @staticmethod
+    def generate_update_meta_payload(datasource_pk, is_status_update=False):
+        if is_status_update:
+            payload = dict(datasource_pk=datasource_pk, status=projects_constants.ProcessingState.PROCESSING)
+        else:
+            payload = dict(
+                items=2,
+                fields=2,
+                fields_names=["fields_1", "field2"],
+                fields_with_urls=[],
+                preview={"preview": "test"},
+                copy_steps=False,
+                status=projects_constants.ProcessingState.SUCCESS,
+            )
+        return payload
+
+    @pytest.mark.parametrize(
+        "token, response_status",
+        [
+            ("invalidToken", status.HTTP_401_UNAUTHORIZED),
+            (settings.LAMBDA_AUTH_TOKEN, status.HTTP_204_NO_CONTENT),
+        ],
+    )
+    def test_authentication_on_update_meta(self, api_client, data_source, token, response_status):
+        response = api_client.post(
+            self.get_url(data_source.pk), {}, HTTP_AUTHORIZATION=f"Token {token}", format="json"
+        )
+
+        assert response.status_code == response_status
+
+    def test_status_update(self, api_client, data_source):
+        old_datasource_status = data_source.meta_data.status
+        payload = self.generate_update_meta_payload(datasource_pk=data_source.pk, is_status_update=True)
+
+        response = api_client.post(
+            self.get_url(data_source.pk),
+            payload,
+            HTTP_AUTHORIZATION=f"Token {settings.LAMBDA_AUTH_TOKEN}",
+            format="json",
+        )
+        data_source.meta_data.refresh_from_db()
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert data_source.meta_data.status != old_datasource_status
+        assert data_source.meta_data.status == projects_constants.ProcessingState.PROCESSING
+
+    @pytest.mark.usefixtures("fake_job_schedule")
+    def test_meta_update(self, api_client, data_source):
+        payload = self.generate_update_meta_payload(datasource_pk=data_source.pk)
+
+        response = api_client.post(
+            self.get_url(data_source.pk),
+            payload,
+            HTTP_AUTHORIZATION=f"Token {settings.LAMBDA_AUTH_TOKEN}",
+            format="json",
+        )
+        data_source.meta_data.refresh_from_db()
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert data_source.meta_data.status == projects_constants.ProcessingState.SUCCESS
+        assert data_source.meta_data.items == payload["items"]
+        assert data_source.meta_data.fields == payload["fields"]
+        assert data_source.meta_data.preview == payload["preview"]
+        assert data_source.meta_data.fields_names == payload["fields_names"]
+
 
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
