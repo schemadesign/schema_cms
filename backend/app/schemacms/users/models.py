@@ -64,7 +64,7 @@ class User(AbstractUser):
         try:
             mail.send_message(
                 email=self.email,
-                template=mail.MandrillTemplate.INVITATION,
+                template=mail.EmailTemplate.INVITATION,
                 subject="Invitation",
                 merge_data_dict={"url": url},
             )

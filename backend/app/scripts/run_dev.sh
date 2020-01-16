@@ -7,6 +7,11 @@ set -e
 # wait untill secretsmanager become ready
 wait_for_secretsmanager
 echo "Secrets manager is up"
+wait_for_s3
+echo "S3 manager is up"
+wait_for_sqs
+echo "SQS manager is up"
+
 
 # install all localstack fixtures
 
@@ -79,6 +84,16 @@ echo "Secrets manager is up"
 #} || {
 #    echo "Public-API function NOT created"
 #}
+
+
+
+{
+    create_ses_email &&
+    echo "Email Verified in SES"
+} || {
+    echo "Email Verified fail!!"
+}
+
 
 echo "LocalStack fixtures installed"
 
