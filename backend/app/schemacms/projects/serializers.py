@@ -542,16 +542,7 @@ class BlockSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Block
-        fields = (
-            "id",
-            "page",
-            "name",
-            "type",
-            "content",
-            "images_order",
-            "is_active",
-            "exec_order",
-        )
+        fields = ("id", "page", "name", "type", "content", "images_order", "is_active", "exec_order")
         extra_kwargs = {
             "page": {"required": False, "allow_null": True},
             "content": {"required": False, "allow_null": True, "allow_blank": False},

@@ -478,9 +478,13 @@ class PageViewSet(
         page = self.get_object()
 
         if request.method == "GET":
-            queryset = page.blocks.prefetch_related(
-                Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
-            ).all().order_by('exec_order')
+            queryset = (
+                page.blocks.prefetch_related(
+                    Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
+                )
+                .all()
+                .order_by('exec_order')
+            )
             serializer = self.get_serializer(instance=queryset, many=True)
             data = {"project": page.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
