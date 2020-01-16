@@ -27,7 +27,6 @@ import {
   DESCRIPTION,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { Container, customInputStyles, Form } from './imageScrapingScript.styles';
 import messages from './imageScrapingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -36,6 +35,8 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { InfoContainer } from '../../../shared/components/container/container.styles';
+import { DATA_WRANGLING_SCRIPT_MENU_OPTIONS } from '../dataWranglingScript.constants';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
 const { CheckboxGroup, Checkbox, Label } = FormUI;
 const { Span } = Typography;
@@ -182,7 +183,7 @@ export class ImageScrapingScript extends PureComponent {
     return (
       <Container>
         <Helmet title={intl.formatMessage(messages.pageTitle)} />
-        <TopHeader {...headerConfig} />
+        <MobileMenu {...headerConfig} options={DATA_WRANGLING_SCRIPT_MENU_OPTIONS} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
