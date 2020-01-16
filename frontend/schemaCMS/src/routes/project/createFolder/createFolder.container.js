@@ -14,12 +14,13 @@ import { FOLDER_FORM, FOLDER_SCHEMA, INITIAL_VALUES } from '../../../modules/fol
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import { selectUserRole } from '../../../modules/userProfile';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
+});
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      userRole: selectUserRole,
       createFolder: promisifyRoutine(FolderRoutines.create),
     },
     dispatch

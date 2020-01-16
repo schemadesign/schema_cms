@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   projectsListPage: {
-    id: 'jobDetail.projectsListPage',
+    id: 'user.projectsListPage',
     defaultMessage: 'Projects',
   },
 });

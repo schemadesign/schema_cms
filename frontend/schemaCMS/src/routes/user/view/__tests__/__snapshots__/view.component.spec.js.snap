@@ -27,7 +27,7 @@ exports[`View: Component should render correctly 1`] = `
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
-            id="jobDetail.projectsListPage"
+            id="user.projectsListPage"
             values={Object {}}
           />,
           "to": "/project/",
@@ -231,7 +231,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
-            id="jobDetail.projectsListPage"
+            id="user.projectsListPage"
             values={Object {}}
           />,
           "to": "/project/",

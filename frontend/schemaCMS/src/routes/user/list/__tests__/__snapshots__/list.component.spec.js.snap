@@ -27,7 +27,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
-            id="jobDetail.projectsListPage"
+            id="user.projectsListPage"
             values={Object {}}
           />,
           "to": "/project/",
@@ -119,7 +119,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
-            id="jobDetail.projectsListPage"
+            id="user.projectsListPage"
             values={Object {}}
           />,
           "to": "/project/",

@@ -9,7 +9,7 @@ import { FOLDER_NAME } from '../../../modules/folder/folder.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
-import { getProjectMenuOptions, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
 export class CreateFolder extends PureComponent {
