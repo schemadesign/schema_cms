@@ -27,6 +27,17 @@ class TestUserListView:
         assert response.data["count"] == len(expected_users)
         assert {r["id"] for r in response.data["results"]} == {str(user.id) for user in expected_users}
 
+    @pytest.mark.parametrize(
+        "role, response_status", [("editor", status.HTTP_403_FORBIDDEN), ("admin", status.HTTP_200_OK)]
+    )
+    def test_permissions(self, api_client, user_factory, role, response_status):
+        user = user_factory(role=role)
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url())
+
+        assert response.status_code == response_status
+
     def test_response_ordering(self, api_client, user_factory):
         user = user_factory()
         expected_users = sorted(

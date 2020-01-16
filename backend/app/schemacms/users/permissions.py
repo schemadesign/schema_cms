@@ -7,7 +7,7 @@ def get_project(project_id):
     try:
         project = Project.objects.get(pk=project_id)
     except Project.DoesNotExist:
-        return exceptions.NotFound
+        raise exceptions.NotFound
 
     return project
 
@@ -40,11 +40,7 @@ class GeneralObjectAccessPermission(permissions.BasePermission):
 
 class UsersViewSetPermission(permissions.BasePermission):
     def has_permission(self, request, view):
-        if request.method in permissions.SAFE_METHODS:
-            return True
         return request.user.is_admin
 
     def has_object_permission(self, request, view, obj):
-        if request.method in permissions.SAFE_METHODS:
-            return True
         return request.user.is_admin
