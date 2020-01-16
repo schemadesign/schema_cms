@@ -40,6 +40,11 @@ jest.mock('react-dnd', () => ({
   useDrag: () => [{ isDragging: false }, Function.prototype],
 }));
 
+jest.mock('./shared/utils/reportError', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
+
 window.scrollTo = jest.fn();
 
 afterEach(() => {

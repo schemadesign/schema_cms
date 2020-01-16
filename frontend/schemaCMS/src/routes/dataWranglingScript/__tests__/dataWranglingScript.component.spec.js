@@ -58,4 +58,16 @@ describe('DataWranglingScript: Component', () => {
 
     expect(defaultProps.fetchDataWranglingScript).toHaveBeenCalled();
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchDataWranglingScript should return error';
+    const wrapper = await render({
+      fetchDataWranglingScript: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

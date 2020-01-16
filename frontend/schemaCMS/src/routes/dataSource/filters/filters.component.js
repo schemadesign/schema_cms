@@ -15,6 +15,7 @@ import { NavigationContainer, NextButton } from '../../../shared/components/navi
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import reportError from '../../../shared/utils/reportError';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -47,6 +48,7 @@ export class Filters extends PureComponent {
 
       await this.props.fetchFilters({ dataSourceId });
     } catch (error) {
+      reportError(error);
       this.setState({ error });
     } finally {
       this.setState({ loading: false });

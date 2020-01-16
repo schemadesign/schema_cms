@@ -10,9 +10,17 @@ describe('UserDetails: Component', () => {
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should render correctly with loading', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly', async () => {
+    const wrapper = await render({
+      fetchUser: jest.fn().mockReturnValue(Promise.resolve()),
+    });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should fetch user', () => {
@@ -43,5 +51,17 @@ describe('UserDetails: Component', () => {
     wrapper.find(NextButton).simulate('click');
 
     expect(defaultProps.removeEditorFromProject).toBeCalledWith({ isDetails: true, projectId: '1', userId: '1' });
+  });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchUser should return error';
+    const wrapper = await render({
+      fetchUser: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
   });
 });

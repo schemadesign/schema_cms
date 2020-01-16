@@ -12,6 +12,7 @@ import { DesktopTopHeader } from '../shared/components/desktopTopHeader';
 import messages from './app.messages';
 import { Container, Content } from './app.styles';
 import { renderWhenTrue } from '../shared/utils/rendering';
+import reportError from '../shared/utils/reportError';
 import { LoadingWrapper } from '../shared/components/loadingWrapper';
 import { ScrollToTop } from '../shared/components/scrollToTop';
 
@@ -40,6 +41,7 @@ export class App extends PureComponent {
     try {
       await this.props.startup();
     } catch (error) {
+      reportError(error);
       this.setState({ error });
     } finally {
       this.setState({ loading: false });

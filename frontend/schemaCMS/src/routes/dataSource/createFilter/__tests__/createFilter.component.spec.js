@@ -29,4 +29,16 @@ describe('CreateFilter: Component', () => {
 
     expect(defaultProps.fetchFieldsInfo).toHaveBeenCalled();
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchFieldsInfo should return error';
+    const wrapper = await render({
+      fetchFieldsInfo: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

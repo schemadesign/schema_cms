@@ -1002,15 +1002,11 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c19"
   >
-    <div
-      className="c19"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
+    <span>
+      Loading...
+    </span>
   </div>
   <div
     className="c20"

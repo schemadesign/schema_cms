@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
 
 import { JobDetail } from '../jobDetail.component';
 import { defaultProps, failureJob, fakeJob } from '../jobDetail.stories';
@@ -15,41 +13,50 @@ describe('JobDetail: Component', () => {
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
-    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render(defaultProps);
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    const wrapper = await render({
+      fetchOne: jest.fn().mockReturnValue(Promise.resolve()),
+    });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with failure job', async () => {
-    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render({ job: failureJob });
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    const wrapper = await render({
+      fetchOne: jest.fn().mockReturnValue(Promise.resolve()),
+      job: failureJob,
+    });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly with fake job', async () => {
-    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render({ job: fakeJob });
-    await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    const wrapper = await render({
+      fetchOne: jest.fn().mockReturnValue(Promise.resolve()),
+      job: fakeJob,
+    });
+
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call fetchOne on componentDidMount', () => {
-    const fetchOne = spy();
-    render({ fetchOne });
-    expect(fetchOne).to.have.been.calledWith({ jobId: '1' });
+    jest.spyOn(defaultProps, 'fetchOne');
+
+    render();
+
+    expect(defaultProps.fetchOne).toHaveBeenCalledWith({ jobId: '1' });
   });
 
   it('should submit form', async () => {
-    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
-
     jest.spyOn(defaultProps, 'handleSubmit');
-    const wrapper = await render();
+
+    const wrapper = await render({
+      fetchOne: jest.fn().mockReturnValue(Promise.resolve()),
+      job: fakeJob,
+    });
 
     wrapper
       .find(LoadingWrapper)
@@ -58,6 +65,18 @@ describe('JobDetail: Component', () => {
       .dive()
       .simulate('submit');
 
-    global.expect(defaultProps.handleSubmit).toHaveBeenCalled();
+    expect(defaultProps.handleSubmit).toHaveBeenCalled();
+  });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchOne should return error';
+    const wrapper = await render({
+      fetchOne: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
   });
 });

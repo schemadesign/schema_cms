@@ -15,24 +15,32 @@ describe('List: Component', () => {
   });
 
   it('should render correctly', async () => {
-    const props = {
+    const wrapper = await render({
       fetchProjectsList: jest.fn().mockReturnValue(Promise.resolve()),
-    };
-    const wrapper = render(props);
-    await Promise.resolve();
+    });
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render without data', async () => {
-    const props = {
+    const wrapper = await render({
       fetchProjectsList: jest.fn().mockReturnValue(Promise.resolve()),
       list: [],
-    };
-    const wrapper = render(props);
-    await Promise.resolve();
+    });
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchProjectsList should return error';
+    const wrapper = await render({
+      fetchProjectsList: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
   });
 
   it('should call fetchProjectsList on componentDidMount', async () => {

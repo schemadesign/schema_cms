@@ -14,6 +14,7 @@ import messages from './list.messages';
 import { Container, Description, HeaderItem, HeaderList, Footer, descriptionStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { ListItem, ListContainer } from '../../../shared/components/listComponents';
+import reportError from '../../../shared/utils/reportError';
 
 const { H1, P } = Typography;
 
@@ -36,10 +37,8 @@ export class List extends PureComponent {
       await this.props.fetchProjectsList();
       this.setState({ loading: false });
     } catch (error) {
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

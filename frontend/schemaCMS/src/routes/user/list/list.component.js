@@ -10,6 +10,7 @@ import { Container } from '../../project/list/list.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './list.messages';
 import browserHistory from '../../../shared/utils/history';
+import reportError from '../../../shared/utils/reportError';
 
 export class List extends PureComponent {
   static propTypes = {
@@ -28,10 +29,8 @@ export class List extends PureComponent {
       await this.props.fetchUsers();
       this.setState({ loading: false });
     } catch (error) {
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

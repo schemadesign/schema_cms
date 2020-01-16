@@ -10,6 +10,7 @@ import { FilterForm } from '../../shared/components/filterForm';
 import { TopHeader } from '../../shared/components/topHeader';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import { getMatchParam } from '../../shared/utils/helpers';
+import reportError from '../../shared/utils/reportError';
 
 export class Filter extends PureComponent {
   static propTypes = {
@@ -30,6 +31,7 @@ export class Filter extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
   };
 
@@ -40,8 +42,9 @@ export class Filter extends PureComponent {
       await this.props.fetchFieldsInfo({ dataSourceId: data.datasource.id });
 
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -51,7 +54,7 @@ export class Filter extends PureComponent {
   });
 
   render() {
-    const { loading } = this.state;
+    const { error, loading } = this.state;
     const dataSourceId = pathOr('', ['filter', 'datasource', 'id'], this.props);
     const headerConfig = this.getHeaderAndMenuConfig();
 
@@ -59,7 +62,7 @@ export class Filter extends PureComponent {
       <Container>
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <LoadingWrapper loading={loading}>
+        <LoadingWrapper loading={loading} error={error}>
           <FilterForm
             fieldsInfo={this.props.fieldsInfo}
             updateFilter={this.props.updateFilter}

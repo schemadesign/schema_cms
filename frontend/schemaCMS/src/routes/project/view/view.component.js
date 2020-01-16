@@ -8,6 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { generateApiUrl, getMatchParam } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
+import reportError from '../../../shared/utils/reportError';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -61,10 +62,8 @@ export class View extends PureComponent {
       await this.props.fetchProject(this.props.match.params);
       this.setState({ loading: false });
     } catch (error) {
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

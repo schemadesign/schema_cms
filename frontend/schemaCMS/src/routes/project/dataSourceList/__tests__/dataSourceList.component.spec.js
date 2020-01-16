@@ -76,4 +76,26 @@ describe('DataSourceList: Component', () => {
 
     expect(defaultProps.fetchDataSources).toHaveBeenCalled();
   });
+
+  it('should call cancelFetchListLoop on componentWillUnmount', async () => {
+    jest.spyOn(defaultProps, 'cancelFetchListLoop');
+
+    const wrapper = await render();
+
+    wrapper.unmount();
+
+    expect(defaultProps.cancelFetchListLoop).toHaveBeenCalled();
+  });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchDataSources should return error';
+    const wrapper = await render({
+      fetchDataSources: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

@@ -13,6 +13,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import { Link } from '../../theme/typography';
 import { getMatchParam } from '../../shared/utils/helpers';
+import reportError from '../../shared/utils/reportError';
 
 export class PageBlock extends PureComponent {
   static propTypes = {
@@ -40,6 +41,7 @@ export class PageBlock extends PureComponent {
       const blockId = getMatchParam(this.props, 'blockId');
       await this.props.fetchPageBlock({ blockId });
     } catch (error) {
+      reportError(error);
       this.setState({ error });
     } finally {
       this.setState({ loading: false });

@@ -53,4 +53,16 @@ describe('Edit: Component', () => {
 
     expect(defaultProps.removeFolder).toHaveBeenCalledWith({ projectId: '1', folderId: '1' });
   });
+
+  it('should set error correctly', async () => {
+    const errorResponse = 'fetchFolder should return error';
+    const wrapper = await render({
+      fetchFolder: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+    });
+
+    const { loading, error } = wrapper.state();
+
+    expect(loading).toBeFalsy();
+    expect(error).toBe(errorResponse);
+  });
 });

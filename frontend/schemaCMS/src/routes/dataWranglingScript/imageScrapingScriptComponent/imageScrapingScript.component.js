@@ -35,6 +35,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import reportError from '../../../shared/utils/reportError';
 import { InfoContainer } from '../../../shared/components/container/container.styles';
 
 const { CheckboxGroup, Checkbox, Label } = FormUI;
@@ -61,6 +62,7 @@ export class ImageScrapingScript extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
     selectedFields: [],
   };
@@ -81,15 +83,10 @@ export class ImageScrapingScript extends PureComponent {
         find(propEq('id', scriptId)),
         ifElse(isNil, always(imageScrapingFields), path(['options', 'columns']))
       )(dataSource);
-
       this.setState({ loading: false, selectedFields });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

@@ -14,6 +14,7 @@ import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -44,10 +45,8 @@ export class View extends PureComponent {
       await this.props.fetchUser({ userId });
       this.setState({ loading: false });
     } catch (error) {
-      this.setState({
-        loading: false,
-        error,
-      });
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 

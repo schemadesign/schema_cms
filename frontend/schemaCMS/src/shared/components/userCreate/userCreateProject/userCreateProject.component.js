@@ -13,6 +13,7 @@ import {
 import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
 import { UserCreate } from '../userCreateComponent/userCreate.component';
 import { errorMessageParser } from '../../../utils/helpers';
+import reportError from '../../../utils/reportError';
 import { LoadingWrapper } from '../../loadingWrapper';
 
 export class UserCreateProject extends PureComponent {
@@ -30,6 +31,7 @@ export class UserCreateProject extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
   };
 
@@ -47,8 +49,9 @@ export class UserCreateProject extends PureComponent {
       }
 
       this.setState({ loading: false });
-    } catch (e) {
-      browserHistory.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -112,8 +115,12 @@ export class UserCreateProject extends PureComponent {
   };
 
   render() {
-    const { loading } = this.state;
+    const { error, loading } = this.state;
 
-    return <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>;
+    return (
+      <LoadingWrapper loading={loading} error={error}>
+        {this.renderContent}
+      </LoadingWrapper>
+    );
   }
 }

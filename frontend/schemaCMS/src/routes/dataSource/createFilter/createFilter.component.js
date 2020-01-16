@@ -9,6 +9,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
@@ -37,6 +38,7 @@ export class CreateFilter extends PureComponent {
     try {
       await this.props.fetchFieldsInfo({ dataSourceId });
     } catch (error) {
+      reportError(error);
       this.setState({ error });
     } finally {
       this.setState({ loading: false });

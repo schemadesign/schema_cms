@@ -13,6 +13,7 @@ import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getMenuProjects, PROJECT_USERS_ID } from '../project.constants';
 
@@ -28,6 +29,7 @@ export class UserList extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
   };
 
@@ -37,8 +39,9 @@ export class UserList extends PureComponent {
 
       await this.props.fetchUsers({ projectId });
       this.setState({ loading: false });
-    } catch (e) {
-      browserHistory.push('/');
+    } catch (error) {
+      reportError(error);
+      this.setState({ loading: false, error });
     }
   }
 
@@ -53,7 +56,7 @@ export class UserList extends PureComponent {
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleAddUser} />))(isAdmin);
 
   render() {
-    const { loading } = this.state;
+    const { error, loading } = this.state;
     const { match, isAdmin, users } = this.props;
     const headerTitle = <FormattedMessage {...messages.headerTitle} />;
     const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
@@ -74,6 +77,7 @@ export class UserList extends PureComponent {
           loading={loading}
           noData={!users.length}
           noDataContent={<FormattedMessage {...messages.noUsers} />}
+          error={error}
         >
           <UserListComponent users={this.props.users} projectId={getMatchParam(this.props, 'projectId')} />
         </LoadingWrapper>
