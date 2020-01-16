@@ -12,6 +12,7 @@ import softdelete.admin
 class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
     actions = ["soft_undelete"]
     deletion_q = models.Q(deleted_at__isnull=0)
+    readonly_on_update_fields = tuple()
 
     def delete_selected(self, request, queryset):
         # prevent hard delete on soft delete action
@@ -54,6 +55,6 @@ class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
         return SoftDeleteObjectAdmin.soft_undelete(self, request, queryset)
 
     def get_readonly_fields(self, request, obj=None):
-        if obj:
-            return self.readonly_fields + ("deleted",)
+        if obj and request.method == "GET":
+            return self.readonly_fields + ("deleted",) + self.readonly_on_update_fields
         return self.readonly_fields
