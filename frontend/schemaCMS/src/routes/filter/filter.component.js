@@ -7,9 +7,10 @@ import { Container } from './filter.styles';
 import messages from './filter.messages';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { FilterForm } from '../../shared/components/filterForm';
-import { TopHeader } from '../../shared/components/topHeader';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import { getMatchParam } from '../../shared/utils/helpers';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
+import { FILTER_MENU_OPTIONS } from './filter.constants';
 
 export class Filter extends PureComponent {
   static propTypes = {
@@ -57,7 +58,7 @@ export class Filter extends PureComponent {
 
     return (
       <Container>
-        <TopHeader {...headerConfig} />
+        <MobileMenu {...headerConfig} options={FILTER_MENU_OPTIONS} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <LoadingWrapper loading={loading}>
           <FilterForm

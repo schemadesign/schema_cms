@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'filter.subTitle',
     defaultMessage: 'Edit Filter',
   },
+  projectsListPage: {
+    id: 'filter.projectsListPage',
+    defaultMessage: 'Projects',
+  },
 });
