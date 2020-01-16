@@ -109,7 +109,7 @@ describe('PageBlock: sagas', () => {
         .dispatch(PageBlockRoutines.create(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`);
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`, { fromBlock: true });
     });
 
     it('should put create.success action for image type', async () => {
@@ -174,7 +174,7 @@ describe('PageBlock: sagas', () => {
         .put(PageBlockRoutines.update.success(response))
         .dispatch(PageBlockRoutines.update(payload))
         .silentRun();
-      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`);
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`, { fromBlock: true });
     });
   });
 
@@ -187,11 +187,11 @@ describe('PageBlock: sagas', () => {
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
-        .put(PageBlockRoutines.removeOne.success())
+        .put(PageBlockRoutines.removeOne.success({ blockId: payload.blockId }))
         .dispatch(PageBlockRoutines.removeOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}/`);
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}/`, { fromBlock: true });
     });
   });
 });

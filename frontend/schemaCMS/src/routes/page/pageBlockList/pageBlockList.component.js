@@ -35,16 +35,14 @@ const { MenuIcon } = Icons;
 
 export class PageBlockList extends PureComponent {
   static propTypes = {
-    pageBlocks: PropTypes.array.isRequired,
-    page: PropTypes.object.isRequired,
     values: PropTypes.array.isRequired,
+    page: PropTypes.object.isRequired,
     temporaryPageBlocks: PropTypes.array.isRequired,
+    saveTemporaryBlocks: PropTypes.func.isRequired,
     fetchPageBlocks: PropTypes.func.isRequired,
     fetchPage: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
-    saveTemporaryBlocks: PropTypes.func.isRequired,
     setValues: PropTypes.func.isRequired,
-    submitForm: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     dirty: PropTypes.bool.isRequired,
     match: PropTypes.shape({
@@ -69,12 +67,12 @@ export class PageBlockList extends PureComponent {
     try {
       const { temporaryPageBlocks, fetchPage, fetchPageBlocks, values, setValues } = this.props;
       const fromBlock = pathOr(false, ['history', 'location', 'state', 'fromBlock'], this.props);
-
       const pageId = getMatchParam(this.props, 'pageId');
       await fetchPage({ pageId });
       await fetchPageBlocks({ pageId });
       if (fromBlock && !isEmpty(values) && !isEmpty(temporaryPageBlocks)) {
         setValues(temporaryPageBlocks);
+        this.props.saveTemporaryBlocks([]);
       }
       this.setState({ loading: false });
     } catch (error) {
@@ -85,7 +83,13 @@ export class PageBlockList extends PureComponent {
 
   getFolderId = () => path(['page', 'folder', 'id'], this.props);
 
-  handleCreateBlock = () => this.props.history.push(`/page/${getMatchParam(this.props, 'pageId')}/block/create`);
+  handleCreateBlock = () => {
+    const { dirty, saveTemporaryBlocks, values, history } = this.props;
+    if (dirty) {
+      saveTemporaryBlocks(values);
+    }
+    history.push(`/page/${getMatchParam(this.props, 'pageId')}/block/create`);
+  };
   handleShowPages = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   handleChange = e => {
@@ -193,7 +197,7 @@ export class PageBlockList extends PureComponent {
           <CreateButtonContainer>
             <PlusButton onClick={this.handleCreateBlock} />
           </CreateButtonContainer>
-          {this.renderBlockCounter(loading, error, this.props.pageBlocks.length)}
+          {this.renderBlockCounter(loading, error, this.props.values.length)}
           <Empty />
         </Header>
         {this.renderContent()}
