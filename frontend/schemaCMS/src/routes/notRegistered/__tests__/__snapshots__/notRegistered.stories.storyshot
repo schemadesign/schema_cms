@@ -10,6 +10,10 @@ exports[`Storyshots NotRegistered Default 1`] = `
   line-height: 1.5em;
 }
 
+.c8 a {
+  color: inherit;
+}
+
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
