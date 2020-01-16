@@ -12,3 +12,8 @@ export const selectPageBlock = createSelector(
   selectPageBlockDomain,
   prop('pageBlock')
 );
+
+export const selectTemporaryPageBlocks = createSelector(
+  selectPageBlockDomain,
+  prop('temporaryPageBlocks')
+);

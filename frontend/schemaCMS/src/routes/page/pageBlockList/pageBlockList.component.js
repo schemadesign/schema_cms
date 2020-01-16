@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import { always, filter, map, path, pipe, prop, propEq, toString } from 'ramda';
+import { always, filter, isEmpty, map, path, pathOr, pipe, prop, propEq, toString } from 'ramda';
 import { Form, Icons } from 'schemaUI';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
@@ -38,10 +38,11 @@ export class PageBlockList extends PureComponent {
     pageBlocks: PropTypes.array.isRequired,
     page: PropTypes.object.isRequired,
     values: PropTypes.array.isRequired,
+    temporaryPageBlocks: PropTypes.array.isRequired,
     fetchPageBlocks: PropTypes.func.isRequired,
     fetchPage: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
-    setPageBlocks: PropTypes.func.isRequired,
+    saveTemporaryBlocks: PropTypes.func.isRequired,
     setValues: PropTypes.func.isRequired,
     submitForm: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
@@ -66,9 +67,15 @@ export class PageBlockList extends PureComponent {
 
   async componentDidMount() {
     try {
+      const { temporaryPageBlocks, fetchPage, fetchPageBlocks, values, setValues } = this.props;
+      const fromBlock = pathOr(false, ['history', 'location', 'state', 'fromBlock'], this.props);
+
       const pageId = getMatchParam(this.props, 'pageId');
-      await this.props.fetchPage({ pageId });
-      await this.props.fetchPageBlocks({ pageId });
+      await fetchPage({ pageId });
+      await fetchPageBlocks({ pageId });
+      if (fromBlock && !isEmpty(values) && !isEmpty(temporaryPageBlocks)) {
+        setValues(temporaryPageBlocks);
+      }
       this.setState({ loading: false });
     } catch (error) {
       reportError(error);
@@ -100,6 +107,12 @@ export class PageBlockList extends PureComponent {
     setValues(mutableValues);
   };
 
+  handleGoToBlock = () => {
+    if (this.props.dirty) {
+      this.props.saveTemporaryBlocks(this.props.values);
+    }
+  };
+
   renderCheckbox = ({ id, name }, index) => (
     <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
       {makeDraggable => {
@@ -113,7 +126,9 @@ export class PageBlockList extends PureComponent {
           <Checkbox id={`checkbox-${index}`} value={id.toString()} isEdit>
             <CheckboxContent>
               {draggableIcon}
-              <Link to={`/block/${id}`}>{name}</Link>
+              <Link to={`/block/${id}`} onClick={this.handleGoToBlock}>
+                {name}
+              </Link>
             </CheckboxContent>
           </Checkbox>
         );

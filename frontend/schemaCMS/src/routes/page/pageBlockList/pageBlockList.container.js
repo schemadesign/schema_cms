@@ -8,13 +8,14 @@ import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
 import { PageBlockList } from './pageBlockList.component';
-import { PageBlockRoutines, selectPageBlocks } from '../../../modules/pageBlock';
+import { PageBlockRoutines, selectTemporaryPageBlocks, selectPageBlocks } from '../../../modules/pageBlock';
 import { PageRoutines, selectPage } from '../../../modules/page';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from '../../pageBlock/pageBlock.messages';
 
 const mapStateToProps = createStructuredSelector({
   pageBlocks: selectPageBlocks,
+  temporaryPageBlocks: selectTemporaryPageBlocks,
   page: selectPage,
 });
 
@@ -22,6 +23,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchPageBlocks: promisifyRoutine(PageBlockRoutines.fetchList),
+      saveTemporaryBlocks: promisifyRoutine(PageBlockRoutines.saveTemporaryBlocks),
       setPageBlocks: promisifyRoutine(PageBlockRoutines.setBlocks),
       fetchPage: promisifyRoutine(PageRoutines.fetchOne),
     },

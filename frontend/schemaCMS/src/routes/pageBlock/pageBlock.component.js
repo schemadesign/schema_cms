@@ -59,7 +59,8 @@ export class PageBlock extends PureComponent {
     this.props.removePageBlock({ pageId, blockId });
   };
 
-  handleBackClick = () => this.props.history.push(`/page/${path(['block', 'page', 'id'], this.props)}`);
+  handleBackClick = () =>
+    this.props.history.push(`/page/${path(['block', 'page', 'id'], this.props)}`, { fromBlock: true });
 
   render() {
     const { handleSubmit, isSubmitting, ...restProps } = this.props;
