@@ -6,8 +6,10 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataSourceList } from './dataSourceList.component';
 import { dataSources } from '../../../modules/dataSource/dataSource.mock';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   createDataSource: Function.prototype,
   fetchDataSources: Function.prototype,
   cancelFetchListLoop: Function.prototype,

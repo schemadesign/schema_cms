@@ -5,8 +5,10 @@ import { Create } from './create.component';
 import { INITIAL_VALUES, PROJECT_STATUS, PROJECT_TITLE } from '../../../modules/project/project.constants';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   values: {
     [PROJECT_TITLE]: 'title',
     [PROJECT_STATUS]: INITIAL_VALUES[PROJECT_STATUS],

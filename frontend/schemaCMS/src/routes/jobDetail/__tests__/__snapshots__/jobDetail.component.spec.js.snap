@@ -2,7 +2,7 @@
 
 exports[`JobDetail: Component should render correctly 1`] = `
 <Fragment>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Details"
@@ -17,8 +17,24 @@ exports[`JobDetail: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="jobDetail.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -76,7 +92,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
 
 exports[`JobDetail: Component should render correctly with failure job 1`] = `
 <Fragment>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Details"
@@ -91,8 +107,24 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="jobDetail.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -150,7 +182,7 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
 
 exports[`JobDetail: Component should render correctly with fake job 1`] = `
 <Fragment>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Details"
@@ -165,8 +197,24 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="jobDetail.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -224,7 +272,7 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
 
 exports[`JobDetail: Component should render correctly with loader 1`] = `
 <Fragment>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Details"
@@ -239,8 +287,24 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="jobDetail.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={

@@ -3,6 +3,7 @@
 exports[`UserList: Component should render correctly 1`] = `
 <Fragment>
   <MobileMenu
+    active="usersNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -20,6 +21,10 @@ exports[`UserList: Component should render correctly 1`] = `
     options={
       Array [
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
@@ -30,6 +35,10 @@ exports[`UserList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectDetailsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project details"
@@ -40,6 +49,10 @@ exports[`UserList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "dataSourceNavBtn",
           "label": <FormattedMessage
             defaultMessage="Data Sources"
@@ -50,7 +63,9 @@ exports[`UserList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
-          "active": true,
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Users"
@@ -61,6 +76,10 @@ exports[`UserList: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "folderNavBtn",
           "label": <FormattedMessage
             defaultMessage="Pages"

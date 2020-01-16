@@ -2,15 +2,110 @@
 
 exports[`Create: Component should render correctly 1`] = `
 <styled.div>
-  <TopHeader
-    headerSubtitle="Project Info"
-    headerTitle="Create New Project"
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Project Info"
+        id="project.create.pageSubTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Create New Project"
+        id="project.create.pageTitle"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/undefined",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/undefined/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/undefined/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/undefined/folder",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
-    subtitle="Project Info"
-    title="Create New Project"
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Project Info"
+        id="project.create.pageSubTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Create New Project"
+        id="project.create.pageTitle"
+        values={Object {}}
+      />
+    }
   />
   <styled.form
     onSubmit={[Function]}
@@ -43,6 +138,7 @@ exports[`Create: Component should render correctly 1`] = `
       placeholder="Project title"
       setFieldValue={[Function]}
       touched={Object {}}
+      userRole="admin"
       value="title"
       values={
         Object {
@@ -79,6 +175,7 @@ exports[`Create: Component should render correctly 1`] = `
       placeholder="Project description"
       setFieldValue={[Function]}
       touched={Object {}}
+      userRole="admin"
       values={
         Object {
           "status": "in_progress",
@@ -115,6 +212,7 @@ exports[`Create: Component should render correctly 1`] = `
       readOnly={true}
       setFieldValue={[Function]}
       touched={Object {}}
+      userRole="admin"
       values={
         Object {
           "status": "in_progress",

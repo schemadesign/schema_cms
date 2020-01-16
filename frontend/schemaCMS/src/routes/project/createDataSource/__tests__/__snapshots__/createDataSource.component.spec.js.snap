@@ -25,6 +25,10 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
     options={
       Array [
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Projects"
@@ -35,6 +39,10 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "projectDetailsNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project details"
@@ -45,6 +53,10 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "dataSourceNavBtn",
           "label": <FormattedMessage
             defaultMessage="Data Sources"
@@ -55,6 +67,9 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Users"
@@ -65,6 +80,10 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
           "type": "link_item",
         },
         Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
           "id": "folderNavBtn",
           "label": <FormattedMessage
             defaultMessage="Pages"
