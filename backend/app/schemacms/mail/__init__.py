@@ -2,20 +2,18 @@ from django.core import mail
 from django.conf import settings
 
 
-class MandrillTemplate:
+class EmailTemplate:
     INVITATION = "schemacms_invitation"
 
 
 def send_message(email, template, subject="", merge_data_dict=None):
     if settings.DEBUG:
-        body = "[DEBUG] Template name: {}, context: {}".format(template, merge_data_dict)
+        body = f"[DEBUG] Template name: {template}, context: {merge_data_dict['url']}"
     else:
-        body = ""
+        body = f"Welcome in SchemaCMS app! Please set your password to start work {merge_data_dict['url']}"
 
-    message = mail.EmailMessage(
-        subject=subject, body=body, to=[email], from_email=settings.DEFAULT_FROM_EMAIL
+    message = mail.send_mail(
+        subject=subject, message=body, recipient_list=[email], from_email=settings.DEFAULT_FROM_EMAIL
     )
-    message.template_id = template
-    if merge_data_dict:
-        message.merge_data = {email: merge_data_dict}
-    message.send()
+
+    return message

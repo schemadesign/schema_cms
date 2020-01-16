@@ -7,6 +7,7 @@ LAMBDA_EP=http://localstack:4574
 API_GTW_EP=http://localstack:4567
 S3_ENDPOINT_URL=http://localstack:4572
 SQS_ENDPOINT_URL=http://localstack:4576
+SES_ENDPOINT_URL=http://localstack:4579
 STEP_FUNCTIONS_EP=http://localstack:4585
 PUBLIC_API_FUNCTION_NAME=public-api
 WORKER_SUCCESS_FUNCTION_NAME=worker-success
@@ -26,6 +27,20 @@ function wait_for_secretsmanager {
 function wait_for_stepfunctions {
   until aws --no-sign-request --endpoint-url="$STEP_FUNCTIONS_EP" stepfunctions list-state-machines; do
     >&2 echo "Stepfunctions is unavailable - sleeping"
+    sleep 1
+  done
+}
+
+function wait_for_s3 {
+  until aws --no-sign-request --endpoint-url="$S3_ENDPOINT_URL" s3 ls; do
+    >&2 echo "S3 is unavailable - sleeping"
+    sleep 1
+  done
+}
+
+function wait_for_sqs {
+  until aws --no-sign-request --endpoint-url="$SQS_ENDPOINT_URL" sqs list-queues; do
+    >&2 echo "SQS is unavailable - sleeping"
     sleep 1
   done
 }
@@ -181,6 +196,12 @@ function create_sqs_queue {
   aws --no-sign-request --endpoint-url=$SQS_ENDPOINT_URL \
       --region $AWS_DEFAULT_REGION \
       sqs create-queue --queue-name "$1"
+}
+
+function create_ses_email {
+  aws --no-sign-request --endpoint-url=$SES_ENDPOINT_URL \
+      --region $AWS_DEFAULT_REGION \
+      ses verify-email-identity --email-address info@local
 }
 
 #{
