@@ -57,6 +57,16 @@ export const CheckboxContent = styled.div`
 export const IconWrapper = styled.div`
   display: flex;
   cursor: move;
+  touch-action: none;
 `;
 
-export const CheckBoxStyles = { width: '100%' };
+export const checkBoxStyles = {
+  width: '100%',
+};
+
+export const checkBoxContainerStyles = {
+  borderTop: 'none',
+};
+
+export const selectedLabelStyles = { marginBottom: 20 };
+export const labelStyles = { margin: '40px 0 20px 0' };

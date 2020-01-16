@@ -13,8 +13,8 @@ export default defineMessages({
     id: 'dataSource.dataWranglingScripts.subTitle',
     defaultMessage: 'Data Wrangling',
   },
-  steps: {
-    id: 'dataSource.dataWranglingScripts.steps',
+  counterSteps: {
+    id: 'dataSource.dataWranglingScripts.counterSteps',
     defaultMessage: '{steps, plural,one {# Step} other {# Steps}}',
   },
   errorOnUploading: {
@@ -36,6 +36,14 @@ export default defineMessages({
   ongoingProcess: {
     id: 'dataSource.dataWranglingScripts.ongoingProcess',
     defaultMessage: 'Another job is running.',
+  },
+  selectedScripts: {
+    id: 'dataSource.dataWranglingScripts.selectedScripts',
+    defaultMessage: 'Selected steps',
+  },
+  steps: {
+    id: 'dataSource.dataWranglingScripts.steps',
+    defaultMessage: 'Steps',
   },
   [CUSTOM]: {
     id: `dataSource.dataWranglingScripts.${CUSTOM}`,

@@ -117,14 +117,13 @@ export class ImageScrapingScript extends PureComponent {
   };
 
   handleSaveClick = () => {
+    const { selectedFields } = this.state;
     const scriptId = getMatchParam(this.props, 'scriptId');
     const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-    const imageScriptIndex = this.props.dataWranglingScripts.findIndex(({ id }) => id.toString() === scriptId);
 
     return this.props.setImageScrapingFields({
-      imageScrapingFields: this.state.selectedFields,
+      imageScrapingFields: selectedFields,
       scriptId,
-      imageScriptIndex,
       dataSourceId,
     });
   };

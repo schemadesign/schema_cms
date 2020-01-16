@@ -1,150 +1,107 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 
 import { DataWranglingScripts } from '../dataWranglingScripts.component';
-import { defaultProps, noStepsProps } from '../dataWranglingScripts.stories';
+import { defaultProps } from '../dataWranglingScripts.stories';
+import { NextButton } from '../../../../shared/components/navigation';
+import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { Draggable } from '../../../../shared/components/draggable';
+
+const { FileUpload, CheckboxGroup } = Form;
 
 describe('DataWranglingScripts: Component', () => {
   const component = props => <DataWranglingScripts {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
+  it('should render empty list', async () => {
+    const wrapper = await render({ dataWranglingScripts: [] });
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should render correctly', async () => {
     const wrapper = await render();
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly form', async () => {
-    defaultProps.fetchDataWranglingScripts = jest.fn().mockReturnValue(Promise.resolve());
+  it('should render only unchecked scripts', async () => {
+    const wrapper = await render({ checkedScripts: [] });
+    const checkboxGroup = wrapper.find(CheckboxGroup);
+    expect(checkboxGroup).toMatchSnapshot();
+  });
 
-    const wrapper = await render()
-      .find(Formik)
-      .dive();
+  it('should render only checked scripts', async () => {
+    const wrapper = await render({ uncheckedScripts: [] });
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly when no steps', async () => {
-    const wrapper = await render({
-      ...noStepsProps,
-      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
-    })
-      .find(Formik)
-      .dive();
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should call fetchDataWranglingScripts on componentDidMount', () => {
+  it('should call fetchDataWranglingScripts', async () => {
     jest.spyOn(defaultProps, 'fetchDataWranglingScripts');
+    await render();
+    expect(defaultProps.fetchDataWranglingScripts).toBeCalledWith({ dataSourceId: '1', fromScript: false });
+  });
 
-    render({
-      history: {
-        ...defaultProps.history,
-        location: {
-          state: {
-            fromScript: true,
-          },
-        },
-      },
-    });
+  it('should call setCheckedScripts', async () => {
+    jest.spyOn(defaultProps, 'setCheckedScripts');
+    const checkedScripts = [{ id: 1 }, { id: 2 }];
+    const wrapper = await render({ checkedScripts });
+    wrapper
+      .find(Draggable)
+      .first()
+      .prop('onMove')(0, 1);
 
+    expect(defaultProps.setCheckedScripts).toBeCalledWith(checkedScripts.reverse());
+  });
+
+  it('should call setScriptsList', async () => {
+    jest.spyOn(defaultProps, 'setScriptsList');
+    const checkedScripts = [{ id: 1 }, { id: 2 }];
+    const e = { target: { value: '1', checked: false } };
+    const wrapper = await render({ checkedScripts });
+    wrapper
+      .find(CheckboxGroup)
+      .first()
+      .prop('onChange')(e);
+
+    expect(defaultProps.setScriptsList).toBeCalledWith({ checked: false, script: { id: 1 } });
+  });
+
+  it('should redirect to image script page', async () => {
+    jest.spyOn(defaultProps.history, 'push');
+    const checkedScripts = [{ id: 1 }];
+    const uncheckedScripts = [{ id: 2, specs: { type: IMAGE_SCRAPING_SCRIPT_TYPE } }];
+    const e = { target: { value: '2', checked: true } };
+    const wrapper = await render({ checkedScripts, uncheckedScripts, imageScrapingFields: [] });
+    wrapper
+      .find(CheckboxGroup)
+      .first()
+      .prop('onChange')(e);
+
+    expect(defaultProps.history.push).toBeCalledWith('/script/2/1');
+  });
+
+  it('should call fetchDataWranglingScripts with fromScript on true', async () => {
+    jest.spyOn(defaultProps, 'fetchDataWranglingScripts');
+    await render({ history: { location: { state: { fromScript: true } }, push: Function.prototype } });
     expect(defaultProps.fetchDataWranglingScripts).toBeCalledWith({ dataSourceId: '1', fromScript: true });
   });
 
-  it('should call uploadScript on change of uploader file', () => {
-    jest.spyOn(defaultProps, 'uploadScript');
-
-    const wrapper = render();
-    wrapper
-      .find(Form.FileUpload)
-      .first()
-      .prop('onChange')({ target: { files: [{ name: 'filename.py' }] } });
-    expect(defaultProps.uploadScript).toHaveBeenCalledTimes(1);
-  });
-
-  it('should return error on upload file with too long name', () => {
-    const wrapper = render();
-    const name = 'someverylongfilename-someverylongfilename-someverylongfilename-someverylongfilename.py';
-    wrapper
-      .find(Form.FileUpload)
-      .first()
-      .prop('onChange')({ target: { files: [{ name }] } });
-
-    expect(wrapper.state().errorMessage).toBe('errorTooLongName');
-  });
-
-  it('should return error on failed uploading', async () => {
-    const wrapper = await render({
-      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
-      uploadScript: jest.fn().mockReturnValue(Promise.reject('Uploading file should failed')),
-    });
-
-    await wrapper
-      .find(Form.FileUpload)
-      .first()
-      .prop('onChange')({ target: { files: [{ name: 'filename.py' }] } });
-
-    expect(wrapper.state().errorMessage).toBe('errorOnUploading');
-    expect(wrapper.state().uploading).toBeFalsy();
-  });
-
-  it('should call sendUpdatedDataWranglingScript on save changes', async () => {
-    defaultProps.fetchDataWranglingScripts = jest.fn().mockReturnValue(Promise.resolve());
-
+  it('should call sendUpdatedDataWranglingScript', async () => {
     jest.spyOn(defaultProps, 'sendUpdatedDataWranglingScript');
-
-    const steps = { steps: ['1'] };
-
-    await render()
-      .find(Formik)
-      .prop('onSubmit')(steps, { setSubmitting: Function.prototype });
-
-    expect(defaultProps.sendUpdatedDataWranglingScript).toHaveBeenCalledTimes(1);
+    const wrapper = await render();
+    wrapper.find(NextButton).simulate('click');
+    expect(defaultProps.sendUpdatedDataWranglingScript).toBeCalledWith({
+      dataSourceId: '1',
+      steps: [{ execOrder: 0, script: 1 }],
+    });
   });
 
-  it('should call setScriptsList on change checkbox', async () => {
-    const dataWranglingScripts = defaultProps.dataWranglingScripts.setIn([0, 'checked'], true);
-    const props = {
-      dataWranglingScripts,
-      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
-      setScriptsList: Function.prototype,
-    };
-    jest.spyOn(props, 'setScriptsList');
-
-    const wrapper = await render(props);
-
-    wrapper
-      .find(Formik)
-      .dive()
-      .find(Form.CheckboxGroup)
-      .first()
-      .prop('onChange')({ target: { value: '3', checked: true } });
-
-    expect(props.setScriptsList).toHaveBeenCalledTimes(1);
-  });
-
-  it('should call setScriptsList on move item', async () => {
-    const dataWranglingScripts = defaultProps.dataWranglingScripts.setIn([0, 'checked'], true);
-    const props = {
-      dataWranglingScripts,
-      fetchDataWranglingScripts: jest.fn().mockReturnValue(Promise.resolve()),
-      setScriptsList: Function.prototype,
-    };
-    jest.spyOn(props, 'setScriptsList');
-
-    const wrapper = await render(props);
-
-    wrapper
-      .find(Formik)
-      .dive()
-      .find(Draggable)
-      .first()
-      .prop('onMove')(1, 0);
-
-    expect(props.setScriptsList).toHaveBeenCalledTimes(1);
+  it('should call uploadScript', async () => {
+    jest.spyOn(defaultProps, 'uploadScript');
+    const wrapper = await render();
+    wrapper.find(FileUpload).simulate('change', { target: { files: [{ name: 'name' }] } });
+    expect(defaultProps.uploadScript).toBeCalledWith({ dataSourceId: '1', script: { name: 'name' } });
   });
 
   it('should set error correctly', async () => {
