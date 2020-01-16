@@ -37,21 +37,53 @@ describe('FilterForm: Component', () => {
   it('should call createForm on submit new', async () => {
     jest.spyOn(createProps, 'createFilter');
 
-    render(createProps)
+    await render(createProps)
       .find(Formik)
-      .prop('onSubmit')({});
+      .prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors: Function.prototype });
 
     expect(createProps.createFilter).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render error on failed createFilter', async () => {
+    const setErrors = jest.fn().mockImplementation(Function.prototype);
+
+    const error = [{ code: 'nameFilterNameNotUniqueError', name: 'name' }];
+    const wrapper = await render({
+      ...createProps,
+      createFilter: jest.fn().mockReturnValue(Promise.reject(error)),
+    });
+
+    await wrapper.find(Formik).prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors });
+
+    expect(setErrors).toHaveBeenCalledWith({
+      name: expect.any(String),
+    });
   });
 
   it('should call updateFilter on submit update', async () => {
     jest.spyOn(editProps, 'updateFilter');
 
-    render(editProps)
+    await render(editProps)
       .find(Formik)
-      .prop('onSubmit')({});
+      .prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors: Function.prototype });
 
     expect(editProps.updateFilter).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render error on failed updateFilter', async () => {
+    const setErrors = jest.fn().mockImplementation(Function.prototype);
+
+    const error = [{ code: 'nameFilterNameNotUniqueError', name: 'name' }];
+    const wrapper = await render({
+      ...editProps,
+      updateFilter: jest.fn().mockReturnValue(Promise.reject(error)),
+    });
+
+    await wrapper.find(Formik).prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors });
+
+    expect(setErrors).toHaveBeenCalledWith({
+      name: expect.any(String),
+    });
   });
 
   it('should call removeFilter on confirm button click', () => {

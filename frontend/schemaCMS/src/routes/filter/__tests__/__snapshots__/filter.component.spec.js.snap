@@ -59,6 +59,11 @@ exports[`Filter: Component should render correctly 1`] = `
           "push": [Function],
         }
       }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
       removeFilter={[Function]}
       updateFilter={[Function]}
     />
@@ -123,6 +128,11 @@ exports[`Filter: Component should render correctly with loader 1`] = `
         Object {
           "goBack": [Function],
           "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
         }
       }
       removeFilter={[Function]}

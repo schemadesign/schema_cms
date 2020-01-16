@@ -28,6 +28,7 @@ export class Filter extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   state = {
@@ -70,6 +71,7 @@ export class Filter extends PureComponent {
             removeFilter={this.props.removeFilter}
             history={this.props.history}
             dataSourceId={dataSourceId}
+            intl={this.props.intl}
           />
         </LoadingWrapper>
       </Container>

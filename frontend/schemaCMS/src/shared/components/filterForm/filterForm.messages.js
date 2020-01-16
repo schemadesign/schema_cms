@@ -57,4 +57,8 @@ export default defineMessages({
     id: 'shared.components.filterForm.removeTitle',
     defaultMessage: 'Are you sure you want to remove the filter?',
   },
+  nameFilterNameNotUniqueError: {
+    id: 'shared.components.filterForm.nameFilterNameNotUniqueError',
+    defaultMessage: 'A filter with this name already exists in project.',
+  },
 });
