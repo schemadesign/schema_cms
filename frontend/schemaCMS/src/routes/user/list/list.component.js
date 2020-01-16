@@ -7,9 +7,10 @@ import { UserList } from '../../../shared/components/userList';
 import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { Container } from '../../project/list/list.styles';
-import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './list.messages';
 import browserHistory from '../../../shared/utils/history';
+import { USER_MENU_OPTIONS } from '../user.constants';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
 export class List extends PureComponent {
   static propTypes = {
@@ -41,18 +42,15 @@ export class List extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { users, isAdmin } = this.props;
+    const { users } = this.props;
 
-    const headerConfig = {
-      headerTitle: <FormattedMessage {...messages.headerTitle} />,
-      headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
-      isAdmin,
-    };
+    const headerTitle = <FormattedMessage {...messages.headerTitle} />;
+    const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
 
     return (
       <Container>
-        <TopHeader {...headerConfig} />
-        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle}>
+        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} options={USER_MENU_OPTIONS} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </ContextHeader>
         <LoadingWrapper loading={loading} error={error} noData={!users.length}>
