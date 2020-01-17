@@ -599,7 +599,8 @@ class TestDataSourceUpdateMeta:
         assert data_source.meta_data.status != old_datasource_status
         assert data_source.meta_data.status == projects_constants.ProcessingState.PROCESSING
 
-    @pytest.mark.usefixtures("fake_job_schedule")
+    @pytest.mark.usefixtures("create_fake_job")
+    @pytest.mark.usefixtures("transaction_on_commit")
     def test_meta_update(self, api_client, data_source):
         payload = self.generate_update_meta_payload(datasource_pk=data_source.pk)
 
@@ -615,7 +616,6 @@ class TestDataSourceUpdateMeta:
         assert data_source.meta_data.status == projects_constants.ProcessingState.SUCCESS
         assert data_source.meta_data.items == payload["items"]
         assert data_source.meta_data.fields == payload["fields"]
-        assert data_source.meta_data.preview == payload["preview"]
         assert data_source.meta_data.fields_names == payload["fields_names"]
 
 
