@@ -11,6 +11,24 @@ export const PROJECT_DETAILS_ID = 'projectDetailsNavBtn';
 export const PROJECT_DATASOURCE_ID = 'dataSourceNavBtn';
 export const PROJECT_FOLDER_ID = 'folderNavBtn';
 export const PROJECT_USERS_ID = 'usersNavBtn';
+export const USERS_PAGE_ID = 'usersPageNavBtn';
+
+export const PROJECT_LIST_MENU_OPTIONS = [
+  {
+    label: <FormattedMessage {...messages.projectsListPage} />,
+    to: '/project/',
+    id: PROJECTS_ID,
+    type: LINK_ITEM,
+    allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
+  },
+  {
+    label: <FormattedMessage {...messages.usersPage} />,
+    to: '/user/',
+    id: USERS_PAGE_ID,
+    type: LINK_ITEM,
+    allowedRoles: [ROLES.ADMIN],
+  },
+];
 
 export const getProjectMenuOptions = projectId => [
   {
