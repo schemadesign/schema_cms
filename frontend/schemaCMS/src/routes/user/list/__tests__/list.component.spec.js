@@ -2,8 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { List } from '../list.component';
+import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
 
 const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchUsers: Function.prototype,
   isAdmin: true,
   users: [],

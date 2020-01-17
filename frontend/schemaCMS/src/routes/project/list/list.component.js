@@ -5,7 +5,7 @@ import { always, isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { generateApiUrl, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { generateApiUrl, filterMenuOptions } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -13,7 +13,7 @@ import messages from './list.messages';
 import { Container, Description, HeaderItem, HeaderList, Footer, descriptionStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { ListItem, ListContainer } from '../../../shared/components/listComponents';
-import { getProjectMenuOptions, PROJECTS_ID } from '../project.constants';
+import { PROJECT_LIST_MENU_OPTIONS, PROJECTS_ID } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import reportError from '../../../shared/utils/reportError';
 
@@ -105,8 +105,6 @@ export class List extends PureComponent {
     const subtitle = this.formatMessage(messages.overview);
 
     const loadingConfig = this.getLoadingConfig(list, loading, error);
-    const projectId = getMatchParam(this.props, 'projectId');
-    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
@@ -114,7 +112,7 @@ export class List extends PureComponent {
         <MobileMenu
           headerTitle={title}
           headerSubtitle={subtitle}
-          options={filterMenuOptions(menuOptions, userRole)}
+          options={filterMenuOptions(PROJECT_LIST_MENU_OPTIONS, userRole)}
           active={PROJECTS_ID}
         />
         <ContextHeader title={title} subtitle={subtitle}>

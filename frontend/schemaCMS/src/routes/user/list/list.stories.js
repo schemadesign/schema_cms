@@ -8,12 +8,14 @@ import { List } from './list.component';
 const { ADMIN, EDITOR } = ROLES;
 
 export const noDataProps = {
+  userRole: ROLES.ADMIN,
   fetchUsers: Function.prototype,
   users: [],
   isAdmin: true,
 };
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchUsers: Function.prototype,
   isAdmin: true,
   users: [

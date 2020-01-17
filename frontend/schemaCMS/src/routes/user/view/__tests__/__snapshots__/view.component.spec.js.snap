@@ -22,7 +22,6 @@ exports[`View: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
           ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
@@ -31,6 +30,19 @@ exports[`View: Component should render correctly 1`] = `
             values={Object {}}
           />,
           "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "userNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="user.userPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
           "type": "link_item",
         },
       ]
@@ -226,7 +238,6 @@ exports[`View: Component should render correctly for admin user 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
           ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
@@ -235,6 +246,19 @@ exports[`View: Component should render correctly for admin user 1`] = `
             values={Object {}}
           />,
           "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "userNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="user.userPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
           "type": "link_item",
         },
       ]

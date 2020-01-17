@@ -4,8 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../../.storybook/decorators';
 import { intl } from '../../../../.storybook/helpers';
 import { UserCreateProject } from './userCreateProject.component';
+import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
 
 export const userCreateProjectProps = {
+  userRole: ROLES.ADMIN,
   createUserProject: Function.prototype,
   user: {
     id: '1',

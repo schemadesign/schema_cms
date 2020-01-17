@@ -6,6 +6,7 @@ import { LINK_ITEM } from '../../shared/components/menu/mobileMenu/mobileMenu.co
 import { ROLES } from '../../modules/userProfile/userProfile.constants';
 
 export const PROJECTS_ID = 'projectsNavBtn';
+export const USER_ID = 'userNavBtn';
 
 export const USER_MENU_OPTIONS = [
   {
@@ -13,6 +14,13 @@ export const USER_MENU_OPTIONS = [
     to: '/project/',
     id: PROJECTS_ID,
     type: LINK_ITEM,
-    allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
+    allowedRoles: [ROLES.ADMIN],
+  },
+  {
+    label: <FormattedMessage {...messages.userPage} />,
+    to: '/user/',
+    id: USER_ID,
+    type: LINK_ITEM,
+    allowedRoles: [ROLES.ADMIN],
   },
 ];

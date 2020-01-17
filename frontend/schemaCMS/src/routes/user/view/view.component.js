@@ -12,13 +12,14 @@ import { LinkContainer } from '../../../theme/typography';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { USER_MENU_OPTIONS } from '../user.constants';
 import reportError from '../../../shared/utils/reportError';
 
 export class View extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     fetchUser: PropTypes.func.isRequired,
     removeUser: PropTypes.func.isRequired,
     makeAdmin: PropTypes.func.isRequired,
@@ -89,14 +90,18 @@ export class View extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { userData, isAdmin } = this.props;
+    const { userData, isAdmin, userRole } = this.props;
     const isEditor = userData.role === ROLES.EDITOR;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Container>
-        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} options={USER_MENU_OPTIONS} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(USER_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent(userData, isEditor, isAdmin)}
