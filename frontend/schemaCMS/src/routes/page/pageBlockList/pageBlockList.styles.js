@@ -28,3 +28,18 @@ export const Link = styled(RouterLink)`
   color: inherit;
   text-decoration: none;
 `;
+
+export const checkboxStyles = {
+  width: '100%',
+};
+
+export const CheckboxContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  cursor: move;
+  touch-action: none;
+`;

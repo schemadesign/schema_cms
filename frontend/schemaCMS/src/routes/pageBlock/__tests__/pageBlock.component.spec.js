@@ -30,7 +30,7 @@ describe('PageBlock: Component', () => {
     const wrapper = render();
     wrapper.find('#backBtn').simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/page/1');
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/page/1', { fromBlock: true });
   });
 
   it('should call fetchFilters on componentDidMount', () => {

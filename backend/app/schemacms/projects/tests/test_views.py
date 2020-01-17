@@ -1200,7 +1200,10 @@ class TestPageDetailView:
 
 class TestBlockListCreateView:
     def test_response(self, api_client, admin, page, block_factory):
-        blocks = block_factory.create_batch(2, page=page)
+        test_block_1 = block_factory(page=page, exec_order=0)
+        test_block_2 = block_factory(page=page, exec_order=1)
+
+        blocks = [test_block_1, test_block_2]
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(page.id))
@@ -1208,7 +1211,7 @@ class TestBlockListCreateView:
         assert response.status_code == status.HTTP_200_OK
         assert (
             response.data["results"]
-            == projects_serializers.BlockSerializer(instance=self.sort_directories(blocks), many=True).data
+            == projects_serializers.BlockSerializer(instance=self.sort_blocks(blocks), many=True).data
         )
         assert response.data["project"] == page.project_info
 
@@ -1265,6 +1268,10 @@ class TestBlockListCreateView:
     @staticmethod
     def sort_directories(iterable):
         return sorted(iterable, key=operator.attrgetter("created"))
+
+    @staticmethod
+    def sort_blocks(blocks):
+        return sorted(blocks, key=operator.attrgetter("exec_order"))
 
 
 class TestBlockDetailView:
@@ -1345,7 +1352,10 @@ class TestSetBlocksView:
         block2 = block_factory(page=page, is_active=True)
         block1_old_status = block1.is_active
         block2_old_status = block2.is_active
-        payload = {"active": [block1.id], "inactive": [block2.id]}
+        payload = [
+            {"id": block1.id, "is_active": True, "exec_order": 0},
+            {"id": block2.id, "is_active": False, "exec_order": 1},
+        ]
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(page.id), data=payload, format="json")
@@ -1354,6 +1364,8 @@ class TestSetBlocksView:
 
         assert response.status_code == status.HTTP_200_OK
         assert block1_old_status != block1.is_active
+        assert block1.exec_order == 0
+        assert block2.exec_order == 1
         assert block2_old_status != block2.is_active
 
     @staticmethod

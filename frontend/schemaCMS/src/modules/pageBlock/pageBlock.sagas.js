@@ -57,11 +57,11 @@ function* fetchOne({ payload: { blockId } }) {
   }
 }
 
-function* setBlocks({ payload: { pageId, active, inactive } }) {
+function* setBlocks({ payload: { pageId, blocks } }) {
   try {
     yield put(PageBlockRoutines.setBlocks.request());
 
-    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/set-blocks`, { active, inactive });
+    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/set-blocks`, blocks);
 
     yield put(PageBlockRoutines.setBlocks.success(data));
   } catch (e) {
@@ -83,7 +83,7 @@ function* create({ payload: { pageId, ...restFields } }) {
     });
 
     yield put(PageBlockRoutines.create.success(data));
-    browserHistory.push(`/page/${pageId}`);
+    browserHistory.push(`/page/${pageId}`, { fromBlock: true });
   } catch (e) {
     yield put(PageBlockRoutines.create.failure(e));
   } finally {
@@ -103,7 +103,7 @@ function* update({ payload: { pageId, blockId, blockType, ...restFields } }) {
     });
 
     yield put(PageBlockRoutines.update.success(data));
-    browserHistory.push(`/page/${pageId}`);
+    browserHistory.push(`/page/${pageId}`, { fromBlock: true });
   } catch (e) {
     yield put(PageBlockRoutines.update.failure(e));
   } finally {
@@ -117,8 +117,8 @@ function* removeOne({ payload: { blockId, pageId } }) {
 
     yield api.delete(`${BLOCK_PATH}/${blockId}`);
 
-    yield put(PageBlockRoutines.removeOne.success());
-    browserHistory.push(`/page/${pageId}/`);
+    yield put(PageBlockRoutines.removeOne.success({ blockId }));
+    browserHistory.push(`/page/${pageId}/`, { fromBlock: true });
   } catch (e) {
     yield put(PageBlockRoutines.removeOne.failure(e));
   } finally {

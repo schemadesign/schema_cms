@@ -187,9 +187,7 @@ describe('DataSource: sagas', () => {
     };
     const responseData = {
       id: 1,
-      project: {
-        id: 1,
-      },
+      project: { id: 1 },
       metaData: null,
     };
 

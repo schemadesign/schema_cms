@@ -6,7 +6,7 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
-  pageBlocks: [
+  values: [
     {
       name: 'block 1',
       isActive: true,
@@ -23,16 +23,21 @@ export const defaultProps = {
       id: '1',
     },
   },
+  temporaryPageBlocks: [],
+  saveTemporaryBlocks: Function.prototype,
   fetchPageBlocks: Function.prototype,
   fetchPage: Function.prototype,
-  setPageBlocks: Function.prototype,
-  history,
-  intl,
+  handleSubmit: Function.prototype,
+  setValues: Function.prototype,
+  isSubmitting: false,
+  dirty: false,
   match: {
     params: {
       pageId: '1',
     },
   },
+  intl,
+  history,
 };
 
 const emptyBlocksProps = {

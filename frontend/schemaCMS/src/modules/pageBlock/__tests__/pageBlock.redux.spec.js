@@ -1,12 +1,13 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as blockReducer, PageBlockRoutines } from '../pageBlock.redux';
+import { PageBlockRoutines, reducer as blockReducer } from '../pageBlock.redux';
 
 describe('PageBlock: redux', () => {
   const state = Immutable({
     pageBlocks: [],
     pageBlock: {},
+    temporaryPageBlocks: [],
   });
 
   describe('reducer', () => {
@@ -43,6 +44,47 @@ describe('PageBlock: redux', () => {
 
       const resultState = blockReducer(state, PageBlockRoutines.fetchOne.success(pageBlock));
       expect(resultState.pageBlock).to.deep.equal(pageBlock);
+    });
+  });
+
+  describe('when PAGE_BLOCK/SAVE_TEMPORARY_BLOCKS action is received', () => {
+    it('should set block', () => {
+      const temporaryPageBlocks = [{ data: 'data' }];
+
+      const resultState = blockReducer(state, PageBlockRoutines.saveTemporaryBlocks.trigger(temporaryPageBlocks));
+      expect(resultState.temporaryPageBlocks).to.deep.equal(temporaryPageBlocks);
+    });
+  });
+
+  describe('when PAGE_BLOCK/REMOVE_ONE action is received', () => {
+    it('should remove temporary block', () => {
+      const temporaryPageBlocks = [{ id: 1 }, { id: 2 }];
+      const defaultState = Immutable({ temporaryPageBlocks });
+
+      const resultState = blockReducer(defaultState, PageBlockRoutines.removeOne.success({ blockId: '1' }));
+      expect(resultState.temporaryPageBlocks).to.deep.equal([temporaryPageBlocks[1]]);
+    });
+  });
+
+  describe('when PAGE_BLOCK/CREATE_ONE action is received', () => {
+    it('should add temporary block', () => {
+      const temporaryPageBlocks = [{ id: 1 }, { id: 2 }];
+      const newBlock = { id: 3 };
+      const defaultState = Immutable({ temporaryPageBlocks });
+
+      const resultState = blockReducer(defaultState, PageBlockRoutines.create.success(newBlock));
+      expect(resultState.temporaryPageBlocks).to.deep.equal([...temporaryPageBlocks, newBlock]);
+    });
+  });
+
+  describe('when PAGE_BLOCK/UPDATE_ONE action is received', () => {
+    it('should update temporary block', () => {
+      const temporaryPageBlocks = [{ id: 1, name: 'name' }, { id: 2, name: 'name 2' }];
+      const newBlock = { id: 2, name: 'new name' };
+      const defaultState = Immutable({ temporaryPageBlocks });
+
+      const resultState = blockReducer(defaultState, PageBlockRoutines.update.success(newBlock));
+      expect(resultState.temporaryPageBlocks).to.deep.equal([temporaryPageBlocks[0], newBlock]);
     });
   });
 });

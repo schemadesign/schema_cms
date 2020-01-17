@@ -582,9 +582,7 @@ class Page(
     objects = managers.PageManager()
 
     def __str__(self):
-        return (
-            f"{self.title or str(self.pk)} || Folder: {self.folder.name}, Project: {self.get_project().title}"
-        )
+        return f"{self.title or str(self.pk)}"
 
     class Meta:
         constraints = [
@@ -652,6 +650,7 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
     type = models.CharField(max_length=25, choices=constants.BLOCK_TYPE_CHOICES)
     content = models.TextField(blank=True, default="")
     is_active = models.BooleanField(default=True)
+    exec_order = models.IntegerField(null=True, default=None)
 
     def __str__(self):
         return self.name or str(self.pk)

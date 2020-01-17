@@ -2,6 +2,7 @@ import json
 import os
 
 from django.db import transaction
+from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
@@ -477,7 +478,13 @@ class PageViewSet(
         page = self.get_object()
 
         if request.method == "GET":
-            queryset = page.blocks.select_related("page").all()
+            queryset = (
+                page.blocks.prefetch_related(
+                    Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
+                )
+                .all()
+                .order_by('exec_order')
+            )
             serializer = self.get_serializer(instance=queryset, many=True)
             data = {"project": page.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
@@ -496,16 +503,19 @@ class PageViewSet(
     @decorators.action(detail=True, url_path='set-blocks', methods=["post"])
     def set_blocks(self, request, pk=None, **kwargs):
         page = self.get_object()
-        active = request.data.get("active", [])
-        inactive = request.data.get("inactive", [])
+        blocks_data = request.data
 
-        page.blocks.filter(id__in=active).update(is_active=True)
-        page.blocks.filter(id__in=inactive).update(is_active=False)
+        with transaction.atomic():
+            for data in blocks_data:
+                block = page.blocks.get(pk=data["id"])
+                block.is_active = data["is_active"]
+                block.exec_order = data["exec_order"]
+                block.save(update_fields=["is_active", "exec_order"])
 
         page = self.get_object()
         page.create_dynamo_item()
 
-        serializer = self.get_serializer(instance=page.blocks, many=True)
+        serializer = self.get_serializer(instance=page.blocks.order_by('exec_order'), many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
