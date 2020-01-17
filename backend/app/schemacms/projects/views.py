@@ -111,10 +111,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             )
 
     @decorators.action(
-        detail=True,
-        permission_classes=[permissions.IsAuthenticated],
-        url_path="folders",
-        methods=["get", "post"],
+        detail=True, url_path="folders", methods=["get", "post"],
     )
     def folders(self, request, **kwargs):
         project = self.get_object()
