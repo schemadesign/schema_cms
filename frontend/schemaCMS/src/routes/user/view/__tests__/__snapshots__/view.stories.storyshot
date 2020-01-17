@@ -383,6 +383,19 @@ exports[`Storyshots User|View Admin 1`] = `
                 </span>
               </a>
             </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/user/"
+                id="userNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
           </div>
           <div
             className="c4"
@@ -968,6 +981,19 @@ exports[`Storyshots User|View Editor 1`] = `
                 </span>
               </a>
             </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/user/"
+                id="userNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
           </div>
           <div
             className="c4"
@@ -1550,6 +1576,19 @@ exports[`Storyshots User|View Make Admin 1`] = `
               >
                 <span>
                   Projects
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/user/"
+                id="userNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
                 </span>
               </a>
             </div>

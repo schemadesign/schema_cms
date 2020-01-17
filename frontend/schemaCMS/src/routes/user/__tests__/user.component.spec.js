@@ -3,8 +3,10 @@ import { shallow } from 'enzyme';
 
 import { User } from '../user.component';
 import { history, intl } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 const defaultProps = {
+  userRole: ROLES.ADMIN,
   createUserProject: Function.prototype,
   createUserCMS: Function.prototype,
   isAdmin: true,

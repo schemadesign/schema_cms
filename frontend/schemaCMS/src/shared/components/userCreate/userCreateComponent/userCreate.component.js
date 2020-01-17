@@ -12,10 +12,13 @@ import { BackButton, NavigationContainer, NextButton } from '../../navigation';
 import { ContextHeader } from '../../contextHeader';
 
 import messages from './userCreate.messages';
-import { TopHeader } from '../../topHeader';
+import { filterMenuOptions } from '../../../utils/helpers';
+import { USER_MENU_OPTIONS } from '../../../../routes/user/user.constants';
+import { MobileMenu } from '../../menu/mobileMenu';
 
 export class UserCreate extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleBlur: PropTypes.func.isRequired,
@@ -98,12 +101,16 @@ export class UserCreate extends PureComponent {
   );
 
   render() {
-    const { isInvitation, headerValues, ...restProps } = this.props;
+    const { isInvitation, headerValues, userRole, ...restProps } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig(headerValues)(isInvitation);
 
     return (
       <Container>
-        <TopHeader {...headerConfig} />
+        <MobileMenu
+          headerTitle={headerConfig.headerTitle}
+          headerSubtitle={headerConfig.headerSubtitle}
+          options={filterMenuOptions(USER_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form onSubmit={this.props.handleSubmit}>
           <TextInput

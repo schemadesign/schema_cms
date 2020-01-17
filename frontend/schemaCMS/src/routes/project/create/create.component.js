@@ -18,7 +18,7 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
-import { getProjectMenuOptions, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 
 export class Create extends PureComponent {
   static propTypes = {

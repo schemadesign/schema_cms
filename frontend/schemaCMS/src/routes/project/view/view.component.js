@@ -187,7 +187,7 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { project, isAdmin, userRole } = this.props;
+    const { project, userRole } = this.props;
     const { confirmationModalOpen, error, loading } = this.state;
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;

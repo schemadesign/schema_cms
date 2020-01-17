@@ -7,11 +7,11 @@ import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 
 import { List } from './list.component';
 import { selectUsers, UserRoutines } from '../../../modules/user';
-import { selectIsAdmin } from '../../../modules/userProfile';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   users: selectUsers,
-  isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch => ({

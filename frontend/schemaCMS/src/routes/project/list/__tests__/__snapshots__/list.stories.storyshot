@@ -388,51 +388,12 @@ exports[`Storyshots Project|List List (admin) 1`] = `
               className="c6"
             >
               <a
-                href="/project/undefined"
-                id="projectDetailsNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Project details
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/datasource"
-                id="dataSourceNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Data Sources
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/user"
-                id="usersNavBtn"
+                href="/user/"
+                id="usersPageNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Users
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/folder"
-                id="folderNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Pages
                 </span>
               </a>
             </div>
@@ -1078,51 +1039,12 @@ exports[`Storyshots Project|List List (editor) 1`] = `
               className="c6"
             >
               <a
-                href="/project/undefined"
-                id="projectDetailsNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Project details
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/datasource"
-                id="dataSourceNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Data Sources
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/user"
-                id="usersNavBtn"
+                href="/user/"
+                id="usersPageNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Users
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/folder"
-                id="folderNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Pages
                 </span>
               </a>
             </div>
@@ -1684,51 +1606,12 @@ exports[`Storyshots Project|List No data 1`] = `
               className="c6"
             >
               <a
-                href="/project/undefined"
-                id="projectDetailsNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Project details
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/datasource"
-                id="dataSourceNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Data Sources
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/user"
-                id="usersNavBtn"
+                href="/user/"
+                id="usersPageNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Users
-                </span>
-              </a>
-            </div>
-            <div
-              className="c6"
-            >
-              <a
-                href="/project/undefined/folder"
-                id="folderNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  Pages
                 </span>
               </a>
             </div>

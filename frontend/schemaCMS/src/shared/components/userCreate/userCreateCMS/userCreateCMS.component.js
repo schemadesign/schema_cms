@@ -10,6 +10,7 @@ import { errorMessageParser } from '../../../utils/helpers';
 
 export class UserCreateCMS extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     createUserCMS: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
   };
@@ -51,7 +52,13 @@ export class UserCreateCMS extends PureComponent {
         }}
         enableReinitialize
         render={({ handleSubmit, ...restProps }) => (
-          <UserCreate handleSubmit={handleSubmit} onCancelClick={this.handleCancelClick} isInvitation {...restProps} />
+          <UserCreate
+            handleSubmit={handleSubmit}
+            onCancelClick={this.handleCancelClick}
+            userRole={this.props.userRole}
+            isInvitation
+            {...restProps}
+          />
         )}
       />
     );

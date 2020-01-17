@@ -3,6 +3,7 @@
 exports[`User List: Component should render correctly with loader 1`] = `
 <styled.div>
   <MobileMenu
+    active="userNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -22,7 +23,6 @@ exports[`User List: Component should render correctly with loader 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
           ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
@@ -31,6 +31,19 @@ exports[`User List: Component should render correctly with loader 1`] = `
             values={Object {}}
           />,
           "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "userNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="user.userPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
           "type": "link_item",
         },
       ]
@@ -95,6 +108,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
 exports[`User List: Component should render correctly with users data 1`] = `
 <styled.div>
   <MobileMenu
+    active="userNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -114,7 +128,6 @@ exports[`User List: Component should render correctly with users data 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
           ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
@@ -123,6 +136,19 @@ exports[`User List: Component should render correctly with users data 1`] = `
             values={Object {}}
           />,
           "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "userNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="user.userPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
           "type": "link_item",
         },
       ]
