@@ -131,7 +131,7 @@ function* updateOne({ payload: { dataSourceId, requestData } }) {
 
       response.data = data;
 
-      browserHistory.push(`/project/${data.project}/datasource`);
+      browserHistory.push(`/project/${data.project.id}/datasource`);
     }
 
     yield put(DataSourceRoutines.updateOne.success(response.data));
