@@ -16,7 +16,6 @@ import {
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
-import { ROLES } from '../../modules/userProfile/userProfile.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 

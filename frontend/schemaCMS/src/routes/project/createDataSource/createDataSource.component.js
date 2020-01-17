@@ -11,7 +11,7 @@ import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.const
 import { errorMessageParser, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getProjectMenuOptions, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 
 export class CreateDataSource extends PureComponent {
   static propTypes = {
