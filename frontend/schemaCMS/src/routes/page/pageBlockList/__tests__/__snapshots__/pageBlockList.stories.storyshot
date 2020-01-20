@@ -30,7 +30,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c20 {
@@ -167,7 +167,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   .c18 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }
@@ -631,91 +631,96 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
         className="c15"
       />
     </div>
-    <div
-      className="c16"
+    <form
+      onSubmit={[Function]}
     >
       <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c17"
-    >
-      <div
-        className="c18"
-      >
         <div
-          className="c19"
+          className="c16"
         >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-            type="button"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "60px",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-              />
-            </svg>
-          </button>
-          <button
-            className="c20"
-            disabled={true}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-            type="submit"
-          >
-            <span>
-              Save
-            </span>
-          </button>
+          <span>
+            Loading...
+          </span>
         </div>
-      </div>
-    </div>
+        <div
+          className="c17"
+        >
+          <div
+            className="c18"
+          >
+            <div
+              className="c19"
+            >
+              <button
+                disabled={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#FFF",
+                    "cursor": "pointer",
+                    "display": "inline-block",
+                    "fill": "#FFF",
+                    "fontSize": "18px",
+                    "height": "60px",
+                    "margin": "0",
+                    "minHeight": "48px",
+                    "outline": "none",
+                    "padding": "0",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                    "width": "60px",
+                  }
+                }
+                type="button"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "60px",
+                      "width": "60px",
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="c20"
+                disabled={true}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#71737e",
+                    "cursor": "default",
+                    "display": "inline-block",
+                    "fill": "#FFF",
+                    "fontSize": "18px",
+                    "margin": "0",
+                    "minHeight": "48px",
+                    "outline": "none",
+                    "padding": "0",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  }
+                }
+                type="submit"
+              >
+                <span>
+                  Save
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </span>
+    </form>
   </div>
 </div>
 `;
@@ -750,7 +755,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c20 {
@@ -887,7 +892,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   .c18 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }
@@ -1351,91 +1356,96 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
         className="c15"
       />
     </div>
-    <div
-      className="c16"
+    <form
+      onSubmit={[Function]}
     >
       <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c17"
-    >
-      <div
-        className="c18"
-      >
         <div
-          className="c19"
+          className="c16"
         >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-            type="button"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "60px",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-              />
-            </svg>
-          </button>
-          <button
-            className="c20"
-            disabled={true}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-            type="submit"
-          >
-            <span>
-              Save
-            </span>
-          </button>
+          <span>
+            Loading...
+          </span>
         </div>
-      </div>
-    </div>
+        <div
+          className="c17"
+        >
+          <div
+            className="c18"
+          >
+            <div
+              className="c19"
+            >
+              <button
+                disabled={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#FFF",
+                    "cursor": "pointer",
+                    "display": "inline-block",
+                    "fill": "#FFF",
+                    "fontSize": "18px",
+                    "height": "60px",
+                    "margin": "0",
+                    "minHeight": "48px",
+                    "outline": "none",
+                    "padding": "0",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                    "width": "60px",
+                  }
+                }
+                type="button"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "60px",
+                      "width": "60px",
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="c20"
+                disabled={true}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#71737e",
+                    "cursor": "default",
+                    "display": "inline-block",
+                    "fill": "#FFF",
+                    "fontSize": "18px",
+                    "margin": "0",
+                    "minHeight": "48px",
+                    "outline": "none",
+                    "padding": "0",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  }
+                }
+                type="submit"
+              >
+                <span>
+                  Save
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </span>
+    </form>
   </div>
 </div>
 `;

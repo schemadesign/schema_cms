@@ -30,7 +30,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c9 {
@@ -153,7 +153,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }
@@ -687,7 +687,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #FFF,#FFF 30%,  );
 }
 
 .c9 {
@@ -810,7 +810,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
   .c15 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #FFF,#FFF 30%,  );
     width: 1000px;
   }
 }
@@ -1248,7 +1248,7 @@ exports[`Storyshots Project|List No data 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c9 {
@@ -1371,7 +1371,7 @@ exports[`Storyshots Project|List No data 1`] = `
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }

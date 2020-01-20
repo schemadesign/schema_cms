@@ -27,6 +27,17 @@ class TestUserListView:
         assert response.data["count"] == len(expected_users)
         assert {r["id"] for r in response.data["results"]} == {str(user.id) for user in expected_users}
 
+    @pytest.mark.parametrize(
+        "role, response_status", [("editor", status.HTTP_403_FORBIDDEN), ("admin", status.HTTP_200_OK)]
+    )
+    def test_permissions(self, api_client, user_factory, role, response_status):
+        user = user_factory(role=role)
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url())
+
+        assert response.status_code == response_status
+
     def test_response_ordering(self, api_client, user_factory):
         user = user_factory()
         expected_users = sorted(
@@ -208,12 +219,28 @@ class TestUserDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data == user_views.UserViewSet.serializer_class(instance=user).data
 
-    def test_retrieve(self, api_client, user_factory):
-        user = user_factory()
+    @pytest.mark.parametrize(
+        "role, response_status",
+        [
+            (user_constants.UserRole.ADMIN, status.HTTP_200_OK),
+            (user_constants.UserRole.EDITOR, status.HTTP_403_FORBIDDEN),
+        ],
+    )
+    def test_retrieve(self, api_client, user_factory, role, response_status):
+        user = user_factory(role=role)
         other_user = user_factory(is_active=True)
         api_client.force_authenticate(user)
 
         response = api_client.get(self.get_url(other_user.pk))
+
+        assert response.status_code == response_status
+
+    def test_editor_can_retrieve_only_users_from_same_projects(self, api_client, user_factory, project):
+        users = user_factory.create_batch(2, role="editor")
+        project.editors.add(*users)
+        api_client.force_authenticate(users[0])
+
+        response = api_client.get(self.get_url(users[0].pk))
 
         assert response.status_code == status.HTTP_200_OK
 

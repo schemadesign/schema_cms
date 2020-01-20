@@ -112,3 +112,6 @@ venv.bak/
 
 # custom project files
 local.env
+
+# local lambdas files
+backend/functions/worker/unzip_requirements.py

@@ -28,6 +28,6 @@ export default defineMessages({
   },
   emailAuth0UserAlreadyExistError: {
     id: 'userCreate.0Auth0UserAlreadyExistError',
-    defaultMessage: 'User with that email already exists.',
+    defaultMessage: 'A user with this email already exists in SchemaCMS.',
   },
 });

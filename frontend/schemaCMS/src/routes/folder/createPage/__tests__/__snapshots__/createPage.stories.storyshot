@@ -34,7 +34,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c17 {
@@ -144,7 +144,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
   .c15 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }

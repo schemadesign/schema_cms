@@ -11,6 +11,13 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ("username", "role")
 
 
+class UserSerializerForAdmin(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "username", "email", "first_name", "last_name", "role")
+        read_only_fields = ("username",)
+
+
 class CurrentUserSerializer(serializers.ModelSerializer):
     auth_method = serializers.SerializerMethodField()
 
@@ -31,10 +38,3 @@ class CurrentUserSerializer(serializers.ModelSerializer):
         except ValueError:
             return None
         return auth_method
-
-
-class UserSerializerForAdmin(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ("id", "username", "email", "first_name", "last_name", "role")
-        read_only_fields = ("username",)

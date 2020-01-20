@@ -30,7 +30,7 @@ const fixedStyles = css`
   background-image: linear-gradient(
     to top,
     ${({ theme: { background } }) => `${background}, ${background} 30%`},
-    rgba(0, 0, 0, 0)
+    ${({ theme: { hiddenBackground } }) => hiddenBackground}
   );
 `;
 

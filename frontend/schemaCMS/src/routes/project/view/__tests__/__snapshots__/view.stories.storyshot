@@ -30,7 +30,7 @@ exports[`Storyshots Project|View Default 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c14 {
@@ -202,7 +202,7 @@ exports[`Storyshots Project|View Default 1`] = `
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }
@@ -737,7 +737,7 @@ exports[`Storyshots Project|View No data 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c14 {
@@ -909,7 +909,7 @@ exports[`Storyshots Project|View No data 1`] = `
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }

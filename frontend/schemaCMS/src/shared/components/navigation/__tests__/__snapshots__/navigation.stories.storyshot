@@ -154,7 +154,7 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
   .c1 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }

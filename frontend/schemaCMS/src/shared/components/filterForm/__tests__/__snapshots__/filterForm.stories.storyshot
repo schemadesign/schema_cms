@@ -66,7 +66,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c8 {
@@ -87,7 +87,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   .c6 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }
@@ -716,7 +716,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%,  );
 }
 
 .c10 {
@@ -765,7 +765,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   .c8 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    background-image: linear-gradient( to top, #000,#000 30%,  );
     width: 1000px;
   }
 }
