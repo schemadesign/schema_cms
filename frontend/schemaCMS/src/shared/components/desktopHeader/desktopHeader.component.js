@@ -1,19 +1,12 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Header, Icons, Menu } from 'schemaUI';
-import { always } from 'ramda';
+import { Button, Header, Icons, Menu, Typography } from 'schemaUI';
+import { always, equals, path, pipe, split, last } from 'ramda';
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 import { LogoutModal } from '../logoutModal';
-import { TopHeader } from '../topHeader';
-import {
-  Content,
-  MenuHeader,
-  PrimaryItem,
-  PrimaryList,
-  SecondaryItem,
-  SecondaryList,
-} from '../topHeader/topHeader.styles';
 import {
   Actions,
   closeButtonStyles,
@@ -31,20 +24,36 @@ import {
   Title,
   TitleWrapper,
   TopContainer,
-} from './desktopTopHeader.styles';
+  Content,
+  PrimaryItem,
+  List,
+  SecondaryItem,
+} from './desktopHeader.styles';
+import { PRIMARY_OPTIONS, SECONDARY_OPTIONS } from './desktopHeader.constants';
+import messages from './desktopHeader.messages';
+import { filterMenuOptions } from '../../utils/helpers';
 
 const { ExitIcon, UserIcon } = Icons;
+const { H1, H2 } = Typography;
 
-export class DesktopTopHeader extends TopHeader {
+export class DesktopHeader extends PureComponent {
   static propTypes = {
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    isAdmin: PropTypes.bool.isRequired,
+    userRole: PropTypes.string,
     userId: PropTypes.string,
   };
 
   state = {
     logoutModalOpen: false,
   };
+
+  getIsActive = page =>
+    pipe(
+      path(['location', 'pathname']),
+      split('/'),
+      last,
+      equals(page)
+    )(window);
 
   handleLogout = () => {
     this.setState({
@@ -55,6 +64,14 @@ export class DesktopTopHeader extends TopHeader {
   handleCancelLogout = () => {
     this.setState({
       logoutModalOpen: false,
+    });
+  };
+
+  handleToggleMenu = () => {
+    const { isMenuOpen } = this.state;
+
+    this.setState({
+      isMenuOpen: !isMenuOpen,
     });
   };
 
@@ -69,9 +86,7 @@ export class DesktopTopHeader extends TopHeader {
 
   renderHeaderBar = () => (
     <HeaderWrapper>
-      <LogoLink to="/">
-        <Logo />
-      </LogoLink>
+      {this.renderLogo}
       {this.renderTitle(this.props.title)}
       <Actions>
         <Button onClick={this.handleLogout} customStyles={logoutButtonStyles}>
@@ -84,6 +99,12 @@ export class DesktopTopHeader extends TopHeader {
     </HeaderWrapper>
   );
 
+  renderLogo = (
+    <LogoLink to="/">
+      <Logo />
+    </LogoLink>
+  );
+
   renderHeader = ({ buttonProps, userId }) =>
     renderWhenTrueOtherwise(
       always(
@@ -91,16 +112,20 @@ export class DesktopTopHeader extends TopHeader {
           {this.renderHeaderBar()}
         </Header>
       ),
-      always(
-        <LogoLink to="/">
-          <Logo />
-        </LogoLink>
-      )
+      always(this.renderLogo)
     )(!!userId);
+
+  renderItem = Item => ({ label = '', to = '', id = null, page = '' }, index) => (
+    <Item key={index} active={this.getIsActive(page)}>
+      <Link id={id} to={to} onClick={this.handleToggleMenu}>
+        {label}
+      </Link>
+    </Item>
+  );
 
   render() {
     const { logoutModalOpen, isMenuOpen } = this.state;
-    const { userId } = this.props;
+    const { userId, userRole } = this.props;
     const buttonProps = {
       onClick: this.handleToggleMenu,
       id: 'desktopTopHeaderOpenMenuButton',
@@ -109,9 +134,7 @@ export class DesktopTopHeader extends TopHeader {
       customStyles: closeButtonStyles,
       id: 'desktopTopHeaderCloseMenuButton',
     };
-
-    const primaryMenu = userId && this.renderMenuItems(this.primaryMenuItems, PrimaryList, PrimaryItem);
-    const secondaryMenu = this.renderMenuItems(this.secondaryMenuItems, SecondaryList, SecondaryItem);
+    const mainOptions = filterMenuOptions(PRIMARY_OPTIONS, userRole);
 
     return (
       <TopContainer>
@@ -125,10 +148,15 @@ export class DesktopTopHeader extends TopHeader {
               customStyles={menuStyles(isMenuOpen)}
               closeButtonProps={closeButtonProps}
             >
-              <MenuHeader>{this.renderHeader('SchemaCMS', 'Menu')}</MenuHeader>
+              <H2>
+                <FormattedMessage {...messages.title} />
+              </H2>
+              <H1>
+                <FormattedMessage {...messages.subtitle} />
+              </H1>
               <Content onClick={this.handleToggleMenu}>
-                {primaryMenu}
-                {secondaryMenu}
+                <List>{mainOptions.map(this.renderItem(PrimaryItem))}</List>
+                <List>{SECONDARY_OPTIONS.map(this.renderItem(SecondaryItem))}</List>
               </Content>
             </Menu>
           </MenuWrapper>

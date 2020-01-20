@@ -314,10 +314,8 @@ exports[`App: Component should not render App when language is not set 1`] = `
           <Component />
         </FormattedMessage>
         <GlobalStyleComponent />
-        <DesktopTopHeader
-          isAdmin={false}
-          primaryMenuItems={Array []}
-          secondaryMenuItems={Array []}
+        <DesktopHeader
+          userRole="editor"
         />
         <styled.div>
           <LoadingWrapper
@@ -653,10 +651,8 @@ exports[`App: Component should render App when language is set 1`] = `
           <Component />
         </FormattedMessage>
         <GlobalStyleComponent />
-        <DesktopTopHeader
-          isAdmin={false}
-          primaryMenuItems={Array []}
-          secondaryMenuItems={Array []}
+        <DesktopHeader
+          userRole="editor"
         />
         <styled.div>
           <LoadingWrapper

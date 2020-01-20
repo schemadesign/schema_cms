@@ -86,7 +86,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           >
             <FormattedMessage
               defaultMessage="Users"
-              id="shared.components.desktopTopHeader.users"
+              id="shared.components.desktopHeader.users"
               values={Object {}}
             />
           </Link>
@@ -297,7 +297,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
           >
             <FormattedMessage
               defaultMessage="Users"
-              id="shared.components.desktopTopHeader.users"
+              id="shared.components.desktopHeader.users"
               values={Object {}}
             />
           </Link>
@@ -504,7 +504,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           >
             <FormattedMessage
               defaultMessage="Users"
-              id="shared.components.desktopTopHeader.users"
+              id="shared.components.desktopHeader.users"
               values={Object {}}
             />
           </Link>

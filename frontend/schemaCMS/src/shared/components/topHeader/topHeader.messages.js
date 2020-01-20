@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   users: {
-    id: 'shared.components.desktopTopHeader.users',
+    id: 'shared.components.desktopHeader.users',
     defaultMessage: 'Users',
   },
   about: {

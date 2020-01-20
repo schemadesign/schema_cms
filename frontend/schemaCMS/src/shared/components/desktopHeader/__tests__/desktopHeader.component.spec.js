@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { DesktopTopHeader } from '../desktopTopHeader.component';
-import { defaultProps } from '../desktopTopHeader.stories';
+import { DesktopHeader } from '../desktopHeader.component';
+import { defaultProps } from '../desktopHeader.stories';
 
 describe('DesktopTopHeader: Component', () => {
-  const component = props => <DesktopTopHeader {...defaultProps} {...props} />;
+  const component = props => <DesktopHeader {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
