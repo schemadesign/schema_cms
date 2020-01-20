@@ -274,7 +274,7 @@ class API(core.Stack):
             self,
             "api-service",
             cluster=scope.base.cluster,
-            task_image_options=aws_ecs_patterns.aws_cdk.ApplicationLoadBalancedTaskImageOptions(
+            task_image_options=aws_ecs_patterns.ApplicationLoadBalancedTaskImageOptions(
                 image=nginx_image,
                 container_name="nginx",
                 container_port=80,
