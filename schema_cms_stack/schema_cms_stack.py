@@ -539,21 +539,6 @@ class CIPipeline(core.Stack):
             self, "deploy-pipeline", pipeline_name="schema-cms-deploy-pipeline"
         )
 
-        self.pipeline.artifact_bucket.grant_read(
-            scope.public_api.public_api_lambda.role
-        )
-        self.pipeline.artifact_bucket.grant_read(
-            scope.workers.worker_task_definition.task_role
-        )
-        self.pipeline.artifact_bucket.grant_read(
-            scope.image_resize_lambda.image_resize_lambda.role
-        )
-
-        for function in scope.lambda_worker.functions:
-            self.pipeline.artifact_bucket.grant_read(
-                function[0].role
-            )
-
         source_output = aws_codepipeline.Artifact()
         github_token_arn = self.node.try_get_context("github_token_arn")
         oauth_token = aws_secretsmanager.Secret.from_secret_arn(
