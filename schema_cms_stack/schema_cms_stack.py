@@ -551,7 +551,7 @@ class CIPipeline(core.Stack):
 
         for function in scope.lambda_worker.functions:
             self.pipeline.artifact_bucket.grant_read(
-                function.role
+                function[0].role
             )
 
         source_output = aws_codepipeline.Artifact()
