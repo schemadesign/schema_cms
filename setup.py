@@ -5,7 +5,7 @@ with open("README.md") as fp:
     long_description = fp.read()
 
 
-AWS_CDK_VERSION = "1.10.0"
+AWS_CDK_VERSION = "1.21.1"
 
 
 setuptools.setup(
