@@ -177,7 +177,7 @@ class Workers(core.Stack):
         run_worker_task = aws_stepfunctions_tasks.RunEcsFargateTask(
             cluster=scope.base.cluster,
             task_definition=self.worker_task_definition,
-            subnets=scope.base.vpc.select_subnets(),
+            subnets=scope.base.vpc.select_subnets(subnet_type=aws_ec2.SubnetType.PRIVATE),
             integration_pattern=aws_stepfunctions.ServiceIntegrationPattern.SYNC,
         )
         run_worker_task.connections.allow_to(
