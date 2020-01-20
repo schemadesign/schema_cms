@@ -274,13 +274,15 @@ class API(core.Stack):
             self,
             "api-service",
             cluster=scope.base.cluster,
-            image=nginx_image,
+            task_image_options=aws_ecs_patterns.aws_cdk.ApplicationLoadBalancedTaskImageOptions(
+                image=nginx_image,
+                container_name="nginx",
+                container_port=80,
+                enable_logging=True
+            ),
             desired_count=1,
             cpu=256,
             memory_limit_mib=512,
-            container_name="nginx",
-            enable_logging=True,
-            container_port=80,
             certificate=scope.certs.cert,
             domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
             domain_zone=aws_route53.PrivateHostedZone(
