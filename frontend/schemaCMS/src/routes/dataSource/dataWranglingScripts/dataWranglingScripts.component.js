@@ -20,8 +20,10 @@ import {
   IconWrapper,
   labelStyles,
   Link,
+  menuIconStyles,
   selectedLabelStyles,
   StepCounter,
+  StepName,
   Type,
   UploadContainer,
   Warning,
@@ -171,12 +173,12 @@ export class DataWranglingScripts extends PureComponent {
     return this.props.setCheckedScripts(tempScripts);
   };
 
-  renderCheckbox = ({ id, name, type = SCRIPT_TYPES.CUSTOM, draggableIcon = '', idPrefix = '' }, index) => (
+  renderCheckbox = ({ id, name, type = SCRIPT_TYPES.CUSTOM, draggableIcon = null, idPrefix = '' }, index) => (
     <Checkbox id={`${idPrefix}checkbox-${index}`} value={id.toString()}>
       <CheckboxContent>
         {draggableIcon}
         <Link to={this.getScriptLink({ id, type })}>
-          {name}
+          <StepName drag={!!draggableIcon}> {name}</StepName>
           <Dot />
           <Type>
             <FormattedMessage {...messages[type]} />
@@ -192,7 +194,7 @@ export class DataWranglingScripts extends PureComponent {
         {makeDraggable => {
           const draggableIcon = makeDraggable(
             <IconWrapper>
-              <MenuIcon />
+              <MenuIcon customStyles={menuIconStyles} />
             </IconWrapper>
           );
 

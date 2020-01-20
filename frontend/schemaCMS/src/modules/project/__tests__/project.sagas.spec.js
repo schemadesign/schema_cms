@@ -123,7 +123,7 @@ describe('Project: sagas', () => {
         .dispatch(ProjectRoutines.createProject({ payload }))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/');
+      expect(browserHistory.push).toBeCalledWith('/project');
     });
 
     it('should put ProjectRoutines.createProject.failure action', async () => {
@@ -166,7 +166,7 @@ describe('Project: sagas', () => {
         .dispatch(ProjectRoutines.removeOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/');
+      expect(browserHistory.push).toBeCalledWith('/project');
     });
 
     it('should put ProjectRoutines.removeEditor.success action and fetch project', async () => {

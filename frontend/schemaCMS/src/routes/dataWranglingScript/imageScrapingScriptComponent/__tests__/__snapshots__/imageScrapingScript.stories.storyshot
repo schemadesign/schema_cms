@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`] = `
-.c13 {
+.c14 {
   height: 155px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,13 +24,16 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
   width: 100%;
 }
 
-.c14 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -51,7 +54,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
   color: #FFF;
 }
 
-.c12 {
+.c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -128,8 +131,15 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
   word-break: break-word;
 }
 
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+  word-break: break-word;
+  margin-bottom: 30px;
+}
+
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -138,7 +148,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -147,7 +157,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     width: 240px;
   }
 }
@@ -286,10 +296,10 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -524,77 +534,55 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
       className=""
       name="dataWranglingForm"
     >
-      <div
-        className=""
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
           }
-        >
-          <label
-            htmlFor="description"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Description
-          </label>
-          <input
-            disabled={true}
-            id="description"
-            name="description"
-            onChange={[Function]}
-            placeholder="Description"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "lineHeight": "24px",
-                "outline": "none",
-                "overflow": "hidden",
-                "padding": 0,
-                "textOverflow": "ellipsis",
-                "whiteSpace": "nowrap",
-              }
-            }
-            type="text"
-            value="local:blank_cells.py"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-        </div>
+        }
+      >
+        <span>
+          Description
+        </span>
+      </label>
+      <div
+        className="c12"
+      >
+        local:blank_cells.py
       </div>
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        <span>
+          Python Code
+        </span>
+      </label>
       <pre
         style={
           Object {
             "background": "#F0F0F0",
             "color": "#444",
             "display": "block",
+            "marginBottom": 30,
+            "minHeight": 100,
             "overflowX": "auto",
             "padding": "0.5em",
           }
@@ -1311,7 +1299,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
         </span>
       </label>
       <div
-        className="c12"
+        className="c13"
       >
         <span>
           Loading...
@@ -1319,16 +1307,16 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
       </div>
     </form>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
       >
         <div
-          className="c15"
+          className="c16"
         >
           <button
-            className="c16"
+            className="c17"
             disabled={false}
             id="imageScrapingBackBtn"
             onClick={[Function]}
@@ -1355,7 +1343,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
             </span>
           </button>
           <button
-            className="c16"
+            className="c17"
             disabled={true}
             id="imageScrapingNextBtn"
             onClick={[Function]}
@@ -1389,11 +1377,11 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
 `;
 
 exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1`] = `
-.c13 {
+.c14 {
   height: 155px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1412,13 +1400,16 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
   width: 100%;
 }
 
-.c14 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
 }
 
-.c16 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1439,7 +1430,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
   color: #1d1d20;
 }
 
-.c12 {
+.c13 {
   color: #1d1d20;
   text-align: center;
   padding: 50px 10px;
@@ -1516,8 +1507,15 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
   word-break: break-word;
 }
 
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+  word-break: break-word;
+  margin-bottom: 30px;
+}
+
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1526,7 +1524,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
@@ -1535,7 +1533,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     width: 240px;
   }
 }
@@ -1674,10 +1672,10 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -1912,77 +1910,55 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
       className=""
       name="dataWranglingForm"
     >
-      <div
-        className=""
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #f0efef",
+            "color": "#a6a7aa",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
           }
-        >
-          <label
-            htmlFor="description"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #f0efef",
-                "color": "#a6a7aa",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Description
-          </label>
-          <input
-            disabled={true}
-            id="description"
-            name="description"
-            onChange={[Function]}
-            placeholder="Description"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#000",
-                "fontSize": "18px",
-                "lineHeight": "24px",
-                "outline": "none",
-                "overflow": "hidden",
-                "padding": 0,
-                "textOverflow": "ellipsis",
-                "whiteSpace": "nowrap",
-              }
-            }
-            type="text"
-            value="local:blank_cells.py"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-        </div>
+        }
+      >
+        <span>
+          Description
+        </span>
+      </label>
+      <div
+        className="c12"
+      >
+        local:blank_cells.py
       </div>
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #f0efef",
+            "color": "#a6a7aa",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        <span>
+          Python Code
+        </span>
+      </label>
       <pre
         style={
           Object {
             "background": "#F0F0F0",
             "color": "#444",
             "display": "block",
+            "marginBottom": 30,
+            "minHeight": 100,
             "overflowX": "auto",
             "padding": "0.5em",
           }
@@ -2699,7 +2675,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
         </span>
       </label>
       <div
-        className="c12"
+        className="c13"
       >
         <span>
           Loading...
@@ -2707,16 +2683,16 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
       </div>
     </form>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
       >
         <div
-          className="c15"
+          className="c16"
         >
           <button
-            className="c16"
+            className="c17"
             disabled={false}
             id="imageScrapingBackBtn"
             onClick={[Function]}
@@ -2743,7 +2719,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
             </span>
           </button>
           <button
-            className="c16"
+            className="c17"
             disabled={true}
             id="imageScrapingNextBtn"
             onClick={[Function]}

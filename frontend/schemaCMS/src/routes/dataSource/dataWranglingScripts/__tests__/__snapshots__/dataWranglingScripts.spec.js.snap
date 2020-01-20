@@ -224,15 +224,20 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             <Styled(Link)
               to="/script/1"
             >
-              name 1
+              <styled.div
+                drag={false}
+              >
+                 
+                name 1
+              </styled.div>
               <styled.div />
-              <styled.span>
+              <styled.div>
                 <FormattedMessage
                   defaultMessage="Uploaded"
                   id="dataSource.dataWranglingScripts.0"
                   values={Object {}}
                 />
-              </styled.span>
+              </styled.div>
             </Styled(Link)>
           </styled.div>
         </Component>
@@ -248,15 +253,20 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             <Styled(Link)
               to="/script/2/1"
             >
-              name 2
+              <styled.div
+                drag={false}
+              >
+                 
+                name 2
+              </styled.div>
               <styled.div />
-              <styled.span>
+              <styled.div>
                 <FormattedMessage
                   defaultMessage="Default"
                   id="dataSource.dataWranglingScripts.2"
                   values={Object {}}
                 />
-              </styled.span>
+              </styled.div>
             </Styled(Link)>
           </styled.div>
         </Component>
@@ -930,15 +940,20 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
         <Styled(Link)
           to="/script/1"
         >
-          name 1
+          <styled.div
+            drag={false}
+          >
+             
+            name 1
+          </styled.div>
           <styled.div />
-          <styled.span>
+          <styled.div>
             <FormattedMessage
               defaultMessage="Uploaded"
               id="dataSource.dataWranglingScripts.0"
               values={Object {}}
             />
-          </styled.span>
+          </styled.div>
         </Styled(Link)>
       </styled.div>
     </Component>
@@ -954,15 +969,20 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
         <Styled(Link)
           to="/script/2/1"
         >
-          name 2
+          <styled.div
+            drag={false}
+          >
+             
+            name 2
+          </styled.div>
           <styled.div />
-          <styled.span>
+          <styled.div>
             <FormattedMessage
               defaultMessage="Default"
               id="dataSource.dataWranglingScripts.2"
               values={Object {}}
             />
-          </styled.span>
+          </styled.div>
         </Styled(Link)>
       </styled.div>
     </Component>

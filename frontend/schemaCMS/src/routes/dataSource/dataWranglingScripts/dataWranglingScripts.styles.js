@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
 
+import { media } from '../../../theme/media';
+
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
@@ -34,19 +36,43 @@ export const Warning = styled.div`
 export const Link = styled(RouterLink)`
   color: inherit;
   text-decoration: none;
+  width: 100%;
 `;
 
 export const Dot = styled.div`
-  display: inline-block;
+  display: none;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   margin: 0 10px 2px 10px;
   background-color: ${({ theme: { secondaryText } }) => secondaryText};
+
+  ${media.tablet`
+    display: inline-block;
+  `};
 `;
 
-export const Type = styled.span`
+export const Type = styled.div`
   color: ${({ theme: { secondaryText } }) => secondaryText};
+  width: 100%;
+
+  ${media.tablet`
+    width: auto;
+    display: inline;
+  `};
+`;
+
+export const StepName = styled.div`
+  overflow: hidden;
+  min-width: 100%;
+  padding-right: ${({ drag }) => (drag ? '30px' : '0')};
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  ${media.tablet`
+    width: auto;
+    display: inline;
+  `};
 `;
 
 export const CheckboxContent = styled.div`
@@ -67,6 +93,8 @@ export const checkBoxStyles = {
 export const checkBoxContainerStyles = {
   borderTop: 'none',
 };
+
+export const menuIconStyles = { width: 10, marginRight: 20 };
 
 export const selectedLabelStyles = { marginBottom: 20 };
 export const labelStyles = { margin: '40px 0 20px 0' };

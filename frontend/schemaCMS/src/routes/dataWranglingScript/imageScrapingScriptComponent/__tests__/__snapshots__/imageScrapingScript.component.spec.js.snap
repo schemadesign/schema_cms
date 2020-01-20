@@ -36,27 +36,30 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
   <styled.form
     name="dataWranglingForm"
   >
-    <TextInput
-      checkOnlyErrors={false}
-      customInputStyles={
+    <Component>
+      <FormattedMessage
+        defaultMessage="Description"
+        id="dataWranglingScripts.imageScrapingScript.description"
+        values={Object {}}
+      />
+    </Component>
+    <styled.div>
+      local:blank_cells.py
+    </styled.div>
+    <Component>
+      <FormattedMessage
+        defaultMessage="Python Code"
+        id="dataWranglingScripts.imageScrapingScript.pythonCode"
+        values={Object {}}
+      />
+    </Component>
+    <SyntaxHighlighter
+      customStyle={
         Object {
-          "overflow": "hidden",
-          "textOverflow": "ellipsis",
-          "whiteSpace": "nowrap",
+          "marginBottom": 30,
+          "minHeight": 100,
         }
       }
-      disabled={true}
-      errors={Object {}}
-      fullWidth={true}
-      isEdit={false}
-      label="Description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      touched={Object {}}
-      value="local:blank_cells.py"
-    />
-    <SyntaxHighlighter
       language="python"
     >
       
@@ -132,7 +135,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     <Component>
       <FormattedMessage
         defaultMessage="Fields with URLs"
-        id="imageScrapingScript.fieldsWithUrls"
+        id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"
         values={Object {}}
       />
     </Component>
@@ -145,14 +148,14 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       <styled.div>
         <FormattedMessage
           defaultMessage="No fields containing URLs were found."
-          id="imageScrapingScript.noFieldFound"
+          id="dataWranglingScripts.imageScrapingScript.noFieldFound"
           values={Object {}}
         />
       </styled.div>
     </LoadingWrapper>
   </styled.form>
   <NavigationContainer
-    fixed={false}
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
@@ -169,7 +172,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Save"
-        id="imageScrapingScript.save"
+        id="dataWranglingScripts.imageScrapingScript.save"
         values={Object {}}
       />
     </NextButton>
@@ -213,27 +216,30 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
   <styled.form
     name="dataWranglingForm"
   >
-    <TextInput
-      checkOnlyErrors={false}
-      customInputStyles={
+    <Component>
+      <FormattedMessage
+        defaultMessage="Description"
+        id="dataWranglingScripts.imageScrapingScript.description"
+        values={Object {}}
+      />
+    </Component>
+    <styled.div>
+      local:blank_cells.py
+    </styled.div>
+    <Component>
+      <FormattedMessage
+        defaultMessage="Python Code"
+        id="dataWranglingScripts.imageScrapingScript.pythonCode"
+        values={Object {}}
+      />
+    </Component>
+    <SyntaxHighlighter
+      customStyle={
         Object {
-          "overflow": "hidden",
-          "textOverflow": "ellipsis",
-          "whiteSpace": "nowrap",
+          "marginBottom": 30,
+          "minHeight": 100,
         }
       }
-      disabled={true}
-      errors={Object {}}
-      fullWidth={true}
-      isEdit={false}
-      label="Description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      touched={Object {}}
-      value="local:blank_cells.py"
-    />
-    <SyntaxHighlighter
       language="python"
     >
       
@@ -309,7 +315,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     <Component>
       <FormattedMessage
         defaultMessage="Fields with URLs"
-        id="imageScrapingScript.fieldsWithUrls"
+        id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"
         values={Object {}}
       />
     </Component>
@@ -322,14 +328,14 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       <styled.div>
         <FormattedMessage
           defaultMessage="No fields containing URLs were found."
-          id="imageScrapingScript.noFieldFound"
+          id="dataWranglingScripts.imageScrapingScript.noFieldFound"
           values={Object {}}
         />
       </styled.div>
     </LoadingWrapper>
   </styled.form>
   <NavigationContainer
-    fixed={false}
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
@@ -346,7 +352,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     >
       <FormattedMessage
         defaultMessage="Save"
-        id="imageScrapingScript.save"
+        id="dataWranglingScripts.imageScrapingScript.save"
         values={Object {}}
       />
     </NextButton>
