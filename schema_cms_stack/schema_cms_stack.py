@@ -548,9 +548,11 @@ class CIPipeline(core.Stack):
         self.pipeline.artifact_bucket.grant_read(
             scope.image_resize_lambda.image_resize_lambda.role
         )
-        self.pipeline.artifact_bucket.grant_read(
-            scope.lambda_worker.lambda_fn.role
-        )
+
+        for function in scope.lambda_worker.functions:
+            self.pipeline.artifact_bucket.grant_read(
+                function.role
+            )
 
         source_output = aws_codepipeline.Artifact()
         github_token_arn = self.node.try_get_context("github_token_arn")
