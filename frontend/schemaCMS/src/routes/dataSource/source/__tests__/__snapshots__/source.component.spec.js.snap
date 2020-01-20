@@ -102,6 +102,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "border": "#2F2F36",
             "text": "#FFF",
           },
+          "hiddenBackground": "rgba(0, 0, 0, 0)",
           "icon": Object {
             "background": "#1d1d20",
             "fill": "#FFF",
@@ -291,6 +292,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "border": "#2F2F36",
             "text": "#FFF",
           },
+          "hiddenBackground": "rgba(0, 0, 0, 0)",
           "icon": Object {
             "background": "#1d1d20",
             "fill": "#FFF",
@@ -520,6 +522,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "border": "#2F2F36",
           "text": "#FFF",
         },
+        "hiddenBackground": "rgba(0, 0, 0, 0)",
         "icon": Object {
           "background": "#1d1d20",
           "fill": "#FFF",
@@ -873,6 +876,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "border": "#2F2F36",
             "text": "#FFF",
           },
+          "hiddenBackground": "rgba(0, 0, 0, 0)",
           "icon": Object {
             "background": "#1d1d20",
             "fill": "#FFF",
@@ -1060,6 +1064,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "border": "#2F2F36",
             "text": "#FFF",
           },
+          "hiddenBackground": "rgba(0, 0, 0, 0)",
           "icon": Object {
             "background": "#1d1d20",
             "fill": "#FFF",
@@ -1266,6 +1271,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "border": "#2F2F36",
           "text": "#FFF",
         },
+        "hiddenBackground": "rgba(0, 0, 0, 0)",
         "icon": Object {
           "background": "#1d1d20",
           "fill": "#FFF",

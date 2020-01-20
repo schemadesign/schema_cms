@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Icons } from 'schemaUI';
 
+import { media } from '../../../theme/media';
+
 export const Container = styled.div``;
 
 export const ListWrapper = styled.div`
@@ -57,4 +59,20 @@ export const JobInformation = styled.div`
   align-items: center;
   margin-right: 10px;
   line-height: 18px;
+
+  &:last-child {
+    width: 100%;
+    ${Dot} {
+      display: none;
+    }
+  }
+
+  ${media.bigMobile`
+    &:last-child {
+      width: auto;
+      ${Dot} {
+       display: block;
+      }
+    }
+  `};
 `;
