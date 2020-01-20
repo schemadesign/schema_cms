@@ -4,8 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { CreateFilter } from './createFilter.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchFieldsInfo: Function.prototype,
   createFilter: Function.prototype,
   fieldsInfo: {
@@ -17,6 +19,7 @@ export const defaultProps = {
   },
   dataSource: {
     name: 'name',
+    project: { id: 1 },
   },
   history,
   intl,

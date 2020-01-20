@@ -5,12 +5,14 @@ import { JobList } from './jobList.component';
 import { JOB_STATE_FAILURE, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
 import { withTheme } from '../../../.storybook/decorators';
 import { history } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchJobList: Function.prototype,
   revertToJob: Function.prototype,
   jobList: [],
-  dataSource: { jobActive: 1 },
+  dataSource: { jobActive: 1, project: { id: 1 } },
   history,
   match: {
     params: {

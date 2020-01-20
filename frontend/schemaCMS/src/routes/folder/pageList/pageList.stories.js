@@ -4,8 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { PageList } from './pageList.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchPages: Function.prototype,
   fetchFolder: Function.prototype,
   pages: [

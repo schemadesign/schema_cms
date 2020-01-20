@@ -35,14 +35,15 @@ import {
   SCRIPT_TYPES,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { Draggable } from '../../../shared/components/draggable';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getDataSourceMenuOptions } from '../dataSource.constants';
 
 const { CheckboxGroup, Checkbox, FileUpload, Label } = Form;
 const { MenuIcon } = Icons;
@@ -287,13 +288,18 @@ export class DataWranglingScripts extends PureComponent {
       flatten,
       uniq
     )(checkedScripts);
-    const { jobsInProcess, name } = dataSource;
+    const { jobsInProcess, name, userRole } = dataSource;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
 
     return (
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
+        <MobileMenu
+          headerTitle={name}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
         <ContextHeader title={name} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

@@ -10,7 +10,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Data Wrangling"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Data Wrangling"
@@ -18,9 +18,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="1"
-    secondaryMenuItems={Array []}
+    options={Array []}
   />
   <ContextHeader
     subtitle={
@@ -127,6 +125,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         ]
       }
       uploadScript={[Function]}
+      userRole="admin"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -385,6 +384,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         ]
       }
       uploadScript={[Function]}
+      userRole="admin"
     />
   </LoadingWrapper>
 </DndProvider>
@@ -400,7 +400,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
     encodeSpecialCharacters={true}
     title="Data Wrangling"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Data Wrangling"
@@ -408,9 +408,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="1"
-    secondaryMenuItems={Array []}
+    options={Array []}
   />
   <ContextHeader
     subtitle={
@@ -491,6 +489,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
         ]
       }
       uploadScript={[Function]}
+      userRole="admin"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -609,6 +608,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
         ]
       }
       uploadScript={[Function]}
+      userRole="admin"
     />
   </LoadingWrapper>
 </DndProvider>
@@ -624,7 +624,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
     encodeSpecialCharacters={true}
     title="Data Wrangling"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Data Wrangling"
@@ -632,9 +632,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="1"
-    secondaryMenuItems={Array []}
+    options={Array []}
   />
   <ContextHeader
     subtitle={
@@ -724,6 +722,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
       setScriptsList={[Function]}
       uncheckedScripts={Array []}
       uploadScript={[Function]}
+      userRole="admin"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -894,6 +893,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
       setScriptsList={[Function]}
       uncheckedScripts={Array []}
       uploadScript={[Function]}
+      userRole="admin"
     />
   </LoadingWrapper>
 </DndProvider>

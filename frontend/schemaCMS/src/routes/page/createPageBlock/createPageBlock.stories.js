@@ -5,8 +5,10 @@ import { CreatePageBlock } from './createPageBlock.component';
 import { NONE } from '../../../modules/pageBlock/pageBlock.constants';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   values: {
     type: NONE,
   },

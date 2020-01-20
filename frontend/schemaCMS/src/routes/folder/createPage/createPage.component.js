@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 
 import { Form } from './createPage.styles';
 import messages from './createPage.messages';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { PageForm } from '../../../shared/components/pageForm';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { PAGE_MENU_OPTIONS } from '../../pageBlock/pageBlock.constants';
 
 export class CreatePage extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     intl: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -25,13 +27,17 @@ export class CreatePage extends PureComponent {
   handleCancelClick = () => this.props.history.push(`/folder/${getMatchParam(this.props, 'folderId')}`);
 
   render() {
-    const { handleSubmit, isValid, isSubmitting } = this.props;
+    const { handleSubmit, isValid, isSubmitting, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <PageForm {...this.props} />

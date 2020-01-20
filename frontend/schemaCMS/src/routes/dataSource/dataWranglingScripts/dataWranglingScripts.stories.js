@@ -6,6 +6,7 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 import { SCRIPT_TYPES } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 const dataWranglingScripts = new Immutable([
   { id: 1, name: 'name 1', specs: {}, isPredefined: false, type: SCRIPT_TYPES.UPLOADED },
@@ -14,6 +15,7 @@ const dataWranglingScripts = new Immutable([
 ]);
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   dataWranglingScripts,
   checkedScripts: [dataWranglingScripts[0]],
   uncheckedScripts: [dataWranglingScripts[0], dataWranglingScripts[1]],

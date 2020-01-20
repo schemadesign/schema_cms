@@ -8,8 +8,10 @@ import { injectIntl } from 'react-intl';
 
 import { Fields } from './fields.component';
 import { DataSourceRoutines, selectDataSource, selectPreviewData } from '../../../modules/dataSource';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   dataSource: selectDataSource,
   previewData: selectPreviewData,
 });

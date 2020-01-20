@@ -5,8 +5,10 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingResult } from './dataWranglingResult.component';
 import { tableData as data, tableFields as fields } from '../../../shared/utils/dataMock';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   dataSource: {
     id: 1,
     activeJob: {

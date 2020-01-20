@@ -22,19 +22,22 @@ import {
 } from './pageBlockList.styles';
 import messages from './pageBlockList.messages';
 import { BackArrowButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { Draggable } from '../../../shared/components/draggable';
 import reportError from '../../../shared/utils/reportError';
+import { PAGE_MENU_OPTIONS } from '../../pageBlock/pageBlock.constants';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
 const { CheckboxGroup, Checkbox } = Form;
 const { MenuIcon } = Icons;
 
 export class PageBlockList extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
+    pageBlocks: PropTypes.array.isRequired,
     values: PropTypes.array.isRequired,
     page: PropTypes.object.isRequired,
     temporaryPageBlocks: PropTypes.array.isRequired,
@@ -191,7 +194,11 @@ export class PageBlockList extends PureComponent {
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, this.props.userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Header>
           <CreateButtonContainer>

@@ -13,8 +13,10 @@ import messages from './pageBlock.messages';
 
 import { errorMessageParser, getMatchParam } from '../../shared/utils/helpers';
 import { BLOCK_CONTENT, BLOCK_FORM, BLOCK_SCHEMA, INITIAL_VALUES } from '../../modules/pageBlock/pageBlock.constants';
+import { selectUserRole } from '../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   block: selectPageBlock,
 });
 

@@ -7,7 +7,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Source"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Source"
@@ -15,9 +15,79 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="projectId"
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/projectId",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/folder",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -209,6 +279,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "warning": "#be8f00",
         }
       }
+      userRole="admin"
       values={
         Object {
           "file": "file",
@@ -629,6 +700,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "warning": "#be8f00",
       }
     }
+    userRole="admin"
     values={
       Object {
         "file": "file",
@@ -783,7 +855,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     encodeSpecialCharacters={true}
     title="Source"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Source"
@@ -791,9 +863,79 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="projectId"
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/projectId",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/folder",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -983,6 +1125,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "warning": "#be8f00",
         }
       }
+      userRole="admin"
       values={
         Object {
           "file": "file",
@@ -1378,6 +1521,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "warning": "#be8f00",
       }
     }
+    userRole="admin"
     values={
       Object {
         "file": "file",

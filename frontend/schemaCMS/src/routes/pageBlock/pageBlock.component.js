@@ -5,18 +5,20 @@ import { path } from 'ramda';
 
 import { Container, Form, LinkWrapper } from './pageBlock.styles';
 import messages from './pageBlock.messages';
-import { TopHeader } from '../../shared/components/topHeader';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { PageBlockForm } from '../../shared/components/pageBlockForm';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import { Link } from '../../theme/typography';
-import { getMatchParam } from '../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../shared/utils/helpers';
 import reportError from '../../shared/utils/reportError';
+import { PAGE_MENU_OPTIONS } from './pageBlock.constants';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 
 export class PageBlock extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     history: PropTypes.object.isRequired,
     block: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
@@ -63,14 +65,18 @@ export class PageBlock extends PureComponent {
     this.props.history.push(`/page/${path(['block', 'page', 'id'], this.props)}`, { fromBlock: true });
 
   render() {
-    const { handleSubmit, isSubmitting, ...restProps } = this.props;
+    const { handleSubmit, isSubmitting, userRole, ...restProps } = this.props;
     const { loading, error, confirmationModalOpen } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Container>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>

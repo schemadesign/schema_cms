@@ -9,8 +9,10 @@ import { injectIntl } from 'react-intl';
 import { DataWranglingResult } from './dataWranglingResult.component';
 import { JobRoutines, selectJobPreview } from '../../../modules/job';
 import { selectDataSource } from '../../../modules/dataSource';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   previewData: selectJobPreview,
   dataSource: selectDataSource,
 });

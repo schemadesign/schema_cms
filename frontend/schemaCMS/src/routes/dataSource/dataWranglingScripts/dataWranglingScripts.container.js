@@ -16,9 +16,10 @@ import {
 } from '../../../modules/dataWranglingScripts';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 import { selectDataSource } from '../../../modules/dataSource';
-import { selectIsAdmin } from '../../../modules/userProfile';
+import { selectIsAdmin, selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   dataSource: selectDataSource,
   dataWranglingScripts: selectDataWranglingScripts,
   checkedScripts: selectCheckedScripts,
