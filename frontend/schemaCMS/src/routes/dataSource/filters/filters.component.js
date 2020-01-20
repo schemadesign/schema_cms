@@ -131,7 +131,7 @@ export class Filters extends PureComponent {
             return (
               <Fragment>
                 {this.renderCheckboxGroup(filters, values, setValues)}
-                <NavigationContainer right>
+                <NavigationContainer right fixed dataSource>
                   <NextButton onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                     <FormattedMessage {...messages.save} />
                   </NextButton>

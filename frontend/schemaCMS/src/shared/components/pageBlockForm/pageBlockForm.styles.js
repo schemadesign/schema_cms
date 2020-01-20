@@ -13,7 +13,7 @@ export const UploaderItem = styled.div`
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin-right: 20px;
+  justify-content: space-between;
 `;
 
 export const ImageName = styled.span`
@@ -29,3 +29,5 @@ export const removeIconStyles = {
   marginLeft: 20,
   cursor: 'pointer',
 };
+
+export const menuIconStyles = { width: 10, marginRight: 20 };

@@ -309,7 +309,7 @@ export class DataWranglingScripts extends PureComponent {
           </Header>
           <Fragment>
             {this.renderCheckboxGroup(steps)}
-            <NavigationContainer right>
+            <NavigationContainer right fixed dataSource>
               <NextButton
                 onClick={this.handleSubmit}
                 disabled={isSubmitting || jobsInProcess || !steps.length}
