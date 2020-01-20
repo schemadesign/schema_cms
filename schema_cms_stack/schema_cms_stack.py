@@ -539,8 +539,17 @@ class CIPipeline(core.Stack):
             self, "deploy-pipeline", pipeline_name="schema-cms-deploy-pipeline"
         )
 
-        self.pipeline.add_to_role_policy(
-            aws_iam.PolicyStatement(actions=["s3:Get*", "s3:List*"], resources=["*"])
+        self.pipeline.artifact_bucket.grant_read(
+            scope.public_api.role
+        )
+        self.pipeline.artifact_bucket.grant_read(
+            scope.workers.role
+        )
+        self.pipeline.artifact_bucket.grant_read(
+            scope.image_resize_lambda.role
+        )
+        self.pipeline.artifact_bucket.grant_read(
+            scope.lambda_worker.role
         )
 
         source_output = aws_codepipeline.Artifact()
