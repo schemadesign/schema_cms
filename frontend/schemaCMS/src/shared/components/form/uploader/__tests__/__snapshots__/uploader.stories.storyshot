@@ -172,6 +172,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
               "border": "#2F2F36",
               "text": "#FFF",
             },
+            "hiddenBackground": "rgba(0, 0, 0, 0)",
             "icon": Object {
               "background": "#1d1d20",
               "fill": "#FFF",
@@ -495,6 +496,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
               "border": "#2F2F36",
               "text": "#FFF",
             },
+            "hiddenBackground": "rgba(0, 0, 0, 0)",
             "icon": Object {
               "background": "#1d1d20",
               "fill": "#FFF",

@@ -30,7 +30,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%,  );
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
 .c20 {
@@ -167,7 +167,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   .c18 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%,  );
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }
@@ -755,7 +755,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%,  );
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
 .c20 {
@@ -892,7 +892,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   .c18 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%,  );
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }

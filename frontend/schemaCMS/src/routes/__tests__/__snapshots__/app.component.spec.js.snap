@@ -49,6 +49,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "border": "#f0efef",
           "text": "#1d1d20",
         },
+        "hiddenBackground": "rgba(255, 255, 255, 0)",
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
@@ -197,6 +198,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "border": "#f0efef",
             "text": "#1d1d20",
           },
+          "hiddenBackground": "rgba(255, 255, 255, 0)",
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",
@@ -386,6 +388,7 @@ exports[`App: Component should render App when language is set 1`] = `
           "border": "#f0efef",
           "text": "#1d1d20",
         },
+        "hiddenBackground": "rgba(255, 255, 255, 0)",
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
@@ -534,6 +537,7 @@ exports[`App: Component should render App when language is set 1`] = `
             "border": "#f0efef",
             "text": "#1d1d20",
           },
+          "hiddenBackground": "rgba(255, 255, 255, 0)",
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",

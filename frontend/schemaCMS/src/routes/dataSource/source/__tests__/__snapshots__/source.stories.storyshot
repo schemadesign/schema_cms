@@ -289,7 +289,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   .c22 {
     position: fixed;
     width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%,  );
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }
@@ -1352,6 +1352,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
                 "border": "#2F2F36",
                 "text": "#FFF",
               },
+              "hiddenBackground": "rgba(0, 0, 0, 0)",
               "icon": Object {
                 "background": "#1d1d20",
                 "fill": "#FFF",
