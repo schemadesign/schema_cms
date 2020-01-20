@@ -19,13 +19,14 @@ import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedD
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 import messages from './jobList.messages';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { JOB_OPTION, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getDataSourceMenuOptions } from '../dataSource.constants';
 
 const { RadioGroup, RadioStyled } = Form;
 
@@ -33,6 +34,7 @@ const { Span } = Typography;
 
 export class JobList extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     fetchJobList: PropTypes.func.isRequired,
     revertToJob: PropTypes.func.isRequired,
     jobList: PropTypes.array.isRequired,
@@ -156,15 +158,20 @@ export class JobList extends PureComponent {
 
   render() {
     const { error, loading, canRevert } = this.state;
-    const { dataSource, jobList } = this.props;
+    const { dataSource, jobList, userRole } = this.props;
 
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const isLoading = loading || isEmpty(dataSource);
+    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
 
     return (
       <Container>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
 
         {this.renderContent({ jobList, canRevert, isLoading, error })}

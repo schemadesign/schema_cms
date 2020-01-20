@@ -2,7 +2,7 @@
 
 exports[`PageBlock: Component should render correctly 1`] = `
 <styled.div>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Edit"
@@ -17,8 +17,37 @@ exports[`PageBlock: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -93,6 +122,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         }
         removePageBlock={[Function]}
         setFieldValue={[Function]}
+        userRole="admin"
         values={Object {}}
       />
       <styled.div>
@@ -209,7 +239,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
 
 exports[`PageBlock: Component should render correctly with loader 1`] = `
 <styled.div>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Edit"
@@ -224,8 +254,37 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -284,6 +343,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
         }
         removePageBlock={[Function]}
         setFieldValue={[Function]}
+        userRole="admin"
         values={Object {}}
       />
       <styled.div>

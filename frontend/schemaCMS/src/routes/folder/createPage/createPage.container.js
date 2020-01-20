@@ -12,8 +12,11 @@ import messages from './createPage.messages';
 import { PageRoutines } from '../../../modules/page';
 import { PAGE_FORM, INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
+import { selectUserRole } from '../../../modules/userProfile';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
+});
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(

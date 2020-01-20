@@ -11,8 +11,10 @@ import {
   DATA_SOURCE_RUN_LAST_JOB,
   DATA_SOURCE_TYPE,
 } from '../../../modules/dataSource/dataSource.constants';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   dataSource: {
     metaData: {},
     jobs: [],

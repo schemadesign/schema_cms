@@ -9,8 +9,10 @@ import { compose } from 'ramda';
 import { CreateFilter } from './createFilter.component';
 import { DataSourceRoutines, selectFieldsInfo, selectDataSource } from '../../../modules/dataSource';
 import { FilterRoutines } from '../../../modules/filter';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   fieldsInfo: selectFieldsInfo,
   dataSource: selectDataSource,
 });

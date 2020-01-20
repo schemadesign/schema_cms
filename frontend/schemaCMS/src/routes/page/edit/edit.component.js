@@ -5,18 +5,20 @@ import { path } from 'ramda';
 
 import { Form } from './edit.styles';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './edit.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { PageForm } from '../../../shared/components/pageForm';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link } from '../../../theme/typography';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
+import { PAGE_MENU_OPTIONS } from '../../pageBlock/pageBlock.constants';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
 export class Edit extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     page: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
     fetchPage: PropTypes.func.isRequired,
@@ -72,13 +74,17 @@ export class Edit extends PureComponent {
 
   render() {
     const { loading, error, confirmationModalOpen } = this.state;
-    const { handleSubmit, isValid, isSubmitting } = this.props;
+    const { handleSubmit, isValid, isSubmitting, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
           <Form onSubmit={handleSubmit}>

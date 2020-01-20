@@ -5,14 +5,16 @@ import { FormattedMessage } from 'react-intl';
 import { Container } from './createFilter.styles';
 import { FilterForm } from '../../../shared/components/filterForm';
 import messages from './createFilter.messages';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getDataSourceMenuOptions } from '../dataSource.constants';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     fetchFieldsInfo: PropTypes.func.isRequired,
     createFilter: PropTypes.func.isRequired,
     fieldsInfo: PropTypes.object.isRequired,
@@ -63,11 +65,17 @@ export class CreateFilter extends PureComponent {
 
   render() {
     const { error, loading } = this.state;
+    const { dataSource, userRole } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig();
+    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
 
     return (
       <Container>
-        <TopHeader {...headerConfig} />
+        <MobileMenu
+          headerTitle={headerConfig.headerTitle}
+          headerSubtitle={headerConfig.headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent}

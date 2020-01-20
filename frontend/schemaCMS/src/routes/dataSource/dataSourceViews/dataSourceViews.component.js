@@ -5,25 +5,33 @@ import Helmet from 'react-helmet';
 
 import { ComingSoon } from './dataSourceViews.styles';
 import messages from './dataSourceViews.messages';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { getDataSourceMenuOptions } from '../dataSource.constants';
 
 export class DataSourceViews extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     dataSource: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
   };
 
   render() {
-    const { dataSource } = this.props;
+    const { dataSource, userRole } = this.props;
     const headerTitle = dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

@@ -5,8 +5,10 @@ import { Fields } from './fields.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { tableFields as fields, tableData as data } from '../../../shared/utils/dataMock';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const noDataProps = {
+  userRole: ROLES.ADMIN,
   fetchPreview: Function.prototype,
   previewData: {},
   dataSource: { project: { id: '1' } },

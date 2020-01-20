@@ -12,8 +12,10 @@ import messages from './edit.messages';
 import { PageRoutines, selectPage } from '../../../modules/page';
 import { PAGE_FORM, INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   page: selectPage,
 });
 

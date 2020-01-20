@@ -10,8 +10,10 @@ import { Filters } from './filters.component';
 import { selectDataSource } from '../../../modules/dataSource';
 import { selectFilters } from '../../../modules/filter';
 import { FilterRoutines } from '../../../modules/filter/filter.redux';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   dataSource: selectDataSource,
   filters: selectFilters,
 });

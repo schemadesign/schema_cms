@@ -7,19 +7,21 @@ import Helmet from 'react-helmet';
 import { Form, Link } from './source.styles';
 import messages from './source.messages';
 import { DATA_SOURCE_RUN_LAST_JOB } from '../../../modules/dataSource/dataSource.constants';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import browserHistory from '../../../shared/utils/history';
 import { ModalActions, Modal, ModalTitle, modalStyles } from '../../../shared/components/modal/modal.styles';
 import { LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { SourceForm } from '../../../shared/components/sourceForm';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getDataSourceMenuOptions } from '../dataSource.constants';
 
 export class Source extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     dataSource: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
@@ -92,15 +94,20 @@ export class Source extends PureComponent {
   );
 
   render() {
-    const { dataSource, intl, handleSubmit, dirty, isSubmitting, values, ...restProps } = this.props;
+    const { dataSource, intl, handleSubmit, dirty, isSubmitting, values, userRole, ...restProps } = this.props;
     const { confirmationRemoveModalOpen, confirmationRunJobModalOpen } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>
