@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo install AWS CDK...
-      - npm install -g aws-cdk@1.10.0
+      - npm install -g aws-cdk@1.21.1
       - cdk --version
       - pip install -r requirements.txt
       - pip freeze
