@@ -540,16 +540,16 @@ class CIPipeline(core.Stack):
         )
 
         self.pipeline.artifact_bucket.grant_read(
-            scope.public_api.role
+            scope.public_api.public_api_lambda.role
         )
         self.pipeline.artifact_bucket.grant_read(
-            scope.workers.role
+            scope.workers.worker_task_definition.task_role
         )
         self.pipeline.artifact_bucket.grant_read(
-            scope.image_resize_lambda.role
+            scope.image_resize_lambda.image_resize_lambda.role
         )
         self.pipeline.artifact_bucket.grant_read(
-            scope.lambda_worker.role
+            scope.lambda_worker.lambda_fn.role
         )
 
         source_output = aws_codepipeline.Artifact()
