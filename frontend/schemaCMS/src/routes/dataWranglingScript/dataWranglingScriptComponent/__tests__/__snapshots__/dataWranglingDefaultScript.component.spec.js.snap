@@ -33,33 +33,33 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     subtitle="View step"
     title="Data Wrangling"
   />
-  <styled.form
-    name="dataWranglingForm"
-  >
-    <TextInput
-      checkOnlyErrors={false}
-      customInputStyles={
-        Object {
-          "overflow": "hidden",
-          "textOverflow": "ellipsis",
-          "whiteSpace": "nowrap",
-        }
-      }
-      disabled={true}
-      errors={Object {}}
-      fullWidth={true}
-      isEdit={false}
-      label="Description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      touched={Object {}}
-      value="local:blank_cells.py"
+  <Component>
+    <FormattedMessage
+      defaultMessage="Description"
+      id="dataWranglingScripts.dataWranglingDefaultScript.description"
+      values={Object {}}
     />
-    <SyntaxHighlighter
-      language="python"
-    >
-      
+  </Component>
+  <styled.div>
+    local:blank_cells.py
+  </styled.div>
+  <Component>
+    <FormattedMessage
+      defaultMessage="Python Code"
+      id="dataWranglingScripts.dataWranglingDefaultScript.pythonCode"
+      values={Object {}}
+    />
+  </Component>
+  <SyntaxHighlighter
+    customStyle={
+      Object {
+        "marginBottom": 30,
+        "minHeight": 100,
+      }
+    }
+    language="python"
+  >
+    
       import pandas as pd
       import numpy as np
       
@@ -128,8 +128,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
       # Partially empty Columns (specific column)
       df = df.dropna(how='any', axis=1)
     
-    </SyntaxHighlighter>
-  </styled.form>
+  </SyntaxHighlighter>
   <NavigationContainer
     fixed={true}
     hideOnDesktop={false}
@@ -176,33 +175,33 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     subtitle="View step"
     title="Data Wrangling"
   />
-  <styled.form
-    name="dataWranglingForm"
-  >
-    <TextInput
-      checkOnlyErrors={false}
-      customInputStyles={
-        Object {
-          "overflow": "hidden",
-          "textOverflow": "ellipsis",
-          "whiteSpace": "nowrap",
-        }
-      }
-      disabled={true}
-      errors={Object {}}
-      fullWidth={true}
-      isEdit={false}
-      label="Description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      touched={Object {}}
-      value="local:blank_cells.py"
+  <Component>
+    <FormattedMessage
+      defaultMessage="Description"
+      id="dataWranglingScripts.dataWranglingDefaultScript.description"
+      values={Object {}}
     />
-    <SyntaxHighlighter
-      language="python"
-    >
-      
+  </Component>
+  <styled.div>
+    local:blank_cells.py
+  </styled.div>
+  <Component>
+    <FormattedMessage
+      defaultMessage="Python Code"
+      id="dataWranglingScripts.dataWranglingDefaultScript.pythonCode"
+      values={Object {}}
+    />
+  </Component>
+  <SyntaxHighlighter
+    customStyle={
+      Object {
+        "marginBottom": 30,
+        "minHeight": 100,
+      }
+    }
+    language="python"
+  >
+    
       import pandas as pd
       import numpy as np
       
@@ -271,8 +270,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
       # Partially empty Columns (specific column)
       df = df.dropna(how='any', axis=1)
     
-    </SyntaxHighlighter>
-  </styled.form>
+  </SyntaxHighlighter>
   <NavigationContainer
     fixed={true}
     hideOnDesktop={false}

@@ -272,10 +272,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
+          viewBox="0 0 10 60"
         >
           <path
-            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
             fillRule="evenodd"
           />
         </svg>
@@ -756,10 +756,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Header with custom menu 1
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
+          viewBox="0 0 10 60"
         >
           <path
-            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
             fillRule="evenodd"
           />
         </svg>
@@ -1288,10 +1288,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
+          viewBox="0 0 10 60"
         >
           <path
-            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
             fillRule="evenodd"
           />
         </svg>
@@ -1791,10 +1791,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu with Users 1`] = `
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
+          viewBox="0 0 10 60"
         >
           <path
-            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
             fillRule="evenodd"
           />
         </svg>
@@ -2275,10 +2275,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Menu without Projects 1`]
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
+          viewBox="0 0 10 60"
         >
           <path
-            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
             fillRule="evenodd"
           />
         </svg>

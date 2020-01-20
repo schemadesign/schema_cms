@@ -3,39 +3,39 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'dataWranglingscripts.view.pageTitle',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.pageTitle',
     defaultMessage: 'View step',
   },
   title: {
-    id: 'dataWranglingscripts.view.title',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.title',
     defaultMessage: 'Data Wrangling',
   },
   subTitle: {
-    id: 'dataWranglingscripts.view.subTitle',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.subTitle',
     defaultMessage: 'View step',
   },
   description: {
-    id: 'dataWranglingscripts.view.description',
-    defaultMessage: 'Description',
-  },
-  descriptionPlaceholder: {
-    id: 'dataWranglingscripts.view.descriptionPlaceholder',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.description',
     defaultMessage: 'Description',
   },
   code: {
-    id: 'dataWranglingscripts.view.code',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.code',
     defaultMessage: 'Python Code',
   },
   codePlaceholder: {
-    id: 'dataWranglingscripts.view.codePlaceholder',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.codePlaceholder',
     defaultMessage: 'Python Code',
   },
   back: {
-    id: 'dataWranglingscripts.view.back',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.back',
     defaultMessage: 'Back',
   },
   save: {
-    id: 'dataWranglingscripts.view.save',
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.save',
     defaultMessage: 'Save',
+  },
+  pythonCode: {
+    id: 'dataWranglingScripts.dataWranglingDefaultScript.pythonCode',
+    defaultMessage: 'Python Code',
   },
 });

@@ -64,7 +64,8 @@ export const Type = styled.div`
 
 export const StepName = styled.div`
   overflow: hidden;
-  width: ${({ drag }) => (drag ? 'calc(100% - 28px)' : '100%')};
+  min-width: 100%;
+  padding-right: ${({ drag }) => (drag ? '30px' : '0')};
   text-overflow: ellipsis;
   white-space: nowrap;
 
