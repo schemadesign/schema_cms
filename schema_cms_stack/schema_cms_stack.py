@@ -440,7 +440,6 @@ class PublicAPI(core.Stack):
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 
-        scope.base.db.secret.grant_read(self.public_api_lambda.role)
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
 
         self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(

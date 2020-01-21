@@ -23,7 +23,7 @@ from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
 from pyarrow import BufferReader, csv as pa_csv, Table
 
-from common import api, db, services, settings, types, utils
+from common import api, services, settings, types, utils
 import errors
 import mocks
 from image_scraping import image_scraping, is_valid_url, www_to_https  # noqa
@@ -145,7 +145,7 @@ def process_datasource_meta_source_file(data_source: dict):
     try:
         datasource = types.DataSource.from_json(data_source["data"])
         api.schemacms_api.update_datasource_meta(
-            datasource_pk=datasource.id, status=db.ProcessState.PROCESSING,
+            datasource_pk=datasource.id, status=utils.ProcessState.PROCESSING,
         )
     except Exception as e:
         return logging.critical(f"Invalid message body - {e}")
@@ -165,13 +165,13 @@ def process_datasource_meta_source_file(data_source: dict):
             preview=json.loads(preview_data),
             fields_with_urls=fields_with_urls,
             copy_steps=data_source["copy_steps"],
-            status=db.ProcessState.SUCCESS,
+            status=utils.ProcessState.SUCCESS,
         )
         logger.info(f"Meta created - DataSource # {datasource.id}")
     except Exception as e:
         api.schemacms_api.update_datasource_meta(
             datasource_pk=datasource.id,
-            status=db.ProcessState.FAILED,
+            status=utils.ProcessState.FAILED,
             error=f"{e} @ update data source meta",
         )
         return logging.error(
@@ -210,7 +210,7 @@ def process_job(job_data: dict):
 
     try:
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id, state=db.ProcessState.PROCESSING
+            job_pk=current_job.id, state=utils.ProcessState.PROCESSING
         )
 
         source_file = current_job.source_file
@@ -262,14 +262,14 @@ def process_job(job_data: dict):
 
         api.schemacms_api.update_job_state(
             job_pk=current_job.id,
-            state=db.ProcessState.SUCCESS,
+            state=utils.ProcessState.SUCCESS,
             result=result_file_name,
             error="",
         )
     except errors.JobLoadingSourceFileError as e:
         api.schemacms_api.update_job_state(
             job_pk=current_job.id,
-            state=db.ProcessState.FAILED,
+            state=utils.ProcessState.FAILED,
             error=f"{e} @ loading source file",
         )
         logging.error(e, exc_info=True)
@@ -278,7 +278,7 @@ def process_job(job_data: dict):
     except errors.JobSetExecutionError as e:
         api.schemacms_api.update_job_state(
             job_pk=current_job.id,
-            state=db.ProcessState.FAILED,
+            state=utils.ProcessState.FAILED,
             error=f"{e.msg} @ {e.step.id}",
         )
         logging.error(e, exc_info=True)
@@ -287,7 +287,7 @@ def process_job(job_data: dict):
     except errors.JobSavingFilesError as e:
         api.schemacms_api.update_job_state(
             job_pk=current_job.id,
-            state=db.ProcessState.FAILED,
+            state=utils.ProcessState.FAILED,
             error=f"{e} @ saving results files",
         )
         logging.error(e, exc_info=True)
@@ -296,7 +296,7 @@ def process_job(job_data: dict):
     except Exception as e:
         api.schemacms_api.update_job_state(
             job_pk=current_job.id,
-            state=db.ProcessState.FAILED,
+            state=utils.ProcessState.FAILED,
             error=f"{e} @ undefined error",
         )
         return logging.critical(str(e), exc_info=True)

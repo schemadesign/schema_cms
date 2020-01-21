@@ -11,6 +11,13 @@ class FieldType:
     NUMBER = "number"
 
 
+class ProcessState:
+    PENDING = "pending"
+    PROCESSING = "processing"
+    FAILED = "failed"
+    SUCCESS = "success"
+
+
 class NumpyEncoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
 
