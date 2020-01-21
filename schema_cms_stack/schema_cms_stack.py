@@ -854,36 +854,36 @@ class CIPipeline(core.Stack):
                     template_path=cdk_artifact.at_path("cdk.out/api.template.json"),
                     run_order=2,
                 ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_image_resize_lambda_changes",
-                    stack_name=scope.image_resize_lambda.stack_name,
-                    change_set_name="imageResizeLambdaStagedChangeSet",
-                    run_order=3,
-                ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_workers_changes",
-                    stack_name=scope.workers.stack_name,
-                    change_set_name="workersStagedChangeSet",
-                    run_order=3,
-                ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_public_api_changes",
-                    stack_name=scope.public_api.stack_name,
-                    change_set_name="publicAPIStagedChangeSet",
-                    run_order=3,
-                ),
+                # aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                #     action_name="execute_image_resize_lambda_changes",
+                #     stack_name=scope.image_resize_lambda.stack_name,
+                #     change_set_name="imageResizeLambdaStagedChangeSet",
+                #     run_order=3,
+                # ),
+                # aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                #     action_name="execute_workers_changes",
+                #     stack_name=scope.workers.stack_name,
+                #     change_set_name="workersStagedChangeSet",
+                #     run_order=3,
+                # ),
+                # aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                #     action_name="execute_public_api_changes",
+                #     stack_name=scope.public_api.stack_name,
+                #     change_set_name="publicAPIStagedChangeSet",
+                #     run_order=3,
+                # ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_api_changes",
                     stack_name=scope.api.stack_name,
                     change_set_name="APIStagedChangeSet",
-                    run_order=4,
+                    run_order=3,
                 ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_lambda_worker_changes",
-                    stack_name=scope.lambda_worker.stack_name,
-                    change_set_name="lambdaWorkerStagedChangeSet",
-                    run_order=5,
-                ),
+                # aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                #     action_name="execute_lambda_worker_changes",
+                #     stack_name=scope.lambda_worker.stack_name,
+                #     change_set_name="lambdaWorkerStagedChangeSet",
+                #     run_order=5,
+                # ),
             ],
         )
 
