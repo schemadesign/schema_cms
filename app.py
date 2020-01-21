@@ -26,9 +26,9 @@ class App(core.App):
         self.api = API(self, 'api')
         self.lambda_worker = LambdaWorker(self, 'lambda-worker')
         self.public_api = PublicAPI(self, 'public-api')
-        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
-        if installation_mode == INSTALLATION_MODE_FULL:
-            self.ci_pipeline = CIPipeline(self, 'ci-pipeline')
+        # installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+        # if installation_mode == INSTALLATION_MODE_FULL:
+        self.ci_pipeline = CIPipeline(self, 'ci-pipeline')
 
 
 app = App()
