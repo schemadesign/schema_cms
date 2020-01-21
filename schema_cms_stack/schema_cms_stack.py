@@ -109,103 +109,103 @@ class CertsStack(core.Stack):
         )
 
 
-class Workers(core.Stack):
-    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
-        super().__init__(scope, id, **kwargs)
-
-        self.worker_task_definition = aws_ecs.FargateTaskDefinition(
-            self, "worker-task-definition", cpu=256, memory_limit_mib=512
-        )
-        scope.base.db.secret.grant_read(self.worker_task_definition.task_role)
-
-        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
-        worker_image = aws_ecs.ContainerImage.from_asset("backend/worker")
-        if installation_mode == INSTALLATION_MODE_FULL:
-            tag_from_context = self.node.try_get_context("app_image_tag")
-            tag = tag_from_context if tag_from_context is not "undefined" else None
-            worker_image = aws_ecs.ContainerImage.from_ecr_repository(
-                scope.base.worker_registry, tag
-            )
-
-        self.worker_container = self.worker_task_definition.add_container(
-            "worker",
-            image=worker_image,
-            logging=aws_ecs.AwsLogDriver(stream_prefix="worker-container"),
-            environment={
-                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                "POSTGRES_DB": DB_NAME,
-            },
-        )
-
-        worker_success_lambda_code = aws_lambda.AssetCode(
-            "backend/functions/worker_success"
-        )
-        self.success_function_code = aws_lambda.Code.from_cfn_parameters()
-        handler = "handlers.handle"
-        if installation_mode == INSTALLATION_MODE_FULL:
-            worker_success_lambda_code = self.success_function_code
-            handler = "backend/functions/worker_success/handlers.handle"
-
-        self.worker_success_lambda = aws_lambda.Function(
-            self,
-            "worker-success-lambda",
-            code=worker_success_lambda_code,
-            handler=handler,
-            runtime=aws_lambda.Runtime.PYTHON_3_7,
-            vpc=scope.base.vpc,
-        )
-
-        worker_failure_lambda_code = aws_lambda.AssetCode(
-            "backend/functions/worker_failure"
-        )
-
-        self.failure_function_code = aws_lambda.Code.from_cfn_parameters()
-        handler = "handlers.handle"
-        if installation_mode == INSTALLATION_MODE_FULL:
-            worker_failure_lambda_code = self.failure_function_code
-            handler = "backend/functions/worker_failure/handlers.handle"
-
-        self.worker_failure_lambda = aws_lambda.Function(
-            self,
-            "worker-failure-lambda",
-            code=worker_failure_lambda_code,
-            handler=handler,
-            runtime=aws_lambda.Runtime.PYTHON_3_7,
-            vpc=scope.base.vpc,
-        )
-
-
-        run_worker_task = aws_stepfunctions_tasks.RunEcsFargateTask(
-            cluster=scope.base.cluster,
-            task_definition=self.worker_task_definition,
-            subnets=aws_ec2.SubnetSelection(subnets=scope.base.vpc.select_subnets().subnets),
-            integration_pattern=aws_stepfunctions.ServiceIntegrationPattern.SYNC,
-        )
-        run_worker_task.connections.allow_to(
-            scope.base.db.connections, aws_ec2.Port.tcp(5432)
-        )
-        self.start_worker_job = aws_stepfunctions.Task(
-            self, "Start Worker", task=run_worker_task
-        )
-
-        run_worker_success = aws_stepfunctions.Task(
-            self,
-            "Worker Success",
-            task=aws_stepfunctions_tasks.InvokeFunction(self.worker_success_lambda),
-        )
-
-        run_worker_failure = aws_stepfunctions.Task(
-            self,
-            "Worker Failure",
-            task=aws_stepfunctions_tasks.InvokeFunction(self.worker_failure_lambda),
-        )
-
-        stm_definition = self.start_worker_job.next(run_worker_success)
-        self.start_worker_job.add_catch(run_worker_failure)
-
-        self.worker_state_machine = aws_stepfunctions.StateMachine(
-            self, "WorkerStateMachine", definition=stm_definition
-        )
+# class Workers(core.Stack):
+#     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+#         super().__init__(scope, id, **kwargs)
+#
+#         self.worker_task_definition = aws_ecs.FargateTaskDefinition(
+#             self, "worker-task-definition", cpu=256, memory_limit_mib=512
+#         )
+#         scope.base.db.secret.grant_read(self.worker_task_definition.task_role)
+#
+#         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+#         worker_image = aws_ecs.ContainerImage.from_asset("backend/worker")
+#         if installation_mode == INSTALLATION_MODE_FULL:
+#             tag_from_context = self.node.try_get_context("app_image_tag")
+#             tag = tag_from_context if tag_from_context is not "undefined" else None
+#             worker_image = aws_ecs.ContainerImage.from_ecr_repository(
+#                 scope.base.worker_registry, tag
+#             )
+#
+#         self.worker_container = self.worker_task_definition.add_container(
+#             "worker",
+#             image=worker_image,
+#             logging=aws_ecs.AwsLogDriver(stream_prefix="worker-container"),
+#             environment={
+#                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
+#                 "POSTGRES_DB": DB_NAME,
+#             },
+#         )
+#
+#         worker_success_lambda_code = aws_lambda.AssetCode(
+#             "backend/functions/worker_success"
+#         )
+#         self.success_function_code = aws_lambda.Code.from_cfn_parameters()
+#         handler = "handlers.handle"
+#         if installation_mode == INSTALLATION_MODE_FULL:
+#             worker_success_lambda_code = self.success_function_code
+#             handler = "backend/functions/worker_success/handlers.handle"
+#
+#         self.worker_success_lambda = aws_lambda.Function(
+#             self,
+#             "worker-success-lambda",
+#             code=worker_success_lambda_code,
+#             handler=handler,
+#             runtime=aws_lambda.Runtime.PYTHON_3_7,
+#             vpc=scope.base.vpc,
+#         )
+#
+#         worker_failure_lambda_code = aws_lambda.AssetCode(
+#             "backend/functions/worker_failure"
+#         )
+#
+#         self.failure_function_code = aws_lambda.Code.from_cfn_parameters()
+#         handler = "handlers.handle"
+#         if installation_mode == INSTALLATION_MODE_FULL:
+#             worker_failure_lambda_code = self.failure_function_code
+#             handler = "backend/functions/worker_failure/handlers.handle"
+#
+#         self.worker_failure_lambda = aws_lambda.Function(
+#             self,
+#             "worker-failure-lambda",
+#             code=worker_failure_lambda_code,
+#             handler=handler,
+#             runtime=aws_lambda.Runtime.PYTHON_3_7,
+#             vpc=scope.base.vpc,
+#         )
+#
+#
+#         run_worker_task = aws_stepfunctions_tasks.RunEcsFargateTask(
+#             cluster=scope.base.cluster,
+#             task_definition=self.worker_task_definition,
+#             subnets=aws_ec2.SubnetSelection(subnets=scope.base.vpc.select_subnets().subnets),
+#             integration_pattern=aws_stepfunctions.ServiceIntegrationPattern.SYNC,
+#         )
+#         run_worker_task.connections.allow_to(
+#             scope.base.db.connections, aws_ec2.Port.tcp(5432)
+#         )
+#         self.start_worker_job = aws_stepfunctions.Task(
+#             self, "Start Worker", task=run_worker_task
+#         )
+#
+#         run_worker_success = aws_stepfunctions.Task(
+#             self,
+#             "Worker Success",
+#             task=aws_stepfunctions_tasks.InvokeFunction(self.worker_success_lambda),
+#         )
+#
+#         run_worker_failure = aws_stepfunctions.Task(
+#             self,
+#             "Worker Failure",
+#             task=aws_stepfunctions_tasks.InvokeFunction(self.worker_failure_lambda),
+#         )
+#
+#         stm_definition = self.start_worker_job.next(run_worker_success)
+#         self.start_worker_job.add_catch(run_worker_failure)
+#
+#         self.worker_state_machine = aws_stepfunctions.StateMachine(
+#             self, "WorkerStateMachine", definition=stm_definition
+#         )
 
 
 class API(core.Stack):
@@ -298,7 +298,6 @@ class API(core.Stack):
             image=api_image,
             logging=aws_ecs.AwsLogDriver(stream_prefix="backend-container"),
             environment={
-                "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "SQS_WORKER_QUEUE_URL": self.job_processing_queues[0].queue_url,
@@ -315,12 +314,11 @@ class API(core.Stack):
         )
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
-        scope.workers.worker_state_machine.grant_start_execution(
-            self.api.service.task_definition.task_role
-        )
+
         scope.base.app_bucket.grant_read_write(
             self.api.service.task_definition.task_role
         )
+
         scope.image_resize_lambda.image_bucket.grant_read(
             self.api.service.task_definition.task_role
         )
@@ -529,12 +527,12 @@ class CIPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        # installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
-        # if installation_mode != INSTALLATION_MODE_FULL:
-        #     self.node.add_error(
-        #         "Deploy of ci-pipeline stack is only available in `full` installation_mode. "
-        #         "Check your installation_mode in CDK context"
-        #     )
+        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+        if installation_mode != INSTALLATION_MODE_FULL:
+            self.node.add_error(
+                "Deploy of ci-pipeline stack is only available in `full` installation_mode. "
+                "Check your installation_mode in CDK context"
+            )
 
         # deploy to env pipeline
         self.pipeline = aws_codepipeline.Pipeline(
@@ -625,31 +623,31 @@ class CIPipeline(core.Stack):
             run_order=1,
         )
 
-        build_workers_project = aws_codebuild.PipelineProject(
-            self,
-            "build_workers_project",
-            project_name="schema_cms_workers_ci",
-            environment=aws_codebuild.BuildEnvironment(
-                environment_variables={
-                    "REPOSITORY_URI": aws_codebuild.BuildEnvironmentVariable(
-                        value=scope.base.worker_registry.repository_uri
-                    )
-                },
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
-                privileged=True,
-            ),
-            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "buildspec-worker.yaml"
-            ),
-        )
-        scope.base.worker_registry.grant_pull_push(build_workers_project)
+        # build_workers_project = aws_codebuild.PipelineProject(
+        #     self,
+        #     "build_workers_project",
+        #     project_name="schema_cms_workers_ci",
+        #     environment=aws_codebuild.BuildEnvironment(
+        #         environment_variables={
+        #             "REPOSITORY_URI": aws_codebuild.BuildEnvironmentVariable(
+        #                 value=scope.base.worker_registry.repository_uri
+        #             )
+        #         },
+        #         build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+        #         privileged=True,
+        #     ),
+        #     cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
+        #     build_spec=aws_codebuild.BuildSpec.from_source_filename(
+        #         "buildspec-worker.yaml"
+        #     ),
+        # )
+        # scope.base.worker_registry.grant_pull_push(build_workers_project)
 
-        build_workers_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_workers",
-            input=source_output,
-            project=build_workers_project,
-        )
+        # build_workers_action = aws_codepipeline_actions.CodeBuildAction(
+        #     action_name="build_workers",
+        #     input=source_output,
+        #     project=build_workers_project,
+        # )
 
         build_public_api_lambda_project = aws_codebuild.PipelineProject(
             self,
@@ -691,45 +689,45 @@ class CIPipeline(core.Stack):
             outputs=[image_resize_lambda_build_output],
         )
 
-        build_workers_success_lambda_project = aws_codebuild.PipelineProject(
-            self,
-            "build_workers_success_lambda_project",
-            project_name="schema_cms_build_workers_success",
-            environment=aws_codebuild.BuildEnvironment(
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
-            ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "backend/functions/buildspec-worker-success.yaml"
-            ),
-        )
+        # build_workers_success_lambda_project = aws_codebuild.PipelineProject(
+        #     self,
+        #     "build_workers_success_lambda_project",
+        #     project_name="schema_cms_build_workers_success",
+        #     environment=aws_codebuild.BuildEnvironment(
+        #         build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
+        #     ),
+        #     build_spec=aws_codebuild.BuildSpec.from_source_filename(
+        #         "backend/functions/buildspec-worker-success.yaml"
+        #     ),
+        # )
 
-        workers_success_lambda_build_output = aws_codepipeline.Artifact()
-        build_workers_success_lambda_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_workers_success_lambda",
-            input=source_output,
-            project=build_workers_success_lambda_project,
-            outputs=[workers_success_lambda_build_output],
-        )
+        # workers_success_lambda_build_output = aws_codepipeline.Artifact()
+        # build_workers_success_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+        #     action_name="build_workers_success_lambda",
+        #     input=source_output,
+        #     project=build_workers_success_lambda_project,
+        #     outputs=[workers_success_lambda_build_output],
+        # )
 
-        build_workers_failure_lambda_project = aws_codebuild.PipelineProject(
-            self,
-            "build_workers_failure_lambda_project",
-            project_name="schema_cms_build_workers_failure",
-            environment=aws_codebuild.BuildEnvironment(
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
-            ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "backend/functions/buildspec-worker-failure.yaml"
-            ),
-        )
-
-        workers_failure_lambda_build_output = aws_codepipeline.Artifact()
-        build_workers_failure_lambda_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_workers_failure_lambda",
-            input=source_output,
-            project=build_workers_failure_lambda_project,
-            outputs=[workers_failure_lambda_build_output],
-        )
+        # build_workers_failure_lambda_project = aws_codebuild.PipelineProject(
+        #     self,
+        #     "build_workers_failure_lambda_project",
+        #     project_name="schema_cms_build_workers_failure",
+        #     environment=aws_codebuild.BuildEnvironment(
+        #         build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
+        #     ),
+        #     build_spec=aws_codebuild.BuildSpec.from_source_filename(
+        #         "backend/functions/buildspec-worker-failure.yaml"
+        #     ),
+        # )
+        #
+        # workers_failure_lambda_build_output = aws_codepipeline.Artifact()
+        # build_workers_failure_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+        #     action_name="build_workers_failure_lambda",
+        #     input=source_output,
+        #     project=build_workers_failure_lambda_project,
+        #     outputs=[workers_failure_lambda_build_output],
+        # )
 
         build_cdk_project = aws_codebuild.PipelineProject(
             self,
@@ -764,11 +762,8 @@ class CIPipeline(core.Stack):
                 build_fe_action,
                 build_app_action,
                 build_image_resize_lambda_action,
-                build_workers_action,
                 *[action for (action, *_) in lambda_workers_build_actions],
                 build_public_api_lambda_action,
-                build_workers_success_lambda_action,
-                build_workers_failure_lambda_action,
                 build_cdk_action,
             ],
         )
@@ -822,30 +817,30 @@ class CIPipeline(core.Stack):
                     },
                     extra_inputs=[image_resize_lambda_build_output],
                 ),
-                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
-                    action_name="prepare_workers_changes",
-                    stack_name=scope.workers.stack_name,
-                    change_set_name="workersStagedChangeSet",
-                    admin_permissions=True,
-                    template_path=cdk_artifact.at_path("cdk.out/workers.template.json"),
-                    run_order=2,
-                    parameter_overrides={
-                        **scope.workers.success_function_code.assign(
-                            bucket_name=workers_success_lambda_build_output.s3_location.bucket_name,
-                            object_key=workers_success_lambda_build_output.s3_location.object_key,
-                            object_version=workers_success_lambda_build_output.s3_location.object_version,
-                        ),
-                        **scope.workers.failure_function_code.assign(
-                            bucket_name=workers_failure_lambda_build_output.s3_location.bucket_name,
-                            object_key=workers_failure_lambda_build_output.s3_location.object_key,
-                            object_version=workers_failure_lambda_build_output.s3_location.object_version,
-                        ),
-                    },
-                    extra_inputs=[
-                        workers_success_lambda_build_output,
-                        workers_failure_lambda_build_output,
-                    ],
-                ),
+                # aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                #     action_name="prepare_workers_changes",
+                #     stack_name=scope.workers.stack_name,
+                #     change_set_name="workersStagedChangeSet",
+                #     admin_permissions=True,
+                #     template_path=cdk_artifact.at_path("cdk.out/workers.template.json"),
+                #     run_order=2,
+                #     parameter_overrides={
+                #         **scope.workers.success_function_code.assign(
+                #             bucket_name=workers_success_lambda_build_output.s3_location.bucket_name,
+                #             object_key=workers_success_lambda_build_output.s3_location.object_key,
+                #             object_version=workers_success_lambda_build_output.s3_location.object_version,
+                #         ),
+                #         **scope.workers.failure_function_code.assign(
+                #             bucket_name=workers_failure_lambda_build_output.s3_location.bucket_name,
+                #             object_key=workers_failure_lambda_build_output.s3_location.object_key,
+                #             object_version=workers_failure_lambda_build_output.s3_location.object_version,
+                #         ),
+                #     },
+                #     extra_inputs=[
+                #         workers_success_lambda_build_output,
+                #         workers_failure_lambda_build_output,
+                #     ],
+                # ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_api_changes",
                     stack_name=scope.api.stack_name,
