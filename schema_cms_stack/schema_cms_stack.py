@@ -529,12 +529,12 @@ class CIPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
-        if installation_mode != INSTALLATION_MODE_FULL:
-            self.node.add_error(
-                "Deploy of ci-pipeline stack is only available in `full` installation_mode. "
-                "Check your installation_mode in CDK context"
-            )
+        # installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+        # if installation_mode != INSTALLATION_MODE_FULL:
+        #     self.node.add_error(
+        #         "Deploy of ci-pipeline stack is only available in `full` installation_mode. "
+        #         "Check your installation_mode in CDK context"
+        #     )
 
         # deploy to env pipeline
         self.pipeline = aws_codepipeline.Pipeline(
