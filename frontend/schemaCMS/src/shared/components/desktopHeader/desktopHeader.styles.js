@@ -125,7 +125,7 @@ export const MenuWrapper = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  ${visibiltyTransition}
+  ${visibiltyTransition};
 `;
 
 export const Overlayer = styled.div`
@@ -137,7 +137,7 @@ export const Overlayer = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9900;
-  ${visibiltyTransition}
+  ${visibiltyTransition};
 `;
 
 export const logoutButtonStyles = {
@@ -149,3 +149,65 @@ export const logoutButtonStyles = {
   borderRadius: null,
   backgroundColor: 'transparent',
 };
+
+export const Content = styled.div`
+  overflow: auto;
+  padding: 40px 0 20px;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 154px);
+`;
+
+export const List = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  &:first-of-type {
+    margin-bottom: 40px;
+  }
+
+  &:last-of-type {
+    align-items: flex-start;
+  }
+`;
+
+export const Item = styled.div`
+  line-height: 1.5;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.text};
+    display: block;
+  }
+`;
+
+export const PrimaryItem = styled(Item)`
+  border-bottom: 2.4px solid ${({ theme, active }) => (active ? theme.header.text : theme.header.border)};
+  margin: 2px 0;
+  font-size: 20px;
+  transition: border 200ms ease-in-out;
+
+  &:hover {
+    border-bottom: 2.4px solid ${({ theme }) => theme.header.text};
+  }
+
+  &:first-of-type {
+    border-top: 2.4px solid ${({ theme }) => theme.header.border};
+  }
+
+  a {
+    padding: 22px 0 27px;
+  }
+`;
+
+export const SecondaryItem = styled(Item)`
+  padding: 0;
+  margin: 10px 0;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+
+  &:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.text};
+  }
+`;

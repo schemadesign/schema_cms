@@ -8,13 +8,14 @@ import Modal from 'react-modal';
 
 import { DEFAULT_LOCALE, translationMessages } from '../i18n';
 import { GlobalStyle } from '../theme/global';
-import { DesktopTopHeader } from '../shared/components/desktopTopHeader';
+import { DesktopHeader } from '../shared/components/desktopHeader';
 import messages from './app.messages';
 import { Container, Content } from './app.styles';
 import { renderWhenTrue } from '../shared/utils/rendering';
 import reportError from '../shared/utils/reportError';
 import { LoadingWrapper } from '../shared/components/loadingWrapper';
 import { ScrollToTop } from '../shared/components/scrollToTop';
+import { ROLES } from '../modules/userProfile/userProfile.constants';
 
 Modal.setAppElement('#app');
 
@@ -23,13 +24,13 @@ export class App extends PureComponent {
     children: PropTypes.node,
     match: PropTypes.object.isRequired,
     startup: PropTypes.func.isRequired,
-    isAdmin: PropTypes.bool,
+    userRole: PropTypes.string,
     userId: PropTypes.string,
     projectTitle: PropTypes.string,
   };
 
   static defaultProps = {
-    isAdmin: false,
+    userRole: ROLES.EDITOR,
   };
 
   state = {
@@ -52,8 +53,8 @@ export class App extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { isAdmin, userId, projectTitle } = this.props;
-    const theme = isAdmin ? Theme.dark : Theme.light;
+    const { userRole, userId, projectTitle } = this.props;
+    const theme = userRole === ROLES.ADMIN ? Theme.dark : Theme.light;
 
     return (
       <IntlProvider key={DEFAULT_LOCALE} locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
@@ -65,7 +66,7 @@ export class App extends PureComponent {
                 {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
               </FormattedMessage>
               <GlobalStyle />
-              <DesktopTopHeader isAdmin={isAdmin} userId={userId} title={projectTitle} />
+              <DesktopHeader userRole={userRole} userId={userId} title={projectTitle} />
               <Content>
                 <LoadingWrapper loading={loading} error={error}>
                   {this.renderContent()}

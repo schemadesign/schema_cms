@@ -1,109 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
-.c9 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  padding: 40px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c10 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c13 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c11 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c11 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c11:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c12 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c12 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c12:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c14 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c14 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c14:hover {
-  border-bottom: 1px solid #FFF;
-}
-
 .c0 {
   display: none;
 }
@@ -205,25 +102,83 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   transition: visibility 0s 0.4s;
 }
 
-@media (min-width:1040px) {
-  .c9 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
-  }
+.c9 {
+  overflow: auto;
+  padding: 40px 0 20px;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 154px);
 }
 
-@media (min-width:1040px) {
-  .c11 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-@media (min-width:1040px) {
-  .c12 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
+.c10:first-of-type {
+  margin-bottom: 40px;
+}
+
+.c10:last-of-type {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c11 {
+  line-height: 1.5;
+  cursor: pointer;
+  border-bottom: 2.4px solid #2F2F36;
+  margin: 2px 0;
+  font-size: 20px;
+  -webkit-transition: border 200ms ease-in-out;
+  transition: border 200ms ease-in-out;
+}
+
+.c11 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c11:hover {
+  border-bottom: 2.4px solid #FFF;
+}
+
+.c11:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c11 a {
+  padding: 22px 0 27px;
+}
+
+.c12 {
+  line-height: 1.5;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c12 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c12:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 @media (min-width:1040px) {
@@ -453,58 +408,62 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
             }
           }
         >
-          <div
-            className=""
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
           >
-            <a
-              className="c3"
-              href="/"
-              onClick={[Function]}
-            >
-              <schemaLogo.svg
-                className="c4"
-              />
-            </a>
-          </div>
+            <span>
+              SchemaCMS
+            </span>
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Menu
+            </span>
+          </h1>
           <div
             className="c9"
             onClick={[Function]}
           >
-            <ul
+            <div
               className="c10"
             >
-              <li
+              <div
                 className="c11"
               >
                 <a
                   href="/project"
-                  id="projectNavBtn"
+                  id="projectsNavBtn"
                   onClick={[Function]}
                 >
                   <span>
-                    Projects
+                    Project
                   </span>
                 </a>
-              </li>
-              <li
-                className="c12"
-              >
-                <a
-                  href="/user"
-                  id="userNavBtn"
-                  onClick={[Function]}
-                >
-                  <span>
-                    Users
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <ul
-              className="c13"
+              </div>
+            </div>
+            <div
+              className="c10"
             >
-              <li
-                className="c14"
+              <div
+                className="c12"
               >
                 <a
                   href="/"
@@ -515,9 +474,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                     About Schema CMS
                   </span>
                 </a>
-              </li>
-              <li
-                className="c14"
+              </div>
+              <div
+                className="c12"
               >
                 <a
                   href="/"
@@ -528,9 +487,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                     API Doc
                   </span>
                 </a>
-              </li>
-              <li
-                className="c14"
+              </div>
+              <div
+                className="c12"
               >
                 <a
                   href="/"
@@ -541,8 +500,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                     GitHub Repository
                   </span>
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <button
             disabled={false}
@@ -593,53 +552,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
-.c6 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  padding: 40px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c7 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c8 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c8 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c8:hover {
-  border-bottom: 1px solid #FFF;
-}
-
 .c0 {
   display: none;
 }
@@ -699,11 +611,83 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   transition: visibility 0s 0.4s;
 }
 
-@media (min-width:1040px) {
-  .c6 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
-  }
+.c6 {
+  overflow: auto;
+  padding: 40px 0 20px;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 154px);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7:first-of-type {
+  margin-bottom: 40px;
+}
+
+.c7:last-of-type {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c8 {
+  line-height: 1.5;
+  cursor: pointer;
+  border-bottom: 2.4px solid #2F2F36;
+  margin: 2px 0;
+  font-size: 20px;
+  -webkit-transition: border 200ms ease-in-out;
+  transition: border 200ms ease-in-out;
+}
+
+.c8 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c8:hover {
+  border-bottom: 2.4px solid #FFF;
+}
+
+.c8:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 a {
+  padding: 22px 0 27px;
+}
+
+.c9 {
+  line-height: 1.5;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c9 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c9:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 @media (min-width:1040px) {
@@ -782,28 +766,75 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
             }
           }
         >
-          <div
-            className=""
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
           >
-            <a
-              className="c2"
-              href="/"
-              onClick={[Function]}
-            >
-              <schemaLogo.svg
-                className="c3"
-              />
-            </a>
-          </div>
+            <span>
+              SchemaCMS
+            </span>
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Menu
+            </span>
+          </h1>
           <div
             className="c6"
             onClick={[Function]}
           >
-            <ul
+            <div
               className="c7"
             >
-              <li
+              <div
                 className="c8"
+              >
+                <a
+                  href="/project"
+                  id="projectsNavBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Project
+                  </span>
+                </a>
+              </div>
+              <div
+                className="c8"
+              >
+                <a
+                  href="/user"
+                  id="usersPageNavBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              className="c7"
+            >
+              <div
+                className="c9"
               >
                 <a
                   href="/"
@@ -814,9 +845,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                     About Schema CMS
                   </span>
                 </a>
-              </li>
-              <li
-                className="c8"
+              </div>
+              <div
+                className="c9"
               >
                 <a
                   href="/"
@@ -827,9 +858,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                     API Doc
                   </span>
                 </a>
-              </li>
-              <li
-                className="c8"
+              </div>
+              <div
+                className="c9"
               >
                 <a
                   href="/"
@@ -840,8 +871,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                     GitHub Repository
                   </span>
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <button
             disabled={false}
@@ -892,109 +923,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`] = `
-.c11 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  padding: 40px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c12 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c15 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c13 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c13 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c13:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c14 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c14 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c14:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c16 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c16 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c16:hover {
-  border-bottom: 1px solid #FFF;
-}
-
 .c0 {
   display: none;
 }
@@ -1123,25 +1051,83 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   transition: visibility 0s 0.4s;
 }
 
-@media (min-width:1040px) {
-  .c11 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
-  }
+.c11 {
+  overflow: auto;
+  padding: 40px 0 20px;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 154px);
 }
 
-@media (min-width:1040px) {
-  .c13 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-@media (min-width:1040px) {
-  .c14 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
+.c12:first-of-type {
+  margin-bottom: 40px;
+}
+
+.c12:last-of-type {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c13 {
+  line-height: 1.5;
+  cursor: pointer;
+  border-bottom: 2.4px solid #2F2F36;
+  margin: 2px 0;
+  font-size: 20px;
+  -webkit-transition: border 200ms ease-in-out;
+  transition: border 200ms ease-in-out;
+}
+
+.c13 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c13:hover {
+  border-bottom: 2.4px solid #FFF;
+}
+
+.c13:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c13 a {
+  padding: 22px 0 27px;
+}
+
+.c14 {
+  line-height: 1.5;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c14 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c14:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 @media (min-width:1040px) {
@@ -1399,58 +1385,62 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
             }
           }
         >
-          <div
-            className=""
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
           >
-            <a
-              className="c3"
-              href="/"
-              onClick={[Function]}
-            >
-              <schemaLogo.svg
-                className="c4"
-              />
-            </a>
-          </div>
+            <span>
+              SchemaCMS
+            </span>
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Menu
+            </span>
+          </h1>
           <div
             className="c11"
             onClick={[Function]}
           >
-            <ul
+            <div
               className="c12"
             >
-              <li
+              <div
                 className="c13"
               >
                 <a
                   href="/project"
-                  id="projectNavBtn"
+                  id="projectsNavBtn"
                   onClick={[Function]}
                 >
                   <span>
-                    Projects
+                    Project
                   </span>
                 </a>
-              </li>
-              <li
-                className="c14"
-              >
-                <a
-                  href="/user"
-                  id="userNavBtn"
-                  onClick={[Function]}
-                >
-                  <span>
-                    Users
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <ul
-              className="c15"
+              </div>
+            </div>
+            <div
+              className="c12"
             >
-              <li
-                className="c16"
+              <div
+                className="c14"
               >
                 <a
                   href="/"
@@ -1461,9 +1451,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                     About Schema CMS
                   </span>
                 </a>
-              </li>
-              <li
-                className="c16"
+              </div>
+              <div
+                className="c14"
               >
                 <a
                   href="/"
@@ -1474,9 +1464,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                     API Doc
                   </span>
                 </a>
-              </li>
-              <li
-                className="c16"
+              </div>
+              <div
+                className="c14"
               >
                 <a
                   href="/"
@@ -1487,8 +1477,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                     GitHub Repository
                   </span>
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <button
             disabled={false}
@@ -1539,88 +1529,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
-.c11 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  padding: 40px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c12 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c14 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c13 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c13 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c13:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c15 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c15 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c15:hover {
-  border-bottom: 1px solid #FFF;
-}
-
 .c0 {
   display: none;
 }
@@ -1749,18 +1657,83 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   transition: visibility 0s 0.4s;
 }
 
-@media (min-width:1040px) {
-  .c11 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
-  }
+.c11 {
+  overflow: auto;
+  padding: 40px 0 20px;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 154px);
 }
 
-@media (min-width:1040px) {
-  .c13 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12:first-of-type {
+  margin-bottom: 40px;
+}
+
+.c12:last-of-type {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c13 {
+  line-height: 1.5;
+  cursor: pointer;
+  border-bottom: 2.4px solid #2F2F36;
+  margin: 2px 0;
+  font-size: 20px;
+  -webkit-transition: border 200ms ease-in-out;
+  transition: border 200ms ease-in-out;
+}
+
+.c13 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c13:hover {
+  border-bottom: 2.4px solid #FFF;
+}
+
+.c13:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c13 a {
+  padding: 22px 0 27px;
+}
+
+.c14 {
+  line-height: 1.5;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c14 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c14:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 @media (min-width:1040px) {
@@ -2010,58 +1983,75 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             }
           }
         >
-          <div
-            className=""
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
           >
-            <a
-              className="c3"
-              href="/"
-              onClick={[Function]}
-            >
-              <schemaLogo.svg
-                className="c4"
-              />
-            </a>
-          </div>
+            <span>
+              SchemaCMS
+            </span>
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Menu
+            </span>
+          </h1>
           <div
             className="c11"
             onClick={[Function]}
           >
-            <ul
+            <div
               className="c12"
             >
-              <li
+              <div
                 className="c13"
               >
                 <a
                   href="/project"
-                  id="projectNavBtn"
+                  id="projectsNavBtn"
                   onClick={[Function]}
                 >
                   <span>
-                    Projects
+                    Project
                   </span>
                 </a>
-              </li>
-              <li
+              </div>
+              <div
                 className="c13"
               >
                 <a
                   href="/user"
-                  id="userNavBtn"
+                  id="usersPageNavBtn"
                   onClick={[Function]}
                 >
                   <span>
                     Users
                   </span>
                 </a>
-              </li>
-            </ul>
-            <ul
-              className="c14"
+              </div>
+            </div>
+            <div
+              className="c12"
             >
-              <li
-                className="c15"
+              <div
+                className="c14"
               >
                 <a
                   href="/"
@@ -2072,9 +2062,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                     About Schema CMS
                   </span>
                 </a>
-              </li>
-              <li
-                className="c15"
+              </div>
+              <div
+                className="c14"
               >
                 <a
                   href="/"
@@ -2085,9 +2075,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                     API Doc
                   </span>
                 </a>
-              </li>
-              <li
-                className="c15"
+              </div>
+              <div
+                className="c14"
               >
                 <a
                   href="/"
@@ -2098,8 +2088,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                     GitHub Repository
                   </span>
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <button
             disabled={false}

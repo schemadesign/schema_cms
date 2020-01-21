@@ -2,22 +2,23 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../.storybook/decorators';
-import { DesktopTopHeader } from './desktopTopHeader.component';
+import { DesktopHeader } from './desktopHeader.component';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
-  isAdmin: false,
+  userRole: ROLES.EDITOR,
   userId: 'userId',
 };
 
 const noUserProps = {
-  isAdmin: true,
+  userRole: ROLES.ADMIN,
   userId: null,
 };
 
 const titleProps = {
   ...defaultProps,
   title: 'Projects',
-  isAdmin: true,
+  userRole: ROLES.ADMIN,
 };
 
 const longText = `
@@ -33,7 +34,7 @@ const longProps = {
 
 storiesOf('Shared Components|Header/DesktopTopHeader', module)
   .addDecorator(withTheme())
-  .add('Default', () => <DesktopTopHeader {...defaultProps} />)
-  .add('No user', () => <DesktopTopHeader {...noUserProps} />)
-  .add('With title', () => <DesktopTopHeader {...titleProps} />)
-  .add('With long title', () => <DesktopTopHeader {...longProps} />);
+  .add('Default', () => <DesktopHeader {...defaultProps} />)
+  .add('No user', () => <DesktopHeader {...noUserProps} />)
+  .add('With title', () => <DesktopHeader {...titleProps} />)
+  .add('With long title', () => <DesktopHeader {...longProps} />);

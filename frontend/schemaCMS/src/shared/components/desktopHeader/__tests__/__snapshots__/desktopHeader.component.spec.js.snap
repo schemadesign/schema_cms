@@ -82,56 +82,44 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         }
         onClose={[Function]}
       >
-        <styled.div>
-          <Styled(Styled(Link))
-            to="/"
-          >
-            <styled.schemaLogo.svg />
-          </Styled(Styled(Link))>
-        </styled.div>
+        <H2>
+          <FormattedMessage
+            defaultMessage="SchemaCMS"
+            id="shared.components.desktopHeader.title"
+            values={Object {}}
+          />
+        </H2>
+        <H1>
+          <FormattedMessage
+            defaultMessage="Menu"
+            id="shared.components.desktopHeader.subtitle"
+            values={Object {}}
+          />
+        </H1>
         <styled.div
           onClick={[Function]}
         >
-          <Styled(styled.ul)>
-            <Styled(styled.li)
+          <styled.div>
+            <Styled(styled.div)
               active={false}
-              hide={false}
               key="0"
             >
               <Link
-                id="projectNavBtn"
+                id="projectsNavBtn"
                 onClick={[Function]}
                 to="/project"
               >
                 <FormattedMessage
-                  defaultMessage="Projects"
-                  id="shared.components.desktopTopHeader.projects"
+                  defaultMessage="Project"
+                  id="shared.components.desktopHeader.project"
                   values={Object {}}
                 />
               </Link>
-            </Styled(styled.li)>
-            <Styled(styled.li)
-              active={false}
-              hide={true}
-              key="1"
-            >
-              <Link
-                id="userNavBtn"
-                onClick={[Function]}
-                to="/user"
-              >
-                <FormattedMessage
-                  defaultMessage="Users"
-                  id="shared.components.desktopTopHeader.users"
-                  values={Object {}}
-                />
-              </Link>
-            </Styled(styled.li)>
-          </Styled(styled.ul)>
-          <Styled(styled.ul)>
-            <Styled(styled.li)
+            </Styled(styled.div)>
+          </styled.div>
+          <styled.div>
+            <Styled(styled.div)
               active={true}
-              hide={false}
               key="0"
             >
               <Link
@@ -141,14 +129,13 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               >
                 <FormattedMessage
                   defaultMessage="About Schema CMS"
-                  id="shared.components.desktopTopHeader.about"
+                  id="shared.components.desktopHeader.about"
                   values={Object {}}
                 />
               </Link>
-            </Styled(styled.li)>
-            <Styled(styled.li)
+            </Styled(styled.div)>
+            <Styled(styled.div)
               active={true}
-              hide={false}
               key="1"
             >
               <Link
@@ -158,14 +145,13 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               >
                 <FormattedMessage
                   defaultMessage="API Doc"
-                  id="shared.components.desktopTopHeader.api"
+                  id="shared.components.desktopHeader.api"
                   values={Object {}}
                 />
               </Link>
-            </Styled(styled.li)>
-            <Styled(styled.li)
+            </Styled(styled.div)>
+            <Styled(styled.div)
               active={true}
-              hide={false}
               key="2"
             >
               <Link
@@ -175,12 +161,12 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               >
                 <FormattedMessage
                   defaultMessage="GitHub Repository"
-                  id="shared.components.desktopTopHeader.repository"
+                  id="shared.components.desktopHeader.repository"
                   values={Object {}}
                 />
               </Link>
-            </Styled(styled.li)>
-          </Styled(styled.ul)>
+            </Styled(styled.div)>
+          </styled.div>
         </styled.div>
       </Component>
     </styled.div>
@@ -230,20 +216,44 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
         }
         onClose={[Function]}
       >
-        <styled.div>
-          <Styled(Styled(Link))
-            to="/"
-          >
-            <styled.schemaLogo.svg />
-          </Styled(Styled(Link))>
-        </styled.div>
+        <H2>
+          <FormattedMessage
+            defaultMessage="SchemaCMS"
+            id="shared.components.desktopHeader.title"
+            values={Object {}}
+          />
+        </H2>
+        <H1>
+          <FormattedMessage
+            defaultMessage="Menu"
+            id="shared.components.desktopHeader.subtitle"
+            values={Object {}}
+          />
+        </H1>
         <styled.div
           onClick={[Function]}
         >
-          <Styled(styled.ul)>
-            <Styled(styled.li)
+          <styled.div>
+            <Styled(styled.div)
+              active={false}
+              key="0"
+            >
+              <Link
+                id="projectsNavBtn"
+                onClick={[Function]}
+                to="/project"
+              >
+                <FormattedMessage
+                  defaultMessage="Project"
+                  id="shared.components.desktopHeader.project"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+          </styled.div>
+          <styled.div>
+            <Styled(styled.div)
               active={true}
-              hide={false}
               key="0"
             >
               <Link
@@ -253,14 +263,13 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               >
                 <FormattedMessage
                   defaultMessage="About Schema CMS"
-                  id="shared.components.desktopTopHeader.about"
+                  id="shared.components.desktopHeader.about"
                   values={Object {}}
                 />
               </Link>
-            </Styled(styled.li)>
-            <Styled(styled.li)
+            </Styled(styled.div)>
+            <Styled(styled.div)
               active={true}
-              hide={false}
               key="1"
             >
               <Link
@@ -270,14 +279,13 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               >
                 <FormattedMessage
                   defaultMessage="API Doc"
-                  id="shared.components.desktopTopHeader.api"
+                  id="shared.components.desktopHeader.api"
                   values={Object {}}
                 />
               </Link>
-            </Styled(styled.li)>
-            <Styled(styled.li)
+            </Styled(styled.div)>
+            <Styled(styled.div)
               active={true}
-              hide={false}
               key="2"
             >
               <Link
@@ -287,12 +295,12 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               >
                 <FormattedMessage
                   defaultMessage="GitHub Repository"
-                  id="shared.components.desktopTopHeader.repository"
+                  id="shared.components.desktopHeader.repository"
                   values={Object {}}
                 />
               </Link>
-            </Styled(styled.li)>
-          </Styled(styled.ul)>
+            </Styled(styled.div)>
+          </styled.div>
         </styled.div>
       </Component>
     </styled.div>
