@@ -214,9 +214,10 @@ class API(core.Stack):
 
         self.djangoSecret = aws_secretsmanager.Secret(self, "django-secret")
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
-        connection_secret_key = aws_ecs.Secret.from_secrets_manager(
-            scope.base.db.secret
-        )
+        # connection_secret_key = aws_ecs.Secret.from_secrets_manager(
+        #     scope.base.db.secret
+        # )
+
         api_lambda_token_secret = aws_secretsmanager.Secret.from_secret_arn(
             self,
             LAMBDA_AUTH_TOKEN_ENV_NAME,
@@ -306,7 +307,7 @@ class API(core.Stack):
             },
             secrets={
                 "DJANGO_SECRET_KEY": django_secret_key,
-                "DB_CONNECTION": connection_secret_key,
+                # "DB_CONNECTION": connection_secret_key,
                 **self.env,
             },
             cpu=256,
