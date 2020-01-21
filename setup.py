@@ -24,6 +24,7 @@ setuptools.setup(
     install_requires=[
         "aws-cdk.cx-api=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.core=={version}".format(version=AWS_CDK_VERSION),
+        "aws_cdk.assets=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.region-info=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-iam=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-kinesis=={version}".format(version=AWS_CDK_VERSION),
