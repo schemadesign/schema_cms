@@ -52,7 +52,6 @@
     "formik": "^1.5.8",
     "fs-extra": "7.0.1",
     "history": "^4.7.2",
-    "html-element-attributes": "^2.1.0",
     "html-webpack-plugin": "4.0.0-beta.5",
     "http-status-codes": "^1.3.0",
     "humps": "^2.0.1",

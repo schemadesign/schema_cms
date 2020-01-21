@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { getStyles } from './textArea.styles';
 import { withStyles } from '../../styles/withStyles';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 export class TextAreaComponent extends PureComponent {
   static propTypes = {
@@ -75,13 +76,14 @@ export class TextAreaComponent extends PureComponent {
     const { height } = this.state;
     const { defaultStyles, shadowStyles } = getStyles(theme);
     const styles = { ...defaultStyles, ...customStyles };
+    const filteredProps = filterAllowedAttributes('textarea', restProps);
 
     return (
       <Fragment>
         <textarea
           id={name}
           style={{ height, ...styles }}
-          {...restProps}
+          {...filteredProps}
           onChange={this.handleChange}
           ref={this.textAreaRef}
         />

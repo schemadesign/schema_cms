@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { light } from '../../../utils/theme';
 import { containerStyles } from './p.styles';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 export class P extends PureComponent {
   static propTypes = {
@@ -15,7 +16,8 @@ export class P extends PureComponent {
     const { customStyles = {}, theme = light, children, ...restProps } = this.props;
     const style = { ...containerStyles, ...theme.typography.p, ...customStyles };
     const props = { style, ...restProps };
+    const filteredProps = filterAllowedAttributes('p', props);
 
-    return <p {...props}>{children}</p>;
+    return <p {...filteredProps}>{children}</p>;
   }
 }
