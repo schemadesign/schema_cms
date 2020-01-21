@@ -1,5 +1,6 @@
 aws-cdk.cx-api==1.21.1
 aws-cdk.core==1.21.1
+aws_cdk.assets==1.21.1
 aws-cdk.region-info==1.21.1
 aws-cdk.aws-iam==1.21.1
 aws-cdk.aws-kinesis==1.21.1
