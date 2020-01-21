@@ -430,9 +430,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       </Styled(Styled(Span))>
     </styled.div>
     <NavigationContainer
-      dataSource={true}
       fixed={true}
       hideOnDesktop={false}
+      padding="40px 0 70px"
       right={true}
     >
       <NextButton
@@ -1182,9 +1182,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       }
     />
     <NavigationContainer
-      dataSource={true}
       fixed={true}
       hideOnDesktop={false}
+      padding="40px 0 70px"
       right={true}
     >
       <NextButton

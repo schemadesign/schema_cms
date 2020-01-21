@@ -273,9 +273,9 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       </div>
     </Component>
     <NavigationContainer
-      dataSource={true}
       fixed={true}
       hideOnDesktop={false}
+      padding="40px 0 70px"
       right={true}
     >
       <NextButton
@@ -524,9 +524,9 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
       </styled.div>
     </styled.div>
     <NavigationContainer
-      dataSource={true}
       fixed={true}
       hideOnDesktop={false}
+      padding="40px 0 70px"
       right={true}
     >
       <NextButton
@@ -801,9 +801,9 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
       </Draggable>
     </Component>
     <NavigationContainer
-      dataSource={true}
       fixed={true}
       hideOnDesktop={false}
+      padding="40px 0 70px"
       right={true}
     >
       <NextButton
