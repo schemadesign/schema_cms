@@ -491,11 +491,13 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
       options={Object {}}
     >
       <styled.div>
-        <FormattedMessage
-          defaultMessage="Current files"
-          id="shared.components.pageBlockForm.filesTitle"
-          values={Object {}}
-        />
+        <Component>
+          <FormattedMessage
+            defaultMessage="Current files"
+            id="shared.components.pageBlockForm.filesTitle"
+            values={Object {}}
+          />
+        </Component>
         <Draggable
           accept="IMAGE"
           id={1}

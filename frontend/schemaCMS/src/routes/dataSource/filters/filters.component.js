@@ -133,7 +133,7 @@ export class Filters extends PureComponent {
             return (
               <Fragment>
                 {this.renderCheckboxGroup(filters, values, setValues)}
-                <NavigationContainer right>
+                <NavigationContainer right fixed padding="40px 0 70px">
                   <NextButton onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                     <FormattedMessage {...messages.save} />
                   </NextButton>

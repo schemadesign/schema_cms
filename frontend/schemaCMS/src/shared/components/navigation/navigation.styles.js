@@ -39,7 +39,7 @@ const fixedNavigationStyles = styleWhenTrue(identity, fixedStyles);
 export const Navigation = styled.div`
   bottom: 0;
   width: 100%;
-  padding: 40px 0 36px;
+  padding: ${({ padding }) => padding || '40px 0 36px'};
 
   ${({ fixed }) => fixedNavigationStyles(fixed)};
 

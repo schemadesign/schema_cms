@@ -31,7 +31,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 .c22 {
   bottom: 0;
   width: 100%;
-  padding: 40px 0 36px;
+  padding: 40px 0 70px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
 .c24 {

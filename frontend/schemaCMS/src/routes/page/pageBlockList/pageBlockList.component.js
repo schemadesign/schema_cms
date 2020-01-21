@@ -19,6 +19,7 @@ import {
   Header,
   IconWrapper,
   Link,
+  menuIconStyles,
 } from './pageBlockList.styles';
 import messages from './pageBlockList.messages';
 import { BackArrowButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
@@ -125,7 +126,7 @@ export class PageBlockList extends PureComponent {
       {makeDraggable => {
         const draggableIcon = makeDraggable(
           <IconWrapper>
-            <MenuIcon />
+            <MenuIcon customStyles={menuIconStyles} />
           </IconWrapper>
         );
 
