@@ -61,7 +61,7 @@ class UserViewSet(
 
     @transaction.atomic()
     def perform_create(self, serializer):
-        user = serializer.save(username=user_models.User.generate_random_username())
+        user = serializer.save(username=user_models.User.generate_random_username(), is_active=False)
         signals.user_invited.send(sender=user_models.User, user=user, requester=self.request.user)
         return user
 
