@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'settings.title',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Schema CMS',
   },
   subTitle: {
     id: 'settings.subTitle',

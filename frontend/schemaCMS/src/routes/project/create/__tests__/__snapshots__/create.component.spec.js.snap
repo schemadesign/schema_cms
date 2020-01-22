@@ -170,6 +170,7 @@ exports[`Create: Component should render correctly 1`] = `
       isSubmitting={false}
       isValid={true}
       label="Description"
+      multiline={true}
       name="description"
       onChange={[Function]}
       placeholder="Project description"

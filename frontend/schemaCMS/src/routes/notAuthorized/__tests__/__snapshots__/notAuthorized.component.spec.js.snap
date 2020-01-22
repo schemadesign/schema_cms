@@ -17,7 +17,7 @@ exports[`NotAuthorized: Component should render correctly 1`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="SchemaCMS"
+        defaultMessage="Schema CMS"
         id="notFound.title"
         values={Object {}}
       />
