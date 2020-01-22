@@ -16,6 +16,7 @@
         "django_default_from_email_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_DEFAULT_FROM_EMAIL-SpZkTz",
         "django_host_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_HOST-DDD8rn",
         "lambda_auth_token": "arn:aws:secretsmanager:us-west-2:022528540894:secret:LAMBDA_AUTH_TOKEN-32yZOF",
-        "django_root_password_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SECRET_PASSWORD-DMD9yK"
+        "django_root_password_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SECRET_PASSWORD-DMD9yK",
+        "db_connection_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:dbSecret8003E3A7-UAt4NS6lM69D-fk0Uoa"
     }
 }
