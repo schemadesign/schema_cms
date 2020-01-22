@@ -174,7 +174,6 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 .c0 {
-  font-weight: 600;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -881,7 +880,6 @@ exports[`Storyshots Project|View No data 1`] = `
 }
 
 .c0 {
-  font-weight: 600;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

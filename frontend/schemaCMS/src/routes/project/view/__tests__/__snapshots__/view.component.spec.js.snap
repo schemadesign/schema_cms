@@ -11,6 +11,7 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={
@@ -35,6 +36,7 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={
@@ -58,6 +60,7 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={
@@ -82,6 +85,7 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={

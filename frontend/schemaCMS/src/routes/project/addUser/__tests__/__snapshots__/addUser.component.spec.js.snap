@@ -5,7 +5,7 @@ exports[`AddUser: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Invite Users"
+        defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
         values={Object {}}
       />
@@ -21,7 +21,7 @@ exports[`AddUser: Component should render correctly 1`] = `
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Invite Users"
+        defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
         values={Object {}}
       />
@@ -111,7 +111,13 @@ exports[`AddUser: Component should render correctly 1`] = `
     error={null}
     loading={true}
     noData={true}
-    noDataContent={null}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No users with role Editor available"
+        id="project.addUser.noData"
+        values={Object {}}
+      />
+    }
   />
   <NavigationContainer
     fixed={true}
@@ -129,71 +135,6 @@ exports[`AddUser: Component should render correctly 1`] = `
       />
     </BackButton>
   </NavigationContainer>
-  <Styled(Modal)
-    contentLabel="Confirm Removal"
-    isOpen={false}
-    style={
-      Object {
-        "content": Object {
-          "WebkitOverflowScrolling": "touch",
-          "alignItems": "center",
-          "border": null,
-          "borderRadius": "4px",
-          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
-          "display": "flex",
-          "flexDirection": "column",
-          "left": "50%",
-          "maxWidth": "600px",
-          "outline": "none",
-          "overflow": "auto",
-          "position": "absolute",
-          "right": "10px",
-          "top": "50%",
-          "transform": "translate(-50%, -50%)",
-          "width": "calc(100% - 20px)",
-        },
-        "overlay": Object {
-          "backgroundColor": "rgba(29, 29, 32, 0.75)",
-          "bottom": 0,
-          "left": 0,
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-          "zIndex": 10000,
-        },
-      }
-    }
-  >
-    <Styled(H1)>
-      <FormattedMessage
-        defaultMessage="Are you sure you want to remove the user from the project?"
-        id="project.addUser.removeTitle"
-        values={Object {}}
-      />
-    </Styled(H1)>
-    <styled.div>
-      <BackButton
-        disabled={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Cancel"
-          id="project.addUser.cancelRemoval"
-          values={Object {}}
-        />
-      </BackButton>
-      <NextButton
-        loading={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Confirm"
-          id="project.addUser.confirmRemoval"
-          values={Object {}}
-        />
-      </NextButton>
-    </styled.div>
-  </Styled(Modal)>
 </styled.div>
 `;
 
@@ -202,7 +143,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Invite Users"
+        defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
         values={Object {}}
       />
@@ -218,7 +159,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Invite Users"
+        defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
         values={Object {}}
       />
@@ -308,16 +249,24 @@ exports[`AddUser: Component should render correctly with users 1`] = `
     error={null}
     loading={true}
     noData={false}
-    noDataContent={null}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No users with role Editor available"
+        id="project.addUser.noData"
+        values={Object {}}
+      />
+    }
   >
     <styled.div
       key="0"
     >
       <styled.div>
         <styled.div>
-          Alan Watts
+          Dale Chihuly
         </styled.div>
-        <styled.div />
+        <styled.div>
+          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+        </styled.div>
       </styled.div>
       <styled.div>
         <Styled(Component)
@@ -328,7 +277,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
               "width": 42,
             }
           }
-          id="removeUserPlusButton0"
+          id="addUserPlusButton0"
           onClick={[Function]}
         >
           <Component
@@ -347,11 +296,9 @@ exports[`AddUser: Component should render correctly with users 1`] = `
     >
       <styled.div>
         <styled.div>
-          Dale Chihuly
+          Dave Bowie
         </styled.div>
-        <styled.div>
-          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-        </styled.div>
+        <styled.div />
       </styled.div>
       <styled.div>
         <Styled(Component)
@@ -381,38 +328,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
     >
       <styled.div>
         <styled.div>
-          Dave Bowie
-        </styled.div>
-        <styled.div />
-      </styled.div>
-      <styled.div>
-        <Styled(Component)
-          customStyles={
-            Object {
-              "height": 42,
-              "minHeight": 42,
-              "width": 42,
-            }
-          }
-          id="addUserPlusButton2"
-          onClick={[Function]}
-        >
-          <Component
-            customStyles={
-              Object {
-                "height": 42,
-                "width": 42,
-              }
-            }
-          />
-        </Styled(Component)>
-      </styled.div>
-    </styled.div>
-    <styled.div
-      key="3"
-    >
-      <styled.div>
-        <styled.div>
           Pellentesque a massa at purus cursus egestas. Aliquam ut vehicula. Praesent est erat, laoreet et ornare ullamcorper, finibus id nisl. Etiam tempor, ligula a sagittis
         </styled.div>
         <styled.div>
@@ -428,7 +343,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
               "width": 42,
             }
           }
-          id="addUserPlusButton3"
+          id="addUserPlusButton2"
           onClick={[Function]}
         >
           <Component
@@ -459,70 +374,5 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       />
     </BackButton>
   </NavigationContainer>
-  <Styled(Modal)
-    contentLabel="Confirm Removal"
-    isOpen={false}
-    style={
-      Object {
-        "content": Object {
-          "WebkitOverflowScrolling": "touch",
-          "alignItems": "center",
-          "border": null,
-          "borderRadius": "4px",
-          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
-          "display": "flex",
-          "flexDirection": "column",
-          "left": "50%",
-          "maxWidth": "600px",
-          "outline": "none",
-          "overflow": "auto",
-          "position": "absolute",
-          "right": "10px",
-          "top": "50%",
-          "transform": "translate(-50%, -50%)",
-          "width": "calc(100% - 20px)",
-        },
-        "overlay": Object {
-          "backgroundColor": "rgba(29, 29, 32, 0.75)",
-          "bottom": 0,
-          "left": 0,
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-          "zIndex": 10000,
-        },
-      }
-    }
-  >
-    <Styled(H1)>
-      <FormattedMessage
-        defaultMessage="Are you sure you want to remove the user from the project?"
-        id="project.addUser.removeTitle"
-        values={Object {}}
-      />
-    </Styled(H1)>
-    <styled.div>
-      <BackButton
-        disabled={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Cancel"
-          id="project.addUser.cancelRemoval"
-          values={Object {}}
-        />
-      </BackButton>
-      <NextButton
-        loading={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Confirm"
-          id="project.addUser.confirmRemoval"
-          values={Object {}}
-        />
-      </NextButton>
-    </styled.div>
-  </Styled(Modal)>
 </styled.div>
 `;
