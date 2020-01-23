@@ -41,6 +41,10 @@ class User(AbstractUser):
 
     objects = managers.UserManager()
 
+    def save(self, *args, **kwargs):
+        self.email = self.email.lower()
+        super().save(*args, **kwargs)
+
     @property
     def is_admin(self):
         return self.role == constants.UserRole.ADMIN

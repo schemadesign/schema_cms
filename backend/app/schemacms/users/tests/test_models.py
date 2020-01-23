@@ -121,3 +121,9 @@ class TestUser:
 
         assert user.source == user_constants.UserSource.AUTH0
         assert user.external_id == auth0_management().users.create()["user_id"]
+
+    def test_emails_saving_as_lowercase(self, user_factory):
+        email = "UPPER.CASSE@email.com"
+        user = user_factory(email=email)
+
+        assert user.email == email.lower()
