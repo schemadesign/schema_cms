@@ -1,5 +1,5 @@
-import { all, cancel, cancelled, delay, fork, put, take, takeLatest } from 'redux-saga/effects';
-import { all as ramdaAll, both, either, includes, isEmpty, omit, pipe, propEq, propIs, when, pathOr } from 'ramda';
+import { all, cancel, cancelled, delay, fork, put, select, take, takeLatest } from 'redux-saga/effects';
+import { all as ramdaAll, any, both, either, includes, isEmpty, omit, pathOr, pipe, propEq, propIs, when } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
@@ -14,21 +14,27 @@ import {
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
+import { selectUploadingDataSources } from './dataSource.selectors';
 
 const PAGE_SIZE = 1000;
 
 function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
-    const requestData = { project: payload.projectId, ...payload.requestData };
-    const formData = formatFormData(requestData);
+    const requestData = { project: payload.projectId, ...omit(['file'], payload.requestData) };
+    const formData = formatFormData({ file: payload.requestData.file });
 
-    const { data } = yield api.post(DATA_SOURCES_PATH, formData, {
+    const { data } = yield api.post(DATA_SOURCES_PATH, requestData);
+
+    yield put(DataSourceRoutines.create.success({ id: data.id, fileName: payload.requestData.file.name }));
+
+    browserHistory.push(`/project/${payload.projectId}/datasource`);
+
+    yield api.patch(`${DATA_SOURCES_PATH}/${data.id}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    browserHistory.push(`/project/${payload.projectId}/datasource`);
-    yield put(DataSourceRoutines.create.success(data));
+    yield put(DataSourceRoutines.removeUploadingDataSource(data.id));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));
   } finally {
@@ -65,18 +71,22 @@ function* fetchOne({ payload: { dataSourceId } }) {
   }
 }
 
-const getIfAllDataSourceProcessed = either(
-  isEmpty,
-  ramdaAll(
-    both(
-      both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)),
-      pipe(
-        pathOr('', ['metaData', 'status']),
-        status => includes(status, [META_FAILED, META_SUCCESS])
+const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
+  either(
+    isEmpty,
+    ramdaAll(
+      either(
+        ({ id, fileName }) => !fileName && !any(propEq('id', id))(uploadingDataSources),
+        both(
+          both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)),
+          pipe(
+            pathOr('', ['metaData', 'status']),
+            status => includes(status, [META_FAILED, META_SUCCESS])
+          )
+        )
       )
     )
-  )
-);
+  )(data);
 
 function* fetchListLoop(payload) {
   try {
@@ -89,8 +99,9 @@ function* fetchListLoop(payload) {
 
       yield put(ProjectRoutines.setProject.trigger(data.project));
       yield put(DataSourceRoutines.fetchList.success(data.results));
+      const uploadingDataSources = yield select(selectUploadingDataSources);
 
-      if (getIfAllDataSourceProcessed(data.results)) {
+      if (getIfAllDataSourceProcessed({ data: data.results, uploadingDataSources })) {
         yield cancel();
       }
 

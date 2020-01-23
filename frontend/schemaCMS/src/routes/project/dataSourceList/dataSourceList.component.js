@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, either, equals, propEq, propOr, T } from 'ramda';
+import { always, cond, either, equals, propEq, propOr, T, any } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -33,7 +33,7 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
-import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -49,6 +49,7 @@ export class DataSourceList extends PureComponent {
     fetchDataSources: PropTypes.func.isRequired,
     cancelFetchListLoop: PropTypes.func.isRequired,
     dataSources: PropTypes.array.isRequired,
+    uploadingDataSources: PropTypes.array.isRequired,
     theme: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -147,16 +148,30 @@ export class DataSourceList extends PureComponent {
 
   renderLoading = message => <Loading metaProcessing>{message}</Loading>;
 
-  renderHeader = ({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed }) =>
+  renderHeader = ({
+    whenCreated,
+    firstName,
+    lastName,
+    jobProcessing,
+    metaProcessing,
+    metaFailed,
+    fileUploading,
+    fileUploadingError,
+  }) =>
     cond([
+      [propEq('fileUploading', true), always(this.renderLoading(<FormattedMessage {...messages.fileUploading} />))],
+      [
+        propEq('fileUploadingError', true),
+        always(this.renderLoading(<FormattedMessage {...messages.fileUploadingError} />)),
+      ],
       [propEq('metaProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />))],
       [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
       [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
-    ])({ metaFailed, jobProcessing, metaProcessing });
+    ])({ metaFailed, jobProcessing, metaProcessing, fileUploading, fileUploadingError });
 
   renderItem = (
-    { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess },
+    { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess, fileName },
     index
   ) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -164,7 +179,19 @@ export class DataSourceList extends PureComponent {
     const metaStatus = propOr('', 'status', metaData);
     const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
     const metaFailed = equals(META_FAILED)(metaStatus);
-    const header = this.renderHeader({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed });
+    const fileUploadingError = !fileName;
+    const fileUploading = any(propEq('id', id), this.props.uploadingDataSources) && fileUploadingError;
+
+    const header = this.renderHeader({
+      whenCreated,
+      firstName,
+      lastName,
+      jobProcessing,
+      metaProcessing,
+      metaFailed,
+      fileUploading,
+      fileUploadingError,
+    });
     const footer = this.renderMetaData({ metaData, metaProcessing });
 
     return (
