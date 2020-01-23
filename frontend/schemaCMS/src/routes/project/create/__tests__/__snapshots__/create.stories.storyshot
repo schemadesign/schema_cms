@@ -744,7 +744,6 @@ exports[`Storyshots Project|Create Default 1`] = `
                 "resize": "none",
               }
             }
-            type="text"
           />
           <textarea
             aria-hidden={true}
