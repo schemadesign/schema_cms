@@ -24,17 +24,19 @@ function* create({ payload }) {
     const requestData = { project: payload.projectId, ...omit(['file'], payload.requestData) };
     const formData = formatFormData({ file: payload.requestData.file });
 
-    const { data } = yield api.post(DATA_SOURCES_PATH, requestData);
+    const {
+      data: { id },
+    } = yield api.post(DATA_SOURCES_PATH, requestData);
 
-    yield put(DataSourceRoutines.create.success({ id: data.id, fileName: payload.requestData.file.name }));
+    yield put(DataSourceRoutines.create.success({ id, fileName: payload.requestData.file.name }));
 
     browserHistory.push(`/project/${payload.projectId}/datasource`);
 
-    yield api.patch(`${DATA_SOURCES_PATH}/${data.id}`, formData, {
+    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${id}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    yield put(DataSourceRoutines.removeUploadingDataSource(data.id));
+    yield put(DataSourceRoutines.removeUploadingDataSource(data));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));
   } finally {

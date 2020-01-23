@@ -33,7 +33,7 @@ const setPreviewData = (state = INITIAL_STATE, { payload }) => state.set('previe
 const setUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
   state.update('uploadingDataSources', uploadingDataSources => [...uploadingDataSources, payload]);
 const removeUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
-  state.update('uploadingDataSources', reject(propEq('id', payload)));
+  state.set('dataSource', payload).update('uploadingDataSources', reject(propEq('id', payload.id)));
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.removeUploadingDataSource.trigger]: removeUploadingDataSource,

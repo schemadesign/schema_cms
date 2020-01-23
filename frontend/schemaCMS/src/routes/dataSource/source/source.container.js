@@ -9,7 +9,7 @@ import { withFormik } from 'formik';
 import { withTheme } from 'styled-components';
 
 import { Source } from './source.component';
-import { DataSourceRoutines, selectDataSource } from '../../../modules/dataSource';
+import { DataSourceRoutines, selectDataSource, selectUploadingDataSources } from '../../../modules/dataSource';
 import { selectIsAdmin, selectUserRole } from '../../../modules/userProfile';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from './source.messages';
@@ -23,6 +23,7 @@ import {
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   dataSource: selectDataSource,
+  uploadingDataSources: selectUploadingDataSources,
   isAdmin: selectIsAdmin,
 });
 

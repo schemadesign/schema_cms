@@ -17,18 +17,20 @@ export const inputStyles = {
   left: 0,
 };
 
-export const buttonStyles = {
+export const getButtonStyles = disabled => ({
   fontSize: 0,
-};
+  opacity: disabled ? 0.5 : 1,
+});
 
-export const valueStyles = {
+export const getValueStyles = disabled => ({
   fontSize: 18,
   lineHeight: '24px',
   width: 'calc(100% - 70px)',
   paddingBottom: 30,
   display: 'block',
-  cursor: 'pointer',
-};
+  cursor: disabled ? 'cursor' : 'pointer',
+  opacity: disabled ? 0.5 : 1,
+});
 
 export const getLabelStyles = label => ({
   top: label ? 10 : 0,

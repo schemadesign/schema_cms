@@ -26,6 +26,14 @@ export default defineMessages({
     id: 'shared.components.sourceForm.processing',
     defaultMessage: 'There is a script processing ongoing. Please wait until it finishes to try and upload a new file.',
   },
+  uploadingError: {
+    id: 'shared.components.sourceForm.uploadingError',
+    defaultMessage: 'Uploading file failed. Please try again.',
+  },
+  uploadingFile: {
+    id: 'shared.components.sourceForm.uploadingFile',
+    defaultMessage: 'Uploading file in progress...',
+  },
   nameDataSourceProjectNameUniqueError: {
     id: 'shared.components.sourceForm.nameDataSourceProjectNameUniqueError',
     defaultMessage: 'A data source with this name already exists in the project',

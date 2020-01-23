@@ -21,22 +21,23 @@ import { getDataSourceMenuOptions } from '../dataSource.constants';
 
 export class Source extends PureComponent {
   static propTypes = {
-    userRole: PropTypes.string.isRequired,
     dataSource: PropTypes.object.isRequired,
+    dirty: PropTypes.bool.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
       }),
     }),
-    isSubmitting: PropTypes.bool.isRequired,
-    dirty: PropTypes.bool.isRequired,
-    values: PropTypes.object.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    handleChange: PropTypes.func.isRequired,
-    setFieldValue: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
+    theme: PropTypes.object.isRequired,
+    uploadingDataSources: PropTypes.array.isRequired,
+    userRole: PropTypes.string.isRequired,
+    values: PropTypes.object.isRequired,
     onDataSourceChange: PropTypes.func.isRequired,
   };
 

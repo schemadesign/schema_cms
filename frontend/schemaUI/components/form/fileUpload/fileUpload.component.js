@@ -2,17 +2,18 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  buttonStyles,
+  getButtonStyles,
   iconContainerStyles,
   getLabelStyles,
   inputStyles,
-  valueStyles,
+  getValueStyles,
   containerStyles,
 } from './fileUpload.styles';
 import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { withStyles } from '../../styles/withStyles';
 import { Label } from '../label';
+import { BUTTON } from '../../button/button.constants';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
@@ -23,6 +24,7 @@ export class FileUploadComponent extends PureComponent {
     label: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
     accept: PropTypes.string,
     onChange: PropTypes.func,
     customStyles: PropTypes.object,
@@ -33,6 +35,7 @@ export class FileUploadComponent extends PureComponent {
   };
 
   static defaultProps = {
+    disabled: false,
     customStyles: {},
     customInputStyles: {},
     customLabelStyles: {},
@@ -40,7 +43,12 @@ export class FileUploadComponent extends PureComponent {
 
   state = {
     iconComponent: this.props.iconComponent || (
-      <div style={{ ...getStyles(this.props.theme).containerStyles, ...buttonStyles }}>
+      <div
+        style={{
+          ...getStyles(this.props.theme, BUTTON, this.props.disabled).containerStyles,
+          ...getButtonStyles(this.props.disabled),
+        }}
+      >
         <UploadIcon />
       </div>
     ),
@@ -60,15 +68,18 @@ export class FileUploadComponent extends PureComponent {
     customInputStyles,
     customIconContainerStyles,
     placeholder,
+    disabled,
   }) => (
     <Fragment>
       <Label htmlFor={id} customStyles={customLabelStyles}>
         {label}
       </Label>
-      <label htmlFor={id} style={{ ...valueStyles, ...customInputStyles }}>
+      <label htmlFor={id} style={{ ...getValueStyles(disabled), ...customInputStyles }}>
         {(fileNames.length && fileNames) || placeholder || DEFAULT_TEXT_VALUE}
       </label>
-      <div style={{ ...iconContainerStyles, ...customIconContainerStyles }}>{this.iconComponent({ id, label })}</div>
+      <div style={{ ...iconContainerStyles, ...customIconContainerStyles }}>
+        {this.iconComponent({ id, label, disabled })}
+      </div>
     </Fragment>
   );
 
@@ -86,6 +97,7 @@ export class FileUploadComponent extends PureComponent {
       iconComponent,
       multiple,
       placeholder,
+      disabled,
       ...props
     } = this.props;
 
@@ -101,8 +113,9 @@ export class FileUploadComponent extends PureComponent {
           customIconContainerStyles,
           multiple,
           placeholder,
+          disabled,
         })}
-        <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" {...props} />
+        <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" disabled={disabled} {...props} />
       </div>
     );
   }
