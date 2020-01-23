@@ -4,6 +4,6 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   pageTitle: {
     id: 'app.pageTitle',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Schema CMS',
   },
 });

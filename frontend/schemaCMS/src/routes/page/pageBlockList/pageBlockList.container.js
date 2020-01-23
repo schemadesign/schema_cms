@@ -8,7 +8,7 @@ import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
 import { PageBlockList } from './pageBlockList.component';
-import { PageBlockRoutines, selectTemporaryPageBlocks, selectPageBlocks } from '../../../modules/pageBlock';
+import { PageBlockRoutines, selectTemporaryPageBlocks } from '../../../modules/pageBlock';
 import { PageRoutines, selectPage } from '../../../modules/page';
 import { selectUserRole } from '../../../modules/userProfile';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
@@ -16,7 +16,6 @@ import messages from '../../pageBlock/pageBlock.messages';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
-  pageBlocks: selectPageBlocks,
   temporaryPageBlocks: selectTemporaryPageBlocks,
   page: selectPage,
 });

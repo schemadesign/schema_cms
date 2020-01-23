@@ -8,7 +8,7 @@ export default defineMessages({
   },
   title: {
     id: 'notFound.title',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Schema CMS',
   },
   subTitle: {
     id: 'notFound.subTitle',

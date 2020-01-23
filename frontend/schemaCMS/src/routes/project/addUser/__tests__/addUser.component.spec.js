@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { Button } from '../addUser.styles';
 import { AddUser } from '../addUser.component';
 import { defaultProps, propsWithUsers } from '../addUser.stories';
-import { BackButton, NextButton } from '../../../../shared/components/navigation';
+import { BackButton } from '../../../../shared/components/navigation';
 
 describe('AddUser: Component', () => {
   const component = props => <AddUser {...defaultProps} {...props} />;
@@ -60,37 +60,7 @@ describe('AddUser: Component', () => {
       .at(1)
       .simulate('click');
 
-    expect(propsWithUsers.history.push).toHaveBeenCalledWith('/user/2/add/1');
-  });
-
-  it('should remove user', () => {
-    jest.spyOn(propsWithUsers, 'removeUser');
-    const wrapper = render(propsWithUsers);
-    wrapper
-      .find(Button)
-      .at(0)
-      .simulate('click');
-
-    wrapper.find(NextButton).simulate('click');
-
-    expect(propsWithUsers.removeUser).toHaveBeenCalledWith({ projectId: '1', userId: 1 });
-  });
-
-  it('should clear state after cancel removing user', () => {
-    const wrapper = render(propsWithUsers);
-
-    wrapper
-      .find(Button)
-      .at(0)
-      .simulate('click');
-
-    wrapper
-      .find(BackButton)
-      .at(1)
-      .simulate('click');
-
-    expect(wrapper.state().userToBeRemoved).toBeNull();
-    expect(wrapper.state().showConfirmationModal).toBeFalsy();
+    expect(propsWithUsers.history.push).toHaveBeenCalledWith('/user/3/add/1');
   });
 
   it('should set error correctly', async () => {

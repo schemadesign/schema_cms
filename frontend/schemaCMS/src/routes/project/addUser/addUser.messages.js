@@ -7,22 +7,14 @@ export default defineMessages({
   },
   headerSubtitle: {
     id: 'project.addUser.headerSubtitle',
-    defaultMessage: 'Invite Users',
-  },
-  removeTitle: {
-    id: 'project.addUser.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the user from the project?',
-  },
-  cancelRemoval: {
-    id: 'project.addUser.cancelRemoval',
-    defaultMessage: 'Cancel',
-  },
-  confirmRemoval: {
-    id: 'project.addUser.confirmRemoval',
-    defaultMessage: 'Confirm',
+    defaultMessage: 'Add Users',
   },
   back: {
     id: 'project.addUser.back',
     defaultMessage: 'Back',
+  },
+  noData: {
+    id: 'project.addUser.noData',
+    defaultMessage: 'No users with role Editor available',
   },
 });

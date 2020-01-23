@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, find, ifElse, propEq } from 'ramda';
+import { differenceWith } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { Icons } from 'schemaUI';
 
@@ -16,8 +16,7 @@ import {
   UserItemDescription,
 } from './addUser.styles';
 import messages from './addUser.messages';
-import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
@@ -37,7 +36,6 @@ export class AddUser extends PureComponent {
       push: PropTypes.func.isRequired,
     }),
     fetchUsers: PropTypes.func.isRequired,
-    removeUser: PropTypes.func.isRequired,
     fetchProjectEditors: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
     usersInProject: PropTypes.array.isRequired,
@@ -45,8 +43,6 @@ export class AddUser extends PureComponent {
   };
 
   state = {
-    userToBeRemoved: null,
-    showConfirmationModal: false,
     loading: true,
     error: null,
   };
@@ -55,76 +51,22 @@ export class AddUser extends PureComponent {
     try {
       const projectId = getMatchParam(this.props, 'projectId');
       if (!this.props.isAdmin) {
-        return this.props.history.push('/not-authorized');
+        this.props.history.push('/not-authorized');
+      } else {
+        await this.props.fetchUsers({ projectId });
+        await this.props.fetchProjectEditors({ projectId });
       }
-
-      await this.props.fetchUsers({ projectId });
-      await this.props.fetchProjectEditors({ projectId });
     } catch (error) {
       reportError(error);
       this.setState({ error });
     } finally {
-      return this.setState({ loading: false });
+      this.setState({ loading: false });
     }
   }
 
   handleAddUser = userId => this.props.history.push(`/user/${userId}/add/${getMatchParam(this.props, 'projectId')}`);
 
-  handleRemoveUser = userId =>
-    this.setState({
-      userToBeRemoved: userId,
-      showConfirmationModal: true,
-    });
-
-  handleCancelRemove = () =>
-    this.setState({
-      userToBeRemoved: null,
-      showConfirmationModal: false,
-    });
-
-  handleConfirmRemove = async () => {
-    const { userToBeRemoved } = this.state;
-    const projectId = getMatchParam(this.props, 'projectId');
-
-    this.setState({
-      loading: true,
-      userToBeRemoved: null,
-      showConfirmationModal: false,
-    });
-
-    try {
-      await this.props.removeUser({ projectId, userId: userToBeRemoved });
-      await this.props.fetchProjectEditors({ projectId });
-    } catch (error) {
-      this.setState({ error });
-    } finally {
-      return this.setState({ loading: false });
-    }
-  };
-
   handleBackClick = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
-
-  renderAction = ({ id }, index) => {
-    const { usersInProject } = this.props;
-
-    return ifElse(
-      find(propEq('id', id)),
-      always(
-        <Button
-          id={`removeUserPlusButton${index}`}
-          onClick={() => this.handleRemoveUser(id)}
-          customStyles={buttonStyles}
-        >
-          <Icons.MinusIcon customStyles={iconStyles} />
-        </Button>
-      ),
-      always(
-        <Button id={`addUserPlusButton${index}`} onClick={() => this.handleAddUser(id)} customStyles={buttonStyles}>
-          <Icons.PlusIcon customStyles={iconStyles} />
-        </Button>
-      )
-    )(usersInProject);
-  };
 
   renderUser = (user, index) => (
     <UserItem key={index}>
@@ -132,17 +74,27 @@ export class AddUser extends PureComponent {
         <UserFullName>{`${user.firstName} ${user.lastName}`}</UserFullName>
         <Email>{user.email}</Email>
       </UserItemDescription>
-      <Action>{this.renderAction(user, index)}</Action>
+      <Action>
+        <Button
+          id={`addUserPlusButton${index}`}
+          onClick={() => this.handleAddUser(user.id)}
+          customStyles={buttonStyles}
+        >
+          <Icons.PlusIcon customStyles={iconStyles} />
+        </Button>
+      </Action>
     </UserItem>
   );
 
   render() {
-    const { users, userRole } = this.props;
-    const { showConfirmationModal, loading, error } = this.state;
+    const { users, userRole, usersInProject } = this.props;
+    const { loading, error } = this.state;
     const projectId = getMatchParam(this.props, 'projectId');
     const headerTitle = <FormattedMessage {...messages.headerTitle} />;
     const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
+    const noDataMessage = <FormattedMessage {...messages.noData} />;
     const menuOptions = getProjectMenuOptions(projectId);
+    const usersToInvite = differenceWith((x, y) => x.id === y.id, users, usersInProject);
 
     return (
       <Container>
@@ -152,27 +104,14 @@ export class AddUser extends PureComponent {
           headerSubtitle={headerSubtitle}
           options={filterMenuOptions(menuOptions, userRole)}
         />
-        <LoadingWrapper loading={loading} error={error} noData={!users.length}>
-          {this.props.users.map(this.renderUser)}
+        <LoadingWrapper loading={loading} error={error} noData={!usersToInvite.length} noDataContent={noDataMessage}>
+          {usersToInvite.map(this.renderUser)}
         </LoadingWrapper>
         <NavigationContainer fixed>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />
           </BackButton>
         </NavigationContainer>
-        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
-          <ModalTitle>
-            <FormattedMessage {...messages.removeTitle} />
-          </ModalTitle>
-          <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
-              <FormattedMessage {...messages.cancelRemoval} />
-            </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
-              <FormattedMessage {...messages.confirmRemoval} />
-            </NextButton>
-          </ModalActions>
-        </Modal>
       </Container>
     );
   }

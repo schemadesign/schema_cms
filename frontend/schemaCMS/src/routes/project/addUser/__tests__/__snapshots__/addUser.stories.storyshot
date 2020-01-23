@@ -247,7 +247,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
           }
         >
           <span>
-            Invite Users
+            Add Users
           </span>
         </h1>
       </div>
@@ -306,7 +306,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>
@@ -410,7 +410,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>
@@ -889,7 +889,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
           }
         >
           <span>
-            Invite Users
+            Add Users
           </span>
         </h1>
       </div>
@@ -948,7 +948,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>
@@ -1052,7 +1052,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>

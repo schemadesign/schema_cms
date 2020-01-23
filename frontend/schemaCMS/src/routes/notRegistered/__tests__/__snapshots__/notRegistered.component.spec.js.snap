@@ -17,7 +17,7 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="SchemaCMS"
+        defaultMessage="Schema CMS"
         id="notRegistered.title"
         values={Object {}}
       />
