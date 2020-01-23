@@ -149,7 +149,7 @@ class API(core.Stack):
             "DJANGO_DEFAULT_FROM_EMAIL": "django_default_from_email_arn",
             "DJANGO_HOST": "django_host_arn",
             "DJANGO_ROOT_PASSWORD": "django_root_password_arn",
-            "DB_CONNECTION": "db_connection_arn"
+            "DB_CONNECTION": "db_connection_arn",
         }
 
         self.env = {k: self.map_secret(v) for k, v in env_map.items()}
@@ -178,7 +178,7 @@ class API(core.Stack):
                 image=nginx_image,
                 container_name="nginx",
                 container_port=80,
-                enable_logging=True
+                enable_logging=True,
             ),
             desired_count=1,
             cpu=256,
@@ -204,10 +204,7 @@ class API(core.Stack):
                 "SQS_WORKER_EXT_QUEUE_URL": self.job_processing_queues[1].queue_url,
                 LAMBDA_AUTH_TOKEN_ENV_NAME: self.api_lambda_token,
             },
-            secrets={
-                "DJANGO_SECRET_KEY": django_secret_key,
-                **self.env,
-            },
+            secrets={"DJANGO_SECRET_KEY": django_secret_key, **self.env,},
             cpu=256,
             memory_limit_mib=512,
         )
@@ -444,17 +441,20 @@ class CIPipeline(core.Stack):
             self, "gh-token", github_token_arn
         )
 
-        pipeline_source_action = aws_codepipeline_actions.GitHubSourceAction(
-            action_name="github_source",
-            owner=GITHUB_REPO_OWNER,
-            repo=GITHUB_REPOSITORY,
-            branch="master",
-            trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
-            output=source_output,
-            oauth_token=oauth_token.secret_value,
+        self.pipeline.add_stage(
+            stage_name="source",
+            actions=[
+                aws_codepipeline_actions.GitHubSourceAction(
+                    action_name="github_source",
+                    owner=GITHUB_REPO_OWNER,
+                    repo=GITHUB_REPOSITORY,
+                    branch="master",
+                    trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
+                    output=source_output,
+                    oauth_token=oauth_token.secret_value,
+                ),
+            ],
         )
-
-        self.pipeline.add_stage(stage_name="source", actions=[pipeline_source_action])
 
         fe_build_spec = aws_codebuild.BuildSpec.from_source_filename(
             "buildspec-frontend.yaml"
