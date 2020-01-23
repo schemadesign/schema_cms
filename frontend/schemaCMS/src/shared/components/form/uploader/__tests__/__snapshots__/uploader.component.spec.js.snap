@@ -3,12 +3,14 @@
 exports[`Uploader: Component should render correctly 1`] = `
 <styled.div>
   <Component
+    fileName="file name"
     id="id"
     label="label"
     name="name"
     onChange={[Function]}
   />
   <Component
+    fileName="file name"
     hidden={true}
     inputId="id"
     name="name"
@@ -20,12 +22,14 @@ exports[`Uploader: Component should render correctly 1`] = `
 exports[`Uploader: Component should render with error 1`] = `
 <styled.div>
   <Component
+    fileName="file name"
     id="id"
     label="label"
     name="name"
     onChange={[Function]}
   />
   <Component
+    fileName="file name"
     hidden={true}
     inputId="id"
     name="name"

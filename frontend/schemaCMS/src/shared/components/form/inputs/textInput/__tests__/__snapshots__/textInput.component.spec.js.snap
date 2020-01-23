@@ -4,6 +4,7 @@ exports[`TextInput: Component should render correctly 1`] = `
 <styled.div>
   <Component
     error={false}
+    handleChange={[Function]}
     iconComponent={null}
     name="A_FIELD_NAME"
     onChange={[Function]}
@@ -16,6 +17,7 @@ exports[`TextInput: Component should render edit icon 1`] = `
 <styled.div>
   <Component
     error={false}
+    handleChange={[Function]}
     iconComponent={
       <ForwardRef(styled.div)>
         <Unknown />
@@ -32,6 +34,7 @@ exports[`TextInput: Component should render error 1`] = `
 <styled.div>
   <Component
     error={true}
+    handleChange={[Function]}
     iconComponent={null}
     name="A_FIELD_NAME"
     onChange={[Function]}

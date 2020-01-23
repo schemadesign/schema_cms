@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { getStyles } from './card.styles';
 import { withStyles } from '../styles/withStyles';
+import { filterAllowedAttributes } from '../../utils/helpers';
 
 export class CardComponent extends PureComponent {
   static propTypes = {
@@ -19,11 +20,11 @@ export class CardComponent extends PureComponent {
   render() {
     const { customStyles, headerComponent, footerComponent, children, theme, ...restProps } = this.props;
     const { containerStyles, headerStyles, footerStyles, upperStyles } = getStyles(theme);
-
     const styles = { ...containerStyles, ...customStyles };
+    const filteredProps = filterAllowedAttributes('div', restProps);
 
     return (
-      <div style={styles} {...restProps}>
+      <div style={styles} {...filteredProps}>
         <div style={upperStyles}>
           {this.renderHeader(headerComponent, headerStyles)}
           {children}

@@ -38,7 +38,6 @@ const { MenuIcon } = Icons;
 export class PageBlockList extends PureComponent {
   static propTypes = {
     userRole: PropTypes.string.isRequired,
-    pageBlocks: PropTypes.array.isRequired,
     values: PropTypes.array.isRequired,
     page: PropTypes.object.isRequired,
     temporaryPageBlocks: PropTypes.array.isRequired,

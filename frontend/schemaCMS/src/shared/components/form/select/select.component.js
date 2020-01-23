@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Icons } from 'schemaUI';
-import { pick } from 'ramda';
-import elementAttributes from 'html-element-attributes/index.json';
 
 import { Container, IconContainer } from './select.styles';
 
@@ -22,9 +20,6 @@ export class Select extends PureComponent {
   render() {
     const { label, name, options, onSelect, value, placeholder, ...restProps } = this.props;
     const updatedOptions = options.map(option => ({ ...option, selected: option.value === value }));
-    const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.select];
-
-    const filteredProps = pick(allowedAttributes, restProps);
 
     return (
       <Container>
@@ -33,7 +28,7 @@ export class Select extends PureComponent {
         <IconContainer>
           <EditIcon />
         </IconContainer>
-        <SelectElement placeholder={placeholder} options={updatedOptions} onSelect={onSelect} {...filteredProps} />
+        <SelectElement placeholder={placeholder} options={updatedOptions} onSelect={onSelect} {...restProps} />
       </Container>
     );
   }

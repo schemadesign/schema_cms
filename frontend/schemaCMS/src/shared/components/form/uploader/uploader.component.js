@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'schemaUI';
-import { pick } from 'ramda';
-import elementAttributes from 'html-element-attributes/index.json';
 
 import { Container, ErrorWrapper } from './uploader.styles';
 import { renderWhenTrue } from '../../../utils/rendering';
@@ -31,17 +29,15 @@ export class Uploader extends PureComponent {
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
 
   render() {
-    const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
     const { errors, touched, checkOnlyErrors, fileNames, label, id, onChange, ...restProps } = this.props;
-    const filteredProps = pick(allowedAttributes, restProps);
-    const isError = !!errors[filteredProps.name];
-    const isTouched = touched[filteredProps.name];
+    const isError = !!errors[restProps.name];
+    const isTouched = touched[restProps.name];
     const error = checkOnlyErrors ? isError : isError && isTouched;
 
     return (
       <Container>
-        <FileUpload fileNames={fileNames} label={label} id={id} onChange={onChange} {...filteredProps} />
-        <DropZone inputId={id} onChange={onChange} {...filteredProps} hidden />
+        <FileUpload fileNames={fileNames} label={label} id={id} onChange={onChange} {...restProps} />
+        <DropZone inputId={id} onChange={onChange} {...restProps} hidden />
         {this.renderError(error)}
       </Container>
     );

@@ -44,7 +44,7 @@ export const defaultProps = {
 
 const emptyBlocksProps = {
   ...defaultProps,
-  pageBlocks: [],
+  values: [],
 };
 
 storiesOf('Page|PageBlockList', module)

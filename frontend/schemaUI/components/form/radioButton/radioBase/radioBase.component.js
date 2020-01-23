@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import RadioGroupContext from '../../radioGroup/radioGroup.context';
 import { getStyles } from './radioBase.styles';
+import { filterAllowedAttributes } from '../../../../utils/helpers';
 
 export class RadioBaseComponent extends PureComponent {
   static propTypes = {
@@ -23,11 +24,11 @@ export class RadioBaseComponent extends PureComponent {
           const checked = value === restProps.value;
           const labelCheckedStyles = checked ? customCheckedStyles : {};
           const styles = { ...labelStyles, ...customLabelStyles, ...labelCheckedStyles };
+          const filteredProps = filterAllowedAttributes('input', restProps);
 
           return (
             <div style={containerStyles}>
               <input
-                {...restProps}
                 onChange={onChange}
                 value={restProps.value}
                 name={name}
@@ -36,6 +37,7 @@ export class RadioBaseComponent extends PureComponent {
                 type="radio"
                 id={id}
                 style={inputStyles}
+                {...filteredProps}
               />
               <label htmlFor={id} style={styles}>
                 {children}

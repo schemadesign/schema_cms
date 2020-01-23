@@ -5,6 +5,7 @@ import replace from 'rollup-plugin-replace';
 import postcss from 'rollup-plugin-postcss';
 import url from 'rollup-plugin-url';
 import svgr from '@svgr/rollup';
+import json from 'rollup-plugin-json';
 
 export default {
   input: './components/index.js',
@@ -30,6 +31,7 @@ export default {
   ],
 
   plugins: [
+    json(),
     postcss({
       modules: true,
     }),

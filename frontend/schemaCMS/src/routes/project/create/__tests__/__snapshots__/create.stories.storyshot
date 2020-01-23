@@ -813,7 +813,6 @@ exports[`Storyshots Project|Create Default 1`] = `
             name="owner"
             onBlur={[Function]}
             onChange={[Function]}
-            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",

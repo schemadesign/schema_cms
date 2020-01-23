@@ -13,6 +13,7 @@ import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { withStyles } from '../../styles/withStyles';
 import { Label } from '../label';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
@@ -86,8 +87,9 @@ export class FileUploadComponent extends PureComponent {
       iconComponent,
       multiple,
       placeholder,
-      ...props
+      ...restProps
     } = this.props;
+    const filteredProps = filterAllowedAttributes('input', restProps);
 
     return (
       <div style={{ ...containerStyles, ...customStyles }}>
@@ -102,7 +104,7 @@ export class FileUploadComponent extends PureComponent {
           multiple,
           placeholder,
         })}
-        <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" {...props} />
+        <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" {...filteredProps} />
       </div>
     );
   }
