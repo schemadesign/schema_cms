@@ -101,10 +101,15 @@ class Project(
     def meta_file_serialization(self):
         data = {
             "id": self.id,
-            "title": self.title,
-            "description": self.description or None,
-            "owner": self.owner.get_full_name(),
+            "meta": {
+                "title": self.title,
+                "description": self.description or None,
+                "owner": self.owner.get_full_name(),
+                "created": self.created.isoformat(),
+                "updated": self.modified.isoformat(),
+            },
             "data_sources": [],
+            "charts": [],
             "pages": [],
         }
 
