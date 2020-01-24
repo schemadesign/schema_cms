@@ -24,7 +24,6 @@ export const mapDispatchToProps = dispatch =>
     {
       fetchUsers: promisifyRoutine(UserRoutines.fetchUsers),
       fetchProjectEditors: promisifyRoutine(ProjectRoutines.fetchEditors),
-      removeUser: promisifyRoutine(ProjectRoutines.removeEditor),
     },
     dispatch
   );

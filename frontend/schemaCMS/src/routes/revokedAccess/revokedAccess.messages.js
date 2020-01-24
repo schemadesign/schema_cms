@@ -17,7 +17,7 @@ export default defineMessages({
   },
   title: {
     id: 'revokedAccess.title',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Schema CMS',
   },
   subTitle: {
     id: 'revokedAccess.subTitle',

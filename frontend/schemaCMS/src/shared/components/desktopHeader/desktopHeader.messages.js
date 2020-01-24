@@ -10,9 +10,9 @@ export default defineMessages({
     id: 'shared.components.desktopHeader.subtitle',
     defaultMessage: 'Menu',
   },
-  project: {
-    id: 'shared.components.desktopHeader.project',
-    defaultMessage: 'Project',
+  projects: {
+    id: 'shared.components.desktopHeader.projects',
+    defaultMessage: 'Projects',
   },
   users: {
     id: 'shared.components.desktopHeader.users',

@@ -454,7 +454,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                   onClick={[Function]}
                 >
                   <span>
-                    Project
+                    Projects
                   </span>
                 </a>
               </div>
@@ -812,7 +812,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                   onClick={[Function]}
                 >
                   <span>
-                    Project
+                    Projects
                   </span>
                 </a>
               </div>
@@ -1431,7 +1431,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                   onClick={[Function]}
                 >
                   <span>
-                    Project
+                    Projects
                   </span>
                 </a>
               </div>
@@ -2029,7 +2029,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                   onClick={[Function]}
                 >
                   <span>
-                    Project
+                    Projects
                   </span>
                 </a>
               </div>

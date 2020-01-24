@@ -5,6 +5,7 @@ import { getStyles } from './checkbox.styles';
 import CheckboxGroupContext from '../checkboxGroup/checkboxGroup.context';
 import { EditIcon } from '../../icons/editIcon';
 import { withStyles } from '../../styles/withStyles';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 export class CheckboxComponent extends PureComponent {
   static propTypes = {
@@ -28,11 +29,11 @@ export class CheckboxComponent extends PureComponent {
           const checked = value.includes(restProps.value);
           const { containerStyles, inputStyles, iconContainerStyles, labelStyles, elementStyles } = getStyles(theme);
           const styles = { ...containerStyles, ...customCheckboxStyles };
+          const filteredProps = filterAllowedAttributes('label', restProps);
 
           return (
             <div style={styles}>
               <input
-                {...restProps}
                 onChange={onChange}
                 value={restProps.value}
                 name={name}
@@ -41,6 +42,7 @@ export class CheckboxComponent extends PureComponent {
                 type="checkbox"
                 id={id}
                 style={inputStyles}
+                {...filteredProps}
               />
               <span style={elementStyles}>{children}</span>
               <div style={iconContainerStyles}>

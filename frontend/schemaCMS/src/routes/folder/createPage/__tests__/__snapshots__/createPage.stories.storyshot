@@ -680,8 +680,6 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
               "resize": "none",
             }
           }
-          type="text"
-          value="description"
         />
         <textarea
           aria-hidden={true}
@@ -772,7 +770,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
           id="keywords"
           onBlur={[Function]}
           onChange={[Function]}
-          placeholder="Keywords"
+          placeholder="Keyword1;Keyword2;"
           style={
             Object {
               "background": "#000",
@@ -786,8 +784,6 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
               "resize": "none",
             }
           }
-          type="text"
-          value="keywords"
         />
         <textarea
           aria-hidden={true}

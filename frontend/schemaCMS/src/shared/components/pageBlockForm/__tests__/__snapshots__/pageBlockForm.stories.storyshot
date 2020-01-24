@@ -343,7 +343,6 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             "resize": "none",
           }
         }
-        type="text"
       />
       <textarea
         aria-hidden={true}
@@ -726,7 +725,6 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             "resize": "none",
           }
         }
-        type="text"
       />
       <textarea
         aria-hidden={true}
@@ -1228,155 +1226,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "visibility": "hidden",
             }
           }
-          theme={
-            Object {
-              "background": "#000",
-              "border": "#2F2F36",
-              "button": Object {
-                "background": "#1d1d20",
-                "text": "#FFF",
-              },
-              "buttonDisabled": Object {
-                "background": "#1d1d20",
-                "text": "#71737e",
-              },
-              "card": Object {
-                "background": "#1d1d20",
-                "border": "#FFF",
-                "label": "#71737e",
-                "text": "#FFF",
-              },
-              "checkbox": Object {
-                "border": "#2F2F36",
-                "text": "#FFF",
-              },
-              "colors": Object {
-                "black": "#000",
-                "coolGray": "#a6a7aa",
-                "darkGrey": "#1d1d20",
-                "lightGrey": "#71737e",
-                "mediumGray": "#2F2F36",
-                "red": "#f21e29",
-                "veryLightPink": "#f0efef",
-                "white": "#FFF",
-                "yellow": "#be8f00",
-              },
-              "dataGrid": Object {
-                "background": "#000",
-                "text": "#71737e",
-              },
-              "error": "#f21e29",
-              "header": Object {
-                "border": "#2F2F36",
-                "text": "#FFF",
-              },
-              "hiddenBackground": "rgba(0, 0, 0, 0)",
-              "icon": Object {
-                "background": "#1d1d20",
-                "fill": "#FFF",
-                "fillInverse": "#000",
-              },
-              "input": Object {
-                "text": "#FFF",
-              },
-              "inverseButton": Object {
-                "background": "#FFF",
-                "text": "#000",
-              },
-              "label": Object {
-                "border": "#2F2F36",
-                "text": "#71737e",
-              },
-              "menu": Object {
-                "background": "#000",
-                "text": "#FFF",
-              },
-              "providerContainer": Object {
-                "minHeight": "100vh",
-              },
-              "radioButton": Object {
-                "active": Object {
-                  "background": "#FFF",
-                  "fill": "#1d1d20",
-                },
-                "border": "#FFF",
-                "text": "#FFF",
-                "unActive": Object {
-                  "background": "#1d1d20",
-                  "dot": "#FFF",
-                  "fill": "#FFF",
-                },
-              },
-              "secondaryText": "#71737e",
-              "select": Object {
-                "background": "#1d1d20",
-                "border": "#000",
-              },
-              "stepper": Object {
-                "active": "#FFF",
-                "background": "#1d1d20",
-              },
-              "tab": Object {
-                "active": "#FFF",
-                "hover": "#FFF",
-                "normal": "#2F2F36",
-              },
-              "table": Object {
-                "background": Object {
-                  "body": "#000",
-                  "header": "#1d1d20",
-                },
-                "border": Object {
-                  "body": "#1d1d20",
-                  "header": "#000",
-                },
-                "text": Object {
-                  "body": "#FFF",
-                  "header": "#71737e",
-                },
-              },
-              "text": "#FFF",
-              "textArea": Object {
-                "background": "#000",
-                "text": "#FFF",
-              },
-              "textField": Object {
-                "error": "#f21e29",
-                "label": "#71737e",
-              },
-              "typography": Object {
-                "h1": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                },
-                "h2": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                },
-                "h3": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 600,
-                },
-                "p": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 200,
-                },
-                "pre": Object {
-                  "fontFamily": "Hack, monospace",
-                  "fontSize": "18px",
-                },
-                "span": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "14px",
-                },
-              },
-              "warning": "#be8f00",
-            }
-          }
           type="file"
         />
       </div>
@@ -1839,7 +1688,6 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             "resize": "none",
           }
         }
-        type="text"
       />
       <textarea
         aria-hidden={true}

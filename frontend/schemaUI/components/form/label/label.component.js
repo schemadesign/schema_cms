@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { getStyles } from './label.styles';
 import { withStyles } from '../../styles/withStyles';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 class LabelComponent extends PureComponent {
   static propTypes = {
@@ -19,9 +20,10 @@ class LabelComponent extends PureComponent {
     const { children, name, theme, customStyles, ...restProps } = this.props;
     const defaultStyles = getStyles(theme);
     const labelStyles = { ...defaultStyles, ...customStyles };
+    const filteredProps = filterAllowedAttributes('label', restProps);
 
     return (
-      <label {...restProps} style={labelStyles} htmlFor={name}>
+      <label style={labelStyles} htmlFor={name} {...filteredProps}>
         {children}
       </label>
     );

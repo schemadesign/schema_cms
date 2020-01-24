@@ -13,7 +13,7 @@ exports[`Settings: Component should render correctly 1`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="SchemaCMS"
+        defaultMessage="Schema CMS"
         id="settings.title"
         values={Object {}}
       />
@@ -60,7 +60,7 @@ exports[`Settings: Component should render correctly 1`] = `
     }
     title={
       <FormattedMessage
-        defaultMessage="SchemaCMS"
+        defaultMessage="Schema CMS"
         id="settings.title"
         values={Object {}}
       />
@@ -234,7 +234,7 @@ exports[`Settings: Component should render correctly 2`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="SchemaCMS"
+        defaultMessage="Schema CMS"
         id="settings.title"
         values={Object {}}
       />
@@ -281,7 +281,7 @@ exports[`Settings: Component should render correctly 2`] = `
     }
     title={
       <FormattedMessage
-        defaultMessage="SchemaCMS"
+        defaultMessage="Schema CMS"
         id="settings.title"
         values={Object {}}
       />

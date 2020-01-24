@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { getStyles } from './select.styles';
 import { withStyles } from '../../styles/withStyles';
 import { find, pipe, prop, propOr } from 'ramda';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 export class SelectComponent extends PureComponent {
   static propTypes = {
@@ -83,9 +84,10 @@ export class SelectComponent extends PureComponent {
   renderNativeSelect = ({ hidden = false, restStyles: { getSelectStyle } }, restProps) => {
     const { options } = this.props;
     const onChange = !!hidden ? Function.prototype : this.handleOptionClick;
+    const filteredProps = filterAllowedAttributes('select', restProps);
 
     return (
-      <select style={getSelectStyle(hidden)} onChange={onChange} {...restProps}>
+      <select style={getSelectStyle(hidden)} onChange={onChange} {...filteredProps}>
         {options.map(this.renderNativeOptions)}
       </select>
     );

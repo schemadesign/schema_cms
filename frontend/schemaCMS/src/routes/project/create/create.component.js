@@ -89,6 +89,7 @@ export class Create extends PureComponent {
             label={intl.formatMessage(messages.projectDescriptionLabel)}
             fullWidth
             isEdit
+            multiline
             {...this.props}
           />
           <TextInput

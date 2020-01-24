@@ -6,7 +6,6 @@ const mobileMargin = 7;
 const desktopMargin = 15;
 
 export const Container = styled.div`
-  font-weight: 600;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -143,4 +142,5 @@ export const CardValue = styled.span`
 
 export const statisticsCardStyles = {
   cursor: 'pointer',
+  fontWeight: 600,
 };

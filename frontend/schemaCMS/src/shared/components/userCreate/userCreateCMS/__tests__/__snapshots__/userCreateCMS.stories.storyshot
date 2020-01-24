@@ -277,7 +277,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             >
               <span>
-                Invite a User to SchemaCMS
+                Invite a User to Schema CMS
               </span>
             </h1>
           </div>
@@ -381,7 +381,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             >
               <span>
-                Invite a User to SchemaCMS
+                Invite a User to Schema CMS
               </span>
             </h1>
           </div>
@@ -562,7 +562,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           }
         >
           <span>
-            Invite a User to SchemaCMS
+            Invite a User to Schema CMS
           </span>
         </h1>
       </div>

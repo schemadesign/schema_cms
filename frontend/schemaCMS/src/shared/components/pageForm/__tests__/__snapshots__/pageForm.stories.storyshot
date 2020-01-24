@@ -149,8 +149,6 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
             "resize": "none",
           }
         }
-        type="text"
-        value="description"
       />
       <textarea
         aria-hidden={true}
@@ -240,7 +238,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
       <textarea
         id="keywords"
         onChange={[Function]}
-        placeholder="Keywords"
+        placeholder="Keyword1;Keyword2;"
         style={
           Object {
             "background": "#000",
@@ -254,8 +252,6 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
             "resize": "none",
           }
         }
-        type="text"
-        value="keywords"
       />
       <textarea
         aria-hidden={true}
