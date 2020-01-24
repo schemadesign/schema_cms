@@ -958,6 +958,13 @@ class TestFilterDetailView:
         assert filter_.name == new_name
         assert response.data == projects_serializers.FilterSerializer(instance=filter_).data
 
+    def test_delete(self, api_client, admin, filter_):
+        api_client.force_authenticate(admin)
+        response = api_client.delete(self.get_url(filter_.id))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Filter.objects.all().filter(pk=filter_.id).exists()
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:filter-detail", kwargs=dict(pk=pk))
@@ -1417,3 +1424,36 @@ class TestTagsListCreateView:
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-tags", kwargs=dict(pk=pk))
+
+
+class TestTagDetailView:
+    def test_response(self, api_client, admin, tag):
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(tag.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == projects_serializers.TagDetailsSerializer(instance=tag).data
+
+    def test_update(self, api_client, admin, tag):
+        new_key = "newKey"
+        payload = dict(key=new_key)
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(tag.id), data=payload)
+        tag.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert tag.key == new_key
+        assert response.data == projects_serializers.TagDetailsSerializer(instance=tag).data
+
+    def test_delete(self, api_client, admin, tag):
+        api_client.force_authenticate(admin)
+        response = api_client.delete(self.get_url(tag.id))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Tag.objects.all().filter(pk=tag.id).exists()
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:tag-detail", kwargs=dict(pk=pk))

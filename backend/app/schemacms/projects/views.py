@@ -443,12 +443,9 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIVie
 class FilterDetailViewSet(
     mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
-    queryset = models.Filter.objects.none()
+    queryset = models.Filter.objects.all().select_related("datasource")
     serializer_class = serializers.FilterDetailsSerializer
     permission_classes = (permissions.IsAuthenticated,)
-
-    def get_queryset(self):
-        return models.Filter.objects.all().select_related("datasource")
 
 
 class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
@@ -568,3 +565,11 @@ class BlockViewSet(
         "update": serializers.BlockDetailSerializer,
         "partial_update": serializers.BlockDetailSerializer,
     }
+
+
+class TagDetailViewSet(
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
+):
+    queryset = models.Tag.objects.all().select_related("datasource")
+    serializer_class = serializers.TagDetailsSerializer
+    permission_classes = (permissions.IsAuthenticated,)
