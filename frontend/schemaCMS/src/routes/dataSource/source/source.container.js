@@ -3,7 +3,7 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
-import { compose, pick } from 'ramda';
+import { compose, pick, pickBy } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 import { withTheme } from 'styled-components';
@@ -11,7 +11,7 @@ import { withTheme } from 'styled-components';
 import { Source } from './source.component';
 import { DataSourceRoutines, selectDataSource, selectUploadingDataSources } from '../../../modules/dataSource';
 import { selectIsAdmin, selectUserRole } from '../../../modules/userProfile';
-import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
+import { errorMessageParser } from '../../../shared/utils/helpers';
 import messages from './source.messages';
 import {
   DATA_SOURCE_FIELDS,
@@ -54,13 +54,14 @@ export default compose(
       [DATA_SOURCE_RUN_LAST_JOB]: false,
     }),
     validationSchema: () => DATA_SOURCE_SCHEMA,
-    handleSubmit: async (requestData, { props, setSubmitting, setErrors }) => {
-      const { onDataSourceChange, intl } = props;
-      const dataSourceId = getMatchParam(props, 'dataSourceId');
+    handleSubmit: async (values, { props, setSubmitting, setErrors }) => {
+      const { onDataSourceChange, intl, dataSource } = props;
 
       try {
         setSubmitting(true);
-        await onDataSourceChange({ requestData, dataSourceId });
+        const requestData = pickBy((val, key) => val !== dataSource[key], values);
+
+        await onDataSourceChange({ requestData, dataSource });
       } catch (errors) {
         const { formatMessage } = intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });

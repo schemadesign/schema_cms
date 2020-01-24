@@ -77,14 +77,17 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
   either(
     isEmpty,
     ramdaAll(
-      either(
-        ({ id, fileName }) => !fileName && !any(propEq('id', id))(uploadingDataSources),
-        both(
-          both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)),
-          pipe(
-            pathOr('', ['metaData', 'status']),
-            status => includes(status, [META_FAILED, META_SUCCESS])
-          )
+      both(
+        ({ id }) => !any(propEq('id', id))(uploadingDataSources),
+        either(
+          both(
+            both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)),
+            pipe(
+              pathOr('', ['metaData', 'status']),
+              status => includes(status, [META_FAILED, META_SUCCESS])
+            )
+          ),
+          propEq('fileName', null)
         )
       )
     )
@@ -103,7 +106,9 @@ function* fetchListLoop(payload) {
       yield put(DataSourceRoutines.fetchList.success(data.results));
       const uploadingDataSources = yield select(selectUploadingDataSources);
 
-      if (getIfAllDataSourceProcessed({ data: data.results, uploadingDataSources })) {
+      const isDataSourceProcessed = getIfAllDataSourceProcessed({ data: data.results, uploadingDataSources });
+
+      if (isDataSourceProcessed) {
         yield cancel();
       }
 
@@ -125,29 +130,36 @@ function* fetchList({ payload }) {
   yield cancel(bgSyncTask);
 }
 
-function* updateOne({ payload: { dataSourceId, requestData } }) {
+function* updateOne({ payload: { requestData, dataSource } }) {
   try {
     yield put(DataSourceRoutines.updateOne.request());
-    const response = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, { name: requestData.name });
+    const response = {
+      data: dataSource,
+    };
+
+    if (requestData.name) {
+      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, { name: requestData.name });
+      response.data = data;
+    }
 
     if (requestData.file) {
       const filteredData = pipe(
         omit(['name']),
         when(propEq(DATA_SOURCE_RUN_LAST_JOB, false), omit([DATA_SOURCE_RUN_LAST_JOB]))
       )(requestData);
-
       const formData = formatFormData(filteredData);
 
-      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
+      yield put(DataSourceRoutines.updateOne.success({ ...dataSource, fileName: requestData.file.name }));
+      browserHistory.push(`/project/${dataSource.project.id}/datasource`);
+      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-
       response.data = data;
-
-      browserHistory.push(`/project/${data.project.id}/datasource`);
+    } else {
+      yield put(DataSourceRoutines.updateOne.success(response.data));
     }
 
-    yield put(DataSourceRoutines.updateOne.success(response.data));
+    yield put(DataSourceRoutines.removeUploadingDataSource(response.data));
   } catch (error) {
     yield put(DataSourceRoutines.updateOne.failure(error));
   } finally {

@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
-import { always, pathEq } from 'ramda';
+import { always, ifElse, isEmpty, pipe, is, path, complement } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
@@ -62,7 +62,10 @@ export class Source extends PureComponent {
   };
 
   handleShowRunModal = () => e => {
-    const isFakeJob = pathEq(['dataSource', 'activeJob', 'scripts'], [], this.props);
+    const isFakeJob = pipe(
+      path(['dataSource', 'activeJob', 'scripts']),
+      ifElse(isEmpty, always(true), complement(is(Array)))
+    )(this.props);
 
     if (this.props.values.file && !isFakeJob) {
       e.preventDefault();

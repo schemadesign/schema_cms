@@ -48,7 +48,6 @@ export class SourceFormComponent extends PureComponent {
 
   handleUploadChange = (data, { setFieldValue }) => {
     const uploadFile = getEventFiles(data);
-
     if (!uploadFile.length) {
       return;
     }
@@ -142,8 +141,8 @@ export class SourceFormComponent extends PureComponent {
     const isProcessing = metaProcessing || jobsInProcess;
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
     const { name, type } = values;
-    const fileUploadingError = !is(String, values.fileName);
-    const fileUploading = uploadingDataSource && fileUploadingError;
+    const fileUploadingError = !is(String, dataSource.fileName);
+    const fileUploading = !!uploadingDataSource;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
 
     return (

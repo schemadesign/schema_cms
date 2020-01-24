@@ -180,7 +180,7 @@ export class DataSourceList extends PureComponent {
     const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
     const metaFailed = equals(META_FAILED)(metaStatus);
     const fileUploadingError = !fileName;
-    const fileUploading = any(propEq('id', id), this.props.uploadingDataSources) && fileUploadingError;
+    const fileUploading = any(propEq('id', id), this.props.uploadingDataSources);
 
     const header = this.renderHeader({
       whenCreated,

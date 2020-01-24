@@ -31,15 +31,17 @@ const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dat
 const setFieldsInfo = (state = INITIAL_STATE, { payload }) => state.set('fieldsInfo', payload);
 const setPreviewData = (state = INITIAL_STATE, { payload }) => state.set('previewData', payload);
 const setUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
-  state.update('uploadingDataSources', uploadingDataSources => [...uploadingDataSources, payload]);
+  state
+    .set('dataSource', payload)
+    .update('uploadingDataSources', uploadingDataSources => [...uploadingDataSources, payload]);
 const removeUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
-  state.set('dataSource', payload).update('uploadingDataSources', reject(propEq('id', payload.id)));
+  state.update('uploadingDataSources', reject(propEq('id', payload.id)));
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [DataSourceRoutines.removeUploadingDataSource.trigger]: removeUploadingDataSource,
+  [DataSourceRoutines.removeUploadingDataSource.TRIGGER]: removeUploadingDataSource,
   [DataSourceRoutines.create.SUCCESS]: setUploadingDataSource,
+  [DataSourceRoutines.updateOne.SUCCESS]: setUploadingDataSource,
   [DataSourceRoutines.fetchOne.SUCCESS]: updateDataSource,
-  [DataSourceRoutines.updateOne.SUCCESS]: updateDataSource,
   [DataSourceRoutines.fetchList.SUCCESS]: updateDataSources,
   [DataSourceRoutines.fetchFieldsInfo.SUCCESS]: setFieldsInfo,
   [DataSourceRoutines.fetchPreview.SUCCESS]: setPreviewData,
