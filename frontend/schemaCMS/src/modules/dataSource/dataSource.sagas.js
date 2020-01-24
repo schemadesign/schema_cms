@@ -29,7 +29,6 @@ function* create({ payload }) {
     } = yield api.post(DATA_SOURCES_PATH, requestData);
 
     yield put(DataSourceRoutines.create.success({ id, fileName: payload.requestData.file.name }));
-
     browserHistory.push(`/project/${payload.projectId}/datasource`);
 
     const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${id}`, formData, {
@@ -105,7 +104,6 @@ function* fetchListLoop(payload) {
       yield put(ProjectRoutines.setProject.trigger(data.project));
       yield put(DataSourceRoutines.fetchList.success(data.results));
       const uploadingDataSources = yield select(selectUploadingDataSources);
-
       const isDataSourceProcessed = getIfAllDataSourceProcessed({ data: data.results, uploadingDataSources });
 
       if (isDataSourceProcessed) {

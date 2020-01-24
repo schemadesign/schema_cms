@@ -10,6 +10,7 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   createDataSource: Function.prototype,
   onDataSourceChange: Function.prototype,
+  uploadingDataSources: [],
   history,
   intl,
   match: {

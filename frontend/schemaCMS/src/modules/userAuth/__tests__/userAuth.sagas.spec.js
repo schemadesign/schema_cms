@@ -13,16 +13,16 @@ describe('UserAuth: sagas', () => {
   const jwtToken = 'aJwtToken';
 
   beforeEach(() => {
-    mockApi.post(TOKEN_PATH).reply(OK, {
-      token: jwtToken,
-    });
-
-    mockApi.post('/auth/logout/').reply(OK);
-
     jest.spyOn(window.location, 'assign').mockImplementation(n => n);
   });
 
   describe('when USER_AUTH/GET_JWT_TOKEN action is fired', () => {
+    beforeEach(() => {
+      mockApi.post(TOKEN_PATH).reply(OK, {
+        token: jwtToken,
+      });
+    });
+
     it('should put USER_AUTH/GET_JWT_TOKEN_SUCCESS with JWT TOKEN', async () => {
       const uid = 'userId';
       const token = '1234';
@@ -54,6 +54,8 @@ describe('UserAuth: sagas', () => {
         .put(UserAuthActions.logoutSuccess())
         .dispatch(UserAuthActions.logout())
         .silentRun();
+
+      expect(window.location.assign).toBeCalledWith('http://localhost/auth/logout');
     });
   });
 });

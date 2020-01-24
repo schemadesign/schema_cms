@@ -141,7 +141,7 @@ export class SourceFormComponent extends PureComponent {
     const isProcessing = metaProcessing || jobsInProcess;
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
     const { name, type } = values;
-    const fileUploadingError = !is(String, dataSource.fileName);
+    const fileUploadingError = id && !is(String, dataSource.fileName);
     const fileUploading = !!uploadingDataSource;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
 

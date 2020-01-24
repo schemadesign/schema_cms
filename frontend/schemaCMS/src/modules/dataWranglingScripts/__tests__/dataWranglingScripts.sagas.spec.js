@@ -2,7 +2,6 @@ import { expectSaga } from 'redux-saga-test-plan';
 import { select } from 'redux-saga/effects';
 import Immutable from 'seamless-immutable';
 import { OK } from 'http-status-codes';
-import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
@@ -13,10 +12,6 @@ import { selectDataWranglingScripts } from '../dataWranglingScripts.selectors';
 
 describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});
-
-  beforeEach(() => {
-    nock.cleanAll();
-  });
 
   describe('fetchList', () => {
     it('should dispatch a success action', async () => {

@@ -1148,6 +1148,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "display": "block",
               "fontSize": 18,
               "lineHeight": "24px",
+              "opacity": 1,
               "paddingBottom": 30,
               "width": "calc(100% - 70px)",
             }
@@ -1186,6 +1187,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
                   "fontSize": 0,
                   "margin": "0",
                   "minHeight": "48px",
+                  "opacity": 1,
                   "outline": "none",
                   "padding": "0",
                   "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
@@ -1212,6 +1214,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         <input
           accept=".png, .jpg, .jpeg, .gif"
           aria-hidden={true}
+          disabled={false}
           id="fileUpload"
           multiple={true}
           name="inputImages"

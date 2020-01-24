@@ -114,6 +114,11 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
   />
   <Formik
     enableReinitialize={true}
+    initialValues={
+      Object {
+        "fileName": "",
+      }
+    }
     isInitialValid={false}
     onSubmit={[Function]}
     validateOnBlur={true}

@@ -1,5 +1,4 @@
 import Immutable from 'seamless-immutable';
-import nock from 'nock';
 import { OK } from 'http-status-codes';
 import { expectSaga } from 'redux-saga-test-plan';
 
@@ -14,10 +13,6 @@ import { ProjectRoutines } from '../../project';
 describe('PageBlock: sagas', () => {
   const defaultState = Immutable({
     blocks: [],
-  });
-
-  beforeEach(() => {
-    nock.cleanAll();
   });
 
   describe('when fetchList action is called', () => {
