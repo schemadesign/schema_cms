@@ -641,3 +641,22 @@ class BlockDetailSerializer(BlockSerializer):
     def get_images(self, instance):
         images = instance.images.all()
         return BlockImageSerializer(images, many=True).data
+
+
+class TagSerializer(serializers.ModelSerializer):
+    datasource = NestedRelatedModelSerializer(
+        serializer=DataSourceFilterSerializer(), queryset=models.DataSource.objects.all()
+    )
+
+    class Meta:
+        model = models.Tag
+        fields = ("id", "datasource", "key", "value", "is_active")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Tag.objects.all(),
+                fields=("datasource", "key"),
+                key_field_name="key",
+                code="tagKeyNotUnique",
+                message="Tag with this key already exist in data source.",
+            )
+        ]

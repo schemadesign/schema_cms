@@ -1371,3 +1371,49 @@ class TestSetBlocksView:
     @staticmethod
     def get_url(pk):
         return reverse("projects:page-set-blocks", kwargs=dict(pk=pk))
+
+
+class TestTagsListCreateView:
+    def test_response(self, api_client, admin, tag_factory, data_source):
+        tag_factory.create_batch(2, datasource=data_source, is_active=True)
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(data_source.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["results"]) == 2
+        assert (
+            response.data["results"] == projects_serializers.TagSerializer(data_source.tags, many=True).data
+        )
+        assert response.data["project"] == {"id": data_source.project.id, "title": data_source.project.title}
+
+    def test_create(self, api_client, admin, data_source):
+        payload = dict(key="test", value="value",)
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+        tag_id = response.data["id"]
+        tag = projects_models.Tag.objects.get(pk=tag_id)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == projects_serializers.TagSerializer(tag).data
+
+    def test_unique_key_validation(self, api_client, admin, tag_factory, data_source):
+        tag = tag_factory(datasource=data_source)
+        payload = dict(key=tag.key, value="value",)
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {
+            'key': [
+                error.Error(
+                    message='Tag with this key already exist in data source.', code='tagKeyNotUnique'
+                ).data
+            ]
+        }
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-tags", kwargs=dict(pk=pk))

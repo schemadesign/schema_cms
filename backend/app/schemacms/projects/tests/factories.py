@@ -126,3 +126,12 @@ class BlockImageFactory(factory.django.DjangoModelFactory):
 
     block = factory.SubFactory(BlockFactory)
     image = factory.django.ImageField(filename="test.png", from_func=utils_test.make_image)
+
+
+class TagFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.Tag"
+
+    datasource = factory.SubFactory(DataSourceFactory)
+    key = factory.Faker("text", max_nb_chars=25)
+    value = factory.Faker("text", max_nb_chars=150)
