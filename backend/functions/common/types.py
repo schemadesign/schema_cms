@@ -47,12 +47,13 @@ class Page(LoaderMixin, FetchMetaFileMixin):
 class DataSource(LoaderMixin, FetchMetaFileMixin):
     table_name: typing.ClassVar = "datasources"
     id: int
-    name: str = ""
+    meta: dict = dataclasses.field(default_factory=dict)
     file: str = ""
-    items: int = 0
     result: str = ""
+    shape: list = dataclasses.field(default_factory=list)
     fields: list = dataclasses.field(default_factory=list)
     filters: list = dataclasses.field(default_factory=list)
+    views: list = dataclasses.field(default_factory=list)
 
     @property
     def result_parquet(self):

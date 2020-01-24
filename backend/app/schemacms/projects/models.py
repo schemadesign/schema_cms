@@ -39,6 +39,10 @@ class MetaDataModel(models.Model):
         self.preview.seek(0)
         return json.loads(self.preview.read())
 
+    @property
+    def shape(self):
+        return [self.items, self.fields]
+
 
 class Project(
     utils_models.MetaGeneratorMixin,
@@ -280,12 +284,22 @@ class DataSource(
     def meta_file_serialization(self):
         data = {
             "id": self.id,
-            "name": self.name,
+            "meta": {
+                "name": self.name,
+                "description": None,
+                "source": None,
+                "source-url": None,
+                "methodology": None,
+                "updated": self.modified.isoformat(),
+                "creator": self.created_by.get_full_name(),
+            },
+
             "file": self.file.name,
-            "items": 0,
+            "shape": self.meta_data.shape,
             "result": None,
             "fields": [],
             "filters": [],
+            "views": []
         }
 
         current_job = self.current_job
