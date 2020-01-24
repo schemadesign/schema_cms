@@ -110,8 +110,8 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 to="/project"
               >
                 <FormattedMessage
-                  defaultMessage="Project"
-                  id="shared.components.desktopHeader.project"
+                  defaultMessage="Projects"
+                  id="shared.components.desktopHeader.projects"
                   values={Object {}}
                 />
               </Link>
@@ -244,8 +244,8 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 to="/project"
               >
                 <FormattedMessage
-                  defaultMessage="Project"
-                  id="shared.components.desktopHeader.project"
+                  defaultMessage="Projects"
+                  id="shared.components.desktopHeader.projects"
                   values={Object {}}
                 />
               </Link>

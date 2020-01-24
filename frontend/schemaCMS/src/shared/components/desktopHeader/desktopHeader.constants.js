@@ -8,7 +8,7 @@ import { PROJECTS_ID, USERS_PAGE_ID } from '../../../routes/project/project.cons
 
 export const PRIMARY_OPTIONS = [
   {
-    label: <FormattedMessage {...messages.project} />,
+    label: <FormattedMessage {...messages.projects} />,
     to: '/project',
     page: 'project',
     id: PROJECTS_ID,
