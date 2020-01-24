@@ -60,8 +60,6 @@ def get_page(page_id):
 def get_data_source(data_source_id):
     try:
         data_source = types.DataSource.get_by_id(id=data_source_id)
-        filters = data_source.filters
-        fields = data_source.fields
         result_file = services.get_s3_object(data_source.result_parquet)
         file = pq.read_table(BufferReader(result_file["Body"].read()))
         records = json.loads(file.slice(0, 10).to_pandas().to_json(orient="records"))
@@ -70,7 +68,10 @@ def get_data_source(data_source_id):
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
 
-    data = {"meta": {}, "fields": fields, "filters": filters, "records": records}
+    data = dict(**asdict(data_source))
+    data.pop("file")
+    data.pop("result")
+    data["records"] = records
 
     return create_response(data), 200
 
@@ -105,7 +106,7 @@ def get_data_source_records(data_source_id):
 
     try:
         data_source = types.DataSource.get_by_id(id=data_source_id)
-        items = data_source.items
+        items = data_source.shape[0]
 
         result_file = services.get_s3_object(data_source.result_parquet)
         file = pq.read_table(BufferReader(result_file["Body"].read()))
