@@ -369,15 +369,28 @@ class TestCreateDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
-    @pytest.mark.usefixtures("sqs")
-    def test_create_by_editor_assigned_to_project(self, api_client, editor, project, faker):
-        project.editors.add(editor)
-        api_client.force_authenticate(editor)
+    def test_create_without_file(self, api_client, admin, project, faker, mocker):
+        api_client.force_authenticate(admin)
         payload = self.generate_payload(project, faker)
+        payload.pop("file")
+        schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSource.schedule_update_meta")
 
         response = api_client.post(self.get_url(), payload, format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED
+        schedule_update_meta_mock.assert_not_called()
+
+    @pytest.mark.usefixtures("sqs")
+    def test_create_by_editor_assigned_to_project(self, api_client, editor, project, faker, mocker):
+        project.editors.add(editor)
+        api_client.force_authenticate(editor)
+        payload = self.generate_payload(project, faker)
+        schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSource.schedule_update_meta")
+
+        response = api_client.post(self.get_url(), payload, format="multipart")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        schedule_update_meta_mock.assert_called_once()
 
     @pytest.mark.usefixtures("sqs")
     def test_create_by_editor_not_assigned_to_project(self, api_client, editor, project, faker):
@@ -446,7 +459,7 @@ class TestUpdateDataSourceView:
 
         api_client.patch(url, payload, format="multipart")
 
-        schedule_update_meta_mock.assert_called_with(False)
+        schedule_update_meta_mock.assert_called_once()
 
     def test_update_by_editor_assigned_to_project(
         self, api_client, faker, editor, project, data_source_factory
