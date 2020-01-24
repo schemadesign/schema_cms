@@ -10,7 +10,7 @@ import { Filters } from './filters';
 import { Fields } from './fields';
 import { DataWranglingScripts } from './dataWranglingScripts';
 import { DataWranglingResult } from './dataWranglingResult';
-import { DataSourceViews } from './dataSourceViews';
+import { Tag } from './tag';
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constants';
 import { ProjectTabs } from '../../shared/components/projectTabs';
@@ -59,7 +59,7 @@ export default class DataSource extends PureComponent {
           <Route exact path={`${path}/filters/add`} component={CreateFilter} />
           <Route exact path={`${path}/filters`} component={Filters} />
           <Route exact path={`${path}/result`} component={DataWranglingResult} />
-          <Route exact path={`${path}/views`} component={DataSourceViews} />
+          <Route exact path={`${path}/tag`} component={Tag} />
           <Route exact path={`${path}/*`} component={NotFound} />
         </Switch>
       )
