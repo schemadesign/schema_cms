@@ -83,7 +83,6 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         if file:
             dsource.file.save(file.name, file)
-            dsource.project.create_dynamo_item()
 
         DataSourceMeta.objects.create(datasource=dsource)
 

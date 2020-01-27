@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content='{{ page.description }}'>
+	<meta name="keywords" content="{{ page.keywords }}">
+	<meta name="author" content="{{ page.creator }}">
+	<title>{{ page.title }}</title>
+</head>
+
+<body>
+    {% for block in page.blocks %}
+		{% if block["type"] == "text" %}
+			<div id='{{ block["id"] }}' class='{{ block["type"] }}'>{{ block["content"] }}</div>
+		{% endif %}
+
+		{% if block["type"] == "markdown_text" %}
+        	<div id='{{ block["id"] }}' class='{{ block["type"] }}'>{{ block["content"]|safe }}</div>
+		{% endif %}
+
+		{% if block["type"] == "image_uploaded" %}
+        	<div id='{{ block["id"] }}' class='{{ block["type"] }}'>
+
+				<ul>
+					{% for image in block["images"] %}
+					<li><img src="{{ image['url'] }}" alt="{{ image['name'] }}" id="{{ image['order'] }}"></li>
+					{% endfor %}
+				</ul>
+
+			</div>
+		{% endif %}
+		{% if block["type"] == "youtube_embed" %}
+			<div id='{{ block["id"] }}' class='{{ block["type"] }}'>
+				<iframe id="player" type="text/html" width="640" height="390" src="{{ block['content'] }}" frameBorder="0"></iframe>
+			</div>
+		{% endif %}
+    {% endfor %}
+</body>
+</html>

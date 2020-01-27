@@ -277,7 +277,9 @@ class DataSource(
         except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError, OSError):
             return []
 
-        data = [{"name": key, "type": value["dtype"]} for key, value in fields.items()]
+        data = {
+            str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
+        }
 
         return data
 
@@ -293,13 +295,13 @@ class DataSource(
                 "updated": self.modified.isoformat(),
                 "creator": self.created_by.get_full_name(),
             },
-
             "file": self.file.name,
-            "shape": self.meta_data.shape,
+            "shape": None,
             "result": None,
-            "fields": [],
+            "fields": {},
             "filters": [],
-            "views": []
+            "views": [],
+            "tags": [],
         }
 
         current_job = self.current_job
@@ -308,7 +310,7 @@ class DataSource(
             job_meta = getattr(current_job, "meta_data", None)
             data.update(
                 {
-                    "items": job_meta.items if job_meta else 0,
+                    "shape": job_meta.shape if job_meta else [],
                     "result": current_job.result.name or None,
                     "fields": self.result_fields_info(),
                 }
@@ -316,6 +318,11 @@ class DataSource(
         if self.filters:
             filters = [f.meta_file_serialization() for f in self.filters.filter(is_active=True)]
             data.update({"filters": filters})
+
+        if self.tags:
+            tags = [t.meta_file_serialization() for t in self.tags.filter(is_active=True)]
+            data.update({"tags": tags})
+
         return data
 
 
@@ -688,7 +695,7 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
     def get_images(self):
         if not hasattr(self, "images"):
             return []
-        return [{"url": i.image.url, "order": i.exec_order} for i in self.images.all()]
+        return [{"url": i.image.url, "order": i.exec_order, "name": i.image_name} for i in self.images.all()]
 
     @functional.cached_property
     def project_info(self):
@@ -741,3 +748,7 @@ class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, e
                 fields=["datasource", "key"], name="unique_tag_key", condition=models.Q(deleted_at=None)
             )
         ]
+
+    def meta_file_serialization(self):
+        data = {"id": self.id, "name": self.key, "type": self.value}
+        return data

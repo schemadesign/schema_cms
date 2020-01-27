@@ -51,9 +51,10 @@ class DataSource(LoaderMixin, FetchMetaFileMixin):
     file: str = ""
     result: str = ""
     shape: list = dataclasses.field(default_factory=list)
-    fields: list = dataclasses.field(default_factory=list)
+    fields: dict = dataclasses.field(default_factory=dict)
     filters: list = dataclasses.field(default_factory=list)
     views: list = dataclasses.field(default_factory=list)
+    tags: list = dataclasses.field(default_factory=list)
 
     @property
     def result_parquet(self):

@@ -4,7 +4,7 @@ import logging
 
 import math
 
-from flask import Flask, abort, request, Response
+from flask import Flask, abort, Markup, request, Response, render_template
 from flask_cors import CORS
 
 import pandas as pd
@@ -23,6 +23,22 @@ CORS(app)
 
 def create_response(data):
     return Response(json.dumps(data, ensure_ascii=True), content_type="application/json; charset=utf-8",)
+
+
+def read_parquet_from_s3(data_source, columns=None, orient="index", slice_=True):
+    result_file = services.get_s3_object(data_source.result_parquet)
+    file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
+    if slice_:
+        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient))
+    else:
+        return json.loads(file.to_pandas().to_json(orient=orient))
+
+
+def split_string_to_list(column_names_string):
+    if column_names_string:
+        names_list = list(column_names_string.split(","))
+        return names_list
+    return None
 
 
 # Projects endpoints
@@ -45,12 +61,27 @@ def get_project(project_id):
 @app.route("/pages/<int:page_id>", methods=["GET"])
 def get_page(page_id):
     try:
+        format_ = request.args.get("format", None)
         page = types.Page.get_by_id(id=page_id)
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
 
-    return create_response(asdict(page)), 200
+    if not format_:
+        return create_response(asdict(page)), 200
+
+    new_blocks = []
+    for block in page.blocks:
+        if block["type"] == "markdown_text":
+            block["content"] = Markup(block["content"])
+            new_blocks.append(block)
+        else:
+            new_blocks.append(block)
+
+    page.blocks = new_blocks
+    logger.info(page.blocks)
+
+    return render_template("page_template.html", page=page)
 
 
 # Data Sources endpoints
@@ -60,9 +91,7 @@ def get_page(page_id):
 def get_data_source(data_source_id):
     try:
         data_source = types.DataSource.get_by_id(id=data_source_id)
-        result_file = services.get_s3_object(data_source.result_parquet)
-        file = pq.read_table(BufferReader(result_file["Body"].read()))
-        records = json.loads(file.slice(0, 10).to_pandas().to_json(orient="records"))
+        records = read_parquet_from_s3(data_source)
 
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
@@ -76,6 +105,18 @@ def get_data_source(data_source_id):
     return create_response(data), 200
 
 
+@app.route("/datasources/<int:data_source_id>/meta", methods=["GET"])
+def get_data_source_meta(data_source_id):
+    try:
+        data_source = types.DataSource.get_by_id(id=data_source_id)
+        meta = data_source.meta
+    except Exception as e:
+        logging.info(f"Unable to get data source - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(meta), 200
+
+
 @app.route("/datasources/<int:data_source_id>/fields", methods=["GET"])
 def get_data_source_fields(data_source_id):
     try:
@@ -86,6 +127,22 @@ def get_data_source_fields(data_source_id):
         return create_response({"error": f"{e}"}), 404
 
     return create_response(fields), 200
+
+
+@app.route("/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"])
+def get_data_source_selected_field(data_source_id, field_id):
+    try:
+        data_source = types.DataSource.get_by_id(id=data_source_id)
+        field = data_source.fields[field_id]
+        records = read_parquet_from_s3(data_source, columns=[field["name"]], slice_=False)
+    except Exception as e:
+        logging.info(f"Unable to get fields - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return (
+        create_response({"id": field_id, "name": field["name"], "type": field['type'], "records": records}),
+        200,
+    )
 
 
 @app.route("/datasources/<int:data_source_id>/filters", methods=["GET"])
@@ -103,13 +160,15 @@ def get_data_source_filters(data_source_id):
 @app.route("/datasources/<int:data_source_id>/records", methods=["GET"])
 def get_data_source_records(data_source_id):
     page_size = request.args.get("page_size", 5000)
+    columns_list_as_string = request.args.get("columns", None)
+    columns = split_string_to_list(columns_list_as_string)
 
     try:
         data_source = types.DataSource.get_by_id(id=data_source_id)
         items = data_source.shape[0]
 
         result_file = services.get_s3_object(data_source.result_parquet)
-        file = pq.read_table(BufferReader(result_file["Body"].read()))
+        file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
 
         return (
             create_response(
