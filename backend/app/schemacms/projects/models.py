@@ -712,6 +712,9 @@ class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, e
     value = models.CharField(max_length=150)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.key or str(self.pk)
+
     class Meta:
         ordering = ("created",)
         constraints = [

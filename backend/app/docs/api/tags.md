@@ -33,7 +33,7 @@ Content-Type application/json
 
 **Request**:
 
-`PATCH` `/api/v1/filters/:id`
+`PATCH` `/api/v1/tags/:id`
 
 Parameters:
 
