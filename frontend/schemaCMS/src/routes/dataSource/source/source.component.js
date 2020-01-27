@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
-import { always, pathEq } from 'ramda';
+import { always, ifElse, isEmpty, pipe, is, path, complement } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
@@ -21,22 +21,23 @@ import { getDataSourceMenuOptions } from '../dataSource.constants';
 
 export class Source extends PureComponent {
   static propTypes = {
-    userRole: PropTypes.string.isRequired,
     dataSource: PropTypes.object.isRequired,
+    dirty: PropTypes.bool.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
       }),
     }),
-    isSubmitting: PropTypes.bool.isRequired,
-    dirty: PropTypes.bool.isRequired,
-    values: PropTypes.object.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    handleChange: PropTypes.func.isRequired,
-    setFieldValue: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
+    theme: PropTypes.object.isRequired,
+    uploadingDataSources: PropTypes.array.isRequired,
+    userRole: PropTypes.string.isRequired,
+    values: PropTypes.object.isRequired,
     onDataSourceChange: PropTypes.func.isRequired,
   };
 
@@ -61,7 +62,10 @@ export class Source extends PureComponent {
   };
 
   handleShowRunModal = () => e => {
-    const isFakeJob = pathEq(['dataSource', 'activeJob', 'scripts'], [], this.props);
+    const isFakeJob = pipe(
+      path(['dataSource', 'activeJob', 'scripts']),
+      ifElse(isEmpty, always(true), complement(is(Array)))
+    )(this.props);
 
     if (this.props.values.file && !isFakeJob) {
       e.preventDefault();

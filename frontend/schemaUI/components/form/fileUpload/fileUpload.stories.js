@@ -19,6 +19,13 @@ const withFileName = {
   fileNames: ['name.csv'],
 };
 
+const disabled = {
+  id: 'id',
+  label: 'label',
+  fileNames: ['name.csv'],
+  disabled: true,
+};
+
 const withCustomIcon = {
   ...withFileName,
   iconComponent: <span>icon</span>,
@@ -42,5 +49,6 @@ storiesOf('Form/FileUpload', module)
   .add('Default', () => <FileUpload {...defaultProps} />)
   .add('with label', () => <FileUpload {...withLabel} />)
   .add('with file name', () => <FileUpload {...withFileName} />)
+  .add('disabled', () => <FileUpload {...disabled} />)
   .add('with custom icon', () => <FileUpload {...withCustomIcon} />)
   .add('with custom styles', () => <FileUpload {...withCustomStyles} />);

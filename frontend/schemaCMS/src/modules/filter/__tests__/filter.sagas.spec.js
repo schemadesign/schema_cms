@@ -1,7 +1,6 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import Immutable from 'seamless-immutable';
 import { OK } from 'http-status-codes';
-import nock from 'nock';
 
 import { watchFilter } from '../filter.sagas';
 import { FilterRoutines } from '../filter.redux';
@@ -12,10 +11,6 @@ import { ProjectRoutines } from '../../project';
 
 describe('Filter: sagas', () => {
   const defaultState = Immutable({});
-
-  beforeEach(() => {
-    nock.cleanAll();
-  });
 
   describe('when fetchList action is called', () => {
     it('should put fetchList.success action', async () => {

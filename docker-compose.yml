@@ -10,7 +10,7 @@ services:
     env_file: local.env
 
   localstack:
-    image: localstack/localstack:0.10.5
+    image: localstack/localstack:latest
     ports:
       - "4567-4593:4567-4593"
       - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"

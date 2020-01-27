@@ -38,19 +38,14 @@ describe('Project: sagas', () => {
       editors: ['3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e', '44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e'],
       modified: '2019-08-21T10:12:52.030069Z',
     };
-
-    mockApi.get(`${PROJECTS_PATH}?page_size=1000`).reply(OK, {
-      results: [item],
-    });
-
-    mockApi.get(`${PROJECTS_PATH}/1`).reply(OK, {
-      ...item,
-      ...extenedProjectData,
-    });
   });
 
   describe('when /PROJECTS action is fired', () => {
     it('should put fetchListSuccess action', async () => {
+      mockApi.get(`${PROJECTS_PATH}?page_size=1000`).reply(OK, {
+        results: [item],
+      });
+
       await expectSaga(watchProject)
         .withState(defaultState)
         .put(ProjectRoutines.clearProject())
@@ -62,6 +57,11 @@ describe('Project: sagas', () => {
 
   describe('when /PROJECTS/:id action is fired', () => {
     it('should put fetchOneSuccess action', async () => {
+      mockApi.get(`${PROJECTS_PATH}/1`).reply(OK, {
+        ...item,
+        ...extenedProjectData,
+      });
+
       await expectSaga(watchProject)
         .withState(defaultState)
         .put(
@@ -175,7 +175,10 @@ describe('Project: sagas', () => {
         userId: '1',
       };
       const response = [{ id: '1' }];
-
+      mockApi.get(`${PROJECTS_PATH}/1`).reply(OK, {
+        ...item,
+        ...extenedProjectData,
+      });
       mockApi.post(`${PROJECTS_PATH}/${payload.projectId}/remove-editor`, { id: payload.userId }).reply(OK, response);
 
       await expectSaga(watchProject)

@@ -8,12 +8,13 @@ import { withTheme } from 'styled-components';
 
 import { compose } from 'ramda';
 import { DataSourceList } from './dataSourceList.component';
-import { DataSourceRoutines, selectDataSources } from '../../../modules/dataSource';
+import { DataSourceRoutines, selectDataSources, selectUploadingDataSources } from '../../../modules/dataSource';
 import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   dataSources: selectDataSources,
+  uploadingDataSources: selectUploadingDataSources,
 });
 
 export const mapDispatchToProps = dispatch => ({

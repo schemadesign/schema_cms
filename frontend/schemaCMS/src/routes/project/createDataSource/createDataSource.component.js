@@ -61,7 +61,12 @@ export class CreateDataSource extends PureComponent {
           options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
-        <Formik enableReinitialize validationSchema={DATA_SOURCE_SCHEMA} onSubmit={this.handleSubmit}>
+        <Formik
+          enableReinitialize
+          initialValues={{ fileName: '' }}
+          validationSchema={DATA_SOURCE_SCHEMA}
+          onSubmit={this.handleSubmit}
+        >
           {({ values, submitForm, dirty, isValid, isSubmitting, ...rest }) => {
             if (!dirty && isValid) {
               submitForm = null;

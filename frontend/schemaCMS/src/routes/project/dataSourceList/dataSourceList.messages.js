@@ -26,6 +26,14 @@ export default defineMessages({
     id: 'project.dataSourceList.metaProcessing',
     defaultMessage: 'Processing meta data...',
   },
+  fileUploading: {
+    id: 'project.dataSourceList.fileUploading',
+    defaultMessage: 'Uploading file...',
+  },
+  fileUploadingError: {
+    id: 'project.dataSourceList.fileUploadingError',
+    defaultMessage: 'Uploading file failed',
+  },
   metaFailed: {
     id: 'project.dataSourceList.metaFailed',
     defaultMessage: 'Processing meta data failed',
