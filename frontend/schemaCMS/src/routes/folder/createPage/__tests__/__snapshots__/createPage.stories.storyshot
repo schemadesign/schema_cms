@@ -680,6 +680,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
               "resize": "none",
             }
           }
+          value="description"
         />
         <textarea
           aria-hidden={true}
@@ -784,6 +785,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
               "resize": "none",
             }
           }
+          value="keywords"
         />
         <textarea
           aria-hidden={true}
