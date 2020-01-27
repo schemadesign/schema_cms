@@ -620,11 +620,11 @@ exports[`Storyshots Project|View Default 1`] = `
           >
             <a
               className="c12"
-              href="/project/100/user"
+              href="/project/100/folder"
               onClick={[Function]}
             >
               <span>
-                Users
+                Pages
               </span>
             </a>
           </div>
@@ -633,11 +633,11 @@ exports[`Storyshots Project|View Default 1`] = `
           >
             <a
               className="c12"
-              href="/project/100/folder"
+              href="/project/100/user"
               onClick={[Function]}
             >
               <span>
-                Pages
+                Users
               </span>
             </a>
           </div>
@@ -1322,11 +1322,11 @@ exports[`Storyshots Project|View No data 1`] = `
           >
             <a
               className="c12"
-              href="/project/100/user"
+              href="/project/100/folder"
               onClick={[Function]}
             >
               <span>
-                Users
+                Pages
               </span>
             </a>
           </div>
@@ -1335,11 +1335,11 @@ exports[`Storyshots Project|View No data 1`] = `
           >
             <a
               className="c12"
-              href="/project/100/folder"
+              href="/project/100/user"
               onClick={[Function]}
             >
               <span>
-                Pages
+                Users
               </span>
             </a>
           </div>

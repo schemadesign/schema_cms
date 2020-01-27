@@ -17,8 +17,8 @@ export class ProjectTabs extends PureComponent {
     const tabs = [
       { id: SETTINGS, to: url },
       { id: SOURCES, to: `${url}/datasource` },
-      { id: USERS, to: `${url}/user` },
       { id: FOLDER, to: `${url}/folder` },
+      { id: USERS, to: `${url}/user` },
     ];
 
     return tabs.map(item => ({

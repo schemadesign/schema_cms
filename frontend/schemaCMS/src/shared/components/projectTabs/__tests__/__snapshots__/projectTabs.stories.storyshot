@@ -110,11 +110,11 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/1/user"
+          href="/project/1/folder"
           onClick={[Function]}
         >
           <span>
-            Users
+            Pages
           </span>
         </a>
       </div>
@@ -123,11 +123,11 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/1/folder"
+          href="/project/1/user"
           onClick={[Function]}
         >
           <span>
-            Pages
+            Users
           </span>
         </a>
       </div>

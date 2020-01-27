@@ -637,11 +637,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/user"
+            href="/project/1/folder"
             onClick={[Function]}
           >
             <span>
-              Users
+              Pages
             </span>
           </a>
         </div>
@@ -650,11 +650,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/folder"
+            href="/project/1/user"
             onClick={[Function]}
           >
             <span>
-              Pages
+              Users
             </span>
           </a>
         </div>
@@ -1489,11 +1489,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/user"
+            href="/project/1/folder"
             onClick={[Function]}
           >
             <span>
-              Users
+              Pages
             </span>
           </a>
         </div>
@@ -1502,11 +1502,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/folder"
+            href="/project/1/user"
             onClick={[Function]}
           >
             <span>
-              Pages
+              Users
             </span>
           </a>
         </div>
