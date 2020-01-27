@@ -99,13 +99,16 @@ describe('DataSource: redux', () => {
 
     describe('when REMOVE_UPLOADING_DATA_SOURCE/TRIGGER action is received', () => {
       it('should set fields info ', () => {
-        const data = { id: 'id' };
+        const data = [{ id: 'id', name: 'name 1' }, { id: 'id 2', name: 'name 2' }];
+        const updatedElement = { id: 'id', name: 'updated name' };
         const state = Immutable({
-          uploadingDataSources: [data],
+          uploadingDataSources: data,
+          dataSources: data,
         });
-        const resultState = dataSourceReducer(state, DataSourceRoutines.removeUploadingDataSource(data));
+        const resultState = dataSourceReducer(state, DataSourceRoutines.removeUploadingDataSource(updatedElement));
 
-        expect(resultState.uploadingDataSources).to.deep.equal([]);
+        expect(resultState.uploadingDataSources).to.deep.equal([data[1]]);
+        expect(resultState.dataSources).to.deep.equal([updatedElement, data[1]]);
       });
     });
   });

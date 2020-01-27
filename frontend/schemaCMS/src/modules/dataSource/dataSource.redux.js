@@ -1,7 +1,7 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
-import { propEq, reject } from 'ramda';
+import { always, propEq, reject, when, map } from 'ramda';
 
 const prefix = 'DATA_SOURCE/';
 
@@ -35,7 +35,9 @@ const setUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
     .set('dataSource', payload)
     .update('uploadingDataSources', uploadingDataSources => [...uploadingDataSources, payload]);
 const removeUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
-  state.update('uploadingDataSources', reject(propEq('id', payload.id)));
+  state
+    .update('uploadingDataSources', reject(propEq('id', payload.id)))
+    .update('dataSources', map(when(propEq('id', payload.id), always(payload))));
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.removeUploadingDataSource.TRIGGER]: removeUploadingDataSource,
