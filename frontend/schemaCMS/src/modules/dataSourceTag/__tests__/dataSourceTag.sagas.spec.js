@@ -80,7 +80,7 @@ describe('Tag: sagas', () => {
         .dispatch(DataSourceTagRoutines.createTag(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/tags');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/tag');
     });
   });
 
@@ -122,7 +122,7 @@ describe('Tag: sagas', () => {
         .dispatch(DataSourceTagRoutines.updateTag(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/tags');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/tag');
     });
   });
 
@@ -144,7 +144,7 @@ describe('Tag: sagas', () => {
         .dispatch(DataSourceTagRoutines.removeTag(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/tags');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/tag');
     });
   });
 });

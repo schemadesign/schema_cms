@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag: Component should render correctly 1`] = `
+<styled.div>
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit Tag"
+        id="dataSourceTag.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="name"
+    options={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit Tag"
+        id="dataSourceTag.subTitle"
+        values={Object {}}
+      />
+    }
+    title="name"
+  />
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <DataSourceTagForm
+      dataSourceId="1"
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      removeTag={[Function]}
+      tag={
+        Object {
+          "datasource": Object {
+            "id": "1",
+            "name": "name",
+          },
+          "key": "key",
+          "value": "value",
+        }
+      }
+      updateTag={[Function]}
+    />
+  </LoadingWrapper>
+</styled.div>
+`;
+
+exports[`Tag: Component should render correctly with loader 1`] = `
+<styled.div>
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit Tag"
+        id="dataSourceTag.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="name"
+    options={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit Tag"
+        id="dataSourceTag.subTitle"
+        values={Object {}}
+      />
+    }
+    title="name"
+  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <DataSourceTagForm
+      dataSourceId="1"
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      removeTag={[Function]}
+      tag={
+        Object {
+          "datasource": Object {
+            "id": "1",
+            "name": "name",
+          },
+          "key": "key",
+          "value": "value",
+        }
+      }
+      updateTag={[Function]}
+    />
+  </LoadingWrapper>
+</styled.div>
+`;

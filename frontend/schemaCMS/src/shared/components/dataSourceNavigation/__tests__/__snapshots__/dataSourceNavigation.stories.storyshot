@@ -369,7 +369,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
         className="c3"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>
@@ -748,7 +748,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
         className="c3"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>
@@ -1153,7 +1153,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
         className="c3"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>

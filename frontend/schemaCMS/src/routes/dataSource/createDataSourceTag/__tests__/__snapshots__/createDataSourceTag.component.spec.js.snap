@@ -1,21 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataSourceViews: Component should render correctly 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Tags"
-  />
+exports[`CreateDataSourceTag: Component should render correctly 1`] = `
+<styled.div>
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="dataSource.tag.subTitle"
+        defaultMessage="Create Tag"
+        id="dataSource.createDataSourceTag.subTitle"
         values={Object {}}
       />
     }
-    headerTitle="name"
+    headerTitle="dataSourceName"
     options={
       Array [
         Object {
@@ -43,7 +38,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
             id="project.view.projectDetails"
             values={Object {}}
           />,
-          "to": "/project/1",
+          "to": "/project/projectId",
           "type": "link_item",
         },
         Object {
@@ -57,7 +52,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
             id="project.view.projectDataSources"
             values={Object {}}
           />,
-          "to": "/project/1/datasource",
+          "to": "/project/projectId/datasource",
           "type": "link_item",
         },
         Object {
@@ -70,7 +65,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
             id="project.view.usersPage"
             values={Object {}}
           />,
-          "to": "/project/1/user",
+          "to": "/project/projectId/user",
           "type": "link_item",
         },
         Object {
@@ -84,7 +79,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
             id="project.view.projectPages"
             values={Object {}}
           />,
-          "to": "/project/1/folder",
+          "to": "/project/projectId/folder",
           "type": "link_item",
         },
       ]
@@ -93,64 +88,28 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="dataSource.tag.subTitle"
+        defaultMessage="Create Tag"
+        id="dataSource.createDataSourceTag.subTitle"
         values={Object {}}
       />
     }
-    title="name"
-  >
-    <DataSourceNavigation
-      dataSource={
-        Object {
-          "name": "name",
-          "project": Object {
-            "id": "1",
-          },
-        }
-      }
-      hideOnDesktop={false}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      match={
-        Object {
-          "url": "url",
-        }
-      }
-      userRole="admin"
-    />
-  </ContextHeader>
-  <styled.div>
-    <FormattedMessage
-      defaultMessage="Coming soon..."
-      id="dataSource.tag.coming"
-      values={Object {}}
-    />
-  </styled.div>
-  <DataSourceNavigation
-    dataSource={
+    title="dataSourceName"
+  />
+  <DataSourceTagForm
+    createTag={[Function]}
+    dataSourceId="dataSourceId"
+    history={
       Object {
-        "name": "name",
-        "project": Object {
-          "id": "1",
-        },
+        "goBack": [Function],
+        "push": [Function],
       }
     }
-    hideOnDesktop={true}
     intl={
       Object {
         "formatMessage": [Function],
       }
     }
-    match={
-      Object {
-        "url": "url",
-      }
-    }
-    userRole="admin"
+    tag={Object {}}
   />
-</Fragment>
+</styled.div>
 `;

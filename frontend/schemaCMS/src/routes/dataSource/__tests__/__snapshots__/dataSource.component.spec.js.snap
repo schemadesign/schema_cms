@@ -57,7 +57,12 @@ exports[`DataSource: Component should render correctly 1`] = `
         <Route
           component={[Function]}
           exact={true}
-          path="path/tags"
+          path="path/tag"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/tag/add"
         />
         <Route
           component={[Function]}

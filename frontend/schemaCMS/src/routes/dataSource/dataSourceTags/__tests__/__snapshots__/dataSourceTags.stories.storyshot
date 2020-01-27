@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Data Source|Fields Default 1`] = `
+exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
 .c8 {
   display: none;
 }
@@ -86,7 +86,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
   word-break: break-word;
 }
 
-.c16 {
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -122,7 +122,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
   cursor: pointer;
 }
 
-.c17 {
+.c18 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -146,7 +146,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c17 svg {
+.c18 svg {
   cursor: pointer;
 }
 
@@ -169,6 +169,23 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
 
 .c14 svg {
   opacity: 0.4;
+}
+
+.c16 {
+  background-color: #1d1d20;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c13 {
@@ -236,7 +253,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -246,6 +263,13 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
 
 @media (min-width:1040px) {
   .c14 {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
     width: 60px;
     height: 60px;
   }
@@ -325,7 +349,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
             }
           >
             <span>
-              Fields
+              Tags
             </span>
           </h1>
         </div>
@@ -425,7 +449,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
             }
           >
             <span>
-              Fields
+              Tags
             </span>
           </h1>
         </div>
@@ -641,7 +665,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
         }
       >
         <span>
-          Fields
+          Tags
         </span>
       </h1>
     </div>
@@ -852,7 +876,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
           className="c13"
         >
           <div
-            className="c14"
+            className="c16"
             disabled={false}
             onClick={[Function]}
           >
@@ -886,14 +910,14 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
     </div>
   </div>
   <div
-    className="c16"
+    className="c17"
   >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c17"
+    className="c18"
   >
     <div
       className="c13"
@@ -1096,7 +1120,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
       className="c13"
     >
       <div
-        className="c14"
+        className="c16"
         disabled={false}
         onClick={[Function]}
       >
@@ -1130,7 +1154,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Data Source|Fields No data 1`] = `
+exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
 .c8 {
   display: none;
 }
@@ -1216,7 +1240,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
   word-break: break-word;
 }
 
-.c16 {
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -1252,7 +1276,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
   cursor: pointer;
 }
 
-.c17 {
+.c18 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -1276,7 +1300,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
   background-color: #1d1d20;
 }
 
-.c17 svg {
+.c18 svg {
   cursor: pointer;
 }
 
@@ -1299,6 +1323,23 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
 
 .c14 svg {
   opacity: 0.4;
+}
+
+.c16 {
+  background-color: #1d1d20;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c13 {
@@ -1366,7 +1407,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -1376,6 +1417,13 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
 
 @media (min-width:1040px) {
   .c14 {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
     width: 60px;
     height: 60px;
   }
@@ -1455,7 +1503,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
             }
           >
             <span>
-              Fields
+              Tags
             </span>
           </h1>
         </div>
@@ -1555,7 +1603,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
             }
           >
             <span>
-              Fields
+              Tags
             </span>
           </h1>
         </div>
@@ -1771,7 +1819,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
         }
       >
         <span>
-          Fields
+          Tags
         </span>
       </h1>
     </div>
@@ -1982,7 +2030,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
           className="c13"
         >
           <div
-            className="c14"
+            className="c16"
             disabled={false}
             onClick={[Function]}
           >
@@ -2016,14 +2064,14 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
     </div>
   </div>
   <div
-    className="c16"
+    className="c17"
   >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c17"
+    className="c18"
   >
     <div
       className="c13"
@@ -2226,7 +2274,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
       className="c13"
     >
       <div
-        className="c14"
+        className="c16"
         disabled={false}
         onClick={[Function]}
       >
