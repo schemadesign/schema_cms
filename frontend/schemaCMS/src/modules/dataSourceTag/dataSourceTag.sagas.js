@@ -6,6 +6,7 @@ import { DATA_SOURCES_PATH, TAGS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { TAGS_PAGE } from '../dataSource/dataSource.constants';
 import { ROUTES } from '../../routes';
+import { ProjectRoutines } from '../project';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -57,7 +58,8 @@ function* fetchTag({ payload: { tagId } }) {
 
     const { data } = yield api.get(`${TAGS_PATH}/${tagId}`);
 
-    yield put(DataSourceTagRoutines.fetchTag.success(data));
+    yield put(ProjectRoutines.setProject(data.project));
+    yield put(DataSourceTagRoutines.fetchTag.success(data.results));
   } catch (e) {
     yield put(DataSourceTagRoutines.fetchTag.failure(e));
   } finally {

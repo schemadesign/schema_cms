@@ -8,6 +8,7 @@ import { DataSourceTagRoutines } from '../dataSourceTag.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, TAGS_PATH } from '../../../shared/utils/api.constants';
 import browserHistory from '../../../shared/utils/history';
+import { ProjectRoutines } from '../../project';
 
 describe('Tag: sagas', () => {
   const defaultState = Immutable({});
@@ -87,7 +88,12 @@ describe('Tag: sagas', () => {
   describe('when fetchTag action is called', () => {
     it('should put fetchTag.success action', async () => {
       const response = {
-        id: 1,
+        results: {
+          id: 1,
+        },
+        project: {
+          title: 'projectTitle',
+        },
       };
       const payload = {
         tagId: 1,
@@ -97,7 +103,8 @@ describe('Tag: sagas', () => {
 
       await expectSaga(watchDataSourceTag)
         .withState(defaultState)
-        .put(DataSourceTagRoutines.fetchTag.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(DataSourceTagRoutines.fetchTag.success(response.results))
         .dispatch(DataSourceTagRoutines.fetchTag(payload))
         .silentRun();
     });
