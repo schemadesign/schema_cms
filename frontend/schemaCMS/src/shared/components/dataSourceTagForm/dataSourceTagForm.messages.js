@@ -39,8 +39,8 @@ export default defineMessages({
     id: 'shared.components.dataSourceTagForm.removeTitle',
     defaultMessage: 'Are you sure you want to remove the tag?',
   },
-  nameTagNameNotUniqueError: {
-    id: 'shared.components.dataSourceTagForm.nameTagNameNotUniqueError',
+  keyTagKeyNotUniqueError: {
+    id: 'shared.components.dataSourceTagForm.keyTagKeyNotUniqueError',
     defaultMessage: 'A tag with this name already exists in project.',
   },
 });

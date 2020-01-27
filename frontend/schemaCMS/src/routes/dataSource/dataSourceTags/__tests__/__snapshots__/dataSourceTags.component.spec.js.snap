@@ -11,7 +11,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Tags"
-        id="dataSource.tags.subTitle"
+        id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
     }
@@ -93,7 +93,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Tags"
-        id="dataSource.tags.subTitle"
+        id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
     }
@@ -178,7 +178,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       <styled.div>
         <FormattedMessage
           defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
-          id="dataSource.view.tags.tags"
+          id="dataSource.dataSourceTags.tags"
           values={
             Object {
               "tags": 2,
@@ -278,7 +278,7 @@ exports[`DataSourceTags: Component should render correctly when no filters 1`] =
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Tags"
-        id="dataSource.tags.subTitle"
+        id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
     }
@@ -360,7 +360,7 @@ exports[`DataSourceTags: Component should render correctly when no filters 1`] =
     subtitle={
       <FormattedMessage
         defaultMessage="Tags"
-        id="dataSource.tags.subTitle"
+        id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
     }
@@ -446,7 +446,7 @@ exports[`DataSourceTags: Component should render correctly when no filters 1`] =
       <styled.div>
         <FormattedMessage
           defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
-          id="dataSource.view.tags.tags"
+          id="dataSource.dataSourceTags.tags"
           values={
             Object {
               "tags": 2,
@@ -547,7 +547,7 @@ exports[`DataSourceTags: Component should render correctly with loader 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Tags"
-        id="dataSource.tags.subTitle"
+        id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
     }
@@ -629,7 +629,7 @@ exports[`DataSourceTags: Component should render correctly with loader 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Tags"
-        id="dataSource.tags.subTitle"
+        id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
     }
@@ -698,7 +698,7 @@ exports[`DataSourceTags: Component should render correctly with loader 1`] = `
       <styled.div>
         <FormattedMessage
           defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
-          id="dataSource.view.tags.tags"
+          id="dataSource.dataSourceTags.tags"
           values={
             Object {
               "tags": 2,

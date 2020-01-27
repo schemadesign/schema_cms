@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { DataSourceTag } from '../dataSourceTag.component';
 import { defaultProps } from '../dataSourceTag.stories';
 
-describe('Tag: Component', () => {
+describe('DataSourceTag: Component', () => {
   const component = props => <DataSourceTag {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

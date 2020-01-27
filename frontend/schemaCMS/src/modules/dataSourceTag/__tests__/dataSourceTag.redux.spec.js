@@ -19,7 +19,7 @@ describe('Tag: redux', () => {
     });
   });
 
-  describe('when FILTERS/FETCH_LIST action is received', () => {
+  describe('when TAG/FETCH_LIST action is received', () => {
     it('should set tags', () => {
       const tags = [{ data: 'data' }];
 
@@ -28,7 +28,7 @@ describe('Tag: redux', () => {
     });
   });
 
-  describe('when FILTERS/SET_FILTERS action is received', () => {
+  describe('when TAG/SET_TAG action is received', () => {
     it('should set tags', () => {
       const tags = [{ data: 'data' }];
 
@@ -37,7 +37,7 @@ describe('Tag: redux', () => {
     });
   });
 
-  describe('when FILTERS/FETCH_FILTER action is received', () => {
+  describe('when TAG/FETCH_TAG action is received', () => {
     it('should set tags', () => {
       const tag = [{ data: 'data' }];
 

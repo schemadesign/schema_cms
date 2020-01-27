@@ -25,7 +25,6 @@ export const defaultProps = {
   match: {
     params: {
       tagId: '1',
-      step: '5',
     },
   },
 };
