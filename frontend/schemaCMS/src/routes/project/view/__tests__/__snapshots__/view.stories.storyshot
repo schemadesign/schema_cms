@@ -425,6 +425,19 @@ exports[`Storyshots Project|View Default 1`] = `
                 </a>
               </div>
               <div
+                className="c6"
+              >
+                <a
+                  href="/user/"
+                  id="usersPageNavBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </div>
+              <div
                 className="c7"
               >
                 <a
@@ -459,7 +472,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   onClick={[Function]}
                 >
                   <span>
-                    Users
+                    Project Users
                   </span>
                 </a>
               </div>
@@ -1127,6 +1140,19 @@ exports[`Storyshots Project|View No data 1`] = `
                 </a>
               </div>
               <div
+                className="c6"
+              >
+                <a
+                  href="/user/"
+                  id="usersPageNavBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </div>
+              <div
                 className="c7"
               >
                 <a
@@ -1161,7 +1187,7 @@ exports[`Storyshots Project|View No data 1`] = `
                   onClick={[Function]}
                 >
                   <span>
-                    Users
+                    Project Users
                   </span>
                 </a>
               </div>

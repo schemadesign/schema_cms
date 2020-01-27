@@ -453,6 +453,19 @@ exports[`Storyshots Project|FolderList Default 1`] = `
               className="c5"
             >
               <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
@@ -484,7 +497,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>
@@ -1317,6 +1330,19 @@ exports[`Storyshots Project|FolderList No data 1`] = `
               className="c5"
             >
               <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
@@ -1348,7 +1374,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>

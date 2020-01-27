@@ -9,9 +9,9 @@ import DataPreview from '../../../shared/components/dataPreview/dataPreview.comp
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 export class DataWranglingResult extends PureComponent {
   static propTypes = {
@@ -31,7 +31,7 @@ export class DataWranglingResult extends PureComponent {
     const headerTitle = dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const isFakeJob = pathEq(['activeJob', 'scripts'], [], dataSource);
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     if (isFakeJob) {
       this.props.history.push(`/datasource/${dataSource.id}/${SOURCE_PAGE}`);

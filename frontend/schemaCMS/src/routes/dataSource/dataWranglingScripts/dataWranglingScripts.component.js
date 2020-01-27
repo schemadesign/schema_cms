@@ -43,7 +43,7 @@ import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers'
 import reportError from '../../../shared/utils/reportError';
 import { Draggable } from '../../../shared/components/draggable';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 const { CheckboxGroup, Checkbox, FileUpload, Label } = Form;
 const { MenuIcon } = Icons;
@@ -290,7 +290,7 @@ export class DataWranglingScripts extends PureComponent {
     )(checkedScripts);
     const { jobsInProcess, name, userRole } = dataSource;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
