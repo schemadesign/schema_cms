@@ -10,6 +10,7 @@ import { reducer as filterReducer } from './filter/filter.redux';
 import { reducer as folderReducer } from './folder/folder.redux';
 import { reducer as pageReducer } from './page/page.redux';
 import { reducer as pageBlockReducer } from './pageBlock/pageBlock.redux';
+import { reducer as DataSourceTagReducer } from './dataSourceTag/dataSourceTag.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -26,6 +27,7 @@ export default function createReducer() {
     folder: folderReducer,
     page: pageReducer,
     pageBlock: pageBlockReducer,
+    dataSourceTag: DataSourceTagReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

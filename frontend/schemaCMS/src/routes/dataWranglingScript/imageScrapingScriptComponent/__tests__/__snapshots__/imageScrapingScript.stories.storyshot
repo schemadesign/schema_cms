@@ -1,43 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`] = `
-.c14 {
-  height: 155px;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c15 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c17 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c8 {
   display: none;
 }
@@ -52,14 +15,6 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
 
 .c11 {
   color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c0 {
@@ -131,35 +86,56 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
   word-break: break-word;
 }
 
+.c14 {
+  height: 155px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c15 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c17 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c13 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 .c12 {
   font-size: 18px;
   line-height: 24px;
   word-break: break-word;
   margin-bottom: 30px;
-}
-
-@media (min-width:1040px) {
-  .c16 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c15 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c17 {
-    width: 240px;
-  }
 }
 
 @media (min-width:1040px) {
@@ -190,6 +166,30 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    width: 240px;
   }
 }
 
@@ -1377,43 +1377,6 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
 `;
 
 exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1`] = `
-.c14 {
-  height: 155px;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c15 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
-}
-
-.c17 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c8 {
   display: none;
 }
@@ -1428,14 +1391,6 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
 
 .c11 {
   color: #1d1d20;
-}
-
-.c13 {
-  color: #1d1d20;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c0 {
@@ -1507,35 +1462,56 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
   word-break: break-word;
 }
 
+.c14 {
+  height: 155px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c15 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
+}
+
+.c17 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c13 {
+  color: #1d1d20;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 .c12 {
   font-size: 18px;
   line-height: 24px;
   word-break: break-word;
   margin-bottom: 30px;
-}
-
-@media (min-width:1040px) {
-  .c16 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c15 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c17 {
-    width: 240px;
-  }
 }
 
 @media (min-width:1040px) {
@@ -1566,6 +1542,30 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    width: 240px;
   }
 }
 

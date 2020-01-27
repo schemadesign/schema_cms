@@ -534,3 +534,105 @@ Name       | Type   | Description
 script     | int    | Script ID
 exec_order | int    | Order of step
 options    | object | Additional options
+
+
+## Get list of data source tags
+
+**Request**:
+
+`GET` `/api/v1/datasources/:id/tags`
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+[
+    {
+        "id": 6,
+        "datasource": {
+            "id": 1,
+            "name": "TestDataSource"
+         },
+        "key": "tagKey",
+        "value": "tagValue",
+        "is_active": true,
+        "created": "2019-11-04T13:28:56+0000",
+        "modified": "2019-11-04T13:28:56+0000"
+    },
+]
+```
+
+## Add tag to data source
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/tags`
+
+Parameters:
+
+Name         | Type     | Description
+-------------|----------|----------------------------------------------
+key          | string   | Tag key.
+value        | string   | Value of tag.
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+201 CREATED
+
+{
+    "id": 6,
+    "datasource": {
+        "id": 1,
+        "name": "TestDataSource"
+     },
+    "key": "tagKey",
+    "value": "tagValue",
+    "is_active": true,
+    "created": "2019-11-04T13:28:56+0000",
+    "modified": "2019-11-04T13:28:56+0000"
+}
+```
+
+## activate/deactivate tags
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/set-tags`
+
+Parameters:
+
+Name         | Type      | Description
+-------------|-----------|----------------------------------------------
+active       | list[int] | List of tags to activate.
+inactive     | list[int] | List od tags to deactivate.
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+```

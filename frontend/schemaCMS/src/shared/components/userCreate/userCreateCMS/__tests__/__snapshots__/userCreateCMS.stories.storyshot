@@ -1,69 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
-.c13 {
-  padding-top: 7px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 30px;
-  position: relative;
-}
-
-.c14 label {
-  margin-bottom: 1px;
-}
-
-.c15 {
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-
-.c16 {
-  height: 155px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c17 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c19 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c8 {
   display: none;
 }
@@ -149,32 +86,71 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c16 {
+  height: 155px;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
 }
 
-@media (min-width:1040px) {
-  .c18 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
+.c17 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-@media (min-width:1040px) {
-  .c17 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
+.c19 {
+  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
-@media (min-width:1040px) {
-  .c19 {
-    width: 240px;
-  }
+.c13 {
+  padding-top: 7px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c14 label {
+  margin-bottom: 1px;
+}
+
+.c15 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c12 {
+  width: 100%;
 }
 
 @media (min-width:1040px) {
@@ -205,6 +181,30 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c18 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c19 {
+    width: 240px;
   }
 }
 

@@ -5,7 +5,6 @@ from aws_cdk import core
 from schema_cms_stack.schema_cms_stack import (
     API,
     LambdaWorker,
-    # Workers,
     BaseResources,
     PublicAPI,
     ImageResize,
@@ -22,7 +21,6 @@ class App(core.App):
         self.certs = CertsStack(self, 'certs')
         self.base = BaseResources(self, 'base')
         self.image_resize_lambda = ImageResize(self, 'image-resize')
-        # self.workers = Workers(self, 'workers')
         self.api = API(self, 'api')
         self.lambda_worker = LambdaWorker(self, 'lambda-worker')
         self.public_api = PublicAPI(self, 'public-api')

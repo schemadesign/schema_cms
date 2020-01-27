@@ -10,7 +10,8 @@ import { Filters } from './filters';
 import { Fields } from './fields';
 import { DataWranglingScripts } from './dataWranglingScripts';
 import { DataWranglingResult } from './dataWranglingResult';
-import { DataSourceViews } from './dataSourceViews';
+import { DataSourceTags } from './dataSourceTags';
+import { CreateDataSourceTag } from './createDataSourceTag';
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constants';
 import { ProjectTabs } from '../../shared/components/projectTabs';
@@ -18,6 +19,13 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../shared/utils/helpers';
 import reportError from '../../shared/utils/reportError';
 import { NotFound } from '../notFound';
+import {
+  FILTERS_PAGE,
+  PREVIEW_PAGE,
+  RESULT_PAGE,
+  STEPS_PAGE,
+  TAGS_PAGE,
+} from '../../modules/dataSource/dataSource.constants';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
@@ -54,12 +62,13 @@ export default class DataSource extends PureComponent {
       always(<Redirect path={path} to={`${path}/source`} />),
       always(
         <Switch>
-          <Route exact path={`${path}/preview`} component={Fields} />
-          <Route exact path={`${path}/steps`} component={DataWranglingScripts} />
-          <Route exact path={`${path}/filters/add`} component={CreateFilter} />
-          <Route exact path={`${path}/filters`} component={Filters} />
-          <Route exact path={`${path}/result`} component={DataWranglingResult} />
-          <Route exact path={`${path}/views`} component={DataSourceViews} />
+          <Route exact path={`${path}/${PREVIEW_PAGE}`} component={Fields} />
+          <Route exact path={`${path}/${STEPS_PAGE}`} component={DataWranglingScripts} />
+          <Route exact path={`${path}/${FILTERS_PAGE}/add`} component={CreateFilter} />
+          <Route exact path={`${path}/${FILTERS_PAGE}`} component={Filters} />
+          <Route exact path={`${path}/${RESULT_PAGE}`} component={DataWranglingResult} />
+          <Route exact path={`${path}/${TAGS_PAGE}`} component={DataSourceTags} />
+          <Route exact path={`${path}/${TAGS_PAGE}/add`} component={CreateDataSourceTag} />
           <Route exact path={`${path}/*`} component={NotFound} />
         </Switch>
       )

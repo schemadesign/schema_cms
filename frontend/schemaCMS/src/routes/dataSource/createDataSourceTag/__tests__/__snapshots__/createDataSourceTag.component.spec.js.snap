@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateDataSourceTag: Component should render correctly 1`] = `
+<styled.div>
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Create Tag"
+        id="dataSource.createDataSourceTag.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="dataSourceName"
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/projectId",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/folder",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Create Tag"
+        id="dataSource.createDataSourceTag.subTitle"
+        values={Object {}}
+      />
+    }
+    title="dataSourceName"
+  />
+  <DataSourceTagForm
+    createTag={[Function]}
+    dataSourceId="dataSourceId"
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    tag={Object {}}
+  />
+</styled.div>
+`;

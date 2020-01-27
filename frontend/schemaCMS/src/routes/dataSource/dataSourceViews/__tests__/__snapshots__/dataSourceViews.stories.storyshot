@@ -881,7 +881,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
             className="c15"
           >
             <span>
-              Views
+              Tags
             </span>
           </div>
         </div>
@@ -1125,7 +1125,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         className="c15"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>
