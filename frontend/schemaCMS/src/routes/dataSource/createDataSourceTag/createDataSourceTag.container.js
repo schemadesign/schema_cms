@@ -1,23 +1,25 @@
 import { connect } from 'react-redux';
-import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
-import { injectIntl } from 'react-intl';
 import { withRouter } from 'react-router-dom';
+import { injectIntl } from 'react-intl';
 import { hot } from 'react-hot-loader';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { compose } from 'ramda';
 
-import { DataSourceTag } from './dataSourceTag.component';
-import { DataSourceTagRoutines, selectTag } from '../../modules/dataSourceTag';
+import { CreateDataSourceTag } from './createDataSourceTag.component';
+import { selectDataSource } from '../../../modules/dataSource';
+import { DataSourceTagRoutines } from '../../../modules/dataSourceTag';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
-  tag: selectTag,
+  userRole: selectUserRole,
+  dataSource: selectDataSource,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      fetchTag: promisifyRoutine(DataSourceTagRoutines.fetchTag),
-      updateTag: promisifyRoutine(DataSourceTagRoutines.updateTag),
+      createTag: promisifyRoutine(DataSourceTagRoutines.createTag),
       removeTag: promisifyRoutine(DataSourceTagRoutines.removeTag),
     },
     dispatch
@@ -31,4 +33,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(DataSourceTag);
+)(CreateDataSourceTag);

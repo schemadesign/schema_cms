@@ -17,6 +17,7 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { TAGS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -85,12 +86,12 @@ export class DataSourceTags extends PureComponent {
 
   handleCreateFilter = () => {
     const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-    this.props.history.push(`/datasource/${dataSourceId}/tags/add`);
+    this.props.history.push(`/datasource/${dataSourceId}/${TAGS_PAGE}/add`);
   };
 
-  renderCheckboxes = ({ id, name }, index) => (
+  renderCheckboxes = ({ id, key }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index} isEdit>
-      <Link to={`/tag/${id}`}>{name}</Link>
+      <Link to={`/tag/${id}`}>{key}</Link>
     </Checkbox>
   );
 
