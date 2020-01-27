@@ -72,6 +72,7 @@ export const StepName = styled.div`
   ${media.tablet`
     width: auto;
     display: inline;
+    padding-right: 0;
   `};
 `;
 
