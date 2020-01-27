@@ -17,14 +17,6 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
   color: #FFF;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -92,6 +84,14 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 
 .c2 {
   word-break: break-word;
+}
+
+.c17 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 .c12 {
@@ -800,7 +800,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               className="c15"
             >
               <span>
-                Views
+                Tags
               </span>
             </div>
           </div>
@@ -835,14 +835,6 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
   color: #FFF;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -910,6 +902,14 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
 
 .c2 {
   word-break: break-word;
+}
+
+.c17 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 .c12 {
@@ -1618,7 +1618,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
               className="c15"
             >
               <span>
-                Views
+                Tags
               </span>
             </div>
           </div>

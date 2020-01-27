@@ -1,0 +1,772 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSourceTags: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Tags"
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Tags"
+        id="dataSource.dataSourceTags.subTitle"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Tags"
+        id="dataSource.dataSourceTags.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      fetchTags={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "dataSourceId": "1",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Promise {},
+            },
+          ],
+        }
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "/datasource/1/tag",
+        }
+      }
+      setTags={[Function]}
+      tags={
+        Array [
+          Object {
+            "id": 1,
+            "isActive": true,
+            "key": "key 1",
+          },
+          Object {
+            "id": 2,
+            "isActive": false,
+            "key": "key 2",
+          },
+        ]
+      }
+      userRole="admin"
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(Component)
+          onClick={[Function]}
+        >
+          <Component />
+        </Styled(Component)>
+      </styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
+          id="dataSource.dataSourceTags.tags"
+          values={
+            Object {
+              "tags": 2,
+            }
+          }
+        />
+      </styled.div>
+    </styled.div>
+    <Formik
+      enableReinitialize={true}
+      initialValues={
+        Array [
+          "1",
+        ]
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    fetchTags={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "dataSourceId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      }
+    }
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+        "url": "/datasource/1/tag",
+      }
+    }
+    setTags={[Function]}
+    tags={
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "key": "key 1",
+        },
+        Object {
+          "id": 2,
+          "isActive": false,
+          "key": "key 2",
+        },
+      ]
+    }
+    userRole="admin"
+  />
+</Fragment>
+`;
+
+exports[`DataSourceTags: Component should render correctly when no filters 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Tags"
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Tags"
+        id="dataSource.dataSourceTags.subTitle"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Tags"
+        id="dataSource.dataSourceTags.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      fetchTags={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "dataSourceId": "1",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Promise {},
+            },
+          ],
+        }
+      }
+      filters={Array []}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "/datasource/1/tag",
+        }
+      }
+      setTags={[Function]}
+      tags={
+        Array [
+          Object {
+            "id": 1,
+            "isActive": true,
+            "key": "key 1",
+          },
+          Object {
+            "id": 2,
+            "isActive": false,
+            "key": "key 2",
+          },
+        ]
+      }
+      userRole="admin"
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(Component)
+          onClick={[Function]}
+        >
+          <Component />
+        </Styled(Component)>
+      </styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
+          id="dataSource.dataSourceTags.tags"
+          values={
+            Object {
+              "tags": 2,
+            }
+          }
+        />
+      </styled.div>
+    </styled.div>
+    <Formik
+      enableReinitialize={true}
+      initialValues={
+        Array [
+          "1",
+        ]
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    fetchTags={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "dataSourceId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      }
+    }
+    filters={Array []}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+        "url": "/datasource/1/tag",
+      }
+    }
+    setTags={[Function]}
+    tags={
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "key": "key 1",
+        },
+        Object {
+          "id": 2,
+          "isActive": false,
+          "key": "key 2",
+        },
+      ]
+    }
+    userRole="admin"
+  />
+</Fragment>
+`;
+
+exports[`DataSourceTags: Component should render correctly with loader 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Tags"
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Tags"
+        id="dataSource.dataSourceTags.subTitle"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Tags"
+        id="dataSource.dataSourceTags.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      fetchTags={[Function]}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "/datasource/1/tag",
+        }
+      }
+      setTags={[Function]}
+      tags={
+        Array [
+          Object {
+            "id": 1,
+            "isActive": true,
+            "key": "key 1",
+          },
+          Object {
+            "id": 2,
+            "isActive": false,
+            "key": "key 2",
+          },
+        ]
+      }
+      userRole="admin"
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(Component)
+          onClick={[Function]}
+        >
+          <Component />
+        </Styled(Component)>
+      </styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
+          id="dataSource.dataSourceTags.tags"
+          values={
+            Object {
+              "tags": 2,
+            }
+          }
+        />
+      </styled.div>
+    </styled.div>
+    <Formik
+      enableReinitialize={true}
+      initialValues={
+        Array [
+          "1",
+        ]
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    fetchTags={[Function]}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+        "url": "/datasource/1/tag",
+      }
+    }
+    setTags={[Function]}
+    tags={
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "key": "key 1",
+        },
+        Object {
+          "id": 2,
+          "isActive": false,
+          "key": "key 2",
+        },
+      ]
+    }
+    userRole="admin"
+  />
+</Fragment>
+`;

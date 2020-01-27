@@ -944,7 +944,7 @@ class TestFilterDetailView:
         response = api_client.get(self.get_url(filter_.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.FilterSerializer(instance=filter_).data
+        assert response.data["results"] == projects_serializers.FilterSerializer(instance=filter_).data
 
     def test_update(self, api_client, admin, filter_):
         new_name = "NewFilter"
@@ -1433,7 +1433,7 @@ class TestTagDetailView:
         response = api_client.get(self.get_url(tag.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.TagDetailsSerializer(instance=tag).data
+        assert response.data["results"] == projects_serializers.TagDetailsSerializer(instance=tag).data
 
     def test_update(self, api_client, admin, tag):
         new_key = "newKey"

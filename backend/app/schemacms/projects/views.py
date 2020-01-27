@@ -447,6 +447,12 @@ class FilterDetailViewSet(
     serializer_class = serializers.FilterDetailsSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {"project": instance.datasource.project_info, "results": serializer.data}
+        return response.Response(data)
+
 
 class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     queryset = models.Folder.objects.select_related("project", "created_by").all()
@@ -573,3 +579,9 @@ class TagDetailViewSet(
     queryset = models.Tag.objects.all().select_related("datasource")
     serializer_class = serializers.TagDetailsSerializer
     permission_classes = (permissions.IsAuthenticated,)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {"project": instance.datasource.project_info, "results": serializer.data}
+        return response.Response(data)

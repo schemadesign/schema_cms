@@ -8,6 +8,7 @@ import { FilterRoutines } from '../filter.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, FILTERS_PATH } from '../../../shared/utils/api.constants';
 import browserHistory from '../../../shared/utils/history';
+import { ProjectRoutines } from '../../project';
 
 describe('Filter: sagas', () => {
   const defaultState = Immutable({});
@@ -89,7 +90,12 @@ describe('Filter: sagas', () => {
   describe('when fetchFilter action is called', () => {
     it('should put fetchFilter.success action', async () => {
       const response = {
-        id: 1,
+        results: {
+          id: 1,
+        },
+        project: {
+          title: 'projectTitle',
+        },
       };
       const payload = {
         filterId: 1,
@@ -99,7 +105,8 @@ describe('Filter: sagas', () => {
 
       await expectSaga(watchFilter)
         .withState(defaultState)
-        .put(FilterRoutines.fetchFilter.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(FilterRoutines.fetchFilter.success(response.results))
         .dispatch(FilterRoutines.fetchFilter(payload))
         .silentRun();
     });
