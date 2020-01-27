@@ -72,7 +72,7 @@ export class TextAreaComponent extends PureComponent {
   };
 
   render() {
-    const { customStyles, name, theme, ...restProps } = this.props;
+    const { customStyles, name, theme, value, ...restProps } = this.props;
     const { height } = this.state;
     const { defaultStyles, shadowStyles } = getStyles(theme);
     const styles = { ...defaultStyles, ...customStyles };
@@ -83,6 +83,7 @@ export class TextAreaComponent extends PureComponent {
         <textarea
           id={name}
           style={{ height, ...styles }}
+          value={value}
           {...filteredProps}
           onChange={this.handleChange}
           ref={this.textAreaRef}
