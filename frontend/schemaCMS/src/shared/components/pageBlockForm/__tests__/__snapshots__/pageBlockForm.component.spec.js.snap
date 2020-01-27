@@ -486,29 +486,37 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
         }
       }
     />
-    <DndProvider
-      backend={[Function]}
-      options={Object {}}
-    >
-      <styled.div>
-        <Component>
-          <FormattedMessage
-            defaultMessage="Current files"
-            id="shared.components.pageBlockForm.filesTitle"
-            values={Object {}}
-          />
-        </Component>
-        <Draggable
-          accept="IMAGE"
-          id={1}
-          index={0}
-          key="0"
-          onMove={[Function]}
-        >
-          <Component />
-        </Draggable>
-      </styled.div>
-    </DndProvider>
+    <Component>
+      <FormattedMessage
+        defaultMessage="Current files"
+        id="shared.components.pageBlockForm.filesTitle"
+        values={Object {}}
+      />
+    </Component>
+    <styled.div>
+      <styled.span
+        key="0"
+      >
+        <styled.div>
+          <styled.span>
+            imageName.png
+          </styled.span>
+        </styled.div>
+        <Component
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "height": 30,
+              "marginLeft": 20,
+              "minWidth": 30,
+              "width": 30,
+            }
+          }
+          id="removeImage-0"
+          onClick={[Function]}
+        />
+      </styled.span>
+    </styled.div>
   </styled.div>
   <Styled(Modal)
     contentLabel="Confirm Change"
@@ -654,6 +662,198 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
       }
     }
   />
+  <Styled(Modal)
+    contentLabel="Confirm Change"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to change the block type? Your data may be lost in the process."
+        id="shared.components.pageBlockForm.changeTypeModalTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="shared.components.pageBlockForm.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="shared.components.pageBlockForm.confirm"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</Fragment>
+`;
+
+exports[`PageBlockForm: Component should render correctly with multiple images  1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={true}
+    label="Block Name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="name"
+  />
+  <Select
+    id="fieldBlockType"
+    label="Type"
+    name="type"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Image Upload",
+          "value": "image_uploaded",
+        },
+        Object {
+          "label": "Markdown Text",
+          "value": "markdown_text",
+        },
+        Object {
+          "label": "Embed",
+          "value": "youtube_embed",
+        },
+        Object {
+          "label": "Code Snippet",
+          "value": "code_snippet",
+        },
+      ]
+    }
+    placeholder="Select type"
+    setFieldValue={[Function]}
+    value="image_uploaded"
+  />
+  <styled.div>
+    <Uploader
+      accept=".png, .jpg, .jpeg, .gif"
+      checkOnlyErrors={true}
+      errors={Object {}}
+      handleChange={[Function]}
+      id="fileUpload"
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      label="File Name"
+      multiple={true}
+      name="inputImages"
+      onChange={[Function]}
+      placeholder="Please select image(s) or Drag and Drop it here"
+      setFieldValue={[Function]}
+      touched={Object {}}
+      type="file"
+      values={
+        Object {
+          "image": Array [
+            Object {
+              "file": "file",
+              "id": 1,
+            },
+            Object {
+              "file": "file",
+              "id": 2,
+            },
+          ],
+          "imageNames": Array [
+            Object {
+              "id": 1,
+              "imageName": "imageName.png",
+            },
+            Object {
+              "id": 2,
+              "imageName": "imageName.png",
+            },
+          ],
+          "name": "name",
+          "type": "image_uploaded",
+        }
+      }
+    />
+    <Component>
+      <FormattedMessage
+        defaultMessage="Current files"
+        id="shared.components.pageBlockForm.filesTitle"
+        values={Object {}}
+      />
+    </Component>
+    <DndProvider
+      backend={[Function]}
+      options={Object {}}
+    >
+      <styled.div>
+        <Draggable
+          accept="IMAGE"
+          id={1}
+          index={0}
+          key="0"
+          onMove={[Function]}
+        >
+          <Component />
+        </Draggable>
+        <Draggable
+          accept="IMAGE"
+          id={2}
+          index={1}
+          key="1"
+          onMove={[Function]}
+        >
+          <Component />
+        </Draggable>
+      </styled.div>
+    </DndProvider>
+  </styled.div>
   <Styled(Modal)
     contentLabel="Confirm Change"
     isOpen={false}
