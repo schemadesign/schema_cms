@@ -382,7 +382,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
 # Filters
 
 
-class DataSourceFilterSerializer(serializers.ModelSerializer):
+class DataSourceNestedFieldSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.DataSource
         fields = ("id", "name")
@@ -390,7 +390,7 @@ class DataSourceFilterSerializer(serializers.ModelSerializer):
 
 class FilterSerializer(serializers.ModelSerializer):
     datasource = NestedRelatedModelSerializer(
-        serializer=DataSourceFilterSerializer(), queryset=models.DataSource.objects.all()
+        serializer=DataSourceNestedFieldSerializer(), queryset=models.DataSource.objects.all()
     )
 
     class Meta:
@@ -425,7 +425,7 @@ class FilterSerializer(serializers.ModelSerializer):
 
 
 class FilterDetailsSerializer(FilterSerializer):
-    datasource = NestedRelatedModelSerializer(serializer=DataSourceFilterSerializer(), read_only=True)
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)
 
 
 # Pages
@@ -641,3 +641,26 @@ class BlockDetailSerializer(BlockSerializer):
     def get_images(self, instance):
         images = instance.images.all()
         return BlockImageSerializer(images, many=True).data
+
+
+class TagSerializer(serializers.ModelSerializer):
+    datasource = NestedRelatedModelSerializer(
+        serializer=DataSourceNestedFieldSerializer(), queryset=models.DataSource.objects.all()
+    )
+
+    class Meta:
+        model = models.Tag
+        fields = ("id", "datasource", "key", "value", "is_active")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Tag.objects.all(),
+                fields=("datasource", "key"),
+                key_field_name="key",
+                code="tagKeyNotUnique",
+                message="Tag with this key already exist in data source.",
+            )
+        ]
+
+
+class TagDetailsSerializer(TagSerializer):
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)

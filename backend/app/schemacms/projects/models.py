@@ -701,3 +701,24 @@ class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
         name, ext = os.path.splitext(os.path.basename(file_name))
 
         return name, os.path.basename(file_name)
+
+
+# Tags
+
+
+class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='tags')
+    key = models.CharField(max_length=25)
+    value = models.CharField(max_length=150)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.key or str(self.pk)
+
+    class Meta:
+        ordering = ("created",)
+        constraints = [
+            models.UniqueConstraint(
+                fields=["datasource", "key"], name="unique_tag_key", condition=models.Q(deleted_at=None)
+            )
+        ]
