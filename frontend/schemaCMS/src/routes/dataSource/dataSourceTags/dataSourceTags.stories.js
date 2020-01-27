@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Tag } from './tag.component';
+import { DataSourceTags } from './dataSourceTags.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { intl } from '../../../.storybook/helpers';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
@@ -20,4 +20,4 @@ export const defaultProps = {
 
 storiesOf('Data Source|DataSourceViews', module)
   .addDecorator(withTheme())
-  .add('Default', () => <Tag {...defaultProps} />);
+  .add('Default', () => <DataSourceTags {...defaultProps} />);

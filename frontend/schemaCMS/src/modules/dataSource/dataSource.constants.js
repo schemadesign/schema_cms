@@ -18,7 +18,7 @@ export const PREVIEW_PAGE = 'preview';
 export const STEPS_PAGE = 'steps';
 export const RESULT_PAGE = 'result';
 export const FILTERS_PAGE = 'filters';
-export const TAGS_PAGE = 'tags';
+export const TAGS_PAGE = 'tag';
 
 export const META_PENDING = 'pending';
 export const META_PROCESSING = 'processing';

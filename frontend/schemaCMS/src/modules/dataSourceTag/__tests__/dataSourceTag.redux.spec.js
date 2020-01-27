@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as tagReducer, TagRoutines } from '../tag.redux';
+import { reducer as tagReducer, DataSourceTagRoutines } from '../dataSourceTag.redux';
 
 describe('Tag: redux', () => {
   const state = Immutable({
@@ -23,7 +23,7 @@ describe('Tag: redux', () => {
     it('should set tags', () => {
       const tags = [{ data: 'data' }];
 
-      const resultState = tagReducer(state, TagRoutines.fetchList.success(tags));
+      const resultState = tagReducer(state, DataSourceTagRoutines.fetchList.success(tags));
       expect(resultState.tags).to.deep.equal(tags);
     });
   });
@@ -32,7 +32,7 @@ describe('Tag: redux', () => {
     it('should set tags', () => {
       const tags = [{ data: 'data' }];
 
-      const resultState = tagReducer(state, TagRoutines.setTags.success(tags));
+      const resultState = tagReducer(state, DataSourceTagRoutines.setTags.success(tags));
       expect(resultState.tags).to.deep.equal(tags);
     });
   });
@@ -41,7 +41,7 @@ describe('Tag: redux', () => {
     it('should set tags', () => {
       const tag = [{ data: 'data' }];
 
-      const resultState = tagReducer(state, TagRoutines.fetchTag.success(tag));
+      const resultState = tagReducer(state, DataSourceTagRoutines.fetchTag.success(tag));
       expect(resultState.tag).to.deep.equal(tag);
     });
   });

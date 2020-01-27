@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectTagDomain, selectTags, selectTag } from '../tag.selectors';
+import { selectTagDomain, selectTags, selectTag } from '../dataSourceTag.selectors';
 
 describe('Tag: selectors', () => {
   const state = Immutable({
-    tag: {
+    dataSourceTag: {
       tags: [],
       tag: {},
     },

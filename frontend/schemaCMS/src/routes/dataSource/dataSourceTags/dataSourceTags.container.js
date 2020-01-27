@@ -6,10 +6,10 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
-import { Tag } from './tag.component';
+import { DataSourceTags } from './dataSourceTags.component';
 import { selectDataSource } from '../../../modules/dataSource';
 import { selectUserRole } from '../../../modules/userProfile';
-import { TagRoutines, selectTags } from '../../../modules/tag';
+import { DataSourceTagRoutines, selectTags } from '../../../modules/dataSourceTag';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
@@ -20,8 +20,8 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchTags: promisifyRoutine(TagRoutines.fetchList),
-      setTags: promisifyRoutine(TagRoutines.setTags),
+      fetchTags: promisifyRoutine(DataSourceTagRoutines.fetchList),
+      setTags: promisifyRoutine(DataSourceTagRoutines.setTags),
     },
     dispatch
   ),
@@ -35,4 +35,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(Tag);
+)(DataSourceTags);

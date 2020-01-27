@@ -2,9 +2,9 @@ import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
 
-const PREFIX = 'TAG/';
+const PREFIX = 'DATA_SOURCE_TAG/';
 
-export const TagRoutines = {
+export const DataSourceTagRoutines = {
   fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
   createTag: createRoutine(`${PREFIX}CREATE_TAG`),
   setTags: createRoutine(`${PREFIX}SET_TAGS`),
@@ -22,7 +22,7 @@ const setTags = (state = INITIAL_STATE, { payload }) => state.set('tags', payloa
 const setTag = (state = INITIAL_STATE, { payload }) => state.set('tag', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [TagRoutines.fetchList.success]: setTags,
-  [TagRoutines.setTags.success]: setTags,
-  [TagRoutines.fetchTag.success]: setTag,
+  [DataSourceTagRoutines.fetchList.success]: setTags,
+  [DataSourceTagRoutines.setTags.success]: setTags,
+  [DataSourceTagRoutines.fetchTag.success]: setTag,
 });

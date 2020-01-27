@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Tag } from '../tag.component';
-import { defaultProps } from '../tag.stories';
+import { DataSourceTags } from '../dataSourceTags.component';
+import { defaultProps } from '../dataSourceTags.stories';
 
 describe('DataSourceViews: Component', () => {
-  const component = props => <Tag {...defaultProps} {...props} />;
+  const component = props => <DataSourceTags {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

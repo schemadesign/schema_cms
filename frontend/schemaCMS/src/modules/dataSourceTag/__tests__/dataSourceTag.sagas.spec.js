@@ -3,8 +3,8 @@ import Immutable from 'seamless-immutable';
 import { OK } from 'http-status-codes';
 import nock from 'nock';
 
-import { watchTag } from '../tag.sagas';
-import { TagRoutines } from '../tag.redux';
+import { watchDataSourceTag } from '../dataSourceTag.sagas';
+import { DataSourceTagRoutines } from '../dataSourceTag.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, TAGS_PATH } from '../../../shared/utils/api.constants';
 import browserHistory from '../../../shared/utils/history';
@@ -28,10 +28,10 @@ describe('Tag: sagas', () => {
 
       mockApi.get(`/datasources/${payload.dataSourceId}/tags`).reply(OK, response);
 
-      await expectSaga(watchTag)
+      await expectSaga(watchDataSourceTag)
         .withState(defaultState)
-        .put(TagRoutines.fetchList.success(response.results))
-        .dispatch(TagRoutines.fetchList(payload))
+        .put(DataSourceTagRoutines.fetchList.success(response.results))
+        .dispatch(DataSourceTagRoutines.fetchList(payload))
         .silentRun();
     });
   });
@@ -51,10 +51,10 @@ describe('Tag: sagas', () => {
 
       mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/set-tags`, { active, inactive }).reply(OK, response);
 
-      await expectSaga(watchTag)
+      await expectSaga(watchDataSourceTag)
         .withState(defaultState)
-        .put(TagRoutines.setTags.success(response))
-        .dispatch(TagRoutines.setTags(payload))
+        .put(DataSourceTagRoutines.setTags.success(response))
+        .dispatch(DataSourceTagRoutines.setTags(payload))
         .silentRun();
     });
   });
@@ -74,10 +74,10 @@ describe('Tag: sagas', () => {
         .post(`${DATA_SOURCES_PATH}/${dataSourceId}/tags`, { ...formData, is_active: true })
         .reply(OK, response);
 
-      await expectSaga(watchTag)
+      await expectSaga(watchDataSourceTag)
         .withState(defaultState)
-        .put(TagRoutines.createTag.success(response))
-        .dispatch(TagRoutines.createTag(payload))
+        .put(DataSourceTagRoutines.createTag.success(response))
+        .dispatch(DataSourceTagRoutines.createTag(payload))
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith('/datasource/1/tags');
@@ -95,10 +95,10 @@ describe('Tag: sagas', () => {
 
       mockApi.get(`${TAGS_PATH}/${payload.tagId}`).reply(OK, response);
 
-      await expectSaga(watchTag)
+      await expectSaga(watchDataSourceTag)
         .withState(defaultState)
-        .put(TagRoutines.fetchTag.success(response))
-        .dispatch(TagRoutines.fetchTag(payload))
+        .put(DataSourceTagRoutines.fetchTag.success(response))
+        .dispatch(DataSourceTagRoutines.fetchTag(payload))
         .silentRun();
     });
   });
@@ -116,10 +116,10 @@ describe('Tag: sagas', () => {
 
       mockApi.put(`${TAGS_PATH}/${tagId}`, formData).reply(OK, response);
 
-      await expectSaga(watchTag)
+      await expectSaga(watchDataSourceTag)
         .withState(defaultState)
-        .put(TagRoutines.updateTag.success(response))
-        .dispatch(TagRoutines.updateTag(payload))
+        .put(DataSourceTagRoutines.updateTag.success(response))
+        .dispatch(DataSourceTagRoutines.updateTag(payload))
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith('/datasource/1/tags');
@@ -138,10 +138,10 @@ describe('Tag: sagas', () => {
 
       mockApi.delete(`${TAGS_PATH}/${tagId}`).reply(OK, response);
 
-      await expectSaga(watchTag)
+      await expectSaga(watchDataSourceTag)
         .withState(defaultState)
-        .put(TagRoutines.removeTag.success(response))
-        .dispatch(TagRoutines.removeTag(payload))
+        .put(DataSourceTagRoutines.removeTag.success(response))
+        .dispatch(DataSourceTagRoutines.removeTag(payload))
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith('/datasource/1/tags');
