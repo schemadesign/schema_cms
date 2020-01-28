@@ -54,6 +54,7 @@ export class View extends PureComponent {
 
   state = {
     loading: true,
+    removeLoading: false,
     error: null,
     confirmationModalOpen: false,
   };
@@ -74,7 +75,17 @@ export class View extends PureComponent {
 
   handleDeleteClick = () => this.setState({ confirmationModalOpen: true });
 
-  handleConfirmRemove = () => this.props.removeProject({ projectId: this.props.project.id });
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+
+      await this.props.removeProject({ projectId: this.props.project.id });
+    } catch (error) {
+      reportError(error);
+    } finally {
+      this.setState({ removeLoading: false });
+    }
+  };
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
@@ -188,7 +199,7 @@ export class View extends PureComponent {
 
   render() {
     const { project, userRole } = this.props;
-    const { confirmationModalOpen, error, loading } = this.state;
+    const { confirmationModalOpen, error, loading, removeLoading } = this.state;
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
     const projectId = getMatchParam(this.props, 'projectId');
@@ -217,10 +228,10 @@ export class View extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
+            <NextButton onClick={this.handleConfirmRemove} loading={removeLoading} disabled={removeLoading}>
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
