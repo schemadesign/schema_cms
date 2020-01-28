@@ -25,4 +25,9 @@ def get_dynamo_item(table, item_id):
     table = dynamodb.Table(table)
     response = table.get_item(Key={"id": item_id})
 
-    return json.dumps(response["Item"], cls=utils.DecimalEncoder)
+    try:
+        item = json.dumps(response["Item"], cls=utils.DecimalEncoder)
+    except KeyError:
+        raise Exception(f"Item with ID {item_id} does not exist")
+
+    return item

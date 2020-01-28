@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content='{{ page.description }}'>
+	<meta name="keywords" content="{{ page.keywords }}">
+	<meta name="author" content="{{ page.creator }}">
+	<title>{{ page.title }}</title>
+</head>
+
+<body>
+    {% for block in page.blocks %}
+		{% if block["type"] == "text" %}
+		<div id='{{ block["id"] }}' class='{{ block["type"] }}'><p>{{ block["content"]|safe }}</p></div>
+		{% endif %}
+
+		{% if block["type"] == "code" %}
+			{{ block["content"]|safe }}
+		{% endif %}
+
+		{% if block["type"] == "markdown" %}
+        	<div id='{{ block["id"] }}' class='{{ block["type"] }}'>{{ block["content"]|safe }}</div>
+		{% endif %}
+
+		{% if block["type"] == "image" %}
+        	<div id='{{ block["id"] }}' class='{{ block["type"] }}'>
+
+				<ul>
+					{% for image in block["images"] %}
+					<li><img src="{{ image['url'] }}" alt="{{ image['name'] }}" id="{{ image['order'] }}"></li>
+					{% endfor %}
+				</ul>
+
+			</div>
+		{% endif %}
+		{% if block["type"] == "embed" %}
+			<div id='{{ block["id"] }}' class='{{ block["type"] }}'>
+				{{ block['content']|safe }}
+			</div>
+		{% endif %}
+    {% endfor %}
+</body>
+</html>

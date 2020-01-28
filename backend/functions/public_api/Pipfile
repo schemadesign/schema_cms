@@ -16,6 +16,7 @@ requests = "==2.22.0"
 flask-cors = "==3.0.8"
 flask-compress = "==1.4.0"
 pyarrow = "==0.15.1"
+markdown2 = "==2.3.8"
 
 [requires]
 python_version = "3.7"
