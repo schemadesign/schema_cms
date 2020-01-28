@@ -30,6 +30,19 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
             "editor",
           ],
           "id": "projectDetailsNavBtn",
@@ -61,8 +74,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
             values={Object {}}
           />,
           "to": "/project/1/user",
@@ -194,8 +207,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Processing data source..."
-              id="project.dataSourceList.jobProcessing"
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -293,23 +306,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.ul)>
-              <ForwardRef(styled.li)
-                id="headerItem-0"
-              >
-                3 months ago
-              </ForwardRef(styled.li)>
-              <ForwardRef(styled.li)
-                id="headerItem-1"
-              >
-                firstName lastName
-              </ForwardRef(styled.li)>
-            </ForwardRef(styled.ul)>
-            <ForwardRef(styled.div)>
-              <Unknown />
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="1"
       >
@@ -408,8 +413,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Processing data source..."
-              id="project.dataSourceList.jobProcessing"
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -507,23 +512,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.ul)>
-              <ForwardRef(styled.li)
-                id="headerItem-0"
-              >
-                3 months ago
-              </ForwardRef(styled.li)>
-              <ForwardRef(styled.li)
-                id="headerItem-1"
-              >
-                firstName lastName
-              </ForwardRef(styled.li)>
-            </ForwardRef(styled.ul)>
-            <ForwardRef(styled.div)>
-              <Unknown />
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="3"
       >
@@ -622,8 +619,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Processing meta data..."
-              id="project.dataSourceList.metaProcessing"
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -725,8 +722,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Processing meta data..."
-              id="project.dataSourceList.metaProcessing"
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -828,13 +825,219 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Processing meta data failed"
-              id="project.dataSourceList.metaFailed"
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
         }
         key="6"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Uploading file..."
+              id="project.dataSourceList.fileUploading"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
+        }
+        key="7"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Uploading file failed"
+              id="project.dataSourceList.fileUploadingError"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
+        }
+        key="8"
       >
         <Styled(H1)
           id="dataSourceTitle"
@@ -893,6 +1096,19 @@ exports[`DataSourceList: Component should render empty 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
             "editor",
           ],
           "id": "projectDetailsNavBtn",
@@ -924,8 +1140,8 @@ exports[`DataSourceList: Component should render empty 1`] = `
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
             values={Object {}}
           />,
           "to": "/project/1/user",

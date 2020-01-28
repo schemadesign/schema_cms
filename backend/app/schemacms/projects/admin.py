@@ -24,17 +24,17 @@ class WranglingScriptAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("datasource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="Script")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Script")
 
 
 @admin.register(models.Filter)
 class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "datasource", "deleted_at")
-    fields = ("datasource", "key", "value", "deleted")
+    fields = ("datasource", "name", "filter_type", "field", "field_type", "deleted")
     readonly_on_update_fields = ("datsource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="Filter")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Filter")
 
 
 @admin.register(models.Tag)
@@ -44,7 +44,7 @@ class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("datasource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_conflicts_on_undelate(request, queryset, field="key", model_name="Tag")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="key", model_name="Tag")
 
 
 @admin.register(models.Project)

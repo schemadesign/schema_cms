@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from '../../../theme/styled';
 import { Link as LinkTypography } from '../../../theme/typography';
 
@@ -26,9 +26,18 @@ export const customRadioGroupStyles = {
   marginBottom: '40px',
 };
 
+const informationWrapperStyles = css`
+  margin: -30px 0 40px;
+`;
+
 export const WarningWrapper = styled.div`
   color: ${colors.yellow};
-  margin-bottom: 40px;
+  ${informationWrapperStyles};
+`;
+
+export const ErrorWrapper = styled.div`
+  color: ${colors.red};
+  ${informationWrapperStyles};
 `;
 
 export const Link = styled(LinkTypography)`

@@ -1,0 +1,764 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSourceTagForm: Component should render correctly 1`] = `
+<Fragment>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "key": "",
+        "value": "",
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "value",
+          "key",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "key": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "value": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      }
+    }
+  >
+    <Component />
+  </Formik>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the tag?"
+        id="shared.components.dataSourceTagForm.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="shared.components.dataSourceTagForm.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="shared.components.dataSourceTagForm.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</Fragment>
+`;
+
+exports[`DataSourceTagForm: Component should render create form 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "key": "",
+        "value": "",
+      },
+      "isSubmitting": false,
+      "isValid": false,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "value",
+          "key",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "key": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "value": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "values": Object {
+        "key": "",
+        "value": "",
+      },
+    }
+  }
+>
+  <Styled(Form)>
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      handleReset={[Function]}
+      handleSubmit={[Function]}
+      initialValues={
+        Object {
+          "key": "",
+          "value": "",
+        }
+      }
+      isEdit={true}
+      isValidating={false}
+      label={
+        <FormattedMessage
+          defaultMessage="Key"
+          id="shared.components.dataSourceTagForm.key"
+          values={Object {}}
+        />
+      }
+      name="key"
+      onChange={[Function]}
+      registerField={[Function]}
+      resetForm={[Function]}
+      setError={[Function]}
+      setErrors={[Function]}
+      setFieldError={[Function]}
+      setFieldTouched={[Function]}
+      setFieldValue={[Function]}
+      setFormikState={[Function]}
+      setStatus={[Function]}
+      setSubmitting={[Function]}
+      setTouched={[Function]}
+      setValues={[Function]}
+      submitCount={0}
+      submitForm={[Function]}
+      touched={Object {}}
+      unregisterField={[Function]}
+      validateField={[Function]}
+      validateForm={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+      value=""
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      handleReset={[Function]}
+      handleSubmit={[Function]}
+      initialValues={
+        Object {
+          "key": "",
+          "value": "",
+        }
+      }
+      isEdit={true}
+      isValidating={false}
+      label={
+        <FormattedMessage
+          defaultMessage="Value"
+          id="shared.components.dataSourceTagForm.value"
+          values={Object {}}
+        />
+      }
+      name="value"
+      onChange={[Function]}
+      registerField={[Function]}
+      resetForm={[Function]}
+      setError={[Function]}
+      setErrors={[Function]}
+      setFieldError={[Function]}
+      setFieldTouched={[Function]}
+      setFieldValue={[Function]}
+      setFormikState={[Function]}
+      setStatus={[Function]}
+      setSubmitting={[Function]}
+      setTouched={[Function]}
+      setValues={[Function]}
+      submitCount={0}
+      submitForm={[Function]}
+      touched={Object {}}
+      unregisterField={[Function]}
+      validateField={[Function]}
+      validateForm={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+      value=""
+    />
+    <NavigationContainer
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="shared.components.dataSourceTagForm.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="shared.components.dataSourceTagForm.saveTag"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </Styled(Form)>
+</ContextProvider>
+`;
+
+exports[`DataSourceTagForm: Component should render edit form 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "datasource": Object {
+          "id": 1,
+        },
+        "id": 2,
+        "key": "namekey",
+        "value": "value",
+      },
+      "isSubmitting": false,
+      "isValid": false,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "value",
+          "key",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "key": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "value": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "values": Object {
+        "datasource": Object {
+          "id": 1,
+        },
+        "id": 2,
+        "key": "namekey",
+        "value": "value",
+      },
+    }
+  }
+>
+  <Styled(Form)>
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      handleReset={[Function]}
+      handleSubmit={[Function]}
+      initialValues={
+        Object {
+          "datasource": Object {
+            "id": 1,
+          },
+          "id": 2,
+          "key": "namekey",
+          "value": "value",
+        }
+      }
+      isEdit={true}
+      isValidating={false}
+      label={
+        <FormattedMessage
+          defaultMessage="Key"
+          id="shared.components.dataSourceTagForm.key"
+          values={Object {}}
+        />
+      }
+      name="key"
+      onChange={[Function]}
+      registerField={[Function]}
+      resetForm={[Function]}
+      setError={[Function]}
+      setErrors={[Function]}
+      setFieldError={[Function]}
+      setFieldTouched={[Function]}
+      setFieldValue={[Function]}
+      setFormikState={[Function]}
+      setStatus={[Function]}
+      setSubmitting={[Function]}
+      setTouched={[Function]}
+      setValues={[Function]}
+      submitCount={0}
+      submitForm={[Function]}
+      touched={Object {}}
+      unregisterField={[Function]}
+      validateField={[Function]}
+      validateForm={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+      value="namekey"
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      handleReset={[Function]}
+      handleSubmit={[Function]}
+      initialValues={
+        Object {
+          "datasource": Object {
+            "id": 1,
+          },
+          "id": 2,
+          "key": "namekey",
+          "value": "value",
+        }
+      }
+      isEdit={true}
+      isValidating={false}
+      label={
+        <FormattedMessage
+          defaultMessage="Value"
+          id="shared.components.dataSourceTagForm.value"
+          values={Object {}}
+        />
+      }
+      name="value"
+      onChange={[Function]}
+      registerField={[Function]}
+      resetForm={[Function]}
+      setError={[Function]}
+      setErrors={[Function]}
+      setFieldError={[Function]}
+      setFieldTouched={[Function]}
+      setFieldValue={[Function]}
+      setFormikState={[Function]}
+      setStatus={[Function]}
+      setSubmitting={[Function]}
+      setTouched={[Function]}
+      setValues={[Function]}
+      submitCount={0}
+      submitForm={[Function]}
+      touched={Object {}}
+      unregisterField={[Function]}
+      validateField={[Function]}
+      validateForm={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+      value="value"
+    />
+    <styled.div>
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove tag"
+          id="shared.components.dataSourceTagForm.deleteTag"
+          values={Object {}}
+        />
+      </Styled(Span)>
+    </styled.div>
+    <NavigationContainer
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <FormattedMessage
+          defaultMessage="Back"
+          id="shared.components.dataSourceTagForm.back"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="shared.components.dataSourceTagForm.saveTag"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </Styled(Form)>
+</ContextProvider>
+`;

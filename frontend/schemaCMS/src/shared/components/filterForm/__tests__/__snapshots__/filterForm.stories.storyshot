@@ -1,42 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
-.c1 {
-  padding-top: 7px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 30px;
-  position: relative;
-}
-
-.c2 label {
-  margin-bottom: 1px;
-}
-
-.c3 {
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-
-.c4 {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
-}
-
-.c0 {
-  padding-top: 24px;
-}
-
 .c5 {
   height: 155px;
 }
@@ -72,6 +36,42 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 .c8 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c1 {
+  padding-top: 7px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c2 label {
+  margin-bottom: 1px;
+}
+
+.c3 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c4 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.c0 {
+  padding-top: 24px;
 }
 
 @media (min-width:1040px) {
@@ -651,42 +651,6 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 `;
 
 exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
-.c1 {
-  padding-top: 7px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 30px;
-  position: relative;
-}
-
-.c2 label {
-  margin-bottom: 1px;
-}
-
-.c3 {
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-
-.c4 {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
-}
-
-.c0 {
-  padding-top: 24px;
-}
-
 .c7 {
   height: 155px;
 }
@@ -724,6 +688,10 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   max-width: 240px;
 }
 
+.c1 {
+  padding-top: 7px;
+}
+
 .c6 {
   cursor: pointer;
   color: #FFF;
@@ -750,6 +718,38 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c2 label {
+  margin-bottom: 1px;
+}
+
+.c3 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c4 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.c0 {
+  padding-top: 24px;
 }
 
 @media (min-width:1040px) {

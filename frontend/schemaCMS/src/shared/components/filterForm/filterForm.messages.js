@@ -59,6 +59,6 @@ export default defineMessages({
   },
   nameFilterNameNotUniqueError: {
     id: 'shared.components.filterForm.nameFilterNameNotUniqueError',
-    defaultMessage: 'A filter with this name already exists in project.',
+    defaultMessage: 'A filter with this name already exists in data source.',
   },
 });

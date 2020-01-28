@@ -118,11 +118,11 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/2/user"
+          href="/project/2/folder"
           onClick={[Function]}
         >
           <span>
-            Users
+            Pages
           </span>
         </a>
       </div>
@@ -131,11 +131,11 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/2/folder"
+          href="/project/2/user"
           onClick={[Function]}
         >
           <span>
-            Pages
+            Users
           </span>
         </a>
       </div>
@@ -269,11 +269,11 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
       >
         <a
           className="c2"
-          href="/project/2/user"
+          href="/project/2/folder"
           onClick={[Function]}
         >
           <span>
-            Users
+            Pages
           </span>
         </a>
       </div>
@@ -282,11 +282,11 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
       >
         <a
           className="c2"
-          href="/project/2/folder"
+          href="/project/2/user"
           onClick={[Function]}
         >
           <span>
-            Pages
+            Users
           </span>
         </a>
       </div>

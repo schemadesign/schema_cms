@@ -42,6 +42,17 @@ export const defaultProps = {
   history,
 };
 
+export const withOneBlock = {
+  ...defaultProps,
+  values: [
+    {
+      name: 'block 1',
+      isActive: true,
+      id: 1,
+    },
+  ],
+};
+
 const emptyBlocksProps = {
   ...defaultProps,
   values: [],
@@ -50,4 +61,5 @@ const emptyBlocksProps = {
 storiesOf('Page|PageBlockList', module)
   .addDecorator(withTheme())
   .add('No data', () => <PageBlockList {...emptyBlocksProps} />)
-  .add('Default', () => <PageBlockList {...defaultProps} />);
+  .add('Default', () => <PageBlockList {...defaultProps} />)
+  .add('With one block', () => <PageBlockList {...withOneBlock} />);

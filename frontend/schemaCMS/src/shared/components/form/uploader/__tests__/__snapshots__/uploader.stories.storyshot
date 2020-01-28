@@ -54,6 +54,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
             "display": "block",
             "fontSize": 18,
             "lineHeight": "24px",
+            "opacity": 1,
             "paddingBottom": 30,
             "width": "calc(100% - 70px)",
           }
@@ -92,6 +93,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
                 "fontSize": 0,
                 "margin": "0",
                 "minHeight": "48px",
+                "opacity": 1,
                 "outline": "none",
                 "padding": "0",
                 "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
@@ -117,6 +119,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
       </div>
       <input
         aria-hidden={true}
+        disabled={false}
         id="id"
         name="name"
         onChange={[Function]}
@@ -229,6 +232,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
             "display": "block",
             "fontSize": 18,
             "lineHeight": "24px",
+            "opacity": 1,
             "paddingBottom": 30,
             "width": "calc(100% - 70px)",
           }
@@ -267,6 +271,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
                 "fontSize": 0,
                 "margin": "0",
                 "minHeight": "48px",
+                "opacity": 1,
                 "outline": "none",
                 "padding": "0",
                 "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
@@ -292,6 +297,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
       </div>
       <input
         aria-hidden={true}
+        disabled={false}
         id="id"
         name="name"
         onChange={[Function]}

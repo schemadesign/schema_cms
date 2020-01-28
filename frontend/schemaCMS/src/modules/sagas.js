@@ -13,6 +13,7 @@ import { watchFilter } from './filter/filter.sagas';
 import { watchFolder } from './folder/folder.sagas';
 import { watchPage } from './page/page.sagas';
 import { watchPageBlock } from './pageBlock/pageBlock.sagas';
+import { watchDataSourceTag } from './dataSourceTag/dataSourceTag.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -30,6 +31,7 @@ export default function* rootSaga() {
       fork(watchFolder),
       fork(watchPage),
       fork(watchPageBlock),
+      fork(watchDataSourceTag),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {

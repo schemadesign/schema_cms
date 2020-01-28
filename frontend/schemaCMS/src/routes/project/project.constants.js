@@ -31,13 +31,7 @@ export const PROJECT_LIST_MENU_OPTIONS = [
 ];
 
 export const getProjectMenuOptions = projectId => [
-  {
-    label: <FormattedMessage {...messages.projectsListPage} />,
-    to: '/project/',
-    id: PROJECTS_ID,
-    type: LINK_ITEM,
-    allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
-  },
+  ...PROJECT_LIST_MENU_OPTIONS,
   {
     label: <FormattedMessage {...messages.projectDetails} />,
     to: `/project/${projectId}`,
@@ -53,7 +47,7 @@ export const getProjectMenuOptions = projectId => [
     allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
   },
   {
-    label: <FormattedMessage {...messages.usersPage} />,
+    label: <FormattedMessage {...messages.projectUsersPage} />,
     to: `/project/${projectId}/user`,
     id: PROJECT_USERS_ID,
     type: LINK_ITEM,

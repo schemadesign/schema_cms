@@ -15,11 +15,13 @@ import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
   userRole: ROLES.ADMIN,
+  uploadingDataSources: [],
   dataSource: {
     metaData: {},
     jobs: [],
     project: { id: 'projectId' },
     id: 'dataSourceIdId',
+    fileName: 'fileName',
   },
   intl,
   theme: Theme.dark,

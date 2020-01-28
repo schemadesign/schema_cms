@@ -84,7 +84,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
       >
         <H2>
           <FormattedMessage
-            defaultMessage="SchemaCMS"
+            defaultMessage="Schema CMS"
             id="shared.components.desktopHeader.title"
             values={Object {}}
           />
@@ -218,7 +218,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
       >
         <H2>
           <FormattedMessage
-            defaultMessage="SchemaCMS"
+            defaultMessage="Schema CMS"
             id="shared.components.desktopHeader.title"
             values={Object {}}
           />

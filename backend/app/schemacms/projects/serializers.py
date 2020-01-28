@@ -98,7 +98,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
-            "file": {"required": True, "allow_null": False},
+            "file": {"required": False, "allow_null": True},
             "run_last_job": {"required": False, "allow_null": False, "allow_blank": False},
         }
         validators = [
@@ -145,7 +145,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
-        if "file" in self.validated_data:
+        if self.validated_data.get("file", None):
             copy_steps = self.initial_data.get("run_last_job", False)
             obj.schedule_update_meta(copy_steps)
         return obj

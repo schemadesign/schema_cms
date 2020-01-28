@@ -34,6 +34,19 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
             "editor",
           ],
           "id": "projectDetailsNavBtn",
@@ -65,8 +78,8 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
             values={Object {}}
           />,
           "to": "/project/projectId/user",
@@ -101,6 +114,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     <DataSourceNavigation
       dataSource={
         Object {
+          "fileName": "fileName",
           "id": "dataSourceIdId",
           "jobs": Array [],
           "metaData": Object {},
@@ -279,6 +293,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "warning": "#be8f00",
         }
       }
+      uploadingDataSources={Array []}
       userRole="admin"
       values={
         Object {
@@ -296,6 +311,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     <WithTheme(SourceFormComponent)
       dataSource={
         Object {
+          "fileName": "fileName",
           "id": "dataSourceIdId",
           "jobs": Array [],
           "metaData": Object {},
@@ -470,6 +486,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "warning": "#be8f00",
         }
       }
+      uploadingDataSources={Array []}
       values={
         Object {
           "file": "file",
@@ -523,6 +540,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   <DataSourceNavigation
     dataSource={
       Object {
+        "fileName": "fileName",
         "id": "dataSourceIdId",
         "jobs": Array [],
         "metaData": Object {},
@@ -701,6 +719,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "warning": "#be8f00",
       }
     }
+    uploadingDataSources={Array []}
     userRole="admin"
     values={
       Object {
@@ -883,6 +902,19 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
             "editor",
           ],
           "id": "projectDetailsNavBtn",
@@ -914,8 +946,8 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
             values={Object {}}
           />,
           "to": "/project/projectId/user",
@@ -1126,6 +1158,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "warning": "#be8f00",
         }
       }
+      uploadingDataSources={Array []}
       userRole="admin"
       values={
         Object {
@@ -1315,6 +1348,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "warning": "#be8f00",
         }
       }
+      uploadingDataSources={Array []}
       values={
         Object {
           "file": "file",
@@ -1523,6 +1557,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "warning": "#be8f00",
       }
     }
+    uploadingDataSources={Array []}
     userRole="admin"
     values={
       Object {

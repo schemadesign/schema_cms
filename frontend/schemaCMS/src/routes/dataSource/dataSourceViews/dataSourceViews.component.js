@@ -9,7 +9,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 export class DataSourceViews extends PureComponent {
   static propTypes = {
@@ -22,7 +22,7 @@ export class DataSourceViews extends PureComponent {
     const { dataSource, userRole } = this.props;
     const headerTitle = dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <Fragment>

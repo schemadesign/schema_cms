@@ -12,7 +12,7 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
   STEPS_PAGE,
-  VIEWS_PAGE,
+  TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
 
 const { FieldIcon, FilterIcon, ViewIcon, UploadIcon, ResultIcon } = Icons;
@@ -22,7 +22,7 @@ export const listIcons = [
   { Icon: ResultIcon, page: STEPS_PAGE },
   { Icon: ResultIcon, page: RESULT_PAGE },
   { Icon: FilterIcon, page: FILTERS_PAGE },
-  { Icon: ViewIcon, page: VIEWS_PAGE },
+  { Icon: ViewIcon, page: TAGS_PAGE },
 ];
 const iconSize = { width: 54, height: 54 };
 

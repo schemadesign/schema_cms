@@ -447,6 +447,12 @@ class FilterDetailViewSet(
     serializer_class = serializers.FilterDetailsSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {"project": instance.datasource.project_info, "results": serializer.data}
+        return response.Response(data)
+
 
 class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     queryset = models.Folder.objects.select_related("project", "created_by").all()
@@ -507,13 +513,7 @@ class PageViewSet(
         page = self.get_object()
 
         if request.method == "GET":
-            queryset = (
-                page.blocks.prefetch_related(
-                    Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
-                )
-                .all()
-                .order_by('exec_order')
-            )
+            queryset = page.blocks.all().order_by('exec_order')
             serializer = self.get_serializer(instance=queryset, many=True)
             data = {"project": page.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
@@ -556,7 +556,13 @@ class BlockViewSet(
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.Block.objects.prefetch_related("images").select_related("page").all()
+    queryset = (
+        models.Block.objects.prefetch_related(
+            Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
+        )
+        .select_related("page")
+        .all()
+    )
     serializer_class = serializers.BlockSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
@@ -573,3 +579,9 @@ class TagDetailViewSet(
     queryset = models.Tag.objects.all().select_related("datasource")
     serializer_class = serializers.TagDetailsSerializer
     permission_classes = (permissions.IsAuthenticated,)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {"project": instance.datasource.project_info, "results": serializer.data}
+        return response.Response(data)

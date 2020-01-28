@@ -11,12 +11,15 @@ export const defaultProps = {
   dataSource: {
     metaData: {},
     jobs: [],
+    id: 'dataSourceIdId',
+    fileName: 'fileName',
   },
   values: {
     name: 'name',
     fileName: 'fileName',
     type: SOURCE_TYPE_FILE,
   },
+  uploadingDataSources: [],
   theme: Theme.dark,
   handleChange: Function.prototype,
   intl,
