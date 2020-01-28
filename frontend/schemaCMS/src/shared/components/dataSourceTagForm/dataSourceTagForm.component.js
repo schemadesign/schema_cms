@@ -19,6 +19,7 @@ import { TAGS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { renderWhenTrue } from '../../utils/rendering';
 import { errorMessageParser } from '../../utils/helpers';
+import reportError from '../../utils/reportError';
 
 export class DataSourceTagForm extends PureComponent {
   static propTypes = {
@@ -39,6 +40,7 @@ export class DataSourceTagForm extends PureComponent {
 
   state = {
     confirmationModalOpen: false,
+    removeLoading: false,
   };
 
   getBackMessageId = ifElse(equals(true), always('cancel'), always('back'));
@@ -49,9 +51,17 @@ export class DataSourceTagForm extends PureComponent {
 
   handleBack = () => this.props.history.push(`/datasource/${this.props.dataSourceId}/${TAGS_PAGE}`);
 
-  handleConfirmRemove = () => {
-    const { datasource, id: tagId } = this.props.tag;
-    this.props.removeTag({ dataSourceId: datasource.id, tagId });
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+
+      const { datasource, id: tagId } = this.props.tag;
+      await this.props.removeTag({ dataSourceId: datasource.id, tagId });
+    } catch (error) {
+      reportError(error);
+    } finally {
+      this.setState({ removeLoading: false });
+    }
   };
 
   handleSubmit = async (formData, { setErrors, setSubmitting }) => {
@@ -82,6 +92,7 @@ export class DataSourceTagForm extends PureComponent {
   );
 
   render() {
+    const { removeLoading, confirmationModalOpen } = this.state;
     const initialValues = {
       ...INITIAL_VALUES,
       ...this.props.tag,
@@ -124,15 +135,20 @@ export class DataSourceTagForm extends PureComponent {
             );
           }}
         </Formik>
-        <Modal isOpen={this.state.confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
