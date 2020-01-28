@@ -137,6 +137,7 @@ exports[`View: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
@@ -197,11 +198,13 @@ exports[`View: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
+          disabled={false}
           id="user.view.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
@@ -353,6 +356,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
@@ -413,11 +417,13 @@ exports[`View: Component should render correctly for admin user 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
+          disabled={false}
           id="user.view.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
