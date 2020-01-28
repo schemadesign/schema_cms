@@ -190,15 +190,35 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           values={Object {}}
         />
       </Component>
-      <Draggable
-        accept="CHECKBOX"
-        id={1}
-        index={0}
-        key="1"
-        onMove={[Function]}
+      <div
+        key="0"
       >
-        <Component />
-      </Draggable>
+        <Component
+          id="checkbox-0"
+          value="1"
+        >
+          <styled.div>
+            <Styled(Link)
+              to="/script/1"
+            >
+              <styled.div
+                drag={false}
+              >
+                 
+                name 1
+              </styled.div>
+              <styled.div />
+              <styled.div>
+                <FormattedMessage
+                  defaultMessage="Uploaded"
+                  id="dataSource.dataWranglingScripts.0"
+                  values={Object {}}
+                />
+              </styled.div>
+            </Styled(Link)>
+          </styled.div>
+        </Component>
+      </div>
       <Component
         customStyles={
           Object {
@@ -384,6 +404,344 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           },
         ]
       }
+      uploadScript={[Function]}
+      userRole="admin"
+    />
+  </LoadingWrapper>
+</DndProvider>
+`;
+
+exports[`DataWranglingScripts: Component should render correctly multiple checked scripts 1`] = `
+<DndProvider
+  backend={[Function]}
+  options={Object {}}
+>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Data Wrangling"
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+    options={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      bindSubmitForm={[Function]}
+      checkedScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+          Object {
+            "id": 2,
+            "isPredefined": true,
+            "name": "name 2",
+            "specs": Object {},
+            "type": 2,
+          },
+          Object {
+            "id": 3,
+            "isPredefined": true,
+            "name": "name 3",
+            "specs": Object {
+              "type": "type",
+            },
+            "type": 1,
+          },
+        ]
+      }
+      customScripts={Array []}
+      dataSource={
+        Object {
+          "metaData": Object {},
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      dataWranglingScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+          Object {
+            "id": 2,
+            "isPredefined": true,
+            "name": "name 2",
+            "specs": Object {},
+            "type": 2,
+          },
+          Object {
+            "id": 3,
+            "isPredefined": true,
+            "name": "name 3",
+            "specs": Object {
+              "type": "type",
+            },
+            "type": 1,
+          },
+        ]
+      }
+      fetchDataWranglingScripts={[Function]}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      imageScrapingFields={Array []}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAdmin={true}
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "3",
+          },
+          "url": "/datasource/1/steps",
+        }
+      }
+      sendUpdatedDataWranglingScript={[Function]}
+      setCheckedScripts={[Function]}
+      setScriptsList={[Function]}
+      uncheckedScripts={Array []}
+      uploadScript={[Function]}
+      userRole="admin"
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div />
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
+          id="dataSource.dataWranglingScripts.counterSteps"
+          values={
+            Object {
+              "steps": 3,
+            }
+          }
+        />
+      </styled.div>
+      <styled.div>
+        <Component
+          accept=".py"
+          disabled={false}
+          id="fileUpload"
+          onChange={[Function]}
+          type="file"
+        />
+      </styled.div>
+    </styled.div>
+    <Component
+      customCheckboxStyles={
+        Object {
+          "width": "100%",
+        }
+      }
+      customStyles={
+        Object {
+          "borderTop": "none",
+        }
+      }
+      id="fieldStepsCheckboxGroup"
+      name="steps"
+      onChange={[Function]}
+      value={
+        Array [
+          "1",
+          "2",
+          "3",
+        ]
+      }
+    >
+      <Component
+        customStyles={
+          Object {
+            "marginBottom": 20,
+          }
+        }
+      >
+        <FormattedMessage
+          defaultMessage="Selected steps"
+          id="dataSource.dataWranglingScripts.selectedScripts"
+          values={Object {}}
+        />
+      </Component>
+      <Draggable
+        accept="CHECKBOX"
+        id={1}
+        index={0}
+        key="1"
+        onMove={[Function]}
+      >
+        <Component />
+      </Draggable>
+      <Draggable
+        accept="CHECKBOX"
+        id={2}
+        index={1}
+        key="2"
+        onMove={[Function]}
+      >
+        <Component />
+      </Draggable>
+      <Draggable
+        accept="CHECKBOX"
+        id={3}
+        index={2}
+        key="3"
+        onMove={[Function]}
+      >
+        <Component />
+      </Draggable>
+    </Component>
+    <NavigationContainer
+      fixed={true}
+      hideOnDesktop={false}
+      padding="40px 0 70px"
+      right={true}
+    >
+      <NextButton
+        disabled={false}
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="dataSource.dataWranglingScripts.save"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+    <DataSourceNavigation
+      bindSubmitForm={[Function]}
+      checkedScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+          Object {
+            "id": 2,
+            "isPredefined": true,
+            "name": "name 2",
+            "specs": Object {},
+            "type": 2,
+          },
+          Object {
+            "id": 3,
+            "isPredefined": true,
+            "name": "name 3",
+            "specs": Object {
+              "type": "type",
+            },
+            "type": 1,
+          },
+        ]
+      }
+      customScripts={Array []}
+      dataSource={
+        Object {
+          "metaData": Object {},
+          "project": Object {
+            "id": "1",
+          },
+        }
+      }
+      dataWranglingScripts={
+        Array [
+          Object {
+            "id": 1,
+            "isPredefined": false,
+            "name": "name 1",
+            "specs": Object {},
+            "type": 0,
+          },
+          Object {
+            "id": 2,
+            "isPredefined": true,
+            "name": "name 2",
+            "specs": Object {},
+            "type": 2,
+          },
+          Object {
+            "id": 3,
+            "isPredefined": true,
+            "name": "name 3",
+            "specs": Object {
+              "type": "type",
+            },
+            "type": 1,
+          },
+        ]
+      }
+      fetchDataWranglingScripts={[Function]}
+      hideOnDesktop={true}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      imageScrapingFields={Array []}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAdmin={true}
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "3",
+          },
+          "url": "/datasource/1/steps",
+        }
+      }
+      sendUpdatedDataWranglingScript={[Function]}
+      setCheckedScripts={[Function]}
+      setScriptsList={[Function]}
+      uncheckedScripts={Array []}
       uploadScript={[Function]}
       userRole="admin"
     />
@@ -789,15 +1147,35 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
           values={Object {}}
         />
       </Component>
-      <Draggable
-        accept="CHECKBOX"
-        id={1}
-        index={0}
-        key="1"
-        onMove={[Function]}
+      <div
+        key="0"
       >
-        <Component />
-      </Draggable>
+        <Component
+          id="checkbox-0"
+          value="1"
+        >
+          <styled.div>
+            <Styled(Link)
+              to="/script/1"
+            >
+              <styled.div
+                drag={false}
+              >
+                 
+                name 1
+              </styled.div>
+              <styled.div />
+              <styled.div>
+                <FormattedMessage
+                  defaultMessage="Uploaded"
+                  id="dataSource.dataWranglingScripts.0"
+                  values={Object {}}
+                />
+              </styled.div>
+            </Styled(Link)>
+          </styled.div>
+        </Component>
+      </div>
     </Component>
     <NavigationContainer
       fixed={true}

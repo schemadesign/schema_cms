@@ -34,7 +34,7 @@ import {
   SCRIPT_NAME_MAX_LENGTH,
   SCRIPT_TYPES,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -205,19 +205,25 @@ export class DataWranglingScripts extends PureComponent {
     );
   };
 
-  renderCheckedScripts = checkedScripts =>
+  renderCheckedScripts = scripts =>
+    renderWhenTrueOtherwise(
+      always(scripts.map((item, index) => <div key={index}>{this.renderCheckbox(item, index)}</div>)),
+      always(scripts.map(this.renderCheckboxWithDrag))
+    )(scripts.length === 1);
+
+  renderSelectedContent = checkedScripts =>
     renderWhenTrue(
       always(
         <Fragment>
           <Label customStyles={selectedLabelStyles}>
             <FormattedMessage {...messages.selectedScripts} />
           </Label>
-          {checkedScripts.map(this.renderCheckboxWithDrag)}
+          {this.renderCheckedScripts(checkedScripts)}
         </Fragment>
       )
     )(!!checkedScripts.length);
 
-  renderUncheckedScripts = uncheckedScripts =>
+  renderUnselectedContent = uncheckedScripts =>
     renderWhenTrue(
       always(
         <Fragment>
@@ -242,8 +248,8 @@ export class DataWranglingScripts extends PureComponent {
           name="steps"
           id="fieldStepsCheckboxGroup"
         >
-          {this.renderCheckedScripts(this.props.checkedScripts)}
-          {this.renderUncheckedScripts(this.props.uncheckedScripts)}
+          {this.renderSelectedContent(this.props.checkedScripts)}
+          {this.renderUnselectedContent(this.props.uncheckedScripts)}
         </CheckboxGroup>
       )
     )(!!this.props.dataWranglingScripts.length);

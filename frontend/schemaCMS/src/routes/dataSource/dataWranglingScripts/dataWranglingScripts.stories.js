@@ -41,6 +41,12 @@ export const defaultProps = {
   },
 };
 
+export const multipleCheckedScripts = {
+  ...defaultProps,
+  checkedScripts: dataWranglingScripts,
+  uncheckedScripts: [],
+};
+
 export const noStepsProps = {
   ...defaultProps,
   dataWranglingScripts: [],
@@ -49,4 +55,5 @@ export const noStepsProps = {
 storiesOf('Data Source|DataWranglingScripts', module)
   .addDecorator(withTheme())
   .add('No data', () => <DataWranglingScripts {...noStepsProps} />)
-  .add('Default', () => <DataWranglingScripts {...defaultProps} />);
+  .add('Default', () => <DataWranglingScripts {...defaultProps} />)
+  .add('Multiple checked scripts', () => <DataWranglingScripts {...multipleCheckedScripts} />);
