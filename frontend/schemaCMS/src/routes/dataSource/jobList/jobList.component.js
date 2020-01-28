@@ -26,7 +26,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 const { RadioGroup, RadioStyled } = Form;
 
@@ -163,7 +163,7 @@ export class JobList extends PureComponent {
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const isLoading = loading || isEmpty(dataSource);
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <Container>

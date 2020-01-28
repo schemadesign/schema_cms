@@ -7,8 +7,8 @@ import messages from './createDataSourceTag.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
 import { DataSourceTagForm } from '../../../shared/components/dataSourceTagForm';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 export class CreateDataSourceTag extends PureComponent {
   static propTypes = {
@@ -43,7 +43,7 @@ export class CreateDataSourceTag extends PureComponent {
   render() {
     const { dataSource, userRole, createTag, history, intl } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig();
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <Container>

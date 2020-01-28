@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'shared.components.desktopHeader.title',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Schema CMS',
   },
   subtitle: {
     id: 'shared.components.desktopHeader.subtitle',

@@ -9,7 +9,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 export class Fields extends PureComponent {
   static propTypes = {
@@ -25,7 +25,7 @@ export class Fields extends PureComponent {
   render() {
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const menuOptions = getDataSourceMenuOptions(this.props.dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(this.props.dataSource.project.id);
 
     return (
       <Fragment>

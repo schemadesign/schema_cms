@@ -438,6 +438,19 @@ exports[`Storyshots Project|AddUser List 1`] = `
               className="c10"
             >
               <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
                 href="/project/1"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
@@ -469,7 +482,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>
@@ -1080,6 +1093,19 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               className="c10"
             >
               <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
                 href="/project/1"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
@@ -1111,7 +1137,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>

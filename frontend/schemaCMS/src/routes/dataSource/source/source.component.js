@@ -17,7 +17,7 @@ import { SourceForm } from '../../../shared/components/sourceForm';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 export class Source extends PureComponent {
   static propTypes = {
@@ -102,7 +102,7 @@ export class Source extends PureComponent {
     const { confirmationRemoveModalOpen, confirmationRunJobModalOpen } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <Fragment>

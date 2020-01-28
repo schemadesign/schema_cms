@@ -25,7 +25,7 @@ import messages from './pageBlockList.messages';
 import { BackArrowButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { Draggable } from '../../../shared/components/draggable';
 import reportError from '../../../shared/utils/reportError';
@@ -120,7 +120,18 @@ export class PageBlockList extends PureComponent {
     }
   };
 
-  renderCheckbox = ({ id, name }, index) => (
+  renderCheckbox = ({ id, name, draggableIcon = null }, index) => (
+    <Checkbox id={`checkbox-${index}`} value={id.toString()} isEdit>
+      <CheckboxContent>
+        {draggableIcon}
+        <Link to={`/block/${id}`} onClick={this.handleGoToBlock}>
+          {name}
+        </Link>
+      </CheckboxContent>
+    </Checkbox>
+  );
+
+  renderCheckboxWithDrag = ({ id, name }, index) => (
     <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
       {makeDraggable => {
         const draggableIcon = makeDraggable(
@@ -129,19 +140,16 @@ export class PageBlockList extends PureComponent {
           </IconWrapper>
         );
 
-        return (
-          <Checkbox id={`checkbox-${index}`} value={id.toString()} isEdit>
-            <CheckboxContent>
-              {draggableIcon}
-              <Link to={`/block/${id}`} onClick={this.handleGoToBlock}>
-                {name}
-              </Link>
-            </CheckboxContent>
-          </Checkbox>
-        );
+        return this.renderCheckbox({ id, name, draggableIcon }, index);
       }}
     </Draggable>
   );
+
+  renderCheckboxes = blocks =>
+    renderWhenTrueOtherwise(
+      always(blocks.map((item, index) => <div key={index}>{this.renderCheckbox(item, index)}</div>)),
+      always(blocks.map(this.renderCheckboxWithDrag))
+    )(blocks.length === 1);
 
   renderContent = () => {
     const { handleSubmit, values, isSubmitting, dirty } = this.props;
@@ -163,7 +171,7 @@ export class PageBlockList extends PureComponent {
               id="blocksCheckboxGroup"
               customCheckboxStyles={checkboxStyles}
             >
-              {values.map(this.renderCheckbox)}
+              {this.renderCheckboxes(values)}
             </CheckboxGroup>
           </LoadingWrapper>
           <NavigationContainer fixed>

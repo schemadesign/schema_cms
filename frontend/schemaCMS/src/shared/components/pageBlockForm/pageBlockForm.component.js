@@ -36,11 +36,12 @@ import {
   UploaderContainer,
   UploaderItem,
   UploaderList,
+  SingleName,
 } from './pageBlockForm.styles';
 import { getEventFiles } from '../../utils/helpers';
 import { Draggable } from '../draggable';
 import { IconWrapper } from '../../../routes/dataSource/dataWranglingScripts/dataWranglingScripts.styles';
-import { renderWhenTrue } from '../../utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { CloseIcon, MenuIcon } = Icons;
 const { Label } = Form;
@@ -164,7 +165,21 @@ export class PageBlockForm extends PureComponent {
     />
   );
 
-  renderUploaderItem = ({ imageName, id, image }, index) => (
+  renderUploaderItem = ({ imageName, id, image, draggableIcon = null, index }) => (
+    <Fragment>
+      <UploaderItem>
+        {draggableIcon}
+        <ImageName>{imageName}</ImageName>
+      </UploaderItem>
+      <CloseIcon
+        id={`removeImage-${index}`}
+        onClick={this.handleRemoveImage({ id, image })}
+        customStyles={removeIconStyles}
+      />
+    </Fragment>
+  );
+
+  renderUploaderWithDrag = ({ imageName, id, image }, index) => (
     <Draggable key={index} accept="IMAGE" onMove={this.handleMove} id={id} index={index}>
       {makeDraggable => {
         const draggableIcon = makeDraggable(
@@ -173,34 +188,36 @@ export class PageBlockForm extends PureComponent {
           </IconWrapper>
         );
 
-        return (
-          <Fragment>
-            <UploaderItem>
-              {draggableIcon}
-              <ImageName>{imageName}</ImageName>
-            </UploaderItem>
-            <CloseIcon
-              id={`removeImage-${index}`}
-              onClick={this.handleRemoveImage({ id, image })}
-              customStyles={removeIconStyles}
-            />
-          </Fragment>
-        );
+        return this.renderUploaderItem({ image, imageName, id, draggableIcon, index });
       }}
     </Draggable>
   );
 
+  renderImagesNames = imageNames =>
+    renderWhenTrueOtherwise(
+      always(
+        <UploaderList>
+          {imageNames.map((item, index) => (
+            <SingleName key={index}>{this.renderUploaderItem({ ...item, index })}</SingleName>
+          ))}
+        </UploaderList>
+      ),
+      always(
+        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+          <UploaderList>{imageNames.map(this.renderUploaderWithDrag)}</UploaderList>
+        </DndProvider>
+      )
+    )(imageNames.length === 1);
+
   renderUploaderList = imageNames =>
     renderWhenTrue(
       always(
-        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-          <UploaderList>
-            <Label>
-              <FormattedMessage {...messages.filesTitle} />
-            </Label>
-            {imageNames.map(this.renderUploaderItem)}
-          </UploaderList>
-        </DndProvider>
+        <Fragment>
+          <Label>
+            <FormattedMessage {...messages.filesTitle} />
+          </Label>
+          {this.renderImagesNames(imageNames)}
+        </Fragment>
       )
     )(!!imageNames.length);
 

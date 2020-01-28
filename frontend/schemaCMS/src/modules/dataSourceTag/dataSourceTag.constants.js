@@ -11,12 +11,12 @@ export const INITIAL_VALUES = {
 export const TAGS_SCHEMA = Yup.object().shape({
   [TAG_KEY]: Yup.string()
     .trim()
-    .min(1, 'Tag name should have at least 3 characters')
-    .max(25, 'Tag name should have maximum 25 characters')
+    .min(1, 'Tag key should have at least 1 character')
+    .max(25, 'Tag key should have maximum 25 characters')
     .required('Required'),
   [TAG_VALUE]: Yup.string()
     .trim()
-    .min(1, 'Tag name should have at least 3 characters')
-    .max(150, 'Tag name should have maximum 25 characters')
+    .min(1, 'Tag value should have at least 1 character')
+    .max(150, 'Tag value should have maximum 150 characters')
     .required('Required'),
 });
