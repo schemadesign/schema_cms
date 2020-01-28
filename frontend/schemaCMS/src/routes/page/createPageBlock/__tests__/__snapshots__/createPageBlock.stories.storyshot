@@ -782,7 +782,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
                   }
                 }
               >
-                Markdown Text
+                Markdown
               </div>
               <div
                 id="select-item-2"
@@ -796,10 +796,24 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
                   }
                 }
               >
-                Embed
+                Text
               </div>
               <div
                 id="select-item-3"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "borderTop": "1px solid  #000",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "padding": "7px",
+                  }
+                }
+              >
+                Embed
+              </div>
+              <div
+                id="select-item-4"
                 onClick={[Function]}
                 style={
                   Object {

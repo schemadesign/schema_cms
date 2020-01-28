@@ -147,7 +147,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="code_snippet"
+      value="code"
     />
     <div
       className="c2"
@@ -254,7 +254,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -268,10 +268,24 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -303,7 +317,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
       }
     >
       <label
-        htmlFor="code_snippet-content"
+        htmlFor="code-content"
         style={
           Object {
             "border": "none",
@@ -320,7 +334,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
         Code Snippet
       </label>
       <textarea
-        id="code_snippet-content"
+        id="code-content"
         onChange={[Function]}
         placeholder="
     <button id=\\"my-button\\">
@@ -528,7 +542,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="youtube_embed"
+      value="embed"
     />
     <div
       className="c2"
@@ -635,7 +649,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -649,10 +663,24 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -684,7 +712,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
       }
     >
       <label
-        htmlFor="youtube_embed-content"
+        htmlFor="embed-content"
         style={
           Object {
             "border": "none",
@@ -701,7 +729,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
         Embed Code
       </label>
       <textarea
-        id="youtube_embed-content"
+        id="embed-content"
         onChange={[Function]}
         placeholder="
     <iframe
@@ -962,7 +990,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="image_uploaded"
+      value="image"
     />
     <div
       className="c2"
@@ -1069,7 +1097,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -1083,10 +1111,24 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -1459,7 +1501,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="markdown_text"
+      value="markdown"
     />
     <div
       className="c2"
@@ -1521,7 +1563,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
         </div>
         <div
@@ -1566,7 +1608,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -1580,10 +1622,24 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -1615,7 +1671,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
       }
     >
       <label
-        htmlFor="markdown_text-content"
+        htmlFor="markdown-content"
         style={
           Object {
             "border": "none",
@@ -1632,7 +1688,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
         Markdown Text
       </label>
       <textarea
-        id="markdown_text-content"
+        id="markdown-content"
         onChange={[Function]}
         placeholder="
     # My Cool Title
@@ -1899,7 +1955,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="image_uploaded"
+      value="image"
     />
     <div
       className="c2"
@@ -2006,7 +2062,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -2020,10 +2076,24 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -2592,7 +2662,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -2606,10 +2676,24 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -2624,6 +2708,394 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
+.c0 {
+  padding-top: 7px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c1 label {
+  margin-bottom: 1px;
+}
+
+.c2 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="text name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="c0"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="text"
+    />
+    <div
+      className="c2"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Text
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Text
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="text-content"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Text
+      </label>
+      <textarea
+        id="text-content"
+        onChange={[Function]}
+        placeholder="Example text"
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
     </div>
   </div>
 </div>
