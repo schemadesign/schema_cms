@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { PageBlockForm } from '../pageBlockForm.component';
-import { noneProps, imageProps, markdownProps, embedProps, codeProps } from '../pageBlockForm.stories';
+import { noneProps, imageProps, markdownProps, embedProps, codeProps, textProps } from '../pageBlockForm.stories';
 import { TextInput } from '../../form/inputs/textInput';
 import { Select } from '../../form/select';
 import { NONE } from '../../../../modules/pageBlock/pageBlock.constants';
@@ -34,6 +34,11 @@ describe('PageBlockForm: Component', () => {
 
   it('should render correctly with markdown type', () => {
     const wrapper = render(markdownProps);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly with text type', () => {
+    const wrapper = render(textProps);
     expect(wrapper).toMatchSnapshot();
   });
 

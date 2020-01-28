@@ -21,6 +21,7 @@ import {
   BLOCK_TYPE,
   CODE_TYPE,
   EMBED_TYPE,
+  TEXT_TYPE,
   IMAGE_TYPE,
   MARKDOWN_TYPE,
   NONE,
@@ -225,6 +226,7 @@ export class PageBlockForm extends PureComponent {
 
   renderBlockContent = cond([
     [equals(MARKDOWN_TYPE), () => this.renderBlock('pageBlockFieldMarkdown', 'pageBlockFieldMarkdownPlaceholder')],
+    [equals(TEXT_TYPE), () => this.renderBlock('pageBlockFieldText', 'pageBlockFieldTextPlaceholder')],
     [equals(EMBED_TYPE), () => this.renderBlock('pageBlockFieldEmbed', 'pageBlockFieldEmbedPlaceholder')],
     [equals(CODE_TYPE), () => this.renderBlock('pageBlockFieldCode', 'pageBlockFieldCodePlaceholder')],
     [equals(IMAGE_TYPE), this.renderImage],

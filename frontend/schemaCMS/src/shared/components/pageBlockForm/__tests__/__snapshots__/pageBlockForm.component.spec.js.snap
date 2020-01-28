@@ -24,19 +24,23 @@ exports[`PageBlockForm: Component should render correctly 1`] = `
       Array [
         Object {
           "label": "Image Upload",
-          "value": "image_uploaded",
+          "value": "image",
         },
         Object {
-          "label": "Markdown Text",
-          "value": "markdown_text",
+          "label": "Markdown",
+          "value": "markdown",
+        },
+        Object {
+          "label": "Text",
+          "value": "text",
         },
         Object {
           "label": "Embed",
-          "value": "youtube_embed",
+          "value": "embed",
         },
         Object {
           "label": "Code Snippet",
-          "value": "code_snippet",
+          "value": "code",
         },
       ]
     }
@@ -136,25 +140,29 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
       Array [
         Object {
           "label": "Image Upload",
-          "value": "image_uploaded",
+          "value": "image",
         },
         Object {
-          "label": "Markdown Text",
-          "value": "markdown_text",
+          "label": "Markdown",
+          "value": "markdown",
+        },
+        Object {
+          "label": "Text",
+          "value": "text",
         },
         Object {
           "label": "Embed",
-          "value": "youtube_embed",
+          "value": "embed",
         },
         Object {
           "label": "Code Snippet",
-          "value": "code_snippet",
+          "value": "code",
         },
       ]
     }
     placeholder="Select type"
     setFieldValue={[Function]}
-    value="code_snippet"
+    value="code"
   />
   <TextInput
     checkOnlyErrors={false}
@@ -169,7 +177,7 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
     isEdit={false}
     label="Code Snippet"
     multiline={true}
-    name="code_snippet-content"
+    name="code-content"
     onChange={[Function]}
     placeholder="
     <button id=\\"my-button\\">
@@ -185,7 +193,7 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
       Object {
         "content": "code content",
         "name": "code name",
-        "type": "code_snippet",
+        "type": "code",
       }
     }
   />
@@ -281,25 +289,29 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
       Array [
         Object {
           "label": "Image Upload",
-          "value": "image_uploaded",
+          "value": "image",
         },
         Object {
-          "label": "Markdown Text",
-          "value": "markdown_text",
+          "label": "Markdown",
+          "value": "markdown",
+        },
+        Object {
+          "label": "Text",
+          "value": "text",
         },
         Object {
           "label": "Embed",
-          "value": "youtube_embed",
+          "value": "embed",
         },
         Object {
           "label": "Code Snippet",
-          "value": "code_snippet",
+          "value": "code",
         },
       ]
     }
     placeholder="Select type"
     setFieldValue={[Function]}
-    value="youtube_embed"
+    value="embed"
   />
   <TextInput
     checkOnlyErrors={false}
@@ -314,7 +326,7 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
     isEdit={false}
     label="Embed Code"
     multiline={true}
-    name="youtube_embed-content"
+    name="embed-content"
     onChange={[Function]}
     placeholder="
     <iframe
@@ -331,7 +343,7 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
       Object {
         "content": "embed content",
         "name": "embed name",
-        "type": "youtube_embed",
+        "type": "embed",
       }
     }
   />
@@ -427,25 +439,29 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
       Array [
         Object {
           "label": "Image Upload",
-          "value": "image_uploaded",
+          "value": "image",
         },
         Object {
-          "label": "Markdown Text",
-          "value": "markdown_text",
+          "label": "Markdown",
+          "value": "markdown",
+        },
+        Object {
+          "label": "Text",
+          "value": "text",
         },
         Object {
           "label": "Embed",
-          "value": "youtube_embed",
+          "value": "embed",
         },
         Object {
           "label": "Code Snippet",
-          "value": "code_snippet",
+          "value": "code",
         },
       ]
     }
     placeholder="Select type"
     setFieldValue={[Function]}
-    value="image_uploaded"
+    value="image"
   />
   <styled.div>
     <Uploader
@@ -482,7 +498,7 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
             },
           ],
           "name": "name",
-          "type": "image_uploaded",
+          "type": "image",
         }
       }
     />
@@ -602,25 +618,29 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
       Array [
         Object {
           "label": "Image Upload",
-          "value": "image_uploaded",
+          "value": "image",
         },
         Object {
-          "label": "Markdown Text",
-          "value": "markdown_text",
+          "label": "Markdown",
+          "value": "markdown",
+        },
+        Object {
+          "label": "Text",
+          "value": "text",
         },
         Object {
           "label": "Embed",
-          "value": "youtube_embed",
+          "value": "embed",
         },
         Object {
           "label": "Code Snippet",
-          "value": "code_snippet",
+          "value": "code",
         },
       ]
     }
     placeholder="Select type"
     setFieldValue={[Function]}
-    value="markdown_text"
+    value="markdown"
   />
   <TextInput
     checkOnlyErrors={false}
@@ -635,7 +655,7 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
     isEdit={false}
     label="Markdown Text"
     multiline={true}
-    name="markdown_text-content"
+    name="markdown-content"
     onChange={[Function]}
     placeholder="
     # My Cool Title
@@ -650,7 +670,149 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
       Object {
         "content": "markdown content",
         "name": "markdown name",
-        "type": "markdown_text",
+        "type": "markdown",
+      }
+    }
+  />
+  <Styled(Modal)
+    contentLabel="Confirm Change"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to change the block type? Your data may be lost in the process."
+        id="shared.components.pageBlockForm.changeTypeModalTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="shared.components.pageBlockForm.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="shared.components.pageBlockForm.confirm"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</Fragment>
+`;
+
+exports[`PageBlockForm: Component should render correctly with text type 1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={true}
+    label="Block Name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="text name"
+  />
+  <Select
+    id="fieldBlockType"
+    label="Type"
+    name="type"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Image Upload",
+          "value": "image",
+        },
+        Object {
+          "label": "Markdown",
+          "value": "markdown",
+        },
+        Object {
+          "label": "Text",
+          "value": "text",
+        },
+        Object {
+          "label": "Embed",
+          "value": "embed",
+        },
+        Object {
+          "label": "Code Snippet",
+          "value": "code",
+        },
+      ]
+    }
+    placeholder="Select type"
+    setFieldValue={[Function]}
+    value="text"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={false}
+    label="Text"
+    multiline={true}
+    name="text-content"
+    onChange={[Function]}
+    placeholder="Example text"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    values={
+      Object {
+        "content": "text content",
+        "name": "text name",
+        "type": "text",
       }
     }
   />
