@@ -30,6 +30,19 @@ exports[`CreateFilter: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
             "editor",
           ],
           "id": "projectDetailsNavBtn",
@@ -61,8 +74,8 @@ exports[`CreateFilter: Component should render correctly 1`] = `
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
             values={Object {}}
           />,
           "to": "/project/1/user",
@@ -136,6 +149,19 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
             "editor",
           ],
           "id": "projectDetailsNavBtn",
@@ -167,8 +193,8 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
             values={Object {}}
           />,
           "to": "/project/1/user",

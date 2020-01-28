@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Form } from 'schemaUI';
 
 import { DataWranglingScripts } from '../dataWranglingScripts.component';
-import { defaultProps } from '../dataWranglingScripts.stories';
+import { defaultProps, multipleCheckedScripts } from '../dataWranglingScripts.stories';
 import { NextButton } from '../../../../shared/components/navigation';
 import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { Draggable } from '../../../../shared/components/draggable';
@@ -22,6 +22,11 @@ describe('DataWranglingScripts: Component', () => {
 
   it('should render correctly', async () => {
     const wrapper = await render();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly multiple checked scripts', async () => {
+    const wrapper = await render(multipleCheckedScripts);
     expect(wrapper).toMatchSnapshot();
   });
 

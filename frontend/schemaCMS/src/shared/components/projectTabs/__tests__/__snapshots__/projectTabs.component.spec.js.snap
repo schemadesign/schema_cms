@@ -28,22 +28,22 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
         Object {
           "active": false,
           "content": <FormattedMessage
-            defaultMessage="Users"
-            id="shared.components.projectTabs.users"
-            values={Object {}}
-          />,
-          "id": "users",
-          "to": "/project/1/user",
-        },
-        Object {
-          "active": false,
-          "content": <FormattedMessage
             defaultMessage="Pages"
             id="shared.components.projectTabs.folder"
             values={Object {}}
           />,
           "id": "folder",
           "to": "/project/1/folder",
+        },
+        Object {
+          "active": false,
+          "content": <FormattedMessage
+            defaultMessage="Users"
+            id="shared.components.projectTabs.users"
+            values={Object {}}
+          />,
+          "id": "users",
+          "to": "/project/1/user",
         },
       ]
     }

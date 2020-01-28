@@ -16,7 +16,7 @@ import { errorMessageParser, filterMenuOptions, getMatchParam } from '../../../s
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -151,7 +151,7 @@ export class Filters extends PureComponent {
     const { dataSource, userRole } = this.props;
     const headerTitle = dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <Fragment>

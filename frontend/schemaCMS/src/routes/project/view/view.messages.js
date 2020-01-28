@@ -117,4 +117,8 @@ export default defineMessages({
     id: 'project.view.usersPage',
     defaultMessage: 'Users',
   },
+  projectUsersPage: {
+    id: 'project.view.projectUsersPage',
+    defaultMessage: 'Project Users',
+  },
 });

@@ -5,7 +5,7 @@ import { reverse } from 'ramda';
 
 import { PageBlockList } from '../pageBlockList.component';
 import { Link } from '../pageBlockList.styles';
-import { defaultProps } from '../pageBlockList.stories';
+import { defaultProps, withOneBlock } from '../pageBlockList.stories';
 import { BackArrowButton, PlusButton } from '../../../../shared/components/navigation';
 import { Draggable } from '../../../../shared/components/draggable';
 import { history } from '../../../../.storybook/helpers';
@@ -24,6 +24,18 @@ describe('PageBlockList: Component', () => {
 
   it('should render correctly', async () => {
     const props = {
+      fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
+    };
+    const wrapper = render(props);
+    await Promise.resolve();
+    await Promise.resolve();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly with one block', async () => {
+    const props = {
+      ...withOneBlock,
       fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
       fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
     };

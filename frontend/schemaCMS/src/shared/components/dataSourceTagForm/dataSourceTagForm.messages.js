@@ -41,6 +41,6 @@ export default defineMessages({
   },
   keyTagKeyNotUniqueError: {
     id: 'shared.components.dataSourceTagForm.keyTagKeyNotUniqueError',
-    defaultMessage: 'A tag with this name already exists in project.',
+    defaultMessage: 'A tag with this name already exists in data source.',
   },
 });

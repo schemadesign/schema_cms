@@ -10,7 +10,7 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getDataSourceMenuOptions } from '../dataSource.constants';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
@@ -67,7 +67,7 @@ export class CreateFilter extends PureComponent {
     const { error, loading } = this.state;
     const { dataSource, userRole } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig();
-    const menuOptions = getDataSourceMenuOptions(dataSource.project.id);
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <Container>
