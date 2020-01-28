@@ -42,6 +42,7 @@ export class Edit extends PureComponent {
 
   state = {
     loading: true,
+    removeLoading: false,
     error: null,
   };
 
@@ -63,17 +64,24 @@ export class Edit extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  handleConfirmRemove = () => {
-    const pageId = getMatchParam(this.props, 'pageId');
-    const folderId = this.getFolderId();
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+      const pageId = getMatchParam(this.props, 'pageId');
+      const folderId = this.getFolderId();
 
-    this.props.removePage({ pageId, folderId });
+      await this.props.removePage({ pageId, folderId });
+    } catch (error) {
+      reportError(error);
+    } finally {
+      this.setState({ removeLoading: false });
+    }
   };
 
   handleBackClick = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   render() {
-    const { loading, error, confirmationModalOpen } = this.state;
+    const { loading, error, confirmationModalOpen, removeLoading } = this.state;
     const { handleSubmit, isValid, isSubmitting, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -107,10 +115,15 @@ export class Edit extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
