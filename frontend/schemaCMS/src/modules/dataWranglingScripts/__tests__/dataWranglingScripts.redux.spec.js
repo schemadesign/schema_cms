@@ -45,7 +45,7 @@ describe('DataWranglingScripts: redux', () => {
       ];
       const dataSource = {
         activeJob: {
-          scripts: [{ id: 1, execOrder: 0 }],
+          scripts: [{ id: 3, execOrder: 0 }, { id: 1, execOrder: 1 }],
         },
       };
 
@@ -53,11 +53,11 @@ describe('DataWranglingScripts: redux', () => {
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(payload));
 
       expect(resultState.scripts).toEqual(data);
-      expect(resultState.uncheckedScripts).toEqual([
-        { id: 2, isPredefined: true, specs: ['1'], type: 1 },
+      expect(resultState.uncheckedScripts).toEqual([{ id: 2, isPredefined: true, specs: ['1'], type: 1 }]);
+      expect(resultState.checkedScripts).toEqual([
         { id: 3, isPredefined: true, specs: [], type: 2 },
+        { id: 1, isPredefined: false, type: 0 },
       ]);
-      expect(resultState.checkedScripts).toEqual([{ id: 1, isPredefined: false, type: 0 }]);
     });
 
     it('should not set scripts', () => {
