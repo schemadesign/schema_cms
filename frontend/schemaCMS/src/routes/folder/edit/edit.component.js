@@ -70,9 +70,8 @@ export class Edit extends PureComponent {
 
       await this.props.removeFolder({ folderId, projectId });
     } catch (error) {
-      reportError(error);
-    } finally {
       this.setState({ removeLoading: false });
+      reportError(error);
     }
   };
 

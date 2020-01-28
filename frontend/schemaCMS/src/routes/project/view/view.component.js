@@ -81,9 +81,8 @@ export class View extends PureComponent {
 
       await this.props.removeProject({ projectId: this.props.project.id });
     } catch (error) {
-      reportError(error);
-    } finally {
       this.setState({ removeLoading: false });
+      reportError(error);
     }
   };
 

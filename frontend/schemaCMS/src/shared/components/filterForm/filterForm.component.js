@@ -86,9 +86,8 @@ export class FilterForm extends PureComponent {
       const { datasource, id: filterId } = this.props.filter;
       await this.props.removeFilter({ dataSourceId: datasource.id, filterId });
     } catch (error) {
-      reportError(error);
-    } finally {
       this.setState({ removeLoading: false });
+      reportError(error);
     }
   };
 

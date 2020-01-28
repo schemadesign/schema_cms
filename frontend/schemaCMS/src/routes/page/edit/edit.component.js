@@ -72,9 +72,8 @@ export class Edit extends PureComponent {
 
       await this.props.removePage({ pageId, folderId });
     } catch (error) {
-      reportError(error);
-    } finally {
       this.setState({ removeLoading: false });
+      reportError(error);
     }
   };
 

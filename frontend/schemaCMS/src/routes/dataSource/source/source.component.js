@@ -64,9 +64,8 @@ export class Source extends PureComponent {
 
       await this.props.removeDataSource({ projectId, dataSourceId });
     } catch (error) {
-      reportError(error);
-    } finally {
       this.setState({ removeLoading: false });
+      reportError(error);
     }
   };
 

@@ -35,6 +35,8 @@ export class PageBlock extends PureComponent {
 
   state = {
     loading: true,
+    removeLoading: false,
+    confirmationModalOpen: false,
     error: null,
   };
 
@@ -54,11 +56,17 @@ export class PageBlock extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  handleConfirmRemove = () => {
-    const pageId = path(['block', 'page', 'id'], this.props);
-    const blockId = getMatchParam(this.props, 'blockId');
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+      const pageId = path(['block', 'page', 'id'], this.props);
+      const blockId = getMatchParam(this.props, 'blockId');
 
-    this.props.removePageBlock({ pageId, blockId });
+      await this.props.removePageBlock({ pageId, blockId });
+    } catch (error) {
+      this.setState({ removeLoading: false });
+      reportError(error);
+    }
   };
 
   handleBackClick = () =>
@@ -66,7 +74,7 @@ export class PageBlock extends PureComponent {
 
   render() {
     const { handleSubmit, isSubmitting, userRole, ...restProps } = this.props;
-    const { loading, error, confirmationModalOpen } = this.state;
+    const { loading, error, confirmationModalOpen, removeLoading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -106,10 +114,15 @@ export class PageBlock extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

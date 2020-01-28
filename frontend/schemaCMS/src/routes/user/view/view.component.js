@@ -64,9 +64,8 @@ export class View extends PureComponent {
 
       await this.props.removeUser({ userId });
     } catch (error) {
-      reportError(error);
-    } finally {
       this.setState({ removeLoading: false });
+      reportError(error);
     }
   };
 

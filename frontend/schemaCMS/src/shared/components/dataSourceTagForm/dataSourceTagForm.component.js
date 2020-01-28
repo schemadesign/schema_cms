@@ -58,9 +58,8 @@ export class DataSourceTagForm extends PureComponent {
       const { datasource, id: tagId } = this.props.tag;
       await this.props.removeTag({ dataSourceId: datasource.id, tagId });
     } catch (error) {
-      reportError(error);
-    } finally {
       this.setState({ removeLoading: false });
+      reportError(error);
     }
   };
 
