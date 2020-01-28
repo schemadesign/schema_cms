@@ -117,7 +117,7 @@ FIELD_TYPE_CHOICES = (
 
 
 class BlockTypes:
-    VIDEO = "video"
+    EMBED = "embed"
     CODE = "code"
     MARKDOWN = "markdown"
     TEXT = "text"
@@ -125,9 +125,9 @@ class BlockTypes:
 
 
 BLOCK_TYPE_CHOICES = (
-    (BlockTypes.VIDEO, 'Video'),
+    (BlockTypes.EMBED, 'Embed'),
     (BlockTypes.CODE, 'Code'),
     (BlockTypes.MARKDOWN, 'Markdown'),
     (BlockTypes.TEXT, 'Text'),
-    (BlockTypes.IMAGE, 'Image'),
+    (BlockTypes.IMAGE, 'Image Upload'),
 )
