@@ -18,6 +18,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../../project/project.constants';
+import reportError from '../../../shared/utils/reportError';
 
 export class Source extends PureComponent {
   static propTypes = {
@@ -44,21 +45,29 @@ export class Source extends PureComponent {
   state = {
     confirmationRemoveModalOpen: false,
     confirmationRunJobModalOpen: false,
+    removeLoading: false,
   };
 
   handleOpenModal = modalState => this.setState({ [modalState]: true });
 
   handleCloseModal = modalState => this.setState({ [modalState]: false });
 
-  handleConfirmRemove = () => {
-    const {
-      dataSource: {
-        project: { id: projectId },
-        id: dataSourceId,
-      },
-    } = this.props;
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+      const {
+        dataSource: {
+          project: { id: projectId },
+          id: dataSourceId,
+        },
+      } = this.props;
 
-    this.props.removeDataSource({ projectId, dataSourceId });
+      await this.props.removeDataSource({ projectId, dataSourceId });
+    } catch (error) {
+      reportError(error);
+    } finally {
+      this.setState({ removeLoading: false });
+    }
   };
 
   handleShowRunModal = () => e => {
@@ -99,7 +108,7 @@ export class Source extends PureComponent {
 
   render() {
     const { dataSource, intl, handleSubmit, dirty, isSubmitting, values, userRole, ...restProps } = this.props;
-    const { confirmationRemoveModalOpen, confirmationRunJobModalOpen } = this.state;
+    const { confirmationRemoveModalOpen, confirmationRunJobModalOpen, removeLoading } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const menuOptions = getProjectMenuOptions(dataSource.project.id);
@@ -137,10 +146,15 @@ export class Source extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={() => this.handleCloseModal('confirmationRemoveModalOpen')}>
+            <BackButton onClick={() => this.handleCloseModal('confirmationRemoveModalOpen')} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id="confirmRemoveDataSource" onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="confirmRemoveDataSource"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
