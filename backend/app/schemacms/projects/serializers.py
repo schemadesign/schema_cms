@@ -59,7 +59,7 @@ class ActiveJobSerializer(serializers.ModelSerializer):
     def get_scripts(self, obj):
         return [
             {"id": step.script_id, "options": step.options, "exec_order": step.exec_order}
-            for step in obj.steps.all()
+            for step in obj.steps.all().order_by("exec_order")
         ]
 
 
