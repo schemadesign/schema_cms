@@ -32,11 +32,16 @@ class TestProject:
 
         assert ret == {
             'id': project.id,
-            'title': project.title,
-            "description": project.description,
-            'owner': admin.get_full_name(),
+            'meta': {
+                'title': project.title,
+                "description": project.description,
+                'owner': admin.get_full_name(),
+                "created": project.created.isoformat(),
+                "updated": project.modified.isoformat(),
+            },
             'data_sources': [{"id": ds.id, "name": ds.name, "type": ds.type}],
             'pages': folder.meta_file_serialization(),
+            "charts": [],
         }
 
 
@@ -108,16 +113,26 @@ class TestDataSource:
 
         assert ret == {
             'id': ds.id,
-            'name': ds.name,
+            'meta': {
+                'name': ds.name,
+                "description": None,
+                "source": None,
+                "source-url": None,
+                "methodology": None,
+                "updated": ds.modified.isoformat(),
+                "creator": ds.created_by.get_full_name(),
+            },
             'file': ds.file.name,
-            'items': job.meta_data.items,
+            'shape': job.meta_data.shape,
             'result': job.result,
             'filters': [],
-            'fields': [
-                {'name': 'col_0', 'type': 'boolean'},
-                {'name': 'col_1', 'type': 'boolean'},
-                {'name': 'col_2', 'type': 'number'},
-            ],
+            'fields': {
+                "0": {'name': 'col_0', 'type': 'boolean'},
+                "1": {'name': 'col_1', 'type': 'boolean'},
+                "2": {'name': 'col_2', 'type': 'number'},
+            },
+            "views": [],
+            "tags": [],
         }
 
 

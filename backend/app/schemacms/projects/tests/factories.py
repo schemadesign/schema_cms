@@ -39,6 +39,7 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     project = factory.SubFactory(ProjectFactory)
     type = project_constants.DataSourceType.FILE
     file = factory.django.FileField(filename="test.csv", from_func=utils_test.make_csv)
+    created_by = factory.SubFactory(UserFactory)
 
 
 class DataSourceMetaFactory(BaseMetaDataFactory):

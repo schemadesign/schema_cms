@@ -3,8 +3,9 @@ import json
 import logging
 
 import math
+import markdown2
 
-from flask import Flask, abort, Markup, request, Response, render_template
+from flask import Flask, request, Response, render_template
 from flask_cors import CORS
 
 import pandas as pd
@@ -67,21 +68,24 @@ def get_page(page_id):
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
 
-    if not format_:
+    if format_ != "html":
         return create_response(asdict(page)), 200
 
+    page.blocks = generate_html_from_markdown_blocks(page)
+
+    return render_template("page_template.html", page=page)
+
+
+def generate_html_from_markdown_blocks(page):
     new_blocks = []
     for block in page.blocks:
-        if block["type"] == "markdown_text":
-            block["content"] = Markup(block["content"])
+        if block["type"] == "markdown":
+            block["content"] = markdown2.markdown(block["content"])
             new_blocks.append(block)
         else:
             new_blocks.append(block)
 
-    page.blocks = new_blocks
-    logger.info(page.blocks)
-
-    return render_template("page_template.html", page=page)
+    return new_blocks
 
 
 # Data Sources endpoints
@@ -161,6 +165,7 @@ def get_data_source_filters(data_source_id):
 def get_data_source_records(data_source_id):
     page_size = request.args.get("page_size", 5000)
     columns_list_as_string = request.args.get("columns", None)
+    orient = get_data_format(request.args.get("orient", "index"))
     columns = split_string_to_list(columns_list_as_string)
 
     try:
@@ -173,7 +178,11 @@ def get_data_source_records(data_source_id):
         return (
             create_response(
                 get_paginated_list(
-                    file, items, page=int(request.args.get("page", 1)), page_size=int(page_size),
+                    file,
+                    items,
+                    page=int(request.args.get("page", 1)),
+                    page_size=int(page_size),
+                    orient=orient,
                 )
             ),
             200,
@@ -184,7 +193,13 @@ def get_data_source_records(data_source_id):
         return create_response({"error": f"{e}"}), 404
 
 
-def get_paginated_list(file, items, page, page_size):
+def get_data_format(orient):
+    if orient not in ["split", "records", "index", "columns", "values", "table"]:
+        return "index"
+    return orient
+
+
+def get_paginated_list(file, items, page, page_size, orient):
     rows_to_skip = (page - 1) * page_size
     count = items
     pages = math.ceil(count / page_size)
@@ -195,9 +210,7 @@ def get_paginated_list(file, items, page, page_size):
         obj["records"] = []
     else:
         obj["records"] = json.loads(
-            file.slice(rows_to_skip, page_size)
-            .to_pandas(strings_to_categorical=True)
-            .to_json(orient="records")
+            file.slice(rows_to_skip, page_size).to_pandas(strings_to_categorical=True).to_json(orient=orient)
         )
 
     return obj

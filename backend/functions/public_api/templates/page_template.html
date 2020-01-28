@@ -11,14 +11,18 @@
 <body>
     {% for block in page.blocks %}
 		{% if block["type"] == "text" %}
-			<div id='{{ block["id"] }}' class='{{ block["type"] }}'>{{ block["content"] }}</div>
+		<div id='{{ block["id"] }}' class='{{ block["type"] }}'><p>{{ block["content"]|safe }}</p></div>
 		{% endif %}
 
-		{% if block["type"] == "markdown_text" %}
+		{% if block["type"] == "code" %}
+			{{ block["content"]|safe }}
+		{% endif %}
+
+		{% if block["type"] == "markdown" %}
         	<div id='{{ block["id"] }}' class='{{ block["type"] }}'>{{ block["content"]|safe }}</div>
 		{% endif %}
 
-		{% if block["type"] == "image_uploaded" %}
+		{% if block["type"] == "image" %}
         	<div id='{{ block["id"] }}' class='{{ block["type"] }}'>
 
 				<ul>
@@ -29,9 +33,9 @@
 
 			</div>
 		{% endif %}
-		{% if block["type"] == "youtube_embed" %}
+		{% if block["type"] == "embed" %}
 			<div id='{{ block["id"] }}' class='{{ block["type"] }}'>
-				<iframe id="player" type="text/html" width="640" height="390" src="{{ block['content'] }}" frameBorder="0"></iframe>
+				{{ block['content']|safe }}
 			</div>
 		{% endif %}
     {% endfor %}
