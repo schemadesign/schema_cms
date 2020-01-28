@@ -216,6 +216,7 @@ exports[`UserDetails: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
@@ -446,6 +447,7 @@ exports[`UserDetails: Component should render correctly with loading 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >

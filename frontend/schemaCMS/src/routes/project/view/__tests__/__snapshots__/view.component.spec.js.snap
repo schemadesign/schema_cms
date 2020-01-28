@@ -418,6 +418,7 @@ exports[`View: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >

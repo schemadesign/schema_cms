@@ -784,6 +784,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         id="confirmRemoveDataSource"
         loading={false}
         onClick={[Function]}
@@ -1622,6 +1623,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         id="confirmRemoveDataSource"
         loading={false}
         onClick={[Function]}

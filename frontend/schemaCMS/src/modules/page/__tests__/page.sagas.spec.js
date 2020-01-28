@@ -114,7 +114,7 @@ describe('Page: sagas', () => {
         .dispatch(PageRoutines.removeOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}/`);
+      expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}`);
     });
   });
 });

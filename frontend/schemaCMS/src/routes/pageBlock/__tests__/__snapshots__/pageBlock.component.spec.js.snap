@@ -171,6 +171,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
   </styled.form>
   <Styled(Modal)
     contentLabel="Confirm Removal"
+    isOpen={false}
     style={
       Object {
         "content": Object {
@@ -222,6 +223,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
@@ -392,6 +394,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
   </styled.form>
   <Styled(Modal)
     contentLabel="Confirm Removal"
+    isOpen={false}
     style={
       Object {
         "content": Object {
@@ -443,6 +446,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}

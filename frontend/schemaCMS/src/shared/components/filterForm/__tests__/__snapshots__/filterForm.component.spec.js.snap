@@ -142,6 +142,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
