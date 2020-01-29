@@ -1,15 +1,15 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import { TAG_KEY, TAG_VALUE } from '../../../modules/dataSourceTag/dataSourceTag.constants';
+import { TAG_NAME, TAG_TAGS } from '../../../modules/dataSourceTag/dataSourceTag.constants';
 
 export default defineMessages({
-  [TAG_KEY]: {
-    id: `shared.components.dataSourceTagForm.${TAG_KEY}`,
-    defaultMessage: 'Key',
+  [TAG_NAME]: {
+    id: `shared.components.dataSourceTagForm.${TAG_NAME}`,
+    defaultMessage: 'Name',
   },
-  [TAG_VALUE]: {
-    id: `shared.components.dataSourceTagForm.${TAG_VALUE}`,
-    defaultMessage: 'Value',
+  [TAG_TAGS]: {
+    id: `shared.components.dataSourceTagForm.${TAG_TAGS}`,
+    defaultMessage: 'Tags',
   },
   saveTag: {
     id: 'shared.components.dataSourceTagForm.saveTag',
@@ -18,6 +18,10 @@ export default defineMessages({
   deleteTag: {
     id: 'shared.components.dataSourceTagForm.deleteTag',
     defaultMessage: 'Remove tag',
+  },
+  addTag: {
+    id: 'shared.components.dataSourceTagForm.addTag',
+    defaultMessage: 'Add tag',
   },
   cancel: {
     id: 'shared.components.dataSourceTagForm.cancel',

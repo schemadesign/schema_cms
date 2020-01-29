@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div``;
 
 export const IconWrapper = styled.div`
-  padding-top: 7px;
+  padding-top: ${({ isLabel }) => (isLabel ? '7px' : 0)};
+  margin-top: ${({ isLabel }) => (isLabel ? 0 : '-2px')};
 `;
 
 export const ErrorWrapper = styled.div`

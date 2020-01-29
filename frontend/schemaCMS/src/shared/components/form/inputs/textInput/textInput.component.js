@@ -38,7 +38,7 @@ export class TextInput extends PureComponent {
 
   renderEditIcon = renderWhenTrue(
     always(
-      <IconWrapper>
+      <IconWrapper isLabel={!!this.props.label}>
         <Icons.EditIcon />
       </IconWrapper>
     )

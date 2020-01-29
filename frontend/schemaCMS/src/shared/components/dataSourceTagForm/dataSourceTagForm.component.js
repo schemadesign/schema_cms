@@ -3,23 +3,26 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
 import { always, equals, ifElse } from 'ramda';
+import { Form as FormUI } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './dataSourceTagForm.messages';
 import {
-  TAG_KEY,
-  TAG_VALUE,
-  TAGS_SCHEMA,
   INITIAL_VALUES,
+  TAG_NAME,
+  TAG_TAGS,
+  TAGS_SCHEMA,
 } from '../../../modules/dataSourceTag/dataSourceTag.constants';
-import { Form } from './dataSourceTagForm.styles';
+import { Form, Tag } from './dataSourceTagForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
-import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { TAGS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { renderWhenTrue } from '../../utils/rendering';
 import { errorMessageParser } from '../../utils/helpers';
 import reportError from '../../utils/reportError';
+
+const { Label } = FormUI;
 
 export class DataSourceTagForm extends PureComponent {
   static propTypes = {
@@ -80,13 +83,15 @@ export class DataSourceTagForm extends PureComponent {
     }
   };
 
+  handleAddTag = ({ setFieldValue, values }) => {
+    setFieldValue(TAG_TAGS, values[TAG_TAGS].concat(['']));
+  };
+
   renderRemoveTagLink = renderWhenTrue(
     always(
-      <LinkContainer>
-        <Link onClick={this.handleRemoveTag}>
-          <FormattedMessage {...messages.deleteTag} />
-        </Link>
-      </LinkContainer>
+      <Link onClick={this.handleRemoveTag}>
+        <FormattedMessage {...messages.deleteTag} />
+      </Link>
     )
   );
 
@@ -100,28 +105,40 @@ export class DataSourceTagForm extends PureComponent {
     return (
       <Fragment>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={TAGS_SCHEMA}>
-          {({ values, handleChange, dirty, isValid, isSubmitting, ...rest }) => {
+          {({ values, handleChange, dirty, isValid, isSubmitting, setFieldValue, ...rest }) => {
             return (
               <Form>
                 <TextInput
-                  value={values[TAG_KEY]}
+                  value={values[TAG_NAME]}
                   onChange={handleChange}
-                  name={TAG_KEY}
+                  name={TAG_NAME}
                   fullWidth
                   isEdit
-                  label={<FormattedMessage {...messages[TAG_KEY]} />}
+                  label={<FormattedMessage {...messages[TAG_NAME]} />}
                   {...rest}
                 />
-                <TextInput
-                  value={values[TAG_VALUE]}
-                  onChange={handleChange}
-                  name={TAG_VALUE}
-                  fullWidth
-                  isEdit
-                  label={<FormattedMessage {...messages[TAG_VALUE]} />}
-                  {...rest}
-                />
-                {this.renderRemoveTagLink(!!this.props.tag.id)}
+                <div>
+                  <Label>{<FormattedMessage {...messages[TAG_TAGS]} />}</Label>
+                  {values[TAG_TAGS].map((item, index) => (
+                    <Tag key={index}>
+                      <TextInput
+                        value={values[TAG_TAGS][index]}
+                        onChange={handleChange}
+                        name={`${[TAG_TAGS]}.${index}`}
+                        fullWidth
+                        customStyles={{ paddingBottom: 0 }}
+                        isEdit
+                        {...rest}
+                      />
+                    </Tag>
+                  ))}
+                </div>
+                <LinkContainer>
+                  <Link onClick={() => this.handleAddTag({ values, setFieldValue })}>
+                    <FormattedMessage {...messages.addTag} />
+                  </Link>
+                  {this.renderRemoveTagLink(!!this.props.tag.id)}
+                </LinkContainer>
                 <NavigationContainer fixed>
                   <BackButton onClick={this.handleBack} type="button">
                     <FormattedMessage {...messages[this.getBackMessageId(!this.props.tag.id)]} />

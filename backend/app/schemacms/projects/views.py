@@ -561,7 +561,7 @@ class TagsListDetailViewSet(
     viewsets.GenericViewSet,
 ):
     queryset = models.TagsList.objects.all().prefetch_related("tags").select_related("datasource")
-    serializer_class = serializers.TagsListSerializer
+    serializer_class = serializers.TagsListDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "tags": serializers.TagSerializer,

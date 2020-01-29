@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import { Form as FormikForm } from 'formik';
 
-export const Row = styled.div`
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
+export const Tag = styled.div`
+  border-bottom: 2px solid ${({ theme }) => theme.border};
+  padding: 10px 0;
+
+  &:last-child {
+    border: none;
+  }
 `;
 
 export const Form = styled(FormikForm)`
