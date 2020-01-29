@@ -1,16 +1,8 @@
 import Page from './page';
 import TopHeaderComponent from './components/topHeader.component';
 import SubHeaderComponent from './components/subHeader.component';
-import {
-  waitForElement,
-  camelCase,
-  clickElement,
-  setValue
-} from '../utils/utils';
-import {
-  CREATE_PROJECT_VALID_TITLE,
-  CREATE_PROJECT_VALID_DESCRIPTION
-} from '../constants/createProject.constants';
+import { waitForElement, camelCase, clickElement, setValue } from '../utils/utils';
+import { CREATE_PROJECT_VALID_TITLE, CREATE_PROJECT_VALID_DESCRIPTION } from '../constants/createProject.constants';
 
 class CreateProjectPage extends Page {
   get TopHeader() {

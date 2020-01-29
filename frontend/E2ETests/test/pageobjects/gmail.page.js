@@ -1,10 +1,5 @@
 import Page from './page';
-import {
-  waitForElement,
-  waitForText,
-  setValue,
-  clickElement
-} from '../utils/utils';
+import { waitForElement, waitForText, setValue, clickElement } from '../utils/utils';
 import { GMAIL_URL, EMAIL_TYPE } from '../constants/gmail.constants';
 import { GMAIL } from '../constants/credentials.constants';
 
@@ -30,9 +25,7 @@ class GmailPage extends Page {
   }
 
   get firstEmail() {
-    return $(
-      'div > table:nth-child(1) > tbody:nth-child(2) > tr > td:nth-child(6) > div > div > div > span'
-    );
+    return $('div > table:nth-child(1) > tbody:nth-child(2) > tr > td:nth-child(6) > div > div > div > span');
   }
 
   get firstUnreadEmail() {

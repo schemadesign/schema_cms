@@ -1,10 +1,5 @@
 import Page from './page';
-import {
-  djangoLoginPage,
-  FIRST_NAME,
-  LAST_NAME,
-  USERS_PAGE_URL
-} from '../constants/django.constants';
+import { djangoLoginPage, FIRST_NAME, LAST_NAME, USERS_PAGE_URL } from '../constants/django.constants';
 import { setValue, clickElement, waitForText } from '../utils/utils';
 import { USERS, DJANGO } from '../constants/credentials.constants';
 

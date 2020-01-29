@@ -95,11 +95,7 @@ class LoginPage extends Page {
 
   setPassword(passwordType) {
     setValue(this, 'newPassword', USERS.invited.password[passwordType].enter);
-    setValue(
-      this,
-      'confirmNewPassword',
-      USERS.invited.password[passwordType].confirm
-    );
+    setValue(this, 'confirmNewPassword', USERS.invited.password[passwordType].confirm);
     clickElement(this, 'submitNewPassword');
   }
 }

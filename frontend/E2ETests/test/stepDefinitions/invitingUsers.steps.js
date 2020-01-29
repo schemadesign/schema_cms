@@ -1,26 +1,11 @@
 import { Given, When, Then } from 'cucumber';
-import {
-  djangoHomeTitle,
-  USER_STATUS,
-  SELECT_USER_TO_CHANGE_PAGE_TITLE
-} from '../constants/django.constants';
+import { djangoHomeTitle, USER_STATUS, SELECT_USER_TO_CHANGE_PAGE_TITLE } from '../constants/django.constants';
 import { USERS } from '../constants/credentials.constants';
 import { clickElement, waitForElement, waitForText } from '../utils/utils';
-import {
-  ADMIN,
-  VALID,
-  INVITED,
-  INVITE,
-  URL_LINK,
-  RANDOM
-} from '../constants/gmail.constants';
+import { ADMIN, VALID, INVITED, INVITE, URL_LINK, RANDOM } from '../constants/gmail.constants';
 import DjangoPage from '../pageobjects/django.page';
 import GmailPage from '../pageobjects/gmail.page';
-import {
-  CHANGE_PASSWORD_HEADER_TEXT,
-  CHANGE_PASSWORD_MESSAGE,
-  RESET_PAGE
-} from '../constants/resetPassword.constants';
+import { CHANGE_PASSWORD_HEADER_TEXT, CHANGE_PASSWORD_MESSAGE, RESET_PAGE } from '../constants/resetPassword.constants';
 import LoginPage from '../pageobjects/login.page';
 import ProjectsPage from '../pageobjects/projects.page';
 import { PROJECTS_PAGE_URL } from '../constants/projectsPage.constants';
@@ -59,9 +44,7 @@ When('invited user sets new password', () => {
   browser.switchWindow(RESET_PAGE);
   waitForText(LoginPage, 'changePasswordHeader', CHANGE_PASSWORD_HEADER_TEXT);
   LoginPage.setPassword(VALID);
-  expect(LoginPage.resetPasswordCreatedMsg.getText()).to.equal(
-    CHANGE_PASSWORD_MESSAGE.created
-  );
+  expect(LoginPage.resetPasswordCreatedMsg.getText()).to.equal(CHANGE_PASSWORD_MESSAGE.created);
 });
 
 Then('I can see confirmation that user was added', () => {
@@ -79,9 +62,7 @@ Then('invited user appears in the list of Users', () => {
   DjangoPage.searchForInvitedUser();
   waitForElement(DjangoPage, 'usersListEmail');
 
-  expect(DjangoPage.usersListEmail.getText()).to.equal(
-    USERS.invited.login.random
-  );
+  expect(DjangoPage.usersListEmail.getText()).to.equal(USERS.invited.login.random);
 });
 
 Then('invited user status is set to {word}', status => {
@@ -93,10 +74,7 @@ Then('invited user status is set to {word}', status => {
   waitForElement(DjangoPage, 'usersListName');
   DjangoPage.searchForInvitedUser();
 
-  assert(
-    DjangoPage.permissionIcon.getAttribute('alt') === USER_STATUS[status],
-    `Account is not set to ${status}`
-  );
+  assert(DjangoPage.permissionIcon.getAttribute('alt') === USER_STATUS[status], `Account is not set to ${status}`);
 });
 
 Then('I can see message that user with this email already exists', () => {

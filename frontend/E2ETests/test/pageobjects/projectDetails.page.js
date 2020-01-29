@@ -147,9 +147,7 @@ class ProjectDetailsPage extends Page {
     clickElement(this, 'deleteProjectBtn');
     clickElement(this, 'confirmRemovalProjectBtn');
 
-    expect(ProjectsPage.projectTitle.getText()).to.not.equal(
-      CREATE_PROJECT_VALID_TITLE
-    );
+    expect(ProjectsPage.projectTitle.getText()).to.not.equal(CREATE_PROJECT_VALID_TITLE);
   }
 }
 export default new ProjectDetailsPage();

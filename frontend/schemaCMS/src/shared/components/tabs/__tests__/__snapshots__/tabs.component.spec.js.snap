@@ -6,6 +6,7 @@ exports[`Tabs: Component should render correctly 1`] = `
     key="0"
   >
     <Styled(Link)
+      id="undefinedTab"
       to="/"
     >
       Tab 1
@@ -16,6 +17,7 @@ exports[`Tabs: Component should render correctly 1`] = `
     key="1"
   >
     <Styled(Link)
+      id="undefinedTab"
       to="/"
     >
       Tab 2
@@ -25,6 +27,7 @@ exports[`Tabs: Component should render correctly 1`] = `
     key="2"
   >
     <Styled(Link)
+      id="undefinedTab"
       to="/"
     >
       Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -34,6 +37,7 @@ exports[`Tabs: Component should render correctly 1`] = `
     key="3"
   >
     <Styled(Link)
+      id="undefinedTab"
       to="/"
     >
       Tab 4

@@ -3,29 +3,18 @@ import {
   RESET_PAGE,
   CHANGE_PASSWORD_TITLE,
   CHANGE_PASSWORD_MESSAGE,
-  CHANGE_PASSWORD_HEADER_TEXT
+  CHANGE_PASSWORD_HEADER_TEXT,
 } from '../constants/resetPassword.constants';
 import { PROJECTS_PAGE_URL } from '../constants/projectsPage.constants';
-import {
-  ADMIN,
-  VALID,
-  INVALID,
-  URL_LINK,
-  INVITED
-} from '../constants/gmail.constants';
+import { ADMIN, VALID, INVALID, URL_LINK, INVITED } from '../constants/gmail.constants';
 import {
   LOGIN_PAGE_TITLE,
   AUTH0_WRONG_CREDS_ERROR,
   AUTH0_EMPTY_INPUT_ERROR,
-  RESET_LINK_SENT_MSG
+  RESET_LINK_SENT_MSG,
 } from '../constants/login.constants';
 import { ASSERT_EMPTY_VALIDATION_MESSAGE } from '../constants/config.constants';
-import {
-  clickElement,
-  waitForElement,
-  waitForText,
-  waitForTitle
-} from '../utils/utils';
+import { clickElement, waitForElement, waitForText, waitForTitle } from '../utils/utils';
 import LoginPage from '../pageobjects/login.page';
 import ProjectsPage from '../pageobjects/projects.page';
 import GmailPage from '../pageobjects/gmail.page';
@@ -50,33 +39,21 @@ Given('I am on page for creating new password', () => {
   expect(browser.getTitle()).to.equal(CHANGE_PASSWORD_TITLE);
 });
 
-Given(
-  'I have logged in as an {word} with {word} login and {word} password',
-  (userRole, loginState, passwordState) => {
-    LoginPage.login(userRole, loginState, passwordState);
-  }
-);
+Given('I have logged in as an {word} with {word} login and {word} password', (userRole, loginState, passwordState) => {
+  LoginPage.login(userRole, loginState, passwordState);
+});
 
-When(
-  'I log in as {word} with {word} login and {word} password',
-  (userRole, loginState, passwordState) => {
-    LoginPage.login(userRole, loginState, passwordState);
-  }
-);
+When('I log in as {word} with {word} login and {word} password', (userRole, loginState, passwordState) => {
+  LoginPage.login(userRole, loginState, passwordState);
+});
 
-When(
-  'I log in with {string} login and {string} password',
-  (loginState, passwordState) => {
-    LoginPage.login(loginState, passwordState);
-  }
-);
+When('I log in with {string} login and {string} password', (loginState, passwordState) => {
+  LoginPage.login(loginState, passwordState);
+});
 
-When(
-  'I( have) provide(d) {word} email to recover my password',
-  passwordState => {
-    LoginPage.resetPassword(passwordState);
-  }
-);
+When('I( have) provide(d) {word} email to recover my password', passwordState => {
+  LoginPage.resetPassword(passwordState);
+});
 
 When('I provide matching passwords', () => {
   LoginPage.setPassword(VALID);
@@ -89,44 +66,25 @@ When("I provide passwords that don't match", () => {
 Then('I am informed about invalid login or password', () => {
   waitForElement(LoginPage, 'wrongCredsError');
 
-  assert(
-    LoginPage.wrongCredsError.isDisplayed(),
-    ASSERT_EMPTY_VALIDATION_MESSAGE
-  );
+  assert(LoginPage.wrongCredsError.isDisplayed(), ASSERT_EMPTY_VALIDATION_MESSAGE);
   expect(LoginPage.wrongCredsError.getText()).to.equal(AUTH0_WRONG_CREDS_ERROR);
 });
 
 Then('I am informed about empty login and password', () => {
-  assert(
-    LoginPage.emptyLoginError.isDisplayed(),
-    ASSERT_EMPTY_VALIDATION_MESSAGE
-  );
-  assert(
-    LoginPage.emptyPasswordError.isDisplayed(),
-    ASSERT_EMPTY_VALIDATION_MESSAGE
-  );
+  assert(LoginPage.emptyLoginError.isDisplayed(), ASSERT_EMPTY_VALIDATION_MESSAGE);
+  assert(LoginPage.emptyPasswordError.isDisplayed(), ASSERT_EMPTY_VALIDATION_MESSAGE);
   expect(LoginPage.emptyLoginError.getText()).to.equal(AUTH0_EMPTY_INPUT_ERROR);
-  expect(LoginPage.emptyPasswordError.getText()).to.equal(
-    AUTH0_EMPTY_INPUT_ERROR
-  );
+  expect(LoginPage.emptyPasswordError.getText()).to.equal(AUTH0_EMPTY_INPUT_ERROR);
 });
 
 Then('I am informed about empty login', () => {
-  assert(
-    LoginPage.emptyLoginError.isDisplayed(),
-    ASSERT_EMPTY_VALIDATION_MESSAGE
-  );
+  assert(LoginPage.emptyLoginError.isDisplayed(), ASSERT_EMPTY_VALIDATION_MESSAGE);
   expect(LoginPage.emptyLoginError.getText()).to.equal(AUTH0_EMPTY_INPUT_ERROR);
 });
 
 Then('I am informed about empty password', () => {
-  assert(
-    LoginPage.emptyPasswordError.isDisplayed(),
-    ASSERT_EMPTY_VALIDATION_MESSAGE
-  );
-  expect(LoginPage.emptyPasswordError.getText()).to.equal(
-    AUTH0_EMPTY_INPUT_ERROR
-  );
+  assert(LoginPage.emptyPasswordError.isDisplayed(), ASSERT_EMPTY_VALIDATION_MESSAGE);
+  expect(LoginPage.emptyPasswordError.getText()).to.equal(AUTH0_EMPTY_INPUT_ERROR);
 });
 
 Then('I am informed that reset link was sent to me', () => {
@@ -135,25 +93,18 @@ Then('I am informed that reset link was sent to me', () => {
   expect(LoginPage.successMsg.getText()).to.equal(RESET_LINK_SENT_MSG);
 });
 
-Then(
-  /^(I|invited user) receive(d)* an email with the (reset|invitation) link$/,
-  function(arg1, arg2, emailType) {
-    GmailPage.open();
-    GmailPage.login(ADMIN, VALID);
-    GmailPage.searchForEmail(emailType);
-    clickElement(GmailPage, 'firstUnreadEmail');
-    waitForElement(GmailPage, `${emailType}Url`);
+Then(/^(I|invited user) receive(d)* an email with the (reset|invitation) link$/, function(arg1, arg2, emailType) {
+  GmailPage.open();
+  GmailPage.login(ADMIN, VALID);
+  GmailPage.searchForEmail(emailType);
+  clickElement(GmailPage, 'firstUnreadEmail');
+  waitForElement(GmailPage, `${emailType}Url`);
 
-    expect(`GmailPage.${emailType}Url.getText()`).to.match(URL_LINK[emailType]);
-  }
-);
+  expect(`GmailPage.${emailType}Url.getText()`).to.match(URL_LINK[emailType]);
+});
 
-Then(/^I am informed that my new password is( not)* created$/, function(
-  messageType
-) {
-  expect(`LoginPage.resetPassword${messageType}CreatedMsg.getText()`).to.equal(
-    CHANGE_PASSWORD_MESSAGE[messageType]
-  );
+Then(/^I am informed that my new password is( not)* created$/, function(messageType) {
+  expect(`LoginPage.resetPassword${messageType}CreatedMsg.getText()`).to.equal(CHANGE_PASSWORD_MESSAGE[messageType]);
 });
 
 Then('I am able to log in using new password', () => {
@@ -168,10 +119,7 @@ Then("I don't receive an email with the reset link", () => {
   GmailPage.open();
   GmailPage.login(ADMIN, INVALID);
 
-  assert(
-    GmailPage.firstEmail.getText() !== 'Reset your password',
-    'Reset email was found in mailbox'
-  );
+  assert(GmailPage.firstEmail.getText() !== 'Reset your password', 'Reset email was found in mailbox');
 });
 
 Then('the new password is not created', () => {

@@ -26,7 +26,9 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         <Styled(Styled(Link))
           to="/"
         >
-          <styled.schemaLogo.svg />
+          <styled.schemaLogo.svg
+            id="desktopTopHeaderSchemaLogo"
+          />
         </Styled(Styled(Link))>
         <styled.div>
           <Component
@@ -41,6 +43,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 "padding": "0 7px",
               }
             }
+            id="desktopTopHeaderLogoutBtn"
             onClick={[Function]}
           >
             <Component />
@@ -48,7 +51,9 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           <Styled(Styled(Link))
             to="/settings"
           >
-            <Component />
+            <Component
+              id="desktopTopHeaderSettingsBtn"
+            />
           </Styled(Styled(Link))>
         </styled.div>
       </styled.div>
@@ -185,7 +190,9 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
     <Styled(Styled(Link))
       to="/"
     >
-      <styled.schemaLogo.svg />
+      <styled.schemaLogo.svg
+        id="desktopTopHeaderSchemaLogo"
+      />
     </Styled(Styled(Link))>
     <styled.div
       onClick={[Function]}

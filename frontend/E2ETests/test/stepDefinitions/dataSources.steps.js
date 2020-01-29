@@ -10,7 +10,7 @@ import {
   ITEMS_LABEL,
   FIELDS_LABEL,
   FILTERS_LABEL,
-  VIEWS_LABEL
+  VIEWS_LABEL,
 } from '../constants/dataSourcesPage.constants';
 
 Given('I have entered Data Sources page', () => {
@@ -65,12 +65,6 @@ Then(/^I can see Data Sources page with all its elements$/, function() {
   expect(DataSourcesPage.sourceLabel.getText()).to.equal(SOURCE_LABEL);
   expect(DataSourcesPage.dataSourceCreator.getText()).to.not.be.null;
   expect(DataSourcesPage.creationDate.getText()).to.not.be.null;
-  assert(
-    DataSourcesPage.createDataSourceBtn.isDisplayed(),
-    'Create data source button is not displayed'
-  );
-  assert(
-    DataSourcesPage.sourceIcon.isDisplayed(),
-    'Source icon is not displayed'
-  );
+  assert(DataSourcesPage.createDataSourceBtn.isDisplayed(), 'Create data source button is not displayed');
+  assert(DataSourcesPage.sourceIcon.isDisplayed(), 'Source icon is not displayed');
 });
