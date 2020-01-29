@@ -48,5 +48,6 @@ functions:
       AWS_ACCESS_KEY_ID: foo
       AWS_SECRET_ACCESS_KEY: bar
       AWS_DEFAULT_REGION: us-east-1
-      BACKEND_URL: http://host.docker.internal:8000/api/v1
+      BACKEND_URL: http://host.docker.internal:8000/api/v1 # macOS
+#      BACKEND_URL: http://172.17.0.1:8000/api/v1 # linux
       LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0
