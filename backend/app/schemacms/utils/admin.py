@@ -25,17 +25,18 @@ class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
 
     soft_undelete.short_description = 'Undelete selected objects'
 
-    def handle_unique_conflicts_on_undelete(self, request, queryset, field, model_name):
-        queryset = queryset.filter(deleted_at__isnull=0)
+    def handle_unique_conflicts_on_undelete(self, request, queryset, field, model_name, parent=None):
         if queryset.values(field).annotate(c=models.Count(field)).filter(c__gt=1).exists():
             msg = f"{model_name}(s) have the same name. Please change the name before undeleting"
             self.message_user(request=request, message=msg, level=messages.ERROR)
             return
-        conflicts = (
-            self.model.objects.values_list(field, flat=True)
-            .filter(**{f"{field}__in": queryset.values(field)})
-            .iterator()
-        )
+
+        if parent:
+            filters = {f"{field}__in": queryset.values(field), f"{parent}_id__in": queryset.values(parent)}
+        else:
+            filters = {f"{field}__in": queryset.values(field)}
+
+        conflicts = self.model.objects.values_list(field, flat=True).filter(**filters).iterator()
         conflict = next(conflicts, None)
         if conflict:
             html = render_to_string(
