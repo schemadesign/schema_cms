@@ -643,24 +643,89 @@ class BlockDetailSerializer(BlockSerializer):
         return BlockImageSerializer(images, many=True).data
 
 
+class SimpleTagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Tag
+        fields = ("id", "value")
+
+
+class TagsListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.TagsList
+        fields = ("id", "datasource", "name", "is_active")
+        extra_kwargs = {
+            "datasource": {"required": False, "allow_null": True},
+        }
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.TagsList.objects.all(),
+                fields=("datasource", "name"),
+                key_field_name="name",
+                code="tagsListNameNotUnique",
+                message="TagsList with this name already exist in data source.",
+            )
+        ]
+
+    @transaction.atomic()
+    def save(self, *args, **kwargs):
+        tags = self.initial_data.pop("tags", None)
+        tags_list = super().save(**kwargs)
+
+        delete_images = self.initial_data.get("delete_tags")
+
+        if delete_images:
+            tags_list.tags.filter(id__in=delete_images.split(",")).delete()
+
+        if tags:
+            models.Tag.objects.bulk_create(self.create_tags(tags, tags_list))
+
+        return tags_list
+
+    @staticmethod
+    def create_tags(tags, list_):
+        for tag in tags:
+            tag_instance = models.Tag()
+            tag_instance.value = tag
+            tag_instance.tags_list = list_
+            yield tag_instance
+
+
+class TagsListDetailSerializer(TagsListSerializer):
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)
+    tags = serializers.SerializerMethodField(read_only=True)
+
+    class Meta(TagsListSerializer.Meta):
+        fields = TagsListSerializer.Meta.fields + ("datasource", "tags")
+
+    def get_tags(self, instance):
+        tags = instance.tags.all()
+        return SimpleTagSerializer(tags, many=True).data
+
+
 class TagSerializer(serializers.ModelSerializer):
-    datasource = NestedRelatedModelSerializer(
-        serializer=DataSourceNestedFieldSerializer(), queryset=models.DataSource.objects.all()
+    tags_list = NestedRelatedModelSerializer(
+        serializer=TagsListSerializer(), queryset=models.TagsList.objects.all()
     )
 
     class Meta:
         model = models.Tag
-        fields = ("id", "datasource", "key", "value", "is_active")
+        fields = ("id", "tags_list", "value", "is_active")
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Tag.objects.all(),
-                fields=("datasource", "key"),
-                key_field_name="key",
-                code="tagKeyNotUnique",
-                message="Tag with this key already exist in data source.",
+                fields=("tags_list", "value"),
+                key_field_name="value",
+                code="tagValueNotUnique",
+                message="Tag with this value already exist in tag list.",
             )
         ]
 
 
-class TagDetailsSerializer(TagSerializer):
-    datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)
+class TagsListNestedFieldSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.TagsList
+        fields = ("id", "name")
+
+
+class TagDetailSerializer(TagSerializer):
+    tags_list = NestedRelatedModelSerializer(serializer=TagsListNestedFieldSerializer(), read_only=True)

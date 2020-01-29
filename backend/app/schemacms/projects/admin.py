@@ -43,13 +43,13 @@ class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
 
 @admin.register(models.Tag)
 class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ("key", "datasource", "deleted_at")
-    fields = ("datasource", "key", "value", "deleted")
-    readonly_on_update_fields = ("datasource",)
+    list_display = ("value", "tags_list", "deleted_at")
+    fields = ("tags_list", "value", "deleted")
+    readonly_on_update_fields = ("tags_list",)
 
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="key", model_name="Tag", parent="datasource"
+            request, queryset, field="value", model_name="Tag", parent="tags_list"
         )
 
 

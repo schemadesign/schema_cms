@@ -321,8 +321,8 @@ class DataSource(
             filters = [f.meta_file_serialization() for f in self.filters.filter(is_active=True)]
             data.update({"filters": filters})
 
-        if self.tags:
-            tags = [t.meta_file_serialization() for t in self.tags.filter(is_active=True)]
+        if self.list_of_tags:
+            tags = [t.meta_file_serialization() for t in self.list_of_tags.filter(is_active=True)]
             data.update({"tags": tags})
 
         return data
@@ -734,23 +734,32 @@ class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
 # Tags
 
 
+class TagsList(
+    utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+):
+    datasource: DataSource = models.ForeignKey(
+        DataSource, on_delete=models.CASCADE, related_name='list_of_tags'
+    )
+    name = models.CharField(max_length=25)
+    is_active = models.BooleanField(default=True)
+
+
 class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
-    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='tags')
-    key = models.CharField(max_length=25)
+    tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name='tags')
     value = models.CharField(max_length=150)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.key or str(self.pk)
+        return self.value or str(self.pk)
 
     class Meta:
         ordering = ("created",)
         constraints = [
             models.UniqueConstraint(
-                fields=["datasource", "key"], name="unique_tag_key", condition=models.Q(deleted_at=None)
+                fields=["tags_list", "value"], name="unique_tag_value", condition=models.Q(deleted_at=None)
             )
         ]
 
     def meta_file_serialization(self):
-        data = {"id": self.id, "name": self.key, "type": self.value}
+        data = {"id": self.id, "list": self.tags_list.name, "value": self.value}
         return data
