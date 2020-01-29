@@ -207,7 +207,11 @@ export class DataWranglingScripts extends PureComponent {
 
   renderCheckedScripts = scripts =>
     renderWhenTrueOtherwise(
-      always(scripts.map((item, index) => <div key={index}>{this.renderCheckbox(item, index)}</div>)),
+      always(
+        scripts.map((item, index) => (
+          <div key={index}>{this.renderCheckbox({ ...item, idPrefix: 'drag-' }, index)}</div>
+        ))
+      ),
       always(scripts.map(this.renderCheckboxWithDrag))
     )(scripts.length === 1);
 

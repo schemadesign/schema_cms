@@ -194,7 +194,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         key="0"
       >
         <Component
-          id="checkbox-0"
+          id="drag-checkbox-0"
           value="1"
         >
           <styled.div>
@@ -1151,7 +1151,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
         key="0"
       >
         <Component
-          id="checkbox-0"
+          id="drag-checkbox-0"
           value="1"
         >
           <styled.div>
