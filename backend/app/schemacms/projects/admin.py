@@ -24,7 +24,9 @@ class WranglingScriptAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("datasource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Script")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Script", parent="datasource"
+        )
 
 
 @admin.register(models.Filter)
@@ -34,7 +36,9 @@ class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("datsource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Filter")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Filter", parent="datasource"
+        )
 
 
 @admin.register(models.Tag)
@@ -44,7 +48,9 @@ class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("datasource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="key", model_name="Tag")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="key", model_name="Tag", parent="datasource"
+        )
 
 
 @admin.register(models.Project)
@@ -91,7 +97,9 @@ class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("project",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="DataSource")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="DataSource", parent="project"
+        )
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
@@ -139,7 +147,9 @@ class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_filter = ('project',)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Folder")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Folder", parent="project"
+        )
 
 
 @admin.register(models.Page)
@@ -155,7 +165,9 @@ class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
         return obj.folder.project.title
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="title", model_name="Page")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="title", model_name="Page", parent="folder"
+        )
 
 
 class BlockImageInline(admin.TabularInline):
@@ -184,4 +196,6 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
         return obj.page.folder.project.title
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Block")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Block", parent="page"
+        )
