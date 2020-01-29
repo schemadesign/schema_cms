@@ -82,10 +82,10 @@ export const handleToggleMenu = (that, isDesktop) => {
   }, 500);
 
   const isMenuOpen = !that.state.isMenuOpen;
-  document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
-
-  that.oldWidth = window.innerWidth;
   const eventListener = isMenuOpen ? 'addEventListener' : 'removeEventListener';
+
+  document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+  that.oldWidth = window.innerWidth;
   window[eventListener]('resize', handleResize);
 
   that.setState({ isMenuOpen });
