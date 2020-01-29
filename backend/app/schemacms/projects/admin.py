@@ -41,18 +41,6 @@ class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
         )
 
 
-@admin.register(models.Tag)
-class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ("value", "tags_list", "deleted_at")
-    fields = ("tags_list", "value", "deleted")
-    readonly_on_update_fields = ("tags_list",)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="value", model_name="Tag", parent="tags_list"
-        )
-
-
 @admin.register(models.Project)
 class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
@@ -198,4 +186,24 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(
             request, queryset, field="name", model_name="Block", parent="page"
+        )
+
+
+class TagInline(admin.TabularInline):
+    model = models.Tag
+    exclude = ("deleted_at",)
+    extra = 0
+
+
+@admin.register(models.TagsList)
+class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
+    list_display = ("name", "datasource", "deleted_at")
+    fields = ("datasource", "name", "deleted")
+    list_filter = ('datasource', "deleted_at")
+    readonly_on_update_fields = ("tags_list",)
+    inlines = (TagInline,)
+
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="TagsList", parent="datasource"
         )

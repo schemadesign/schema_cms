@@ -560,8 +560,8 @@ class TagsListDetailViewSet(
     mixins.UpdateModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.TagsList.objects.all().select_related("datasource")
-    serializer_class = serializers.TagsListDetailSerializer
+    queryset = models.TagsList.objects.all().prefetch_related("tags").select_related("datasource")
+    serializer_class = serializers.TagsListSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "tags": serializers.TagSerializer,
