@@ -110,7 +110,7 @@ class Project(
             "meta": {
                 "title": self.title,
                 "description": self.description or None,
-                "owner": self.owner.get_full_name(),
+                "owner": None if not self.owner else self.owner.get_full_name(),
                 "created": self.created.isoformat(),
                 "updated": self.modified.isoformat(),
             },
@@ -143,7 +143,7 @@ class DataSource(
         null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
     active_job = models.ForeignKey(
         "projects.DataSourceJob", blank=True, on_delete=models.CASCADE, related_name="data_sources", null=True
@@ -295,7 +295,7 @@ class DataSource(
                 "source-url": None,
                 "methodology": None,
                 "updated": self.modified.isoformat(),
-                "creator": self.created_by.get_full_name(),
+                "creator": None if not self.created_by else self.created_by.get_full_name(),
             },
             "file": self.file.name,
             "shape": None,
@@ -349,7 +349,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         DataSource, on_delete=models.CASCADE, related_name='scripts', blank=True, null=True
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="scripts", blank=True, null=True
     )
     name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
     is_predefined = models.BooleanField(default=True)
@@ -557,7 +557,7 @@ class Folder(
     project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='folders')
     name = models.CharField(max_length=constants.DIRECTORY_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="folders", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="folders", null=True
     )
 
     def __str__(self):
@@ -604,7 +604,7 @@ class Page(
     folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name='pages')
     keywords = models.TextField(blank=True, default="")
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="pages", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="pages", null=True
     )
 
     objects = managers.PageManager()
@@ -665,7 +665,7 @@ class Page(
             "keywords": self.keywords or None,
             "folder": self.folder.name,
             "updated": str(self.modified),
-            "creator": self.created_by.get_full_name(),
+            "creator": None if not self.created_by else self.created_by.get_full_name(),
             "blocks": self.get_blocks(),
         }
 
