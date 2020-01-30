@@ -15,9 +15,9 @@ export default defineMessages({
     id: 'shared.components.dataSourceTagForm.saveTag',
     defaultMessage: 'Save',
   },
-  deleteTag: {
-    id: 'shared.components.dataSourceTagForm.deleteTag',
-    defaultMessage: 'Remove tag',
+  deleteList: {
+    id: 'shared.components.dataSourceTagForm.deleteList',
+    defaultMessage: 'Remove list',
   },
   addTag: {
     id: 'shared.components.dataSourceTagForm.addTag',

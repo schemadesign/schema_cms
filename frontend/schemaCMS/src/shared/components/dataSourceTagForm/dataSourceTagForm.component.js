@@ -2,18 +2,19 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { always, equals, ifElse } from 'ramda';
-import { Form as FormUI } from 'schemaUI';
+import { always, equals, ifElse, insert, is, pick, remove } from 'ramda';
+import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './dataSourceTagForm.messages';
 import {
   INITIAL_VALUES,
   TAG_NAME,
+  TAG_REMOVE_TAGS,
   TAG_TAGS,
   TAGS_SCHEMA,
 } from '../../../modules/dataSourceTag/dataSourceTag.constants';
-import { Form, Tag } from './dataSourceTagForm.styles';
+import { Form, Tag, removeIconStyles } from './dataSourceTagForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { TAGS_PAGE } from '../../../modules/dataSource/dataSource.constants';
@@ -23,6 +24,7 @@ import { errorMessageParser } from '../../utils/helpers';
 import reportError from '../../utils/reportError';
 
 const { Label } = FormUI;
+const { CloseIcon } = Icons;
 
 export class DataSourceTagForm extends PureComponent {
   static propTypes = {
@@ -44,11 +46,12 @@ export class DataSourceTagForm extends PureComponent {
   state = {
     confirmationModalOpen: false,
     removeLoading: false,
+    focusInputIndex: null,
   };
 
   getBackMessageId = ifElse(equals(true), always('cancel'), always('back'));
 
-  handleRemoveTag = () => this.setState({ confirmationModalOpen: true });
+  handleRemoveList = () => this.setState({ confirmationModalOpen: true });
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
@@ -83,23 +86,67 @@ export class DataSourceTagForm extends PureComponent {
     }
   };
 
-  handleAddTag = ({ setFieldValue, values }) => {
-    setFieldValue(TAG_TAGS, values[TAG_TAGS].concat(['']));
+  handleAddTag = ({ setFieldValue, values, index }) => {
+    const insertIndex = is(Number, index) ? index : values[TAG_TAGS].length;
+    const newValues = insert(insertIndex, { value: '' }, values[TAG_TAGS]);
+    this.setState({ focusInputIndex: insertIndex });
+    setFieldValue(TAG_TAGS, newValues);
+  };
+
+  handleRemoveTag = ({ setFieldValue, values, index, byButton }) => {
+    this.setState({ focusInputIndex: byButton ? null : index - 1 });
+    const newValues = remove(index, 1, values[TAG_TAGS]);
+
+    setFieldValue(TAG_TAGS, newValues);
+
+    const removeId = values[TAG_TAGS][index].id;
+    if (removeId) {
+      setFieldValue(TAG_REMOVE_TAGS, values[TAG_REMOVE_TAGS].concat(removeId));
+    }
+  };
+
+  handleBlur = ({ setFieldValue, values, value }) => {
+    if (!value.length) {
+      this.setState({ focusInputIndex: null });
+      setFieldValue(TAG_TAGS, values[TAG_TAGS].filter(({ value }) => value.length));
+    }
+  };
+
+  handleKeyDown = ({ e, setFieldValue, values, value, index }) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      if (value.length) {
+        this.handleAddTag({ setFieldValue, values, index: index + 1 });
+      }
+    }
+
+    if (!value.length) {
+      if (e.keyCode === 8) {
+        e.preventDefault();
+        this.handleRemoveTag({ setFieldValue, values, index });
+      }
+    }
+  };
+
+  handleChange = ({ e, id = null, setFieldValue, index }) => {
+    const { value } = e.target;
+    setFieldValue(`${TAG_TAGS}.${index}`, id ? { value, id } : { value });
   };
 
   renderRemoveTagLink = renderWhenTrue(
     always(
-      <Link onClick={this.handleRemoveTag}>
-        <FormattedMessage {...messages.deleteTag} />
+      <Link onClick={this.handleRemoveList}>
+        <FormattedMessage {...messages.deleteList} />
       </Link>
     )
   );
 
   render() {
-    const { removeLoading, confirmationModalOpen } = this.state;
+    const { removeLoading, confirmationModalOpen, focusInputIndex } = this.state;
+    const { tag } = this.props;
     const initialValues = {
       ...INITIAL_VALUES,
-      ...this.props.tag,
+      ...pick([TAG_NAME, TAG_TAGS], tag),
     };
 
     return (
@@ -119,16 +166,24 @@ export class DataSourceTagForm extends PureComponent {
                 />
                 <div>
                   <Label>{<FormattedMessage {...messages[TAG_TAGS]} />}</Label>
-                  {values[TAG_TAGS].map((item, index) => (
+                  {values[TAG_TAGS].map(({ value, id }, index) => (
                     <Tag key={index}>
                       <TextInput
-                        value={values[TAG_TAGS][index]}
-                        onChange={handleChange}
+                        value={value}
+                        onChange={e => this.handleChange({ e, handleChange, id, setFieldValue, index })}
                         name={`${[TAG_TAGS]}.${index}`}
                         fullWidth
-                        customStyles={{ paddingBottom: 0 }}
+                        customStyles={{ paddingBottom: 0, width: '100%' }}
                         isEdit
+                        inputRef={input => input && focusInputIndex === index && input.focus()}
+                        onFocus={() => this.setState({ focusInputIndex: index })}
+                        onBlur={() => this.handleBlur({ setFieldValue, values, value })}
+                        onKeyDown={e => this.handleKeyDown({ value, values, setFieldValue, e, index })}
                         {...rest}
+                      />
+                      <CloseIcon
+                        customStyles={removeIconStyles}
+                        onClick={() => this.handleRemoveTag({ values, setFieldValue, index, byButton: true })}
                       />
                     </Tag>
                   ))}
