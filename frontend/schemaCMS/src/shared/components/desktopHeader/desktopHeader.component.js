@@ -31,7 +31,7 @@ import {
 } from './desktopHeader.styles';
 import { PRIMARY_OPTIONS, SECONDARY_OPTIONS } from './desktopHeader.constants';
 import messages from './desktopHeader.messages';
-import { filterMenuOptions } from '../../utils/helpers';
+import { filterMenuOptions, handleToggleMenu } from '../../utils/helpers';
 
 const { ExitIcon, UserIcon } = Icons;
 const { H1, H2 } = Typography;
@@ -67,13 +67,7 @@ export class DesktopHeader extends PureComponent {
     });
   };
 
-  handleToggleMenu = () => {
-    const { isMenuOpen } = this.state;
-
-    this.setState({
-      isMenuOpen: !isMenuOpen,
-    });
-  };
+  handleToggleMenu = () => handleToggleMenu(this, true);
 
   renderTitle = title =>
     renderWhenTrue(
