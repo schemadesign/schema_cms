@@ -150,10 +150,10 @@ def process_datasource_meta_source_file(data_source: dict):
     except Exception as e:
         return logging.critical(f"Invalid message body - {e}")
 
-    s3obj = services.get_s3_object(datasource.file)
-    data_frame = read_file_to_data_frame(s3obj["Body"])
-
     try:
+        s3obj = services.get_s3_object(datasource.file)
+        data_frame = read_file_to_data_frame(s3obj["Body"])
+
         preview_data, items, fields, fields_names, fields_with_urls = get_preview_data(
             data_frame
         )
