@@ -50,7 +50,7 @@ class User(AbstractUser):
         return self.role == constants.UserRole.ADMIN
 
     def __str__(self):
-        return self.username
+        return self.get_full_name()
 
     @classmethod
     def generate_random_username(cls):

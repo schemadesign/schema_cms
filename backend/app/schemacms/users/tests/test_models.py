@@ -19,7 +19,7 @@ class TestUser:
         username = faker.word()
         user = user_models.User(username=username)
 
-        assert str(user) == username
+        assert str(user) == user.get_full_name()
 
     def test_get_exchange_token(self, mocker, faker, user):
         make_token_mock = mocker.patch(
