@@ -46,9 +46,12 @@ dynamo = functional.SimpleLazyObject(get_dynamodb_resource)
 
 def get_sqs_queue_url(file_size: int) -> str:
     """Return queue url based on input file size"""
-    if file_size > settings.SQS_WORKER_QUEUE_FILE_SIZE:
+    if file_size < settings.BASE_QUEUE_LIMIT:
+        return settings.SQS_WORKER_QUEUE_URL
+    elif file_size < settings.EXT_QUEUE_LIMIT:
         return settings.SQS_WORKER_EXT_QUEUE_URL
-    return settings.SQS_WORKER_QUEUE_URL
+    else:
+        return settings.SQS_WORKER_MAX_QUEUE_URL
 
 
 def schedule_worker_with(data: dict, source_file_size: int):
