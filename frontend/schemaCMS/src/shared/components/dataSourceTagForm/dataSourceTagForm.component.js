@@ -77,7 +77,7 @@ export class DataSourceTagForm extends PureComponent {
       setSubmitting(true);
       const formData = {
         tags: difference(data[TAG_TAGS], this.props.tag[TAG_TAGS]),
-        execOrder: data[TAG_TAGS].map(({ id }) => id),
+        order: data[TAG_TAGS].map(({ id }, index) => ({ id, execOrder: index })),
         name: data[TAG_NAME],
       };
 
