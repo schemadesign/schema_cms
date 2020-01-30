@@ -232,10 +232,19 @@ export class View extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton id={'projectConfirmationRemovalModalCancelBtn'} onClick={this.handleCancelRemove} disabled={removeLoading}>
+            <BackButton
+              id={'projectConfirmationRemovalModalCancelBtn'}
+              onClick={this.handleCancelRemove}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id={'projectConfirmationRemovalModalConfirmBtn'} onClick={this.handleConfirmRemove} loading={removeLoading} disabled={removeLoading}>
+            <NextButton
+              id={'projectConfirmationRemovalModalConfirmBtn'}
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
