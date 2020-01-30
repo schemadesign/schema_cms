@@ -234,7 +234,7 @@ class API(core.Stack):
         return aws_sqs.Queue(
             self,
             name,
-            visibility_timeout=core.Duration.seconds(60),
+            visibility_timeout=core.Duration.seconds(300),
             dead_letter_queue=aws_sqs.DeadLetterQueue(
                 queue=dead_letter_queue, max_receive_count=JOB_PROCESSING_MAX_RETRIES
             ),
