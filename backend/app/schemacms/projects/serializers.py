@@ -671,23 +671,24 @@ class TagsListSerializer(serializers.ModelSerializer):
         tags = self.initial_data.pop("tags", None)
         tags_list = super().save(**kwargs)
 
-        delete_images = self.initial_data.get("delete_tags")
+        tags_to_delete = self.initial_data.get("delete_tags")
 
-        if delete_images:
-            tags_list.tags.filter(id__in=delete_images.split(",")).delete()
+        if tags_to_delete:
+            tags_list.tags.filter(id__in=tags_to_delete).delete()
 
         if tags:
-            models.Tag.objects.bulk_create(self.create_tags(tags, tags_list))
+            self.create_or_update_tags(tags, tags_list)
 
         return tags_list
 
     @staticmethod
-    def create_tags(tags, list_):
-        for tag in tags:
-            tag_instance = models.Tag()
-            tag_instance.value = tag
-            tag_instance.tags_list = list_
-            yield tag_instance
+    def create_or_update_tags(tags, list_):
+        for order, tag in enumerate(tags):
+            models.Tag.objects.update_or_create(
+                value=tag["value"],
+                tags_list=list_,
+                defaults={'value': tag["value"], "tags_list": list_, "exec_order": order},
+            )
 
 
 class TagsListDetailSerializer(TagsListSerializer):

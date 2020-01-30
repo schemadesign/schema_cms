@@ -6,7 +6,7 @@ export const TAG_REMOVE_TAGS = 'deleteTags';
 
 export const INITIAL_VALUES = {
   [TAG_NAME]: '',
-  [TAG_TAGS]: [''],
+  [TAG_TAGS]: [{ value: '' }],
   [TAG_REMOVE_TAGS]: [],
 };
 

@@ -747,6 +747,7 @@ class TagsList(
 class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name='tags')
     value = models.CharField(max_length=150)
+    exec_order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
