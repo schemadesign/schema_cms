@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { always, equals, ifElse, insert, is, pick, remove } from 'ramda';
+import { always, difference, equals, ifElse, insert, is, pick, remove } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
@@ -14,7 +14,7 @@ import {
   TAG_TAGS,
   TAGS_SCHEMA,
 } from '../../../modules/dataSourceTag/dataSourceTag.constants';
-import { Form, Tag, removeIconStyles } from './dataSourceTagForm.styles';
+import { Form, removeIconStyles, Tag } from './dataSourceTagForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { TAGS_PAGE } from '../../../modules/dataSource/dataSource.constants';
@@ -69,12 +69,18 @@ export class DataSourceTagForm extends PureComponent {
     }
   };
 
-  handleSubmit = async (formData, { setErrors, setSubmitting }) => {
+  handleSubmit = async (data, { setErrors, setSubmitting }) => {
     const submitFunc = this.props.createTag || this.props.updateTag;
     const dataSourceId = this.props.dataSourceId;
 
     try {
       setSubmitting(true);
+      const formData = {
+        tags: difference(data[TAG_TAGS], this.props.tag[TAG_TAGS]),
+        execOrder: data[TAG_TAGS].map(({ id }) => id),
+        name: data[TAG_NAME],
+      };
+
       await submitFunc({ dataSourceId, tagId: this.props.tag.id, formData });
     } catch (errors) {
       const { formatMessage } = this.props.intl;
@@ -130,7 +136,7 @@ export class DataSourceTagForm extends PureComponent {
 
   handleChange = ({ e, id = null, setFieldValue, index }) => {
     const { value } = e.target;
-    setFieldValue(`${TAG_TAGS}.${index}`, id ? { value, id } : { value });
+    setFieldValue(`${TAG_TAGS}.${index}`, { value, id: id || `create_${index}` });
   };
 
   renderRemoveTagLink = renderWhenTrue(
