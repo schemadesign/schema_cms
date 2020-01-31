@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   subTitle: {
     id: 'dataSourceTag.subTitle',
-    defaultMessage: 'Edit Tag',
+    defaultMessage: 'Edit Tag List',
   },
   projectsListPage: {
     id: 'dataSourceTag.projectsListPage',

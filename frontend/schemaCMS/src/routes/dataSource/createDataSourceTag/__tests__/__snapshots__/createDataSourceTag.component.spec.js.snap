@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateDataSourceTag: Component should render correctly 1`] = `
-<styled.div>
+<styled.form
+  onSubmit={[Function]}
+>
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Create Tag"
+        defaultMessage="Create Tag List"
         id="dataSource.createDataSourceTag.subTitle"
         values={Object {}}
       />
@@ -101,7 +103,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Create Tag"
+        defaultMessage="Create Tag List"
         id="dataSource.createDataSourceTag.subTitle"
         values={Object {}}
       />
@@ -110,7 +112,17 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
   />
   <DataSourceTagForm
     createTag={[Function]}
-    dataSourceId="dataSourceId"
+    dataSource={
+      Object {
+        "name": "dataSourceName",
+        "project": Object {
+          "id": "projectId",
+        },
+      }
+    }
+    dirty={false}
+    handleChange={[Function]}
+    handleSubmit={[Function]}
     history={
       Object {
         "goBack": [Function],
@@ -122,7 +134,51 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
-    tag={Object {}}
+    isSubmitting={false}
+    isValid={true}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "dataSourceId",
+        },
+      }
+    }
+    setFieldValue={[Function]}
+    userRole="admin"
+    values={
+      Object {
+        "name": "",
+        "tags": Array [],
+      }
+    }
   />
-</styled.div>
+  <NavigationContainer
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="shared.components.dataSourceTagForm.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      loading={false}
+      type="submit"
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="shared.components.dataSourceTagForm.saveTag"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.form>
 `;

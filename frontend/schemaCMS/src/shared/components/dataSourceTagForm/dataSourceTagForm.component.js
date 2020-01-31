@@ -1,17 +1,17 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { insert, is, remove } from 'ramda';
+import { always, insert, is, remove } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './dataSourceTagForm.messages';
 import { TAG_NAME, TAG_REMOVE_TAGS, TAG_TAGS } from '../../../modules/dataSourceTag/dataSourceTag.constants';
-import { removeIconStyles, Tag } from './dataSourceTagForm.styles';
-import { Link, LinkContainer } from '../../../theme/typography';
+import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './dataSourceTagForm.styles';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { Label } = FormUI;
-const { CloseIcon } = Icons;
+const { CloseIcon, PlusIcon } = Icons;
 
 export class DataSourceTagForm extends PureComponent {
   static propTypes = {
@@ -36,16 +36,16 @@ export class DataSourceTagForm extends PureComponent {
     const { setFieldValue, values } = this.props;
     this.setState({ focusInputIndex: byButton ? null : index - 1 });
     const newValues = remove(index, 1, values[TAG_TAGS]);
-
     setFieldValue(TAG_TAGS, newValues);
-
     const removeId = values[TAG_TAGS][index].id;
-    if (removeId) {
+
+    if (is(Number, removeId)) {
       setFieldValue(TAG_REMOVE_TAGS, values[TAG_REMOVE_TAGS].concat(removeId));
     }
   };
 
-  handleBlur = ({ value }) => {
+  handleBlur = e => {
+    const { value } = e.target;
     const { setFieldValue, values } = this.props;
     this.setState({ focusInputIndex: null });
     if (!value.length) {
@@ -53,8 +53,9 @@ export class DataSourceTagForm extends PureComponent {
     }
   };
 
-  handleKeyDown = ({ e, value, index }) => {
+  handleKeyDown = index => e => {
     const { setFieldValue, values } = this.props;
+    const { value } = e.target;
 
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -77,8 +78,31 @@ export class DataSourceTagForm extends PureComponent {
     setFieldValue(`${TAG_TAGS}.${index}`, { value, id: id || `create_${index}` });
   };
 
+  renderTag = ({ value, id }, index) => (
+    <Tag key={index}>
+      <TextInput
+        value={value}
+        onChange={e => this.handleChange({ e, id, index })}
+        name={`${[TAG_TAGS]}.${index}`}
+        fullWidth
+        customStyles={{ paddingBottom: 0, width: '100%' }}
+        isEdit
+        inputRef={input => input && this.state.focusInputIndex === index && input.focus()}
+        onFocus={() => this.setState({ focusInputIndex: index })}
+        onBlur={this.handleBlur}
+        onKeyDown={this.handleKeyDown(index)}
+        {...this.props}
+      />
+      <CloseIcon customStyles={removeIconStyles} onClick={() => this.handleRemoveTag({ index, byButton: true })} />
+    </Tag>
+  );
+
+  renderTags = tags =>
+    renderWhenTrueOtherwise(always(<FormattedMessage {...messages.noTags} />), () => tags.map(this.renderTag))(
+      !tags.length
+    );
+
   render() {
-    const { focusInputIndex } = this.state;
     const { handleChange, values, ...rest } = this.props;
 
     return (
@@ -92,35 +116,13 @@ export class DataSourceTagForm extends PureComponent {
           label={<FormattedMessage {...messages[TAG_NAME]} />}
           {...rest}
         />
-        <div>
-          <Label>{<FormattedMessage {...messages[TAG_TAGS]} />}</Label>
-          {values[TAG_TAGS].map(({ value, id }, index) => (
-            <Tag key={index}>
-              <TextInput
-                value={value}
-                onChange={e => this.handleChange({ e, handleChange, id, index })}
-                name={`${[TAG_TAGS]}.${index}`}
-                fullWidth
-                customStyles={{ paddingBottom: 0, width: '100%' }}
-                isEdit
-                inputRef={input => input && focusInputIndex === index && input.focus()}
-                onFocus={() => this.setState({ focusInputIndex: index })}
-                onBlur={() => this.handleBlur({ value })}
-                onKeyDown={e => this.handleKeyDown({ value, e, index })}
-                {...rest}
-              />
-              <CloseIcon
-                customStyles={removeIconStyles}
-                onClick={() => this.handleRemoveTag({ index, byButton: true })}
-              />
-            </Tag>
-          ))}
-        </div>
-        <LinkContainer>
-          <Link onClick={this.handleAddTag}>
-            <FormattedMessage {...messages.addTag} />
-          </Link>
-        </LinkContainer>
+        <Label>{<FormattedMessage {...messages[TAG_TAGS]} />}</Label>
+        <TagsContainer>{this.renderTags(values[TAG_TAGS])}</TagsContainer>
+        <ButtonContainer>
+          <PlusButton onClick={this.handleAddTag} type="button">
+            <PlusIcon />
+          </PlusButton>
+        </ButtonContainer>
       </Fragment>
     );
   }

@@ -19,13 +19,13 @@ import { Link } from '../../theme/typography';
 
 export class DataSourceTag extends PureComponent {
   static propTypes = {
-    updateTag: PropTypes.func.isRequired,
+    userRole: PropTypes.string.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     dirty: PropTypes.bool.isRequired,
     isValid: PropTypes.bool.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
     fetchTag: PropTypes.func.isRequired,
     removeTag: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
     tag: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({

@@ -175,7 +175,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
                 }
               }
             >
-              name
+              
             </h2>
             <h1
               className="c2"
@@ -192,7 +192,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
               }
             >
               <span>
-                Edit Tag
+                Edit Tag List
               </span>
             </h1>
           </div>
@@ -277,7 +277,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
                 }
               }
             >
-              name
+              
             </h2>
             <h1
               className="c2"
@@ -294,7 +294,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
               }
             >
               <span>
-                Edit Tag
+                Edit Tag List
               </span>
             </h1>
           </div>
@@ -429,7 +429,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
             }
           }
         >
-          name
+          
         </h2>
         <h1
           className="c11"
@@ -446,7 +446,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
           }
         >
           <span>
-            Edit Tag
+            Edit Tag List
           </span>
         </h1>
       </div>

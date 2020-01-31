@@ -2,10 +2,15 @@
 
 exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17,11 +22,11 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -43,7 +48,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -102,7 +107,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -124,7 +129,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -150,7 +155,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
       value="code"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -303,7 +308,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -397,10 +402,15 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -412,11 +422,11 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -438,7 +448,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -497,7 +507,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -519,7 +529,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -545,7 +555,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
       value="embed"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -698,7 +708,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -793,10 +803,15 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -808,30 +823,30 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
+}
+
+.c5 {
+  position: relative;
 }
 
 .c4 {
   position: relative;
 }
 
-.c3 {
-  position: relative;
-}
-
-.c5 {
+.c6 {
   line-height: 24px;
   font-size: 18px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -847,13 +862,13 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c9 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -886,7 +901,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -945,7 +960,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -967,7 +982,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -993,7 +1008,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
       value="image"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -1146,10 +1161,10 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
   >
     <div
-      className="c4"
+      className="c5"
     >
       <div
         style={
@@ -1314,16 +1329,16 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
       </span>
     </label>
     <div
-      className="c5"
+      className="c6"
     >
       <span
-        className="c6"
+        className="c7"
       >
         <div
-          className="c7"
+          className="c8"
         >
           <span
-            className="c8"
+            className="c9"
           >
             imageName.png
           </span>
@@ -1356,10 +1371,15 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1371,11 +1391,11 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -1397,7 +1417,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -1456,7 +1476,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -1478,7 +1498,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -1504,7 +1524,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
       value="markdown"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -1657,7 +1677,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -1750,10 +1770,15 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1765,21 +1790,21 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c4 {
+.c5 {
   position: relative;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1788,7 +1813,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
   touch-action: none;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1804,16 +1829,16 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
   position: relative;
 }
 
-.c5 {
+.c6 {
   line-height: 24px;
   font-size: 18px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1829,7 +1854,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
   justify-content: space-between;
 }
 
-.c9 {
+.c10 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1851,7 +1876,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -1910,7 +1935,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -1932,7 +1957,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -1958,7 +1983,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
       value="image"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -2111,10 +2136,10 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
   >
     <div
-      className="c4"
+      className="c5"
     >
       <div
         style={
@@ -2280,10 +2305,10 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
     </label>
     <span>
       <div
-        className="c5"
+        className="c6"
       >
         <div
-          className="c6"
+          className="c7"
           style={
             Object {
               "opacity": 1,
@@ -2291,11 +2316,11 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
           }
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span>
               <div
-                className="c8"
+                className="c9"
               >
                 <svg
                   style={
@@ -2316,7 +2341,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
               </div>
             </span>
             <span
-              className="c9"
+              className="c10"
             >
               imageName.png
             </span>
@@ -2343,7 +2368,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
           </svg>
         </div>
         <div
-          className="c6"
+          className="c7"
           style={
             Object {
               "opacity": 1,
@@ -2351,11 +2376,11 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
           }
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span>
               <div
-                className="c8"
+                className="c9"
               >
                 <svg
                   style={
@@ -2376,7 +2401,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
               </div>
             </span>
             <span
-              className="c9"
+              className="c10"
             >
               imageName.png
             </span>
@@ -2410,10 +2435,15 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2425,11 +2455,11 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -2451,7 +2481,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -2510,7 +2540,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -2532,7 +2562,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -2558,7 +2588,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
       value="none"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -2715,10 +2745,15 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2730,11 +2765,11 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -2756,7 +2791,7 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -2815,7 +2850,7 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -2837,7 +2872,7 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -2863,7 +2898,7 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
       value="text"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -3016,7 +3051,7 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={

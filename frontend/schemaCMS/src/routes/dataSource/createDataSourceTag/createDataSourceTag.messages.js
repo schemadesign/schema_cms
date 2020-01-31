@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   subTitle: {
     id: 'dataSource.createDataSourceTag.subTitle',
-    defaultMessage: 'Create Tag',
+    defaultMessage: 'Create Tag List',
   },
   saveTag: {
     id: 'shared.components.dataSourceTagForm.saveTag',

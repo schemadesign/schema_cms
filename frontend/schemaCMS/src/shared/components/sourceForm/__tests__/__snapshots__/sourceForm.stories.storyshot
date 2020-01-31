@@ -2,10 +2,15 @@
 
 exports[`Storyshots Shared Components|Source Form Default 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   position: relative;
 }
 
@@ -25,7 +30,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -83,7 +88,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -220,7 +225,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <div
       style={

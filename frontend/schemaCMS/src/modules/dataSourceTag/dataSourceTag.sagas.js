@@ -40,7 +40,7 @@ function* createTag({ payload: { dataSourceId, formData } }) {
   try {
     yield put(DataSourceTagRoutines.createTag.request());
 
-    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/tags-lists`, { ...formData });
+    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/tags-lists`, formData);
 
     browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${TAGS_PAGE}`);
 

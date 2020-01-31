@@ -20,9 +20,11 @@ import {
   TAGS_SCHEMA,
 } from '../../modules/dataSourceTag/dataSourceTag.constants';
 import reportError from '../../shared/utils/reportError';
+import { selectUserRole } from '../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   tag: selectTag,
+  userRole: selectUserRole,
 });
 
 export const mapDispatchToProps = dispatch =>

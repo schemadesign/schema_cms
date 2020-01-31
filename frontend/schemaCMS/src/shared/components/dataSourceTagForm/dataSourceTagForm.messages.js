@@ -15,6 +15,10 @@ export default defineMessages({
     id: 'shared.components.dataSourceTagForm.addTag',
     defaultMessage: 'Add tag',
   },
+  noTags: {
+    id: 'shared.components.dataSourceTagForm.noTags',
+    defaultMessage: 'No Tags',
+  },
   keyTagKeyNotUniqueError: {
     id: 'shared.components.dataSourceTagForm.keyTagKeyNotUniqueError',
     defaultMessage: 'A tag with this name already exists in data source.',

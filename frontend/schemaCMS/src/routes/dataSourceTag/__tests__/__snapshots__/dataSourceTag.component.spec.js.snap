@@ -5,23 +5,23 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag"
+        defaultMessage="Edit Tag List"
         id="dataSourceTag.subTitle"
         values={Object {}}
       />
     }
-    headerTitle="name"
+    headerTitle=""
     options={Array []}
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag"
+        defaultMessage="Edit Tag List"
         id="dataSourceTag.subTitle"
         values={Object {}}
       />
     }
-    title="name"
+    title=""
   />
   <LoadingWrapper
     error={null}
@@ -29,33 +29,187 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <DataSourceTagForm
-      dataSourceId="1"
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <DataSourceTagForm
+        dirty={false}
+        fetchTag={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "tagId": "1",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": Promise {},
+              },
+            ],
+          }
         }
-      }
-      intl={
-        Object {
-          "formatMessage": [Function],
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "goBack": [Function],
+            "push": [Function],
+          }
         }
-      }
-      removeTag={[Function]}
-      tag={
-        Object {
-          "datasource": Object {
-            "id": "1",
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        match={
+          Object {
+            "params": Object {
+              "tagId": "1",
+            },
+          }
+        }
+        removeTag={[Function]}
+        setFieldValue={[Function]}
+        tag={
+          Object {
+            "datasource": Object {
+              "id": 1,
+            },
+            "id": 2,
             "name": "name",
-          },
-          "key": "key",
-          "value": "value",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
         }
-      }
-      updateTag={[Function]}
-    />
+        updateTag={[Function]}
+        userRole="admin"
+        values={
+          Object {
+            "name": "name",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
+        }
+      />
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove list"
+          id="dataSourceTag.subTitle"
+          values={Object {}}
+        />
+      </Styled(Span)>
+      <NavigationContainer
+        fixed={true}
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackButton
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <FormattedMessage
+            defaultMessage="Back"
+            id="shared.components.dataSourceTagForm.back"
+            values={Object {}}
+          />
+        </BackButton>
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="shared.components.dataSourceTagForm.saveTag"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
   </LoadingWrapper>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the tag?"
+        id="shared.components.dataSourceTagForm.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="shared.components.dataSourceTagForm.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="shared.components.dataSourceTagForm.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </styled.div>
 `;
 
@@ -64,23 +218,23 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag"
+        defaultMessage="Edit Tag List"
         id="dataSourceTag.subTitle"
         values={Object {}}
       />
     }
-    headerTitle="name"
+    headerTitle=""
     options={Array []}
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag"
+        defaultMessage="Edit Tag List"
         id="dataSourceTag.subTitle"
         values={Object {}}
       />
     }
-    title="name"
+    title=""
   />
   <LoadingWrapper
     error={null}
@@ -88,32 +242,170 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <DataSourceTagForm
-      dataSourceId="1"
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <DataSourceTagForm
+        dirty={false}
+        fetchTag={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "goBack": [Function],
+            "push": [Function],
+          }
         }
-      }
-      intl={
-        Object {
-          "formatMessage": [Function],
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
         }
-      }
-      removeTag={[Function]}
-      tag={
-        Object {
-          "datasource": Object {
-            "id": "1",
+        isSubmitting={false}
+        isValid={true}
+        match={
+          Object {
+            "params": Object {
+              "tagId": "1",
+            },
+          }
+        }
+        removeTag={[Function]}
+        setFieldValue={[Function]}
+        tag={
+          Object {
+            "datasource": Object {
+              "id": 1,
+            },
+            "id": 2,
             "name": "name",
-          },
-          "key": "key",
-          "value": "value",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
         }
-      }
-      updateTag={[Function]}
-    />
+        updateTag={[Function]}
+        userRole="admin"
+        values={
+          Object {
+            "name": "name",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
+        }
+      />
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove list"
+          id="dataSourceTag.subTitle"
+          values={Object {}}
+        />
+      </Styled(Span)>
+      <NavigationContainer
+        fixed={true}
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackButton
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <FormattedMessage
+            defaultMessage="Back"
+            id="shared.components.dataSourceTagForm.back"
+            values={Object {}}
+          />
+        </BackButton>
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="shared.components.dataSourceTagForm.saveTag"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
   </LoadingWrapper>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the tag?"
+        id="shared.components.dataSourceTagForm.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="shared.components.dataSourceTagForm.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="shared.components.dataSourceTagForm.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </styled.div>
 `;
