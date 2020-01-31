@@ -6,4 +6,12 @@ export default defineMessages({
     id: 'dataSource.createDataSourceTag.subTitle',
     defaultMessage: 'Create Tag',
   },
+  saveTag: {
+    id: 'shared.components.dataSourceTagForm.saveTag',
+    defaultMessage: 'Save',
+  },
+  cancel: {
+    id: 'shared.components.dataSourceTagForm.cancel',
+    defaultMessage: 'Cancel',
+  },
 });

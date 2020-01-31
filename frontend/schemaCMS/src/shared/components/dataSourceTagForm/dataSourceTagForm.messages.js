@@ -11,37 +11,9 @@ export default defineMessages({
     id: `shared.components.dataSourceTagForm.${TAG_TAGS}`,
     defaultMessage: 'Tags',
   },
-  saveTag: {
-    id: 'shared.components.dataSourceTagForm.saveTag',
-    defaultMessage: 'Save',
-  },
-  deleteList: {
-    id: 'shared.components.dataSourceTagForm.deleteList',
-    defaultMessage: 'Remove list',
-  },
   addTag: {
     id: 'shared.components.dataSourceTagForm.addTag',
     defaultMessage: 'Add tag',
-  },
-  cancel: {
-    id: 'shared.components.dataSourceTagForm.cancel',
-    defaultMessage: 'Cancel',
-  },
-  back: {
-    id: 'shared.components.dataSourceTagForm.back',
-    defaultMessage: 'Back',
-  },
-  cancelRemoval: {
-    id: 'shared.components.dataSourceTagForm.cancelRemoval',
-    defaultMessage: 'Cancel',
-  },
-  confirmRemoval: {
-    id: 'shared.components.dataSourceTagForm.confirmRemoval',
-    defaultMessage: 'Confirm',
-  },
-  removeTitle: {
-    id: 'shared.components.dataSourceTagForm.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the tag?',
   },
   keyTagKeyNotUniqueError: {
     id: 'shared.components.dataSourceTagForm.keyTagKeyNotUniqueError',

@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 
+export const TAG_FORM = 'tag_form';
 export const TAG_NAME = 'name';
 export const TAG_TAGS = 'tags';
 export const TAG_REMOVE_TAGS = 'deleteTags';
