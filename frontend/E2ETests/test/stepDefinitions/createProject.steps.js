@@ -139,5 +139,5 @@ Then(/^all elements of Create New Project page are displayed properly$/, functio
 Then(/^Finish button is not active$/, function() {
   waitForElement(CreateProjectPage, 'finishBtn');
 
-  assert(CreateProjectPage.finishBtn.isEnabled() === false, 'Finish button is enabled');
+  assert(!CreateProjectPage.finishBtn.isEnabled(), 'Finish button is enabled');
 });

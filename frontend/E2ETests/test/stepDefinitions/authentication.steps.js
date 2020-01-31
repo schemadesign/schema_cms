@@ -100,11 +100,19 @@ Then(/^(I|invited user) receive(d)* an email with the (reset|invitation) link$/,
   clickElement(GmailPage, 'firstUnreadEmail');
   waitForElement(GmailPage, `${emailType}Url`);
 
-  expect(`GmailPage.${emailType}Url.getText()`).to.match(URL_LINK[emailType]);
+  expect(GmailPage[`${emailType}Url`].getText()).to.match(URL_LINK[emailType]);
 });
 
 Then(/^I am informed that my new password is( not)* created$/, function(messageType) {
-  expect(`LoginPage.resetPassword${messageType}CreatedMsg.getText()`).to.equal(CHANGE_PASSWORD_MESSAGE[messageType]);
+  waitForText(
+    LoginPage,
+    messageType ? 'resetPasswordNotCreatedMsg' : 'resetPasswordCreatedMsg',
+    CHANGE_PASSWORD_MESSAGE[messageType.trim() || 'created']
+  );
+
+  expect(LoginPage[messageType ? 'resetPasswordNotCreatedMsg' : 'resetPasswordCreatedMsg'].getText()).to.equal(
+    CHANGE_PASSWORD_MESSAGE[messageType.trim() || 'created']
+  );
 });
 
 Then('I am able to log in using new password', () => {
@@ -126,6 +134,6 @@ Then('the new password is not created', () => {
   LoginPage.open();
   waitForElement(LoginPage, 'loginBtn');
   LoginPage.loginWithPassword(INVALID);
-
+  waitForElement(LoginPage, 'wrongCredsError');
   expect(LoginPage.wrongCredsError.getText()).to.equal(AUTH0_WRONG_CREDS_ERROR);
 });

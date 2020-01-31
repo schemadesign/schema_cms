@@ -1,3 +1,5 @@
+import { AUTH0_STAGE_HOST } from './config.constants';
+
 export const ADMIN = 'admin';
 export const EDITOR = 'editor';
 export const VALID = 'valid';
@@ -11,9 +13,9 @@ export const INVITE = 'invitation';
 export const RESET = 'reset';
 export const EMAIL_TYPE = {
   invitation: 'Invitation',
-  reset: 'Reset your password'
+  reset: 'Reset your password',
 };
 export const URL_LINK = {
-  reset: /schemadesign-stage.auth0.com\/lo\/reset/,
-  invitation: /schemadesign-stage.auth0.com\/lo\/reset/
+  reset: new RegExp(`${AUTH0_STAGE_HOST}\/lo\/reset`),
+  invitation: new RegExp(`${AUTH0_STAGE_HOST}\/lo\/reset`),
 };

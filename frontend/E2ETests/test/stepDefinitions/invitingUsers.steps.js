@@ -1,5 +1,11 @@
 import { Given, When, Then } from 'cucumber';
-import { djangoHomeTitle, USER_STATUS, SELECT_USER_TO_CHANGE_PAGE_TITLE } from '../constants/django.constants';
+import {
+  djangoHomeTitle,
+  USER_STATUS,
+  SELECT_USER_TO_CHANGE_PAGE_TITLE,
+  FIRST_NAME,
+  LAST_NAME,
+} from '../constants/django.constants';
 import { USERS } from '../constants/credentials.constants';
 import { clickElement, waitForElement, waitForText } from '../utils/utils';
 import { ADMIN, VALID, INVITED, INVITE, URL_LINK, RANDOM } from '../constants/gmail.constants';
@@ -52,7 +58,7 @@ Then('I can see confirmation that user was added', () => {
   waitForElement(DjangoPage, 'username');
 
   expect(DjangoPage.successMsg.getText()).to.equal(
-    `The user "${DjangoPage.username.getValue()}" was added successfully. You may edit it again below.`
+    `The user "${FIRST_NAME} ${LAST_NAME}" was added successfully. You may edit it again below.`
   );
 });
 

@@ -61,7 +61,7 @@ class DjangoPage extends Page {
   }
 
   get usersListEmail() {
-    return $('tbody > tr:nth-child(1) > td.field-email');
+    return $('tbody > tr:nth-child(1) > th.field-email');
   }
 
   get usersListName() {
@@ -81,7 +81,7 @@ class DjangoPage extends Page {
   }
 
   get userEmail() {
-    return $('#result_list > tbody > tr:nth-child(1) > td.field-email');
+    return $('#result_list > tbody > tr:nth-child(1) > th.field-email');
   }
 
   get userCheckbox() {

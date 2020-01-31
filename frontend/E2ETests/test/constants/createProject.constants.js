@@ -1,6 +1,7 @@
 import { generateRandomString } from '../utils/utils';
+import { BASE_URL } from './config.constants';
 
-export const CREATE_PROJECT_URL = 'https://schema-test.appt5n.com/project/create/';
+export const CREATE_PROJECT_URL = `${BASE_URL}/project/create/`;
 export const CREATE_PROJECT_HEADER_TITLE = 'Create New Project';
 export const CREATE_PROJECT_HEADER_SUBTITLE = 'Project Info';
 export const CREATE_PROJECT_TITLE_LABEL = 'Title';

@@ -223,24 +223,24 @@ export class View extends PureComponent {
           <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
         <Modal
-          id={'projectConfirmationRemovalModal'}
+          id="projectConfirmationRemovalModal"
           isOpen={confirmationModalOpen}
           contentLabel="Confirm Removal"
           style={modalStyles}
         >
-          <ModalTitle id={'projectConfirmationRemovalModalTitle'}>
+          <ModalTitle id="projectConfirmationRemovalModalTitle">
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
             <BackButton
-              id={'projectConfirmationRemovalModalCancelBtn'}
+              id="projectConfirmationRemovalModalCancelBtn"
               onClick={this.handleCancelRemove}
               disabled={removeLoading}
             >
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
             <NextButton
-              id={'projectConfirmationRemovalModalConfirmBtn'}
+              id="projectConfirmationRemovalModalConfirmBtn"
               onClick={this.handleConfirmRemove}
               loading={removeLoading}
               disabled={removeLoading}

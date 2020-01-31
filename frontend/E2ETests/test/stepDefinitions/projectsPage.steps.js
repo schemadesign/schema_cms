@@ -17,7 +17,6 @@ When('I close menu', () => {
 
 Then('I am on Projects page', () => {
   waitForUrl(PROJECTS_PAGE_URL);
-  waitForElement(ProjectsPage, 'addProjectBtn');
 
   expect(browser.getUrl()).to.equal(PROJECTS_PAGE_URL);
 });
@@ -31,23 +30,11 @@ Then(/^I can see Projects page with all its elements$/, function() {
   waitForElement(ProjectsPage, 'apiPath');
   waitForElement(ProjectsPage, 'addProjectBtn');
 
-  assert(
-    ProjectsPage.creationDate.isDisplayed(),
-    'Creation date is not displayed'
-  );
+  assert(ProjectsPage.creationDate.isDisplayed(), 'Creation date is not displayed');
   assert(ProjectsPage.status.isDisplayed(), 'Status is not displayed');
   assert(ProjectsPage.owner.isDisplayed(), 'Owner is not displayed');
-  assert(
-    ProjectsPage.projectTitle.isDisplayed(),
-    'Project title is not displayed'
-  );
-  assert(
-    ProjectsPage.projectDesc.isDisplayed(),
-    'Project description is not displayed'
-  );
+  assert(ProjectsPage.projectTitle.isDisplayed(), 'Project title is not displayed');
+  assert(ProjectsPage.projectDesc.isDisplayed(), 'Project description is not displayed');
   assert(ProjectsPage.apiPath.isDisplayed(), 'API path is not displayed');
-  assert(
-    ProjectsPage.addProjectBtn.isDisplayed(),
-    'Add project button is not displayed'
-  );
+  assert(ProjectsPage.addProjectBtn.isDisplayed(), 'Add project button is not displayed');
 });

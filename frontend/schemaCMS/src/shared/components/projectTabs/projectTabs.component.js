@@ -33,7 +33,7 @@ export class ProjectTabs extends PureComponent {
     const tabs = this.generateTabs(active, url);
 
     return (
-      <Container id={'tabsContainer'}>
+      <Container id="tabsContainer">
         <Tabs tabs={tabs} />
       </Container>
     );

@@ -21,7 +21,7 @@ Feature: CMS-8
         Then I am informed that reset link was sent to me
         And I don't receive an email with the reset link
 
-
+    @Test
     Scenario: User cannot reset a password if provided passwords don't match
         Given I provided valid email to recover my password
         And I used reset link sent to me

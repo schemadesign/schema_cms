@@ -1,27 +1,15 @@
 import { TIMEOUT } from '../constants/config.constants';
 
 export const waitForElement = (that, elemName, timeout = TIMEOUT) => {
-  browser.waitUntil(
-    () => that[elemName].isDisplayed(),
-    timeout,
-    `${elemName} not load after ${timeout} miliseconds`
-  );
+  browser.waitUntil(() => that[elemName].isDisplayed(), timeout, `${elemName} not load after ${timeout} miliseconds`);
 };
 
 export const waitForText = (that, elemName, text, timeout = TIMEOUT) => {
-  browser.waitUntil(
-    () => that[elemName].getText() === text,
-    timeout,
-    `Text of ${elemName} doesn't equal ${text}`
-  );
+  browser.waitUntil(() => that[elemName].getText() === text, timeout, `Text of ${elemName} doesn't equal ${text}`);
 };
 
 export const waitForUrl = (url, timeout = TIMEOUT) => {
-  browser.waitUntil(
-    () => browser.getUrl() === url,
-    timeout,
-    `URL of window is not ${url}`
-  );
+  browser.waitUntil(() => browser.getUrl() === url, timeout, `URL of window is not ${url}`);
 };
 
 export const waitForNewWindow = () => {
@@ -55,11 +43,7 @@ export const scrollBy = (posX, posY) => {
 };
 
 export const waitForTitle = (title, timeout = TIMEOUT) => {
-  browser.waitUntil(
-    () => browser.getTitle() === title,
-    timeout,
-    `Title of window is not ${title}`
-  );
+  browser.waitUntil(() => browser.getTitle() === title, timeout, `Title of window is not ${title}`);
 };
 
 export const setValue = (page, elemName, value) => {
@@ -69,8 +53,7 @@ export const setValue = (page, elemName, value) => {
 
 export const generateRandomString = length => {
   let result = 'X1';
-  const characters =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
   for (let i = 0; i < length; i += 1) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
