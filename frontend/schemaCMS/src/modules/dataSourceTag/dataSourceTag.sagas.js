@@ -71,7 +71,7 @@ function* updateTag({ payload: { tagId, dataSourceId, formData } }) {
   try {
     yield put(DataSourceTagRoutines.updateTag.request());
 
-    const { data } = yield api.put(`${TAGS_PATH}/${tagId}`, { ...formData });
+    const { data } = yield api.patch(`${TAGS_PATH}/${tagId}`, { ...formData });
     browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${TAGS_PAGE}`);
 
     yield put(DataSourceTagRoutines.updateTag.success(data));

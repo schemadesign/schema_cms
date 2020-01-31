@@ -564,7 +564,7 @@ class TagsListDetailViewSet(
         models.TagsList.objects.all()
         .prefetch_related(Prefetch('tags', queryset=models.Tag.objects.order_by('exec_order')))
         .select_related("datasource")
-    )
+    ).order_by("created")
     serializer_class = serializers.TagsListDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {

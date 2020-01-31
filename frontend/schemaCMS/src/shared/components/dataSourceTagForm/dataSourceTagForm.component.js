@@ -75,14 +75,18 @@ export class DataSourceTagForm extends PureComponent {
 
     try {
       setSubmitting(true);
+      const tags = this.props.tag[TAG_TAGS] || [];
+      const dataWithOrder = data[TAG_TAGS].map((item, index) => ({ ...item, execOrder: index }));
+      const tagWithOrder = tags.map((item, index) => ({ ...item, execOrder: index }));
       const formData = {
-        tags: difference(data[TAG_TAGS], this.props.tag[TAG_TAGS]),
-        order: data[TAG_TAGS].map(({ id }, index) => ({ id, execOrder: index })),
+        tags: difference(dataWithOrder, tagWithOrder),
         name: data[TAG_NAME],
+        deleteTags: data[TAG_REMOVE_TAGS],
       };
 
       await submitFunc({ dataSourceId, tagId: this.props.tag.id, formData });
     } catch (errors) {
+      reportError(errors);
       const { formatMessage } = this.props.intl;
       const errorMessages = errorMessageParser({ errors, messages, formatMessage });
 
