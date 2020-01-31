@@ -170,6 +170,10 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
+    def perform_update(self, serializer):
+        if "file" in serializer.validated_data:
+            serializer.save(created_by=self.request.user)
+
     @staticmethod
     def get_active_inactive_lists(request):
         to_activate = request.data.get("active", [])
