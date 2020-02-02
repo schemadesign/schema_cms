@@ -16,6 +16,8 @@ import {
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
+import debounce from 'lodash.debounce';
+import { sizes } from '../../theme/media';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
@@ -66,3 +68,25 @@ export const getQueryParams = pipe(
 const byRole = userRole => item => includes(userRole, item.allowedRoles);
 
 export const filterMenuOptions = (options, userRole) => filter(byRole(userRole))(options);
+
+export const handleToggleMenu = (that, isDesktop) => {
+  const handleResize = debounce(e => {
+    const { innerWidth } = e.target;
+    const sizeBreakpoint = isDesktop ? innerWidth < sizes.desktop : innerWidth >= sizes.desktop;
+
+    if (sizeBreakpoint && innerWidth !== that.oldWidth) {
+      that.oldWidth = innerWidth;
+      document.body.style.overflow = 'auto';
+      that.setState({ isMenuOpen: false });
+    }
+  }, 500);
+
+  const isMenuOpen = !that.state.isMenuOpen;
+  const eventListener = isMenuOpen ? 'addEventListener' : 'removeEventListener';
+
+  document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+  that.oldWidth = window.innerWidth;
+  window[eventListener]('resize', handleResize);
+
+  that.setState({ isMenuOpen });
+};

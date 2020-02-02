@@ -27,7 +27,7 @@ export const META_SUCCESS = 'success';
 
 export const DATA_SOURCE_FIELDS = ['fileName', 'type', 'name'];
 
-const FILE_SIZE = 300000000;
+const FILE_SIZE = 30000000000;
 
 export const DATA_SOURCE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_NAME]: Yup.string()

@@ -170,6 +170,47 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
+    def perform_update(self, serializer):
+        if "file" in serializer.validated_data:
+            serializer.save(created_by=self.request.user)
+
+    @staticmethod
+    def get_active_inactive_lists(request):
+        to_activate = request.data.get("active", [])
+        to_deactivate = request.data.get("inactive", [])
+        return to_activate, to_deactivate
+
+    def set_is_active_fields(self, request, related_objects_name):
+        instance = self.get_object()
+        to_activate, to_deactivate = self.get_active_inactive_lists(request)
+
+        getattr(instance, related_objects_name).filter(id__in=to_activate).update(is_active=True)
+        getattr(instance, related_objects_name).filter(id__in=to_deactivate).update(is_active=False)
+
+        instance.refresh_from_db()
+
+        return instance
+
+    def generate_action_post_get_response(self, request, related_objects_name):
+        data_source = self.get_object()
+
+        if request.method == 'GET':
+            if not getattr(data_source, related_objects_name).exists():
+                return response.Response({"project": data_source.project_info, "results": []})
+
+            serializer = self.get_serializer(instance=getattr(data_source, related_objects_name), many=True)
+            data = {"project": data_source.project_info, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
+
+        else:
+            request.data["datasource"] = data_source.id
+
+            serializer = self.get_serializer(data=request.data, context=data_source)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()

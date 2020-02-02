@@ -1,4 +1,4 @@
-import { errorMessageParser, generateApiUrl } from '../helpers';
+import { errorMessageParser, generateApiUrl, handleToggleMenu } from '../helpers';
 
 describe('Helpers', () => {
   describe('generateApiUrl', () => {
@@ -30,5 +30,24 @@ describe('Helpers', () => {
 
       expect(errorMessageParser({ errors, messages, formatMessage })).toEqual({});
     });
+  });
+  describe('handleToggleMenu', () => {
+    it('should add resize listener', () => {
+      const that = { setState: Function.prototype, state: { isMenuOpen: false } };
+      jest.spyOn(window, 'addEventListener');
+      jest.spyOn(that, 'setState');
+      handleToggleMenu(that);
+      expect(window.addEventListener).toBeCalledWith('resize', expect.any(Function));
+      expect(that.setState).toBeCalledWith({ isMenuOpen: true });
+    });
+  });
+
+  it('should remove resize listener', () => {
+    const that = { setState: Function.prototype, state: { isMenuOpen: true } };
+    jest.spyOn(window, 'removeEventListener');
+    jest.spyOn(that, 'setState');
+    handleToggleMenu(that);
+    expect(window.removeEventListener).toBeCalledWith('resize', expect.any(Function));
+    expect(that.setState).toBeCalledWith({ isMenuOpen: false });
   });
 });

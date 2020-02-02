@@ -23,6 +23,7 @@ import {
 import messages from './mobileMenu.messages';
 import { LogoutModal } from '../../logoutModal';
 import { DIVIDER, LINK_ITEM, HELPER_LINK, SETTINGS_ID } from './mobileMenu.constants';
+import { handleToggleMenu } from '../../../utils/helpers';
 
 const HELPER_LINKS = [
   { label: <FormattedMessage {...messages.about} />, to: '/', id: 'aboutNavBtn', type: HELPER_LINK },
@@ -48,6 +49,8 @@ export class MobileMenu extends PureComponent {
     logoutModalOpen: false,
   };
 
+  handleToggleMenu = () => handleToggleMenu(this);
+
   handleLogout = () => {
     this.setState({
       logoutModalOpen: true,
@@ -57,14 +60,6 @@ export class MobileMenu extends PureComponent {
   handleCancelLogout = () => {
     this.setState({
       logoutModalOpen: false,
-    });
-  };
-
-  handleToggleMenu = () => {
-    const { isMenuOpen } = this.state;
-
-    this.setState({
-      isMenuOpen: !isMenuOpen,
     });
   };
 
