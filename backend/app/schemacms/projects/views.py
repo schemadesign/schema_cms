@@ -343,7 +343,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def set_tags_lists(self, request, pk=None, **kwargs):
         data_source = self.set_is_active_fields(request, related_objects_name="list_of_tags")
 
-        serializer = self.get_serializer(instance=data_source.tags, many=True)
+        serializer = self.get_serializer(instance=data_source.list_of_tags, many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -595,11 +595,7 @@ class BlockViewSet(
 
 
 class TagsListDetailViewSet(
-    utils_serializers.ActionSerializerViewSetMixin,
-    mixins.DestroyModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet,
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
 ):
     queryset = (
         models.TagsList.objects.all()
@@ -607,27 +603,6 @@ class TagsListDetailViewSet(
         .select_related("datasource")
     ).order_by("created")
     serializer_class = serializers.TagsListDetailSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-    serializer_class_mapping = {
-        "tags": serializers.TagSerializer,
-    }
-
-    def retrieve(self, request, *args, **kwargs):
-        instance = self.get_object()
-        serializer = self.get_serializer(instance)
-        data = {"project": instance.datasource.project_info, "results": serializer.data}
-        return response.Response(data)
-
-    @decorators.action(detail=True, url_path='tags', methods=["get", "post"])
-    def tags(self, request, pk=None, **kwargs):
-        return self.generate_action_post_get_response(request, related_objects_name="tas")
-
-
-class TagDetailViewSet(
-    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
-):
-    queryset = models.Tag.objects.all().select_related("tags_list")
-    serializer_class = serializers.TagDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
     def retrieve(self, request, *args, **kwargs):

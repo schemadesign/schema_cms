@@ -743,6 +743,9 @@ class TagsList(
     name = models.CharField(max_length=25)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name or str(self.pk)
+
 
 class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name='tags')
@@ -755,11 +758,6 @@ class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, e
 
     class Meta:
         ordering = ("created",)
-        constraints = [
-            models.UniqueConstraint(
-                fields=["tags_list", "value"], name="unique_tag_value", condition=models.Q(deleted_at=None)
-            )
-        ]
 
     def meta_file_serialization(self):
         data = {"id": self.id, "list": self.tags_list.name, "value": self.value}

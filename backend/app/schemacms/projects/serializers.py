@@ -643,14 +643,14 @@ class BlockDetailSerializer(BlockSerializer):
         return BlockImageSerializer(images, many=True).data
 
 
-class SimpleTagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Tag
-        fields = ("id", "value", "exec_order")
+class TagSerializer(serializers.Serializer):
+    id = serializers.IntegerField(required=False)
+    value = serializers.CharField(max_length=150, required=True)
+    exec_order = serializers.IntegerField(required=True)
 
 
 class TagsListSerializer(serializers.ModelSerializer):
-    tags = SimpleTagSerializer(many=True, required=False)
+    tags = TagSerializer(many=True, required=False)
 
     class Meta:
         model = models.TagsList
@@ -670,7 +670,7 @@ class TagsListSerializer(serializers.ModelSerializer):
 
     @transaction.atomic()
     def create(self, validated_data):
-        tags = validated_data.pop("tags")
+        tags = validated_data.pop("tags", [])
         tags_list = models.TagsList.objects.create(**validated_data)
         if tags:
             models.Tag.objects.bulk_create(self.create_tags(tags, tags_list))
@@ -680,14 +680,13 @@ class TagsListSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def update(self, instance, validated_data):
         tags_to_delete = self.initial_data.pop("delete_tags", [])
-        tags = self.initial_data.pop("tags", [])
-
+        tags = validated_data.pop("tags", [])
         if tags_to_delete:
             instance.tags.filter(id__in=tags_to_delete).delete()
 
         if tags:
-            tags_to_update = [tag for tag in tags if type(tag["id"]) == int]
-            tags_to_create = [tag for tag in tags if str((tag["id"])).startswith("create")]
+            tags_to_update = [tag for tag in tags if "id" in tag]
+            tags_to_create = [tag for tag in tags if "id" not in tag]
 
             if tags_to_update:
                 for tag in tags_to_update:
@@ -712,40 +711,6 @@ class TagsListSerializer(serializers.ModelSerializer):
 
 class TagsListDetailSerializer(TagsListSerializer):
     datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)
-    tags = serializers.SerializerMethodField(read_only=True)
 
     class Meta(TagsListSerializer.Meta):
-        fields = TagsListSerializer.Meta.fields + ("datasource", "tags")
-
-    def get_tags(self, instance):
-        tags = instance.tags.all()
-        return SimpleTagSerializer(tags, many=True).data
-
-
-class TagSerializer(serializers.ModelSerializer):
-    tags_list = NestedRelatedModelSerializer(
-        serializer=TagsListSerializer(), queryset=models.TagsList.objects.all()
-    )
-
-    class Meta:
-        model = models.Tag
-        fields = ("id", "tags_list", "value", "is_active")
-        validators = [
-            CustomUniqueTogetherValidator(
-                queryset=models.Tag.objects.all(),
-                fields=("tags_list", "value"),
-                key_field_name="value",
-                code="tagValueNotUnique",
-                message="Tag with this value already exist in tag list.",
-            )
-        ]
-
-
-class TagsListNestedFieldSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.TagsList
-        fields = ("id", "name", "exec_order")
-
-
-class TagDetailSerializer(TagSerializer):
-    tags_list = NestedRelatedModelSerializer(serializer=TagsListNestedFieldSerializer(), read_only=True)
+        fields = TagsListSerializer.Meta.fields + ("datasource",)

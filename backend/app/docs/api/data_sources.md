@@ -540,7 +540,7 @@ options    | object | Additional options
 
 **Request**:
 
-`GET` `/api/v1/datasources/:id/tags`
+`GET` `/api/v1/datasources/:id/tags-lists`
 
 
 *Note:*
@@ -561,11 +561,13 @@ Content-Type: application/json
             "id": 1,
             "name": "TestDataSource"
          },
-        "key": "tagKey",
-        "value": "tagValue",
+        "name": "tagsListName",
         "is_active": true,
         "created": "2019-11-04T13:28:56+0000",
-        "modified": "2019-11-04T13:28:56+0000"
+        "modified": "2019-11-04T13:28:56+0000",
+        "tags": [
+            {"id": 1, "value": "tagValue", "exec_order": 0},
+        ]
     },
 ]
 ```
@@ -574,14 +576,14 @@ Content-Type: application/json
 
 **Request**:
 
-`POST` `/api/v1/datasources/:id/tags`
+`POST` `/api/v1/datasources/:id/tags-lists`
 
 Parameters:
 
 Name         | Type     | Description
 -------------|----------|----------------------------------------------
-key          | string   | Tag key.
-value        | string   | Value of tag.
+name         | string   | Tags list name.
+tags         | list     | Value of tag.
 
 
 *Note:*
@@ -602,19 +604,21 @@ Content-Type: application/json
         "id": 1,
         "name": "TestDataSource"
      },
-    "key": "tagKey",
-    "value": "tagValue",
+    "name": "tagsListName",
     "is_active": true,
     "created": "2019-11-04T13:28:56+0000",
-    "modified": "2019-11-04T13:28:56+0000"
+    "modified": "2019-11-04T13:28:56+0000",
+    "tags": [
+        {"id": 1, "value": "tagValue", "exec_order": 0},
+    ]
 }
 ```
 
-## activate/deactivate tags
+## activate/deactivate tags lists
 
 **Request**:
 
-`POST` `/api/v1/datasources/:id/set-tags`
+`POST` `/api/v1/datasources/:id/set-tags-lists`
 
 Parameters:
 
