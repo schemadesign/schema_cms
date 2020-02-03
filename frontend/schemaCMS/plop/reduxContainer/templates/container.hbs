@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -9,7 +9,9 @@ import { {{ pascalCase name }} } from './{{ camelCase name }}.component';
 
 const mapStateToProps = createStructuredSelector({});
 
-export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+export const mapDispatchToProps = dispatch => ({
+  ...bindPromiseCreators({}, dispatch),
+});
 
 export default compose(
   hot(module),
