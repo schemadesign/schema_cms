@@ -58,9 +58,9 @@ export default defineMessages({
     id: 'project.dataSourceList.filters',
     defaultMessage: 'Filters',
   },
-  views: {
-    id: 'project.dataSourceList.views',
-    defaultMessage: 'Views',
+  tags: {
+    id: 'project.dataSourceList.tags',
+    defaultMessage: 'Tags',
   },
   noData: {
     id: 'project.dataSourceList.noData',

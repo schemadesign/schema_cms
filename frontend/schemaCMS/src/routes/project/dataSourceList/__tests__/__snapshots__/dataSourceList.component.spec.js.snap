@@ -192,7 +192,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -295,7 +295,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -398,7 +398,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -501,7 +501,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -604,7 +604,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -707,7 +707,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -810,7 +810,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -913,7 +913,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
@@ -1016,7 +1016,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
-                Views
+                Tags
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-4"

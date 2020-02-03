@@ -107,7 +107,7 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = ({ id: projectId, owner = {}, slug, created, meta, status } = {}) => {
+  renderProject = ({ id: projectId, owner, slug, created, meta, status } = {}) => {
     const statistics = [
       {
         header: this.renderStatisticHeader(messages.dataSources),
@@ -130,7 +130,7 @@ export class View extends PureComponent {
       },
     ].filter(({ value }) => !isNil(value));
 
-    const { firstName = '', lastName = '' } = owner;
+    const { firstName = '—', lastName = '' } = owner || {};
 
     const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
     const data = [

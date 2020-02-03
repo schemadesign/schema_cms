@@ -69,8 +69,8 @@ export class FolderList extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, name = '', created = '', createdBy = {} }, index) {
-    const { firstName, lastName } = createdBy;
+  renderItem({ id, name = '', created = '', createdBy }, index) {
+    const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`]);
 
