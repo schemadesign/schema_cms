@@ -183,7 +183,14 @@ class DataSource(
 
     @property
     def source_file_latest_version(self) -> str:
-        return services.s3_resource.Object(settings.AWS_S3_BUCKET_NAME, self.file.name).version_id
+        return next(
+            (
+                v.id
+                for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
+                if v.is_latest and v.id != "null"
+            ),
+            "",
+        )
 
     @property
     def current_job(self):
@@ -237,9 +244,10 @@ class DataSource(
                 )
 
     def relative_path_to_save(self, filename):
+        base_path = self.file.storage.location
         if not (self.id and self.project_id):
             raise ValueError("Project or DataSource ID is not set")
-        return f"{self.id}/uploads/{filename}"
+        return os.path.join(base_path, f"{self.id}/uploads/{filename}")
 
     def get_original_file_name(self, file_name=None):
         if not file_name:
@@ -333,7 +341,9 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
         return f"DataSource {self.datasource} meta"
 
     def relative_path_to_save(self, filename):
-        return f"{self.datasource.id}/previews/{filename}"
+        base_path = self.preview.storage.location
+
+        return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
@@ -361,10 +371,12 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         super(WranglingScript, self).save(*args, **kwargs)
 
     def relative_path_to_save(self, filename):
+        base_path = self.file.storage.location
+
         if self.is_predefined:
-            return f"scripts/{filename}"
+            return os.path.join(base_path, f"scripts/{filename}")
         else:
-            return f"{self.datasource.id}/scripts/{filename}"
+            return os.path.join(base_path, f"{self.datasource.id}/scripts/{filename}")
 
     def meta_file_serialization(self):
         data = {"id": self.id, "name": self.name}
@@ -416,9 +428,10 @@ class DataSourceJob(
         return dict(id=project.id, title=project.title)
 
     def relative_path_to_save(self, filename):
+        base_path = self.result.storage.location
         if self.id is None or self.datasource_id is None:
             raise ValueError("Job or DataSource ID is not set")
-        return f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}"
+        return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
     def update_meta(self, preview: dict, items: int, fields: int, fields_names: list, fields_with_urls: list):
         with transaction.atomic():
@@ -465,7 +478,9 @@ class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
         return f"Job {self.job} meta"
 
     def relative_path_to_save(self, filename):
-        return f"{self.job.datasource.id}/previews/{filename}"
+        base_path = self.preview.storage.location
+
+        return os.path.join(base_path, f"{self.job.datasource.id}/previews/{filename}")
 
 
 class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
@@ -702,10 +717,12 @@ class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
         ordering = ("created",)
 
     def relative_path_to_save(self, filename):
+        base_path = self.image.storage.location
+
         if not self.block.page_id:
             raise ValueError("Page is not set")
 
-        return f"pages/{self.block.page_id}/{filename}"
+        return os.path.join(base_path, f"pages/{self.block.page_id}/{filename}")
 
     def get_original_image_name(self, file_name=None):
         if not file_name:
