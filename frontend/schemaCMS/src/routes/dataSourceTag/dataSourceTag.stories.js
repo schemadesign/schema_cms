@@ -3,22 +3,29 @@ import { storiesOf } from '@storybook/react';
 
 import { DataSourceTag } from './dataSourceTag.component';
 import { withTheme } from '../../.storybook/decorators';
-import { ROLES } from '../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../.storybook/helpers';
+import { ROLES } from '../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
   userRole: ROLES.ADMIN,
+  isSubmitting: false,
+  dirty: false,
+  isValid: true,
+  handleSubmit: Function.prototype,
+  handleChange: Function.prototype,
+  setFieldValue: Function.prototype,
   updateTag: Function.prototype,
-  fetchFieldsInfo: Function.prototype,
   fetchTag: () => Promise.resolve({ datasource: { id: '1' } }),
   removeTag: Function.prototype,
   tag: {
-    key: 'key',
-    value: 'value',
-    datasource: {
-      id: '1',
-      name: 'name',
-    },
+    id: 2,
+    datasource: { id: 1 },
+    name: 'name',
+    tags: [{ id: 1, value: 'value' }],
+  },
+  values: {
+    name: 'name',
+    tags: [{ id: 1, value: 'value' }],
   },
   history,
   intl,

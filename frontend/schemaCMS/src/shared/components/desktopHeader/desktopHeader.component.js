@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Header, Icons, Menu, Typography } from 'schemaUI';
-import { always, equals, path, pipe, split, last } from 'ramda';
+import { always, equals, last, path, pipe, split } from 'ramda';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
@@ -11,23 +11,23 @@ import {
   Actions,
   closeButtonStyles,
   Container,
+  Content,
   customButtonStyles,
   headerCustomStyles,
   HeaderWrapper,
   IconLink,
+  List,
   Logo,
   LogoLink,
   logoutButtonStyles,
   menuStyles,
   MenuWrapper,
   Overlayer,
+  PrimaryItem,
+  SecondaryItem,
   Title,
   TitleWrapper,
   TopContainer,
-  Content,
-  PrimaryItem,
-  List,
-  SecondaryItem,
 } from './desktopHeader.styles';
 import { PRIMARY_OPTIONS, SECONDARY_OPTIONS } from './desktopHeader.constants';
 import messages from './desktopHeader.messages';

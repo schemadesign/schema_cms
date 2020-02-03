@@ -86,11 +86,11 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   word-break: break-word;
 }
 
-.c15 {
+.c16 {
   height: 155px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c17 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,16 +118,21 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c19 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c13 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -139,11 +144,11 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   position: relative;
 }
 
-.c13 label {
+.c14 label {
   margin-bottom: 1px;
 }
 
-.c14 {
+.c15 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -181,7 +186,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -190,7 +195,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -199,7 +204,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     width: 240px;
   }
 }
@@ -571,7 +576,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className=""
+        className="c12"
       >
         <div
           style={
@@ -630,7 +635,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
             }
           >
             <div
-              className="c12"
+              className="c13"
             >
               <svg
                 style={
@@ -652,7 +657,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c13"
+        className="c14"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -678,7 +683,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
           value="none"
         />
         <div
-          className="c14"
+          className="c15"
         >
           <svg
             style={
@@ -831,16 +836,16 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
           >
             <button
-              className="c18"
+              className="c19"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -868,7 +873,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
               </span>
             </button>
             <button
-              className="c18"
+              className="c19"
               disabled={true}
               id="createPageBlockBtn"
               style={

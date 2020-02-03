@@ -19,7 +19,9 @@ exports[`TextInput: Component should render edit icon 1`] = `
     error={false}
     handleChange={[Function]}
     iconComponent={
-      <ForwardRef(styled.div)>
+      <ForwardRef(styled.div)
+        isLabel={false}
+      >
         <Unknown />
       </ForwardRef(styled.div)>
     }

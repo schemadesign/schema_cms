@@ -5,12 +5,12 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Tags"
+    title="Tags List"
   />
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Tags"
+        defaultMessage="Tags List"
         id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
@@ -105,7 +105,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Tags"
+        defaultMessage="Tags List"
         id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
@@ -190,7 +190,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
+          defaultMessage="{tags, plural,one {# Tag List} other {# Tags List}}"
           id="dataSource.dataSourceTags.tags"
           values={
             Object {
@@ -285,12 +285,12 @@ exports[`DataSourceTags: Component should render correctly when no filters 1`] =
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Tags"
+    title="Tags List"
   />
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Tags"
+        defaultMessage="Tags List"
         id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
@@ -385,7 +385,7 @@ exports[`DataSourceTags: Component should render correctly when no filters 1`] =
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Tags"
+        defaultMessage="Tags List"
         id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
@@ -471,7 +471,7 @@ exports[`DataSourceTags: Component should render correctly when no filters 1`] =
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
+          defaultMessage="{tags, plural,one {# Tag List} other {# Tags List}}"
           id="dataSource.dataSourceTags.tags"
           values={
             Object {
@@ -567,12 +567,12 @@ exports[`DataSourceTags: Component should render correctly with loader 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Tags"
+    title="Tags List"
   />
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Tags"
+        defaultMessage="Tags List"
         id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
@@ -667,7 +667,7 @@ exports[`DataSourceTags: Component should render correctly with loader 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Tags"
+        defaultMessage="Tags List"
         id="dataSource.dataSourceTags.subTitle"
         values={Object {}}
       />
@@ -736,7 +736,7 @@ exports[`DataSourceTags: Component should render correctly with loader 1`] = `
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="{tags, plural,one {# Tag} other {# Tags}}"
+          defaultMessage="{tags, plural,one {# Tag List} other {# Tags List}}"
           id="dataSource.dataSourceTags.tags"
           values={
             Object {

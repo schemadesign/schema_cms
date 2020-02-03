@@ -89,9 +89,9 @@ export class DataSourceTags extends PureComponent {
     this.props.history.push(`/datasource/${dataSourceId}/${TAGS_PAGE}/add`);
   };
 
-  renderCheckboxes = ({ id, key }, index) => (
+  renderCheckboxes = ({ id, name }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index} isEdit>
-      <Link to={`/tag/${id}`}>{key}</Link>
+      <Link to={`/tag/${id}`}>{name}</Link>
     </Checkbox>
   );
 

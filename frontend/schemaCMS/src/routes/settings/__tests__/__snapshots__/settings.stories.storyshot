@@ -103,11 +103,11 @@ exports[`Storyshots Settings Default 1`] = `
   word-break: break-word;
 }
 
-.c16 {
+.c17 {
   height: 155px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -126,7 +126,7 @@ exports[`Storyshots Settings Default 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c18 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -135,16 +135,21 @@ exports[`Storyshots Settings Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c19 {
+.c20 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c13 {
-  padding-top: 7px;
+  width: 100%;
 }
 
-.c15 {
+.c14 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c16 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -152,11 +157,11 @@ exports[`Storyshots Settings Default 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c15:hover {
+.c16:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c14 {
+.c15 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -204,7 +209,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -213,7 +218,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -222,7 +227,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     width: 240px;
   }
 }
@@ -591,7 +596,7 @@ exports[`Storyshots Settings Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -653,7 +658,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c14"
           >
             <svg
               style={
@@ -675,7 +680,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -737,7 +742,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c14"
           >
             <svg
               style={
@@ -759,7 +764,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -822,7 +827,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -886,10 +891,10 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className="c14"
+      className="c15"
     >
       <span
-        className="c15"
+        className="c16"
         onClick={[Function]}
         style={
           Object {
@@ -904,16 +909,16 @@ exports[`Storyshots Settings Default 1`] = `
       </span>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
       >
         <div
-          className="c18"
+          className="c19"
         >
           <button
-            className="c19"
+            className="c20"
             disabled={false}
             onClick={[Function]}
             style={
@@ -940,7 +945,7 @@ exports[`Storyshots Settings Default 1`] = `
             </span>
           </button>
           <button
-            className="c19"
+            className="c20"
             disabled={true}
             style={
               Object {

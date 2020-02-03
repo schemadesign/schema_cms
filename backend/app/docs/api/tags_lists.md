@@ -4,7 +4,7 @@
 
 **Request**:
 
-`GET` `/api/v1/tags/:id`
+`GET` `/api/v1/tags-lists/:id`
 
 *Note:*
 
@@ -21,11 +21,13 @@ Content-Type application/json
         "id": 1,
         "name": "TestDataSource"
      },
-    "key": "tagKey",
-    "value": "tagValue",
+    "name": "tagsListName",
     "is_active": true,
     "created": "2019-11-04T13:28:56+0000",
-    "modified": "2019-11-04T13:28:56+0000"
+    "modified": "2019-11-04T13:28:56+0000",
+    "tags": [
+        {"id": 1, "value": "tagValue", "exec_order": 0},
+    ]
 }
 ```
 
@@ -39,9 +41,8 @@ Parameters:
 
 Name         | Type     | Description
 -------------|----------|----------------------------------------------
-key          | string   | Tag key.
-value        | string   | Value of tag.
-is_active    | bool     | Is tag active?
+name         | string   | Tags list name.
+is_active    | bool     | Is tags list active?
 
 *Note:*
 
@@ -58,10 +59,12 @@ Content-Type application/json
         "id": 1,
         "name": "TestDataSource"
      },
-    "key": "tagKey",
-    "value": "tagValue",
+    "name": "tagsListName",
     "is_active": true,
     "created": "2019-11-04T13:28:56+0000",
-    "modified": "2019-11-04T13:28:56+0000"
+    "modified": "2019-11-04T13:28:56+0000",
+    "tags": [
+        {"id": 1, "value": "tagValue", "exec_order": 0},
+    ]
 }
 ```
