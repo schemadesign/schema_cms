@@ -69,8 +69,8 @@ export class List extends PureComponent {
 
   renderFooter = (index, slug) => <Footer id={`apiPath-${index}`}>{generateApiUrl(slug)}</Footer>;
 
-  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }, index) {
-    const { firstName = '', lastName = '' } = owner;
+  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner }, index) {
+    const { firstName = '—', lastName = '' } = owner || {};
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
 

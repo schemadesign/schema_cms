@@ -120,7 +120,7 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderMetaData = ({ metaData: { items, fields, filters, views }, metaProcessing }) => {
+  renderMetaData = ({ metaData: { items, fields, filters, tags }, metaProcessing }) => {
     const {
       intl: { formatMessage },
       theme,
@@ -134,7 +134,7 @@ export class DataSourceList extends PureComponent {
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
-      { name: formatMessage(messages.views), value: views },
+      { name: formatMessage(messages.tags), value: tags },
     ];
     const elements = list.map(({ name, value }, index) => (
       <MetaData key={index} metaProcessing={metaProcessing}>
@@ -170,10 +170,8 @@ export class DataSourceList extends PureComponent {
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
     ])({ metaFailed, jobProcessing, metaProcessing, fileUploading, fileUploadingError });
 
-  renderItem = (
-    { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess, fileName },
-    index
-  ) => {
+  renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsInProcess, fileName }, index) => {
+    const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const jobProcessing = !activeJob || jobsInProcess;
     const metaStatus = propOr('', 'status', metaData);

@@ -77,6 +77,17 @@ exports[`PageBlockList: Component should render correctly 1`] = `
         onClick={[Function]}
       />
     </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{count, plural,one {# Block} other {# Blocks}}"
+        id="page.blockList.blocks"
+        values={
+          Object {
+            "count": 2,
+          }
+        }
+      />
+    </styled.div>
     <styled.div />
   </styled.div>
   <form
@@ -431,6 +442,17 @@ exports[`PageBlockList: Component should render correctly with one block 1`] = `
       <PlusButton
         hideOnDesktop={false}
         onClick={[Function]}
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{count, plural,one {# Block} other {# Blocks}}"
+        id="page.blockList.blocks"
+        values={
+          Object {
+            "count": 1,
+          }
+        }
       />
     </styled.div>
     <styled.div />
