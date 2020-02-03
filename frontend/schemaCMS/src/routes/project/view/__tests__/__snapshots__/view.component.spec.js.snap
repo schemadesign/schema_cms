@@ -41,13 +41,14 @@ exports[`View: Component should render content correctly 1`] = `
           }
           headerComponent={
             <ForwardRef(styled.span)>
-              Charts
+              States
             </ForwardRef(styled.span)>
           }
+          id="projectStates"
           onClick={[Function]}
         >
           <styled.span
-            id="undefinedValue"
+            id="projectStatesValue"
           >
             0
           </styled.span>

@@ -14,4 +14,5 @@ export const TAGS_PATH = '/tags-lists';
 export const DATA_WRANGLING_SCRIPTS_PATH = '/script';
 export const DATA_WRANGLING_JOB_PATH = '/job';
 export const PREVIEW_PATH = '/preview';
+export const STATES_PATH = '/states';
 export const RESET_PASSWORD_PATH = `${ME_PATH}/reset-password`;

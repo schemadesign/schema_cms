@@ -654,6 +654,19 @@ exports[`Storyshots Project|FolderList Default 1`] = `
           </a>
         </div>
         <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/1/states"
+            onClick={[Function]}
+          >
+            <span>
+              States
+            </span>
+          </a>
+        </div>
+        <div
           className="c12"
         >
           <a
@@ -1527,6 +1540,19 @@ exports[`Storyshots Project|FolderList No data 1`] = `
           >
             <span>
               Sources
+            </span>
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/1/states"
+            onClick={[Function]}
+          >
+            <span>
+              States
             </span>
           </a>
         </div>

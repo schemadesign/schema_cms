@@ -633,6 +633,19 @@ exports[`Storyshots Project|View Default 1`] = `
           >
             <a
               className="c12"
+              href="/project/100/states"
+              onClick={[Function]}
+            >
+              <span>
+                States
+              </span>
+            </a>
+          </div>
+          <div
+            className="c13"
+          >
+            <a
+              className="c12"
               href="/project/100/folder"
               onClick={[Function]}
             >
@@ -1340,6 +1353,19 @@ exports[`Storyshots Project|View No data 1`] = `
             >
               <span>
                 Sources
+              </span>
+            </a>
+          </div>
+          <div
+            className="c13"
+          >
+            <a
+              className="c12"
+              href="/project/100/states"
+              onClick={[Function]}
+            >
+              <span>
+                States
               </span>
             </a>
           </div>

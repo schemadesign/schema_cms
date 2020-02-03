@@ -110,6 +110,19 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
       >
         <a
           className="c2"
+          href="/project/1/states"
+          onClick={[Function]}
+        >
+          <span>
+            States
+          </span>
+        </a>
+      </div>
+      <div
+        className="c3"
+      >
+        <a
+          className="c2"
           href="/project/1/folder"
           onClick={[Function]}
         >
