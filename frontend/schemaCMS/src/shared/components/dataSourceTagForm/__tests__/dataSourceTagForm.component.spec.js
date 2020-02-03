@@ -1,138 +1,110 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Formik } from 'formik';
 
 import { DataSourceTagForm } from '../dataSourceTagForm.component';
-import { defaultProps, createProps, editProps } from '../dataSourceTagForm.stories';
-import { BackButton } from '../../navigation';
-import { Link } from '../../../../theme/typography';
+import { defaultProps, propsWithTags } from '../dataSourceTagForm.stories';
 
 describe('DataSourceTagForm: Component', () => {
   const component = props => <DataSourceTagForm {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should render empty', () => {
     const wrapper = render();
 
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render create form', () => {
-    const form = render(createProps)
-      .find(Formik)
-      .dive();
+  it('should render correctly', () => {
+    const form = render(propsWithTags);
 
     expect(form).toMatchSnapshot();
   });
 
-  it('should render edit form', () => {
-    const form = render(editProps)
-      .find(Formik)
-      .dive();
+  it('should call setFieldValue on input change', () => {
+    jest.spyOn(propsWithTags, 'setFieldValue');
 
-    expect(form).toMatchSnapshot();
+    render(propsWithTags)
+      .find('[name="tags.0"]')
+      .simulate('change', { target: { value: 'new value' } });
+
+    expect(propsWithTags.setFieldValue).toHaveBeenCalledWith('tags.0', { id: 1, value: 'new value' });
   });
 
-  it('should call createForm on submit new', async () => {
-    jest.spyOn(createProps, 'createTag');
+  it('should add new tag on enter', () => {
+    jest.spyOn(propsWithTags, 'setFieldValue');
 
-    await render(createProps)
-      .find(Formik)
-      .prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors: Function.prototype });
-
-    expect(createProps.createTag).toHaveBeenCalledTimes(1);
-  });
-
-  it('should render error on failed createTag', async () => {
-    const setErrors = jest.fn().mockImplementation(Function.prototype);
-
-    const error = [{ code: 'nameTagNameNotUniqueError', name: 'name' }];
-    const wrapper = await render({
-      ...createProps,
-      createTag: jest.fn().mockReturnValue(Promise.reject(error)),
-    });
-
-    await wrapper.find(Formik).prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors });
-
-    expect(setErrors).toHaveBeenCalledWith({
-      name: expect.any(String),
-    });
-  });
-
-  it('should call updateTag on submit update', async () => {
-    jest.spyOn(editProps, 'updateTag');
-
-    await render(editProps)
-      .find(Formik)
-      .prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors: Function.prototype });
-
-    expect(editProps.updateTag).toHaveBeenCalledTimes(1);
-  });
-
-  it('should render error on failed updateTag', async () => {
-    const setErrors = jest.fn().mockImplementation(Function.prototype);
-
-    const error = [{ code: 'nameTagNameNotUniqueError', name: 'name' }];
-    const wrapper = await render({
-      ...editProps,
-      updateTag: jest.fn().mockReturnValue(Promise.reject(error)),
-    });
-
-    await wrapper.find(Formik).prop('onSubmit')({}, { setSubmitting: Function.prototype, setErrors });
-
-    expect(setErrors).toHaveBeenCalledWith({
-      name: expect.any(String),
-    });
-  });
-
-  it('should call removeTag on confirm button click', () => {
-    jest.spyOn(editProps, 'removeTag');
-
-    const wrapper = render(editProps);
-
-    wrapper.find('#confirmRemovalBtn').simulate('click');
-
-    expect(editProps.removeTag).toHaveBeenCalledWith({ dataSourceId: 1, tagId: 2 });
-  });
-
-  it('should show modal on click remove link', () => {
-    const wrapper = render(editProps);
+    const wrapper = render(propsWithTags);
 
     wrapper
-      .find(Formik)
-      .dive()
-      .find(Link)
-      .simulate('click');
+      .find('[name="tags.0"]')
+      .simulate('keydown', { target: { value: 'new value' }, keyCode: 13, preventDefault: Function.prototype });
 
-    expect(wrapper.state().confirmationModalOpen).toBeTruthy();
+    expect(propsWithTags.setFieldValue).toHaveBeenCalledWith('tags', [
+      { id: 1, value: 'value' },
+      { value: '' },
+      { id: 'create_2', value: 'value' },
+    ]);
+    expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
   });
 
-  it('should hide modal on cancel', () => {
-    const wrapper = render(editProps);
+  it('should remove tag on backspace', () => {
+    const props = {
+      setFieldValue: Function.prototype,
+      values: {
+        id: 2,
+        datasource: { id: 1 },
+        name: 'name',
+        tags: [{ id: 1, value: 'value' }, { id: 'create_2', value: 'value' }, { id: 3, value: 'value' }],
+        deleteTags: [],
+      },
+    };
+
+    jest.spyOn(props, 'setFieldValue');
+
+    const wrapper = render(props);
 
     wrapper
-      .find(Formik)
-      .dive()
-      .find(Link)
-      .simulate('click');
+      .find('[name="tags.2"]')
+      .simulate('keydown', { target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
 
-    wrapper.find(BackButton).simulate('click');
-
-    expect(wrapper.state().confirmationModalOpen).toBeFalsy();
+    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [
+      { id: 1, value: 'value' },
+      { id: 'create_2', value: 'value' },
+    ]);
+    expect(props.setFieldValue).toHaveBeenCalledWith('deleteTags', [3]);
+    expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
   });
 
-  it('should go back', () => {
-    jest.spyOn(defaultProps.history, 'push');
+  it('should remove tag on blur', () => {
+    const props = {
+      setFieldValue: Function.prototype,
+      values: {
+        id: 2,
+        datasource: { id: 1 },
+        name: 'name',
+        tags: [{ id: 1, value: '' }, { id: 'create_2', value: 'value' }],
+        deleteTags: [],
+      },
+    };
 
-    const wrapper = render();
+    jest.spyOn(props, 'setFieldValue');
+
+    const wrapper = render(props);
 
     wrapper
-      .find(Formik)
-      .dive()
-      .find(BackButton)
-      .simulate('click');
+      .find('[name="tags.0"]')
+      .simulate('blur', { target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/datasource/1/tag');
+    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [{ id: 'create_2', value: 'value' }]);
+    expect(wrapper.state()).toEqual({ focusInputIndex: null });
+  });
+
+  it('should set focus index', () => {
+    jest.spyOn(propsWithTags, 'setFieldValue');
+    const wrapper = render(propsWithTags);
+    wrapper.find('[name="tags.1"]').simulate('focus');
+
+    expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
   });
 });

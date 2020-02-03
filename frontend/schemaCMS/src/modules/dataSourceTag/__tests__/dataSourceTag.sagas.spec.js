@@ -27,7 +27,7 @@ describe('Tag: sagas', () => {
         dataSourceId: 1,
       };
 
-      mockApi.get(`/datasources/${payload.dataSourceId}/tags`).reply(OK, response);
+      mockApi.get(`/datasources/${payload.dataSourceId}/tags-lists`).reply(OK, response);
 
       await expectSaga(watchDataSourceTag)
         .withState(defaultState)
@@ -50,7 +50,9 @@ describe('Tag: sagas', () => {
         inactive,
       };
 
-      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/set-tags`, { active, inactive }).reply(OK, response);
+      mockApi
+        .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/set-tags-lists`, { active, inactive })
+        .reply(OK, response);
 
       await expectSaga(watchDataSourceTag)
         .withState(defaultState)
@@ -70,10 +72,7 @@ describe('Tag: sagas', () => {
       const payload = { formData, dataSourceId };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi
-        // eslint-disable-next-line camelcase
-        .post(`${DATA_SOURCES_PATH}/${dataSourceId}/tags`, { ...formData, is_active: true })
-        .reply(OK, response);
+      mockApi.post(`${DATA_SOURCES_PATH}/${dataSourceId}/tags-lists`, formData).reply(OK, response);
 
       await expectSaga(watchDataSourceTag)
         .withState(defaultState)
@@ -121,7 +120,7 @@ describe('Tag: sagas', () => {
       const payload = { formData, dataSourceId, tagId };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi.put(`${TAGS_PATH}/${tagId}`, formData).reply(OK, response);
+      mockApi.patch(`${TAGS_PATH}/${tagId}`, formData).reply(OK, response);
 
       await expectSaga(watchDataSourceTag)
         .withState(defaultState)

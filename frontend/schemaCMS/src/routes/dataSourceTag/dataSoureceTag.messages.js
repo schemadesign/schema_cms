@@ -4,10 +4,34 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   subTitle: {
     id: 'dataSourceTag.subTitle',
-    defaultMessage: 'Edit Tag',
+    defaultMessage: 'Edit Tag List',
   },
   projectsListPage: {
     id: 'dataSourceTag.projectsListPage',
     defaultMessage: 'Projects',
+  },
+  deleteList: {
+    id: 'dataSourceTag.subTitle',
+    defaultMessage: 'Remove list',
+  },
+  saveTag: {
+    id: 'dataSourceTag.saveTag',
+    defaultMessage: 'Save',
+  },
+  back: {
+    id: 'dataSourceTag.back',
+    defaultMessage: 'Back',
+  },
+  cancelRemoval: {
+    id: 'dataSourceTag.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'dataSourceTag.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'dataSourceTag.removeTitle',
+    defaultMessage: 'Are you sure you want to remove the tag?',
   },
 });

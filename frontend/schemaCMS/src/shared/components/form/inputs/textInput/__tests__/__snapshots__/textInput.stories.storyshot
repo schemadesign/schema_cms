@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
+.c0 {
+  width: 100%;
+}
+
 <div
   style={
     Object {
@@ -17,7 +21,7 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -81,7 +85,12 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 
 exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 .c0 {
+  width: 100%;
+}
+
+.c1 {
   padding-top: 7px;
+  margin-top: 0;
 }
 
 <div
@@ -100,7 +109,7 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -158,7 +167,7 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -184,6 +193,10 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 
 exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
 .c0 {
+  width: 100%;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,7 +222,7 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -268,7 +281,7 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
       />
     </div>
     <div
-      className="c0"
+      className="c1"
     >
       error
     </div>

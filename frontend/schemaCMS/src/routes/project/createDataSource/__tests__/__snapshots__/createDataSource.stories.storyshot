@@ -86,11 +86,11 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c14 {
   height: 155px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,13 +118,18 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
   padding-top: 7px;
+  margin-top: 0;
 }
 
 @media (min-width:1040px) {
@@ -159,7 +164,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -168,7 +173,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -177,7 +182,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     width: 240px;
   }
 }
@@ -594,7 +599,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     />
   </div>
   <div
-    className=""
+    className="c12"
   >
     <div
       style={
@@ -653,7 +658,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
         }
       >
         <div
-          className="c12"
+          className="c13"
         >
           <svg
             style={
@@ -790,16 +795,16 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
-      className="c14"
+      className="c15"
     >
       <div
-        className="c15"
+        className="c16"
       >
         <button
-          className="c16"
+          className="c17"
           disabled={false}
           onClick={[Function]}
           style={
@@ -825,7 +830,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
           </span>
         </button>
         <button
-          className="c16"
+          className="c17"
           disabled={true}
           onClick={[Function]}
           style={

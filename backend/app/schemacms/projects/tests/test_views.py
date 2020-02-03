@@ -1393,9 +1393,9 @@ class TestSetBlocksView:
         return reverse("projects:page-set-blocks", kwargs=dict(pk=pk))
 
 
-class TestTagsListCreateView:
-    def test_response(self, api_client, admin, tag_factory, data_source):
-        tag_factory.create_batch(2, datasource=data_source, is_active=True)
+class TestTagsListsCreateView:
+    def test_response(self, api_client, admin, tags_list_factory, data_source):
+        tags_list_factory.create_batch(2, datasource=data_source, is_active=True)
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(data_source.id))
@@ -1403,70 +1403,116 @@ class TestTagsListCreateView:
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["results"]) == 2
         assert (
-            response.data["results"] == projects_serializers.TagSerializer(data_source.tags, many=True).data
+            response.data["results"]
+            == projects_serializers.TagsListSerializer(data_source.list_of_tags, many=True).data
         )
         assert response.data["project"] == {"id": data_source.project.id, "title": data_source.project.title}
 
-    def test_create(self, api_client, admin, data_source):
-        payload = dict(key="test", value="value",)
+    def test_create_without_tags(self, api_client, admin, data_source):
+        payload = dict(name="test")
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
-        tag_id = response.data["id"]
-        tag = projects_models.Tag.objects.get(pk=tag_id)
+        tags_list_id = response.data["id"]
+        tags_list = projects_models.TagsList.objects.get(pk=tags_list_id)
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == projects_serializers.TagSerializer(tag).data
+        assert response.data == projects_serializers.TagsListSerializer(tags_list).data
 
-    def test_unique_key_validation(self, api_client, admin, tag_factory, data_source):
-        tag = tag_factory(datasource=data_source)
-        payload = dict(key=tag.key, value="value",)
+    def test_create_with_tags(self, api_client, admin, data_source):
+        payload = {
+            "name": "withTags",
+            "is_active": True,
+            "tags": [
+                {"value": "tag1", "exec_order": 0},
+                {"value": "tag2", "exec_order": 1},
+                {"value": "tag1", "exec_order": 2},
+            ],
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+        tags_list_id = response.data["id"]
+        tags_list = projects_models.TagsList.objects.get(pk=tags_list_id)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert len(response.data["tags"]) == 3
+        assert response.data["tags"] == projects_serializers.TagsListSerializer(tags_list).data["tags"]
+
+    def test_unique_key_validation(self, api_client, admin, tags_list_factory, data_source):
+        tags_list = tags_list_factory(datasource=data_source)
+        payload = dict(name=tags_list.name)
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
-            'key': [
+            'name': [
                 error.Error(
-                    message='Tag with this key already exist in data source.', code='tagKeyNotUnique'
+                    message='TagsList with this name already exist in data source.',
+                    code='tagsListNameNotUnique',
                 ).data
             ]
         }
 
     @staticmethod
     def get_url(pk):
-        return reverse("projects:datasource-tags", kwargs=dict(pk=pk))
+        return reverse("projects:datasource-tags-lists", kwargs=dict(pk=pk))
 
 
-class TestTagDetailView:
-    def test_response(self, api_client, admin, tag):
+class TestTagsListDetailView:
+    def test_response(self, api_client, admin, tags_list):
 
         api_client.force_authenticate(admin)
-        response = api_client.get(self.get_url(tag.id))
+        response = api_client.get(self.get_url(tags_list.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["results"] == projects_serializers.TagDetailsSerializer(instance=tag).data
+        assert (
+            response.data["results"] == projects_serializers.TagsListDetailSerializer(instance=tags_list).data
+        )
 
-    def test_update(self, api_client, admin, tag):
-        new_key = "newKey"
-        payload = dict(key=new_key)
+    def test_update(self, api_client, admin, tags_list):
+        new_name = "newName"
+        payload = dict(name=new_name)
 
         api_client.force_authenticate(admin)
-        response = api_client.patch(self.get_url(tag.id), data=payload)
-        tag.refresh_from_db()
+        response = api_client.patch(self.get_url(tags_list.id), data=payload, format="json")
+        tags_list.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert tag.key == new_key
-        assert response.data == projects_serializers.TagDetailsSerializer(instance=tag).data
+        assert tags_list.name == new_name
+        assert response.data == projects_serializers.TagsListDetailSerializer(instance=tags_list).data
 
-    def test_delete(self, api_client, admin, tag):
+    def test_delete(self, api_client, admin, tags_list):
         api_client.force_authenticate(admin)
-        response = api_client.delete(self.get_url(tag.id))
+        response = api_client.delete(self.get_url(tags_list.id))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert not projects_models.Tag.objects.all().filter(pk=tag.id).exists()
+        assert not projects_models.Tag.objects.all().filter(pk=tags_list.id).exists()
 
     @staticmethod
     def get_url(pk):
-        return reverse("projects:tag-detail", kwargs=dict(pk=pk))
+        return reverse("projects:tagslist-detail", kwargs=dict(pk=pk))
+
+
+class TestSetTagsListView:
+    def test_response(self, api_client, admin, data_source, tags_list_factory):
+        tags_list_1 = tags_list_factory(datasource=data_source, is_active=False)
+        tags_list_2 = tags_list_factory(datasource=data_source, is_active=True)
+        tags_list_1_old_status = tags_list_1.is_active
+        tags_list_2_old_status = tags_list_2.is_active
+        payload = {"active": [tags_list_1.id], "inactive": [tags_list_2.id]}
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+        tags_list_1.refresh_from_db()
+        tags_list_2.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert tags_list_1_old_status != tags_list_1.is_active
+        assert tags_list_2_old_status != tags_list_2.is_active
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-set-tags-lists", kwargs=dict(pk=pk))

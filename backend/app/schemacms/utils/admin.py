@@ -1,5 +1,6 @@
 import itertools
 
+from django.core.validators import ValidationError
 from django.contrib import messages
 from django.db import models
 from django.template.loader import render_to_string
@@ -9,10 +10,29 @@ from django.utils import safestring
 import softdelete.admin
 
 
+class SoftDeleteFormWithUniqueTogetherValidation(softdelete.admin.SoftDeleteObjectAdminForm):
+    def clean(self):
+        constraints = self.instance._meta.constraints
+        if constraints and any([constrain.condition for constrain in constraints]):
+            fields = [field for field in self.instance._meta.constraints[0].fields]
+            filter_query = {}
+            for field in fields:
+                filter_query[field] = (
+                    self.cleaned_data[field] if field in self.cleaned_data else getattr(self.instance, field)
+                )
+
+            if self.instance.__class__.objects.filter(**filter_query).exists():
+                message = f"Object with this {fields[1]} already exists in {fields[0]}"
+                raise ValidationError(message)
+
+        super().clean()
+
+
 class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
     actions = ["soft_undelete"]
     deletion_q = models.Q(deleted_at__isnull=0)
     readonly_on_update_fields = tuple()
+    form = SoftDeleteFormWithUniqueTogetherValidation
 
     def delete_selected(self, request, queryset):
         # prevent hard delete on soft delete action

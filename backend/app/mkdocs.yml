@@ -17,5 +17,5 @@ nav:
     - Pages: 'api/pages.md'
     - Projects: 'api/projects.md'
     - Scripts: 'api/scripts.md'
-    - Tags: 'api/tags.md'
+    - Tags Lists: 'api/tags_lists.md'
     - Users: 'api/users.md'

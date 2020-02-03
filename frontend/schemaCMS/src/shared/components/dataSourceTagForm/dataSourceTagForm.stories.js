@@ -3,32 +3,29 @@ import { storiesOf } from '@storybook/react';
 
 import { DataSourceTagForm } from './dataSourceTagForm.component';
 import { withTheme } from '../../../.storybook/decorators';
-import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
-  dataSourceId: '1',
-  history,
-  intl,
+  handleChange: Function.prototype,
+  setFieldValue: Function.prototype,
+  values: {
+    name: '',
+    tags: [],
+    deleteTags: [],
+  },
 };
 
-export const createProps = {
+export const propsWithTags = {
   ...defaultProps,
-  createTag: Function.prototype,
-};
-
-export const editProps = {
-  ...defaultProps,
-  updateTag: Function.prototype,
-  removeTag: Function.prototype,
-  tag: {
+  values: {
     id: 2,
     datasource: { id: 1 },
-    key: 'namekey',
-    value: 'value',
+    name: 'name',
+    tags: [{ id: 1, value: 'value' }, { id: 'create_2', value: 'value' }],
+    deleteTags: [],
   },
 };
 
 storiesOf('Shared Components|DataSourceTagForm', module)
   .addDecorator(withTheme())
-  .add('Create form', () => <DataSourceTagForm {...createProps} />)
-  .add('Edit form', () => <DataSourceTagForm {...editProps} />);
+  .add('Create form', () => <DataSourceTagForm {...defaultProps} />)
+  .add('Edit form', () => <DataSourceTagForm {...propsWithTags} />);

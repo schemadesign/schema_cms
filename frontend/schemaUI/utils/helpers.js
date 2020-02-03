@@ -1,6 +1,15 @@
 import elementAttributes from 'html-element-attributes';
 
-const additionalAllowedAttributes = ['className', 'onClick', 'onChange', 'onBlur', 'onFocus', 'defaultValue'];
+const additionalAllowedAttributes = [
+  'className',
+  'onClick',
+  'onChange',
+  'onBlur',
+  'onFocus',
+  'defaultValue',
+  'onKeyDown',
+  'autoFocus',
+];
 
 export const filterAllowedAttributes = (element, props) => {
   const attributes = elementAttributes['*']

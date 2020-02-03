@@ -1,157 +1,128 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { always, equals, ifElse } from 'ramda';
+import { always, insert, is, remove } from 'ramda';
+import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './dataSourceTagForm.messages';
-import {
-  TAG_KEY,
-  TAG_VALUE,
-  TAGS_SCHEMA,
-  INITIAL_VALUES,
-} from '../../../modules/dataSourceTag/dataSourceTag.constants';
-import { Form } from './dataSourceTagForm.styles';
-import { BackButton, NavigationContainer, NextButton } from '../navigation';
-import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.styles';
-import { TAGS_PAGE } from '../../../modules/dataSource/dataSource.constants';
-import { Link, LinkContainer } from '../../../theme/typography';
-import { renderWhenTrue } from '../../utils/rendering';
-import { errorMessageParser } from '../../utils/helpers';
-import reportError from '../../utils/reportError';
+import { TAG_NAME, TAG_REMOVE_TAGS, TAG_TAGS } from '../../../modules/dataSourceTag/dataSourceTag.constants';
+import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './dataSourceTagForm.styles';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
+
+const { Label } = FormUI;
+const { CloseIcon, PlusIcon } = Icons;
 
 export class DataSourceTagForm extends PureComponent {
   static propTypes = {
-    createTag: PropTypes.func,
-    updateTag: PropTypes.func,
-    removeTag: PropTypes.func,
-    tag: PropTypes.object,
-    dataSourceId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }).isRequired,
-    intl: PropTypes.object.isRequired,
-  };
-
-  static defaultProps = {
-    tag: {},
+    handleChange: PropTypes.func.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
+    values: PropTypes.object.isRequired,
   };
 
   state = {
-    confirmationModalOpen: false,
-    removeLoading: false,
+    focusInputIndex: null,
   };
 
-  getBackMessageId = ifElse(equals(true), always('cancel'), always('back'));
+  handleAddTag = ({ index }) => {
+    const { setFieldValue, values } = this.props;
+    const insertIndex = is(Number, index) ? index : values[TAG_TAGS].length;
+    const newValues = insert(insertIndex, { value: '' }, values[TAG_TAGS]);
+    this.setState({ focusInputIndex: insertIndex });
+    setFieldValue(TAG_TAGS, newValues);
+  };
 
-  handleRemoveTag = () => this.setState({ confirmationModalOpen: true });
+  handleRemoveTag = ({ index, resetIndex }) => {
+    const { setFieldValue, values } = this.props;
+    this.setState({ focusInputIndex: resetIndex ? null : index - 1 });
+    const newValues = remove(index, 1, values[TAG_TAGS]);
+    setFieldValue(TAG_TAGS, newValues);
+    const removeId = values[TAG_TAGS][index].id;
 
-  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
-
-  handleBack = () => this.props.history.push(`/datasource/${this.props.dataSourceId}/${TAGS_PAGE}`);
-
-  handleConfirmRemove = async () => {
-    try {
-      this.setState({ removeLoading: true });
-
-      const { datasource, id: tagId } = this.props.tag;
-      await this.props.removeTag({ dataSourceId: datasource.id, tagId });
-    } catch (error) {
-      this.setState({ removeLoading: false });
-      reportError(error);
+    if (is(Number, removeId)) {
+      setFieldValue(TAG_REMOVE_TAGS, values[TAG_REMOVE_TAGS].concat(removeId));
     }
   };
 
-  handleSubmit = async (formData, { setErrors, setSubmitting }) => {
-    const submitFunc = this.props.createTag || this.props.updateTag;
-    const dataSourceId = this.props.dataSourceId;
+  handleBlur = index => e => {
+    const { value } = e.target;
 
-    try {
-      setSubmitting(true);
-      await submitFunc({ dataSourceId, tagId: this.props.tag.id, formData });
-    } catch (errors) {
-      const { formatMessage } = this.props.intl;
-      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
-
-      setErrors(errorMessages);
-    } finally {
-      setSubmitting(false);
+    if (!value.length) {
+      this.handleRemoveTag({ index, resetIndex: true });
     }
   };
 
-  renderRemoveTagLink = renderWhenTrue(
-    always(
-      <LinkContainer>
-        <Link onClick={this.handleRemoveTag}>
-          <FormattedMessage {...messages.deleteTag} />
-        </Link>
-      </LinkContainer>
-    )
+  handleKeyDown = index => e => {
+    const { setFieldValue, values } = this.props;
+    const { value } = e.target;
+
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      if (value.length) {
+        this.handleAddTag({ index: index + 1 });
+      }
+    }
+
+    if (!value.length) {
+      if (e.keyCode === 8) {
+        e.preventDefault();
+        this.handleRemoveTag({ setFieldValue, values, index });
+      }
+    }
+  };
+
+  handleChange = ({ e, id = null, index }) => {
+    const { setFieldValue } = this.props;
+    const { value } = e.target;
+    const tag = id ? { value, id } : { value };
+    setFieldValue(`${TAG_TAGS}.${index}`, tag);
+  };
+
+  renderTag = ({ value, id }, index) => (
+    <Tag key={index}>
+      <TextInput
+        value={value}
+        onChange={e => this.handleChange({ e, id, index })}
+        name={`${[TAG_TAGS]}.${index}`}
+        fullWidth
+        customStyles={{ paddingBottom: 0, width: '100%' }}
+        isEdit
+        inputRef={input => input && this.state.focusInputIndex === index && input.focus()}
+        onFocus={() => this.setState({ focusInputIndex: index })}
+        onBlur={this.handleBlur(index)}
+        onKeyDown={this.handleKeyDown(index)}
+        {...this.props}
+      />
+      <CloseIcon customStyles={removeIconStyles} onClick={() => this.handleRemoveTag({ index, resetIndex: true })} />
+    </Tag>
   );
 
+  renderTags = tags =>
+    renderWhenTrueOtherwise(always(<FormattedMessage {...messages.noTags} />), () => tags.map(this.renderTag))(
+      !tags.length
+    );
+
   render() {
-    const { removeLoading, confirmationModalOpen } = this.state;
-    const initialValues = {
-      ...INITIAL_VALUES,
-      ...this.props.tag,
-    };
+    const { handleChange, values, ...rest } = this.props;
 
     return (
       <Fragment>
-        <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={TAGS_SCHEMA}>
-          {({ values, handleChange, dirty, isValid, isSubmitting, ...rest }) => {
-            return (
-              <Form>
-                <TextInput
-                  value={values[TAG_KEY]}
-                  onChange={handleChange}
-                  name={TAG_KEY}
-                  fullWidth
-                  isEdit
-                  label={<FormattedMessage {...messages[TAG_KEY]} />}
-                  {...rest}
-                />
-                <TextInput
-                  value={values[TAG_VALUE]}
-                  onChange={handleChange}
-                  name={TAG_VALUE}
-                  fullWidth
-                  isEdit
-                  label={<FormattedMessage {...messages[TAG_VALUE]} />}
-                  {...rest}
-                />
-                {this.renderRemoveTagLink(!!this.props.tag.id)}
-                <NavigationContainer fixed>
-                  <BackButton onClick={this.handleBack} type="button">
-                    <FormattedMessage {...messages[this.getBackMessageId(!this.props.tag.id)]} />
-                  </BackButton>
-                  <NextButton loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
-                    <FormattedMessage {...messages.saveTag} />
-                  </NextButton>
-                </NavigationContainer>
-              </Form>
-            );
-          }}
-        </Formik>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
-          <ModalTitle>
-            <FormattedMessage {...messages.removeTitle} />
-          </ModalTitle>
-          <ModalActions>
-            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
-              <FormattedMessage {...messages.cancelRemoval} />
-            </BackButton>
-            <NextButton
-              id="confirmRemovalBtn"
-              onClick={this.handleConfirmRemove}
-              loading={removeLoading}
-              disabled={removeLoading}
-            >
-              <FormattedMessage {...messages.confirmRemoval} />
-            </NextButton>
-          </ModalActions>
-        </Modal>
+        <TextInput
+          value={values[TAG_NAME]}
+          onChange={handleChange}
+          name={TAG_NAME}
+          fullWidth
+          isEdit
+          label={<FormattedMessage {...messages[TAG_NAME]} />}
+          {...rest}
+        />
+        <Label>{<FormattedMessage {...messages[TAG_TAGS]} />}</Label>
+        <TagsContainer>{this.renderTags(values[TAG_TAGS])}</TagsContainer>
+        <ButtonContainer>
+          <PlusButton onClick={this.handleAddTag} type="button">
+            <PlusIcon />
+          </PlusButton>
+        </ButtonContainer>
       </Fragment>
     );
   }

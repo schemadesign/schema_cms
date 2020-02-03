@@ -14,12 +14,12 @@ class InputComponent extends PureComponent {
   };
 
   render() {
-    const { customStyles, theme, ...restProps } = this.props;
+    const { customStyles, theme, inputRef, ...restProps } = this.props;
     const defaultStyles = getStyles(theme);
     const inputStyles = { ...defaultStyles, ...customStyles };
     const filteredProps = filterAllowedAttributes('input', restProps);
 
-    return <input id={restProps.name} style={inputStyles} {...filteredProps} />;
+    return <input id={restProps.name} style={inputStyles} ref={inputRef} {...filteredProps} />;
   }
 }
 

@@ -1,43 +1,23 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import { TAG_KEY, TAG_VALUE } from '../../../modules/dataSourceTag/dataSourceTag.constants';
+import { TAG_NAME, TAG_TAGS } from '../../../modules/dataSourceTag/dataSourceTag.constants';
 
 export default defineMessages({
-  [TAG_KEY]: {
-    id: `shared.components.dataSourceTagForm.${TAG_KEY}`,
-    defaultMessage: 'Key',
+  [TAG_NAME]: {
+    id: `shared.components.dataSourceTagForm.${TAG_NAME}`,
+    defaultMessage: 'Name',
   },
-  [TAG_VALUE]: {
-    id: `shared.components.dataSourceTagForm.${TAG_VALUE}`,
-    defaultMessage: 'Value',
+  [TAG_TAGS]: {
+    id: `shared.components.dataSourceTagForm.${TAG_TAGS}`,
+    defaultMessage: 'Tags',
   },
-  saveTag: {
-    id: 'shared.components.dataSourceTagForm.saveTag',
-    defaultMessage: 'Save',
+  addTag: {
+    id: 'shared.components.dataSourceTagForm.addTag',
+    defaultMessage: 'Add tag',
   },
-  deleteTag: {
-    id: 'shared.components.dataSourceTagForm.deleteTag',
-    defaultMessage: 'Remove tag',
-  },
-  cancel: {
-    id: 'shared.components.dataSourceTagForm.cancel',
-    defaultMessage: 'Cancel',
-  },
-  back: {
-    id: 'shared.components.dataSourceTagForm.back',
-    defaultMessage: 'Back',
-  },
-  cancelRemoval: {
-    id: 'shared.components.dataSourceTagForm.cancelRemoval',
-    defaultMessage: 'Cancel',
-  },
-  confirmRemoval: {
-    id: 'shared.components.dataSourceTagForm.confirmRemoval',
-    defaultMessage: 'Confirm',
-  },
-  removeTitle: {
-    id: 'shared.components.dataSourceTagForm.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the tag?',
+  noTags: {
+    id: 'shared.components.dataSourceTagForm.noTags',
+    defaultMessage: 'No Tags',
   },
   keyTagKeyNotUniqueError: {
     id: 'shared.components.dataSourceTagForm.keyTagKeyNotUniqueError',

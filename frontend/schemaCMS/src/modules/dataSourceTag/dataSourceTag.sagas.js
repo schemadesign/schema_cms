@@ -12,7 +12,7 @@ function* fetchList({ payload: { dataSourceId } }) {
   try {
     yield put(DataSourceTagRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/tags`);
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/tags-lists`);
 
     yield put(DataSourceTagRoutines.fetchList.success(data.results));
   } catch (e) {
@@ -26,7 +26,7 @@ function* setTags({ payload: { dataSourceId, active, inactive } }) {
   try {
     yield put(DataSourceTagRoutines.setTags.request());
 
-    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/set-tags`, { active, inactive });
+    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/set-tags-lists`, { active, inactive });
 
     yield put(DataSourceTagRoutines.setTags.success(data));
   } catch (e) {
@@ -40,7 +40,7 @@ function* createTag({ payload: { dataSourceId, formData } }) {
   try {
     yield put(DataSourceTagRoutines.createTag.request());
 
-    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/tags`, { ...formData, isActive: true });
+    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/tags-lists`, formData);
 
     browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${TAGS_PAGE}`);
 
@@ -71,7 +71,7 @@ function* updateTag({ payload: { tagId, dataSourceId, formData } }) {
   try {
     yield put(DataSourceTagRoutines.updateTag.request());
 
-    const { data } = yield api.put(`${TAGS_PATH}/${tagId}`, { ...formData });
+    const { data } = yield api.patch(`${TAGS_PATH}/${tagId}`, { ...formData });
     browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${TAGS_PAGE}`);
 
     yield put(DataSourceTagRoutines.updateTag.success(data));

@@ -289,9 +289,11 @@ class Common(Configuration):
     AWS_DEFAULT_ACL = None
 
     AWS_SQS_ENDPOINT_URL = os.getenv('SQS_ENDPOINT_URL')
-    SQS_WORKER_QUEUE_FILE_SIZE = 52428800  # bytes, 50MB
+    BASE_QUEUE_LIMIT = 52428800  # bytes, 50MB
+    EXT_QUEUE_LIMIT = 241172480  # bytes, 230MB
     SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')
     SQS_WORKER_EXT_QUEUE_URL = os.getenv('SQS_WORKER_EXT_QUEUE_URL')
+    SQS_WORKER_MAX_QUEUE_URL = os.getenv('SQS_WORKER_MAX_QUEUE_URL')
     DYNAMODB_ENDPOINT_URL = os.getenv('DYNAMODB_ENDPOINT_URL')
 
     # Allow lambda function to call API endpoint

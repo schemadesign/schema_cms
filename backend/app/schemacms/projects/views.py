@@ -153,8 +153,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
         "set_filters": serializers.FilterSerializer,
-        "tags": serializers.TagSerializer,
-        "set_tags": serializers.TagSerializer,
+        "tags_lists": serializers.TagsListSerializer,
+        "set_tags_lists": serializers.TagsListSerializer,
         "update_meta": serializers.PublicApiUpdateMetaSerializer,
     }
 
@@ -169,6 +169,10 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
+
+    def perform_update(self, serializer):
+        if "file" in serializer.validated_data:
+            serializer.save(created_by=self.request.user)
 
     @staticmethod
     def get_active_inactive_lists(request):
@@ -314,15 +318,32 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
-    @decorators.action(detail=True, url_path='tags', methods=["get", "post"])
-    def tags(self, request, pk=None, **kwargs):
-        return self.generate_action_post_get_response(request, related_objects_name="tags")
+    @decorators.action(detail=True, url_path='tags-lists', methods=["get", "post"])
+    def tags_lists(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
 
-    @decorators.action(detail=True, url_path='set-tags', methods=["post"])
-    def set_tags(self, request, pk=None, **kwargs):
-        data_source = self.set_is_active_fields(request, related_objects_name="tags")
+        if request.method == "GET":
+            queryset = data_source.list_of_tags.all()
+            serializer = self.get_serializer(instance=queryset, many=True)
+            data = {"project": data_source.project_info, "results": serializer.data}
+            return response.Response(data, status=status.HTTP_200_OK)
 
-        serializer = self.get_serializer(instance=data_source.tags, many=True)
+        else:
+            data = request.data.copy()
+
+            data["datasource"] = data_source.id
+
+            serializer = self.get_serializer(data=data, context=data_source)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    @decorators.action(detail=True, url_path='set-tags-lists', methods=["post"])
+    def set_tags_lists(self, request, pk=None, **kwargs):
+        data_source = self.set_is_active_fields(request, related_objects_name="list_of_tags")
+
+        serializer = self.get_serializer(instance=data_source.list_of_tags, many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -573,11 +594,15 @@ class BlockViewSet(
     }
 
 
-class TagDetailViewSet(
-    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
+class TagsListDetailViewSet(
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
 ):
-    queryset = models.Tag.objects.all().select_related("datasource")
-    serializer_class = serializers.TagDetailsSerializer
+    queryset = (
+        models.TagsList.objects.all()
+        .prefetch_related(Prefetch('tags', queryset=models.Tag.objects.order_by('exec_order')))
+        .select_related("datasource")
+    ).order_by("created")
+    serializer_class = serializers.TagsListDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
     def retrieve(self, request, *args, **kwargs):

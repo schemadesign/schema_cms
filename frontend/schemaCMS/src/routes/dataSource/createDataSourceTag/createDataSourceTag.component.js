@@ -2,24 +2,25 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Container } from './createDataSourceTag.styles';
+import { Form } from './createDataSourceTag.styles';
 import messages from './createDataSourceTag.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { DataSourceTagForm } from '../../../shared/components/dataSourceTagForm';
 import { getProjectMenuOptions } from '../../project/project.constants';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { TAGS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 
 export class CreateDataSourceTag extends PureComponent {
   static propTypes = {
     userRole: PropTypes.string.isRequired,
-    createTag: PropTypes.func.isRequired,
     dataSource: PropTypes.object.isRequired,
-    match: PropTypes.shape({
-      params: PropTypes.shape({
-        dataSourceId: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
+    dirty: PropTypes.bool.isRequired,
+    isValid: PropTypes.bool.isRequired,
+    values: PropTypes.object.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
@@ -31,35 +32,31 @@ export class CreateDataSourceTag extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  renderContent = () => (
-    <DataSourceTagForm
-      createTag={this.props.createTag}
-      dataSourceId={getMatchParam(this.props, 'dataSourceId')}
-      history={this.props.history}
-      intl={this.props.intl}
-    />
-  );
+  handleBack = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/${TAGS_PAGE}`);
 
   render() {
-    const { dataSource, userRole, createTag, history, intl } = this.props;
+    const { dataSource, userRole, isSubmitting, isValid, dirty, handleSubmit } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig();
     const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
-      <Container>
+      <Form onSubmit={handleSubmit}>
         <MobileMenu
           headerTitle={headerConfig.headerTitle}
           headerSubtitle={headerConfig.headerSubtitle}
           options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <DataSourceTagForm
-          createTag={createTag}
-          dataSourceId={getMatchParam(this.props, 'dataSourceId')}
-          history={history}
-          intl={intl}
-        />
-      </Container>
+        <DataSourceTagForm {...this.props} />
+        <NavigationContainer fixed>
+          <BackButton onClick={this.handleBack} type="button">
+            <FormattedMessage {...messages.cancel} />
+          </BackButton>
+          <NextButton loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
+            <FormattedMessage {...messages.saveTag} />
+          </NextButton>
+        </NavigationContainer>
+      </Form>
     );
   }
 }

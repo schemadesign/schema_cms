@@ -2,7 +2,12 @@
 
 exports[`Storyshots Shared Components|PageForm Default 1`] = `
 .c0 {
+  width: 100%;
+}
+
+.c1 {
   padding-top: 7px;
+  margin-top: 0;
 }
 
 <div
@@ -21,7 +26,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -80,7 +85,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -102,7 +107,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -184,7 +189,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -206,7 +211,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -288,7 +293,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={

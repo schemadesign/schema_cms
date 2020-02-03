@@ -86,11 +86,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   word-break: break-word;
 }
 
-.c16 {
+.c17 {
   height: 155px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c18 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,16 +118,21 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c19 {
+.c20 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c13 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c14 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -139,11 +144,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   position: relative;
 }
 
-.c14 label {
+.c15 label {
   margin-bottom: 1px;
 }
 
-.c15 {
+.c16 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -185,7 +190,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -194,7 +199,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -203,7 +208,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     width: 240px;
   }
 }
@@ -575,7 +580,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -635,7 +640,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c14"
             >
               <svg
                 style={
@@ -657,7 +662,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -717,7 +722,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c14"
             >
               <svg
                 style={
@@ -739,7 +744,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -797,7 +802,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c14"
             >
               <svg
                 style={
@@ -819,7 +824,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        className="c15"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -845,7 +850,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           value="admin"
         />
         <div
-          className="c15"
+          className="c16"
         >
           <svg
             style={
@@ -955,16 +960,16 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="c16"
+        className="c17"
       >
         <div
-          className="c17"
+          className="c18"
         >
           <div
-            className="c18"
+            className="c19"
           >
             <button
-              className="c19"
+              className="c20"
               disabled={false}
               onClick={[Function]}
               style={
@@ -991,7 +996,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               </span>
             </button>
             <button
-              className="c19"
+              className="c20"
               disabled={true}
               style={
                 Object {

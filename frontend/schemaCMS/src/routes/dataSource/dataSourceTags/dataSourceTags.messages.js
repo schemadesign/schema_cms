@@ -4,11 +4,11 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   subTitle: {
     id: 'dataSource.dataSourceTags.subTitle',
-    defaultMessage: 'Tags',
+    defaultMessage: 'Tags List',
   },
   pageTitle: {
     id: 'dataSource.dataSourceTags.pageTitle',
-    defaultMessage: 'Tags',
+    defaultMessage: 'Tags List',
   },
   save: {
     id: 'dataSource.dataSourceTags.save',
@@ -16,6 +16,6 @@ export default defineMessages({
   },
   tags: {
     id: 'dataSource.dataSourceTags.tags',
-    defaultMessage: '{tags, plural,one {# Tag} other {# Tags}}',
+    defaultMessage: '{tags, plural,one {# Tag List} other {# Tags List}}',
   },
 });
