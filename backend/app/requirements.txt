@@ -51,6 +51,7 @@ coverage==4.5.2
 
 # Static and Media Storage
 django-storages==1.7.1
+django-s3-storage==0.13.0
 boto3==1.9.93
 
 # Utils

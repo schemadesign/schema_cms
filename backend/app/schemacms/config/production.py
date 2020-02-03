@@ -13,7 +13,7 @@ class Production(Common):
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/2.0/howto/static-files/
     # http://django-storages.readthedocs.org/en/latest/index.html
-    INSTALLED_APPS += ("storages",)
+    # INSTALLED_APPS += ("storages",)
 
     # https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control
     # Response can be cached by browser and any intermediary caches (i.e. it is "public") for up to 1 day
