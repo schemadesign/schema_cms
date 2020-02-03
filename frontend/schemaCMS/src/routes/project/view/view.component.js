@@ -115,7 +115,12 @@ export class View extends PureComponent {
         to: `/project/${projectId}/datasource`,
         id: 'projectDataSources',
       },
-      { header: this.renderStatisticHeader(messages.charts), value: meta.charts },
+      {
+        header: this.renderStatisticHeader(messages.states),
+        value: meta.states || 0,
+        to: `/project/${projectId}/state`,
+        id: 'projectStates',
+      },
       {
         header: this.renderStatisticHeader(messages.pages),
         value: meta.pages,
