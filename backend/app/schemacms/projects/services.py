@@ -12,10 +12,6 @@ def get_s3():
     return boto3.client('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL)
 
 
-def get_s3_resource():
-    return boto3.resource('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL)
-
-
 def get_dynamodb_resource():
     return boto3.resource(
         'dynamodb',
@@ -44,7 +40,6 @@ def get_sqs():
 
 
 s3 = functional.SimpleLazyObject(get_s3)
-s3_resource = functional.SimpleLazyObject(get_s3_resource)
 sqs = functional.SimpleLazyObject(get_sqs)
 dynamo = functional.SimpleLazyObject(get_dynamodb_resource)
 
