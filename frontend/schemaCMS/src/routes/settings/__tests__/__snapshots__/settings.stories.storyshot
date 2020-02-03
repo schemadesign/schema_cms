@@ -894,9 +894,8 @@ exports[`Storyshots Settings Default 1`] = `
       className="c15"
     >
       <span
-        className="c15"
-        id="resetPasswordLink"
         className="c16"
+        id="resetPasswordLink"
         onClick={[Function]}
         style={
           Object {
