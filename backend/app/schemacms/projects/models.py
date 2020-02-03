@@ -748,6 +748,16 @@ class TagsList(
     def __str__(self):
         return self.name or str(self.pk)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["datasource", "name"],
+                name="unique_tags_list_name",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
+        ordering = ('created',)
+
 
 class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name='tags')
