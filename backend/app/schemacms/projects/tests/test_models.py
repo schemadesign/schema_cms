@@ -67,18 +67,18 @@ class TestDataSource:
 
         assert correct_path == dsource.file.path
 
-    def test_source_file_latest_version(self, mocker, data_source_factory, s3_object_version_factory):
-        ds = data_source_factory()
-        file_versions = (
-            s3_object_version_factory(ds.file.name),
-            s3_object_version_factory(ds.file.name),
-            s3_object_version_factory(ds.file.name, is_latest=True),
-        )
-        storage_mock = mocker.patch("schemacms.utils.storages.OverwriteStorage")
-        storage_mock.bucket.object_versions.filter.return_value = file_versions
-        ds.file.storage = storage_mock
-
-        assert ds.source_file_latest_version == file_versions[-1].id
+    # def test_source_file_latest_version(self, mocker, data_source_factory, s3_object_version_factory):
+    #     ds = data_source_factory()
+    #     file_versions = (
+    #         s3_object_version_factory(ds.file.name),
+    #         s3_object_version_factory(ds.file.name),
+    #         s3_object_version_factory(ds.file.name, is_latest=True),
+    #     )
+    #     storage_mock = mocker.patch("schemacms.utils.storages.OverwriteStorage")
+    #     storage_mock.bucket.object_versions.filter.return_value = file_versions
+    #     ds.file.storage = storage_mock
+    #
+    #     assert ds.source_file_latest_version == file_versions[-1].id
 
     @pytest.mark.usefixtures("ds_source_file_latest_version_mock")
     def test_create_job(self, faker, data_source_factory):
