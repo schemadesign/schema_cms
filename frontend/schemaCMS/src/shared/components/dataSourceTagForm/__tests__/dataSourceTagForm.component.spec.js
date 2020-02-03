@@ -21,7 +21,7 @@ describe('DataSourceTagForm: Component', () => {
     expect(form).toMatchSnapshot();
   });
 
-  it('should call setFieldValue on input change', async () => {
+  it('should call setFieldValue on input change', () => {
     jest.spyOn(propsWithTags, 'setFieldValue');
 
     render(propsWithTags)
@@ -31,7 +31,7 @@ describe('DataSourceTagForm: Component', () => {
     expect(propsWithTags.setFieldValue).toHaveBeenCalledWith('tags.0', { id: 1, value: 'new value' });
   });
 
-  it('should add new tag on enter', async () => {
+  it('should add new tag on enter', () => {
     jest.spyOn(propsWithTags, 'setFieldValue');
 
     const wrapper = render(propsWithTags);
@@ -48,7 +48,7 @@ describe('DataSourceTagForm: Component', () => {
     expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
   });
 
-  it('should remove tag on backspace', async () => {
+  it('should remove tag on backspace', () => {
     const props = {
       setFieldValue: Function.prototype,
       values: {
@@ -76,7 +76,7 @@ describe('DataSourceTagForm: Component', () => {
     expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
   });
 
-  it('should remove tag on blur', async () => {
+  it('should remove tag on blur', () => {
     const props = {
       setFieldValue: Function.prototype,
       values: {
@@ -100,7 +100,7 @@ describe('DataSourceTagForm: Component', () => {
     expect(wrapper.state()).toEqual({ focusInputIndex: null });
   });
 
-  it('should set focus index', async () => {
+  it('should set focus index', () => {
     jest.spyOn(propsWithTags, 'setFieldValue');
     const wrapper = render(propsWithTags);
     wrapper.find('[name="tags.1"]').simulate('focus');

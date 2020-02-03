@@ -54,7 +54,7 @@ describe('DataSourceTag: Component', () => {
   });
 
   it('should show modal on click remove link', () => {
-    const wrapper = render(editProps);
+    const wrapper = render();
 
     wrapper.find(Link).simulate('click');
 
@@ -62,7 +62,7 @@ describe('DataSourceTag: Component', () => {
   });
 
   it('should hide modal on cancel', () => {
-    const wrapper = render(editProps);
+    const wrapper = render();
 
     wrapper.find(Link).simulate('click');
 

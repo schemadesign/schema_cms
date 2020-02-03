@@ -32,9 +32,9 @@ export class DataSourceTagForm extends PureComponent {
     setFieldValue(TAG_TAGS, newValues);
   };
 
-  handleRemoveTag = ({ index, byButton }) => {
+  handleRemoveTag = ({ index, resetIndex }) => {
     const { setFieldValue, values } = this.props;
-    this.setState({ focusInputIndex: byButton ? null : index - 1 });
+    this.setState({ focusInputIndex: resetIndex ? null : index - 1 });
     const newValues = remove(index, 1, values[TAG_TAGS]);
     setFieldValue(TAG_TAGS, newValues);
     const removeId = values[TAG_TAGS][index].id;
@@ -44,12 +44,11 @@ export class DataSourceTagForm extends PureComponent {
     }
   };
 
-  handleBlur = e => {
+  handleBlur = index => e => {
     const { value } = e.target;
-    const { setFieldValue, values } = this.props;
-    this.setState({ focusInputIndex: null });
+
     if (!value.length) {
-      setFieldValue(TAG_TAGS, values[TAG_TAGS].filter(({ value }) => value.length));
+      this.handleRemoveTag({ index, resetIndex: true });
     }
   };
 
@@ -75,7 +74,8 @@ export class DataSourceTagForm extends PureComponent {
   handleChange = ({ e, id = null, index }) => {
     const { setFieldValue } = this.props;
     const { value } = e.target;
-    setFieldValue(`${TAG_TAGS}.${index}`, { value, id: id || `create_${index}` });
+    const tag = id ? { value, id } : { value };
+    setFieldValue(`${TAG_TAGS}.${index}`, tag);
   };
 
   renderTag = ({ value, id }, index) => (
@@ -89,11 +89,11 @@ export class DataSourceTagForm extends PureComponent {
         isEdit
         inputRef={input => input && this.state.focusInputIndex === index && input.focus()}
         onFocus={() => this.setState({ focusInputIndex: index })}
-        onBlur={this.handleBlur}
+        onBlur={this.handleBlur(index)}
         onKeyDown={this.handleKeyDown(index)}
         {...this.props}
       />
-      <CloseIcon customStyles={removeIconStyles} onClick={() => this.handleRemoveTag({ index, byButton: true })} />
+      <CloseIcon customStyles={removeIconStyles} onClick={() => this.handleRemoveTag({ index, resetIndex: true })} />
     </Tag>
   );
 
