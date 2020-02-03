@@ -199,6 +199,10 @@ class DataSource(
         return self.filters.count()
 
     @functional.cached_property
+    def tags_count(self):
+        return self.list_of_tags.count()
+
+    @functional.cached_property
     def project_info(self):
         return dict(id=self.project.id, title=self.project.title)
 
