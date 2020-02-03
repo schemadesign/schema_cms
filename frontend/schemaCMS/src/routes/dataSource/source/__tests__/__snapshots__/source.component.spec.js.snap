@@ -75,6 +75,20 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -939,6 +953,20 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             values={Object {}}
           />,
           "to": "/project/projectId/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/state",
           "type": "link_item",
         },
         Object {

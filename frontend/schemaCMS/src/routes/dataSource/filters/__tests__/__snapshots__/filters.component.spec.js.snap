@@ -75,6 +75,20 @@ exports[`Filters: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -355,6 +369,20 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -600,6 +628,20 @@ exports[`Filters: Component should render correctly with loader 1`] = `
             values={Object {}}
           />,
           "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
           "type": "link_item",
         },
         Object {

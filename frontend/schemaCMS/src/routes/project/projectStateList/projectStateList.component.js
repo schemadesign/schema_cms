@@ -23,17 +23,17 @@ const { P } = Typography;
 
 export class ProjectStateList extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     states: PropTypes.array.isRequired,
     fetchStates: PropTypes.func.isRequired,
-    userRole: PropTypes.string.isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
     match: PropTypes.shape({
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
       }),
-    }),
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
     }),
   };
 

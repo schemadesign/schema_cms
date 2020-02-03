@@ -516,6 +516,19 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             className="c5"
           >
             <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                States
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
               href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}
@@ -1676,6 +1689,19 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             >
               <span>
                 Data Sources
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                States
               </span>
             </a>
           </div>

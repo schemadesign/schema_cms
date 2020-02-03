@@ -615,6 +615,19 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             className="c5"
           >
             <a
+              href="/project/projectId/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                States
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
               href="/project/projectId/user"
               id="usersNavBtn"
               onClick={[Function]}

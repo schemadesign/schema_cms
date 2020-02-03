@@ -453,6 +453,19 @@ exports[`Storyshots Project|Create Default 1`] = `
               className="c5"
             >
               <a
+                href="/project/undefined/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/undefined/user"
                 id="usersNavBtn"
                 onClick={[Function]}

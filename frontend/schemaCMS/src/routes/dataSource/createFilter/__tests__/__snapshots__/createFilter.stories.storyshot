@@ -361,6 +361,19 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
               className="c5"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}

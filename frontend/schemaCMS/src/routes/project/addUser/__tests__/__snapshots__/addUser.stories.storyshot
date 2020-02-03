@@ -477,6 +477,19 @@ exports[`Storyshots Project|AddUser List 1`] = `
               className="c10"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
@@ -1125,6 +1138,19 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               >
                 <span>
                   Data Sources
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
                 </span>
               </a>
             </div>

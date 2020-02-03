@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FolderList: Component should render correctly 1`] = `
+exports[`ProjectStateList: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Folders"
+    title="States"
   />
   <MobileMenu
-    active="folderNavBtn"
+    active="stateNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.folderList.subTitle"
+        id="projectStateList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Folders"
-        id="project.folderList.title"
+        defaultMessage="States"
+        id="projectStateList.title"
         values={Object {}}
       />
     }
@@ -125,28 +125,28 @@ exports[`FolderList: Component should render correctly 1`] = `
     }
   />
   <ProjectTabs
-    active="folder"
+    active="state"
     url="/project/1"
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.folderList.subTitle"
+        id="projectStateList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Folders"
-        id="project.folderList.title"
+        defaultMessage="States"
+        id="projectStateList.title"
         values={Object {}}
       />
     }
   >
     <PlusButton
       hideOnDesktop={false}
-      id="createFolderDesktopBtn"
+      id="createStateDesktopBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -154,7 +154,7 @@ exports[`FolderList: Component should render correctly 1`] = `
     error={null}
     loading={false}
     noData={false}
-    noDataContent="0 Folders"
+    noDataContent={null}
   >
     <styled.section>
       <Styled(Component)
@@ -163,35 +163,86 @@ exports[`FolderList: Component should render correctly 1`] = `
             <ForwardRef(styled.li)
               id="headerItem-0"
             >
-              12 days ago
+              NaN years ago
             </ForwardRef(styled.li)>
             <ForwardRef(styled.li)
               id="headerItem-1"
             >
-              firstName lastName
+              — 
             </ForwardRef(styled.li)>
           </ForwardRef(styled.ul)>
         }
         key="0"
       >
-        <styled.div>
-          <Styled(H1)
-            customStyles={
-              Object {
-                "cursor": "pointer",
-                "wordBreak": "break-word",
-              }
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
             }
-            id="folderName-0"
-            onClick={[Function]}
+          }
+          id="stateName-0"
+          onClick={[Function]}
+        >
+          name 1
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-0"
           >
-            name
-          </Styled(H1)>
-          <Styled(Span)
-            onClick={[Function]}
+            description
+          </P>
+        </styled.div>
+      </Styled(Component)>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              NaN years ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              — 
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="1"
+      >
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
+            }
+          }
+          id="stateName-1"
+          onClick={[Function]}
+        >
+          name 2
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-1"
           >
-            Edit folder
-          </Styled(Span)>
+            description
+          </P>
         </styled.div>
       </Styled(Component)>
     </styled.section>
@@ -207,33 +258,33 @@ exports[`FolderList: Component should render correctly 1`] = `
     />
     <PlusButton
       hideOnDesktop={false}
-      id="createFolderBtn"
+      id="createStateBtn"
       onClick={[Function]}
     />
   </NavigationContainer>
 </styled.div>
 `;
 
-exports[`FolderList: Component should render correctly with loader 1`] = `
+exports[`ProjectStateList: Component should render correctly when no tags 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Folders"
+    title="States"
   />
   <MobileMenu
-    active="folderNavBtn"
+    active="stateNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.folderList.subTitle"
+        id="projectStateList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Folders"
-        id="project.folderList.title"
+        defaultMessage="States"
+        id="projectStateList.title"
         values={Object {}}
       />
     }
@@ -339,28 +390,204 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     }
   />
   <ProjectTabs
-    active="folder"
+    active="state"
     url="/project/1"
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.folderList.subTitle"
+        id="projectStateList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Folders"
-        id="project.folderList.title"
+        defaultMessage="States"
+        id="projectStateList.title"
         values={Object {}}
       />
     }
   >
     <PlusButton
       hideOnDesktop={false}
-      id="createFolderDesktopBtn"
+      id="createStateDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={true}
+    noDataContent={null}
+  >
+    <styled.section />
+  </LoadingWrapper>
+  <NavigationContainer
+    fixed={true}
+    hideOnDesktop={true}
+    right={false}
+  >
+    <BackArrowButton
+      id="backBtn"
+      onClick={[Function]}
+    />
+    <PlusButton
+      hideOnDesktop={false}
+      id="createStateBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`ProjectStateList: Component should render correctly with loader 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="States"
+  />
+  <MobileMenu
+    active="stateNavBtn"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="projectStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="States"
+        id="projectStateList.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ProjectTabs
+    active="state"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="projectStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="States"
+        id="projectStateList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      hideOnDesktop={false}
+      id="createStateDesktopBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -368,7 +595,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     error={null}
     loading={true}
     noData={false}
-    noDataContent="0 Folders"
+    noDataContent={null}
   >
     <styled.section>
       <Styled(Component)
@@ -377,35 +604,86 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
             <ForwardRef(styled.li)
               id="headerItem-0"
             >
-              12 days ago
+              NaN years ago
             </ForwardRef(styled.li)>
             <ForwardRef(styled.li)
               id="headerItem-1"
             >
-              firstName lastName
+              — 
             </ForwardRef(styled.li)>
           </ForwardRef(styled.ul)>
         }
         key="0"
       >
-        <styled.div>
-          <Styled(H1)
-            customStyles={
-              Object {
-                "cursor": "pointer",
-                "wordBreak": "break-word",
-              }
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
             }
-            id="folderName-0"
-            onClick={[Function]}
+          }
+          id="stateName-0"
+          onClick={[Function]}
+        >
+          name 1
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-0"
           >
-            name
-          </Styled(H1)>
-          <Styled(Span)
-            onClick={[Function]}
+            description
+          </P>
+        </styled.div>
+      </Styled(Component)>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              NaN years ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              — 
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="1"
+      >
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
+            }
+          }
+          id="stateName-1"
+          onClick={[Function]}
+        >
+          name 2
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-1"
           >
-            Edit folder
-          </Styled(Span)>
+            description
+          </P>
         </styled.div>
       </Styled(Component)>
     </styled.section>
@@ -421,7 +699,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     />
     <PlusButton
       hideOnDesktop={false}
-      id="createFolderBtn"
+      id="createStateBtn"
       onClick={[Function]}
     />
   </NavigationContainer>
