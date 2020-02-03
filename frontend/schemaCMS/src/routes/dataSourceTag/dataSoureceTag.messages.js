@@ -15,23 +15,23 @@ export default defineMessages({
     defaultMessage: 'Remove list',
   },
   saveTag: {
-    id: 'shared.components.dataSourceTagForm.saveTag',
+    id: 'dataSourceTag.saveTag',
     defaultMessage: 'Save',
   },
   back: {
-    id: 'shared.components.dataSourceTagForm.back',
+    id: 'dataSourceTag.back',
     defaultMessage: 'Back',
   },
   cancelRemoval: {
-    id: 'shared.components.dataSourceTagForm.cancelRemoval',
+    id: 'dataSourceTag.cancelRemoval',
     defaultMessage: 'Cancel',
   },
   confirmRemoval: {
-    id: 'shared.components.dataSourceTagForm.confirmRemoval',
+    id: 'dataSourceTag.confirmRemoval',
     defaultMessage: 'Confirm',
   },
   removeTitle: {
-    id: 'shared.components.dataSourceTagForm.removeTitle',
+    id: 'dataSourceTag.removeTitle',
     defaultMessage: 'Are you sure you want to remove the tag?',
   },
 });

@@ -7,11 +7,11 @@ export default defineMessages({
     defaultMessage: 'Create Tag List',
   },
   saveTag: {
-    id: 'shared.components.dataSourceTagForm.saveTag',
+    id: 'dataSource.createDataSourceTag.saveTag',
     defaultMessage: 'Save',
   },
   cancel: {
-    id: 'shared.components.dataSourceTagForm.cancel',
+    id: 'dataSource.createDataSourceTag.cancel',
     defaultMessage: 'Cancel',
   },
 });

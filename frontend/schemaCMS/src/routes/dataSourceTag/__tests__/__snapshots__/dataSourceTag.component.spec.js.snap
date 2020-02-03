@@ -125,7 +125,7 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
         >
           <FormattedMessage
             defaultMessage="Back"
-            id="shared.components.dataSourceTagForm.back"
+            id="dataSourceTag.back"
             values={Object {}}
           />
         </BackButton>
@@ -136,7 +136,7 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
         >
           <FormattedMessage
             defaultMessage="Save"
-            id="shared.components.dataSourceTagForm.saveTag"
+            id="dataSourceTag.saveTag"
             values={Object {}}
           />
         </NextButton>
@@ -181,7 +181,7 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
     <Styled(H1)>
       <FormattedMessage
         defaultMessage="Are you sure you want to remove the tag?"
-        id="shared.components.dataSourceTagForm.removeTitle"
+        id="dataSourceTag.removeTitle"
         values={Object {}}
       />
     </Styled(H1)>
@@ -192,7 +192,7 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="shared.components.dataSourceTagForm.cancelRemoval"
+          id="dataSourceTag.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
@@ -204,7 +204,7 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Confirm"
-          id="shared.components.dataSourceTagForm.confirmRemoval"
+          id="dataSourceTag.confirmRemoval"
           values={Object {}}
         />
       </NextButton>
@@ -322,7 +322,7 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
         >
           <FormattedMessage
             defaultMessage="Back"
-            id="shared.components.dataSourceTagForm.back"
+            id="dataSourceTag.back"
             values={Object {}}
           />
         </BackButton>
@@ -333,7 +333,7 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
         >
           <FormattedMessage
             defaultMessage="Save"
-            id="shared.components.dataSourceTagForm.saveTag"
+            id="dataSourceTag.saveTag"
             values={Object {}}
           />
         </NextButton>
@@ -378,7 +378,7 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
     <Styled(H1)>
       <FormattedMessage
         defaultMessage="Are you sure you want to remove the tag?"
-        id="shared.components.dataSourceTagForm.removeTitle"
+        id="dataSourceTag.removeTitle"
         values={Object {}}
       />
     </Styled(H1)>
@@ -389,7 +389,7 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="shared.components.dataSourceTagForm.cancelRemoval"
+          id="dataSourceTag.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
@@ -401,7 +401,7 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
       >
         <FormattedMessage
           defaultMessage="Confirm"
-          id="shared.components.dataSourceTagForm.confirmRemoval"
+          id="dataSourceTag.confirmRemoval"
           values={Object {}}
         />
       </NextButton>

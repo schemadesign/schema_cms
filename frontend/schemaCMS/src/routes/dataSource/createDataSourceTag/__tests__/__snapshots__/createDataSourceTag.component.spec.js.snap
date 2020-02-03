@@ -164,7 +164,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Cancel"
-        id="shared.components.dataSourceTagForm.cancel"
+        id="dataSource.createDataSourceTag.cancel"
         values={Object {}}
       />
     </BackButton>
@@ -175,7 +175,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Save"
-        id="shared.components.dataSourceTagForm.saveTag"
+        id="dataSource.createDataSourceTag.saveTag"
         values={Object {}}
       />
     </NextButton>
