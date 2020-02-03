@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ProjectStateList Default 1`] = `
+<div
+  className=""
+>
+  <span>
+    ProjectStateList component
+  </span>
+</div>
+`;

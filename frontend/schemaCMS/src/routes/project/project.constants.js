@@ -9,6 +9,7 @@ export const NONE = 'none';
 export const PROJECTS_ID = 'projectsNavBtn';
 export const PROJECT_DETAILS_ID = 'projectDetailsNavBtn';
 export const PROJECT_DATASOURCE_ID = 'dataSourceNavBtn';
+export const PROJECT_STATE_ID = 'stateNavBtn';
 export const PROJECT_FOLDER_ID = 'folderNavBtn';
 export const PROJECT_USERS_ID = 'usersNavBtn';
 export const USERS_PAGE_ID = 'usersPageNavBtn';
@@ -43,6 +44,13 @@ export const getProjectMenuOptions = projectId => [
     label: <FormattedMessage {...messages.projectDataSources} />,
     to: `/project/${projectId}/datasource`,
     id: PROJECT_DATASOURCE_ID,
+    type: LINK_ITEM,
+    allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
+  },
+  {
+    label: <FormattedMessage {...messages.states} />,
+    to: `/project/${projectId}/state`,
+    id: PROJECT_STATE_ID,
     type: LINK_ITEM,
     allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
   },
