@@ -1,7 +1,7 @@
 import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
 import renderer from 'react-test-renderer';
 import { styleSheetSerializer } from 'jest-styled-components/serializer';
-import { addSerializer } from "jest-specific-snapshot"
+import { addSerializer } from 'jest-specific-snapshot';
 
 addSerializer(styleSheetSerializer);
 

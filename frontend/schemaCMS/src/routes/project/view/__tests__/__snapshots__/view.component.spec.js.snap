@@ -44,10 +44,11 @@ exports[`View: Component should render content correctly 1`] = `
               Charts
             </ForwardRef(styled.span)>
           }
+          id="projectCharts"
           onClick={[Function]}
         >
           <styled.span
-            id="undefinedValue"
+            id="projectChartsValue"
           >
             0
           </styled.span>
@@ -68,11 +69,11 @@ exports[`View: Component should render content correctly 1`] = `
               Pages
             </ForwardRef(styled.span)>
           }
-          id="projectUsers"
+          id="projectPages"
           onClick={[Function]}
         >
           <styled.span
-            id="projectUsersValue"
+            id="projectPagesValue"
           >
             1
           </styled.span>
@@ -366,6 +367,7 @@ exports[`View: Component should render correctly 1`] = `
   </NavigationContainer>
   <Styled(Modal)
     contentLabel="Confirm Removal"
+    id="projectConfirmationRemovalModal"
     isOpen={false}
     style={
       Object {
@@ -399,7 +401,9 @@ exports[`View: Component should render correctly 1`] = `
       }
     }
   >
-    <Styled(H1)>
+    <Styled(H1)
+      id="projectConfirmationRemovalModalTitle"
+    >
       <FormattedMessage
         defaultMessage="Are you sure you want to delete the project?"
         id="project.view.removeTitle"
@@ -409,6 +413,7 @@ exports[`View: Component should render correctly 1`] = `
     <styled.div>
       <BackButton
         disabled={false}
+        id="projectConfirmationRemovalModalCancelBtn"
         onClick={[Function]}
       >
         <FormattedMessage
@@ -419,6 +424,7 @@ exports[`View: Component should render correctly 1`] = `
       </BackButton>
       <NextButton
         disabled={false}
+        id="projectConfirmationRemovalModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >
