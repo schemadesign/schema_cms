@@ -44,9 +44,15 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .order_by("-created")
         )
 
-    @decorators.action(detail=True, methods=["get"])
+    @decorators.action(detail=True, url_path="datasources", methods=["get"])
     def datasources(self, request, **kwargs):
         project = self.get_object()
+
+        if "raw_list" in request.query_params:
+            serializer_ = serializers.RawDataSourceSerializer(project.data_sources, many=True)
+            response_ = dict(project=project.project_info, results=serializer_.data)
+            return response.Response(response_, status=status.HTTP_200_OK)
+
         queryset = (
             project.data_sources.all()
             .jobs_in_process()
