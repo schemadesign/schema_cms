@@ -41,7 +41,7 @@ function* create({ payload: { projectId, formData } }) {
 
     const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${STATES_PATH}`, formData);
 
-    yield put(ProjectStateRoutines.create.success(data.results));
+    yield put(ProjectStateRoutines.create.success(data));
   } catch (e) {
     reportError(e);
     yield put(ProjectStateRoutines.create.failure(e));
@@ -56,7 +56,7 @@ function* update({ payload: { stateId, formData } }) {
 
     const { data } = yield api.patch(`${STATES_PATH}/${stateId}`, formData);
 
-    yield put(ProjectStateRoutines.update.success(data.results));
+    yield put(ProjectStateRoutines.update.success(data));
   } catch (e) {
     reportError(e);
     yield put(ProjectStateRoutines.update.failure(e));

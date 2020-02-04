@@ -11,7 +11,7 @@ export class Select extends PureComponent {
   static propTypes = {
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     name: PropTypes.string.isRequired,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     placeholder: PropTypes.string,
     options: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,

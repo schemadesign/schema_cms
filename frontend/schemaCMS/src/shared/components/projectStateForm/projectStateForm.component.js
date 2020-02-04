@@ -32,7 +32,7 @@ export class ProjectStateForm extends PureComponent {
 
   getStatusOptions = () =>
     this.props.dataSources.map(({ name, id }) => ({
-      value: id.toString(),
+      value: id,
       label: name,
     }));
 
