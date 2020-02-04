@@ -212,7 +212,7 @@ class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
 @admin.register(models.State)
 class StateAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "project", "datasource", "deleted_at")
-    fields = ("project", "datasource", "name", "description", "source_url", "is_public", "deleted")
+    fields = ("project", "datasource", "name", "description", "source_url", "author", "is_public", "deleted")
     list_filter = ("project", 'datasource', "is_public", "deleted_at")
     readonly_on_update_fields = ("project",)
 
