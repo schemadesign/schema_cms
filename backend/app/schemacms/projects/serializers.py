@@ -730,13 +730,23 @@ class StateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.State
-        fields = ("id", "name", "project", "datasource", "description", "source_url", "author", "is_public", "created")
+        fields = (
+            "id",
+            "name",
+            "project",
+            "datasource",
+            "description",
+            "source_url",
+            "author",
+            "is_public",
+            "created",
+        )
         extra_kwargs = {
             "project": {"required": False, "allow_null": True},
         }
         validators = [
             CustomUniqueTogetherValidator(
-                queryset=models.TagsList.objects.all(),
+                queryset=models.State.objects.all(),
                 fields=("project", "name"),
                 key_field_name="name",
                 code="stateNameNotUnique",
