@@ -18,6 +18,7 @@ export const NavigationContent = styled.div`
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+  ${({ contentStyles }) => contentStyles};
 
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};

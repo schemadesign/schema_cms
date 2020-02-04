@@ -726,9 +726,11 @@ class TagsListDetailSerializer(TagsListSerializer):
 
 
 class StateSerializer(serializers.ModelSerializer):
+    author = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = models.State
-        fields = ("id", "name", "project", "datasource", "description", "source_url", "author", "is_public")
+        fields = ("id", "name", "project", "datasource", "description", "source_url", "author", "is_public", "created")
         extra_kwargs = {
             "project": {"required": False, "allow_null": True},
         }
@@ -747,3 +749,6 @@ class StateSerializer(serializers.ModelSerializer):
         state.save()
 
         return state
+
+    def get_author(self, state):
+        return state.author.get_full_name()

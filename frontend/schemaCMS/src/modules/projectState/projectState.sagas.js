@@ -35,11 +35,11 @@ function* fetchOne({ payload: { stateId } }) {
   }
 }
 
-function* create({ payload: { stateId, formData } }) {
+function* create({ payload: { projectId, formData } }) {
   try {
     yield put(ProjectStateRoutines.create.request());
 
-    const { data } = yield api.post(`${STATES_PATH}/${stateId}`, formData);
+    const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${STATES_PATH}`, formData);
 
     yield put(ProjectStateRoutines.create.success(data.results));
   } catch (e) {

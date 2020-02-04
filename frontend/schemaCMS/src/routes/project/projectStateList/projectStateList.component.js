@@ -69,10 +69,9 @@ export class ProjectStateList extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, name = '', description = '', created = '', createdBy }, index) {
-    const { firstName = '—', lastName = '' } = createdBy || {};
+  renderItem({ id, name = '', description = '', created = '', author }, index) {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-    const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`]);
+    const header = this.renderHeader([whenCreated, author || '—']);
 
     return (
       <ListItem key={index} headerComponent={header}>

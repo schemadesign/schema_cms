@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateProjectState: Component should render correctly 1`] = `
+<styled.div>
+  <FormattedMessage
+    defaultMessage="CreateProjectState component"
+    id="createProjectState.title"
+    values={Object {}}
+  />
+</styled.div>
+`;

@@ -24,21 +24,23 @@ export class NavigationContainer extends PureComponent {
     fixed: PropTypes.bool,
     padding: PropTypes.string,
     hideOnDesktop: PropTypes.bool,
+    contentStyles: PropTypes.array,
   };
 
   static defaultProps = {
     right: false,
     fixed: false,
     hideOnDesktop: false,
+    contentStyles: null,
   };
 
   render() {
-    const { right, hideOnDesktop, children, fixed, padding } = this.props;
+    const { right, hideOnDesktop, children, fixed, padding, contentStyles } = this.props;
 
     return (
       <Container>
         <Navigation fixed={fixed} padding={padding}>
-          <NavigationContent right={right} hideOnDesktop={hideOnDesktop}>
+          <NavigationContent right={right} hideOnDesktop={hideOnDesktop} contentStyles={contentStyles}>
             {children}
           </NavigationContent>
         </Navigation>
