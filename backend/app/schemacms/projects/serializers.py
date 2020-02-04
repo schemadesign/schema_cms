@@ -714,3 +714,30 @@ class TagsListDetailSerializer(TagsListSerializer):
 
     class Meta(TagsListSerializer.Meta):
         fields = TagsListSerializer.Meta.fields + ("datasource",)
+
+
+# States
+
+
+class StateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.State
+        fields = ("id", "name", "project", "datasource", "description", "source_url", "author", "is_public")
+        extra_kwargs = {
+            "project": {"required": False, "allow_null": True},
+        }
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.TagsList.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="stateNameNotUnique",
+                message="State with this name already exist in project.",
+            )
+        ]
+
+    def create(self, validated_data):
+        state = models.State(author=self.context["request"].user, **validated_data)
+        state.save()
+
+        return state

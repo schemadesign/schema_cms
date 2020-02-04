@@ -762,3 +762,28 @@ class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, e
     def meta_file_serialization(self):
         data = {"id": self.id, "list": self.tags_list.name, "value": self.value}
         return data
+
+
+class State(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='states')
+    name = models.CharField(max_length=50)
+    datasource: DataSource = models.ForeignKey(
+        DataSource, on_delete=models.SET_NULL, related_name='states', null=True
+    )
+    description = models.TextField(blank=True, default="")
+    source_url = models.TextField(blank=True, default="")
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True
+    )
+    is_public = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name or str(self.pk)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"], name="unique_state_name", condition=models.Q(deleted_at=None)
+            )
+        ]
+        ordering = ('created',)

@@ -41,21 +41,21 @@ class ActionSerializerViewSetMixin:
 
         return instance
 
-    def generate_action_post_get_response(self, request, related_objects_name):
-        data_source = self.get_object()
+    def generate_action_post_get_response(self, request, related_objects_name, parent_object_name):
+        instance = self.get_object()
 
         if request.method == 'GET':
-            if not getattr(data_source, related_objects_name).exists():
-                return response.Response({"project": data_source.project_info, "results": []})
+            if not getattr(instance, related_objects_name).exists():
+                return response.Response({"project": instance.project_info, "results": []})
 
-            serializer = self.get_serializer(instance=getattr(data_source, related_objects_name), many=True)
-            data = {"project": data_source.project_info, "results": serializer.data}
+            serializer = self.get_serializer(instance=getattr(instance, related_objects_name), many=True)
+            data = {"project": instance.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
 
         else:
-            request.data["datasource"] = data_source.id
+            request.data[parent_object_name] = instance.id
 
-            serializer = self.get_serializer(data=request.data, context=data_source)
+            serializer = self.get_serializer(data=request.data, context=instance)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
