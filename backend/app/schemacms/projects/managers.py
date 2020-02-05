@@ -105,6 +105,23 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
             )
         )
 
+    def annotate_tags_count(self):
+        from .models import TagsList
+
+        subquery = (
+            TagsList.objects.order_by()
+            .values('datasource')
+            .filter(datasource=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
+
+        return self.annotate(
+            filters_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
+            )
+        )
+
     def jobs_in_process(self):
         from .models import DataSourceJob
 

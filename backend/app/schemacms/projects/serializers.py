@@ -19,6 +19,7 @@ class RawDataSourceSerializer(serializers.ModelSerializer):
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     filters = serializers.SerializerMethodField(read_only=True)
+    tags = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSourceMeta
@@ -29,12 +30,16 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
             "fields_with_urls",
             "preview",
             "filters",
+            "tags",
             "status",
             "error",
         )
 
     def get_filters(self, meta):
         return meta.datasource.filters_count
+
+    def get_tags(self, meta):
+        return meta.datasource.tags_count
 
 
 class DataSourceCreatorSerializer(serializers.ModelSerializer):

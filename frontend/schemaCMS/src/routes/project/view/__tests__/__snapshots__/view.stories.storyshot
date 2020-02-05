@@ -611,6 +611,7 @@ exports[`Storyshots Project|View Default 1`] = `
       </div>
       <div
         className=""
+        id="tabsContainer"
       >
         <div
           className="c10"
@@ -621,6 +622,7 @@ exports[`Storyshots Project|View Default 1`] = `
             <a
               className="c12"
               href="/project/100"
+              id="settingsTab"
               onClick={[Function]}
             >
               <span>
@@ -634,6 +636,7 @@ exports[`Storyshots Project|View Default 1`] = `
             <a
               className="c12"
               href="/project/100/datasource"
+              id="sourcesTab"
               onClick={[Function]}
             >
               <span>
@@ -660,6 +663,7 @@ exports[`Storyshots Project|View Default 1`] = `
             <a
               className="c12"
               href="/project/100/folder"
+              id="folderTab"
               onClick={[Function]}
             >
               <span>
@@ -673,6 +677,7 @@ exports[`Storyshots Project|View Default 1`] = `
             <a
               className="c12"
               href="/project/100/user"
+              id="usersTab"
               onClick={[Function]}
             >
               <span>
@@ -1352,6 +1357,7 @@ exports[`Storyshots Project|View No data 1`] = `
       </div>
       <div
         className=""
+        id="tabsContainer"
       >
         <div
           className="c10"
@@ -1362,6 +1368,7 @@ exports[`Storyshots Project|View No data 1`] = `
             <a
               className="c12"
               href="/project/100"
+              id="settingsTab"
               onClick={[Function]}
             >
               <span>
@@ -1375,6 +1382,7 @@ exports[`Storyshots Project|View No data 1`] = `
             <a
               className="c12"
               href="/project/100/datasource"
+              id="sourcesTab"
               onClick={[Function]}
             >
               <span>
@@ -1401,6 +1409,7 @@ exports[`Storyshots Project|View No data 1`] = `
             <a
               className="c12"
               href="/project/100/folder"
+              id="folderTab"
               onClick={[Function]}
             >
               <span>
@@ -1414,6 +1423,7 @@ exports[`Storyshots Project|View No data 1`] = `
             <a
               className="c12"
               href="/project/100/user"
+              id="usersTab"
               onClick={[Function]}
             >
               <span>

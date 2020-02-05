@@ -125,7 +125,7 @@ export class View extends PureComponent {
         header: this.renderStatisticHeader(messages.pages),
         value: meta.pages,
         to: `/project/${projectId}/folder`,
-        id: 'projectUsers',
+        id: 'projectPages',
       },
       {
         header: this.renderStatisticHeader(messages.users),
@@ -227,15 +227,29 @@ export class View extends PureComponent {
         <NavigationContainer fixed>
           <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
-          <ModalTitle>
+        <Modal
+          id="projectConfirmationRemovalModal"
+          isOpen={confirmationModalOpen}
+          contentLabel="Confirm Removal"
+          style={modalStyles}
+        >
+          <ModalTitle id="projectConfirmationRemovalModalTitle">
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
+            <BackButton
+              id="projectConfirmationRemovalModalCancelBtn"
+              onClick={this.handleCancelRemove}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmRemove} loading={removeLoading} disabled={removeLoading}>
+            <NextButton
+              id="projectConfirmationRemovalModalConfirmBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

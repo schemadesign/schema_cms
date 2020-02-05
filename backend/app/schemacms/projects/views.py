@@ -59,6 +59,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .prefetch_related("filters", "active_job__steps")
             .select_related("project", "meta_data", "created_by", "active_job")
             .annotate_filters_count()
+            .annotate_tags_count()
             .available_for_user(user=self.request.user)
         )
 
@@ -178,6 +179,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             super()
             .get_queryset()
             .annotate_filters_count()
+            .annotate_tags_count()
             .jobs_in_process()
             .available_for_user(user=self.request.user)
         )
@@ -499,7 +501,7 @@ class PageViewSet(
         page = self.get_object()
 
         if request.method == "GET":
-            queryset = page.blocks.all().order_by('exec_order')
+            queryset = page.blocks.all().order_by('exec_order', 'created')
             serializer = self.get_serializer(instance=queryset, many=True)
             data = {"project": page.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)

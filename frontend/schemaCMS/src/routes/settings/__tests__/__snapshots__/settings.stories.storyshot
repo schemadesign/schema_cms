@@ -895,6 +895,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <span
         className="c16"
+        id="resetPasswordLink"
         onClick={[Function]}
         style={
           Object {
@@ -920,6 +921,7 @@ exports[`Storyshots Settings Default 1`] = `
           <button
             className="c20"
             disabled={false}
+            id="settingsBackBtn"
             onClick={[Function]}
             style={
               Object {
@@ -947,6 +949,7 @@ exports[`Storyshots Settings Default 1`] = `
           <button
             className="c20"
             disabled={true}
+            id="settingsSaveBtn"
             style={
               Object {
                 "backgroundColor": "#1d1d20",

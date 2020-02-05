@@ -710,6 +710,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="sourceBtn"
               style={
                 Object {
                   "fill": "#FFF",
@@ -741,6 +742,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="fieldsBtn"
               style={
                 Object {
                   "fill": "#FFF",
@@ -774,6 +776,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           >
             <svg
               fill="#fff"
+              id="stepsBtn"
               stroke="#000"
               style={
                 Object {
@@ -824,6 +827,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           >
             <svg
               fill="#fff"
+              id="resultsBtn"
               stroke="#000"
               style={
                 Object {
@@ -873,6 +877,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="filtersBtn"
               stroke="#FFF"
               style={
                 Object {
@@ -907,6 +912,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="tagsBtn"
               style={
                 Object {
                   "height": 54,
@@ -954,6 +960,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="sourceBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -985,6 +992,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="fieldsBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -1018,6 +1026,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       >
         <svg
           fill="#fff"
+          id="stepsBtn"
           stroke="#000"
           style={
             Object {
@@ -1068,6 +1077,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       >
         <svg
           fill="#fff"
+          id="resultsBtn"
           stroke="#000"
           style={
             Object {
@@ -1117,6 +1127,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="filtersBtn"
           stroke="#FFF"
           style={
             Object {
@@ -1151,6 +1162,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="tagsBtn"
           style={
             Object {
               "height": 54,
@@ -1890,6 +1902,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="sourceBtn"
               style={
                 Object {
                   "fill": "#FFF",
@@ -1921,6 +1934,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="fieldsBtn"
               style={
                 Object {
                   "fill": "#FFF",
@@ -1954,6 +1968,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           >
             <svg
               fill="#fff"
+              id="stepsBtn"
               stroke="#000"
               style={
                 Object {
@@ -2004,6 +2019,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           >
             <svg
               fill="#fff"
+              id="resultsBtn"
               stroke="#000"
               style={
                 Object {
@@ -2053,6 +2069,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="filtersBtn"
               stroke="#FFF"
               style={
                 Object {
@@ -2087,6 +2104,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="tagsBtn"
               style={
                 Object {
                   "height": 54,
@@ -2134,6 +2152,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="sourceBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -2165,6 +2184,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="fieldsBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -2198,6 +2218,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       >
         <svg
           fill="#fff"
+          id="stepsBtn"
           stroke="#000"
           style={
             Object {
@@ -2248,6 +2269,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       >
         <svg
           fill="#fff"
+          id="resultsBtn"
           stroke="#000"
           style={
             Object {
@@ -2297,6 +2319,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="filtersBtn"
           stroke="#FFF"
           style={
             Object {
@@ -2331,6 +2354,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="tagsBtn"
           style={
             Object {
               "height": 54,

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProjectTabs: Component should render correctly 1`] = `
-<styled.div>
+<styled.div
+  id="tabsContainer"
+>
   <Tabs
     tabs={
       Array [

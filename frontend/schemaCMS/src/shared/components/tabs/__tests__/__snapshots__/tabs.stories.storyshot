@@ -82,6 +82,7 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
       <a
         className="c2"
         href="/"
+        id="tab1Tab"
         onClick={[Function]}
       >
         Tab 1
@@ -93,6 +94,7 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
       <a
         className="c2"
         href="/"
+        id="tab2Tab"
         onClick={[Function]}
       >
         Tab 2
@@ -104,6 +106,7 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
       <a
         className="c2"
         href="/"
+        id="tab3Tab"
         onClick={[Function]}
       >
         Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -115,6 +118,7 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
       <a
         className="c2"
         href="/"
+        id="tab4Tab"
         onClick={[Function]}
       >
         Tab 4

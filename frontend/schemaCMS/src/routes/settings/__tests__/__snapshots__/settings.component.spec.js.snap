@@ -681,6 +681,7 @@ exports[`Settings: Component should render correctly form 1`] = `
     />
     <styled.div>
       <Styled(Span)
+        id="resetPasswordLink"
         onClick={[Function]}
       >
         <FormattedMessage
@@ -698,11 +699,13 @@ exports[`Settings: Component should render correctly form 1`] = `
     >
       <BackButton
         disabled={false}
+        id="settingsBackBtn"
         onClick={[Function]}
         type="button"
       />
       <NextButton
         disabled={true}
+        id="settingsSaveBtn"
         loading={false}
         type="submit"
       >
@@ -954,11 +957,13 @@ exports[`Settings: Component should render form without reset password link 1`] 
     >
       <BackButton
         disabled={false}
+        id="settingsBackBtn"
         onClick={[Function]}
         type="button"
       />
       <NextButton
         disabled={true}
+        id="settingsSaveBtn"
         loading={false}
         type="submit"
       >

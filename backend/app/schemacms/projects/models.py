@@ -206,6 +206,10 @@ class DataSource(
         return self.filters.count()
 
     @functional.cached_property
+    def tags_count(self):
+        return self.list_of_tags.count()
+
+    @functional.cached_property
     def project_info(self):
         return dict(id=self.project.id, title=self.project.title)
 
@@ -250,8 +254,6 @@ class DataSource(
             file_name = self.file.name
         name, ext = os.path.splitext(os.path.basename(file_name))
         return name, os.path.basename(file_name)
-
-        return self.get_last_success_job()
 
     def create_job(self, **job_kwargs):
         """Create new job for data source, copy source file and version"""
@@ -745,6 +747,16 @@ class TagsList(
 
     def __str__(self):
         return self.name or str(self.pk)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["datasource", "name"],
+                name="unique_tags_list_name",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
+        ordering = ('created',)
 
 
 class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
