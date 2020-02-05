@@ -166,6 +166,7 @@ exports[`UserDetails: Component should render correctly 1`] = `
     </styled.div>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -411,6 +412,7 @@ exports[`UserDetails: Component should render correctly with loading 1`] = `
     </styled.div>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

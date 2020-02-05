@@ -17,7 +17,7 @@ export class StepperComponent extends PureComponent {
 
   static defaultProps = {
     customDotStyles: {},
-    handleStep: () => {},
+    onStepChange: () => {},
   };
 
   getActiveStyles = ({ step, activeStep, dotActiveStyles, customActiveDotStyles }) =>
@@ -40,7 +40,6 @@ export class StepperComponent extends PureComponent {
       theme,
       activeStep,
       onStepChange,
-      handleStep,
       customActiveDotStyles,
       customDotStyles,
       steps,
@@ -52,7 +51,6 @@ export class StepperComponent extends PureComponent {
       theme,
       activeStep,
       onStepChange,
-      handleStep,
       customActiveDotStyles,
       customDotStyles,
       steps,

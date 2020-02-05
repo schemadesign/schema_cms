@@ -246,6 +246,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "active": "#FFF",
             "background": "#1d1d20",
           },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
+          },
           "tab": Object {
             "active": "#FFF",
             "hover": "#FFF",
@@ -439,6 +444,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "active": "#FFF",
             "background": "#1d1d20",
           },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
+          },
           "tab": Object {
             "active": "#FFF",
             "hover": "#FFF",
@@ -532,6 +542,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       </Styled(Styled(Span))>
     </styled.div>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"
@@ -671,6 +682,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
         },
         "tab": Object {
           "active": "#FFF",
@@ -1126,6 +1142,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "active": "#FFF",
             "background": "#1d1d20",
           },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
+          },
           "tab": Object {
             "active": "#FFF",
             "hover": "#FFF",
@@ -1316,6 +1337,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "active": "#FFF",
             "background": "#1d1d20",
           },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
+          },
           "tab": Object {
             "active": "#FFF",
             "hover": "#FFF",
@@ -1388,6 +1414,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       }
     />
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"
@@ -1524,6 +1551,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
         },
         "tab": Object {
           "active": "#FFF",

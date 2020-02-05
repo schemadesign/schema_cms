@@ -2,10 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { ProjectStateForm } from '../projectStateForm.component';
+import { defaultProps } from '../projectStateForm.stories';
 
 describe('ProjectStateForm: Component', () => {
-  const defaultProps = {};
-
   const component = props => <ProjectStateForm {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

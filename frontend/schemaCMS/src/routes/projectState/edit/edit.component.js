@@ -51,7 +51,7 @@ export class Edit extends PureComponent {
   handleCancel = () => this.props.history.push(`/project/${this.props.state.project}/state`);
 
   render() {
-    const { dataSources, userRole, handleSubmit, isSubmitting, isValid } = this.props;
+    const { userRole, handleSubmit, isSubmitting, isValid } = this.props;
     const { loading, error } = this.state;
     const projectId = getMatchParam(this.props, 'projectId');
     const menuOptions = getProjectMenuOptions(projectId);
@@ -69,7 +69,7 @@ export class Edit extends PureComponent {
           title={<FormattedMessage {...messages.title} />}
           subtitle={<FormattedMessage {...messages.subTitle} />}
         />
-        <LoadingWrapper loading={loading} error={error} noData={!dataSources.length}>
+        <LoadingWrapper loading={loading} error={error}>
           <ProjectStateForm {...this.props} />
         </LoadingWrapper>
         <NavigationContainer fixed contentStyles={contentStyles}>

@@ -110,7 +110,7 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/1/states"
+          href="/project/1/state"
           onClick={[Function]}
         >
           <span>

@@ -129,6 +129,7 @@ exports[`Preview: Component should render correctly 1`] = `
     }
   />
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -270,6 +271,7 @@ exports[`Preview: Component should render correctly with loader 1`] = `
     }
   />
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

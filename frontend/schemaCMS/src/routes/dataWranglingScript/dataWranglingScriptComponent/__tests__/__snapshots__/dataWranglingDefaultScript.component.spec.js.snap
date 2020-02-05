@@ -130,6 +130,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     
   </SyntaxHighlighter>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -272,6 +273,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     
   </SyntaxHighlighter>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectStateForm: Component should render correctly 1`] = `
+<styled.div>
+  <Select
+    label="Dataset"
+    name="datasource"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "name",
+          "value": "id",
+        },
+      ]
+    }
+    placeholder="Select a dataset"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    dataSources={
+      Array [
+        Object {
+          "id": "id",
+          "name": "name",
+        },
+      ]
+    }
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={true}
+    label="Name"
+    name="name"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    state={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+    touched={Object {}}
+    value="name"
+    values={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    dataSources={
+      Array [
+        Object {
+          "id": "id",
+          "name": "name",
+        },
+      ]
+    }
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={true}
+    label="Description"
+    multiline={true}
+    name="description"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    state={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+    touched={Object {}}
+    value="description"
+    values={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    dataSources={
+      Array [
+        Object {
+          "id": "id",
+          "name": "name",
+        },
+      ]
+    }
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={true}
+    label="Source URL"
+    name="sourceUrl"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    state={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+    touched={Object {}}
+    values={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    dataSources={
+      Array [
+        Object {
+          "id": "id",
+          "name": "name",
+        },
+      ]
+    }
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={true}
+    label="Author"
+    name="author"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    state={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+    touched={Object {}}
+    value="author"
+    values={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    dataSources={
+      Array [
+        Object {
+          "id": "id",
+          "name": "name",
+        },
+      ]
+    }
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={true}
+    label="Created"
+    name="created"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    state={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+    touched={Object {}}
+    value="12/10/2019"
+    values={
+      Object {
+        "author": "author",
+        "created": "10.12.2019",
+        "description": "description",
+        "isPublic": false,
+        "name": "name",
+        "project": 1,
+      }
+    }
+  />
+  <Component
+    id="isPublic"
+    label="Make Public"
+    onChange={[Function]}
+    value={false}
+  />
+</styled.div>
+`;

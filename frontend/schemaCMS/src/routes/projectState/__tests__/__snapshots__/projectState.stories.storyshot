@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ProjectState Default 1`] = `
+.c4 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c0 {
+  display: none;
+}
+
+.c1 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c1:hover {
+  border-bottom-color: #FFF;
+}
+
+.c3 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c3:hover {
+  border-bottom-color: #FFF;
+}
+
+.c2 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className=""
+  >
+    <div
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        <a
+          className="c2"
+          href="/project/projectId"
+          onClick={[Function]}
+        >
+          <span>
+            Settings
+          </span>
+        </a>
+      </div>
+      <div
+        className="c1"
+      >
+        <a
+          className="c2"
+          href="/project/projectId/datasource"
+          onClick={[Function]}
+        >
+          <span>
+            Sources
+          </span>
+        </a>
+      </div>
+      <div
+        className="c3"
+      >
+        <a
+          className="c2"
+          href="/project/projectId/state"
+          onClick={[Function]}
+        >
+          <span>
+            States
+          </span>
+        </a>
+      </div>
+      <div
+        className="c1"
+      >
+        <a
+          className="c2"
+          href="/project/projectId/folder"
+          onClick={[Function]}
+        >
+          <span>
+            Pages
+          </span>
+        </a>
+      </div>
+      <div
+        className="c1"
+      >
+        <a
+          className="c2"
+          href="/project/projectId/user"
+          onClick={[Function]}
+        >
+          <span>
+            Users
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <span>
+      Loading...
+    </span>
+  </div>
+</div>
+`;

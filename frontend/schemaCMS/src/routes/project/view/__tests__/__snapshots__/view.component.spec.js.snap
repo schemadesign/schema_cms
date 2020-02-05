@@ -370,6 +370,7 @@ exports[`View: Component should render correctly 1`] = `
     </LoadingWrapper>
   </div>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

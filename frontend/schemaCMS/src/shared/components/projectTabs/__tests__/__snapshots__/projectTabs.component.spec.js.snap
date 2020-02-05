@@ -33,7 +33,7 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
             values={Object {}}
           />,
           "id": "state",
-          "to": "/project/1/states",
+          "to": "/project/1/state",
         },
         Object {
           "active": false,

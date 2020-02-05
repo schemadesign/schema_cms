@@ -163,6 +163,7 @@ exports[`CreateFolder: Component should render correctly 1`] = `
       touched={Object {}}
     />
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}

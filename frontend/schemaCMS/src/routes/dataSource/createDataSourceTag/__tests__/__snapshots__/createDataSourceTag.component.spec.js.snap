@@ -167,6 +167,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     }
   />
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

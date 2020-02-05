@@ -5,6 +5,7 @@ import { OK } from 'http-status-codes';
 import mockApi from '../../../shared/utils/mockApi';
 import { ProjectStateRoutines } from '../projectState.redux';
 import { watchProjectState } from '../projectState.sagas';
+import browserHistory from '../../../shared/utils/history';
 
 describe('ProjectState: sagas', () => {
   const defaultState = Immutable({});
@@ -45,37 +46,45 @@ describe('ProjectState: sagas', () => {
 
   it('should put create.success action', async () => {
     const response = {
-      results: {},
+      data: 'data',
+      id: 1,
     };
     const payload = {
-      stateId: 1,
+      projectId: 1,
       formData: { data: 'data' },
     };
+    jest.spyOn(browserHistory, 'push');
 
-    mockApi.post(`/states/${payload.stateId}`, payload.formData).reply(OK, response);
+    mockApi.post(`/projects/${payload.projectId}/states`, payload.formData).reply(OK, response);
 
     await expectSaga(watchProjectState)
       .withState(defaultState)
-      .put(ProjectStateRoutines.create.success(response.results))
+      .put(ProjectStateRoutines.create.success(response))
       .dispatch(ProjectStateRoutines.create(payload))
       .silentRun();
+
+    expect(browserHistory.push).toBeCalledWith('/state/1/tags');
   });
 
   it('should put update.success action', async () => {
     const response = {
-      results: {},
+      data: 'data',
+      id: 1,
     };
     const payload = {
       stateId: 1,
       formData: { data: 'data' },
     };
+    jest.spyOn(browserHistory, 'push');
 
     mockApi.patch(`/states/${payload.stateId}`, payload.formData).reply(OK, response);
 
     await expectSaga(watchProjectState)
       .withState(defaultState)
-      .put(ProjectStateRoutines.update.success(response.results))
+      .put(ProjectStateRoutines.update.success(response))
       .dispatch(ProjectStateRoutines.update(payload))
       .silentRun();
+
+    expect(browserHistory.push).toBeCalledWith('/state/1/tags');
   });
 });

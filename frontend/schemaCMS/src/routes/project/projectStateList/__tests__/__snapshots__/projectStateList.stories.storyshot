@@ -671,7 +671,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/states"
+            href="/project/1/state"
             onClick={[Function]}
           >
             <span>
@@ -1574,7 +1574,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/states"
+            href="/project/1/state"
             onClick={[Function]}
           >
             <span>

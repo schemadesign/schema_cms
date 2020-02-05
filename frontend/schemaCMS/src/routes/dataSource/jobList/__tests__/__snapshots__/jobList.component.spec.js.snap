@@ -155,6 +155,7 @@ exports[`JobList: Component should render correctly 1`] = `
     </RadioGroup>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -476,6 +477,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
     </RadioGroup>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -662,6 +664,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
     </RadioGroup>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

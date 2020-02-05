@@ -646,7 +646,7 @@ exports[`Storyshots Project|View Default 1`] = `
           >
             <a
               className="c12"
-              href="/project/100/states"
+              href="/project/100/state"
               onClick={[Function]}
             >
               <span>
@@ -1387,7 +1387,7 @@ exports[`Storyshots Project|View No data 1`] = `
           >
             <a
               className="c12"
-              href="/project/100/states"
+              href="/project/100/state"
               onClick={[Function]}
             >
               <span>

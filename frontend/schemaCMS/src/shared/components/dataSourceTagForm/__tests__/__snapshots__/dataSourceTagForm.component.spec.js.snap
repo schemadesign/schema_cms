@@ -147,10 +147,13 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
   </styled.div>
   <styled.div>
     <Styled(Component)
+      inverse={true}
       onClick={[Function]}
       type="button"
     >
-      <Component />
+      <Component
+        inverse={true}
+      />
     </Styled(Component)>
   </styled.div>
 </Fragment>
@@ -192,10 +195,13 @@ exports[`DataSourceTagForm: Component should render empty 1`] = `
   </styled.div>
   <styled.div>
     <Styled(Component)
+      inverse={true}
       onClick={[Function]}
       type="button"
     >
-      <Component />
+      <Component
+        inverse={true}
+      />
     </Styled(Component)>
   </styled.div>
 </Fragment>

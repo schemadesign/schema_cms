@@ -4,6 +4,7 @@ import reportError from '../../shared/utils/reportError';
 import { ProjectStateRoutines } from './projectState.redux';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH, STATES_PATH } from '../../shared/utils/api.constants';
+import browserHistory from '../../shared/utils/history';
 
 function* fetchList({ payload: { projectId } }) {
   try {
@@ -40,8 +41,9 @@ function* create({ payload: { projectId, formData } }) {
     yield put(ProjectStateRoutines.create.request());
 
     const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${STATES_PATH}`, formData);
-
     yield put(ProjectStateRoutines.create.success(data));
+
+    browserHistory.push(`/state/${data.id}/tags`);
   } catch (e) {
     reportError(e);
     yield put(ProjectStateRoutines.create.failure(e));
@@ -57,6 +59,8 @@ function* update({ payload: { stateId, formData } }) {
     const { data } = yield api.patch(`${STATES_PATH}/${stateId}`, formData);
 
     yield put(ProjectStateRoutines.update.success(data));
+
+    browserHistory.push(`/state/${data.id}/tags`);
   } catch (e) {
     reportError(e);
     yield put(ProjectStateRoutines.update.failure(e));

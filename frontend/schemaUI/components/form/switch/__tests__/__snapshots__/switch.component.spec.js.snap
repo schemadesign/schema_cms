@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch: Component should render correctly 1`] = `
+<Component
+  id="id"
+  onChange={[Function]}
+  value={false}
+/>
+`;
+
+exports[`Switch: Component should render correctly with label 1`] = `
+<Component
+  id="id"
+  label="label"
+  onChange={[Function]}
+  value={false}
+/>
+`;

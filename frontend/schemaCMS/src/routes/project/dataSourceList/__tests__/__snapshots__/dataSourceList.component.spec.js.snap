@@ -1063,6 +1063,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={true}
     right={false}
@@ -1215,6 +1216,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
     <styled.section />
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={true}
     right={false}

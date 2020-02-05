@@ -671,7 +671,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/states"
+            href="/project/1/state"
             onClick={[Function]}
           >
             <span>
@@ -1574,7 +1574,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/states"
+            href="/project/1/state"
             onClick={[Function]}
           >
             <span>

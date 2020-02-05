@@ -292,6 +292,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       </div>
     </Component>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"
@@ -631,6 +632,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
       </Draggable>
     </Component>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"
@@ -881,6 +883,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
       </styled.div>
     </styled.div>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"
@@ -1178,6 +1181,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
       </div>
     </Component>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"

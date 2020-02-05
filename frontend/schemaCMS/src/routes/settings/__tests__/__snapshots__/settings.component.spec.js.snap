@@ -691,6 +691,7 @@ exports[`Settings: Component should render correctly form 1`] = `
       </Styled(Span)>
     </styled.div>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}
@@ -946,6 +947,7 @@ exports[`Settings: Component should render form without reset password link 1`] 
       }
     />
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}
