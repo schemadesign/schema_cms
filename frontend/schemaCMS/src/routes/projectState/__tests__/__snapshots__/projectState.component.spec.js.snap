@@ -23,6 +23,16 @@ exports[`ProjectState: Component should render correctly 1`] = `
         exact={true}
         path="path/edit"
       />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="path/tags"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="path/*"
+      />
     </Switch>
   </LoadingWrapper>
 </Fragment>

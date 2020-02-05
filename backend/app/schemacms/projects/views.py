@@ -582,8 +582,8 @@ class TagsListDetailViewSet(
 class StateDetailViewSet(
     mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
 ):
-    queryset = (models.State.objects.all().select_related("datasource", "author", "project")).order_by(
-        "created"
+    queryset = (
+        models.State.objects.all().select_related("datasource", "author", "project").order_by("created")
     )
     serializer_class = serializers.StateSerializer
     permission_classes = (permissions.IsAuthenticated,)

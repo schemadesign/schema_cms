@@ -788,6 +788,7 @@ class State(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True
     )
     is_public = models.BooleanField(default=True)
+    active_tags = pg_fields.ArrayField(models.IntegerField(), null=True, default=list)
 
     def __str__(self):
         return self.name or str(self.pk)

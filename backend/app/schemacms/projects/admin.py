@@ -200,7 +200,7 @@ class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "datasource", "deleted_at")
     fields = ("datasource", "name", "deleted")
     list_filter = ('datasource', "deleted_at")
-    readonly_on_update_fields = ("tags_list",)
+    readonly_on_update_fields = ("datasource",)
     inlines = (TagInline,)
 
     def soft_undelete(self, request, queryset):

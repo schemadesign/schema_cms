@@ -8,6 +8,8 @@ import { getMatchParam } from '../../shared/utils/helpers';
 import reportError from '../../shared/utils/reportError';
 import { Edit } from './edit';
 import { STATES } from '../../shared/components/projectTabs/projectTabs.constants';
+import { NotFound } from '../notFound';
+import { StateTag } from './stateTag';
 
 export class ProjectState extends PureComponent {
   static propTypes = {
@@ -46,6 +48,7 @@ export class ProjectState extends PureComponent {
       state,
     } = this.props;
     const editPath = `${path}/edit`;
+    const tagPath = `${path}/tags`;
 
     return (
       <Fragment>
@@ -54,6 +57,8 @@ export class ProjectState extends PureComponent {
           <Switch>
             <Redirect exact path={path} to={editPath} />
             <Route exact path={editPath} component={Edit} />
+            <Route exact path={tagPath} component={StateTag} />
+            <Route exact path={`${path}/*`} component={NotFound} />
           </Switch>
         </LoadingWrapper>
       </Fragment>
