@@ -13,6 +13,11 @@ const colors = {
 };
 
 const light = {
+  switch: {
+    backgroundActive: colors.coolGray,
+    background: colors.veryLightPink,
+    circle: colors.black,
+  },
   [BUTTON]: {
     background: colors.veryLightPink,
     text: colors.black,
@@ -119,6 +124,11 @@ const light = {
 };
 
 const dark = {
+  switch: {
+    backgroundActive: colors.lightGrey,
+    background: colors.mediumGray,
+    circle: colors.white,
+  },
   [BUTTON]: {
     background: colors.darkGrey,
     text: colors.white,

@@ -9,6 +9,7 @@ import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkboxGroup';
 import { Select } from './select';
 import { DropZone } from './dropZone';
+import { Switch } from './switch';
 
 const Form = {
   Input,
@@ -23,6 +24,7 @@ const Form = {
   CheckboxGroup,
   Select,
   DropZone,
+  Switch,
 };
 
 export {
@@ -38,5 +40,6 @@ export {
   CheckboxGroup,
   Select,
   DropZone,
+  Switch,
 };
 export default Form;

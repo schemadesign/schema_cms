@@ -11,6 +11,7 @@ import { reducer as folderReducer } from './folder/folder.redux';
 import { reducer as pageReducer } from './page/page.redux';
 import { reducer as pageBlockReducer } from './pageBlock/pageBlock.redux';
 import { reducer as DataSourceTagReducer } from './dataSourceTag/dataSourceTag.redux';
+import { reducer as projectStateReducer } from './projectState/projectState.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -28,6 +29,7 @@ export default function createReducer() {
     page: pageReducer,
     pageBlock: pageBlockReducer,
     dataSourceTag: DataSourceTagReducer,
+    projectState: projectStateReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

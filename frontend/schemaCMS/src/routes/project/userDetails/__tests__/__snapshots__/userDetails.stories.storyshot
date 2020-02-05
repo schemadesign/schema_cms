@@ -471,6 +471,19 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               className="c9"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c9"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}

@@ -426,6 +426,19 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
               className="c5"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
@@ -1096,6 +1109,19 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
               >
                 <span>
                   Data Sources
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
                 </span>
               </a>
             </div>

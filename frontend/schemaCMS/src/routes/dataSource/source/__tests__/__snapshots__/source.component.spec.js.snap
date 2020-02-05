@@ -75,6 +75,20 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -231,6 +245,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "stepper": Object {
             "active": "#FFF",
             "background": "#1d1d20",
+          },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
           },
           "tab": Object {
             "active": "#FFF",
@@ -425,6 +444,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "active": "#FFF",
             "background": "#1d1d20",
           },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
+          },
           "tab": Object {
             "active": "#FFF",
             "hover": "#FFF",
@@ -518,6 +542,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       </Styled(Styled(Span))>
     </styled.div>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"
@@ -657,6 +682,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
         },
         "tab": Object {
           "active": "#FFF",
@@ -944,6 +974,20 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -1097,6 +1141,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "stepper": Object {
             "active": "#FFF",
             "background": "#1d1d20",
+          },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
           },
           "tab": Object {
             "active": "#FFF",
@@ -1288,6 +1337,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "active": "#FFF",
             "background": "#1d1d20",
           },
+          "switch": Object {
+            "background": "#2F2F36",
+            "backgroundActive": "#71737e",
+            "circle": "#FFF",
+          },
           "tab": Object {
             "active": "#FFF",
             "hover": "#FFF",
@@ -1360,6 +1414,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       }
     />
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       padding="40px 0 70px"
@@ -1496,6 +1551,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
         },
         "tab": Object {
           "active": "#FFF",

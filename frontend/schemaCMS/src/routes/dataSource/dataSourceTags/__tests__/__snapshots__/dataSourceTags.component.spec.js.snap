@@ -75,6 +75,20 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -280,7 +294,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
 </Fragment>
 `;
 
-exports[`DataSourceTags: Component should render correctly when no filters 1`] = `
+exports[`DataSourceTags: Component should render correctly when no tags 1`] = `
 <Fragment>
   <HelmetWrapper
     defer={true}
@@ -350,6 +364,20 @@ exports[`DataSourceTags: Component should render correctly when no filters 1`] =
             values={Object {}}
           />,
           "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
           "type": "link_item",
         },
         Object {
@@ -632,6 +660,20 @@ exports[`DataSourceTags: Component should render correctly with loader 1`] = `
             values={Object {}}
           />,
           "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
           "type": "link_item",
         },
         Object {

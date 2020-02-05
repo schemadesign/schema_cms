@@ -492,6 +492,19 @@ exports[`Storyshots Project|FolderList Default 1`] = `
               className="c5"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
@@ -653,6 +666,20 @@ exports[`Storyshots Project|FolderList Default 1`] = `
           >
             <span>
               Sources
+            </span>
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/1/state"
+            id="stateTab"
+            onClick={[Function]}
+          >
+            <span>
+              States
             </span>
           </a>
         </div>
@@ -1374,6 +1401,19 @@ exports[`Storyshots Project|FolderList No data 1`] = `
               className="c5"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
@@ -1535,6 +1575,20 @@ exports[`Storyshots Project|FolderList No data 1`] = `
           >
             <span>
               Sources
+            </span>
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/1/state"
+            id="stateTab"
+            onClick={[Function]}
+          >
+            <span>
+              States
             </span>
           </a>
         </div>

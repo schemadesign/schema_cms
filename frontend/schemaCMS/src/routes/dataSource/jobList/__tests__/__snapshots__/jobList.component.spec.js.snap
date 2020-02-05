@@ -77,6 +77,20 @@ exports[`JobList: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -141,6 +155,7 @@ exports[`JobList: Component should render correctly 1`] = `
     </RadioGroup>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -244,6 +259,20 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
             values={Object {}}
           />,
           "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
           "type": "link_item",
         },
         Object {
@@ -448,6 +477,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
     </RadioGroup>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -556,6 +586,20 @@ exports[`JobList: Component should render correctly with no data 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -620,6 +664,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
     </RadioGroup>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

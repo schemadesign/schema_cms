@@ -139,6 +139,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
       </styled.div>
     </LoadingWrapper>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}
@@ -362,6 +363,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
       </styled.div>
     </LoadingWrapper>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}

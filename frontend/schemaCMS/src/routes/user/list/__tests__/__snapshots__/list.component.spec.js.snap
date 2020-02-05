@@ -82,6 +82,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
     />
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={true}
     right={false}
@@ -198,6 +199,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
     />
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={true}
     right={false}

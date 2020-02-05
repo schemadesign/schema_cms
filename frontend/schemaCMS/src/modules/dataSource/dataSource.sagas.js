@@ -92,13 +92,13 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
     )
   )(data);
 
-function* fetchListLoop(payload) {
+function* fetchListLoop({ projectId, rawList = false }) {
   try {
     while (true) {
       yield put(DataSourceRoutines.fetchList.request());
-
+      const rawListQuery = rawList ? `&raw_list=${rawList}` : '';
       const { data } = yield api.get(
-        `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=${PAGE_SIZE}`
+        `${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}?page_size=${PAGE_SIZE}${rawListQuery}`
       );
 
       yield put(ProjectRoutines.setProject.trigger(data.project));
@@ -106,7 +106,7 @@ function* fetchListLoop(payload) {
       const uploadingDataSources = yield select(selectUploadingDataSources);
       const isDataSourceProcessed = getIfAllDataSourceProcessed({ data: data.results, uploadingDataSources });
 
-      if (isDataSourceProcessed) {
+      if (isDataSourceProcessed || rawList) {
         yield cancel();
       }
 

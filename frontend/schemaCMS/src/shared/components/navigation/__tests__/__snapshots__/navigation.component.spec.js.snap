@@ -46,6 +46,7 @@ exports[`Navigation: Component should render NavigationContainer 1`] = `
     fixed={false}
   >
     <styled.div
+      contentStyles={null}
       hideOnDesktop={false}
       right={false}
     >

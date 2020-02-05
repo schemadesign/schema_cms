@@ -41,14 +41,14 @@ exports[`View: Component should render content correctly 1`] = `
           }
           headerComponent={
             <ForwardRef(styled.span)>
-              Charts
+              States
             </ForwardRef(styled.span)>
           }
-          id="projectCharts"
+          id="projectStates"
           onClick={[Function]}
         >
           <styled.span
-            id="projectChartsValue"
+            id="projectStatesValue"
           >
             0
           </styled.span>
@@ -315,6 +315,20 @@ exports[`View: Component should render correctly 1`] = `
           Object {
             "allowedRoles": Array [
               "admin",
+              "editor",
+            ],
+            "id": "stateNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="States"
+              id="project.view.states"
+              values={Object {}}
+            />,
+            "to": "/project/100/state",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
             ],
             "id": "usersNavBtn",
             "label": <FormattedMessage
@@ -356,6 +370,7 @@ exports[`View: Component should render correctly 1`] = `
     </LoadingWrapper>
   </div>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}

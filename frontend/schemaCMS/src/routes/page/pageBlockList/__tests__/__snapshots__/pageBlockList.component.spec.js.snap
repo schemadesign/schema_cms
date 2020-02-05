@@ -164,6 +164,7 @@ exports[`PageBlockList: Component should render correctly 1`] = `
         </Component>
       </LoadingWrapper>
       <NavigationContainer
+        contentStyles={null}
         fixed={true}
         hideOnDesktop={false}
         right={false}
@@ -342,6 +343,7 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
         </Component>
       </LoadingWrapper>
       <NavigationContainer
+        contentStyles={null}
         fixed={true}
         hideOnDesktop={false}
         right={false}
@@ -531,6 +533,7 @@ exports[`PageBlockList: Component should render correctly with one block 1`] = `
         </Component>
       </LoadingWrapper>
       <NavigationContainer
+        contentStyles={null}
         fixed={true}
         hideOnDesktop={false}
         right={false}

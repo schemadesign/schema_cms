@@ -94,6 +94,11 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "active": "#1d1d20",
           "background": "#f0efef",
         },
+        "switch": Object {
+          "background": "#f0efef",
+          "backgroundActive": "#a6a7aa",
+          "circle": "#000",
+        },
         "tab": Object {
           "active": "#000",
           "hover": "#000",
@@ -242,6 +247,11 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "stepper": Object {
             "active": "#1d1d20",
             "background": "#f0efef",
+          },
+          "switch": Object {
+            "background": "#f0efef",
+            "backgroundActive": "#a6a7aa",
+            "circle": "#000",
           },
           "tab": Object {
             "active": "#000",
@@ -431,6 +441,11 @@ exports[`App: Component should render App when language is set 1`] = `
           "active": "#1d1d20",
           "background": "#f0efef",
         },
+        "switch": Object {
+          "background": "#f0efef",
+          "backgroundActive": "#a6a7aa",
+          "circle": "#000",
+        },
         "tab": Object {
           "active": "#000",
           "hover": "#000",
@@ -579,6 +594,11 @@ exports[`App: Component should render App when language is set 1`] = `
           "stepper": Object {
             "active": "#1d1d20",
             "background": "#f0efef",
+          },
+          "switch": Object {
+            "background": "#f0efef",
+            "backgroundActive": "#a6a7aa",
+            "circle": "#000",
           },
           "tab": Object {
             "active": "#000",

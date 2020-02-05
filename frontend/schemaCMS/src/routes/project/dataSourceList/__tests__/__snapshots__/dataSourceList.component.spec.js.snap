@@ -71,6 +71,20 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -114,7 +128,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
   </ContextHeader>
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={false}
     noDataContent="No Data Sources"
   >
@@ -1049,6 +1063,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={true}
     right={false}
@@ -1137,6 +1152,20 @@ exports[`DataSourceList: Component should render empty 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
@@ -1180,13 +1209,14 @@ exports[`DataSourceList: Component should render empty 1`] = `
   </ContextHeader>
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={true}
     noDataContent="No Data Sources"
   >
     <styled.section />
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={true}
     right={false}

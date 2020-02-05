@@ -38,6 +38,7 @@ import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constants';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -201,6 +202,8 @@ export class DataSourceList extends PureComponent {
     );
   };
 
+  renderList = renderWhenTrue(() => <ListContainer>{this.props.dataSources.map(this.renderItem)}</ListContainer>);
+
   render() {
     const { loading, error } = this.state;
     const { dataSources = [], match, userRole } = this.props;
@@ -223,9 +226,7 @@ export class DataSourceList extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
         </ContextHeader>
-        <LoadingWrapper {...loadingConfig}>
-          <ListContainer>{dataSources.map(this.renderItem)}</ListContainer>
-        </LoadingWrapper>
+        <LoadingWrapper {...loadingConfig}>{this.renderList(!loading)}</LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />

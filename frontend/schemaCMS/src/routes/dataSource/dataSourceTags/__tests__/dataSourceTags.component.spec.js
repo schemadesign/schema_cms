@@ -26,7 +26,7 @@ describe('DataSourceTags: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly when no filters', async () => {
+  it('should render correctly when no tags', async () => {
     const fetchTags = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = await render({
       ...noTagsProps,

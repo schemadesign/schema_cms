@@ -119,8 +119,8 @@ export class DataSourceTagForm extends PureComponent {
         <Label>{<FormattedMessage {...messages[TAG_TAGS]} />}</Label>
         <TagsContainer>{this.renderTags(values[TAG_TAGS])}</TagsContainer>
         <ButtonContainer>
-          <PlusButton onClick={this.handleAddTag} type="button">
-            <PlusIcon />
+          <PlusButton onClick={this.handleAddTag} type="button" inverse>
+            <PlusIcon inverse />
           </PlusButton>
         </ButtonContainer>
       </Fragment>

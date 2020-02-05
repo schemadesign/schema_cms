@@ -103,6 +103,11 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
           "active": "#FFF",
           "background": "#1d1d20",
         },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
+        },
         "tab": Object {
           "active": "#FFF",
           "hover": "#FFF",
@@ -329,6 +334,11 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
         },
         "tab": Object {
           "active": "#FFF",
@@ -510,6 +520,11 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
           "active": "#FFF",
           "background": "#1d1d20",
         },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
+        },
         "tab": Object {
           "active": "#FFF",
           "hover": "#FFF",
@@ -736,6 +751,11 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
         },
         "tab": Object {
           "active": "#FFF",

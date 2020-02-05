@@ -11,6 +11,12 @@ from ..utils.serializers import NestedRelatedModelSerializer
 from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
+class RawDataSourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DataSource
+        fields = ("id", "name")
+
+
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     filters = serializers.SerializerMethodField(read_only=True)
     tags = serializers.SerializerMethodField(read_only=True)
@@ -719,3 +725,45 @@ class TagsListDetailSerializer(TagsListSerializer):
 
     class Meta(TagsListSerializer.Meta):
         fields = TagsListSerializer.Meta.fields + ("datasource",)
+
+
+# States
+
+
+class StateSerializer(serializers.ModelSerializer):
+    author = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = models.State
+        fields = (
+            "id",
+            "name",
+            "project",
+            "datasource",
+            "description",
+            "source_url",
+            "author",
+            "is_public",
+            "created",
+        )
+        extra_kwargs = {
+            "project": {"required": False, "allow_null": True},
+        }
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.State.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="stateNameNotUnique",
+                message="State with this name already exist in project.",
+            )
+        ]
+
+    def create(self, validated_data):
+        state = models.State(author=self.context["request"].user, **validated_data)
+        state.save()
+
+        return state
+
+    def get_author(self, state):
+        return state.author.get_full_name()
