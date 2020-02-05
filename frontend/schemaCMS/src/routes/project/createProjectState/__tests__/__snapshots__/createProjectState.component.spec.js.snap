@@ -14,14 +14,14 @@ exports[`CreateProjectState: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="createProjectState.title"
+        id="project.createProjectState.title"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="State"
-        id="createProjectState.title"
+        id="project.createProjectState.title"
         values={Object {}}
       />
     }
@@ -134,14 +134,14 @@ exports[`CreateProjectState: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="createProjectState.title"
+        id="project.createProjectState.title"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="State"
-        id="createProjectState.title"
+        id="project.createProjectState.title"
         values={Object {}}
       />
     }

@@ -3,11 +3,11 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'createProjectState.title',
+    id: 'project.createProjectState.title',
     defaultMessage: 'State',
   },
   subTitle: {
-    id: 'createProjectState.title',
+    id: 'project.createProjectState.title',
     defaultMessage: 'Create',
   },
 });

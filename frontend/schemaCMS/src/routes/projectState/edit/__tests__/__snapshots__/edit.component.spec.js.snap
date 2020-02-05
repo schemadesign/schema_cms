@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Edit: Component should render correctly 1`] = `
-<styled.form
-  onSubmit={[Function]}
->
+<Fragment>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
@@ -65,7 +63,7 @@ exports[`Edit: Component should render correctly 1`] = `
             id="project.view.projectDetails"
             values={Object {}}
           />,
-          "to": "/project/undefined",
+          "to": "/project/1",
           "type": "link_item",
         },
         Object {
@@ -79,7 +77,7 @@ exports[`Edit: Component should render correctly 1`] = `
             id="project.view.projectDataSources"
             values={Object {}}
           />,
-          "to": "/project/undefined/datasource",
+          "to": "/project/1/datasource",
           "type": "link_item",
         },
         Object {
@@ -93,7 +91,7 @@ exports[`Edit: Component should render correctly 1`] = `
             id="project.view.states"
             values={Object {}}
           />,
-          "to": "/project/undefined/state",
+          "to": "/project/1/state",
           "type": "link_item",
         },
         Object {
@@ -106,7 +104,7 @@ exports[`Edit: Component should render correctly 1`] = `
             id="project.view.projectUsersPage"
             values={Object {}}
           />,
-          "to": "/project/undefined/user",
+          "to": "/project/1/user",
           "type": "link_item",
         },
         Object {
@@ -120,7 +118,7 @@ exports[`Edit: Component should render correctly 1`] = `
             id="project.view.projectPages"
             values={Object {}}
           />,
-          "to": "/project/undefined/folder",
+          "to": "/project/1/folder",
           "type": "link_item",
         },
       ]
@@ -142,90 +140,94 @@ exports[`Edit: Component should render correctly 1`] = `
       />
     }
   />
-  <LoadingWrapper
-    error={null}
-    loading={true}
-    noData={false}
-    noDataContent={null}
+  <styled.form
+    onSubmit={[Function]}
   >
-    <ProjectStateForm
-      dataSources={
-        Array [
+    <LoadingWrapper
+      error={null}
+      loading={true}
+      noData={false}
+      noDataContent={null}
+    >
+      <ProjectStateForm
+        dataSources={
+          Array [
+            Object {
+              "id": "id",
+              "name": "name",
+            },
+          ]
+        }
+        fetchDataSources={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
           Object {
-            "id": "id",
+            "goBack": [Function],
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        setFieldValue={[Function]}
+        state={
+          Object {
+            "author": "author",
+            "created": "10.12.2019",
+            "description": "description",
+            "isPublic": false,
             "name": "name",
-          },
-        ]
-      }
-      fetchDataSources={[Function]}
-      handleChange={[Function]}
-      handleSubmit={[Function]}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
+            "project": 1,
+          }
         }
-      }
-      intl={
-        Object {
-          "formatMessage": [Function],
+        userRole="admin"
+        values={
+          Object {
+            "author": "author",
+            "created": "10.12.2019",
+            "description": "description",
+            "isPublic": false,
+            "name": "name",
+            "project": 1,
+          }
         }
-      }
-      isSubmitting={false}
-      isValid={true}
-      setFieldValue={[Function]}
-      state={
-        Object {
-          "author": "author",
-          "created": "10.12.2019",
-          "description": "description",
-          "isPublic": false,
-          "name": "name",
-          "project": 1,
-        }
-      }
-      userRole="admin"
-      values={
-        Object {
-          "author": "author",
-          "created": "10.12.2019",
-          "description": "description",
-          "isPublic": false,
-          "name": "name",
-          "project": 1,
-        }
-      }
-    />
-  </LoadingWrapper>
-  <NavigationContainer
-    contentStyles={
-      Array [
-        "
+      />
+    </LoadingWrapper>
+    <NavigationContainer
+      contentStyles={
+        Array [
+          "
   display: flex;
   flex-direction: column;
 ",
-      ]
-    }
-    fixed={true}
-    hideOnDesktop={false}
-    right={false}
-  >
-    <styled.div>
-      <BackButton
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+        ]
+      }
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
+    >
+      <styled.div>
+        <BackButton
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        />
+        <NextButton
+          disabled={false}
+          loading={false}
+          type="submit"
+        />
+      </styled.div>
+      <Component
+        activeStep={1}
+        steps={3}
       />
-      <NextButton
-        disabled={false}
-        loading={false}
-        type="submit"
-      />
-    </styled.div>
-    <Component
-      activeStep={1}
-      steps={3}
-    />
-  </NavigationContainer>
-</styled.form>
+    </NavigationContainer>
+  </styled.form>
+</Fragment>
 `;

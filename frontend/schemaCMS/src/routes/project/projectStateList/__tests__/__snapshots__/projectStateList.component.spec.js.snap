@@ -12,14 +12,14 @@ exports[`ProjectStateList: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="projectStateList.subTitle"
+        id="project.projectStateList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="States"
-        id="projectStateList.title"
+        id="project.projectStateList.title"
         values={Object {}}
       />
     }
@@ -132,14 +132,14 @@ exports[`ProjectStateList: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="projectStateList.subTitle"
+        id="project.projectStateList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="States"
-        id="projectStateList.title"
+        id="project.projectStateList.title"
         values={Object {}}
       />
     }
@@ -278,14 +278,14 @@ exports[`ProjectStateList: Component should render correctly when no tags 1`] = 
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="projectStateList.subTitle"
+        id="project.projectStateList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="States"
-        id="projectStateList.title"
+        id="project.projectStateList.title"
         values={Object {}}
       />
     }
@@ -398,14 +398,14 @@ exports[`ProjectStateList: Component should render correctly when no tags 1`] = 
     subtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="projectStateList.subTitle"
+        id="project.projectStateList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="States"
-        id="projectStateList.title"
+        id="project.projectStateList.title"
         values={Object {}}
       />
     }
@@ -455,14 +455,14 @@ exports[`ProjectStateList: Component should render correctly with loader 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="projectStateList.subTitle"
+        id="project.projectStateList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="States"
-        id="projectStateList.title"
+        id="project.projectStateList.title"
         values={Object {}}
       />
     }
@@ -575,14 +575,14 @@ exports[`ProjectStateList: Component should render correctly with loader 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="projectStateList.subTitle"
+        id="project.projectStateList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="States"
-        id="projectStateList.title"
+        id="project.projectStateList.title"
         values={Object {}}
       />
     }

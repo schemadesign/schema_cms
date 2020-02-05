@@ -11,19 +11,19 @@ describe('DataSourceList: Component', () => {
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render empty', () => {
-    const wrapper = render();
+  it('should render empty', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly', () => {
-    const wrapper = render(propsWithDataSources);
+  it('should render correctly', async () => {
+    const wrapper = await render(propsWithDataSources);
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should go to source', () => {
+  it('should go to source', async () => {
     jest.spyOn(propsWithDataSources.history, 'push');
-    const wrapper = render(propsWithDataSources);
+    const wrapper = await render(propsWithDataSources);
 
     wrapper
       .find(ListItemTitle)
@@ -33,9 +33,9 @@ describe('DataSourceList: Component', () => {
     expect(propsWithDataSources.history.push).toHaveBeenCalledWith('/datasource/17/source');
   });
 
-  it('should go to preview', () => {
+  it('should go to preview', async () => {
     jest.spyOn(propsWithDataSources.history, 'push');
-    const wrapper = render(propsWithDataSources);
+    const wrapper = await render(propsWithDataSources);
 
     wrapper
       .find(ListItemTitle)
@@ -45,9 +45,9 @@ describe('DataSourceList: Component', () => {
     expect(propsWithDataSources.history.push).toHaveBeenCalledWith('/datasource/17/preview');
   });
 
-  it('should go to data result', () => {
+  it('should go to data result', async () => {
     jest.spyOn(propsWithDataSources.history, 'push');
-    const wrapper = render(propsWithDataSources);
+    const wrapper = await render(propsWithDataSources);
 
     wrapper
       .find(ListItemTitle)

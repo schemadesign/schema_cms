@@ -164,6 +164,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
         },
       ]
     }
+    disabled={true}
     errors={Object {}}
     fullWidth={true}
     handleChange={[Function]}
@@ -172,7 +173,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
-    isEdit={true}
+    isEdit={false}
     label="Author"
     name="author"
     onChange={[Function]}
@@ -210,6 +211,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
         },
       ]
     }
+    disabled={true}
     errors={Object {}}
     fullWidth={true}
     handleChange={[Function]}
@@ -218,7 +220,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
-    isEdit={true}
+    isEdit={false}
     label="Created"
     name="created"
     onChange={[Function]}

@@ -54,7 +54,7 @@ export class ProjectStateForm extends PureComponent {
           name={name}
           label={this.props.intl.formatMessage(messages[name])}
           fullWidth
-          isEdit
+          disabled
           {...this.props}
         />
       )

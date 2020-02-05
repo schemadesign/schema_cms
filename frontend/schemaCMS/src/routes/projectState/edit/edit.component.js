@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
@@ -6,7 +6,7 @@ import { Stepper } from 'schemaUI';
 
 import { Form } from './edit.styles';
 import messages from './edit.messages';
-import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
 import { contentStyles, NavigationButtons } from '../../project/createProjectState/createProjectState.styles';
@@ -51,13 +51,13 @@ export class Edit extends PureComponent {
   handleCancel = () => this.props.history.push(`/project/${this.props.state.project}/state`);
 
   render() {
-    const { userRole, handleSubmit, isSubmitting, isValid } = this.props;
+    const { userRole, handleSubmit, isSubmitting, isValid, state } = this.props;
     const { loading, error } = this.state;
-    const projectId = getMatchParam(this.props, 'projectId');
+    const projectId = state.project;
     const menuOptions = getProjectMenuOptions(projectId);
 
     return (
-      <Form onSubmit={handleSubmit}>
+      <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
         <MobileMenu
           headerTitle={<FormattedMessage {...messages.title} />}
@@ -69,17 +69,19 @@ export class Edit extends PureComponent {
           title={<FormattedMessage {...messages.title} />}
           subtitle={<FormattedMessage {...messages.subTitle} />}
         />
-        <LoadingWrapper loading={loading} error={error}>
-          <ProjectStateForm {...this.props} />
-        </LoadingWrapper>
-        <NavigationContainer fixed contentStyles={contentStyles}>
-          <NavigationButtons>
-            <BackButton type="button" onClick={this.handleCancel} />
-            <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid} />
-          </NavigationButtons>
-          <Stepper steps={3} activeStep={1} />
-        </NavigationContainer>
-      </Form>
+        <Form onSubmit={handleSubmit}>
+          <LoadingWrapper loading={loading} error={error}>
+            <ProjectStateForm {...this.props} />
+          </LoadingWrapper>
+          <NavigationContainer fixed contentStyles={contentStyles}>
+            <NavigationButtons>
+              <BackButton type="button" onClick={this.handleCancel} />
+              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid} />
+            </NavigationButtons>
+            <Stepper steps={3} activeStep={1} />
+          </NavigationContainer>
+        </Form>
+      </Fragment>
     );
   }
 }

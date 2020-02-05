@@ -128,7 +128,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
   </ContextHeader>
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={false}
     noDataContent="No Data Sources"
   >
@@ -1209,7 +1209,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
   </ContextHeader>
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={true}
     noDataContent="No Data Sources"
   >
