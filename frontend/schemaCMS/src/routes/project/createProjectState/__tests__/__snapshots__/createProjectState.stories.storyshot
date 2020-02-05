@@ -668,6 +668,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
     </div>
     <div
       className=""
+      id="tabsContainer"
     >
       <div
         className="c9"
@@ -678,6 +679,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
           <a
             className="c11"
             href="/project/projectId"
+            id="settingsTab"
             onClick={[Function]}
           >
             <span>
@@ -691,6 +693,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
           <a
             className="c11"
             href="/project/projectId/datasource"
+            id="sourcesTab"
             onClick={[Function]}
           >
             <span>
@@ -704,6 +707,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
           <a
             className="c11"
             href="/project/projectId/state"
+            id="stateTab"
             onClick={[Function]}
           >
             <span>
@@ -717,6 +721,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
           <a
             className="c11"
             href="/project/projectId/folder"
+            id="folderTab"
             onClick={[Function]}
           >
             <span>
@@ -730,6 +735,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
           <a
             className="c11"
             href="/project/projectId/user"
+            id="usersTab"
             onClick={[Function]}
           >
             <span>

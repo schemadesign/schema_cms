@@ -672,6 +672,7 @@ exports[`Storyshots Project|UserList List 1`] = `
         <a
           className="c11"
           href="/project/1/state"
+          id="stateTab"
           onClick={[Function]}
         >
           <span>
@@ -1575,6 +1576,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
         <a
           className="c11"
           href="/project/1/state"
+          id="stateTab"
           onClick={[Function]}
         >
           <span>

@@ -636,6 +636,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
     </div>
     <div
       className=""
+      id="tabsContainer"
     >
       <div
         className="c9"
@@ -646,6 +647,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
           <a
             className="c11"
             href="/project/1"
+            id="settingsTab"
             onClick={[Function]}
           >
             <span>
@@ -659,6 +661,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
           <a
             className="c11"
             href="/project/1/datasource"
+            id="sourcesTab"
             onClick={[Function]}
           >
             <span>
@@ -672,6 +675,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
           <a
             className="c11"
             href="/project/1/state"
+            id="stateTab"
             onClick={[Function]}
           >
             <span>
@@ -685,6 +689,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
           <a
             className="c11"
             href="/project/1/folder"
+            id="folderTab"
             onClick={[Function]}
           >
             <span>
@@ -698,6 +703,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
           <a
             className="c11"
             href="/project/1/user"
+            id="usersTab"
             onClick={[Function]}
           >
             <span>
@@ -1539,6 +1545,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
     </div>
     <div
       className=""
+      id="tabsContainer"
     >
       <div
         className="c9"
@@ -1549,6 +1556,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
           <a
             className="c11"
             href="/project/1"
+            id="settingsTab"
             onClick={[Function]}
           >
             <span>
@@ -1562,6 +1570,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
           <a
             className="c11"
             href="/project/1/datasource"
+            id="sourcesTab"
             onClick={[Function]}
           >
             <span>
@@ -1575,6 +1584,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
           <a
             className="c11"
             href="/project/1/state"
+            id="stateTab"
             onClick={[Function]}
           >
             <span>
@@ -1588,6 +1598,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
           <a
             className="c11"
             href="/project/1/folder"
+            id="folderTab"
             onClick={[Function]}
           >
             <span>
@@ -1601,6 +1612,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
           <a
             className="c11"
             href="/project/1/user"
+            id="usersTab"
             onClick={[Function]}
           >
             <span>

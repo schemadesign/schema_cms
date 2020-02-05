@@ -122,6 +122,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
         <a
           className="c2"
           href="/project/2/state"
+          id="stateTab"
           onClick={[Function]}
         >
           <span>
@@ -291,6 +292,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
         <a
           className="c2"
           href="/project/2/state"
+          id="stateTab"
           onClick={[Function]}
         >
           <span>
