@@ -732,6 +732,7 @@ class TagsListDetailSerializer(TagsListSerializer):
 
 class StateSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField(read_only=True)
+    active_tags = serializers.ListField(required=False, allow_empty=True)
 
     class Meta:
         model = models.State
@@ -745,6 +746,7 @@ class StateSerializer(serializers.ModelSerializer):
             "author",
             "is_public",
             "created",
+            "active_tags",
         )
         extra_kwargs = {
             "project": {"required": False, "allow_null": True},
