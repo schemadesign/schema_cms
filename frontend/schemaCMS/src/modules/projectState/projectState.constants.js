@@ -8,6 +8,7 @@ export const PROJECT_STATE_SOURCE_URL = 'sourceUrl';
 export const PROJECT_STATE_IS_PUBLIC = 'isPublic';
 export const PROJECT_STATE_AUTHOR = 'author';
 export const PROJECT_STATE_CREATED = 'created';
+export const PROJECT_STATE_FILTERS = 'filters';
 
 export const INITIAL_VALUES = {
   [PROJECT_STATE_NAME]: '',
