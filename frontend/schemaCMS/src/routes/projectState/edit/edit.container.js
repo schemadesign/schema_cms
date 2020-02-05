@@ -46,6 +46,7 @@ export default compose(
   withFormik({
     displayName: CREATE_PROJECT_STATE_FORM,
     enableReinitialize: true,
+    isInitialValid: true,
     mapPropsToValues: ({ state }) => ({ ...INITIAL_VALUES, ...state }),
     validationSchema: () => PROJECT_STATE_SCHEMA,
     handleSubmit: async (formData, { props, setSubmitting, setErrors }) => {
