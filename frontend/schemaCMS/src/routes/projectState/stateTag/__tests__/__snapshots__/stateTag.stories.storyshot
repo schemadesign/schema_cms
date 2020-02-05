@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ProjectState/Edit Default 1`] = `
+exports[`Storyshots StateTag Default 1`] = `
 .c9 {
   display: none;
 }
@@ -290,7 +290,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             }
           >
             <span>
-              Edit State
+              Select Tags
             </span>
           </h1>
         </div>
@@ -392,7 +392,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             }
           >
             <span>
-              Edit State
+              Select Tags
             </span>
           </h1>
         </div>
@@ -636,7 +636,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
         }
       >
         <span>
-          Edit State
+          Select Tags
         </span>
       </h1>
     </div>
@@ -733,13 +733,12 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               onClick={[Function]}
               style={
                 Object {
-                  "backgroundColor": "#FFF",
+                  "backgroundColor": "#1d1d20",
                   "borderRadius": "50%",
-                  "cursor": "default",
+                  "cursor": "pointer",
                   "display": "block",
                   "height": "12px",
                   "margin": "0 4px",
-                  "pointerEvents": "none",
                   "width": "12px",
                 }
               }
@@ -748,12 +747,13 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               onClick={[Function]}
               style={
                 Object {
-                  "backgroundColor": "#1d1d20",
+                  "backgroundColor": "#FFF",
                   "borderRadius": "50%",
-                  "cursor": "pointer",
+                  "cursor": "default",
                   "display": "block",
                   "height": "12px",
                   "margin": "0 4px",
+                  "pointerEvents": "none",
                   "width": "12px",
                 }
               }

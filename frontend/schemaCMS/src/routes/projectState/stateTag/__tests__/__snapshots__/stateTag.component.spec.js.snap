@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Edit: Component should render correctly 1`] = `
+exports[`StateTag: Component should render correctly 1`] = `
 <Fragment>
   <HelmetWrapper
     defer={true}
@@ -11,8 +11,8 @@ exports[`Edit: Component should render correctly 1`] = `
     active="stateNavBtn"
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Edit State"
-        id="projectState.edit.subTitle"
+        defaultMessage="Select Tags"
+        id="projectState.stateTag.subTitle"
         values={Object {}}
       />
     }
@@ -121,8 +121,8 @@ exports[`Edit: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Edit State"
-        id="projectState.edit.subTitle"
+        defaultMessage="Select Tags"
+        id="projectState.stateTag.subTitle"
         values={Object {}}
       />
     }
@@ -137,54 +137,42 @@ exports[`Edit: Component should render correctly 1`] = `
       noData={false}
       noDataContent={null}
     >
-      <ProjectStateForm
-        dataSources={
-          Array [
+      <styled.div
+        key="1"
+      >
+        <Component>
+          name
+        </Component>
+        <Component
+          customStyles={
             Object {
-              "id": "id",
-              "name": "name",
-            },
-          ]
-        }
-        fetchDataSources={[Function]}
-        handleChange={[Function]}
-        handleSubmit={[Function]}
-        history={
-          Object {
-            "goBack": [Function],
-            "push": [Function],
+              "borderTop": "none",
+            }
           }
-        }
-        intl={
-          Object {
-            "formatMessage": [Function],
+          name="name"
+          onChange={[Function]}
+          value={
+            Array [
+              1,
+            ]
           }
-        }
-        isSubmitting={false}
-        isValid={true}
-        setFieldValue={[Function]}
-        state={
-          Object {
-            "author": "author",
-            "created": "10.12.2019",
-            "description": "description",
-            "isPublic": false,
-            "name": "name",
-            "project": 1,
-          }
-        }
-        userRole="admin"
-        values={
-          Object {
-            "author": "author",
-            "created": "10.12.2019",
-            "description": "description",
-            "isPublic": false,
-            "name": "name",
-            "project": 1,
-          }
-        }
-      />
+        >
+          <Component
+            id="checkbox-1"
+            key="0"
+            value={1}
+          >
+            value
+          </Component>
+          <Component
+            id="checkbox-2"
+            key="1"
+            value={2}
+          >
+            value 2
+          </Component>
+        </Component>
+      </styled.div>
     </LoadingWrapper>
     <NavigationContainer
       contentStyles={
@@ -212,7 +200,7 @@ exports[`Edit: Component should render correctly 1`] = `
         />
       </styled.div>
       <Component
-        activeStep={1}
+        activeStep={2}
         steps={3}
       />
     </NavigationContainer>
