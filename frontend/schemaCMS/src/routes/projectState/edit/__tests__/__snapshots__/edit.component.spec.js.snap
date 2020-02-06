@@ -146,6 +146,7 @@ exports[`Edit: Component should render correctly 1`] = `
             },
           ]
         }
+        dirty={false}
         fetchDataSources={[Function]}
         handleChange={[Function]}
         handleSubmit={[Function]}
@@ -204,7 +205,13 @@ exports[`Edit: Component should render correctly 1`] = `
           disabled={false}
           onClick={[Function]}
           type="button"
-        />
+        >
+          <FormattedMessage
+            defaultMessage="Cancel"
+            id="projectState.edit.cancel"
+            values={Object {}}
+          />
+        </BackButton>
         <NextButton
           disabled={false}
           loading={false}

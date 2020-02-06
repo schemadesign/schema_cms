@@ -11,7 +11,7 @@ export const defaultProps = {
   handleSubmit: Function.prototype,
   setValues: Function.prototype,
   isSubmitting: false,
-  isValid: true,
+  dirty: true,
   values: [1],
   tags: [{ name: 'name', id: 1, tags: [{ id: 1, value: 'value' }, { id: 2, value: 'value 2' }] }],
   userRole: ROLES.ADMIN,

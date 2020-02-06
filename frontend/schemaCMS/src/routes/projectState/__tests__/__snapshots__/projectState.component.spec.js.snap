@@ -31,6 +31,16 @@ exports[`ProjectState: Component should render correctly 1`] = `
       <Route
         component={[Function]}
         exact={true}
+        path="path/filters"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="path/filter/:filterId"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
         path="path/*"
       />
     </Switch>

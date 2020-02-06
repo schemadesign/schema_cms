@@ -135,7 +135,13 @@ exports[`StateTag: Component should render correctly 1`] = `
       error={null}
       loading={true}
       noData={false}
-      noDataContent={null}
+      noDataContent={
+        <FormattedMessage
+          defaultMessage="No Tags"
+          id="projectState.stateTag.noData"
+          values={Object {}}
+        />
+      }
     >
       <styled.div
         key="1"

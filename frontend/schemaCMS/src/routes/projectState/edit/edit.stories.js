@@ -14,6 +14,7 @@ export const defaultProps = {
   values: state,
   isSubmitting: false,
   isValid: true,
+  dirty: false,
   userRole: ROLES.ADMIN,
   state,
   fetchDataSources: Function.prototype,

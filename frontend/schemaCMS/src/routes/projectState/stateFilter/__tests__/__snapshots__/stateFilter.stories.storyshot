@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ProjectState/Edit Default 1`] = `
+exports[`Storyshots ProjectState/StateFilter Default 1`] = `
 .c9 {
   display: none;
 }
@@ -103,72 +103,12 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
   word-break: break-word;
 }
 
-.c14 {
-  height: 155px;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c15 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c18 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
   font-weight: 200;
   font-size: 20px;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  width: 100%;
 }
 
 @media (min-width:1040px) {
@@ -199,30 +139,6 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c16 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c15 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c18 {
-    width: 240px;
   }
 }
 
@@ -290,7 +206,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             }
           >
             <span>
-              Edit State
+              Set Filter
             </span>
           </h1>
         </div>
@@ -392,7 +308,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             }
           >
             <span>
-              Edit State
+              Set Filter
             </span>
           </h1>
         </div>
@@ -636,7 +552,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
         }
       >
         <span>
-          Edit State
+          Set Filter
         </span>
       </h1>
     </div>
@@ -644,138 +560,12 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
       className=""
     />
   </div>
-  <form
-    className=""
-    onSubmit={[Function]}
+  <div
+    className="c13"
   >
-    <div
-      className="c13"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c14"
-    >
-      <div
-        className="c15"
-      >
-        <div
-          className="c16"
-        >
-          <div
-            className="c17"
-          >
-            <button
-              className="c18"
-              disabled={false}
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                }
-              }
-              type="button"
-            >
-              <span>
-                Cancel
-              </span>
-            </button>
-            <button
-              className="c18"
-              disabled={false}
-              style={
-                Object {
-                  "backgroundColor": "#FFF",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                }
-              }
-              type="submit"
-            >
-              <span>
-                Next
-              </span>
-            </button>
-          </div>
-          <div
-            style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
-            }
-          >
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#FFF",
-                  "borderRadius": "50%",
-                  "cursor": "default",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
+    <span>
+      Loading...
+    </span>
+  </div>
 </div>
 `;
