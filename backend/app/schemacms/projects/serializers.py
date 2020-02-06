@@ -784,11 +784,11 @@ class StateSerializer(serializers.ModelSerializer):
         return state
 
     def update(self, instance, validated_data):
-        filters = self.initial_data.pop("filters", [])
         with transaction.atomic():
             instance = super().update(instance, validated_data)
-            if filters:
+            if "filters" in self.initial_data:
                 instance.filters.clear()
+                filters = self.initial_data.pop("filters")
                 for filter_ in filters:
                     filter_instance = models.Filter.objects.get(pk=filter_["filter"])
                     instance.filters.add(
