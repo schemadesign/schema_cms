@@ -758,6 +758,12 @@ class TagsList(
         ]
         ordering = ('created',)
 
+    def meta_file_serialization(self):
+        data = dict(
+            id=self.id, name=self.name, tags=[tag.meta_file_serialization() for tag in self.tags.all()]
+        )
+        return data
+
 
 class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name='tags')
