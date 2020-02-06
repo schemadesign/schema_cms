@@ -274,7 +274,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         except Exception as e:
             return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
 
-        data = dict(project=data_source.project_info, results={})
+        data = dict(project=data_source.project_info, results=[])
 
         if states_view and field_name:
             data = self.create_single_field_info_response(preview, field_name, data)
@@ -282,11 +282,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             fields = json.loads(preview.read())["fields"]
 
             for key, value in fields.items():
-                data["results"] = dict(
-                    field_name=key,
-                    field_type=value["dtype"],
-                    unique=value["unique"],
-                    filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
+                data["results"].append(
+                    dict(
+                        field_name=key,
+                        field_type=value["dtype"],
+                        unique=value["unique"],
+                        filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
+                    )
                 )
 
         return response.Response(data=data)
