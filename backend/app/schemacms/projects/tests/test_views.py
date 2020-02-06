@@ -1095,7 +1095,7 @@ class TestFilterDetailView:
         response = api_client.get(self.get_url(filter_.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.FilterDetailSerializer(instance=filter_).data
+        assert response.data["results"] == projects_serializers.FilterDetailsSerializer(instance=filter_).data
 
     def test_update(self, api_client, admin, filter_):
         new_name = "NewFilter"
@@ -1107,7 +1107,7 @@ class TestFilterDetailView:
 
         assert response.status_code == status.HTTP_200_OK
         assert filter_.name == new_name
-        assert response.data == projects_serializers.FilterDetailSerializer(instance=filter_).data
+        assert response.data == projects_serializers.FilterDetailsSerializer(instance=filter_).data
 
     def test_update_unique_together_validation(self, api_client, admin, filter_, filter_factory):
         new_filter_name = "new_filter"
