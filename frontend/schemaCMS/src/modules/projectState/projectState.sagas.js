@@ -69,11 +69,28 @@ function* update({ payload: { stateId, formData, redirectUrl } }) {
   }
 }
 
+function* remove({ payload: { stateId, projectId } }) {
+  try {
+    yield put(ProjectStateRoutines.remove.request());
+
+    yield api.delete(`${STATES_PATH}/${stateId}`);
+    yield put(ProjectStateRoutines.remove.success());
+
+    browserHistory.push(`/project/${projectId}/state`);
+  } catch (e) {
+    reportError(e);
+    yield put(ProjectStateRoutines.remove.failure(e));
+  } finally {
+    yield put(ProjectStateRoutines.remove.fulfill());
+  }
+}
+
 export function* watchProjectState() {
   yield all([
     takeLatest(ProjectStateRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(ProjectStateRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(ProjectStateRoutines.create.TRIGGER, create),
     takeLatest(ProjectStateRoutines.update.TRIGGER, update),
+    takeLatest(ProjectStateRoutines.remove.TRIGGER, remove),
   ]);
 }

@@ -87,4 +87,22 @@ describe('ProjectState: sagas', () => {
 
     expect(browserHistory.push).toBeCalledWith('/state/1/tags');
   });
+
+  it('should put remove.success action', async () => {
+    const payload = {
+      stateId: 'stateId',
+      projectId: 'projectId',
+    };
+    jest.spyOn(browserHistory, 'push');
+
+    mockApi.delete(`/states/${payload.stateId}`).reply(OK);
+
+    await expectSaga(watchProjectState)
+      .withState(defaultState)
+      .put(ProjectStateRoutines.remove.success())
+      .dispatch(ProjectStateRoutines.remove(payload))
+      .silentRun();
+
+    expect(browserHistory.push).toBeCalledWith('/project/projectId/state');
+  });
 });

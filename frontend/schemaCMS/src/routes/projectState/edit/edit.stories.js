@@ -9,6 +9,7 @@ import { state } from '../../../modules/projectState/projectState.mock';
 
 export const defaultProps = {
   handleSubmit: Function.prototype,
+  removeState: Function.prototype,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   values: state,

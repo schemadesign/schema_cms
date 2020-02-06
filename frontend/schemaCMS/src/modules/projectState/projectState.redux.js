@@ -9,6 +9,7 @@ export const ProjectStateRoutines = {
   fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
   create: createRoutine(`${PREFIX}CREATE`),
   update: createRoutine(`${PREFIX}UPDATE`),
+  remove: createRoutine(`${PREFIX}REMOVE`),
 };
 
 export const INITIAL_STATE = new Immutable({

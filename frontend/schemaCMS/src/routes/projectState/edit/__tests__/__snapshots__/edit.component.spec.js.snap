@@ -163,6 +163,7 @@ exports[`Edit: Component should render correctly 1`] = `
         }
         isSubmitting={false}
         isValid={true}
+        removeState={[Function]}
         setFieldValue={[Function]}
         state={
           Object {
@@ -186,6 +187,17 @@ exports[`Edit: Component should render correctly 1`] = `
           }
         }
       />
+      <styled.div>
+        <Styled(Span)
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Remove State"
+            id="projectState.edit.deleteState"
+            values={Object {}}
+          />
+        </Styled(Span)>
+      </styled.div>
     </LoadingWrapper>
     <NavigationContainer
       contentStyles={
@@ -224,5 +236,72 @@ exports[`Edit: Component should render correctly 1`] = `
       />
     </NavigationContainer>
   </styled.form>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the state?"
+        id="projectState.edit.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="projectState.edit.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="projectState.edit.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </Fragment>
 `;
