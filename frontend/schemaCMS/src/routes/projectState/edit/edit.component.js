@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Stepper } from 'schemaUI';
 
-import { Form } from './edit.styles';
+import { Form, LinkContainer } from './edit.styles';
 import messages from './edit.messages';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
@@ -15,10 +15,13 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ProjectStateForm } from '../../../shared/components/projectStateForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { Link } from '../../../theme/typography';
 
 export class Edit extends PureComponent {
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
+    removeState: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     isValid: PropTypes.bool.isRequired,
     dirty: PropTypes.bool.isRequired,
@@ -35,6 +38,8 @@ export class Edit extends PureComponent {
   state = {
     loading: true,
     error: null,
+    confirmationModalOpen: false,
+    removeLoading: false,
   };
 
   async componentDidMount() {
@@ -62,9 +67,25 @@ export class Edit extends PureComponent {
     return history.push(redirectUrl);
   };
 
+  handleRemoveState = () => this.setState({ confirmationModalOpen: true });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+
+      const { id, project } = this.props.state;
+      await this.props.removeState({ stateId: id, projectId: project });
+    } catch (error) {
+      this.setState({ removeLoading: false });
+      reportError(error);
+    }
+  };
+
   render() {
     const { userRole, isSubmitting, isValid, state } = this.props;
-    const { loading, error } = this.state;
+    const { loading, error, confirmationModalOpen, removeLoading } = this.state;
     const projectId = state.project;
     const menuOptions = getProjectMenuOptions(projectId);
     const title = state.name;
@@ -81,7 +102,14 @@ export class Edit extends PureComponent {
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
         <Form onSubmit={this.handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>
-            <ProjectStateForm {...this.props} />
+            <Fragment>
+              <ProjectStateForm {...this.props} />
+              <LinkContainer>
+                <Link onClick={this.handleRemoveState}>
+                  <FormattedMessage {...messages.deleteState} />
+                </Link>
+              </LinkContainer>
+            </Fragment>
           </LoadingWrapper>
           <NavigationContainer fixed contentStyles={contentStyles}>
             <NavigationButtons>
@@ -93,6 +121,24 @@ export class Edit extends PureComponent {
             <Stepper steps={3} activeStep={1} />
           </NavigationContainer>
         </Form>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </BackButton>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
+              <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
       </Fragment>
     );
   }
