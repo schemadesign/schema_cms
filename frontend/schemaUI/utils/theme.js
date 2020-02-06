@@ -13,6 +13,11 @@ const colors = {
 };
 
 const light = {
+  switch: {
+    backgroundActive: colors.coolGray,
+    background: colors.veryLightPink,
+    circle: colors.black,
+  },
   [BUTTON]: {
     background: colors.veryLightPink,
     text: colors.black,
@@ -109,6 +114,7 @@ const light = {
     border: colors.white,
   },
   background: colors.white,
+  hiddenBackground: 'rgba(255, 255, 255, 0)',
   border: colors.veryLightPink,
   text: colors.darkGrey,
   secondaryText: colors.coolGray,
@@ -118,6 +124,11 @@ const light = {
 };
 
 const dark = {
+  switch: {
+    backgroundActive: colors.lightGrey,
+    background: colors.mediumGray,
+    circle: colors.white,
+  },
   [BUTTON]: {
     background: colors.darkGrey,
     text: colors.white,
@@ -216,6 +227,7 @@ const dark = {
     border: colors.black,
   },
   background: colors.black,
+  hiddenBackground: 'rgba(0, 0, 0, 0)',
   text: colors.white,
   border: colors.mediumGray,
   secondaryText: colors.lightGrey,

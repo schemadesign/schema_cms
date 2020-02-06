@@ -95,11 +95,12 @@ const updateDataWranglingScripts = (
     sortBy(prop('type')),
     groupBy(ifElse(({ id }) => includes(id)(dataSourceScripts), always('checked'), always('unchecked')))
   )(data);
+  const sortedChecked = dataSourceScripts.map(id => checked.find(item => item.id === id));
 
   return state
     .set('scripts', data)
     .set('uncheckedScripts', unchecked)
-    .set('checkedScripts', checked);
+    .set('checkedScripts', sortedChecked);
 };
 
 const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) => {

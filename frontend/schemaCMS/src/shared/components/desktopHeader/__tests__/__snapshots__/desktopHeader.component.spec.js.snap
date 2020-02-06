@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DesktopTopHeader: Component should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <Component
+      buttonProps={
+        Object {
+          "id": "desktopTopHeaderOpenMenuButton",
+          "onClick": [Function],
+        }
+      }
+      customButtonStyles={
+        Object {
+          "flex": "0 0 auto",
+          "position": null,
+        }
+      }
+      customStyles={
+        Object {
+          "padding": null,
+        }
+      }
+    >
+      <styled.div>
+        <Styled(Styled(Link))
+          to="/"
+        >
+          <styled.schemaLogo.svg
+            id="desktopTopHeaderSchemaLogo"
+          />
+        </Styled(Styled(Link))>
+        <styled.div>
+          <Component
+            customStyles={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderRadius": null,
+                "display": "flex",
+                "height": "calc(100% - 20px)",
+                "margin": "6px 0 10px 10px",
+                "padding": "0 7px",
+              }
+            }
+            id="desktopTopHeaderLogoutBtn"
+            onClick={[Function]}
+          >
+            <Component />
+          </Component>
+          <Styled(Styled(Link))
+            to="/settings"
+          >
+            <Component
+              id="desktopTopHeaderSettingsBtn"
+            />
+          </Styled(Styled(Link))>
+        </styled.div>
+      </styled.div>
+    </Component>
+    <styled.div
+      onClick={[Function]}
+    />
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        closeButtonProps={
+          Object {
+            "customStyles": Object {
+              "backgroundColor": "transparent",
+              "right": 44,
+              "top": 44,
+            },
+            "id": "desktopTopHeaderCloseMenuButton",
+          }
+        }
+        customStyles={
+          Object {
+            "maxWidth": 595,
+            "minHeight": null,
+            "padding": 50,
+            "position": "absolute",
+            "transition": "transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), visibility 0s 0.4s",
+            "zIndex": 9999,
+          }
+        }
+        onClose={[Function]}
+      >
+        <H2>
+          <FormattedMessage
+            defaultMessage="Schema CMS"
+            id="shared.components.desktopHeader.title"
+            values={Object {}}
+          />
+        </H2>
+        <H1>
+          <FormattedMessage
+            defaultMessage="Menu"
+            id="shared.components.desktopHeader.subtitle"
+            values={Object {}}
+          />
+        </H1>
+        <styled.div
+          onClick={[Function]}
+        >
+          <styled.div>
+            <Styled(styled.div)
+              active={false}
+              key="0"
+            >
+              <Link
+                id="projectsNavBtn"
+                onClick={[Function]}
+                to="/project"
+              >
+                <FormattedMessage
+                  defaultMessage="Projects"
+                  id="shared.components.desktopHeader.projects"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+          </styled.div>
+          <styled.div>
+            <Styled(styled.div)
+              active={true}
+              key="0"
+            >
+              <Link
+                id="aboutNavBtn"
+                onClick={[Function]}
+                to="/"
+              >
+                <FormattedMessage
+                  defaultMessage="About Schema CMS"
+                  id="shared.components.desktopHeader.about"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+            <Styled(styled.div)
+              active={true}
+              key="1"
+            >
+              <Link
+                id="apiNavBtn"
+                onClick={[Function]}
+                to="/"
+              >
+                <FormattedMessage
+                  defaultMessage="API Doc"
+                  id="shared.components.desktopHeader.api"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+            <Styled(styled.div)
+              active={true}
+              key="2"
+            >
+              <Link
+                id="repositoryNavBtn"
+                onClick={[Function]}
+                to="/"
+              >
+                <FormattedMessage
+                  defaultMessage="GitHub Repository"
+                  id="shared.components.desktopHeader.repository"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+          </styled.div>
+        </styled.div>
+      </Component>
+    </styled.div>
+  </styled.div>
+  <LogoutModal
+    logoutModalOpen={false}
+    onAction={[Function]}
+    redirectUrl="/logout"
+  />
+</styled.div>
+`;
+
+exports[`DesktopTopHeader: Component should render correctly when no user 1`] = `
+<styled.div>
+  <styled.div>
+    <Styled(Styled(Link))
+      to="/"
+    >
+      <styled.schemaLogo.svg
+        id="desktopTopHeaderSchemaLogo"
+      />
+    </Styled(Styled(Link))>
+    <styled.div
+      onClick={[Function]}
+    />
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        closeButtonProps={
+          Object {
+            "customStyles": Object {
+              "backgroundColor": "transparent",
+              "right": 44,
+              "top": 44,
+            },
+            "id": "desktopTopHeaderCloseMenuButton",
+          }
+        }
+        customStyles={
+          Object {
+            "maxWidth": 595,
+            "minHeight": null,
+            "padding": 50,
+            "position": "absolute",
+            "transition": "transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), visibility 0s 0.4s",
+            "zIndex": 9999,
+          }
+        }
+        onClose={[Function]}
+      >
+        <H2>
+          <FormattedMessage
+            defaultMessage="Schema CMS"
+            id="shared.components.desktopHeader.title"
+            values={Object {}}
+          />
+        </H2>
+        <H1>
+          <FormattedMessage
+            defaultMessage="Menu"
+            id="shared.components.desktopHeader.subtitle"
+            values={Object {}}
+          />
+        </H1>
+        <styled.div
+          onClick={[Function]}
+        >
+          <styled.div>
+            <Styled(styled.div)
+              active={false}
+              key="0"
+            >
+              <Link
+                id="projectsNavBtn"
+                onClick={[Function]}
+                to="/project"
+              >
+                <FormattedMessage
+                  defaultMessage="Projects"
+                  id="shared.components.desktopHeader.projects"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+          </styled.div>
+          <styled.div>
+            <Styled(styled.div)
+              active={true}
+              key="0"
+            >
+              <Link
+                id="aboutNavBtn"
+                onClick={[Function]}
+                to="/"
+              >
+                <FormattedMessage
+                  defaultMessage="About Schema CMS"
+                  id="shared.components.desktopHeader.about"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+            <Styled(styled.div)
+              active={true}
+              key="1"
+            >
+              <Link
+                id="apiNavBtn"
+                onClick={[Function]}
+                to="/"
+              >
+                <FormattedMessage
+                  defaultMessage="API Doc"
+                  id="shared.components.desktopHeader.api"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+            <Styled(styled.div)
+              active={true}
+              key="2"
+            >
+              <Link
+                id="repositoryNavBtn"
+                onClick={[Function]}
+                to="/"
+              >
+                <FormattedMessage
+                  defaultMessage="GitHub Repository"
+                  id="shared.components.desktopHeader.repository"
+                  values={Object {}}
+                />
+              </Link>
+            </Styled(styled.div)>
+          </styled.div>
+        </styled.div>
+      </Component>
+    </styled.div>
+  </styled.div>
+  <LogoutModal
+    logoutModalOpen={false}
+    onAction={[Function]}
+    redirectUrl="/logout"
+  />
+</styled.div>
+`;

@@ -1,344 +1,845 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SourceFormComponent: Component should render correctly 1`] = `
-<SourceFormComponent
-  dataSource={
-    Object {
-      "jobs": Array [],
-      "metaData": Object {},
+<Fragment>
+  <TextInput
+    checkOnlyErrors={true}
+    errors={Object {}}
+    fullWidth={true}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
     }
-  }
-  handleChange={[Function]}
-  intl={
-    Object {
-      "formatMessage": [Function],
-    }
-  }
-  theme={
-    Object {
-      "background": "#000",
-      "border": "#2F2F36",
-      "button": Object {
-        "background": "#1d1d20",
-        "text": "#FFF",
-      },
-      "buttonDisabled": Object {
-        "background": "#1d1d20",
-        "text": "#71737e",
-      },
-      "card": Object {
-        "background": "#1d1d20",
-        "border": "#FFF",
-        "label": "#71737e",
-        "text": "#FFF",
-      },
-      "checkbox": Object {
-        "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "colors": Object {
-        "black": "#000",
-        "coolGray": "#a6a7aa",
-        "darkGrey": "#1d1d20",
-        "lightGrey": "#71737e",
-        "mediumGray": "#2F2F36",
-        "red": "#f21e29",
-        "veryLightPink": "#f0efef",
-        "white": "#FFF",
-        "yellow": "#be8f00",
-      },
-      "dataGrid": Object {
+    isEdit={true}
+    label="Name"
+    name="name"
+    onChange={[Function]}
+    theme={
+      Object {
         "background": "#000",
-        "text": "#71737e",
-      },
-      "error": "#f21e29",
-      "header": Object {
         "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "icon": Object {
-        "background": "#1d1d20",
-        "fill": "#FFF",
-        "fillInverse": "#000",
-      },
-      "input": Object {
-        "text": "#FFF",
-      },
-      "inverseButton": Object {
-        "background": "#FFF",
-        "text": "#000",
-      },
-      "label": Object {
-        "border": "#2F2F36",
-        "text": "#71737e",
-      },
-      "menu": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "providerContainer": Object {
-        "minHeight": "100vh",
-      },
-      "radioButton": Object {
-        "active": Object {
-          "background": "#FFF",
-          "fill": "#1d1d20",
-        },
-        "border": "#FFF",
-        "text": "#FFF",
-        "unActive": Object {
+        "button": Object {
           "background": "#1d1d20",
-          "dot": "#FFF",
-          "fill": "#FFF",
+          "text": "#FFF",
         },
-      },
-      "secondaryText": "#71737e",
-      "select": Object {
-        "background": "#1d1d20",
-        "border": "#000",
-      },
-      "stepper": Object {
-        "active": "#FFF",
-        "background": "#1d1d20",
-      },
-      "tab": Object {
-        "active": "#FFF",
-        "hover": "#FFF",
-        "normal": "#2F2F36",
-      },
-      "table": Object {
-        "background": Object {
-          "body": "#000",
-          "header": "#1d1d20",
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
         },
-        "border": Object {
-          "body": "#1d1d20",
-          "header": "#000",
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
         },
-        "text": Object {
-          "body": "#FFF",
-          "header": "#71737e",
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
         },
-      },
-      "text": "#FFF",
-      "textArea": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "textField": Object {
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+          "yellow": "#be8f00",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
         "error": "#f21e29",
-        "label": "#71737e",
-      },
-      "typography": Object {
-        "h1": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
+        "header": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
         },
-        "h2": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 100,
+        "hiddenBackground": "rgba(0, 0, 0, 0)",
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+          "fillInverse": "#000",
         },
-        "h3": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "18px",
-          "fontWeight": 600,
+        "input": Object {
+          "text": "#FFF",
         },
-        "p": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "18px",
-          "fontWeight": 200,
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
         },
-        "pre": Object {
-          "fontFamily": "Hack, monospace",
-          "fontSize": "18px",
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
         },
-        "span": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "14px",
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
         },
-      },
-      "warning": "#be8f00",
+        "providerContainer": Object {
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "border": "#FFF",
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "dot": "#FFF",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
+        },
+        "tab": Object {
+          "active": "#FFF",
+          "hover": "#FFF",
+          "normal": "#2F2F36",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+            "fontSize": "18px",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          },
+        },
+        "warning": "#be8f00",
+      }
     }
-  }
-  values={
-    Object {
-      "fileName": "fileName",
-      "name": "name",
-      "type": "file",
+    touched={Object {}}
+    value="name"
+  />
+  <Component
+    customStyles={
+      Object {
+        "marginBottom": 20,
+      }
     }
-  }
-/>
+  >
+    <FormattedMessage
+      defaultMessage="Source Type"
+      id="shared.components.sourceForm.source"
+      values={Object {}}
+    />
+  </Component>
+  <RadioGroup
+    customCheckedStyles={Object {}}
+    customLabelStyles={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "width": 96,
+      }
+    }
+    customStyles={
+      Object {
+        "marginBottom": "40px",
+      }
+    }
+    name="type"
+    onChange={[Function]}
+    value="file"
+  >
+    <RadioBaseComponent
+      id="file"
+      label="CSV"
+      value="file"
+    >
+      <Component
+        customStyles={
+          Object {
+            "background": "#FFF",
+            "height": 96,
+            "marginBottom": 10,
+            "pointerEvents": "none",
+            "width": 96,
+          }
+        }
+        type="button"
+      >
+        <Component
+          customStyles={
+            Object {
+              "fill": "#1d1d20",
+            }
+          }
+        />
+      </Component>
+    </RadioBaseComponent>
+  </RadioGroup>
+  <Uploader
+    accept=".csv"
+    checkOnlyErrors={true}
+    disabled={false}
+    errors={Object {}}
+    fileNames="fileName"
+    id="fileUpload"
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    label="File Name"
+    name="file"
+    onChange={[Function]}
+    placeholder="Select file or Drag and Drop it here"
+    theme={
+      Object {
+        "background": "#000",
+        "border": "#2F2F36",
+        "button": Object {
+          "background": "#1d1d20",
+          "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
+        },
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+          "yellow": "#be8f00",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
+        "error": "#f21e29",
+        "header": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "hiddenBackground": "rgba(0, 0, 0, 0)",
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+          "fillInverse": "#000",
+        },
+        "input": Object {
+          "text": "#FFF",
+        },
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
+        },
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "providerContainer": Object {
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "border": "#FFF",
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "dot": "#FFF",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
+        },
+        "tab": Object {
+          "active": "#FFF",
+          "hover": "#FFF",
+          "normal": "#2F2F36",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+            "fontSize": "18px",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          },
+        },
+        "warning": "#be8f00",
+      }
+    }
+    touched={Object {}}
+    type="file"
+  />
+</Fragment>
+`;
+
+exports[`SourceFormComponent: Component should render error wrapper 1`] = `
+<styled.div>
+  <FormattedMessage
+    defaultMessage="Uploading file failed. Please try again."
+    id="shared.components.sourceForm.uploadingError"
+    values={Object {}}
+  />
+</styled.div>
 `;
 
 exports[`SourceFormComponent: Component should render file uploader 1`] = `
-<SourceFormComponent
-  dataSource={
-    Object {
-      "type": "file",
+<Fragment>
+  <TextInput
+    checkOnlyErrors={true}
+    errors={Object {}}
+    fullWidth={true}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
     }
-  }
-  handleChange={[Function]}
-  intl={
-    Object {
-      "formatMessage": [Function],
-    }
-  }
-  theme={
-    Object {
-      "background": "#000",
-      "border": "#2F2F36",
-      "button": Object {
-        "background": "#1d1d20",
-        "text": "#FFF",
-      },
-      "buttonDisabled": Object {
-        "background": "#1d1d20",
-        "text": "#71737e",
-      },
-      "card": Object {
-        "background": "#1d1d20",
-        "border": "#FFF",
-        "label": "#71737e",
-        "text": "#FFF",
-      },
-      "checkbox": Object {
-        "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "colors": Object {
-        "black": "#000",
-        "coolGray": "#a6a7aa",
-        "darkGrey": "#1d1d20",
-        "lightGrey": "#71737e",
-        "mediumGray": "#2F2F36",
-        "red": "#f21e29",
-        "veryLightPink": "#f0efef",
-        "white": "#FFF",
-        "yellow": "#be8f00",
-      },
-      "dataGrid": Object {
+    isEdit={true}
+    label="Name"
+    name="name"
+    onChange={[Function]}
+    theme={
+      Object {
         "background": "#000",
-        "text": "#71737e",
-      },
-      "error": "#f21e29",
-      "header": Object {
         "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "icon": Object {
-        "background": "#1d1d20",
-        "fill": "#FFF",
-        "fillInverse": "#000",
-      },
-      "input": Object {
-        "text": "#FFF",
-      },
-      "inverseButton": Object {
-        "background": "#FFF",
-        "text": "#000",
-      },
-      "label": Object {
-        "border": "#2F2F36",
-        "text": "#71737e",
-      },
-      "menu": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "providerContainer": Object {
-        "minHeight": "100vh",
-      },
-      "radioButton": Object {
-        "active": Object {
-          "background": "#FFF",
-          "fill": "#1d1d20",
-        },
-        "border": "#FFF",
-        "text": "#FFF",
-        "unActive": Object {
+        "button": Object {
           "background": "#1d1d20",
-          "dot": "#FFF",
-          "fill": "#FFF",
+          "text": "#FFF",
         },
-      },
-      "secondaryText": "#71737e",
-      "select": Object {
-        "background": "#1d1d20",
-        "border": "#000",
-      },
-      "stepper": Object {
-        "active": "#FFF",
-        "background": "#1d1d20",
-      },
-      "tab": Object {
-        "active": "#FFF",
-        "hover": "#FFF",
-        "normal": "#2F2F36",
-      },
-      "table": Object {
-        "background": Object {
-          "body": "#000",
-          "header": "#1d1d20",
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
         },
-        "border": Object {
-          "body": "#1d1d20",
-          "header": "#000",
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
         },
-        "text": Object {
-          "body": "#FFF",
-          "header": "#71737e",
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
         },
-      },
-      "text": "#FFF",
-      "textArea": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "textField": Object {
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+          "yellow": "#be8f00",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
         "error": "#f21e29",
-        "label": "#71737e",
-      },
-      "typography": Object {
-        "h1": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
+        "header": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
         },
-        "h2": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 100,
+        "hiddenBackground": "rgba(0, 0, 0, 0)",
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+          "fillInverse": "#000",
         },
-        "h3": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "18px",
-          "fontWeight": 600,
+        "input": Object {
+          "text": "#FFF",
         },
-        "p": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "18px",
-          "fontWeight": 200,
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
         },
-        "pre": Object {
-          "fontFamily": "Hack, monospace",
-          "fontSize": "18px",
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
         },
-        "span": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "14px",
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
         },
-      },
-      "warning": "#be8f00",
+        "providerContainer": Object {
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "border": "#FFF",
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "dot": "#FFF",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
+        },
+        "tab": Object {
+          "active": "#FFF",
+          "hover": "#FFF",
+          "normal": "#2F2F36",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+            "fontSize": "18px",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          },
+        },
+        "warning": "#be8f00",
+      }
     }
-  }
-  values={
-    Object {
-      "fileName": "fileName",
-      "name": "name",
-      "type": "file",
+    touched={Object {}}
+    value="name"
+  />
+  <Component
+    customStyles={
+      Object {
+        "marginBottom": 20,
+      }
     }
-  }
-/>
+  >
+    <FormattedMessage
+      defaultMessage="Source Type"
+      id="shared.components.sourceForm.source"
+      values={Object {}}
+    />
+  </Component>
+  <RadioGroup
+    customCheckedStyles={Object {}}
+    customLabelStyles={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "width": 96,
+      }
+    }
+    customStyles={
+      Object {
+        "marginBottom": "40px",
+      }
+    }
+    name="type"
+    onChange={[Function]}
+    value="file"
+  >
+    <RadioBaseComponent
+      id="file"
+      label="CSV"
+      value="file"
+    >
+      <Component
+        customStyles={
+          Object {
+            "background": "#FFF",
+            "height": 96,
+            "marginBottom": 10,
+            "pointerEvents": "none",
+            "width": 96,
+          }
+        }
+        type="button"
+      >
+        <Component
+          customStyles={
+            Object {
+              "fill": "#1d1d20",
+            }
+          }
+        />
+      </Component>
+    </RadioBaseComponent>
+  </RadioGroup>
+  <Uploader
+    accept=".csv"
+    checkOnlyErrors={true}
+    disabled={false}
+    errors={Object {}}
+    fileNames="fileName"
+    id="fileUpload"
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    label="File Name"
+    name="file"
+    onChange={[Function]}
+    placeholder="Select file or Drag and Drop it here"
+    theme={
+      Object {
+        "background": "#000",
+        "border": "#2F2F36",
+        "button": Object {
+          "background": "#1d1d20",
+          "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
+        },
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+          "yellow": "#be8f00",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
+        "error": "#f21e29",
+        "header": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "hiddenBackground": "rgba(0, 0, 0, 0)",
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+          "fillInverse": "#000",
+        },
+        "input": Object {
+          "text": "#FFF",
+        },
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
+        },
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "providerContainer": Object {
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "border": "#FFF",
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "dot": "#FFF",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "switch": Object {
+          "background": "#2F2F36",
+          "backgroundActive": "#71737e",
+          "circle": "#FFF",
+        },
+        "tab": Object {
+          "active": "#FFF",
+          "hover": "#FFF",
+          "normal": "#2F2F36",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+            "fontSize": "18px",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          },
+        },
+        "warning": "#be8f00",
+      }
+    }
+    touched={Object {}}
+    type="file"
+  />
+</Fragment>
+`;
+
+exports[`SourceFormComponent: Component should render warning wrapper with job ongoing 1`] = `
+<styled.div>
+  <FormattedMessage
+    defaultMessage="There is a script processing ongoing. Please wait until it finishes to try and upload a new file."
+    id="shared.components.sourceForm.processing"
+    values={Object {}}
+  />
+</styled.div>
+`;
+
+exports[`SourceFormComponent: Component should render warning wrapper with uploading file 1`] = `
+<styled.div>
+  <FormattedMessage
+    defaultMessage="Uploading file in progress..."
+    id="shared.components.sourceForm.uploadingFile"
+    values={Object {}}
+  />
+</styled.div>
 `;

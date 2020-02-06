@@ -1,47 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
-.c1 {
-  padding-top: 7px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 30px;
-  position: relative;
-}
-
-.c2 label {
-  margin-bottom: 1px;
-}
-
-.c3 {
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-
-.c4 {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
-}
-
-.c0 {
-  padding-top: 24px;
-}
-
-.c5 {
+.c6 {
   height: 155px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -60,7 +24,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c7 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -69,13 +33,54 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c8 {
+.c9 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
+.c1 {
+  width: 100%;
+}
+
+.c2 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c3 label {
+  margin-bottom: 1px;
+}
+
+.c4 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c5 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.c0 {
+  padding-top: 24px;
+}
+
 @media (min-width:1040px) {
-  .c7 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -84,7 +89,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c7 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -93,7 +98,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c9 {
     width: 240px;
   }
 }
@@ -119,7 +124,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className=""
+      className="c1"
     >
       <div
         style={
@@ -180,7 +185,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
           }
         >
           <div
-            className="c1"
+            className="c2"
           >
             <svg
               style={
@@ -202,7 +207,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c3"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -230,7 +235,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
         value="field"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           style={
@@ -326,7 +331,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c3"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -354,7 +359,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
         value="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           style={
@@ -450,10 +455,10 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c4"
+      className="c5"
     >
       <div
-        className=""
+        className="c1"
       >
         <div
           style={
@@ -517,7 +522,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c1"
       >
         <div
           style={
@@ -582,16 +587,16 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c6"
     >
       <div
-        className="c6"
+        className="c7"
       >
         <div
-          className="c7"
+          className="c8"
         >
           <button
-            className="c8"
+            className="c9"
             disabled={false}
             onClick={[Function]}
             style={
@@ -618,7 +623,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             </span>
           </button>
           <button
-            className="c8"
+            className="c9"
             disabled={true}
             style={
               Object {
@@ -651,47 +656,11 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 `;
 
 exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
-.c1 {
-  padding-top: 7px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 30px;
-  position: relative;
-}
-
-.c2 label {
-  margin-bottom: 1px;
-}
-
-.c3 {
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-
-.c4 {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
-}
-
-.c0 {
-  padding-top: 24px;
-}
-
-.c7 {
+.c8 {
   height: 155px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -710,7 +679,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c9 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -719,12 +688,53 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c10 {
+.c11 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c6 {
+.c1 {
+  width: 100%;
+}
+
+.c2 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c3 label {
+  margin-bottom: 1px;
+}
+
+.c4 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c5 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.c0 {
+  padding-top: 24px;
+}
+
+.c7 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -732,11 +742,11 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c6:hover {
+.c7:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c5 {
+.c6 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -753,7 +763,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -762,7 +772,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c9 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -771,7 +781,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c11 {
     width: 240px;
   }
 }
@@ -797,7 +807,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className=""
+      className="c1"
     >
       <div
         style={
@@ -858,7 +868,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
           }
         >
           <div
-            className="c1"
+            className="c2"
           >
             <svg
               style={
@@ -880,7 +890,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c3"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -908,7 +918,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
         value="field"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           style={
@@ -1004,7 +1014,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c3"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -1032,7 +1042,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
         value="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           style={
@@ -1128,10 +1138,10 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c4"
+      className="c5"
     >
       <div
-        className=""
+        className="c1"
       >
         <div
           style={
@@ -1195,7 +1205,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c1"
       >
         <div
           style={
@@ -1260,10 +1270,10 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c6"
     >
       <span
-        className="c6"
+        className="c7"
         onClick={[Function]}
         style={
           Object {
@@ -1278,16 +1288,16 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </span>
     </div>
     <div
-      className="c7"
+      className="c8"
     >
       <div
-        className="c8"
+        className="c9"
       >
         <div
-          className="c9"
+          className="c10"
         >
           <button
-            className="c10"
+            className="c11"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1314,7 +1324,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             </span>
           </button>
           <button
-            className="c10"
+            className="c11"
             disabled={true}
             style={
               Object {

@@ -9,6 +9,7 @@ describe('DataSource: redux', () => {
     dataSources: [],
     previewData: {},
     fieldsInfo: {},
+    uploadingDataSources: [],
   });
 
   describe('reducer', () => {
@@ -41,6 +42,7 @@ describe('DataSource: redux', () => {
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.create.success(dataSource));
 
       expect(resultState.dataSource).to.deep.equal(dataSource);
+      expect(resultState.uploadingDataSources).to.deep.equal([dataSource]);
     });
   });
 
@@ -68,6 +70,7 @@ describe('DataSource: redux', () => {
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.updateOne.success(dataSource));
 
       expect(resultState.dataSource).to.deep.equal(dataSource);
+      expect(resultState.uploadingDataSources).to.deep.equal([dataSource]);
     });
   });
 
@@ -92,6 +95,21 @@ describe('DataSource: redux', () => {
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchFieldsInfo.success(data));
 
       expect(resultState.fieldsInfo).to.deep.equal(data);
+    });
+
+    describe('when REMOVE_UPLOADING_DATA_SOURCE/TRIGGER action is received', () => {
+      it('should set fields info ', () => {
+        const data = [{ id: 'id', name: 'name 1' }, { id: 'id 2', name: 'name 2' }];
+        const updatedElement = { id: 'id', name: 'updated name' };
+        const state = Immutable({
+          uploadingDataSources: data,
+          dataSources: data,
+        });
+        const resultState = dataSourceReducer(state, DataSourceRoutines.removeUploadingDataSource(updatedElement));
+
+        expect(resultState.uploadingDataSources).to.deep.equal([data[1]]);
+        expect(resultState.dataSources).to.deep.equal([updatedElement, data[1]]);
+      });
     });
   });
 });

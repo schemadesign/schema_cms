@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Tabs } from '../tabs';
 import { Container } from './projectTabs.styles';
-import { FOLDER, SETTINGS, SOURCES, USERS } from './projectTabs.constants';
+import { FOLDER, SETTINGS, SOURCES, USERS, STATES } from './projectTabs.constants';
 import messages from './projectTabs.messages';
 
 export class ProjectTabs extends PureComponent {
@@ -17,8 +17,9 @@ export class ProjectTabs extends PureComponent {
     const tabs = [
       { id: SETTINGS, to: url },
       { id: SOURCES, to: `${url}/datasource` },
-      { id: USERS, to: `${url}/user` },
+      { id: STATES, to: `${url}/state` },
       { id: FOLDER, to: `${url}/folder` },
+      { id: USERS, to: `${url}/user` },
     ];
 
     return tabs.map(item => ({
@@ -33,7 +34,7 @@ export class ProjectTabs extends PureComponent {
     const tabs = this.generateTabs(active, url);
 
     return (
-      <Container>
+      <Container id="tabsContainer">
         <Tabs tabs={tabs} />
       </Container>
     );

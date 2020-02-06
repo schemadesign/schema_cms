@@ -110,7 +110,7 @@ api.interceptors.response.use(
     const url = getRedirectUrl(status);
 
     if (url) {
-      return browserHistory.push(url);
+      browserHistory.push(url);
     }
 
     if (error.response.status === BAD_REQUEST) {

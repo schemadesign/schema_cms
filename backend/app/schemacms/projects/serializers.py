@@ -11,8 +11,15 @@ from ..utils.serializers import NestedRelatedModelSerializer
 from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
+class RawDataSourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DataSource
+        fields = ("id", "name")
+
+
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     filters = serializers.SerializerMethodField(read_only=True)
+    tags = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSourceMeta
@@ -23,12 +30,16 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
             "fields_with_urls",
             "preview",
             "filters",
+            "tags",
             "status",
             "error",
         )
 
     def get_filters(self, meta):
         return meta.datasource.filters_count
+
+    def get_tags(self, meta):
+        return meta.datasource.tags_count
 
 
 class DataSourceCreatorSerializer(serializers.ModelSerializer):
@@ -59,7 +70,7 @@ class ActiveJobSerializer(serializers.ModelSerializer):
     def get_scripts(self, obj):
         return [
             {"id": step.script_id, "options": step.options, "exec_order": step.exec_order}
-            for step in obj.steps.all()
+            for step in obj.steps.all().order_by("exec_order")
         ]
 
 
@@ -98,7 +109,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
-            "file": {"required": True, "allow_null": False},
+            "file": {"required": False, "allow_null": True},
             "run_last_job": {"required": False, "allow_null": False, "allow_blank": False},
         }
         validators = [
@@ -145,7 +156,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
-        if "file" in self.validated_data:
+        if self.validated_data.get("file", None):
             copy_steps = self.initial_data.get("run_last_job", False)
             obj.schedule_update_meta(copy_steps)
         return obj
@@ -382,7 +393,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
 # Filters
 
 
-class DataSourceFilterSerializer(serializers.ModelSerializer):
+class DataSourceNestedFieldSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.DataSource
         fields = ("id", "name")
@@ -390,7 +401,7 @@ class DataSourceFilterSerializer(serializers.ModelSerializer):
 
 class FilterSerializer(serializers.ModelSerializer):
     datasource = NestedRelatedModelSerializer(
-        serializer=DataSourceFilterSerializer(), queryset=models.DataSource.objects.all()
+        serializer=DataSourceNestedFieldSerializer(), queryset=models.DataSource.objects.all()
     )
 
     class Meta:
@@ -424,8 +435,8 @@ class FilterSerializer(serializers.ModelSerializer):
         return filter_
 
 
-class FilterDetailSerializer(FilterSerializer):
-    datasource = NestedRelatedModelSerializer(serializer=DataSourceFilterSerializer(), read_only=True)
+class FilterDetailsSerializer(FilterSerializer):
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)
 
 
 # Pages
@@ -538,12 +549,11 @@ class BlockImageSerializer(serializers.ModelSerializer):
 
 
 class BlockSerializer(serializers.ModelSerializer):
-    images = serializers.SerializerMethodField(read_only=True)
     images_order = serializers.CharField(write_only=True, default="{}")
 
     class Meta:
         model = models.Block
-        fields = ("id", "page", "name", "type", "content", "images", "images_order", "is_active")
+        fields = ("id", "page", "name", "type", "content", "images_order", "is_active", "exec_order")
         extra_kwargs = {
             "page": {"required": False, "allow_null": True},
             "content": {"required": False, "allow_null": True, "allow_blank": False},
@@ -568,10 +578,6 @@ class BlockSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"type": message}, code="invalidType")
 
         return type_
-
-    def get_images(self, instance):
-        images = instance.images.all().order_by('exec_order')
-        return BlockImageSerializer(images, many=True).data
 
     @staticmethod
     def create_images(images, images_order, block):
@@ -633,11 +639,133 @@ class BlockPageSerializer(serializers.ModelSerializer):
 
 
 class BlockDetailSerializer(BlockSerializer):
+    images = serializers.SerializerMethodField(read_only=True)
     page = NestedRelatedModelSerializer(serializer=BlockPageSerializer(), read_only=True)
     project = serializers.SerializerMethodField(read_only=True)
 
     class Meta(BlockSerializer.Meta):
-        fields = BlockSerializer.Meta.fields + ("project",)
+        fields = BlockSerializer.Meta.fields + ("project", "images")
 
     def get_project(self, obj):
         return obj.project_info
+
+    def get_images(self, instance):
+        images = instance.images.all()
+        return BlockImageSerializer(images, many=True).data
+
+
+class TagSerializer(serializers.Serializer):
+    id = serializers.IntegerField(required=False)
+    value = serializers.CharField(max_length=150, required=True)
+    exec_order = serializers.IntegerField(required=True)
+
+
+class TagsListSerializer(serializers.ModelSerializer):
+    tags = TagSerializer(many=True, required=False)
+
+    class Meta:
+        model = models.TagsList
+        fields = ("id", "datasource", "name", "is_active", "tags")
+        extra_kwargs = {
+            "datasource": {"required": False, "allow_null": True},
+        }
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.TagsList.objects.all(),
+                fields=("name", "datasource"),
+                key_field_name="name",
+                code="tagsListNameNotUnique",
+                message="TagsList with this name already exist in data source.",
+            )
+        ]
+
+    @transaction.atomic()
+    def create(self, validated_data):
+        tags = validated_data.pop("tags", [])
+        tags_list = models.TagsList.objects.create(**validated_data)
+        if tags:
+            models.Tag.objects.bulk_create(self.create_tags(tags, tags_list))
+
+        return tags_list
+
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        tags_to_delete = self.initial_data.pop("delete_tags", [])
+        tags = validated_data.pop("tags", [])
+        if tags_to_delete:
+            instance.tags.filter(id__in=tags_to_delete).delete()
+
+        if tags:
+            tags_to_update = [tag for tag in tags if "id" in tag]
+            tags_to_create = [tag for tag in tags if "id" not in tag]
+
+            if tags_to_update:
+                for tag in tags_to_update:
+                    instance.tags.filter(id=tag["id"]).update(
+                        value=tag["value"], exec_order=tag["exec_order"]
+                    )
+
+            if tags_to_create:
+                models.Tag.objects.bulk_create(self.create_tags(tags_to_create, instance))
+
+        return super().update(instance, validated_data)
+
+    @staticmethod
+    def create_tags(tags, list_):
+        for tag in tags:
+            tag_instance = models.Tag()
+            tag_instance.value = tag["value"]
+            tag_instance.tags_list = list_
+            tag_instance.exec_order = tag["exec_order"]
+            yield tag_instance
+
+
+class TagsListDetailSerializer(TagsListSerializer):
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)
+
+    class Meta(TagsListSerializer.Meta):
+        fields = TagsListSerializer.Meta.fields + ("datasource",)
+
+
+# States
+
+
+class StateSerializer(serializers.ModelSerializer):
+    author = serializers.SerializerMethodField(read_only=True)
+    active_tags = serializers.ListField(required=False, allow_empty=True)
+
+    class Meta:
+        model = models.State
+        fields = (
+            "id",
+            "name",
+            "project",
+            "datasource",
+            "description",
+            "source_url",
+            "author",
+            "is_public",
+            "created",
+            "active_tags",
+        )
+        extra_kwargs = {
+            "project": {"required": False, "allow_null": True},
+        }
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.State.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="stateNameNotUnique",
+                message="State with this name already exist in project.",
+            )
+        ]
+
+    def create(self, validated_data):
+        state = models.State(author=self.context["request"].user, **validated_data)
+        state.save()
+
+        return state
+
+    def get_author(self, state):
+        return state.author.get_full_name()

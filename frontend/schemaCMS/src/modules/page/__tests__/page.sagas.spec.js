@@ -1,6 +1,5 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import Immutable from 'seamless-immutable';
-import nock from 'nock';
 import { OK } from 'http-status-codes';
 
 import { watchPage } from '../page.sagas';
@@ -13,10 +12,6 @@ import { ProjectRoutines } from '../../project';
 describe('Page: sagas', () => {
   const defaultState = Immutable({
     pages: [],
-  });
-
-  beforeEach(() => {
-    nock.cleanAll();
   });
 
   describe('when fetchList action is called', () => {
@@ -119,7 +114,7 @@ describe('Page: sagas', () => {
         .dispatch(PageRoutines.removeOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}/`);
+      expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}`);
     });
   });
 });

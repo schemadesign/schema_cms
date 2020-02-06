@@ -26,6 +26,14 @@ export default defineMessages({
     id: 'project.dataSourceList.metaProcessing',
     defaultMessage: 'Processing meta data...',
   },
+  fileUploading: {
+    id: 'project.dataSourceList.fileUploading',
+    defaultMessage: 'Uploading file...',
+  },
+  fileUploadingError: {
+    id: 'project.dataSourceList.fileUploadingError',
+    defaultMessage: 'Uploading file failed',
+  },
   metaFailed: {
     id: 'project.dataSourceList.metaFailed',
     defaultMessage: 'Processing meta data failed',
@@ -50,9 +58,9 @@ export default defineMessages({
     id: 'project.dataSourceList.filters',
     defaultMessage: 'Filters',
   },
-  views: {
-    id: 'project.dataSourceList.views',
-    defaultMessage: 'Views',
+  tags: {
+    id: 'project.dataSourceList.tags',
+    defaultMessage: 'Tags',
   },
   noData: {
     id: 'project.dataSourceList.noData',

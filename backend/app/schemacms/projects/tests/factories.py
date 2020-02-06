@@ -39,6 +39,7 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     project = factory.SubFactory(ProjectFactory)
     type = project_constants.DataSourceType.FILE
     file = factory.django.FileField(filename="test.csv", from_func=utils_test.make_csv)
+    created_by = factory.SubFactory(UserFactory)
 
 
 class DataSourceMetaFactory(BaseMetaDataFactory):
@@ -126,3 +127,19 @@ class BlockImageFactory(factory.django.DjangoModelFactory):
 
     block = factory.SubFactory(BlockFactory)
     image = factory.django.ImageField(filename="test.png", from_func=utils_test.make_image)
+
+
+class TagsListFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.TagsList"
+
+    datasource = factory.SubFactory(DataSourceFactory)
+    name = factory.Faker("text", max_nb_chars=25)
+
+
+class TagFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.Tag"
+
+    tags_list = factory.SubFactory(TagsListFactory)
+    value = factory.Faker("text", max_nb_chars=150)

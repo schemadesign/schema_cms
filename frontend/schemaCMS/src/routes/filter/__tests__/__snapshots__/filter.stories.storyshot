@@ -17,14 +17,6 @@ exports[`Storyshots Filter Default 1`] = `
   color: #FFF;
 }
 
-.c12 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -92,6 +84,14 @@ exports[`Storyshots Filter Default 1`] = `
 
 .c2 {
   word-break: break-word;
+}
+
+.c12 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 @media (min-width:1040px) {
@@ -230,10 +230,10 @@ exports[`Storyshots Filter Default 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>

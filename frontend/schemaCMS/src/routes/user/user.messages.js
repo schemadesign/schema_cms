@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'user.projectsListPage',
     defaultMessage: 'Projects',
   },
+  userPage: {
+    id: 'user.userPage',
+    defaultMessage: 'Users',
+  },
 });

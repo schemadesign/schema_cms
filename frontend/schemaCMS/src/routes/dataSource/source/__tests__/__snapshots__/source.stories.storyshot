@@ -1,58 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Source|Source Default 1`] = `
-.c19 {
-  padding-top: 7px;
+.c8 {
+  display: none;
 }
 
-.c23 {
-  height: 155px;
+.c9 {
+  margin-right: 20px;
 }
 
-.c25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
+.c10 {
+  color: #FFF;
 }
 
-.c24 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-}
-
-.c26 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c21 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+.c11 {
+  color: #FFF;
 }
 
 .c0 {
@@ -78,13 +40,101 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 30px;
 }
 
-.c8 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a,
+.c5 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  display: block;
+}
+
+.c6 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c22 {
+  height: 155px;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c23 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 70px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c25 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c17 {
+  width: 100%;
+}
+
+.c18 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c20 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -98,117 +148,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   align-items: flex-start;
 }
 
-.c5 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c5 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c5:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c7 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #FFF;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c7 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c7:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c9 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c9 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c1 {
-  word-break: break-word;
-}
-
-.c2 {
-  word-break: break-word;
-}
-
-.c10 {
-  display: none;
-}
-
-.c11 {
-  margin-right: 20px;
-}
-
-.c12 {
-  color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
-}
-
-.c22 {
+.c21 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -217,19 +157,19 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c22:hover {
+.c21:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c22:last-child {
+.c21:last-child {
   margin-bottom: 0;
 }
 
-.c20 {
+.c19 {
   position: relative;
 }
 
-.c14 {
+.c12 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -253,11 +193,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c14 svg {
+.c12 svg {
   cursor: pointer;
 }
 
-.c27 {
+.c26 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -281,29 +221,8 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c27 svg {
+.c26 svg {
   cursor: pointer;
-}
-
-.c18 {
-  background-color: #1d1d20;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c18 svg {
-  opacity: 0.4;
 }
 
 .c16 {
@@ -323,7 +242,28 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   align-items: center;
 }
 
-.c15 {
+.c16 svg {
+  opacity: 0.4;
+}
+
+.c14 {
+  background-color: #1d1d20;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -337,7 +277,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c15 {
   padding-top: 9px;
   color: #71737e;
   font-size: 12px;
@@ -345,65 +285,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c25 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c24 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c26 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c3 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c7 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c10 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -421,7 +303,44 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c24 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c23 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c25 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -433,18 +352,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c27 {
+  .c26 {
     position: static;
     background-color: transparent;
     padding: 0;
     display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c18 {
-    width: 60px;
-    height: 60px;
   }
 }
 
@@ -456,13 +368,20 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c14 {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
     margin-left: 15px;
   }
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c15 {
     display: block;
   }
 }
@@ -567,10 +486,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
+          viewBox="0 0 10 60"
         >
           <path
-            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
             fillRule="evenodd"
           />
         </svg>
@@ -637,36 +556,36 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       <div
         className="c3"
       >
-        <ul
+        <div
           className="c4"
         >
-          <li
+          <div
             className="c5"
           >
             <a
-              href="/project"
-              id="projectNavBtn"
+              href="/project/"
+              id="projectsNavBtn"
               onClick={[Function]}
             >
               <span>
                 Projects
               </span>
             </a>
-          </li>
-          <li
-            className="c6"
+          </div>
+          <div
+            className="c5"
           >
             <a
-              href="/user"
-              id="userNavBtn"
+              href="/user/"
+              id="usersPageNavBtn"
               onClick={[Function]}
             >
               <span>
                 Users
               </span>
             </a>
-          </li>
-          <li
+          </div>
+          <div
             className="c5"
           >
             <a
@@ -678,8 +597,8 @@ exports[`Storyshots Data Source|Source Default 1`] = `
                 Project details
               </span>
             </a>
-          </li>
-          <li
+          </div>
+          <div
             className="c5"
           >
             <a
@@ -691,8 +610,34 @@ exports[`Storyshots Data Source|Source Default 1`] = `
                 Data Sources
               </span>
             </a>
-          </li>
-          <li
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/projectId/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                States
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/projectId/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Project Users
+              </span>
+            </a>
+          </div>
+          <div
             className="c5"
           >
             <a
@@ -704,8 +649,12 @@ exports[`Storyshots Data Source|Source Default 1`] = `
                 Pages
               </span>
             </a>
-          </li>
-          <li
+          </div>
+        </div>
+        <div
+          className="c4"
+        >
+          <div
             className="c5"
           >
             <a
@@ -717,60 +666,53 @@ exports[`Storyshots Data Source|Source Default 1`] = `
                 Settings
               </span>
             </a>
-          </li>
-          <li
+          </div>
+          <div
+            className="c5"
+          >
+            <div
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <a
             className="c7"
-            id="logoutNavBtn"
+            href="/"
+            id="aboutNavBtn"
             onClick={[Function]}
           >
             <span>
-              Log out
+              About Schema CMS
             </span>
-          </li>
-        </ul>
-        <ul
-          className="c8"
-        >
-          <li
-            className="c9"
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
           >
-            <a
-              href="/"
-              id="aboutNavBtn"
-              onClick={[Function]}
-            >
-              <span>
-                About Schema CMS
-              </span>
-            </a>
-          </li>
-          <li
-            className="c9"
+            <span>
+              API Doc
+            </span>
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
           >
-            <a
-              href="/"
-              id="apiNavBtn"
-              onClick={[Function]}
-            >
-              <span>
-                API Doc
-              </span>
-            </a>
-          </li>
-          <li
-            className="c9"
-          >
-            <a
-              href="/"
-              id="repositoryNavBtn"
-              onClick={[Function]}
-            >
-              <span>
-                GitHub Repository
-              </span>
-            </a>
-          </li>
-        </ul>
+            <span>
+              GitHub Repository
+            </span>
+          </a>
+        </div>
       </div>
       <button
         disabled={false}
@@ -816,13 +758,13 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     </div>
   </div>
   <div
-    className="c10"
+    className="c8"
   >
     <div
-      className="c11"
+      className="c9"
     >
       <h2
-        className="c12"
+        className="c10"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -834,7 +776,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         }
       />
       <h1
-        className="c13"
+        className="c11"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -856,17 +798,18 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       className=""
     >
       <div
-        className="c14"
+        className="c12"
       >
         <div
-          className="c15"
+          className="c13"
         >
           <div
-            className="c16"
+            className="c14"
             disabled={false}
             onClick={[Function]}
           >
             <svg
+              id="sourceBtn"
               style={
                 Object {
                   "fill": "#FFF",
@@ -882,7 +825,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             </svg>
           </div>
           <div
-            className="c17"
+            className="c15"
           >
             <span>
               Source
@@ -890,14 +833,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </div>
         </div>
         <div
-          className="c15"
+          className="c13"
         >
           <div
-            className="c18"
+            className="c16"
             disabled={false}
             onClick={[Function]}
           >
             <svg
+              id="fieldsBtn"
               style={
                 Object {
                   "fill": "#FFF",
@@ -914,7 +858,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             </svg>
           </div>
           <div
-            className="c17"
+            className="c15"
           >
             <span>
               Fields
@@ -922,15 +866,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </div>
         </div>
         <div
-          className="c15"
+          className="c13"
         >
           <div
-            className="c18"
+            className="c16"
             disabled={false}
             onClick={[Function]}
           >
             <svg
               fill="#fff"
+              id="stepsBtn"
               stroke="#000"
               style={
                 Object {
@@ -964,7 +909,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             </svg>
           </div>
           <div
-            className="c17"
+            className="c15"
           >
             <span>
               Steps
@@ -972,15 +917,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </div>
         </div>
         <div
-          className="c15"
+          className="c13"
         >
           <div
-            className="c18"
+            className="c16"
             disabled={false}
             onClick={[Function]}
           >
             <svg
               fill="#fff"
+              id="resultsBtn"
               stroke="#000"
               style={
                 Object {
@@ -1014,7 +960,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             </svg>
           </div>
           <div
-            className="c17"
+            className="c15"
           >
             <span>
               Results
@@ -1022,14 +968,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </div>
         </div>
         <div
-          className="c15"
+          className="c13"
         >
           <div
-            className="c18"
+            className="c16"
             disabled={false}
             onClick={[Function]}
           >
             <svg
+              id="filtersBtn"
               stroke="#FFF"
               style={
                 Object {
@@ -1048,7 +995,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             </svg>
           </div>
           <div
-            className="c17"
+            className="c15"
           >
             <span>
               Filters
@@ -1056,14 +1003,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </div>
         </div>
         <div
-          className="c15"
+          className="c13"
         >
           <div
-            className="c18"
+            className="c16"
             disabled={false}
             onClick={[Function]}
           >
             <svg
+              id="tagsBtn"
               style={
                 Object {
                   "height": 54,
@@ -1082,10 +1030,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             </svg>
           </div>
           <div
-            className="c17"
+            className="c15"
           >
             <span>
-              Views
+              Tags
             </span>
           </div>
         </div>
@@ -1097,7 +1045,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className=""
+      className="c17"
     >
       <div
         style={
@@ -1155,7 +1103,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           }
         >
           <div
-            className="c19"
+            className="c18"
           >
             <svg
               style={
@@ -1292,7 +1240,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c20"
+      className="c19"
     >
       <div
         style={
@@ -1325,6 +1273,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
               "display": "block",
               "fontSize": 18,
               "lineHeight": "24px",
+              "opacity": 1,
               "paddingBottom": 30,
               "width": "calc(100% - 70px)",
             }
@@ -1363,6 +1312,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
                   "fontSize": 0,
                   "margin": "0",
                   "minHeight": "48px",
+                  "opacity": 1,
                   "outline": "none",
                   "padding": "0",
                   "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
@@ -1389,6 +1339,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         <input
           accept=".csv"
           aria-hidden={true}
+          disabled={false}
           id="fileUpload"
           name="file"
           onChange={[Function]}
@@ -1400,154 +1351,6 @@ exports[`Storyshots Data Source|Source Default 1`] = `
               "position": "absolute",
               "top": 0,
               "visibility": "hidden",
-            }
-          }
-          theme={
-            Object {
-              "background": "#000",
-              "border": "#2F2F36",
-              "button": Object {
-                "background": "#1d1d20",
-                "text": "#FFF",
-              },
-              "buttonDisabled": Object {
-                "background": "#1d1d20",
-                "text": "#71737e",
-              },
-              "card": Object {
-                "background": "#1d1d20",
-                "border": "#FFF",
-                "label": "#71737e",
-                "text": "#FFF",
-              },
-              "checkbox": Object {
-                "border": "#2F2F36",
-                "text": "#FFF",
-              },
-              "colors": Object {
-                "black": "#000",
-                "coolGray": "#a6a7aa",
-                "darkGrey": "#1d1d20",
-                "lightGrey": "#71737e",
-                "mediumGray": "#2F2F36",
-                "red": "#f21e29",
-                "veryLightPink": "#f0efef",
-                "white": "#FFF",
-                "yellow": "#be8f00",
-              },
-              "dataGrid": Object {
-                "background": "#000",
-                "text": "#71737e",
-              },
-              "error": "#f21e29",
-              "header": Object {
-                "border": "#2F2F36",
-                "text": "#FFF",
-              },
-              "icon": Object {
-                "background": "#1d1d20",
-                "fill": "#FFF",
-                "fillInverse": "#000",
-              },
-              "input": Object {
-                "text": "#FFF",
-              },
-              "inverseButton": Object {
-                "background": "#FFF",
-                "text": "#000",
-              },
-              "label": Object {
-                "border": "#2F2F36",
-                "text": "#71737e",
-              },
-              "menu": Object {
-                "background": "#000",
-                "text": "#FFF",
-              },
-              "providerContainer": Object {
-                "minHeight": "100vh",
-              },
-              "radioButton": Object {
-                "active": Object {
-                  "background": "#FFF",
-                  "fill": "#1d1d20",
-                },
-                "border": "#FFF",
-                "text": "#FFF",
-                "unActive": Object {
-                  "background": "#1d1d20",
-                  "dot": "#FFF",
-                  "fill": "#FFF",
-                },
-              },
-              "secondaryText": "#71737e",
-              "select": Object {
-                "background": "#1d1d20",
-                "border": "#000",
-              },
-              "stepper": Object {
-                "active": "#FFF",
-                "background": "#1d1d20",
-              },
-              "tab": Object {
-                "active": "#FFF",
-                "hover": "#FFF",
-                "normal": "#2F2F36",
-              },
-              "table": Object {
-                "background": Object {
-                  "body": "#000",
-                  "header": "#1d1d20",
-                },
-                "border": Object {
-                  "body": "#1d1d20",
-                  "header": "#000",
-                },
-                "text": Object {
-                  "body": "#FFF",
-                  "header": "#71737e",
-                },
-              },
-              "text": "#FFF",
-              "textArea": Object {
-                "background": "#000",
-                "text": "#FFF",
-              },
-              "textField": Object {
-                "error": "#f21e29",
-                "label": "#71737e",
-              },
-              "typography": Object {
-                "h1": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                },
-                "h2": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                },
-                "h3": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 600,
-                },
-                "p": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 200,
-                },
-                "pre": Object {
-                  "fontFamily": "Hack, monospace",
-                  "fontSize": "18px",
-                },
-                "span": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "14px",
-                },
-              },
-              "warning": "#be8f00",
             }
           }
           type="file"
@@ -1583,10 +1386,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </label>
     </div>
     <div
-      className="c21"
+      className="c20"
     >
       <span
-        className="c22"
+        className="c21"
         onClick={[Function]}
         style={
           Object {
@@ -1600,7 +1403,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </span>
       </span>
       <span
-        className="c22"
+        className="c21"
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}
         style={
@@ -1616,16 +1419,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </span>
     </div>
     <div
-      className="c23"
+      className="c22"
     >
       <div
-        className="c24"
+        className="c23"
       >
         <div
-          className="c25"
+          className="c24"
         >
           <button
-            className="c26"
+            className="c25"
             disabled={true}
             onClick={[Function]}
             style={
@@ -1656,17 +1459,18 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     </div>
   </form>
   <div
-    className="c27"
+    className="c26"
   >
     <div
-      className="c15"
+      className="c13"
     >
       <div
-        className="c16"
+        className="c14"
         disabled={false}
         onClick={[Function]}
       >
         <svg
+          id="sourceBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -1682,7 +1486,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </svg>
       </div>
       <div
-        className="c17"
+        className="c15"
       >
         <span>
           Source
@@ -1690,14 +1494,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c13"
     >
       <div
-        className="c18"
+        className="c16"
         disabled={false}
         onClick={[Function]}
       >
         <svg
+          id="fieldsBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -1714,7 +1519,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </svg>
       </div>
       <div
-        className="c17"
+        className="c15"
       >
         <span>
           Fields
@@ -1722,15 +1527,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c13"
     >
       <div
-        className="c18"
+        className="c16"
         disabled={false}
         onClick={[Function]}
       >
         <svg
           fill="#fff"
+          id="stepsBtn"
           stroke="#000"
           style={
             Object {
@@ -1764,7 +1570,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </svg>
       </div>
       <div
-        className="c17"
+        className="c15"
       >
         <span>
           Steps
@@ -1772,15 +1578,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c13"
     >
       <div
-        className="c18"
+        className="c16"
         disabled={false}
         onClick={[Function]}
       >
         <svg
           fill="#fff"
+          id="resultsBtn"
           stroke="#000"
           style={
             Object {
@@ -1814,7 +1621,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </svg>
       </div>
       <div
-        className="c17"
+        className="c15"
       >
         <span>
           Results
@@ -1822,14 +1629,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c13"
     >
       <div
-        className="c18"
+        className="c16"
         disabled={false}
         onClick={[Function]}
       >
         <svg
+          id="filtersBtn"
           stroke="#FFF"
           style={
             Object {
@@ -1848,7 +1656,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </svg>
       </div>
       <div
-        className="c17"
+        className="c15"
       >
         <span>
           Filters
@@ -1856,14 +1664,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c13"
     >
       <div
-        className="c18"
+        className="c16"
         disabled={false}
         onClick={[Function]}
       >
         <svg
+          id="tagsBtn"
           style={
             Object {
               "height": 54,
@@ -1882,10 +1691,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </svg>
       </div>
       <div
-        className="c17"
+        className="c15"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>

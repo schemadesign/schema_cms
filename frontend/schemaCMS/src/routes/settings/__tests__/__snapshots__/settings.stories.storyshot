@@ -1,75 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Settings Default 1`] = `
-.c13 {
-  padding-top: 7px;
-}
-
-.c16 {
-  height: 155px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c17 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c19 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c15 {
-  cursor: pointer;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c15:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c14 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
 .c9 {
   display: none;
 }
@@ -172,28 +103,78 @@ exports[`Storyshots Settings Default 1`] = `
   word-break: break-word;
 }
 
-@media (min-width:1040px) {
-  .c18 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
+.c17 {
+  height: 155px;
 }
 
-@media (min-width:1040px) {
-  .c17 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
-@media (min-width:1040px) {
-  .c19 {
-    width: 240px;
-  }
+.c18 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c20 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c13 {
+  width: 100%;
+}
+
+.c14 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c16 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c16:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c15 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 @media (min-width:1040px) {
@@ -224,6 +205,30 @@ exports[`Storyshots Settings Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c19 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c18 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c20 {
+    width: 240px;
   }
 }
 
@@ -275,7 +280,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              SchemaCMS
+              Schema CMS
             </span>
           </h2>
           <h1
@@ -331,10 +336,10 @@ exports[`Storyshots Settings Default 1`] = `
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
+          viewBox="0 0 10 60"
         >
           <path
-            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
             fillRule="evenodd"
           />
         </svg>
@@ -379,7 +384,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              SchemaCMS
+              Schema CMS
             </span>
           </h2>
           <h1
@@ -560,7 +565,7 @@ exports[`Storyshots Settings Default 1`] = `
         }
       >
         <span>
-          SchemaCMS
+          Schema CMS
         </span>
       </h2>
       <h1
@@ -591,7 +596,7 @@ exports[`Storyshots Settings Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -653,7 +658,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c14"
           >
             <svg
               style={
@@ -675,7 +680,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -737,7 +742,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c14"
           >
             <svg
               style={
@@ -759,7 +764,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -822,7 +827,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c13"
     >
       <div
         style={
@@ -886,10 +891,11 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className="c14"
+      className="c15"
     >
       <span
-        className="c15"
+        className="c16"
+        id="resetPasswordLink"
         onClick={[Function]}
         style={
           Object {
@@ -904,17 +910,18 @@ exports[`Storyshots Settings Default 1`] = `
       </span>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
       >
         <div
-          className="c18"
+          className="c19"
         >
           <button
-            className="c19"
+            className="c20"
             disabled={false}
+            id="settingsBackBtn"
             onClick={[Function]}
             style={
               Object {
@@ -940,8 +947,9 @@ exports[`Storyshots Settings Default 1`] = `
             </span>
           </button>
           <button
-            className="c19"
+            className="c20"
             disabled={true}
+            id="settingsSaveBtn"
             style={
               Object {
                 "backgroundColor": "#1d1d20",

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProjectTabs: Component should render correctly 1`] = `
-<styled.div>
+<styled.div
+  id="tabsContainer"
+>
   <Tabs
     tabs={
       Array [
@@ -28,12 +30,12 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
         Object {
           "active": false,
           "content": <FormattedMessage
-            defaultMessage="Users"
-            id="shared.components.projectTabs.users"
+            defaultMessage="States"
+            id="shared.components.projectTabs.state"
             values={Object {}}
           />,
-          "id": "users",
-          "to": "/project/1/user",
+          "id": "state",
+          "to": "/project/1/state",
         },
         Object {
           "active": false,
@@ -44,6 +46,16 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
           />,
           "id": "folder",
           "to": "/project/1/folder",
+        },
+        Object {
+          "active": false,
+          "content": <FormattedMessage
+            defaultMessage="Users"
+            id="shared.components.projectTabs.users"
+            values={Object {}}
+          />,
+          "id": "users",
+          "to": "/project/1/user",
         },
       ]
     }

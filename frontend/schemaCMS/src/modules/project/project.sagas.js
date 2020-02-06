@@ -34,7 +34,7 @@ function* createProject({ payload }) {
     const { data } = yield api.post(PROJECTS_PATH, parsedPayload);
 
     yield put(ProjectRoutines.createProject.success(data));
-    browserHistory.push('/project/');
+    browserHistory.push('/project');
   } catch (error) {
     yield put(ProjectRoutines.createProject.failure(error));
   } finally {
@@ -61,7 +61,7 @@ function* removeOne({ payload }) {
     yield put(ProjectRoutines.removeOne.request());
     yield api.delete(`${PROJECTS_PATH}/${payload.projectId}`);
 
-    browserHistory.push('/project/');
+    browserHistory.push('/project');
     yield put(ProjectRoutines.removeOne.success());
   } catch (error) {
     yield put(ProjectRoutines.removeOne.failure(error));

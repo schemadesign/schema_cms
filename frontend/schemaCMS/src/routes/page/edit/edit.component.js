@@ -5,18 +5,20 @@ import { path } from 'ramda';
 
 import { Form } from './edit.styles';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './edit.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { PageForm } from '../../../shared/components/pageForm';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link } from '../../../theme/typography';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
+import { PAGE_MENU_OPTIONS } from '../../pageBlock/pageBlock.constants';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 
 export class Edit extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     page: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
     fetchPage: PropTypes.func.isRequired,
@@ -40,6 +42,7 @@ export class Edit extends PureComponent {
 
   state = {
     loading: true,
+    removeLoading: false,
     error: null,
   };
 
@@ -61,24 +64,34 @@ export class Edit extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  handleConfirmRemove = () => {
-    const pageId = getMatchParam(this.props, 'pageId');
-    const folderId = this.getFolderId();
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+      const pageId = getMatchParam(this.props, 'pageId');
+      const folderId = this.getFolderId();
 
-    this.props.removePage({ pageId, folderId });
+      await this.props.removePage({ pageId, folderId });
+    } catch (error) {
+      this.setState({ removeLoading: false });
+      reportError(error);
+    }
   };
 
   handleBackClick = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   render() {
-    const { loading, error, confirmationModalOpen } = this.state;
-    const { handleSubmit, isValid, isSubmitting } = this.props;
+    const { loading, error, confirmationModalOpen, removeLoading } = this.state;
+    const { handleSubmit, isValid, isSubmitting, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
           <Form onSubmit={handleSubmit}>
@@ -101,10 +114,15 @@ export class Edit extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

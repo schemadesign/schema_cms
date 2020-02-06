@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
@@ -7,18 +7,19 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { UserProfile } from '../../../shared/components/userProfile/userProfile.component';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './view.messages';
-import { modalStyles, Modal, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { LinkContainer } from '../../../theme/typography';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { USER_MENU_OPTIONS } from '../user.constants';
 import reportError from '../../../shared/utils/reportError';
 
 export class View extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     fetchUser: PropTypes.func.isRequired,
     removeUser: PropTypes.func.isRequired,
     makeAdmin: PropTypes.func.isRequired,
@@ -35,6 +36,8 @@ export class View extends PureComponent {
   state = {
     error: null,
     loading: true,
+    removeLoading: false,
+    makeAdminLoading: false,
     userRemoveModalOpen: false,
     makeAdminModalOpen: false,
   };
@@ -54,15 +57,28 @@ export class View extends PureComponent {
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
   handleCancelMakeAdmin = () => this.setState({ makeAdminModalOpen: false });
 
-  handleConfirmRemove = () => {
-    const userId = getMatchParam(this.props, 'userId');
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+      const userId = getMatchParam(this.props, 'userId');
 
-    return this.props.removeUser({ userId });
+      await this.props.removeUser({ userId });
+    } catch (error) {
+      this.setState({ removeLoading: false });
+      reportError(error);
+    }
   };
 
-  handleConfirmMakeAdmin = () => {
-    this.setState({ makeAdminModalOpen: false });
-    this.props.makeAdmin({ userId: getMatchParam(this.props, 'userId') });
+  handleConfirmMakeAdmin = async () => {
+    try {
+      this.setState({ makeAdminLoading: true });
+
+      await this.props.makeAdmin({ userId: getMatchParam(this.props, 'userId') });
+    } catch (error) {
+      reportError(error);
+    } finally {
+      this.setState({ makeAdminModalOpen: false, makeAdminLoading: false });
+    }
   };
 
   handleBack = () => this.props.history.push('/user');
@@ -88,15 +104,19 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { loading, error } = this.state;
-    const { userData, isAdmin } = this.props;
+    const { loading, error, removeLoading, makeAdminLoading } = this.state;
+    const { userData, isAdmin, userRole } = this.props;
     const isEditor = userData.role === ROLES.EDITOR;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Container>
-        <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} options={USER_MENU_OPTIONS} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(USER_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent(userData, isEditor, isAdmin)}
@@ -109,10 +129,10 @@ export class View extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
+            <NextButton onClick={this.handleConfirmRemove} loading={removeLoading} disabled={removeLoading}>
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
@@ -123,9 +143,9 @@ export class View extends PureComponent {
           </ModalTitle>
           <ModalActions>
             <BackButton onClick={this.handleCancelMakeAdmin}>
-              <FormattedMessage {...messages.cancelRemoval} />
+              <FormattedMessage {...messages.cancelRemoval} disabled={makeAdminLoading} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmMakeAdmin}>
+            <NextButton onClick={this.handleConfirmMakeAdmin} loading={makeAdminLoading} disabled={makeAdminLoading}>
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

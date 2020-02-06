@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, cond, equals, pathOr, T } from 'ramda';
+import { always, find, cond, equals, is, pathOr, propEq, T, ifElse, isNil, prop, propOr, either } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'styled-components';
@@ -11,6 +11,7 @@ import {
   customRadioButtonStyles,
   customRadioGroupStyles,
   WarningWrapper,
+  ErrorWrapper,
 } from './sourceForm.styles';
 import messages from './sourceForm.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -18,12 +19,13 @@ import {
   DATA_SOURCE_FILE,
   DATA_SOURCE_NAME,
   DATA_SOURCE_TYPE,
+  META_PENDING,
+  META_PROCESSING,
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
-import { renderWhenTrue } from '../../utils/rendering';
 import { getEventFiles } from '../../utils/helpers';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
@@ -36,29 +38,55 @@ export class SourceFormComponent extends PureComponent {
     theme: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     values: PropTypes.object.isRequired,
+    uploadingDataSources: PropTypes.array,
   };
 
   static defaultProps = {
     dataSource: {},
+    uploadingDataSources: [],
   };
 
   handleUploadChange = (data, { setFieldValue }) => {
     const uploadFile = getEventFiles(data);
+    if (!uploadFile.length) {
+      return;
+    }
+
     setFieldValue('file', uploadFile[0]);
     setFieldValue('fileName', pathOr('', ['name'], uploadFile[0]));
   };
 
-  renderProcessingMessage = renderWhenTrue(
-    always(
-      <WarningWrapper>
-        <FormattedMessage {...messages.processing} />
-      </WarningWrapper>
-    )
-  );
+  renderProcessingMessage = cond([
+    [
+      propEq('fileUploading', true),
+      always(
+        <WarningWrapper>
+          <FormattedMessage {...messages.uploadingFile} />
+        </WarningWrapper>
+      ),
+    ],
+    [
+      propEq('fileUploadingError', true),
+      always(
+        <ErrorWrapper>
+          <FormattedMessage {...messages.uploadingError} />
+        </ErrorWrapper>
+      ),
+    ],
+    [
+      propEq('isProcessing', true),
+      always(
+        <WarningWrapper>
+          <FormattedMessage {...messages.processing} />
+        </WarningWrapper>
+      ),
+    ],
+    [T, always(null)],
+  ]);
 
-  renderCsvUploader = ({ setFieldValue, fileName, jobsInProcess, ...restProps }) => (
+  renderCsvUploader = ({ setFieldValue, fileName, disabled, ...restProps }) => (
     <Uploader
-      fileNames={fileName}
+      fileNames={fileName || ''}
       name={DATA_SOURCE_FILE}
       label={this.props.intl.formatMessage(messages.fileName)}
       placeholder={this.props.intl.formatMessage(messages.filePlaceholder)}
@@ -66,20 +94,20 @@ export class SourceFormComponent extends PureComponent {
       id="fileUpload"
       onChange={data => this.handleUploadChange(data, { setFieldValue })}
       accept=".csv"
-      disabled={jobsInProcess}
+      disabled={disabled}
       checkOnlyErrors
       {...restProps}
     />
   );
 
-  renderSourceUpload = ({ type, jobsInProcess, ...restProps }) =>
+  renderSourceUpload = ({ type, isProcessing, fileUploadingError, fileUploading, ...restProps }) =>
     cond([
       [
         equals(SOURCE_TYPE_FILE),
         () => (
           <Fragment>
-            {this.renderCsvUploader({ ...restProps, jobsInProcess })}
-            {this.renderProcessingMessage(jobsInProcess)}
+            {this.renderCsvUploader({ ...restProps, disabled: (isProcessing && !fileUploadingError) || fileUploading })}
+            {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
           </Fragment>
         ),
       ],
@@ -106,9 +134,16 @@ export class SourceFormComponent extends PureComponent {
   };
 
   render() {
-    const { dataSource, handleChange, values, ...restProps } = this.props;
-    const { name, fileName, type } = values;
-    const { jobsInProcess } = dataSource;
+    const { dataSource, handleChange, values, uploadingDataSources, ...restProps } = this.props;
+    const { jobsInProcess, id, metaData } = dataSource;
+    const metaStatus = propOr('', 'status', metaData);
+    const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
+    const isProcessing = metaProcessing || jobsInProcess;
+    const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
+    const { name, type } = values;
+    const fileUploadingError = id && !is(String, dataSource.fileName);
+    const fileUploading = !!uploadingDataSource;
+    const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
 
     return (
       <Fragment>
@@ -135,7 +170,7 @@ export class SourceFormComponent extends PureComponent {
         >
           {this.renderRadioButton(type)}
         </RadioGroup>
-        {this.renderSourceUpload({ type, fileName, jobsInProcess, ...restProps })}
+        {this.renderSourceUpload({ type, fileName, isProcessing, fileUploadingError, fileUploading, ...restProps })}
       </Fragment>
     );
   }

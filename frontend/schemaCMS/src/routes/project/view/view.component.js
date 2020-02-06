@@ -54,6 +54,7 @@ export class View extends PureComponent {
 
   state = {
     loading: true,
+    removeLoading: false,
     error: null,
     confirmationModalOpen: false,
   };
@@ -74,7 +75,16 @@ export class View extends PureComponent {
 
   handleDeleteClick = () => this.setState({ confirmationModalOpen: true });
 
-  handleConfirmRemove = () => this.props.removeProject({ projectId: this.props.project.id });
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+
+      await this.props.removeProject({ projectId: this.props.project.id });
+    } catch (error) {
+      this.setState({ removeLoading: false });
+      reportError(error);
+    }
+  };
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
@@ -97,7 +107,7 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = ({ id: projectId, owner = {}, slug, created, meta, status } = {}) => {
+  renderProject = ({ id: projectId, owner, slug, created, meta, status } = {}) => {
     const statistics = [
       {
         header: this.renderStatisticHeader(messages.dataSources),
@@ -105,12 +115,17 @@ export class View extends PureComponent {
         to: `/project/${projectId}/datasource`,
         id: 'projectDataSources',
       },
-      { header: this.renderStatisticHeader(messages.charts), value: meta.charts },
+      {
+        header: this.renderStatisticHeader(messages.states),
+        value: meta.states || 0,
+        to: `/project/${projectId}/state`,
+        id: 'projectStates',
+      },
       {
         header: this.renderStatisticHeader(messages.pages),
         value: meta.pages,
         to: `/project/${projectId}/folder`,
-        id: 'projectUsers',
+        id: 'projectPages',
       },
       {
         header: this.renderStatisticHeader(messages.users),
@@ -120,7 +135,7 @@ export class View extends PureComponent {
       },
     ].filter(({ value }) => !isNil(value));
 
-    const { firstName = '', lastName = '' } = owner;
+    const { firstName = '—', lastName = '' } = owner || {};
 
     const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
     const data = [
@@ -187,8 +202,8 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { project, isAdmin, userRole } = this.props;
-    const { confirmationModalOpen, error, loading } = this.state;
+    const { project, userRole } = this.props;
+    const { confirmationModalOpen, error, loading, removeLoading } = this.state;
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
     const projectId = getMatchParam(this.props, 'projectId');
@@ -212,15 +227,29 @@ export class View extends PureComponent {
         <NavigationContainer fixed>
           <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
-          <ModalTitle>
+        <Modal
+          id="projectConfirmationRemovalModal"
+          isOpen={confirmationModalOpen}
+          contentLabel="Confirm Removal"
+          style={modalStyles}
+        >
+          <ModalTitle id="projectConfirmationRemovalModalTitle">
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton
+              id="projectConfirmationRemovalModalCancelBtn"
+              onClick={this.handleCancelRemove}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="projectConfirmationRemovalModalConfirmBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

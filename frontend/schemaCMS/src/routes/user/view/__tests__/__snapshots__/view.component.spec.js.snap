@@ -22,7 +22,6 @@ exports[`View: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
           ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
@@ -31,6 +30,19 @@ exports[`View: Component should render correctly 1`] = `
             values={Object {}}
           />,
           "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "userNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="user.userPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
           "type": "link_item",
         },
       ]
@@ -61,6 +73,7 @@ exports[`View: Component should render correctly 1`] = `
     <Component />
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -125,6 +138,7 @@ exports[`View: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
@@ -185,11 +199,13 @@ exports[`View: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
+          disabled={false}
           id="user.view.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
@@ -226,7 +242,6 @@ exports[`View: Component should render correctly for admin user 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
           ],
           "id": "projectsNavBtn",
           "label": <FormattedMessage
@@ -235,6 +250,19 @@ exports[`View: Component should render correctly for admin user 1`] = `
             values={Object {}}
           />,
           "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "userNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="user.userPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
           "type": "link_item",
         },
       ]
@@ -265,6 +293,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
     <Component />
   </LoadingWrapper>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -329,6 +358,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >
@@ -389,11 +419,13 @@ exports[`View: Component should render correctly for admin user 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
+          disabled={false}
           id="user.view.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         onClick={[Function]}
       >

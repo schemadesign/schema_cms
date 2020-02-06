@@ -75,6 +75,7 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
   </style>
   <div
     className=""
+    id="tabsContainer"
   >
     <div
       className="c0"
@@ -85,6 +86,7 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
         <a
           className="c2"
           href="/project/1"
+          id="settingsTab"
           onClick={[Function]}
         >
           <span>
@@ -98,6 +100,7 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
         <a
           className="c2"
           href="/project/1/datasource"
+          id="sourcesTab"
           onClick={[Function]}
         >
           <span>
@@ -110,11 +113,12 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/1/user"
+          href="/project/1/state"
+          id="stateTab"
           onClick={[Function]}
         >
           <span>
-            Users
+            States
           </span>
         </a>
       </div>
@@ -124,10 +128,25 @@ exports[`Storyshots Shared Components|ProjectTabs Default 1`] = `
         <a
           className="c2"
           href="/project/1/folder"
+          id="folderTab"
           onClick={[Function]}
         >
           <span>
             Pages
+          </span>
+        </a>
+      </div>
+      <div
+        className="c3"
+      >
+        <a
+          className="c2"
+          href="/project/1/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          <span>
+            Users
           </span>
         </a>
       </div>

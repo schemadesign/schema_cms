@@ -4,8 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { CreatePage } from './createPage.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   values: {
     title: 'title',
     description: 'description',

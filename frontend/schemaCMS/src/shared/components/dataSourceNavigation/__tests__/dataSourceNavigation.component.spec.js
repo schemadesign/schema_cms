@@ -10,12 +10,12 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
   STEPS_PAGE,
-  VIEWS_PAGE,
+  TAGS_PAGE,
 } from '../../../../modules/dataSource/dataSource.constants';
 
 describe('DataSourceNavigation: Component', () => {
   const component = props => <DataSourceNavigation {...defaultProps} {...props} />;
-  const pages = [SOURCE_PAGE, PREVIEW_PAGE, STEPS_PAGE, RESULT_PAGE, FILTERS_PAGE, VIEWS_PAGE];
+  const pages = [SOURCE_PAGE, PREVIEW_PAGE, STEPS_PAGE, RESULT_PAGE, FILTERS_PAGE, TAGS_PAGE];
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {

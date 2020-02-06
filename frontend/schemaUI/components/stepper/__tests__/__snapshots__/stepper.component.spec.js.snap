@@ -4,7 +4,6 @@ exports[`Stepper: Component should render correctly 1`] = `
 <StepperComponent
   activeStep={1}
   customDotStyles={Object {}}
-  handleStep={[Function]}
   onStepChange={[Function]}
   steps={6}
 >
@@ -130,7 +129,6 @@ exports[`Stepper: Component should render with custom styles 1`] = `
       "flexDirection": "column",
     }
   }
-  handleStep={[Function]}
   onStepChange={[Function]}
   steps={6}
 >

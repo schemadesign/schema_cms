@@ -36,6 +36,19 @@ exports[`Create: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
             "editor",
           ],
           "id": "projectDetailsNavBtn",
@@ -64,11 +77,25 @@ exports[`Create: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/undefined/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
           ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
             values={Object {}}
           />,
           "to": "/project/undefined/user",
@@ -170,6 +197,7 @@ exports[`Create: Component should render correctly 1`] = `
       isSubmitting={false}
       isValid={true}
       label="Description"
+      multiline={true}
       name="description"
       onChange={[Function]}
       placeholder="Project description"
@@ -248,6 +276,7 @@ exports[`Create: Component should render correctly 1`] = `
       value="in_progress"
     />
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}

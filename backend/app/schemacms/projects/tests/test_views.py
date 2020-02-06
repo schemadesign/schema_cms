@@ -370,15 +370,28 @@ class TestCreateDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
-    @pytest.mark.usefixtures("sqs")
-    def test_create_by_editor_assigned_to_project(self, api_client, editor, project, faker):
-        project.editors.add(editor)
-        api_client.force_authenticate(editor)
+    def test_create_without_file(self, api_client, admin, project, faker, mocker):
+        api_client.force_authenticate(admin)
         payload = self.generate_payload(project, faker)
+        payload.pop("file")
+        schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSource.schedule_update_meta")
 
         response = api_client.post(self.get_url(), payload, format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED
+        schedule_update_meta_mock.assert_not_called()
+
+    @pytest.mark.usefixtures("sqs")
+    def test_create_by_editor_assigned_to_project(self, api_client, editor, project, faker, mocker):
+        project.editors.add(editor)
+        api_client.force_authenticate(editor)
+        payload = self.generate_payload(project, faker)
+        schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSource.schedule_update_meta")
+
+        response = api_client.post(self.get_url(), payload, format="multipart")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        schedule_update_meta_mock.assert_called_once()
 
     @pytest.mark.usefixtures("sqs")
     def test_create_by_editor_not_assigned_to_project(self, api_client, editor, project, faker):
@@ -447,7 +460,7 @@ class TestUpdateDataSourceView:
 
         api_client.patch(url, payload, format="multipart")
 
-        schedule_update_meta_mock.assert_called_with(False)
+        schedule_update_meta_mock.assert_called_once()
 
     def test_update_by_editor_assigned_to_project(
         self, api_client, faker, editor, project, data_source_factory
@@ -485,7 +498,7 @@ class TestUpdateDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert response.data.keys() == {"name", "type", "file"}
+        assert response.data.keys() == {"name", "type"}
 
     def test_unique_name(self, api_client, faker, admin, data_source_factory):
         other_datasource = data_source_factory(name="test")
@@ -1107,6 +1120,13 @@ class TestFilterDetailView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data["name"][0]["code"] == "filterNameNotUnique"
 
+    def test_delete(self, api_client, admin, filter_):
+        api_client.force_authenticate(admin)
+        response = api_client.delete(self.get_url(filter_.id))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Filter.objects.all().filter(pk=filter_.id).exists()
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:filter-detail", kwargs=dict(pk=pk))
@@ -1349,7 +1369,10 @@ class TestPageDetailView:
 
 class TestBlockListCreateView:
     def test_response(self, api_client, admin, page, block_factory):
-        blocks = block_factory.create_batch(2, page=page)
+        test_block_1 = block_factory(page=page, exec_order=0)
+        test_block_2 = block_factory(page=page, exec_order=1)
+
+        blocks = [test_block_1, test_block_2]
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(page.id))
@@ -1357,7 +1380,7 @@ class TestBlockListCreateView:
         assert response.status_code == status.HTTP_200_OK
         assert (
             response.data["results"]
-            == projects_serializers.BlockSerializer(instance=self.sort_directories(blocks), many=True).data
+            == projects_serializers.BlockSerializer(instance=self.sort_blocks(blocks), many=True).data
         )
         assert response.data["project"] == page.project_info
 
@@ -1414,6 +1437,10 @@ class TestBlockListCreateView:
     @staticmethod
     def sort_directories(iterable):
         return sorted(iterable, key=operator.attrgetter("created"))
+
+    @staticmethod
+    def sort_blocks(blocks):
+        return sorted(blocks, key=operator.attrgetter("exec_order"))
 
 
 class TestBlockDetailView:
@@ -1494,7 +1521,10 @@ class TestSetBlocksView:
         block2 = block_factory(page=page, is_active=True)
         block1_old_status = block1.is_active
         block2_old_status = block2.is_active
-        payload = {"active": [block1.id], "inactive": [block2.id]}
+        payload = [
+            {"id": block1.id, "is_active": True, "exec_order": 0},
+            {"id": block2.id, "is_active": False, "exec_order": 1},
+        ]
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(page.id), data=payload, format="json")
@@ -1503,8 +1533,135 @@ class TestSetBlocksView:
 
         assert response.status_code == status.HTTP_200_OK
         assert block1_old_status != block1.is_active
+        assert block1.exec_order == 0
+        assert block2.exec_order == 1
         assert block2_old_status != block2.is_active
 
     @staticmethod
     def get_url(pk):
         return reverse("projects:page-set-blocks", kwargs=dict(pk=pk))
+
+
+class TestTagsListsCreateView:
+    def test_response(self, api_client, admin, tags_list_factory, data_source):
+        tags_list_factory.create_batch(2, datasource=data_source, is_active=True)
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(data_source.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["results"]) == 2
+        assert (
+            response.data["results"]
+            == projects_serializers.TagsListSerializer(data_source.list_of_tags, many=True).data
+        )
+        assert response.data["project"] == {"id": data_source.project.id, "title": data_source.project.title}
+
+    def test_create_without_tags(self, api_client, admin, data_source):
+        payload = dict(name="test")
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+        tags_list_id = response.data["id"]
+        tags_list = projects_models.TagsList.objects.get(pk=tags_list_id)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == projects_serializers.TagsListSerializer(tags_list).data
+
+    def test_create_with_tags(self, api_client, admin, data_source):
+        payload = {
+            "name": "withTags",
+            "is_active": True,
+            "tags": [
+                {"value": "tag1", "exec_order": 0},
+                {"value": "tag2", "exec_order": 1},
+                {"value": "tag1", "exec_order": 2},
+            ],
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+        tags_list_id = response.data["id"]
+        tags_list = projects_models.TagsList.objects.get(pk=tags_list_id)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert len(response.data["tags"]) == 3
+        assert response.data["tags"] == projects_serializers.TagsListSerializer(tags_list).data["tags"]
+
+    def test_unique_key_validation(self, api_client, admin, tags_list_factory, data_source):
+        tags_list = tags_list_factory(datasource=data_source)
+        payload = dict(name=tags_list.name)
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {
+            'name': [
+                error.Error(
+                    message='TagsList with this name already exist in data source.',
+                    code='tagsListNameNotUnique',
+                ).data
+            ]
+        }
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-tags-lists", kwargs=dict(pk=pk))
+
+
+class TestTagsListDetailView:
+    def test_response(self, api_client, admin, tags_list):
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(tags_list.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert (
+            response.data["results"] == projects_serializers.TagsListDetailSerializer(instance=tags_list).data
+        )
+
+    def test_update(self, api_client, admin, tags_list):
+        new_name = "newName"
+        payload = dict(name=new_name)
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(tags_list.id), data=payload, format="json")
+        tags_list.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert tags_list.name == new_name
+        assert response.data == projects_serializers.TagsListDetailSerializer(instance=tags_list).data
+
+    def test_delete(self, api_client, admin, tags_list):
+        api_client.force_authenticate(admin)
+        response = api_client.delete(self.get_url(tags_list.id))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Tag.objects.all().filter(pk=tags_list.id).exists()
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:tagslist-detail", kwargs=dict(pk=pk))
+
+
+class TestSetTagsListView:
+    def test_response(self, api_client, admin, data_source, tags_list_factory):
+        tags_list_1 = tags_list_factory(datasource=data_source, is_active=False)
+        tags_list_2 = tags_list_factory(datasource=data_source, is_active=True)
+        tags_list_1_old_status = tags_list_1.is_active
+        tags_list_2_old_status = tags_list_2.is_active
+        payload = {"active": [tags_list_1.id], "inactive": [tags_list_2.id]}
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+        tags_list_1.refresh_from_db()
+        tags_list_2.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert tags_list_1_old_status != tags_list_1.is_active
+        assert tags_list_2_old_status != tags_list_2.is_active
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-set-tags-lists", kwargs=dict(pk=pk))

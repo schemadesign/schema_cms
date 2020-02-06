@@ -20,8 +20,10 @@ import {
   IconWrapper,
   labelStyles,
   Link,
+  menuIconStyles,
   selectedLabelStyles,
   StepCounter,
+  StepName,
   Type,
   UploadContainer,
   Warning,
@@ -32,15 +34,16 @@ import {
   SCRIPT_NAME_MAX_LENGTH,
   SCRIPT_TYPES,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { TopHeader } from '../../../shared/components/topHeader';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { Draggable } from '../../../shared/components/draggable';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 const { CheckboxGroup, Checkbox, FileUpload, Label } = Form;
 const { MenuIcon } = Icons;
@@ -171,12 +174,12 @@ export class DataWranglingScripts extends PureComponent {
     return this.props.setCheckedScripts(tempScripts);
   };
 
-  renderCheckbox = ({ id, name, type = SCRIPT_TYPES.CUSTOM, draggableIcon = '', idPrefix = '' }, index) => (
+  renderCheckbox = ({ id, name, type = SCRIPT_TYPES.CUSTOM, draggableIcon = null, idPrefix = '' }, index) => (
     <Checkbox id={`${idPrefix}checkbox-${index}`} value={id.toString()}>
       <CheckboxContent>
         {draggableIcon}
         <Link to={this.getScriptLink({ id, type })}>
-          {name}
+          <StepName drag={!!draggableIcon}> {name}</StepName>
           <Dot />
           <Type>
             <FormattedMessage {...messages[type]} />
@@ -192,7 +195,7 @@ export class DataWranglingScripts extends PureComponent {
         {makeDraggable => {
           const draggableIcon = makeDraggable(
             <IconWrapper>
-              <MenuIcon />
+              <MenuIcon customStyles={menuIconStyles} />
             </IconWrapper>
           );
 
@@ -202,19 +205,29 @@ export class DataWranglingScripts extends PureComponent {
     );
   };
 
-  renderCheckedScripts = checkedScripts =>
+  renderCheckedScripts = scripts =>
+    renderWhenTrueOtherwise(
+      always(
+        scripts.map((item, index) => (
+          <div key={index}>{this.renderCheckbox({ ...item, idPrefix: 'drag-' }, index)}</div>
+        ))
+      ),
+      always(scripts.map(this.renderCheckboxWithDrag))
+    )(scripts.length === 1);
+
+  renderSelectedContent = checkedScripts =>
     renderWhenTrue(
       always(
         <Fragment>
           <Label customStyles={selectedLabelStyles}>
             <FormattedMessage {...messages.selectedScripts} />
           </Label>
-          {checkedScripts.map(this.renderCheckboxWithDrag)}
+          {this.renderCheckedScripts(checkedScripts)}
         </Fragment>
       )
     )(!!checkedScripts.length);
 
-  renderUncheckedScripts = uncheckedScripts =>
+  renderUnselectedContent = uncheckedScripts =>
     renderWhenTrue(
       always(
         <Fragment>
@@ -239,8 +252,8 @@ export class DataWranglingScripts extends PureComponent {
           name="steps"
           id="fieldStepsCheckboxGroup"
         >
-          {this.renderCheckedScripts(this.props.checkedScripts)}
-          {this.renderUncheckedScripts(this.props.uncheckedScripts)}
+          {this.renderSelectedContent(this.props.checkedScripts)}
+          {this.renderUnselectedContent(this.props.uncheckedScripts)}
         </CheckboxGroup>
       )
     )(!!this.props.dataWranglingScripts.length);
@@ -285,13 +298,18 @@ export class DataWranglingScripts extends PureComponent {
       flatten,
       uniq
     )(checkedScripts);
-    const { jobsInProcess, name } = dataSource;
+    const { jobsInProcess, name, userRole } = dataSource;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
+        <MobileMenu
+          headerTitle={name}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
         <ContextHeader title={name} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>
@@ -307,7 +325,7 @@ export class DataWranglingScripts extends PureComponent {
           </Header>
           <Fragment>
             {this.renderCheckboxGroup(steps)}
-            <NavigationContainer right>
+            <NavigationContainer right fixed padding="40px 0 70px">
               <NextButton
                 onClick={this.handleSubmit}
                 disabled={isSubmitting || jobsInProcess || !steps.length}

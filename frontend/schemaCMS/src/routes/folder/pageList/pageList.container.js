@@ -9,8 +9,10 @@ import { injectIntl } from 'react-intl';
 import { PageList } from './pageList.component';
 import { PageRoutines, selectPages } from '../../../modules/page';
 import { FolderRoutines, selectFolder } from '../../../modules/folder';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   pages: selectPages,
   folder: selectFolder,
 });

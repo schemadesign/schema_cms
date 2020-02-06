@@ -5,18 +5,20 @@ import { path } from 'ramda';
 
 import { Container, Form, LinkWrapper } from './pageBlock.styles';
 import messages from './pageBlock.messages';
-import { TopHeader } from '../../shared/components/topHeader';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { PageBlockForm } from '../../shared/components/pageBlockForm';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import { Link } from '../../theme/typography';
-import { getMatchParam } from '../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../shared/utils/helpers';
 import reportError from '../../shared/utils/reportError';
+import { PAGE_MENU_OPTIONS } from './pageBlock.constants';
+import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 
 export class PageBlock extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     history: PropTypes.object.isRequired,
     block: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
@@ -33,6 +35,8 @@ export class PageBlock extends PureComponent {
 
   state = {
     loading: true,
+    removeLoading: false,
+    confirmationModalOpen: false,
     error: null,
   };
 
@@ -52,24 +56,35 @@ export class PageBlock extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  handleConfirmRemove = () => {
-    const pageId = path(['block', 'page', 'id'], this.props);
-    const blockId = getMatchParam(this.props, 'blockId');
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+      const pageId = path(['block', 'page', 'id'], this.props);
+      const blockId = getMatchParam(this.props, 'blockId');
 
-    this.props.removePageBlock({ pageId, blockId });
+      await this.props.removePageBlock({ pageId, blockId });
+    } catch (error) {
+      this.setState({ removeLoading: false });
+      reportError(error);
+    }
   };
 
-  handleBackClick = () => this.props.history.push(`/page/${path(['block', 'page', 'id'], this.props)}`);
+  handleBackClick = () =>
+    this.props.history.push(`/page/${path(['block', 'page', 'id'], this.props)}`, { fromBlock: true });
 
   render() {
-    const { handleSubmit, isSubmitting, ...restProps } = this.props;
-    const { loading, error, confirmationModalOpen } = this.state;
+    const { handleSubmit, isSubmitting, userRole, ...restProps } = this.props;
+    const { loading, error, confirmationModalOpen, removeLoading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Container>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>
@@ -99,10 +114,15 @@ export class PageBlock extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

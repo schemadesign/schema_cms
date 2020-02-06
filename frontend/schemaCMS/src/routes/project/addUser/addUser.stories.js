@@ -9,7 +9,6 @@ import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 export const defaultProps = {
   userRole: ROLES.ADMIN,
   fetchUsers: Function.prototype,
-  removeUser: Function.prototype,
   fetchProjectEditors: Function.prototype,
   users: [],
   usersInProject: [],

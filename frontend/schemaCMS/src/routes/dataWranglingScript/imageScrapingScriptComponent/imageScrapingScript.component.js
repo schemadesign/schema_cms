@@ -22,12 +22,8 @@ import {
 } from 'ramda';
 
 import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
-import {
-  DATA_WRANGLING_FORM_NAME,
-  DESCRIPTION,
-} from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
-import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { Container, customInputStyles, Form } from './imageScrapingScript.styles';
+import { DATA_WRANGLING_FORM_NAME } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
+import { Container, Form } from './imageScrapingScript.styles';
 import messages from './imageScrapingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -38,6 +34,7 @@ import reportError from '../../../shared/utils/reportError';
 import { InfoContainer } from '../../../shared/components/container/container.styles';
 import { DATA_WRANGLING_SCRIPT_MENU_OPTIONS } from '../dataWranglingScript.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { ScriptName, syntaxCustomStyles } from '../dataWranglingScriptComponent/dataWranglingDefaultScript.styles';
 
 const { CheckboxGroup, Checkbox, Label } = FormUI;
 const { Span } = Typography;
@@ -165,25 +162,20 @@ export class ImageScrapingScript extends PureComponent {
       ...difference(selectedFields, imageScrapingFields),
     ]);
 
-    const descriptionFieldProps = {
-      name: DESCRIPTION,
-      value: dataWranglingScript.name,
-      label: intl.formatMessage(messages.description),
-      placeholder: intl.formatMessage(messages.descriptionPlaceholder),
-      fullWidth: true,
-      disabled: true,
-      onChange: Function.prototype,
-      customInputStyles,
-    };
-
     return (
       <Container>
         <Helmet title={intl.formatMessage(messages.pageTitle)} />
         <MobileMenu {...headerConfig} options={DATA_WRANGLING_SCRIPT_MENU_OPTIONS} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form name={DATA_WRANGLING_FORM_NAME}>
-          <TextInput {...descriptionFieldProps} />
-          <SyntaxHighlighter language="python" style={syntaxTheme}>
+          <Label>
+            <FormattedMessage {...messages.description} />
+          </Label>
+          <ScriptName>{dataWranglingScript.name}</ScriptName>
+          <Label>
+            <FormattedMessage {...messages.pythonCode} />
+          </Label>
+          <SyntaxHighlighter language="python" style={syntaxTheme} customStyle={syntaxCustomStyles}>
             {dataWranglingScript.body}
           </SyntaxHighlighter>
           <Label>
@@ -193,7 +185,7 @@ export class ImageScrapingScript extends PureComponent {
             {this.renderContent(fieldsWithUrls)}
           </LoadingWrapper>
         </Form>
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton id="imageScrapingBackBtn" onClick={this.handleGoToDataWranglingList(match, history)} />
           <NextButton id="imageScrapingNextBtn" onClick={this.handleSaveClick} disabled={isCleanForm || loading}>
             <FormattedMessage {...messages.save} />

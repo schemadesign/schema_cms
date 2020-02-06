@@ -3,47 +3,51 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'imageScrapingScript.pageTitle',
+    id: 'dataWranglingScripts.imageScrapingScript.pageTitle',
     defaultMessage: 'View step',
   },
   title: {
-    id: 'imageScrapingScript.title',
+    id: 'dataWranglingScripts.imageScrapingScript.title',
     defaultMessage: 'Data Wrangling',
   },
   subTitle: {
-    id: 'imageScrapingScript.subTitle',
+    id: 'dataWranglingScripts.imageScrapingScript.subTitle',
     defaultMessage: 'View step',
   },
   description: {
-    id: 'imageScrapingScript.description',
+    id: 'dataWranglingScripts.imageScrapingScript.description',
     defaultMessage: 'Description',
   },
   descriptionPlaceholder: {
-    id: 'imageScrapingScript.descriptionPlaceholder',
+    id: 'dataWranglingScripts.imageScrapingScript.descriptionPlaceholder',
     defaultMessage: 'Description',
   },
   code: {
-    id: 'imageScrapingScript.code',
+    id: 'dataWranglingScripts.imageScrapingScript.code',
     defaultMessage: 'Python Code',
   },
   codePlaceholder: {
-    id: 'imageScrapingScript.codePlaceholder',
+    id: 'dataWranglingScripts.imageScrapingScript.codePlaceholder',
     defaultMessage: 'Python Code',
   },
   back: {
-    id: 'imageScrapingScript.back',
+    id: 'dataWranglingScripts.imageScrapingScript.back',
     defaultMessage: 'Back',
   },
   save: {
-    id: 'imageScrapingScript.save',
+    id: 'dataWranglingScripts.imageScrapingScript.save',
     defaultMessage: 'Save',
   },
   fieldsWithUrls: {
-    id: 'imageScrapingScript.fieldsWithUrls',
+    id: 'dataWranglingScripts.imageScrapingScript.fieldsWithUrls',
     defaultMessage: 'Fields with URLs',
   },
   noFieldFound: {
-    id: 'imageScrapingScript.noFieldFound',
+    id: 'dataWranglingScripts.imageScrapingScript.noFieldFound',
     defaultMessage: 'No fields containing URLs were found.',
+  },
+  pythonCode: {
+    id: 'dataWranglingScripts.imageScrapingScript.pythonCode',
+    defaultMessage: 'Python Code',
   },
 });

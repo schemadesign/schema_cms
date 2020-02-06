@@ -1,38 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|DataSourceList Empty 1`] = `
-.c19 {
-  height: 155px;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c20 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
 .c13 {
   display: none;
 }
@@ -47,60 +15,6 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 
 .c16 {
   color: #FFF;
-}
-
-.c18 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
-.c9 {
-  display: none;
-}
-
-.c10 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #2F2F36;
-  cursor: pointer;
-}
-
-.c10:hover {
-  border-bottom-color: #FFF;
-}
-
-.c12 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #FFF;
-  cursor: pointer;
-}
-
-.c12:hover {
-  border-bottom-color: #FFF;
-}
-
-.c11 {
-  color: #FFF;
-  display: block;
-  padding: 16px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c0 {
@@ -189,6 +103,123 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   word-break: break-word;
 }
 
+.c19 {
+  height: 155px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c20 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c18 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c9 {
+  display: none;
+}
+
+.c10 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c10:hover {
+  border-bottom-color: #FFF;
+}
+
+.c12 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c12:hover {
+  border-bottom-color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
 @media (min-width:1040px) {
   .c21 {
     display: none;
@@ -211,24 +242,6 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-  }
-}
-
-@media (min-width:1040px) {
   .c9 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -236,19 +249,6 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
     display: flex;
     margin: 29px 0 20px 0;
     font-size: 15px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c3 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
   }
 }
 
@@ -355,10 +355,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -445,6 +445,19 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               className="c5"
             >
               <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
@@ -471,12 +484,25 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               className="c5"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>
@@ -602,6 +628,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
     </div>
     <div
       className=""
+      id="tabsContainer"
     >
       <div
         className="c9"
@@ -612,6 +639,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           <a
             className="c11"
             href="/project/1"
+            id="settingsTab"
             onClick={[Function]}
           >
             <span>
@@ -625,6 +653,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           <a
             className="c11"
             href="/project/1/datasource"
+            id="sourcesTab"
             onClick={[Function]}
           >
             <span>
@@ -637,11 +666,12 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/user"
+            href="/project/1/state"
+            id="stateTab"
             onClick={[Function]}
           >
             <span>
-              Users
+              States
             </span>
           </a>
         </div>
@@ -651,10 +681,25 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           <a
             className="c11"
             href="/project/1/folder"
+            id="folderTab"
             onClick={[Function]}
           >
             <span>
               Pages
+            </span>
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/1/user"
+            id="usersTab"
+            onClick={[Function]}
+          >
+            <span>
+              Users
             </span>
           </a>
         </div>
@@ -853,38 +898,6 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With data source 1`] = `
-.c19 {
-  height: 155px;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c20 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
 .c13 {
   display: none;
 }
@@ -899,60 +912,6 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 
 .c16 {
   color: #FFF;
-}
-
-.c18 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
-.c9 {
-  display: none;
-}
-
-.c10 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #2F2F36;
-  cursor: pointer;
-}
-
-.c10:hover {
-  border-bottom-color: #FFF;
-}
-
-.c12 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #FFF;
-  cursor: pointer;
-}
-
-.c12:hover {
-  border-bottom-color: #FFF;
-}
-
-.c11 {
-  color: #FFF;
-  display: block;
-  padding: 16px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c0 {
@@ -1041,6 +1000,123 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   word-break: break-word;
 }
 
+.c19 {
+  height: 155px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c20 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c18 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c9 {
+  display: none;
+}
+
+.c10 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c10:hover {
+  border-bottom-color: #FFF;
+}
+
+.c12 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c12:hover {
+  border-bottom-color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
 @media (min-width:1040px) {
   .c21 {
     display: none;
@@ -1063,24 +1139,6 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-  }
-}
-
-@media (min-width:1040px) {
   .c9 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1088,19 +1146,6 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
     display: flex;
     margin: 29px 0 20px 0;
     font-size: 15px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c3 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
   }
 }
 
@@ -1207,10 +1252,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -1297,6 +1342,19 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c5"
             >
               <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
@@ -1323,12 +1381,25 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c5"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>
@@ -1454,6 +1525,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
     </div>
     <div
       className=""
+      id="tabsContainer"
     >
       <div
         className="c9"
@@ -1464,6 +1536,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           <a
             className="c11"
             href="/project/1"
+            id="settingsTab"
             onClick={[Function]}
           >
             <span>
@@ -1477,6 +1550,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           <a
             className="c11"
             href="/project/1/datasource"
+            id="sourcesTab"
             onClick={[Function]}
           >
             <span>
@@ -1489,11 +1563,12 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/user"
+            href="/project/1/state"
+            id="stateTab"
             onClick={[Function]}
           >
             <span>
-              Users
+              States
             </span>
           </a>
         </div>
@@ -1503,10 +1578,25 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           <a
             className="c11"
             href="/project/1/folder"
+            id="folderTab"
             onClick={[Function]}
           >
             <span>
               Pages
+            </span>
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/1/user"
+            id="usersTab"
+            onClick={[Function]}
+          >
+            <span>
+              Users
             </span>
           </a>
         </div>

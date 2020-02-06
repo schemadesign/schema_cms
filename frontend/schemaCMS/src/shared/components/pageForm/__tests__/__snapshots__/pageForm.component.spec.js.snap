@@ -36,7 +36,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     multiline={true}
     name="keywords"
     onChange={[Function]}
-    placeholder="Keywords"
+    placeholder="Keyword1;Keyword2;"
     touched={Object {}}
     value="keywords"
   />

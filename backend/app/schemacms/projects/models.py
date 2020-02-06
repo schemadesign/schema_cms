@@ -39,6 +39,10 @@ class MetaDataModel(models.Model):
         self.preview.seek(0)
         return json.loads(self.preview.read())
 
+    @property
+    def shape(self):
+        return [self.items, self.fields]
+
 
 class Project(
     utils_models.MetaGeneratorMixin,
@@ -49,7 +53,9 @@ class Project(
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="projects", null=True
+    )
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects", blank=True)
 
     objects = managers.ProjectManager()
@@ -101,10 +107,15 @@ class Project(
     def meta_file_serialization(self):
         data = {
             "id": self.id,
-            "title": self.title,
-            "description": self.description or None,
-            "owner": self.owner.get_full_name(),
+            "meta": {
+                "title": self.title,
+                "description": self.description or None,
+                "owner": None if not self.owner else self.owner.get_full_name(),
+                "created": self.created.isoformat(),
+                "updated": self.modified.isoformat(),
+            },
             "data_sources": [],
+            "charts": [],
             "pages": [],
         }
 
@@ -132,7 +143,7 @@ class DataSource(
         null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
     active_job = models.ForeignKey(
         "projects.DataSourceJob", blank=True, on_delete=models.CASCADE, related_name="data_sources", null=True
@@ -195,6 +206,10 @@ class DataSource(
         return self.filters.count()
 
     @functional.cached_property
+    def tags_count(self):
+        return self.list_of_tags.count()
+
+    @functional.cached_property
     def project_info(self):
         return dict(id=self.project.id, title=self.project.title)
 
@@ -240,8 +255,6 @@ class DataSource(
         name, ext = os.path.splitext(os.path.basename(file_name))
         return name, os.path.basename(file_name)
 
-        return self.get_last_success_job()
-
     def create_job(self, **job_kwargs):
         """Create new job for data source, copy source file and version"""
         return DataSourceJob.objects.create(
@@ -268,19 +281,31 @@ class DataSource(
         except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError, OSError):
             return []
 
-        data = [{"name": key, "type": value["dtype"]} for key, value in fields.items()]
+        data = {
+            str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
+        }
 
         return data
 
     def meta_file_serialization(self):
         data = {
             "id": self.id,
-            "name": self.name,
+            "meta": {
+                "name": self.name,
+                "description": None,
+                "source": None,
+                "source-url": None,
+                "methodology": None,
+                "updated": self.modified.isoformat(),
+                "creator": None if not self.created_by else self.created_by.get_full_name(),
+            },
             "file": self.file.name,
-            "items": 0,
+            "shape": None,
             "result": None,
-            "fields": [],
+            "fields": {},
             "filters": [],
+            "views": [],
+            "tags": [],
         }
 
         current_job = self.current_job
@@ -289,7 +314,7 @@ class DataSource(
             job_meta = getattr(current_job, "meta_data", None)
             data.update(
                 {
-                    "items": job_meta.items if job_meta else 0,
+                    "shape": job_meta.shape if job_meta else [],
                     "result": current_job.result.name or None,
                     "fields": self.result_fields_info(),
                 }
@@ -297,6 +322,11 @@ class DataSource(
         if self.filters:
             filters = [f.meta_file_serialization() for f in self.filters.filter(is_active=True)]
             data.update({"filters": filters})
+
+        if self.list_of_tags:
+            tags = [t.meta_file_serialization() for t in self.list_of_tags.filter(is_active=True)]
+            data.update({"tags": tags})
+
         return data
 
 
@@ -321,7 +351,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         DataSource, on_delete=models.CASCADE, related_name='scripts', blank=True, null=True
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="scripts", blank=True, null=True
     )
     name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
     is_predefined = models.BooleanField(default=True)
@@ -529,7 +559,7 @@ class Folder(
     project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='folders')
     name = models.CharField(max_length=constants.DIRECTORY_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="folders", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="folders", null=True
     )
 
     def __str__(self):
@@ -576,15 +606,13 @@ class Page(
     folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name='pages')
     keywords = models.TextField(blank=True, default="")
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="pages", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="pages", null=True
     )
 
     objects = managers.PageManager()
 
     def __str__(self):
-        return (
-            f"{self.title or str(self.pk)} || Folder: {self.folder.name}, Project: {self.get_project().title}"
-        )
+        return f"{self.title or str(self.pk)}"
 
     class Meta:
         constraints = [
@@ -639,7 +667,7 @@ class Page(
             "keywords": self.keywords or None,
             "folder": self.folder.name,
             "updated": str(self.modified),
-            "creator": self.created_by.get_full_name(),
+            "creator": None if not self.created_by else self.created_by.get_full_name(),
             "blocks": self.get_blocks(),
         }
 
@@ -652,6 +680,7 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
     type = models.CharField(max_length=25, choices=constants.BLOCK_TYPE_CHOICES)
     content = models.TextField(blank=True, default="")
     is_active = models.BooleanField(default=True)
+    exec_order = models.IntegerField(null=True, default=None)
 
     def __str__(self):
         return self.name or str(self.pk)
@@ -670,7 +699,7 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
     def get_images(self):
         if not hasattr(self, "images"):
             return []
-        return [{"url": i.image.url, "order": i.exec_order} for i in self.images.all()]
+        return [{"url": i.image.url, "order": i.exec_order, "name": i.image_name} for i in self.images.all()]
 
     @functional.cached_property
     def project_info(self):
@@ -702,3 +731,78 @@ class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
         name, ext = os.path.splitext(os.path.basename(file_name))
 
         return name, os.path.basename(file_name)
+
+
+# Tags
+
+
+class TagsList(
+    utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+):
+    datasource: DataSource = models.ForeignKey(
+        DataSource, on_delete=models.CASCADE, related_name='list_of_tags'
+    )
+    name = models.CharField(max_length=25)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name or str(self.pk)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["datasource", "name"],
+                name="unique_tags_list_name",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
+        ordering = ('created',)
+
+    def meta_file_serialization(self):
+        data = dict(
+            id=self.id, name=self.name, tags=[tag.meta_file_serialization() for tag in self.tags.all()]
+        )
+        return data
+
+
+class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+    tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name='tags')
+    value = models.CharField(max_length=150)
+    exec_order = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.value or str(self.pk)
+
+    class Meta:
+        ordering = ("created",)
+
+    def meta_file_serialization(self):
+        data = {"id": self.id, "list": self.tags_list.name, "value": self.value}
+        return data
+
+
+class State(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='states')
+    name = models.CharField(max_length=50)
+    datasource: DataSource = models.ForeignKey(
+        DataSource, on_delete=models.SET_NULL, related_name='states', null=True
+    )
+    description = models.TextField(blank=True, default="")
+    source_url = models.TextField(blank=True, default="")
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True
+    )
+    is_public = models.BooleanField(default=True)
+    active_tags = pg_fields.ArrayField(models.IntegerField(), null=True, default=list)
+
+    def __str__(self):
+        return self.name or str(self.pk)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"], name="unique_state_name", condition=models.Q(deleted_at=None)
+            )
+        ]
+        ordering = ('created',)

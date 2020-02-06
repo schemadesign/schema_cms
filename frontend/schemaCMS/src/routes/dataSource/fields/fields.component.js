@@ -5,12 +5,15 @@ import { FormattedMessage } from 'react-intl';
 
 import messages from './fields.messages';
 import DataPreview from '../../../shared/components/dataPreview/dataPreview.component';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 export class Fields extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     previewData: PropTypes.object.isRequired,
     fetchPreview: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
@@ -22,14 +25,15 @@ export class Fields extends PureComponent {
   render() {
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getProjectMenuOptions(this.props.dataSource.project.id);
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader
+        <MobileMenu
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          projectId={this.props.dataSource.project.id}
+          options={filterMenuOptions(menuOptions, this.props.userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />

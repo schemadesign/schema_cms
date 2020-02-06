@@ -7,7 +7,6 @@ import { Typography } from 'schemaUI';
 
 import { Container } from './pageList.styles';
 import messages from './pageList.messages';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { Description, HeaderItem, HeaderList, titleStyles } from '../../project/list/list.styles';
@@ -20,12 +19,15 @@ import {
   ListItemTitle,
   ListItemDescription,
 } from '../../../shared/components/listComponents/listItem.styles';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { PAGE_MENU_OPTIONS } from '../../pageBlock/pageBlock.constants';
 
 const { P } = Typography;
 
 export class PageList extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     fetchPages: PropTypes.func.isRequired,
     fetchFolder: PropTypes.func.isRequired,
     intl: PropTypes.shape({
@@ -79,8 +81,8 @@ export class PageList extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, title = '', created = '', createdBy = {}, description = '', meta = {} }, index) {
-    const { firstName, lastName } = createdBy;
+  renderItem({ id, title = '', created = '', createdBy, description = '', meta = {} }, index) {
+    const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`]);
     const footer = <FormattedMessage values={{ length: meta.blocks }} {...messages.blocks} />;
@@ -105,7 +107,7 @@ export class PageList extends PureComponent {
   renderContent = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   render() {
-    const { pages } = this.props;
+    const { pages, userRole } = this.props;
     const { loading, error } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -113,7 +115,11 @@ export class PageList extends PureComponent {
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createPageDesktopBtn" onClick={this.handleCreatePage} />
         </ContextHeader>

@@ -21,9 +21,9 @@ export default defineMessages({
     id: 'project.view.dataSources',
     defaultMessage: 'Data Sources',
   },
-  charts: {
-    id: 'project.view.charts',
-    defaultMessage: 'Charts',
+  states: {
+    id: 'project.view.states',
+    defaultMessage: 'States',
   },
   pages: {
     id: 'project.view.pages',
@@ -116,5 +116,9 @@ export default defineMessages({
   usersPage: {
     id: 'project.view.usersPage',
     defaultMessage: 'Users',
+  },
+  projectUsersPage: {
+    id: 'project.view.projectUsersPage',
+    defaultMessage: 'Project Users',
   },
 });

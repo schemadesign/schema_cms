@@ -151,6 +151,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="sourceBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -182,6 +183,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="fieldsBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -215,6 +217,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       >
         <svg
           fill="#fff"
+          id="stepsBtn"
           stroke="#000"
           style={
             Object {
@@ -265,6 +268,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       >
         <svg
           fill="#fff"
+          id="resultsBtn"
           stroke="#000"
           style={
             Object {
@@ -314,6 +318,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="filtersBtn"
           stroke="#FFF"
           style={
             Object {
@@ -348,6 +353,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="tagsBtn"
           style={
             Object {
               "height": 54,
@@ -369,7 +375,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
         className="c3"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>
@@ -530,6 +536,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="sourceBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -561,6 +568,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="fieldsBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -594,6 +602,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       >
         <svg
           fill="#fff"
+          id="stepsBtn"
           stroke="#000"
           style={
             Object {
@@ -644,6 +653,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       >
         <svg
           fill="#fff"
+          id="resultsBtn"
           stroke="#000"
           style={
             Object {
@@ -693,6 +703,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="filtersBtn"
           stroke="#FFF"
           style={
             Object {
@@ -727,6 +738,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="tagsBtn"
           style={
             Object {
               "height": 54,
@@ -748,7 +760,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
         className="c3"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>
@@ -935,6 +947,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="sourceBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -966,6 +979,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="fieldsBtn"
           style={
             Object {
               "fill": "#FFF",
@@ -999,6 +1013,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       >
         <svg
           fill="#fff"
+          id="stepsBtn"
           stroke="#000"
           style={
             Object {
@@ -1049,6 +1064,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       >
         <svg
           fill="#fff"
+          id="resultsBtn"
           stroke="#000"
           style={
             Object {
@@ -1098,6 +1114,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="filtersBtn"
           stroke="#FFF"
           style={
             Object {
@@ -1132,6 +1149,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
         onClick={[Function]}
       >
         <svg
+          id="tagsBtn"
           style={
             Object {
               "height": 54,
@@ -1153,7 +1171,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
         className="c3"
       >
         <span>
-          Views
+          Tags
         </span>
       </div>
     </div>

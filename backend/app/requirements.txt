@@ -50,8 +50,8 @@ pytest-cov==2.7.1
 coverage==4.5.2
 
 # Static and Media Storage
-django-storages==1.7.1
-boto3==1.9.93
+django-storages==1.9
+boto3==1.11.9
 
 # Utils
 hashids==1.2.0

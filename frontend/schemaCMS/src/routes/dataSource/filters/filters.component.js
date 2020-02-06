@@ -9,19 +9,21 @@ import Helmet from 'react-helmet';
 import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
 import messages from './filters.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
-import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import reportError from '../../../shared/utils/reportError';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getProjectMenuOptions } from '../../project/project.constants';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
 
 export class Filters extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     filters: PropTypes.array.isRequired,
     fetchFilters: PropTypes.func.isRequired,
     setFilters: PropTypes.func.isRequired,
@@ -131,7 +133,7 @@ export class Filters extends PureComponent {
             return (
               <Fragment>
                 {this.renderCheckboxGroup(filters, values, setValues)}
-                <NavigationContainer right>
+                <NavigationContainer right fixed padding="40px 0 70px">
                   <NextButton onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                     <FormattedMessage {...messages.save} />
                   </NextButton>
@@ -146,14 +148,19 @@ export class Filters extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { dataSource } = this.props;
+    const { dataSource, userRole } = this.props;
     const headerTitle = dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} projectId={dataSource.project.id} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

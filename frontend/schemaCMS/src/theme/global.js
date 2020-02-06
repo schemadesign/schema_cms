@@ -11,4 +11,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${({ theme }) => theme.typography.p.fontFamily};
   }
+
+  input:-webkit-autofill {
+     -webkit-text-fill-color: ${({ theme }) => theme.text};
+    box-shadow: 0 0 0 50px ${({ theme }) => theme.border} inset;
+  }
 `;

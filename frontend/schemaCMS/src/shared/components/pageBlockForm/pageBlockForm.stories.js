@@ -4,7 +4,14 @@ import { storiesOf } from '@storybook/react';
 import { PageBlockForm } from './pageBlockForm.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { intl } from '../../../.storybook/helpers';
-import { IMAGE_TYPE, MARKDOWN_TYPE, NONE, EMBED_TYPE, CODE_TYPE } from '../../../modules/pageBlock/pageBlock.constants';
+import {
+  IMAGE_TYPE,
+  MARKDOWN_TYPE,
+  NONE,
+  EMBED_TYPE,
+  CODE_TYPE,
+  TEXT_TYPE,
+} from '../../../modules/pageBlock/pageBlock.constants';
 
 export const defaultProps = {
   handleChange: Function.prototype,
@@ -47,6 +54,15 @@ export const markdownProps = {
   },
 };
 
+export const textProps = {
+  ...defaultProps,
+  values: {
+    name: 'text name',
+    content: 'text content',
+    type: TEXT_TYPE,
+  },
+};
+
 export const imageProps = {
   ...defaultProps,
   values: {
@@ -57,10 +73,22 @@ export const imageProps = {
   },
 };
 
+export const multipleImages = {
+  ...defaultProps,
+  values: {
+    name: 'name',
+    image: [{ file: 'file', id: 1 }, { file: 'file', id: 2 }],
+    imageNames: [{ imageName: 'imageName.png', id: 1 }, { imageName: 'imageName.png', id: 2 }],
+    type: IMAGE_TYPE,
+  },
+};
+
 storiesOf('Shared Components|PageBlockForm', module)
   .addDecorator(withTheme())
   .add('None type', () => <PageBlockForm {...noneProps} />)
   .add('Markdown type', () => <PageBlockForm {...markdownProps} />)
   .add('Embed type', () => <PageBlockForm {...embedProps} />)
   .add('Code type', () => <PageBlockForm {...codeProps} />)
-  .add('Image type', () => <PageBlockForm {...imageProps} />);
+  .add('Image type', () => <PageBlockForm {...imageProps} />)
+  .add('Multiple images type', () => <PageBlockForm {...multipleImages} />)
+  .add('Text type', () => <PageBlockForm {...textProps} />);

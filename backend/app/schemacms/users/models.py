@@ -41,12 +41,16 @@ class User(AbstractUser):
 
     objects = managers.UserManager()
 
+    def save(self, *args, **kwargs):
+        self.email = self.email.lower()
+        super().save(*args, **kwargs)
+
     @property
     def is_admin(self):
         return self.role == constants.UserRole.ADMIN
 
     def __str__(self):
-        return self.username
+        return self.get_full_name()
 
     @classmethod
     def generate_random_username(cls):

@@ -23,6 +23,8 @@ import { Project } from './project';
 import { ResetPassword } from './resetPassword';
 import { Settings } from './settings';
 import { User } from './user';
+import { DataSourceTag } from './dataSourceTag';
+import { ProjectState } from './projectState';
 
 export const ROUTES = {
   HOME: '/',
@@ -41,6 +43,8 @@ export const ROUTES = {
   USER: '/user',
   FILTER: '/filter',
   JOB_DETAIL: '/job',
+  TAG: '/tag',
+  STATE: '/state',
 };
 
 export default class RootContainer extends Component {
@@ -78,6 +82,10 @@ export default class RootContainer extends Component {
             <AuthRoute path={ROUTES.USER} component={User} />
 
             <AuthRoute exact path={`${ROUTES.FILTER}/:filterId`} component={Filter} />
+
+            <AuthRoute exact path={`${ROUTES.TAG}/:tagId`} component={DataSourceTag} />
+
+            <AuthRoute path={`${ROUTES.STATE}/:stateId`} component={ProjectState} />
 
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
 

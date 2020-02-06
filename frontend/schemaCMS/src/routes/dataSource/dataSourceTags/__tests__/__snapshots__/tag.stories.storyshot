@@ -1,0 +1,1134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
+.c8 {
+  display: none;
+}
+
+.c9 {
+  margin-right: 20px;
+}
+
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c3 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  padding: 40px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a,
+.c5 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  display: block;
+}
+
+.c6 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c12 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1d1d20;
+}
+
+.c12 svg {
+  cursor: pointer;
+}
+
+.c17 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1d1d20;
+}
+
+.c17 svg {
+  cursor: pointer;
+}
+
+.c14 {
+  background-color: #1d1d20;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14 svg {
+  opacity: 0.4;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  padding-top: 9px;
+  color: #71737e;
+  font-size: 12px;
+  display: none;
+}
+
+.c16 {
+  color: #FFF;
+  text-align: center;
+}
+
+@media (min-width:1040px) {
+  .c8 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    display: -webkit-box;
+    display: -webkit-fixed;
+    display: -ms-fixedbox;
+    display: fixed;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: block;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className=""
+        >
+          <h2
+            className="c1"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h2>
+          <h1
+            className="c2"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Tags
+            </span>
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "fixed",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 9999,
+        }
+      }
+    >
+      <div
+        className=""
+      >
+        <div
+          className=""
+        >
+          <h2
+            className="c1"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h2>
+          <h1
+            className="c2"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Tags
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Projects
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Project details
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Data Sources
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Users
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/1/folder"
+              id="folderNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Pages
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Settings
+              </span>
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <div
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <a
+            className="c7"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            <span>
+              About Schema CMS
+            </span>
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            <span>
+              API Doc
+            </span>
+          </a>
+          <a
+            className="c7"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            <span>
+              GitHub Repository
+            </span>
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="c8"
+  >
+    <div
+      className="c9"
+    >
+      <h2
+        className="c10"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        name
+      </h2>
+      <h1
+        className="c11"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Tags
+        </span>
+      </h1>
+    </div>
+    <div
+      className=""
+    >
+      <div
+        className="c12"
+      >
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+              />
+            </svg>
+          </div>
+          <div
+            className="c15"
+          >
+            <span>
+              Source
+            </span>
+          </div>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className="c15"
+          >
+            <span>
+              Fields
+            </span>
+          </div>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              fill="#fff"
+              stroke="#000"
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "stroke": "#1d1d20",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <g
+                fillRule="evenodd"
+              >
+                <path
+                  d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                  stroke="none"
+                />
+                <circle
+                  cx={43}
+                  cy={40}
+                  fill="none"
+                  r={5}
+                  strokeWidth={10}
+                />
+                <path
+                  d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                  stroke="none"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="c15"
+          >
+            <span>
+              Steps
+            </span>
+          </div>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              fill="#fff"
+              stroke="#000"
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "stroke": "#1d1d20",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <g
+                fillRule="evenodd"
+              >
+                <path
+                  d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                  stroke="none"
+                />
+                <circle
+                  cx={43}
+                  cy={40}
+                  fill="none"
+                  r={5}
+                  strokeWidth={10}
+                />
+                <path
+                  d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                  stroke="none"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="c15"
+          >
+            <span>
+              Results
+            </span>
+          </div>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              stroke="#FFF"
+              style={
+                Object {
+                  "height": 54,
+                  "stroke": "#FFF",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+                fill="none"
+                strokeWidth={2}
+              />
+            </svg>
+          </div>
+          <div
+            className="c15"
+          >
+            <span>
+              Filters
+            </span>
+          </div>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              style={
+                Object {
+                  "height": 54,
+                  "stroke": "#FFF",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M13 31h8v13h-8zm13-8h8v21h-8zm13-7h9v28h-9z"
+                fill="none"
+                fillRule="evenodd"
+                strokeWidth={2}
+              />
+            </svg>
+          </div>
+          <div
+            className="c15"
+          >
+            <span>
+              Tags
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c16"
+  >
+    <span>
+      Coming soon...
+    </span>
+  </div>
+  <div
+    className="c17"
+  >
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 54,
+              "width": 54,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+          />
+        </svg>
+      </div>
+      <div
+        className="c15"
+      >
+        <span>
+          Source
+        </span>
+      </div>
+    </div>
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 54,
+              "width": 54,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+      <div
+        className="c15"
+      >
+        <span>
+          Fields
+        </span>
+      </div>
+    </div>
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          fill="#fff"
+          stroke="#000"
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 54,
+              "stroke": "#1d1d20",
+              "width": 54,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <g
+            fillRule="evenodd"
+          >
+            <path
+              d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+              stroke="none"
+            />
+            <circle
+              cx={43}
+              cy={40}
+              fill="none"
+              r={5}
+              strokeWidth={10}
+            />
+            <path
+              d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+              stroke="none"
+            />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="c15"
+      >
+        <span>
+          Steps
+        </span>
+      </div>
+    </div>
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          fill="#fff"
+          stroke="#000"
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 54,
+              "stroke": "#1d1d20",
+              "width": 54,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <g
+            fillRule="evenodd"
+          >
+            <path
+              d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+              stroke="none"
+            />
+            <circle
+              cx={43}
+              cy={40}
+              fill="none"
+              r={5}
+              strokeWidth={10}
+            />
+            <path
+              d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+              stroke="none"
+            />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="c15"
+      >
+        <span>
+          Results
+        </span>
+      </div>
+    </div>
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          stroke="#FFF"
+          style={
+            Object {
+              "height": 54,
+              "stroke": "#FFF",
+              "width": 54,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+            fill="none"
+            strokeWidth={2}
+          />
+        </svg>
+      </div>
+      <div
+        className="c15"
+      >
+        <span>
+          Filters
+        </span>
+      </div>
+    </div>
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <svg
+          style={
+            Object {
+              "height": 54,
+              "stroke": "#FFF",
+              "width": 54,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M13 31h8v13h-8zm13-8h8v21h-8zm13-7h9v28h-9z"
+            fill="none"
+            fillRule="evenodd"
+            strokeWidth={2}
+          />
+        </svg>
+      </div>
+      <div
+        className="c15"
+      >
+        <span>
+          Tags
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

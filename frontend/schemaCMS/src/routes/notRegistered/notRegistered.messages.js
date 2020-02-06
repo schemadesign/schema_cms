@@ -17,7 +17,7 @@ export default defineMessages({
   },
   title: {
     id: 'notRegistered.title',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Schema CMS',
   },
   subTitle: {
     id: 'notRegistered.subTitle',

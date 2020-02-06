@@ -49,6 +49,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "border": "#f0efef",
           "text": "#1d1d20",
         },
+        "hiddenBackground": "rgba(255, 255, 255, 0)",
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
@@ -92,6 +93,11 @@ exports[`App: Component should not render App when language is not set 1`] = `
         "stepper": Object {
           "active": "#1d1d20",
           "background": "#f0efef",
+        },
+        "switch": Object {
+          "background": "#f0efef",
+          "backgroundActive": "#a6a7aa",
+          "circle": "#000",
         },
         "tab": Object {
           "active": "#000",
@@ -197,6 +203,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "border": "#f0efef",
             "text": "#1d1d20",
           },
+          "hiddenBackground": "rgba(255, 255, 255, 0)",
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",
@@ -240,6 +247,11 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "stepper": Object {
             "active": "#1d1d20",
             "background": "#f0efef",
+          },
+          "switch": Object {
+            "background": "#f0efef",
+            "backgroundActive": "#a6a7aa",
+            "circle": "#000",
           },
           "tab": Object {
             "active": "#000",
@@ -305,17 +317,15 @@ exports[`App: Component should not render App when language is not set 1`] = `
       <styled.div>
         <ScrollToTop />
         <FormattedMessage
-          defaultMessage="SchemaCMS"
+          defaultMessage="Schema CMS"
           id="app.pageTitle"
           values={Object {}}
         >
           <Component />
         </FormattedMessage>
         <GlobalStyleComponent />
-        <DesktopTopHeader
-          isAdmin={false}
-          primaryMenuItems={Array []}
-          secondaryMenuItems={Array []}
+        <DesktopHeader
+          userRole="editor"
         />
         <styled.div>
           <LoadingWrapper
@@ -386,6 +396,7 @@ exports[`App: Component should render App when language is set 1`] = `
           "border": "#f0efef",
           "text": "#1d1d20",
         },
+        "hiddenBackground": "rgba(255, 255, 255, 0)",
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
@@ -429,6 +440,11 @@ exports[`App: Component should render App when language is set 1`] = `
         "stepper": Object {
           "active": "#1d1d20",
           "background": "#f0efef",
+        },
+        "switch": Object {
+          "background": "#f0efef",
+          "backgroundActive": "#a6a7aa",
+          "circle": "#000",
         },
         "tab": Object {
           "active": "#000",
@@ -534,6 +550,7 @@ exports[`App: Component should render App when language is set 1`] = `
             "border": "#f0efef",
             "text": "#1d1d20",
           },
+          "hiddenBackground": "rgba(255, 255, 255, 0)",
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",
@@ -577,6 +594,11 @@ exports[`App: Component should render App when language is set 1`] = `
           "stepper": Object {
             "active": "#1d1d20",
             "background": "#f0efef",
+          },
+          "switch": Object {
+            "background": "#f0efef",
+            "backgroundActive": "#a6a7aa",
+            "circle": "#000",
           },
           "tab": Object {
             "active": "#000",
@@ -642,17 +664,15 @@ exports[`App: Component should render App when language is set 1`] = `
       <styled.div>
         <ScrollToTop />
         <FormattedMessage
-          defaultMessage="SchemaCMS"
+          defaultMessage="Schema CMS"
           id="app.pageTitle"
           values={Object {}}
         >
           <Component />
         </FormattedMessage>
         <GlobalStyleComponent />
-        <DesktopTopHeader
-          isAdmin={false}
-          primaryMenuItems={Array []}
-          secondaryMenuItems={Array []}
+        <DesktopHeader
+          userRole="editor"
         />
         <styled.div>
           <LoadingWrapper

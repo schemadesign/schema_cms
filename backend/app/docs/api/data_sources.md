@@ -534,3 +534,109 @@ Name       | Type   | Description
 script     | int    | Script ID
 exec_order | int    | Order of step
 options    | object | Additional options
+
+
+## Get list of data source tags
+
+**Request**:
+
+`GET` `/api/v1/datasources/:id/tags-lists`
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+[
+    {
+        "id": 6,
+        "datasource": {
+            "id": 1,
+            "name": "TestDataSource"
+         },
+        "name": "tagsListName",
+        "is_active": true,
+        "created": "2019-11-04T13:28:56+0000",
+        "modified": "2019-11-04T13:28:56+0000",
+        "tags": [
+            {"id": 1, "value": "tagValue", "exec_order": 0},
+        ]
+    },
+]
+```
+
+## Add tag to data source
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/tags-lists`
+
+Parameters:
+
+Name         | Type     | Description
+-------------|----------|----------------------------------------------
+name         | string   | Tags list name.
+tags         | list     | Value of tag.
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+201 CREATED
+
+{
+    "id": 6,
+    "datasource": {
+        "id": 1,
+        "name": "TestDataSource"
+     },
+    "name": "tagsListName",
+    "is_active": true,
+    "created": "2019-11-04T13:28:56+0000",
+    "modified": "2019-11-04T13:28:56+0000",
+    "tags": [
+        {"id": 1, "value": "tagValue", "exec_order": 0},
+    ]
+}
+```
+
+## activate/deactivate tags lists
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/set-tags-lists`
+
+Parameters:
+
+Name         | Type      | Description
+-------------|-----------|----------------------------------------------
+active       | list[int] | List of tags to activate.
+inactive     | list[int] | List od tags to deactivate.
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+```

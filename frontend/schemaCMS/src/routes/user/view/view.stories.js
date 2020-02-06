@@ -8,6 +8,7 @@ import { userData } from '../../../modules/userProfile/userProfile.mock';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   fetchUser: Function.prototype,
   removeUser: Function.prototype,
   makeAdmin: Function.prototype,

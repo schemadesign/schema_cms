@@ -7,7 +7,7 @@ exports[`PageBlockList: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Blocks"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -22,8 +22,37 @@ exports[`PageBlockList: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -48,141 +77,117 @@ exports[`PageBlockList: Component should render correctly 1`] = `
         onClick={[Function]}
       />
     </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{count, plural,one {# Block} other {# Blocks}}"
+        id="page.blockList.blocks"
+        values={
+          Object {
+            "count": 2,
+          }
+        }
+      />
+    </styled.div>
     <styled.div />
   </styled.div>
-  <Formik
-    enableReinitialize={true}
-    initialValues={
-      Object {
-        "blocks": Array [
-          "1",
-        ],
-      }
-    }
-    isInitialValid={false}
+  <form
     onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
   >
-    <Component />
-  </Formik>
-</styled.div>
-`;
-
-exports[`PageBlockList: Component should render correctly form 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "dirty": false,
-      "errors": Object {},
-      "handleBlur": [Function],
-      "handleChange": [Function],
-      "handleReset": [Function],
-      "handleSubmit": [Function],
-      "initialValues": Object {
-        "blocks": Array [
-          "1",
-        ],
-      },
-      "isSubmitting": false,
-      "isValid": false,
-      "isValidating": false,
-      "registerField": [Function],
-      "resetForm": [Function],
-      "setError": [Function],
-      "setErrors": [Function],
-      "setFieldError": [Function],
-      "setFieldTouched": [Function],
-      "setFieldValue": [Function],
-      "setFormikState": [Function],
-      "setStatus": [Function],
-      "setSubmitting": [Function],
-      "setTouched": [Function],
-      "setValues": [Function],
-      "status": undefined,
-      "submitCount": 0,
-      "submitForm": [Function],
-      "touched": Object {},
-      "unregisterField": [Function],
-      "validate": undefined,
-      "validateField": [Function],
-      "validateForm": [Function],
-      "validateOnBlur": true,
-      "validateOnChange": true,
-      "validationSchema": undefined,
-      "values": Object {
-        "blocks": Array [
-          "1",
-        ],
-      },
-    }
-  }
->
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={false}
-    noDataContent=" "
-  >
-    <Component
-      id="blocksCheckboxGroup"
-      name="pageBlocks"
-      onChange={[Function]}
-      value={
-        Array [
-          "1",
-        ]
+    <DndProvider
+      backend={[Function]}
+      options={
+        Object {
+          "backends": Array [
+            Object {
+              "backend": [Function],
+              "transition": Object {
+                "_isMBTransition": true,
+                "check": [Function],
+                "event": "mousedown",
+              },
+            },
+            Object {
+              "backend": [Function],
+              "options": Object {
+                "enableMouseEvents": true,
+              },
+              "preview": true,
+              "transition": Object {
+                "_isMBTransition": true,
+                "check": [Function],
+                "event": "touchstart",
+              },
+            },
+          ],
+        }
       }
     >
-      <Component
-        id="checkbox-0"
-        isEdit={true}
-        key="0"
-        value="1"
+      <LoadingWrapper
+        error={null}
+        loading={false}
+        noData={false}
+        noDataContent=" "
       >
-        <Styled(Link)
-          to="/block/1"
+        <Component
+          customCheckboxStyles={
+            Object {
+              "width": "100%",
+            }
+          }
+          id="blocksCheckboxGroup"
+          name="pageBlocks"
+          onChange={[Function]}
+          value={
+            Array [
+              "1",
+            ]
+          }
         >
-          block 1
-        </Styled(Link)>
-      </Component>
-      <Component
-        id="checkbox-1"
-        isEdit={true}
-        key="1"
-        value="2"
+          <Draggable
+            accept="CHECKBOX"
+            id={1}
+            index={0}
+            key="1"
+            onMove={[Function]}
+          >
+            <Component />
+          </Draggable>
+          <Draggable
+            accept="CHECKBOX"
+            id={2}
+            index={1}
+            key="2"
+            onMove={[Function]}
+          >
+            <Component />
+          </Draggable>
+        </Component>
+      </LoadingWrapper>
+      <NavigationContainer
+        contentStyles={null}
+        fixed={true}
+        hideOnDesktop={false}
+        right={false}
       >
-        <Styled(Link)
-          to="/block/2"
+        <BackArrowButton
+          onClick={[Function]}
+          type="button"
+        />
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
         >
-          block 2
-        </Styled(Link)>
-      </Component>
-    </Component>
-  </LoadingWrapper>
-  <NavigationContainer
-    fixed={true}
-    hideOnDesktop={false}
-    right={false}
-  >
-    <BackArrowButton
-      onClick={[Function]}
-      type="button"
-    />
-    <NextButton
-      disabled={true}
-      loading={false}
-      onClick={[Function]}
-      type="submit"
-    >
-      <FormattedMessage
-        defaultMessage="Save"
-        id="page.blockList.save"
-        values={Object {}}
-      />
-    </NextButton>
-  </NavigationContainer>
-</ContextProvider>
+          <FormattedMessage
+            defaultMessage="Save"
+            id="page.blockList.save"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </DndProvider>
+  </form>
+</styled.div>
 `;
 
 exports[`PageBlockList: Component should render correctly with loader 1`] = `
@@ -192,7 +197,7 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
     encodeSpecialCharacters={true}
     title="Blocks"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
@@ -207,8 +212,37 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -235,21 +269,292 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
     </styled.div>
     <styled.div />
   </styled.div>
-  <Formik
-    enableReinitialize={true}
-    initialValues={
-      Object {
-        "blocks": Array [
-          "1",
-        ],
-      }
-    }
-    isInitialValid={false}
+  <form
     onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
   >
-    <Component />
-  </Formik>
+    <DndProvider
+      backend={[Function]}
+      options={
+        Object {
+          "backends": Array [
+            Object {
+              "backend": [Function],
+              "transition": Object {
+                "_isMBTransition": true,
+                "check": [Function],
+                "event": "mousedown",
+              },
+            },
+            Object {
+              "backend": [Function],
+              "options": Object {
+                "enableMouseEvents": true,
+              },
+              "preview": true,
+              "transition": Object {
+                "_isMBTransition": true,
+                "check": [Function],
+                "event": "touchstart",
+              },
+            },
+          ],
+        }
+      }
+    >
+      <LoadingWrapper
+        error={null}
+        loading={true}
+        noData={false}
+        noDataContent=" "
+      >
+        <Component
+          customCheckboxStyles={
+            Object {
+              "width": "100%",
+            }
+          }
+          id="blocksCheckboxGroup"
+          name="pageBlocks"
+          onChange={[Function]}
+          value={
+            Array [
+              "1",
+            ]
+          }
+        >
+          <Draggable
+            accept="CHECKBOX"
+            id={1}
+            index={0}
+            key="1"
+            onMove={[Function]}
+          >
+            <Component />
+          </Draggable>
+          <Draggable
+            accept="CHECKBOX"
+            id={2}
+            index={1}
+            key="2"
+            onMove={[Function]}
+          >
+            <Component />
+          </Draggable>
+        </Component>
+      </LoadingWrapper>
+      <NavigationContainer
+        contentStyles={null}
+        fixed={true}
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackArrowButton
+          onClick={[Function]}
+          type="button"
+        />
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="page.blockList.save"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </DndProvider>
+  </form>
+</styled.div>
+`;
+
+exports[`PageBlockList: Component should render correctly with one block 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Blocks"
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="page.blockList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Blocks"
+        id="page.blockList.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="page.blockList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Blocks"
+        id="page.blockList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.div>
+    <styled.div>
+      <PlusButton
+        hideOnDesktop={false}
+        onClick={[Function]}
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{count, plural,one {# Block} other {# Blocks}}"
+        id="page.blockList.blocks"
+        values={
+          Object {
+            "count": 1,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div />
+  </styled.div>
+  <form
+    onSubmit={[Function]}
+  >
+    <DndProvider
+      backend={[Function]}
+      options={
+        Object {
+          "backends": Array [
+            Object {
+              "backend": [Function],
+              "transition": Object {
+                "_isMBTransition": true,
+                "check": [Function],
+                "event": "mousedown",
+              },
+            },
+            Object {
+              "backend": [Function],
+              "options": Object {
+                "enableMouseEvents": true,
+              },
+              "preview": true,
+              "transition": Object {
+                "_isMBTransition": true,
+                "check": [Function],
+                "event": "touchstart",
+              },
+            },
+          ],
+        }
+      }
+    >
+      <LoadingWrapper
+        error={null}
+        loading={false}
+        noData={false}
+        noDataContent=" "
+      >
+        <Component
+          customCheckboxStyles={
+            Object {
+              "width": "100%",
+            }
+          }
+          id="blocksCheckboxGroup"
+          name="pageBlocks"
+          onChange={[Function]}
+          value={
+            Array [
+              "1",
+            ]
+          }
+        >
+          <div
+            key="0"
+          >
+            <Component
+              id="checkbox-0"
+              isEdit={true}
+              value="1"
+            >
+              <styled.div>
+                <Styled(Link)
+                  onClick={[Function]}
+                  to="/block/1"
+                >
+                  block 1
+                </Styled(Link)>
+              </styled.div>
+            </Component>
+          </div>
+        </Component>
+      </LoadingWrapper>
+      <NavigationContainer
+        contentStyles={null}
+        fixed={true}
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackArrowButton
+          onClick={[Function]}
+          type="button"
+        />
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="page.blockList.save"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </DndProvider>
+  </form>
 </styled.div>
 `;

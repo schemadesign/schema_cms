@@ -20,7 +20,7 @@ export default defineMessages({
   },
   pageSubTitle: {
     id: 'userCreate.pageSubTitle',
-    defaultMessage: 'Invite a User to SchemaCMS',
+    defaultMessage: 'Invite a User to Schema CMS',
   },
   addUser: {
     id: 'userCreate.addUser',
@@ -28,6 +28,6 @@ export default defineMessages({
   },
   emailAuth0UserAlreadyExistError: {
     id: 'userCreate.0Auth0UserAlreadyExistError',
-    defaultMessage: 'User with that email already exists.',
+    defaultMessage: 'A user with this email already exists in Schema CMS.',
   },
 });

@@ -142,6 +142,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
@@ -465,6 +466,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       />
     </styled.div>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}
@@ -835,6 +837,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       </Styled(Span)>
     </styled.div>
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}

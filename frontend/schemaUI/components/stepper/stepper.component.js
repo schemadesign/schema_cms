@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { getStyles } from './stepper.styles';
 import { withStyles } from '../styles/withStyles';
+import { filterAllowedAttributes } from '../../utils/helpers';
 
 export class StepperComponent extends PureComponent {
   static propTypes = {
@@ -16,7 +17,7 @@ export class StepperComponent extends PureComponent {
 
   static defaultProps = {
     customDotStyles: {},
-    handleStep: () => {},
+    onStepChange: () => {},
   };
 
   getActiveStyles = ({ step, activeStep, dotActiveStyles, customActiveDotStyles }) =>
@@ -39,7 +40,6 @@ export class StepperComponent extends PureComponent {
       theme,
       activeStep,
       onStepChange,
-      handleStep,
       customActiveDotStyles,
       customDotStyles,
       steps,
@@ -51,16 +51,16 @@ export class StepperComponent extends PureComponent {
       theme,
       activeStep,
       onStepChange,
-      handleStep,
       customActiveDotStyles,
       customDotStyles,
       steps,
       dotActiveStyles,
       dotStyles,
     };
+    const filteredProps = filterAllowedAttributes('div', restProps);
 
     return (
-      <div style={{ ...containerStyles, ...customStyles }} {...restProps}>
+      <div style={{ ...containerStyles, ...customStyles }} {...filteredProps}>
         {this.renderDots(customProps)}
       </div>
     );

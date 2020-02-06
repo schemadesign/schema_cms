@@ -1,36 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Folder|PageList Default 1`] = `
-.c16 {
-  height: 155px;
+.c8 {
+  display: none;
 }
 
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
+.c9 {
+  margin-right: 20px;
 }
 
-.c17 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
 }
 
 .c0 {
@@ -56,24 +40,6 @@ exports[`Storyshots Folder|PageList Default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c8 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
 }
 
 .c5 {
@@ -83,83 +49,33 @@ exports[`Storyshots Folder|PageList Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
-  display: block;
 }
 
-.c5 a {
+.c5 a,
+.c5 div {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
+  color: rgba(255,255,255,0.75);
   display: block;
-}
-
-.c5:first-of-type {
-  border-top: 2.4px solid #2F2F36;
 }
 
 .c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #2F2F36;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c7 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #FFF;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c7 a {
+  color: #FFF;
+  font-size: 14px;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c7:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c9 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c9 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
+  margin: 12px 0;
 }
 
 .c1 {
@@ -170,23 +86,39 @@ exports[`Storyshots Folder|PageList Default 1`] = `
   word-break: break-word;
 }
 
-.c10 {
-  display: none;
+.c14 {
+  height: 155px;
 }
 
-.c11 {
-  margin-right: 20px;
-}
-
-.c12 {
-  color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
 .c15 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -195,32 +127,20 @@ exports[`Storyshots Folder|PageList Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c17 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c14 {
-    display: block;
-  }
-}
-
-@media (min-width:1040px) {
-  .c19 {
-    display: none;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
   }
 }
 
@@ -238,41 +158,32 @@ exports[`Storyshots Folder|PageList Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c7 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c10 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    display: block;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    display: none;
   }
 }
 
@@ -383,10 +294,10 @@ exports[`Storyshots Folder|PageList Default 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -457,36 +368,40 @@ exports[`Storyshots Folder|PageList Default 1`] = `
         <div
           className="c3"
         >
-          <ul
+          <div
             className="c4"
           >
-            <li
+            <div
               className="c5"
             >
               <a
-                href="/project"
-                id="projectNavBtn"
+                href="/project/"
+                id="projectsNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Projects
                 </span>
               </a>
-            </li>
-            <li
-              className="c6"
+            </div>
+            <div
+              className="c5"
             >
               <a
-                href="/user"
-                id="userNavBtn"
+                href="/user/"
+                id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Users
                 </span>
               </a>
-            </li>
-            <li
+            </div>
+          </div>
+          <div
+            className="c4"
+          >
+            <div
               className="c5"
             >
               <a
@@ -498,60 +413,53 @@ exports[`Storyshots Folder|PageList Default 1`] = `
                   Settings
                 </span>
               </a>
-            </li>
-            <li
+            </div>
+            <div
+              className="c5"
+            >
+              <div
+                onClick={[Function]}
+              >
+                <span>
+                  Log out
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
               className="c7"
-              id="logoutNavBtn"
+              href="/"
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
-                Log out
+                About Schema CMS
               </span>
-            </li>
-          </ul>
-          <ul
-            className="c8"
-          >
-            <li
-              className="c9"
+            </a>
+            <a
+              className="c7"
+              href="/"
+              id="apiNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="aboutNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
+              <span>
+                API Doc
+              </span>
+            </a>
+            <a
+              className="c7"
+              href="/"
+              id="repositoryNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="apiNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
-            >
-              <a
-                href="/"
-                id="repositoryNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
+              <span>
+                GitHub Repository
+              </span>
+            </a>
+          </div>
         </div>
         <button
           disabled={false}
@@ -597,13 +505,13 @@ exports[`Storyshots Folder|PageList Default 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="c8"
     >
       <div
-        className="c11"
+        className="c9"
       >
         <h2
-          className="c12"
+          className="c10"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -619,7 +527,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
           </span>
         </h2>
         <h1
-          className="c13"
+          className="c11"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -641,7 +549,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
         className=""
       >
         <div
-          className="c14"
+          className="c12"
         >
           <button
             disabled={false}
@@ -687,20 +595,20 @@ exports[`Storyshots Folder|PageList Default 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c13"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c16"
+      className="c14"
     >
       <div
-        className="c17"
+        className="c15"
       >
         <div
-          className="c18"
+          className="c16"
         >
           <button
             disabled={false}
@@ -742,7 +650,7 @@ exports[`Storyshots Folder|PageList Default 1`] = `
             </svg>
           </button>
           <div
-            className="c19"
+            className="c17"
           >
             <button
               disabled={false}
@@ -793,36 +701,20 @@ exports[`Storyshots Folder|PageList Default 1`] = `
 `;
 
 exports[`Storyshots Folder|PageList No data 1`] = `
-.c16 {
-  height: 155px;
+.c8 {
+  display: none;
 }
 
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
+.c9 {
+  margin-right: 20px;
 }
 
-.c17 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
 }
 
 .c0 {
@@ -848,24 +740,6 @@ exports[`Storyshots Folder|PageList No data 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.c8 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
 }
 
 .c5 {
@@ -875,83 +749,33 @@ exports[`Storyshots Folder|PageList No data 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
-  display: block;
 }
 
-.c5 a {
+.c5 a,
+.c5 div {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
+  color: rgba(255,255,255,0.75);
   display: block;
-}
-
-.c5:first-of-type {
-  border-top: 2.4px solid #2F2F36;
 }
 
 .c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
-  display: none;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6:first-of-type {
-  border-top: 2.4px solid #2F2F36;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c7 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #FFF;
-  padding: 8px 0 13px;
-  display: block;
-}
-
-.c7 a {
+  color: #FFF;
+  font-size: 14px;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c7:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c9 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-}
-
-.c9 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
+  margin: 12px 0;
 }
 
 .c1 {
@@ -962,23 +786,39 @@ exports[`Storyshots Folder|PageList No data 1`] = `
   word-break: break-word;
 }
 
-.c10 {
-  display: none;
+.c14 {
+  height: 155px;
 }
 
-.c11 {
-  margin-right: 20px;
-}
-
-.c12 {
-  color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
 .c15 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -987,32 +827,20 @@ exports[`Storyshots Folder|PageList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c17 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c14 {
-    display: block;
-  }
-}
-
-@media (min-width:1040px) {
-  .c19 {
-    display: none;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
   }
 }
 
@@ -1030,41 +858,32 @@ exports[`Storyshots Folder|PageList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c7 {
-    padding: 22px 0 27px;
-    font-size: 20px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c10 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    display: block;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    display: none;
   }
 }
 
@@ -1175,10 +994,10 @@ exports[`Storyshots Folder|PageList No data 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -1249,36 +1068,40 @@ exports[`Storyshots Folder|PageList No data 1`] = `
         <div
           className="c3"
         >
-          <ul
+          <div
             className="c4"
           >
-            <li
+            <div
               className="c5"
             >
               <a
-                href="/project"
-                id="projectNavBtn"
+                href="/project/"
+                id="projectsNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Projects
                 </span>
               </a>
-            </li>
-            <li
-              className="c6"
+            </div>
+            <div
+              className="c5"
             >
               <a
-                href="/user"
-                id="userNavBtn"
+                href="/user/"
+                id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
                   Users
                 </span>
               </a>
-            </li>
-            <li
+            </div>
+          </div>
+          <div
+            className="c4"
+          >
+            <div
               className="c5"
             >
               <a
@@ -1290,60 +1113,53 @@ exports[`Storyshots Folder|PageList No data 1`] = `
                   Settings
                 </span>
               </a>
-            </li>
-            <li
+            </div>
+            <div
+              className="c5"
+            >
+              <div
+                onClick={[Function]}
+              >
+                <span>
+                  Log out
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
               className="c7"
-              id="logoutNavBtn"
+              href="/"
+              id="aboutNavBtn"
               onClick={[Function]}
             >
               <span>
-                Log out
+                About Schema CMS
               </span>
-            </li>
-          </ul>
-          <ul
-            className="c8"
-          >
-            <li
-              className="c9"
+            </a>
+            <a
+              className="c7"
+              href="/"
+              id="apiNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="aboutNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  About Schema CMS
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
+              <span>
+                API Doc
+              </span>
+            </a>
+            <a
+              className="c7"
+              href="/"
+              id="repositoryNavBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/"
-                id="apiNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  API Doc
-                </span>
-              </a>
-            </li>
-            <li
-              className="c9"
-            >
-              <a
-                href="/"
-                id="repositoryNavBtn"
-                onClick={[Function]}
-              >
-                <span>
-                  GitHub Repository
-                </span>
-              </a>
-            </li>
-          </ul>
+              <span>
+                GitHub Repository
+              </span>
+            </a>
+          </div>
         </div>
         <button
           disabled={false}
@@ -1389,13 +1205,13 @@ exports[`Storyshots Folder|PageList No data 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="c8"
     >
       <div
-        className="c11"
+        className="c9"
       >
         <h2
-          className="c12"
+          className="c10"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1411,7 +1227,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
           </span>
         </h2>
         <h1
-          className="c13"
+          className="c11"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1433,7 +1249,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
         className=""
       >
         <div
-          className="c14"
+          className="c12"
         >
           <button
             disabled={false}
@@ -1479,20 +1295,20 @@ exports[`Storyshots Folder|PageList No data 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c13"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c16"
+      className="c14"
     >
       <div
-        className="c17"
+        className="c15"
       >
         <div
-          className="c18"
+          className="c16"
         >
           <button
             disabled={false}
@@ -1534,7 +1350,7 @@ exports[`Storyshots Folder|PageList No data 1`] = `
             </svg>
           </button>
           <div
-            className="c19"
+            className="c17"
           >
             <button
               disabled={false}

@@ -2,7 +2,6 @@ import Immutable from 'seamless-immutable';
 import { expectSaga } from 'redux-saga-test-plan';
 import * as effects from 'redux-saga/effects';
 import { BAD_REQUEST, OK } from 'http-status-codes';
-import nock from 'nock';
 
 import { watchDataSource } from '../dataSource.sagas';
 import { DataSourceRoutines } from '../dataSource.redux';
@@ -11,17 +10,14 @@ import { DATA_SOURCES_PATH, PROJECTS_PATH } from '../../../shared/utils/api.cons
 import browserHistory from '../../../shared/utils/history';
 import { ProjectRoutines } from '../../project';
 import { META_PROCESSING, META_SUCCESS } from '../dataSource.constants';
+import { selectUploadingDataSources } from '../dataSource.selectors';
 
 describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
 
-  beforeEach(() => {
-    nock.cleanAll();
-  });
-
   describe('create', () => {
     it('should dispatch a success action', async () => {
-      const payload = { project: '1', requestData: { file: 'file' } };
+      const payload = { projectId: '1', requestData: { file: { file: 'file', name: 'fileName' }, name: 'name' } };
       const responseData = {
         id: 1,
         metaData: null,
@@ -29,14 +25,21 @@ describe('DataSource: sagas', () => {
       const options = {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
+      jest.spyOn(browserHistory, 'push');
 
-      mockApi.post(DATA_SOURCES_PATH, /form-data; name="file"[^]*file/m, options).reply(OK, responseData);
+      mockApi.post(DATA_SOURCES_PATH, { project: '1', name: 'name' }).reply(OK, responseData);
+      mockApi
+        .patch(`${DATA_SOURCES_PATH}/${responseData.id}`, /form-data; name="file"[^]*object/m, options)
+        .reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.create.success(responseData))
+        .put(DataSourceRoutines.create.success({ id: responseData.id, fileName: 'fileName' }))
+        .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
         .dispatch(DataSourceRoutines.create(payload))
         .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith('/project/1/datasource');
     });
   });
 
@@ -66,6 +69,7 @@ describe('DataSource: sagas', () => {
       results: [
         {
           activeJob: null,
+          fileName: 'fileName',
           jobsInProcess: true,
           metaData: {
             status: META_SUCCESS,
@@ -77,6 +81,7 @@ describe('DataSource: sagas', () => {
       results: [
         {
           activeJob: null,
+          fileName: 'fileName',
           jobsInProcess: true,
           metaData: {
             status: META_PROCESSING,
@@ -88,6 +93,7 @@ describe('DataSource: sagas', () => {
       results: [
         {
           activeJob: { id: 'id' },
+          fileName: 'fileName',
           jobsInProcess: false,
           metaData: {
             status: META_SUCCESS,
@@ -108,6 +114,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .provide([[effects.select(selectUploadingDataSources), []]])
         .put(ProjectRoutines.setProject.trigger(responseDoneData.project))
         .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
         .dispatch(DataSourceRoutines.fetchList(payload))
@@ -123,6 +130,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .provide([[effects.select(selectUploadingDataSources), []]])
         .put(DataSourceRoutines.fetchList.success(responseJobProcessingData.results))
         .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
         .put(DataSourceRoutines.fetchList.fulfill())
@@ -139,6 +147,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .provide([[effects.select(selectUploadingDataSources), []]])
         .put(DataSourceRoutines.fetchList.success(responseMetaProcessingData.results))
         .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
         .put(DataSourceRoutines.fetchList.fulfill())
@@ -153,6 +162,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .provide([[effects.select(selectUploadingDataSources), []]])
         .put(DataSourceRoutines.fetchList.fulfill())
         .dispatch(DataSourceRoutines.fetchList(payload))
         .dispatch(DataSourceRoutines.cancelFetchListLoop(payload))
@@ -176,9 +186,7 @@ describe('DataSource: sagas', () => {
 
   describe('updateOne', () => {
     const payload = {
-      projectId: '1',
-      dataSourceId: '1',
-      step: '1',
+      dataSource: { id: '1', project: { id: '1' } },
       requestData: {
         data: 'data',
         name: 'name',
@@ -187,16 +195,14 @@ describe('DataSource: sagas', () => {
     };
     const responseData = {
       id: 1,
-      project: {
-        id: 1,
-      },
+      project: { id: 1 },
       metaData: null,
     };
 
     describe('on success', () => {
       beforeEach(() => {
         mockApi
-          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, { name: payload.requestData.name })
+          .patch(`${DATA_SOURCES_PATH}/${payload.dataSource.id}`, { name: payload.requestData.name })
           .reply(OK, responseData);
       });
 
@@ -204,6 +210,7 @@ describe('DataSource: sagas', () => {
         await expectSaga(watchDataSource)
           .withState(defaultState)
           .put(DataSourceRoutines.updateOne.success(responseData))
+          .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
           .dispatch(DataSourceRoutines.updateOne(payload))
           .silentRun();
       });
@@ -215,18 +222,20 @@ describe('DataSource: sagas', () => {
 
         mockApi
           .patch(
-            `${DATA_SOURCES_PATH}/${payload.dataSourceId}`,
+            `${DATA_SOURCES_PATH}/${payload.dataSource.id}`,
             /form-data; name="camelize_data"[^]*camelizeData/m,
             options
           )
           .reply(OK, responseData);
 
         jest.spyOn(browserHistory, 'push');
-        payload.requestData.file = 'file';
+        payload.requestData.file = { file: 'file', name: 'fileName' };
 
         await expectSaga(watchDataSource)
           .withState(defaultState)
           .dispatch(DataSourceRoutines.updateOne(payload))
+          .put(DataSourceRoutines.updateOne.success({ ...payload.dataSource, fileName: 'fileName' }))
+          .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
           .silentRun();
 
         expect(browserHistory.push).toBeCalledWith('/project/1/datasource');
@@ -236,7 +245,7 @@ describe('DataSource: sagas', () => {
     it('should dispatch a failure action', async () => {
       const errorResponseData = { name: [{ code: 'code', message: 'message' }] };
       const errorResult = [{ code: 'code', name: 'name' }];
-      mockApi.patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(BAD_REQUEST, errorResponseData);
+      mockApi.patch(`${DATA_SOURCES_PATH}/${payload.dataSource.id}`).reply(BAD_REQUEST, errorResponseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)

@@ -6,7 +6,7 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
   STEPS_PAGE,
-  VIEWS_PAGE,
+  TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
 
 export default defineMessages({
@@ -26,9 +26,9 @@ export default defineMessages({
     id: `shared.components.dataSourceNavigation.${RESULT_PAGE}`,
     defaultMessage: 'Results',
   },
-  [VIEWS_PAGE]: {
-    id: `shared.components.dataSourceNavigation.${VIEWS_PAGE}`,
-    defaultMessage: 'Views',
+  [TAGS_PAGE]: {
+    id: `shared.components.dataSourceNavigation.${TAGS_PAGE}`,
+    defaultMessage: 'Tags',
   },
   [FILTERS_PAGE]: {
     id: `shared.components.dataSourceNavigation.${FILTERS_PAGE}`,

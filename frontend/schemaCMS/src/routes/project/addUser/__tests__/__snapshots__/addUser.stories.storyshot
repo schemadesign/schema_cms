@@ -1,43 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|AddUser List 1`] = `
-.c14 {
-  height: 155px;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c15 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c17 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c1 {
   display: none;
 }
@@ -52,14 +15,6 @@ exports[`Storyshots Project|AddUser List 1`] = `
 
 .c4 {
   color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c5 {
@@ -131,28 +86,49 @@ exports[`Storyshots Project|AddUser List 1`] = `
   word-break: break-word;
 }
 
-@media (min-width:1040px) {
-  .c16 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
+.c14 {
+  height: 155px;
 }
 
-@media (min-width:1040px) {
-  .c15 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
-@media (min-width:1040px) {
-  .c17 {
-    width: 240px;
-  }
+.c15 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c17 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c13 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 @media (min-width:1040px) {
@@ -183,6 +159,30 @@ exports[`Storyshots Project|AddUser List 1`] = `
   .c8 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    width: 240px;
   }
 }
 
@@ -247,7 +247,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
           }
         >
           <span>
-            Invite Users
+            Add Users
           </span>
         </h1>
       </div>
@@ -306,7 +306,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>
@@ -344,10 +344,10 @@ exports[`Storyshots Project|AddUser List 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -410,7 +410,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>
@@ -431,6 +431,19 @@ exports[`Storyshots Project|AddUser List 1`] = `
               >
                 <span>
                   Projects
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
                 </span>
               </a>
             </div>
@@ -464,12 +477,25 @@ exports[`Storyshots Project|AddUser List 1`] = `
               className="c10"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>
@@ -643,43 +669,6 @@ exports[`Storyshots Project|AddUser List 1`] = `
 `;
 
 exports[`Storyshots Project|AddUser No data 1`] = `
-.c14 {
-  height: 155px;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c15 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c17 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c1 {
   display: none;
 }
@@ -694,14 +683,6 @@ exports[`Storyshots Project|AddUser No data 1`] = `
 
 .c4 {
   color: #FFF;
-}
-
-.c13 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c5 {
@@ -773,28 +754,49 @@ exports[`Storyshots Project|AddUser No data 1`] = `
   word-break: break-word;
 }
 
-@media (min-width:1040px) {
-  .c16 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
+.c14 {
+  height: 155px;
 }
 
-@media (min-width:1040px) {
-  .c15 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
-@media (min-width:1040px) {
-  .c17 {
-    width: 240px;
-  }
+.c15 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c17 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c13 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 @media (min-width:1040px) {
@@ -825,6 +827,30 @@ exports[`Storyshots Project|AddUser No data 1`] = `
   .c8 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    width: 240px;
   }
 }
 
@@ -889,7 +915,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
           }
         >
           <span>
-            Invite Users
+            Add Users
           </span>
         </h1>
       </div>
@@ -948,7 +974,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>
@@ -986,10 +1012,10 @@ exports[`Storyshots Project|AddUser No data 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -1052,7 +1078,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               }
             >
               <span>
-                Invite Users
+                Add Users
               </span>
             </h1>
           </div>
@@ -1073,6 +1099,19 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               >
                 <span>
                   Projects
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
                 </span>
               </a>
             </div>
@@ -1106,12 +1145,25 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               className="c10"
             >
               <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
                 href="/project/1/user"
                 id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>

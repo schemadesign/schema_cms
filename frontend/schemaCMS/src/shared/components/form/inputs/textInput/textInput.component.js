@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Icons } from 'schemaUI';
-import { always, pick } from 'ramda';
-import elementAttributes from 'html-element-attributes/index.json';
+import { always } from 'ramda';
 
 import { Container, ErrorWrapper, IconWrapper } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
@@ -39,7 +38,7 @@ export class TextInput extends PureComponent {
 
   renderEditIcon = renderWhenTrue(
     always(
-      <IconWrapper>
+      <IconWrapper isLabel={!!this.props.label}>
         <Icons.EditIcon />
       </IconWrapper>
     )
@@ -61,10 +60,8 @@ export class TextInput extends PureComponent {
       isEdit,
       ...restProps
     } = this.props;
-    const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
-    const filteredProps = pick(allowedAttributes, restProps);
-    const isError = !!errors[filteredProps.name];
-    const isTouched = touched[filteredProps.name];
+    const isError = !!errors[restProps.name];
+    const isTouched = touched[restProps.name];
     const error = checkOnlyErrors ? isError : isError && isTouched;
 
     return (
@@ -80,7 +77,7 @@ export class TextInput extends PureComponent {
           fullWidth={fullWidth}
           readOnly={readOnly}
           iconComponent={this.renderEditIcon(isEdit)}
-          {...filteredProps}
+          {...restProps}
         />
         {this.renderError(error)}
       </Container>

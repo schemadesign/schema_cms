@@ -6,6 +6,7 @@ import { DATA_SOURCES_PATH, FILTERS_PATH } from '../../shared/utils/api.constant
 import browserHistory from '../../shared/utils/history';
 import { FILTERS_PAGE } from '../dataSource/dataSource.constants';
 import { ROUTES } from '../../routes';
+import { ProjectRoutines } from '../project';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -57,7 +58,8 @@ function* fetchFilter({ payload: { filterId } }) {
 
     const { data } = yield api.get(`${FILTERS_PATH}/${filterId}`);
 
-    yield put(FilterRoutines.fetchFilter.success(data));
+    yield put(ProjectRoutines.setProject(data.project));
+    yield put(FilterRoutines.fetchFilter.success(data.results));
   } catch (e) {
     yield put(FilterRoutines.fetchFilter.failure(e));
   } finally {

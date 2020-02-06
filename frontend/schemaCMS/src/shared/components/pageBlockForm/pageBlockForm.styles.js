@@ -13,13 +13,21 @@ export const UploaderItem = styled.div`
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin-right: 20px;
+  justify-content: space-between;
 `;
 
 export const ImageName = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const SingleName = styled.span`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
 `;
 
 export const removeIconStyles = {
@@ -29,3 +37,5 @@ export const removeIconStyles = {
   marginLeft: 20,
   cursor: 'pointer',
 };
+
+export const menuIconStyles = { width: 10, marginRight: 20 };

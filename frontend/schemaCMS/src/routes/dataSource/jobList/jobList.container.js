@@ -9,8 +9,10 @@ import { withTheme } from 'styled-components';
 import { JobList } from './jobList.component';
 import { JobRoutines, selectJobList } from '../../../modules/job';
 import { DataSourceRoutines, selectDataSource } from '../../../modules/dataSource';
+import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
+  userRole: selectUserRole,
   jobList: selectJobList,
   dataSource: selectDataSource,
 });

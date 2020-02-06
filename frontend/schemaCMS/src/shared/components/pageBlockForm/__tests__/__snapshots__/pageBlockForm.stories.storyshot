@@ -2,10 +2,15 @@
 
 exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17,11 +22,11 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -43,7 +48,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -102,7 +107,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -124,7 +129,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -147,10 +152,10 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="code_snippet"
+      value="code"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -254,7 +259,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -268,10 +273,24 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -289,7 +308,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -303,7 +322,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
       }
     >
       <label
-        htmlFor="code_snippet-content"
+        htmlFor="code-content"
         style={
           Object {
             "border": "none",
@@ -320,7 +339,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
         Code Snippet
       </label>
       <textarea
-        id="code_snippet-content"
+        id="code-content"
         onChange={[Function]}
         placeholder="
     <button id=\\"my-button\\">
@@ -343,7 +362,6 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             "resize": "none",
           }
         }
-        type="text"
       />
       <textarea
         aria-hidden={true}
@@ -384,10 +402,15 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -399,11 +422,11 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -425,7 +448,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -484,7 +507,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -506,7 +529,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -529,10 +552,10 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="youtube_embed"
+      value="embed"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -636,7 +659,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -650,10 +673,24 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -671,7 +708,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -685,7 +722,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
       }
     >
       <label
-        htmlFor="youtube_embed-content"
+        htmlFor="embed-content"
         style={
           Object {
             "border": "none",
@@ -702,7 +739,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
         Embed Code
       </label>
       <textarea
-        id="youtube_embed-content"
+        id="embed-content"
         onChange={[Function]}
         placeholder="
     <iframe
@@ -726,7 +763,6 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             "resize": "none",
           }
         }
-        type="text"
       />
       <textarea
         aria-hidden={true}
@@ -767,10 +803,15 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -782,47 +823,30 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
+}
+
+.c5 {
+  position: relative;
 }
 
 .c4 {
   position: relative;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: move;
-  touch-action: none;
-}
-
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-.c3 {
-  position: relative;
-}
-
-.c5 {
   line-height: 24px;
   font-size: 18px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -832,13 +856,33 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
-  margin-right: 20px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c9 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 60px;
 }
 
 <div
@@ -857,7 +901,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -916,7 +960,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -938,7 +982,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -961,10 +1005,10 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="image_uploaded"
+      value="image"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -1068,7 +1112,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -1082,10 +1126,24 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -1103,10 +1161,10 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
   >
     <div
-      className="c4"
+      className="c5"
     >
       <div
         style={
@@ -1139,6 +1197,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "display": "block",
               "fontSize": 18,
               "lineHeight": "24px",
+              "opacity": 1,
               "paddingBottom": 30,
               "width": "calc(100% - 70px)",
             }
@@ -1177,6 +1236,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
                   "fontSize": 0,
                   "margin": "0",
                   "minHeight": "48px",
+                  "opacity": 1,
                   "outline": "none",
                   "padding": "0",
                   "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
@@ -1203,6 +1263,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         <input
           accept=".png, .jpg, .jpeg, .gif"
           aria-hidden={true}
+          disabled={false}
           id="fileUpload"
           multiple={true}
           name="inputImages"
@@ -1215,154 +1276,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "position": "absolute",
               "top": 0,
               "visibility": "hidden",
-            }
-          }
-          theme={
-            Object {
-              "background": "#000",
-              "border": "#2F2F36",
-              "button": Object {
-                "background": "#1d1d20",
-                "text": "#FFF",
-              },
-              "buttonDisabled": Object {
-                "background": "#1d1d20",
-                "text": "#71737e",
-              },
-              "card": Object {
-                "background": "#1d1d20",
-                "border": "#FFF",
-                "label": "#71737e",
-                "text": "#FFF",
-              },
-              "checkbox": Object {
-                "border": "#2F2F36",
-                "text": "#FFF",
-              },
-              "colors": Object {
-                "black": "#000",
-                "coolGray": "#a6a7aa",
-                "darkGrey": "#1d1d20",
-                "lightGrey": "#71737e",
-                "mediumGray": "#2F2F36",
-                "red": "#f21e29",
-                "veryLightPink": "#f0efef",
-                "white": "#FFF",
-                "yellow": "#be8f00",
-              },
-              "dataGrid": Object {
-                "background": "#000",
-                "text": "#71737e",
-              },
-              "error": "#f21e29",
-              "header": Object {
-                "border": "#2F2F36",
-                "text": "#FFF",
-              },
-              "icon": Object {
-                "background": "#1d1d20",
-                "fill": "#FFF",
-                "fillInverse": "#000",
-              },
-              "input": Object {
-                "text": "#FFF",
-              },
-              "inverseButton": Object {
-                "background": "#FFF",
-                "text": "#000",
-              },
-              "label": Object {
-                "border": "#2F2F36",
-                "text": "#71737e",
-              },
-              "menu": Object {
-                "background": "#000",
-                "text": "#FFF",
-              },
-              "providerContainer": Object {
-                "minHeight": "100vh",
-              },
-              "radioButton": Object {
-                "active": Object {
-                  "background": "#FFF",
-                  "fill": "#1d1d20",
-                },
-                "border": "#FFF",
-                "text": "#FFF",
-                "unActive": Object {
-                  "background": "#1d1d20",
-                  "dot": "#FFF",
-                  "fill": "#FFF",
-                },
-              },
-              "secondaryText": "#71737e",
-              "select": Object {
-                "background": "#1d1d20",
-                "border": "#000",
-              },
-              "stepper": Object {
-                "active": "#FFF",
-                "background": "#1d1d20",
-              },
-              "tab": Object {
-                "active": "#FFF",
-                "hover": "#FFF",
-                "normal": "#2F2F36",
-              },
-              "table": Object {
-                "background": Object {
-                  "body": "#000",
-                  "header": "#1d1d20",
-                },
-                "border": Object {
-                  "body": "#1d1d20",
-                  "header": "#000",
-                },
-                "text": Object {
-                  "body": "#FFF",
-                  "header": "#71737e",
-                },
-              },
-              "text": "#FFF",
-              "textArea": Object {
-                "background": "#000",
-                "text": "#FFF",
-              },
-              "textField": Object {
-                "error": "#f21e29",
-                "label": "#71737e",
-              },
-              "typography": Object {
-                "h1": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                },
-                "h2": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                },
-                "h3": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 600,
-                },
-                "p": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 200,
-                },
-                "pre": Object {
-                  "fontFamily": "Hack, monospace",
-                  "fontSize": "18px",
-                },
-                "span": Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "14px",
-                },
-              },
-              "warning": "#be8f00",
             }
           }
           type="file"
@@ -1397,84 +1310,76 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         Drop here
       </label>
     </div>
-    <span>
-      <div
-        className="c5"
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      <span>
+        Current files
+      </span>
+    </label>
+    <div
+      className="c6"
+    >
+      <span
+        className="c7"
       >
-        <span>
-          Current files
-        </span>
         <div
-          className="c6"
+          className="c8"
+        >
+          <span
+            className="c9"
+          >
+            imageName.png
+          </span>
+        </div>
+        <svg
+          id="removeImage-0"
+          onClick={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "cursor": "pointer",
+              "fill": "#FFF",
+              "height": 30,
+              "marginLeft": 20,
+              "minWidth": 30,
+              "width": 30,
             }
           }
+          viewBox="0 0 60 60"
         >
-          <div
-            className="c7"
-          >
-            <span>
-              <div
-                className="c8"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "60px",
-                      "width": "60px",
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </span>
-            <span
-              className="c9"
-            >
-              imageName.png
-            </span>
-            <svg
-              id="removeImage-0"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "fill": "#FFF",
-                  "height": 30,
-                  "marginLeft": 20,
-                  "minWidth": 30,
-                  "width": 30,
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </span>
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1486,11 +1391,11 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -1512,7 +1417,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -1571,7 +1476,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -1593,7 +1498,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -1616,10 +1521,10 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
       id="type"
       name="type"
       type="hidden"
-      value="markdown_text"
+      value="markdown"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -1678,7 +1583,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
         </div>
         <div
@@ -1723,7 +1628,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -1737,10 +1642,24 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -1758,7 +1677,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -1772,7 +1691,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
       }
     >
       <label
-        htmlFor="markdown_text-content"
+        htmlFor="markdown-content"
         style={
           Object {
             "border": "none",
@@ -1789,7 +1708,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
         Markdown Text
       </label>
       <textarea
-        id="markdown_text-content"
+        id="markdown-content"
         onChange={[Function]}
         placeholder="
     # My Cool Title
@@ -1811,7 +1730,6 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             "resize": "none",
           }
         }
-        type="text"
       />
       <textarea
         aria-hidden={true}
@@ -1850,12 +1768,17 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 </div>
 `;
 
-exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
+exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 .c0 {
-  padding-top: 7px;
+  width: 100%;
 }
 
 .c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1867,11 +1790,676 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
   position: relative;
 }
 
-.c1 label {
+.c2 label {
   margin-bottom: 1px;
 }
 
+.c3 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c5 {
+  position: relative;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  position: relative;
+}
+
+.c6 {
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c2"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="image"
+    />
+    <div
+      className="c3"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Text
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      className="c5"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          File Name
+        </label>
+        <label
+          htmlFor="fileUpload"
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "block",
+              "fontSize": 18,
+              "lineHeight": "24px",
+              "opacity": 1,
+              "paddingBottom": 30,
+              "width": "calc(100% - 70px)",
+            }
+          }
+        >
+          Please select image(s) or Drag and Drop it here
+        </label>
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <label
+            htmlFor="fileUpload"
+            style={
+              Object {
+                "position": "relative",
+                "top": 10,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": 0,
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "opacity": 1,
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+          </label>
+        </div>
+        <input
+          accept=".png, .jpg, .jpeg, .gif"
+          aria-hidden={true}
+          disabled={false}
+          id="fileUpload"
+          multiple={true}
+          name="inputImages"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="file"
+        />
+      </div>
+      <label
+        htmlFor="fileUpload"
+        id="dropZone-schema-ui"
+        onDrop={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "background": "#000",
+            "border": "2px dashed #2F2F36",
+            "borderRadius": 10,
+            "cursor": "copy",
+            "display": "flex",
+            "height": "calc(100% - 10px)",
+            "justifyContent": "center",
+            "left": 0,
+            "lineHeight": "50px",
+            "opacity": 0,
+            "position": "absolute",
+            "textAlign": "center",
+            "top": 5,
+            "transition": "opacity 200ms ease-in-out",
+            "visibility": "hidden",
+            "width": "100%",
+          }
+        }
+      >
+        Drop here
+      </label>
+    </div>
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      <span>
+        Current files
+      </span>
+    </label>
+    <span>
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <div
+            className="c8"
+          >
+            <span>
+              <div
+                className="c9"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "60px",
+                      "marginRight": 20,
+                      "width": 10,
+                    }
+                  }
+                  viewBox="0 0 10 60"
+                >
+                  <path
+                    d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </span>
+            <span
+              className="c10"
+            >
+              imageName.png
+            </span>
+          </div>
+          <svg
+            id="removeImage-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fill": "#FFF",
+                "height": 30,
+                "marginLeft": 20,
+                "minWidth": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="c7"
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <div
+            className="c8"
+          >
+            <span>
+              <div
+                className="c9"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "60px",
+                      "marginRight": 20,
+                      "width": 10,
+                    }
+                  }
+                  viewBox="0 0 10 60"
+                >
+                  <path
+                    d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </span>
+            <span
+              className="c10"
+            >
+              imageName.png
+            </span>
+          </div>
+          <svg
+            id="removeImage-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fill": "#FFF",
+                "height": 30,
+                "marginLeft": 20,
+                "minWidth": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
+.c0 {
+  width: 100%;
+}
+
+.c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c2 label {
+  margin-bottom: 1px;
+}
+
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -1893,7 +2481,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -1952,7 +2540,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -1974,7 +2562,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -2000,7 +2588,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
       value="none"
     />
     <div
-      className="c2"
+      className="c3"
     >
       <svg
         style={
@@ -2104,7 +2692,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
               }
             }
           >
-            Markdown Text
+            Markdown
           </div>
           <div
             id="select-item-2"
@@ -2118,10 +2706,24 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
               }
             }
           >
-            Embed
+            Text
           </div>
           <div
             id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
             onClick={[Function]}
             style={
               Object {
@@ -2136,6 +2738,399 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
+.c0 {
+  width: 100%;
+}
+
+.c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c2 label {
+  margin-bottom: 1px;
+}
+
+.c3 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="text name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c2"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="text"
+    />
+    <div
+      className="c3"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Text
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Text
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="text-content"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Text
+      </label>
+      <textarea
+        id="text-content"
+        onChange={[Function]}
+        placeholder="Example text"
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
     </div>
   </div>
 </div>

@@ -80,4 +80,28 @@ export const dataSources = [
       status: META_FAILED,
     },
   },
+  {
+    created: '2019-09-09T11:23:40+0000',
+    createdBy: { firstName: 'firstName', lastName: 'lastName' },
+    id: 18,
+    name: 'name',
+    activeJob: {},
+    jobsInProcess: false,
+    metaData: {
+      status: META_PENDING,
+    },
+  },
+  {
+    created: '2019-09-09T11:23:40+0000',
+    createdBy: { firstName: 'firstName', lastName: 'lastName' },
+    id: 19,
+    name: 'name',
+    fileName: null,
+    file: null,
+    activeJob: {},
+    jobsInProcess: false,
+    metaData: {
+      status: META_PENDING,
+    },
+  },
 ];

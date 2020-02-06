@@ -24,10 +24,9 @@ class FetchMetaFileMixin:
 class Project(LoaderMixin, FetchMetaFileMixin):
     table_name: typing.ClassVar = "projects"
     id: int
-    title: str = ""
-    description: str = ""
-    owner: str = ""
+    meta: dict = dataclasses.field(default_factory=dict)
     data_sources: list = dataclasses.field(default_factory=list)
+    charts: list = dataclasses.field(default_factory=list)
     pages: list = dataclasses.field(default_factory=list)
 
 
@@ -48,12 +47,14 @@ class Page(LoaderMixin, FetchMetaFileMixin):
 class DataSource(LoaderMixin, FetchMetaFileMixin):
     table_name: typing.ClassVar = "datasources"
     id: int
-    name: str = ""
+    meta: dict = dataclasses.field(default_factory=dict)
     file: str = ""
-    items: int = 0
     result: str = ""
-    fields: list = dataclasses.field(default_factory=list)
+    shape: list = dataclasses.field(default_factory=list)
+    fields: dict = dataclasses.field(default_factory=dict)
     filters: list = dataclasses.field(default_factory=list)
+    views: list = dataclasses.field(default_factory=list)
+    tags: list = dataclasses.field(default_factory=list)
 
     @property
     def result_parquet(self):

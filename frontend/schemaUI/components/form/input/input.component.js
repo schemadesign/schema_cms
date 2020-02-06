@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { getStyles } from './input.styles';
 import { withStyles } from '../../styles/withStyles';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 class InputComponent extends PureComponent {
   static propTypes = {
@@ -13,11 +14,12 @@ class InputComponent extends PureComponent {
   };
 
   render() {
-    const { customStyles, theme, ...restProps } = this.props;
+    const { customStyles, theme, inputRef, ...restProps } = this.props;
     const defaultStyles = getStyles(theme);
     const inputStyles = { ...defaultStyles, ...customStyles };
+    const filteredProps = filterAllowedAttributes('input', restProps);
 
-    return <input id={restProps.name} {...restProps} style={inputStyles} />;
+    return <input id={restProps.name} style={inputStyles} ref={inputRef} {...filteredProps} />;
   }
 }
 

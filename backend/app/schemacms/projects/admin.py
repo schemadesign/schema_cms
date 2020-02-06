@@ -24,16 +24,21 @@ class WranglingScriptAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("datasource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="Script")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Script", parent="datasource"
+        )
 
 
 @admin.register(models.Filter)
 class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "datasource", "deleted_at")
+    fields = ("datasource", "name", "filter_type", "field", "field_type", "deleted")
     readonly_on_update_fields = ("datsource",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="Filter")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Filter", parent="datasource"
+        )
 
 
 @admin.register(models.Project)
@@ -80,7 +85,9 @@ class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("project",)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="DataSource")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="DataSource", parent="project"
+        )
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
@@ -128,7 +135,9 @@ class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_filter = ('project',)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Folder")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Folder", parent="project"
+        )
 
 
 @admin.register(models.Page)
@@ -144,7 +153,9 @@ class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
         return obj.folder.project.title
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="title", model_name="Page")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="title", model_name="Page", parent="folder"
+        )
 
 
 class BlockImageInline(admin.TabularInline):
@@ -173,4 +184,39 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
         return obj.page.folder.project.title
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Block")
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Block", parent="page"
+        )
+
+
+class TagInline(admin.TabularInline):
+    model = models.Tag
+    exclude = ("deleted_at",)
+    extra = 0
+
+
+@admin.register(models.TagsList)
+class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
+    list_display = ("name", "datasource", "deleted_at")
+    fields = ("datasource", "name", "deleted")
+    list_filter = ('datasource', "deleted_at")
+    readonly_on_update_fields = ("datasource",)
+    inlines = (TagInline,)
+
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="TagsList", parent="datasource"
+        )
+
+
+@admin.register(models.State)
+class StateAdmin(utils_admin.SoftDeleteObjectAdmin):
+    list_display = ("name", "project", "datasource", "deleted_at")
+    fields = ("project", "datasource", "name", "description", "source_url", "author", "is_public", "deleted")
+    list_filter = ("project", 'datasource', "is_public", "deleted_at")
+    readonly_on_update_fields = ("project",)
+
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="State", parent="project"
+        )

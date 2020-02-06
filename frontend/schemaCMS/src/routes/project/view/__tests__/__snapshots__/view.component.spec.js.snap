@@ -11,6 +11,7 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={
@@ -35,17 +36,19 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={
             <ForwardRef(styled.span)>
-              Charts
+              States
             </ForwardRef(styled.span)>
           }
+          id="projectStates"
           onClick={[Function]}
         >
           <styled.span
-            id="undefinedValue"
+            id="projectStatesValue"
           >
             0
           </styled.span>
@@ -58,6 +61,7 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={
@@ -65,11 +69,11 @@ exports[`View: Component should render content correctly 1`] = `
               Pages
             </ForwardRef(styled.span)>
           }
-          id="projectUsers"
+          id="projectPages"
           onClick={[Function]}
         >
           <styled.span
-            id="projectUsersValue"
+            id="projectPagesValue"
           >
             1
           </styled.span>
@@ -82,6 +86,7 @@ exports[`View: Component should render content correctly 1`] = `
           customStyles={
             Object {
               "cursor": "pointer",
+              "fontWeight": 600,
             }
           }
           headerComponent={
@@ -269,6 +274,19 @@ exports[`View: Component should render correctly 1`] = `
           Object {
             "allowedRoles": Array [
               "admin",
+            ],
+            "id": "usersPageNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Users"
+              id="project.view.usersPage"
+              values={Object {}}
+            />,
+            "to": "/user/",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
               "editor",
             ],
             "id": "projectDetailsNavBtn",
@@ -297,11 +315,25 @@ exports[`View: Component should render correctly 1`] = `
           Object {
             "allowedRoles": Array [
               "admin",
+              "editor",
+            ],
+            "id": "stateNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="States"
+              id="project.view.states"
+              values={Object {}}
+            />,
+            "to": "/project/100/state",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
             ],
             "id": "usersNavBtn",
             "label": <FormattedMessage
-              defaultMessage="Users"
-              id="project.view.usersPage"
+              defaultMessage="Project Users"
+              id="project.view.projectUsersPage"
               values={Object {}}
             />,
             "to": "/project/100/user",
@@ -338,6 +370,7 @@ exports[`View: Component should render correctly 1`] = `
     </LoadingWrapper>
   </div>
   <NavigationContainer
+    contentStyles={null}
     fixed={true}
     hideOnDesktop={false}
     right={false}
@@ -349,6 +382,7 @@ exports[`View: Component should render correctly 1`] = `
   </NavigationContainer>
   <Styled(Modal)
     contentLabel="Confirm Removal"
+    id="projectConfirmationRemovalModal"
     isOpen={false}
     style={
       Object {
@@ -382,7 +416,9 @@ exports[`View: Component should render correctly 1`] = `
       }
     }
   >
-    <Styled(H1)>
+    <Styled(H1)
+      id="projectConfirmationRemovalModalTitle"
+    >
       <FormattedMessage
         defaultMessage="Are you sure you want to delete the project?"
         id="project.view.removeTitle"
@@ -392,6 +428,7 @@ exports[`View: Component should render correctly 1`] = `
     <styled.div>
       <BackButton
         disabled={false}
+        id="projectConfirmationRemovalModalCancelBtn"
         onClick={[Function]}
       >
         <FormattedMessage
@@ -401,6 +438,8 @@ exports[`View: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
+        id="projectConfirmationRemovalModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >

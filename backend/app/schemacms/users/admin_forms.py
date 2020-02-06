@@ -31,7 +31,7 @@ class InviteUserForm(UserFormMixin, forms.ModelForm):
         return super().save(commit=commit)
 
     def clean_email(self):
-        email = self.cleaned_data["email"]
+        email = self.cleaned_data["email"].lower()
         if USER_MODEL.objects.filter(email=email).exists():
             raise forms.ValidationError('The user with email "{}" already exists'.format(email))
         return email

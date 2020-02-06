@@ -7,6 +7,7 @@ import View from './view/view.container';
 
 export class User extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     createUserProject: PropTypes.func.isRequired,
     createUserCMS: PropTypes.func.isRequired,
     isAdmin: PropTypes.bool.isRequired,

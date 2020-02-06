@@ -2,7 +2,7 @@
 
 exports[`CreatePage: Component should render correctly 1`] = `
 <Fragment>
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
@@ -17,8 +17,37 @@ exports[`CreatePage: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -64,6 +93,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
           },
         }
       }
+      userRole="admin"
       values={
         Object {
           "description": "description",
@@ -73,6 +103,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
       }
     />
     <NavigationContainer
+      contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
       right={false}

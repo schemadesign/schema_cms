@@ -29,7 +29,7 @@ APP_S3_BUCKET_NAME = "schemacms"
 IMAGE_S3_BUCKET_NAME = "schemacms-images"
 LAMBDA_AUTH_TOKEN_ENV_NAME = "LAMBDA_AUTH_TOKEN"
 JOB_PROCESSING_MAX_RETRIES = 3
-JOB_PROCESSING_MEMORY_SIZES = [512, 1280]
+JOB_PROCESSING_MEMORY_SIZES = [512, 1280, 3008]
 
 INSTALLATION_MODE_CONTEXT_KEY = "installation_mode"
 DOMAIN_NAME_CONTEXT_KEY = "domain_name"
@@ -107,96 +107,15 @@ class CertsStack(core.Stack):
         self.cert = aws_certificatemanager.Certificate(self, "cert", domain_name=domain_name)
 
 
-class Workers(core.Stack):
-    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
-        super().__init__(scope, id, **kwargs)
-
-        self.worker_task_definition = aws_ecs.FargateTaskDefinition(
-            self, "worker-task-definition", cpu=256, memory_limit_mib=512
-        )
-        scope.base.db.secret.grant_read(self.worker_task_definition.task_role)
-
-        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
-        worker_image = aws_ecs.ContainerImage.from_asset("backend/worker")
-        if installation_mode == INSTALLATION_MODE_FULL:
-            tag_from_context = self.node.try_get_context("app_image_tag")
-            tag = tag_from_context if tag_from_context is not "undefined" else None
-            worker_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.worker_registry, tag)
-
-        self.worker_container = self.worker_task_definition.add_container(
-            "worker",
-            image=worker_image,
-            logging=aws_ecs.AwsLogDriver(stream_prefix="worker-container"),
-            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn, "POSTGRES_DB": DB_NAME},
-        )
-
-        worker_success_lambda_code = aws_lambda.AssetCode("backend/functions/worker_success")
-        self.success_function_code = aws_lambda.Code.from_cfn_parameters()
-        handler = "handlers.handle"
-        if installation_mode == INSTALLATION_MODE_FULL:
-            worker_success_lambda_code = self.success_function_code
-            handler = "backend/functions/worker_success/handlers.handle"
-
-        self.worker_success_lambda = aws_lambda.Function(
-            self,
-            "worker-success-lambda",
-            code=worker_success_lambda_code,
-            handler=handler,
-            runtime=aws_lambda.Runtime.PYTHON_3_7,
-            vpc=scope.base.vpc,
-        )
-
-        worker_failure_lambda_code = aws_lambda.AssetCode("backend/functions/worker_failure")
-
-        self.failure_function_code = aws_lambda.Code.from_cfn_parameters()
-        handler = "handlers.handle"
-        if installation_mode == INSTALLATION_MODE_FULL:
-            worker_failure_lambda_code = self.failure_function_code
-            handler = "backend/functions/worker_failure/handlers.handle"
-
-        self.worker_failure_lambda = aws_lambda.Function(
-            self,
-            "worker-failure-lambda",
-            code=worker_failure_lambda_code,
-            handler=handler,
-            runtime=aws_lambda.Runtime.PYTHON_3_7,
-            vpc=scope.base.vpc,
-        )
-
-        run_worker_task = aws_stepfunctions_tasks.RunEcsFargateTask(
-            cluster=scope.base.cluster,
-            task_definition=self.worker_task_definition,
-            subnets=scope.base.vpc.select_subnets(),
-            integration_pattern=aws_stepfunctions.ServiceIntegrationPattern.SYNC,
-        )
-        run_worker_task.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
-        self.start_worker_job = aws_stepfunctions.Task(self, "Start Worker", task=run_worker_task)
-
-        run_worker_success = aws_stepfunctions.Task(
-            self, "Worker Success", task=aws_stepfunctions_tasks.InvokeFunction(self.worker_success_lambda)
-        )
-
-        run_worker_failure = aws_stepfunctions.Task(
-            self, "Worker Failure", task=aws_stepfunctions_tasks.InvokeFunction(self.worker_failure_lambda)
-        )
-
-        stm_definition = self.start_worker_job.next(run_worker_success)
-        self.start_worker_job.add_catch(run_worker_failure)
-
-        self.worker_state_machine = aws_stepfunctions.StateMachine(
-            self, "WorkerStateMachine", definition=stm_definition
-        )
-
-
 class API(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         self.djangoSecret = aws_secretsmanager.Secret(self, "django-secret")
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
-        connection_secret_key = aws_ecs.Secret.from_secrets_manager(scope.base.db.secret)
+
         api_lambda_token_secret = aws_secretsmanager.Secret.from_secret_arn(
-            self, LAMBDA_AUTH_TOKEN_ENV_NAME, self.node.try_get_context("lambda_auth_token")
+            self, LAMBDA_AUTH_TOKEN_ENV_NAME, self.node.try_get_context("lambda_auth_token"),
         )
         self.api_lambda_token = api_lambda_token_secret.secret_value.to_string()
 
@@ -222,11 +141,12 @@ class API(core.Stack):
             "DJANGO_DEFAULT_FROM_EMAIL": "django_default_from_email_arn",
             "DJANGO_HOST": "django_host_arn",
             "DJANGO_ROOT_PASSWORD": "django_root_password_arn",
+            "DB_CONNECTION": "db_connection_arn",
         }
 
         self.env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, 'job_processing_dead_letter_sqs',)
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, "job_processing_dead_letter_sqs",)
         self.job_processing_queues = [
             self._create_job_processing_queue(
                 scope=scope,
@@ -238,23 +158,30 @@ class API(core.Stack):
                 name=f"job_processing_sqs_ext",
                 dead_letter_queue=self.job_processing_dead_letter_sqs,
             ),
+            self._create_job_processing_queue(
+                scope=scope,
+                name=f"job_processing_sqs_max",
+                dead_letter_queue=self.job_processing_dead_letter_sqs,
+            ),
         ]
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
             "api-service",
             cluster=scope.base.cluster,
-            image=nginx_image,
+            task_image_options=aws_ecs_patterns.ApplicationLoadBalancedTaskImageOptions(
+                image=nginx_image, container_name="nginx", container_port=80, enable_logging=True,
+            ),
             desired_count=1,
             cpu=256,
             memory_limit_mib=512,
-            container_name="nginx",
-            enable_logging=True,
-            container_port=80,
             certificate=scope.certs.cert,
             domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
             domain_zone=aws_route53.PrivateHostedZone(
-                self, "zone", vpc=scope.base.vpc, zone_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                self,
+                "zone",
+                vpc=scope.base.vpc,
+                zone_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
             ),
         )
 
@@ -263,25 +190,22 @@ class API(core.Stack):
             image=api_image,
             logging=aws_ecs.AwsLogDriver(stream_prefix="backend-container"),
             environment={
-                "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "SQS_WORKER_QUEUE_URL": self.job_processing_queues[0].queue_url,
                 "SQS_WORKER_EXT_QUEUE_URL": self.job_processing_queues[1].queue_url,
+                "SQS_WORKER_MAX_QUEUE_URL": self.job_processing_queues[2].queue_url,
                 LAMBDA_AUTH_TOKEN_ENV_NAME: self.api_lambda_token,
             },
-            secrets={
-                "DJANGO_SECRET_KEY": django_secret_key,
-                "DB_CONNECTION": connection_secret_key,
-                **self.env,
-            },
+            secrets={"DJANGO_SECRET_KEY": django_secret_key, **self.env,},
             cpu=256,
             memory_limit_mib=512,
         )
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
-        scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
+
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
+
         scope.image_resize_lambda.image_bucket.grant_read(self.api.service.task_definition.task_role)
 
         for queue in self.job_processing_queues:
@@ -292,11 +216,9 @@ class API(core.Stack):
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
         self.api.task_definition.add_to_task_role_policy(
-            aws_iam.PolicyStatement(actions=["dynamodb:*", "ses:SendRawEmail"], resources=["*"])
-        )
-
-        self.api.task_definition.add_to_task_role_policy(
-            aws_iam.PolicyStatement(actions=["ses:SendRawEmail", "ses:SendBulkTemplatedEmail"], resources=["*"])
+            aws_iam.PolicyStatement(
+                actions=["dynamodb:*", "ses:SendRawEmail", "ses:SendBulkTemplatedEmail",], resources=["*"],
+            )
         )
 
     def map_secret(self, secret_arn):
@@ -312,7 +234,7 @@ class API(core.Stack):
         return aws_sqs.Queue(
             self,
             name,
-            visibility_timeout=core.Duration.seconds(60),
+            visibility_timeout=core.Duration.seconds(300),
             dead_letter_queue=aws_sqs.DeadLetterQueue(
                 queue=dead_letter_queue, max_receive_count=JOB_PROCESSING_MAX_RETRIES
             ),
@@ -357,7 +279,7 @@ class LambdaWorker(core.Stack):
 
     def get_secret(self, secret_arn, secret_suffix):
         return aws_secretsmanager.Secret.from_secret_attributes(
-            self, secret_arn + secret_suffix, secret_arn=self.node.try_get_context(secret_arn)
+            self, secret_arn + secret_suffix, secret_arn=self.node.try_get_context(secret_arn),
         )
 
 
@@ -382,7 +304,6 @@ class PublicAPI(core.Stack):
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 
-        scope.base.db.secret.grant_read(self.public_api_lambda.role)
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
 
         self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(
@@ -391,7 +312,7 @@ class PublicAPI(core.Stack):
 
         self.public_api_lambda.add_to_role_policy(
             aws_iam.PolicyStatement(
-                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"], resources=["*"]
+                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"], resources=["*"],
             )
         )
 
@@ -401,7 +322,7 @@ class ImageResize(core.Stack):
         super().__init__(scope, id, **kwargs)
         domain_name = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
 
-        self.image_resize_lambda, self.function_code, self.api_gateway = self.create_lambda()
+        (self.image_resize_lambda, self.function_code, self.api_gateway,) = self.create_lambda()
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
         self.image_resize_lambda.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
         self.image_resize_lambda.add_environment(
@@ -473,17 +394,20 @@ class CIPipeline(core.Stack):
         github_token_arn = self.node.try_get_context("github_token_arn")
         oauth_token = aws_secretsmanager.Secret.from_secret_arn(self, "gh-token", github_token_arn)
 
-        pipeline_source_action = aws_codepipeline_actions.GitHubSourceAction(
-            action_name="github_source",
-            owner=GITHUB_REPO_OWNER,
-            repo=GITHUB_REPOSITORY,
-            branch="master",
-            trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
-            output=source_output,
-            oauth_token=oauth_token.secret_value,
+        self.pipeline.add_stage(
+            stage_name="source",
+            actions=[
+                aws_codepipeline_actions.GitHubSourceAction(
+                    action_name="github_source",
+                    owner=GITHUB_REPO_OWNER,
+                    repo=GITHUB_REPOSITORY,
+                    branch="master",
+                    trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
+                    output=source_output,
+                    oauth_token=oauth_token.secret_value,
+                ),
+            ],
         )
-
-        self.pipeline.add_stage(stage_name="source", actions=[pipeline_source_action])
 
         fe_build_spec = aws_codebuild.BuildSpec.from_source_filename("buildspec-frontend.yaml")
         build_fe_project = aws_codebuild.PipelineProject(
@@ -514,7 +438,7 @@ class CIPipeline(core.Stack):
         scope.base.webapp_registry.grant_pull_push(build_fe_project)
 
         build_fe_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_fe", input=source_output, project=build_fe_project, run_order=2
+            action_name="build_fe", input=source_output, project=build_fe_project, run_order=2,
         )
 
         app_build_spec = aws_codebuild.BuildSpec.from_source_filename("buildspec-app.yaml")
@@ -538,29 +462,7 @@ class CIPipeline(core.Stack):
         scope.base.app_registry.grant_pull_push(build_app_project)
 
         build_app_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_app", input=source_output, project=build_app_project, run_order=1
-        )
-
-        build_workers_project = aws_codebuild.PipelineProject(
-            self,
-            "build_workers_project",
-            project_name="schema_cms_workers_ci",
-            environment=aws_codebuild.BuildEnvironment(
-                environment_variables={
-                    "REPOSITORY_URI": aws_codebuild.BuildEnvironmentVariable(
-                        value=scope.base.worker_registry.repository_uri
-                    )
-                },
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
-                privileged=True,
-            ),
-            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename("buildspec-worker.yaml"),
-        )
-        scope.base.worker_registry.grant_pull_push(build_workers_project)
-
-        build_workers_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_workers", input=source_output, project=build_workers_project
+            action_name="build_app", input=source_output, project=build_app_project, run_order=1,
         )
 
         build_public_api_lambda_project = aws_codebuild.PipelineProject(
@@ -603,46 +505,6 @@ class CIPipeline(core.Stack):
             outputs=[image_resize_lambda_build_output],
         )
 
-        build_workers_success_lambda_project = aws_codebuild.PipelineProject(
-            self,
-            "build_workers_success_lambda_project",
-            project_name="schema_cms_build_workers_success",
-            environment=aws_codebuild.BuildEnvironment(
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
-            ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "backend/functions/buildspec-worker-success.yaml"
-            ),
-        )
-
-        workers_success_lambda_build_output = aws_codepipeline.Artifact()
-        build_workers_success_lambda_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_workers_success_lambda",
-            input=source_output,
-            project=build_workers_success_lambda_project,
-            outputs=[workers_success_lambda_build_output],
-        )
-
-        build_workers_failure_lambda_project = aws_codebuild.PipelineProject(
-            self,
-            "build_workers_failure_lambda_project",
-            project_name="schema_cms_build_workers_failure",
-            environment=aws_codebuild.BuildEnvironment(
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
-            ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "backend/functions/buildspec-worker-failure.yaml"
-            ),
-        )
-
-        workers_failure_lambda_build_output = aws_codepipeline.Artifact()
-        build_workers_failure_lambda_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_workers_failure_lambda",
-            input=source_output,
-            project=build_workers_failure_lambda_project,
-            outputs=[workers_failure_lambda_build_output],
-        )
-
         build_cdk_project = aws_codebuild.PipelineProject(
             self,
             "build_cdk_project",
@@ -674,11 +536,8 @@ class CIPipeline(core.Stack):
                 build_fe_action,
                 build_app_action,
                 build_image_resize_lambda_action,
-                build_workers_action,
                 *[action for (action, *_) in lambda_workers_build_actions],
                 build_public_api_lambda_action,
-                build_workers_success_lambda_action,
-                build_workers_failure_lambda_action,
                 build_cdk_action,
             ],
         )
@@ -727,27 +586,6 @@ class CIPipeline(core.Stack):
                     extra_inputs=[image_resize_lambda_build_output],
                 ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
-                    action_name="prepare_workers_changes",
-                    stack_name=scope.workers.stack_name,
-                    change_set_name="workersStagedChangeSet",
-                    admin_permissions=True,
-                    template_path=cdk_artifact.at_path("cdk.out/workers.template.json"),
-                    run_order=2,
-                    parameter_overrides={
-                        **scope.workers.success_function_code.assign(
-                            bucket_name=workers_success_lambda_build_output.s3_location.bucket_name,
-                            object_key=workers_success_lambda_build_output.s3_location.object_key,
-                            object_version=workers_success_lambda_build_output.s3_location.object_version,
-                        ),
-                        **scope.workers.failure_function_code.assign(
-                            bucket_name=workers_failure_lambda_build_output.s3_location.bucket_name,
-                            object_key=workers_failure_lambda_build_output.s3_location.object_key,
-                            object_version=workers_failure_lambda_build_output.s3_location.object_version,
-                        ),
-                    },
-                    extra_inputs=[workers_success_lambda_build_output, workers_failure_lambda_build_output],
-                ),
-                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_api_changes",
                     stack_name=scope.api.stack_name,
                     change_set_name="APIStagedChangeSet",
@@ -759,12 +597,6 @@ class CIPipeline(core.Stack):
                     action_name="execute_image_resize_lambda_changes",
                     stack_name=scope.image_resize_lambda.stack_name,
                     change_set_name="imageResizeLambdaStagedChangeSet",
-                    run_order=3,
-                ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_workers_changes",
-                    stack_name=scope.workers.stack_name,
-                    change_set_name="workersStagedChangeSet",
                     run_order=3,
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(

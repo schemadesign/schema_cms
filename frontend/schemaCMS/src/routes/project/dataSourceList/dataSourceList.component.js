@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, either, equals, propEq, propOr, T } from 'ramda';
+import { always, cond, either, equals, propEq, propOr, T, any } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -33,11 +33,12 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
-import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constants';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -49,6 +50,7 @@ export class DataSourceList extends PureComponent {
     fetchDataSources: PropTypes.func.isRequired,
     cancelFetchListLoop: PropTypes.func.isRequired,
     dataSources: PropTypes.array.isRequired,
+    uploadingDataSources: PropTypes.array.isRequired,
     theme: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -119,7 +121,7 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderMetaData = ({ metaData: { items, fields, filters, views }, metaProcessing }) => {
+  renderMetaData = ({ metaData: { items, fields, filters, tags }, metaProcessing }) => {
     const {
       intl: { formatMessage },
       theme,
@@ -133,7 +135,7 @@ export class DataSourceList extends PureComponent {
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
-      { name: formatMessage(messages.views), value: views },
+      { name: formatMessage(messages.tags), value: tags },
     ];
     const elements = list.map(({ name, value }, index) => (
       <MetaData key={index} metaProcessing={metaProcessing}>
@@ -147,24 +149,48 @@ export class DataSourceList extends PureComponent {
 
   renderLoading = message => <Loading metaProcessing>{message}</Loading>;
 
-  renderHeader = ({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed }) =>
+  renderHeader = ({
+    whenCreated,
+    firstName,
+    lastName,
+    jobProcessing,
+    metaProcessing,
+    metaFailed,
+    fileUploading,
+    fileUploadingError,
+  }) =>
     cond([
+      [propEq('fileUploading', true), always(this.renderLoading(<FormattedMessage {...messages.fileUploading} />))],
+      [
+        propEq('fileUploadingError', true),
+        always(this.renderLoading(<FormattedMessage {...messages.fileUploadingError} />)),
+      ],
       [propEq('metaProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />))],
       [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
       [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
-    ])({ metaFailed, jobProcessing, metaProcessing });
+    ])({ metaFailed, jobProcessing, metaProcessing, fileUploading, fileUploadingError });
 
-  renderItem = (
-    { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess },
-    index
-  ) => {
+  renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsInProcess, fileName }, index) => {
+    const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const jobProcessing = !activeJob || jobsInProcess;
     const metaStatus = propOr('', 'status', metaData);
     const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
     const metaFailed = equals(META_FAILED)(metaStatus);
-    const header = this.renderHeader({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed });
+    const fileUploadingError = !fileName;
+    const fileUploading = any(propEq('id', id), this.props.uploadingDataSources);
+
+    const header = this.renderHeader({
+      whenCreated,
+      firstName,
+      lastName,
+      jobProcessing,
+      metaProcessing,
+      metaFailed,
+      fileUploading,
+      fileUploadingError,
+    });
     const footer = this.renderMetaData({ metaData, metaProcessing });
 
     return (
@@ -175,6 +201,8 @@ export class DataSourceList extends PureComponent {
       </ListItem>
     );
   };
+
+  renderList = renderWhenTrue(() => <ListContainer>{this.props.dataSources.map(this.renderItem)}</ListContainer>);
 
   render() {
     const { loading, error } = this.state;
@@ -198,9 +226,7 @@ export class DataSourceList extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
         </ContextHeader>
-        <LoadingWrapper {...loadingConfig}>
-          <ListContainer>{dataSources.map(this.renderItem)}</ListContainer>
-        </LoadingWrapper>
+        <LoadingWrapper {...loadingConfig}>{this.renderList(!loading)}</LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />

@@ -2,6 +2,7 @@ import json
 import os
 
 from django.db import transaction
+from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
@@ -26,27 +27,39 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         "datasources": serializers.DataSourceSerializer,
         "folders": serializers.FolderSerializer,
         "users": serializers.ProjectEditorSerializer,
+        "states": serializers.StateSerializer,
     }
 
     def get_queryset(self):
+        if self.action == "retrieve":
+            queryset = models.Project.objects.all()
+        else:
+            queryset = models.Project.get_projects_for_user(self.request.user)
+
         return (
-            models.Project.get_projects_for_user(self.request.user)
-            .annotate_data_source_count()
+            queryset.annotate_data_source_count()
             .annotate_pages_count()
             .select_related("owner")
             .prefetch_related("editors", "folders")
             .order_by("-created")
         )
 
-    @decorators.action(detail=True, methods=["get"])
+    @decorators.action(detail=True, url_path="datasources", methods=["get"])
     def datasources(self, request, **kwargs):
         project = self.get_object()
+
+        if "raw_list" in request.query_params:
+            serializer_ = serializers.RawDataSourceSerializer(project.data_sources, many=True)
+            response_ = dict(project=project.project_info, results=serializer_.data)
+            return response.Response(response_, status=status.HTTP_200_OK)
+
         queryset = (
             project.data_sources.all()
             .jobs_in_process()
             .prefetch_related("filters", "active_job__steps")
             .select_related("project", "meta_data", "created_by", "active_job")
             .annotate_filters_count()
+            .annotate_tags_count()
             .available_for_user(user=self.request.user)
         )
 
@@ -131,12 +144,20 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
             return response.Response(serializer.data, status=status.HTTP_201_CREATED)
 
+    @decorators.action(
+        detail=True, url_path="states", methods=["get", "post"],
+    )
+    def states(self, request, **kwargs):
+        return self.generate_action_post_get_response(
+            request, related_objects_name="states", parent_object_name="project"
+        )
+
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.prefetch_related("filters", "active_job__steps").select_related(
-        "project", "meta_data", "created_by", "active_job"
-    )
+    queryset = models.DataSource.objects.prefetch_related(
+        "filters", "list_of_tags", "active_job__steps"
+    ).select_related("project", "meta_data", "created_by", "active_job")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "retrieve": serializers.DataSourceDetailSerializer,
@@ -148,6 +169,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
         "set_filters": serializers.FilterSerializer,
+        "tags_lists": serializers.TagsListSerializer,
+        "set_tags_lists": serializers.TagsListSerializer,
         "update_meta": serializers.PublicApiUpdateMetaSerializer,
     }
 
@@ -156,12 +179,17 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             super()
             .get_queryset()
             .annotate_filters_count()
+            .annotate_tags_count()
             .jobs_in_process()
             .available_for_user(user=self.request.user)
         )
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
+
+    def perform_update(self, serializer):
+        if "file" in serializer.validated_data:
+            serializer.save(created_by=self.request.user)
 
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
@@ -258,38 +286,31 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
     @decorators.action(detail=True, url_path="filters", methods=["get", "post"])
     def filters(self, request, pk=None, **kwargs):
-        data_source = self.get_object()
-
-        if request.method == 'GET':
-            if not data_source.filters.exists():
-                return response.Response({"project": data_source.project_info, "results": []})
-
-            serializer = self.get_serializer(instance=data_source.filters, many=True)
-            data = {"project": data_source.project_info, "results": serializer.data}
-            return response.Response(data, status=status.HTTP_200_OK)
-
-        else:
-            request.data["datasource"] = data_source.id
-
-            serializer = self.get_serializer(data=request.data, context=data_source)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+        return self.generate_action_post_get_response(
+            request, related_objects_name="filters", parent_object_name="datasource"
+        )
 
     @decorators.action(detail=True, url_path='set-filters', methods=["post"])
     def set_filters(self, request, pk=None, **kwargs):
-        data_source = self.get_object()
-        active = request.data.get("active", [])
-        inactive = request.data.get("inactive", [])
+        data_source = self.set_is_active_fields(request, related_objects_name="filters")
 
-        data_source.filters.filter(id__in=active).update(is_active=True)
-        data_source.filters.filter(id__in=inactive).update(is_active=False)
-
-        data_source = self.get_object()
         data_source.create_dynamo_item()
 
         serializer = self.get_serializer(instance=data_source.filters, many=True)
+
+        return response.Response(serializer.data, status=status.HTTP_200_OK)
+
+    @decorators.action(detail=True, url_path='tags-lists', methods=["get", "post"])
+    def tags_lists(self, request, pk=None, **kwargs):
+        return self.generate_action_post_get_response(
+            request, related_objects_name="list_of_tags", parent_object_name="datasource"
+        )
+
+    @decorators.action(detail=True, url_path='set-tags-lists', methods=["post"])
+    def set_tags_lists(self, request, pk=None, **kwargs):
+        data_source = self.set_is_active_fields(request, related_objects_name="list_of_tags")
+
+        serializer = self.get_serializer(instance=data_source.list_of_tags, many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -312,7 +333,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         authentication_classes=[authentication.EnvTokenAuthentication],
     )
     def update_meta(self, request, *args, **kwargs):
-        # breakpoint()
         data_source = self.get_object()
         copy_steps = request.data.pop("copy_steps", None)
         status_ = request.data.get("status")
@@ -411,12 +431,15 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIVie
 class FilterDetailViewSet(
     mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
-    queryset = models.Filter.objects.none()
-    serializer_class = serializers.FilterDetailSerializer
+    queryset = models.Filter.objects.all().select_related("datasource")
+    serializer_class = serializers.FilterDetailsSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
-    def get_queryset(self):
-        return models.Filter.objects.all().select_related("datasource")
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {"project": instance.datasource.project_info, "results": serializer.data}
+        return response.Response(data)
 
 
 class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
@@ -478,7 +501,7 @@ class PageViewSet(
         page = self.get_object()
 
         if request.method == "GET":
-            queryset = page.blocks.select_related("page").all()
+            queryset = page.blocks.all().order_by('exec_order', 'created')
             serializer = self.get_serializer(instance=queryset, many=True)
             data = {"project": page.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
@@ -497,16 +520,19 @@ class PageViewSet(
     @decorators.action(detail=True, url_path='set-blocks', methods=["post"])
     def set_blocks(self, request, pk=None, **kwargs):
         page = self.get_object()
-        active = request.data.get("active", [])
-        inactive = request.data.get("inactive", [])
+        blocks_data = request.data
 
-        page.blocks.filter(id__in=active).update(is_active=True)
-        page.blocks.filter(id__in=inactive).update(is_active=False)
+        with transaction.atomic():
+            for data in blocks_data:
+                block = page.blocks.get(pk=data["id"])
+                block.is_active = data["is_active"]
+                block.exec_order = data["exec_order"]
+                block.save(update_fields=["is_active", "exec_order"])
 
         page = self.get_object()
         page.create_dynamo_item()
 
-        serializer = self.get_serializer(instance=page.blocks, many=True)
+        serializer = self.get_serializer(instance=page.blocks.order_by('exec_order'), many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -518,7 +544,13 @@ class BlockViewSet(
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.Block.objects.prefetch_related("images").select_related("page").all()
+    queryset = (
+        models.Block.objects.prefetch_related(
+            Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
+        )
+        .select_related("page")
+        .all()
+    )
     serializer_class = serializers.BlockSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
@@ -527,3 +559,37 @@ class BlockViewSet(
         "update": serializers.BlockDetailSerializer,
         "partial_update": serializers.BlockDetailSerializer,
     }
+
+
+class TagsListDetailViewSet(
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
+):
+    queryset = (
+        models.TagsList.objects.all()
+        .prefetch_related(Prefetch('tags', queryset=models.Tag.objects.order_by('exec_order')))
+        .select_related("datasource")
+    ).order_by("created")
+    serializer_class = serializers.TagsListDetailSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {"project": instance.datasource.project_info, "results": serializer.data}
+        return response.Response(data)
+
+
+class StateDetailViewSet(
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
+):
+    queryset = (
+        models.State.objects.all().select_related("datasource", "author", "project").order_by("created")
+    )
+    serializer_class = serializers.StateSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {"project": instance.datasource.project_info, "results": serializer.data}
+        return response.Response(data)

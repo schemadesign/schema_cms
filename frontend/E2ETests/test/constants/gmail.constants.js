@@ -1,7 +1,21 @@
-export const LINK_SENT = 'linkSent';
-export const LINK_NOT_SENT = 'linkNotSent';
-export const GMAIL = 'https://www.gmail.com';
-export const RESET_URL = /schemadesign-stage.auth0.com\/lo\/reset/;
+import { AUTH0_STAGE_HOST } from './config.constants';
+
+export const ADMIN = 'admin';
+export const EDITOR = 'editor';
+export const VALID = 'valid';
+export const INVALID = 'invalid';
+export const CURRENT = 'current';
+export const INVITED = 'invited';
+export const RANDOM = 'random';
+export const GMAIL_URL = 'https://www.gmail.com';
 export const RESET_MAIL_TITLE = 'Reset your password';
-export const INVITATION_MAIL_TITLE = ''; //TODO: add title for invitation email when Mandrillo is configured
-export const INVITATION_URL = ''; //TODO: add value when Mandrillo is configured
+export const INVITE = 'invitation';
+export const RESET = 'reset';
+export const EMAIL_TYPE = {
+  invitation: 'Invitation',
+  reset: 'Reset your password',
+};
+export const URL_LINK = {
+  reset: new RegExp(`${AUTH0_STAGE_HOST}\/lo\/reset`),
+  invitation: new RegExp(`${AUTH0_STAGE_HOST}\/lo\/reset`),
+};

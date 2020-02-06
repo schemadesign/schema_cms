@@ -5,3 +5,4 @@ cdk.out
 local.env
 .vscode
 __pycache__
+dist

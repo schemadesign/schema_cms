@@ -7,7 +7,7 @@ exports[`Filters: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Filters"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Filters"
@@ -15,9 +15,106 @@ exports[`Filters: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="1"
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -88,6 +185,7 @@ exports[`Filters: Component should render correctly 1`] = `
         }
       }
       setFilters={[Function]}
+      userRole="admin"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -191,6 +289,7 @@ exports[`Filters: Component should render correctly 1`] = `
       }
     }
     setFilters={[Function]}
+    userRole="admin"
   />
 </Fragment>
 `;
@@ -202,7 +301,7 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
     encodeSpecialCharacters={true}
     title="Filters"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Filters"
@@ -210,9 +309,106 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="1"
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -270,6 +466,7 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
         }
       }
       setFilters={[Function]}
+      userRole="admin"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -356,6 +553,7 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
       }
     }
     setFilters={[Function]}
+    userRole="admin"
   />
 </Fragment>
 `;
@@ -367,7 +565,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
     encodeSpecialCharacters={true}
     title="Filters"
   />
-  <TopHeader
+  <MobileMenu
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Filters"
@@ -375,9 +573,106 @@ exports[`Filters: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
-    primaryMenuItems={Array []}
-    projectId="1"
-    secondaryMenuItems={Array []}
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/1/folder",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -432,6 +727,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
         }
       }
       setFilters={[Function]}
+      userRole="admin"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -519,6 +815,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
       }
     }
     setFilters={[Function]}
+    userRole="admin"
   />
 </Fragment>
 `;

@@ -4,9 +4,11 @@ import { storiesOf } from '@storybook/react';
 import { PageBlockList } from './pageBlockList.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
-  pageBlocks: [
+  userRole: ROLES.ADMIN,
+  values: [
     {
       name: 'block 1',
       isActive: true,
@@ -23,24 +25,41 @@ export const defaultProps = {
       id: '1',
     },
   },
+  temporaryPageBlocks: [],
+  saveTemporaryBlocks: Function.prototype,
   fetchPageBlocks: Function.prototype,
   fetchPage: Function.prototype,
-  setPageBlocks: Function.prototype,
-  history,
-  intl,
+  handleSubmit: Function.prototype,
+  setValues: Function.prototype,
+  isSubmitting: false,
+  dirty: false,
   match: {
     params: {
       pageId: '1',
     },
   },
+  intl,
+  history,
+};
+
+export const withOneBlock = {
+  ...defaultProps,
+  values: [
+    {
+      name: 'block 1',
+      isActive: true,
+      id: 1,
+    },
+  ],
 };
 
 const emptyBlocksProps = {
   ...defaultProps,
-  pageBlocks: [],
+  values: [],
 };
 
 storiesOf('Page|PageBlockList', module)
   .addDecorator(withTheme())
   .add('No data', () => <PageBlockList {...emptyBlocksProps} />)
-  .add('Default', () => <PageBlockList {...defaultProps} />);
+  .add('Default', () => <PageBlockList {...defaultProps} />)
+  .add('With one block', () => <PageBlockList {...withOneBlock} />);

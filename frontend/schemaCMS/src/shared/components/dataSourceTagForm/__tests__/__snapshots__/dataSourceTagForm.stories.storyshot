@@ -1,0 +1,609 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
+.c0 {
+  width: 100%;
+}
+
+.c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c4 {
+  height: 60px;
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        <span>
+          Name
+        </span>
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    <span>
+      Tags
+    </span>
+  </label>
+  <div
+    className="c2"
+  >
+    <span>
+      No Tags
+    </span>
+  </div>
+  <div
+    className="c3"
+  >
+    <button
+      className="c4"
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#000",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fill": "#FFF",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+        }
+      }
+      type="button"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#000",
+            "height": "60px",
+            "shapeRendering": "crispEdges",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
+.c0 {
+  width: 100%;
+}
+
+.c1 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c4 {
+  padding-top: 0;
+  margin-top: -2px;
+}
+
+.c3 {
+  border-bottom: 2px solid #2F2F36;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c6 {
+  height: 60px;
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        <span>
+          Name
+        </span>
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    <span>
+      Tags
+    </span>
+  </label>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c0"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            id="tags.0"
+            name="tags.0"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="value"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <div
+              className="c4"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fill": "#FFF",
+            "height": 35,
+            "marginLeft": 5,
+            "minWidth": 35,
+            "width": 35,
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c0"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            id="tags.1"
+            name="tags.1"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="value"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <div
+              className="c4"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fill": "#FFF",
+            "height": 35,
+            "marginLeft": 5,
+            "minWidth": 35,
+            "width": 35,
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="c5"
+  >
+    <button
+      className="c6"
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#000",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fill": "#FFF",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+        }
+      }
+      type="button"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#000",
+            "height": "60px",
+            "shapeRendering": "crispEdges",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

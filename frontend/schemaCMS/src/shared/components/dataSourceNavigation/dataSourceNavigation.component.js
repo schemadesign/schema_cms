@@ -12,17 +12,17 @@ import {
   RESULT_PAGE,
   SOURCE_PAGE,
   STEPS_PAGE,
-  VIEWS_PAGE,
+  TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
 
 const { FieldIcon, FilterIcon, ViewIcon, UploadIcon, ResultIcon } = Icons;
 export const listIcons = [
-  { Icon: UploadIcon, page: SOURCE_PAGE },
-  { Icon: FieldIcon, page: PREVIEW_PAGE },
-  { Icon: ResultIcon, page: STEPS_PAGE },
-  { Icon: ResultIcon, page: RESULT_PAGE },
-  { Icon: FilterIcon, page: FILTERS_PAGE },
-  { Icon: ViewIcon, page: VIEWS_PAGE },
+  { Icon: UploadIcon, page: SOURCE_PAGE, id: 'sourceBtn' },
+  { Icon: FieldIcon, page: PREVIEW_PAGE, id: 'fieldsBtn' },
+  { Icon: ResultIcon, page: STEPS_PAGE, id: 'stepsBtn' },
+  { Icon: ResultIcon, page: RESULT_PAGE, id: 'resultsBtn' },
+  { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn' },
+  { Icon: ViewIcon, page: TAGS_PAGE, id: 'tagsBtn' },
 ];
 const iconSize = { width: 54, height: 54 };
 
@@ -58,14 +58,14 @@ export class DataSourceNavigation extends PureComponent {
   goToPage = page => () => this.props.history.push(`/datasource/${this.props.dataSource.id}/${page}`);
 
   renderButtons = ({ dataSource }) =>
-    listIcons.map(({ Icon, page }, index) => (
+    listIcons.map(({ Icon, page, id }, index) => (
       <ButtonContainer key={index}>
         <Button
           onClick={this.goToPage(page)}
           active={this.getIsActive(page)}
           disabled={this.getIsDisabled({ dataSource, page })}
         >
-          <Icon customStyles={iconSize} />
+          <Icon id={id} customStyles={iconSize} />
         </Button>
         <PageTitle>
           <FormattedMessage {...messages[page]} />

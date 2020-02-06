@@ -18,6 +18,7 @@ import { LoadingWrapper } from '../../loadingWrapper';
 
 export class UserCreateProject extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     user: PropTypes.object.isRequired,
     project: PropTypes.object.isRequired,
     createUserProject: PropTypes.func.isRequired,
@@ -84,7 +85,7 @@ export class UserCreateProject extends PureComponent {
   };
 
   renderContent = () => {
-    const { project, user } = this.props;
+    const { project, user, userRole } = this.props;
 
     const headerValues = {
       project: project.title,
@@ -107,6 +108,7 @@ export class UserCreateProject extends PureComponent {
             handleSubmit={handleSubmit}
             headerValues={headerValues}
             onCancelClick={this.handleCancelClick}
+            userRole={userRole}
             {...restProps}
           />
         )}

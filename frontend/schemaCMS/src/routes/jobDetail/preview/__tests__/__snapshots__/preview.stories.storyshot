@@ -1,43 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots JobDetail/Preview Default 1`] = `
-.c13 {
-  height: 155px;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c14 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c16 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c8 {
   display: none;
 }
@@ -52,14 +15,6 @@ exports[`Storyshots JobDetail/Preview Default 1`] = `
 
 .c11 {
   color: #FFF;
-}
-
-.c12 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c0 {
@@ -131,28 +86,49 @@ exports[`Storyshots JobDetail/Preview Default 1`] = `
   word-break: break-word;
 }
 
-@media (min-width:1040px) {
-  .c15 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
+.c13 {
+  height: 155px;
 }
 
-@media (min-width:1040px) {
-  .c14 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
-@media (min-width:1040px) {
-  .c16 {
-    width: 240px;
-  }
+.c14 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c16 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c12 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 @media (min-width:1040px) {
@@ -183,6 +159,30 @@ exports[`Storyshots JobDetail/Preview Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    width: 240px;
   }
 }
 
@@ -293,10 +293,10 @@ exports[`Storyshots JobDetail/Preview Default 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>

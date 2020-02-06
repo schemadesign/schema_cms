@@ -1,69 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|Create Default 1`] = `
-.c13 {
-  padding-top: 7px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 30px;
-  position: relative;
-}
-
-.c14 label {
-  margin-bottom: 1px;
-}
-
-.c15 {
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-
-.c16 {
-  height: 155px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c17 {
-  bottom: 0;
-  width: 100%;
-  padding: 40px 0 36px;
-  position: fixed;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c19 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
 .c8 {
   display: none;
 }
@@ -149,32 +86,76 @@ exports[`Storyshots Project|Create Default 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c17 {
+  height: 155px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
 }
 
-@media (min-width:1040px) {
-  .c18 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
+.c18 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-@media (min-width:1040px) {
-  .c17 {
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-    width: 1000px;
-  }
+.c20 {
+  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
-@media (min-width:1040px) {
-  .c19 {
-    width: 240px;
-  }
+.c13 {
+  width: 100%;
+}
+
+.c14 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c15 label {
+  margin-bottom: 1px;
+}
+
+.c16 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c12 {
+  width: 100%;
 }
 
 @media (min-width:1040px) {
@@ -205,6 +186,30 @@ exports[`Storyshots Project|Create Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c19 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c18 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c20 {
+    width: 240px;
   }
 }
 
@@ -315,10 +320,10 @@ exports[`Storyshots Project|Create Default 1`] = `
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 10 60"
           >
             <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
               fillRule="evenodd"
             />
           </svg>
@@ -409,6 +414,19 @@ exports[`Storyshots Project|Create Default 1`] = `
               className="c5"
             >
               <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/undefined"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
@@ -435,12 +453,25 @@ exports[`Storyshots Project|Create Default 1`] = `
               className="c5"
             >
               <a
+                href="/project/undefined/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  States
+                </span>
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
                 href="/project/undefined/user"
                 id="usersNavBtn"
                 onClick={[Function]}
               >
                 <span>
-                  Users
+                  Project Users
                 </span>
               </a>
             </div>
@@ -614,7 +645,7 @@ exports[`Storyshots Project|Create Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -674,7 +705,7 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c14"
             >
               <svg
                 style={
@@ -696,7 +727,7 @@ exports[`Storyshots Project|Create Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -726,24 +757,47 @@ exports[`Storyshots Project|Create Default 1`] = `
           >
             Description
           </label>
-          <input
+          <textarea
             id="description"
-            name="description"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Project description"
             style={
               Object {
-                "backgroundColor": "transparent",
+                "background": "#000",
                 "border": "none",
                 "color": "#FFF",
                 "fontSize": "18px",
+                "height": 0,
                 "lineHeight": "24px",
                 "outline": "none",
-                "padding": 0,
+                "padding": "0",
+                "resize": "none",
               }
             }
-            type="text"
+          />
+          <textarea
+            aria-hidden={true}
+            readOnly={true}
+            style={
+              Object {
+                "background": "#000",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "height": 0,
+                "left": 0,
+                "lineHeight": "24px",
+                "outline": "none",
+                "overflow": "hidden",
+                "padding": "0",
+                "position": "absolute",
+                "resize": "none",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            tabIndex={-1}
           />
           <div
             style={
@@ -755,7 +809,7 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c14"
             >
               <svg
                 style={
@@ -777,7 +831,7 @@ exports[`Storyshots Project|Create Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -813,7 +867,6 @@ exports[`Storyshots Project|Create Default 1`] = `
             name="owner"
             onBlur={[Function]}
             onChange={[Function]}
-            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -839,7 +892,7 @@ exports[`Storyshots Project|Create Default 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        className="c15"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -865,7 +918,7 @@ exports[`Storyshots Project|Create Default 1`] = `
           value="in_progress"
         />
         <div
-          className="c15"
+          className="c16"
         >
           <svg
             style={
@@ -1004,16 +1057,16 @@ exports[`Storyshots Project|Create Default 1`] = `
         </div>
       </div>
       <div
-        className="c16"
+        className="c17"
       >
         <div
-          className="c17"
+          className="c18"
         >
           <div
-            className="c18"
+            className="c19"
           >
             <button
-              className="c19"
+              className="c20"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1041,7 +1094,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               </span>
             </button>
             <button
-              className="c19"
+              className="c20"
               disabled={false}
               id="finishBtn"
               style={

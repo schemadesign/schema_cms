@@ -6,6 +6,7 @@ import { getStyles } from './checkboxGroup.styles';
 import { CheckboxOnIcon } from '../../icons/checkboxOnIcon';
 import { CheckboxOffIcon } from '../../icons/checkboxOffIcon';
 import { withStyles } from '../../styles/withStyles';
+import { filterAllowedAttributes } from '../../../utils/helpers';
 
 class CheckboxGroupComponent extends PureComponent {
   static propTypes = {
@@ -43,9 +44,10 @@ class CheckboxGroupComponent extends PureComponent {
     const context = { name, onChange, value, isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles };
     const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
+    const filteredProps = filterAllowedAttributes('div', restProps);
 
     return (
-      <div style={styles} {...restProps}>
+      <div style={styles} {...filteredProps}>
         <CheckboxGroupContext.Provider value={context}>{children}</CheckboxGroupContext.Provider>
       </div>
     );

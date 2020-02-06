@@ -11,7 +11,7 @@ import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.const
 import { errorMessageParser, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getProjectMenuOptions, NONE } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 
 export class CreateDataSource extends PureComponent {
   static propTypes = {
@@ -61,7 +61,12 @@ export class CreateDataSource extends PureComponent {
           options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
-        <Formik enableReinitialize validationSchema={DATA_SOURCE_SCHEMA} onSubmit={this.handleSubmit}>
+        <Formik
+          enableReinitialize
+          initialValues={{ fileName: '' }}
+          validationSchema={DATA_SOURCE_SCHEMA}
+          onSubmit={this.handleSubmit}
+        >
           {({ values, submitForm, dirty, isValid, isSubmitting, ...rest }) => {
             if (!dirty && isValid) {
               submitForm = null;

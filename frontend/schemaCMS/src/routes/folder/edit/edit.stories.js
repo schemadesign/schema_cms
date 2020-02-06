@@ -5,8 +5,10 @@ import { Edit } from './edit.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { FOLDER_NAME } from '../../../modules/folder/folder.constants';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
+  userRole: ROLES.ADMIN,
   values: {
     [FOLDER_NAME]: 'name',
   },

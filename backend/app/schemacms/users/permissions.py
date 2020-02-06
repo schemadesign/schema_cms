@@ -18,7 +18,8 @@ class ProjectAccessPermission(permissions.BasePermission):
             project_id = view.kwargs.get("pk")
             project = get_project(project_id)
             return request.user.is_admin or request.user in project.editors.all()
-        if view.action == "list":
+
+        if request.method in permissions.SAFE_METHODS:
             return True
 
         return request.user.is_admin

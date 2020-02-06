@@ -83,6 +83,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
   </style>
   <div
     className=""
+    id="tabsContainer"
   >
     <div
       className="c0"
@@ -93,6 +94,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
         <a
           className="c2"
           href="/project/2"
+          id="settingsTab"
           onClick={[Function]}
         >
           <span>
@@ -106,6 +108,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
         <a
           className="c2"
           href="/project/2/datasource"
+          id="sourcesTab"
           onClick={[Function]}
         >
           <span>
@@ -118,11 +121,12 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/2/user"
+          href="/project/2/state"
+          id="stateTab"
           onClick={[Function]}
         >
           <span>
-            Users
+            States
           </span>
         </a>
       </div>
@@ -132,10 +136,25 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
         <a
           className="c2"
           href="/project/2/folder"
+          id="folderTab"
           onClick={[Function]}
         >
           <span>
             Pages
+          </span>
+        </a>
+      </div>
+      <div
+        className="c1"
+      >
+        <a
+          className="c2"
+          href="/project/2/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          <span>
+            Users
           </span>
         </a>
       </div>
@@ -234,6 +253,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
   </style>
   <div
     className=""
+    id="tabsContainer"
   >
     <div
       className="c0"
@@ -244,6 +264,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
         <a
           className="c2"
           href="/project/2"
+          id="settingsTab"
           onClick={[Function]}
         >
           <span>
@@ -257,6 +278,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
         <a
           className="c2"
           href="/project/2/datasource"
+          id="sourcesTab"
           onClick={[Function]}
         >
           <span>
@@ -269,11 +291,12 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
       >
         <a
           className="c2"
-          href="/project/2/user"
+          href="/project/2/state"
+          id="stateTab"
           onClick={[Function]}
         >
           <span>
-            Users
+            States
           </span>
         </a>
       </div>
@@ -283,10 +306,25 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
         <a
           className="c2"
           href="/project/2/folder"
+          id="folderTab"
           onClick={[Function]}
         >
           <span>
             Pages
+          </span>
+        </a>
+      </div>
+      <div
+        className="c1"
+      >
+        <a
+          className="c2"
+          href="/project/2/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          <span>
+            Users
           </span>
         </a>
       </div>

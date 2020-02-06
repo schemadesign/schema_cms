@@ -1,7 +1,6 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import Immutable from 'seamless-immutable';
 import { OK } from 'http-status-codes';
-import nock from 'nock';
 
 import { JobRoutines } from '../job.redux';
 import { watchJob } from '../job.sagas';
@@ -10,10 +9,6 @@ import { ProjectRoutines } from '../../project';
 
 describe('Job: sagas', () => {
   const defaultState = Immutable({});
-
-  beforeEach(() => {
-    nock.cleanAll();
-  });
 
   describe('when fetchOne action is called', () => {
     it('should put fetchOne.success action', async () => {

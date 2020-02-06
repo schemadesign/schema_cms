@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots RevokedAccess Default 1`] = `
-.c8 {
-  color: #1d1d20;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-  line-height: 1.5em;
-}
-
-.c8 a {
-  color: inherit;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -83,6 +70,19 @@ exports[`Storyshots RevokedAccess Default 1`] = `
   word-break: break-word;
 }
 
+.c8 {
+  color: #1d1d20;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.c8 a {
+  color: inherit;
+}
+
 @media (min-width:1040px) {
   .c0 {
     display: none;
@@ -144,7 +144,7 @@ exports[`Storyshots RevokedAccess Default 1`] = `
             }
           >
             <span>
-              SchemaCMS
+              Schema CMS
             </span>
           </h2>
           <h1
@@ -232,7 +232,7 @@ exports[`Storyshots RevokedAccess Default 1`] = `
             }
           >
             <span>
-              SchemaCMS
+              Schema CMS
             </span>
           </h2>
           <h1

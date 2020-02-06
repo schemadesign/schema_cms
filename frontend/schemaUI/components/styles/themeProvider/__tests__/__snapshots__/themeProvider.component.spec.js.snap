@@ -45,6 +45,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "border": "#f0efef",
           "text": "#1d1d20",
         },
+        "hiddenBackground": "rgba(255, 255, 255, 0)",
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
@@ -88,6 +89,11 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         "stepper": Object {
           "active": "#1d1d20",
           "background": "#f0efef",
+        },
+        "switch": Object {
+          "background": "#f0efef",
+          "backgroundActive": "#a6a7aa",
+          "circle": "#000",
         },
         "tab": Object {
           "active": "#000",

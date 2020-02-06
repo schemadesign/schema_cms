@@ -1,6 +1,5 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import Immutable from 'seamless-immutable';
-import nock from 'nock';
 import { OK } from 'http-status-codes';
 
 import { watchFolder } from '../folder.sagas';
@@ -14,10 +13,6 @@ describe('Folder: sagas', () => {
   const defaultState = Immutable({
     folders: [],
     folder: {},
-  });
-
-  beforeEach(() => {
-    nock.cleanAll();
   });
 
   describe('when fetchList action is called', () => {

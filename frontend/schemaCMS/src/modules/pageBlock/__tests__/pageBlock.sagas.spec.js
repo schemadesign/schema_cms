@@ -1,5 +1,4 @@
 import Immutable from 'seamless-immutable';
-import nock from 'nock';
 import { OK } from 'http-status-codes';
 import { expectSaga } from 'redux-saga-test-plan';
 
@@ -14,10 +13,6 @@ import { ProjectRoutines } from '../../project';
 describe('PageBlock: sagas', () => {
   const defaultState = Immutable({
     blocks: [],
-  });
-
-  beforeEach(() => {
-    nock.cleanAll();
   });
 
   describe('when fetchList action is called', () => {
@@ -68,15 +63,13 @@ describe('PageBlock: sagas', () => {
       const response = {
         id: 1,
       };
-      const active = ['1'];
-      const inactive = ['2'];
+      const blocks = [{ id: '1' }];
       const payload = {
         pageId: 1,
-        active,
-        inactive,
+        blocks,
       };
 
-      mockApi.post(`/pages/${payload.pageId}/set-blocks`, { active, inactive }).reply(OK, response);
+      mockApi.post(`/pages/${payload.pageId}/set-blocks`, blocks).reply(OK, response);
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
@@ -111,7 +104,7 @@ describe('PageBlock: sagas', () => {
         .dispatch(PageBlockRoutines.create(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`);
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`, { fromBlock: true });
     });
 
     it('should put create.success action for image type', async () => {
@@ -176,7 +169,7 @@ describe('PageBlock: sagas', () => {
         .put(PageBlockRoutines.update.success(response))
         .dispatch(PageBlockRoutines.update(payload))
         .silentRun();
-      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`);
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`, { fromBlock: true });
     });
   });
 
@@ -189,11 +182,11 @@ describe('PageBlock: sagas', () => {
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
-        .put(PageBlockRoutines.removeOne.success())
+        .put(PageBlockRoutines.removeOne.success({ blockId: payload.blockId }))
         .dispatch(PageBlockRoutines.removeOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}/`);
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}/`, { fromBlock: true });
     });
   });
 });

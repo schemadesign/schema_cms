@@ -1,6 +1,13 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import { CODE_TYPE, EMBED_TYPE, IMAGE_TYPE, MARKDOWN_TYPE, NONE } from '../../../modules/pageBlock/pageBlock.constants';
+import {
+  CODE_TYPE,
+  IMAGE_TYPE,
+  MARKDOWN_TYPE,
+  NONE,
+  TEXT_TYPE,
+  EMBED_TYPE,
+} from '../../../modules/pageBlock/pageBlock.constants';
 
 export default defineMessages({
   pageBlockFieldName: {
@@ -15,6 +22,10 @@ export default defineMessages({
     id: 'shared.components.pageBlockForm.pageBlockFieldMarkdown',
     defaultMessage: 'Markdown Text',
   },
+  pageBlockFieldText: {
+    id: 'shared.components.pageBlockForm.pageBlockFieldText',
+    defaultMessage: 'Text',
+  },
   selectImage: {
     id: 'shared.components.pageBlockForm.selectImage',
     defaultMessage: 'Please select image(s) or Drag and Drop it here',
@@ -28,6 +39,10 @@ export default defineMessages({
 
     Description **bold**
     `,
+  },
+  pageBlockFieldTextPlaceholder: {
+    id: 'shared.components.pageBlockForm.pageBlockFieldTextPlaceholder',
+    defaultMessage: 'Example text',
   },
   pageBlockFieldCode: {
     id: 'shared.components.pageBlockForm.pageBlockFieldCode',
@@ -102,6 +117,10 @@ export default defineMessages({
   },
   [MARKDOWN_TYPE]: {
     id: `shared.components.pageBlockForm.${MARKDOWN_TYPE}`,
-    defaultMessage: 'Markdown Text',
+    defaultMessage: 'Markdown',
+  },
+  [TEXT_TYPE]: {
+    id: `shared.components.pageBlockForm.${TEXT_TYPE}`,
+    defaultMessage: 'Text',
   },
 });

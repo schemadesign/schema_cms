@@ -24,6 +24,6 @@ export default defineMessages({
   },
   pageFieldKeywordsPlaceholder: {
     id: 'shared.components.pageForm.pageFieldKeywordsPlaceholder',
-    defaultMessage: 'Keywords',
+    defaultMessage: 'Keyword1;Keyword2;',
   },
 });

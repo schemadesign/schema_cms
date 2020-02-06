@@ -7,17 +7,19 @@ import { Form } from './edit.styles';
 import messages from './edit.messages';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { FOLDER_NAME } from '../../../modules/folder/folder.constants';
-import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link } from '../../../theme/typography';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { PAGE_MENU_OPTIONS } from '../../pageBlock/pageBlock.constants';
 
 export class Edit extends PureComponent {
   static propTypes = {
+    userRole: PropTypes.string.isRequired,
     intl: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
     folder: PropTypes.object.isRequired,
@@ -42,6 +44,7 @@ export class Edit extends PureComponent {
     error: null,
     loading: true,
     confirmationModalOpen: false,
+    removeLoading: false,
   };
 
   async componentDidMount() {
@@ -59,11 +62,17 @@ export class Edit extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  handleConfirmRemove = () => {
-    const folderId = getMatchParam(this.props, 'folderId');
-    const projectId = path(['folder', 'project', 'id'], this.props);
+  handleConfirmRemove = async () => {
+    try {
+      this.setState({ removeLoading: true });
+      const folderId = getMatchParam(this.props, 'folderId');
+      const projectId = path(['folder', 'project', 'id'], this.props);
 
-    this.props.removeFolder({ folderId, projectId });
+      await this.props.removeFolder({ folderId, projectId });
+    } catch (error) {
+      this.setState({ removeLoading: false });
+      reportError(error);
+    }
   };
 
   handleBackClick = () => this.props.history.push(`/project/${path(['folder', 'project', 'id'], this.props)}/folder`);
@@ -82,14 +91,18 @@ export class Edit extends PureComponent {
   );
 
   render() {
-    const { handleSubmit, isValid, isSubmitting } = this.props;
-    const { error, loading, confirmationModalOpen } = this.state;
+    const { handleSubmit, isValid, isSubmitting, userRole } = this.props;
+    const { error, loading, confirmationModalOpen, removeLoading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(PAGE_MENU_OPTIONS, userRole)}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>
@@ -112,10 +125,15 @@ export class Edit extends PureComponent {
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove} disabled={removeLoading}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

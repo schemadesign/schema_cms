@@ -2,7 +2,12 @@
 
 exports[`Storyshots Shared Components|PageForm Default 1`] = `
 .c0 {
+  width: 100%;
+}
+
+.c1 {
   padding-top: 7px;
+  margin-top: 0;
 }
 
 <div
@@ -21,7 +26,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -80,7 +85,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -102,7 +107,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -149,7 +154,6 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
             "resize": "none",
           }
         }
-        type="text"
         value="description"
       />
       <textarea
@@ -185,7 +189,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -207,7 +211,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -240,7 +244,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
       <textarea
         id="keywords"
         onChange={[Function]}
-        placeholder="Keywords"
+        placeholder="Keyword1;Keyword2;"
         style={
           Object {
             "background": "#000",
@@ -254,7 +258,6 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
             "resize": "none",
           }
         }
-        type="text"
         value="keywords"
       />
       <textarea
@@ -290,7 +293,7 @@ exports[`Storyshots Shared Components|PageForm Default 1`] = `
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={

@@ -83,7 +83,6 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         if file:
             dsource.file.save(file.name, file)
-            dsource.project.create_dynamo_item()
 
         DataSourceMeta.objects.create(datasource=dsource)
 
@@ -102,6 +101,23 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         return self.annotate(
             filters_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
+            )
+        )
+
+    def annotate_tags_count(self):
+        from .models import TagsList
+
+        subquery = (
+            TagsList.objects.order_by()
+            .values('datasource')
+            .filter(datasource=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
+
+        return self.annotate(
+            tags_count=Coalesce(
                 models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )

@@ -18,6 +18,7 @@ export const NavigationContent = styled.div`
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+  ${({ contentStyles }) => contentStyles};
 
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
@@ -30,7 +31,7 @@ const fixedStyles = css`
   background-image: linear-gradient(
     to top,
     ${({ theme: { background } }) => `${background}, ${background} 30%`},
-    rgba(0, 0, 0, 0)
+    ${({ theme: { hiddenBackground } }) => hiddenBackground}
   );
 `;
 
@@ -39,7 +40,7 @@ const fixedNavigationStyles = styleWhenTrue(identity, fixedStyles);
 export const Navigation = styled.div`
   bottom: 0;
   width: 100%;
-  padding: 40px 0 36px;
+  padding: ${({ padding }) => padding || '40px 0 36px'};
 
   ${({ fixed }) => fixedNavigationStyles(fixed)};
 

@@ -5,10 +5,39 @@ Summary: Schema CMS
 Home-page: UNKNOWN
 Author: author
 License: UNKNOWN
-Description: 
-        # Welcome Schema CMS project!
+Description: ```
+                       ________  ________  ___  ___  _______   _____ ______   ________     
+                      |\   ____\|\   ____\|\  \|\  \|\  ___ \ |\   _ \  _   \|\   __  \    
+                      \ \  \___|\ \  \___|\ \  \\\  \ \   __/|\ \  \\\__\ \  \ \  \|\  \   
+                       \ \_____  \ \  \    \ \   __  \ \  \_|/_\ \  \\|__| \  \ \   __  \  
+                        \|____|\  \ \  \____\ \  \ \  \ \  \_|\ \ \  \    \ \  \ \  \ \  \ 
+                          ____\_\  \ \_______\ \__\ \__\ \_______\ \__\    \ \__\ \__\ \__\
+                         |\_________\|_______|\|__|\|__|\|_______|\|__|     \|__|\|__|\|__|
+                         \|_________|
         
-        TODO: write this description
+                                         ________  _____ ______   ________      
+                                        |\   ____\|\   _ \  _   \|\   ____\     
+                                        \ \  \___|\ \  \\\__\ \  \ \  \___|_    
+                                         \ \  \    \ \  \\|__| \  \ \_____  \   
+                                          \ \  \____\ \  \    \ \  \|____|\  \  
+                                           \ \_______\ \__\    \ \__\____\_\  \ 
+                                            \|_______|\|__|     \|__|\_________\
+                                                                    \|_________|
+        ```
+        
+        ## Installation
+        
+        `make install` & ☕
+        
+        You will find more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app and `./docs`
+        
+        ## Development
+        
+        In `./frontend/schemaCMS/` run `yarn start`
+        In `./frontend/schemaUI/` run `yarn storybook`
+        
+        To serve backend run `docker-compose up`
+        
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
