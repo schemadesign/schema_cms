@@ -730,9 +730,16 @@ class TagsListDetailSerializer(TagsListSerializer):
 # States
 
 
+class InStateFilterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.InStateFilter
+        fields = ("filter", "condition_values")
+
+
 class StateSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField(read_only=True)
     active_tags = serializers.ListField(required=False, allow_empty=True)
+    filters = InStateFilterSerializer(read_only=True, many=True)
 
     class Meta:
         model = models.State
@@ -747,6 +754,7 @@ class StateSerializer(serializers.ModelSerializer):
             "is_public",
             "created",
             "active_tags",
+            "filters",
         )
         extra_kwargs = {
             "project": {"required": False, "allow_null": True},
@@ -766,6 +774,23 @@ class StateSerializer(serializers.ModelSerializer):
         state.save()
 
         return state
+
+    def update(self, instance, validated_data):
+        filters = self.initial_data.pop("filters", [])
+        with transaction.atomic():
+            instance = super().update(instance, validated_data)
+            for filter_ in filters:
+                instance.filters.clear()
+                filter_instance = models.Filter.objects.get(pk=filter_["id"])
+                instance.filters.add(
+                    filter_instance,
+                    through_defaults={
+                        "filter_type": filter_instance.filter_type,
+                        "field": filter_instance.field,
+                        "field_type": filter_instance.field_type,
+                        "condition_values": filter_.condition_values,
+                    },
+                )
 
     def get_author(self, state):
         return state.author.get_full_name()
