@@ -22,7 +22,7 @@ export const INITIAL_STATE = new Immutable({
   dataSource: {},
   dataSources: [],
   previewData: {},
-  fieldsInfo: {},
+  fieldsInfo: [],
   uploadingDataSources: [],
 });
 

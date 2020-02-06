@@ -2,12 +2,13 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { always, equals, ifElse, keys, map, path, pathOr, pipe, toString } from 'ramda';
+import { always, equals, ifElse, map, find, propEq, toString } from 'ramda';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './filterForm.messages';
 import {
   FILTER_FIELD,
+  FILTER_FIELD_NAME,
   FILTER_FIELD_TYPE,
   FILTER_NAME,
   FILTER_TYPE,
@@ -27,7 +28,7 @@ import reportError from '../../utils/reportError';
 
 export class FilterForm extends PureComponent {
   static propTypes = {
-    fieldsInfo: PropTypes.object.isRequired,
+    fieldsInfo: PropTypes.array.isRequired,
     createFilter: PropTypes.func,
     updateFilter: PropTypes.func,
     removeFilter: PropTypes.func,
@@ -50,13 +51,17 @@ export class FilterForm extends PureComponent {
 
   getBackMessageId = ifElse(equals(true), always('cancel'), always('back'));
 
-  getDependencyValues = value => ({
-    uniqueItems: path(['fieldsInfo', value, FILTER_UNIQUE_ITEMS], this.props),
-    fieldType: path(['fieldsInfo', value, FILTER_FIELD_TYPE], this.props),
-    filterType: path(['fieldsInfo', value, FILTER_TYPE, 0], this.props),
-  });
+  getDependencyValues = value => {
+    const { unique, fieldType, filterType } = find(propEq(FILTER_FIELD_NAME, value), this.props.fieldsInfo);
 
-  getFilterTypes = value => pathOr([], ['fieldsInfo', value, FILTER_TYPE], this.props);
+    return {
+      uniqueItems: unique,
+      fieldType,
+      filterType: filterType[0],
+    };
+  };
+
+  getFilterTypes = value => find(propEq(FILTER_FIELD_NAME, value), this.props.fieldsInfo).filterType;
 
   handleSelectField = ({ value, setFieldValue, filterTypes }) => {
     const { uniqueItems, fieldType, filterType } = this.getDependencyValues(value);
@@ -120,10 +125,7 @@ export class FilterForm extends PureComponent {
 
   render() {
     const { confirmationModalOpen, removeLoading } = this.state;
-    const fieldOptions = pipe(
-      keys,
-      map(key => ({ value: key, label: key }))
-    )(this.props.fieldsInfo);
+    const fieldOptions = map(({ fieldName }) => ({ value: fieldName, label: fieldName }))(this.props.fieldsInfo);
     const fieldValue = this.props.filter[FILTER_FIELD] || fieldOptions[0].value;
     const { uniqueItems, fieldType, filterType } = this.getDependencyValues(fieldValue);
     const initialValues = {

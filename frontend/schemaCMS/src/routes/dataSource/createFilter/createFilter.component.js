@@ -17,7 +17,7 @@ export class CreateFilter extends PureComponent {
     userRole: PropTypes.string.isRequired,
     fetchFieldsInfo: PropTypes.func.isRequired,
     createFilter: PropTypes.func.isRequired,
-    fieldsInfo: PropTypes.object.isRequired,
+    fieldsInfo: PropTypes.array.isRequired,
     dataSource: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({

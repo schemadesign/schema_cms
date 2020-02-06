@@ -17,7 +17,7 @@ export class Filter extends PureComponent {
   static propTypes = {
     updateFilter: PropTypes.func.isRequired,
     fetchFieldsInfo: PropTypes.func.isRequired,
-    fieldsInfo: PropTypes.object.isRequired,
+    fieldsInfo: PropTypes.array.isRequired,
     fetchFilter: PropTypes.func.isRequired,
     removeFilter: PropTypes.func.isRequired,
     filter: PropTypes.object.isRequired,

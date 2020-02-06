@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 export const FILTER_NAME = 'name';
 export const FILTER_TYPE = 'filterType';
 export const FILTER_FIELD = 'field';
+export const FILTER_FIELD_NAME = 'fieldName';
 export const FILTER_FIELD_TYPE = 'fieldType';
 export const FILTER_UNIQUE_ITEMS = 'unique';
 
