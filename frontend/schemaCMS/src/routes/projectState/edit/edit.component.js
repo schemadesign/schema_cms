@@ -21,6 +21,7 @@ export class Edit extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     isValid: PropTypes.bool.isRequired,
+    dirty: PropTypes.bool.isRequired,
     userRole: PropTypes.string.isRequired,
     state: PropTypes.object.isRequired,
     fetchDataSources: PropTypes.func.isRequired,
@@ -50,8 +51,19 @@ export class Edit extends PureComponent {
 
   handleCancel = () => this.props.history.push(`/project/${this.props.state.project}/state`);
 
+  handleSubmit = e => {
+    const { dirty, handleSubmit, history, state } = this.props;
+    const redirectUrl = `/state/${state.id}/tags`;
+
+    if (dirty) {
+      return handleSubmit(e);
+    }
+
+    return history.push(redirectUrl);
+  };
+
   render() {
-    const { userRole, handleSubmit, isSubmitting, isValid, state } = this.props;
+    const { userRole, isSubmitting, isValid, state } = this.props;
     const { loading, error } = this.state;
     const projectId = state.project;
     const menuOptions = getProjectMenuOptions(projectId);
@@ -67,13 +79,15 @@ export class Edit extends PureComponent {
           active={PROJECT_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>
             <ProjectStateForm {...this.props} />
           </LoadingWrapper>
           <NavigationContainer fixed contentStyles={contentStyles}>
             <NavigationButtons>
-              <BackButton type="button" onClick={this.handleCancel} />
+              <BackButton type="button" onClick={this.handleCancel}>
+                <FormattedMessage {...messages.cancel} />
+              </BackButton>
               <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid} />
             </NavigationButtons>
             <Stepper steps={3} activeStep={1} />

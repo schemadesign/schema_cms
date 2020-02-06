@@ -52,7 +52,7 @@ function* create({ payload: { projectId, formData } }) {
   }
 }
 
-function* update({ payload: { stateId, formData } }) {
+function* update({ payload: { stateId, formData, redirectUrl } }) {
   try {
     yield put(ProjectStateRoutines.update.request());
 
@@ -60,7 +60,7 @@ function* update({ payload: { stateId, formData } }) {
 
     yield put(ProjectStateRoutines.update.success(data));
 
-    browserHistory.push(`/state/${data.id}/tags`);
+    browserHistory.push(redirectUrl);
   } catch (e) {
     reportError(e);
     yield put(ProjectStateRoutines.update.failure(e));

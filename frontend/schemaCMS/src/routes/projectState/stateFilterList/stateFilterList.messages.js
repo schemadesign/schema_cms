@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'projectState.stateFilterList.subTitle',
     defaultMessage: 'Select Filters',
   },
+  finish: {
+    id: 'projectState.stateFilterList.finish',
+    defaultMessage: 'Finish',
+  },
 });

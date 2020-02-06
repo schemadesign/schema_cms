@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'projectState.stateTag.subTitle',
     defaultMessage: 'Select Tags',
   },
+  noData: {
+    id: 'projectState.stateTag.noData',
+    defaultMessage: 'No Tags',
+  },
 });

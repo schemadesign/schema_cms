@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'project.createProjectState.title',
     defaultMessage: 'Create',
   },
+  cancel: {
+    id: 'project.createProjectState.cancel',
+    defaultMessage: 'Cancel',
+  },
 });

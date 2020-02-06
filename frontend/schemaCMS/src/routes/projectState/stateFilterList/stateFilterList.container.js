@@ -41,13 +41,16 @@ export default compose(
   withRouter,
   withFormik({
     enableReinitialize: true,
-    mapPropsToValues: ({ state }) => state.filters || [],
-    handleSubmit: async (filters, { props, setSubmitting, setErrors }) => {
+    mapPropsToValues: ({ state }) => state.filters.map(({ filter }) => filter),
+    handleSubmit: async (values, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
         const stateId = getMatchParam(props, 'stateId');
+        const { filters, project } = props.state;
+        const redirectUrl = `/project/${project}/state`;
+        const formData = { filters: filters.filter(({ filter }) => values.includes(filter)) };
 
-        await props.updateState({ formData: { filters }, stateId });
+        await props.updateState({ formData, stateId, redirectUrl });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });

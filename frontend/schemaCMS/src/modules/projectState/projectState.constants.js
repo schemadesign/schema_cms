@@ -9,6 +9,10 @@ export const PROJECT_STATE_IS_PUBLIC = 'isPublic';
 export const PROJECT_STATE_AUTHOR = 'author';
 export const PROJECT_STATE_CREATED = 'created';
 export const PROJECT_STATE_FILTERS = 'filters';
+export const PROJECT_STATE_FILTER_NAME = 'name';
+export const PROJECT_STATE_FILTER_TYPE = 'filterType';
+export const PROJECT_STATE_FILTER_FIELD = 'field';
+export const PROJECT_STATE_FILTER_VALUES = 'values';
 
 export const INITIAL_VALUES = {
   [PROJECT_STATE_NAME]: '',

@@ -16,6 +16,7 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { contentStyles, NavigationButtons } from '../../project/createProjectState/createProjectState.styles';
 import { PROJECT_STATE_FILTERS } from '../../../modules/projectState/projectState.constants';
+import { Link } from '../../page/pageBlockList/pageBlockList.styles';
 
 const { CheckboxGroup, Checkbox } = FormUI;
 
@@ -24,7 +25,7 @@ export class StateFilterList extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     setValues: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
-    isValid: PropTypes.bool.isRequired,
+    dirty: PropTypes.bool.isRequired,
     userRole: PropTypes.string.isRequired,
     state: PropTypes.object.isRequired,
     filters: PropTypes.array.isRequired,
@@ -55,23 +56,42 @@ export class StateFilterList extends PureComponent {
 
   handleChange = e => {
     const { value, checked } = e.target;
-    const { setValues, values } = this.props;
+    const { setValues, values, state } = this.props;
     const intValue = parseInt(value, 10);
+    const isFilled = state.filters.find(({ filter }) => filter === intValue);
+
+    if (checked && !isFilled) {
+      return this.props.history.push(`/state/${this.props.state.id}/filter/${value}`);
+    }
+
     const setTags = ifElse(equals(true), always(append(intValue, values)), always(reject(equals(intValue), values)));
 
-    setValues(setTags(checked));
+    return setValues(setTags(checked));
   };
 
   handleBack = () => this.props.history.push(`/state/${this.props.state.id}/tags`);
 
+  handleSubmit = e => {
+    const { dirty, handleSubmit, history, state } = this.props;
+    const redirectUrl = `/project/${state.project}/state`;
+
+    if (dirty) {
+      return handleSubmit(e);
+    }
+
+    return history.push(redirectUrl);
+  };
+
   renderFilters = ({ id, name }, index) => (
     <Checkbox key={index} id={`checkbox-${index}`} value={id}>
-      {name}
+      <Link to={`/state/${this.props.state.id}/filter/${id}`} onClick={this.handleGoToBlock}>
+        {name}
+      </Link>
     </Checkbox>
   );
 
   render() {
-    const { userRole, handleSubmit, isSubmitting, isValid, state, filters, values } = this.props;
+    const { userRole, isSubmitting, state, filters, values } = this.props;
     const { loading, error } = this.state;
     const projectId = state.project;
     const menuOptions = getProjectMenuOptions(projectId);
@@ -87,7 +107,7 @@ export class StateFilterList extends PureComponent {
           active={PROJECT_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>
             <CheckboxGroup onChange={this.handleChange} name={PROJECT_STATE_FILTERS} value={values}>
               {filters.map(this.renderFilters)}
@@ -96,7 +116,9 @@ export class StateFilterList extends PureComponent {
           <NavigationContainer fixed contentStyles={contentStyles}>
             <NavigationButtons>
               <BackButton type="button" onClick={this.handleBack} />
-              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid} />
+              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting}>
+                <FormattedMessage {...messages.finish} />
+              </NextButton>
             </NavigationButtons>
             <Stepper steps={3} activeStep={3} />
           </NavigationContainer>

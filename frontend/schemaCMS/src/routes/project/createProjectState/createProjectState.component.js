@@ -81,7 +81,9 @@ export class CreateProjectState extends PureComponent {
         </LoadingWrapper>
         <NavigationContainer fixed contentStyles={contentStyles}>
           <NavigationButtons>
-            <BackButton type="button" onClick={this.handleCancel} />
+            <BackButton type="button" onClick={this.handleCancel}>
+              <FormattedMessage {...messages.cancel} />
+            </BackButton>
             <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid} />
           </NavigationButtons>
           <Stepper steps={3} activeStep={1} />

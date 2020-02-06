@@ -23,9 +23,9 @@ export class StateTag extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     setValues: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
-    isValid: PropTypes.bool.isRequired,
     userRole: PropTypes.string.isRequired,
     state: PropTypes.object.isRequired,
+    dirty: PropTypes.bool.isRequired,
     tags: PropTypes.array.isRequired,
     values: PropTypes.array.isRequired,
     fetchTags: PropTypes.func.isRequired,
@@ -63,6 +63,17 @@ export class StateTag extends PureComponent {
     setValues(setTags(checked));
   };
 
+  handleSubmit = e => {
+    const { dirty, handleSubmit, history, state } = this.props;
+    const redirectUrl = `/state/${state.id}/filters`;
+
+    if (dirty) {
+      return handleSubmit(e);
+    }
+
+    return history.push(redirectUrl);
+  };
+
   renderTags = ({ id, value }, index) => (
     <Checkbox key={index} id={`checkbox-${id}`} value={id}>
       {value}
@@ -86,11 +97,12 @@ export class StateTag extends PureComponent {
   renderTagsList = map(this.renderList);
 
   render() {
-    const { userRole, handleSubmit, isSubmitting, isValid, state, tags } = this.props;
+    const { userRole, isSubmitting, state, tags } = this.props;
     const { loading, error } = this.state;
     const projectId = state.project;
     const menuOptions = getProjectMenuOptions(projectId);
     const title = state.name;
+    const noData = <FormattedMessage {...messages.noData} />;
 
     return (
       <Fragment>
@@ -102,14 +114,14 @@ export class StateTag extends PureComponent {
           active={PROJECT_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <Form onSubmit={handleSubmit}>
-          <LoadingWrapper loading={loading} error={error}>
+        <Form onSubmit={this.handleSubmit}>
+          <LoadingWrapper loading={loading} error={error} noData={!tags.length} noDataContent={noData}>
             {this.renderTagsList(tags)}
           </LoadingWrapper>
           <NavigationContainer fixed contentStyles={contentStyles}>
             <NavigationButtons>
               <BackButton type="button" onClick={this.handleBack} />
-              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid} />
+              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting} />
             </NavigationButtons>
             <Stepper steps={3} activeStep={2} />
           </NavigationContainer>

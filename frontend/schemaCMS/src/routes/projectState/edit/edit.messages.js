@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'projectState.edit.subTitle',
     defaultMessage: 'Edit State',
   },
+  cancel: {
+    id: 'projectState.edit.cancel',
+    defaultMessage: 'Cancel',
+  },
 });
