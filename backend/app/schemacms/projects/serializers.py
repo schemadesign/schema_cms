@@ -787,18 +787,19 @@ class StateSerializer(serializers.ModelSerializer):
         filters = self.initial_data.pop("filters", [])
         with transaction.atomic():
             instance = super().update(instance, validated_data)
-            for filter_ in filters:
+            if filters:
                 instance.filters.clear()
-                filter_instance = models.Filter.objects.get(pk=filter_["id"])
-                instance.filters.add(
-                    filter_instance,
-                    through_defaults={
-                        "filter_type": filter_instance.filter_type,
-                        "field": filter_instance.field,
-                        "field_type": filter_instance.field_type,
-                        "condition_values": filter_["values"],
-                    },
-                )
+                for filter_ in filters:
+                    filter_instance = models.Filter.objects.get(pk=filter_["filter"])
+                    instance.filters.add(
+                        filter_instance,
+                        through_defaults={
+                            "filter_type": filter_instance.filter_type,
+                            "field": filter_instance.field,
+                            "field_type": filter_instance.field_type,
+                            "condition_values": filter_["values"],
+                        },
+                    )
         return instance
 
     def get_author(self, state):
