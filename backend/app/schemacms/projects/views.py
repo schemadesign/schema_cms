@@ -282,7 +282,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             fields = json.loads(preview.read())["fields"]
 
             for key, value in fields.items():
-                data["results"][key] = dict(
+                data["results"] = dict(
+                    field_name=key,
                     field_type=value["dtype"],
                     unique=value["unique"],
                     filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
