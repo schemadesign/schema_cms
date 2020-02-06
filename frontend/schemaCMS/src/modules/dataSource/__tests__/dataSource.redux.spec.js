@@ -8,7 +8,7 @@ describe('DataSource: redux', () => {
     dataSource: {},
     dataSources: [],
     previewData: {},
-    fieldsInfo: {},
+    fieldsInfo: [],
     uploadingDataSources: [],
   });
 

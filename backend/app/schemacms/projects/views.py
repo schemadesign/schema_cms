@@ -266,23 +266,42 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="fields-info", methods=["get"])
     def fields_info(self, request, pk=None, **kwargs):
         data_source = self.get_object()
+        states_view = request.query_params.get("states_view", False)
+        field_name = request.query_params.get("field_name", None)
 
         try:
             preview = data_source.active_job.meta_data.preview
         except Exception as e:
             return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
 
-        fields = json.loads(preview.read())["fields"]
+        data = dict(project=data_source.project_info, results=[])
 
-        data = dict(project=data_source.project_info, results={})
-        for key, value in fields.items():
-            data["results"][key] = dict(
-                field_type=value["dtype"],
-                unique=value["unique"],
-                filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
-            )
+        if states_view and field_name:
+            data = self.create_single_field_info_response(preview, field_name, data)
+        else:
+            fields = json.loads(preview.read())["fields"]
+
+            for key, value in fields.items():
+                data["results"].append(
+                    dict(
+                        field_name=key,
+                        field_type=value["dtype"],
+                        unique=value["unique"],
+                        filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
+                    )
+                )
 
         return response.Response(data=data)
+
+    @staticmethod
+    def create_single_field_info_response(preview, field_name, response_data):
+        field = json.loads(preview.read())["fields"][field_name]
+        if field["dtype"] != "number":
+            response_data["results"] = field["unique_values"]
+        else:
+            response_data["results"] = [field["min"], field["max"]]
+
+        return response_data
 
     @decorators.action(detail=True, url_path="filters", methods=["get", "post"])
     def filters(self, request, pk=None, **kwargs):

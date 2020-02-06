@@ -7,23 +7,24 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
-import { StateTag } from './stateTag.component';
-import { ProjectStateRoutines, selectState } from '../../../modules/projectState';
-import { selectUserRole } from '../../../modules/userProfile';
+import { StateFilterList } from './stateFilterList.component';
+
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from '../../project/create/create.messages';
-import { DataSourceTagRoutines, selectTags } from '../../../modules/dataSourceTag';
+import { ProjectStateRoutines, selectState } from '../../../modules/projectState';
+import { selectUserRole } from '../../../modules/userProfile';
+import { FilterRoutines, selectFilters } from '../../../modules/filter';
 
 const mapStateToProps = createStructuredSelector({
   state: selectState,
+  filters: selectFilters,
   userRole: selectUserRole,
-  tags: selectTags,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchTags: promisifyRoutine(DataSourceTagRoutines.fetchList),
+      fetchFilters: promisifyRoutine(FilterRoutines.fetchList),
       updateState: promisifyRoutine(ProjectStateRoutines.update),
     },
     dispatch
@@ -40,14 +41,16 @@ export default compose(
   withRouter,
   withFormik({
     enableReinitialize: true,
-    mapPropsToValues: ({ state }) => state.activeTags,
-    handleSubmit: async (activeTags, { props, setSubmitting, setErrors }) => {
+    mapPropsToValues: ({ state }) => state.filters.map(({ filter }) => filter),
+    handleSubmit: async (values, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
         const stateId = getMatchParam(props, 'stateId');
-        const redirectUrl = `/state/${stateId}/filters`;
+        const { filters, project } = props.state;
+        const redirectUrl = `/project/${project}/state`;
+        const formData = { filters: filters.filter(({ filter }) => values.includes(filter)) };
 
-        await props.updateState({ formData: { activeTags }, stateId, redirectUrl });
+        await props.updateState({ formData, stateId, redirectUrl });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });
@@ -58,4 +61,4 @@ export default compose(
       }
     },
   })
-)(StateTag);
+)(StateFilterList);

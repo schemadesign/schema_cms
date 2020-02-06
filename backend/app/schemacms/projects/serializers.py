@@ -730,9 +730,24 @@ class TagsListDetailSerializer(TagsListSerializer):
 # States
 
 
+class InStateFilterSerializer(serializers.ModelSerializer):
+    values = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = models.InStateFilter
+        fields = (
+            "filter",
+            "values",
+        )
+
+    def get_values(self, filter_):
+        return filter_.condition_values
+
+
 class StateSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField(read_only=True)
     active_tags = serializers.ListField(required=False, allow_empty=True)
+    filters = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.State
@@ -747,6 +762,7 @@ class StateSerializer(serializers.ModelSerializer):
             "is_public",
             "created",
             "active_tags",
+            "filters",
         )
         extra_kwargs = {
             "project": {"required": False, "allow_null": True},
@@ -767,5 +783,28 @@ class StateSerializer(serializers.ModelSerializer):
 
         return state
 
+    def update(self, instance, validated_data):
+        with transaction.atomic():
+            instance = super().update(instance, validated_data)
+            if "filters" in self.initial_data:
+                instance.filters.clear()
+                filters = self.initial_data.pop("filters")
+                for filter_ in filters:
+                    filter_instance = models.Filter.objects.get(pk=filter_["filter"])
+                    instance.filters.add(
+                        filter_instance,
+                        through_defaults={
+                            "filter_type": filter_instance.filter_type,
+                            "field": filter_instance.field,
+                            "field_type": filter_instance.field_type,
+                            "condition_values": filter_["values"],
+                        },
+                    )
+        return instance
+
     def get_author(self, state):
         return state.author.get_full_name()
+
+    def get_filters(self, state):
+        state_filters = models.InStateFilter.objects.filter(state=state)
+        return InStateFilterSerializer(state_filters, many=True).data

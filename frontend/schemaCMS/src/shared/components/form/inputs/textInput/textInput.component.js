@@ -19,7 +19,7 @@ export class TextInput extends PureComponent {
     fullWidth: PropTypes.bool,
     name: PropTypes.string.isRequired,
     touched: PropTypes.object,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     readOnly: PropTypes.bool,
     isEdit: PropTypes.bool,
     handleBlur: PropTypes.func,

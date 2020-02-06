@@ -55,23 +55,11 @@ PROCESSING_STATE_CHOICES = (
 
 
 class FilterType(Enum):
-    # Date
-    CALENDAR = "Calendar"
-    TIME_INPUT = "Time Input"
-    TIME_SCRUBBER = "Time Scrubber"
-    # Bool
-    SWITCH = "Switch"
-    # Geographic
-    CARTOGRAM = "Cartogram"
-    ZIPCODE_INPUT = "Zipcode Input"
-    # String
-    RADIO_BUTTON = "Radio Button"
-    CHECKBOX = "Checkbox"
-    SEARCH_INPUT = "Search Input"
-    TAGS = "Tags"
-    # Number
-    INTERVAL_SLIDER = "Interval Slider"
-    SINGLE_POINT_SLIDER = "Single Point Slider"
+    RANGE = "range"
+    VALUE = "value"
+    BOOL = "bool"
+    SELECT = "select"
+    CHECKBOX = "checkbox"
 
     @classmethod
     def choices(cls):
@@ -79,19 +67,15 @@ class FilterType(Enum):
 
 
 STRING_FILTER_TYPES = [
-    FilterType.TAGS.value,
-    FilterType.SEARCH_INPUT.value,
-    FilterType.RADIO_BUTTON.value,
+    FilterType.SELECT.value,
     FilterType.CHECKBOX.value,
 ]
 
-DATE_FILTER_TYPES = [FilterType.TIME_SCRUBBER.value, FilterType.TIME_INPUT.value, FilterType.CALENDAR.value]
+DATE_FILTER_TYPES = [FilterType.RANGE.value, FilterType.VALUE.value]
 
-BOOL_FILTER_TYPES = [FilterType.SWITCH.value]
+BOOL_FILTER_TYPES = [FilterType.BOOL.value]
 
-NUMBER_FILTER_TYPES = [FilterType.INTERVAL_SLIDER.value, FilterType.SINGLE_POINT_SLIDER.value]
-
-GEO_FILTER_TYPES = [FilterType.CARTOGRAM.value, FilterType.ZIPCODE_INPUT.value]
+NUMBER_FILTER_TYPES = [FilterType.RANGE.value, FilterType.VALUE.value]
 
 
 class FilterTypesGroups:

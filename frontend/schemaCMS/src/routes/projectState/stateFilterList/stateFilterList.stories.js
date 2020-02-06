@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { StateTag } from './stateTag.component';
+import { StateFilterList } from './stateFilterList.component';
 import { state } from '../../../modules/projectState/projectState.mock';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../../.storybook/helpers';
@@ -11,16 +11,16 @@ export const defaultProps = {
   handleSubmit: Function.prototype,
   setValues: Function.prototype,
   isSubmitting: false,
-  dirty: true,
-  values: [1],
-  tags: [{ name: 'name', id: 1, tags: [{ id: 1, value: 'value' }, { id: 2, value: 'value 2' }] }],
+  dirty: false,
   userRole: ROLES.ADMIN,
   state,
-  fetchTags: Function.prototype,
+  filters: [],
+  values: [],
+  fetchFilters: Function.prototype,
   intl,
   history,
 };
 
-storiesOf('StateTag', module)
+storiesOf('ProjectState/StateFilterList', module)
   .addDecorator(withTheme())
-  .add('Default', () => <StateTag {...defaultProps} />);
+  .add('Default', () => <StateFilterList {...defaultProps} />);

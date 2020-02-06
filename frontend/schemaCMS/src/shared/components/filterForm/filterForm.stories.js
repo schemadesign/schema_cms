@@ -6,13 +6,14 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
-  fieldsInfo: {
-    field: {
+  fieldsInfo: [
+    {
+      fieldName: 'field',
       filterType: ['checkbox'],
       unique: 1,
       fieldType: 'string',
     },
-  },
+  ],
   dataSourceId: '1',
   history,
   intl,

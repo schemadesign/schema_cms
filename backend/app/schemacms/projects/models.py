@@ -795,6 +795,7 @@ class State(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
     )
     is_public = models.BooleanField(default=True)
     active_tags = pg_fields.ArrayField(models.IntegerField(), null=True, default=list)
+    filters = models.ManyToManyField(Filter, through="InStateFilter")
 
     def __str__(self):
         return self.name or str(self.pk)
@@ -806,3 +807,14 @@ class State(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
             )
         ]
         ordering = ('created',)
+
+
+class InStateFilter(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject):
+    filter = models.ForeignKey(Filter, on_delete=models.CASCADE)
+    state = models.ForeignKey(State, on_delete=models.CASCADE)
+    filter_type = models.CharField(max_length=25)
+    field = models.CharField(max_length=25)
+    field_type = models.CharField(max_length=25)
+    condition_values = pg_fields.ArrayField(
+        base_field=models.CharField(max_length=255), blank=True, default=list
+    )

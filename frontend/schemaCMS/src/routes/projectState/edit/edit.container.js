@@ -3,7 +3,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { compose } from 'ramda';
+import { compose, pick, keys } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
@@ -47,14 +47,15 @@ export default compose(
     displayName: CREATE_PROJECT_STATE_FORM,
     enableReinitialize: true,
     isInitialValid: true,
-    mapPropsToValues: ({ state }) => ({ ...INITIAL_VALUES, ...state }),
+    mapPropsToValues: ({ state }) => ({ ...pick(keys(INITIAL_VALUES), state) }),
     validationSchema: () => PROJECT_STATE_SCHEMA,
     handleSubmit: async (formData, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
         const stateId = getMatchParam(props, 'stateId');
+        const redirectUrl = `/state/${stateId}/tags`;
 
-        await props.updateState({ formData, stateId });
+        await props.updateState({ formData, stateId, redirectUrl });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });

@@ -1,26 +1,30 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { StateTag } from './stateTag.component';
+import { StateFilter } from './stateFilter.component';
 import { state } from '../../../modules/projectState/projectState.mock';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
+  fetchFilter: Function.prototype,
+  fetchFieldsInfo: Function.prototype,
   handleSubmit: Function.prototype,
-  setValues: Function.prototype,
+  handleChange: Function.prototype,
+  setFieldValue: Function.prototype,
   isSubmitting: false,
-  dirty: true,
-  values: [1],
-  tags: [{ name: 'name', id: 1, tags: [{ id: 1, value: 'value' }, { id: 2, value: 'value 2' }] }],
-  userRole: ROLES.ADMIN,
+  isValid: true,
   state,
-  fetchTags: Function.prototype,
+  values: { values: [] },
+  filter: {},
+  fieldsInfo: [],
+  userRole: ROLES.ADMIN,
+  match: { params: { filterId: 'filterId' } },
   intl,
   history,
 };
 
-storiesOf('StateTag', module)
+storiesOf('ProjectState/StateFilter', module)
   .addDecorator(withTheme())
-  .add('Default', () => <StateTag {...defaultProps} />);
+  .add('Default', () => <StateFilter {...defaultProps} />);

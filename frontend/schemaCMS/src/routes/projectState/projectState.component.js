@@ -10,6 +10,8 @@ import { Edit } from './edit';
 import { STATES } from '../../shared/components/projectTabs/projectTabs.constants';
 import { NotFound } from '../notFound';
 import { StateTag } from './stateTag';
+import { StateFilterList } from './stateFilterList';
+import { StateFilter } from './stateFilter';
 
 export class ProjectState extends PureComponent {
   static propTypes = {
@@ -48,7 +50,9 @@ export class ProjectState extends PureComponent {
       state,
     } = this.props;
     const editPath = `${path}/edit`;
-    const tagPath = `${path}/tags`;
+    const tagsPath = `${path}/tags`;
+    const filterListPath = `${path}/filters`;
+    const filterPath = `${path}/filter/:filterId`;
 
     return (
       <Fragment>
@@ -57,7 +61,9 @@ export class ProjectState extends PureComponent {
           <Switch>
             <Redirect exact path={path} to={editPath} />
             <Route exact path={editPath} component={Edit} />
-            <Route exact path={tagPath} component={StateTag} />
+            <Route exact path={tagsPath} component={StateTag} />
+            <Route exact path={filterListPath} component={StateFilterList} />
+            <Route exact path={filterPath} component={StateFilter} />
             <Route exact path={`${path}/*`} component={NotFound} />
           </Switch>
         </LoadingWrapper>

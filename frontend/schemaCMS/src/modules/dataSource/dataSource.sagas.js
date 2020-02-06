@@ -180,12 +180,12 @@ function* fetchPreview({ payload }) {
   }
 }
 
-function* fetchFieldsInfo({ payload }) {
+function* fetchFieldsInfo({ payload: { dataSourceId, field } }) {
   try {
     yield put(DataSourceRoutines.fetchFieldsInfo.request());
 
-    const { dataSourceId } = payload;
-    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/fields-info`);
+    const fieldQuery = field ? `?field_name=${field}&states_view=true` : '';
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/fields-info${fieldQuery}`);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(DataSourceRoutines.fetchFieldsInfo.success(data.results));

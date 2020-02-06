@@ -49,8 +49,9 @@ exports[`Filter: Component should render correctly 1`] = `
     <FilterForm
       dataSourceId="1"
       fieldsInfo={
-        Object {
-          "field": Object {
+        Array [
+          Object {
+            "fieldName": "fieldName",
             "fieldType": "fieldType",
             "filterType": Array [
               "Filter Type 1",
@@ -59,7 +60,7 @@ exports[`Filter: Component should render correctly 1`] = `
             ],
             "unique": "unique",
           },
-        }
+        ]
       }
       filter={
         Object {
@@ -136,8 +137,9 @@ exports[`Filter: Component should render correctly with loader 1`] = `
     <FilterForm
       dataSourceId="1"
       fieldsInfo={
-        Object {
-          "field": Object {
+        Array [
+          Object {
+            "fieldName": "fieldName",
             "fieldType": "fieldType",
             "filterType": Array [
               "Filter Type 1",
@@ -146,7 +148,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
             ],
             "unique": "unique",
           },
-        }
+        ]
       }
       filter={
         Object {
