@@ -96,11 +96,12 @@ def get_preview_data(data_frame):
         percentile_75th = json.dumps({})
         percentile_90th = json.dumps({})
 
-    columns = data_frame.columns.to_list()
+    all_columns = data_frame.columns.to_list()
+    non_numeric_columns = data_frame.select_dtypes(exclude=["number"]).columns.tolist()
 
     fields_info = {}
 
-    for i in columns:
+    for i in all_columns:
         fields_info[i] = {}
         fields_info[i]["mean"] = json.loads(mean).get(i, None)
         fields_info[i]["median"] = json.loads(median).get(i, None)
@@ -108,7 +109,9 @@ def get_preview_data(data_frame):
         fields_info[i]["max"] = json.loads(max_).get(i, None)
         fields_info[i]["std"] = json.loads(std).get(i, None)
         fields_info[i]["unique"] = json.loads(unique).get(i, None)
-        fields_info[i]["unique_values"] = get_unique_values_for_column(data_frame, i)
+        fields_info[i]["unique_values"] = (
+            get_unique_values_for_column(data_frame, i) if i in non_numeric_columns else None
+        )
         fields_info[i]["number_of_nans"] = nan.get(i, None)
         fields_info[i]["percentile_10th"] = json.loads(percentile_10th).get(i, None)
         fields_info[i]["percentile_25th"] = json.loads(percentile_25th).get(i, None)
@@ -116,7 +119,7 @@ def get_preview_data(data_frame):
         fields_info[i]["percentile_90th"] = json.loads(percentile_90th).get(i, None)
         fields_info[i]["count"] = items
 
-    dtypes = {i: k for i, k in zip(columns, data_frame.dtypes)}
+    dtypes = {i: k for i, k in zip(all_columns, data_frame.dtypes)}
     for key, value in dtypes.items():
         fields_info[key]["dtype"] = map_general_dtypes(value.name)
 
@@ -131,11 +134,11 @@ def get_preview_data(data_frame):
 
     del data_frame, sample_of_5
 
-    return preview_json, items, fields, columns, fields_with_urls
+    return preview_json, items, fields, all_columns, fields_with_urls
 
 
 def get_unique_values_for_column(data_frame, column):
-    return json.loads(data_frame[column].unique().to_json())
+    return data_frame[column].unique().tolist()
 
 
 def process_datasource_meta_source_file(data_source: dict):

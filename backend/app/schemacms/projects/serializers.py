@@ -740,7 +740,7 @@ class InStateFilterSerializer(serializers.ModelSerializer):
             "values",
         )
 
-    def get_value(self, filter_):
+    def get_values(self, filter_):
         return filter_.condition_values
 
 
