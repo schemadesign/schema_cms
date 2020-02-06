@@ -731,13 +731,13 @@ class TagsListDetailSerializer(TagsListSerializer):
 
 
 class InStateFilterSerializer(serializers.ModelSerializer):
-    value = serializers.SerializerMethodField(read_only=True)
+    values = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.InStateFilter
         fields = (
             "filter",
-            "value",
+            "values",
         )
 
     def get_value(self, filter_):
@@ -796,7 +796,7 @@ class StateSerializer(serializers.ModelSerializer):
                         "filter_type": filter_instance.filter_type,
                         "field": filter_instance.field,
                         "field_type": filter_instance.field_type,
-                        "condition_values": filter_.values,
+                        "condition_values": filter_["values"],
                     },
                 )
         return instance
