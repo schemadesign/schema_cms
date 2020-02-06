@@ -731,15 +731,23 @@ class TagsListDetailSerializer(TagsListSerializer):
 
 
 class InStateFilterSerializer(serializers.ModelSerializer):
+    value = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = models.InStateFilter
-        fields = ("filter", "condition_values")
+        fields = (
+            "filter",
+            "value",
+        )
+
+    def get_value(self, filter_):
+        return filter_.condition_values
 
 
 class StateSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField(read_only=True)
     active_tags = serializers.ListField(required=False, allow_empty=True)
-    filters = InStateFilterSerializer(read_only=True, many=True)
+    filters = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.State
@@ -788,9 +796,14 @@ class StateSerializer(serializers.ModelSerializer):
                         "filter_type": filter_instance.filter_type,
                         "field": filter_instance.field,
                         "field_type": filter_instance.field_type,
-                        "condition_values": filter_.condition_values,
+                        "condition_values": filter_.values,
                     },
                 )
+        return instance
 
     def get_author(self, state):
         return state.author.get_full_name()
+
+    def get_filters(self, state):
+        state_filters = models.InStateFilter.objects.filter(state=state)
+        return InStateFilterSerializer(state_filters, many=True).data
