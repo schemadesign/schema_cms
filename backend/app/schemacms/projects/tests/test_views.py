@@ -3,6 +3,7 @@ import operator
 import os
 import uuid
 
+from django.conf import settings
 from django.core.files import base
 from django.urls import reverse
 from rest_framework import status
@@ -560,6 +561,77 @@ class TestUpdateDataSourceView:
         return reverse("projects:datasource-detail", kwargs=dict(pk=pk))
 
 
+class TestDataSourceUpdateMeta:
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-update-meta", kwargs=dict(pk=pk))
+
+    @staticmethod
+    def generate_update_meta_payload(datasource_pk, is_status_update=False):
+        if is_status_update:
+            payload = dict(datasource_pk=datasource_pk, status=projects_constants.ProcessingState.PROCESSING)
+        else:
+            payload = dict(
+                items=2,
+                fields=2,
+                fields_names=["fields_1", "field2"],
+                fields_with_urls=[],
+                preview={"preview": "test"},
+                copy_steps=False,
+                status=projects_constants.ProcessingState.SUCCESS,
+            )
+        return payload
+
+    @pytest.mark.parametrize(
+        "token, response_status",
+        [
+            ("invalidToken", status.HTTP_401_UNAUTHORIZED),
+            (settings.LAMBDA_AUTH_TOKEN, status.HTTP_204_NO_CONTENT),
+        ],
+    )
+    def test_authentication_on_update_meta(self, api_client, data_source, token, response_status):
+        response = api_client.post(
+            self.get_url(data_source.pk), {}, HTTP_AUTHORIZATION=f"Token {token}", format="json"
+        )
+
+        assert response.status_code == response_status
+
+    def test_status_update(self, api_client, data_source):
+        old_datasource_status = data_source.meta_data.status
+        payload = self.generate_update_meta_payload(datasource_pk=data_source.pk, is_status_update=True)
+
+        response = api_client.post(
+            self.get_url(data_source.pk),
+            payload,
+            HTTP_AUTHORIZATION=f"Token {settings.LAMBDA_AUTH_TOKEN}",
+            format="json",
+        )
+        data_source.meta_data.refresh_from_db()
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert data_source.meta_data.status != old_datasource_status
+        assert data_source.meta_data.status == projects_constants.ProcessingState.PROCESSING
+
+    @pytest.mark.usefixtures("create_fake_job")
+    @pytest.mark.usefixtures("transaction_on_commit")
+    def test_meta_update(self, api_client, data_source):
+        payload = self.generate_update_meta_payload(datasource_pk=data_source.pk)
+
+        response = api_client.post(
+            self.get_url(data_source.pk),
+            payload,
+            HTTP_AUTHORIZATION=f"Token {settings.LAMBDA_AUTH_TOKEN}",
+            format="json",
+        )
+        data_source.meta_data.refresh_from_db()
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert data_source.meta_data.status == projects_constants.ProcessingState.SUCCESS
+        assert data_source.meta_data.items == payload["items"]
+        assert data_source.meta_data.fields == payload["fields"]
+        assert data_source.meta_data.fields_names == payload["fields_names"]
+
+
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
         api_client.force_authenticate(admin)
@@ -768,6 +840,57 @@ class TestDataSourceJobUpdateState:
         return reverse("projects:datasourcejob-update-state", kwargs=dict(pk=pk))
 
 
+class TestJobUpdateMeta:
+    @staticmethod
+    def generate_job_and_meta_payload(job_factory):
+        job = job_factory(job_state=projects_constants.ProcessingState.PROCESSING, result=None, error="")
+
+        payload = dict(
+            items=2,
+            fields=2,
+            fields_names=["fields_1", "field2"],
+            fields_with_urls=[],
+            preview={"preview": "test"},
+        )
+        return payload, job
+
+    @pytest.mark.parametrize(
+        "token, response_status",
+        [
+            ("invalidToken", status.HTTP_401_UNAUTHORIZED),
+            (settings.LAMBDA_AUTH_TOKEN, status.HTTP_204_NO_CONTENT),
+        ],
+    )
+    def test_authentication_on_update_meta(self, api_client, job_factory, token, response_status):
+        payload, job = self.generate_job_and_meta_payload(job_factory)
+        response = api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION=f"Token {token}", format="json"
+        )
+
+        assert response.status_code == response_status
+
+    def test_meta_is_updated(self, api_client, job_factory):
+        payload, job = self.generate_job_and_meta_payload(job_factory)
+
+        response = api_client.post(
+            self.get_url(job.pk),
+            payload,
+            HTTP_AUTHORIZATION=f"Token {settings.LAMBDA_AUTH_TOKEN}",
+            format="json",
+        )
+        job.refresh_from_db()
+        job_meta_data = job.meta_data
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert job_meta_data.fields == payload["fields"]
+        assert job_meta_data.items == payload["items"]
+        assert job_meta_data.fields_names == payload["fields_names"]
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasourcejob-update-meta", kwargs=dict(pk=pk))
+
+
 class TestDataSourceScriptsView:
     def test_response(self, api_client, rf, admin, data_source_factory, script_factory):
         data_source_1 = data_source_factory()
@@ -945,6 +1068,21 @@ class TestFilterCreateView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.FilterSerializer(filter_).data
 
+    def test_unique_together_validation(self, api_client, admin, data_source, filter_):
+        existing_filter_name = filter_.name
+        payload = dict(
+            name=existing_filter_name,
+            filter_type=projects_constants.FilterType.RADIO_BUTTON.value,
+            field="Date of Birth",
+            field_type=projects_constants.FieldType.DATE,
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data["name"][0]["code"] == "filterNameNotUnique"
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-filters", kwargs=dict(pk=pk))
@@ -957,7 +1095,7 @@ class TestFilterDetailView:
         response = api_client.get(self.get_url(filter_.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["results"] == projects_serializers.FilterSerializer(instance=filter_).data
+        assert response.data["results"] == projects_serializers.FilterDetailsSerializer(instance=filter_).data
 
     def test_update(self, api_client, admin, filter_):
         new_name = "NewFilter"
@@ -969,7 +1107,18 @@ class TestFilterDetailView:
 
         assert response.status_code == status.HTTP_200_OK
         assert filter_.name == new_name
-        assert response.data == projects_serializers.FilterSerializer(instance=filter_).data
+        assert response.data == projects_serializers.FilterDetailsSerializer(instance=filter_).data
+
+    def test_update_unique_together_validation(self, api_client, admin, filter_, filter_factory):
+        new_filter_name = "new_filter"
+        filter_factory(name=new_filter_name, datasource=filter_.datasource)
+        payload = {"name": new_filter_name}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(filter_.id), data=payload)
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data["name"][0]["code"] == "filterNameNotUnique"
 
     def test_delete(self, api_client, admin, filter_):
         api_client.force_authenticate(admin)

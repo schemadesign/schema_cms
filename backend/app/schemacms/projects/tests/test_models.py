@@ -6,6 +6,7 @@ from factory.django import FileField
 
 from schemacms.utils.test import make_csv
 from schemacms.projects.tests.factories import DataSourceFactory
+from schemacms.projects import models as project_models
 
 
 pytestmark = [pytest.mark.django_db]
@@ -43,6 +44,10 @@ class TestProject:
             'pages': folder.meta_file_serialization(),
             "charts": [],
         }
+
+    def test_get_projects_for_user(self, faker, project_factory, user):
+        projects = project_factory.create_batch(3, editors=[user])
+        assert projects == list(project_models.Project.get_projects_for_user(user))
 
 
 class TestDataSource:
@@ -147,6 +152,10 @@ class TestDataSourceMeta:
         ds.meta_data.preview.seek(offset, whence)
 
         assert ds.meta_data.data == expected
+
+    def test_data_when_preview_does_not_exists(self, data_source_factory):
+        data_source = data_source_factory()
+        assert data_source.meta_data.data == {}
 
 
 class TestDataSourceJob:

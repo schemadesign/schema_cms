@@ -27,5 +27,15 @@ def transaction_on_commit(mocker):
 
 
 @pytest.fixture()
+def fake_job_schedule(mocker):
+    mocker.patch("schemacms.projects.models.DataSourceJob.schedule")
+
+
+@pytest.fixture()
+def create_fake_job(mocker):
+    mocker.patch("schemacms.projects.models.DataSource.create_job")
+
+
+@pytest.fixture()
 def default_storage():
     return storage.default_storage
