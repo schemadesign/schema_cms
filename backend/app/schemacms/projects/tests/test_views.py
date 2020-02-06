@@ -1072,7 +1072,7 @@ class TestFilterCreateView:
         existing_filter_name = filter_.name
         payload = dict(
             name=existing_filter_name,
-            filter_type=projects_constants.FilterType.RADIO_BUTTON.value,
+            filter_type=projects_constants.FilterType.VALUE.value,
             field="Date of Birth",
             field_type=projects_constants.FieldType.DATE,
         )
