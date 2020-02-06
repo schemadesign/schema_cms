@@ -297,9 +297,9 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def create_single_field_info_response(preview, field_name, response_data):
         field = json.loads(preview.read())["fields"][field_name]
         if field["dtype"] != "number":
-            response_data["results"] = dict(unique_values=field["unique_values"],)
+            response_data["results"] = field["unique_values"]
         else:
-            response_data["results"] = dict(max=field["max"], min=field["min"],)
+            response_data["results"] = [field["min"], field["max"]]
 
         return response_data
 

@@ -14,11 +14,13 @@ import messages from '../../project/create/create.messages';
 import { ProjectStateRoutines, selectState } from '../../../modules/projectState';
 import { selectUserRole } from '../../../modules/userProfile';
 import reportError from '../../../shared/utils/reportError';
+import { DataSourceRoutines, selectFieldsInfo } from '../../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
   filter: selectFilter,
   state: selectState,
   userRole: selectUserRole,
+  fieldsInfo: selectFieldsInfo,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -26,6 +28,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       fetchFilter: promisifyRoutine(FilterRoutines.fetchFilter),
       updateState: promisifyRoutine(ProjectStateRoutines.update),
+      fetchFieldsInfo: promisifyRoutine(DataSourceRoutines.fetchFieldsInfo),
     },
     dispatch
   ),

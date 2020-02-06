@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import { always, append, cond, ifElse, propEq, T, equals, reject } from 'ramda';
+import { always, append, cond, equals, ifElse, pathOr, propEq, reject, T } from 'ramda';
 import { Form as FormUI } from 'schemaUI';
 
 import { Form } from './stateFilter.styles';
@@ -22,13 +22,14 @@ import {
   PROJECT_STATE_FILTER_VALUES,
 } from '../../../modules/projectState/projectState.constants';
 import { Select } from '../../../shared/components/form/select';
+import { FILTER_TYPE_CHECKBOX, FILTER_TYPE_RANGE, FILTER_TYPE_SELECT } from '../../../modules/filter/filter.constants';
 
 const { CheckboxGroup, Checkbox } = FormUI;
-const VALUES = [{ name: 'name' }];
 
 export class StateFilter extends PureComponent {
   static propTypes = {
     fetchFilter: PropTypes.func.isRequired,
+    fetchFieldsInfo: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
@@ -37,6 +38,7 @@ export class StateFilter extends PureComponent {
     state: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
     filter: PropTypes.object.isRequired,
+    fieldsInfo: PropTypes.array.isRequired,
     userRole: PropTypes.string.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -60,7 +62,10 @@ export class StateFilter extends PureComponent {
     try {
       const filterId = getMatchParam(this.props, 'filterId');
 
-      await this.props.fetchFilter({ filterId });
+      const { filterType, field, datasource } = await this.props.fetchFilter({ filterId });
+      if ([FILTER_TYPE_SELECT, FILTER_TYPE_CHECKBOX, FILTER_TYPE_RANGE].includes(filterType)) {
+        await this.props.fetchFieldsInfo({ dataSourceId: datasource.id, field });
+      }
 
       this.setState({ loading: false });
     } catch (error) {
@@ -69,8 +74,10 @@ export class StateFilter extends PureComponent {
     }
   }
 
+  getUniqueValues = () => pathOr([], ['props', 'fieldsInfo'], this);
+
   getStatusOptions = () =>
-    VALUES.map(({ name }) => ({
+    this.getUniqueValues().map(name => ({
       value: name,
       label: name,
     }));
@@ -95,21 +102,27 @@ export class StateFilter extends PureComponent {
   renderRange = () => (
     <Fragment>
       <TextInput
-        value={this.props.values[PROJECT_STATE_FILTER_VALUES][0]}
+        value={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || this.getUniqueValues()[0]}
         onChange={this.props.handleChange}
         name={`${PROJECT_STATE_FILTER_VALUES}.0`}
         label={this.props.intl.formatMessage(messages.min)}
         fullWidth
         isEdit
+        type="number"
+        min={this.getUniqueValues()[0]}
+        max={this.props.values[PROJECT_STATE_FILTER_VALUES][1] || this.getUniqueValues()[1]}
         {...this.props}
       />
       <TextInput
-        value={this.props.values[PROJECT_STATE_FILTER_VALUES][1]}
+        value={this.props.values[PROJECT_STATE_FILTER_VALUES][1] || this.getUniqueValues()[1]}
         onChange={this.props.handleChange}
         name={`${PROJECT_STATE_FILTER_VALUES}.1`}
         label={this.props.intl.formatMessage(messages.max)}
         fullWidth
         isEdit
+        type="number"
+        min={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || this.getUniqueValues()[0]}
+        max={this.getUniqueValues()[1]}
         {...this.props}
       />
     </Fragment>
@@ -138,7 +151,7 @@ export class StateFilter extends PureComponent {
     />
   );
 
-  renderCheckbox = ({ name }, index) => (
+  renderCheckbox = (name, index) => (
     <Checkbox key={index} id={`checkbox-${index}`} value={name}>
       {name}
     </Checkbox>
@@ -150,7 +163,7 @@ export class StateFilter extends PureComponent {
       name={PROJECT_STATE_FILTER_VALUES}
       value={this.props.values[PROJECT_STATE_FILTER_VALUES]}
     >
-      {VALUES.map(this.renderCheckbox)}
+      {this.getUniqueValues().map(this.renderCheckbox)}
     </CheckboxGroup>
   );
 

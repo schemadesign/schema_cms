@@ -7,6 +7,12 @@ export const FILTER_FIELD_NAME = 'fieldName';
 export const FILTER_FIELD_TYPE = 'fieldType';
 export const FILTER_UNIQUE_ITEMS = 'unique';
 
+export const FILTER_TYPE_SELECT = 'select';
+export const FILTER_TYPE_CHECKBOX = 'checkbox';
+export const FILTER_TYPE_RANGE = 'range';
+export const FILTER_TYPE_BOOL = 'bool';
+export const FILTER_TYPE_VALUE = 'value';
+
 export const INITIAL_VALUES = {
   [FILTER_NAME]: '',
   [FILTER_TYPE]: '',
