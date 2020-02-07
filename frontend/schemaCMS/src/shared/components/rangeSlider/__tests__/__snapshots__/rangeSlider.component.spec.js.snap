@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeSlider: Component should render correctly 1`] = `
+<styled.div>
+  <styled.div />
+  <styled.div
+    left={10}
+    size={30}
+  />
+  <styled.input
+    id="idMin"
+    max={100}
+    min={0}
+    name="idMin"
+    onChange={[Function]}
+    type="range"
+    value={10}
+  />
+  <styled.input
+    id="idMax"
+    max={100}
+    min={0}
+    name="idMax"
+    onChange={[Function]}
+    type="range"
+    value={40}
+  />
+</styled.div>
+`;
