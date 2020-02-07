@@ -128,88 +128,85 @@ exports[`StateTag: Component should render correctly 1`] = `
     }
     title="name"
   />
-  <styled.form
-    onSubmit={[Function]}
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No Tags"
+        id="projectState.stateTag.noData"
+        values={Object {}}
+      />
+    }
   >
-    <LoadingWrapper
-      error={null}
-      loading={true}
-      noData={false}
-      noDataContent={
-        <FormattedMessage
-          defaultMessage="No Tags"
-          id="projectState.stateTag.noData"
-          values={Object {}}
-        />
-      }
+    <styled.div
+      key="1"
     >
-      <styled.div
-        key="1"
+      <Component>
+        name
+      </Component>
+      <Component
+        customStyles={
+          Object {
+            "borderTop": "none",
+          }
+        }
+        name="name"
+        onChange={[Function]}
+        value={
+          Array [
+            1,
+          ]
+        }
       >
-        <Component>
-          name
+        <Component
+          id="checkbox-1"
+          key="0"
+          value={1}
+        >
+          value
         </Component>
         <Component
-          customStyles={
-            Object {
-              "borderTop": "none",
-            }
-          }
-          name="name"
-          onChange={[Function]}
-          value={
-            Array [
-              1,
-            ]
-          }
+          id="checkbox-2"
+          key="1"
+          value={2}
         >
-          <Component
-            id="checkbox-1"
-            key="0"
-            value={1}
-          >
-            value
-          </Component>
-          <Component
-            id="checkbox-2"
-            key="1"
-            value={2}
-          >
-            value 2
-          </Component>
+          value 2
         </Component>
-      </styled.div>
-    </LoadingWrapper>
-    <NavigationContainer
-      contentStyles={
-        Array [
-          "
+      </Component>
+    </styled.div>
+  </LoadingWrapper>
+  <NavigationContainer
+    contentStyles={
+      Array [
+        "
   display: flex;
   flex-direction: column;
 ",
-        ]
-      }
-      fixed={true}
-      hideOnDesktop={false}
-      right={false}
-    >
-      <styled.div>
-        <BackButton
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        />
-        <NextButton
-          disabled={false}
-          loading={false}
-          type="submit"
-        />
-      </styled.div>
-      <Component
-        activeStep={2}
-        steps={3}
+      ]
+    }
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <styled.div>
+      <BackButton
+        disabled={true}
+        onClick={[Function]}
+        type="button"
       />
-    </NavigationContainer>
-  </styled.form>
+      <NextButton
+        disabled={true}
+        loading={false}
+        onClick={[Function]}
+        type="submit"
+      />
+    </styled.div>
+    <Component
+      activeStep={2}
+      steps={3}
+    />
+  </NavigationContainer>
 </Fragment>
 `;

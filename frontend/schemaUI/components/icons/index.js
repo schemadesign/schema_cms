@@ -17,6 +17,8 @@ import { ResultIcon } from './resultIcon';
 import { ViewIcon } from './viewIcon';
 import { FilterIcon } from './filterIcon';
 import { FieldIcon } from './fieldIcon';
+import { TagIcon } from './tagIcon';
+import { CaretIcon } from './caretIcon';
 
 const Icons = {
   ResultIcon,
@@ -38,6 +40,8 @@ const Icons = {
   UserIcon,
   UploadIcon,
   EyeIcon,
+  TagIcon,
+  CaretIcon,
 };
 
 export {
@@ -56,6 +60,8 @@ export {
   UserIcon,
   UploadIcon,
   EyeIcon,
+  TagIcon,
+  CaretIcon,
 };
 
 export default Icons;

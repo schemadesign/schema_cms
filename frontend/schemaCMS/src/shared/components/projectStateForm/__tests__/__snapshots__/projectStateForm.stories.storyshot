@@ -89,7 +89,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
           viewBox="0 0 30 30"
         >
           <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            d="M15.117 18L9 12h12z"
             fillRule="evenodd"
           />
         </svg>
@@ -147,7 +147,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
                 "maxHeight": "175px",
                 "overflow": "hidden",
                 "position": "absolute",
-                "top": "46px",
+                "top": "37px",
                 "width": "100%",
                 "zIndex": 2,
               }
@@ -156,12 +156,18 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
             <div
               id="select-item-0"
               onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               style={
                 Object {
-                  "borderTop": "none",
+                  "alignItems": "center",
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "1px solid  #2F2F36",
+                  "color": "#71737e",
                   "cursor": "pointer",
-                  "display": "block",
-                  "padding": "7px",
+                  "display": "flex",
+                  "minHeight": "60px",
+                  "padding": "0 10px",
                 }
               }
             >

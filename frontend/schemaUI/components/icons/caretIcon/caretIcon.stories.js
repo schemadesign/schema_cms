@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { IntersectIcon } from './intersectIcon.component';
+import { CaretIcon } from './caretIcon.component';
 import { withTheme } from '../../../.storybook/decorators';
 
 const customStyles = { customStyles: { fill: 'blue' } };
 
-storiesOf('Icons/IntersectIcon', module)
+storiesOf('Icons/CaretIcon', module)
   .addDecorator(withTheme())
-  .add('Default', () => <IntersectIcon />)
-  .add('with custom styles', () => <IntersectIcon {...customStyles} />);
+  .add('Default', () => <CaretIcon />)
+  .add('with custom styles', () => <CaretIcon {...customStyles} />);

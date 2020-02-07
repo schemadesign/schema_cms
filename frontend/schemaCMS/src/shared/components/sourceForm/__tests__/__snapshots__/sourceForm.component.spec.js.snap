@@ -97,7 +97,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "secondaryText": "#71737e",
         "select": Object {
           "background": "#1d1d20",
-          "border": "#000",
+          "border": "#2F2F36",
         },
         "stepper": Object {
           "active": "#FFF",
@@ -329,7 +329,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "secondaryText": "#71737e",
         "select": Object {
           "background": "#1d1d20",
-          "border": "#000",
+          "border": "#2F2F36",
         },
         "stepper": Object {
           "active": "#FFF",
@@ -514,7 +514,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "secondaryText": "#71737e",
         "select": Object {
           "background": "#1d1d20",
-          "border": "#000",
+          "border": "#2F2F36",
         },
         "stepper": Object {
           "active": "#FFF",
@@ -746,7 +746,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "secondaryText": "#71737e",
         "select": Object {
           "background": "#1d1d20",
-          "border": "#000",
+          "border": "#2F2F36",
         },
         "stepper": Object {
           "active": "#FFF",

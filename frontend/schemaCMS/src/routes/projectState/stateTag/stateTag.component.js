@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { append, ifElse, equals, always, reject, map } from 'ramda';
 import { Stepper, Form as FormUI } from 'schemaUI';
 
-import { Form, TagList } from './stateTag.styles';
+import { TagList } from './stateTag.styles';
 import messages from './stateTag.messages';
 import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -114,18 +114,21 @@ export class StateTag extends PureComponent {
           active={PROJECT_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <Form onSubmit={this.handleSubmit}>
-          <LoadingWrapper loading={loading} error={error} noData={!tags.length} noDataContent={noData}>
-            {this.renderTagsList(tags)}
-          </LoadingWrapper>
-          <NavigationContainer fixed contentStyles={contentStyles}>
-            <NavigationButtons>
-              <BackButton type="button" onClick={this.handleBack} />
-              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting} />
-            </NavigationButtons>
-            <Stepper steps={3} activeStep={2} />
-          </NavigationContainer>
-        </Form>
+        <LoadingWrapper loading={loading} error={error} noData={!tags.length} noDataContent={noData}>
+          {this.renderTagsList(tags)}
+        </LoadingWrapper>
+        <NavigationContainer fixed contentStyles={contentStyles}>
+          <NavigationButtons>
+            <BackButton type="button" onClick={this.handleBack} disabled={loading} />
+            <NextButton
+              type="submit"
+              onClick={this.handleSubmit}
+              loading={isSubmitting}
+              disabled={isSubmitting || loading}
+            />
+          </NavigationButtons>
+          <Stepper steps={3} activeStep={2} />
+        </NavigationContainer>
       </Fragment>
     );
   }

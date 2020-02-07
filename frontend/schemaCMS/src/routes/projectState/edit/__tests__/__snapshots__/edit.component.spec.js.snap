@@ -128,114 +128,111 @@ exports[`Edit: Component should render correctly 1`] = `
     }
     title="name"
   />
-  <styled.form
-    onSubmit={[Function]}
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
   >
-    <LoadingWrapper
-      error={null}
-      loading={true}
-      noData={false}
-      noDataContent={null}
-    >
-      <ProjectStateForm
-        dataSources={
-          Array [
-            Object {
-              "id": "id",
-              "name": "name",
-            },
-          ]
-        }
-        dirty={false}
-        fetchDataSources={[Function]}
-        handleChange={[Function]}
-        handleSubmit={[Function]}
-        history={
-          Object {
-            "goBack": [Function],
-            "push": [Function],
-          }
-        }
-        intl={
-          Object {
-            "formatMessage": [Function],
-          }
-        }
-        isSubmitting={false}
-        isValid={true}
-        removeState={[Function]}
-        setFieldValue={[Function]}
-        state={
-          Object {
-            "author": "author",
-            "created": "10.12.2019",
-            "description": "description",
-            "isPublic": false,
-            "name": "name",
-            "project": 1,
-          }
-        }
-        userRole="admin"
-        values={
-          Object {
-            "author": "author",
-            "created": "10.12.2019",
-            "description": "description",
-            "isPublic": false,
-            "name": "name",
-            "project": 1,
-          }
-        }
-      />
-      <styled.div>
-        <Styled(Span)
-          onClick={[Function]}
-        >
-          <FormattedMessage
-            defaultMessage="Remove State"
-            id="projectState.edit.deleteState"
-            values={Object {}}
-          />
-        </Styled(Span)>
-      </styled.div>
-    </LoadingWrapper>
-    <NavigationContainer
-      contentStyles={
+    <ProjectStateForm
+      dataSources={
         Array [
-          "
+          Object {
+            "id": "id",
+            "name": "name",
+          },
+        ]
+      }
+      dirty={false}
+      fetchDataSources={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isSubmitting={false}
+      isValid={true}
+      removeState={[Function]}
+      setFieldValue={[Function]}
+      state={
+        Object {
+          "author": "author",
+          "created": "10.12.2019",
+          "description": "description",
+          "isPublic": false,
+          "name": "name",
+          "project": 1,
+        }
+      }
+      userRole="admin"
+      values={
+        Object {
+          "author": "author",
+          "created": "10.12.2019",
+          "description": "description",
+          "isPublic": false,
+          "name": "name",
+          "project": 1,
+        }
+      }
+    />
+    <styled.div>
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove State"
+          id="projectState.edit.deleteState"
+          values={Object {}}
+        />
+      </Styled(Span)>
+    </styled.div>
+  </LoadingWrapper>
+  <NavigationContainer
+    contentStyles={
+      Array [
+        "
   display: flex;
   flex-direction: column;
 ",
-        ]
-      }
-      fixed={true}
-      hideOnDesktop={false}
-      right={false}
-    >
-      <styled.div>
-        <BackButton
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          <FormattedMessage
-            defaultMessage="Cancel"
-            id="projectState.edit.cancel"
-            values={Object {}}
-          />
-        </BackButton>
-        <NextButton
-          disabled={false}
-          loading={false}
-          type="submit"
+      ]
+    }
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <styled.div>
+      <BackButton
+        disabled={true}
+        onClick={[Function]}
+        type="button"
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="projectState.edit.cancel"
+          values={Object {}}
         />
-      </styled.div>
-      <Component
-        activeStep={1}
-        steps={3}
+      </BackButton>
+      <NextButton
+        disabled={true}
+        loading={false}
+        onClick={[Function]}
+        type="submit"
       />
-    </NavigationContainer>
-  </styled.form>
+    </styled.div>
+    <Component
+      activeStep={1}
+      steps={3}
+    />
+  </NavigationContainer>
   <Styled(Modal)
     contentLabel="Confirm Removal"
     isOpen={false}

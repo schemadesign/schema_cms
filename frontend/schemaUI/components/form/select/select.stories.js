@@ -28,7 +28,7 @@ class TestComponent extends PureComponent {
 
     const native = this.props.native || this.state.native;
 
-    const parsedOptions = [...options, selectedOption];
+    const parsedOptions = options.map(option => (option.label === selectedOption.label ? selectedOption : option));
 
     return (
       <div>
@@ -50,7 +50,7 @@ class TestComponentWithPlaceholder extends PureComponent {
 
   render() {
     const selectedOption = this.state.selectedOption;
-    const parsedOptions = [...options, selectedOption];
+    const parsedOptions = options.map(option => (option.label === selectedOption.label ? selectedOption : option));
 
     return (
       <div>

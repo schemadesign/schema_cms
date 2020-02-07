@@ -224,7 +224,7 @@ const dark = {
   },
   select: {
     background: colors.darkGrey,
-    border: colors.black,
+    border: colors.mediumGray,
   },
   background: colors.black,
   hiddenBackground: 'rgba(0, 0, 0, 0)',

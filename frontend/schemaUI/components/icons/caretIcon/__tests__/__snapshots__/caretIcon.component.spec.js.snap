@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CaretIcon: Component should render correctly 1`] = `
+<caret.svg
+  style={
+    Object {
+      "fill": "#FFF",
+      "height": "30px",
+      "width": "30px",
+    }
+  }
+/>
+`;
+
+exports[`CaretIcon: Component should render with custom styles 1`] = `
+<caret.svg
+  style={
+    Object {
+      "fill": "blue",
+      "height": "30px",
+      "width": "30px",
+    }
+  }
+/>
+`;

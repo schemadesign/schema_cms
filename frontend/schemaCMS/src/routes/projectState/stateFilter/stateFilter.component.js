@@ -22,9 +22,14 @@ import {
   PROJECT_STATE_FILTER_VALUES,
 } from '../../../modules/projectState/projectState.constants';
 import { Select } from '../../../shared/components/form/select';
-import { FILTER_TYPE_CHECKBOX, FILTER_TYPE_RANGE, FILTER_TYPE_SELECT } from '../../../modules/filter/filter.constants';
+import {
+  FILTER_TYPE_BOOL,
+  FILTER_TYPE_CHECKBOX,
+  FILTER_TYPE_RANGE,
+  FILTER_TYPE_SELECT,
+} from '../../../modules/filter/filter.constants';
 
-const { CheckboxGroup, Checkbox } = FormUI;
+const { CheckboxGroup, Checkbox, Label, Switch } = FormUI;
 
 export class StateFilter extends PureComponent {
   static propTypes = {
@@ -158,19 +163,35 @@ export class StateFilter extends PureComponent {
   );
 
   renderCheckboxes = () => (
-    <CheckboxGroup
-      onChange={this.handleCheckboxChange}
-      name={PROJECT_STATE_FILTER_VALUES}
-      value={this.props.values[PROJECT_STATE_FILTER_VALUES]}
-    >
-      {this.getUniqueValues().map(this.renderCheckbox)}
-    </CheckboxGroup>
+    <Fragment>
+      <Label>
+        <FormattedMessage {...messages[PROJECT_STATE_FILTER_VALUES]} />
+      </Label>
+      <CheckboxGroup
+        onChange={this.handleCheckboxChange}
+        name={PROJECT_STATE_FILTER_VALUES}
+        customStyles={{ borderTop: 'none' }}
+        value={this.props.values[PROJECT_STATE_FILTER_VALUES]}
+      >
+        {this.getUniqueValues().map(this.renderCheckbox)}
+      </CheckboxGroup>
+    </Fragment>
+  );
+
+  renderSwitch = () => (
+    <Switch
+      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0]}
+      id={`${PROJECT_STATE_FILTER_VALUES}.0`}
+      onChange={this.props.handleChange}
+      label={this.props.intl.formatMessage(messages[PROJECT_STATE_FILTER_VALUES])}
+    />
   );
 
   renderValue = cond([
-    [propEq('filterType', 'range'), this.renderRange],
-    [propEq('filterType', 'select'), this.renderSelect],
-    [propEq('filterType', 'checkbox'), this.renderCheckboxes],
+    [propEq('filterType', FILTER_TYPE_RANGE), this.renderRange],
+    [propEq('filterType', FILTER_TYPE_SELECT), this.renderSelect],
+    [propEq('filterType', FILTER_TYPE_CHECKBOX), this.renderCheckboxes],
+    [propEq('filterType', FILTER_TYPE_BOOL), this.renderSwitch],
     [T, this.renderInput],
   ]);
 
