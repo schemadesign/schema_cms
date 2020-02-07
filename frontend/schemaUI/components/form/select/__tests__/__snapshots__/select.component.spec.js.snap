@@ -52,7 +52,7 @@ exports[`Select: Component should render correctly 1`] = `
           "maxHeight": "175px",
           "overflow": "hidden",
           "position": "absolute",
-          "top": "46px",
+          "top": "37px",
           "width": "100%",
           "zIndex": 2,
         }
@@ -62,12 +62,18 @@ exports[`Select: Component should render correctly 1`] = `
         id="select-item-0"
         key="0"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "none",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "1px solid  #2F2F36",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -77,12 +83,18 @@ exports[`Select: Component should render correctly 1`] = `
         id="select-item-1"
         key="1"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -92,12 +104,18 @@ exports[`Select: Component should render correctly 1`] = `
         id="select-item-2"
         key="2"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -107,12 +125,18 @@ exports[`Select: Component should render correctly 1`] = `
         id="select-item-3"
         key="3"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -122,12 +146,18 @@ exports[`Select: Component should render correctly 1`] = `
         id="select-item-4"
         key="4"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -137,12 +167,18 @@ exports[`Select: Component should render correctly 1`] = `
         id="select-item-5"
         key="5"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -265,7 +301,7 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
           "maxHeight": "175px",
           "overflow": "hidden",
           "position": "absolute",
-          "top": "46px",
+          "top": "37px",
           "width": "100%",
           "zIndex": 2,
         }
@@ -275,12 +311,18 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         id="select-item-0"
         key="0"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "none",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "1px solid  #2F2F36",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -290,12 +332,18 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         id="select-item-1"
         key="1"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -305,12 +353,18 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         id="select-item-2"
         key="2"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -320,12 +374,18 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         id="select-item-3"
         key="3"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -335,12 +395,18 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         id="select-item-4"
         key="4"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >
@@ -350,12 +416,18 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         id="select-item-5"
         key="5"
         onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
         style={
           Object {
-            "borderTop": "1px solid  #000",
+            "alignItems": "center",
+            "border": "1px solid  #2F2F36",
+            "borderTop": "none",
+            "color": "#71737e",
             "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
+            "display": "flex",
+            "minHeight": "60px",
+            "padding": "0 10px",
           }
         }
       >

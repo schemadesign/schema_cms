@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Stepper } from 'schemaUI';
 
-import { Form, LinkContainer } from './edit.styles';
+import { LinkContainer } from './edit.styles';
 import messages from './edit.messages';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
@@ -23,7 +23,6 @@ export class Edit extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     removeState: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
-    isValid: PropTypes.bool.isRequired,
     dirty: PropTypes.bool.isRequired,
     userRole: PropTypes.string.isRequired,
     state: PropTypes.object.isRequired,
@@ -56,12 +55,12 @@ export class Edit extends PureComponent {
 
   handleCancel = () => this.props.history.push(`/project/${this.props.state.project}/state`);
 
-  handleSubmit = e => {
+  handleSubmit = () => {
     const { dirty, handleSubmit, history, state } = this.props;
     const redirectUrl = `/state/${state.id}/tags`;
 
     if (dirty) {
-      return handleSubmit(e);
+      return handleSubmit();
     }
 
     return history.push(redirectUrl);
@@ -84,7 +83,7 @@ export class Edit extends PureComponent {
   };
 
   render() {
-    const { userRole, isSubmitting, isValid, state } = this.props;
+    const { userRole, isSubmitting, state } = this.props;
     const { loading, error, confirmationModalOpen, removeLoading } = this.state;
     const projectId = state.project;
     const menuOptions = getProjectMenuOptions(projectId);
@@ -100,27 +99,30 @@ export class Edit extends PureComponent {
           active={PROJECT_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <Form onSubmit={this.handleSubmit}>
-          <LoadingWrapper loading={loading} error={error}>
-            <Fragment>
-              <ProjectStateForm {...this.props} />
-              <LinkContainer>
-                <Link onClick={this.handleRemoveState}>
-                  <FormattedMessage {...messages.deleteState} />
-                </Link>
-              </LinkContainer>
-            </Fragment>
-          </LoadingWrapper>
-          <NavigationContainer fixed contentStyles={contentStyles}>
-            <NavigationButtons>
-              <BackButton type="button" onClick={this.handleCancel}>
-                <FormattedMessage {...messages.cancel} />
-              </BackButton>
-              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid} />
-            </NavigationButtons>
-            <Stepper steps={3} activeStep={1} />
-          </NavigationContainer>
-        </Form>
+        <LoadingWrapper loading={loading} error={error}>
+          <Fragment>
+            <ProjectStateForm {...this.props} />
+            <LinkContainer>
+              <Link onClick={this.handleRemoveState}>
+                <FormattedMessage {...messages.deleteState} />
+              </Link>
+            </LinkContainer>
+          </Fragment>
+        </LoadingWrapper>
+        <NavigationContainer fixed contentStyles={contentStyles}>
+          <NavigationButtons>
+            <BackButton type="button" onClick={this.handleCancel} disabled={loading}>
+              <FormattedMessage {...messages.cancel} />
+            </BackButton>
+            <NextButton
+              type="submit"
+              onClick={this.handleSubmit}
+              loading={isSubmitting}
+              disabled={isSubmitting || loading}
+            />
+          </NavigationButtons>
+          <Stepper steps={3} activeStep={1} />
+        </NavigationContainer>
         <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />

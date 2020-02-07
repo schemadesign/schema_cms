@@ -5,7 +5,6 @@ import { Form as FormUI, Stepper } from 'schemaUI';
 import Helmet from 'react-helmet';
 import { always, append, equals, ifElse, reject } from 'ramda';
 
-import { Form } from './stateFilterList.styles';
 import messages from './stateFilterList.messages';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
@@ -71,12 +70,12 @@ export class StateFilterList extends PureComponent {
 
   handleBack = () => this.props.history.push(`/state/${this.props.state.id}/tags`);
 
-  handleSubmit = e => {
+  handleSubmit = () => {
     const { dirty, handleSubmit, history, state } = this.props;
     const redirectUrl = `/project/${state.project}/state`;
 
     if (dirty) {
-      return handleSubmit(e);
+      return handleSubmit();
     }
 
     return history.push(redirectUrl);
@@ -107,22 +106,25 @@ export class StateFilterList extends PureComponent {
           active={PROJECT_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <Form onSubmit={this.handleSubmit}>
-          <LoadingWrapper loading={loading} error={error}>
-            <CheckboxGroup onChange={this.handleChange} name={PROJECT_STATE_FILTERS} value={values}>
-              {filters.map(this.renderFilters)}
-            </CheckboxGroup>
-          </LoadingWrapper>
-          <NavigationContainer fixed contentStyles={contentStyles}>
-            <NavigationButtons>
-              <BackButton type="button" onClick={this.handleBack} />
-              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting}>
-                <FormattedMessage {...messages.finish} />
-              </NextButton>
-            </NavigationButtons>
-            <Stepper steps={3} activeStep={3} />
-          </NavigationContainer>
-        </Form>
+        <LoadingWrapper loading={loading} error={error}>
+          <CheckboxGroup onChange={this.handleChange} name={PROJECT_STATE_FILTERS} value={values}>
+            {filters.map(this.renderFilters)}
+          </CheckboxGroup>
+        </LoadingWrapper>
+        <NavigationContainer fixed contentStyles={contentStyles}>
+          <NavigationButtons>
+            <BackButton type="button" onClick={this.handleBack} disabled={loading} />
+            <NextButton
+              type="submit"
+              onClick={this.handleSubmit}
+              loading={isSubmitting}
+              disabled={isSubmitting || loading}
+            >
+              <FormattedMessage {...messages.finish} />
+            </NextButton>
+          </NavigationButtons>
+          <Stepper steps={3} activeStep={3} />
+        </NavigationContainer>
       </Fragment>
     );
   }

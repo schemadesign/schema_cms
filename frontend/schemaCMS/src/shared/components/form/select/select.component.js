@@ -5,7 +5,7 @@ import { Form, Icons } from 'schemaUI';
 import { Container, IconContainer } from './select.styles';
 
 const { Label, Select: SelectElement } = Form;
-const { EditIcon } = Icons;
+const { CaretIcon } = Icons;
 
 export class Select extends PureComponent {
   static propTypes = {
@@ -26,7 +26,7 @@ export class Select extends PureComponent {
         <Label id="fieldProjectStatusLabel">{label}</Label>
         <input type="hidden" id={name} name={name} value={value} />
         <IconContainer>
-          <EditIcon />
+          <CaretIcon />
         </IconContainer>
         <SelectElement placeholder={placeholder} options={updatedOptions} onSelect={onSelect} {...restProps} />
       </Container>

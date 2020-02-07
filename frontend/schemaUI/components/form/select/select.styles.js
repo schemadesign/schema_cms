@@ -19,10 +19,14 @@ export const getStyles = (theme = defaultTheme) => ({
     cursor: 'pointer',
   },
   customOptionStyle: index => ({
-    display: 'block',
+    display: 'flex',
     cursor: 'pointer',
-    padding: `${PADDING}px`,
-    borderTop: index ? `1px solid  ${theme.select.border}` : 'none',
+    alignItems: 'center',
+    minHeight: '60px',
+    padding: '0 10px',
+    border: `1px solid  ${theme.select.border}`,
+    borderTop: !index ? `1px solid  ${theme.select.border}` : 'none',
+    color: theme.secondaryText,
   }),
   selectedOptionsStyles: {
     display: 'flex',
@@ -43,9 +47,13 @@ export const getStyles = (theme = defaultTheme) => ({
     flexDirection: 'column',
     position: 'absolute',
     width: '100%',
-    top: `${ITEM_HEIGHT + PADDING * 2 + 2}px`,
+    top: `${ITEM_HEIGHT + PADDING}px`,
     left: '0',
     zIndex: 2,
     backgroundColor: theme.select.background,
   }),
+  hoverStyles: {
+    backgroundColor: theme.text,
+    color: theme.background,
+  },
 });

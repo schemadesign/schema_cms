@@ -128,57 +128,54 @@ exports[`StateFilterList: Component should render correctly 1`] = `
     }
     title="name"
   />
-  <styled.form
-    onSubmit={[Function]}
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
   >
-    <LoadingWrapper
-      error={null}
-      loading={true}
-      noData={false}
-      noDataContent={null}
-    >
-      <Component
-        name="filters"
-        onChange={[Function]}
-        value={Array []}
-      />
-    </LoadingWrapper>
-    <NavigationContainer
-      contentStyles={
-        Array [
-          "
+    <Component
+      name="filters"
+      onChange={[Function]}
+      value={Array []}
+    />
+  </LoadingWrapper>
+  <NavigationContainer
+    contentStyles={
+      Array [
+        "
   display: flex;
   flex-direction: column;
 ",
-        ]
-      }
-      fixed={true}
-      hideOnDesktop={false}
-      right={false}
-    >
-      <styled.div>
-        <BackButton
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        />
-        <NextButton
-          disabled={false}
-          loading={false}
-          type="submit"
-        >
-          <FormattedMessage
-            defaultMessage="Finish"
-            id="projectState.stateFilterList.finish"
-            values={Object {}}
-          />
-        </NextButton>
-      </styled.div>
-      <Component
-        activeStep={3}
-        steps={3}
+      ]
+    }
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <styled.div>
+      <BackButton
+        disabled={true}
+        onClick={[Function]}
+        type="button"
       />
-    </NavigationContainer>
-  </styled.form>
+      <NextButton
+        disabled={true}
+        loading={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Finish"
+          id="projectState.stateFilterList.finish"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+    <Component
+      activeStep={3}
+      steps={3}
+    />
+  </NavigationContainer>
 </Fragment>
 `;

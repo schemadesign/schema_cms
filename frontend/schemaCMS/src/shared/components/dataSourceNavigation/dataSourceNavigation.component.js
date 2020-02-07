@@ -15,14 +15,14 @@ import {
   TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
 
-const { FieldIcon, FilterIcon, ViewIcon, UploadIcon, ResultIcon } = Icons;
+const { FieldIcon, FilterIcon, TagIcon, UploadIcon, ResultIcon } = Icons;
 export const listIcons = [
   { Icon: UploadIcon, page: SOURCE_PAGE, id: 'sourceBtn' },
   { Icon: FieldIcon, page: PREVIEW_PAGE, id: 'fieldsBtn' },
   { Icon: ResultIcon, page: STEPS_PAGE, id: 'stepsBtn' },
   { Icon: ResultIcon, page: RESULT_PAGE, id: 'resultsBtn' },
   { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn' },
-  { Icon: ViewIcon, page: TAGS_PAGE, id: 'tagsBtn' },
+  { Icon: TagIcon, page: TAGS_PAGE, id: 'tagsBtn' },
 ];
 const iconSize = { width: 54, height: 54 };
 

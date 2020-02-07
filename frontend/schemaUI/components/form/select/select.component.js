@@ -21,6 +21,7 @@ export class SelectComponent extends PureComponent {
 
   state = {
     isMenuOpen: false,
+    hoverIndex: null,
   };
 
   handleOptionClick = ({ target: { value } }) => {
@@ -46,28 +47,23 @@ export class SelectComponent extends PureComponent {
     this.setState({ isMenuOpen });
   };
 
-  renderSelectedOption = ({ selectedOptionStyles }) => {
-    const label = pipe(
-      prop('options'),
-      find(({ selected }) => selected),
-      propOr(this.props.placeholder, 'label')
-    )(this.props);
+  renderSelectedOption = ({ selectedOptionStyles }, label) => <div style={selectedOptionStyles}>{label}</div>;
 
-    return <div style={selectedOptionStyles}>{label}</div>;
-  };
-
-  renderOptions = ({ value, label, selected }, index, { customOptionStyle }) => {
+  renderOptions = ({ value, label, selected }, index, { customOptionStyle, hoverStyles }) => {
     const eventObj = {
       target: {
         value: value,
       },
     };
+    const actionStyles = selected || index === this.state.hoverIndex ? hoverStyles : {};
 
     return (
       <div
         key={index}
         id={`select-item-${index}`}
-        style={customOptionStyle(index)}
+        style={{ ...customOptionStyle(index), ...actionStyles }}
+        onMouseOver={() => this.setState({ hoverIndex: index })}
+        onMouseOut={() => this.setState({ hoverIndex: null })}
         onClick={() => this.handleOptionClick(eventObj)}
       >
         {label}
@@ -95,11 +91,16 @@ export class SelectComponent extends PureComponent {
 
   renderCustomSelect = ({ selectWrapperStyles, selectedOptionsStyles, optionListStyles, ...restStyles }, props) => {
     const { id } = props;
+    const label = pipe(
+      prop('options'),
+      find(({ selected }) => selected),
+      propOr(this.props.placeholder, 'label')
+    )(this.props);
 
     return (
       <div id={id} style={selectWrapperStyles}>
         <div style={selectedOptionsStyles} onClick={this.toggleMenu}>
-          {this.renderSelectedOption(restStyles)}
+          {this.renderSelectedOption(restStyles, label)}
         </div>
         <div style={optionListStyles(this.state.isMenuOpen)}>
           {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles))}
