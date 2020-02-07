@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { always, append, cond, equals, ifElse, pathOr, propEq, reject, T } from 'ramda';
 import { Form as FormUI } from 'schemaUI';
 
-import { Form } from './stateFilter.styles';
+import { Form, RangeValues } from './stateFilter.styles';
 import messages from './stateFilter.messages';
 import reportError from '../../../shared/utils/reportError';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
@@ -28,6 +28,7 @@ import {
   FILTER_TYPE_RANGE,
   FILTER_TYPE_SELECT,
 } from '../../../modules/filter/filter.constants';
+import { RangeSlider } from '../../../shared/components/rangeSlider';
 
 const { CheckboxGroup, Checkbox, Label, Switch } = FormUI;
 
@@ -104,34 +105,46 @@ export class StateFilter extends PureComponent {
     setFieldValue(PROJECT_STATE_FILTER_VALUES, setValues(checked));
   };
 
-  renderRange = () => (
-    <Fragment>
-      <TextInput
-        value={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || this.getUniqueValues()[0]}
-        onChange={this.props.handleChange}
-        name={`${PROJECT_STATE_FILTER_VALUES}.0`}
-        label={this.props.intl.formatMessage(messages.min)}
-        fullWidth
-        isEdit
-        type="number"
-        min={this.getUniqueValues()[0]}
-        max={this.props.values[PROJECT_STATE_FILTER_VALUES][1] || this.getUniqueValues()[1]}
-        {...this.props}
-      />
-      <TextInput
-        value={this.props.values[PROJECT_STATE_FILTER_VALUES][1] || this.getUniqueValues()[1]}
-        onChange={this.props.handleChange}
-        name={`${PROJECT_STATE_FILTER_VALUES}.1`}
-        label={this.props.intl.formatMessage(messages.max)}
-        fullWidth
-        isEdit
-        type="number"
-        min={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || this.getUniqueValues()[0]}
-        max={this.getUniqueValues()[1]}
-        {...this.props}
-      />
-    </Fragment>
-  );
+  handleRangeChange = e => {
+    const { handleChange, values } = this.props;
+    const { target } = e;
+    const { name, value } = target;
+    const [key, index] = name.split('.');
+    const intValue = parseInt(value, 10);
+    const intIndex = parseInt(index, 10);
+
+    if (intIndex && value < values[key][0]) {
+      return;
+    }
+    if (!intIndex && intValue > values[key][1]) {
+      return;
+    }
+
+    handleChange(e);
+  };
+
+  renderRange = () => {
+    const [min, max] = this.getUniqueValues();
+    const [minValue = min, maxValue = max] = this.props.values[PROJECT_STATE_FILTER_VALUES];
+
+    return (
+      <Fragment>
+        <RangeSlider
+          minValue={minValue}
+          maxValue={maxValue}
+          idMin={`${PROJECT_STATE_FILTER_VALUES}.0`}
+          idMax={`${PROJECT_STATE_FILTER_VALUES}.1`}
+          min={min}
+          max={max}
+          onChange={this.handleRangeChange}
+        />
+        <RangeValues>
+          <span>{minValue}</span>
+          <span>{maxValue}</span>
+        </RangeValues>
+      </Fragment>
+    );
+  };
 
   renderInput = () => (
     <TextInput
