@@ -815,6 +815,4 @@ class InStateFilter(utils_models.MetaGeneratorMixin, softdelete.models.SoftDelet
     filter_type = models.CharField(max_length=25)
     field = models.CharField(max_length=25)
     field_type = models.CharField(max_length=25)
-    condition_values = pg_fields.ArrayField(
-        base_field=models.CharField(max_length=255), blank=True, default=list
-    )
+    condition = pg_fields.JSONField(blank=True, default=dict)

@@ -741,7 +741,7 @@ class InStateFilterSerializer(serializers.ModelSerializer):
         )
 
     def get_values(self, filter_):
-        return filter_.condition_values
+        return filter_.condition["values"]
 
 
 class StateSerializer(serializers.ModelSerializer):
@@ -797,7 +797,7 @@ class StateSerializer(serializers.ModelSerializer):
                             "filter_type": filter_instance.filter_type,
                             "field": filter_instance.field,
                             "field_type": filter_instance.field_type,
-                            "condition_values": filter_["values"],
+                            "condition": {"values": filter_["values"]},
                         },
                     )
         return instance

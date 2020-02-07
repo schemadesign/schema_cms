@@ -138,7 +138,7 @@ def get_preview_data(data_frame):
 
 
 def get_unique_values_for_column(data_frame, column):
-    return data_frame[column].unique().tolist()
+    return data_frame[column].dropna().unique().tolist()
 
 
 def process_datasource_meta_source_file(data_source: dict):
