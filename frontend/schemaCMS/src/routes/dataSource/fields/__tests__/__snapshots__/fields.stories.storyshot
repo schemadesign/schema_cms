@@ -898,12 +898,23 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
               }
               viewBox="0 0 60 60"
             >
-              <path
-                d="M13 31h8v13h-8zm13-8h8v21h-8zm13-7h9v28h-9z"
+              <g
                 fill="none"
                 fillRule="evenodd"
-                strokeWidth={2}
-              />
+                strokeWidth={1.8}
+                transform="rotate(-45 47.142 -.314)"
+              >
+                <path
+                  d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                />
+                <rect
+                  height={6.3}
+                  rx={3.15}
+                  width={6.3}
+                  x={17.1}
+                  y={5.4}
+                />
+              </g>
             </svg>
           </div>
           <div
@@ -1148,12 +1159,23 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
           }
           viewBox="0 0 60 60"
         >
-          <path
-            d="M13 31h8v13h-8zm13-8h8v21h-8zm13-7h9v28h-9z"
+          <g
             fill="none"
             fillRule="evenodd"
-            strokeWidth={2}
-          />
+            strokeWidth={1.8}
+            transform="rotate(-45 47.142 -.314)"
+          >
+            <path
+              d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+            />
+            <rect
+              height={6.3}
+              rx={3.15}
+              width={6.3}
+              x={17.1}
+              y={5.4}
+            />
+          </g>
         </svg>
       </div>
       <div
@@ -2066,12 +2088,23 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
               }
               viewBox="0 0 60 60"
             >
-              <path
-                d="M13 31h8v13h-8zm13-8h8v21h-8zm13-7h9v28h-9z"
+              <g
                 fill="none"
                 fillRule="evenodd"
-                strokeWidth={2}
-              />
+                strokeWidth={1.8}
+                transform="rotate(-45 47.142 -.314)"
+              >
+                <path
+                  d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                />
+                <rect
+                  height={6.3}
+                  rx={3.15}
+                  width={6.3}
+                  x={17.1}
+                  y={5.4}
+                />
+              </g>
             </svg>
           </div>
           <div
@@ -2316,12 +2349,23 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
           }
           viewBox="0 0 60 60"
         >
-          <path
-            d="M13 31h8v13h-8zm13-8h8v21h-8zm13-7h9v28h-9z"
+          <g
             fill="none"
             fillRule="evenodd"
-            strokeWidth={2}
-          />
+            strokeWidth={1.8}
+            transform="rotate(-45 47.142 -.314)"
+          >
+            <path
+              d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+            />
+            <rect
+              height={6.3}
+              rx={3.15}
+              width={6.3}
+              x={17.1}
+              y={5.4}
+            />
+          </g>
         </svg>
       </div>
       <div
