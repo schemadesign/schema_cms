@@ -109,7 +109,12 @@ export class ProjectStateList extends PureComponent {
         >
           <PlusButton id="createStateDesktopBtn" onClick={this.handleCreateState} />
         </ContextHeader>
-        <LoadingWrapper loading={loading} error={error} noData={!states.length}>
+        <LoadingWrapper
+          loading={loading}
+          error={error}
+          noData={!states.length}
+          noDataContent={<FormattedMessage {...messages.noData} />}
+        >
           {this.renderList(states)}
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
