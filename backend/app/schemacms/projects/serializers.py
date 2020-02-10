@@ -222,6 +222,7 @@ class ProjectSerializer(serializers.ModelSerializer):
     def get_meta(self, project):
         return {
             "data_sources": project.data_source_count,
+            "states": project.states_count,
             "pages": project.pages_count,
             "users": project.users_count,
             "charts": project.charts_count,
