@@ -154,7 +154,13 @@ exports[`ProjectStateList: Component should render correctly 1`] = `
     error={null}
     loading={false}
     noData={false}
-    noDataContent={null}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No States"
+        id="project.projectStateList.noData"
+        values={Object {}}
+      />
+    }
   >
     <styled.section>
       <Styled(Component)
@@ -420,7 +426,13 @@ exports[`ProjectStateList: Component should render correctly when no tags 1`] = 
     error={null}
     loading={false}
     noData={true}
-    noDataContent={null}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No States"
+        id="project.projectStateList.noData"
+        values={Object {}}
+      />
+    }
   >
     <styled.section />
   </LoadingWrapper>
@@ -597,7 +609,13 @@ exports[`ProjectStateList: Component should render correctly with loader 1`] = `
     error={null}
     loading={true}
     noData={false}
-    noDataContent={null}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No States"
+        id="project.projectStateList.noData"
+        values={Object {}}
+      />
+    }
   >
     <styled.section>
       <Styled(Component)

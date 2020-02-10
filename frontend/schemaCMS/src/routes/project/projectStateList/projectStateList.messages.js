@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'project.projectStateList.subTitle',
     defaultMessage: 'Overview',
   },
+  noData: {
+    id: 'project.projectStateList.noData',
+    defaultMessage: 'No States',
+  },
 });

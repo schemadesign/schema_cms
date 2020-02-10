@@ -11,7 +11,7 @@ import { CreateProjectState } from './createProjectState.component';
 import { selectUserRole } from '../../../modules/userProfile';
 import { DataSourceRoutines, selectDataSources } from '../../../modules/dataSource';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
-import messages from '../create/create.messages';
+import messages from './createProjectState.messages';
 import {
   CREATE_PROJECT_STATE_FORM,
   INITIAL_VALUES,

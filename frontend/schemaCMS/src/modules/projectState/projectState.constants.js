@@ -36,3 +36,10 @@ export const PROJECT_STATE_SCHEMA = Yup.object().shape({
     .max(150, 'State source URL should have maximum 150 characters'),
   [PROJECT_STATE_DATA_SOURCE]: Yup.string().required('Required'),
 });
+
+export const PROJECT_STATE_FILTER_SCHEMA = Yup.object().shape({
+  [PROJECT_STATE_FILTER_VALUES]: Yup.array()
+    .compact(v => v === '')
+    .min(1, 'Required')
+    .required('Required'),
+});

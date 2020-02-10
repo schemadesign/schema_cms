@@ -142,6 +142,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   flex-direction: column;
   padding-bottom: 30px;
   position: relative;
+  font-size: 18px;
 }
 
 .c15 label {

@@ -21,21 +21,37 @@ export class RangeSlider extends PureComponent {
 
   render() {
     const { min, max, minValue, maxValue, onChange, idMin, idMax } = this.props;
-    const min1 = parseInt(min % 1 ? min - 1 : min, 10);
-    const max1 = parseInt(max % 1 ? max + 1 : max, 10);
+    const roundedMin = parseInt(min, 10);
+    const roundedMax = parseInt(max % 1 ? max + 1 : max, 10);
     const mapBetween = (currentNum, minAllowed, maxAllowed, min, max) =>
       ((maxAllowed - minAllowed) * (currentNum - min)) / (max - min) + minAllowed;
 
-    const left = mapBetween(minValue, 0, 100, min1, max1);
-    const right = mapBetween(maxValue, 0, 100, min1, max1);
+    const left = mapBetween(minValue, 0, 100, roundedMin, roundedMax);
+    const right = mapBetween(maxValue, 0, 100, roundedMin, roundedMax);
     const width = right - left;
 
     return (
       <Container>
         <Slider />
         <SelectedSlider left={left} size={width} />
-        <Min min={min1} max={max1} value={minValue} type="range" id={idMin} name={idMin} onChange={onChange} />
-        <Max min={min1} max={max1} value={maxValue} type="range" id={idMax} name={idMax} onChange={onChange} />
+        <Min
+          min={roundedMin}
+          max={roundedMax}
+          value={minValue}
+          type="range"
+          id={idMin}
+          name={idMin}
+          onChange={onChange}
+        />
+        <Max
+          min={roundedMin}
+          max={roundedMax}
+          value={maxValue}
+          type="range"
+          id={idMax}
+          name={idMax}
+          onChange={onChange}
+        />
       </Container>
     );
   }

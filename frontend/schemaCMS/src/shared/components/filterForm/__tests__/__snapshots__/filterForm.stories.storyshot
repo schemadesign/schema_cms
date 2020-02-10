@@ -57,6 +57,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   flex-direction: column;
   padding-bottom: 30px;
   position: relative;
+  font-size: 18px;
 }
 
 .c3 label {
@@ -726,6 +727,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   flex-direction: column;
   padding-bottom: 30px;
   position: relative;
+  font-size: 18px;
 }
 
 .c3 label {
