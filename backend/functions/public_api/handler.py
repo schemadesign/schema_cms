@@ -30,9 +30,9 @@ def read_parquet_from_s3(data_source, columns=None, orient="index", slice_=True)
     result_file = services.get_s3_object(data_source.result_parquet)
     file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
     if slice_:
-        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient))
+        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso"))
     else:
-        return json.loads(file.to_pandas().to_json(orient=orient))
+        return json.loads(file.to_pandas().to_json(orient=orient, date_format="iso"))
 
 
 def split_string_to_list(column_names_string):
@@ -210,7 +210,7 @@ def get_paginated_list(file, items, page, page_size, orient):
         obj["records"] = []
     else:
         obj["records"] = json.loads(
-            file.slice(rows_to_skip, page_size).to_pandas(strings_to_categorical=True).to_json(orient=orient)
+            file.slice(rows_to_skip, page_size).to_pandas(strings_to_categorical=True).to_json(orient=orient, date_format="iso")
         )
 
     return obj
