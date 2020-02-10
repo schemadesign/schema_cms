@@ -85,6 +85,10 @@ class Project(
         return self.data_sources.count()
 
     @functional.cached_property
+    def states_count(self):
+        return self.states.count()
+
+    @functional.cached_property
     def pages_count(self):
         return self.folders.values("pages").count()
 
@@ -514,7 +518,7 @@ class Filter(
     datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
     name = models.CharField(max_length=25)
     filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())
-    field = models.CharField(max_length=25)
+    field = models.TextField()
     field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
     unique_items = models.IntegerField(null=True)
     is_active = models.BooleanField(default=True)

@@ -39,8 +39,9 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         return (
             queryset.annotate_data_source_count()
             .annotate_pages_count()
+            .annotate_states_count()
             .select_related("owner")
-            .prefetch_related("editors", "folders")
+            .prefetch_related("editors", "folders", "states")
             .order_by("-created")
         )
 
