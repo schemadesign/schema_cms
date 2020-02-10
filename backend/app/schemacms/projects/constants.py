@@ -87,14 +87,14 @@ class FilterTypesGroups:
 
 class FieldType:
     STRING = "string"
-    DATE = "date"
+    DATE = "datetime"
     BOOLEAN = "boolean"
     NUMBER = "number"
 
 
 FIELD_TYPE_CHOICES = (
     (FieldType.STRING, 'String'),
-    (FieldType.DATE, 'Date'),
+    (FieldType.DATE, 'Date/Time'),
     (FieldType.BOOLEAN, 'Boolean'),
     (FieldType.NUMBER, 'Number'),
 )

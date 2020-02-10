@@ -3,15 +3,27 @@ import itertools
 from django.core.validators import ValidationError
 from django.contrib import messages
 from django.db import models
+from django.forms import ModelForm
 from django.template.loader import render_to_string
 from django.utils import safestring
 
 
 import softdelete.admin
+from softdelete.models import SoftDeleteObject
 
 
-class SoftDeleteFormWithUniqueTogetherValidation(softdelete.admin.SoftDeleteObjectAdminForm):
-    def clean(self):
+class SoftDeleteFormWithUniqueTogetherValidation(ModelForm):
+    class Meta:
+        model = SoftDeleteObject
+        exclude = ('deleted_at',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        instance = kwargs.get('instance')
+        if instance:
+            self.initial['deleted'] = instance.deleted
+
+    def clean(self, *args, **kwargs):
         constraints = self.instance._meta.constraints
         if constraints and any([constrain.condition for constrain in constraints]):
             fields = [field for field in self.instance._meta.constraints[0].fields]
@@ -21,17 +33,29 @@ class SoftDeleteFormWithUniqueTogetherValidation(softdelete.admin.SoftDeleteObje
                     self.cleaned_data[field] if field in self.cleaned_data else getattr(self.instance, field)
                 )
 
-            if self.instance.__class__.objects.filter(**filter_query).exists():
+            if self.instance.__class__.objects.filter(**filter_query).exclude(pk=self.instance.id).exists():
                 message = f"Object with this {fields[1]} already exists in {fields[0]}"
                 raise ValidationError(message)
 
-        super().clean()
+        cleaned_data = super().clean(*args, **kwargs)
+
+        if 'undelete' in self.data:
+            self.instance.deleted = False
+            cleaned_data['deleted'] = False
+        return cleaned_data
+
+    def save(self, commit=True, *args, **kwargs):
+        model = super().save(commit=False, *args, **kwargs)
+        if commit:
+            model.save()
+        return model
 
 
 class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
     actions = ["soft_undelete"]
     deletion_q = models.Q(deleted_at__isnull=0)
     readonly_on_update_fields = tuple()
+    readonly_fields = ("deleted_at",)
     form = SoftDeleteFormWithUniqueTogetherValidation
 
     def delete_selected(self, request, queryset):
@@ -77,8 +101,5 @@ class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         if obj:
-            if request.method == "GET":
-                return self.readonly_fields + ("deleted",) + self.readonly_on_update_fields
             return self.readonly_fields + self.readonly_on_update_fields
-
         return self.readonly_fields
