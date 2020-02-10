@@ -131,8 +131,14 @@ exports[`StateFilterList: Component should render correctly 1`] = `
   <LoadingWrapper
     error={null}
     loading={true}
-    noData={false}
-    noDataContent={null}
+    noData={true}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No Filters"
+        id="projectState.stateFilterList.noData"
+        values={Object {}}
+      />
+    }
   >
     <Component
       name="filters"

@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'projectState.stateFilterList.finish',
     defaultMessage: 'Finish',
   },
+  noData: {
+    id: 'projectState.stateFilterList.noData',
+    defaultMessage: 'No Filters',
+  },
 });

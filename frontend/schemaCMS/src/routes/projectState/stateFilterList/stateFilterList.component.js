@@ -106,7 +106,12 @@ export class StateFilterList extends PureComponent {
           active={PROJECT_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <LoadingWrapper loading={loading} error={error}>
+        <LoadingWrapper
+          loading={loading}
+          error={error}
+          noData={!filters.length}
+          noDataContent={<FormattedMessage {...messages.noData} />}
+        >
           <CheckboxGroup onChange={this.handleChange} name={PROJECT_STATE_FILTERS} value={values}>
             {filters.map(this.renderFilters)}
           </CheckboxGroup>
