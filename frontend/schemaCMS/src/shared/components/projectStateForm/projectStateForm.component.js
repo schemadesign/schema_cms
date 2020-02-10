@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always } from 'ramda';
+import { always, pipe, propEq, prop, path, find } from 'ramda';
 import { Form } from 'schemaUI';
 import dayjs from 'dayjs';
 
@@ -17,7 +17,7 @@ import {
   PROJECT_STATE_CREATED,
   PROJECT_STATE_IS_PUBLIC,
 } from '../../../modules/projectState/projectState.constants';
-import { renderWhenTrue } from '../../utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { Switch } = Form;
 
@@ -60,19 +60,41 @@ export class ProjectStateForm extends PureComponent {
       )
     )(!!value);
 
+  renderSelect = (value, name) =>
+    renderWhenTrueOtherwise(
+      always(
+        <TextInput
+          value={pipe(
+            path(['props', 'dataSources']),
+            find(propEq('id', value)),
+            prop('name')
+          )(this)}
+          onChange={this.props.handleChange}
+          name={name}
+          label={this.props.intl.formatMessage(messages[name])}
+          fullWidth
+          disabled
+          {...this.props}
+        />
+      ),
+      always(
+        <Select
+          label={this.props.intl.formatMessage(messages[name])}
+          name={name}
+          value={value}
+          options={this.getStatusOptions()}
+          onSelect={this.handleSelectStatus}
+          placeholder={this.props.intl.formatMessage(messages.dataSourcePlaceholder)}
+        />
+      )
+    )(!!value);
+
   render() {
     const { handleChange, intl, values, state } = this.props;
 
     return (
       <Container>
-        <Select
-          label={intl.formatMessage(messages[PROJECT_STATE_DATA_SOURCE])}
-          name={PROJECT_STATE_DATA_SOURCE}
-          value={values[PROJECT_STATE_DATA_SOURCE]}
-          options={this.getStatusOptions()}
-          onSelect={this.handleSelectStatus}
-          placeholder={intl.formatMessage(messages.dataSourcePlaceholder)}
-        />
+        {this.renderSelect(values[PROJECT_STATE_DATA_SOURCE], PROJECT_STATE_DATA_SOURCE)}
         <TextInput
           value={values[PROJECT_STATE_NAME]}
           onChange={handleChange}
