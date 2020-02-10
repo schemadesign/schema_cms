@@ -15,6 +15,8 @@ import { ProjectStateRoutines, selectState } from '../../../modules/projectState
 import { selectUserRole } from '../../../modules/userProfile';
 import reportError from '../../../shared/utils/reportError';
 import { DataSourceRoutines, selectFieldsInfo } from '../../../modules/dataSource';
+import { PROJECT_STATE_FILTER_SCHEMA } from '../../../modules/projectState/projectState.constants';
+import { FILTER_TYPE_BOOL, FILTER_TYPE_RANGE } from '../../../modules/filter/filter.constants';
 
 const mapStateToProps = createStructuredSelector({
   filter: selectFilter,
@@ -44,7 +46,8 @@ export default compose(
   withRouter,
   withFormik({
     enableReinitialize: true,
-    isInitialValid: true,
+    isInitialValid: ({ filter: { filterType } }) => [FILTER_TYPE_RANGE, FILTER_TYPE_BOOL].includes(filterType),
+    validationSchema: () => PROJECT_STATE_FILTER_SCHEMA,
     mapPropsToValues: props =>
       pipe(
         pathOr([], ['state', 'filters']),
