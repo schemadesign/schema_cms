@@ -60,7 +60,7 @@ export class ProjectStateForm extends PureComponent {
       )
     )(!!value);
 
-  renderSelect = (value, name) =>
+  renderSelect = (value, stateValue, name) =>
     renderWhenTrueOtherwise(
       always(
         <TextInput
@@ -87,14 +87,18 @@ export class ProjectStateForm extends PureComponent {
           placeholder={this.props.intl.formatMessage(messages.dataSourcePlaceholder)}
         />
       )
-    )(!!value);
+    )(!!stateValue);
 
   render() {
     const { handleChange, intl, values, state } = this.props;
 
     return (
       <Container>
-        {this.renderSelect(values[PROJECT_STATE_DATA_SOURCE], PROJECT_STATE_DATA_SOURCE)}
+        {this.renderSelect(
+          values[PROJECT_STATE_DATA_SOURCE],
+          state[PROJECT_STATE_DATA_SOURCE],
+          PROJECT_STATE_DATA_SOURCE
+        )}
         <TextInput
           value={values[PROJECT_STATE_NAME]}
           onChange={handleChange}
