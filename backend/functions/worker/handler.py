@@ -73,8 +73,8 @@ def get_preview_data(data_frame):
         return json.dumps({"data": [], "fields": {}}).encode(), items, fields
 
     sample_of_5 = data_frame.head(5)
-    table_preview = json.loads(sample_of_5.to_json(orient="records"))
-    samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
+    table_preview = json.loads(sample_of_5.to_json(orient="records", date_format="iso"))
+    samples = json.loads(sample_of_5.head(1).to_json(orient="records", date_format="iso"))
 
     mean = data_frame.mean(numeric_only=True).to_json()
     min_ = data_frame.min(numeric_only=True).to_json()

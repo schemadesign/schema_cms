@@ -26,8 +26,8 @@ class MetaDataModel(models.Model):
     items = models.PositiveIntegerField(null=True)
     fields = models.PositiveSmallIntegerField(null=True)
     preview = models.FileField(null=True, upload_to=file_upload_path)
-    fields_names = pg_fields.ArrayField(models.CharField(max_length=200), blank=True, default=list)
-    fields_with_urls = pg_fields.ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    fields_names = pg_fields.ArrayField(models.TextField(), blank=True, default=list)
+    fields_with_urls = pg_fields.ArrayField(models.TextField(), blank=True, default=list)
 
     class Meta:
         abstract = True
