@@ -32,7 +32,7 @@ class WranglingScriptAdmin(utils_admin.SoftDeleteObjectAdmin):
 @admin.register(models.Filter)
 class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "datasource", "deleted_at")
-    fields = ("datasource", "name", "filter_type", "field", "field_type", "deleted")
+    fields = ("datasource", "name", "filter_type", "field", "field_type", "deleted_at")
     readonly_on_update_fields = ("datsource",)
 
     def soft_undelete(self, request, queryset):
@@ -44,7 +44,7 @@ class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
 @admin.register(models.Project)
 class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
-    fields = ("title", "description", "owner", "editors", "deleted")
+    fields = ("title", "description", "owner", "editors", "deleted_at")
     filter_horizontal = ("editors",)
 
     def delete_selected(self, request, queryset):
@@ -80,7 +80,7 @@ class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
 class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
     actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta_file, update_meta]
     list_display = ("name", "project", "deleted_at")
-    fields = ("project", "name", "created_by", "type", "file", "active_job", "deleted")
+    fields = ("project", "name", "created_by", "type", "file", "active_job", "deleted_at")
     list_filter = ('project', "type", "deleted_at")
     readonly_on_update_fields = ("project",)
 
@@ -120,7 +120,7 @@ class DataSourceJobStepInline(admin.TabularInline):
 class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
     actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta]
     list_display = ('pk', 'datasource', 'job_state', 'created', 'deleted_at')
-    fields = ("datasource", "job_state", "description", "result", "error", "deleted")
+    fields = ("datasource", "job_state", "description", "result", "error", "deleted_at")
     readonly_on_update_fields = ("datasource",)
     list_filter = ('datasource',)
     inlines = [DataSourceJobStepInline]
@@ -129,7 +129,7 @@ class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
 @admin.register(models.Folder)
 class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ('id', 'name', 'project', 'deleted_at')
-    fields = ("project", "name", "created_by", "deleted")
+    fields = ("project", "name", "created_by", "deleted_at")
     readonly_on_update_fields = ("project",)
     search_fields = ('name',)
     list_filter = ('project',)
@@ -143,7 +143,7 @@ class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
 @admin.register(models.Page)
 class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ('id', 'title', 'folder', 'project', 'deleted_at')
-    fields = ("folder", "title", "created_by", "description", "keywords", "deleted")
+    fields = ("folder", "title", "created_by", "description", "keywords", "deleted_at")
     readonly_on_update_fields = ("folder",)
 
     search_fields = ('title',)
@@ -168,7 +168,7 @@ class BlockImageInline(admin.TabularInline):
 class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
     form = forms.BlockForm
     list_display = ('id', 'name', 'page_title', 'folder', 'project', 'deleted_at')
-    fields = ("page", "name", "type", "content", "is_active", "deleted")
+    fields = ("page", "name", "type", "content", "is_active", "deleted_at")
     readonly_on_update_fields = ("page",)
     search_fields = ('name',)
     list_filter = ('page',)
@@ -198,7 +198,7 @@ class TagInline(admin.TabularInline):
 @admin.register(models.TagsList)
 class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "datasource", "deleted_at")
-    fields = ("datasource", "name", "deleted")
+    fields = ("datasource", "name", "deleted_at")
     list_filter = ('datasource', "deleted_at")
     readonly_on_update_fields = ("datasource",)
     inlines = (TagInline,)
@@ -212,7 +212,16 @@ class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
 @admin.register(models.State)
 class StateAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "project", "datasource", "deleted_at")
-    fields = ("project", "datasource", "name", "description", "source_url", "author", "is_public", "deleted")
+    fields = (
+        "project",
+        "datasource",
+        "name",
+        "description",
+        "source_url",
+        "author",
+        "is_public",
+        "deleted_at",
+    )
     list_filter = ("project", 'datasource', "is_public", "deleted_at")
     readonly_on_update_fields = ("project",)
 
