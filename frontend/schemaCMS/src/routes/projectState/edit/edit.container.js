@@ -15,7 +15,7 @@ import {
   PROJECT_STATE_SCHEMA,
 } from '../../../modules/projectState/projectState.constants';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
-import messages from '../../project/create/create.messages';
+import messages from './edit.messages';
 import { selectUserRole } from '../../../modules/userProfile';
 import { DataSourceRoutines, selectDataSources } from '../../../modules/dataSource';
 
