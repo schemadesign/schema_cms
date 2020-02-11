@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { always, append, cond, equals, ifElse, pathOr, propEq, reject, T } from 'ramda';
 import { Form as FormUI } from 'schemaUI';
 
-import { Form, RangeValues } from './stateFilter.styles';
+import { Form, RangeInput, RangeValues } from './stateFilter.styles';
 import messages from './stateFilter.messages';
 import reportError from '../../../shared/utils/reportError';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
@@ -18,6 +18,7 @@ import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import {
   PROJECT_STATE_FILTER_FIELD,
   PROJECT_STATE_FILTER_NAME,
+  PROJECT_STATE_FILTER_SECONDARY_VALUES,
   PROJECT_STATE_FILTER_TYPE,
   PROJECT_STATE_FILTER_VALUES,
 } from '../../../modules/projectState/projectState.constants';
@@ -106,26 +107,48 @@ export class StateFilter extends PureComponent {
   };
 
   handleRangeChange = e => {
-    const { handleChange, values } = this.props;
+    const { values } = this.props;
     const { target } = e;
     const { name, value } = target;
     const [key, index] = name.split('.');
     const intValue = parseInt(value, 10);
     const intIndex = parseInt(index, 10);
 
-    if (intIndex && value < values[key][0]) {
+    if (intIndex && intValue < values[key][0] + 1) {
       return;
     }
-    if (!intIndex && intValue > values[key][1]) {
+    if (!intIndex && intValue > values[key][1] - 1) {
       return;
     }
 
-    handleChange(e);
+    this.props.setFieldValue(`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.${index}`, intValue);
+    this.props.setFieldValue(name, intValue);
+  };
+
+  handleInputRangeChange = (e, isBlur) => {
+    const { target } = e;
+    const { name, value } = target;
+    const [, index] = name.split('.');
+    const intIndex = parseInt(index, 10);
+    const intValue = parseInt(value, 10);
+    const { values, setFieldValue } = this.props;
+    const [minRounded, maxRounded] = values.range;
+
+    if ((isBlur && (intValue < minRounded || intValue > maxRounded)) || (isBlur && isNaN(intValue))) {
+      setFieldValue(name, values[PROJECT_STATE_FILTER_VALUES][intIndex]);
+      return;
+    }
+
+    setFieldValue(name, intValue);
+    if (intValue >= minRounded && intValue <= maxRounded) {
+      setFieldValue(`${PROJECT_STATE_FILTER_VALUES}.${index}`, intValue);
+    }
   };
 
   renderRange = () => {
-    const [min, max] = this.getUniqueValues();
-    const [minValue = min, maxValue = max] = this.props.values[PROJECT_STATE_FILTER_VALUES];
+    const { values, intl } = this.props;
+    const [minRounded, maxRounded] = values.range;
+    const [minValue, maxValue] = values[PROJECT_STATE_FILTER_VALUES];
 
     return (
       <Fragment>
@@ -134,13 +157,43 @@ export class StateFilter extends PureComponent {
           maxValue={maxValue}
           idMin={`${PROJECT_STATE_FILTER_VALUES}.0`}
           idMax={`${PROJECT_STATE_FILTER_VALUES}.1`}
-          min={min}
-          max={max}
+          min={minRounded}
+          max={maxRounded}
           onChange={this.handleRangeChange}
         />
         <RangeValues>
-          <span>{minValue}</span>
-          <span>{maxValue}</span>
+          <span>{minRounded}</span>
+          <span>{maxRounded}</span>
+        </RangeValues>
+        <RangeValues>
+          <RangeInput>
+            <TextInput
+              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][0]}
+              onChange={this.handleInputRangeChange}
+              onBlur={e => this.handleInputRangeChange(e, true)}
+              name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.0`}
+              label={intl.formatMessage(messages.min)}
+              type="number"
+              step="1"
+              min={minRounded}
+              max={maxValue - 1}
+              {...this.props}
+            />
+          </RangeInput>
+          <RangeInput>
+            <TextInput
+              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][1]}
+              onChange={this.handleInputRangeChange}
+              onBlur={e => this.handleInputRangeChange(e, true)}
+              name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.1`}
+              label={intl.formatMessage(messages.max)}
+              type="number"
+              step="1"
+              min={minValue + 1}
+              max={maxRounded}
+              {...this.props}
+            />
+          </RangeInput>
         </RangeValues>
       </Fragment>
     );
@@ -200,13 +253,14 @@ export class StateFilter extends PureComponent {
     />
   );
 
-  renderValue = cond([
-    [propEq('filterType', FILTER_TYPE_RANGE), this.renderRange],
-    [propEq('filterType', FILTER_TYPE_SELECT), this.renderSelect],
-    [propEq('filterType', FILTER_TYPE_CHECKBOX), this.renderCheckboxes],
-    [propEq('filterType', FILTER_TYPE_BOOL), this.renderSwitch],
-    [T, this.renderInput],
-  ]);
+  renderValue = data =>
+    cond([
+      [propEq('filterType', FILTER_TYPE_RANGE), this.renderRange],
+      [propEq('filterType', FILTER_TYPE_SELECT), this.renderSelect],
+      [propEq('filterType', FILTER_TYPE_CHECKBOX), this.renderCheckboxes],
+      [propEq('filterType', FILTER_TYPE_BOOL), this.renderSwitch],
+      [T, this.renderInput],
+    ])(data);
 
   render() {
     const { loading, error } = this.state;

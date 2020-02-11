@@ -13,6 +13,7 @@ export const PROJECT_STATE_FILTER_NAME = 'name';
 export const PROJECT_STATE_FILTER_TYPE = 'filterType';
 export const PROJECT_STATE_FILTER_FIELD = 'field';
 export const PROJECT_STATE_FILTER_VALUES = 'values';
+export const PROJECT_STATE_FILTER_SECONDARY_VALUES = 'secondaryValues';
 
 export const INITIAL_VALUES = {
   [PROJECT_STATE_NAME]: '',

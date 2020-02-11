@@ -76,7 +76,12 @@ export class CreateProjectState extends PureComponent {
           title={<FormattedMessage {...messages.title} />}
           subtitle={<FormattedMessage {...messages.subTitle} />}
         />
-        <LoadingWrapper loading={loading} error={error} noData={!dataSources.length}>
+        <LoadingWrapper
+          loading={loading}
+          error={error}
+          noData={!dataSources.length}
+          noDataContent={<FormattedMessage {...messages.noData} />}
+        >
           <ProjectStateForm {...this.props} />
         </LoadingWrapper>
         <NavigationContainer fixed contentStyles={contentStyles}>

@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'project.createProjectState.nameStateNameNotUniqueError',
     defaultMessage: 'A state with this name already exists in project.',
   },
+  noData: {
+    id: 'project.createProjectState.noData',
+    defaultMessage: 'Please create data source first',
+  },
 });
