@@ -17,8 +17,6 @@ from aws_cdk import (
     aws_ecr,
     aws_codepipeline,
     aws_codepipeline_actions,
-    aws_stepfunctions,
-    aws_stepfunctions_tasks,
     aws_certificatemanager,
     aws_route53,
 )
@@ -104,7 +102,9 @@ class CertsStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         domain_name = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
-        self.cert = aws_certificatemanager.Certificate(self, "cert", domain_name=domain_name)
+        self.cert = aws_certificatemanager.Certificate(
+            self, "cert", domain_name=domain_name
+        )
 
 
 class API(core.Stack):
@@ -115,7 +115,9 @@ class API(core.Stack):
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
 
         api_lambda_token_secret = aws_secretsmanager.Secret.from_secret_arn(
-            self, LAMBDA_AUTH_TOKEN_ENV_NAME, self.node.try_get_context("lambda_auth_token"),
+            self,
+            LAMBDA_AUTH_TOKEN_ENV_NAME,
+            self.node.try_get_context("lambda_auth_token"),
         )
         self.api_lambda_token = api_lambda_token_secret.secret_value.to_string()
 
@@ -125,8 +127,12 @@ class API(core.Stack):
         if installation_mode == INSTALLATION_MODE_FULL:
             tag_from_context = self.node.try_get_context("app_image_tag")
             tag = tag_from_context if tag_from_context is not "undefined" else None
-            api_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag)
-            nginx_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.nginx_registry, tag)
+            api_image = aws_ecs.ContainerImage.from_ecr_repository(
+                scope.base.app_registry, tag
+            )
+            nginx_image = aws_ecs.ContainerImage.from_ecr_repository(
+                scope.base.nginx_registry, tag
+            )
 
         env_map = {
             "DJANGO_SOCIAL_AUTH_AUTH0_KEY": "django_social_auth_auth0_key_arn",
@@ -146,7 +152,9 @@ class API(core.Stack):
 
         self.env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, "job_processing_dead_letter_sqs",)
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(
+            self, "job_processing_dead_letter_sqs",
+        )
         self.job_processing_queues = [
             self._create_job_processing_queue(
                 scope=scope,
@@ -170,11 +178,14 @@ class API(core.Stack):
             "api-service",
             cluster=scope.base.cluster,
             task_image_options=aws_ecs_patterns.ApplicationLoadBalancedTaskImageOptions(
-                image=nginx_image, container_name="nginx", container_port=80, enable_logging=True,
+                image=nginx_image,
+                container_name="nginx",
+                container_port=80,
+                enable_logging=True,
             ),
             desired_count=1,
             cpu=256,
-            memory_limit_mib=512,
+            memory_limit_mib=1024,
             certificate=scope.certs.cert,
             domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
             domain_zone=aws_route53.PrivateHostedZone(
@@ -198,15 +209,19 @@ class API(core.Stack):
                 LAMBDA_AUTH_TOKEN_ENV_NAME: self.api_lambda_token,
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, **self.env,},
-            cpu=256,
-            memory_limit_mib=512,
+            cpu=512,
+            memory_limit_mib=1024,
         )
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
 
-        scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
+        scope.base.app_bucket.grant_read_write(
+            self.api.service.task_definition.task_role
+        )
 
-        scope.image_resize_lambda.image_bucket.grant_read(self.api.service.task_definition.task_role)
+        scope.image_resize_lambda.image_bucket.grant_read(
+            self.api.service.task_definition.task_role
+        )
 
         for queue in self.job_processing_queues:
             queue.grant_send_messages(self.api.service.task_definition.task_role)
@@ -214,10 +229,17 @@ class API(core.Stack):
         for v in self.env.values():
             self.grant_secret_access(v)
 
-        self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
+        self.api.service.connections.allow_to(
+            scope.base.db.connections, aws_ec2.Port.tcp(5432)
+        )
         self.api.task_definition.add_to_task_role_policy(
             aws_iam.PolicyStatement(
-                actions=["dynamodb:*", "ses:SendRawEmail", "ses:SendBulkTemplatedEmail",], resources=["*"],
+                actions=[
+                    "dynamodb:*",
+                    "ses:SendRawEmail",
+                    "ses:SendBulkTemplatedEmail",
+                ],
+                resources=["*"],
             )
         )
 
@@ -247,7 +269,9 @@ class LambdaWorker(core.Stack):
 
         self.functions = [
             self._create_lambda_fn(scope=scope, memory_size=memory_size, queue=queue)
-            for memory_size, queue in zip(JOB_PROCESSING_MEMORY_SIZES, scope.api.job_processing_queues)
+            for memory_size, queue in zip(
+                JOB_PROCESSING_MEMORY_SIZES, scope.api.job_processing_queues
+            )
         ]
 
     def _create_lambda_fn(self, scope, memory_size, queue):
@@ -264,22 +288,30 @@ class LambdaWorker(core.Stack):
                 "IMAGE_SCRAPING_FETCH_TIMEOUT": "15",
                 "AWS_IMAGE_STORAGE_BUCKET_NAME": scope.image_resize_lambda.image_bucket.bucket_name,
                 "AWS_IMAGE_STATIC_URL": scope.image_resize_lambda.image_bucket.bucket_website_url,
-                "BACKEND_URL": BACKEND_URL.format(domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)),
-                "SENTRY_DNS": self.get_secret("sentry_dns_arn", name + "-secret").secret_value.to_string(),
+                "BACKEND_URL": BACKEND_URL.format(
+                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                ),
+                "SENTRY_DNS": self.get_secret(
+                    "sentry_dns_arn", name + "-secret"
+                ).secret_value.to_string(),
                 LAMBDA_AUTH_TOKEN_ENV_NAME: scope.api.api_lambda_token,
             },
             memory_size=memory_size,
             timeout=core.Duration.seconds(300),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
-        lambda_fn.add_event_source(aws_lambda_event_sources.SqsEventSource(queue, batch_size=1))
+        lambda_fn.add_event_source(
+            aws_lambda_event_sources.SqsEventSource(queue, batch_size=1)
+        )
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
         scope.image_resize_lambda.image_bucket.grant_read_write(lambda_fn.role)
         return lambda_fn, lambda_code
 
     def get_secret(self, secret_arn, secret_suffix):
         return aws_secretsmanager.Secret.from_secret_attributes(
-            self, secret_arn + secret_suffix, secret_arn=self.node.try_get_context(secret_arn),
+            self,
+            secret_arn + secret_suffix,
+            secret_arn=self.node.try_get_context(secret_arn),
         )
 
 
@@ -297,7 +329,9 @@ class PublicAPI(core.Stack):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
-                "BACKEND_URL": BACKEND_URL.format(domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)),
+                "BACKEND_URL": BACKEND_URL.format(
+                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                ),
             },
             memory_size=512,
             timeout=core.Duration.seconds(60),
@@ -312,7 +346,8 @@ class PublicAPI(core.Stack):
 
         self.public_api_lambda.add_to_role_policy(
             aws_iam.PolicyStatement(
-                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"], resources=["*"],
+                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"],
+                resources=["*"],
             )
         )
 
@@ -322,14 +357,24 @@ class ImageResize(core.Stack):
         super().__init__(scope, id, **kwargs)
         domain_name = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
 
-        (self.image_resize_lambda, self.function_code, self.api_gateway,) = self.create_lambda()
+        (
+            self.image_resize_lambda,
+            self.function_code,
+            self.api_gateway,
+        ) = self.create_lambda()
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
-        self.image_resize_lambda.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
+        self.image_resize_lambda.add_environment(
+            key="BUCKET", value=self.image_bucket.bucket_name
+        )
         self.image_resize_lambda.add_environment(
             key="REDIRECT_URL", value=self.image_bucket.bucket_website_url
         )
-        self.image_resize_lambda.add_environment(key="CORS_ORIGIN", value=f"https://{domain_name}")
-        self.image_resize_lambda.add_environment(key="ALLOWED_DIMENSIONS", value="150x150,1024x1024")
+        self.image_resize_lambda.add_environment(
+            key="CORS_ORIGIN", value=f"https://{domain_name}"
+        )
+        self.image_resize_lambda.add_environment(
+            key="ALLOWED_DIMENSIONS", value="150x150,1024x1024"
+        )
         self.image_bucket.grant_read_write(self.image_resize_lambda.role)
 
     def create_bucket(self, lambda_url):
@@ -345,8 +390,12 @@ class ImageResize(core.Stack):
             website_index_document="index.html",
             website_routing_rules=[
                 aws_s3.RoutingRule(
-                    condition=aws_s3.RoutingRuleCondition(http_error_code_returned_equals="404"),
-                    protocol=protocol_mapping[parsed_url.scheme.upper()],  # enum required
+                    condition=aws_s3.RoutingRuleCondition(
+                        http_error_code_returned_equals="404"
+                    ),
+                    protocol=protocol_mapping[
+                        parsed_url.scheme.upper()
+                    ],  # enum required
                     host_name=parsed_url.netloc,
                     replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
                     http_redirect_code="307",
@@ -392,7 +441,9 @@ class CIPipeline(core.Stack):
 
         source_output = aws_codepipeline.Artifact()
         github_token_arn = self.node.try_get_context("github_token_arn")
-        oauth_token = aws_secretsmanager.Secret.from_secret_arn(self, "gh-token", github_token_arn)
+        oauth_token = aws_secretsmanager.Secret.from_secret_arn(
+            self, "gh-token", github_token_arn
+        )
 
         self.pipeline.add_stage(
             stage_name="source",
@@ -409,7 +460,9 @@ class CIPipeline(core.Stack):
             ],
         )
 
-        fe_build_spec = aws_codebuild.BuildSpec.from_source_filename("buildspec-frontend.yaml")
+        fe_build_spec = aws_codebuild.BuildSpec.from_source_filename(
+            "buildspec-frontend.yaml"
+        )
         build_fe_project = aws_codebuild.PipelineProject(
             self,
             "build_fe_project",
@@ -438,10 +491,15 @@ class CIPipeline(core.Stack):
         scope.base.webapp_registry.grant_pull_push(build_fe_project)
 
         build_fe_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_fe", input=source_output, project=build_fe_project, run_order=2,
+            action_name="build_fe",
+            input=source_output,
+            project=build_fe_project,
+            run_order=2,
         )
 
-        app_build_spec = aws_codebuild.BuildSpec.from_source_filename("buildspec-app.yaml")
+        app_build_spec = aws_codebuild.BuildSpec.from_source_filename(
+            "buildspec-app.yaml"
+        )
         build_app_project = aws_codebuild.PipelineProject(
             self,
             "build_app_project",
@@ -462,7 +520,10 @@ class CIPipeline(core.Stack):
         scope.base.app_registry.grant_pull_push(build_app_project)
 
         build_app_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_app", input=source_output, project=build_app_project, run_order=1,
+            action_name="build_app",
+            input=source_output,
+            project=build_app_project,
+            run_order=1,
         )
 
         build_public_api_lambda_project = aws_codebuild.PipelineProject(
@@ -512,7 +573,9 @@ class CIPipeline(core.Stack):
             environment=aws_codebuild.BuildEnvironment(
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
             ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename("buildspec-cdk.yaml"),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename(
+                "buildspec-cdk.yaml"
+            ),
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.CUSTOM),
         )
 
@@ -545,7 +608,9 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name="deploy_public_api",
             actions=[
-                aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=1),
+                aws_codepipeline_actions.ManualApprovalAction(
+                    action_name="approve_changes", run_order=1
+                ),
                 self.prepare_lambda_worker_changes(
                     scope=scope,
                     cdk_artifact=cdk_artifact,
@@ -558,7 +623,9 @@ class CIPipeline(core.Stack):
                     stack_name=scope.public_api.stack_name,
                     change_set_name="publicAPIStagedChangeSet",
                     admin_permissions=True,
-                    template_path=cdk_artifact.at_path("cdk.out/public-api.template.json"),
+                    template_path=cdk_artifact.at_path(
+                        "cdk.out/public-api.template.json"
+                    ),
                     run_order=2,
                     parameter_overrides={
                         **scope.public_api.function_code.assign(
@@ -574,7 +641,9 @@ class CIPipeline(core.Stack):
                     stack_name=scope.image_resize_lambda.stack_name,
                     change_set_name="imageResizeLambdaStagedChangeSet",
                     admin_permissions=True,
-                    template_path=cdk_artifact.at_path("cdk.out/image-resize.template.json"),
+                    template_path=cdk_artifact.at_path(
+                        "cdk.out/image-resize.template.json"
+                    ),
                     run_order=2,
                     parameter_overrides={
                         **scope.image_resize_lambda.function_code.assign(
@@ -626,9 +695,15 @@ class CIPipeline(core.Stack):
             repo=GITHUB_REPOSITORY,
             webhook=True,
             webhook_filters=[
-                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_CREATED),
-                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_UPDATED),
-                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_REOPENED),
+                aws_codebuild.FilterGroup.in_event_of(
+                    aws_codebuild.EventAction.PULL_REQUEST_CREATED
+                ),
+                aws_codebuild.FilterGroup.in_event_of(
+                    aws_codebuild.EventAction.PULL_REQUEST_UPDATED
+                ),
+                aws_codebuild.FilterGroup.in_event_of(
+                    aws_codebuild.EventAction.PULL_REQUEST_REOPENED
+                ),
             ],
         )
 
@@ -698,12 +773,17 @@ class CIPipeline(core.Stack):
             )
             output = aws_codepipeline.Artifact()
             action = aws_codepipeline_actions.CodeBuildAction(
-                action_name=f"build_{function_name}", input=action_input, project=project, outputs=[output],
+                action_name=f"build_{function_name}",
+                input=action_input,
+                project=project,
+                outputs=[output],
             )
             actions_with_outputs.append((action, output, function, code))
         return actions_with_outputs
 
-    def prepare_lambda_worker_changes(self, scope, cdk_artifact, build_actions, **change_set_kwargs):
+    def prepare_lambda_worker_changes(
+        self, scope, cdk_artifact, build_actions, **change_set_kwargs
+    ):
         parameter_overrides = dict()
         extra_inputs = []
         for (_, output, _, code) in build_actions:
