@@ -184,7 +184,7 @@ class API(core.Stack):
                 enable_logging=True,
             ),
             desired_count=1,
-            cpu=256,
+            cpu=512,
             memory_limit_mib=1024,
             certificate=scope.certs.cert,
             domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
