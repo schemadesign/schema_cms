@@ -9,3 +9,7 @@ export const RangeValues = styled.div`
   font-size: 12px;
   margin-top: 15px;
 `;
+
+export const RangeInput = styled.div`
+  width: 100px;
+`;

@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'projectState.edit.cancelRemoval',
     defaultMessage: 'Cancel',
   },
+  nameStateNameNotUniqueError: {
+    id: 'projectState.edit.nameStateNameNotUniqueError',
+    defaultMessage: 'A state with this name already exists in project.',
+  },
 });

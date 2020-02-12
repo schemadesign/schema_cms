@@ -15,7 +15,10 @@ import { ProjectStateRoutines, selectState } from '../../../modules/projectState
 import { selectUserRole } from '../../../modules/userProfile';
 import reportError from '../../../shared/utils/reportError';
 import { DataSourceRoutines, selectFieldsInfo } from '../../../modules/dataSource';
-import { PROJECT_STATE_FILTER_SCHEMA } from '../../../modules/projectState/projectState.constants';
+import {
+  PROJECT_STATE_FILTER_SCHEMA,
+  PROJECT_STATE_FILTER_SECONDARY_VALUES,
+} from '../../../modules/projectState/projectState.constants';
 import { FILTER_TYPE_BOOL, FILTER_TYPE_RANGE } from '../../../modules/filter/filter.constants';
 
 const mapStateToProps = createStructuredSelector({
@@ -36,6 +39,34 @@ export const mapDispatchToProps = dispatch => ({
   ),
 });
 
+const getInitialValues = props => {
+  const { values } = pipe(
+    pathOr([], ['state', 'filters']),
+    find(propEq('filter', parseInt(getMatchParam(props, 'filterId'), 10))),
+    defaultTo({ values: [] }),
+    pick(['values'])
+  )(props);
+  if (FILTER_TYPE_RANGE === props.filter.filterType) {
+    const data = { range: [] };
+    if (props.fieldsInfo.length) {
+      const [min, max] = props.fieldsInfo;
+      data.range = [parseInt(min, 10), parseInt(max % 1 ? max + 1 : max, 10)];
+    }
+
+    if (values.length) {
+      data.values = values;
+      data[PROJECT_STATE_FILTER_SECONDARY_VALUES] = values;
+    } else {
+      data.values = data.range;
+      data[PROJECT_STATE_FILTER_SECONDARY_VALUES] = data.range;
+    }
+
+    return data;
+  }
+
+  return { values, range: [], [PROJECT_STATE_FILTER_SECONDARY_VALUES]: [] };
+};
+
 export default compose(
   hot(module),
   connect(
@@ -48,13 +79,7 @@ export default compose(
     enableReinitialize: true,
     isInitialValid: ({ filter: { filterType } }) => [FILTER_TYPE_RANGE, FILTER_TYPE_BOOL].includes(filterType),
     validationSchema: () => PROJECT_STATE_FILTER_SCHEMA,
-    mapPropsToValues: props =>
-      pipe(
-        pathOr([], ['state', 'filters']),
-        find(propEq('filter', parseInt(getMatchParam(props, 'filterId'), 10))),
-        defaultTo({ values: [] }),
-        pick(['values'])
-      )(props),
+    mapPropsToValues: getInitialValues,
     handleSubmit: async ({ values }, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);

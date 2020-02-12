@@ -14,4 +14,8 @@ export default defineMessages({
     id: 'dataSource.createDataSourceTag.cancel',
     defaultMessage: 'Cancel',
   },
+  nameTagsListNameNotUniqueError: {
+    id: 'dataSource.createDataSourceTag.nameTagsListNameNotUniqueError',
+    defaultMessage: 'A tag with this name already exists in data source.',
+  },
 });

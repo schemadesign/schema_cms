@@ -48,8 +48,10 @@ export class DataSourceTagForm extends PureComponent {
     const { value } = e.target;
 
     if (!value.length) {
-      this.handleRemoveTag({ index, resetIndex: true });
+      return this.handleRemoveTag({ index, resetIndex: true });
     }
+
+    return this.setState({ focusInputIndex: null });
   };
 
   handleKeyDown = index => e => {

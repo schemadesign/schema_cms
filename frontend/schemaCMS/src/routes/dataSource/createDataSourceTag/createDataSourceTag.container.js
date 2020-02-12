@@ -20,7 +20,7 @@ import {
 } from '../../../modules/dataSourceTag/dataSourceTag.constants';
 import reportError from '../../../shared/utils/reportError';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
-import messages from '../../folder/createPage/createPage.messages';
+import messages from './createDataSourceTag.messages';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,

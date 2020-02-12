@@ -34,4 +34,8 @@ export default defineMessages({
     id: 'dataSourceTag.removeTitle',
     defaultMessage: 'Are you sure you want to remove the tag?',
   },
+  nameTagsListNameNotUniqueError: {
+    id: 'dataSourceTag.nameTagsListNameNotUniqueError',
+    defaultMessage: 'A tag with this name already exists in data source.',
+  },
 });

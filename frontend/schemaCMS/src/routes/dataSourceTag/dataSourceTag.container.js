@@ -10,7 +10,7 @@ import { withFormik } from 'formik';
 import { DataSourceTag } from './dataSourceTag.component';
 import { DataSourceTagRoutines, selectTag } from '../../modules/dataSourceTag';
 import { errorMessageParser } from '../../shared/utils/helpers';
-import messages from '../folder/createPage/createPage.messages';
+import messages from './dataSoureceTag.messages';
 import {
   INITIAL_VALUES,
   TAG_FORM,
