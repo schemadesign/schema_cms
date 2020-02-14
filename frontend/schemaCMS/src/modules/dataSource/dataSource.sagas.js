@@ -1,5 +1,32 @@
-import { all, cancel, cancelled, delay, fork, put, select, take, takeLatest } from 'redux-saga/effects';
-import { all as ramdaAll, any, both, either, includes, isEmpty, omit, pathOr, pipe, propEq, propIs, when } from 'ramda';
+import {
+  all,
+  call,
+  cancel,
+  cancelled,
+  delay,
+  fork,
+  put,
+  select,
+  take,
+  takeLatest,
+  takeEvery,
+} from 'redux-saga/effects';
+import {
+  all as ramdaAll,
+  any,
+  both,
+  either,
+  includes,
+  isEmpty,
+  omit,
+  pathOr,
+  pipe,
+  propEq,
+  propIs,
+  when,
+  is,
+} from 'ramda';
+import { eventChannel } from 'redux-saga';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
@@ -15,8 +42,54 @@ import {
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
 import { selectUploadingDataSources } from './dataSource.selectors';
+import reportError from '../../shared/utils/reportError';
 
 const PAGE_SIZE = 1000;
+
+function createUploaderChannel({ formData, id }) {
+  return eventChannel(emit => {
+    const onProgress = ({ total, loaded }) => {
+      const progress = Math.round((loaded * 100) / (total || 1));
+
+      emit({ progress });
+    };
+
+    api
+      .patch(`${DATA_SOURCES_PATH}/${id}`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        onUploadProgress: onProgress,
+      })
+      .then(({ data }) => {
+        emit({ data });
+      });
+
+    return () => {};
+  });
+}
+
+function* uploadProgressWatcher(channel, id) {
+  while (true) {
+    try {
+      yield put(DataSourceRoutines.updateProgress.request());
+      const { progress, data } = yield take(channel);
+
+      if (is(Number, progress)) {
+        yield put(DataSourceRoutines.updateProgress.success({ progress, id }));
+      }
+
+      if (data) {
+        yield put(DataSourceRoutines.removeUploadingDataSource(data));
+      }
+    } catch (error) {
+      reportError(error);
+      yield put(DataSourceRoutines.updateProgress.failure(error));
+    } finally {
+      if (yield cancelled()) {
+        channel.close();
+      }
+    }
+  }
+}
 
 function* create({ payload }) {
   try {
@@ -28,15 +101,18 @@ function* create({ payload }) {
       data: { id },
     } = yield api.post(DATA_SOURCES_PATH, requestData);
 
-    yield put(DataSourceRoutines.create.success({ id, fileName: payload.requestData.file.name }));
+    yield put(
+      DataSourceRoutines.create.success({
+        dataSource: { id, fileName: payload.requestData.file.name, progress: 0 },
+        isUpload: true,
+      })
+    );
     browserHistory.push(`/project/${payload.projectId}/datasource`);
 
-    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${id}`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
-
-    yield put(DataSourceRoutines.removeUploadingDataSource(data));
+    const uploadChannel = yield call(createUploaderChannel, { formData, id });
+    yield fork(uploadProgressWatcher, uploadChannel, id);
   } catch (error) {
+    reportError(error);
     yield put(DataSourceRoutines.create.failure(error));
   } finally {
     yield put(DataSourceRoutines.create.fulfill());
@@ -147,18 +223,21 @@ function* updateOne({ payload: { requestData, dataSource } }) {
       )(requestData);
       const formData = formatFormData(filteredData);
 
-      yield put(DataSourceRoutines.updateOne.success({ ...dataSource, fileName: requestData.file.name }));
+      yield put(
+        DataSourceRoutines.updateOne.success({
+          dataSource: { ...dataSource, fileName: requestData.file.name, progress: 0 },
+          isUpload: true,
+        })
+      );
       browserHistory.push(`/project/${dataSource.project.id}/datasource`);
-      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
-      response.data = data;
-    } else {
-      yield put(DataSourceRoutines.updateOne.success(response.data));
+      const uploadChannel = yield call(createUploaderChannel, { formData, id: dataSource.id });
+      yield fork(uploadProgressWatcher, uploadChannel, dataSource.id);
+      return;
     }
 
-    yield put(DataSourceRoutines.removeUploadingDataSource(response.data));
+    yield put(DataSourceRoutines.updateOne.success({ dataSource: response.data }));
   } catch (error) {
+    reportError(error);
     yield put(DataSourceRoutines.updateOne.failure(error));
   } finally {
     yield put(DataSourceRoutines.updateOne.fulfill());
@@ -213,7 +292,7 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
 
 export function* watchDataSource() {
   yield all([
-    takeLatest(DataSourceRoutines.create.TRIGGER, create),
+    takeEvery(DataSourceRoutines.create.TRIGGER, create),
     takeLatest(DataSourceRoutines.removeOne.TRIGGER, removeOne),
     takeLatest(DataSourceRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),

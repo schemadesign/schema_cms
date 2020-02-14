@@ -14,7 +14,7 @@ export const defaultProps = {
   fetchDataSources: Function.prototype,
   cancelFetchListLoop: Function.prototype,
   dataSources: [],
-  uploadingDataSources: [{ id: 18 }],
+  uploadingDataSources: [{ id: 18, progress: 50 }],
   history,
   intl,
   theme: {

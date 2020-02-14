@@ -18,15 +18,6 @@ describe('DataSource: redux', () => {
     });
   });
 
-  describe('when CREATE/SUCCESS action is received', () => {
-    it('should set dataSource ', () => {
-      const dataSource = [{ id: 1 }];
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.create.success(dataSource));
-
-      expect(resultState.dataSource).to.deep.equal(dataSource);
-    });
-  });
-
   describe('when FETCH_ONE/SUCCESS action is received', () => {
     it('should set dataSource ', () => {
       const dataSource = [{ id: 1 }];
@@ -39,7 +30,18 @@ describe('DataSource: redux', () => {
   describe('when CREATE/SUCCESS action is received', () => {
     it('should set dataSource ', () => {
       const dataSource = [{ id: 1 }];
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.create.success(dataSource));
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.create.success({ dataSource }));
+
+      expect(resultState.dataSource).to.deep.equal(dataSource);
+      expect(resultState.uploadingDataSources).to.deep.equal([]);
+    });
+
+    it('should set dataSource and uploadingDataSources', () => {
+      const dataSource = [{ id: 1 }];
+      const resultState = dataSourceReducer(
+        defaultState,
+        DataSourceRoutines.create.success({ dataSource, isUpload: true })
+      );
 
       expect(resultState.dataSource).to.deep.equal(dataSource);
       expect(resultState.uploadingDataSources).to.deep.equal([dataSource]);
@@ -67,7 +69,18 @@ describe('DataSource: redux', () => {
   describe('when UPDATE_ONE/SUCCESS action is received', () => {
     it('should set dataSource ', () => {
       const dataSource = [{ id: 2 }];
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.updateOne.success(dataSource));
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.updateOne.success({ dataSource }));
+
+      expect(resultState.dataSource).to.deep.equal(dataSource);
+      expect(resultState.uploadingDataSources).to.deep.equal([]);
+    });
+
+    it('should set dataSource and uploadingDataSources', () => {
+      const dataSource = [{ id: 2 }];
+      const resultState = dataSourceReducer(
+        defaultState,
+        DataSourceRoutines.updateOne.success({ dataSource, isUpload: true })
+      );
 
       expect(resultState.dataSource).to.deep.equal(dataSource);
       expect(resultState.uploadingDataSources).to.deep.equal([dataSource]);

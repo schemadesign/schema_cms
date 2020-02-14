@@ -28,7 +28,7 @@ export default defineMessages({
   },
   fileUploading: {
     id: 'project.dataSourceList.fileUploading',
-    defaultMessage: 'Uploading file...',
+    defaultMessage: 'Uploading file {uploadProgress}%...',
   },
   fileUploadingError: {
     id: 'project.dataSourceList.fileUploadingError',

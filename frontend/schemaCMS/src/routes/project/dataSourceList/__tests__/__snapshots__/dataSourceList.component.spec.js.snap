@@ -942,9 +942,13 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Uploading file..."
+              defaultMessage="Uploading file {uploadProgress}%..."
               id="project.dataSourceList.fileUploading"
-              values={Object {}}
+              values={
+                Object {
+                  "uploadProgress": 50,
+                }
+              }
             />
           </ForwardRef(styled.span)>
         }

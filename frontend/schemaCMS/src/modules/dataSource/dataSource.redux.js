@@ -16,6 +16,7 @@ export const DataSourceRoutines = {
   revertToJob: createRoutine(`${prefix}REVERT_TO_JOB`),
   fetchPreview: createRoutine(`${prefix}FETCH_PREVIEW`),
   removeUploadingDataSource: createRoutine(`${prefix}REMOVE_UPLOADING_DATA_SOURCE`),
+  updateProgress: createRoutine(`${prefix}UPDATE_PROGRESS`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -30,10 +31,16 @@ const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('data
 const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', payload);
 const setFieldsInfo = (state = INITIAL_STATE, { payload }) => state.set('fieldsInfo', payload);
 const setPreviewData = (state = INITIAL_STATE, { payload }) => state.set('previewData', payload);
-const setUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
+const setUploadingDataSource = (state = INITIAL_STATE, { payload: { dataSource, isUpload = false } }) =>
   state
-    .set('dataSource', payload)
-    .update('uploadingDataSources', uploadingDataSources => [...uploadingDataSources, payload]);
+    .set('dataSource', dataSource)
+    .update('uploadingDataSources', uploadingDataSources =>
+      isUpload ? [...uploadingDataSources, dataSource] : uploadingDataSources
+    );
+const updateProgress = (state = INITIAL_STATE, { payload: { id, progress } }) =>
+  state.update('uploadingDataSources', uploadingDataSources =>
+    uploadingDataSources.map(data => (data.id === id ? { ...data, progress } : data))
+  );
 const removeUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
   state
     .update('uploadingDataSources', reject(propEq('id', payload.id)))
@@ -48,4 +55,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.fetchFieldsInfo.SUCCESS]: setFieldsInfo,
   [DataSourceRoutines.fetchPreview.SUCCESS]: setPreviewData,
   [DataSourceRoutines.revertToJob.SUCCESS]: updateDataSource,
+  [DataSourceRoutines.updateProgress.SUCCESS]: updateProgress,
 });
