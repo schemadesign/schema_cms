@@ -202,6 +202,13 @@ class DataSource(
             return self.active_job
 
     @property
+    def get_last_job(self):
+        try:
+            return self.jobs.filter(description=f"DataSource {self.id} file upload").latest("created")
+        except DataSourceJob.DoesNotExist:
+            return None
+
+    @property
     def dynamo_table_name(self):
         return "datasources"
 
