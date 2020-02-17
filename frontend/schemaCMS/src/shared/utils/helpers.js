@@ -13,11 +13,14 @@ import {
   pathOr,
   pickBy,
   pipe,
+  propOr,
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
 import debounce from 'lodash.debounce';
 import { sizes } from '../../theme/media';
+import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
+import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
@@ -89,4 +92,13 @@ export const handleToggleMenu = (that, isDesktop) => {
   window[eventListener]('resize', handleResize);
 
   that.setState({ isMenuOpen });
+};
+
+export const isProcessingData = ({ metaData, jobsState }) => {
+  const metaStatus = propOr('', 'status', metaData);
+  const lastJobStatus = propOr('', 'lastJobStatus', jobsState);
+  const metaProcessing = [META_PENDING, META_PROCESSING].includes(metaStatus);
+  const jobProcessing = [JOB_STATE_PENDING, JOB_STATE_PROCESSING].includes(lastJobStatus);
+
+  return { isProcessing: metaProcessing || jobProcessing, metaProcessing, jobProcessing };
 };

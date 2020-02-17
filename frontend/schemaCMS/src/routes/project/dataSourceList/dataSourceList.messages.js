@@ -22,6 +22,10 @@ export default defineMessages({
     id: 'project.dataSourceList.jobProcessing',
     defaultMessage: 'Processing data source...',
   },
+  jobFailed: {
+    id: 'project.dataSourceList.jobFailed',
+    defaultMessage: 'Processing data source failed',
+  },
   metaProcessing: {
     id: 'project.dataSourceList.metaProcessing',
     defaultMessage: 'Processing meta data...',

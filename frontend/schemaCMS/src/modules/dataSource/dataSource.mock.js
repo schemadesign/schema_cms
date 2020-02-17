@@ -1,4 +1,5 @@
 import { META_FAILED, META_PENDING, META_PROCESSING, META_SUCCESS } from './dataSource.constants';
+import { JOB_STATE_FAILURE, JOB_STATE_PENDING, JOB_STATE_PROCESSING, JOB_STATE_SUCCESS } from '../job/job.constants';
 
 export const dataSources = [
   {
@@ -7,7 +8,9 @@ export const dataSources = [
     id: 17,
     name: 'name',
     activeJob: null,
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: JOB_STATE_FAILURE,
+    },
     metaData: {
       status: META_SUCCESS,
     },
@@ -20,7 +23,9 @@ export const dataSources = [
     activeJob: {
       scripts: [],
     },
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: JOB_STATE_SUCCESS,
+    },
     metaData: {
       status: META_SUCCESS,
     },
@@ -31,7 +36,9 @@ export const dataSources = [
     id: 17,
     name: 'name',
     activeJob: {},
-    jobsInProcess: true,
+    jobsState: {
+      lastJobStatus: JOB_STATE_PROCESSING,
+    },
     metaData: {
       status: META_SUCCESS,
     },
@@ -42,7 +49,9 @@ export const dataSources = [
     id: 17,
     name: 'name',
     activeJob: {},
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: JOB_STATE_PENDING,
+    },
     metaData: {
       status: META_SUCCESS,
     },
@@ -53,7 +62,9 @@ export const dataSources = [
     id: 17,
     name: 'name',
     activeJob: {},
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: null,
+    },
     metaData: {
       status: META_PROCESSING,
     },
@@ -64,7 +75,9 @@ export const dataSources = [
     id: 17,
     name: 'name',
     activeJob: {},
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: null,
+    },
     metaData: {
       status: META_PENDING,
     },
@@ -75,7 +88,9 @@ export const dataSources = [
     id: 17,
     name: 'name',
     activeJob: {},
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: null,
+    },
     metaData: {
       status: META_FAILED,
     },
@@ -86,7 +101,9 @@ export const dataSources = [
     id: 18,
     name: 'name',
     activeJob: {},
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: null,
+    },
     metaData: {
       status: META_PENDING,
     },
@@ -99,7 +116,9 @@ export const dataSources = [
     fileName: null,
     file: null,
     activeJob: {},
-    jobsInProcess: false,
+    jobsState: {
+      lastJobStatus: null,
+    },
     metaData: {
       status: META_PENDING,
     },

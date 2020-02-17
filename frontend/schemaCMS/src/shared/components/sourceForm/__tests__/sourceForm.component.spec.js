@@ -5,6 +5,7 @@ import { SourceFormComponent } from '../sourceForm.component';
 import { defaultProps } from '../sourceForm.stories';
 import { TextInput } from '../../form/inputs/textInput';
 import { ErrorWrapper, WarningWrapper } from '../sourceForm.styles';
+import { JOB_STATE_PROCESSING } from '../../../../modules/job/job.constants';
 
 describe('SourceFormComponent: Component', () => {
   const component = props => <SourceFormComponent {...defaultProps} {...props} />;
@@ -61,7 +62,9 @@ describe('SourceFormComponent: Component', () => {
         id: 'id',
         type: 'file',
         fileName: 'fileName',
-        jobsInProcess: true,
+        jobsState: {
+          lastJobStatus: JOB_STATE_PROCESSING,
+        },
       },
     };
     const warningWrapper = render(props).find(WarningWrapper);

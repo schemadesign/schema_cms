@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, find, cond, equals, is, pathOr, propEq, T, ifElse, isNil, prop, propOr, either } from 'ramda';
+import { always, find, cond, equals, is, pathOr, propEq, T, ifElse, isNil, prop } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'styled-components';
@@ -19,14 +19,12 @@ import {
   DATA_SOURCE_FILE,
   DATA_SOURCE_NAME,
   DATA_SOURCE_TYPE,
-  META_PENDING,
-  META_PROCESSING,
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
-import { getEventFiles } from '../../utils/helpers';
+import { getEventFiles, isProcessingData } from '../../utils/helpers';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
 const { CsvIcon } = Icons;
@@ -135,10 +133,8 @@ export class SourceFormComponent extends PureComponent {
 
   render() {
     const { dataSource, handleChange, values, uploadingDataSources, ...restProps } = this.props;
-    const { jobsInProcess, id, metaData } = dataSource;
-    const metaStatus = propOr('', 'status', metaData);
-    const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
-    const isProcessing = metaProcessing || jobsInProcess;
+    const { jobsState, id, metaData } = dataSource;
+    const { isProcessing } = isProcessingData({ jobsState, metaData });
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
     const { name, type } = values;
     const fileUploadingError = id && !is(String, dataSource.fileName);

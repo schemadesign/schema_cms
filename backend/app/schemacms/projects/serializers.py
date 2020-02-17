@@ -75,7 +75,6 @@ class ActiveJobSerializer(serializers.ModelSerializer):
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
-    status = serializers.CharField(read_only=True, default="done")
     meta_data = DataSourceMetaSerializer(read_only=True)
     file_name = serializers.SerializerMethodField(read_only=True)
     created_by = NestedRelatedModelSerializer(
@@ -83,8 +82,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
-    error_log = serializers.SerializerMethodField()
-    jobs_in_process = serializers.SerializerMethodField(read_only=True)
+    jobs_state = serializers.SerializerMethodField(read_only=True)
     active_job = ActiveJobSerializer(read_only=True)
 
     class Meta:
@@ -99,10 +97,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "created",
             "modified",
             "meta_data",
-            "error_log",
             "project",
-            "status",
-            "jobs_in_process",
+            "jobs_state",
             "active_job",
         )
 
@@ -145,13 +141,16 @@ class DataSourceSerializer(serializers.ModelSerializer):
             _, file_name = obj.get_original_file_name()
             return file_name
 
-    def get_error_log(self, obj):
-        return []
+    def get_jobs_state(self, obj):
+        last_job = obj.get_last_job
 
-    def get_jobs_in_process(self, obj):
-        if hasattr(obj, "jobs_in_process") and obj.jobs_in_process:
-            return True
-        return False
+        jobs_state = {
+            "any_job_in_process": obj.jos_in_process if hasattr(obj, "jos_in_process") else False,
+            "last_job_status": last_job.job_state if last_job else None,
+            "error": last_job.error if last_job else None,
+        }
+
+        return jobs_state
 
     @transaction.atomic()
     def save(self, *args, **kwargs):
