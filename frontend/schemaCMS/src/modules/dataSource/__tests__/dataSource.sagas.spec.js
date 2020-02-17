@@ -11,6 +11,7 @@ import browserHistory from '../../../shared/utils/history';
 import { ProjectRoutines } from '../../project';
 import { META_PROCESSING, META_SUCCESS } from '../dataSource.constants';
 import { selectUploadingDataSources } from '../dataSource.selectors';
+import { JOB_STATE_PENDING, JOB_STATE_PROCESSING, JOB_STATE_SUCCESS } from '../../job/job.constants';
 
 describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
@@ -76,7 +77,9 @@ describe('DataSource: sagas', () => {
         {
           activeJob: null,
           fileName: 'fileName',
-          jobsInProcess: true,
+          jobsState: {
+            lastJobStatus: JOB_STATE_PROCESSING,
+          },
           metaData: {
             status: META_SUCCESS,
           },
@@ -88,7 +91,9 @@ describe('DataSource: sagas', () => {
         {
           activeJob: null,
           fileName: 'fileName',
-          jobsInProcess: true,
+          jobsState: {
+            lastJobStatus: JOB_STATE_PENDING,
+          },
           metaData: {
             status: META_PROCESSING,
           },
@@ -100,7 +105,9 @@ describe('DataSource: sagas', () => {
         {
           activeJob: { id: 'id' },
           fileName: 'fileName',
-          jobsInProcess: false,
+          jobsState: {
+            lastJobStatus: JOB_STATE_SUCCESS,
+          },
           metaData: {
             status: META_SUCCESS,
           },

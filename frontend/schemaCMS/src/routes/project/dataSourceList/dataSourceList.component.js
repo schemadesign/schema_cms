@@ -39,6 +39,7 @@ import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { JOB_STATE_FAILURE, JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../../modules/job/job.constants';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -154,6 +155,7 @@ export class DataSourceList extends PureComponent {
     firstName,
     lastName,
     jobProcessing,
+    jobFailed,
     metaProcessing,
     metaFailed,
     isUploading,
@@ -167,18 +169,21 @@ export class DataSourceList extends PureComponent {
       ],
       [
         propEq('fileUploadingError', true),
-        always(this.renderLoading(<FormattedMessage id="sdfsd" {...messages.fileUploadingError} />)),
+        always(this.renderLoading(<FormattedMessage {...messages.fileUploadingError} />)),
       ],
-      [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
       [propEq('metaProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />))],
+      [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
       [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
+      [propEq('jobFailed', true), always(this.renderLoading(<FormattedMessage {...messages.jobFailed} />))],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
-    ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError });
+    ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed });
 
-  renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsInProcess, fileName }, index) => {
+  renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsState = {}, fileName }, index) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-    const jobProcessing = !activeJob || jobsInProcess;
+    const { lastJobStatus } = jobsState;
+    const jobProcessing = [JOB_STATE_PENDING, JOB_STATE_PROCESSING].includes(lastJobStatus);
+    const jobFailed = lastJobStatus === JOB_STATE_FAILURE;
     const metaStatus = propOr('', 'status', metaData);
     const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
     const metaFailed = equals(META_FAILED)(metaStatus);
@@ -193,6 +198,7 @@ export class DataSourceList extends PureComponent {
       firstName,
       lastName,
       jobProcessing,
+      jobFailed,
       metaProcessing,
       metaFailed,
       isUploading,

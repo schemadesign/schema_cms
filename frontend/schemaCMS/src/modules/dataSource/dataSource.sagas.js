@@ -23,6 +23,7 @@ import {
   pipe,
   propEq,
   propIs,
+  path,
   when,
   is,
 } from 'ramda';
@@ -42,6 +43,7 @@ import {
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
 import { selectUploadingDataSources } from './dataSource.selectors';
+import { JOB_STATE_FAILURE, JOB_STATE_SUCCESS } from '../job/job.constants';
 import reportError from '../../shared/utils/reportError';
 
 const PAGE_SIZE = 1000;
@@ -156,10 +158,13 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
         ({ id }) => !any(propEq('id', id))(uploadingDataSources),
         either(
           both(
-            both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)),
             pipe(
               pathOr('', ['metaData', 'status']),
               status => includes(status, [META_FAILED, META_SUCCESS])
+            ),
+            pipe(
+              path(['jobsState', 'lastJobStatus']),
+              status => includes(status, [JOB_STATE_FAILURE, JOB_STATE_SUCCESS, null])
             )
           ),
           propEq('fileName', null)
