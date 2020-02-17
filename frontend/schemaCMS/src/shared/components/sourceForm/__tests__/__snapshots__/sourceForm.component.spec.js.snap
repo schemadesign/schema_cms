@@ -12,6 +12,11 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
       }
     }
     isEdit={true}
+    jobsState={
+      Object {
+        "lastJobStatus": "success",
+      }
+    }
     label="Name"
     name="name"
     onChange={[Function]}
@@ -241,6 +246,11 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     intl={
       Object {
         "formatMessage": [Function],
+      }
+    }
+    jobsState={
+      Object {
+        "lastJobStatus": "success",
       }
     }
     label="File Name"
@@ -429,6 +439,11 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
       }
     }
     isEdit={true}
+    jobsState={
+      Object {
+        "lastJobStatus": "success",
+      }
+    }
     label="Name"
     name="name"
     onChange={[Function]}
@@ -658,6 +673,11 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     intl={
       Object {
         "formatMessage": [Function],
+      }
+    }
+    jobsState={
+      Object {
+        "lastJobStatus": "success",
       }
     }
     label="File Name"

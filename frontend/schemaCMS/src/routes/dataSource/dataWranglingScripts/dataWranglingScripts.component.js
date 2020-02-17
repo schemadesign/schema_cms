@@ -39,7 +39,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam, isProcessingData } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { Draggable } from '../../../shared/components/draggable';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -298,7 +298,8 @@ export class DataWranglingScripts extends PureComponent {
       flatten,
       uniq
     )(checkedScripts);
-    const { jobsInProcess, name, userRole } = dataSource;
+    const { jobsState, metaData, name, userRole } = dataSource;
+    const { isProcessing } = isProcessingData({ jobsState, metaData });
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
@@ -319,7 +320,7 @@ export class DataWranglingScripts extends PureComponent {
             <StepCounter>
               <FormattedMessage values={{ steps: dataWranglingScripts.length }} {...messages.counterSteps} />
               {this.renderUploadingError(errorMessage)}
-              {this.renderProcessingWarning(jobsInProcess)}
+              {this.renderProcessingWarning(isProcessing)}
             </StepCounter>
             <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
           </Header>
@@ -328,7 +329,7 @@ export class DataWranglingScripts extends PureComponent {
             <NavigationContainer right fixed padding="40px 0 70px">
               <NextButton
                 onClick={this.handleSubmit}
-                disabled={isSubmitting || jobsInProcess || !steps.length}
+                disabled={isSubmitting || isProcessing || !steps.length}
                 loading={isSubmitting}
               >
                 <FormattedMessage {...messages.save} />

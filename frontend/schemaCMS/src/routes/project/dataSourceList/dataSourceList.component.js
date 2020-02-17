@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, either, equals, propEq, propOr, T, find } from 'ramda';
+import { always, cond, equals, propEq, T, find } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -25,21 +25,14 @@ import {
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
-import {
-  META_FAILED,
-  META_PENDING,
-  META_PROCESSING,
-  PREVIEW_PAGE,
-  RESULT_PAGE,
-  SOURCE_PAGE,
-} from '../../../modules/dataSource/dataSource.constants';
-import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { META_FAILED, PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
+import { filterMenuOptions, getMatchParam, isProcessingData } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { JOB_STATE_FAILURE, JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../../modules/job/job.constants';
+import { JOB_STATE_FAILURE } from '../../../modules/job/job.constants';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -181,12 +174,9 @@ export class DataSourceList extends PureComponent {
   renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsState = {}, fileName }, index) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-    const { lastJobStatus } = jobsState;
-    const jobProcessing = [JOB_STATE_PENDING, JOB_STATE_PROCESSING].includes(lastJobStatus);
-    const jobFailed = lastJobStatus === JOB_STATE_FAILURE;
-    const metaStatus = propOr('', 'status', metaData);
-    const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
-    const metaFailed = equals(META_FAILED)(metaStatus);
+    const jobFailed = propEq('lastJobStatus', JOB_STATE_FAILURE)(jobsState);
+    const metaFailed = propEq('status', META_FAILED)(metaData);
+    const { metaProcessing, jobProcessing } = isProcessingData({ jobsState, metaData });
     const fileUploadingError = !fileName;
     const fileUploading = find(propEq('id', id), this.props.uploadingDataSources);
     const isUploading = !!fileUploading;
