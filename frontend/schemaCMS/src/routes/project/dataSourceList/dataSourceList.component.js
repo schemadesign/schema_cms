@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, either, equals, propEq, propOr, T, any } from 'ramda';
+import { always, cond, either, equals, propEq, propOr, T, find } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -156,20 +156,24 @@ export class DataSourceList extends PureComponent {
     jobProcessing,
     metaProcessing,
     metaFailed,
-    fileUploading,
+    isUploading,
+    uploadProgress,
     fileUploadingError,
   }) =>
     cond([
-      [propEq('fileUploading', true), always(this.renderLoading(<FormattedMessage {...messages.fileUploading} />))],
+      [
+        propEq('isUploading', true),
+        always(this.renderLoading(<FormattedMessage {...messages.fileUploading} values={{ uploadProgress }} />)),
+      ],
       [
         propEq('fileUploadingError', true),
-        always(this.renderLoading(<FormattedMessage {...messages.fileUploadingError} />)),
+        always(this.renderLoading(<FormattedMessage id="sdfsd" {...messages.fileUploadingError} />)),
       ],
+      [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
       [propEq('metaProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />))],
       [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
-      [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
-    ])({ metaFailed, jobProcessing, metaProcessing, fileUploading, fileUploadingError });
+    ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError });
 
   renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsInProcess, fileName }, index) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
@@ -179,16 +183,19 @@ export class DataSourceList extends PureComponent {
     const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
     const metaFailed = equals(META_FAILED)(metaStatus);
     const fileUploadingError = !fileName;
-    const fileUploading = any(propEq('id', id), this.props.uploadingDataSources);
+    const fileUploading = find(propEq('id', id), this.props.uploadingDataSources);
+    const isUploading = !!fileUploading;
+    const uploadProgress = fileUploading && fileUploading.progress;
 
     const header = this.renderHeader({
       whenCreated,
+      uploadProgress,
       firstName,
       lastName,
       jobProcessing,
       metaProcessing,
       metaFailed,
-      fileUploading,
+      isUploading,
       fileUploadingError,
     });
     const footer = this.renderMetaData({ metaData, metaProcessing });

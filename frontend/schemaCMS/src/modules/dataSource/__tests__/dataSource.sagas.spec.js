@@ -34,7 +34,13 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.create.success({ id: responseData.id, fileName: 'fileName' }))
+        .put(
+          DataSourceRoutines.create.success({
+            dataSource: { id: responseData.id, fileName: 'fileName', progress: 0 },
+            isUpload: true,
+          })
+        )
+        .put(DataSourceRoutines.updateProgress.success({ id: responseData.id, progress: 0 }))
         .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
         .dispatch(DataSourceRoutines.create(payload))
         .silentRun();
@@ -209,8 +215,7 @@ describe('DataSource: sagas', () => {
       it('should dispatch a success action', async () => {
         await expectSaga(watchDataSource)
           .withState(defaultState)
-          .put(DataSourceRoutines.updateOne.success(responseData))
-          .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
+          .put(DataSourceRoutines.updateOne.success({ dataSource: responseData }))
           .dispatch(DataSourceRoutines.updateOne(payload))
           .silentRun();
       });
@@ -234,7 +239,12 @@ describe('DataSource: sagas', () => {
         await expectSaga(watchDataSource)
           .withState(defaultState)
           .dispatch(DataSourceRoutines.updateOne(payload))
-          .put(DataSourceRoutines.updateOne.success({ ...payload.dataSource, fileName: 'fileName' }))
+          .put(
+            DataSourceRoutines.updateOne.success({
+              dataSource: { ...payload.dataSource, progress: 0, fileName: 'fileName' },
+              isUpload: true,
+            })
+          )
           .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
           .silentRun();
 
