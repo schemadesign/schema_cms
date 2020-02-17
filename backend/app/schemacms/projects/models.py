@@ -204,7 +204,7 @@ class DataSource(
     @property
     def get_last_job(self):
         try:
-            return self.jobs.filter(description=f"DataSource {self.id} file upload").latest("created")
+            return self.jobs.latest("created")
         except DataSourceJob.DoesNotExist:
             return None
 
@@ -278,12 +278,6 @@ class DataSource(
     def set_active_job(self, job):
         self.active_job = job
         self.save(update_fields=["active_job"])
-
-    def get_last_success_job(self):
-        try:
-            return self.jobs.filter(job_state=constants.ProcessingState.SUCCESS).latest("created")
-        except DataSourceJob.DoesNotExist:
-            return None
 
     def result_fields_info(self):
         try:
@@ -548,7 +542,7 @@ class Filter(
         return dict(id=project.id, title=project.title)
 
     def get_fields_info(self):
-        last_job = self.datasource.get_last_success_job()
+        last_job = self.datasource.active_job
         return json.loads(last_job.meta_data.preview.read())
 
     def meta_file_serialization(self):
