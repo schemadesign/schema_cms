@@ -119,6 +119,7 @@ class Common(Configuration):
     DEFAULT_FILE_STORAGE = os.getenv(
         "DJANGO_DEFAULT_FILE_STORAGE", "storages.backends.s3boto3.S3Boto3Storage"
     )
+    FILE_UPLOAD_MAX_MEMORY_SIZE = 241172480
 
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")
