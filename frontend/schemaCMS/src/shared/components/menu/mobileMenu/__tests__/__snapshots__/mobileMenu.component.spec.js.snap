@@ -39,6 +39,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
     customStyles={
       Object {
         "maxWidth": null,
+        "position": "absolute",
         "zIndex": 9999,
       }
     }

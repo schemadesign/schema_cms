@@ -79,7 +79,7 @@ export const handleToggleMenu = (that, isDesktop) => {
 
     if (sizeBreakpoint && innerWidth !== that.oldWidth) {
       that.oldWidth = innerWidth;
-      document.body.style.overflow = 'auto';
+      document.documentElement.classList.remove('hideScroll');
       that.setState({ isMenuOpen: false });
     }
   }, 500);
@@ -87,7 +87,8 @@ export const handleToggleMenu = (that, isDesktop) => {
   const isMenuOpen = !that.state.isMenuOpen;
   const eventListener = isMenuOpen ? 'addEventListener' : 'removeEventListener';
 
-  document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+  const classFunc = isMenuOpen ? 'add' : 'remove';
+  document.documentElement.classList[classFunc]('hideScroll');
   that.oldWidth = window.innerWidth;
   window[eventListener]('resize', handleResize);
 
