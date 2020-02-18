@@ -503,7 +503,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
-          "position": "fixed",
+          "position": "absolute",
           "right": 0,
           "textAlign": "left",
           "top": 0,

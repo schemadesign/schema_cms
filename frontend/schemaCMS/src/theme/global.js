@@ -4,12 +4,22 @@ export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     background-color: ${({ theme }) => theme.background};
+    overflow-x: hidden;
   }
+
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
   body {
     font-family: ${({ theme }) => theme.typography.p.fontFamily};
+  }
+
+  html.hideScroll,
+  html.hideScroll body {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
   }
 
   input:-webkit-autofill {
