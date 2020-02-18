@@ -10,6 +10,8 @@ export const Container = styled.div`
   label {
     margin-bottom: 2px;
   }
+
+  ${({ customStyles }) => customStyles};
 `;
 
 export const IconContainer = styled.div`

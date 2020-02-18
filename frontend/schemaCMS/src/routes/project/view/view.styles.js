@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { media } from '../../../theme/media';
+import { ErrorWrapper } from '../../../shared/components/form/inputs/textInput/textInput.styles';
 
 const mobileMargin = 7;
 const desktopMargin = 15;
@@ -25,6 +26,7 @@ export const Details = styled.ul`
   margin-bottom: 0;
 
   ${media.desktop`
+    font-size: 18px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -48,8 +50,9 @@ export const DetailItem = styled.li`
 export const DetailWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: calc(100% - 37px);
+  width: 100%;
   padding: 12px 0 8px 0;
+  position: relative;
 
   ${media.desktop`
     flex-direction: column;
@@ -61,9 +64,9 @@ export const DetailLabel = styled.span`
   color: ${({ theme: { secondaryText } }) => secondaryText};
   margin-right: 5px;
   flex: 0 0 auto;
+  font-size: 14px;
 
   ${media.desktop`
-    font-size: 14px;
     margin-bottom: 6px;
   `};
 `;
@@ -73,10 +76,6 @@ export const DetailValue = styled.span`
   flex: 1 1 auto;
   white-space: pre-wrap;
   word-break: break-word;
-
-  ${media.desktop`
-    font-size: 18px;
-  `};
 `;
 
 export const Statistics = styled.ul`
@@ -144,3 +143,30 @@ export const statisticsCardStyles = {
   cursor: 'pointer',
   fontWeight: 600,
 };
+
+export const containerInputStyles = {
+  paddingBottom: 0,
+  position: 'static',
+};
+
+export const inputStyles = {
+  fontSize: 'inherit',
+  lineHeight: 'inherit',
+};
+
+export const selectContainerStyles = css`
+  font-size: inherit;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+`;
+
+export const InputContainer = styled.div`
+  ${ErrorWrapper} {
+    margin: 5px 0 0;
+  }
+
+  svg {
+    margin-top: 7px;
+  }
+`;

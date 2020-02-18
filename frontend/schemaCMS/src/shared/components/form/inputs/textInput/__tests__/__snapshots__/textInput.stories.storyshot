@@ -196,7 +196,7 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
   width: 100%;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -204,6 +204,10 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
   color: #f21e29;
   margin: -20px 0 20px 0;
   font-size: 0.9em;
+}
+
+.c3 .c1 {
+  margin: 5px 0 0;
 }
 
 <div
@@ -281,7 +285,7 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
       />
     </div>
     <div
-      className="c1"
+      className="c1 c2"
     >
       error
     </div>

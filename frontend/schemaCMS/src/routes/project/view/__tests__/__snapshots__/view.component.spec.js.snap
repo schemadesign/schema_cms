@@ -137,11 +137,42 @@ exports[`View: Component should render content correctly 1`] = `
           >
             Status
           </styled.span>
-          <styled.span
-            id="fieldStatusValue"
-          >
-            Status
-          </styled.span>
+          <Select
+            customStyles={
+              Array [
+                "
+  font-size: inherit;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+",
+              ]
+            }
+            label={null}
+            name="status"
+            onSelect={[Function]}
+            options={
+              Array [
+                Object {
+                  "label": "In Progress",
+                  "value": "in_progress",
+                },
+                Object {
+                  "label": "Done",
+                  "value": "done",
+                },
+                Object {
+                  "label": "Hold",
+                  "value": "hold",
+                },
+                Object {
+                  "label": "Published",
+                  "value": "published",
+                },
+              ]
+            }
+            value="Status"
+          />
         </styled.div>
       </styled.li>
       <styled.li
@@ -175,11 +206,111 @@ exports[`View: Component should render content correctly 1`] = `
           >
             Title
           </styled.span>
-          <styled.span
-            id="fieldTitleValue"
-          >
-            Project Name
-          </styled.span>
+          <styled.div>
+            <TextInput
+              checkOnlyErrors={false}
+              customInputStyles={
+                Object {
+                  "fontSize": "inherit",
+                  "lineHeight": "inherit",
+                }
+              }
+              customStyles={
+                Object {
+                  "paddingBottom": 0,
+                  "position": "static",
+                }
+              }
+              dirty={false}
+              errors={Object {}}
+              fetchProject={
+                [MockFunction] {
+                  "calls": Array [
+                    Array [
+                      Object {
+                        "projectId": "100",
+                      },
+                    ],
+                  ],
+                  "results": Array [
+                    Object {
+                      "type": "return",
+                      "value": Promise {},
+                    },
+                  ],
+                }
+              }
+              fullWidth={true}
+              handleChange={[Function]}
+              handleSubmit={[Function]}
+              history={
+                Object {
+                  "goBack": [Function],
+                  "push": [Function],
+                }
+              }
+              intl={
+                Object {
+                  "formatMessage": [Function],
+                }
+              }
+              isAdmin={true}
+              isEdit={true}
+              isSubmitting={false}
+              match={
+                Object {
+                  "params": Object {
+                    "projectId": "100",
+                  },
+                }
+              }
+              name="title"
+              onChange={[Function]}
+              project={
+                Object {
+                  "created": "2019-08-26T11:05:12+0000",
+                  "description": "Description",
+                  "editors": Array [
+                    "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                    "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                  ],
+                  "id": "100",
+                  "meta": Object {
+                    "charts": 0,
+                    "dataSources": 3,
+                    "pages": 1,
+                    "users": 2,
+                  },
+                  "modified": "2019-08-21T10:12:52.030069Z",
+                  "owner": Object {
+                    "firstName": "Firstname",
+                    "id": "1",
+                    "lastName": "Lastname",
+                  },
+                  "slug": "project_title",
+                  "status": "Status",
+                  "title": "Project Name",
+                }
+              }
+              removeProject={[Function]}
+              setFieldValue={[Function]}
+              touched={Object {}}
+              user={
+                Object {
+                  "role": "admin",
+                }
+              }
+              userRole="admin"
+              value="Project Name"
+              values={
+                Object {
+                  "description": "Description",
+                  "status": "Status",
+                  "title": "Project Name",
+                }
+              }
+            />
+          </styled.div>
         </styled.div>
       </styled.li>
       <styled.li
@@ -194,11 +325,112 @@ exports[`View: Component should render content correctly 1`] = `
           >
             Description
           </styled.span>
-          <styled.span
-            id="fieldDescriptionValue"
-          >
-            Description
-          </styled.span>
+          <styled.div>
+            <TextInput
+              checkOnlyErrors={false}
+              customInputStyles={
+                Object {
+                  "fontSize": "inherit",
+                  "lineHeight": "inherit",
+                }
+              }
+              customStyles={
+                Object {
+                  "paddingBottom": 0,
+                  "position": "static",
+                }
+              }
+              dirty={false}
+              errors={Object {}}
+              fetchProject={
+                [MockFunction] {
+                  "calls": Array [
+                    Array [
+                      Object {
+                        "projectId": "100",
+                      },
+                    ],
+                  ],
+                  "results": Array [
+                    Object {
+                      "type": "return",
+                      "value": Promise {},
+                    },
+                  ],
+                }
+              }
+              fullWidth={true}
+              handleChange={[Function]}
+              handleSubmit={[Function]}
+              history={
+                Object {
+                  "goBack": [Function],
+                  "push": [Function],
+                }
+              }
+              intl={
+                Object {
+                  "formatMessage": [Function],
+                }
+              }
+              isAdmin={true}
+              isEdit={true}
+              isSubmitting={false}
+              match={
+                Object {
+                  "params": Object {
+                    "projectId": "100",
+                  },
+                }
+              }
+              multiline={true}
+              name="description"
+              onChange={[Function]}
+              project={
+                Object {
+                  "created": "2019-08-26T11:05:12+0000",
+                  "description": "Description",
+                  "editors": Array [
+                    "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                    "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                  ],
+                  "id": "100",
+                  "meta": Object {
+                    "charts": 0,
+                    "dataSources": 3,
+                    "pages": 1,
+                    "users": 2,
+                  },
+                  "modified": "2019-08-21T10:12:52.030069Z",
+                  "owner": Object {
+                    "firstName": "Firstname",
+                    "id": "1",
+                    "lastName": "Lastname",
+                  },
+                  "slug": "project_title",
+                  "status": "Status",
+                  "title": "Project Name",
+                }
+              }
+              removeProject={[Function]}
+              setFieldValue={[Function]}
+              touched={Object {}}
+              user={
+                Object {
+                  "role": "admin",
+                }
+              }
+              userRole="admin"
+              value="Description"
+              values={
+                Object {
+                  "description": "Description",
+                  "status": "Status",
+                  "title": "Project Name",
+                }
+              }
+            />
+          </styled.div>
         </styled.div>
       </styled.li>
       <styled.li
@@ -366,7 +598,470 @@ exports[`View: Component should render correctly 1`] = `
       noData={false}
       noDataContent={null}
     >
-      <Component />
+      <styled.div>
+        <styled.ul>
+          <styled.li
+            key="0"
+          >
+            <Component
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                  "fontWeight": 600,
+                }
+              }
+              headerComponent={
+                <ForwardRef(styled.span)>
+                  Data Sources
+                </ForwardRef(styled.span)>
+              }
+              id="projectDataSources"
+              onClick={[Function]}
+            >
+              <styled.span
+                id="projectDataSourcesValue"
+              >
+                3
+              </styled.span>
+            </Component>
+          </styled.li>
+          <styled.li
+            key="1"
+          >
+            <Component
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                  "fontWeight": 600,
+                }
+              }
+              headerComponent={
+                <ForwardRef(styled.span)>
+                  States
+                </ForwardRef(styled.span)>
+              }
+              id="projectStates"
+              onClick={[Function]}
+            >
+              <styled.span
+                id="projectStatesValue"
+              >
+                0
+              </styled.span>
+            </Component>
+          </styled.li>
+          <styled.li
+            key="2"
+          >
+            <Component
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                  "fontWeight": 600,
+                }
+              }
+              headerComponent={
+                <ForwardRef(styled.span)>
+                  Pages
+                </ForwardRef(styled.span)>
+              }
+              id="projectPages"
+              onClick={[Function]}
+            >
+              <styled.span
+                id="projectPagesValue"
+              >
+                1
+              </styled.span>
+            </Component>
+          </styled.li>
+          <styled.li
+            key="3"
+          >
+            <Component
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                  "fontWeight": 600,
+                }
+              }
+              headerComponent={
+                <ForwardRef(styled.span)>
+                  Users
+                </ForwardRef(styled.span)>
+              }
+              id="projectUsers"
+              onClick={[Function]}
+            >
+              <styled.span
+                id="projectUsersValue"
+              >
+                2
+              </styled.span>
+            </Component>
+          </styled.li>
+        </styled.ul>
+        <styled.ul>
+          <styled.li
+            key="0"
+            order={1}
+          >
+            <styled.div
+              id="fieldLastUpdated"
+            >
+              <styled.span
+                id="fieldLastUpdatedLabel"
+              >
+                Last Update
+              </styled.span>
+              <styled.span
+                id="fieldLastUpdatedValue"
+              >
+                3 months ago
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="1"
+            order={3}
+          >
+            <styled.div
+              id="fieldStatus"
+            >
+              <styled.span
+                id="fieldStatusLabel"
+              >
+                Status
+              </styled.span>
+              <Select
+                customStyles={
+                  Array [
+                    "
+  font-size: inherit;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+",
+                  ]
+                }
+                label={null}
+                name="status"
+                onSelect={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "In Progress",
+                      "value": "in_progress",
+                    },
+                    Object {
+                      "label": "Done",
+                      "value": "done",
+                    },
+                    Object {
+                      "label": "Hold",
+                      "value": "hold",
+                    },
+                    Object {
+                      "label": "Published",
+                      "value": "published",
+                    },
+                  ]
+                }
+                value="Status"
+              />
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="2"
+            order={5}
+          >
+            <styled.div
+              id="fieldOwner"
+            >
+              <styled.span
+                id="fieldOwnerLabel"
+              >
+                Owner
+              </styled.span>
+              <styled.span
+                id="fieldOwnerValue"
+              >
+                Firstname Lastname
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="3"
+            order={2}
+          >
+            <styled.div
+              id="fieldTitle"
+            >
+              <styled.span
+                id="fieldTitleLabel"
+              >
+                Title
+              </styled.span>
+              <styled.div>
+                <TextInput
+                  checkOnlyErrors={false}
+                  customInputStyles={
+                    Object {
+                      "fontSize": "inherit",
+                      "lineHeight": "inherit",
+                    }
+                  }
+                  customStyles={
+                    Object {
+                      "paddingBottom": 0,
+                      "position": "static",
+                    }
+                  }
+                  dirty={false}
+                  errors={Object {}}
+                  fetchProject={
+                    [MockFunction] {
+                      "calls": Array [
+                        Array [
+                          Object {
+                            "projectId": "100",
+                          },
+                        ],
+                      ],
+                      "results": Array [
+                        Object {
+                          "type": "return",
+                          "value": Promise {},
+                        },
+                      ],
+                    }
+                  }
+                  fullWidth={true}
+                  handleChange={[Function]}
+                  handleSubmit={[Function]}
+                  history={
+                    Object {
+                      "goBack": [Function],
+                      "push": [Function],
+                    }
+                  }
+                  intl={
+                    Object {
+                      "formatMessage": [Function],
+                    }
+                  }
+                  isAdmin={true}
+                  isEdit={true}
+                  isSubmitting={false}
+                  match={
+                    Object {
+                      "params": Object {
+                        "projectId": "100",
+                      },
+                    }
+                  }
+                  name="title"
+                  onChange={[Function]}
+                  project={
+                    Object {
+                      "created": "2019-08-26T11:05:12+0000",
+                      "description": "Description",
+                      "editors": Array [
+                        "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                        "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                      ],
+                      "id": "100",
+                      "meta": Object {
+                        "charts": 0,
+                        "dataSources": 3,
+                        "pages": 1,
+                        "users": 2,
+                      },
+                      "modified": "2019-08-21T10:12:52.030069Z",
+                      "owner": Object {
+                        "firstName": "Firstname",
+                        "id": "1",
+                        "lastName": "Lastname",
+                      },
+                      "slug": "project_title",
+                      "status": "Status",
+                      "title": "Project Name",
+                    }
+                  }
+                  removeProject={[Function]}
+                  setFieldValue={[Function]}
+                  touched={Object {}}
+                  user={
+                    Object {
+                      "role": "admin",
+                    }
+                  }
+                  userRole="admin"
+                  value="Project Name"
+                  values={
+                    Object {
+                      "description": "Description",
+                      "status": "Status",
+                      "title": "Project Name",
+                    }
+                  }
+                />
+              </styled.div>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="4"
+            order={4}
+          >
+            <styled.div
+              id="fieldDescription"
+            >
+              <styled.span
+                id="fieldDescriptionLabel"
+              >
+                Description
+              </styled.span>
+              <styled.div>
+                <TextInput
+                  checkOnlyErrors={false}
+                  customInputStyles={
+                    Object {
+                      "fontSize": "inherit",
+                      "lineHeight": "inherit",
+                    }
+                  }
+                  customStyles={
+                    Object {
+                      "paddingBottom": 0,
+                      "position": "static",
+                    }
+                  }
+                  dirty={false}
+                  errors={Object {}}
+                  fetchProject={
+                    [MockFunction] {
+                      "calls": Array [
+                        Array [
+                          Object {
+                            "projectId": "100",
+                          },
+                        ],
+                      ],
+                      "results": Array [
+                        Object {
+                          "type": "return",
+                          "value": Promise {},
+                        },
+                      ],
+                    }
+                  }
+                  fullWidth={true}
+                  handleChange={[Function]}
+                  handleSubmit={[Function]}
+                  history={
+                    Object {
+                      "goBack": [Function],
+                      "push": [Function],
+                    }
+                  }
+                  intl={
+                    Object {
+                      "formatMessage": [Function],
+                    }
+                  }
+                  isAdmin={true}
+                  isEdit={true}
+                  isSubmitting={false}
+                  match={
+                    Object {
+                      "params": Object {
+                        "projectId": "100",
+                      },
+                    }
+                  }
+                  multiline={true}
+                  name="description"
+                  onChange={[Function]}
+                  project={
+                    Object {
+                      "created": "2019-08-26T11:05:12+0000",
+                      "description": "Description",
+                      "editors": Array [
+                        "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                        "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                      ],
+                      "id": "100",
+                      "meta": Object {
+                        "charts": 0,
+                        "dataSources": 3,
+                        "pages": 1,
+                        "users": 2,
+                      },
+                      "modified": "2019-08-21T10:12:52.030069Z",
+                      "owner": Object {
+                        "firstName": "Firstname",
+                        "id": "1",
+                        "lastName": "Lastname",
+                      },
+                      "slug": "project_title",
+                      "status": "Status",
+                      "title": "Project Name",
+                    }
+                  }
+                  removeProject={[Function]}
+                  setFieldValue={[Function]}
+                  touched={Object {}}
+                  user={
+                    Object {
+                      "role": "admin",
+                    }
+                  }
+                  userRole="admin"
+                  value="Description"
+                  values={
+                    Object {
+                      "description": "Description",
+                      "status": "Status",
+                      "title": "Project Name",
+                    }
+                  }
+                />
+              </styled.div>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="5"
+            order={6}
+          >
+            <styled.div
+              id="fieldSlug"
+            >
+              <styled.span
+                id="fieldSlugLabel"
+              >
+                API
+              </styled.span>
+              <styled.span
+                id="fieldSlugValue"
+              >
+                schemacms/api/project_title
+              </styled.span>
+            </styled.div>
+          </styled.li>
+        </styled.ul>
+      </styled.div>
+      <styled.div>
+        <Styled(Span)
+          id="deleteProjectDesktopBtn"
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Delete Project"
+            id="project.view.deleteProject"
+            values={Object {}}
+          />
+        </Styled(Span)>
+      </styled.div>
     </LoadingWrapper>
   </div>
   <NavigationContainer
@@ -379,6 +1074,18 @@ exports[`View: Component should render correctly 1`] = `
       id="backProjectBtn"
       onClick={[Function]}
     />
+    <NextButton
+      disabled={true}
+      loading={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="project.view.save"
+        values={Object {}}
+      />
+    </NextButton>
   </NavigationContainer>
   <Styled(Modal)
     contentLabel="Confirm Removal"

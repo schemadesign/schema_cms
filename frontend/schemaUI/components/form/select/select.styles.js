@@ -1,8 +1,5 @@
 import { defaultTheme } from '../../../utils/theme';
 
-const ITEM_HEIGHT = 30;
-const PADDING = 7;
-
 export const getStyles = (theme = defaultTheme) => ({
   containerStyles: {
     display: 'flex',
@@ -30,13 +27,11 @@ export const getStyles = (theme = defaultTheme) => ({
   }),
   selectedOptionsStyles: {
     display: 'flex',
-    height: `${ITEM_HEIGHT}px`,
     cursor: 'pointer',
     width: '100%',
   },
   selectedOptionStyles: {
     cursor: 'pointer',
-    height: `${ITEM_HEIGHT}px`,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -48,7 +43,7 @@ export const getStyles = (theme = defaultTheme) => ({
     flexDirection: 'column',
     position: 'absolute',
     width: '100%',
-    top: `${ITEM_HEIGHT + PADDING}px`,
+    top: 'calc(100% + 5px)',
     left: '0',
     zIndex: 2,
     backgroundColor: theme.select.background,

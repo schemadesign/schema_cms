@@ -3,6 +3,7 @@
 exports[`ProjectStateForm: Component should render correctly 1`] = `
 <styled.div>
   <Select
+    customStyles={null}
     label="Dataset"
     name="datasource"
     onSelect={[Function]}
