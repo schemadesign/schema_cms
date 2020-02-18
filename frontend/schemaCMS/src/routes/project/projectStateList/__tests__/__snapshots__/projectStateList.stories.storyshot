@@ -189,7 +189,7 @@ exports[`Storyshots ProjectStateList Default 1`] = `
   text-decoration: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c13 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -207,26 +207,26 @@ exports[`Storyshots ProjectStateList Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c21 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c20 {
     position: fixed;
     width: calc(100% - 40px);
@@ -235,13 +235,13 @@ exports[`Storyshots ProjectStateList Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c17 {
     display: block;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c9 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1098,7 +1098,7 @@ exports[`Storyshots ProjectStateList No states 1`] = `
   text-decoration: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c13 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1116,26 +1116,26 @@ exports[`Storyshots ProjectStateList No states 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c21 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c20 {
     position: fixed;
     width: calc(100% - 40px);
@@ -1144,13 +1144,13 @@ exports[`Storyshots ProjectStateList No states 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c17 {
     display: block;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c9 {
     display: -webkit-box;
     display: -webkit-flex;

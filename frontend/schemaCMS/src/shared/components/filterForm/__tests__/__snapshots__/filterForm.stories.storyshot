@@ -61,7 +61,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 .c3 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c4 {
@@ -72,15 +72,14 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 
 .c5 {
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
+  grid-template-columns: 100%;
 }
 
 .c0 {
   padding-top: 24px;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -89,7 +88,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c7 {
     position: fixed;
     width: calc(100% - 40px);
@@ -98,9 +97,16 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c9 {
     width: 240px;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
   }
 }
 
@@ -287,10 +293,11 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             <div
               style={
                 Object {
-                  "alignItems": "center",
                   "cursor": "pointer",
-                  "display": "flex",
                   "height": "30px",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >
@@ -304,8 +311,8 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "175px",
-                "overflow": "hidden",
+                "maxHeight": "183px",
+                "overflowY": "hidden",
                 "position": "absolute",
                 "top": "37px",
                 "width": "100%",
@@ -320,15 +327,15 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
               onMouseOver={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
                   "backgroundColor": "#FFF",
                   "border": "1px solid  #2F2F36",
                   "borderTop": "1px solid  #2F2F36",
                   "color": "#000",
                   "cursor": "pointer",
-                  "display": "flex",
-                  "minHeight": "60px",
-                  "padding": "0 10px",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >
@@ -418,10 +425,11 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             <div
               style={
                 Object {
-                  "alignItems": "center",
                   "cursor": "pointer",
-                  "display": "flex",
                   "height": "30px",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >
@@ -435,8 +443,8 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "175px",
-                "overflow": "hidden",
+                "maxHeight": "183px",
+                "overflowY": "hidden",
                 "position": "absolute",
                 "top": "37px",
                 "width": "100%",
@@ -451,15 +459,15 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
               onMouseOver={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
                   "backgroundColor": "#FFF",
                   "border": "1px solid  #2F2F36",
                   "borderTop": "1px solid  #2F2F36",
                   "color": "#000",
                   "cursor": "pointer",
-                  "display": "flex",
-                  "minHeight": "60px",
-                  "padding": "0 10px",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >
@@ -731,7 +739,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 .c3 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c4 {
@@ -742,8 +750,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 
 .c5 {
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
+  grid-template-columns: 100%;
 }
 
 .c0 {
@@ -778,7 +785,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   align-items: flex-start;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c10 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -787,7 +794,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c9 {
     position: fixed;
     width: calc(100% - 40px);
@@ -796,9 +803,16 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c11 {
     width: 240px;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
   }
 }
 
@@ -985,10 +999,11 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             <div
               style={
                 Object {
-                  "alignItems": "center",
                   "cursor": "pointer",
-                  "display": "flex",
                   "height": "30px",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >
@@ -1002,8 +1017,8 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "175px",
-                "overflow": "hidden",
+                "maxHeight": "183px",
+                "overflowY": "hidden",
                 "position": "absolute",
                 "top": "37px",
                 "width": "100%",
@@ -1018,15 +1033,15 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
               onMouseOver={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
                   "backgroundColor": "#FFF",
                   "border": "1px solid  #2F2F36",
                   "borderTop": "1px solid  #2F2F36",
                   "color": "#000",
                   "cursor": "pointer",
-                  "display": "flex",
-                  "minHeight": "60px",
-                  "padding": "0 10px",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >
@@ -1116,10 +1131,11 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             <div
               style={
                 Object {
-                  "alignItems": "center",
                   "cursor": "pointer",
-                  "display": "flex",
                   "height": "30px",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >
@@ -1133,8 +1149,8 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "175px",
-                "overflow": "hidden",
+                "maxHeight": "183px",
+                "overflowY": "hidden",
                 "position": "absolute",
                 "top": "37px",
                 "width": "100%",
@@ -1149,15 +1165,15 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
               onMouseOver={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
                   "backgroundColor": "#FFF",
                   "border": "1px solid  #2F2F36",
                   "borderTop": "1px solid  #2F2F36",
                   "color": "#000",
                   "cursor": "pointer",
-                  "display": "flex",
-                  "minHeight": "60px",
-                  "padding": "0 10px",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
                 }
               }
             >

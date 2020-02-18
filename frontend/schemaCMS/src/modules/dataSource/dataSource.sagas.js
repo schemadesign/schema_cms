@@ -22,7 +22,6 @@ import {
   pathOr,
   pipe,
   propEq,
-  propIs,
   path,
   when,
   is,

@@ -24,7 +24,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 }
 
 .c2 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c3 {
@@ -208,10 +208,11 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
           <div
             style={
               Object {
-                "alignItems": "center",
                 "cursor": "pointer",
-                "display": "flex",
                 "height": "30px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -225,8 +226,8 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
               "display": "none",
               "flexDirection": "column",
               "left": "0",
-              "maxHeight": "175px",
-              "overflow": "hidden",
+              "maxHeight": "183px",
+              "overflowY": "hidden",
               "position": "absolute",
               "top": "37px",
               "width": "100%",
@@ -241,14 +242,14 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "1px solid  #2F2F36",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -261,14 +262,14 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -281,14 +282,14 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -301,14 +302,14 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -321,15 +322,15 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -456,7 +457,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 }
 
 .c2 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c3 {
@@ -640,10 +641,11 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
           <div
             style={
               Object {
-                "alignItems": "center",
                 "cursor": "pointer",
-                "display": "flex",
                 "height": "30px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -657,8 +659,8 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
               "display": "none",
               "flexDirection": "column",
               "left": "0",
-              "maxHeight": "175px",
-              "overflow": "hidden",
+              "maxHeight": "183px",
+              "overflowY": "hidden",
               "position": "absolute",
               "top": "37px",
               "width": "100%",
@@ -673,14 +675,14 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "1px solid  #2F2F36",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -693,14 +695,14 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -713,14 +715,14 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -733,15 +735,15 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -754,14 +756,14 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -889,7 +891,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 }
 
 .c2 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c3 {
@@ -1125,10 +1127,11 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
           <div
             style={
               Object {
-                "alignItems": "center",
                 "cursor": "pointer",
-                "display": "flex",
                 "height": "30px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1142,8 +1145,8 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "display": "none",
               "flexDirection": "column",
               "left": "0",
-              "maxHeight": "175px",
-              "overflow": "hidden",
+              "maxHeight": "183px",
+              "overflowY": "hidden",
               "position": "absolute",
               "top": "37px",
               "width": "100%",
@@ -1158,15 +1161,15 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "1px solid  #2F2F36",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1179,14 +1182,14 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1199,14 +1202,14 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1219,14 +1222,14 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1239,14 +1242,14 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1489,7 +1492,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 }
 
 .c2 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c3 {
@@ -1673,10 +1676,11 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
           <div
             style={
               Object {
-                "alignItems": "center",
                 "cursor": "pointer",
-                "display": "flex",
                 "height": "30px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1690,8 +1694,8 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               "display": "none",
               "flexDirection": "column",
               "left": "0",
-              "maxHeight": "175px",
-              "overflow": "hidden",
+              "maxHeight": "183px",
+              "overflowY": "hidden",
               "position": "absolute",
               "top": "37px",
               "width": "100%",
@@ -1706,14 +1710,14 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "1px solid  #2F2F36",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1726,15 +1730,15 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1747,14 +1751,14 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1767,14 +1771,14 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1787,14 +1791,14 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -1920,7 +1924,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 }
 
 .c2 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c3 {
@@ -2164,10 +2168,11 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
           <div
             style={
               Object {
-                "alignItems": "center",
                 "cursor": "pointer",
-                "display": "flex",
                 "height": "30px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2181,8 +2186,8 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
               "display": "none",
               "flexDirection": "column",
               "left": "0",
-              "maxHeight": "175px",
-              "overflow": "hidden",
+              "maxHeight": "183px",
+              "overflowY": "hidden",
               "position": "absolute",
               "top": "37px",
               "width": "100%",
@@ -2197,15 +2202,15 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "1px solid  #2F2F36",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2218,14 +2223,14 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2238,14 +2243,14 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2258,14 +2263,14 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2278,14 +2283,14 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2617,7 +2622,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 }
 
 .c2 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c3 {
@@ -2801,10 +2806,11 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
           <div
             style={
               Object {
-                "alignItems": "center",
                 "cursor": "pointer",
-                "display": "flex",
                 "height": "30px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2818,8 +2824,8 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
               "display": "none",
               "flexDirection": "column",
               "left": "0",
-              "maxHeight": "175px",
-              "overflow": "hidden",
+              "maxHeight": "183px",
+              "overflowY": "hidden",
               "position": "absolute",
               "top": "37px",
               "width": "100%",
@@ -2834,14 +2840,14 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "1px solid  #2F2F36",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2854,14 +2860,14 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2874,14 +2880,14 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2894,14 +2900,14 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2914,14 +2920,14 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -2958,7 +2964,7 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
 }
 
 .c2 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c3 {
@@ -3142,10 +3148,11 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
           <div
             style={
               Object {
-                "alignItems": "center",
                 "cursor": "pointer",
-                "display": "flex",
                 "height": "30px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -3159,8 +3166,8 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
               "display": "none",
               "flexDirection": "column",
               "left": "0",
-              "maxHeight": "175px",
-              "overflow": "hidden",
+              "maxHeight": "183px",
+              "overflowY": "hidden",
               "position": "absolute",
               "top": "37px",
               "width": "100%",
@@ -3175,14 +3182,14 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "1px solid  #2F2F36",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -3195,14 +3202,14 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -3215,15 +3222,15 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -3236,14 +3243,14 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -3256,14 +3263,14 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             onMouseOver={[Function]}
             style={
               Object {
-                "alignItems": "center",
                 "border": "1px solid  #2F2F36",
                 "borderTop": "none",
                 "color": "#71737e",
                 "cursor": "pointer",
-                "display": "flex",
-                "minHeight": "60px",
-                "padding": "0 10px",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >

@@ -55,7 +55,7 @@ exports[`Storyshots ProjectState Default 1`] = `
   text-decoration: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;

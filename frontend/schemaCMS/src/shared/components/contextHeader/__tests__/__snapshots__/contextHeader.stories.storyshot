@@ -17,7 +17,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
   color: #FFF;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -111,7 +111,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
   color: #FFF;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -129,7 +129,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c4 {
     display: block;
   }
@@ -254,7 +254,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
   color: #FFF;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -272,7 +272,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c4 {
     display: block;
   }

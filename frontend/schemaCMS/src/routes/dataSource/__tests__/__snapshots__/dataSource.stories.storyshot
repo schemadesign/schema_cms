@@ -55,7 +55,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
   text-decoration: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -225,7 +225,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
   text-decoration: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;

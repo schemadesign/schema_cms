@@ -30,6 +30,7 @@ import {
   FILTER_TYPE_SELECT,
 } from '../../../modules/filter/filter.constants';
 import { RangeSlider } from '../../../shared/components/rangeSlider';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { CheckboxGroup, Checkbox, Label, Switch } = FormUI;
 
@@ -168,7 +169,7 @@ export class StateFilter extends PureComponent {
         <RangeValues>
           <RangeInput>
             <TextInput
-              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][0]}
+              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][0] || ''}
               onChange={this.handleInputRangeChange}
               onBlur={e => this.handleInputRangeChange(e, true)}
               name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.0`}
@@ -182,7 +183,7 @@ export class StateFilter extends PureComponent {
           </RangeInput>
           <RangeInput>
             <TextInput
-              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][1]}
+              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][1] || ''}
               onChange={this.handleInputRangeChange}
               onBlur={e => this.handleInputRangeChange(e, true)}
               name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.1`}
@@ -201,7 +202,7 @@ export class StateFilter extends PureComponent {
 
   renderInput = () => (
     <TextInput
-      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0]}
+      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || ''}
       onChange={this.props.handleChange}
       name={`${PROJECT_STATE_FILTER_VALUES}.0`}
       label={this.props.intl.formatMessage(messages[PROJECT_STATE_FILTER_VALUES])}
@@ -215,7 +216,7 @@ export class StateFilter extends PureComponent {
     <Select
       label={this.props.intl.formatMessage(messages[PROJECT_STATE_FILTER_VALUES])}
       name={PROJECT_STATE_FILTER_VALUES}
-      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0]}
+      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || ''}
       options={this.getStatusOptions()}
       onSelect={this.handleSelectStatus}
       placeholder={this.props.intl.formatMessage(messages.selectPlaceholder)}
@@ -253,22 +254,62 @@ export class StateFilter extends PureComponent {
     />
   );
 
-  renderValue = data =>
-    cond([
-      [propEq('filterType', FILTER_TYPE_RANGE), this.renderRange],
-      [propEq('filterType', FILTER_TYPE_SELECT), this.renderSelect],
-      [propEq('filterType', FILTER_TYPE_CHECKBOX), this.renderCheckboxes],
-      [propEq('filterType', FILTER_TYPE_BOOL), this.renderSwitch],
-      [T, this.renderInput],
-    ])(data);
+  renderValue = cond([
+    [propEq('filterType', FILTER_TYPE_RANGE), this.renderRange],
+    [propEq('filterType', FILTER_TYPE_SELECT), this.renderSelect],
+    [propEq('filterType', FILTER_TYPE_CHECKBOX), this.renderCheckboxes],
+    [propEq('filterType', FILTER_TYPE_BOOL), this.renderSwitch],
+    [T, this.renderInput],
+  ]);
+
+  renderForm = loading =>
+    renderWhenTrue(() => {
+      const { handleSubmit, isSubmitting, isValid, intl, filter } = this.props;
+      const { filterType, fieldType } = filter;
+
+      return (
+        <Form onSubmit={handleSubmit}>
+          <TextInput
+            value={filter[PROJECT_STATE_FILTER_NAME]}
+            name={PROJECT_STATE_FILTER_NAME}
+            label={intl.formatMessage(messages[PROJECT_STATE_FILTER_NAME])}
+            fullWidth
+            disabled
+            {...this.props}
+          />
+          <TextInput
+            value={filter[PROJECT_STATE_FILTER_TYPE]}
+            name={PROJECT_STATE_FILTER_TYPE}
+            label={intl.formatMessage(messages[PROJECT_STATE_FILTER_TYPE])}
+            fullWidth
+            disabled
+            {...this.props}
+          />
+          <TextInput
+            value={filter[PROJECT_STATE_FILTER_FIELD]}
+            name={PROJECT_STATE_FILTER_FIELD}
+            label={intl.formatMessage(messages[PROJECT_STATE_FILTER_FIELD])}
+            fullWidth
+            disabled
+            {...this.props}
+          />
+          {this.renderValue({ filterType, fieldType })}
+          <NavigationContainer fixed>
+            <BackButton type="button" onClick={this.handleBack} />
+            <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid}>
+              <FormattedMessage {...messages.save} />
+            </NextButton>
+          </NavigationContainer>
+        </Form>
+      );
+    })(!loading);
 
   render() {
     const { loading, error } = this.state;
-    const { userRole, handleSubmit, isSubmitting, isValid, state, intl, filter } = this.props;
+    const { userRole, state } = this.props;
     const projectId = state.project;
     const menuOptions = getProjectMenuOptions(projectId);
     const title = state.name;
-    const { filterType, fieldType } = filter;
 
     return (
       <Fragment>
@@ -281,39 +322,7 @@ export class StateFilter extends PureComponent {
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
         <LoadingWrapper loading={loading} error={error}>
-          <Form onSubmit={handleSubmit}>
-            <TextInput
-              value={filter[PROJECT_STATE_FILTER_NAME]}
-              name={PROJECT_STATE_FILTER_NAME}
-              label={intl.formatMessage(messages[PROJECT_STATE_FILTER_NAME])}
-              fullWidth
-              disabled
-              {...this.props}
-            />
-            <TextInput
-              value={filter[PROJECT_STATE_FILTER_TYPE]}
-              name={PROJECT_STATE_FILTER_TYPE}
-              label={intl.formatMessage(messages[PROJECT_STATE_FILTER_TYPE])}
-              fullWidth
-              disabled
-              {...this.props}
-            />
-            <TextInput
-              value={filter[PROJECT_STATE_FILTER_FIELD]}
-              name={PROJECT_STATE_FILTER_FIELD}
-              label={intl.formatMessage(messages[PROJECT_STATE_FILTER_FIELD])}
-              fullWidth
-              disabled
-              {...this.props}
-            />
-            {this.renderValue({ filterType, fieldType })}
-            <NavigationContainer fixed>
-              <BackButton type="button" onClick={this.handleBack} />
-              <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid}>
-                <FormattedMessage {...messages.save} />
-              </NextButton>
-            </NavigationContainer>
-          </Form>
+          {this.renderForm(loading)}
         </LoadingWrapper>
       </Fragment>
     );

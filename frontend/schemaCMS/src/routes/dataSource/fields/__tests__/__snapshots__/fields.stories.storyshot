@@ -192,7 +192,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
   display: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -210,20 +210,20 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -235,7 +235,7 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c17 {
     position: static;
     background-color: transparent;
@@ -244,20 +244,20 @@ exports[`Storyshots Data Source|Fields Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c14 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c13 {
     margin-left: 15px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c15 {
     display: block;
   }
@@ -1382,7 +1382,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
   display: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1400,20 +1400,20 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -1425,7 +1425,7 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c17 {
     position: static;
     background-color: transparent;
@@ -1434,20 +1434,20 @@ exports[`Storyshots Data Source|Fields No data 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c14 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c13 {
     margin-left: 15px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c15 {
     display: block;
   }

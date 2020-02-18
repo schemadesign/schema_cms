@@ -146,7 +146,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 }
 
 .c15 label {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .c16 {
@@ -159,7 +159,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   width: 100%;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -177,20 +177,20 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c19 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -199,7 +199,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c18 {
     position: fixed;
     width: calc(100% - 40px);
@@ -208,7 +208,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c20 {
     width: 240px;
   }
@@ -902,10 +902,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               <div
                 style={
                   Object {
-                    "alignItems": "center",
                     "cursor": "pointer",
-                    "display": "flex",
                     "height": "30px",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
                   }
                 }
               >
@@ -919,8 +920,8 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   "display": "none",
                   "flexDirection": "column",
                   "left": "0",
-                  "maxHeight": "175px",
-                  "overflow": "hidden",
+                  "maxHeight": "183px",
+                  "overflowY": "hidden",
                   "position": "absolute",
                   "top": "37px",
                   "width": "100%",
@@ -935,15 +936,15 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                 onMouseOver={[Function]}
                 style={
                   Object {
-                    "alignItems": "center",
                     "backgroundColor": "#FFF",
                     "border": "1px solid  #2F2F36",
                     "borderTop": "1px solid  #2F2F36",
                     "color": "#000",
                     "cursor": "pointer",
-                    "display": "flex",
-                    "minHeight": "60px",
-                    "padding": "0 10px",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
                   }
                 }
               >
@@ -956,14 +957,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                 onMouseOver={[Function]}
                 style={
                   Object {
-                    "alignItems": "center",
                     "border": "1px solid  #2F2F36",
                     "borderTop": "none",
                     "color": "#71737e",
                     "cursor": "pointer",
-                    "display": "flex",
-                    "minHeight": "60px",
-                    "padding": "0 10px",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
                   }
                 }
               >

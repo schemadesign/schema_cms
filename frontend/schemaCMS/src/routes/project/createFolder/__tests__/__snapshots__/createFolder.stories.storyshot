@@ -136,7 +136,7 @@ exports[`Storyshots Project|CreateFolder Default 1`] = `
   width: 100%;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -154,20 +154,20 @@ exports[`Storyshots Project|CreateFolder Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c17 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -176,7 +176,7 @@ exports[`Storyshots Project|CreateFolder Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
@@ -185,7 +185,7 @@ exports[`Storyshots Project|CreateFolder Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c18 {
     width: 240px;
   }

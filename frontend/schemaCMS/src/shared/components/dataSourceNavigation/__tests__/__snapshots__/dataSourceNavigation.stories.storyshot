@@ -86,7 +86,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
   display: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     position: static;
     background-color: transparent;
@@ -98,27 +98,27 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c2 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c4 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c1 {
     margin-left: 15px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     display: block;
   }
@@ -482,7 +482,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
   display: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     position: static;
     background-color: transparent;
@@ -494,27 +494,27 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c4 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c2 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c1 {
     margin-left: 15px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     display: block;
   }
@@ -897,7 +897,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
   display: none;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     position: static;
     background-color: transparent;
@@ -909,34 +909,34 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c4 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c2 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c5 {
     width: 60px;
     height: 60px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c1 {
     margin-left: 15px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     display: block;
   }

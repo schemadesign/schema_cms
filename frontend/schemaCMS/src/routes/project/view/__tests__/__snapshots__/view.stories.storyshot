@@ -188,20 +188,20 @@ exports[`Storyshots Project|View Default 1`] = `
   justify-content: space-between;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c1 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c4 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c17 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -210,7 +210,7 @@ exports[`Storyshots Project|View Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
@@ -219,7 +219,7 @@ exports[`Storyshots Project|View Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c10 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -939,20 +939,20 @@ exports[`Storyshots Project|View No data 1`] = `
   justify-content: space-between;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c1 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c4 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c17 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -961,7 +961,7 @@ exports[`Storyshots Project|View No data 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
@@ -970,7 +970,7 @@ exports[`Storyshots Project|View No data 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c10 {
     display: -webkit-box;
     display: -webkit-flex;
