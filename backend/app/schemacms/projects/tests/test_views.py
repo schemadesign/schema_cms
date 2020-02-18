@@ -448,6 +448,17 @@ class TestUpdateDataSourceView:
         data_source.refresh_from_db()
         assert data_source.get_original_file_name()[1] == payload["file"].name
 
+    def test_update_without_file(self, api_client, faker, admin, data_source_factory):
+        data_source = data_source_factory()
+        url = self.get_url(pk=data_source.pk)
+        payload = dict(name=faker.word(),)
+        api_client.force_authenticate(admin)
+
+        api_client.patch(url, payload, format="multipart")
+
+        data_source.refresh_from_db()
+        assert data_source.name == payload["name"]
+
     def test_schedule_update_meta(self, api_client, faker, mocker, admin, data_source_factory):
         data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
