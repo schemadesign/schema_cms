@@ -658,6 +658,7 @@ class Page(
                 "name": block.name,
                 "type": block.type or None,
                 "content": block.content or None,
+                "exec_order": block.exec_order or None,
                 "images": block.get_images(),
             }
             blocks.append(data)
