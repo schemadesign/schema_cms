@@ -14,6 +14,7 @@ export const ProjectRoutines = {
   fetchEditors: createRoutine(`${prefix}FETCH_EDITORS`),
   setProject: createRoutine(`${prefix}SET_PROJECT`),
   clearProject: createRoutine(`${prefix}CLEAR_PROJECT`),
+  editProject: createRoutine(`${prefix}EDIT_PROJECT`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -35,6 +36,7 @@ const setEditors = (state = INITIAL_STATE, { payload }) => state.set('editors', 
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchList.SUCCESS]: updateList,
   [ProjectRoutines.fetchOne.SUCCESS]: setProject,
+  [ProjectRoutines.editProject.SUCCESS]: setProject,
   [ProjectRoutines.createProject.SUCCESS]: createProjectSuccess,
   [ProjectRoutines.fetchEditors.SUCCESS]: setEditors,
   [ProjectRoutines.setProject.TRIGGER]: setProject,

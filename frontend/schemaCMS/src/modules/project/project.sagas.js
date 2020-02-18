@@ -6,6 +6,7 @@ import api from '../../shared/services/api';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { PROJECT_OWNER } from './project.constants';
 import { selectUserData } from '../userProfile';
+import reportError from '../../shared/utils/reportError';
 
 const PAGE_SIZE = 1000;
 
@@ -36,9 +37,24 @@ function* createProject({ payload }) {
     yield put(ProjectRoutines.createProject.success(data));
     browserHistory.push('/project');
   } catch (error) {
+    reportError(error);
     yield put(ProjectRoutines.createProject.failure(error));
   } finally {
     yield put(ProjectRoutines.createProject.fulfill());
+  }
+}
+
+function* editProject({ payload: { formData, projectId } }) {
+  try {
+    yield put(ProjectRoutines.editProject.request());
+    const { data } = yield api.patch(`${PROJECTS_PATH}/${projectId}`, formData);
+
+    yield put(ProjectRoutines.editProject.success(data));
+  } catch (error) {
+    reportError(error);
+    yield put(ProjectRoutines.editProject.failure(error));
+  } finally {
+    yield put(ProjectRoutines.editProject.fulfill());
   }
 }
 
@@ -123,6 +139,7 @@ export function* watchProject() {
     takeLatest(ProjectRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(ProjectRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(ProjectRoutines.createProject.TRIGGER, createProject),
+    takeLatest(ProjectRoutines.editProject.TRIGGER, editProject),
     takeLatest(ProjectRoutines.removeOne.TRIGGER, removeOne),
     takeLatest(ProjectRoutines.removeEditor.TRIGGER, removeEditor),
     takeLatest(ProjectRoutines.addEditor.TRIGGER, addEditor),
