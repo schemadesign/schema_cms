@@ -191,6 +191,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def perform_update(self, serializer):
         if "file" in serializer.validated_data:
             serializer.save(created_by=self.request.user)
+        else:
+            serializer.save()
 
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
