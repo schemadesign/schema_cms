@@ -16,6 +16,7 @@ exports[`PageBlockForm: Component should render correctly 1`] = `
     value=""
   />
   <Select
+    customStyles={null}
     id="fieldBlockType"
     label="Type"
     name="type"
@@ -132,6 +133,7 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
     value="code name"
   />
   <Select
+    customStyles={null}
     id="fieldBlockType"
     label="Type"
     name="type"
@@ -281,6 +283,7 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
     value="embed name"
   />
   <Select
+    customStyles={null}
     id="fieldBlockType"
     label="Type"
     name="type"
@@ -431,6 +434,7 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
     value="name"
   />
   <Select
+    customStyles={null}
     id="fieldBlockType"
     label="Type"
     name="type"
@@ -618,6 +622,7 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
     value="markdown name"
   />
   <Select
+    customStyles={null}
     id="fieldBlockType"
     label="Type"
     name="type"
@@ -766,6 +771,7 @@ exports[`PageBlockForm: Component should render correctly with multiple images  
     value="name"
   />
   <Select
+    customStyles={null}
     id="fieldBlockType"
     label="Type"
     name="type"
@@ -962,6 +968,7 @@ exports[`PageBlockForm: Component should render correctly with text type 1`] = `
     value="text name"
   />
   <Select
+    customStyles={null}
     id="fieldBlockType"
     label="Type"
     name="type"

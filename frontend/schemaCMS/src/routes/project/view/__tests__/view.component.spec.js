@@ -6,6 +6,7 @@ import { View } from '../view.component';
 import { defaultProps } from '../view.stories';
 import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 import { BackButton, NextButton } from '../../../../shared/components/navigation';
+import { TextInput } from '../../../../shared/components/form/inputs/textInput';
 
 describe('View: Component', () => {
   const component = props => <View {...defaultProps} {...props} />;
@@ -61,9 +62,38 @@ describe('View: Component', () => {
 
     expect(wrapper.state().confirmationModalOpen).toBeTruthy();
 
-    wrapper.find(NextButton).simulate('click');
+    wrapper
+      .find(NextButton)
+      .last()
+      .simulate('click');
 
     expect(defaultProps.removeProject).toHaveBeenCalledWith({ projectId: '100' });
+  });
+
+  it('should call handleSubmit on save', async () => {
+    jest.spyOn(defaultProps, 'handleSubmit');
+
+    const wrapper = await render();
+
+    wrapper
+      .find(NextButton)
+      .first()
+      .simulate('click');
+
+    expect(defaultProps.handleSubmit).toHaveBeenCalled();
+  });
+
+  it('should call handleChange on change', async () => {
+    jest.spyOn(defaultProps, 'handleChange');
+
+    const wrapper = await render();
+
+    wrapper
+      .find(TextInput)
+      .first()
+      .simulate('change', { target: { value: 'new value', name: 'title' } });
+
+    expect(defaultProps.handleChange).toHaveBeenCalled();
   });
 
   it('should hide modal on cancel delete project', async () => {

@@ -26,7 +26,6 @@ exports[`Select: Component should render correctly 1`] = `
         Object {
           "cursor": "pointer",
           "display": "flex",
-          "height": "30px",
           "width": "100%",
         }
       }
@@ -35,7 +34,6 @@ exports[`Select: Component should render correctly 1`] = `
         style={
           Object {
             "cursor": "pointer",
-            "height": "30px",
             "overflow": "hidden",
             "textOverflow": "ellipsis",
             "whiteSpace": "nowrap",
@@ -53,7 +51,7 @@ exports[`Select: Component should render correctly 1`] = `
           "maxHeight": "183px",
           "overflowY": "hidden",
           "position": "absolute",
-          "top": "37px",
+          "top": "calc(100% + 5px)",
           "width": "100%",
           "zIndex": 2,
         }
@@ -274,7 +272,6 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         Object {
           "cursor": "pointer",
           "display": "flex",
-          "height": "30px",
           "width": "100%",
         }
       }
@@ -283,7 +280,6 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         style={
           Object {
             "cursor": "pointer",
-            "height": "30px",
             "overflow": "hidden",
             "textOverflow": "ellipsis",
             "whiteSpace": "nowrap",
@@ -303,7 +299,7 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
           "maxHeight": "183px",
           "overflowY": "hidden",
           "position": "absolute",
-          "top": "37px",
+          "top": "calc(100% + 5px)",
           "width": "100%",
           "zIndex": 2,
         }

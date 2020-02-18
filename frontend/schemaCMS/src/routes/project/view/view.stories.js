@@ -6,14 +6,23 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { View } from './view.component';
 
-const emptyProps = {
+export const defaultProps = {
   fetchProject: Function.prototype,
   removeProject: Function.prototype,
+  handleSubmit: Function.prototype,
+  setFieldValue: Function.prototype,
+  handleChange: Function.prototype,
+  isSubmitting: false,
+  dirty: false,
   userRole: ROLES.ADMIN,
   user: {
     role: ROLES.ADMIN,
   },
-  project: {},
+  values: {
+    title: 'Project Name',
+    description: 'Description',
+    status: 'Status',
+  },
   history,
   intl,
   match: {
@@ -22,10 +31,6 @@ const emptyProps = {
     },
   },
   isAdmin: true,
-};
-
-export const defaultProps = {
-  ...emptyProps,
   project: {
     id: '100',
     title: 'Project Name',
@@ -51,5 +56,4 @@ export const defaultProps = {
 
 storiesOf('Project|View', module)
   .addDecorator(withTheme())
-  .add('No data', () => <View {...emptyProps} />)
   .add('Default', () => <View {...defaultProps} />);

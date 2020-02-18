@@ -88,6 +88,17 @@ describe('Project: redux', () => {
     });
   });
 
+  describe('when PROJECTS/EDIT_PROJECT_SUCCESS action is received', () => {
+    it('should set project', () => {
+      const project = {
+        title: 'Project title',
+      };
+
+      const resultState = projectReducer(defaultState, ProjectRoutines.editProject.success(project));
+      expect(resultState.project).to.deep.equal(project);
+    });
+  });
+
   describe('when PROJECTS/CLEAR_PROJECT action is received', () => {
     it('should clear project', () => {
       const resultState = projectReducer(defaultState, ProjectRoutines.clearProject());

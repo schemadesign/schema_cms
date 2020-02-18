@@ -110,7 +110,6 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
               Object {
                 "cursor": "pointer",
                 "display": "flex",
-                "height": "30px",
                 "width": "100%",
               }
             }
@@ -119,7 +118,6 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
               style={
                 Object {
                   "cursor": "pointer",
-                  "height": "30px",
                   "overflow": "hidden",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
@@ -139,7 +137,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
                 "maxHeight": "183px",
                 "overflowY": "hidden",
                 "position": "absolute",
-                "top": "37px",
+                "top": "calc(100% + 5px)",
                 "width": "100%",
                 "zIndex": 2,
               }

@@ -326,6 +326,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       value=""
     />
     <Select
+      customStyles={null}
       label={
         <FormattedMessage
           defaultMessage="Field"
@@ -346,6 +347,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       value="field"
     />
     <Select
+      customStyles={null}
       label={
         <FormattedMessage
           defaultMessage="Filter Type"
@@ -678,6 +680,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       value="name"
     />
     <Select
+      customStyles={null}
       label={
         <FormattedMessage
           defaultMessage="Field"
@@ -698,6 +701,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       value="field"
     />
     <Select
+      customStyles={null}
       label={
         <FormattedMessage
           defaultMessage="Filter Type"

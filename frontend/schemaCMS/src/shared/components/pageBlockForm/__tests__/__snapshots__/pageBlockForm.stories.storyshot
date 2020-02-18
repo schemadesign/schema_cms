@@ -200,7 +200,6 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             Object {
               "cursor": "pointer",
               "display": "flex",
-              "height": "30px",
               "width": "100%",
             }
           }
@@ -209,7 +208,6 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             style={
               Object {
                 "cursor": "pointer",
-                "height": "30px",
                 "overflow": "hidden",
                 "textOverflow": "ellipsis",
                 "whiteSpace": "nowrap",
@@ -229,7 +227,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
               "maxHeight": "183px",
               "overflowY": "hidden",
               "position": "absolute",
-              "top": "37px",
+              "top": "calc(100% + 5px)",
               "width": "100%",
               "zIndex": 2,
             }
@@ -633,7 +631,6 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             Object {
               "cursor": "pointer",
               "display": "flex",
-              "height": "30px",
               "width": "100%",
             }
           }
@@ -642,7 +639,6 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             style={
               Object {
                 "cursor": "pointer",
-                "height": "30px",
                 "overflow": "hidden",
                 "textOverflow": "ellipsis",
                 "whiteSpace": "nowrap",
@@ -662,7 +658,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
               "maxHeight": "183px",
               "overflowY": "hidden",
               "position": "absolute",
-              "top": "37px",
+              "top": "calc(100% + 5px)",
               "width": "100%",
               "zIndex": 2,
             }
@@ -1119,7 +1115,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             Object {
               "cursor": "pointer",
               "display": "flex",
-              "height": "30px",
               "width": "100%",
             }
           }
@@ -1128,7 +1123,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             style={
               Object {
                 "cursor": "pointer",
-                "height": "30px",
                 "overflow": "hidden",
                 "textOverflow": "ellipsis",
                 "whiteSpace": "nowrap",
@@ -1148,7 +1142,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "maxHeight": "183px",
               "overflowY": "hidden",
               "position": "absolute",
-              "top": "37px",
+              "top": "calc(100% + 5px)",
               "width": "100%",
               "zIndex": 2,
             }
@@ -1668,7 +1662,6 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             Object {
               "cursor": "pointer",
               "display": "flex",
-              "height": "30px",
               "width": "100%",
             }
           }
@@ -1677,7 +1670,6 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             style={
               Object {
                 "cursor": "pointer",
-                "height": "30px",
                 "overflow": "hidden",
                 "textOverflow": "ellipsis",
                 "whiteSpace": "nowrap",
@@ -1697,7 +1689,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
               "maxHeight": "183px",
               "overflowY": "hidden",
               "position": "absolute",
-              "top": "37px",
+              "top": "calc(100% + 5px)",
               "width": "100%",
               "zIndex": 2,
             }
@@ -2160,7 +2152,6 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             Object {
               "cursor": "pointer",
               "display": "flex",
-              "height": "30px",
               "width": "100%",
             }
           }
@@ -2169,7 +2160,6 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             style={
               Object {
                 "cursor": "pointer",
-                "height": "30px",
                 "overflow": "hidden",
                 "textOverflow": "ellipsis",
                 "whiteSpace": "nowrap",
@@ -2189,7 +2179,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
               "maxHeight": "183px",
               "overflowY": "hidden",
               "position": "absolute",
-              "top": "37px",
+              "top": "calc(100% + 5px)",
               "width": "100%",
               "zIndex": 2,
             }
@@ -2798,7 +2788,6 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             Object {
               "cursor": "pointer",
               "display": "flex",
-              "height": "30px",
               "width": "100%",
             }
           }
@@ -2807,7 +2796,6 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             style={
               Object {
                 "cursor": "pointer",
-                "height": "30px",
                 "overflow": "hidden",
                 "textOverflow": "ellipsis",
                 "whiteSpace": "nowrap",
@@ -2827,7 +2815,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
               "maxHeight": "183px",
               "overflowY": "hidden",
               "position": "absolute",
-              "top": "37px",
+              "top": "calc(100% + 5px)",
               "width": "100%",
               "zIndex": 2,
             }
@@ -3140,7 +3128,6 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             Object {
               "cursor": "pointer",
               "display": "flex",
-              "height": "30px",
               "width": "100%",
             }
           }
@@ -3149,7 +3136,6 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             style={
               Object {
                 "cursor": "pointer",
-                "height": "30px",
                 "overflow": "hidden",
                 "textOverflow": "ellipsis",
                 "whiteSpace": "nowrap",
@@ -3169,7 +3155,7 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
               "maxHeight": "183px",
               "overflowY": "hidden",
               "position": "absolute",
-              "top": "37px",
+              "top": "calc(100% + 5px)",
               "width": "100%",
               "zIndex": 2,
             }

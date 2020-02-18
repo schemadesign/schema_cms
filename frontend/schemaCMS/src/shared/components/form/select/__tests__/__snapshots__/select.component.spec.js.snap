@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select: Component should render correctly 1`] = `
-<styled.div>
+<styled.div
+  customStyles={null}
+>
   <Component
     id="fieldProjectStatusLabel"
   >

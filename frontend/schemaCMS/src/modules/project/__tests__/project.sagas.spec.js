@@ -77,29 +77,6 @@ describe('Project: sagas', () => {
 
   describe('when ProjectRoutines.createProject.TRIGGER is fired', () => {
     it('should put createProjectSuccess action', async () => {
-      const currentUser = {
-        id: 1,
-        firstName: 'Joe',
-        lastName: 'Doe',
-      };
-
-      const payload = {
-        [PROJECT_TITLE]: 'Project Title',
-        [PROJECT_DESCRIPTION]: 'A Project Description',
-        [PROJECT_OWNER]: 'Joe Doe',
-      };
-
-      mockApi.post(PROJECTS_PATH).reply(OK, item);
-
-      await expectSaga(watchProject)
-        .withState(defaultState)
-        .provide([[select(selectUserData), currentUser]])
-        .put(ProjectRoutines.createProject.success(item))
-        .dispatch(ProjectRoutines.createProject({ payload }))
-        .silentRun();
-    });
-
-    it('should redirect the user to project list', async () => {
       jest.spyOn(browserHistory, 'push');
 
       const currentUser = {
@@ -120,10 +97,30 @@ describe('Project: sagas', () => {
         .withState(defaultState)
         .provide([[select(selectUserData), currentUser]])
         .put(ProjectRoutines.createProject.success(item))
-        .dispatch(ProjectRoutines.createProject({ payload }))
+        .dispatch(ProjectRoutines.createProject(payload))
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith('/project');
+    });
+    describe('when ProjectRoutines.editProject.TRIGGER is fired', () => {
+      it('should put editProjectSuccess action', async () => {
+        const payload = {
+          formData: {
+            [PROJECT_TITLE]: 'Project Title',
+            [PROJECT_DESCRIPTION]: 'A Project Description',
+            [PROJECT_OWNER]: 'Joe Doe',
+          },
+          projectId: 'projectId',
+        };
+
+        mockApi.patch(`${PROJECTS_PATH}/${payload.projectId}`).reply(OK, item);
+
+        await expectSaga(watchProject)
+          .withState(defaultState)
+          .put(ProjectRoutines.editProject.success(item))
+          .dispatch(ProjectRoutines.editProject(payload))
+          .silentRun();
+      });
     });
 
     it('should put ProjectRoutines.createProject.failure action', async () => {

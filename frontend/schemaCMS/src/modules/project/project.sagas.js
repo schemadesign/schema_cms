@@ -47,6 +47,7 @@ function* createProject({ payload }) {
 function* editProject({ payload: { formData, projectId } }) {
   try {
     yield put(ProjectRoutines.editProject.request());
+
     const { data } = yield api.patch(`${PROJECTS_PATH}/${projectId}`, formData);
 
     yield put(ProjectRoutines.editProject.success(data));
