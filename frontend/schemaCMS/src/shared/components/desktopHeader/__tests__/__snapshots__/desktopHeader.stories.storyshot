@@ -181,7 +181,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   border-bottom: 1px solid #FFF;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -693,7 +693,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
   border-bottom: 1px solid #FFF;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1134,7 +1134,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   border-bottom: 1px solid #FFF;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1744,7 +1744,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   border-bottom: 1px solid #FFF;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;

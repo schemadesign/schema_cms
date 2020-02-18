@@ -94,7 +94,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   font-size: 20px;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -112,13 +112,13 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);

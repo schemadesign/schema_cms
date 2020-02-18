@@ -26,7 +26,6 @@ export class TestComponent extends PureComponent {
   handleChange = ({ target: { checked } }) => this.setState({ value: checked });
 
   render() {
-    console.log('this.state:', this.state);
     return <Switch onChange={this.handleChange} {...this.state} {...this.props} />;
   }
 }

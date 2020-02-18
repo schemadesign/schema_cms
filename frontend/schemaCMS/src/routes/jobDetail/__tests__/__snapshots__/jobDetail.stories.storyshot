@@ -131,7 +131,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   font-size: 20px;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -149,20 +149,20 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c15 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -171,7 +171,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
@@ -180,7 +180,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     width: 240px;
   }
@@ -737,7 +737,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   font-size: 20px;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -755,20 +755,20 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c15 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -777,7 +777,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
@@ -786,7 +786,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     width: 240px;
   }
@@ -1343,7 +1343,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   font-size: 20px;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1361,20 +1361,20 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c15 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1383,7 +1383,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
@@ -1392,7 +1392,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     width: 240px;
   }

@@ -217,7 +217,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   width: 100%;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c13 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -235,20 +235,20 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c20 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -257,7 +257,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c19 {
     position: fixed;
     width: calc(100% - 40px);
@@ -266,13 +266,13 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c22 {
     width: 240px;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c9 {
     display: -webkit-box;
     display: -webkit-flex;

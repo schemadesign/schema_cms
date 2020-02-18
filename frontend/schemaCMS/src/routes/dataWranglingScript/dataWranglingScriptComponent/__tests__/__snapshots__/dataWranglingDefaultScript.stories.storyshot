@@ -130,7 +130,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   margin-bottom: 30px;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -148,20 +148,20 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c15 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -170,7 +170,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
@@ -179,7 +179,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     width: 240px;
   }
@@ -1440,7 +1440,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   margin-bottom: 30px;
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1458,20 +1458,20 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c0 {
     display: none;
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c15 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1480,7 +1480,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
@@ -1489,7 +1489,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   }
 }
 
-@media (min-width:1040px) {
+@media (min-width:1050px) {
   .c16 {
     width: 240px;
   }
