@@ -2,11 +2,7 @@
 
 set -e
 
-. $(dirname "$0")/install_localstack_fixtures.sh
-
-# wait untill secretsmanager become ready
-wait_for_secretsmanager
-echo "Secrets manager is up"
+python /app/wait_for_postgres.py
 
 echo "Run migrations"
 /app/manage.py makemigrations --dry-run --check || { echo "ERROR: there were changes in the models, but migration listed above have not been created and are not saved in version control"; exit 1; }

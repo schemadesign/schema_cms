@@ -1,13 +1,13 @@
-version: '3'
+version: '3.7'
 
 services:
   db:
     image: postgres:9.6.8
-    ports:
-    - "5432:5432"
-    volumes:
-    - schema_cms_db_data:/var/lib/postgresql/data
     env_file: local.env
+    volumes:
+      - schema_cms_db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
   localstack:
     image: localstack/localstack:latest
@@ -15,7 +15,7 @@ services:
       - "4567-4593:4567-4593"
       - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
     environment:
-      - SERVICES=sqs,secretsmanager,serverless
+      - SERVICES=sqs,serverless
 #      - DEBUG="1"  # uncomment if you want to see localstack debug info
       - DATA_DIR=/tmp/localstack/data
       - PORT_WEB_UI=${PORT_WEB_UI- }
@@ -37,6 +37,9 @@ services:
       context: backend/app
       args:
         STAGE: dev
+    entrypoint: ./scripts/entrypoint.sh
+    command: ./scripts/run_dev.sh
+    env_file: local.env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./backend/app:/app
@@ -47,13 +50,10 @@ services:
       - db
       - localstack
       - mailcatcher
-    restart: on-failure
-    env_file: local.env
-    command: ./scripts/run_dev.sh
-    tty: true
+    restart: always
     stdin_open: true
     privileged: true
-    entrypoint: ./scripts/entrypoint.sh
+    tty: true
 
   mailcatcher:
     image: schickling/mailcatcher
@@ -62,8 +62,7 @@ services:
 
   documentation:
     restart: always
-    build:
-      context: ./backend/app
+    image: schema_cms_backend:latest
     command: "mkdocs serve"
     volumes:
     - ./backend/app:/app

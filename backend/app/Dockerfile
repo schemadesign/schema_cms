@@ -1,25 +1,33 @@
-FROM python:3.7.4-slim-buster
+FROM python:3.8.1-slim-buster
+
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 ARG STAGE=prod
 
+WORKDIR /app
+
 COPY scripts/install_serverless.sh .
 
-RUN if [ "$STAGE" = "dev" ] ; then sh install_serverless.sh ; else pip install awscli gevent  ; fi
+RUN apt-get update \
+  && apt-get install -y build-essential \
+  && apt-get install -y libpq-dev \
+  && apt-get install -y gettext \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && rm -rf /var/lib/apt/lists/*
 
-# Allows docker to cache installed dependencies between builds
+
+RUN if [ "$STAGE" = "dev" ] ; then sh install_serverless.sh ; else pip install awscli; fi
+
 COPY ./requirements.txt /app/
-WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Adds our application code to the image
 COPY . /app
 
 EXPOSE 8000
 
-# Migrates the database, uploads staticfiles, and runs the production server
 CMD ./manage.py migrate && \
     ./manage.py initialuser && \
     ./manage.py create_dynamo_tables && \
     ./manage.py loadscripts && \
-    gunicorn --worker-class=gevent --bind 0.0.0.0:8000 --timeout 180 --graceful-timeout 30  --access-logfile - schemacms.wsgi:application
+    gunicorn --bind 0.0.0.0:8000 --access-logfile - schemacms.wsgi:application

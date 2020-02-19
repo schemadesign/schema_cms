@@ -17,3 +17,13 @@ install:
 	docker volume create --name=localstack_data
 	docker volume create --name=schema_cms_db_data
 	docker-compose up
+
+clean_localstack_volume:
+    @echo "Cleaning localstack data"
+    docker volume rm localstack_data
+    docker volume create --name=localstack_data
+
+clean_db_volume:
+    @echo "Cleaning db data"
+    docker volume rm schema_cms_db_data
+	docker volume create --name=schema_cms_db_data
