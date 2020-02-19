@@ -12,6 +12,7 @@ COPY scripts/install_serverless.sh .
 RUN apt-get update \
   && apt-get install -y build-essential \
   && apt-get install -y libpq-dev \
+  && apt-get install -y postgresql-client \
   && apt-get install -y gettext \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
