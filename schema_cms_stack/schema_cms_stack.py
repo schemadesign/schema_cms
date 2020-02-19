@@ -468,7 +468,7 @@ class CIPipeline(core.Stack):
             "build_public_api_lambda_project",
             project_name="schema_cms_build_public_api",
             environment=aws_codebuild.BuildEnvironment(
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_3_0
             ),
             build_spec=aws_codebuild.BuildSpec.from_source_filename(
                 "backend/functions/buildspec-public_api.yaml"
@@ -688,7 +688,7 @@ class CIPipeline(core.Stack):
                 f"project_build_{function_name}",
                 project_name=f"project_build_{function_name}",
                 environment=aws_codebuild.BuildEnvironment(
-                    build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
+                    build_image=aws_codebuild.LinuxBuildImage.STANDARD_3_0
                 ),
                 build_spec=aws_codebuild.BuildSpec.from_source_filename(
                     "backend/functions/buildspec-lambda-worker.yaml"
