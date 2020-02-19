@@ -2,4 +2,4 @@
     line-length = 110
     skip-string-normalization = true
     exclude = "/(.git|.tox|migrations|libs|docs|data)/"
-    target-versions = "py37"
+    target-versions = "py38"

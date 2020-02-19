@@ -45,11 +45,6 @@ function wait_for_sqs {
   done
 }
 
-function install_db_secret {
-    aws --endpoint-url="$SECRET_MANAGER_ENDPOINT_URL" secretsmanager create-secret \
-        --name "$DB_SECRET_ARN" \
-        --secret-string file://./scripts/dev/db-secret.json
-}
 
 function create_lambda_function() {
     aws --no-sign-request --endpoint-url=$LAMBDA_EP lambda create-function \
@@ -93,9 +88,6 @@ function get_public_api_lambda_arn {
     get_lambda_arn $PUBLIC_API_FUNCTION_NAME
 }
 
-function get_worker_success_lambda_arn {
-    get_lambda_arn $WORKER_SUCCESS_FUNCTION_NAME
-}
 
 function create_rest_api {
     aws --no-sign-request --endpoint-url=$API_GTW_EP apigateway create-rest-api \
@@ -143,41 +135,6 @@ function create_public_api_deployment {
         --stage-name $API_STAGE
 }
 
-function create_worker_success_lambda {
-  create_lambda_function $WORKER_SUCCESS_FUNCTION_NAME "/app/functions/worker_success" "handlers.handle"
-}
-
-function create_worker_failure_lambda {
-  create_lambda_function $WORKER_FAILURE_FUNCTION_NAME "/app/functions/worker_failure" "handlers.handle"
-}
-
-function create_state_machine {
-  aws --no-sign-request --endpoint-url=$STEP_FUNCTIONS_EP \
-      --region $AWS_DEFAULT_REGION \
-      stepfunctions create-state-machine \
-      --name "$1" \
-      --role-arn arn:aws:iam::000000000000:role/service-role/MyRole \
-      --definition "{
-      \"StartAt\": \"call-success\",
-      \"Version\": \"1.0\",
-      \"TimeoutSeconds\": 60,
-      \"States\": {
-          \"call-success\": {
-              \"Resource\": \"$2\",
-              \"Type\": \"Task\",
-              \"End\": true
-          }
-      }
-  }"
-}
-
-function get_state_machine_arn {
-  aws --no-sign-request --endpoint-url=$STEP_FUNCTIONS_EP \
-      --region $AWS_DEFAULT_REGION \
-      stepfunctions list-state-machines \
-      --query "stateMachines[?name==\'$1\'].stateMachineArn"
-      --output text
-}
 
 function create_s3_bucket {
   aws --no-sign-request --endpoint-url=$S3_ENDPOINT_URL \
@@ -197,41 +154,3 @@ function create_sqs_queue {
       --region $AWS_DEFAULT_REGION \
       sqs create-queue --queue-name "$1"
 }
-
-function create_ses_email {
-  aws --no-sign-request --endpoint-url=$SES_ENDPOINT_URL \
-      --region $AWS_DEFAULT_REGION \
-      ses verify-email-identity --email-address info@local
-}
-
-#{
-#    aws --no-sign-request --endpoint-url=$API_GTW_EP apigateway create-resource \
-#        --region ${AWS_DEFAULT_REGION} \
-#        --rest-api-id ${API_ID} \
-#        --parent-id ${PARENT_RESOURCE_ID} \
-#        --path-part "{somethingId}" &&
-#    echo "Public API resource created"
-#} || {
-#    echo "Public API resource NOT created"
-#}
-
-#RESOURCE_ID=$(aws \
-#    --no-sign-request --endpoint-url=$API_GTW_EP \
-#    apigateway get-resources \
-#    --rest-api-id ${API_ID} \
-#    --query 'items[?path==`/{somethingId}`].id' \
-#    -output text \
-#    --region ${AWS_DEFAULT_REGION})
-
-#{
-#    aws --no-sign-request --endpoint-url=$API_GTW_EP apigateway put-method \
-#        --region $AWS_DEFAULT_REGION \
-#        --rest-api-id $API_ID \
-#        --resource-id $RESOURCE_ID \
-#        --http-method GET \
-#        --request-parameters "method.request.path.somethingId=true" \
-#        --authorization-type "NONE" &&
-#     echo "Public API PUT method created"
-#} || {
-#    echo "Public API PUT method NOT created"
-#}

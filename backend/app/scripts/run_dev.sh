@@ -5,8 +5,6 @@ set -e
 . $(dirname "$0")/install_localstack_fixtures.sh
 
 # wait untill secretsmanager become ready
-wait_for_secretsmanager
-echo "Secrets manager is up"
 wait_for_s3
 echo "S3 manager is up"
 wait_for_sqs
@@ -14,8 +12,6 @@ echo "SQS manager is up"
 
 
 # install all localstack fixtures
-
-#install_db_secret
 
 {
     create_s3_bucket "schemacms-images" &&
@@ -44,8 +40,6 @@ echo "SQS manager is up"
 } || {
     echo "SQS Queue worker NOT created"
 }
-
-
 {
     create_worker_lambda &&
     echo "Worker-Lambda function created"
