@@ -1206,6 +1206,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         >
           <button
             disabled={false}
+            id="csvUploadIcon"
             style={
               Object {
                 "background": "#FFF",

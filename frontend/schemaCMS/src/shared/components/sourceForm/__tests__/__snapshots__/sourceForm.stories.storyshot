@@ -180,6 +180,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
       >
         <button
           disabled={false}
+          id="csvUploadIcon"
           style={
             Object {
               "background": "#FFF",

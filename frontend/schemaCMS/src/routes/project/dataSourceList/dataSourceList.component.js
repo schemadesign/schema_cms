@@ -162,7 +162,11 @@ export class DataSourceList extends PureComponent {
     cond([
       [
         propEq('isUploading', true),
-        always(this.renderLoading(<FormattedMessage id="fileUploadingStatus" {...messages.fileUploading} values={{ uploadProgress }} />)),
+        always(
+          this.renderLoading(
+            <FormattedMessage id="fileUploadingStatus" {...messages.fileUploading} values={{ uploadProgress }} />
+          )
+        ),
       ],
       [
         propEq('fileUploadingError', true),
@@ -180,7 +184,10 @@ export class DataSourceList extends PureComponent {
         propEq('jobProcessing', true),
         always(this.renderLoading(<FormattedMessage id="dataWranglingStatus" {...messages.jobProcessing} />)),
       ],
-      [propEq('jobFailed', true), always(this.renderLoading(<FormattedMessage id="dataWranglingErrorStatus" {...messages.jobFailed} />))],
+      [
+        propEq('jobFailed', true),
+        always(this.renderLoading(<FormattedMessage id="dataWranglingErrorStatus" {...messages.jobFailed} />)),
+      ],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
     ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed });
 
