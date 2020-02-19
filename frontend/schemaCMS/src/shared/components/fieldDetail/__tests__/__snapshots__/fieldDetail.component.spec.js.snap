@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FieldDetail: Component should render correctly 1`] = `
-<styled.div>
-  <styled.ul>
+<styled.div
+  id="fieldInfo-undefined"
+>
+  <styled.ul
+    id="fieldInfoTable"
+  >
     <styled.li>
       <styled.span>
         Field

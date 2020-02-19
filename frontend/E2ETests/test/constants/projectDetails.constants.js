@@ -8,4 +8,4 @@ export const OWNER_LABEL = 'Owner';
 export const TITLE_LABEL = 'Title';
 export const DESCRIPTION_LABEL = 'Description';
 export const API_PATH_LABEL = 'API';
-export const PAGE_TITLE = 'Project - SchemaCMS';
+export const PAGE_TITLE = 'Project - Schema CMS';

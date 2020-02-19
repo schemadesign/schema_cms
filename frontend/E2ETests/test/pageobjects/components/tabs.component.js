@@ -18,5 +18,9 @@ class TabsComponent {
   get pages() {
     return $('#folderTab');
   }
+
+  get states() {
+    return $('#stateTab');
+  }
 }
 export default new TabsComponent();

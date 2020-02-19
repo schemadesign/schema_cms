@@ -141,7 +141,11 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderLoading = message => <Loading metaProcessing>{message}</Loading>;
+  renderLoading = message => (
+    <Loading id="dataSourceStatus" metaProcessing>
+      {message}
+    </Loading>
+  );
 
   renderHeader = ({
     whenCreated,
@@ -158,16 +162,25 @@ export class DataSourceList extends PureComponent {
     cond([
       [
         propEq('isUploading', true),
-        always(this.renderLoading(<FormattedMessage {...messages.fileUploading} values={{ uploadProgress }} />)),
+        always(this.renderLoading(<FormattedMessage id="fileUploadingStatus" {...messages.fileUploading} values={{ uploadProgress }} />)),
       ],
       [
         propEq('fileUploadingError', true),
-        always(this.renderLoading(<FormattedMessage {...messages.fileUploadingError} />)),
+        always(this.renderLoading(<FormattedMessage id="fileUploadingErrorStatus" {...messages.fileUploadingError} />)),
       ],
-      [propEq('metaProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />))],
-      [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
-      [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
-      [propEq('jobFailed', true), always(this.renderLoading(<FormattedMessage {...messages.jobFailed} />))],
+      [
+        propEq('metaProcessing', true),
+        always(this.renderLoading(<FormattedMessage id="metaProcessingStatus" {...messages.metaProcessing} />)),
+      ],
+      [
+        propEq('metaFailed', true),
+        always(this.renderLoading(<FormattedMessage id="metaProcessingErrorStatus" {...messages.metaFailed} />)),
+      ],
+      [
+        propEq('jobProcessing', true),
+        always(this.renderLoading(<FormattedMessage id="dataWranglingStatus" {...messages.jobProcessing} />)),
+      ],
+      [propEq('jobFailed', true), always(this.renderLoading(<FormattedMessage id="dataWranglingErrorStatus" {...messages.jobFailed} />))],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
     ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed });
 
@@ -197,7 +210,7 @@ export class DataSourceList extends PureComponent {
     const footer = this.renderMetaData({ metaData, metaProcessing });
 
     return (
-      <ListItem key={index} headerComponent={header} footerComponent={footer}>
+      <ListItem id="dataSourceContainer" key={index} headerComponent={header} footerComponent={footer}>
         <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, activeJob })}>
           {name}
         </ListItemTitle>

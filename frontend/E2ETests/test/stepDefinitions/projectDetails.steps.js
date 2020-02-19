@@ -20,7 +20,7 @@ Given('I have entered project details page', () => {
   ProjectsPage.projectName = ProjectsPage.projectTitle.getText();
   clickElement(ProjectsPage, 'projectTitle');
   waitForElement(ProjectDetailsPage.TopHeader, 'projectName');
-  waitForTitle('Project - SchemaCMS');
+  waitForTitle(PAGE_TITLE);
 
   expect(ProjectDetailsPage.TopHeader.projectName.getText()).to.equal(ProjectsPage.projectName);
   expect(browser.getTitle()).to.equal(PAGE_TITLE);

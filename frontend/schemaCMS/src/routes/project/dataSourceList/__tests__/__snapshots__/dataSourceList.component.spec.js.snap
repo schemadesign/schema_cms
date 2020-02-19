@@ -218,6 +218,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -227,6 +228,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="0"
       >
         <Styled(H1)
@@ -321,6 +323,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -330,6 +333,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="1"
       >
         <Styled(H1)
@@ -424,6 +428,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -433,6 +438,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="2"
       >
         <Styled(H1)
@@ -527,6 +533,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -536,6 +543,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="3"
       >
         <Styled(H1)
@@ -630,6 +638,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -639,6 +648,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="4"
       >
         <Styled(H1)
@@ -733,6 +743,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -742,6 +753,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="5"
       >
         <Styled(H1)
@@ -836,6 +848,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -845,6 +858,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="6"
       >
         <Styled(H1)
@@ -939,6 +953,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -952,6 +967,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="7"
       >
         <Styled(H1)
@@ -1046,6 +1062,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
         headerComponent={
           <ForwardRef(styled.span)
+            id="dataSourceStatus"
             metaProcessing={true}
           >
             <FormattedMessage
@@ -1055,6 +1072,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             />
           </ForwardRef(styled.span)>
         }
+        id="dataSourceContainer"
         key="8"
       >
         <Styled(H1)

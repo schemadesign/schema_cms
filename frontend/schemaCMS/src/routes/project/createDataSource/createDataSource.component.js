@@ -62,6 +62,7 @@ export class CreateDataSource extends PureComponent {
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Formik
+          id="csvUploadFileName"
           enableReinitialize
           initialValues={{ fileName: '' }}
           validationSchema={DATA_SOURCE_SCHEMA}
@@ -76,10 +77,11 @@ export class CreateDataSource extends PureComponent {
               <Fragment>
                 <SourceForm intl={intl} values={values} {...rest} />
                 <NavigationContainer fixed>
-                  <BackButton onClick={this.handleCancelCreate}>
+                  <BackButton id="createDataSourceBackBtn" onClick={this.handleCancelCreate}>
                     <FormattedMessage {...messages.cancel} />
                   </BackButton>
                   <NextButton
+                    id="createDataSourceSaveBtn"
                     onClick={submitForm}
                     disabled={!values.fileName || !isValid || isSubmitting}
                     loading={isSubmitting}
