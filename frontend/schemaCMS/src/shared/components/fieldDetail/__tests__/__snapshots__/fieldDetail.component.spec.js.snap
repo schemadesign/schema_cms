@@ -2,7 +2,7 @@
 
 exports[`FieldDetail: Component should render correctly 1`] = `
 <styled.div
-  id="fieldInfo-undefined"
+  id="fieldInfo-0"
 >
   <styled.ul
     id="fieldInfoTable"

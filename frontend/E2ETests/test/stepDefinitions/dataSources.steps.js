@@ -92,8 +92,6 @@ When('I cho(o)se to upload a valid CSV file', function() {
 Then(/^newly created data source is displayed on list$/, function() {
   waitForTitle(DATA_SOURCES_PAGE_TITLE);
   waitForElement(DataSourcesPage, 'dataSourceTitle');
-  waitForElement(DataSourcesPage, 'itemsValue');
-  waitForElement(DataSourcesPage, 'fieldsValue');
 
   waitForText(DataSourcesPage, 'itemsValue', CSV_FILE.rowsAmount);
   waitForText(DataSourcesPage, 'fieldsValue', CSV_FILE.columnsAmount);
@@ -125,7 +123,7 @@ Then(/^data in preview table matches data from CSV file$/, function() {
 });
 
 Then(/^I can see status of file updating on the tile$/, function() {
-  DataSourcesPage.waitForDataSourceStatusToChange(SUCCESS);
+  DataSourcesPage.waitForDataSourceStatusToChange();
 });
 
 When('I cho(o)se to see field info preview', function() {

@@ -24,7 +24,7 @@ Feature: CMS-26-Editor
     When I choose to see data source preview
     Then I am on data source preview page
     And data in preview table matches data from CSV file
-  @Test
+
   Scenario: Field Preview page matches design
     Given I chose to upload a valid CSV file
     And I am on Data Sources page

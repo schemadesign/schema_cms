@@ -38,7 +38,7 @@ class DataSourcesPage extends Page {
   }
 
   get dataSourceCreator() {
-    return $$('#dataSourceContainer')[0].$('#headerItem-1');
+    return $('#dataSourceContainer:first-child #headerItem-1');
   }
 
   get dataSourceTitle() {
@@ -110,9 +110,7 @@ class DataSourcesPage extends Page {
   }
 
   waitForDataSourceStatusToChange() {
-    for (let i = 0; i < CREATE_DATASOURCE_STATUS.length; i += 1) {
-      waitForText(this, 'dataSourceStatus', CREATE_DATASOURCE_STATUS[i]);
-    }
+    CREATE_DATASOURCE_STATUS.forEach(item => waitForText(this, 'dataSourceStatus', item));
   }
 }
 export default new DataSourcesPage();

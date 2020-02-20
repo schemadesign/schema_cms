@@ -36,7 +36,7 @@ export const SECOND_FIELD = [
   'Field',
   'date',
   'Sample',
-  '1583020800000',
+  '2020-03-01T00:00:00.000Z',
   'Type',
   'datetime',
   'Total Count (N)',
