@@ -44,7 +44,9 @@ const updateProgress = (state = INITIAL_STATE, { payload: { id, progress } }) =>
 const removeUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
   state
     .update('uploadingDataSources', reject(propEq('id', payload.id)))
-    .update('dataSources', map(when(propEq('id', payload.id), always(payload))));
+    .update('dataSources', dataSources =>
+      payload.name ? map(when(propEq('id', payload.id), always(payload)))(dataSources) : dataSources
+    );
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.removeUploadingDataSource.TRIGGER]: removeUploadingDataSource,

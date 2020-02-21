@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import { always, append, cond, equals, ifElse, pathOr, propEq, reject, T } from 'ramda';
+import { always, append, cond, equals, ifElse, pathOr, propEq, reject, T, map, identity } from 'ramda';
 import { Form as FormUI } from 'schemaUI';
 
 import { Form, RangeInput, RangeValues } from './stateFilter.styles';
@@ -150,6 +150,9 @@ export class StateFilter extends PureComponent {
     const { values, intl } = this.props;
     const [minRounded, maxRounded] = values.range;
     const [minValue, maxValue] = values[PROJECT_STATE_FILTER_VALUES];
+    const [minSecondaryValue, maxSecondaryValue] = map(ifElse(equals(NaN), always(''), identity))(
+      values[PROJECT_STATE_FILTER_SECONDARY_VALUES]
+    );
 
     return (
       <Fragment>
@@ -169,7 +172,7 @@ export class StateFilter extends PureComponent {
         <RangeValues>
           <RangeInput>
             <TextInput
-              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][0] || ''}
+              value={minSecondaryValue}
               onChange={this.handleInputRangeChange}
               onBlur={e => this.handleInputRangeChange(e, true)}
               name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.0`}
@@ -183,7 +186,7 @@ export class StateFilter extends PureComponent {
           </RangeInput>
           <RangeInput>
             <TextInput
-              value={values[PROJECT_STATE_FILTER_SECONDARY_VALUES][1] || ''}
+              value={maxSecondaryValue}
               onChange={this.handleInputRangeChange}
               onBlur={e => this.handleInputRangeChange(e, true)}
               name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.1`}
