@@ -55,6 +55,7 @@ boto3==1.12.2
 # Utils
 hashids==1.2.0
 pipenv==2018.11.26
+awscli==1.18.4
 
 # Error logging
 sentry-sdk==0.14.1

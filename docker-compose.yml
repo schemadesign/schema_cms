@@ -35,8 +35,6 @@ services:
     image: schema_cms_backend
     build:
       context: backend/app
-      args:
-        STAGE: dev
     entrypoint: ./scripts/entrypoint.sh
     command: ./scripts/run_dev.sh
     env_file: local.env

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -68,13 +68,13 @@ function get_lambda_arn() {
 
 function create_worker_lambda() {
   cd ../functions/worker && \
-  SLS_DEBUG=* serverless deploy --verbose --stage local && \
+  SLS_DEBUG=* node_modules/serverless/bin/serverless package --verbose --stage local && \
   cd ../../app
 }
 
 function create_public_api_lambda() {
   cd ../functions/public_api && \
-  SLS_DEBUG=* serverless deploy --verbose --stage local && \
+  SLS_DEBUG=* node_modules/serverless/bin/serverless deploy --verbose --stage local && \
   cd ../../app
 }
 
