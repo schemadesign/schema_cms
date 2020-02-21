@@ -4,7 +4,6 @@ export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     background-color: ${({ theme }) => theme.background};
-    overflow-x: hidden;
   }
 
   *, *:before, *:after {
@@ -13,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${({ theme }) => theme.typography.p.fontFamily};
+  }
+
+  html, body {
+    overflow-x: hidden;
+    position: relative;
   }
 
   html.hideScroll,
