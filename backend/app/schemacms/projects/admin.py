@@ -2,7 +2,8 @@ from django.contrib import admin
 from django.db import transaction
 from django.utils import safestring
 from django.template.loader import render_to_string
-
+from django.forms.models import BaseInlineFormSet
+from django.core.exceptions import ValidationError  # NOQA
 from schemacms.utils import admin as utils_admin
 from ..users.models import User
 from . import models, forms
@@ -189,7 +190,15 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
         )
 
 
+class TagInlineFormSet(BaseInlineFormSet):
+    def clean(self):
+        super().clean()
+        if not all(self.cleaned_data):
+            raise ValidationError("Tag value can't be empty")
+
+
 class TagInline(admin.TabularInline):
+    formset = TagInlineFormSet
     model = models.Tag
     exclude = ("deleted_at",)
     extra = 0
