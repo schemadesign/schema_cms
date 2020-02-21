@@ -124,7 +124,7 @@ export class SourceFormComponent extends PureComponent {
         value={DATA_SOURCE_FILE}
         id={DATA_SOURCE_FILE}
       >
-        <Button customStyles={{ background, ...buttonStyles }} type="button">
+        <Button id="csvUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
           <CsvIcon customStyles={{ fill }} />
         </Button>
       </RadioBaseComponent>

@@ -224,6 +224,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
             "width": 96,
           }
         }
+        id="csvUploadIcon"
         type="button"
       >
         <Component
@@ -651,6 +652,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
             "width": 96,
           }
         }
+        id="csvUploadIcon"
         type="button"
       >
         <Component

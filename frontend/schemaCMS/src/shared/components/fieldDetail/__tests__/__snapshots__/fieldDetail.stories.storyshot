@@ -105,9 +105,11 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
   </style>
   <div
     className=""
+    id="fieldInfo-0"
   >
     <ul
       className="c0"
+      id="fieldInfoTable"
     >
       <li
         className="c1"

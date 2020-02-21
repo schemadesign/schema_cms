@@ -5,7 +5,11 @@ export const waitForElement = (that, elemName, timeout = TIMEOUT) => {
 };
 
 export const waitForText = (that, elemName, text, timeout = TIMEOUT) => {
-  browser.waitUntil(() => that[elemName].getText() === text, timeout, `Text of ${elemName} doesn't equal ${text}`);
+  browser.waitUntil(
+    () => that[elemName].getText() === text,
+    timeout,
+    `Text of ${elemName} equals ${that[elemName].getText()} while it should equal ${text}`
+  );
 };
 
 export const waitForUrl = (url, timeout = TIMEOUT) => {

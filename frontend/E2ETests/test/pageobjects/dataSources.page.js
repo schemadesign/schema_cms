@@ -1,6 +1,8 @@
 import Page from './page';
 import TopHeaderComponent from './components/topHeader.component';
 import MenuComponent from './components/menu.component';
+import { waitForText } from '../utils/utils';
+import { CREATE_DATASOURCE_STATUS } from '../constants/createDatasource.constants';
 
 class DataSourcesPage extends Page {
   get TopHeader() {
@@ -31,8 +33,12 @@ class DataSourcesPage extends Page {
     return $('#headerItem-0');
   }
 
+  get dataSourceStatus() {
+    return $('#dataSourceStatus');
+  }
+
   get dataSourceCreator() {
-    return $('#headerItem-1');
+    return $('#dataSourceContainer:first-child #headerItem-1');
   }
 
   get dataSourceTitle() {
@@ -101,6 +107,10 @@ class DataSourcesPage extends Page {
 
   get updatedAtValue() {
     return $('#jobUpdatedAtValue');
+  }
+
+  waitForDataSourceStatusToChange() {
+    CREATE_DATASOURCE_STATUS.forEach(item => waitForText(this, 'dataSourceStatus', item));
   }
 }
 export default new DataSourcesPage();

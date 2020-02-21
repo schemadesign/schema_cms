@@ -11,6 +11,7 @@ import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon
 export class FieldDetail extends PureComponent {
   static propTypes = {
     id: PropTypes.string.isRequired,
+    step: PropTypes.number.isRequired,
     data: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
   };
@@ -51,8 +52,8 @@ export class FieldDetail extends PureComponent {
     );
 
     return (
-      <Container>
-        <List>
+      <Container id={`fieldInfo-${this.props.step}`}>
+        <List id="fieldInfoTable">
           <FieldInformation>
             <Label>{this.props.intl.formatMessage(messages.field)}</Label>
             <Value>{this.props.id}</Value>

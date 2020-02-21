@@ -27,6 +27,7 @@ const long = `
 
 export const defaultProps = {
   id: 'firstName',
+  step: 0,
   data: {
     someProp: null,
     freq: 6,

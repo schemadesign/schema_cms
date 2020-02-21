@@ -141,6 +141,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
   />
   <Formik
     enableReinitialize={true}
+    id="csvUploadFileName"
     initialValues={
       Object {
         "fileName": "",

@@ -763,6 +763,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
       >
         <button
           disabled={false}
+          id="csvUploadIcon"
           style={
             Object {
               "background": "#1d1d20",
@@ -819,6 +820,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
         <button
           className="c17"
           disabled={false}
+          id="createDataSourceBackBtn"
           onClick={[Function]}
           style={
             Object {
@@ -845,6 +847,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
         <button
           className="c17"
           disabled={true}
+          id="createDataSourceSaveBtn"
           onClick={[Function]}
           style={
             Object {

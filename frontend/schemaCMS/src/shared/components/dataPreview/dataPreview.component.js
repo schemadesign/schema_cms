@@ -74,7 +74,7 @@ export default class DataPreview extends PureComponent {
     const id = fieldsIds[step];
     const data = this.props.previewData.fields[id];
 
-    return { id, data, intl: this.props.intl };
+    return { id, data, intl: this.props.intl, step };
   }
 
   handleNavigation = direction => {
@@ -106,13 +106,23 @@ export default class DataPreview extends PureComponent {
     return (
       <Navigation>
         <NavigationButton>
-          <Button onClick={this.handlePreviewStep} disabled={isPreviousDisabled} customStyles={buttonStyles}>
+          <Button
+            id="previewLeftBtn"
+            onClick={this.handlePreviewStep}
+            disabled={isPreviousDisabled}
+            customStyles={buttonStyles}
+          >
             <Icons.ArrowLeftIcon customStyles={arrowStyles(isPreviousDisabled)} />
           </Button>
         </NavigationButton>
-        <NavigationLabel>{label}</NavigationLabel>
+        <NavigationLabel id="fieldsAmountLabel">{label}</NavigationLabel>
         <NavigationButton>
-          <Button onClick={this.handleNextStep} disabled={isNextDisabled} customStyles={buttonStyles}>
+          <Button
+            id="previewRightBtn"
+            onClick={this.handleNextStep}
+            disabled={isNextDisabled}
+            customStyles={buttonStyles}
+          >
             <Icons.ArrowRightIcon customStyles={arrowStyles(isNextDisabled)} />
           </Button>
         </NavigationButton>
