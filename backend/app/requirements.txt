@@ -51,7 +51,6 @@ coverage==5.0.3
 # Static and Media Storage
 django-storages==1.9.1
 boto3==1.12.2
-django-s3file==5.0.5
 
 # Utils
 hashids==1.2.0
