@@ -1,9 +1,16 @@
 import faker as faker_
 import pytest
 from django.core.files import storage
+from django.conf import settings
 from rest_framework import test
 
 from schemacms.utils import test as utils_test
+
+
+@pytest.fixture(autouse=True, scope="session")
+def configure_test_settings():
+    settings.MIDDLEWARE.remove("silk.middleware.SilkyMiddleware")
+    settings.MIDDLEWARE.remove("debug_toolbar.middleware.DebugToolbarMiddleware")
 
 
 @pytest.fixture()

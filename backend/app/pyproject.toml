@@ -1,5 +1,19 @@
+[tool.coverage.run]
+branch = true
+omit = [
+        "*migrations*",
+        "*urls*",
+        "*test*",
+        "*admin*",
+        "./manage.py" ,
+        "./schemacms/config/*",
+        "./schemacms/wsgi.py",
+        "*__init__*",
+        "./wait_for_postgres.py"
+    ]
+
 [tool.black]
-    line-length = 110
-    skip-string-normalization = true
-    exclude = "/(.git|.tox|migrations|libs|docs|data)/"
-    target-versions = "py38"
+line-length = 110
+skip-string-normalization = false
+exclude = "/(.git|.tox|migrations|libs|docs|data)/"
+target-versions = "py38"

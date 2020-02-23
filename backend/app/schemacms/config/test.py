@@ -12,7 +12,7 @@ class Test(Common):
     DEBUG = False
     TEMPLATE_DEBUG = False
     Common.TEMPLATES[0]["OPTIONS"]["debug"] = False
-
+    MIDDLEWARE = Common.MIDDLEWARE
     DEFAULT_FILE_STORAGE = "schemacms.utils.storages.OverwriteStorage"
 
     # Mail

@@ -12,13 +12,11 @@ services:
   localstack:
     image: localstack/localstack:latest
     ports:
-      - "4567-4593:4567-4593"
-      - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
+      - "4567-4599:4567-4599"
     environment:
       - SERVICES=sqs,serverless
-#      - DEBUG="1"  # uncomment if you want to see localstack debug info
+      - DEBUG="1"
       - DATA_DIR=/tmp/localstack/data
-      - PORT_WEB_UI=${PORT_WEB_UI- }
       - LAMBDA_EXECUTOR=docker
       - LAMBDA_REMOTE_DOCKER=true
       - DOCKER_HOST=unix:///var/run/docker.sock
@@ -30,16 +28,16 @@ services:
 #      - "localstack_data:/tmp/localstack/data"  # uncomment if you want keep data after killing container
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./backend/functions:/app/functions"
+    privileged: true
 
   backend:
     image: schema_cms_backend
     build:
       context: backend/app
-    entrypoint: ./scripts/entrypoint.sh
-    command: ./scripts/run_dev.sh
+    entrypoint: ["./scripts/entrypoint.sh"]
+    command: ["./scripts/run_dev.sh"]
     env_file: local.env
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - ./backend/app:/app
       - ./backend/functions:/functions
     ports:
@@ -50,7 +48,6 @@ services:
       - mailcatcher
     restart: always
     stdin_open: true
-    privileged: true
     tty: true
 
   mailcatcher:
