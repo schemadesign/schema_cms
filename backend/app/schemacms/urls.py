@@ -12,17 +12,14 @@ urlpatterns = [
             [
                 urls.path("auth/", urls.include("schemacms.authorization.urls", namespace="authorization")),
                 urls.path("auth/", urls.include("social_django.urls")),
-                urls.path("", urls.include('schemacms.projects.urls')),
+                urls.path("", urls.include("schemacms.projects.urls")),
                 urls.path("", urls.include("schemacms.users.urls")),
                 urls.path("", urls.include("rest_framework.urls", namespace="rest_framework")),
             ]
         ),
     ),
     urls.path("admin/", admin.site.urls),
-    urls.path("", misc_views.HomeView.as_view(), name="home")
-    # the 'api-root' from django rest-frameworks default router
-    # http://www.django-rest-framework.org/api-guide/routers/#defaultrouter
-    # re_path(r'^$', RedirectView.as_view(url=reverse_lazy('api-root'), permanent=False)),
+    urls.path("", misc_views.HomeView.as_view(), name="home"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
@@ -30,7 +27,10 @@ if settings.DEBUG:
     import debug_toolbar
 
     urlpatterns = (
-        [urls.path('__debug__/', urls.include(debug_toolbar.urls))]
+        [
+            urls.path("__debug__/", urls.include(debug_toolbar.urls)),
+            urls.path("silk/", urls.include("silk.urls", namespace="silk")),
+        ]
         + urlpatterns
         + static(settings.STATIC_URL)
     )

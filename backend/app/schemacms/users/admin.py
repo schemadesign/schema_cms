@@ -41,11 +41,11 @@ def deactivate_users(modeladmin, request, queryset):
 class UserAdmin(UserAdmin):
     actions = (activate_users, deactivate_users)
     list_display = ("email", "first_name", "last_name", "is_active", "is_staff", "source", "role")
-    list_filter = ('role', 'is_active', 'is_staff')
+    list_filter = ("role", "is_active", "is_staff")
     fieldsets = (
         (None, {"fields": ("username", "password")}),
         (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
-        (_("Permissions"), {"fields": ("role", "is_active", "is_staff", "is_superuser")},),
+        (_("Permissions"), {"fields": ("role", "is_active", "is_staff", "is_superuser")}),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
         (_("Auth"), {"fields": ("source", "external_id")}),
     )

@@ -32,16 +32,16 @@ class TestProject:
         ret = project.meta_file_serialization()
 
         assert ret == {
-            'id': project.id,
-            'meta': {
-                'title': project.title,
+            "id": project.id,
+            "meta": {
+                "title": project.title,
                 "description": project.description,
-                'owner': admin.get_full_name(),
+                "owner": admin.get_full_name(),
                 "created": project.created.isoformat(),
                 "updated": project.modified.isoformat(),
             },
-            'data_sources': [{"id": ds.id, "name": ds.name, "type": ds.type}],
-            'pages': folder.meta_file_serialization(),
+            "data_sources": [{"id": ds.id, "name": ds.name, "type": ds.type}],
+            "pages": folder.meta_file_serialization(),
             "charts": [],
         }
 
@@ -102,10 +102,10 @@ class TestDataSource:
         job.save()
         ds.active_job = job
         preview_data = {
-            'fields': {
-                'col_0': {'dtype': 'boolean'},
-                'col_1': {'dtype': 'boolean'},
-                'col_2': {'dtype': 'number'},
+            "fields": {
+                "col_0": {"dtype": "boolean"},
+                "col_1": {"dtype": "boolean"},
+                "col_2": {"dtype": "number"},
             }
         }
         ds.active_job.update_meta(
@@ -117,9 +117,9 @@ class TestDataSource:
         ret = ds.meta_file_serialization()
 
         assert ret == {
-            'id': ds.id,
-            'meta': {
-                'name': ds.name,
+            "id": ds.id,
+            "meta": {
+                "name": ds.name,
                 "description": None,
                 "source": None,
                 "source-url": None,
@@ -127,14 +127,14 @@ class TestDataSource:
                 "updated": ds.modified.isoformat(),
                 "creator": ds.created_by.get_full_name(),
             },
-            'file': ds.file.name,
-            'shape': job.meta_data.shape,
-            'result': job.result,
-            'filters': [],
-            'fields': {
-                "0": {'name': 'col_0', 'type': 'boolean'},
-                "1": {'name': 'col_1', 'type': 'boolean'},
-                "2": {'name': 'col_2', 'type': 'number'},
+            "file": ds.file.name,
+            "shape": job.meta_data.shape,
+            "result": job.result,
+            "filters": [],
+            "fields": {
+                "0": {"name": "col_0", "type": "boolean"},
+                "1": {"name": "col_1", "type": "boolean"},
+                "2": {"name": "col_2", "type": "number"},
             },
             "views": [],
             "tags": [],
@@ -169,10 +169,10 @@ class TestDataSourceJob:
 
         assert url == expected_url
         s3.generate_presigned_url.assert_called_with(
-            ClientMethod='get_object',
+            ClientMethod="get_object",
             Params={
                 **self._get_common_generate_presigned_url_params(settings, job),
-                'VersionId': job.source_file_version,
+                "VersionId": job.source_file_version,
             },
         )
 
@@ -190,14 +190,14 @@ class TestDataSourceJob:
 
         assert url == expected_url
         s3.generate_presigned_url.assert_called_with(
-            ClientMethod='get_object',
+            ClientMethod="get_object",
             Params={**self._get_common_generate_presigned_url_params(settings, job)},
         )
 
     def _get_common_generate_presigned_url_params(self, settings, job):
         filename = os.path.basename(job.source_file_path)
         return {
-            'Bucket': settings.AWS_STORAGE_BUCKET_NAME,
-            'Key': job.source_file_path,
-            'ResponseContentDisposition': f"attachment; filename={filename}",
+            "Bucket": settings.AWS_STORAGE_BUCKET_NAME,
+            "Key": job.source_file_path,
+            "ResponseContentDisposition": f"attachment; filename={filename}",
         }

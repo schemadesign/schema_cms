@@ -164,7 +164,7 @@ class TestUserCreateView:
         assert send_invitation_email_mock.called
 
     def test_create_by_admin_username_duplicated(self, api_client, faker, user_factory):
-        user = user_factory(username='')
+        user = user_factory(username="")
         payload = dict(email=faker.email())
         api_client.force_authenticate(user)
 
@@ -432,7 +432,7 @@ class TestMeResetPasswordView:
         response = api_client.get(self._url, HTTP_AUTHORIZATION="JWT {}".format(token))
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert response.data[0]["code"] == 'invalidAuthMethod'
+        assert response.data[0]["code"] == "invalidAuthMethod"
 
     def test_unauthorized(self, api_client):
         response = api_client.get(self._url)

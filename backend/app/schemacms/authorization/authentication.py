@@ -7,7 +7,7 @@ from django.utils.translation import ugettext as _
 class LambdaUser:
     id = None
     pk = None
-    username = ''
+    username = ""
     is_staff = False
     is_active = False
     is_superuser = False
@@ -15,7 +15,7 @@ class LambdaUser:
     _user_permissions = models.EmptyManager(models.Permission)
 
     def __str__(self):
-        return 'LambdaUser'
+        return "LambdaUser"
 
     def __eq__(self, other):
         return isinstance(other, self.__class__)
@@ -71,7 +71,7 @@ class LambdaUser:
 
 
 class EnvTokenAuthentication(authentication.BaseAuthentication):
-    keyword = 'Token'
+    keyword = "Token"
 
     def authenticate(self, request):
         auth = authentication.get_authorization_header(request).split()
@@ -93,7 +93,7 @@ class EnvTokenAuthentication(authentication.BaseAuthentication):
 
     def authenticate_credentials(self, key):
         if not settings.LAMBDA_AUTH_TOKEN or settings.LAMBDA_AUTH_TOKEN != key:
-            raise exceptions.AuthenticationFailed(_('Invalid token.'))
+            raise exceptions.AuthenticationFailed(_("Invalid token."))
         user = LambdaUser()
         return user, key
 

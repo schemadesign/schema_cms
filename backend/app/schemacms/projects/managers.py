@@ -12,7 +12,7 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         subquery = (
             DataSource.objects.order_by()
-            .values('project')
+            .values("project")
             .filter(project=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")
@@ -28,7 +28,7 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         subquery = (
             State.objects.order_by()
-            .values('project')
+            .values("project")
             .filter(project=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")
@@ -44,7 +44,7 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         subquery = (
             Page.objects.order_by()
-            .values('folder__project')
+            .values("folder__project")
             .filter(folder__project=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")
@@ -109,7 +109,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         subquery = (
             Filter.objects.order_by()
-            .values('datasource')
+            .values("datasource")
             .filter(datasource=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")
@@ -126,7 +126,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         subquery = (
             TagsList.objects.order_by()
-            .values('datasource')
+            .values("datasource")
             .filter(datasource=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")
@@ -165,7 +165,7 @@ class PageQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         subquery = (
             Block.objects.order_by()
-            .values('page')
+            .values("page")
             .filter(page=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")

@@ -25,7 +25,6 @@ custom:
       - local
     # optional - LocalStack host to connect to
     host: http://localstack
-#    host: http://localhost
     lambda:
       mountCode: False
   stages:
@@ -35,13 +34,13 @@ custom:
     external:
       - '../common'
 
-
 package:
   package:
     individually: true
   exclude:
     - .git/**
     - node_modules/**
+    - Dockerfile
 
 functions:
   app:

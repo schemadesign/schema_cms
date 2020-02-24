@@ -81,8 +81,8 @@ class Auth0UserManagement(base.BaseUserManagement):
         """
         if not return_to:
             return_to = self.get_login_url()
-        params = {'returnTo': return_to, 'client_id': settings.SOCIAL_AUTH_AUTH0_KEY}
-        return f'https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?{parse.urlencode(params)}'
+        params = {"returnTo": return_to, "client_id": settings.SOCIAL_AUTH_AUTH0_KEY}
+        return f"https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?{parse.urlencode(params)}"
 
     @classmethod
     def _get_token(cls, domain):

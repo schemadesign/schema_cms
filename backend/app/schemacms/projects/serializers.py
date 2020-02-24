@@ -270,13 +270,13 @@ class CreateJobSerializer(serializers.ModelSerializer):
 
     def validate_steps(self, attr):
         if not attr:
-            raise exceptions.ValidationError('At least single step is required', code="missingSteps")
+            raise exceptions.ValidationError("At least single step is required", code="missingSteps")
         return attr
 
     @transaction.atomic()
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
-        steps = validated_data.pop('steps')
+        steps = validated_data.pop("steps")
         job = datasource.create_job(**validated_data)
         models.DataSourceJobStep.objects.bulk_create(self.create_steps(steps, job))
         return job
@@ -569,11 +569,11 @@ class BlockSerializer(serializers.ModelSerializer):
         ]
 
     def validate_type(self, type_):
-        if type_ == BlockTypes.IMAGE and not self.context.get('view').request.FILES:
+        if type_ == BlockTypes.IMAGE and not self.context.get("view").request.FILES:
             message = f"Please select images to upload."
             raise serializers.ValidationError({"images": message}, code="noImages")
 
-        if self.context.get('view').request.FILES and type_ != BlockTypes.IMAGE:
+        if self.context.get("view").request.FILES and type_ != BlockTypes.IMAGE:
             message = f"For image upload use Image Uploaded block type."
             raise serializers.ValidationError({"type": message}, code="invalidType")
 
@@ -591,7 +591,7 @@ class BlockSerializer(serializers.ModelSerializer):
 
     @transaction.atomic()
     def save(self, *args, **kwargs):
-        images = self.context.get('view').request.FILES
+        images = self.context.get("view").request.FILES
         images_order = json.loads(self.validated_data.pop("images_order", "{}"))
         block = super().save(**kwargs)
 
@@ -666,9 +666,7 @@ class TagsListSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.TagsList
         fields = ("id", "datasource", "name", "is_active", "tags")
-        extra_kwargs = {
-            "datasource": {"required": False, "allow_null": True},
-        }
+        extra_kwargs = {"datasource": {"required": False, "allow_null": True}}
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.TagsList.objects.all(),
@@ -735,10 +733,7 @@ class InStateFilterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.InStateFilter
-        fields = (
-            "filter",
-            "values",
-        )
+        fields = ("filter", "values")
 
     def get_values(self, filter_):
         return filter_.condition["values"]
@@ -764,9 +759,7 @@ class StateSerializer(serializers.ModelSerializer):
             "active_tags",
             "filters",
         )
-        extra_kwargs = {
-            "project": {"required": False, "allow_null": True},
-        }
+        extra_kwargs = {"project": {"required": False, "allow_null": True}}
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.State.objects.all(),

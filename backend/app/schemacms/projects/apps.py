@@ -3,7 +3,7 @@ from django.db.models import signals as db_signals
 
 
 class ProjectsConfig(AppConfig):
-    name = 'schemacms.projects'
+    name = "schemacms.projects"
 
     def ready(self):
         from . import receivers  # noqa

@@ -163,7 +163,7 @@ class DataSource(
                 condition=models.Q(deleted_at=None),
             )
         ]
-        ordering = ('-modified',)
+        ordering = ("-modified",)
 
     def __str__(self):
         return self.name or str(self.id)
@@ -353,7 +353,7 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     datasource = models.ForeignKey(
-        DataSource, on_delete=models.CASCADE, related_name='scripts', blank=True, null=True
+        DataSource, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True
     )
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="scripts", blank=True, null=True
@@ -394,7 +394,7 @@ class DataSourceJob(
     ext_models.TimeStampedModel,
     fsm.DataSourceJobFSM,
 ):
-    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
+    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="jobs")
     description = models.TextField(blank=True)
     source_file_path: str = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
@@ -402,15 +402,15 @@ class DataSourceJob(
     error = models.TextField(blank=True, default="")
 
     def __str__(self):
-        return f'DataSource Job #{self.pk}'
+        return f"DataSource Job #{self.pk}"
 
     @property
     def get_source_file(self):
         if not self.source_file_path:
             return
-        params = {'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': self.source_file_path}
+        params = {"Bucket": settings.AWS_STORAGE_BUCKET_NAME, "Key": self.source_file_path}
         if self.source_file_version:
-            params['VersionId'] = self.source_file_version
+            params["VersionId"] = self.source_file_version
         return django.core.files.base.File(services.s3.get_object(**params)["Body"])
 
     @property
@@ -419,13 +419,13 @@ class DataSourceJob(
             return ""
         filename = os.path.basename(self.source_file_path)
         params = {
-            'Bucket': settings.AWS_STORAGE_BUCKET_NAME,
-            'Key': self.source_file_path,
-            'ResponseContentDisposition': f"attachment; filename={filename}",
+            "Bucket": settings.AWS_STORAGE_BUCKET_NAME,
+            "Key": self.source_file_path,
+            "ResponseContentDisposition": f"attachment; filename={filename}",
         }
         if self.source_file_version:
-            params['VersionId'] = self.source_file_version
-        return services.s3.generate_presigned_url(ClientMethod='get_object', Params=params)
+            params["VersionId"] = self.source_file_version
+        return services.s3.generate_presigned_url(ClientMethod="get_object", Params=params)
 
     @functional.cached_property
     def project_info(self):
@@ -490,10 +490,10 @@ class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
 
 class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
     datasource_job: DataSourceJob = models.ForeignKey(
-        DataSourceJob, on_delete=models.CASCADE, related_name='steps'
+        DataSourceJob, on_delete=models.CASCADE, related_name="steps"
     )
     script: WranglingScript = models.ForeignKey(
-        WranglingScript, on_delete=models.SET_NULL, related_name='steps', null=True
+        WranglingScript, on_delete=models.SET_NULL, related_name="steps", null=True
     )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
@@ -516,7 +516,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
 class Filter(
     utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
 ):
-    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
+    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="filters")
     name = models.CharField(max_length=25)
     filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())
     field = models.TextField()
@@ -561,7 +561,7 @@ class Filter(
 class Folder(
     utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
 ):
-    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='folders')
+    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="folders")
     name = models.CharField(max_length=constants.DIRECTORY_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="folders", null=True
@@ -578,7 +578,7 @@ class Folder(
                 fields=["project", "name"], name="unique_project_folder", condition=models.Q(deleted_at=None)
             )
         ]
-        ordering = ('name',)
+        ordering = ("name",)
 
     def get_project(self):
         return self.project
@@ -608,7 +608,7 @@ class Page(
     softdelete.models.SoftDeleteObject,
     ext_models.TimeStampedModel,
 ):
-    folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name='pages')
+    folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name="pages")
     keywords = models.TextField(blank=True, default="")
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="pages", null=True
@@ -625,7 +625,7 @@ class Page(
                 fields=["folder", "title"], name="unique_folder_page", condition=models.Q(deleted_at=None)
             )
         ]
-        ordering = ('created',)
+        ordering = ("created",)
 
     @property
     def page_url(self):
@@ -697,7 +697,7 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
                 fields=["page", "name"], name="unique_page_block", condition=models.Q(deleted_at=None)
             )
         ]
-        ordering = ('created',)
+        ordering = ("created",)
 
     def get_project(self):
         return self.page.folder.project
@@ -746,7 +746,7 @@ class TagsList(
     utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
 ):
     datasource: DataSource = models.ForeignKey(
-        DataSource, on_delete=models.CASCADE, related_name='list_of_tags'
+        DataSource, on_delete=models.CASCADE, related_name="list_of_tags"
     )
     name = models.CharField(max_length=25)
     is_active = models.BooleanField(default=True)
@@ -762,7 +762,7 @@ class TagsList(
                 condition=models.Q(deleted_at=None),
             )
         ]
-        ordering = ('created',)
+        ordering = ("created",)
 
     def meta_file_serialization(self):
         data = dict(
@@ -772,7 +772,7 @@ class TagsList(
 
 
 class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
-    tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name='tags')
+    tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name="tags")
     value = models.CharField(max_length=150)
     exec_order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
@@ -789,10 +789,10 @@ class Tag(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, e
 
 
 class State(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
-    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='states')
+    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="states")
     name = models.CharField(max_length=50)
     datasource: DataSource = models.ForeignKey(
-        DataSource, on_delete=models.SET_NULL, related_name='states', null=True
+        DataSource, on_delete=models.SET_NULL, related_name="states", null=True
     )
     description = models.TextField(blank=True, default="")
     source_url = models.TextField(blank=True, default="")
@@ -812,7 +812,7 @@ class State(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
                 fields=["project", "name"], name="unique_state_name", condition=models.Q(deleted_at=None)
             )
         ]
-        ordering = ('created',)
+        ordering = ("created",)
 
 
 class InStateFilter(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject):

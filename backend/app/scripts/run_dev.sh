@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -40,6 +40,7 @@ echo "SQS manager is up"
 } || {
     echo "SQS Queue worker NOT created"
 }
+
 {
     create_worker_lambda &&
     echo "Worker-Lambda function created"
@@ -47,13 +48,7 @@ echo "SQS manager is up"
     echo "Worker-Lambda function NOT created"
 }
 
-#{
-#    create_public_api_lambda &&
-#    echo "Public-API function created"
-#} || {
-#    echo "Public-API function NOT created"
-#}
-
+python /app/scripts/create_local_lambda.py
 
 echo "LocalStack fixtures installed"
 

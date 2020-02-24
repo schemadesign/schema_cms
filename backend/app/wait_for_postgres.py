@@ -4,7 +4,7 @@ from time import time, sleep
 import psycopg2
 import json
 
-db_connection = os.environ.get('DB_CONNECTION', '{}')
+db_connection = os.environ.get("DB_CONNECTION", "{}")
 # contains host, username, password and port
 db_connection_config = json.loads(db_connection)
 

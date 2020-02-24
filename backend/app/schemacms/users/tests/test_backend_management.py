@@ -95,8 +95,8 @@ class TestAuth0UserManagement:
         mgmt = auth0_.Auth0UserManagement()
         get_login_url_mock = mocker.patch.object(mgmt, "get_login_url", return_value="http://localhost/login")
 
-        params = {'returnTo': get_login_url_mock.return_value, 'client_id': settings.SOCIAL_AUTH_AUTH0_KEY}
-        assert f'https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?' + parse.urlencode(params)
+        params = {"returnTo": get_login_url_mock.return_value, "client_id": settings.SOCIAL_AUTH_AUTH0_KEY}
+        assert f"https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?" + parse.urlencode(params)
 
     @pytest.fixture(autouse=True)
     def setup(self, settings):

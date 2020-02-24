@@ -11,7 +11,7 @@ from schemacms.projects import models
 
 
 class Command(BaseCommand):
-    help = 'Creating and updating wrangling scripts in database'
+    help = "Creating and updating wrangling scripts in database"
 
     def handle(self, *args, **options):
         directory = pathlib.Path(settings.SCRIPTS_DIRECTORY)
@@ -29,15 +29,15 @@ class Command(BaseCommand):
             file_modified = max(self.trunc_datetime(self.modification_date(file)), specs_file_modified)
             if not existing_scripts.filter(name=name).exists():
                 self.create_script(name, file, file_modified, specs)
-                self.stdout.write(self.style.SUCCESS(f'Script {name} was created!'))
+                self.stdout.write(self.style.SUCCESS(f"Script {name} was created!"))
             else:
                 script = existing_scripts.get(name=name)
                 last_file_modification = script.last_file_modification
                 if file_modified > self.trunc_datetime(last_file_modification):
                     self.update_script(script, file, file_modified, specs)
-                    self.stdout.write(self.style.SUCCESS(f'Script {name} updated!'))
+                    self.stdout.write(self.style.SUCCESS(f"Script {name} updated!"))
                 else:
-                    self.stdout.write(self.style.SUCCESS(f'Script {name} is up-to-date!'))
+                    self.stdout.write(self.style.SUCCESS(f"Script {name} is up-to-date!"))
 
     @staticmethod
     def modification_date(file):

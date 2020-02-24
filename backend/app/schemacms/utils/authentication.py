@@ -20,17 +20,17 @@ class RoleJSONWebTokenAuthentication(JSONWebTokenAuthentication):
         role = payload.get("role", None)
 
         if not username or not role:
-            msg = _('Invalid payload.')
+            msg = _("Invalid payload.")
             raise exceptions.AuthenticationFailed(msg)
 
         try:
             user = User.objects.get_by_natural_key(username)
         except User.DoesNotExist:
-            msg = _('Invalid signature.')
+            msg = _("Invalid signature.")
             raise exceptions.AuthenticationFailed(msg)
 
         if not user.is_active:
-            msg = _('User account is disabled.')
+            msg = _("User account is disabled.")
             raise exceptions.AuthenticationFailed(msg)
 
         if user.role != role:

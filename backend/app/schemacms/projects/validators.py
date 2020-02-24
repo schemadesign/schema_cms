@@ -7,7 +7,7 @@ from rest_framework.exceptions import ValidationError
 def generate_code(fields):
     all_fields = (x.title() for x in itertools.chain(fields, ["unique"]))
     first = next(all_fields)
-    return ''.join(itertools.chain([first[0].lower(), first[1:]], all_fields))
+    return "".join(itertools.chain([first[0].lower(), first[1:]], all_fields))
 
 
 class CustomUniqueValidator(validators.UniqueValidator):

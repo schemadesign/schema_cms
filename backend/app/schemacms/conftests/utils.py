@@ -1,9 +1,16 @@
 import faker as faker_
 import pytest
 from django.core.files import storage
+from django.conf import settings
 from rest_framework import test
 
 from schemacms.utils import test as utils_test
+
+
+@pytest.fixture(autouse=True, scope="session")
+def configure_test_settings():
+    if "silk.middleware.SilkyMiddleware" in settings.MIDDLEWARE:
+        settings.MIDDLEWARE.remove("silk.middleware.SilkyMiddleware")
 
 
 @pytest.fixture()

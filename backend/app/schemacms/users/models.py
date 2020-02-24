@@ -24,11 +24,11 @@ class User(AbstractUser):
     )
     external_id = models.CharField(max_length=64, blank=True)
     is_active = models.BooleanField(
-        _('active'),
+        _("active"),
         default=True,
         help_text=_(
-            'Designates whether this user should be treated as active. '
-            'Select an action from admin panel to change this instead of deleting accounts.'
+            "Designates whether this user should be treated as active. "
+            "Select an action from admin panel to change this instead of deleting accounts."
         ),
     )
 

@@ -15,13 +15,13 @@ from softdelete.models import SoftDeleteObject
 class SoftDeleteFormWithUniqueTogetherValidation(ModelForm):
     class Meta:
         model = SoftDeleteObject
-        exclude = ('deleted_at',)
+        exclude = ("deleted_at",)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        instance = kwargs.get('instance')
+        instance = kwargs.get("instance")
         if instance:
-            self.initial['deleted'] = instance.deleted
+            self.initial["deleted"] = instance.deleted
 
     def clean(self, *args, **kwargs):
         constraints = self.instance._meta.constraints
@@ -39,9 +39,9 @@ class SoftDeleteFormWithUniqueTogetherValidation(ModelForm):
 
         cleaned_data = super().clean(*args, **kwargs)
 
-        if 'undelete' in self.data:
+        if "undelete" in self.data:
             self.instance.deleted = False
-            cleaned_data['deleted'] = False
+            cleaned_data["deleted"] = False
         return cleaned_data
 
     def save(self, commit=True, *args, **kwargs):
@@ -62,12 +62,12 @@ class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
         # prevent hard delete on soft delete action
         return super().delete_queryset(request, queryset.exclude(self.deletion_q))
 
-    delete_selected.short_description = 'Soft delete selected objects'
+    delete_selected.short_description = "Soft delete selected objects"
 
     def soft_undelete(self, request, queryset):
         return super().soft_undelete(request, queryset.filter(self.deletion_q))
 
-    soft_undelete.short_description = 'Undelete selected objects'
+    soft_undelete.short_description = "Undelete selected objects"
 
     def handle_unique_conflicts_on_undelete(self, request, queryset, field, model_name, parent=None):
         if queryset.values(field).annotate(c=models.Count(field)).filter(c__gt=1).exists():
