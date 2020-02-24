@@ -29,7 +29,7 @@ class UserViewSet(
 
     def get_queryset(self):
         qs = super().get_queryset()
-        if self.action == 'list':
+        if self.action == "list":
             qs = qs.exclude(pk=self.request.user.pk).order_by("first_name", "last_name")
         return qs
 

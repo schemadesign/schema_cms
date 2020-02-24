@@ -124,9 +124,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
                 "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
             )
 
-    @decorators.action(
-        detail=True, url_path="folders", methods=["get", "post"],
-    )
+    @decorators.action(detail=True, url_path="folders", methods=["get", "post"])
     def folders(self, request, **kwargs):
         project = self.get_object()
 
@@ -145,9 +143,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
             return response.Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    @decorators.action(
-        detail=True, url_path="states", methods=["get", "post"],
-    )
+    @decorators.action(detail=True, url_path="states", methods=["get", "post"])
     def states(self, request, **kwargs):
         return self.generate_action_post_get_response(
             request, related_objects_name="states", parent_object_name="project"
@@ -198,7 +194,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
 
-        if not hasattr(data_source, 'meta_data'):
+        if not hasattr(data_source, "meta_data"):
             return response.Response({}, status=status.HTTP_200_OK)
 
         data = dict(
@@ -312,7 +308,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             request, related_objects_name="filters", parent_object_name="datasource"
         )
 
-    @decorators.action(detail=True, url_path='set-filters', methods=["post"])
+    @decorators.action(detail=True, url_path="set-filters", methods=["post"])
     def set_filters(self, request, pk=None, **kwargs):
         data_source = self.set_is_active_fields(request, related_objects_name="filters")
 
@@ -322,13 +318,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
-    @decorators.action(detail=True, url_path='tags-lists', methods=["get", "post"])
+    @decorators.action(detail=True, url_path="tags-lists", methods=["get", "post"])
     def tags_lists(self, request, pk=None, **kwargs):
         return self.generate_action_post_get_response(
             request, related_objects_name="list_of_tags", parent_object_name="datasource"
         )
 
-    @decorators.action(detail=True, url_path='set-tags-lists', methods=["post"])
+    @decorators.action(detail=True, url_path="set-tags-lists", methods=["post"])
     def set_tags_lists(self, request, pk=None, **kwargs):
         data_source = self.set_is_active_fields(request, related_objects_name="list_of_tags")
 
@@ -402,7 +398,7 @@ class DataSourceJobDetailViewSet(
 
         response_data = dict(project=obj.project_info)
         try:
-            if not hasattr(obj, 'meta_data') and obj.result:
+            if not hasattr(obj, "meta_data") and obj.result:
                 obj.update_meta()
             response_data["results"] = obj.meta_data.data
         except Exception as e:
@@ -475,7 +471,7 @@ class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mod
         "pages": serializers.PageSerializer,
     }
 
-    @decorators.action(detail=True, url_path='pages', methods=["GET", "POST"])
+    @decorators.action(detail=True, url_path="pages", methods=["GET", "POST"])
     def pages(self, request, pk=None, **kwargs):
         folder = self.get_object()
 
@@ -515,7 +511,7 @@ class PageViewSet(
 
     @decorators.action(
         detail=True,
-        url_path='blocks',
+        url_path="blocks",
         parser_classes=(parsers.FormParser, parsers.MultiPartParser),
         methods=["GET", "POST"],
     )
@@ -523,7 +519,7 @@ class PageViewSet(
         page = self.get_object()
 
         if request.method == "GET":
-            queryset = page.blocks.all().order_by('exec_order', 'created')
+            queryset = page.blocks.all().order_by("exec_order", "created")
             serializer = self.get_serializer(instance=queryset, many=True)
             data = {"project": page.project_info, "results": serializer.data}
             return response.Response(data, status=status.HTTP_200_OK)
@@ -539,7 +535,7 @@ class PageViewSet(
 
             return response.Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    @decorators.action(detail=True, url_path='set-blocks', methods=["post"])
+    @decorators.action(detail=True, url_path="set-blocks", methods=["post"])
     def set_blocks(self, request, pk=None, **kwargs):
         page = self.get_object()
         blocks_data = request.data
@@ -554,7 +550,7 @@ class PageViewSet(
         page = self.get_object()
         page.create_dynamo_item()
 
-        serializer = self.get_serializer(instance=page.blocks.order_by('exec_order'), many=True)
+        serializer = self.get_serializer(instance=page.blocks.order_by("exec_order"), many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -568,7 +564,7 @@ class BlockViewSet(
 ):
     queryset = (
         models.Block.objects.prefetch_related(
-            Prefetch('images', queryset=models.BlockImage.objects.order_by('exec_order'))
+            Prefetch("images", queryset=models.BlockImage.objects.order_by("exec_order"))
         )
         .select_related("page")
         .all()
@@ -584,11 +580,11 @@ class BlockViewSet(
 
 
 class TagsListDetailViewSet(
-    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     queryset = (
         models.TagsList.objects.all()
-        .prefetch_related(Prefetch('tags', queryset=models.Tag.objects.order_by('exec_order')))
+        .prefetch_related(Prefetch("tags", queryset=models.Tag.objects.order_by("exec_order")))
         .select_related("datasource")
     ).order_by("created")
     serializer_class = serializers.TagsListDetailSerializer
@@ -602,7 +598,7 @@ class TagsListDetailViewSet(
 
 
 class StateDetailViewSet(
-    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     queryset = (
         models.State.objects.all().select_related("datasource", "author", "project").order_by("created")

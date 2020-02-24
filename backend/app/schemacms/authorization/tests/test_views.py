@@ -66,7 +66,7 @@ class TestRetrieveAuthToken:
         response = api_client.post(url, {"uid": uid, "token": "1234"})
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert response.data == [{'code': 'invalidToken', 'message': 'Invalid input.'}]
+        assert response.data == [{"code": "invalidToken", "message": "Invalid input."}]
 
     def test_reuse_token(self, api_client, user):
         payload = {"uid": user.id, "token": pipeline.generate_signed_exchange_token(user)}
@@ -94,7 +94,7 @@ class TestLogout:
         response = api_client.get(url)
 
         assert response.status_code == status.HTTP_302_FOUND
-        assert response['Location'] == get_logout_url_mock.return_value
+        assert response["Location"] == get_logout_url_mock.return_value
 
     def test_url(self):
         assert "/api/v1/auth/logout" == urls.reverse("authorization:logout")

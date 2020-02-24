@@ -40,17 +40,17 @@ DATA_SOURCE_TYPE_CHOICES = (
 
 
 class ProcessingState:
-    PENDING = 'pending'
-    PROCESSING = 'processing'
-    FAILED = 'failed'
-    SUCCESS = 'success'
+    PENDING = "pending"
+    PROCESSING = "processing"
+    FAILED = "failed"
+    SUCCESS = "success"
 
 
 PROCESSING_STATE_CHOICES = (
-    (ProcessingState.PENDING, 'Pending'),
-    (ProcessingState.PROCESSING, 'Processing'),
-    (ProcessingState.FAILED, 'Failed'),
-    (ProcessingState.SUCCESS, 'Success'),
+    (ProcessingState.PENDING, "Pending"),
+    (ProcessingState.PROCESSING, "Processing"),
+    (ProcessingState.FAILED, "Failed"),
+    (ProcessingState.SUCCESS, "Success"),
 )
 
 
@@ -66,10 +66,7 @@ class FilterType(Enum):
         return [(key.value, key.name) for key in cls]
 
 
-STRING_FILTER_TYPES = [
-    FilterType.SELECT.value,
-    FilterType.CHECKBOX.value,
-]
+STRING_FILTER_TYPES = [FilterType.SELECT.value, FilterType.CHECKBOX.value]
 
 DATE_FILTER_TYPES = [FilterType.RANGE.value, FilterType.VALUE.value]
 
@@ -93,10 +90,10 @@ class FieldType:
 
 
 FIELD_TYPE_CHOICES = (
-    (FieldType.STRING, 'String'),
-    (FieldType.DATE, 'Date/Time'),
-    (FieldType.BOOLEAN, 'Boolean'),
-    (FieldType.NUMBER, 'Number'),
+    (FieldType.STRING, "String"),
+    (FieldType.DATE, "Date/Time"),
+    (FieldType.BOOLEAN, "Boolean"),
+    (FieldType.NUMBER, "Number"),
 )
 
 
@@ -109,9 +106,9 @@ class BlockTypes:
 
 
 BLOCK_TYPE_CHOICES = (
-    (BlockTypes.EMBED, 'Embed'),
-    (BlockTypes.CODE, 'Code'),
-    (BlockTypes.MARKDOWN, 'Markdown'),
-    (BlockTypes.TEXT, 'Text'),
-    (BlockTypes.IMAGE, 'Image Upload'),
+    (BlockTypes.EMBED, "Embed"),
+    (BlockTypes.CODE, "Code"),
+    (BlockTypes.MARKDOWN, "Markdown"),
+    (BlockTypes.TEXT, "Text"),
+    (BlockTypes.IMAGE, "Image Upload"),
 )

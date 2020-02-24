@@ -5,7 +5,7 @@ from . import signals
 
 
 class UsersConfig(AppConfig):
-    name = 'schemacms.users'
+    name = "schemacms.users"
 
     def ready(self):
         from . import receivers  # noqa

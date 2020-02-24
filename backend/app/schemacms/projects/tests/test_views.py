@@ -181,7 +181,7 @@ class TestRetrieveUpdateDeleteProjectView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
-            'title': [error.Error(message='This field must be unique.', code='projectTitleUnique').data]
+            "title": [error.Error(message="This field must be unique.", code="projectTitleUnique").data]
         }
 
     def test_update_project_by_not_projects_editor(self, api_client, user_factory, project):
@@ -439,7 +439,7 @@ class TestUpdateDataSourceView:
         payload = dict(
             name=faker.word(),
             type=projects_constants.DataSourceType.FILE,
-            file=faker.csv_upload_file(filename='filename.csv'),
+            file=faker.csv_upload_file(filename="filename.csv"),
         )
         api_client.force_authenticate(admin)
 
@@ -451,7 +451,7 @@ class TestUpdateDataSourceView:
     def test_update_without_file(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
-        payload = dict(name=faker.word(),)
+        payload = dict(name=faker.word())
         api_client.force_authenticate(admin)
 
         api_client.patch(url, payload, format="multipart")
@@ -465,7 +465,7 @@ class TestUpdateDataSourceView:
         payload = dict(
             name=faker.word(),
             type=projects_constants.DataSourceType.FILE,
-            file=faker.csv_upload_file(filename='filename.csv'),
+            file=faker.csv_upload_file(filename="filename.csv"),
         )
         api_client.force_authenticate(admin)
         schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSource.schedule_update_meta")
@@ -527,10 +527,10 @@ class TestUpdateDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
         assert response.data == {
-            'name': [
+            "name": [
                 error.Error(
-                    message='DataSource with this name already exist in project.',
-                    code='dataSourceProjectNameUnique',
+                    message="DataSource with this name already exist in project.",
+                    code="dataSourceProjectNameUnique",
                 ).data
             ]
         }
@@ -669,7 +669,7 @@ class TestDataSourcePreview:
 
 @pytest.mark.usefixtures("ds_source_file_latest_version_mock")
 class TestDataSourceJobCreate:
-    @pytest.mark.parametrize("description", ['', "test_desc"])
+    @pytest.mark.parametrize("description", ["", "test_desc"])
     def test_response(self, api_client, admin, data_source_factory, script_factory, description):
         data_source = data_source_factory(created_by=admin)
         script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
@@ -795,7 +795,7 @@ class TestDataSourceJobUpdateState:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
-            'job_state': [{'code': 'invalid_choice', 'message': '"pending" is not a valid choice.'}]
+            "job_state": [{"code": "invalid_choice", "message": '"pending" is not a valid choice.'}]
         }
 
     @pytest.mark.parametrize(
@@ -812,7 +812,7 @@ class TestDataSourceJobUpdateState:
     ):
         initial = dict(result="path/to/result.csv", error="Error")
         job = job_factory(job_state=initial_job_state, **initial)
-        payload = dict(job_state=new_job_state, result="path/to/other-result.csv", error='Other error')
+        payload = dict(job_state=new_job_state, result="path/to/other-result.csv", error="Other error")
 
         api_client.post(
             self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
@@ -1421,8 +1421,8 @@ class TestBlockListCreateView:
         block = page.blocks.get(pk=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert block.images.filter(image_name='image_0.png').exists()
-        assert block.images.get(image_name='image_1.png').exec_order == 2
+        assert block.images.filter(image_name="image_0.png").exists()
+        assert block.images.get(image_name="image_1.png").exec_order == 2
 
     def test_400_on_image_upload_with_wrong_type(self, api_client, admin, page, faker):
         payload = dict(
@@ -1509,8 +1509,8 @@ class TestBlockDetailView:
         block.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert block.images.filter(image_name='new_pic.png').exists()
-        assert block.images.get(image_name='new_pic.png').exec_order == 6
+        assert block.images.filter(image_name="new_pic.png").exists()
+        assert block.images.get(image_name="new_pic.png").exec_order == 6
 
     def test_delete_block(self, api_client, user, block):
         api_client.force_authenticate(user)
@@ -1609,10 +1609,10 @@ class TestTagsListsCreateView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
-            'name': [
+            "name": [
                 error.Error(
-                    message='TagsList with this name already exist in data source.',
-                    code='tagsListNameNotUnique',
+                    message="TagsList with this name already exist in data source.",
+                    code="tagsListNameNotUnique",
                 ).data
             ]
         }
@@ -1694,11 +1694,7 @@ class TestStateCreateListView:
         assert len(response.data["results"]) == 2
 
     def test_create(self, api_client, admin, project, data_source):
-        payload = {
-            "datasource": data_source.id,
-            "name": "testState",
-            "description": "test state description",
-        }
+        payload = {"datasource": data_source.id, "name": "testState", "description": "test state description"}
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(project.id), data=payload, format="json")

@@ -31,13 +31,13 @@ class TestDataSourceJobSerializer:
         job_steps = job_step_factory.create_batch(2, datasource_job=job)
         serializer = self.serializer_class(instance=job)
         assert serializer.data == {
-            'id': job.id,
-            'datasource': job.datasource_id,
-            'description': job.description,
-            'steps': serializers.StepSerializer(instance=job_steps, many=True).data,
-            'job_state': job.job_state,
-            'result': job.result,
-            'error': job.error,
-            'source_file_url': job.source_file_url,
-            'created': job.created.strftime(Common.REST_FRAMEWORK["DATETIME_FORMAT"]),
+            "id": job.id,
+            "datasource": job.datasource_id,
+            "description": job.description,
+            "steps": serializers.StepSerializer(instance=job_steps, many=True).data,
+            "job_state": job.job_state,
+            "result": job.result,
+            "error": job.error,
+            "source_file_url": job.source_file_url,
+            "created": job.created.strftime(Common.REST_FRAMEWORK["DATETIME_FORMAT"]),
         }

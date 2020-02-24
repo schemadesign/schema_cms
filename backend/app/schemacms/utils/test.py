@@ -6,7 +6,7 @@ import io
 from django.core.files import base
 
 
-def make_image(size=(100, 100), image_mode='RGB', image_format='PNG'):
+def make_image(size=(100, 100), image_mode="RGB", image_format="PNG"):
     data = io.BytesIO()
     Image.new(image_mode, size).save(data, image_format)
     data.seek(0)

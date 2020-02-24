@@ -44,7 +44,7 @@ class ActionSerializerViewSetMixin:
     def generate_action_post_get_response(self, request, related_objects_name, parent_object_name):
         instance = self.get_object()
 
-        if request.method == 'GET':
+        if request.method == "GET":
             if not getattr(instance, related_objects_name).exists():
                 return response.Response({"project": instance.project_info, "results": []})
 

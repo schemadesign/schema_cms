@@ -3,7 +3,7 @@ from rest_framework import routers
 
 from schemacms.projects import views
 
-app_name = 'projects'
+app_name = "projects"
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"blocks", views.BlockViewSet)

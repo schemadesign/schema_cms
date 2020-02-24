@@ -9,12 +9,12 @@ from schemacms.projects import constants
 
 
 def get_s3():
-    return boto3.client('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL)
+    return boto3.client("s3", endpoint_url=settings.AWS_S3_ENDPOINT_URL)
 
 
 def get_dynamodb_resource():
     return boto3.resource(
-        'dynamodb',
+        "dynamodb",
         endpoint_url=settings.DYNAMODB_ENDPOINT_URL,
         aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
         aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
@@ -23,7 +23,7 @@ def get_dynamodb_resource():
 
 def get_dynamodb_client():
     return boto3.client(
-        'dynamodb',
+        "dynamodb",
         endpoint_url=settings.DYNAMODB_ENDPOINT_URL,
         aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
         aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
@@ -32,7 +32,7 @@ def get_dynamodb_client():
 
 def get_sqs():
     return boto3.client(
-        'sqs',
+        "sqs",
         endpoint_url=settings.AWS_SQS_ENDPOINT_URL,
         aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
         aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
@@ -57,7 +57,7 @@ def get_sqs_queue_url(file_size: int) -> str:
 def schedule_worker_with(data: dict, source_file_size: int):
     queue_url = get_sqs_queue_url(file_size=source_file_size)
     sqs_response = sqs.send_message(QueueUrl=queue_url, MessageBody=json.dumps(data))
-    return sqs_response['MessageId']
+    return sqs_response["MessageId"]
 
 
 def schedule_object_meta_processing(obj, source_file_size, copy_steps):

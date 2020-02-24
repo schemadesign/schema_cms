@@ -12,7 +12,7 @@ from schemacms.utils import json as json_
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-db_connection = os.environ.get('DB_CONNECTION', '{}')
+db_connection = os.environ.get("DB_CONNECTION", "{}")
 # contains host, username, password and port
 db_connection_config = json.loads(db_connection)
 
@@ -288,14 +288,14 @@ class Common(Configuration):
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
     AWS_DEFAULT_ACL = None
 
-    AWS_SQS_ENDPOINT_URL = os.getenv('SQS_ENDPOINT_URL')
+    AWS_SQS_ENDPOINT_URL = os.getenv("SQS_ENDPOINT_URL")
     BASE_QUEUE_LIMIT = 52428800  # bytes, 50MB
     EXT_QUEUE_LIMIT = 241172480  # bytes, 230MB
-    SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')
-    SQS_WORKER_EXT_QUEUE_URL = os.getenv('SQS_WORKER_EXT_QUEUE_URL')
-    SQS_WORKER_MAX_QUEUE_URL = os.getenv('SQS_WORKER_MAX_QUEUE_URL')
-    DYNAMODB_ENDPOINT_URL = os.getenv('DYNAMODB_ENDPOINT_URL')
+    SQS_WORKER_QUEUE_URL = os.getenv("SQS_WORKER_QUEUE_URL")
+    SQS_WORKER_EXT_QUEUE_URL = os.getenv("SQS_WORKER_EXT_QUEUE_URL")
+    SQS_WORKER_MAX_QUEUE_URL = os.getenv("SQS_WORKER_MAX_QUEUE_URL")
+    DYNAMODB_ENDPOINT_URL = os.getenv("DYNAMODB_ENDPOINT_URL")
 
     # Allow lambda function to call API endpoint
-    LAMBDA_AUTH_TOKEN = os.getenv('LAMBDA_AUTH_TOKEN')
+    LAMBDA_AUTH_TOKEN = os.getenv("LAMBDA_AUTH_TOKEN")
     PUBLIC_API_LAMBDA_URL = os.getenv("PUBLIC_API_LAMBDA_URL", "http://schmema-public-api")

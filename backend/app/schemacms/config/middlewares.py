@@ -15,10 +15,10 @@ class SocialAuthExceptionMiddleware:
 
     def process_exception(self, request, exception):
         if isinstance(exception, social_exceptions.AuthException):
-            strategy = getattr(request, 'social_strategy', None)
+            strategy = getattr(request, "social_strategy", None)
             if strategy:
-                url = strategy.session_get('next', settings.DEFAULT_WEBAPP_HOST)
+                url = strategy.session_get("next", settings.DEFAULT_WEBAPP_HOST)
                 query_params = urllib.parse.urlencode(
-                    {'error': exception.__class__.__name__.lower(), 'msg': str(exception)}
+                    {"error": exception.__class__.__name__.lower(), "msg": str(exception)}
                 )
-                return shortcuts.redirect(f'{url}?{query_params}')
+                return shortcuts.redirect(f"{url}?{query_params}")
