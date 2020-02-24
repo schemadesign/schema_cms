@@ -31,7 +31,6 @@ class Project(LoaderMixin, FetchMetaFileMixin):
     id: int
     meta: dict = dataclasses.field(default_factory=dict)
     data_sources: list = dataclasses.field(default_factory=list)
-    charts: list = dataclasses.field(default_factory=list)
     pages: list = dataclasses.field(default_factory=list)
 
 

@@ -17,8 +17,6 @@ custom:
     app: handler.app
   pythonRequirements:
     dockerizePip: false
-    zip: true
-    slim: true
   localstack:
     stages:
       # list of stages for which the plugin should be enabled

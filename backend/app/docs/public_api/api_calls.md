@@ -1,6 +1,6 @@
 # Public API
 
-## Get project
+## Get Project
 **Request**:
 
 `GET` `/api/v1/projects/<id>`
@@ -24,7 +24,6 @@ Content-Type: application/json
      {"name": "TestDS2", "type": "file", "id": 2},
      {"name": "TestDS1", "type": "file", "id": 1}
   ], 
-  "charts": [],
   "pages": [
       {"description": "html format page example", "id": 1, "folder": "TestFolder", "title": "ExamplePage"}
   ]
@@ -143,8 +142,7 @@ Content-Type: application/json
 </html>
 ```
 
-## Data Source
-### Get Data Source preview
+## Get Data Source preview
 **Request**:
 
 `GET` `/api/v1/datasources/<id>`
@@ -285,7 +283,7 @@ Content-Type: application/json
 }
 ```
 
-### Get Data Source meta
+## Get Data Source meta
 **Request**:
 
 `GET` `/api/v1/datasources/<id>/meta`
@@ -306,7 +304,7 @@ Content-Type: application/json
 }
 ```
 
-### Get Data Source fields
+## Get Data Source fields
 **Request**:
 
 `GET` `/api/v1/datasources/<id>/fields`
@@ -332,7 +330,7 @@ Content-Type: application/json
 }
 ```
 
-### Get Data Source filters
+## Get Data Source filters
 **Request**:
 
 `GET` `/api/v1/datasources/<id>/filters`
@@ -358,19 +356,24 @@ Content-Type: application/json
 ]
 ```
 
-### Get Data Source records
+## Get Data Source records
 **Request**:
 
 `GET` `/api/v1/datasources/<id>/records`
 
 **Note**:
 
-**Extra paramters:**
+**Extra parameters:**
 
 `page_size` - number of rows on page to fetch - default `5000`
+
 `page` - number of page to fetch - default `5000`
-`orient ` - records output format (check orients in https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) - default `index`
-`columns` - list of columns you want to fetch, example `/api/v1/datasources/<id>/records?columns=Total Revenue,Total Cost`
+
+`orient ` - records output format (check orients [here](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) - default `index`
+
+`columns` - list of columns you want to fetch, example:
+
+* `/api/v1/datasources/<id>/records?columns=Total Revenue,Total Cost`
 
 **Response**:
 
