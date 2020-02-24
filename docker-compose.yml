@@ -50,6 +50,22 @@ services:
     stdin_open: true
     tty: true
 
+  publicapi:
+    image: schema_cms_publicapi
+    build:
+      context: backend/functions/public_api
+    volumes:
+      - ./backend/functions:/functions
+    ports:
+      - "8002:8002"
+    depends_on:
+      - backend
+      - db
+      - localstack
+    restart: always
+    stdin_open: true
+    tty: true
+
   mailcatcher:
     image: schickling/mailcatcher
     ports:

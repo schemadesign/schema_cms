@@ -2,6 +2,7 @@ import os
 import socket
 from .common import Common
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -21,10 +22,10 @@ class Local(Common):
     INSTALLED_APPS += ["debug_toolbar", "silk"]
 
     MIDDLEWARE = Common.MIDDLEWARE
-    MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware", "silk.middleware.SilkyMiddleware"]
+    MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 
-    SILKY_MAX_REQUEST_BODY_SIZE = -1
-    SILKY_MAX_RESPONSE_BODY_SIZE = 1024
+    if os.getenv("USE_SILK", False):
+        MIDDLEWARE += ["silk.middleware.SilkyMiddleware"]
 
     # django-debug-toolbar
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())

@@ -25,3 +25,4 @@ var/
 
 # Shared packages injected by serverless-package-external plugin
 common/*
+common
