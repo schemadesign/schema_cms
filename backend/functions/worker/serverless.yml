@@ -13,6 +13,9 @@ plugins:
 custom:
   pythonRequirements:
     dockerizePip: false
+    zip: true
+    slim: true
+
   localstack:
     stages:
       - local

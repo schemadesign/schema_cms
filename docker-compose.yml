@@ -56,7 +56,8 @@ services:
       context: backend/functions/public_api
     env_file: local.env
     volumes:
-      - ./backend/functions:/functions
+      - ./backend/functions/public_api:/functions/public_api
+      - ./backend/functions/common:/functions/public_api/common
     ports:
       - "8002:8002"
     depends_on:
