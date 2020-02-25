@@ -1,5 +1,38 @@
 # Public API
 
+## Get All Project
+**Request**:
+
+`GET` `/api/v1/projects`
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+[
+    {
+      "id": 1,
+      "meta": {
+         "owner": "Jan Kowalsky",
+         "description": "Test Project",
+         "title": "PagesExampleProject",
+         "updated": "2020-01-28T13:53:02.848621+00:00",
+         "created": "2020-01-28T13:53:02.848594+00:00"
+      },
+      "data_sources": [
+         {"name": "TestDS2", "type": "file", "id": 2},
+         {"name": "TestDS1", "type": "file", "id": 1}
+      ], 
+      "pages": [
+          {"description": "html format page example", "id": 1, "folder": "TestFolder", "title": "ExamplePage"}
+      ]
+    },
+    ...
+]
+```
+
 ## Get Project
 **Request**:
 
