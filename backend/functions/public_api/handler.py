@@ -8,7 +8,6 @@ import markdown2
 from flask import Flask, request, Response, render_template
 from flask_cors import CORS
 
-import pandas as pd
 from pyarrow import BufferReader
 import pyarrow.parquet as pq
 
@@ -19,18 +18,23 @@ logger.setLevel(logging.INFO)
 
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
 
 def create_response(data):
-    return Response(json.dumps(data, ensure_ascii=True), content_type="application/json; charset=utf-8",)
+    return Response(
+        json.dumps(data, ensure_ascii=True),
+        content_type="application/json; charset=utf-8",
+    )
 
 
 def read_parquet_from_s3(data_source, columns=None, orient="index", slice_=True):
     result_file = services.get_s3_object(data_source.result_parquet)
     file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
     if slice_:
-        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso"))
+        return json.loads(
+            file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso")
+        )
     else:
         return json.loads(file.to_pandas().to_json(orient=orient, date_format="iso"))
 
@@ -45,12 +49,23 @@ def split_string_to_list(column_names_string):
 # Projects endpoints
 
 
+@app.route("/projects", methods=["GET"])
+def get_projects():
+    try:
+        projects = types.Project.get_all_items()
+    except Exception as e:
+        logging.info(f"Unable to get projects - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(projects), 200
+
+
 @app.route("/projects/<int:project_id>", methods=["GET"])
 def get_project(project_id):
     try:
         project = types.Project.get_by_id(id=project_id)
     except Exception as e:
-        logging.info(f"Unable to get data source - {e}")
+        logging.info(f"Unable to get project - {e}")
         return create_response({"error": f"{e}"}), 404
 
     return create_response(asdict(project)), 200
@@ -133,18 +148,29 @@ def get_data_source_fields(data_source_id):
     return create_response(fields), 200
 
 
-@app.route("/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"])
+@app.route(
+    "/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"]
+)
 def get_data_source_selected_field(data_source_id, field_id):
     try:
         data_source = types.DataSource.get_by_id(id=data_source_id)
         field = data_source.fields[field_id]
-        records = read_parquet_from_s3(data_source, columns=[field["name"]], slice_=False)
+        records = read_parquet_from_s3(
+            data_source, columns=[field["name"]], slice_=False
+        )
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
         return create_response({"error": f"{e}"}), 404
 
     return (
-        create_response({"id": field_id, "name": field["name"], "type": field['type'], "records": records}),
+        create_response(
+            {
+                "id": field_id,
+                "name": field["name"],
+                "type": field["type"],
+                "records": records,
+            }
+        ),
         200,
     )
 
@@ -210,7 +236,9 @@ def get_paginated_list(file, items, page, page_size, orient):
         obj["records"] = []
     else:
         obj["records"] = json.loads(
-            file.slice(rows_to_skip, page_size).to_pandas(strings_to_categorical=True).to_json(orient=orient, date_format="iso")
+            file.slice(rows_to_skip, page_size)
+            .to_pandas(strings_to_categorical=True)
+            .to_json(orient=orient, date_format="iso")
         )
 
     return obj

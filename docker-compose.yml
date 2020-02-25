@@ -54,6 +54,7 @@ services:
     image: schema_cms_publicapi
     build:
       context: backend/functions/public_api
+    env_file: local.env
     volumes:
       - ./backend/functions:/functions
     ports:
