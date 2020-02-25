@@ -19,6 +19,11 @@ class FetchMetaFileMixin:
         data = services.get_dynamo_item(cls.table_name, id)
         return cls.from_json(json.loads(data))
 
+    @classmethod
+    def get_all_items(cls):
+        data = services.get_all_dynamo_table_items(cls.table_name)
+        return json.loads(data)
+
 
 @dataclasses.dataclass()
 class Project(LoaderMixin, FetchMetaFileMixin):
@@ -97,7 +102,8 @@ class Job(LoaderMixin):
         data = data.copy()
         data["datasource"] = DataSource.from_json(data["datasource"])
         data["steps"] = sorted(
-            map(Step.from_json, data.get("steps", [])), key=operator.attrgetter("exec_order")
+            map(Step.from_json, data.get("steps", [])),
+            key=operator.attrgetter("exec_order"),
         )
         job = super().from_json(data)
         for step in job.steps:
@@ -106,4 +112,6 @@ class Job(LoaderMixin):
 
     @property
     def source_file(self):
-        return services.get_s3_object(self.source_file_path, version=self.source_file_version)
+        return services.get_s3_object(
+            self.source_file_path, version=self.source_file_version
+        )

@@ -5,11 +5,13 @@ import boto3
 from . import settings, utils
 
 
-s3 = boto3.client('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL,)
+s3 = boto3.client("s3", endpoint_url=settings.AWS_S3_ENDPOINT_URL,)
 
 s3_resource = boto3.resource("s3", endpoint_url=settings.AWS_S3_ENDPOINT_URL,)
 
-secret_manager = boto3.client("secretsmanager", endpoint_url=settings.SECRET_MANAGER_ENDPOINT_URL)
+secret_manager = boto3.client(
+    "secretsmanager", endpoint_url=settings.SECRET_MANAGER_ENDPOINT_URL
+)
 
 dynamodb = boto3.resource("dynamodb", endpoint_url=settings.DYNAMODB_ENDPOINT_URL)
 
@@ -31,3 +33,15 @@ def get_dynamo_item(table, item_id):
         raise Exception(f"Item with ID {item_id} does not exist")
 
     return item
+
+
+def get_all_dynamo_table_items(table):
+    table = dynamodb.Table(table)
+    response = table.scan()
+
+    try:
+        items = json.dumps(response["Items"], cls=utils.DecimalEncoder)
+    except KeyError:
+        raise Exception(f"There is no projects to display")
+
+    return items
