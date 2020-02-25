@@ -21,10 +21,10 @@ class Project(
     ext_models.TimeStampedModel,
 ):
     status = django_fsm.FSMField(
-        choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS,
+        choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
     )
     owner = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="projects", null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="projects", null=True
     )
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects", blank=True)
 
@@ -113,7 +113,7 @@ class Folder(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.
     project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="folders")
     name = models.CharField(max_length=constants.DIRECTORY_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="folders", null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="folders", null=True
     )
 
     def __str__(self):
@@ -124,7 +124,7 @@ class Folder(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.
         verbose_name_plural = _("Folders")
         constraints = [
             models.UniqueConstraint(
-                fields=["project", "name"], name="unique_project_folder", condition=models.Q(deleted_at=None),
+                fields=["project", "name"], name="unique_project_folder", condition=models.Q(deleted_at=None)
             )
         ]
         ordering = ("name",)
@@ -160,7 +160,7 @@ class Page(
     folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name="pages")
     keywords = models.TextField(blank=True, default="")
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="pages", null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="pages", null=True
     )
 
     objects = managers.PageManager()
@@ -171,7 +171,7 @@ class Page(
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["folder", "title"], name="unique_folder_page", condition=models.Q(deleted_at=None),
+                fields=["folder", "title"], name="unique_folder_page", condition=models.Q(deleted_at=None)
             )
         ]
         ordering = ("created",)
@@ -179,7 +179,7 @@ class Page(
     @property
     def page_url(self):
         return os.path.join(
-            settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.folder.project_id), "pages", str(self.pk),
+            settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.folder.project_id), "pages", str(self.pk)
         )
 
     @property
@@ -243,7 +243,7 @@ class Block(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.T
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["page", "name"], name="unique_page_block", condition=models.Q(deleted_at=None),
+                fields=["page", "name"], name="unique_page_block", condition=models.Q(deleted_at=None)
             )
         ]
         ordering = ("created",)

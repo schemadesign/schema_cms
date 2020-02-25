@@ -42,12 +42,10 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="data_sources")
     file = models.FileField(
-        null=True,
-        upload_to=file_upload_path,
-        validators=[FileExtensionValidator(allowed_extensions=["csv"])],
+        null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
     active_job = models.ForeignKey(
         "datasources.DataSourceJob",
@@ -188,12 +186,7 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
         try:
             preview = self.current_job.meta_data.preview
             fields = json.loads(preview.read())["fields"]
-        except (
-            DataSourceJobMetaData.DoesNotExist,
-            json.JSONDecodeError,
-            KeyError,
-            OSError,
-        ):
+        except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError, OSError):
             return []
 
         data = {
@@ -248,7 +241,7 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
 class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
     status = models.CharField(
-        max_length=25, choices=constants.PROCESSING_STATE_CHOICES, default=constants.ProcessingState.PENDING,
+        max_length=25, choices=constants.PROCESSING_STATE_CHOICES, default=constants.ProcessingState.PENDING
     )
     error = models.TextField(blank=True, default="")
 
@@ -263,15 +256,15 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     datasource = models.ForeignKey(
-        DataSource, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True,
+        DataSource, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="scripts2", blank=True, null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="scripts2", blank=True, null=True
     )
     name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
     is_predefined = models.BooleanField(default=True)
     file = models.FileField(
-        upload_to=file_upload_path, null=True, validators=[FileExtensionValidator(allowed_extensions=["py"])],
+        upload_to=file_upload_path, null=True, validators=[FileExtensionValidator(allowed_extensions=["py"])]
     )
     body = models.TextField(blank=True)
     last_file_modification = models.DateTimeField(null=True)
@@ -299,7 +292,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
 
 
 class DataSourceJob(
-    MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM,
+    MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM
 ):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="jobs")
     description = models.TextField(blank=True)
@@ -315,10 +308,7 @@ class DataSourceJob(
     def get_source_file(self):
         if not self.source_file_path:
             return
-        params = {
-            "Bucket": settings.AWS_STORAGE_BUCKET_NAME,
-            "Key": self.source_file_path,
-        }
+        params = {"Bucket": settings.AWS_STORAGE_BUCKET_NAME, "Key": self.source_file_path}
         if self.source_file_version:
             params["VersionId"] = self.source_file_version
         return django.core.files.base.File(services.s3.get_object(**params)["Body"])
@@ -348,9 +338,7 @@ class DataSourceJob(
             raise ValueError("Job or DataSource ID is not set")
         return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
-    def update_meta(
-        self, preview: dict, items: int, fields: int, fields_names: list, fields_with_urls: list,
-    ):
+    def update_meta(self, preview: dict, items: int, fields: int, fields_names: list, fields_with_urls: list):
         with transaction.atomic():
             meta, _ = DataSourceJobMetaData.objects.update_or_create(
                 job=self,

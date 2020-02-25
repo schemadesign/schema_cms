@@ -34,7 +34,7 @@ social-auth-app-django = "~=3.1"
 
 [dev-packages]
 coverage = "==5.0.3"
-black = "==19.3b0"
+black = "==19.10b0"
 django-debug-toolbar = "==2.2"
 django-silk = "*"
 factory-boy = "==2.12.0"

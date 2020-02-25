@@ -29,7 +29,7 @@ class TagsList(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_model
 
     def meta_file_serialization(self):
         data = dict(
-            id=self.id, name=self.name, tags=[tag.meta_file_serialization() for tag in self.tags.all()],
+            id=self.id, name=self.name, tags=[tag.meta_file_serialization() for tag in self.tags.all()]
         )
         return data
 
@@ -55,12 +55,12 @@ class State(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.T
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="states")
     name = models.CharField(max_length=50)
     datasource = models.ForeignKey(
-        "datasources.DataSource", on_delete=models.SET_NULL, related_name="states", null=True,
+        "datasources.DataSource", on_delete=models.SET_NULL, related_name="states", null=True
     )
     description = models.TextField(blank=True, default="")
     source_url = models.TextField(blank=True, default="")
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True
     )
     is_public = models.BooleanField(default=True)
     active_tags = pg_fields.ArrayField(models.IntegerField(), null=True, default=list)
@@ -72,7 +72,7 @@ class State(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.T
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["project", "name"], name="unique_state_name", condition=models.Q(deleted_at=None),
+                fields=["project", "name"], name="unique_state_name", condition=models.Q(deleted_at=None)
             )
         ]
         ordering = ("created",)

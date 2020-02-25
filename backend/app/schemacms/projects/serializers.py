@@ -11,7 +11,7 @@ from ..utils.validators import CustomUniqueValidator, CustomUniqueTogetherValida
 
 class ProjectSerializer(serializers.ModelSerializer):
     owner = NestedRelatedModelSerializer(
-        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose"),
+        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose")
     )
     editors = NestedRelatedModelSerializer(
         read_only=True,
@@ -62,7 +62,7 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 class FolderSerializer(serializers.ModelSerializer):
     created_by = NestedRelatedModelSerializer(
-        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose"),
+        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose")
     )
 
     class Meta:
@@ -94,7 +94,7 @@ class FolderDetailSerializer(FolderSerializer):
 
 class PageSerializer(serializers.ModelSerializer):
     created_by = NestedRelatedModelSerializer(
-        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose"),
+        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose")
     )
     page_url = serializers.SerializerMethodField(read_only=True)
     meta = serializers.SerializerMethodField()

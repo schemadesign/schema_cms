@@ -5,16 +5,11 @@ from . import models, serializers
 
 
 class TagsListDetailViewSet(
-    mixins.DestroyModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet,
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     queryset = (
         models.TagsList.objects.all()
-        .prefetch_related(
-            Prefetch("tags", queryset=models.Tag.objects.order_by("exec_order"))
-        )
+        .prefetch_related(Prefetch("tags", queryset=models.Tag.objects.order_by("exec_order")))
         .select_related("datasource")
     ).order_by("created")
     serializer_class = serializers.TagsListDetailSerializer
@@ -28,15 +23,10 @@ class TagsListDetailViewSet(
 
 
 class StateDetailViewSet(
-    mixins.DestroyModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet,
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     queryset = (
-        models.State.objects.all()
-        .select_related("datasource", "author", "project")
-        .order_by("created")
+        models.State.objects.all().select_related("datasource", "author", "project").order_by("created")
     )
     serializer_class = serializers.StateSerializer
     permission_classes = (permissions.IsAuthenticated,)

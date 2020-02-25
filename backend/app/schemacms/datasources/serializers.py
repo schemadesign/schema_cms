@@ -168,23 +168,14 @@ class DataSourceDetailSerializer(DataSourceSerializer):
 class WranglingScriptSerializer(serializers.ModelSerializer):
     body = serializers.CharField(read_only=True)
     created_by = NestedRelatedModelSerializer(
-        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose"),
+        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose")
     )
     is_predefined = serializers.BooleanField(read_only=True)
     datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = ds_models.WranglingScript
-        fields = (
-            "id",
-            "datasource",
-            "name",
-            "is_predefined",
-            "created_by",
-            "file",
-            "body",
-            "specs",
-        )
+        fields = ("id", "datasource", "name", "is_predefined", "created_by", "file", "body", "specs")
         extra_kwargs = {"name": {"required": False, "allow_null": True}}
 
     def create(self, validated_data):
@@ -279,15 +270,7 @@ class PublicApiUpdateMetaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ds_models.DataSourceMeta
-        fields = (
-            "items",
-            "fields",
-            "fields_names",
-            "fields_with_urls",
-            "preview",
-            "status",
-            "error",
-        )
+        fields = ("items", "fields", "fields_names", "fields_with_urls", "preview", "status", "error")
 
 
 class PublicApiUpdateJobMetaSerializer(serializers.ModelSerializer):
@@ -353,7 +336,7 @@ class DataSourceNestedFieldSerializer(serializers.ModelSerializer):
 
 class FilterSerializer(serializers.ModelSerializer):
     datasource = NestedRelatedModelSerializer(
-        serializer=DataSourceNestedFieldSerializer(), queryset=ds_models.DataSource.objects.all(),
+        serializer=DataSourceNestedFieldSerializer(), queryset=ds_models.DataSource.objects.all()
     )
 
     class Meta:

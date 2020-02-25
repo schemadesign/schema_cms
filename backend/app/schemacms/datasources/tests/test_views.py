@@ -101,9 +101,7 @@ class TestUpdateDataSourceView:
     def test_response(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
-        payload = dict(
-            name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file(),
-        )
+        payload = dict(name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
         api_client.force_authenticate(admin)
         response = api_client.patch(url, payload, format="multipart")
@@ -159,9 +157,7 @@ class TestUpdateDataSourceView:
         project.editors.add(editor)
         data_source = data_source_factory(project=project)
         url = self.get_url(pk=data_source.pk)
-        payload = dict(
-            name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file(),
-        )
+        payload = dict(name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
         api_client.force_authenticate(editor)
         response = api_client.patch(url, payload, format="multipart")
@@ -171,9 +167,7 @@ class TestUpdateDataSourceView:
     def test_update_by_editor_not_assigned_to_project(self, api_client, faker, editor, data_source_factory):
         data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
-        payload = dict(
-            name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file(),
-        )
+        payload = dict(name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
         api_client.force_authenticate(editor)
         response = api_client.put(url, payload, format="multipart")
@@ -196,7 +190,7 @@ class TestUpdateDataSourceView:
         data_source = data_source_factory(project=other_datasource.project)
         url = self.get_url(pk=data_source.pk)
         payload = dict(
-            name=other_datasource.name, type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file(),
+            name=other_datasource.name, type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file()
         )
         api_client.force_authenticate(admin)
 
@@ -213,16 +207,14 @@ class TestUpdateDataSourceView:
         }
 
     @pytest.mark.parametrize(
-        "job_status", [ds_constants.ProcessingState.PENDING, ds_constants.ProcessingState.PROCESSING],
+        "job_status", [ds_constants.ProcessingState.PENDING, ds_constants.ProcessingState.PROCESSING]
     )
     def test_error_file_reupload_when_job_is_processing(
         self, api_client, faker, admin, data_source_factory, job_factory, job_status
     ):
         data_source = data_source_factory()
         job_factory(datasource=data_source, job_state=job_status)
-        payload = dict(
-            name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file(),
-        )
+        payload = dict(name=faker.word(), type=ds_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
         api_client.force_authenticate(admin)
         response = api_client.put(self.get_url(pk=data_source.pk), payload, format="multipart")
@@ -257,7 +249,7 @@ class TestDataSourceUpdateMeta:
     @staticmethod
     def generate_update_meta_payload(datasource_pk, is_status_update=False):
         if is_status_update:
-            payload = dict(datasource_pk=datasource_pk, status=ds_constants.ProcessingState.PROCESSING,)
+            payload = dict(datasource_pk=datasource_pk, status=ds_constants.ProcessingState.PROCESSING)
         else:
             payload = dict(
                 items=2,
@@ -279,7 +271,7 @@ class TestDataSourceUpdateMeta:
     )
     def test_authentication_on_update_meta(self, api_client, data_source, token, response_status):
         response = api_client.post(
-            self.get_url(data_source.pk), {}, HTTP_AUTHORIZATION=f"Token {token}", format="json",
+            self.get_url(data_source.pk), {}, HTTP_AUTHORIZATION=f"Token {token}", format="json"
         )
 
         assert response.status_code == response_status
@@ -403,11 +395,11 @@ class TestDataSourceJobUpdateState:
     def test_job_state_from_pending_to_processing(self, api_client, job_factory, lambda_auth_token):
         job = job_factory(job_state=ds_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=ds_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test",
+            job_state=ds_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(
-            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token),
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
         )
         job.refresh_from_db()
 
@@ -419,10 +411,10 @@ class TestDataSourceJobUpdateState:
     def test_job_state_from_processing_to_success(
         self, api_client, job_factory, mocker, lambda_auth_token, default_storage
     ):
-        job = job_factory(job_state=ds_constants.ProcessingState.PROCESSING, result=None, error="",)
+        job = job_factory(job_state=ds_constants.ProcessingState.PROCESSING, result=None, error="")
         default_storage.save(name="path/to/result.csv", content=base.ContentFile("test,1,2".encode()))
         payload = dict(
-            job_state=projects_constants.ProcessingState.SUCCESS, result="path/to/result.csv", error="test",
+            job_state=projects_constants.ProcessingState.SUCCESS, result="path/to/result.csv", error="test"
         )
         set_active_job_mock = mocker.patch("schemacms.datasources.models.DataSource.set_active_job")
 
@@ -449,7 +441,7 @@ class TestDataSourceJobUpdateState:
         )
 
         response = api_client.post(
-            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token),
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
         )
         job.refresh_from_db()
 
@@ -459,14 +451,14 @@ class TestDataSourceJobUpdateState:
         assert not job.result
 
     @pytest.mark.parametrize(
-        "job_state", [ds_constants.ProcessingState.SUCCESS, ds_constants.ProcessingState.FAILED],
+        "job_state", [ds_constants.ProcessingState.SUCCESS, ds_constants.ProcessingState.FAILED]
     )
     def test_job_state_to_pending(self, api_client, job_factory, job_state, lambda_auth_token):
         job = job_factory(job_state=job_state)
         payload = dict(job_state=ds_constants.ProcessingState.PENDING)
 
         response = api_client.post(
-            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token),
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
         )
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -477,21 +469,21 @@ class TestDataSourceJobUpdateState:
     @pytest.mark.parametrize(
         "initial_job_state, new_job_state",
         [
-            (ds_constants.ProcessingState.SUCCESS, ds_constants.ProcessingState.SUCCESS,),
-            (ds_constants.ProcessingState.FAILED, ds_constants.ProcessingState.FAILED,),
-            (ds_constants.ProcessingState.SUCCESS, ds_constants.ProcessingState.FAILED,),
-            (ds_constants.ProcessingState.FAILED, ds_constants.ProcessingState.SUCCESS,),
+            (ds_constants.ProcessingState.SUCCESS, ds_constants.ProcessingState.SUCCESS),
+            (ds_constants.ProcessingState.FAILED, ds_constants.ProcessingState.FAILED),
+            (ds_constants.ProcessingState.SUCCESS, ds_constants.ProcessingState.FAILED),
+            (ds_constants.ProcessingState.FAILED, ds_constants.ProcessingState.SUCCESS),
         ],
     )
     def test_changing_data_with_same_job_state(
-        self, api_client, job_factory, initial_job_state, new_job_state, lambda_auth_token,
+        self, api_client, job_factory, initial_job_state, new_job_state, lambda_auth_token
     ):
         initial = dict(result="path/to/result.csv", error="Error")
         job = job_factory(job_state=initial_job_state, **initial)
-        payload = dict(job_state=new_job_state, result="path/to/other-result.csv", error="Other error",)
+        payload = dict(job_state=new_job_state, result="path/to/other-result.csv", error="Other error")
 
         api_client.post(
-            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token),
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
         )
         job.refresh_from_db()
 
@@ -502,9 +494,7 @@ class TestDataSourceJobUpdateState:
     def test_job_state_not_authenticated(self, api_client, job_factory):
         job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.ProcessingState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(self.get_url(job.pk), payload)
@@ -515,13 +505,11 @@ class TestDataSourceJobUpdateState:
     def test_job_state_not_authenticated_by_jwt_token(self, api_client, job_factory, admin):
         job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.ProcessingState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(
-            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="JWT {}".format(admin.get_jwt_token()),
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="JWT {}".format(admin.get_jwt_token())
         )
         job.refresh_from_db()
 
@@ -535,7 +523,7 @@ class TestDataSourceJobUpdateState:
 class TestJobUpdateMeta:
     @staticmethod
     def generate_job_and_meta_payload(job_factory):
-        job = job_factory(job_state=ds_constants.ProcessingState.PROCESSING, result=None, error="",)
+        job = job_factory(job_state=ds_constants.ProcessingState.PROCESSING, result=None, error="")
 
         payload = dict(
             items=2,
@@ -556,7 +544,7 @@ class TestJobUpdateMeta:
     def test_authentication_on_update_meta(self, api_client, job_factory, token, response_status):
         payload, job = self.generate_job_and_meta_payload(job_factory)
         response = api_client.post(
-            self.get_url(job.pk), payload, HTTP_AUTHORIZATION=f"Token {token}", format="json",
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION=f"Token {token}", format="json"
         )
 
         assert response.status_code == response_status
@@ -707,7 +695,7 @@ class TestJobResultPreviewView:
         job.result = faker.csv_upload_file(filename="test_result.csv")
         job.save()
         job.update_meta(
-            preview={"test": "test"}, items=3, fields=2, fields_names=["col1", "col2"], fields_with_urls=[],
+            preview={"test": "test"}, items=3, fields=2, fields_names=["col1", "col2"], fields_with_urls=[]
         )
 
         api_client.force_authenticate(admin)
@@ -733,10 +721,7 @@ class TestFilterListView:
         assert (
             response.data["results"] == ds_serializers.FilterSerializer(data_source.filters, many=True).data
         )
-        assert response.data["project"] == {
-            "id": data_source.project.id,
-            "title": data_source.project.title,
-        }
+        assert response.data["project"] == {"id": data_source.project.id, "title": data_source.project.title}
 
     @staticmethod
     def get_url(pk):
@@ -827,7 +812,7 @@ class TestFilterDetailView:
 class TestRevertJobView:
     def test_response(self, api_client, data_source, admin, job_factory, mocker):
         jobs = job_factory.create_batch(
-            3, datasource=data_source, job_state=ds_constants.ProcessingState.SUCCESS,
+            3, datasource=data_source, job_state=ds_constants.ProcessingState.SUCCESS
         )
         payload = dict(id=jobs[1].id)
         old_active_job = data_source.active_job

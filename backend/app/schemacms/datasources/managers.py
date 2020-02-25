@@ -35,7 +35,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         return self.annotate(
             filters_count=Coalesce(
-                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0),
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
 
@@ -52,7 +52,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         return self.annotate(
             tags_count=Coalesce(
-                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0),
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
 

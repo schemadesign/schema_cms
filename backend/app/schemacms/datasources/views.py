@@ -189,7 +189,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="tags-lists", methods=["get", "post"])
     def tags_lists(self, request, pk=None, **kwargs):
         return self.generate_action_post_get_response(
-            request, related_objects_name="list_of_tags", parent_object_name="datasource",
+            request, related_objects_name="list_of_tags", parent_object_name="datasource"
         )
 
     @decorators.action(detail=True, url_path="set-tags-lists", methods=["post"])
@@ -315,7 +315,7 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIVie
 
 
 class FilterDetailViewSet(
-    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     queryset = models.Filter.objects.all().select_related("datasource")
     serializer_class = serializers.FilterDetailsSerializer

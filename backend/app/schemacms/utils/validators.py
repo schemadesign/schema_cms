@@ -20,9 +20,7 @@ class CustomUniqueValidator(validators.UniqueValidator):
         queryset = self.filter_queryset(value, queryset)
         queryset = self.exclude_current_instance(queryset)
         if validators.qs_exists(queryset):
-            raise ValidationError(
-                self.message, code=generate_code(fields=[self.prefix, self.field_name])
-            )
+            raise ValidationError(self.message, code=generate_code(fields=[self.prefix, self.field_name]))
 
 
 class CustomUniqueTogetherValidator(validators.UniqueTogetherValidator):
@@ -38,11 +36,8 @@ class CustomUniqueTogetherValidator(validators.UniqueTogetherValidator):
         queryset = self.exclude_current_instance(attrs, queryset)
 
         # Ignore validation if any field is None
-        checked_values = [
-            value for field, value in attrs.items() if field in self.fields
-        ]
+        checked_values = [value for field, value in attrs.items() if field in self.fields]
         if None not in checked_values and validators.qs_exists(queryset):
             raise ValidationError(
-                {self.key_field_name: self.message},
-                code=self.code or generate_code(fields=self.fields),
+                {self.key_field_name: self.message}, code=self.code or generate_code(fields=self.fields)
             )

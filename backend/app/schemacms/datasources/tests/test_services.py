@@ -24,13 +24,8 @@ class TestScheduleJobScriptsProcessingWith:
         queues = [settings.SQS_WORKER_QUEUE_URL, settings.SQS_WORKER_EXT_QUEUE_URL]
         expected_queue_url = queues[expected_queue_idx]
         settings.SQS_WORKER_QUEUE_FILE_SIZE = 52428800  # 50mb
-        data = {
-            "type": constants.WorkerProcessType.SCRIPTS_PROCESSING,
-            "data": job.meta_file_serialization(),
-        }
+        data = {"type": constants.WorkerProcessType.SCRIPTS_PROCESSING, "data": job.meta_file_serialization()}
 
         services.schedule_job_scripts_processing(job, file_size)
 
-        sqs.send_message.assert_called_with(
-            QueueUrl=expected_queue_url, MessageBody=json.dumps(data)
-        )
+        sqs.send_message.assert_called_with(QueueUrl=expected_queue_url, MessageBody=json.dumps(data))

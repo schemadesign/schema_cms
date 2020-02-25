@@ -57,9 +57,7 @@ class TagsListSerializer(serializers.ModelSerializer):
                     )
 
             if tags_to_create:
-                models.Tag.objects.bulk_create(
-                    self.create_tags(tags_to_create, instance)
-                )
+                models.Tag.objects.bulk_create(self.create_tags(tags_to_create, instance))
 
         return super().update(instance, validated_data)
 
@@ -74,9 +72,7 @@ class TagsListSerializer(serializers.ModelSerializer):
 
 
 class TagsListDetailSerializer(TagsListSerializer):
-    datasource = NestedRelatedModelSerializer(
-        serializer=DataSourceNameSerializer(), read_only=True
-    )
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceNameSerializer(), read_only=True)
 
     class Meta(TagsListSerializer.Meta):
         fields = TagsListSerializer.Meta.fields + ("datasource",)
