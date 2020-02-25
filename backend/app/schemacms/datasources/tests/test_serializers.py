@@ -27,9 +27,7 @@ class TestDataSourceJobSerializer:
     serializer_class = serializers.DataSourceJobSerializer
 
     def test_instance_data(self, job, job_step_factory, mocker, faker):
-        mocker.patch(
-            "schemacms.datasources.models.DataSourceJob.source_file_url", faker.url()
-        )
+        mocker.patch("schemacms.datasources.models.DataSourceJob.source_file_url", faker.url())
         job_steps = job_step_factory.create_batch(2, datasource_job=job)
         serializer = self.serializer_class(instance=job)
         assert serializer.data == {

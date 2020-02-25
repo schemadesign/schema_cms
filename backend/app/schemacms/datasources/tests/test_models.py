@@ -70,7 +70,7 @@ class TestDataSource:
             }
         }
         ds.active_job.update_meta(
-            preview=preview_data, items=0, fields=0, fields_names=[], fields_with_urls=[],
+            preview=preview_data, items=0, fields=0, fields_names=[], fields_with_urls=[]
         )
 
         ds.save(update_fields=["active_job"])
@@ -155,7 +155,8 @@ class TestDataSourceJob:
             Params={**self._get_common_generate_presigned_url_params(settings, job)},
         )
 
-    def _get_common_generate_presigned_url_params(self, settings, job):
+    @staticmethod
+    def _get_common_generate_presigned_url_params(settings, job):
         filename = os.path.basename(job.source_file_path)
         return {
             "Bucket": settings.AWS_STORAGE_BUCKET_NAME,
