@@ -1,8 +1,8 @@
 from django.db import transaction
 from rest_framework import serializers, exceptions
 
-from .constants import ProcessingState
 from . import models as ds_models
+from .constants import ProcessingState
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer, UserSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
@@ -66,11 +66,7 @@ class ActiveJobSerializer(serializers.ModelSerializer):
 
     def get_scripts(self, obj):
         return [
-            {
-                "id": step.script_id,
-                "options": step.options,
-                "exec_order": step.exec_order,
-            }
+            {"id": step.script_id, "options": step.options, "exec_order": step.exec_order}
             for step in obj.steps.all().order_by("exec_order")
         ]
 
@@ -107,11 +103,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
             "file": {"required": False, "allow_null": True},
-            "run_last_job": {
-                "required": False,
-                "allow_null": False,
-                "allow_blank": False,
-            },
+            "run_last_job": {"required": False, "allow_null": False, "allow_blank": False},
         }
         validators = [
             CustomUniqueTogetherValidator(
@@ -129,14 +121,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
         if not self.instance:
             return super().validate(attrs)
 
-        if (
-            attrs.get("file", None)
-            and self.instance.jobs.filter(job_state__in=states).exists()
-        ):
+        if attrs.get("file", None) and self.instance.jobs.filter(job_state__in=states).exists():
             message = "You can't re-upload file when job is processing"
-            raise serializers.ValidationError(
-                {"file": message}, code="fileInProcessing"
-            )
+            raise serializers.ValidationError({"file": message}, code="fileInProcessing")
 
         return super().validate(attrs)
 
@@ -155,9 +142,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         last_job = obj.get_last_job
 
         jobs_state = {
-            "any_job_in_process": obj.jos_in_process
-            if hasattr(obj, "jos_in_process")
-            else False,
+            "any_job_in_process": obj.jos_in_process if hasattr(obj, "jos_in_process") else False,
             "last_job_status": last_job.job_state if last_job else None,
             "error": last_job.error if last_job else None,
         }
@@ -183,9 +168,7 @@ class DataSourceDetailSerializer(DataSourceSerializer):
 class WranglingScriptSerializer(serializers.ModelSerializer):
     body = serializers.CharField(read_only=True)
     created_by = NestedRelatedModelSerializer(
-        serializer=UserSerializer(),
-        read_only=True,
-        pk_field=serializers.UUIDField(format="hex_verbose"),
+        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     is_predefined = serializers.BooleanField(read_only=True)
     datasource = serializers.PrimaryKeyRelatedField(read_only=True)
@@ -208,9 +191,7 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
         datasource = self.initial_data["datasource"]
 
         script = ds_models.WranglingScript(
-            created_by=self.context["request"].user,
-            datasource=datasource,
-            **validated_data
+            created_by=self.context["request"].user, datasource=datasource, **validated_data
         )
         script.is_predefined = False
         script.save()
@@ -233,9 +214,7 @@ class CreateJobSerializer(serializers.ModelSerializer):
 
     def validate_steps(self, attr):
         if not attr:
-            raise exceptions.ValidationError(
-                "At least single step is required", code="missingSteps"
-            )
+            raise exceptions.ValidationError("At least single step is required", code="missingSteps")
         return attr
 
     @transaction.atomic()
@@ -321,11 +300,7 @@ class PublicApiUpdateJobMetaSerializer(serializers.ModelSerializer):
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     job_state = serializers.ChoiceField(
-        choices=[
-            ProcessingState.PROCESSING,
-            ProcessingState.SUCCESS,
-            ProcessingState.FAILED,
-        ]
+        choices=[ProcessingState.PROCESSING, ProcessingState.SUCCESS, ProcessingState.FAILED]
     )
     result = serializers.CharField()
 
@@ -348,9 +323,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
 
     def validate_job_state(self, new_job_state):
         job = self.instance
-        available_states = (
-            tr.target for tr in job.get_available_job_state_transitions()
-        )
+        available_states = (tr.target for tr in job.get_available_job_state_transitions())
         if new_job_state not in available_states:
             raise serializers.ValidationError("Invalid job state transition")
         return new_job_state
@@ -380,8 +353,7 @@ class DataSourceNestedFieldSerializer(serializers.ModelSerializer):
 
 class FilterSerializer(serializers.ModelSerializer):
     datasource = NestedRelatedModelSerializer(
-        serializer=DataSourceNestedFieldSerializer(),
-        queryset=ds_models.DataSource.objects.all(),
+        serializer=DataSourceNestedFieldSerializer(), queryset=ds_models.DataSource.objects.all(),
     )
 
     class Meta:
@@ -416,6 +388,4 @@ class FilterSerializer(serializers.ModelSerializer):
 
 
 class FilterDetailsSerializer(FilterSerializer):
-    datasource = NestedRelatedModelSerializer(
-        serializer=DataSourceNestedFieldSerializer(), read_only=True
-    )
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)

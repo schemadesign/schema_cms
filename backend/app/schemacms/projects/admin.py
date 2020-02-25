@@ -1,45 +1,10 @@
 from django.contrib import admin
-from django.db import transaction
-from django.utils import safestring
 from django.template.loader import render_to_string
-from django.forms.models import BaseInlineFormSet
-from django.core.exceptions import ValidationError  # NOQA
-from schemacms.utils import admin as utils_admin
-from ..users.models import User
+from django.utils import safestring
+
 from . import models, forms
-
-
-def update_meta_file(modeladmin, request, queryset):
-    for obj in queryset.iterator():
-        obj.create_dynamo_item()
-
-
-def update_meta(modeladmin, request, queryset):
-    for obj in queryset.iterator():
-        obj.schedule_update_meta(copy_steps=False)
-
-
-@admin.register(models.WranglingScript)
-class WranglingScriptAdmin(utils_admin.SoftDeleteObjectAdmin):
-    readonly_fields = ("specs",)
-    readonly_on_update_fields = ("datasource",)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="Script", parent="datasource"
-        )
-
-
-@admin.register(models.Filter)
-class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ("name", "datasource", "deleted_at")
-    fields = ("datasource", "name", "filter_type", "field", "field_type", "deleted_at")
-    readonly_on_update_fields = ("datsource",)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="Filter", parent="datasource"
-        )
+from ..users.models import User
+from ..utils import admin as utils_admin
 
 
 @admin.register(models.Project)
@@ -75,56 +40,6 @@ class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
         return safestring.mark_safe(html)
 
     get_editors.short_description = "Editors"
-
-
-@admin.register(models.DataSource)
-class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
-    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta_file, update_meta]
-    list_display = ("name", "project", "deleted_at")
-    fields = ("project", "name", "created_by", "type", "file", "active_job", "deleted_at")
-    list_filter = ("project", "type", "deleted_at")
-    readonly_on_update_fields = ("project",)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="DataSource", parent="project"
-        )
-
-    def get_form(self, request, obj=None, **kwargs):
-        form = super().get_form(request, obj, **kwargs)
-        form.base_fields["active_job"].queryset = models.DataSourceJob.objects.filter(datasource=obj)
-        return form
-
-    def get_queryset(self, request):
-        return super().get_queryset(request).select_related("active_job", "project", "created_by")
-
-    @transaction.atomic()
-    def save_model(self, request, obj, form, change):
-        if "file" in form.changed_data and obj.file:
-            file = obj.file
-            obj.file = None
-            super().save_model(request, obj, form, change)
-            obj.file.save(file.name, file)
-        else:
-            super().save_model(request, obj, form, change)
-
-        models.DataSourceMeta.objects.update_or_create(datasource=obj, defaults={"datasource": obj})
-
-
-class DataSourceJobStepInline(admin.TabularInline):
-    model = models.DataSourceJobStep
-    exclude = ("deleted_at",)
-    extra = 0
-
-
-@admin.register(models.DataSourceJob)
-class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
-    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta]
-    list_display = ("pk", "datasource", "job_state", "created", "deleted_at")
-    fields = ("datasource", "job_state", "description", "result", "error", "deleted_at")
-    readonly_on_update_fields = ("datasource",)
-    list_filter = ("datasource",)
-    inlines = [DataSourceJobStepInline]
 
 
 @admin.register(models.Folder)
@@ -187,54 +102,4 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(
             request, queryset, field="name", model_name="Block", parent="page"
-        )
-
-
-class TagInlineFormSet(BaseInlineFormSet):
-    def clean(self):
-        super().clean()
-        if not all(self.cleaned_data):
-            raise ValidationError("Tag value can't be empty")
-
-
-class TagInline(admin.TabularInline):
-    formset = TagInlineFormSet
-    model = models.Tag
-    exclude = ("deleted_at",)
-    extra = 0
-
-
-@admin.register(models.TagsList)
-class TagAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ("name", "datasource", "deleted_at")
-    fields = ("datasource", "name", "deleted_at")
-    list_filter = ("datasource", "deleted_at")
-    readonly_on_update_fields = ("datasource",)
-    inlines = (TagInline,)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="TagsList", parent="datasource"
-        )
-
-
-@admin.register(models.State)
-class StateAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ("name", "project", "datasource", "deleted_at")
-    fields = (
-        "project",
-        "datasource",
-        "name",
-        "description",
-        "source_url",
-        "author",
-        "is_public",
-        "deleted_at",
-    )
-    list_filter = ("project", "datasource", "is_public", "deleted_at")
-    readonly_on_update_fields = ("project",)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="State", parent="project"
         )

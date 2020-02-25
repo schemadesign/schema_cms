@@ -3,21 +3,12 @@ import os
 
 from django.db import transaction
 from django.shortcuts import get_object_or_404
-from rest_framework import (
-    decorators,
-    mixins,
-    permissions,
-    response,
-    status,
-    viewsets,
-    generics,
-    parsers,
-)
+from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
 from . import constants, models, serializers
 from ..authorization import authentication
-from ..utils import serializers as utils_serializers
 from ..states import serializers as st_serializers
+from ..utils import serializers as utils_serializers
 
 
 def copy_steps_from_active_job(steps, job):
@@ -27,9 +18,7 @@ def copy_steps_from_active_job(steps, job):
         step.save()
 
 
-class DataSourceViewSet(
-    utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet
-):
+class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = models.DataSource.objects.prefetch_related(
         "filters", "list_of_tags", "active_job__steps"
@@ -86,9 +75,7 @@ class DataSourceViewSet(
 
     @decorators.action(detail=True)
     def script(self, request, pk=None, **kwargs):
-        serializer = self.get_serializer(
-            instance=self.get_object().available_scripts, many=True
-        )
+        serializer = self.get_serializer(instance=self.get_object().available_scripts, many=True)
         return response.Response(data=serializer.data, status=status.HTTP_200_OK)
 
     @decorators.action(
@@ -130,9 +117,7 @@ class DataSourceViewSet(
     @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
     def jobs_history(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        queryset = data_source.jobs.prefetch_related("steps__script").order_by(
-            "-created"
-        )
+        queryset = data_source.jobs.prefetch_related("steps__script").order_by("-created")
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -154,9 +139,7 @@ class DataSourceViewSet(
         try:
             preview = data_source.active_job.meta_data.preview
         except Exception as e:
-            return response.Response(
-                f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND
-            )
+            return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
 
         data = dict(project=data_source.project_info, results=[])
 
@@ -171,9 +154,7 @@ class DataSourceViewSet(
                         field_name=key,
                         field_type=value["dtype"],
                         unique=value["unique"],
-                        filter_type=getattr(
-                            constants.FilterTypesGroups, value["dtype"]
-                        ),
+                        filter_type=getattr(constants.FilterTypesGroups, value["dtype"]),
                     )
                 )
 
@@ -208,16 +189,12 @@ class DataSourceViewSet(
     @decorators.action(detail=True, url_path="tags-lists", methods=["get", "post"])
     def tags_lists(self, request, pk=None, **kwargs):
         return self.generate_action_post_get_response(
-            request,
-            related_objects_name="list_of_tags",
-            parent_object_name="datasource",
+            request, related_objects_name="list_of_tags", parent_object_name="datasource",
         )
 
     @decorators.action(detail=True, url_path="set-tags-lists", methods=["post"])
     def set_tags_lists(self, request, pk=None, **kwargs):
-        data_source = self.set_is_active_fields(
-            request, related_objects_name="list_of_tags"
-        )
+        data_source = self.set_is_active_fields(request, related_objects_name="list_of_tags")
 
         serializer = self.get_serializer(instance=data_source.list_of_tags, many=True)
 
@@ -246,23 +223,17 @@ class DataSourceViewSet(
         copy_steps = request.data.pop("copy_steps", None)
         status_ = request.data.get("status")
 
-        serializer = self.get_serializer(
-            data=request.data, context=data_source.meta_data
-        )
+        serializer = self.get_serializer(data=request.data, context=data_source.meta_data)
         serializer.is_valid(raise_exception=True)
 
         data_source.update_meta(**serializer.validated_data)
 
         if status_ == constants.ProcessingState.SUCCESS:
             with transaction.atomic():
-                fake_job = data_source.create_job(
-                    description=f"DataSource {data_source.id} file upload"
-                )
+                fake_job = data_source.create_job(description=f"DataSource {data_source.id} file upload")
 
                 if copy_steps:
-                    copy_steps_from_active_job(
-                        data_source.active_job.steps.all(), fake_job
-                    )
+                    copy_steps_from_active_job(data_source.active_job.steps.all(), fake_job)
 
                     data_source.active_job = None
                     data_source.save(update_fields=["active_job"])
@@ -287,11 +258,7 @@ class DataSourceJobDetailViewSet(
     }
 
     def get_queryset(self):
-        return (
-            models.DataSourceJob.objects.all()
-            .select_related("datasource")
-            .prefetch_related("steps")
-        )
+        return models.DataSourceJob.objects.all().select_related("datasource").prefetch_related("steps")
 
     @decorators.action(detail=True, url_path="preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
@@ -344,16 +311,11 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIVie
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        return models.WranglingScript.objects.all().select_related(
-            "datasource", "created_by"
-        )
+        return models.WranglingScript.objects.all().select_related("datasource", "created_by")
 
 
 class FilterDetailViewSet(
-    mixins.DestroyModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet,
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
 ):
     queryset = models.Filter.objects.all().select_related("datasource")
     serializer_class = serializers.FilterDetailsSerializer

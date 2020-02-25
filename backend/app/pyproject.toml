@@ -9,7 +9,8 @@ omit = [
         "./schemacms/config/*",
         "./schemacms/wsgi.py",
         "*__init__*",
-        "./wait_for_postgres.py"
+        "./wait_for_postgres.py",
+        "./schemacms/scripts/*"
     ]
 
 [tool.black]

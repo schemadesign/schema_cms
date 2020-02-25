@@ -1,7 +1,8 @@
 import factory
 
-from schemacms.projects import constants as project_constants
 from schemacms.users.tests.factories import UserFactory
+from schemacms.projects.tests.factories import ProjectFactory
+from schemacms.datasources import constants
 from schemacms.utils import test as utils_test
 
 
@@ -14,16 +15,12 @@ class BaseMetaDataFactory(factory.django.DjangoModelFactory):
 
 
 class DataSourceFactory(factory.django.DjangoModelFactory):
-    from schemacms.projects.tests.factories import ProjectFactory
-
     class Meta:
         model = "datasources.DataSource"
 
-    name = factory.Faker(
-        "text", max_nb_chars=project_constants.DATASOURCE_NAME_MAX_LENGTH
-    )
+    name = factory.Faker("text", max_nb_chars=constants.DATASOURCE_NAME_MAX_LENGTH)
     project = factory.SubFactory(ProjectFactory)
-    type = project_constants.DataSourceType.FILE
+    type = constants.DataSourceType.FILE
     file = factory.django.FileField(filename="test.csv", from_func=utils_test.make_csv)
     created_by = factory.SubFactory(UserFactory)
 
@@ -41,11 +38,9 @@ class ScriptFactory(factory.django.DjangoModelFactory):
         model = "datasources.WranglingScript"
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
-    name = factory.Faker("text", max_nb_chars=project_constants.SCRIPT_NAME_MAX_LENGTH)
+    name = factory.Faker("text", max_nb_chars=constants.SCRIPT_NAME_MAX_LENGTH)
     created_by = factory.SubFactory(UserFactory)
-    file = factory.django.FileField(
-        filename="test.py", from_func=utils_test.make_script
-    )
+    file = factory.django.FileField(filename="test.py", from_func=utils_test.make_script)
 
 
 class JobFactory(factory.django.DjangoModelFactory):
@@ -53,8 +48,6 @@ class JobFactory(factory.django.DjangoModelFactory):
         model = "datasources.DataSourceJob"
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
-    # TODO(khanek) Find a way to generate result path without job id on creation
-    # result = factory.django.FileField(filename="result.csv", from_func=utils_test.make_csv)
     source_file_path = factory.SelfAttribute(".datasource.file.name")
     source_file_version = factory.Faker("uuid4")
 

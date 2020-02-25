@@ -2,9 +2,9 @@ import softdelete.models
 from django.db import models, transaction
 from django.db.models.functions import Coalesce
 
+from .constants import ProcessingState
 from ..authorization.authentication import LambdaUser
 from ..utils.managers import generate_soft_delete_manager
-from .constants import ProcessingState
 
 
 class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
@@ -35,13 +35,12 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         return self.annotate(
             filters_count=Coalesce(
-                models.Subquery(subquery, output_field=models.IntegerField()),
-                models.Value(0),
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0),
             )
         )
 
     def annotate_tags_count(self):
-        from ..projects.models import TagsList
+        from ..states.models import TagsList
 
         subquery = (
             TagsList.objects.order_by()
@@ -53,8 +52,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         return self.annotate(
             tags_count=Coalesce(
-                models.Subquery(subquery, output_field=models.IntegerField()),
-                models.Value(0),
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0),
             )
         )
 

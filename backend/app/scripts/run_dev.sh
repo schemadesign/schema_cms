@@ -41,14 +41,14 @@ echo "SQS manager is up"
     echo "SQS Queue worker NOT created"
 }
 
-{
-    create_worker_lambda &&
-    echo "Worker-Lambda function created"
-} || {
-    echo "Worker-Lambda function NOT created"
-}
-
-python /app/scripts/create_local_lambda.py
+#{
+#    create_worker_lambda &&
+#    echo "Worker-Lambda function created"
+#} || {
+#    echo "Worker-Lambda function NOT created"
+#}
+#
+#python /app/scripts/create_local_lambda.py
 
 echo "LocalStack fixtures installed"
 

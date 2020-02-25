@@ -2,6 +2,9 @@
 !.coveragerc
 !.env
 !.pytest_cache
+*.pyc
+**/__pycache__
+.pytest_cache
 *.egg-info/
 .Python
 build/

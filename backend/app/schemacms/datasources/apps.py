@@ -12,5 +12,5 @@ class DatasourcesConfig(AppConfig):
         db_signals.post_save.connect(
             receivers.update_public_api_meta,
             sender=models.DataSource,
-            dispatch_uid="projects.receivers.update_public_api_meta",
+            dispatch_uid="utils.receivers.update_public_api_meta",
         )

@@ -1,9 +1,9 @@
 from django.contrib import admin
-from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
+from django.forms.models import BaseInlineFormSet
 
-from ..utils import admin as utils_admin
 from . import models
+from ..utils import admin as utils_admin
 
 
 class TagInlineFormSet(BaseInlineFormSet):

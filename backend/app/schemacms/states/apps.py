@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class StatesConfig(AppConfig):
-    name = "states"
+    name = "schemacms.states"

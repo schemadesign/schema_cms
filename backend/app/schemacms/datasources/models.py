@@ -20,9 +20,7 @@ class MetaDataModel(models.Model):
     fields = models.PositiveSmallIntegerField(null=True)
     preview = models.FileField(null=True, upload_to=file_upload_path)
     fields_names = pg_fields.ArrayField(models.TextField(), blank=True, default=list)
-    fields_with_urls = pg_fields.ArrayField(
-        models.TextField(), blank=True, default=list
-    )
+    fields_with_urls = pg_fields.ArrayField(models.TextField(), blank=True, default=list)
 
     class Meta:
         abstract = True
@@ -39,24 +37,17 @@ class MetaDataModel(models.Model):
         return [self.items, self.fields]
 
 
-class DataSource(
-    MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
-):
+class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
-    project = models.ForeignKey(
-        "projects.Project", on_delete=models.CASCADE, related_name="data_sources"
-    )
+    project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="data_sources")
     file = models.FileField(
         null=True,
         upload_to=file_upload_path,
         validators=[FileExtensionValidator(allowed_extensions=["csv"])],
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        related_name="data_sources",
-        null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True,
     )
     active_job = models.ForeignKey(
         "datasources.DataSourceJob",
@@ -103,9 +94,7 @@ class DataSource(
         return next(
             (
                 v.id
-                for v in self.file.storage.bucket.object_versions.filter(
-                    Prefix=self.file.name
-                )
+                for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
                 if v.is_latest and v.id != "null"
             ),
             "",
@@ -161,16 +150,12 @@ class DataSource(
         with transaction.atomic():
             preview = kwargs.pop("preview", {})
 
-            meta, _ = DataSourceMeta.objects.update_or_create(
-                datasource_id=self.id, defaults=kwargs
-            )
+            meta, _ = DataSourceMeta.objects.update_or_create(datasource_id=self.id, defaults=kwargs)
             if preview:
                 file_name, _ = self.get_original_file_name(self.file.name)
                 meta.preview.save(
                     f"{file_name}_preview.json",
-                    django.core.files.base.ContentFile(
-                        content=json.dumps(preview).encode()
-                    ),
+                    django.core.files.base.ContentFile(content=json.dumps(preview).encode()),
                 )
 
     def relative_path_to_save(self, filename):
@@ -197,6 +182,7 @@ class DataSource(
     def set_active_job(self, job):
         self.active_job = job
         self.save(update_fields=["active_job"])
+        self.create_dynamo_item()
 
     def result_fields_info(self):
         try:
@@ -211,8 +197,7 @@ class DataSource(
             return []
 
         data = {
-            str(num): {"name": key, "type": value["dtype"]}
-            for num, (key, value) in enumerate(fields.items())
+            str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
 
         return data
@@ -227,9 +212,7 @@ class DataSource(
                 "source-url": None,
                 "methodology": None,
                 "updated": self.modified.isoformat(),
-                "creator": None
-                if not self.created_by
-                else self.created_by.get_full_name(),
+                "creator": None if not self.created_by else self.created_by.get_full_name(),
             },
             "file": self.file.name,
             "shape": None,
@@ -252,29 +235,20 @@ class DataSource(
                 }
             )
         if self.filters:
-            filters = [
-                f.meta_file_serialization() for f in self.filters.filter(is_active=True)
-            ]
+            filters = [f.meta_file_serialization() for f in self.filters.filter(is_active=True)]
             data.update({"filters": filters})
 
         if self.list_of_tags:
-            tags = [
-                t.meta_file_serialization()
-                for t in self.list_of_tags.filter(is_active=True)
-            ]
+            tags = [t.meta_file_serialization() for t in self.list_of_tags.filter(is_active=True)]
             data.update({"tags": tags})
 
         return data
 
 
 class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
-    datasource = models.OneToOneField(
-        DataSource, on_delete=models.CASCADE, related_name="meta_data"
-    )
+    datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
     status = models.CharField(
-        max_length=25,
-        choices=constants.PROCESSING_STATE_CHOICES,
-        default=constants.ProcessingState.PENDING,
+        max_length=25, choices=constants.PROCESSING_STATE_CHOICES, default=constants.ProcessingState.PENDING,
     )
     error = models.TextField(blank=True, default="")
 
@@ -289,25 +263,15 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     datasource = models.ForeignKey(
-        DataSource,
-        on_delete=models.CASCADE,
-        related_name="scripts",
-        blank=True,
-        null=True,
+        DataSource, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True,
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        related_name="scripts2",
-        blank=True,
-        null=True,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="scripts2", blank=True, null=True,
     )
     name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
     is_predefined = models.BooleanField(default=True)
     file = models.FileField(
-        upload_to=file_upload_path,
-        null=True,
-        validators=[FileExtensionValidator(allowed_extensions=["py"])],
+        upload_to=file_upload_path, null=True, validators=[FileExtensionValidator(allowed_extensions=["py"])],
     )
     body = models.TextField(blank=True)
     last_file_modification = models.DateTimeField(null=True)
@@ -335,14 +299,9 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
 
 
 class DataSourceJob(
-    MetaGeneratorMixin,
-    softdelete.models.SoftDeleteObject,
-    ext_models.TimeStampedModel,
-    fsm.DataSourceJobFSM,
+    MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM,
 ):
-    datasource: models.ForeignKey(
-        DataSource, on_delete=models.CASCADE, related_name="jobs"
-    )
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="jobs")
     description = models.TextField(blank=True)
     source_file_path = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
@@ -376,9 +335,7 @@ class DataSourceJob(
         }
         if self.source_file_version:
             params["VersionId"] = self.source_file_version
-        return services.s3.generate_presigned_url(
-            ClientMethod="get_object", Params=params
-        )
+        return services.s3.generate_presigned_url(ClientMethod="get_object", Params=params)
 
     @functional.cached_property
     def project_info(self):
@@ -389,17 +346,10 @@ class DataSourceJob(
         base_path = self.result.storage.location
         if self.id is None or self.datasource_id is None:
             raise ValueError("Job or DataSource ID is not set")
-        return os.path.join(
-            base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}"
-        )
+        return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
     def update_meta(
-        self,
-        preview: dict,
-        items: int,
-        fields: int,
-        fields_names: list,
-        fields_with_urls: list,
+        self, preview: dict, items: int, fields: int, fields_names: list, fields_with_urls: list,
     ):
         with transaction.atomic():
             meta, _ = DataSourceJobMetaData.objects.update_or_create(
@@ -414,9 +364,7 @@ class DataSourceJob(
 
             meta.preview.save(
                 f"job_{self.id}_preview.json",
-                django.core.files.base.ContentFile(
-                    content=json.dumps(preview).encode()
-                ),
+                django.core.files.base.ContentFile(content=json.dumps(preview).encode()),
             )
 
     def meta_file_serialization(self):
@@ -426,8 +374,7 @@ class DataSourceJob(
             "source_file_path": self.source_file_path,
             "source_file_version": self.source_file_version,
             "steps": [
-                step.meta_file_serialization()
-                for step in self.steps.order_by("exec_order").iterator()
+                step.meta_file_serialization() for step in self.steps.order_by("exec_order").iterator()
             ],
         }
         return data
@@ -454,12 +401,8 @@ class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
 
 
 class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
-    datasource_job = models.ForeignKey(
-        DataSourceJob, on_delete=models.CASCADE, related_name="steps"
-    )
-    script = models.ForeignKey(
-        WranglingScript, on_delete=models.SET_NULL, related_name="steps", null=True
-    )
+    datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name="steps")
+    script = models.ForeignKey(WranglingScript, on_delete=models.SET_NULL, related_name="steps", null=True)
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
     options: dict = pg_fields.JSONField(default=dict, blank=True)
@@ -475,16 +418,10 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
         return data
 
 
-class Filter(
-    MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
-):
-    datasource = models.ForeignKey(
-        DataSource, on_delete=models.CASCADE, related_name="filters"
-    )
+class Filter(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="filters")
     name = models.CharField(max_length=25)
-    filter_type = models.CharField(
-        max_length=25, choices=constants.FilterType.choices()
-    )
+    filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())
     field = models.TextField()
     field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
     unique_items = models.IntegerField(null=True)

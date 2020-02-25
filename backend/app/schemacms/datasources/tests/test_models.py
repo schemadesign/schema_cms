@@ -1,10 +1,11 @@
-import os
 import json
+import os
 
 import pytest
 from factory.django import FileField
 
 from schemacms.utils.test import make_csv
+
 from .factories import DataSourceFactory
 
 pytestmark = [pytest.mark.django_db]
@@ -32,9 +33,7 @@ class TestDataSource:
 
         assert correct_path == dsource.file.path
 
-    def test_source_file_latest_version(
-        self, mocker, data_source_factory, s3_object_version_factory
-    ):
+    def test_source_file_latest_version(self, mocker, data_source_factory, s3_object_version_factory):
         ds = data_source_factory()
         file_versions = (
             s3_object_version_factory(ds.file.name),
@@ -71,11 +70,7 @@ class TestDataSource:
             }
         }
         ds.active_job.update_meta(
-            preview=preview_data,
-            items=0,
-            fields=0,
-            fields_names=[],
-            fields_with_urls=[],
+            preview=preview_data, items=0, fields=0, fields_names=[], fields_with_urls=[],
         )
 
         ds.save(update_fields=["active_job"])
@@ -108,9 +103,7 @@ class TestDataSource:
 
 
 class TestDataSourceMeta:
-    @pytest.mark.parametrize(
-        "offset, whence", [(0, 0), (0, 2)]
-    )  # test different file cursor positions
+    @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions
     def test_data(self, data_source_factory, offset, whence):
         ds = data_source_factory()
         ds.update_meta(preview={"test": "test"}, items=0, fields=0, fields_names=[])
@@ -149,9 +142,7 @@ class TestDataSourceJob:
 
         assert job.source_file_url == ""
 
-    def test_source_file_url_without_file_version(
-        self, job_factory, settings, s3, faker
-    ):
+    def test_source_file_url_without_file_version(self, job_factory, settings, s3, faker):
         job = job_factory(source_file_version="")
         expected_url = faker.url()
         s3.generate_presigned_url.return_value = expected_url

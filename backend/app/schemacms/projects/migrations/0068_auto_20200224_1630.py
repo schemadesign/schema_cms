@@ -10,12 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="state", name="author",),
-        migrations.RemoveField(model_name="state", name="datasource",),
-        migrations.RemoveField(model_name="state", name="filters",),
-        migrations.RemoveField(model_name="state", name="project",),
-        migrations.RemoveField(model_name="tag", name="tags_list",),
-        migrations.RemoveField(model_name="tagslist", name="datasource",),
         migrations.DeleteModel(name="InStateFilter",),
         migrations.DeleteModel(name="State",),
         migrations.DeleteModel(name="Tag",),
