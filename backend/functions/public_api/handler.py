@@ -18,7 +18,7 @@ logger.setLevel(logging.INFO)
 
 
 app = Flask(__name__)
-# CORS(app)
+CORS(app)
 
 
 def create_response(data):
