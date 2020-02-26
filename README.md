@@ -18,18 +18,61 @@
                                                             \|_________|
 ```
 
+# Prerequisites
+Docker is used for develop, test and improve an environment.
+1. Install [docker](https://docs.docker.com/install/)
+2. Install [docker-compose](https://docs.docker.com/compose/install/) if you are using Linux
+3. Install [npm](https://www.npmjs.com/)
+4. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+
 ## Installation
 
+### Easy way
 `make install` & ☕
 
 You will find more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app` and `./docs`
 
+### Step-by-step guide
+Build docker images:
+```shell script
+docker-compose build
+```
+Build lambdas dependencies:
+```shell script
+cd ./backend/functions/worker && npm install
+cd ./backend/functions/public_api && npm install
+```
+
+Build frontend:
+```shell script
+yarn --cwd ./frontend/schemaUI
+yarn --cwd ./frontend/schemaUI build
+yarn --cwd ./frontend/schemaUI link
+yarn --cwd $(SCHEMA_CMS_PATH)
+yarn --cwd $(SCHEMA_CMS_PATH) link schemaUI
+```
+Create docker volumes
+```shell script
+docker volume create --name=localstack_data
+docker volume create --name=schema_cms_db_data
+```
+
+Run backend - `Before you run app make sure that you have latest local.env file`
+```shell script
+docker-compose up
+```
+
+Run frontend
+```shell script
+yarn --cwd ./frontend/schemaCMS start
+```
+
 ## Development
-
-In `./frontend/schemaCMS/` run `yarn start`
-In `./frontend/schemaUI/` run `yarn storybook`
-
-To serve backend run `docker-compose up`
+Backend in running on `localhost:8000`
+MailCatcher in running on `localhost:1080`
+Documentations in running on `localhost:8001`
+Public-Api in running on `localhost:8002`
+Fronted in running on `localhost:3000`
 
 # Local set-up and usage notes
 

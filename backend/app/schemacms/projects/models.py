@@ -119,7 +119,6 @@ class Project(
                 "updated": self.modified.isoformat(),
             },
             "data_sources": [],
-            "charts": [],
             "pages": [],
         }
 

@@ -10,7 +10,7 @@ nav:
   - API:
     - Authentication: 'api/authentication.md'
     - Blocks: 'api/blocks.md'
-    - Data sources: 'api/data_sources.md'
+    - Data Sources: 'api/data_sources.md'
     - Filters: 'api/filters.md'
     - Folders: 'api/folders.md'
     - Jobs: 'api/jobs.md'
@@ -19,3 +19,5 @@ nav:
     - Scripts: 'api/scripts.md'
     - Tags Lists: 'api/tags_lists.md'
     - Users: 'api/users.md'
+  - PUBLIC API:
+    - Info: "public_api/api_calls"

@@ -19,6 +19,7 @@ custom:
     dockerizePip: false
     zip: true
     slim: true
+
   localstack:
     stages:
       # list of stages for which the plugin should be enabled
