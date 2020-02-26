@@ -19,5 +19,4 @@ RUN pipenv install --system --dev
 
 EXPOSE 8002
 
-RUN ln -s /functions/common /functions/public_api
 CMD node_modules/serverless/bin/serverless wsgi serve -p 8002 --host 0.0.0.0

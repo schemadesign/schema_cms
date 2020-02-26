@@ -57,7 +57,7 @@ docker volume create --name=localstack_data
 docker volume create --name=schema_cms_db_data
 ```
 
-Run backend
+Run backend - `Before you run app make sure that you have latest local.env file`
 ```shell script
 docker-compose up
 ```
