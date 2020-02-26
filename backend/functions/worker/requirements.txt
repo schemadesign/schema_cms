@@ -1,0 +1,11 @@
+boto3
+pandas
+numpy
+datatable
+requests
+scipy
+pyarrow
+validators
+aiohttp
+aiobotocore
+sentry-sdk

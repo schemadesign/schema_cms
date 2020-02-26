@@ -16,7 +16,6 @@ install:
 	yarn --cwd $(SCHEMA_CMS_PATH) link schemaUI
 
 	@echo "Installing Lambdas dependencies"
-	cd $(WORKER_LAMBDA_PATH) && npm install
 	cd $(PUBLIC_API_LAMBDA_PATH) && npm install
 	cd ./
 
@@ -36,6 +35,5 @@ clean_db_volume:
 	docker volume create --name=schema_cms_db_data
 
 install_lambdas:
-	cd $(WORKER_LAMBDA_PATH) && npm install
 	cd $(PUBLIC_API_LAMBDA_PATH) && npm install
 	cd ./

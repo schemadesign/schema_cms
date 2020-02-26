@@ -12,13 +12,11 @@ services:
   localstack:
     image: localstack/localstack:latest
     ports:
-      - "4567-4599:4567-4599"
+      - "4569:4569"
+      - "4572:4572"
     environment:
-      - SERVICES=sqs,serverless
-#      - DEBUG="1"
+      - SERVICES=dynamodb,s3
       - DATA_DIR=/tmp/localstack/data
-      - LAMBDA_EXECUTOR=docker
-      - LAMBDA_REMOTE_DOCKER=true
       - DOCKER_HOST=unix:///var/run/docker.sock
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=foo
@@ -27,8 +25,8 @@ services:
     volumes:
       - "localstack_data:/tmp/localstack/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "./backend/functions:/app/functions"
     privileged: true
+
 
   backend:
     image: schema_cms_backend
@@ -45,10 +43,35 @@ services:
     depends_on:
       - db
       - localstack
+      - workerlambda
       - mailcatcher
     restart: always
     stdin_open: true
     tty: true
+
+
+  workerlambda:
+    image: schema_cms_workerlambda
+    build:
+      context: backend/functions/worker
+    command: handler.main
+    env_file: local.env
+    environment:
+      DOCKER_LAMBDA_STAY_OPEN: 1
+      AWS_STORAGE_BUCKET_NAME: schemacms
+      IMAGE_SCRAPING_FETCH_TIMEOUT: "15"
+      AWS_IMAGE_STORAGE_BUCKET_NAME: schemacms-images
+      AWS_IMAGE_STATIC_URL: http://localhost:4572/schemacms-images
+      BACKEND_URL: http://172.17.0.1:8000/api/v1
+      LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0
+    volumes:
+      - ./backend/functions/worker:/var/task:ro,delegated
+    ports:
+      - "9001:9001"
+    restart: always
+    stdin_open: true
+    tty: true
+
 
   publicapi:
     image: schema_cms_publicapi
@@ -61,8 +84,6 @@ services:
     ports:
       - "8002:8002"
     depends_on:
-      - backend
-      - db
       - localstack
     restart: always
     stdin_open: true
