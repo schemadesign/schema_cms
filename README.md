@@ -69,10 +69,14 @@ yarn --cwd ./frontend/schemaCMS start
 
 ## Development
 Backend in running on `localhost:8000`
+
 MailCatcher in running on `localhost:1080`
+
 Documentations in running on `localhost:8001`
+
 Public-Api in running on `localhost:8002`
-Fronted in running on `localhost:3000`
+
+Frontend in running on `localhost:3000`
 
 # Local set-up and usage notes
 
