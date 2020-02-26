@@ -15,7 +15,7 @@ nav:
     - Folders: 'api/folders.md'
     - Jobs: 'api/jobs.md'
     - Pages: 'api/pages.md'
-    - Projects: 'api/api_calls.md'
+    - Projects: 'api/projects.md'
     - Scripts: 'api/scripts.md'
     - Tags Lists: 'api/tags_lists.md'
     - Users: 'api/users.md'

@@ -42,7 +42,6 @@ class TestProject:
             },
             "data_sources": [{"id": ds.id, "name": ds.name, "type": ds.type}],
             "pages": folder.meta_file_serialization(),
-            "charts": [],
         }
 
     def test_get_projects_for_user(self, faker, project_factory, user):
