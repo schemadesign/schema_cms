@@ -15,7 +15,7 @@ services:
       - "4567-4599:4567-4599"
     environment:
       - SERVICES=sqs,serverless
-      - DEBUG="1"
+#      - DEBUG="1"
       - DATA_DIR=/tmp/localstack/data
       - LAMBDA_EXECUTOR=docker
       - LAMBDA_REMOTE_DOCKER=true
@@ -25,7 +25,7 @@ services:
       - AWS_SECRET_ACCESS_KEY=bar
       - AWS_STORAGE_BUCKET_NAME=schemacms
     volumes:
-#      - "localstack_data:/tmp/localstack/data"  # uncomment if you want keep data after killing container
+      - "localstack_data:/tmp/localstack/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./backend/functions:/app/functions"
     privileged: true

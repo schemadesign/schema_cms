@@ -1,5 +1,6 @@
-from django.core.files.base import ContentFile
 import pytest
+
+from django.core.files.base import ContentFile
 
 from schemacms.projects import constants, forms
 

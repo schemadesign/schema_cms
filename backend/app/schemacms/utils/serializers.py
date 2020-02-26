@@ -1,5 +1,20 @@
 from rest_framework import response, serializers, status
 
+from ..users.models import User
+from ..datasources.models import DataSource
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name", "role")
+
+
+class DataSourceNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DataSource
+        fields = ("id", "name")
+
 
 class NestedRelatedModelSerializer(serializers.PrimaryKeyRelatedField):
     def __init__(self, serializer, **kwargs):

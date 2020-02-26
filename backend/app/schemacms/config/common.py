@@ -42,9 +42,11 @@ class Common(Configuration):
         "corsheaders",  # cors
         "softdelete",
         # Your apps
-        "schemacms.users",
         "schemacms.authorization",
+        "schemacms.datasources",
         "schemacms.projects",
+        "schemacms.states",
+        "schemacms.users",
     ]
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/

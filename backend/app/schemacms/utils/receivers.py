@@ -1,4 +1,5 @@
-from .models import Folder, DataSource, Page, Project
+from ..projects.models import Folder, Page, Project
+from ..datasources.models import DataSource
 
 
 def update_public_api_meta(sender, instance, **kwargs):

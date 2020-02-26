@@ -7,7 +7,7 @@ from django.conf import settings
 from django.core.files import File
 from django.core.management import BaseCommand
 
-from schemacms.projects import models
+from schemacms.datasources import models as ds_models
 
 
 class Command(BaseCommand):
@@ -20,7 +20,7 @@ class Command(BaseCommand):
         with open(os.path.join(directory, "specs.json")) as f:
             all_specs = json.loads(f.read())
             specs_file_modified = self.trunc_datetime(self.modification_date(f.name))
-        existing_scripts = models.WranglingScript.objects.filter(is_predefined=True)
+        existing_scripts = ds_models.WranglingScript.objects.filter(is_predefined=True)
         for file in files:
             name = os.path.splitext(os.path.basename(file))[0]
             specs = all_specs.get(name, {})
@@ -51,7 +51,7 @@ class Command(BaseCommand):
     @staticmethod
     def create_script(name, filepath, modified, specs=None):
         with open(filepath, "rb") as f:
-            script = models.WranglingScript()
+            script = ds_models.WranglingScript()
             script.name = name
             script.file = File(f)
             script.is_predefined = True

@@ -19,12 +19,12 @@ def s3_object_version_factory():
 
 @pytest.fixture()
 def s3(mocker):
-    return mocker.patch("schemacms.projects.services.s3")
+    return mocker.patch("schemacms.utils.services.s3")
 
 
 @pytest.fixture()
 def sqs(mocker):
-    return mocker.patch("schemacms.projects.services.sqs")
+    return mocker.patch("schemacms.utils.services.sqs")
 
 
 @pytest.fixture(autouse=True)

@@ -2,7 +2,8 @@ import json
 
 import pytest
 
-from schemacms.projects import constants, services
+from schemacms.datasources import constants
+from schemacms.utils import services
 
 
 pytestmark = [pytest.mark.django_db]

@@ -1,6 +1,6 @@
 from django.core.management import BaseCommand
 
-from schemacms.projects import services
+from schemacms.utils import services
 
 
 client = services.get_dynamodb_client()
