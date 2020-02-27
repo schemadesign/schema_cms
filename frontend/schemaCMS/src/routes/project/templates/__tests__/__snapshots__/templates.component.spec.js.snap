@@ -164,8 +164,8 @@ exports[`Templates: Component should render correctly 1`] = `
               "defaultMessage": "Block",
               "id": "project.templates.block",
             },
-            "id": "projectDataSources",
-            "to": "/project/projectId/datasource",
+            "id": "blockTemplates",
+            "to": "/project/projectId/templates/block",
             "value": 0,
           },
           Object {
@@ -173,8 +173,8 @@ exports[`Templates: Component should render correctly 1`] = `
               "defaultMessage": "Page",
               "id": "project.templates.page",
             },
-            "id": "projectStates",
-            "to": "/project/projectId/state",
+            "id": "pageTemplates",
+            "to": "/project/projectId/templates/page",
             "value": 0,
           },
           Object {
@@ -182,8 +182,8 @@ exports[`Templates: Component should render correctly 1`] = `
               "defaultMessage": "Filter",
               "id": "project.templates.filter",
             },
-            "id": "projectPages",
-            "to": "/project/projectId/folder",
+            "id": "filterTemplates",
+            "to": "/project/projectId/templates/filter",
             "value": 0,
           },
           Object {
@@ -191,8 +191,8 @@ exports[`Templates: Component should render correctly 1`] = `
               "defaultMessage": "State",
               "id": "project.templates.state",
             },
-            "id": "projectUsers",
-            "to": "/project/projectId/user",
+            "id": "stateTemplates",
+            "to": "/project/projectId/templates/state",
             "value": 0,
           },
         ]
