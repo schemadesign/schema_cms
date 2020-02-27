@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots StatisticCards Default 1`] = `
+.c0 {
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.c1 {
+  font-size: 12px;
+  display: inline-block;
+  width: calc(50% - 7px);
+  margin-bottom: 14px;
+}
+
+.c1:nth-child(2n + 1) {
+  margin-right: 7px;
+}
+
+.c1:nth-child(2n) {
+  margin-left: 7px;
+}
+
+.c2 {
+  font-size: 12px;
+}
+
+.c3 {
+  display: block;
+  font-size: 66px;
+  line-height: 1.09;
+  font-weight: 500;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-bottom: 30px;
+    margin-left: -15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    font-size: 18px;
+    width: calc(25% - 15px);
+  }
+
+  .c1:nth-child(2n + 1) {
+    margin-right: 0;
+    margin-left: 15px;
+  }
+
+  .c1:nth-child(2n) {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c2 {
+    color: #FFF;
+    font-size: 18px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-top: 40px;
+    font-size: 108px;
+    line-height: 1em;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <ul
+    className="c0"
+  >
+    <li
+      className="c1"
+    >
+      <div
+        id="id"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "fontWeight": 600,
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c2"
+            >
+              block
+            </span>
+          </div>
+          <span
+            className="c3"
+            id="idValue"
+          >
+            2
+          </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

@@ -244,4 +244,23 @@ describe('Project: sagas', () => {
         .silentRun();
     });
   });
+  describe('when /PROJECTS_TEMPLATES action is fired', () => {
+    it('should put fetchTemplates action', async () => {
+      const projectId = 'projectId';
+      const response = {
+        id: 1,
+        results: [],
+        project: {},
+      };
+
+      mockApi.get(`${PROJECTS_PATH}/${projectId}/templates`).reply(OK, response);
+
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(ProjectRoutines.fetchTemplates.success(response.results))
+        .dispatch(ProjectRoutines.fetchTemplates({ projectId }))
+        .silentRun();
+    });
+  });
 });

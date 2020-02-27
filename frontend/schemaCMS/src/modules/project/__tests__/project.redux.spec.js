@@ -8,6 +8,12 @@ describe('Project: redux', () => {
     projects: [],
     project: {},
     editors: [],
+    templates: {
+      blocks: 0,
+      pages: 0,
+      filters: 0,
+      states: 0,
+    },
   });
 
   describe('reducer', () => {
@@ -111,6 +117,15 @@ describe('Project: redux', () => {
       const editors = [{ data: 'data' }];
       const resultState = projectReducer(defaultState, ProjectRoutines.fetchEditors.success(editors));
       expect(resultState.editors).to.deep.equal(editors);
+    });
+  });
+
+  describe('when PROJECTS/FETCH_TEMPLATES_SUCCESS action is received', () => {
+    it('should set templates', () => {
+      const templates = { blocks: 1, pages: 2, filters: 3, states: 4 };
+      const resultState = projectReducer(defaultState, ProjectRoutines.fetchTemplates.success(templates));
+
+      expect(resultState.templates).to.deep.equal(templates);
     });
   });
 });

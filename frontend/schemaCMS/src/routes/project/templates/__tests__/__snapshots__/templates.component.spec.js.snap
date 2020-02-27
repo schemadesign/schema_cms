@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Templates: Component should render correctly 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Templates"
+  />
+  <MobileMenu
+    active="templatesNavBtn"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Library"
+        id="project.templates.subtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Templates"
+        id="project.templates.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/projectId",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "folderNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Pages"
+            id="project.view.projectPages"
+            values={Object {}}
+          />,
+          "to": "/project/projectId/folder",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ProjectTabs
+    active="templates"
+    url="/project/projectId"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Library"
+        id="project.templates.subtitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Templates"
+        id="project.templates.title"
+        values={Object {}}
+      />
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <StatisticCards
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      statistics={
+        Array [
+          Object {
+            "header": Object {
+              "defaultMessage": "Block",
+              "id": "project.templates.block",
+            },
+            "id": "blockTemplates",
+            "to": "/project/projectId/templates/block",
+            "value": 0,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "Page",
+              "id": "project.templates.page",
+            },
+            "id": "pageTemplates",
+            "to": "/project/projectId/templates/page",
+            "value": 0,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "Filter",
+              "id": "project.templates.filter",
+            },
+            "id": "filterTemplates",
+            "to": "/project/projectId/templates/filter",
+            "value": 0,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "State",
+              "id": "project.templates.state",
+            },
+            "id": "stateTemplates",
+            "to": "/project/projectId/templates/state",
+            "value": 0,
+          },
+        ]
+      }
+    />
+  </LoadingWrapper>
+</styled.div>
+`;

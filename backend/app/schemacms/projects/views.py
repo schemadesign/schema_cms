@@ -30,6 +30,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             queryset.annotate_data_source_count()
             .annotate_pages_count()
             .annotate_states_count()
+            .annotate_templates_count()
             .select_related("owner")
             .prefetch_related("editors", "folders", "states")
             .order_by("-created")
@@ -138,6 +139,14 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         return self.generate_action_post_get_response(
             request, related_objects_name="states", parent_object_name="project"
         )
+
+    @decorators.action(detail=True, url_path="templates", methods=["get"])
+    def templates(self, request, **kwargs):
+        project = self.get_object()
+
+        data = {"project": project.project_info, "results": project.templates_count}
+
+        return response.Response(data, status=status.HTTP_200_OK)
 
 
 class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):

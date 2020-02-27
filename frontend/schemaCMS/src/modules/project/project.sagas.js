@@ -135,6 +135,21 @@ function* fetchEditors({ payload: { projectId } }) {
   }
 }
 
+function* fetchTemplates({ payload: { projectId } }) {
+  try {
+    yield put(ProjectRoutines.fetchTemplates.request());
+
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}/templates`);
+
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(ProjectRoutines.fetchTemplates.success(data.results));
+  } catch (error) {
+    yield put(ProjectRoutines.fetchTemplates.failure());
+  } finally {
+    yield put(ProjectRoutines.fetchTemplates.fulfill());
+  }
+}
+
 export function* watchProject() {
   yield all([
     takeLatest(ProjectRoutines.fetchList.TRIGGER, fetchList),
@@ -145,5 +160,6 @@ export function* watchProject() {
     takeLatest(ProjectRoutines.removeEditor.TRIGGER, removeEditor),
     takeLatest(ProjectRoutines.addEditor.TRIGGER, addEditor),
     takeLatest(ProjectRoutines.fetchEditors.TRIGGER, fetchEditors),
+    takeLatest(ProjectRoutines.fetchTemplates.TRIGGER, fetchTemplates),
   ]);
 }

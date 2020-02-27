@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
 
-import { FOLDER, SETTINGS, SOURCES, STATES, USERS } from './projectTabs.constants';
+import { FOLDER, SETTINGS, SOURCES, STATES, TEMPLATES, USERS } from './projectTabs.constants';
 
 export default defineMessages({
   [SETTINGS]: {
@@ -23,5 +23,9 @@ export default defineMessages({
   [STATES]: {
     id: `shared.components.projectTabs.${STATES}`,
     defaultMessage: 'States',
+  },
+  [TEMPLATES]: {
+    id: `shared.components.projectTabs.${TEMPLATES}`,
+    defaultMessage: 'Templates',
   },
 });

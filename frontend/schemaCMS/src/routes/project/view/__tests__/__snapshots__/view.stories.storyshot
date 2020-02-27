@@ -688,6 +688,20 @@ exports[`Storyshots Project|View Default 1`] = `
           >
             <a
               className="c12"
+              href="/project/100/templates"
+              id="templatesTab"
+              onClick={[Function]}
+            >
+              <span>
+                Templates
+              </span>
+            </a>
+          </div>
+          <div
+            className="c13"
+          >
+            <a
+              className="c12"
               href="/project/100/user"
               id="usersTab"
               onClick={[Function]}

@@ -7,3 +7,5 @@ export const USERS = 'users';
 export const FOLDER = 'folder';
 
 export const STATES = 'state';
+
+export const TEMPLATES = 'templates';

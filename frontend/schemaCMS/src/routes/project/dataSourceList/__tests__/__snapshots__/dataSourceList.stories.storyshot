@@ -694,6 +694,20 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         >
           <a
             className="c11"
+            href="/project/1/templates"
+            id="templatesTab"
+            onClick={[Function]}
+          >
+            <span>
+              Templates
+            </span>
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
             href="/project/1/user"
             id="usersTab"
             onClick={[Function]}
@@ -1583,6 +1597,20 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           >
             <span>
               Pages
+            </span>
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/1/templates"
+            id="templatesTab"
+            onClick={[Function]}
+          >
+            <span>
+              Templates
             </span>
           </a>
         </div>
