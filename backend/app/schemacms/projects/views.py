@@ -1,10 +1,9 @@
-from django.db import transaction
-from django.db.models import Prefetch
-from rest_framework import decorators, mixins, permissions, response, status, viewsets, parsers
+from rest_framework import decorators, permissions, response, status, viewsets
 
 from . import models, serializers
 from ..datasources import serializers as ds_serializers
 from ..states import serializers as st_serializers
+from ..pages import serializers as pages_serializers
 from ..users import permissions as user_permissions
 from ..utils import serializers as utils_serializers
 
@@ -15,9 +14,10 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     queryset = models.Project.objects.none()
     serializer_class_mapping = {
         "datasources": ds_serializers.DataSourceSerializer,
-        "folders": serializers.FolderSerializer,
         "users": serializers.UserSerializer,
         "states": st_serializers.StateSerializer,
+        "block_templates": pages_serializers.BlockTemplateSerializer,
+        "page_templates": pages_serializers.PageTemplateSerializer,
     }
 
     def get_queryset(self):
@@ -28,11 +28,10 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
         return (
             queryset.annotate_data_source_count()
-            .annotate_pages_count()
             .annotate_states_count()
             .annotate_templates_count()
             .select_related("owner")
-            .prefetch_related("editors", "folders", "states")
+            .prefetch_related("editors", "states", "blocktemplate_set", "pagetemplate_set",)
             .order_by("-created")
         )
 
@@ -115,25 +114,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
                 "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
             )
 
-    @decorators.action(detail=True, url_path="folders", methods=["get", "post"])
-    def folders(self, request, **kwargs):
-        project = self.get_object()
-
-        if request.method == "GET":
-            queryset = project.folders.select_related("created_by").all()
-            serializer = self.get_serializer(queryset, many=True)
-            data = {"project": project.project_info, "results": serializer.data}
-            return response.Response(data, status=status.HTTP_200_OK)
-
-        else:
-            request.data["project"] = project.id
-
-            serializer = self.get_serializer(data=request.data, context=project)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
-
     @decorators.action(detail=True, url_path="states", methods=["get", "post"])
     def states(self, request, **kwargs):
         return self.generate_action_post_get_response(
@@ -148,121 +128,14 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
         return response.Response(data, status=status.HTTP_200_OK)
 
-
-class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
-    queryset = models.Folder.objects.select_related("project", "created_by").all()
-    serializer_class = serializers.FolderSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-    serializer_class_mapping = {
-        "retrieve": serializers.FolderDetailSerializer,
-        "partial_update": serializers.FolderDetailSerializer,
-        "update": serializers.FolderDetailSerializer,
-        "pages": serializers.PageSerializer,
-    }
-
-    @decorators.action(detail=True, url_path="pages", methods=["GET", "POST"])
-    def pages(self, request, pk=None, **kwargs):
-        folder = self.get_object()
-
-        if request.method == "GET":
-            queryset = folder.pages.select_related("created_by").all()
-            serializer = self.get_serializer(instance=queryset, many=True)
-            data = {"project": folder.project_info, "results": serializer.data}
-            return response.Response(data, status=status.HTTP_200_OK)
-
-        else:
-            request.data["folder"] = folder.id
-
-            serializer = self.get_serializer(data=request.data, context=folder)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
-
-
-class PageViewSet(
-    utils_serializers.ActionSerializerViewSetMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    mixins.DestroyModelMixin,
-    viewsets.GenericViewSet,
-):
-    queryset = models.Page.objects.prefetch_related("blocks").select_related("folder", "created_by").all()
-    serializer_class = serializers.PageSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-    serializer_class_mapping = {
-        "retrieve": serializers.PageDetailSerializer,
-        "update": serializers.PageDetailSerializer,
-        "partial_update": serializers.PageDetailSerializer,
-        "blocks": serializers.BlockSerializer,
-        "set_blocks": serializers.BlockSerializer,
-    }
-
-    @decorators.action(
-        detail=True,
-        url_path="blocks",
-        parser_classes=(parsers.FormParser, parsers.MultiPartParser),
-        methods=["GET", "POST"],
-    )
-    def blocks(self, request, pk=None, **kwargs):
-        page = self.get_object()
-
-        if request.method == "GET":
-            queryset = page.blocks.all().order_by("exec_order", "created")
-            serializer = self.get_serializer(instance=queryset, many=True)
-            data = {"project": page.project_info, "results": serializer.data}
-            return response.Response(data, status=status.HTTP_200_OK)
-
-        else:
-            data = request.data.copy()
-
-            data["page"] = page.id
-
-            serializer = self.get_serializer(data=data, context=page)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
-
-    @decorators.action(detail=True, url_path="set-blocks", methods=["post"])
-    def set_blocks(self, request, pk=None, **kwargs):
-        page = self.get_object()
-        blocks_data = request.data
-
-        with transaction.atomic():
-            for data in blocks_data:
-                block = page.blocks.get(pk=data["id"])
-                block.is_active = data["is_active"]
-                block.exec_order = data["exec_order"]
-                block.save(update_fields=["is_active", "exec_order"])
-
-        page = self.get_object()
-        page.create_dynamo_item()
-
-        serializer = self.get_serializer(instance=page.blocks.order_by("exec_order"), many=True)
-
-        return response.Response(serializer.data, status=status.HTTP_200_OK)
-
-
-class BlockViewSet(
-    utils_serializers.ActionSerializerViewSetMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    mixins.DestroyModelMixin,
-    viewsets.GenericViewSet,
-):
-    queryset = (
-        models.Block.objects.prefetch_related(
-            Prefetch("images", queryset=models.BlockImage.objects.order_by("exec_order"))
+    @decorators.action(detail=True, url_path="block-templates", methods=["get", "post"])
+    def block_templates(self, request, **kwargs):
+        return self.generate_action_post_get_response(
+            request, related_objects_name="blocktemplate_set", parent_object_name="project"
         )
-        .select_related("page")
-        .all()
-    )
-    serializer_class = serializers.BlockSerializer
-    permission_classes = (permissions.IsAuthenticated,)
 
-    serializer_class_mapping = {
-        "retrieve": serializers.BlockDetailSerializer,
-        "update": serializers.BlockDetailSerializer,
-        "partial_update": serializers.BlockDetailSerializer,
-    }
+    @decorators.action(detail=True, url_path="page-templates", methods=["get", "post"])
+    def page_templates(self, request, **kwargs):
+        return self.generate_action_post_get_response(
+            request, related_objects_name="pagetemplate_set", parent_object_name="project"
+        )

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.template.loader import render_to_string
 from django.utils import safestring
 
-from . import models, forms
+from . import models
 from ..users.models import User
 from ..utils import admin as utils_admin
 
@@ -40,66 +40,3 @@ class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
         return safestring.mark_safe(html)
 
     get_editors.short_description = "Editors"
-
-
-@admin.register(models.Folder)
-class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ("id", "name", "project", "deleted_at")
-    fields = ("project", "name", "created_by", "deleted_at")
-    readonly_on_update_fields = ("project",)
-    search_fields = ("name",)
-    list_filter = ("project",)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="Folder", parent="project"
-        )
-
-
-@admin.register(models.Page)
-class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ("id", "title", "folder", "project", "deleted_at")
-    fields = ("folder", "title", "created_by", "description", "keywords", "deleted_at")
-    readonly_on_update_fields = ("folder",)
-
-    search_fields = ("title",)
-    list_filter = ("folder",)
-
-    def project(self, obj):
-        return obj.folder.project.title
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="title", model_name="Page", parent="folder"
-        )
-
-
-class BlockImageInline(admin.TabularInline):
-    model = models.BlockImage
-    exclude = ("deleted_at",)
-    extra = 0
-
-
-@admin.register(models.Block)
-class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
-    form = forms.BlockForm
-    list_display = ("id", "name", "page_title", "folder", "project", "deleted_at")
-    fields = ("page", "name", "type", "content", "is_active", "deleted_at")
-    readonly_on_update_fields = ("page",)
-    search_fields = ("name",)
-    list_filter = ("page",)
-    inlines = (BlockImageInline,)
-
-    def page_title(self, obj):
-        return f"{obj.page.title}"
-
-    def folder(self, obj):
-        return obj.page.folder.name
-
-    def project(self, obj):
-        return obj.page.folder.project.title
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="Block", parent="page"
-        )

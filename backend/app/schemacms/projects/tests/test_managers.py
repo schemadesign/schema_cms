@@ -16,14 +16,5 @@ class TestProjectQuerySet:
         with django_assert_num_queries(0):
             assert project_refreshed.data_source_count == expected
 
-    def test_annotate_pages_count(
-        self, django_assert_num_queries, faker, project, folder_factory, page_factory
-    ):
-        expected = faker.pyint(min_value=0, max_value=3)
-        folder = folder_factory(project=project)
-        page_factory.create_batch(expected, folder=folder)
-
-        project_refreshed = models.Project.objects.all().annotate_pages_count().get(pk=project.pk)
-
-        with django_assert_num_queries(0):
-            assert project_refreshed.pages_count == expected
+    def test_annotate_templates_count(self, django_assert_num_queries, faker, project, data_source_factory):
+        pass

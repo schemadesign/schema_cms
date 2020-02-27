@@ -14,15 +14,3 @@ class ProjectsConfig(AppConfig):
             sender=models.Project,
             dispatch_uid="utils.receivers.update_public_api_meta",
         )
-
-        db_signals.post_save.connect(
-            receivers.update_public_api_meta,
-            sender=models.Folder,
-            dispatch_uid="utils.receivers.update_public_api_meta",
-        )
-
-        db_signals.post_save.connect(
-            receivers.update_public_api_meta,
-            sender=models.Page,
-            dispatch_uid="utils.receivers.update_public_api_meta",
-        )
