@@ -2,6 +2,7 @@
 .requirements.zip
 node_modules/**
 unzip_requirements.py
+
 # Distribution / packaging
 .Python
 env/
@@ -22,5 +23,3 @@ var/
 
 # Serverless directories
 .serverless
-common
-sqs_message_mock.example.json
