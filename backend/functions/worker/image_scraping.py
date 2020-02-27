@@ -1,6 +1,6 @@
 try:
     import unzip_requirements
-except ImportError:
+except Exception:
     pass
 
 import asyncio
@@ -39,6 +39,7 @@ def www_to_https(url: str) -> str:
         return url
     except AttributeError:
         return url
+
 
 def is_valid_url(url: str) -> bool:
     try:
@@ -83,9 +84,7 @@ async def upload(s3_client, path, http_response):
     )
 
 
-async def fetch_and_upload_task(
-    url, current_step, http_session, s3_client, dirpath="images"
-):
+async def fetch_and_upload_task(url, current_step, http_session, s3_client, dirpath="images"):
     try:
         url = www_to_https(url)
         if not is_valid_url(url):
@@ -96,9 +95,7 @@ async def fetch_and_upload_task(
         parsed_url = parse.urlparse(url)
         filename = generate_available_filename(os.path.basename(parsed_url.path))
         path = os.path.join(
-            f"{current_step.job.datasource.id}/jobs/{current_step.job.id}",
-            dirpath,
-            filename,
+            f"{current_step.job.datasource.id}/jobs/{current_step.job.id}", dirpath, filename,
         )
         await upload(s3_client, path, http_response)
     except (asyncio.TimeoutError, aiohttp.ClientError):
@@ -110,17 +107,12 @@ async def column_image_scraping(df, current_step, column):
     """Fetch images from url in the data frame column, upload them to s3 and return new image url"""
 
     boto_session = aiobotocore.get_session()
-    async with boto_session.create_client(
-        "s3", endpoint_url=settings.AWS_S3_ENDPOINT_URL
-    ) as s3_client:
+    async with boto_session.create_client("s3", endpoint_url=settings.AWS_S3_ENDPOINT_URL) as s3_client:
         async with aiohttp.ClientSession() as http_session:
             return await asyncio.gather(
                 *(
                     fetch_and_upload_task(
-                        url,
-                        current_step=current_step,
-                        http_session=http_session,
-                        s3_client=s3_client,
+                        url, current_step=current_step, http_session=http_session, s3_client=s3_client,
                     )
                     for url in df[column]
                 )
@@ -130,7 +122,5 @@ async def column_image_scraping(df, current_step, column):
 def image_scraping(df, current_step, prefix="scrapped_"):
     columns = current_step.options.get("columns", [])
     for column in columns:
-        processed_urls = asyncio.run(
-            column_image_scraping(df=df, current_step=current_step, column=column)
-        )
+        processed_urls = asyncio.run(column_image_scraping(df=df, current_step=current_step, column=column))
         df[f"{prefix}{column}"] = pd.Series(processed_urls)
