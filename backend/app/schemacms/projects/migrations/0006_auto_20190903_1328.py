@@ -7,18 +7,27 @@ import schemacms.projects.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0005_auto_20190902_0833'),
+        ("projects", "0005_auto_20190902_0833"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='datasourcemeta',
-            name='preview',
-            field=models.FileField(null=True, upload_to=schemacms.projects.models.file_upload_path),
+            model_name="datasourcemeta",
+            name="preview",
+            field=models.FileField(null=True, upload_to=schemacms.utils.models.file_upload_path),
         ),
         migrations.AlterField(
-            model_name='datasource',
-            name='status',
-            field=models.CharField(choices=[('draft', 'draft'), ('processing', 'processing'), ('done', 'done'), ('error', 'error')], default='draft', max_length=25),
+            model_name="datasource",
+            name="status",
+            field=models.CharField(
+                choices=[
+                    ("draft", "draft"),
+                    ("processing", "processing"),
+                    ("done", "done"),
+                    ("error", "error"),
+                ],
+                default="draft",
+                max_length=25,
+            ),
         ),
     ]

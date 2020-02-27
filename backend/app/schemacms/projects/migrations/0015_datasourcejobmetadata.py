@@ -8,21 +8,29 @@ import schemacms.projects.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0014_auto_20191003_1009'),
+        ("projects", "0014_auto_20191003_1009"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='DataSourceJobMetaData',
+            name="DataSourceJobMetaData",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('items', models.PositiveIntegerField()),
-                ('fields', models.PositiveSmallIntegerField()),
-                ('preview', models.FileField(null=True, upload_to=schemacms.projects.models.file_upload_path)),
-                ('job', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='meta_data', to='projects.DataSourceJob')),
+                (
+                    "id",
+                    models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID"),
+                ),
+                ("items", models.PositiveIntegerField()),
+                ("fields", models.PositiveSmallIntegerField()),
+                ("preview", models.FileField(null=True, upload_to=schemacms.utils.models.file_upload_path)),
+                (
+                    "job",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="meta_data",
+                        to="projects.DataSourceJob",
+                    ),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
+            options={"abstract": False},
         ),
     ]

@@ -7,15 +7,13 @@ import schemacms.projects.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0040_auto_20191129_0730'),
+        ("projects", "0040_auto_20191129_0730"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='datasourcejob',
-            name='result',
-            field=models.FileField(
-                blank=True, null=True, upload_to=schemacms.projects.models.file_upload_path
-            ),
+            model_name="datasourcejob",
+            name="result",
+            field=models.FileField(blank=True, null=True, upload_to=schemacms.utils.models.file_upload_path),
         ),
     ]

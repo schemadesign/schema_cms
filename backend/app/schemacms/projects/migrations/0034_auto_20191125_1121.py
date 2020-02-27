@@ -10,59 +10,59 @@ import schemacms.utils.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0033_auto_20191122_1338'),
+        ("projects", "0033_auto_20191122_1338"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Block',
+            name="Block",
             fields=[
                 (
-                    'id',
-                    models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+                    "id",
+                    models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID"),
                 ),
                 (
-                    'created',
+                    "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name='created'
+                        auto_now_add=True, verbose_name="created"
                     ),
                 ),
                 (
-                    'modified',
+                    "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name='modified'
+                        auto_now=True, verbose_name="modified"
                     ),
                 ),
-                ('name', models.CharField(max_length=25)),
+                ("name", models.CharField(max_length=25)),
                 (
-                    'type',
+                    "type",
                     models.CharField(
                         choices=[
-                            ('youtube_embed', 'Youtube Embed'),
-                            ('code_snippet', 'Code Snippet'),
-                            ('markdown_text', 'Markdown Text'),
-                            ('image_uploaded', 'Image Uploaded'),
+                            ("youtube_embed", "Youtube Embed"),
+                            ("code_snippet", "Code Snippet"),
+                            ("markdown_text", "Markdown Text"),
+                            ("image_uploaded", "Image Uploaded"),
                         ],
                         max_length=25,
                     ),
                 ),
-                ('content', models.TextField(blank=True, default='')),
+                ("content", models.TextField(blank=True, default="")),
                 (
-                    'image',
+                    "image",
                     models.ImageField(
-                        blank=True, null=True, upload_to=schemacms.projects.models.file_upload_path
+                        blank=True, null=True, upload_to=schemacms.utils.models.file_upload_path
                     ),
                 ),
-                ('is_active', models.BooleanField(default=True)),
+                ("is_active", models.BooleanField(default=True)),
                 (
-                    'page',
+                    "page",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, related_name='blocks', to='projects.Page'
+                        on_delete=django.db.models.deletion.CASCADE, related_name="blocks", to="projects.Page"
                     ),
                 ),
             ],
-            options={'ordering': ('created',)},
+            options={"ordering": ("created",)},
             bases=(schemacms.utils.models.MetaGeneratorMixin, models.Model),
         ),
-        migrations.AlterUniqueTogether(name='block', unique_together={('name', 'page')},),
+        migrations.AlterUniqueTogether(name="block", unique_together={("name", "page")},),
     ]

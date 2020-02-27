@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
                 (
                     "file",
                     models.FileField(
-                        upload_to=schemacms.projects.models.file_upload_path,
+                        upload_to=schemacms.utils.models.file_upload_path,
                         validators=[
                             django.core.validators.FileExtensionValidator(
                                 allowed_extensions=["csv"],
