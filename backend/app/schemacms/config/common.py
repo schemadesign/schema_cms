@@ -47,6 +47,7 @@ class Common(Configuration):
         "schemacms.projects",
         "schemacms.states",
         "schemacms.users",
+        "schemacms.pages",
     ]
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
