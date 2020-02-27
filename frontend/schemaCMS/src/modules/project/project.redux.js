@@ -49,5 +49,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchEditors.SUCCESS]: setEditors,
   [ProjectRoutines.setProject.TRIGGER]: setProject,
   [ProjectRoutines.clearProject.TRIGGER]: clearProject,
-  [ProjectRoutines.fetchTemplates.TRIGGER]: fetchTemplates,
+  [ProjectRoutines.fetchTemplates.SUCCESS]: fetchTemplates,
 });

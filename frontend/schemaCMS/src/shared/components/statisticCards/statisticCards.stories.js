@@ -1,8 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { history } from '../../../.storybook/helpers';
 
 import { StatisticCards } from './statisticCards.component';
+import { withTheme } from '../../../.storybook/decorators';
 
-const defaultProps = {};
+export const defaultProps = {
+  statistics: [{ header: 'block', value: 2, to: '/link/to', id: 'id' }],
+  history,
+};
 
-storiesOf('StatisticCards', module).add('Default', () => <StatisticCards {...defaultProps} />);
+storiesOf('StatisticCards', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <StatisticCards {...defaultProps} />);

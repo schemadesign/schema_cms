@@ -1,7 +1,13 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectProjectDomain, selectProjectsList, selectProject, selectEditors } from '../project.selectors';
+import {
+  selectProjectDomain,
+  selectProjectsList,
+  selectProject,
+  selectEditors,
+  selectTemplates,
+} from '../project.selectors';
 
 describe('Project: selectors', () => {
   const state = Immutable({
@@ -9,6 +15,12 @@ describe('Project: selectors', () => {
       projects: [],
       project: {},
       editors: [],
+      templates: {
+        blocks: 0,
+        pages: 0,
+        filters: 0,
+        states: 0,
+      },
     },
   });
 
@@ -33,6 +45,12 @@ describe('Project: selectors', () => {
   describe('selectEditors', () => {
     it('should select a editors', () => {
       expect(selectEditors(state)).to.equal(state.project.editors);
+    });
+  });
+
+  describe('selectTemplates', () => {
+    it('should select a templates', () => {
+      expect(selectTemplates(state)).to.equal(state.project.templates);
     });
   });
 });

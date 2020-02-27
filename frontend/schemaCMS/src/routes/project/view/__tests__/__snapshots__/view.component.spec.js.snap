@@ -3,108 +3,54 @@
 exports[`View: Component should render content correctly 1`] = `
 <Fragment>
   <styled.div>
-    <styled.ul>
-      <styled.li
-        key="0"
-      >
-        <Component
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "fontWeight": 600,
-            }
-          }
-          headerComponent={
-            <ForwardRef(styled.span)>
-              Data Sources
-            </ForwardRef(styled.span)>
-          }
-          id="projectDataSources"
-          onClick={[Function]}
-        >
-          <styled.span
-            id="projectDataSourcesValue"
-          >
-            3
-          </styled.span>
-        </Component>
-      </styled.li>
-      <styled.li
-        key="1"
-      >
-        <Component
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "fontWeight": 600,
-            }
-          }
-          headerComponent={
-            <ForwardRef(styled.span)>
-              States
-            </ForwardRef(styled.span)>
-          }
-          id="projectStates"
-          onClick={[Function]}
-        >
-          <styled.span
-            id="projectStatesValue"
-          >
-            0
-          </styled.span>
-        </Component>
-      </styled.li>
-      <styled.li
-        key="2"
-      >
-        <Component
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "fontWeight": 600,
-            }
-          }
-          headerComponent={
-            <ForwardRef(styled.span)>
-              Pages
-            </ForwardRef(styled.span)>
-          }
-          id="projectPages"
-          onClick={[Function]}
-        >
-          <styled.span
-            id="projectPagesValue"
-          >
-            1
-          </styled.span>
-        </Component>
-      </styled.li>
-      <styled.li
-        key="3"
-      >
-        <Component
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "fontWeight": 600,
-            }
-          }
-          headerComponent={
-            <ForwardRef(styled.span)>
-              Users
-            </ForwardRef(styled.span)>
-          }
-          id="projectUsers"
-          onClick={[Function]}
-        >
-          <styled.span
-            id="projectUsersValue"
-          >
-            2
-          </styled.span>
-        </Component>
-      </styled.li>
-    </styled.ul>
+    <StatisticCards
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      statistics={
+        Array [
+          Object {
+            "header": Object {
+              "defaultMessage": "Data Sources",
+              "id": "project.view.dataSources",
+            },
+            "id": "projectDataSources",
+            "to": "/project/100/datasource",
+            "value": 3,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "States",
+              "id": "project.view.states",
+            },
+            "id": "projectStates",
+            "to": "/project/100/state",
+            "value": undefined,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "Pages",
+              "id": "project.view.pages",
+            },
+            "id": "projectPages",
+            "to": "/project/100/folder",
+            "value": 1,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "Users",
+              "id": "project.view.users",
+            },
+            "id": "projectUsers",
+            "to": "/project/100/user",
+            "value": 2,
+          },
+        ]
+      }
+    />
     <styled.ul>
       <styled.li
         key="0"
@@ -599,108 +545,54 @@ exports[`View: Component should render correctly 1`] = `
       noDataContent={null}
     >
       <styled.div>
-        <styled.ul>
-          <styled.li
-            key="0"
-          >
-            <Component
-              customStyles={
-                Object {
-                  "cursor": "pointer",
-                  "fontWeight": 600,
-                }
-              }
-              headerComponent={
-                <ForwardRef(styled.span)>
-                  Data Sources
-                </ForwardRef(styled.span)>
-              }
-              id="projectDataSources"
-              onClick={[Function]}
-            >
-              <styled.span
-                id="projectDataSourcesValue"
-              >
-                3
-              </styled.span>
-            </Component>
-          </styled.li>
-          <styled.li
-            key="1"
-          >
-            <Component
-              customStyles={
-                Object {
-                  "cursor": "pointer",
-                  "fontWeight": 600,
-                }
-              }
-              headerComponent={
-                <ForwardRef(styled.span)>
-                  States
-                </ForwardRef(styled.span)>
-              }
-              id="projectStates"
-              onClick={[Function]}
-            >
-              <styled.span
-                id="projectStatesValue"
-              >
-                0
-              </styled.span>
-            </Component>
-          </styled.li>
-          <styled.li
-            key="2"
-          >
-            <Component
-              customStyles={
-                Object {
-                  "cursor": "pointer",
-                  "fontWeight": 600,
-                }
-              }
-              headerComponent={
-                <ForwardRef(styled.span)>
-                  Pages
-                </ForwardRef(styled.span)>
-              }
-              id="projectPages"
-              onClick={[Function]}
-            >
-              <styled.span
-                id="projectPagesValue"
-              >
-                1
-              </styled.span>
-            </Component>
-          </styled.li>
-          <styled.li
-            key="3"
-          >
-            <Component
-              customStyles={
-                Object {
-                  "cursor": "pointer",
-                  "fontWeight": 600,
-                }
-              }
-              headerComponent={
-                <ForwardRef(styled.span)>
-                  Users
-                </ForwardRef(styled.span)>
-              }
-              id="projectUsers"
-              onClick={[Function]}
-            >
-              <styled.span
-                id="projectUsersValue"
-              >
-                2
-              </styled.span>
-            </Component>
-          </styled.li>
-        </styled.ul>
+        <StatisticCards
+          history={
+            Object {
+              "goBack": [Function],
+              "push": [Function],
+            }
+          }
+          statistics={
+            Array [
+              Object {
+                "header": Object {
+                  "defaultMessage": "Data Sources",
+                  "id": "project.view.dataSources",
+                },
+                "id": "projectDataSources",
+                "to": "/project/100/datasource",
+                "value": 3,
+              },
+              Object {
+                "header": Object {
+                  "defaultMessage": "States",
+                  "id": "project.view.states",
+                },
+                "id": "projectStates",
+                "to": "/project/100/state",
+                "value": undefined,
+              },
+              Object {
+                "header": Object {
+                  "defaultMessage": "Pages",
+                  "id": "project.view.pages",
+                },
+                "id": "projectPages",
+                "to": "/project/100/folder",
+                "value": 1,
+              },
+              Object {
+                "header": Object {
+                  "defaultMessage": "Users",
+                  "id": "project.view.users",
+                },
+                "id": "projectUsers",
+                "to": "/project/100/user",
+                "value": 2,
+              },
+            ]
+          }
+        />
         <styled.ul>
           <styled.li
             key="0"

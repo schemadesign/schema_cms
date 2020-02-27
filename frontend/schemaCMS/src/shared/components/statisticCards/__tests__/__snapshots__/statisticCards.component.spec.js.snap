@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatisticCards: Component should render correctly 1`] = `
+<styled.ul>
+  <styled.li
+    key="0"
+  >
+    <Component
+      customStyles={
+        Object {
+          "cursor": "pointer",
+          "fontWeight": 600,
+        }
+      }
+      headerComponent={
+        <ForwardRef(styled.span)>
+          block
+        </ForwardRef(styled.span)>
+      }
+      id="id"
+      onClick={[Function]}
+    >
+      <styled.span
+        id="idValue"
+      >
+        2
+      </styled.span>
+    </Component>
+  </styled.li>
+</styled.ul>
+`;

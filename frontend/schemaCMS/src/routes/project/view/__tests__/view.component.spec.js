@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Card } from 'schemaUI';
 
 import { View } from '../view.component';
 import { defaultProps } from '../view.stories';
@@ -112,21 +111,5 @@ describe('View: Component', () => {
     wrapper.find(BackButton).simulate('click');
 
     expect(wrapper.state().confirmationModalOpen).toBeFalsy();
-  });
-
-  it('should redirect on click on card', async () => {
-    defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
-    jest.spyOn(defaultProps.history, 'push');
-
-    const wrapper = await render();
-
-    wrapper
-      .find(LoadingWrapper)
-      .dive()
-      .find(Card)
-      .first()
-      .simulate('click');
-
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/100/datasource');
   });
 });
