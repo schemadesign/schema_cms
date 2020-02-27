@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockTemplates: Component should render correctly 1`] = `
+<styled.div>
+  <FormattedMessage
+    defaultMessage="BlockTemplates component"
+    id="blockTemplates.title"
+    values={Object {}}
+  />
+</styled.div>
+`;
