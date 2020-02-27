@@ -11,7 +11,6 @@ class Test(Common):
     # Turn debug off so tests run faster
     DEBUG = False
     TEMPLATE_DEBUG = False
-    LOCAL_LAMBDA = False
 
     Common.TEMPLATES[0]["OPTIONS"]["debug"] = False
     MIDDLEWARE = Common.MIDDLEWARE

@@ -72,7 +72,7 @@ def local_lambda_invoke(payload):
         use_ssl=False,
         verify=False,
         config=botocore.client.Config(
-            signature_version=botocore.UNSIGNED, read_timeout=30, retries={"max_attempts": 0},
+            signature_version=botocore.UNSIGNED, read_timeout=30, retries={"max_attempts": 0}
         ),
     )
     response = lambda_client.invoke(FunctionName="main", InvocationType="Event", Payload=json.dumps(data))

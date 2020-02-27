@@ -6,7 +6,6 @@
   "devDependencies": {
     "serverless": "1.61.3",
     "serverless-localstack": "^0.4.24",
-    "serverless-package-external": "^1.1.1",
     "serverless-python-requirements": "^5.0.1"
   }
 }

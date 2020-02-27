@@ -1,6 +1,6 @@
 try:
     import unzip_requirements
-except ImportError:
+except Exception:
     pass
 
 import csv

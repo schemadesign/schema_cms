@@ -62,15 +62,13 @@ services:
       IMAGE_SCRAPING_FETCH_TIMEOUT: "15"
       AWS_IMAGE_STORAGE_BUCKET_NAME: schemacms-images
       AWS_IMAGE_STATIC_URL: http://localhost:4572/schemacms-images
-      BACKEND_URL: http://172.17.0.1:8000/api/v1
+      BACKEND_URL: http://backend:8000/api/v1
       LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0
     volumes:
       - ./backend/functions/worker:/var/task:ro,delegated
     ports:
       - "9001:9001"
-    restart: always
-    stdin_open: true
-    tty: true
+    restart: on-failure
 
 
   publicapi:
@@ -80,14 +78,9 @@ services:
     env_file: local.env
     volumes:
       - ./backend/functions/public_api:/functions/public_api
-      - ./backend/functions/common:/functions/public_api/common
     ports:
       - "8002:8002"
-    depends_on:
-      - localstack
-    restart: always
-    stdin_open: true
-    tty: true
+    restart: on-failure
 
   mailcatcher:
     image: schickling/mailcatcher
