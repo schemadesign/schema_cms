@@ -72,12 +72,7 @@ class Project(
 
     @functional.cached_property
     def templates_count(self):
-        return {
-            "blocks": self.block_templates,
-            "pages": self.page_templates,
-            "filters": 0,
-            "states": 0,
-        }
+        return {"blocks": self.block_templates, "pages": self.page_templates, "filters": 0, "states": 0}
 
     @functional.cached_property
     def project_info(self):
