@@ -7,7 +7,7 @@ import { Container } from './blockTemplates.styles';
 import messages from './blockTemplates.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
-export const BlockTemplates = memo(({ fetchBlocks }) => {
+export const BlockTemplates = memo(({ fetchBlocks, blockTemplates }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -35,5 +35,6 @@ export const BlockTemplates = memo(({ fetchBlocks }) => {
 
 BlockTemplates.propTypes = {
   match: PropTypes.object.isRequired,
+  blockTemplates: PropTypes.object.isRequired,
   fetchBlocks: PropTypes.func.isRequired,
 };

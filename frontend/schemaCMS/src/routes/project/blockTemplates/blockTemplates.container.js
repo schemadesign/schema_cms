@@ -6,11 +6,19 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { BlockTemplates } from './blockTemplates.component';
+import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  blockTemplates: selectBlockTemplates,
+});
 
 export const mapDispatchToProps = dispatch => ({
-  ...bindPromiseCreators({}, dispatch),
+  ...bindPromiseCreators(
+    {
+      fetchBlocks: promisifyRoutine(BlockTemplatesRoutines.fetchBlocks),
+    },
+    dispatch
+  ),
 });
 
 export default compose(
