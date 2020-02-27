@@ -25,11 +25,15 @@ class SchemaCMSAPI:
     def update_datasource_meta(self, datasource_pk, **kwargs):
         url = os.path.join(self._datasource_url(datasource_pk), "update-meta")
         json_ = {**kwargs}
-        response = requests.post(url, json=json_, headers=self.get_headers(), timeout=self.timeout,)
+        response = requests.post(
+            url, json=json_, headers=self.get_headers(), timeout=self.timeout,
+        )
         return response
 
     @check_response
-    def update_job_meta(self, job_pk, items, fields, preview, fields_names, fields_with_urls):
+    def update_job_meta(
+        self, job_pk, items, fields, preview, fields_names, fields_with_urls
+    ):
         url = os.path.join(self._job_url(job_pk), "update-meta")
         response = requests.post(
             url,

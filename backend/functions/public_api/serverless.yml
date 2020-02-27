@@ -10,11 +10,11 @@ plugins:
   - serverless-python-requirements
   - serverless-wsgi
   - serverless-localstack
-  - serverless-package-external
 
 custom:
   wsgi:
     app: handler.app
+
   pythonRequirements:
     dockerizePip: false
     zip: true
@@ -22,18 +22,14 @@ custom:
 
   localstack:
     stages:
-      # list of stages for which the plugin should be enabled
       - local
-    # optional - LocalStack host to connect to
     host: http://localstack
     lambda:
       mountCode: False
+
   stages:
     - local
     - prod
-  packageExternal:
-    external:
-      - '../common'
 
 package:
   package:
@@ -54,5 +50,5 @@ functions:
       AWS_ACCESS_KEY_ID: foo
       AWS_SECRET_ACCESS_KEY: bar
       AWS_DEFAULT_REGION: us-east-1
-      BACKEND_URL: http://host.docker.internal:8000/api/v1
+      BACKEND_URL: http://172.17.0.1:8000/api/v1
       LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0

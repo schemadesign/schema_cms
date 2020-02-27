@@ -12,6 +12,7 @@ def show_toolbar(request):
 
 class Local(Common):
     DEBUG = True
+    LOCAL_LAMBDA = True
 
     # Mail
     EMAIL_HOST = "mailcatcher"

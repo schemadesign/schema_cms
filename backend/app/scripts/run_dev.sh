@@ -7,8 +7,6 @@ set -e
 # wait untill secretsmanager become ready
 wait_for_s3
 echo "S3 manager is up"
-wait_for_sqs
-echo "SQS manager is up"
 
 
 # install all localstack fixtures
@@ -33,22 +31,6 @@ echo "SQS manager is up"
 } || {
     echo "Scripts S3 put bucket versioning failed"
 }
-
-{
-    create_sqs_queue "schemacms-queue" &&
-    echo "SQS Queue worker created"
-} || {
-    echo "SQS Queue worker NOT created"
-}
-
-{
-    create_worker_lambda &&
-    echo "Worker-Lambda function created"
-} || {
-    echo "Worker-Lambda function NOT created"
-}
-
-python /app/scripts/create_local_lambda.py
 
 echo "LocalStack fixtures installed"
 
