@@ -15,6 +15,7 @@ import { CreateFolder } from './createFolder';
 import { NotFound } from '../notFound';
 import { ProjectStateList } from './projectStateList';
 import { CreateProjectState } from './createProjectState';
+import { Templates } from './templates';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -38,6 +39,7 @@ export class Project extends PureComponent {
     const folderCreatePath = `${viewPath}/folder/create`;
     const stateListPath = `${viewPath}/state`;
     const stateCreatePath = `${viewPath}/state/create`;
+    const templatesPath = `${viewPath}/templates`;
 
     return (
       <Switch>
@@ -53,6 +55,7 @@ export class Project extends PureComponent {
         <Route exact path={folderCreatePath} component={CreateFolder} />
         <Route exact path={stateListPath} component={ProjectStateList} />
         <Route exact path={stateCreatePath} component={CreateProjectState} />
+        <Route exact path={templatesPath} component={Templates} />
         <Route path="*" component={NotFound} />
       </Switch>
     );

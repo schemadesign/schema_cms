@@ -15,12 +15,19 @@ export const ProjectRoutines = {
   setProject: createRoutine(`${prefix}SET_PROJECT`),
   clearProject: createRoutine(`${prefix}CLEAR_PROJECT`),
   editProject: createRoutine(`${prefix}EDIT_PROJECT`),
+  fetchTemplates: createRoutine(`${prefix}TEMPLATES`),
 };
 
 export const INITIAL_STATE = new Immutable({
   projects: [],
   project: {},
   editors: [],
+  templates: {
+    blocks: 0,
+    pages: 0,
+    filters: 0,
+    states: 0,
+  },
 });
 
 const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload);
@@ -32,6 +39,7 @@ const setProject = (state = INITIAL_STATE, { payload }) => state.set('project', 
 const clearProject = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project);
 
 const setEditors = (state = INITIAL_STATE, { payload }) => state.set('editors', payload);
+const fetchTemplates = (state = INITIAL_STATE, { payload }) => state.set('templates', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchList.SUCCESS]: updateList,
@@ -41,4 +49,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchEditors.SUCCESS]: setEditors,
   [ProjectRoutines.setProject.TRIGGER]: setProject,
   [ProjectRoutines.clearProject.TRIGGER]: clearProject,
+  [ProjectRoutines.fetchTemplates.TRIGGER]: fetchTemplates,
 });

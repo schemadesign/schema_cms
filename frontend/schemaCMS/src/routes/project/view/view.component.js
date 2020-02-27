@@ -1,8 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card } from 'schemaUI';
-import { always, cond, isEmpty, isNil, path, propEq, T } from 'ramda';
+import { always, cond, isEmpty, path, propEq, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -15,9 +14,6 @@ import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
 import messages from './view.messages';
 import {
-  CardHeader,
-  CardValue,
-  CardWrapper,
   Container,
   DetailItem,
   DetailLabel,
@@ -25,8 +21,6 @@ import {
   DetailValue,
   DetailWrapper,
   ProjectView,
-  Statistics,
-  statisticsCardStyles,
   inputStyles,
   containerInputStyles,
   selectContainerStyles,
@@ -40,6 +34,7 @@ import { getProjectMenuOptions, PROJECT_DETAILS_ID } from '../project.constants'
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Select } from '../../../shared/components/form/select';
 import { PROJECT_STATUS, PROJECT_STATUSES_LIST } from '../../../modules/project/project.constants';
+import { StatisticCards } from '../../../shared/components/statisticCards';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -111,16 +106,6 @@ export class View extends PureComponent {
     setFieldValue(PROJECT_STATUS, selectedStatus);
   };
 
-  renderStatisticHeader = text => <CardHeader>{this.formatMessage(text)}</CardHeader>;
-
-  renderStatistic = ({ header, value, to, id }, index) => (
-    <CardWrapper key={index}>
-      <Card id={id} headerComponent={header} onClick={this.handleGoTo(to)} customStyles={statisticsCardStyles}>
-        <CardValue id={`${id}Value`}>{value}</CardValue>
-      </Card>
-    </CardWrapper>
-  );
-
   renderInput = ({ field, multiline }) => (
     <InputContainer>
       <TextInput
@@ -169,30 +154,30 @@ export class View extends PureComponent {
   renderProject = ({ id: projectId, owner, slug, created, meta, status } = {}) => {
     const statistics = [
       {
-        header: this.renderStatisticHeader(messages.dataSources),
+        header: messages.dataSources,
         value: meta.dataSources,
         to: `/project/${projectId}/datasource`,
         id: 'projectDataSources',
       },
       {
-        header: this.renderStatisticHeader(messages.states),
-        value: meta.states || 0,
+        header: messages.states,
+        value: meta.states,
         to: `/project/${projectId}/state`,
         id: 'projectStates',
       },
       {
-        header: this.renderStatisticHeader(messages.pages),
+        header: messages.pages,
         value: meta.pages,
         to: `/project/${projectId}/folder`,
         id: 'projectPages',
       },
       {
-        header: this.renderStatisticHeader(messages.users),
+        header: messages.users,
         value: meta.users,
         to: `/project/${projectId}/user`,
         id: 'projectUsers',
       },
-    ].filter(({ value }) => !isNil(value));
+    ];
 
     const { firstName = '—', lastName = '' } = owner || {};
 
@@ -241,7 +226,7 @@ export class View extends PureComponent {
 
     return (
       <ProjectView>
-        <Statistics>{statistics.map(this.renderStatistic)}</Statistics>
+        <StatisticCards statistics={statistics} history={this.props.history} />
         <Details>{data.map(this.renderDetail)}</Details>
       </ProjectView>
     );

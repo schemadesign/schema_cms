@@ -13,6 +13,7 @@ export const PROJECT_STATE_ID = 'stateNavBtn';
 export const PROJECT_FOLDER_ID = 'folderNavBtn';
 export const PROJECT_USERS_ID = 'usersNavBtn';
 export const USERS_PAGE_ID = 'usersPageNavBtn';
+export const TEMPLATES_ID = 'templatesNavBtn';
 
 export const PROJECT_LIST_MENU_OPTIONS = [
   {

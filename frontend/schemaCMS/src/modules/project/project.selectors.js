@@ -22,3 +22,8 @@ export const selectProjectTitle = createSelector(
   selectProject,
   prop('title')
 );
+
+export const selectTemplates = createSelector(
+  selectProjectDomain,
+  prop('templates')
+);
