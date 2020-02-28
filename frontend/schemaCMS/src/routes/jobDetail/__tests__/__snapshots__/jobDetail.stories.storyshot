@@ -86,11 +86,11 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c19 {
   height: 155px;
 }
 
-.c15 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,17 +118,58 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c22 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c18 {
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  padding: 10px 0;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.c18:hover {
+  color: #71737e;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c14 {
+  color: #71737e;
+  margin-bottom: 10px;
+}
+
+.c15 {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin-bottom: 40px;
 }
 
 @media (min-width:1050px) {
@@ -146,6 +187,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -163,7 +205,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c21 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -172,7 +214,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -181,7 +223,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c22 {
     width: 240px;
   }
 }
@@ -233,9 +275,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
               }
             }
           >
-            <span>
-              Job
-            </span>
+            Job
           </h2>
           <h1
             className="c2"
@@ -251,9 +291,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
               }
             }
           >
-            <span>
-              Details
-            </span>
+            Details
           </h1>
         </div>
       </div>
@@ -337,9 +375,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
               }
             }
           >
-            <span>
-              Job
-            </span>
+            Job
           </h2>
           <h1
             className="c2"
@@ -355,9 +391,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
               }
             }
           >
-            <span>
-              Details
-            </span>
+            Details
           </h1>
         </div>
       </div>
@@ -375,9 +409,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
         </div>
@@ -392,9 +424,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -403,9 +433,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -418,9 +446,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c7"
@@ -428,9 +454,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c7"
@@ -438,9 +462,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -505,9 +527,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           }
         }
       >
-        <span>
-          Job
-        </span>
+        Job
       </h2>
       <h1
         className="c11"
@@ -523,9 +543,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           }
         }
       >
-        <span>
-          Details
-        </span>
+        Details
       </h1>
     </div>
     <div
@@ -535,21 +553,370 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   <div
     className="c12"
   >
-    <span>
-      Loading...
-    </span>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="pk"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Job Id
+      </label>
+      <input
+        disabled={true}
+        id="pk"
+        name="pk"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="1"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
   </div>
   <div
-    className="c13"
+    className="c12"
   >
     <div
-      className="c14"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="jobState"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Job status
+      </label>
+      <input
+        disabled={true}
+        id="jobState"
+        name="jobState"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="Failed"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div
+      className="c12"
     >
       <div
-        className="c15"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Job description
+        </label>
+        <textarea
+          id="description"
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+          value="description"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="c13"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    className="c12"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="error"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Error
+      </label>
+      <textarea
+        disabled={true}
+        id="error"
+        onChange={[Function]}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+        value="error"
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <label
+    className="c14"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Steps:
+  </label>
+  <ul
+    className="c15"
+  >
+    <li
+      className="c16"
+    >
+      scriptName 1
+    </li>
+    <li
+      className="c16"
+    >
+      scriptName 2
+    </li>
+  </ul>
+  <div
+    className="c17"
+  >
+    <a
+      className="c18"
+      download={true}
+      href="http://sourceFileUrl"
+    >
+      Download Original File
+    </a>
+  </div>
+  <div
+    className="c19"
+  >
+    <div
+      className="c20"
+    >
+      <div
+        className="c21"
       >
         <button
-          className="c16"
+          className="c22"
           disabled={false}
           onClick={[Function]}
           style={
@@ -570,12 +937,10 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             }
           }
         >
-          <span>
-            Back
-          </span>
+          Back
         </button>
         <button
-          className="c16"
+          className="c22"
           disabled={false}
           onClick={[Function]}
           style={
@@ -596,9 +961,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             }
           }
         >
-          <span>
-            Save
-          </span>
+          Save
         </button>
       </div>
     </div>
@@ -692,11 +1055,11 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c17 {
   height: 155px;
 }
 
-.c15 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -715,7 +1078,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c18 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -724,17 +1087,54 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c20 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c16 {
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  padding: 10px 0;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.c16:hover {
+  color: #71737e;
+}
+
+.c15 {
+  color: #FFF;
+  padding: 10px 0;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.c15:hover {
+  color: #71737e;
 }
 
 @media (min-width:1050px) {
@@ -752,6 +1152,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -769,7 +1170,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -778,7 +1179,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c18 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -787,7 +1188,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c20 {
     width: 240px;
   }
 }
@@ -839,9 +1240,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
               }
             }
           >
-            <span>
-              Job
-            </span>
+            Job
           </h2>
           <h1
             className="c2"
@@ -857,9 +1256,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
               }
             }
           >
-            <span>
-              Details
-            </span>
+            Details
           </h1>
         </div>
       </div>
@@ -943,9 +1340,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
               }
             }
           >
-            <span>
-              Job
-            </span>
+            Job
           </h2>
           <h1
             className="c2"
@@ -961,9 +1356,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
               }
             }
           >
-            <span>
-              Details
-            </span>
+            Details
           </h1>
         </div>
       </div>
@@ -981,9 +1374,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
         </div>
@@ -998,9 +1389,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -1009,9 +1398,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -1024,9 +1411,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c7"
@@ -1034,9 +1419,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c7"
@@ -1044,9 +1427,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -1111,9 +1492,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           }
         }
       >
-        <span>
-          Job
-        </span>
+        Job
       </h2>
       <h1
         className="c11"
@@ -1129,9 +1508,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           }
         }
       >
-        <span>
-          Details
-        </span>
+        Details
       </h1>
     </div>
     <div
@@ -1141,21 +1518,262 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   <div
     className="c12"
   >
-    <span>
-      Loading...
-    </span>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="pk"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Job Id
+      </label>
+      <input
+        disabled={true}
+        id="pk"
+        name="pk"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="1"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
   </div>
   <div
-    className="c13"
+    className="c12"
   >
     <div
-      className="c14"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="jobState"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Job status
+      </label>
+      <input
+        disabled={true}
+        id="jobState"
+        name="jobState"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="Success"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div
+      className="c12"
     >
       <div
-        className="c15"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Job description
+        </label>
+        <textarea
+          id="description"
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+          value="description"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="c13"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    className="c14"
+  >
+    <a
+      className="c15"
+      href="/job/1/preview"
+      onClick={[Function]}
+    >
+      Preview
+    </a>
+    <a
+      className="c16"
+      download={true}
+      href="http://sourceFileUrl"
+    >
+      Download Original File
+    </a>
+  </div>
+  <div
+    className="c17"
+  >
+    <div
+      className="c18"
+    >
+      <div
+        className="c19"
       >
         <button
-          className="c16"
+          className="c20"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1176,12 +1794,10 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             }
           }
         >
-          <span>
-            Back
-          </span>
+          Back
         </button>
         <button
-          className="c16"
+          className="c20"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1202,9 +1818,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             }
           }
         >
-          <span>
-            Save
-          </span>
+          Save
         </button>
       </div>
     </div>
@@ -1298,11 +1912,11 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c20 {
   height: 155px;
 }
 
-.c15 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1321,7 +1935,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c21 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1330,17 +1944,69 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c23 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c19 {
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  padding: 10px 0;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.c19:hover {
+  color: #71737e;
+}
+
+.c18 {
+  color: #FFF;
+  padding: 10px 0;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.c18:hover {
+  color: #71737e;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c14 {
+  color: #71737e;
+  margin-bottom: 10px;
+}
+
+.c15 {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin-bottom: 40px;
 }
 
 @media (min-width:1050px) {
@@ -1358,6 +2024,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1375,7 +2042,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c22 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1384,7 +2051,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c21 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1393,7 +2060,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c23 {
     width: 240px;
   }
 }
@@ -1445,9 +2112,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
               }
             }
           >
-            <span>
-              Job
-            </span>
+            Job
           </h2>
           <h1
             className="c2"
@@ -1463,9 +2128,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
               }
             }
           >
-            <span>
-              Details
-            </span>
+            Details
           </h1>
         </div>
       </div>
@@ -1549,9 +2212,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
               }
             }
           >
-            <span>
-              Job
-            </span>
+            Job
           </h2>
           <h1
             className="c2"
@@ -1567,9 +2228,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
               }
             }
           >
-            <span>
-              Details
-            </span>
+            Details
           </h1>
         </div>
       </div>
@@ -1587,9 +2246,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
         </div>
@@ -1604,9 +2261,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -1615,9 +2270,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -1630,9 +2283,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c7"
@@ -1640,9 +2291,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c7"
@@ -1650,9 +2299,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -1717,9 +2364,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           }
         }
       >
-        <span>
-          Job
-        </span>
+        Job
       </h2>
       <h1
         className="c11"
@@ -1735,9 +2380,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           }
         }
       >
-        <span>
-          Details
-        </span>
+        Details
       </h1>
     </div>
     <div
@@ -1747,21 +2390,305 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   <div
     className="c12"
   >
-    <span>
-      Loading...
-    </span>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="pk"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Job Id
+      </label>
+      <input
+        disabled={true}
+        id="pk"
+        name="pk"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="1"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
   </div>
   <div
-    className="c13"
+    className="c12"
   >
     <div
-      className="c14"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="jobState"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Job status
+      </label>
+      <input
+        disabled={true}
+        id="jobState"
+        name="jobState"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="Success"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div
+      className="c12"
     >
       <div
-        className="c15"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Job description
+        </label>
+        <textarea
+          id="description"
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+          value="description"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="c13"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <label
+    className="c14"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Steps:
+  </label>
+  <ul
+    className="c15"
+  >
+    <li
+      className="c16"
+    >
+      scriptName 1
+    </li>
+    <li
+      className="c16"
+    >
+      scriptName 2
+    </li>
+    <li
+      className="c16"
+    >
+      scriptName 3
+    </li>
+  </ul>
+  <div
+    className="c17"
+  >
+    <a
+      className="c18"
+      href="/job/1/preview"
+      onClick={[Function]}
+    >
+      Preview
+    </a>
+    <a
+      className="c19"
+      download={true}
+      href="http://result"
+    >
+      Download Result File
+    </a>
+    <a
+      className="c19"
+      download={true}
+      href="http://sourceFileUrl"
+    >
+      Download Original File
+    </a>
+  </div>
+  <div
+    className="c20"
+  >
+    <div
+      className="c21"
+    >
+      <div
+        className="c22"
       >
         <button
-          className="c16"
+          className="c23"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1782,12 +2709,10 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             }
           }
         >
-          <span>
-            Back
-          </span>
+          Back
         </button>
         <button
-          className="c16"
+          className="c23"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1808,9 +2733,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             }
           }
         >
-          <span>
-            Save
-          </span>
+          Save
         </button>
       </div>
     </div>

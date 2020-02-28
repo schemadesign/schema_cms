@@ -41,7 +41,7 @@ export class Project extends PureComponent {
     const stateListPath = `${viewPath}/state`;
     const stateCreatePath = `${viewPath}/state/create`;
     const templatesPath = `${viewPath}/templates`;
-    const blockTemplatesPath = `${viewPath}/templates/block`;
+    const blockTemplatesPath = `${viewPath}/block-templates`;
 
     return (
       <Switch>

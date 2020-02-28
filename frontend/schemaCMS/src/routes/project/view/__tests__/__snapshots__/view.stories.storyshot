@@ -87,11 +87,11 @@ exports[`Storyshots Project|View Default 1`] = `
   word-break: break-word;
 }
 
-.c15 {
+.c36 {
   height: 155px;
 }
 
-.c17 {
+.c38 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`Storyshots Project|View Default 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c37 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -119,17 +119,73 @@ exports[`Storyshots Project|View Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c39 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c14 {
+.c30 {
+  width: 100%;
+}
+
+.c31 {
+  padding-top: 0;
+  margin-top: -2px;
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+  font-size: 18px;
+  font-size: inherit;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+}
+
+.c25 label {
+  margin-bottom: 2px;
+}
+
+.c26 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c35 {
+  cursor: pointer;
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c35:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c34 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c10 {
@@ -178,6 +234,37 @@ exports[`Storyshots Project|View Default 1`] = `
   text-decoration: none;
 }
 
+.c15 {
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.c16 {
+  font-size: 12px;
+  display: inline-block;
+  width: calc(50% - 7px);
+  margin-bottom: 14px;
+}
+
+.c16:nth-child(2n + 1) {
+  margin-right: 7px;
+}
+
+.c16:nth-child(2n) {
+  margin-left: 7px;
+}
+
+.c17 {
+  font-size: 12px;
+}
+
+.c18 {
+  display: block;
+  font-size: 66px;
+  line-height: 1.09;
+  font-weight: 500;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -191,6 +278,112 @@ exports[`Storyshots Project|View Default 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c19 {
+  list-style: none;
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.c20 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c24 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c27 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c28 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c32 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c33 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  padding: 12px 0 8px 0;
+  position: relative;
+}
+
+.c22 {
+  color: #71737e;
+  margin-right: 5px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 14px;
+}
+
+.c23 {
+  color: #FFF;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.c29 .c40 {
+  margin: 5px 0 0;
+}
+
+.c29 svg {
+  margin-top: 7px;
 }
 
 @media (min-width:1050px) {
@@ -207,7 +400,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c38 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -216,7 +409,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c37 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -225,7 +418,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c39 {
     width: 240px;
   }
 }
@@ -238,6 +431,160 @@ exports[`Storyshots Project|View Default 1`] = `
     display: flex;
     margin: 29px 0 20px 0;
     font-size: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c15 {
+    margin-bottom: 30px;
+    margin-left: -15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c16 {
+    font-size: 18px;
+    width: calc(25% - 15px);
+  }
+
+  .c16:nth-child(2n + 1) {
+    margin-right: 0;
+    margin-left: 15px;
+  }
+
+  .c16:nth-child(2n) {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c17 {
+    color: #FFF;
+    font-size: 18px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c18 {
+    padding-top: 40px;
+    font-size: 108px;
+    line-height: 1em;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
+    font-size: 18px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:1050px) {
+  .c20 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+}
+
+@media (min-width:1050px) {
+  .c27 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 5;
+    -ms-flex-order: 5;
+    order: 5;
+  }
+}
+
+@media (min-width:1050px) {
+  .c28 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+@media (min-width:1050px) {
+  .c32 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 4;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+}
+
+@media (min-width:1050px) {
+  .c33 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 6;
+    -ms-flex-order: 6;
+    order: 6;
+  }
+}
+
+@media (min-width:1050px) {
+  .c21 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-weight: normal;
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    margin-bottom: 6px;
   }
 }
 
@@ -292,9 +639,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   }
                 }
               >
-                <span>
-                  Project
-                </span>
+                Project
               </h2>
               <h1
                 className="c3"
@@ -394,9 +739,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   }
                 }
               >
-                <span>
-                  Project
-                </span>
+                Project
               </h2>
               <h1
                 className="c3"
@@ -430,9 +773,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="projectsNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Projects
-                  </span>
+                  Projects
                 </a>
               </div>
               <div
@@ -443,9 +784,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="usersPageNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Users
-                  </span>
+                  Users
                 </a>
               </div>
               <div
@@ -456,9 +795,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="projectDetailsNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Project details
-                  </span>
+                  Project details
                 </a>
               </div>
               <div
@@ -469,9 +806,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="dataSourceNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Data Sources
-                  </span>
+                  Data Sources
                 </a>
               </div>
               <div
@@ -482,9 +817,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="stateNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    States
-                  </span>
+                  States
                 </a>
               </div>
               <div
@@ -495,9 +828,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="usersNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Project Users
-                  </span>
+                  Project Users
                 </a>
               </div>
               <div
@@ -508,9 +839,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="folderNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Pages
-                  </span>
+                  Pages
                 </a>
               </div>
             </div>
@@ -525,9 +854,7 @@ exports[`Storyshots Project|View Default 1`] = `
                   id="settingsNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Settings
-                  </span>
+                  Settings
                 </a>
               </div>
               <div
@@ -536,9 +863,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 <div
                   onClick={[Function]}
                 >
-                  <span>
-                    Log out
-                  </span>
+                  Log out
                 </div>
               </div>
             </div>
@@ -551,9 +876,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 id="aboutNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  About Schema CMS
-                </span>
+                About Schema CMS
               </a>
               <a
                 className="c9"
@@ -561,9 +884,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 id="apiNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  API Doc
-                </span>
+                API Doc
               </a>
               <a
                 className="c9"
@@ -571,9 +892,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 id="repositoryNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  GitHub Repository
-                </span>
+                GitHub Repository
               </a>
             </div>
           </div>
@@ -636,9 +955,7 @@ exports[`Storyshots Project|View Default 1`] = `
               id="settingsTab"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -650,9 +967,7 @@ exports[`Storyshots Project|View Default 1`] = `
               id="sourcesTab"
               onClick={[Function]}
             >
-              <span>
-                Sources
-              </span>
+              Sources
             </a>
           </div>
           <div
@@ -664,9 +979,7 @@ exports[`Storyshots Project|View Default 1`] = `
               id="stateTab"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -678,9 +991,7 @@ exports[`Storyshots Project|View Default 1`] = `
               id="folderTab"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
           <div
@@ -692,9 +1003,7 @@ exports[`Storyshots Project|View Default 1`] = `
               id="templatesTab"
               onClick={[Function]}
             >
-              <span>
-                Templates
-              </span>
+              Templates
             </a>
           </div>
           <div
@@ -706,9 +1015,7 @@ exports[`Storyshots Project|View Default 1`] = `
               id="usersTab"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
         </div>
@@ -716,19 +1023,696 @@ exports[`Storyshots Project|View Default 1`] = `
       <div
         className="c14"
       >
-        <span>
-          Loading...
+        <ul
+          className="c15"
+        >
+          <li
+            className="c16"
+          >
+            <div
+              id="projectDataSources"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderTop": "2px solid #FFF",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "justifyContent": "space-between",
+                  "padding": "12px 14px 14px",
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "#71737e",
+                      "marginBottom": 14,
+                    }
+                  }
+                >
+                  <span
+                    className="c17"
+                  >
+                    Data Sources
+                  </span>
+                </div>
+                <span
+                  className="c18"
+                  id="projectDataSourcesValue"
+                >
+                  3
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="c16"
+          >
+            <div
+              id="projectStates"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderTop": "2px solid #FFF",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "justifyContent": "space-between",
+                  "padding": "12px 14px 14px",
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "#71737e",
+                      "marginBottom": 14,
+                    }
+                  }
+                >
+                  <span
+                    className="c17"
+                  >
+                    States
+                  </span>
+                </div>
+                <span
+                  className="c18"
+                  id="projectStatesValue"
+                />
+              </div>
+            </div>
+          </li>
+          <li
+            className="c16"
+          >
+            <div
+              id="projectPages"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderTop": "2px solid #FFF",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "justifyContent": "space-between",
+                  "padding": "12px 14px 14px",
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "#71737e",
+                      "marginBottom": 14,
+                    }
+                  }
+                >
+                  <span
+                    className="c17"
+                  >
+                    Pages
+                  </span>
+                </div>
+                <span
+                  className="c18"
+                  id="projectPagesValue"
+                >
+                  1
+                </span>
+              </div>
+            </div>
+          </li>
+          <li
+            className="c16"
+          >
+            <div
+              id="projectUsers"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderTop": "2px solid #FFF",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "justifyContent": "space-between",
+                  "padding": "12px 14px 14px",
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "#71737e",
+                      "marginBottom": 14,
+                    }
+                  }
+                >
+                  <span
+                    className="c17"
+                  >
+                    Users
+                  </span>
+                </div>
+                <span
+                  className="c18"
+                  id="projectUsersValue"
+                >
+                  2
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul
+          className="c19"
+        >
+          <li
+            className="c20"
+            order={1}
+          >
+            <div
+              className="c21"
+              id="fieldLastUpdated"
+            >
+              <span
+                className="c22"
+                id="fieldLastUpdatedLabel"
+              >
+                Last Update
+              </span>
+              <span
+                className="c23"
+                id="fieldLastUpdatedValue"
+              >
+                3 months ago
+              </span>
+            </div>
+          </li>
+          <li
+            className="c24"
+            order={3}
+          >
+            <div
+              className="c21"
+              id="fieldStatus"
+            >
+              <span
+                className="c22"
+                id="fieldStatusLabel"
+              >
+                Status
+              </span>
+              <div
+                className="c25"
+              >
+                <input
+                  id="status"
+                  name="status"
+                  type="hidden"
+                  value="Status"
+                />
+                <div
+                  className="c26"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M15.117 18L9 12h12z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#FFF",
+                      "display": "flex",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "display": "flex",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                          "display": "flex",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
+                        
+                      </div>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "backgroundColor": "#1d1d20",
+                          "display": "none",
+                          "flexDirection": "column",
+                          "left": "0",
+                          "maxHeight": "183px",
+                          "overflowY": "hidden",
+                          "position": "absolute",
+                          "top": "calc(100% + 5px)",
+                          "width": "100%",
+                          "zIndex": 2,
+                        }
+                      }
+                    >
+                      <div
+                        id="select-item-0"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "border": "1px solid  #2F2F36",
+                            "borderTop": "1px solid  #2F2F36",
+                            "color": "#71737e",
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "padding": "20px 10px",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
+                        In Progress
+                      </div>
+                      <div
+                        id="select-item-1"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "border": "1px solid  #2F2F36",
+                            "borderTop": "none",
+                            "color": "#71737e",
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "padding": "20px 10px",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
+                        Done
+                      </div>
+                      <div
+                        id="select-item-2"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "border": "1px solid  #2F2F36",
+                            "borderTop": "none",
+                            "color": "#71737e",
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "padding": "20px 10px",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
+                        Hold
+                      </div>
+                      <div
+                        id="select-item-3"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "border": "1px solid  #2F2F36",
+                            "borderTop": "none",
+                            "color": "#71737e",
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "padding": "20px 10px",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
+                        Published
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            className="c27"
+            order={5}
+          >
+            <div
+              className="c21"
+              id="fieldOwner"
+            >
+              <span
+                className="c22"
+                id="fieldOwnerLabel"
+              >
+                Owner
+              </span>
+              <span
+                className="c23"
+                id="fieldOwnerValue"
+              >
+                Firstname Lastname
+              </span>
+            </div>
+          </li>
+          <li
+            className="c28"
+            order={2}
+          >
+            <div
+              className="c21"
+              id="fieldTitle"
+            >
+              <span
+                className="c22"
+                id="fieldTitleLabel"
+              >
+                Title
+              </span>
+              <div
+                className="c29"
+              >
+                <div
+                  className="c30"
+                >
+                  <div
+                    style={
+                      Object {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "maxWidth": "100%",
+                        "paddingBottom": 0,
+                        "position": "static",
+                      }
+                    }
+                  >
+                    <input
+                      id="title"
+                      name="title"
+                      onChange={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "border": "none",
+                          "color": "#FFF",
+                          "fontSize": "inherit",
+                          "lineHeight": "inherit",
+                          "outline": "none",
+                          "padding": 0,
+                        }
+                      }
+                      type="text"
+                      value="Project Name"
+                    />
+                    <div
+                      style={
+                        Object {
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
+                      }
+                    >
+                      <div
+                        className="c31"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            className="c32"
+            order={4}
+          >
+            <div
+              className="c21"
+              id="fieldDescription"
+            >
+              <span
+                className="c22"
+                id="fieldDescriptionLabel"
+              >
+                Description
+              </span>
+              <div
+                className="c29"
+              >
+                <div
+                  className="c30"
+                >
+                  <div
+                    style={
+                      Object {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "maxWidth": "100%",
+                        "paddingBottom": 0,
+                        "position": "static",
+                      }
+                    }
+                  >
+                    <textarea
+                      id="description"
+                      onChange={[Function]}
+                      style={
+                        Object {
+                          "background": "#000",
+                          "border": "none",
+                          "color": "#FFF",
+                          "fontSize": "inherit",
+                          "height": 0,
+                          "lineHeight": "inherit",
+                          "outline": "none",
+                          "padding": "0",
+                          "resize": "none",
+                        }
+                      }
+                      value="Description"
+                    />
+                    <textarea
+                      aria-hidden={true}
+                      readOnly={true}
+                      style={
+                        Object {
+                          "background": "#000",
+                          "border": "none",
+                          "color": "#FFF",
+                          "fontSize": "inherit",
+                          "height": 0,
+                          "left": 0,
+                          "lineHeight": "inherit",
+                          "outline": "none",
+                          "overflow": "hidden",
+                          "padding": "0",
+                          "position": "absolute",
+                          "resize": "none",
+                          "top": 0,
+                          "visibility": "hidden",
+                        }
+                      }
+                      tabIndex={-1}
+                    />
+                    <div
+                      style={
+                        Object {
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
+                      }
+                    >
+                      <div
+                        className="c31"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            className="c33"
+            order={6}
+          >
+            <div
+              className="c21"
+              id="fieldSlug"
+            >
+              <span
+                className="c22"
+                id="fieldSlugLabel"
+              >
+                API
+              </span>
+              <span
+                className="c23"
+                id="fieldSlugValue"
+              >
+                schemacms/api/project_title
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="c34"
+      >
+        <span
+          className="c35"
+          id="deleteProjectDesktopBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Delete Project
         </span>
       </div>
     </div>
     <div
-      className="c15"
+      className="c36"
     >
       <div
-        className="c16"
+        className="c37"
       >
         <div
-          className="c17"
+          className="c38"
         >
           <button
             disabled={false}
@@ -770,7 +1754,7 @@ exports[`Storyshots Project|View Default 1`] = `
             </svg>
           </button>
           <button
-            className="c18"
+            className="c39"
             disabled={true}
             onClick={[Function]}
             style={
@@ -792,9 +1776,7 @@ exports[`Storyshots Project|View Default 1`] = `
             }
             type="button"
           >
-            <span>
-              Save
-            </span>
+            Save
           </button>
         </div>
       </div>

@@ -1,24 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { IntlProvider } from 'react-intl';
 
 import { Source } from '../source.component';
 import { defaultProps } from '../source.stories';
 import { Form, Link } from '../source.styles';
-import { DEFAULT_LOCALE } from '../../../../i18n';
 import browserHistory from '../../../../shared/utils/history';
 
 describe('SourceComponent: Component', () => {
-  const component = props => (
-    <IntlProvider locale={DEFAULT_LOCALE}>
-      <Source {...defaultProps} {...props} />
-    </IntlProvider>
-  );
+  const component = props => <Source {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
-    const wrapper = render().dive();
+    const wrapper = render();
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -30,14 +24,14 @@ describe('SourceComponent: Component', () => {
         project: { id: 'projectId' },
       },
     };
-    const wrapper = render(props).dive();
+    const wrapper = render(props);
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should call handleSubmit', () => {
     jest.spyOn(defaultProps, 'handleSubmit');
-    const wrapper = render().dive();
+    const wrapper = render();
     wrapper.find(Form).simulate('submit');
 
     expect(defaultProps.handleSubmit).toHaveBeenCalled();
@@ -46,7 +40,7 @@ describe('SourceComponent: Component', () => {
   it('should call handleSubmit and set runLastJob on true', () => {
     jest.spyOn(defaultProps, 'handleSubmit');
     jest.spyOn(defaultProps, 'setFieldValue');
-    const wrapper = render().dive();
+    const wrapper = render();
     wrapper.find(Form).simulate('submit');
     wrapper.find('#confirmRunLastJob').simulate('click');
 
@@ -56,7 +50,7 @@ describe('SourceComponent: Component', () => {
   it('should call handleSubmit and set runLastJob on false', () => {
     jest.spyOn(defaultProps, 'handleSubmit');
     jest.spyOn(defaultProps, 'setFieldValue');
-    const wrapper = render().dive();
+    const wrapper = render();
     wrapper.find(Form).simulate('submit');
     wrapper.find('#declineRunLastJob').simulate('click');
 
@@ -66,7 +60,7 @@ describe('SourceComponent: Component', () => {
   it('should remove data source', () => {
     jest.spyOn(defaultProps, 'removeDataSource');
 
-    const wrapper = render().dive();
+    const wrapper = render();
     wrapper
       .find(Form)
       .dive()
@@ -83,7 +77,7 @@ describe('SourceComponent: Component', () => {
   it('should redurect on click past versions', () => {
     jest.spyOn(browserHistory, 'push');
 
-    const wrapper = render().dive();
+    const wrapper = render();
     wrapper
       .find(Form)
       .dive()

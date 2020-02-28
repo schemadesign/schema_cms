@@ -86,11 +86,11 @@ exports[`Storyshots User|View Admin 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c15 {
   height: 155px;
 }
 
-.c15 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots User|View Admin 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c16 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,17 +118,46 @@ exports[`Storyshots User|View Admin 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c18 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c14 {
+  cursor: pointer;
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 30px;
+}
+
+.c14:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c14:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width:1050px) {
@@ -146,6 +175,7 @@ exports[`Storyshots User|View Admin 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -163,7 +193,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c17 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -172,7 +202,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c16 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -181,7 +211,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c18 {
     width: 240px;
   }
 }
@@ -236,9 +266,7 @@ exports[`Storyshots User|View Admin 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -254,9 +282,7 @@ exports[`Storyshots User|View Admin 1`] = `
                 }
               }
             >
-              <span>
-                Profile
-              </span>
+              Profile
             </h1>
           </div>
         </div>
@@ -340,9 +366,7 @@ exports[`Storyshots User|View Admin 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -358,9 +382,7 @@ exports[`Storyshots User|View Admin 1`] = `
                 }
               }
             >
-              <span>
-                Profile
-              </span>
+              Profile
             </h1>
           </div>
         </div>
@@ -378,9 +400,7 @@ exports[`Storyshots User|View Admin 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -391,9 +411,7 @@ exports[`Storyshots User|View Admin 1`] = `
                 id="userNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -408,9 +426,7 @@ exports[`Storyshots User|View Admin 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -419,9 +435,7 @@ exports[`Storyshots User|View Admin 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -434,9 +448,7 @@ exports[`Storyshots User|View Admin 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -444,9 +456,7 @@ exports[`Storyshots User|View Admin 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -454,9 +464,7 @@ exports[`Storyshots User|View Admin 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -521,9 +529,7 @@ exports[`Storyshots User|View Admin 1`] = `
             }
           }
         >
-          <span>
-            Users
-          </span>
+          Users
         </h2>
         <h1
           className="c11"
@@ -539,9 +545,7 @@ exports[`Storyshots User|View Admin 1`] = `
             }
           }
         >
-          <span>
-            Profile
-          </span>
+          Profile
         </h1>
       </div>
       <div
@@ -551,21 +555,274 @@ exports[`Storyshots User|View Admin 1`] = `
     <div
       className="c12"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="firstName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          First Name
+        </label>
+        <input
+          disabled={true}
+          id="firstName"
+          name="firstName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="FirstName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="lastName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Last Name
+        </label>
+        <input
+          disabled={true}
+          id="lastName"
+          name="lastName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="LastName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="email"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Email
+        </label>
+        <input
+          disabled={true}
+          id="email"
+          name="email"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="email@example.com"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="role"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Role
+        </label>
+        <input
+          disabled={true}
+          id="role"
+          name="role"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="admin"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
     </div>
     <div
       className="c13"
     >
-      <div
+      <span
         className="c14"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        Remove user
+      </span>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        className="c16"
       >
         <div
-          className="c15"
+          className="c17"
         >
           <button
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
             style={
@@ -587,9 +844,7 @@ exports[`Storyshots User|View Admin 1`] = `
             }
             type="button"
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
         </div>
       </div>
@@ -684,11 +939,11 @@ exports[`Storyshots User|View Editor 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c15 {
   height: 155px;
 }
 
-.c15 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -707,7 +962,7 @@ exports[`Storyshots User|View Editor 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c16 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -716,17 +971,46 @@ exports[`Storyshots User|View Editor 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c18 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c14 {
+  cursor: pointer;
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 30px;
+}
+
+.c14:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c14:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width:1050px) {
@@ -744,6 +1028,7 @@ exports[`Storyshots User|View Editor 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -761,7 +1046,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c17 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -770,7 +1055,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c16 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -779,7 +1064,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c18 {
     width: 240px;
   }
 }
@@ -834,9 +1119,7 @@ exports[`Storyshots User|View Editor 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -852,9 +1135,7 @@ exports[`Storyshots User|View Editor 1`] = `
                 }
               }
             >
-              <span>
-                Profile
-              </span>
+              Profile
             </h1>
           </div>
         </div>
@@ -938,9 +1219,7 @@ exports[`Storyshots User|View Editor 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -956,9 +1235,7 @@ exports[`Storyshots User|View Editor 1`] = `
                 }
               }
             >
-              <span>
-                Profile
-              </span>
+              Profile
             </h1>
           </div>
         </div>
@@ -976,9 +1253,7 @@ exports[`Storyshots User|View Editor 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -989,9 +1264,7 @@ exports[`Storyshots User|View Editor 1`] = `
                 id="userNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -1006,9 +1279,7 @@ exports[`Storyshots User|View Editor 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1017,9 +1288,7 @@ exports[`Storyshots User|View Editor 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1032,9 +1301,7 @@ exports[`Storyshots User|View Editor 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1042,9 +1309,7 @@ exports[`Storyshots User|View Editor 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1052,9 +1317,7 @@ exports[`Storyshots User|View Editor 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1119,9 +1382,7 @@ exports[`Storyshots User|View Editor 1`] = `
             }
           }
         >
-          <span>
-            Users
-          </span>
+          Users
         </h2>
         <h1
           className="c11"
@@ -1137,9 +1398,7 @@ exports[`Storyshots User|View Editor 1`] = `
             }
           }
         >
-          <span>
-            Profile
-          </span>
+          Profile
         </h1>
       </div>
       <div
@@ -1149,21 +1408,274 @@ exports[`Storyshots User|View Editor 1`] = `
     <div
       className="c12"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="firstName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          First Name
+        </label>
+        <input
+          disabled={true}
+          id="firstName"
+          name="firstName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="FirstName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="lastName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Last Name
+        </label>
+        <input
+          disabled={true}
+          id="lastName"
+          name="lastName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="LastName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="email"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Email
+        </label>
+        <input
+          disabled={true}
+          id="email"
+          name="email"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="email@example.com"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="role"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Role
+        </label>
+        <input
+          disabled={true}
+          id="role"
+          name="role"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="editor"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
     </div>
     <div
       className="c13"
     >
-      <div
+      <span
         className="c14"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        Remove user
+      </span>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        className="c16"
       >
         <div
-          className="c15"
+          className="c17"
         >
           <button
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1185,9 +1697,7 @@ exports[`Storyshots User|View Editor 1`] = `
             }
             type="button"
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
         </div>
       </div>
@@ -1282,11 +1792,11 @@ exports[`Storyshots User|View Make Admin 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c15 {
   height: 155px;
 }
 
-.c15 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1305,7 +1815,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c16 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1314,17 +1824,46 @@ exports[`Storyshots User|View Make Admin 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c18 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c14 {
+  cursor: pointer;
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 30px;
+}
+
+.c14:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c14:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width:1050px) {
@@ -1342,6 +1881,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1359,7 +1899,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c17 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1368,7 +1908,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c16 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1377,7 +1917,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c18 {
     width: 240px;
   }
 }
@@ -1432,9 +1972,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -1450,9 +1988,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
                 }
               }
             >
-              <span>
-                Profile
-              </span>
+              Profile
             </h1>
           </div>
         </div>
@@ -1536,9 +2072,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -1554,9 +2088,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
                 }
               }
             >
-              <span>
-                Profile
-              </span>
+              Profile
             </h1>
           </div>
         </div>
@@ -1574,9 +2106,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1587,9 +2117,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
                 id="userNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -1604,9 +2132,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1615,9 +2141,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1630,9 +2154,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1640,9 +2162,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1650,9 +2170,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1717,9 +2235,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
             }
           }
         >
-          <span>
-            Users
-          </span>
+          Users
         </h2>
         <h1
           className="c11"
@@ -1735,9 +2251,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
             }
           }
         >
-          <span>
-            Profile
-          </span>
+          Profile
         </h1>
       </div>
       <div
@@ -1747,21 +2261,286 @@ exports[`Storyshots User|View Make Admin 1`] = `
     <div
       className="c12"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="firstName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          First Name
+        </label>
+        <input
+          disabled={true}
+          id="firstName"
+          name="firstName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="FirstName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="lastName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Last Name
+        </label>
+        <input
+          disabled={true}
+          id="lastName"
+          name="lastName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="LastName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="email"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Email
+        </label>
+        <input
+          disabled={true}
+          id="email"
+          name="email"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="email@example.com"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="role"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Role
+        </label>
+        <input
+          disabled={true}
+          id="role"
+          name="role"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="editor"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
     </div>
     <div
       className="c13"
     >
-      <div
+      <span
         className="c14"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        Remove user
+      </span>
+      <span
+        className="c14"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        Make admin
+      </span>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        className="c16"
       >
         <div
-          className="c15"
+          className="c17"
         >
           <button
-            className="c16"
+            className="c18"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1783,9 +2562,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
             }
             type="button"
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
         </div>
       </div>

@@ -181,9 +181,7 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
           <div
             className="c2"
           >
-            <span>
-              Admin
-            </span>
+            Admin
           </div>
           <button
             disabled={false}
@@ -282,9 +280,7 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
           <div
             className="c2"
           >
-            <span>
-              Editor
-            </span>
+            Editor
           </div>
           <button
             disabled={false}
@@ -383,9 +379,7 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
           <div
             className="c2"
           >
-            <span>
-              Admin
-            </span>
+            Admin
           </div>
           <button
             disabled={false}
@@ -588,9 +582,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           <div
             className="c2"
           >
-            <span>
-              Admin
-            </span>
+            Admin
           </div>
         </div>
         <div
@@ -648,9 +640,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           <div
             className="c2"
           >
-            <span>
-              Editor
-            </span>
+            Editor
           </div>
         </div>
         <div
@@ -708,9 +698,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           <div
             className="c2"
           >
-            <span>
-              Admin
-            </span>
+            Admin
           </div>
         </div>
         <div

@@ -48,25 +48,25 @@ export class Templates extends PureComponent {
       {
         header: messages.block,
         value: templates.blocks,
-        to: `/project/${projectId}/templates/block`,
+        to: `/project/${projectId}/block-templates`,
         id: 'blockTemplates',
       },
       {
         header: messages.page,
         value: templates.pages,
-        to: `/project/${projectId}/templates/page`,
+        to: `/project/${projectId}/page-templates`,
         id: 'pageTemplates',
       },
       {
         header: messages.filter,
         value: templates.filters,
-        to: `/project/${projectId}/templates/filter`,
+        to: `/project/${projectId}/filter-templates`,
         id: 'filterTemplates',
       },
       {
         header: messages.state,
         value: templates.states,
-        to: `/project/${projectId}/templates/state`,
+        to: `/project/${projectId}/state-templates`,
         id: 'stateTemplates',
       },
     ];

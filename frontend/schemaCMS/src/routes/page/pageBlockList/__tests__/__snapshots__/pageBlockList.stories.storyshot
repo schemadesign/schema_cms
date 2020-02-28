@@ -86,11 +86,11 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   word-break: break-word;
 }
 
-.c17 {
+.c21 {
   height: 155px;
 }
 
-.c19 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c22 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,21 +118,35 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c20 {
+.c24 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c16 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c13 {
   width: 20%;
+}
+
+.c15 {
+  width: 60%;
+  text-align: center;
+  color: #71737e;
 }
 
 .c12 {
@@ -150,8 +164,37 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
   margin-bottom: 24px;
 }
 
-.c15 {
+.c16 {
   width: 20%;
+}
+
+.c20 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
 }
 
 @media (min-width:1050px) {
@@ -169,6 +212,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -186,7 +230,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c23 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -195,7 +239,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c22 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -204,7 +248,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c24 {
     width: 240px;
   }
 }
@@ -265,9 +309,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 }
               }
             >
-              <span>
-                Blocks
-              </span>
+              Blocks
             </h2>
             <h1
               className="c2"
@@ -283,9 +325,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -369,9 +409,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 }
               }
             >
-              <span>
-                Blocks
-              </span>
+              Blocks
             </h2>
             <h1
               className="c2"
@@ -387,9 +425,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -407,9 +443,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -420,9 +454,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -437,9 +469,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -448,9 +478,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -463,9 +491,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -473,9 +499,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -483,9 +507,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -550,9 +572,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
             }
           }
         >
-          <span>
-            Blocks
-          </span>
+          Blocks
         </h2>
         <h1
           className="c11"
@@ -568,9 +588,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
             }
           }
         >
-          <span>
-            Overview
-          </span>
+          Overview
         </h1>
       </div>
       <div
@@ -629,6 +647,11 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
       </div>
       <div
         className="c15"
+      >
+        2 Blocks
+      </div>
+      <div
+        className="c16"
       />
     </div>
     <form
@@ -636,20 +659,305 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
     >
       <span>
         <div
-          className="c16"
-        >
-          <span>
-            Loading...
-          </span>
-        </div>
-        <div
-          className="c17"
+          id="blocksCheckboxGroup"
+          style={
+            Object {
+              "borderTop": "1px solid #2F2F36",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
         >
           <div
-            className="c18"
+            className="c17"
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
           >
             <div
-              className="c19"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottom": "1px solid #2F2F36",
+                  "color": "#FFF",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "justifyContent": "space-between",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                aria-hidden={true}
+                checked={true}
+                id="checkbox-0"
+                name="pageBlocks"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="checkbox"
+                value="1"
+              />
+              <span
+                style={
+                  Object {
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                <div
+                  className="c18"
+                >
+                  <span>
+                    <div
+                      className="c19"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "60px",
+                            "marginRight": 20,
+                            "width": 10,
+                          }
+                        }
+                        viewBox="0 0 10 60"
+                      >
+                        <path
+                          d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </span>
+                  <a
+                    className="c20"
+                    href="/block/1"
+                    onClick={[Function]}
+                  >
+                    block 1
+                  </a>
+                </div>
+              </span>
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+                <label
+                  htmlFor="checkbox-0"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  <svg
+                    stroke="#000"
+                    style={
+                      Object {
+                        "height": "30px",
+                        "stroke": "#FFF",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <g
+                      fill="none"
+                      fillRule="evenodd"
+                    >
+                      <path
+                        d="M20.455 7.5H7.5v15h15v-6.136"
+                        strokeLinecap="square"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M11 12l5 5L26 7"
+                        strokeWidth={3}
+                      />
+                    </g>
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c17"
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottom": "1px solid #2F2F36",
+                  "color": "#FFF",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "justifyContent": "space-between",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                aria-hidden={true}
+                checked={false}
+                id="checkbox-1"
+                name="pageBlocks"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="checkbox"
+                value="2"
+              />
+              <span
+                style={
+                  Object {
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                <div
+                  className="c18"
+                >
+                  <span>
+                    <div
+                      className="c19"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "60px",
+                            "marginRight": 20,
+                            "width": 10,
+                          }
+                        }
+                        viewBox="0 0 10 60"
+                      >
+                        <path
+                          d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </span>
+                  <a
+                    className="c20"
+                    href="/block/2"
+                    onClick={[Function]}
+                  >
+                    block 2
+                  </a>
+                </div>
+              </span>
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+                <label
+                  htmlFor="checkbox-1"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  <svg
+                    style={
+                      Object {
+                        "height": "30px",
+                        "stroke": "#FFF",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M7.5 7.5h15v15h-15z"
+                      fill="none"
+                    />
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c21"
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c23"
             >
               <button
                 disabled={false}
@@ -691,7 +999,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 </svg>
               </button>
               <button
-                className="c20"
+                className="c24"
                 disabled={true}
                 style={
                   Object {
@@ -712,9 +1020,7 @@ exports[`Storyshots Page|PageBlockList Default 1`] = `
                 }
                 type="submit"
               >
-                <span>
-                  Save
-                </span>
+                Save
               </button>
             </div>
           </div>
@@ -811,11 +1117,11 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   word-break: break-word;
 }
 
-.c17 {
+.c18 {
   height: 155px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -834,7 +1140,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -843,12 +1149,12 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c20 {
+.c21 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c16 {
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -858,6 +1164,12 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
 
 .c13 {
   width: 20%;
+}
+
+.c15 {
+  width: 60%;
+  text-align: center;
+  color: #71737e;
 }
 
 .c12 {
@@ -875,7 +1187,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
   margin-bottom: 24px;
 }
 
-.c15 {
+.c16 {
   width: 20%;
 }
 
@@ -894,6 +1206,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -911,7 +1224,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c20 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -920,7 +1233,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -929,7 +1242,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c21 {
     width: 240px;
   }
 }
@@ -990,9 +1303,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 }
               }
             >
-              <span>
-                Blocks
-              </span>
+              Blocks
             </h2>
             <h1
               className="c2"
@@ -1008,9 +1319,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -1094,9 +1403,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 }
               }
             >
-              <span>
-                Blocks
-              </span>
+              Blocks
             </h2>
             <h1
               className="c2"
@@ -1112,9 +1419,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -1132,9 +1437,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1145,9 +1448,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -1162,9 +1463,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1173,9 +1472,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1188,9 +1485,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1198,9 +1493,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1208,9 +1501,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1275,9 +1566,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
             }
           }
         >
-          <span>
-            Blocks
-          </span>
+          Blocks
         </h2>
         <h1
           className="c11"
@@ -1293,9 +1582,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
             }
           }
         >
-          <span>
-            Overview
-          </span>
+          Overview
         </h1>
       </div>
       <div
@@ -1354,6 +1641,11 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
       </div>
       <div
         className="c15"
+      >
+        0 Blocks
+      </div>
+      <div
+        className="c16"
       />
     </div>
     <form
@@ -1361,20 +1653,18 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
     >
       <span>
         <div
-          className="c16"
-        >
-          <span>
-            Loading...
-          </span>
-        </div>
-        <div
           className="c17"
         >
+           
+        </div>
+        <div
+          className="c18"
+        >
           <div
-            className="c18"
+            className="c19"
           >
             <div
-              className="c19"
+              className="c20"
             >
               <button
                 disabled={false}
@@ -1416,7 +1706,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 </svg>
               </button>
               <button
-                className="c20"
+                className="c21"
                 disabled={true}
                 style={
                   Object {
@@ -1437,9 +1727,7 @@ exports[`Storyshots Page|PageBlockList No data 1`] = `
                 }
                 type="submit"
               >
-                <span>
-                  Save
-                </span>
+                Save
               </button>
             </div>
           </div>
@@ -1536,11 +1824,11 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
   word-break: break-word;
 }
 
-.c17 {
+.c19 {
   height: 155px;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1559,7 +1847,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1568,21 +1856,19 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c20 {
+.c22 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c16 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 .c13 {
   width: 20%;
+}
+
+.c15 {
+  width: 60%;
+  text-align: center;
+  color: #71737e;
 }
 
 .c12 {
@@ -1600,8 +1886,28 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
   margin-bottom: 24px;
 }
 
-.c15 {
+.c16 {
   width: 20%;
+}
+
+.c18 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @media (min-width:1050px) {
@@ -1619,6 +1925,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1636,7 +1943,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c21 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1645,7 +1952,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1654,7 +1961,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c22 {
     width: 240px;
   }
 }
@@ -1715,9 +2022,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 }
               }
             >
-              <span>
-                Blocks
-              </span>
+              Blocks
             </h2>
             <h1
               className="c2"
@@ -1733,9 +2038,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -1819,9 +2122,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 }
               }
             >
-              <span>
-                Blocks
-              </span>
+              Blocks
             </h2>
             <h1
               className="c2"
@@ -1837,9 +2138,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -1857,9 +2156,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1870,9 +2167,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -1887,9 +2182,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1898,9 +2191,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1913,9 +2204,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1923,9 +2212,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1933,9 +2220,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -2000,9 +2285,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
             }
           }
         >
-          <span>
-            Blocks
-          </span>
+          Blocks
         </h2>
         <h1
           className="c11"
@@ -2018,9 +2301,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
             }
           }
         >
-          <span>
-            Overview
-          </span>
+          Overview
         </h1>
       </div>
       <div
@@ -2079,6 +2360,11 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
       </div>
       <div
         className="c15"
+      >
+        1 Block
+      </div>
+      <div
+        className="c16"
       />
     </div>
     <form
@@ -2086,20 +2372,141 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
     >
       <span>
         <div
-          className="c16"
+          id="blocksCheckboxGroup"
+          style={
+            Object {
+              "borderTop": "1px solid #2F2F36",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
         >
-          <span>
-            Loading...
-          </span>
+          <div>
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottom": "1px solid #2F2F36",
+                  "color": "#FFF",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "height": 48,
+                  "justifyContent": "space-between",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                aria-hidden={true}
+                checked={true}
+                id="checkbox-0"
+                name="pageBlocks"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="checkbox"
+                value="1"
+              />
+              <span
+                style={
+                  Object {
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                <div
+                  className="c17"
+                >
+                  <a
+                    className="c18"
+                    href="/block/1"
+                    onClick={[Function]}
+                  >
+                    block 1
+                  </a>
+                </div>
+              </span>
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+                <label
+                  htmlFor="checkbox-0"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  <svg
+                    stroke="#000"
+                    style={
+                      Object {
+                        "height": "30px",
+                        "stroke": "#FFF",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <g
+                      fill="none"
+                      fillRule="evenodd"
+                    >
+                      <path
+                        d="M20.455 7.5H7.5v15h15v-6.136"
+                        strokeLinecap="square"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M11 12l5 5L26 7"
+                        strokeWidth={3}
+                      />
+                    </g>
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
         <div
-          className="c17"
+          className="c19"
         >
           <div
-            className="c18"
+            className="c20"
           >
             <div
-              className="c19"
+              className="c21"
             >
               <button
                 disabled={false}
@@ -2141,7 +2548,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 </svg>
               </button>
               <button
-                className="c20"
+                className="c22"
                 disabled={true}
                 style={
                   Object {
@@ -2162,9 +2569,7 @@ exports[`Storyshots Page|PageBlockList With one block 1`] = `
                 }
                 type="submit"
               >
-                <span>
-                  Save
-                </span>
+                Save
               </button>
             </div>
           </div>

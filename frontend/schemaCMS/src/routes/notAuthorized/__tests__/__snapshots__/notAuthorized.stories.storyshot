@@ -143,9 +143,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             className="c2"
@@ -161,9 +159,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
               }
             }
           >
-            <span>
-              Error
-            </span>
+            Error
           </h1>
         </div>
       </div>
@@ -247,9 +243,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             className="c2"
@@ -265,9 +259,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
               }
             }
           >
-            <span>
-              Error
-            </span>
+            Error
           </h1>
         </div>
       </div>
@@ -288,9 +280,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -299,9 +289,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -314,9 +302,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c7"
@@ -324,9 +310,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c7"
@@ -334,9 +318,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -398,9 +380,7 @@ exports[`Storyshots NotAuthorized Default 1`] = `
         }
       }
     >
-      <span>
-        You don't have permissions to see this content.
-      </span>
+      You don't have permissions to see this content.
     </h1>
   </div>
 </div>

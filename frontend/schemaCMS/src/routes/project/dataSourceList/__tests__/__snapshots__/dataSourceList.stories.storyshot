@@ -204,6 +204,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -436,9 +437,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -449,9 +448,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -462,9 +459,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -475,9 +470,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -488,9 +481,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -501,9 +492,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -514,9 +503,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -531,9 +518,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -542,9 +527,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -557,9 +540,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c8"
@@ -567,9 +548,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c8"
@@ -577,9 +556,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -642,9 +619,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             id="settingsTab"
             onClick={[Function]}
           >
-            <span>
-              Settings
-            </span>
+            Settings
           </a>
         </div>
         <div
@@ -656,9 +631,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             id="sourcesTab"
             onClick={[Function]}
           >
-            <span>
-              Sources
-            </span>
+            Sources
           </a>
         </div>
         <div
@@ -670,9 +643,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             id="stateTab"
             onClick={[Function]}
           >
-            <span>
-              States
-            </span>
+            States
           </a>
         </div>
         <div
@@ -684,9 +655,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             id="folderTab"
             onClick={[Function]}
           >
-            <span>
-              Pages
-            </span>
+            Pages
           </a>
         </div>
         <div
@@ -698,9 +667,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             id="templatesTab"
             onClick={[Function]}
           >
-            <span>
-              Templates
-            </span>
+            Templates
           </a>
         </div>
         <div
@@ -712,9 +679,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             id="usersTab"
             onClick={[Function]}
           >
-            <span>
-              Users
-            </span>
+            Users
           </a>
         </div>
       </div>
@@ -808,9 +773,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
     <div
       className="c18"
     >
-      <span>
-        Loading...
-      </span>
+      No Data Sources
     </div>
     <div
       className="c19"
@@ -1014,11 +977,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   word-break: break-word;
 }
 
-.c19 {
+.c27 {
   height: 155px;
 }
 
-.c21 {
+.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1037,21 +1000,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   width: 100%;
 }
 
-.c20 {
+.c28 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c18 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c9 {
@@ -1100,6 +1055,86 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   text-decoration: none;
 }
 
+.c19 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
+.c21 {
+  word-break: break-word;
+  cursor: pointer;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #FFF;
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #71737e;
+}
+
+.c24 {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.c25 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.c20 {
+  color: #FFF;
+}
+
 @media (min-width:1050px) {
   .c13 {
     display: -webkit-box;
@@ -1115,6 +1150,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1132,13 +1168,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c29 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c28 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1160,6 +1196,25 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
     display: flex;
     margin: 29px 0 20px 0;
     font-size: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c18 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
   }
 }
 
@@ -1347,9 +1402,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1360,9 +1413,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -1373,9 +1424,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -1386,9 +1435,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -1399,9 +1446,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -1412,9 +1457,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -1425,9 +1468,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -1442,9 +1483,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1453,9 +1492,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1468,9 +1505,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c8"
@@ -1478,9 +1513,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c8"
@@ -1488,9 +1521,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1553,9 +1584,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             id="settingsTab"
             onClick={[Function]}
           >
-            <span>
-              Settings
-            </span>
+            Settings
           </a>
         </div>
         <div
@@ -1567,9 +1596,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             id="sourcesTab"
             onClick={[Function]}
           >
-            <span>
-              Sources
-            </span>
+            Sources
           </a>
         </div>
         <div
@@ -1581,9 +1608,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             id="stateTab"
             onClick={[Function]}
           >
-            <span>
-              States
-            </span>
+            States
           </a>
         </div>
         <div
@@ -1595,9 +1620,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             id="folderTab"
             onClick={[Function]}
           >
-            <span>
-              Pages
-            </span>
+            Pages
           </a>
         </div>
         <div
@@ -1609,9 +1632,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             id="templatesTab"
             onClick={[Function]}
           >
-            <span>
-              Templates
-            </span>
+            Templates
           </a>
         </div>
         <div
@@ -1623,9 +1644,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             id="usersTab"
             onClick={[Function]}
           >
-            <span>
-              Users
-            </span>
+            Users
           </a>
         </div>
       </div>
@@ -1716,21 +1735,1530 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         </div>
       </div>
     </div>
-    <div
+    <section
       className="c18"
     >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c19"
-    >
       <div
-        className="c20"
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
       >
         <div
-          className="c21"
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file 50%...
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              Uploading file failed
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      className="c27"
+    >
+      <div
+        className="c28"
+      >
+        <div
+          className="c29"
         >
           <button
             disabled={false}

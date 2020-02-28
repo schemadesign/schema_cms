@@ -103,11 +103,11 @@ exports[`Storyshots Project|List List (admin) 1`] = `
   word-break: break-word;
 }
 
-.c15 {
+.c20 {
   height: 155px;
 }
 
-.c17 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -126,7 +126,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c21 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -135,12 +135,65 @@ exports[`Storyshots Project|List List (admin) 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c14 {
+.c16 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c17 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c17::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c18 {
+  margin: 7px 0 14px;
+  cursor: pointer;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.c19 {
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  font-size: 12px;
+  font-weight: 300;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.c15 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 @media (min-width:1050px) {
@@ -158,6 +211,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -175,13 +229,13 @@ exports[`Storyshots Project|List List (admin) 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c22 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c21 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -192,6 +246,25 @@ exports[`Storyshots Project|List List (admin) 1`] = `
 @media (min-width:1050px) {
   .c13 {
     display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c15 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
   }
 }
 
@@ -379,9 +452,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -392,9 +463,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -409,9 +478,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -420,9 +487,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -435,9 +500,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c8"
@@ -445,9 +508,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c8"
@@ -455,9 +516,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -590,21 +649,240 @@ exports[`Storyshots Project|List List (admin) 1`] = `
         </div>
       </div>
     </div>
-    <div
+    <section
       className="c14"
     >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c15"
-    >
       <div
-        className="c16"
+        className="c15"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
       >
         <div
-          className="c17"
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <ul
+              className="c16"
+            >
+              <li
+                className="c17"
+                id="headerItem-0"
+              >
+                3 months ago
+              </li>
+              <li
+                className="c17"
+                id="headerItem-1"
+              >
+                In Progress
+              </li>
+              <li
+                className="c17"
+                id="headerItem-2"
+              >
+                Sed sed risus a nibh Maecenas nec pulvinar ex
+              </li>
+            </ul>
+          </div>
+          <h1
+            id="projectName-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+                "wordBreak": "break-word",
+              }
+            }
+          >
+            Project Name
+          </h1>
+          <div
+            className="c18"
+            onClick={[Function]}
+          >
+            <p
+              id="projectDescription-0"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "18px",
+                  "fontWeight": 200,
+                  "lineHeight": "1.33em",
+                  "margin": 0,
+                }
+              }
+            >
+              Description
+            </p>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c19"
+            id="apiPath-0"
+          >
+            schemacms/api/project_title
+          </div>
+        </div>
+      </div>
+      <div
+        className="c15"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <ul
+              className="c16"
+            >
+              <li
+                className="c17"
+                id="headerItem-0"
+              >
+                3 months ago
+              </li>
+              <li
+                className="c17"
+                id="headerItem-1"
+              >
+                Published
+              </li>
+              <li
+                className="c17"
+                id="headerItem-2"
+              >
+                Tadeusz Kosciuszko
+              </li>
+            </ul>
+          </div>
+          <h1
+            id="projectName-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+                "wordBreak": "break-word",
+              }
+            }
+          >
+            Honec sodales libero non fermentum aliquam
+          </h1>
+          <div
+            className="c18"
+            onClick={[Function]}
+          >
+            <p
+              id="projectDescription-1"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "18px",
+                  "fontWeight": 200,
+                  "lineHeight": "1.33em",
+                  "margin": 0,
+                }
+              }
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
+            </p>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c19"
+            id="apiPath-1"
+          >
+            schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      className="c20"
+    >
+      <div
+        className="c21"
+      >
+        <div
+          className="c22"
         >
           <div
             className="c13"
@@ -760,11 +1038,11 @@ exports[`Storyshots Project|List List (editor) 1`] = `
   word-break: break-word;
 }
 
-.c14 {
+.c19 {
   height: 155px;
 }
 
-.c16 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -783,7 +1061,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
   width: 100%;
 }
 
-.c15 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -792,12 +1070,65 @@ exports[`Storyshots Project|List List (editor) 1`] = `
   background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
 }
 
+.c15 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c16 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #a6a7aa;
+}
+
+.c16::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c17 {
+  margin: 7px 0 14px;
+  cursor: pointer;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.c18 {
+  color: #000;
+  font-size: 12px;
+  font-weight: 300;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.c14 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
 .c13 {
-  color: #1d1d20;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 @media (min-width:1050px) {
@@ -815,6 +1146,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -832,17 +1164,36 @@ exports[`Storyshots Project|List List (editor) 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c21 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
     width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
   }
 }
 
@@ -1030,9 +1381,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1043,9 +1392,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -1060,9 +1407,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1071,9 +1416,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1086,9 +1429,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c8"
@@ -1096,9 +1437,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c8"
@@ -1106,9 +1445,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1196,21 +1533,240 @@ exports[`Storyshots Project|List List (editor) 1`] = `
         className=""
       />
     </div>
-    <div
+    <section
       className="c13"
     >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c14"
-    >
       <div
-        className="c15"
+        className="c14"
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderTop": "2px solid #000",
+            "color": "#1d1d20",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
       >
         <div
-          className="c16"
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#a6a7aa",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <ul
+              className="c15"
+            >
+              <li
+                className="c16"
+                id="headerItem-0"
+              >
+                3 months ago
+              </li>
+              <li
+                className="c16"
+                id="headerItem-1"
+              >
+                In Progress
+              </li>
+              <li
+                className="c16"
+                id="headerItem-2"
+              >
+                Sed sed risus a nibh Maecenas nec pulvinar ex
+              </li>
+            </ul>
+          </div>
+          <h1
+            id="projectName-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+                "wordBreak": "break-word",
+              }
+            }
+          >
+            Project Name
+          </h1>
+          <div
+            className="c17"
+            onClick={[Function]}
+          >
+            <p
+              id="projectDescription-0"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "18px",
+                  "fontWeight": 200,
+                  "lineHeight": "1.33em",
+                  "margin": 0,
+                }
+              }
+            >
+              Description
+            </p>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c18"
+            id="apiPath-0"
+          >
+            schemacms/api/project_title
+          </div>
+        </div>
+      </div>
+      <div
+        className="c14"
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderTop": "2px solid #000",
+            "color": "#1d1d20",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#a6a7aa",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <ul
+              className="c15"
+            >
+              <li
+                className="c16"
+                id="headerItem-0"
+              >
+                3 months ago
+              </li>
+              <li
+                className="c16"
+                id="headerItem-1"
+              >
+                Published
+              </li>
+              <li
+                className="c16"
+                id="headerItem-2"
+              >
+                Tadeusz Kosciuszko
+              </li>
+            </ul>
+          </div>
+          <h1
+            id="projectName-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+                "wordBreak": "break-word",
+              }
+            }
+          >
+            Honec sodales libero non fermentum aliquam
+          </h1>
+          <div
+            className="c17"
+            onClick={[Function]}
+          >
+            <p
+              id="projectDescription-1"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "18px",
+                  "fontWeight": 200,
+                  "lineHeight": "1.33em",
+                  "margin": 0,
+                }
+              }
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
+            </p>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c18"
+            id="apiPath-1"
+          >
+            schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      className="c19"
+    >
+      <div
+        className="c20"
+      >
+        <div
+          className="c21"
         />
       </div>
     </div>
@@ -1376,6 +1932,7 @@ exports[`Storyshots Project|List No data 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1597,9 +2154,7 @@ exports[`Storyshots Project|List No data 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1610,9 +2165,7 @@ exports[`Storyshots Project|List No data 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -1627,9 +2180,7 @@ exports[`Storyshots Project|List No data 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1638,9 +2189,7 @@ exports[`Storyshots Project|List No data 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1653,9 +2202,7 @@ exports[`Storyshots Project|List No data 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c8"
@@ -1663,9 +2210,7 @@ exports[`Storyshots Project|List No data 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c8"
@@ -1673,9 +2218,7 @@ exports[`Storyshots Project|List No data 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1811,9 +2354,7 @@ exports[`Storyshots Project|List No data 1`] = `
     <div
       className="c14"
     >
-      <span>
-        Loading...
-      </span>
+      No Projects
     </div>
     <div
       className="c15"

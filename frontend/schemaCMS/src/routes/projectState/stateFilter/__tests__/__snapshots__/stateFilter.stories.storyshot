@@ -104,10 +104,10 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
 }
 
 .c13 {
-  color: #FFF;
+  color: #f21e29;
+  font-weight: 200;
   text-align: center;
   padding: 50px 10px;
-  font-weight: 200;
   font-size: 20px;
 }
 
@@ -126,6 +126,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -205,9 +206,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               }
             }
           >
-            <span>
-              Set Filter
-            </span>
+            Set Filter
           </h1>
         </div>
       </div>
@@ -307,9 +306,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               }
             }
           >
-            <span>
-              Set Filter
-            </span>
+            Set Filter
           </h1>
         </div>
       </div>
@@ -327,9 +324,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -340,9 +335,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -353,9 +346,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -366,9 +357,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -379,9 +368,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -392,9 +379,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -405,9 +390,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -422,9 +405,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -433,9 +414,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -448,9 +427,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c8"
@@ -458,9 +435,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c8"
@@ -468,9 +443,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -551,9 +524,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
           }
         }
       >
-        <span>
-          Set Filter
-        </span>
+        Set Filter
       </h1>
     </div>
     <div
@@ -562,10 +533,9 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
   </div>
   <div
     className="c13"
+    type="page"
   >
-    <span>
-      Loading...
-    </span>
+    An Error occured
   </div>
 </div>
 `;

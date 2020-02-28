@@ -145,6 +145,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -369,9 +370,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
           </div>
@@ -386,9 +385,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -397,9 +394,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -412,9 +407,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -422,9 +415,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -432,9 +423,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -536,9 +525,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
         }
       }
     >
-      <span>
-        Description
-      </span>
+      Description
     </label>
     <div
       className="c12"
@@ -559,9 +546,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
         }
       }
     >
-      <span>
-        Python Code
-      </span>
+      Python Code
     </label>
     <pre
       style={
@@ -1299,9 +1284,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
               }
             }
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
         </div>
       </div>
@@ -1455,6 +1438,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1679,9 +1663,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
           </div>
@@ -1696,9 +1678,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1707,9 +1687,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1722,9 +1700,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1732,9 +1708,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1742,9 +1716,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1846,9 +1818,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
         }
       }
     >
-      <span>
-        Description
-      </span>
+      Description
     </label>
     <div
       className="c12"
@@ -1869,9 +1839,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
         }
       }
     >
-      <span>
-        Python Code
-      </span>
+      Python Code
     </label>
     <pre
       style={
@@ -2609,9 +2577,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
               }
             }
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
         </div>
       </div>

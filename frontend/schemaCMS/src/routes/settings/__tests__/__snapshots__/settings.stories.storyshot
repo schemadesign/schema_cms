@@ -192,6 +192,7 @@ exports[`Storyshots Settings Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -279,9 +280,7 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             className="c2"
@@ -297,9 +296,7 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            <span>
-              My Profile
-            </span>
+            My Profile
           </h1>
         </div>
       </div>
@@ -383,9 +380,7 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             className="c2"
@@ -401,9 +396,7 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            <span>
-              My Profile
-            </span>
+            My Profile
           </h1>
         </div>
       </div>
@@ -421,9 +414,7 @@ exports[`Storyshots Settings Default 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -434,9 +425,7 @@ exports[`Storyshots Settings Default 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
         </div>
@@ -451,9 +440,7 @@ exports[`Storyshots Settings Default 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -462,9 +449,7 @@ exports[`Storyshots Settings Default 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -477,9 +462,7 @@ exports[`Storyshots Settings Default 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c8"
@@ -487,9 +470,7 @@ exports[`Storyshots Settings Default 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c8"
@@ -497,9 +478,7 @@ exports[`Storyshots Settings Default 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -564,9 +543,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         }
       >
-        <span>
-          Schema CMS
-        </span>
+        Schema CMS
       </h2>
       <h1
         className="c12"
@@ -582,9 +559,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         }
       >
-        <span>
-          My Profile
-        </span>
+        My Profile
       </h1>
     </div>
     <div
@@ -624,9 +599,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
         >
-          <span>
-            First Name
-          </span>
+          First Name
         </label>
         <input
           disabled={false}
@@ -708,9 +681,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
         >
-          <span>
-            Last Name
-          </span>
+          Last Name
         </label>
         <input
           disabled={false}
@@ -792,9 +763,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
         >
-          <span>
-            Email
-          </span>
+          Email
         </label>
         <input
           disabled={true}
@@ -855,9 +824,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
         >
-          <span>
-            Role
-          </span>
+          Role
         </label>
         <input
           disabled={true}
@@ -904,9 +871,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         }
       >
-        <span>
-          Reset password
-        </span>
+        Reset password
       </span>
     </div>
     <div
@@ -942,9 +907,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
             type="button"
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
           <button
             className="c20"
@@ -969,9 +932,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
             type="submit"
           >
-            <span>
-              Save
-            </span>
+            Save
           </button>
         </div>
       </div>

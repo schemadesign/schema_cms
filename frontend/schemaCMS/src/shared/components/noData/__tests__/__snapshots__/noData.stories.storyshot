@@ -59,9 +59,7 @@ exports[`Storyshots Shared Components|NoData default 1`] = `
   <div
     className="c0"
   >
-    <span>
-      No Data Found.
-    </span>
+    No Data Found.
   </div>
 </div>
 `;

@@ -32,6 +32,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -126,6 +127,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -269,6 +271,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 

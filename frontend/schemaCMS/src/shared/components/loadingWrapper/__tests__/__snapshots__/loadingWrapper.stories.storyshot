@@ -95,9 +95,7 @@ exports[`Storyshots Shared Components|LoadingWrapper loading 1`] = `
   <div
     className="c0"
   >
-    <span>
-      Loading...
-    </span>
+    Loading...
   </div>
 </div>
 `;
@@ -129,9 +127,7 @@ exports[`Storyshots Shared Components|LoadingWrapper no data 1`] = `
   <div
     className="c0"
   >
-    <span>
-      No Data Found.
-    </span>
+    No Data Found.
   </div>
 </div>
 `;

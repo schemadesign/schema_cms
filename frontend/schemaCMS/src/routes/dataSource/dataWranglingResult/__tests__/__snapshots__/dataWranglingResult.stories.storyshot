@@ -86,14 +86,6 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
   word-break: break-word;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 .c12 {
   width: 100%;
   position: fixed;
@@ -122,7 +114,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
   cursor: pointer;
 }
 
-.c18 {
+.c20 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -146,7 +138,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c18 svg {
+.c20 svg {
   cursor: pointer;
 }
 
@@ -209,6 +201,41 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
   display: none;
 }
 
+.c17 {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.c18 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 60px;
+}
+
+.c19 {
+  margin: 0 10px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFF;
+}
+
 @media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
@@ -224,6 +251,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -253,7 +281,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c20 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -348,9 +376,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               }
             }
           >
-            <span>
-              Data Wrangling Result
-            </span>
+            Data Wrangling Result
           </h1>
         </div>
       </div>
@@ -448,9 +474,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               }
             }
           >
-            <span>
-              Data Wrangling Result
-            </span>
+            Data Wrangling Result
           </h1>
         </div>
       </div>
@@ -468,9 +492,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -481,9 +503,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -494,9 +514,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -507,9 +525,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -520,9 +536,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -533,9 +547,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -546,9 +558,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -563,9 +573,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -574,9 +582,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -589,9 +595,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c7"
@@ -599,9 +603,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c7"
@@ -609,9 +611,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -690,9 +690,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           }
         }
       >
-        <span>
-          Data Wrangling Result
-        </span>
+        Data Wrangling Result
       </h1>
     </div>
     <div
@@ -728,9 +726,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Source
-            </span>
+            Source
           </div>
         </div>
         <div
@@ -761,9 +757,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Fields
-            </span>
+            Fields
           </div>
         </div>
         <div
@@ -812,9 +806,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Steps
-            </span>
+            Steps
           </div>
         </div>
         <div
@@ -863,9 +855,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Results
-            </span>
+            Results
           </div>
         </div>
         <div
@@ -898,9 +888,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Filters
-            </span>
+            Filters
           </div>
         </div>
         <div
@@ -944,23 +932,928 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Tags
-            </span>
+            Tags
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c17"
+    className=""
   >
-    <span>
-      Loading...
-    </span>
+    <div
+      className="c17"
+    >
+      <div
+        className="c18"
+      >
+        <button
+          disabled={true}
+          id="previewLeftBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 60,
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 60,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "opacity": 0.3,
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="c19"
+        id="fieldsAmountLabel"
+      >
+        {countFields, plural,one {# Field} other {# Fields}}
+      </div>
+      <div
+        className="c18"
+      >
+        <button
+          disabled={false}
+          id="previewRightBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 60,
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 60,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M34.143 17L32 19.083 41.172 28H15v3h26.172L32 39.917 34.143 42 47 29.5 34.143 17z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "overflowX": "auto",
+          "paddingBottom": "10px",
+          "width": "100%",
+        }
+      }
+    >
+      <table
+        style={
+          Object {
+            "borderCollapse": "collapse",
+            "color": "#FFF",
+            "fontSize": "14px",
+            "minWidth": "100%",
+          }
+        }
+      >
+        <thead
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "color": "#71737e",
+              "fontWeight": 600,
+            }
+          }
+        >
+          <tr>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textAlign": "center",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                  "width": 25,
+                }
+              }
+            >
+              #
+            </th>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              First Name
+            </th>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Last Name
+            </th>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Full Name
+            </th>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Birthplace
+            </th>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              State of Birth
+            </th>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Birthday
+            </th>
+            <th
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Url
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "color": "#71737e",
+                  "fontWeight": 600,
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textAlign": "center",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              1
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              George
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Washington
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              George Washington
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Westmoreland County
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              VA
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              02/22/1732
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr>
+            <td
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "color": "#71737e",
+                  "fontWeight": 600,
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textAlign": "center",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              2
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              John
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Adams
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              John Adams
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Braintree
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              MA
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              10/30/1735
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr>
+            <td
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "color": "#71737e",
+                  "fontWeight": 600,
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textAlign": "center",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              3
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Thomas
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Jefferson
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Thomas Jefferson
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Shadwell
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              VA
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              04/13/1743
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr>
+            <td
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#000",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "color": "#71737e",
+                  "fontWeight": 600,
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textAlign": "center",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              4
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              James
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Madison
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              James Madison
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Port Conway
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              VA
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              03/16/1751
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr>
+            <td
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderBottomColor": "#1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "borderRightColor": "#000",
+                  "color": "#71737e",
+                  "fontWeight": 600,
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "12px",
+                  "textAlign": "center",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              5
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              James
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Monroe
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              James Monroe
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              Monroe Hall
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              VA
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              04/28/1758
+            </td>
+            <td
+              style={
+                Object {
+                  "borderBottom": "2px solid #1d1d20",
+                  "borderRight": "2px solid #1d1d20",
+                  "maxWidth": "250px",
+                  "overflow": "hidden",
+                  "padding": "7px 12px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              some.url.com
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <div
-    className="c18"
+    className="c20"
   >
     <div
       className="c13"
@@ -989,9 +1882,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Source
-        </span>
+        Source
       </div>
     </div>
     <div
@@ -1022,9 +1913,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Fields
-        </span>
+        Fields
       </div>
     </div>
     <div
@@ -1073,9 +1962,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Steps
-        </span>
+        Steps
       </div>
     </div>
     <div
@@ -1124,9 +2011,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Results
-        </span>
+        Results
       </div>
     </div>
     <div
@@ -1159,9 +2044,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </div>
     </div>
     <div
@@ -1205,9 +2088,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Tags
-        </span>
+        Tags
       </div>
     </div>
   </div>

@@ -1417,9 +1417,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         }
       }
     >
-      <span>
-        Current files
-      </span>
+      Current files
     </label>
     <div
       className="c6"
@@ -2454,9 +2452,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
         }
       }
     >
-      <span>
-        Current files
-      </span>
+      Current files
     </label>
     <span>
       <div

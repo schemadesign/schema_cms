@@ -29,6 +29,7 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
     <FormattedHTMLMessage
       defaultMessage="The access for account with email <b>{email}</b> has been revoked."
       id="revokedAccess.info"
+      tagName="span"
       values={
         Object {
           "email": "some-mail@example.com",
@@ -39,6 +40,7 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
     <FormattedHTMLMessage
       defaultMessage="If you believe this is an error, please contact your administrator or <a href=\\"/\\">log with different credentials</a>."
       id="revokedAccess.contact"
+      tagName="span"
       values={Object {}}
     />
   </styled.div>
