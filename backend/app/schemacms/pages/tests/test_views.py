@@ -5,10 +5,7 @@ import pytest
 
 from schemacms.projects import models as projects_models
 from schemacms.pages.constants import ElementType
-from schemacms.pages import (
-    serializers as page_serializer,
-    models as pages_models,
-)
+from schemacms.pages import serializers as page_serializer, models as pages_models
 
 
 pytestmark = [pytest.mark.django_db]
