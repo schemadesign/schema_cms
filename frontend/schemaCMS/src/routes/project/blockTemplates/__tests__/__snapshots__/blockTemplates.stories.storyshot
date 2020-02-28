@@ -696,7 +696,6 @@ exports[`Storyshots BlockTemplates Default 1`] = `
     >
       <div
         className="c15"
-        id="dataSourceContainer"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -747,7 +746,7 @@ exports[`Storyshots BlockTemplates Default 1`] = `
           </div>
           <h1
             className="c18"
-            id="dataSourceTitle"
+            id="blockTemplateTitle-1"
             onClick={[Function]}
             style={
               Object {
@@ -777,7 +776,6 @@ exports[`Storyshots BlockTemplates Default 1`] = `
       </div>
       <div
         className="c15"
-        id="dataSourceContainer"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -828,7 +826,7 @@ exports[`Storyshots BlockTemplates Default 1`] = `
           </div>
           <h1
             className="c18"
-            id="dataSourceTitle"
+            id="blockTemplateTitle-2"
             onClick={[Function]}
             style={
               Object {
@@ -910,7 +908,7 @@ exports[`Storyshots BlockTemplates Default 1`] = `
           >
             <button
               disabled={false}
-              id="createDataSourceBtn"
+              id="createTemplateBlockMobile"
               onClick={[Function]}
               style={
                 Object {
