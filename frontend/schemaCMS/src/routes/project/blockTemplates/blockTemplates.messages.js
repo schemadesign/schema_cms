@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'project.blockTemplates.elementsCounter',
     defaultMessage: '{elements, plural,one {# Element} other {# Elements}}',
   },
+  noData: {
+    id: 'project.blockTemplates.noData',
+    defaultMessage: 'No block templates available',
+  },
 });

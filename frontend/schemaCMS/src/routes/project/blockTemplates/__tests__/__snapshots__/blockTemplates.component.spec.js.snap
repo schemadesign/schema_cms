@@ -188,7 +188,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             className="sc-dnqmqq bkzxAx"
           >
             <a
-              href="/project/undefined"
+              href="/project/projectId"
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
@@ -199,7 +199,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             className="sc-dnqmqq bkzxAx"
           >
             <a
-              href="/project/undefined/datasource"
+              href="/project/projectId/datasource"
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
@@ -210,7 +210,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             className="sc-dnqmqq bkzxAx"
           >
             <a
-              href="/project/undefined/state"
+              href="/project/projectId/state"
               id="stateNavBtn"
               onClick={[Function]}
             >
@@ -221,7 +221,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             className="sc-dnqmqq bkzxAx"
           >
             <a
-              href="/project/undefined/user"
+              href="/project/projectId/user"
               id="usersNavBtn"
               onClick={[Function]}
             >
@@ -232,7 +232,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             className="sc-dnqmqq bkzxAx"
           >
             <a
-              href="/project/undefined/folder"
+              href="/project/projectId/folder"
               id="folderNavBtn"
               onClick={[Function]}
             >
@@ -646,7 +646,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         >
           <button
             disabled={false}
-            id="createDataSourceBtn"
+            id="createTemplateBlockMobile"
             onClick={[Function]}
             style={
               Object {

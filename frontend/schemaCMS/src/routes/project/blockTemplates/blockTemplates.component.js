@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { Fragment, memo, useState } from 'react';
 import { useEffectOnce } from 'react-use';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -27,8 +27,11 @@ const BlockTemplate = memo(({ created, createdBy, name, id, elements }) => {
   const footer = <FormattedMessage {...messages.elementsCounter} values={{ elements }} />;
 
   return (
-    <ListItem id="dataSourceContainer" headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id="dataSourceTitle" onClick={() => history.push(`/project/${projectId}/block-templates/${id}`)}>
+    <ListItem headerComponent={header} footerComponent={footer}>
+      <ListItemTitle
+        id={`blockTemplateTitle-${id}`}
+        onClick={() => history.push(`/project/${projectId}/block-templates/${id}`)}
+      >
         {name}
       </ListItemTitle>
     </ListItem>
@@ -52,6 +55,7 @@ export const BlockTemplates = memo(({ fetchBlocks, blockTemplates, userRole }) =
   const menuOptions = getProjectMenuOptions(projectId);
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
+  const noData = <FormattedMessage {...messages.noData} />;
 
   useEffectOnce(() => {
     (async () => {
@@ -75,18 +79,20 @@ export const BlockTemplates = memo(({ fetchBlocks, blockTemplates, userRole }) =
           onClick={() => history.push(`/project/${projectId}/block-templates/create`)}
         />
       </ContextHeader>
-      <CounterHeader copy={intl.formatMessage(messages.blockTemplate)} count={blockTemplates.length} />
-      <LoadingWrapper loading={loading} error={error}>
-        <ListContainer>
-          {blockTemplates.map((block, index) => (
-            <BlockTemplate key={index} {...block} />
-          ))}
-        </ListContainer>
+      <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!blockTemplates.length}>
+        <Fragment>
+          <CounterHeader copy={intl.formatMessage(messages.blockTemplate)} count={blockTemplates.length} />
+          <ListContainer>
+            {blockTemplates.map((block, index) => (
+              <BlockTemplate key={index} {...block} />
+            ))}
+          </ListContainer>
+        </Fragment>
       </LoadingWrapper>
       <NavigationContainer fixed hideOnDesktop>
         <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}/templates`)} />
         <PlusButton
-          id="createDataSourceBtn"
+          id="createTemplateBlockMobile"
           onClick={() => history.push(`/project/${projectId}/block-templates/create`)}
         />
       </NavigationContainer>
