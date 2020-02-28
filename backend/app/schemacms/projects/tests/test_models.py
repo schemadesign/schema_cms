@@ -30,7 +30,7 @@ class TestProject:
                 "updated": project.modified.isoformat(),
             },
             "data_sources": [{"id": ds.id, "name": ds.name, "type": ds.type}],
-            "pages": 0,
+            "pages": [],
         }
 
     def test_get_projects_for_user(self, faker, project_factory, user):

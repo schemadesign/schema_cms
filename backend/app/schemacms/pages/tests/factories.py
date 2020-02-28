@@ -12,6 +12,14 @@ class BlockTemplateFactory(factory.django.DjangoModelFactory):
     created_by = factory.SubFactory(UserFactory)
 
 
+class BlockTemplateElementFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "pages.BlockTemplateElement"
+
+    name = factory.Faker("text", max_nb_chars=constants.ELEMENT_NAME_MAX_LENGTH)
+    template = factory.SubFactory(BlockTemplateFactory)
+
+
 class PageTemplateFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "pages.PageTemplate"
