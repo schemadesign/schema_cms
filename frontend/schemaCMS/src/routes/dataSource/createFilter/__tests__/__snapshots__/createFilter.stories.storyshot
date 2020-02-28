@@ -86,12 +86,82 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   word-break: break-word;
 }
 
+.c18 {
+  height: 155px;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c19 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c21 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c13 {
+  width: 100%;
+}
+
+.c14 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+  font-size: 18px;
+}
+
+.c15 label {
+  margin-bottom: 2px;
+}
+
+.c16 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c17 {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
 .c12 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  padding-top: 24px;
 }
 
 @media (min-width:1050px) {
@@ -109,6 +179,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -122,6 +193,37 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c20 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c21 {
+    width: 240px;
+  }
+}
+
+@media (min-width:768px) {
+  .c17 {
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
   }
 }
 
@@ -191,9 +293,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 }
               }
             >
-              <span>
-                Create Filter
-              </span>
+              Create Filter
             </h1>
           </div>
         </div>
@@ -293,9 +393,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 }
               }
             >
-              <span>
-                Create Filter
-              </span>
+              Create Filter
             </h1>
           </div>
         </div>
@@ -313,9 +411,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -326,9 +422,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -339,9 +433,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -352,9 +444,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -365,9 +455,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -378,9 +466,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -391,9 +477,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -408,9 +492,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -419,9 +501,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -434,9 +514,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -444,9 +522,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -454,9 +530,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -537,22 +611,585 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
             }
           }
         >
-          <span>
-            Create Filter
-          </span>
+          Create Filter
         </h1>
       </div>
       <div
         className=""
       />
     </div>
-    <div
+    <form
       className="c12"
+      onReset={[Function]}
+      onSubmit={[Function]}
     >
-      <span>
-        Loading...
-      </span>
-    </div>
+      <div
+        className="c13"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="name"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Filter Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <div
+              className="c14"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c15"
+      >
+        <label
+          id="fieldProjectStatusLabel"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Field
+        </label>
+        <input
+          id="field"
+          name="field"
+          type="hidden"
+          value="fieldName"
+        />
+        <div
+          className="c16"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#FFF",
+              "display": "flex",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                fieldName
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "display": "none",
+                  "flexDirection": "column",
+                  "left": "0",
+                  "maxHeight": "183px",
+                  "overflowY": "hidden",
+                  "position": "absolute",
+                  "top": "calc(100% + 5px)",
+                  "width": "100%",
+                  "zIndex": 2,
+                }
+              }
+            >
+              <div
+                id="select-item-0"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "1px solid  #2F2F36",
+                    "color": "#000",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                fieldName
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c15"
+      >
+        <label
+          id="fieldProjectStatusLabel"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Filter Type
+        </label>
+        <input
+          id="filterType"
+          name="filterType"
+          type="hidden"
+          value="Filter Type 1"
+        />
+        <div
+          className="c16"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#FFF",
+              "display": "flex",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Filter Type 1
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "display": "none",
+                  "flexDirection": "column",
+                  "left": "0",
+                  "maxHeight": "183px",
+                  "overflowY": "hidden",
+                  "position": "absolute",
+                  "top": "calc(100% + 5px)",
+                  "width": "100%",
+                  "zIndex": 2,
+                }
+              }
+            >
+              <div
+                id="select-item-0"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "1px solid  #2F2F36",
+                    "color": "#000",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Filter Type 1
+              </div>
+              <div
+                id="select-item-1"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Filter Type 2
+              </div>
+              <div
+                id="select-item-2"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Filter Type 3
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c17"
+      >
+        <div
+          className="c13"
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "maxWidth": "100%",
+                "paddingBottom": "30px",
+                "position": "relative",
+              }
+            }
+          >
+            <label
+              htmlFor="fieldType"
+              style={
+                Object {
+                  "border": "none",
+                  "borderTop": "2px solid #2F2F36",
+                  "color": "#71737e",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
+                }
+              }
+            >
+              Field Type
+            </label>
+            <input
+              disabled={true}
+              id="fieldType"
+              name="fieldType"
+              onBlur={[Function]}
+              onChange={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "border": "none",
+                  "color": "#FFF",
+                  "fontSize": "18px",
+                  "lineHeight": "24px",
+                  "outline": "none",
+                  "padding": 0,
+                }
+              }
+              type="text"
+              value="fieldType"
+            />
+            <div
+              style={
+                Object {
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "maxWidth": "100%",
+                "paddingBottom": "30px",
+                "position": "relative",
+              }
+            }
+          >
+            <label
+              htmlFor="unique"
+              style={
+                Object {
+                  "border": "none",
+                  "borderTop": "2px solid #2F2F36",
+                  "color": "#71737e",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
+                }
+              }
+            >
+              Unique items
+            </label>
+            <input
+              disabled={true}
+              id="unique"
+              name="unique"
+              onBlur={[Function]}
+              onChange={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "border": "none",
+                  "color": "#FFF",
+                  "fontSize": "18px",
+                  "lineHeight": "24px",
+                  "outline": "none",
+                  "padding": 0,
+                }
+              }
+              type="text"
+              value="\\"unique\\""
+            />
+            <div
+              style={
+                Object {
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c18"
+      >
+        <div
+          className="c19"
+        >
+          <div
+            className="c20"
+          >
+            <button
+              className="c21"
+              disabled={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              className="c21"
+              disabled={true}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#71737e",
+                  "cursor": "default",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 `;

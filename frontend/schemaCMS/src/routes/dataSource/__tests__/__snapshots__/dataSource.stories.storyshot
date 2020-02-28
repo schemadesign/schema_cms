@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Source|DataSource Default 1`] = `
-.c4 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 .c0 {
   display: none;
 }
@@ -97,9 +89,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
           id="settingsTab"
           onClick={[Function]}
         >
-          <span>
-            Settings
-          </span>
+          Settings
         </a>
       </div>
       <div
@@ -111,9 +101,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
           id="sourcesTab"
           onClick={[Function]}
         >
-          <span>
-            Sources
-          </span>
+          Sources
         </a>
       </div>
       <div
@@ -125,9 +113,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
           id="stateTab"
           onClick={[Function]}
         >
-          <span>
-            States
-          </span>
+          States
         </a>
       </div>
       <div
@@ -139,9 +125,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
           id="folderTab"
           onClick={[Function]}
         >
-          <span>
-            Pages
-          </span>
+          Pages
         </a>
       </div>
       <div
@@ -153,9 +137,7 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
           id="templatesTab"
           onClick={[Function]}
         >
-          <span>
-            Templates
-          </span>
+          Templates
         </a>
       </div>
       <div
@@ -167,32 +149,15 @@ exports[`Storyshots Data Source|DataSource Default 1`] = `
           id="usersTab"
           onClick={[Function]}
         >
-          <span>
-            Users
-          </span>
+          Users
         </a>
       </div>
     </div>
-  </div>
-  <div
-    className="c4"
-  >
-    <span>
-      Loading...
-    </span>
   </div>
 </div>
 `;
 
 exports[`Storyshots Data Source|DataSource With active job 1`] = `
-.c4 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 .c0 {
   display: none;
 }
@@ -281,9 +246,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
           id="settingsTab"
           onClick={[Function]}
         >
-          <span>
-            Settings
-          </span>
+          Settings
         </a>
       </div>
       <div
@@ -295,9 +258,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
           id="sourcesTab"
           onClick={[Function]}
         >
-          <span>
-            Sources
-          </span>
+          Sources
         </a>
       </div>
       <div
@@ -309,9 +270,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
           id="stateTab"
           onClick={[Function]}
         >
-          <span>
-            States
-          </span>
+          States
         </a>
       </div>
       <div
@@ -323,9 +282,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
           id="folderTab"
           onClick={[Function]}
         >
-          <span>
-            Pages
-          </span>
+          Pages
         </a>
       </div>
       <div
@@ -337,9 +294,7 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
           id="templatesTab"
           onClick={[Function]}
         >
-          <span>
-            Templates
-          </span>
+          Templates
         </a>
       </div>
       <div
@@ -351,19 +306,10 @@ exports[`Storyshots Data Source|DataSource With active job 1`] = `
           id="usersTab"
           onClick={[Function]}
         >
-          <span>
-            Users
-          </span>
+          Users
         </a>
       </div>
     </div>
-  </div>
-  <div
-    className="c4"
-  >
-    <span>
-      Loading...
-    </span>
   </div>
 </div>
 `;

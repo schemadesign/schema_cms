@@ -129,6 +129,11 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
   padding: 50px 10px;
   font-weight: 200;
   font-size: 20px;
+  line-height: 1.5em;
+}
+
+.c13 a {
+  color: inherit;
 }
 
 .c12 {
@@ -153,6 +158,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -377,9 +383,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
           </div>
@@ -394,9 +398,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -405,9 +407,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -420,9 +420,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -430,9 +428,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -440,9 +436,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -548,9 +542,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
           }
         }
       >
-        <span>
-          Description
-        </span>
+        Description
       </label>
       <div
         className="c12"
@@ -571,9 +563,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
           }
         }
       >
-        <span>
-          Python Code
-        </span>
+        Python Code
       </label>
       <pre
         style={
@@ -1294,16 +1284,12 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
           }
         }
       >
-        <span>
-          Fields with URLs
-        </span>
+        Fields with URLs
       </label>
       <div
         className="c13"
       >
-        <span>
-          Loading...
-        </span>
+        No fields containing URLs were found.
       </div>
     </form>
     <div
@@ -1338,9 +1324,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
               }
             }
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
           <button
             className="c17"
@@ -1365,9 +1349,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
               }
             }
           >
-            <span>
-              Save
-            </span>
+            Save
           </button>
         </div>
       </div>
@@ -1505,6 +1487,11 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
   padding: 50px 10px;
   font-weight: 200;
   font-size: 20px;
+  line-height: 1.5em;
+}
+
+.c13 a {
+  color: inherit;
 }
 
 .c12 {
@@ -1529,6 +1516,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1753,9 +1741,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
           </div>
@@ -1770,9 +1756,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1781,9 +1765,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1796,9 +1778,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1806,9 +1786,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1816,9 +1794,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1924,9 +1900,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
           }
         }
       >
-        <span>
-          Description
-        </span>
+        Description
       </label>
       <div
         className="c12"
@@ -1947,9 +1921,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
           }
         }
       >
-        <span>
-          Python Code
-        </span>
+        Python Code
       </label>
       <pre
         style={
@@ -2670,16 +2642,12 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
           }
         }
       >
-        <span>
-          Fields with URLs
-        </span>
+        Fields with URLs
       </label>
       <div
         className="c13"
       >
-        <span>
-          Loading...
-        </span>
+        No fields containing URLs were found.
       </div>
     </form>
     <div
@@ -2714,9 +2682,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
               }
             }
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
           <button
             className="c17"
@@ -2741,9 +2707,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
               }
             }
           >
-            <span>
-              Save
-            </span>
+            Save
           </button>
         </div>
       </div>

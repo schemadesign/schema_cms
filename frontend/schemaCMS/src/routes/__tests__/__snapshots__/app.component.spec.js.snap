@@ -2,9 +2,14 @@
 
 exports[`App: Component should not render App when language is not set 1`] = `
 <IntlProvider
+  defaultFormats={Object {}}
+  defaultLocale="en"
+  formats={Object {}}
   key="en"
   locale="en"
   messages={Object {}}
+  onError={[Function]}
+  textComponent={Symbol(react.fragment)}
 >
   <ThemeProvider
     theme={
@@ -349,9 +354,14 @@ exports[`App: Component should not render App when language is not set 1`] = `
 
 exports[`App: Component should render App when language is set 1`] = `
 <IntlProvider
+  defaultFormats={Object {}}
+  defaultLocale="en"
+  formats={Object {}}
   key="en"
   locale="en"
   messages={Object {}}
+  onError={[Function]}
+  textComponent={Symbol(react.fragment)}
 >
   <ThemeProvider
     theme={

@@ -103,11 +103,11 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
   word-break: break-word;
 }
 
-.c14 {
+.c19 {
   height: 155px;
 }
 
-.c16 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -133,7 +133,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
   flex-direction: column;
 }
 
-.c15 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -142,20 +142,56 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c23 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c13 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+.c15 {
+  width: 100%;
 }
 
-.c17 {
+.c16 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+  font-size: 18px;
+}
+
+.c13 label {
+  margin-bottom: 2px;
+}
+
+.c14 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c18 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c18:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -169,6 +205,10 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
   justify-content: space-between;
   margin-bottom: 24px;
   width: 100%;
+}
+
+.c17 {
+  margin-top: 50px;
 }
 
 @media (min-width:1050px) {
@@ -186,6 +226,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -203,7 +244,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c21 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -212,7 +253,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -221,7 +262,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c23 {
     width: 240px;
   }
 }
@@ -289,9 +330,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               }
             }
           >
-            <span>
-              Edit State
-            </span>
+            Edit State
           </h1>
         </div>
       </div>
@@ -391,9 +430,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               }
             }
           >
-            <span>
-              Edit State
-            </span>
+            Edit State
           </h1>
         </div>
       </div>
@@ -411,9 +448,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -424,9 +459,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -437,9 +470,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -450,9 +481,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -463,9 +492,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -476,9 +503,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -489,9 +514,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -506,9 +529,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -517,9 +538,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -532,9 +551,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c8"
@@ -542,9 +559,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c8"
@@ -552,9 +567,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -635,9 +648,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
           }
         }
       >
-        <span>
-          Edit State
-        </span>
+        Edit State
       </h1>
     </div>
     <div
@@ -645,35 +656,624 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
     />
   </div>
   <div
-    className="c13"
+    className=""
   >
-    <span>
-      Loading...
-    </span>
-  </div>
-  <div
-    className="c14"
-  >
+    <div
+      className="c13"
+    >
+      <label
+        id="fieldProjectStatusLabel"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Dataset
+      </label>
+      <input
+        id="datasource"
+        name="datasource"
+        type="hidden"
+      />
+      <div
+        className="c14"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M15.117 18L9 12h12z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#FFF",
+            "display": "flex",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              Select a dataset
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "display": "none",
+                "flexDirection": "column",
+                "left": "0",
+                "maxHeight": "183px",
+                "overflowY": "hidden",
+                "position": "absolute",
+                "top": "calc(100% + 5px)",
+                "width": "100%",
+                "zIndex": 2,
+              }
+            }
+          >
+            <div
+              id="select-item-0"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "1px solid  #2F2F36",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              name
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       className="c15"
     >
       <div
-        className="c16"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="name"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="c16"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Description
+        </label>
+        <textarea
+          id="description"
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+          value="description"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="c16"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="sourceUrl"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Source URL
+        </label>
+        <input
+          id="sourceUrl"
+          name="sourceUrl"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="c16"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="author"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Author
+        </label>
+        <input
+          disabled={true}
+          id="author"
+          name="author"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="author"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="created"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Created
+        </label>
+        <input
+          disabled={true}
+          id="created"
+          name="created"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="12/10/2019"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div>
+      <input
+        checked={false}
+        id="isPublic"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+      />
+      <label
+        htmlFor="isPublic"
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "cursor": "pointer",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": "14px",
+            "justifyContent": "space-between",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Make Public
+        <div
+          style={
+            Object {
+              "background": "#2F2F36",
+              "borderRadius": 20,
+              "boxSizing": "border-box",
+              "cursor": "pointer",
+              "height": 24,
+              "padding": 2,
+              "transition": "background 200ms ease-in-out",
+              "width": 44,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "background": "#FFF",
+                "borderRadius": "50%",
+                "height": 20,
+                "transform": "translateX(0)",
+                "transition": "transform 200ms ease-in-out",
+                "width": 20,
+              }
+            }
+          />
+        </div>
+      </label>
+    </div>
+  </div>
+  <div
+    className="c17"
+  >
+    <span
+      className="c18"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+        }
+      }
+    >
+      Remove State
+    </span>
+  </div>
+  <div
+    className="c19"
+  >
+    <div
+      className="c20"
+    >
+      <div
+        className="c21"
       >
         <div
-          className="c17"
+          className="c22"
         >
           <button
-            className="c18"
-            disabled={true}
+            className="c23"
+            disabled={false}
             onClick={[Function]}
             style={
               Object {
                 "backgroundColor": "#1d1d20",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
+                "color": "#FFF",
+                "cursor": "pointer",
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
@@ -686,21 +1286,19 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             }
             type="button"
           >
-            <span>
-              Cancel
-            </span>
+            Cancel
           </button>
           <button
-            className="c18"
-            disabled={true}
+            className="c23"
+            disabled={false}
             onClick={[Function]}
             style={
               Object {
-                "backgroundColor": "#1d1d20",
+                "backgroundColor": "#FFF",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
+                "color": "#000",
+                "cursor": "pointer",
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
@@ -713,9 +1311,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
             }
             type="submit"
           >
-            <span>
-              Next
-            </span>
+            Next
           </button>
         </div>
         <div

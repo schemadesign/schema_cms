@@ -186,6 +186,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -289,9 +290,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               }
             }
           >
-            <span>
-              Select Filters
-            </span>
+            Select Filters
           </h1>
         </div>
       </div>
@@ -391,9 +390,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               }
             }
           >
-            <span>
-              Select Filters
-            </span>
+            Select Filters
           </h1>
         </div>
       </div>
@@ -411,9 +408,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -424,9 +419,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -437,9 +430,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -450,9 +441,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -463,9 +452,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -476,9 +463,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -489,9 +474,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -506,9 +489,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -517,9 +498,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -532,9 +511,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c8"
@@ -542,9 +519,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c8"
@@ -552,9 +527,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -635,9 +608,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
           }
         }
       >
-        <span>
-          Select Filters
-        </span>
+        Select Filters
       </h1>
     </div>
     <div
@@ -647,9 +618,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
   <div
     className="c13"
   >
-    <span>
-      Loading...
-    </span>
+    No Filters
   </div>
   <div
     className="c14"
@@ -665,15 +634,15 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
         >
           <button
             className="c18"
-            disabled={true}
+            disabled={false}
             onClick={[Function]}
             style={
               Object {
                 "backgroundColor": "#1d1d20",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
+                "color": "#FFF",
+                "cursor": "pointer",
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
@@ -686,21 +655,19 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
             }
             type="button"
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
           <button
             className="c18"
-            disabled={true}
+            disabled={false}
             onClick={[Function]}
             style={
               Object {
-                "backgroundColor": "#1d1d20",
+                "backgroundColor": "#FFF",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
+                "color": "#000",
+                "cursor": "pointer",
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
@@ -713,9 +680,7 @@ exports[`Storyshots ProjectState/StateFilterList Default 1`] = `
             }
             type="submit"
           >
-            <span>
-              Finish
-            </span>
+            Finish
           </button>
         </div>
         <div

@@ -124,9 +124,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
       }
     }
   >
-    <span>
-      Source Type
-    </span>
+    Source Type
   </label>
   <div
     style={

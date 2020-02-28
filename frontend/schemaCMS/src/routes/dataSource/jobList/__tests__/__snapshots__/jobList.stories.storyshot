@@ -86,11 +86,11 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c20 {
   height: 155px;
 }
 
-.c15 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c21 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,17 +118,111 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c23 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  width: 100%;
+  border-top: 2px solid #2F2F36;
+  padding: 10px 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c18 {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: #FFF;
+}
+
+.c19 {
+  cursor: pointer;
+  min-width: 30px;
+}
+
+.c15 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 10px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 10px;
+  line-height: 18px;
+}
+
+.c16:last-child {
+  width: 100%;
+}
+
+.c16:last-child .c17 {
+  display: none;
 }
 
 @media (min-width:1050px) {
@@ -146,6 +240,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -163,7 +258,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c22 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -172,7 +267,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c21 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -181,8 +276,18 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c23 {
     width: 240px;
+  }
+}
+
+@media (min-width:480px) {
+  .c16:last-child {
+    width: auto;
+  }
+
+  .c16:last-child .c17 {
+    display: block;
   }
 }
 
@@ -236,9 +341,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 }
               }
             >
-              <span>
-                Past Versions
-              </span>
+              Past Versions
             </h2>
             <h1
               className="c2"
@@ -254,9 +357,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 }
               }
             >
-              <span>
-                Source
-              </span>
+              Source
             </h1>
           </div>
         </div>
@@ -340,9 +441,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 }
               }
             >
-              <span>
-                Past Versions
-              </span>
+              Past Versions
             </h2>
             <h1
               className="c2"
@@ -358,9 +457,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 }
               }
             >
-              <span>
-                Source
-              </span>
+              Source
             </h1>
           </div>
         </div>
@@ -378,9 +475,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -391,9 +486,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -404,9 +497,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -417,9 +508,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -430,9 +519,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -443,9 +530,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -456,9 +541,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -473,9 +556,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -484,9 +565,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -499,9 +578,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -509,9 +586,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -519,9 +594,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -586,9 +659,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
             }
           }
         >
-          <span>
-            Past Versions
-          </span>
+          Past Versions
         </h2>
         <h1
           className="c11"
@@ -604,9 +675,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
             }
           }
         >
-          <span>
-            Source
-          </span>
+          Source
         </h1>
       </div>
       <div
@@ -614,23 +683,470 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
       />
     </div>
     <div
-      className="c12"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c13"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+        }
+      }
     >
       <div
-        className="c14"
+        className="c12"
       >
         <div
-          className="c15"
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              style={
+                Object {
+                  "color": "#FFF",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "textAlign": "center",
+                }
+              }
+            >
+              <input
+                aria-hidden={true}
+                defaultChecked={false}
+                id="job_option_revert-0"
+                name="job_option_revert"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="radio"
+                value={1}
+              />
+              <label
+                htmlFor="job_option_revert-0"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "border": "1px solid #FFF",
+                      "borderRadius": "50%",
+                      "display": "flex",
+                      "height": "16px",
+                      "justifyContent": "center",
+                      "width": "16px",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "borderRadius": "50%",
+                        "height": "8px",
+                        "transition": "background 0.25s ease-in-out",
+                        "width": "8px",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+            <label
+              className="c15"
+              htmlFor="job_option_revert-0"
+            >
+              <div
+                className="c16"
+              >
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  Invalid Date
+                </span>
+              </div>
+              <div
+                className="c16"
+              >
+                <div
+                  className="c17 c18"
+                />
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  Success
+                </span>
+              </div>
+              <div
+                className="c16"
+              >
+                <div
+                  className="c17 c18"
+                />
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  Original file
+                </span>
+              </div>
+            </label>
+          </div>
+          <svg
+            className="c19"
+            onClick={[Function]}
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M25.976 15.668l-.013.036a.536.536 0 01-.065.122C22.904 19.934 19.263 22 15 22s-7.904-2.066-10.898-6.174l-.022-.034a.515.515 0 01-.024-.043l.046.077a.52.52 0 01-.078-.158l-.004-.015a.57.57 0 01.007-.33.533.533 0 01.056-.12l-.042.083a.53.53 0 01.024-.052l.018-.031C7.073 10.415 10.722 8 15 8s7.927 2.415 10.917 7.203a.52.52 0 01.079.225.628.628 0 01-.016.225l-.004.015zM15 9c-3.995 0-7.398 2.252-10.237 6.797l.204-.322.028.037C7.781 19.178 11.107 21 15 21c3.906 0 7.241-1.834 10.032-5.524C22.235 11.146 18.9 9 15 9z"
+            />
+            <circle
+              cx={15}
+              cy={15}
+              fill="none"
+              r={4.5}
+            />
+          </svg>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              style={
+                Object {
+                  "color": "#FFF",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "textAlign": "center",
+                }
+              }
+            >
+              <input
+                aria-hidden={true}
+                defaultChecked={false}
+                id="job_option_revert-1"
+                name="job_option_revert"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="radio"
+                value={2}
+              />
+              <label
+                htmlFor="job_option_revert-1"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "border": "1px solid #FFF",
+                      "borderRadius": "50%",
+                      "display": "flex",
+                      "height": "16px",
+                      "justifyContent": "center",
+                      "width": "16px",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "borderRadius": "50%",
+                        "height": "8px",
+                        "transition": "background 0.25s ease-in-out",
+                        "width": "8px",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+            <label
+              className="c15"
+              htmlFor="job_option_revert-1"
+            >
+              <div
+                className="c16"
+              >
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  Invalid Date
+                </span>
+              </div>
+              <div
+                className="c16"
+              >
+                <div
+                  className="c17 c18"
+                />
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  Success
+                </span>
+              </div>
+              <div
+                className="c16"
+              >
+                <div
+                  className="c17 c18"
+                />
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  1 Step
+                </span>
+              </div>
+            </label>
+          </div>
+          <svg
+            className="c19"
+            onClick={[Function]}
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M25.976 15.668l-.013.036a.536.536 0 01-.065.122C22.904 19.934 19.263 22 15 22s-7.904-2.066-10.898-6.174l-.022-.034a.515.515 0 01-.024-.043l.046.077a.52.52 0 01-.078-.158l-.004-.015a.57.57 0 01.007-.33.533.533 0 01.056-.12l-.042.083a.53.53 0 01.024-.052l.018-.031C7.073 10.415 10.722 8 15 8s7.927 2.415 10.917 7.203a.52.52 0 01.079.225.628.628 0 01-.016.225l-.004.015zM15 9c-3.995 0-7.398 2.252-10.237 6.797l.204-.322.028.037C7.781 19.178 11.107 21 15 21c3.906 0 7.241-1.834 10.032-5.524C22.235 11.146 18.9 9 15 9z"
+            />
+            <circle
+              cx={15}
+              cy={15}
+              fill="none"
+              r={4.5}
+            />
+          </svg>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              style={
+                Object {
+                  "color": "#FFF",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "textAlign": "center",
+                }
+              }
+            >
+              <input
+                aria-hidden={true}
+                defaultChecked={false}
+                id="job_option_revert-2"
+                name="job_option_revert"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="radio"
+                value={3}
+              />
+              <label
+                htmlFor="job_option_revert-2"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "border": "1px solid #FFF",
+                      "borderRadius": "50%",
+                      "display": "flex",
+                      "height": "16px",
+                      "justifyContent": "center",
+                      "width": "16px",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "borderRadius": "50%",
+                        "height": "8px",
+                        "transition": "background 0.25s ease-in-out",
+                        "width": "8px",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+            <label
+              className="c15"
+              htmlFor="job_option_revert-2"
+            >
+              <div
+                className="c16"
+              >
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  Invalid Date
+                </span>
+              </div>
+              <div
+                className="c16"
+              >
+                <div
+                  className="c17 c18"
+                />
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  Failed
+                </span>
+              </div>
+              <div
+                className="c16"
+              >
+                <div
+                  className="c17 c18"
+                />
+                <span
+                  style={
+                    Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontSize": "14px",
+                    }
+                  }
+                >
+                  1 Step
+                </span>
+              </div>
+            </label>
+          </div>
+          <svg
+            className="c19"
+            onClick={[Function]}
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M25.976 15.668l-.013.036a.536.536 0 01-.065.122C22.904 19.934 19.263 22 15 22s-7.904-2.066-10.898-6.174l-.022-.034a.515.515 0 01-.024-.043l.046.077a.52.52 0 01-.078-.158l-.004-.015a.57.57 0 01.007-.33.533.533 0 01.056-.12l-.042.083a.53.53 0 01.024-.052l.018-.031C7.073 10.415 10.722 8 15 8s7.927 2.415 10.917 7.203a.52.52 0 01.079.225.628.628 0 01-.016.225l-.004.015zM15 9c-3.995 0-7.398 2.252-10.237 6.797l.204-.322.028.037C7.781 19.178 11.107 21 15 21c3.906 0 7.241-1.834 10.032-5.524C22.235 11.146 18.9 9 15 9z"
+            />
+            <circle
+              cx={15}
+              cy={15}
+              fill="none"
+              r={4.5}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c20"
+    >
+      <div
+        className="c21"
+      >
+        <div
+          className="c22"
         >
           <button
-            className="c16"
+            className="c23"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -652,12 +1168,10 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
               }
             }
           >
-            <span>
-              Cancel
-            </span>
+            Cancel
           </button>
           <button
-            className="c16"
+            className="c23"
             disabled={true}
             id="revertBtn"
             onClick={[Function]}
@@ -679,9 +1193,7 @@ exports[`Storyshots Data Source|JobList Default 1`] = `
               }
             }
           >
-            <span>
-              Revert
-            </span>
+            Revert
           </button>
         </div>
       </div>
@@ -836,6 +1348,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -926,9 +1439,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 }
               }
             >
-              <span>
-                Past Versions
-              </span>
+              Past Versions
             </h2>
             <h1
               className="c2"
@@ -944,9 +1455,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 }
               }
             >
-              <span>
-                Source
-              </span>
+              Source
             </h1>
           </div>
         </div>
@@ -1030,9 +1539,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 }
               }
             >
-              <span>
-                Past Versions
-              </span>
+              Past Versions
             </h2>
             <h1
               className="c2"
@@ -1048,9 +1555,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 }
               }
             >
-              <span>
-                Source
-              </span>
+              Source
             </h1>
           </div>
         </div>
@@ -1068,9 +1573,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1081,9 +1584,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -1094,9 +1595,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -1107,9 +1606,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -1120,9 +1617,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -1133,9 +1628,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -1146,9 +1639,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -1163,9 +1654,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1174,9 +1663,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1189,9 +1676,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1199,9 +1684,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1209,9 +1692,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1276,9 +1757,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
             }
           }
         >
-          <span>
-            Past Versions
-          </span>
+          Past Versions
         </h2>
         <h1
           className="c11"
@@ -1294,9 +1773,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
             }
           }
         >
-          <span>
-            Source
-          </span>
+          Source
         </h1>
       </div>
       <div
@@ -1306,9 +1783,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
     <div
       className="c12"
     >
-      <span>
-        Loading...
-      </span>
+      No Data Found.
     </div>
     <div
       className="c13"
@@ -1342,9 +1817,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
               }
             }
           >
-            <span>
-              Cancel
-            </span>
+            Cancel
           </button>
           <button
             className="c16"
@@ -1369,9 +1842,7 @@ exports[`Storyshots Data Source|JobList No data 1`] = `
               }
             }
           >
-            <span>
-              Revert
-            </span>
+            Revert
           </button>
         </div>
       </div>

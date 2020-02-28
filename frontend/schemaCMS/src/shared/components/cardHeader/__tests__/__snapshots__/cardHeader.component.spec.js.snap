@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHeader: Component should render correctly 1`] = `
+<styled.ul>
+  <styled.li
+    id="headerItem-0"
+    key="0"
+  >
+    item
+  </styled.li>
+  <styled.li
+    id="headerItem-1"
+    key="1"
+  >
+    item 2
+  </styled.li>
+</styled.ul>
+`;

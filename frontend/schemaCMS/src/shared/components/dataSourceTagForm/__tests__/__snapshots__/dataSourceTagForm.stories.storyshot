@@ -81,9 +81,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
           }
         }
       >
-        <span>
-          Name
-        </span>
+        Name
       </label>
       <input
         id="name"
@@ -148,16 +146,12 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
       }
     }
   >
-    <span>
-      Tags
-    </span>
+    Tags
   </label>
   <div
     className="c2"
   >
-    <span>
-      No Tags
-    </span>
+    No Tags
   </div>
   <div
     className="c3"
@@ -307,9 +301,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
           }
         }
       >
-        <span>
-          Name
-        </span>
+        Name
       </label>
       <input
         id="name"
@@ -374,9 +366,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
       }
     }
   >
-    <span>
-      Tags
-    </span>
+    Tags
   </label>
   <div
     className="c2"

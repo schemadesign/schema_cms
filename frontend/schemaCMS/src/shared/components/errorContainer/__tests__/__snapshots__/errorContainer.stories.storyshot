@@ -58,9 +58,7 @@ exports[`Storyshots Shared Components|ErrorContainer Not found Code 1`] = `
     className="c0"
     type="page"
   >
-    <span>
-      Not Found
-    </span>
+    Not Found
   </div>
 </div>
 `;
@@ -93,9 +91,7 @@ exports[`Storyshots Shared Components|ErrorContainer Not identified Code 1`] = `
     className="c0"
     type="page"
   >
-    <span>
-      An Error occured
-    </span>
+    An Error occured
   </div>
 </div>
 `;

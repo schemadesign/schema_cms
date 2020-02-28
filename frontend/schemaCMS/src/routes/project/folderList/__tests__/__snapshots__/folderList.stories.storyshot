@@ -103,11 +103,11 @@ exports[`Storyshots Project|FolderList Default 1`] = `
   word-break: break-word;
 }
 
-.c19 {
+.c25 {
   height: 155px;
 }
 
-.c21 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -126,7 +126,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
   width: 100%;
 }
 
-.c20 {
+.c26 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -135,12 +135,16 @@ exports[`Storyshots Project|FolderList Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c24 {
+  cursor: pointer;
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c24:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c9 {
@@ -189,6 +193,73 @@ exports[`Storyshots Project|FolderList Default 1`] = `
   text-decoration: none;
 }
 
+.c20 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c21 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c21::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c19 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
+.c23 {
+  word-break: break-word;
+  cursor: pointer;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-height: calc(100% - 28px);
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 @media (min-width:1050px) {
   .c13 {
     display: -webkit-box;
@@ -204,6 +275,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -221,13 +293,13 @@ exports[`Storyshots Project|FolderList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c27 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c26 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -249,6 +321,25 @@ exports[`Storyshots Project|FolderList Default 1`] = `
     display: flex;
     margin: 29px 0 20px 0;
     font-size: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c18 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
   }
 }
 
@@ -302,9 +393,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 }
               }
             >
-              <span>
-                Folders
-              </span>
+              Folders
             </h2>
             <h1
               className="c2"
@@ -320,9 +409,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -406,9 +493,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 }
               }
             >
-              <span>
-                Folders
-              </span>
+              Folders
             </h2>
             <h1
               className="c2"
@@ -424,9 +509,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -444,9 +527,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -457,9 +538,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -470,9 +549,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -483,9 +560,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -496,9 +571,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -509,9 +582,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -522,9 +593,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -539,9 +608,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -550,9 +617,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -565,9 +630,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c8"
@@ -575,9 +638,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c8"
@@ -585,9 +646,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -650,9 +709,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             id="settingsTab"
             onClick={[Function]}
           >
-            <span>
-              Settings
-            </span>
+            Settings
           </a>
         </div>
         <div
@@ -664,9 +721,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             id="sourcesTab"
             onClick={[Function]}
           >
-            <span>
-              Sources
-            </span>
+            Sources
           </a>
         </div>
         <div
@@ -678,9 +733,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             id="stateTab"
             onClick={[Function]}
           >
-            <span>
-              States
-            </span>
+            States
           </a>
         </div>
         <div
@@ -692,9 +745,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             id="folderTab"
             onClick={[Function]}
           >
-            <span>
-              Pages
-            </span>
+            Pages
           </a>
         </div>
         <div
@@ -706,9 +757,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             id="templatesTab"
             onClick={[Function]}
           >
-            <span>
-              Templates
-            </span>
+            Templates
           </a>
         </div>
         <div
@@ -720,9 +769,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             id="usersTab"
             onClick={[Function]}
           >
-            <span>
-              Users
-            </span>
+            Users
           </a>
         </div>
       </div>
@@ -745,9 +792,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             }
           }
         >
-          <span>
-            Folders
-          </span>
+          Folders
         </h2>
         <h1
           className="c16"
@@ -763,9 +808,7 @@ exports[`Storyshots Project|FolderList Default 1`] = `
             }
           }
         >
-          <span>
-            Overview
-          </span>
+          Overview
         </h1>
       </div>
       <div
@@ -817,21 +860,105 @@ exports[`Storyshots Project|FolderList Default 1`] = `
         </div>
       </div>
     </div>
-    <div
+    <section
       className="c18"
     >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="c19"
-    >
       <div
-        className="c20"
+        className="c19"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
       >
         <div
-          className="c21"
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <ul
+              className="c20"
+            >
+              <li
+                className="c21"
+                id="headerItem-0"
+              >
+                12 days ago
+              </li>
+              <li
+                className="c21"
+                id="headerItem-1"
+              >
+                firstName lastName
+              </li>
+            </ul>
+          </div>
+          <div
+            className="c22"
+          >
+            <h1
+              className="c23"
+              id="folderName-0"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                  "wordBreak": "break-word",
+                }
+              }
+            >
+              name
+            </h1>
+            <span
+              className="c24"
+              onClick={[Function]}
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "14px",
+                }
+              }
+            >
+              Edit folder
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      className="c25"
+    >
+      <div
+        className="c26"
+      >
+        <div
+          className="c27"
         >
           <button
             disabled={false}
@@ -1127,6 +1254,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1225,9 +1353,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 }
               }
             >
-              <span>
-                Folders
-              </span>
+              Folders
             </h2>
             <h1
               className="c2"
@@ -1243,9 +1369,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -1329,9 +1453,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 }
               }
             >
-              <span>
-                Folders
-              </span>
+              Folders
             </h2>
             <h1
               className="c2"
@@ -1347,9 +1469,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 }
               }
             >
-              <span>
-                Overview
-              </span>
+              Overview
             </h1>
           </div>
         </div>
@@ -1367,9 +1487,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -1380,9 +1498,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -1393,9 +1509,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -1406,9 +1520,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -1419,9 +1531,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -1432,9 +1542,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -1445,9 +1553,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -1462,9 +1568,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1473,9 +1577,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1488,9 +1590,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c8"
@@ -1498,9 +1598,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c8"
@@ -1508,9 +1606,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1573,9 +1669,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             id="settingsTab"
             onClick={[Function]}
           >
-            <span>
-              Settings
-            </span>
+            Settings
           </a>
         </div>
         <div
@@ -1587,9 +1681,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             id="sourcesTab"
             onClick={[Function]}
           >
-            <span>
-              Sources
-            </span>
+            Sources
           </a>
         </div>
         <div
@@ -1601,9 +1693,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             id="stateTab"
             onClick={[Function]}
           >
-            <span>
-              States
-            </span>
+            States
           </a>
         </div>
         <div
@@ -1615,9 +1705,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             id="folderTab"
             onClick={[Function]}
           >
-            <span>
-              Pages
-            </span>
+            Pages
           </a>
         </div>
         <div
@@ -1629,9 +1717,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             id="templatesTab"
             onClick={[Function]}
           >
-            <span>
-              Templates
-            </span>
+            Templates
           </a>
         </div>
         <div
@@ -1643,9 +1729,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             id="usersTab"
             onClick={[Function]}
           >
-            <span>
-              Users
-            </span>
+            Users
           </a>
         </div>
       </div>
@@ -1668,9 +1752,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             }
           }
         >
-          <span>
-            Folders
-          </span>
+          Folders
         </h2>
         <h1
           className="c16"
@@ -1686,9 +1768,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
             }
           }
         >
-          <span>
-            Overview
-          </span>
+          Overview
         </h1>
       </div>
       <div
@@ -1743,9 +1823,7 @@ exports[`Storyshots Project|FolderList No data 1`] = `
     <div
       className="c18"
     >
-      <span>
-        Loading...
-      </span>
+      0 Folders
     </div>
     <div
       className="c19"

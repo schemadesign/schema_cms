@@ -11,6 +11,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   `};
 `;
 

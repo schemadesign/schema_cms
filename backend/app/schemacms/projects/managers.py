@@ -38,22 +38,6 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
             )
         )
 
-    def annotate_pages_count(self):
-        from .models import Page
-
-        subquery = (
-            Page.objects.order_by()
-            .values("folder__project")
-            .filter(folder__project=models.OuterRef("pk"))
-            .annotate(count=models.Count("pk"))
-            .values("count")
-        )
-        return self.annotate(
-            pages_count=Coalesce(
-                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
-            )
-        )
-
     def annotate_templates_count(self):
         return self.annotate(
             block_templates=models.Count("blocktemplate", distinct=True),
@@ -62,24 +46,3 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
 
 
 ProjectManager = generate_soft_delete_manager(queryset_class=ProjectQuerySet)
-
-
-class PageQuerySet(softdelete.models.SoftDeleteQuerySet):
-    def annotate_blocks_count(self):
-        from .models import Block
-
-        subquery = (
-            Block.objects.order_by()
-            .values("page")
-            .filter(page=models.OuterRef("pk"))
-            .annotate(count=models.Count("pk"))
-            .values("count")
-        )
-        return self.annotate(
-            blocks_count=Coalesce(
-                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
-            )
-        )
-
-
-PageManager = generate_soft_delete_manager(queryset_class=PageQuerySet)

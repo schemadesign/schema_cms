@@ -8,13 +8,17 @@ import schemacms.projects.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0018_remove_datasource_status'),
+        ("projects", "0018_remove_datasource_status"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='wranglingscript',
-            name='file',
-            field=models.FileField(null=True, upload_to=schemacms.projects.models.file_upload_path, validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['py'])]),
+            model_name="wranglingscript",
+            name="file",
+            field=models.FileField(
+                null=True,
+                upload_to=schemacms.utils.models.file_upload_path,
+                validators=[django.core.validators.FileExtensionValidator(allowed_extensions=["py"])],
+            ),
         ),
     ]

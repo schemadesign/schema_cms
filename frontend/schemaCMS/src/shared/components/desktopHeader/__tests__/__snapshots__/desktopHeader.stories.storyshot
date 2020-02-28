@@ -421,9 +421,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             style={
@@ -437,9 +435,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               }
             }
           >
-            <span>
-              Menu
-            </span>
+            Menu
           </h1>
           <div
             className="c9"
@@ -456,9 +452,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                   id="projectsNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Projects
-                  </span>
+                  Projects
                 </a>
               </div>
             </div>
@@ -473,9 +467,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                   id="aboutNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    About Schema CMS
-                  </span>
+                  About Schema CMS
                 </a>
               </div>
               <div
@@ -486,9 +478,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                   id="apiNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    API Doc
-                  </span>
+                  API Doc
                 </a>
               </div>
               <div
@@ -499,9 +489,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                   id="repositoryNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    GitHub Repository
-                  </span>
+                  GitHub Repository
                 </a>
               </div>
             </div>
@@ -780,9 +768,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             style={
@@ -796,9 +782,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
               }
             }
           >
-            <span>
-              Menu
-            </span>
+            Menu
           </h1>
           <div
             className="c6"
@@ -815,9 +799,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                   id="projectsNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Projects
-                  </span>
+                  Projects
                 </a>
               </div>
               <div
@@ -828,9 +810,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                   id="usersPageNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Users
-                  </span>
+                  Users
                 </a>
               </div>
             </div>
@@ -845,9 +825,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                   id="aboutNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    About Schema CMS
-                  </span>
+                  About Schema CMS
                 </a>
               </div>
               <div
@@ -858,9 +836,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                   id="apiNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    API Doc
-                  </span>
+                  API Doc
                 </a>
               </div>
               <div
@@ -871,9 +847,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                   id="repositoryNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    GitHub Repository
-                  </span>
+                  GitHub Repository
                 </a>
               </div>
             </div>
@@ -1403,9 +1377,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             style={
@@ -1419,9 +1391,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               }
             }
           >
-            <span>
-              Menu
-            </span>
+            Menu
           </h1>
           <div
             className="c11"
@@ -1438,9 +1408,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                   id="projectsNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Projects
-                  </span>
+                  Projects
                 </a>
               </div>
             </div>
@@ -1455,9 +1423,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                   id="aboutNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    About Schema CMS
-                  </span>
+                  About Schema CMS
                 </a>
               </div>
               <div
@@ -1468,9 +1434,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                   id="apiNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    API Doc
-                  </span>
+                  API Doc
                 </a>
               </div>
               <div
@@ -1481,9 +1445,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                   id="repositoryNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    GitHub Repository
-                  </span>
+                  GitHub Repository
                 </a>
               </div>
             </div>
@@ -2005,9 +1967,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               }
             }
           >
-            <span>
-              Schema CMS
-            </span>
+            Schema CMS
           </h2>
           <h1
             style={
@@ -2021,9 +1981,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               }
             }
           >
-            <span>
-              Menu
-            </span>
+            Menu
           </h1>
           <div
             className="c11"
@@ -2040,9 +1998,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                   id="projectsNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Projects
-                  </span>
+                  Projects
                 </a>
               </div>
               <div
@@ -2053,9 +2009,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                   id="usersPageNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    Users
-                  </span>
+                  Users
                 </a>
               </div>
             </div>
@@ -2070,9 +2024,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                   id="aboutNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    About Schema CMS
-                  </span>
+                  About Schema CMS
                 </a>
               </div>
               <div
@@ -2083,9 +2035,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                   id="apiNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    API Doc
-                  </span>
+                  API Doc
                 </a>
               </div>
               <div
@@ -2096,9 +2046,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                   id="repositoryNavBtn"
                   onClick={[Function]}
                 >
-                  <span>
-                    GitHub Repository
-                  </span>
+                  GitHub Repository
                 </a>
               </div>
             </div>

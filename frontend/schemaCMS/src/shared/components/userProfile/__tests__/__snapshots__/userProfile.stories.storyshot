@@ -49,9 +49,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           }
         }
       >
-        <span>
-          First Name
-        </span>
+        First Name
       </label>
       <input
         disabled={true}
@@ -112,9 +110,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           }
         }
       >
-        <span>
-          Last Name
-        </span>
+        Last Name
       </label>
       <input
         disabled={true}
@@ -175,9 +171,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           }
         }
       >
-        <span>
-          Email
-        </span>
+        Email
       </label>
       <input
         disabled={true}
@@ -238,9 +232,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           }
         }
       >
-        <span>
-          Role
-        </span>
+        Role
       </label>
       <input
         disabled={true}
@@ -329,9 +321,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           }
         }
       >
-        <span>
-          First Name
-        </span>
+        First Name
       </label>
       <input
         disabled={false}
@@ -412,9 +402,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           }
         }
       >
-        <span>
-          Last Name
-        </span>
+        Last Name
       </label>
       <input
         disabled={false}
@@ -495,9 +483,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           }
         }
       >
-        <span>
-          Email
-        </span>
+        Email
       </label>
       <input
         disabled={true}
@@ -558,9 +544,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           }
         }
       >
-        <span>
-          Role
-        </span>
+        Role
       </label>
       <input
         disabled={true}

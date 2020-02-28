@@ -27,9 +27,7 @@ exports[`Storyshots Shared Components|Loading Default 1`] = `
   <div
     className="c0"
   >
-    <span>
-      Loading...
-    </span>
+    Loading...
   </div>
 </div>
 `;

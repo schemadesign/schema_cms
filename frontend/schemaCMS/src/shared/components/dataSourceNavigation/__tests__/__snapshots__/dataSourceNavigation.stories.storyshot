@@ -169,9 +169,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Source
-        </span>
+        Source
       </div>
     </div>
     <div
@@ -202,9 +200,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Fields
-        </span>
+        Fields
       </div>
     </div>
     <div
@@ -253,9 +249,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Steps
-        </span>
+        Steps
       </div>
     </div>
     <div
@@ -304,9 +298,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Results
-        </span>
+        Results
       </div>
     </div>
     <div
@@ -339,9 +331,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </div>
     </div>
     <div
@@ -385,9 +375,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Tags
-        </span>
+        Tags
       </div>
     </div>
   </div>
@@ -565,9 +553,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Source
-        </span>
+        Source
       </div>
     </div>
     <div
@@ -598,9 +584,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Fields
-        </span>
+        Fields
       </div>
     </div>
     <div
@@ -649,9 +633,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Steps
-        </span>
+        Steps
       </div>
     </div>
     <div
@@ -700,9 +682,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Results
-        </span>
+        Results
       </div>
     </div>
     <div
@@ -735,9 +715,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </div>
     </div>
     <div
@@ -781,9 +759,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Tags
-        </span>
+        Tags
       </div>
     </div>
   </div>
@@ -987,9 +963,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Source
-        </span>
+        Source
       </div>
     </div>
     <div
@@ -1020,9 +994,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Fields
-        </span>
+        Fields
       </div>
     </div>
     <div
@@ -1071,9 +1043,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Steps
-        </span>
+        Steps
       </div>
     </div>
     <div
@@ -1122,9 +1092,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Results
-        </span>
+        Results
       </div>
     </div>
     <div
@@ -1157,9 +1125,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </div>
     </div>
     <div
@@ -1203,9 +1169,7 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
       <div
         className="c3"
       >
-        <span>
-          Tags
-        </span>
+        Tags
       </div>
     </div>
   </div>

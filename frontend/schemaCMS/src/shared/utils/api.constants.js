@@ -16,3 +16,4 @@ export const DATA_WRANGLING_JOB_PATH = '/job';
 export const PREVIEW_PATH = '/preview';
 export const STATES_PATH = '/states';
 export const RESET_PASSWORD_PATH = `${ME_PATH}/reset-password`;
+export const BLOCK_TEMPLATES_PATH = '/block-templates';

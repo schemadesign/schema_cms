@@ -146,6 +146,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -236,9 +237,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -254,9 +253,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              <span>
-                You are adding  to 
-              </span>
+              You are adding  to 
             </h1>
           </div>
         </div>
@@ -340,9 +337,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              <span>
-                Users
-              </span>
+              Users
             </h2>
             <h1
               className="c2"
@@ -358,9 +353,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              <span>
-                You are adding  to 
-              </span>
+              You are adding  to 
             </h1>
           </div>
         </div>
@@ -378,9 +371,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -391,9 +382,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 id="userNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -408,9 +397,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -419,9 +406,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -434,9 +419,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -444,9 +427,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -454,9 +435,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -521,9 +500,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             }
           }
         >
-          <span>
-            Users
-          </span>
+          Users
         </h2>
         <h1
           className="c11"
@@ -539,9 +516,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             }
           }
         >
-          <span>
-            You are adding  to 
-          </span>
+          You are adding  to 
         </h1>
       </div>
       <div
@@ -826,9 +801,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               }
               type="button"
             >
-              <span>
-                Cancel
-              </span>
+              Cancel
             </button>
             <button
               className="c17"
@@ -852,9 +825,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               }
               type="submit"
             >
-              <span>
-                Add
-              </span>
+              Add
             </button>
           </div>
         </div>

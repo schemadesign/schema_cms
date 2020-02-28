@@ -9,47 +9,47 @@ import schemacms.projects.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0045_auto_20191212_0951'),
+        ("projects", "0045_auto_20191212_0951"),
     ]
 
     operations = [
-        migrations.RemoveField(model_name='block', name='image',),
+        migrations.RemoveField(model_name="block", name="image",),
         migrations.CreateModel(
-            name='BlockImage',
+            name="BlockImage",
             fields=[
                 (
-                    'id',
-                    models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+                    "id",
+                    models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID"),
                 ),
-                ('deleted_at', models.DateTimeField(blank=True, default=None, null=True)),
+                ("deleted_at", models.DateTimeField(blank=True, default=None, null=True)),
                 (
-                    'created',
+                    "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name='created'
+                        auto_now_add=True, verbose_name="created"
                     ),
                 ),
                 (
-                    'modified',
+                    "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name='modified'
+                        auto_now=True, verbose_name="modified"
                     ),
                 ),
                 (
-                    'image',
+                    "image",
                     models.ImageField(
-                        blank=True, null=True, upload_to=schemacms.projects.models.file_upload_path
+                        blank=True, null=True, upload_to=schemacms.utils.models.file_upload_path
                     ),
                 ),
-                ('image_name', models.CharField(blank=True, max_length=50)),
+                ("image_name", models.CharField(blank=True, max_length=50)),
                 (
-                    'block',
+                    "block",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        related_name='images',
-                        to='projects.Block',
+                        related_name="images",
+                        to="projects.Block",
                     ),
                 ),
             ],
-            options={'permissions': (('can_undelete', 'Can undelete this object'),), 'abstract': False},
+            options={"permissions": (("can_undelete", "Can undelete this object"),), "abstract": False},
         ),
     ]

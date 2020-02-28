@@ -174,6 +174,7 @@ exports[`Storyshots Project|Create Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -264,9 +265,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              <span>
-                Create New Project
-              </span>
+              Create New Project
             </h2>
             <h1
               className="c2"
@@ -282,9 +281,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              <span>
-                Project Info
-              </span>
+              Project Info
             </h1>
           </div>
         </div>
@@ -368,9 +365,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              <span>
-                Create New Project
-              </span>
+              Create New Project
             </h2>
             <h1
               className="c2"
@@ -386,9 +381,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 }
               }
             >
-              <span>
-                Project Info
-              </span>
+              Project Info
             </h1>
           </div>
         </div>
@@ -406,9 +399,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -419,9 +410,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="usersPageNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
             <div
@@ -432,9 +421,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project details
-                </span>
+                Project details
               </a>
             </div>
             <div
@@ -445,9 +432,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Data Sources
-                </span>
+                Data Sources
               </a>
             </div>
             <div
@@ -458,9 +443,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="stateNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  States
-                </span>
+                States
               </a>
             </div>
             <div
@@ -471,9 +454,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Project Users
-                </span>
+                Project Users
               </a>
             </div>
             <div
@@ -484,9 +465,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="folderNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Pages
-                </span>
+                Pages
               </a>
             </div>
           </div>
@@ -501,9 +480,7 @@ exports[`Storyshots Project|Create Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -512,9 +489,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -527,9 +502,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -537,9 +510,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -547,9 +518,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -614,9 +583,7 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           }
         >
-          <span>
-            Create New Project
-          </span>
+          Create New Project
         </h2>
         <h1
           className="c11"
@@ -632,9 +599,7 @@ exports[`Storyshots Project|Create Default 1`] = `
             }
           }
         >
-          <span>
-            Project Info
-          </span>
+          Project Info
         </h1>
       </div>
       <div
@@ -1114,9 +1079,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               }
               type="button"
             >
-              <span>
-                Cancel
-              </span>
+              Cancel
             </button>
             <button
               className="c20"
@@ -1141,9 +1104,7 @@ exports[`Storyshots Project|Create Default 1`] = `
               }
               type="submit"
             >
-              <span>
-                Finish
-              </span>
+              Finish
             </button>
           </div>
         </div>

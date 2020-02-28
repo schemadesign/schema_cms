@@ -13,14 +13,9 @@ class TestProject:
 
         assert project.data_source_count == expected
 
-    def test_meta_file_serialization(
-        self, admin, project_factory, data_source_factory, folder_factory, page_factory, block_factory
-    ):
+    def test_meta_file_serialization(self, admin, project_factory, data_source_factory):
         project = project_factory(owner=admin)
         ds = data_source_factory(project=project)
-        folder = folder_factory(project=project)
-        page = page_factory(folder=folder)
-        block_factory.create_batch(2, page=page)
 
         project.refresh_from_db()
         ret = project.meta_file_serialization()
@@ -35,7 +30,7 @@ class TestProject:
                 "updated": project.modified.isoformat(),
             },
             "data_sources": [{"id": ds.id, "name": ds.name, "type": ds.type}],
-            "pages": folder.meta_file_serialization(),
+            "pages": [],
         }
 
     def test_get_projects_for_user(self, faker, project_factory, user):

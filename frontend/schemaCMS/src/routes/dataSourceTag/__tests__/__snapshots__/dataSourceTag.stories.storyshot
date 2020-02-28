@@ -86,12 +86,110 @@ exports[`Storyshots DataSourceTag Default 1`] = `
   word-break: break-word;
 }
 
+.c20 {
+  height: 155px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c21 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c23 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
 .c12 {
-  color: #FFF;
+  width: 100%;
+}
+
+.c13 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c16 {
+  padding-top: 0;
+  margin-top: -2px;
+}
+
+.c15 {
+  border-bottom: 2px solid #2F2F36;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c18 {
+  height: 60px;
+}
+
+.c19 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c19:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 @media (min-width:1050px) {
@@ -109,6 +207,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -122,6 +221,30 @@ exports[`Storyshots DataSourceTag Default 1`] = `
   .c3 {
     padding-bottom: 20px;
     max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c21 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    width: 240px;
   }
 }
 
@@ -191,9 +314,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
                 }
               }
             >
-              <span>
-                Edit Tag List
-              </span>
+              Edit Tag List
             </h1>
           </div>
         </div>
@@ -293,9 +414,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
                 }
               }
             >
-              <span>
-                Edit Tag List
-              </span>
+              Edit Tag List
             </h1>
           </div>
         </div>
@@ -316,9 +435,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -327,9 +444,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -342,9 +457,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -352,9 +465,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -362,9 +473,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -445,22 +554,324 @@ exports[`Storyshots DataSourceTag Default 1`] = `
             }
           }
         >
-          <span>
-            Edit Tag List
-          </span>
+          Edit Tag List
         </h1>
       </div>
       <div
         className=""
       />
     </div>
-    <div
-      className="c12"
+    <form
+      className=""
+      onSubmit={[Function]}
     >
-      <span>
-        Loading...
+      <div
+        className="c12"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="name"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <div
+              className="c13"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Tags
+      </label>
+      <div
+        className="c14"
+      >
+        <div
+          className="c15"
+        >
+          <div
+            className="c12"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                id="tags.0"
+                name="tags.0"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontSize": "18px",
+                    "lineHeight": "24px",
+                    "outline": "none",
+                    "padding": 0,
+                  }
+                }
+                type="text"
+                value="value"
+              />
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <div
+                  className="c16"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fill": "#FFF",
+                "height": 35,
+                "marginLeft": 5,
+                "minWidth": 35,
+                "width": 35,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c17"
+      >
+        <button
+          className="c18"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="button"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "shapeRendering": "crispEdges",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <span
+        className="c19"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        Remove list
       </span>
-    </div>
+      <div
+        className="c20"
+      >
+        <div
+          className="c21"
+        >
+          <div
+            className="c22"
+          >
+            <button
+              className="c23"
+              disabled={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              className="c23"
+              disabled={true}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#71737e",
+                  "cursor": "default",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 `;

@@ -86,12 +86,41 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   word-break: break-word;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+.c22 {
+  height: 155px;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c23 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 70px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c25 {
+  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c12 {
@@ -122,7 +151,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   cursor: pointer;
 }
 
-.c18 {
+.c26 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -146,7 +175,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c18 svg {
+.c26 svg {
   cursor: pointer;
 }
 
@@ -209,6 +238,41 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   display: none;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.c20 {
+  width: 34%;
+  text-align: center;
+  color: #71737e;
+}
+
+.c19 {
+  height: 60px;
+}
+
+.c18 {
+  width: 33%;
+}
+
+.c21 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 @media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
@@ -224,6 +288,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -241,6 +306,30 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
 }
 
 @media (min-width:1050px) {
+  .c24 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c25 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -253,7 +342,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c26 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -348,9 +437,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               }
             }
           >
-            <span>
-              Filters
-            </span>
+            Filters
           </h1>
         </div>
       </div>
@@ -448,9 +535,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               }
             }
           >
-            <span>
-              Filters
-            </span>
+            Filters
           </h1>
         </div>
       </div>
@@ -468,9 +553,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -481,9 +564,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -494,9 +575,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -507,9 +586,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -520,9 +597,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -533,9 +608,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -546,9 +619,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -563,9 +634,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -574,9 +643,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -589,9 +656,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c7"
@@ -599,9 +664,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c7"
@@ -609,9 +672,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -690,9 +751,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           }
         }
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </h1>
     </div>
     <div
@@ -728,9 +787,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Source
-            </span>
+            Source
           </div>
         </div>
         <div
@@ -761,9 +818,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Fields
-            </span>
+            Fields
           </div>
         </div>
         <div
@@ -812,9 +867,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Steps
-            </span>
+            Steps
           </div>
         </div>
         <div
@@ -863,9 +916,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Results
-            </span>
+            Results
           </div>
         </div>
         <div
@@ -898,9 +949,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Filters
-            </span>
+            Filters
           </div>
         </div>
         <div
@@ -944,9 +993,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Tags
-            </span>
+            Tags
           </div>
         </div>
       </div>
@@ -955,12 +1002,312 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   <div
     className="c17"
   >
-    <span>
-      Loading...
-    </span>
+    <div
+      className="c18"
+    >
+      <button
+        className="c19"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "shapeRendering": "crispEdges",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="c20"
+    >
+      2 Filters
+    </div>
   </div>
   <div
-    className="c18"
+    id="fieldStepsCheckboxGroup"
+    style={
+      Object {
+        "borderTop": "1px solid #2F2F36",
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={true}
+        id="checkbox-0"
+        name="steps"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value="1"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <a
+          className="c21"
+          href="/filter/1"
+          onClick={[Function]}
+        >
+          name 1
+        </a>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
+        <label
+          htmlFor="checkbox-0"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <svg
+            stroke="#000"
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+            >
+              <path
+                d="M20.455 7.5H7.5v15h15v-6.136"
+                strokeLinecap="square"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M11 12l5 5L26 7"
+                strokeWidth={3}
+              />
+            </g>
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="checkbox-1"
+        name="steps"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value="2"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <a
+          className="c21"
+          href="/filter/2"
+          onClick={[Function]}
+        >
+          name 2
+        </a>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
+        <label
+          htmlFor="checkbox-1"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c22"
+  >
+    <div
+      className="c23"
+    >
+      <div
+        className="c24"
+      >
+        <button
+          className="c25"
+          disabled={true}
+          onClick={null}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c26"
   >
     <div
       className="c13"
@@ -989,9 +1336,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Source
-        </span>
+        Source
       </div>
     </div>
     <div
@@ -1022,9 +1367,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Fields
-        </span>
+        Fields
       </div>
     </div>
     <div
@@ -1073,9 +1416,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Steps
-        </span>
+        Steps
       </div>
     </div>
     <div
@@ -1124,9 +1465,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Results
-        </span>
+        Results
       </div>
     </div>
     <div
@@ -1159,9 +1498,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </div>
     </div>
     <div
@@ -1205,9 +1542,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Tags
-        </span>
+        Tags
       </div>
     </div>
   </div>
@@ -1300,12 +1635,41 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
   word-break: break-word;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+.c21 {
+  height: 155px;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c22 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 70px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c24 {
+  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c12 {
@@ -1336,7 +1700,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
   cursor: pointer;
 }
 
-.c18 {
+.c25 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -1360,7 +1724,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
   background-color: #1d1d20;
 }
 
-.c18 svg {
+.c25 svg {
   cursor: pointer;
 }
 
@@ -1423,6 +1787,35 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
   display: none;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.c20 {
+  width: 34%;
+  text-align: center;
+  color: #71737e;
+}
+
+.c19 {
+  height: 60px;
+}
+
+.c18 {
+  width: 33%;
+}
+
 @media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
@@ -1438,6 +1831,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1455,6 +1849,30 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
 }
 
 @media (min-width:1050px) {
+  .c23 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -1467,7 +1885,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c25 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -1562,9 +1980,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               }
             }
           >
-            <span>
-              Filters
-            </span>
+            Filters
           </h1>
         </div>
       </div>
@@ -1662,9 +2078,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               }
             }
           >
-            <span>
-              Filters
-            </span>
+            Filters
           </h1>
         </div>
       </div>
@@ -1682,9 +2096,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -1695,9 +2107,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -1708,9 +2118,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -1721,9 +2129,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -1734,9 +2140,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -1747,9 +2151,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -1760,9 +2162,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -1777,9 +2177,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -1788,9 +2186,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -1803,9 +2199,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c7"
@@ -1813,9 +2207,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c7"
@@ -1823,9 +2215,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -1904,9 +2294,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           }
         }
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </h1>
     </div>
     <div
@@ -1942,9 +2330,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Source
-            </span>
+            Source
           </div>
         </div>
         <div
@@ -1975,9 +2361,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Fields
-            </span>
+            Fields
           </div>
         </div>
         <div
@@ -2026,9 +2410,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Steps
-            </span>
+            Steps
           </div>
         </div>
         <div
@@ -2077,9 +2459,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Results
-            </span>
+            Results
           </div>
         </div>
         <div
@@ -2112,9 +2492,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Filters
-            </span>
+            Filters
           </div>
         </div>
         <div
@@ -2158,9 +2536,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
           <div
             className="c15"
           >
-            <span>
-              Tags
-            </span>
+            Tags
           </div>
         </div>
       </div>
@@ -2169,12 +2545,92 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
   <div
     className="c17"
   >
-    <span>
-      Loading...
-    </span>
+    <div
+      className="c18"
+    >
+      <button
+        className="c19"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "shapeRendering": "crispEdges",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="c20"
+    >
+      0 Filters
+    </div>
   </div>
   <div
-    className="c18"
+    className="c21"
+  >
+    <div
+      className="c22"
+    >
+      <div
+        className="c23"
+      >
+        <button
+          className="c24"
+          disabled={true}
+          onClick={null}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c25"
   >
     <div
       className="c13"
@@ -2203,9 +2659,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Source
-        </span>
+        Source
       </div>
     </div>
     <div
@@ -2236,9 +2690,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Fields
-        </span>
+        Fields
       </div>
     </div>
     <div
@@ -2287,9 +2739,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Steps
-        </span>
+        Steps
       </div>
     </div>
     <div
@@ -2338,9 +2788,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Results
-        </span>
+        Results
       </div>
     </div>
     <div
@@ -2373,9 +2821,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Filters
-        </span>
+        Filters
       </div>
     </div>
     <div
@@ -2419,9 +2865,7 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
       <div
         className="c15"
       >
-        <span>
-          Tags
-        </span>
+        Tags
       </div>
     </div>
   </div>

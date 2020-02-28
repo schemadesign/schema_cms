@@ -159,9 +159,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             }
           }
         >
-          <span>
-            Filter Name
-          </span>
+          Filter Name
         </label>
         <input
           id="name"
@@ -231,9 +229,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
           }
         }
       >
-        <span>
-          Field
-        </span>
+        Field
       </label>
       <input
         id="field"
@@ -361,9 +357,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
           }
         }
       >
-        <span>
-          Filter Type
-        </span>
+        Filter Type
       </label>
       <input
         id="filterType"
@@ -505,9 +499,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
               }
             }
           >
-            <span>
-              Field Type
-            </span>
+            Field Type
           </label>
           <input
             disabled={true}
@@ -569,9 +561,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
               }
             }
           >
-            <span>
-              Unique items
-            </span>
+            Unique items
           </label>
           <input
             disabled={true}
@@ -637,9 +627,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             }
             type="button"
           >
-            <span>
-              Cancel
-            </span>
+            Cancel
           </button>
           <button
             className="c9"
@@ -663,9 +651,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             }
             type="submit"
           >
-            <span>
-              Save
-            </span>
+            Save
           </button>
         </div>
       </div>
@@ -861,9 +847,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             }
           }
         >
-          <span>
-            Filter Name
-          </span>
+          Filter Name
         </label>
         <input
           id="name"
@@ -933,9 +917,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
           }
         }
       >
-        <span>
-          Field
-        </span>
+        Field
       </label>
       <input
         id="field"
@@ -1063,9 +1045,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
           }
         }
       >
-        <span>
-          Filter Type
-        </span>
+        Filter Type
       </label>
       <input
         id="filterType"
@@ -1207,9 +1187,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
               }
             }
           >
-            <span>
-              Field Type
-            </span>
+            Field Type
           </label>
           <input
             disabled={true}
@@ -1271,9 +1249,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
               }
             }
           >
-            <span>
-              Unique items
-            </span>
+            Unique items
           </label>
           <input
             disabled={true}
@@ -1320,9 +1296,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
           }
         }
       >
-        <span>
-          Remove filter
-        </span>
+        Remove filter
       </span>
     </div>
     <div
@@ -1357,9 +1331,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             }
             type="button"
           >
-            <span>
-              Back
-            </span>
+            Back
           </button>
           <button
             className="c11"
@@ -1383,9 +1355,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             }
             type="submit"
           >
-            <span>
-              Save
-            </span>
+            Save
           </button>
         </div>
       </div>

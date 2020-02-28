@@ -16,6 +16,18 @@ class DataSourceNameSerializer(serializers.ModelSerializer):
         fields = ("id", "name")
 
 
+class CustomModelSerializer(serializers.ModelSerializer):
+    created_by = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        abstract = True
+
+    def get_created_by(self, obj):
+        if getattr(obj, "created_by"):
+            return obj.created_by.get_full_name()
+        return None
+
+
 class NestedRelatedModelSerializer(serializers.PrimaryKeyRelatedField):
     def __init__(self, serializer, **kwargs):
         self.serializer = serializer

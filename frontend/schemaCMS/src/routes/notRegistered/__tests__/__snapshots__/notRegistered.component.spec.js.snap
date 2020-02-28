@@ -29,6 +29,7 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     <FormattedHTMLMessage
       defaultMessage="Account with email <b>{email}</b> is not registered."
       id="notRegistered.info"
+      tagName="span"
       values={
         Object {
           "email": "some-mail@example.com",
@@ -39,6 +40,7 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     <FormattedHTMLMessage
       defaultMessage="If you believe this is an error, please contact your administrator or <a href=\\"/\\">log in again</a>."
       id="notRegistered.contact"
+      tagName="span"
       values={Object {}}
     />
   </styled.div>

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CounterHeader Default 1`] = `
+.c0 {
+  color: #71737e;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-top: -35px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    3 copys
+  </div>
+</div>
+`;

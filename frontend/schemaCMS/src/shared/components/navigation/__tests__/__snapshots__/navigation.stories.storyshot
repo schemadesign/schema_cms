@@ -104,9 +104,7 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
       }
     }
   >
-    <span>
-      Back
-    </span>
+    Back
   </button>
 </div>
 `;
@@ -274,9 +272,7 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
       }
     }
   >
-    <span>
-      Next
-    </span>
+    Next
   </button>
 </div>
 `;

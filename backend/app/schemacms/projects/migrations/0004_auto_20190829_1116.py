@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             model_name="datasource",
             name="file",
             field=models.FileField(
-                upload_to=schemacms.projects.models.file_upload_path,
+                upload_to=schemacms.utils.models.file_upload_path,
                 validators=[django.core.validators.FileExtensionValidator(allowed_extensions=["csv"])],
             ),
         ),

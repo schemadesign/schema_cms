@@ -86,11 +86,11 @@ exports[`Storyshots PageBlock Default 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c18 {
   height: 155px;
 }
 
-.c15 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +109,7 @@ exports[`Storyshots PageBlock Default 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,17 +118,57 @@ exports[`Storyshots PageBlock Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c21 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c12 {
+  width: 100%;
+}
+
+.c13 {
+  padding-top: 7px;
+  margin-top: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+  font-size: 18px;
+}
+
+.c14 label {
+  margin-bottom: 2px;
+}
+
+.c15 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c17 {
+  cursor: pointer;
   color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c17:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c16 {
+  margin-top: 30px;
 }
 
 @media (min-width:1050px) {
@@ -146,6 +186,7 @@ exports[`Storyshots PageBlock Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -163,7 +204,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c20 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -172,7 +213,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -181,7 +222,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c21 {
     width: 240px;
   }
 }
@@ -236,9 +277,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 }
               }
             >
-              <span>
-                Page Block
-              </span>
+              Page Block
             </h2>
             <h1
               className="c2"
@@ -254,9 +293,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 }
               }
             >
-              <span>
-                Edit
-              </span>
+              Edit
             </h1>
           </div>
         </div>
@@ -340,9 +377,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 }
               }
             >
-              <span>
-                Page Block
-              </span>
+              Page Block
             </h2>
             <h1
               className="c2"
@@ -358,9 +393,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 }
               }
             >
-              <span>
-                Edit
-              </span>
+              Edit
             </h1>
           </div>
         </div>
@@ -378,9 +411,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 id="projectsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Projects
-                </span>
+                Projects
               </a>
             </div>
             <div
@@ -391,9 +422,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 id="usersNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Users
-                </span>
+                Users
               </a>
             </div>
           </div>
@@ -408,9 +437,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -419,9 +446,7 @@ exports[`Storyshots PageBlock Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -434,9 +459,7 @@ exports[`Storyshots PageBlock Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -444,9 +467,7 @@ exports[`Storyshots PageBlock Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -454,9 +475,7 @@ exports[`Storyshots PageBlock Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -521,9 +540,7 @@ exports[`Storyshots PageBlock Default 1`] = `
             }
           }
         >
-          <span>
-            Page Block
-          </span>
+          Page Block
         </h2>
         <h1
           className="c11"
@@ -539,9 +556,7 @@ exports[`Storyshots PageBlock Default 1`] = `
             }
           }
         >
-          <span>
-            Edit
-          </span>
+          Edit
         </h1>
       </div>
       <div
@@ -555,21 +570,318 @@ exports[`Storyshots PageBlock Default 1`] = `
       <div
         className="c12"
       >
-        <span>
-          Loading...
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="name"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Block Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <div
+              className="c13"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c14"
+      >
+        <label
+          id="fieldProjectStatusLabel"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Type
+        </label>
+        <input
+          id="type"
+          name="type"
+          type="hidden"
+        />
+        <div
+          className="c15"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#FFF",
+              "display": "flex",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            id="fieldBlockType"
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Select type
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "display": "none",
+                  "flexDirection": "column",
+                  "left": "0",
+                  "maxHeight": "183px",
+                  "overflowY": "hidden",
+                  "position": "absolute",
+                  "top": "calc(100% + 5px)",
+                  "width": "100%",
+                  "zIndex": 2,
+                }
+              }
+            >
+              <div
+                id="select-item-0"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "1px solid  #2F2F36",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Image Upload
+              </div>
+              <div
+                id="select-item-1"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Markdown
+              </div>
+              <div
+                id="select-item-2"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Text
+              </div>
+              <div
+                id="select-item-3"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Embed
+              </div>
+              <div
+                id="select-item-4"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Code Snippet
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c16"
+      >
+        <span
+          className="c17"
+          id="removePageBlockDesktopBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Remove Page Block
         </span>
       </div>
       <div
-        className="c13"
+        className="c18"
       >
         <div
-          className="c14"
+          className="c19"
         >
           <div
-            className="c15"
+            className="c20"
           >
             <button
-              className="c16"
+              className="c21"
               disabled={false}
               id="backBtn"
               onClick={[Function]}
@@ -592,12 +904,10 @@ exports[`Storyshots PageBlock Default 1`] = `
               }
               type="button"
             >
-              <span>
-                Back
-              </span>
+              Back
             </button>
             <button
-              className="c16"
+              className="c21"
               disabled={true}
               id="editPageBlockBtn"
               style={
@@ -619,9 +929,7 @@ exports[`Storyshots PageBlock Default 1`] = `
               }
               type="submit"
             >
-              <span>
-                Save
-              </span>
+              Save
             </button>
           </div>
         </div>

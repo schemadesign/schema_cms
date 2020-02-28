@@ -103,11 +103,11 @@ exports[`Storyshots Project|UserList List 1`] = `
   word-break: break-word;
 }
 
-.c19 {
+.c24 {
   height: 155px;
 }
 
-.c21 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -126,21 +126,13 @@ exports[`Storyshots Project|UserList List 1`] = `
   width: 100%;
 }
 
-.c20 {
+.c25 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c18 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c9 {
@@ -189,6 +181,62 @@ exports[`Storyshots Project|UserList List 1`] = `
   text-decoration: none;
 }
 
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c22 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c23 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.c19 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+  min-height: 120px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
+.c20 {
+  color: #71737e;
+  font-weight: bold;
+}
+
 @media (min-width:1050px) {
   .c13 {
     display: -webkit-box;
@@ -204,6 +252,7 @@ exports[`Storyshots Project|UserList List 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -221,13 +270,13 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c26 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c25 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -249,6 +298,31 @@ exports[`Storyshots Project|UserList List 1`] = `
     display: flex;
     margin: 29px 0 20px 0;
     font-size: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c18 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
+    min-height: 114px;
   }
 }
 
@@ -299,9 +373,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               }
             }
           >
-            <span>
-              Users
-            </span>
+            Users
           </h2>
           <h1
             className="c2"
@@ -317,9 +389,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               }
             }
           >
-            <span>
-              Overview
-            </span>
+            Overview
           </h1>
         </div>
       </div>
@@ -403,9 +473,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               }
             }
           >
-            <span>
-              Users
-            </span>
+            Users
           </h2>
           <h1
             className="c2"
@@ -421,9 +489,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               }
             }
           >
-            <span>
-              Overview
-            </span>
+            Overview
           </h1>
         </div>
       </div>
@@ -441,9 +507,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -454,9 +518,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -467,9 +529,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -480,9 +540,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -493,9 +551,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -506,9 +562,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -519,9 +573,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -536,9 +588,7 @@ exports[`Storyshots Project|UserList List 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -547,9 +597,7 @@ exports[`Storyshots Project|UserList List 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -562,9 +610,7 @@ exports[`Storyshots Project|UserList List 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c8"
@@ -572,9 +618,7 @@ exports[`Storyshots Project|UserList List 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c8"
@@ -582,9 +626,7 @@ exports[`Storyshots Project|UserList List 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -647,9 +689,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           id="settingsTab"
           onClick={[Function]}
         >
-          <span>
-            Settings
-          </span>
+          Settings
         </a>
       </div>
       <div
@@ -661,9 +701,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           id="sourcesTab"
           onClick={[Function]}
         >
-          <span>
-            Sources
-          </span>
+          Sources
         </a>
       </div>
       <div
@@ -675,9 +713,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           id="stateTab"
           onClick={[Function]}
         >
-          <span>
-            States
-          </span>
+          States
         </a>
       </div>
       <div
@@ -689,9 +725,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           id="folderTab"
           onClick={[Function]}
         >
-          <span>
-            Pages
-          </span>
+          Pages
         </a>
       </div>
       <div
@@ -703,9 +737,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           id="templatesTab"
           onClick={[Function]}
         >
-          <span>
-            Templates
-          </span>
+          Templates
         </a>
       </div>
       <div
@@ -717,9 +749,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           id="usersTab"
           onClick={[Function]}
         >
-          <span>
-            Users
-          </span>
+          Users
         </a>
       </div>
     </div>
@@ -742,9 +772,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           }
         }
       >
-        <span>
-          Users
-        </span>
+        Users
       </h2>
       <h1
         className="c16"
@@ -760,9 +788,7 @@ exports[`Storyshots Project|UserList List 1`] = `
           }
         }
       >
-        <span>
-          Overview
-        </span>
+        Overview
       </h1>
     </div>
     <div
@@ -814,21 +840,192 @@ exports[`Storyshots Project|UserList List 1`] = `
       </div>
     </div>
   </div>
-  <div
+  <section
     className="c18"
   >
-    <span>
-      Loading...
-    </span>
-  </div>
-  <div
-    className="c19"
-  >
     <div
-      className="c20"
+      className="c19"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
     >
       <div
-        className="c21"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <div
+            className="c20"
+          >
+            Admin
+          </div>
+        </div>
+        <div
+          className="c21"
+        >
+          <div
+            className="c22"
+          >
+            <a
+              className="c23"
+              href="/project/1/user/1"
+              onClick={[Function]}
+            >
+              Alan
+               
+              Watts
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c19"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <div
+            className="c20"
+          >
+            Editor
+          </div>
+        </div>
+        <div
+          className="c21"
+        >
+          <div
+            className="c22"
+          >
+            <a
+              className="c23"
+              href="/project/1/user/2"
+              onClick={[Function]}
+            >
+              Dale
+               
+              Chihuly
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c19"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <div
+            className="c20"
+          >
+            Admin
+          </div>
+        </div>
+        <div
+          className="c21"
+        >
+          <div
+            className="c22"
+          >
+            <a
+              className="c23"
+              href="/project/1/user/3"
+              onClick={[Function]}
+            >
+              Dave
+               
+              Bowie
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    className="c24"
+  >
+    <div
+      className="c25"
+    >
+      <div
+        className="c26"
       >
         <button
           disabled={false}
@@ -1122,6 +1319,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1217,9 +1415,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               }
             }
           >
-            <span>
-              Users
-            </span>
+            Users
           </h2>
           <h1
             className="c2"
@@ -1235,9 +1431,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               }
             }
           >
-            <span>
-              Overview
-            </span>
+            Overview
           </h1>
         </div>
       </div>
@@ -1321,9 +1515,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               }
             }
           >
-            <span>
-              Users
-            </span>
+            Users
           </h2>
           <h1
             className="c2"
@@ -1339,9 +1531,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               }
             }
           >
-            <span>
-              Overview
-            </span>
+            Overview
           </h1>
         </div>
       </div>
@@ -1359,9 +1549,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="projectsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Projects
-              </span>
+              Projects
             </a>
           </div>
           <div
@@ -1372,9 +1560,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="usersPageNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Users
-              </span>
+              Users
             </a>
           </div>
           <div
@@ -1385,9 +1571,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project details
-              </span>
+              Project details
             </a>
           </div>
           <div
@@ -1398,9 +1582,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Data Sources
-              </span>
+              Data Sources
             </a>
           </div>
           <div
@@ -1411,9 +1593,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="stateNavBtn"
               onClick={[Function]}
             >
-              <span>
-                States
-              </span>
+              States
             </a>
           </div>
           <div
@@ -1424,9 +1604,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="usersNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Project Users
-              </span>
+              Project Users
             </a>
           </div>
           <div
@@ -1437,9 +1615,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="folderNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Pages
-              </span>
+              Pages
             </a>
           </div>
         </div>
@@ -1454,9 +1630,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
               id="settingsNavBtn"
               onClick={[Function]}
             >
-              <span>
-                Settings
-              </span>
+              Settings
             </a>
           </div>
           <div
@@ -1465,9 +1639,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
             <div
               onClick={[Function]}
             >
-              <span>
-                Log out
-              </span>
+              Log out
             </div>
           </div>
         </div>
@@ -1480,9 +1652,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
             id="aboutNavBtn"
             onClick={[Function]}
           >
-            <span>
-              About Schema CMS
-            </span>
+            About Schema CMS
           </a>
           <a
             className="c8"
@@ -1490,9 +1660,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
             id="apiNavBtn"
             onClick={[Function]}
           >
-            <span>
-              API Doc
-            </span>
+            API Doc
           </a>
           <a
             className="c8"
@@ -1500,9 +1668,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
             id="repositoryNavBtn"
             onClick={[Function]}
           >
-            <span>
-              GitHub Repository
-            </span>
+            GitHub Repository
           </a>
         </div>
       </div>
@@ -1565,9 +1731,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           id="settingsTab"
           onClick={[Function]}
         >
-          <span>
-            Settings
-          </span>
+          Settings
         </a>
       </div>
       <div
@@ -1579,9 +1743,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           id="sourcesTab"
           onClick={[Function]}
         >
-          <span>
-            Sources
-          </span>
+          Sources
         </a>
       </div>
       <div
@@ -1593,9 +1755,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           id="stateTab"
           onClick={[Function]}
         >
-          <span>
-            States
-          </span>
+          States
         </a>
       </div>
       <div
@@ -1607,9 +1767,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           id="folderTab"
           onClick={[Function]}
         >
-          <span>
-            Pages
-          </span>
+          Pages
         </a>
       </div>
       <div
@@ -1621,9 +1779,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           id="templatesTab"
           onClick={[Function]}
         >
-          <span>
-            Templates
-          </span>
+          Templates
         </a>
       </div>
       <div
@@ -1635,9 +1791,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           id="usersTab"
           onClick={[Function]}
         >
-          <span>
-            Users
-          </span>
+          Users
         </a>
       </div>
     </div>
@@ -1660,9 +1814,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           }
         }
       >
-        <span>
-          Users
-        </span>
+        Users
       </h2>
       <h1
         className="c16"
@@ -1678,9 +1830,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
           }
         }
       >
-        <span>
-          Overview
-        </span>
+        Overview
       </h1>
     </div>
     <div
@@ -1735,9 +1885,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
   <div
     className="c18"
   >
-    <span>
-      Loading...
-    </span>
+    No Users
   </div>
   <div
     className="c19"

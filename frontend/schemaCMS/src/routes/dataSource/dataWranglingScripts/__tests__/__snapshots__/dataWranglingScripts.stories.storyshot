@@ -86,12 +86,41 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
   word-break: break-word;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+.c26 {
+  height: 155px;
+}
+
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c27 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 70px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c29 {
+  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c12 {
@@ -119,6 +148,34 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 }
 
 .c12 svg {
+  cursor: pointer;
+}
+
+.c30 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1d1d20;
+}
+
+.c30 svg {
   cursor: pointer;
 }
 
@@ -181,6 +238,76 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
   display: none;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.c19 {
+  width: 60%;
+  text-align: center;
+  color: #71737e;
+}
+
+.c18 {
+  width: 20%;
+}
+
+.c20 {
+  width: 20%;
+  text-align: right;
+}
+
+.c22 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c24 {
+  display: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin: 0 10px 2px 10px;
+  background-color: #71737e;
+}
+
+.c25 {
+  color: #71737e;
+  width: 100%;
+}
+
+.c23 {
+  overflow: hidden;
+  min-width: 100%;
+  padding-right: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 @media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
@@ -196,6 +323,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -213,6 +341,30 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 }
 
 @media (min-width:1050px) {
+  .c28 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c27 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c29 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -221,6 +373,15 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
     display: -webkit-fixed;
     display: -ms-fixedbox;
     display: fixed;
+  }
+}
+
+@media (min-width:1050px) {
+  .c30 {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    display: none;
   }
 }
 
@@ -247,6 +408,27 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 @media (min-width:1050px) {
   .c15 {
     display: block;
+  }
+}
+
+@media (min-width:768px) {
+  .c24 {
+    display: inline-block;
+  }
+}
+
+@media (min-width:768px) {
+  .c25 {
+    width: auto;
+    display: inline;
+  }
+}
+
+@media (min-width:768px) {
+  .c23 {
+    width: auto;
+    display: inline;
+    padding-right: 0;
   }
 }
 
@@ -312,9 +494,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                 }
               }
             >
-              <span>
-                Data Wrangling
-              </span>
+              Data Wrangling
             </h1>
           </div>
         </div>
@@ -412,9 +592,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                 }
               }
             >
-              <span>
-                Data Wrangling
-              </span>
+              Data Wrangling
             </h1>
           </div>
         </div>
@@ -435,9 +613,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -446,9 +622,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -461,9 +635,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -471,9 +643,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -481,9 +651,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -562,9 +730,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             }
           }
         >
-          <span>
-            Data Wrangling
-          </span>
+          Data Wrangling
         </h1>
       </div>
       <div
@@ -600,9 +766,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Source
-              </span>
+              Source
             </div>
           </div>
           <div
@@ -633,9 +797,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Fields
-              </span>
+              Fields
             </div>
           </div>
           <div
@@ -684,9 +846,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Steps
-              </span>
+              Steps
             </div>
           </div>
           <div
@@ -735,9 +895,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Results
-              </span>
+              Results
             </div>
           </div>
           <div
@@ -770,9 +928,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Filters
-              </span>
+              Filters
             </div>
           </div>
           <div
@@ -816,9 +972,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Tags
-              </span>
+              Tags
             </div>
           </div>
         </div>
@@ -827,9 +981,744 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
     <div
       className="c17"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        className="c18"
+      />
+      <div
+        className="c19"
+      >
+        3 Steps
+      </div>
+      <div
+        className="c20"
+      >
+        <div
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="fileUpload"
+            style={
+              Object {
+                "position": "relative",
+                "top": 0,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": 0,
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "opacity": 1,
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+          </label>
+          <input
+            accept=".py"
+            aria-hidden={true}
+            disabled={false}
+            id="fileUpload"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="file"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      id="fieldStepsCheckboxGroup"
+      style={
+        Object {
+          "borderTop": "none",
+          "display": "flex",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "marginBottom": 20,
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Selected steps
+      </label>
+      <div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottom": "1px solid #2F2F36",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "space-between",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            aria-hidden={true}
+            checked={true}
+            id="drag-checkbox-0"
+            name="steps"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+            value="1"
+          />
+          <span
+            style={
+              Object {
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            <div
+              className="c21"
+            >
+              <a
+                className="c22"
+                href="/script/1"
+                onClick={[Function]}
+              >
+                <div
+                  className="c23"
+                >
+                   
+                  name 1
+                </div>
+                <div
+                  className="c24"
+                />
+                <div
+                  className="c25"
+                >
+                  Uploaded
+                </div>
+              </a>
+            </div>
+          </span>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <label
+              htmlFor="drag-checkbox-0"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <svg
+                stroke="#000"
+                style={
+                  Object {
+                    "height": "30px",
+                    "stroke": "#FFF",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M20.455 7.5H7.5v15h15v-6.136"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M11 12l5 5L26 7"
+                    strokeWidth={3}
+                  />
+                </g>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "margin": "40px 0 20px 0",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Steps
+      </label>
+      <div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottom": "1px solid #2F2F36",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "space-between",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            aria-hidden={true}
+            checked={true}
+            id="checkbox-0"
+            name="steps"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+            value="1"
+          />
+          <span
+            style={
+              Object {
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            <div
+              className="c21"
+            >
+              <a
+                className="c22"
+                href="/script/1"
+                onClick={[Function]}
+              >
+                <div
+                  className="c23"
+                >
+                   
+                  name 1
+                </div>
+                <div
+                  className="c24"
+                />
+                <div
+                  className="c25"
+                >
+                  Uploaded
+                </div>
+              </a>
+            </div>
+          </span>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <label
+              htmlFor="checkbox-0"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <svg
+                stroke="#000"
+                style={
+                  Object {
+                    "height": "30px",
+                    "stroke": "#FFF",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M20.455 7.5H7.5v15h15v-6.136"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M11 12l5 5L26 7"
+                    strokeWidth={3}
+                  />
+                </g>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottom": "1px solid #2F2F36",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "space-between",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            aria-hidden={true}
+            checked={false}
+            id="checkbox-1"
+            name="steps"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+            value="2"
+          />
+          <span
+            style={
+              Object {
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            <div
+              className="c21"
+            >
+              <a
+                className="c22"
+                href="/script/2/1"
+                onClick={[Function]}
+              >
+                <div
+                  className="c23"
+                >
+                   
+                  name 2
+                </div>
+                <div
+                  className="c24"
+                />
+                <div
+                  className="c25"
+                >
+                  Default
+                </div>
+              </a>
+            </div>
+          </span>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <label
+              htmlFor="checkbox-1"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "height": "30px",
+                    "stroke": "#FFF",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M7.5 7.5h15v15h-15z"
+                  fill="none"
+                />
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c26"
+    >
+      <div
+        className="c27"
+      >
+        <div
+          className="c28"
+        >
+          <button
+            className="c29"
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c30"
+    >
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="sourceBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Source
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="fieldsBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Fields
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c16"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="stepsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "stroke": "#1d1d20",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Steps
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="resultsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "stroke": "#1d1d20",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Results
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="filtersBtn"
+            stroke="#FFF"
+            style={
+              Object {
+                "height": 54,
+                "stroke": "#FFF",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+              fill="none"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Filters
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="tagsBtn"
+            style={
+              Object {
+                "height": 54,
+                "stroke": "#FFF",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+              strokeWidth={1.8}
+              transform="rotate(-45 47.142 -.314)"
+            >
+              <path
+                d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+              />
+              <rect
+                height={6.3}
+                rx={3.15}
+                width={6.3}
+                x={17.1}
+                y={5.4}
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Tags
+        </div>
+      </div>
     </div>
   </span>
 </div>
@@ -921,12 +1810,41 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   word-break: break-word;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+.c28 {
+  height: 155px;
+}
+
+.c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c29 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 70px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c31 {
+  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c12 {
@@ -954,6 +1872,34 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 }
 
 .c12 svg {
+  cursor: pointer;
+}
+
+.c32 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1d1d20;
+}
+
+.c32 svg {
   cursor: pointer;
 }
 
@@ -1016,6 +1962,101 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   display: none;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.c19 {
+  width: 60%;
+  text-align: center;
+  color: #71737e;
+}
+
+.c18 {
+  width: 20%;
+}
+
+.c20 {
+  width: 20%;
+  text-align: right;
+}
+
+.c24 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c26 {
+  display: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin: 0 10px 2px 10px;
+  background-color: #71737e;
+}
+
+.c27 {
+  color: #71737e;
+  width: 100%;
+}
+
+.c25 {
+  overflow: hidden;
+  min-width: 100%;
+  padding-right: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 @media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
@@ -1031,6 +2072,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1048,6 +2090,30 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 }
 
 @media (min-width:1050px) {
+  .c30 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c29 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c31 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -1056,6 +2122,15 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
     display: -webkit-fixed;
     display: -ms-fixedbox;
     display: fixed;
+  }
+}
+
+@media (min-width:1050px) {
+  .c32 {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    display: none;
   }
 }
 
@@ -1082,6 +2157,27 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 @media (min-width:1050px) {
   .c15 {
     display: block;
+  }
+}
+
+@media (min-width:768px) {
+  .c26 {
+    display: inline-block;
+  }
+}
+
+@media (min-width:768px) {
+  .c27 {
+    width: auto;
+    display: inline;
+  }
+}
+
+@media (min-width:768px) {
+  .c25 {
+    width: auto;
+    display: inline;
+    padding-right: 0;
   }
 }
 
@@ -1147,9 +2243,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                 }
               }
             >
-              <span>
-                Data Wrangling
-              </span>
+              Data Wrangling
             </h1>
           </div>
         </div>
@@ -1247,9 +2341,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                 }
               }
             >
-              <span>
-                Data Wrangling
-              </span>
+              Data Wrangling
             </h1>
           </div>
         </div>
@@ -1270,9 +2362,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -1281,9 +2371,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -1296,9 +2384,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -1306,9 +2392,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -1316,9 +2400,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -1397,9 +2479,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             }
           }
         >
-          <span>
-            Data Wrangling
-          </span>
+          Data Wrangling
         </h1>
       </div>
       <div
@@ -1435,9 +2515,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             <div
               className="c15"
             >
-              <span>
-                Source
-              </span>
+              Source
             </div>
           </div>
           <div
@@ -1468,9 +2546,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             <div
               className="c15"
             >
-              <span>
-                Fields
-              </span>
+              Fields
             </div>
           </div>
           <div
@@ -1519,9 +2595,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             <div
               className="c15"
             >
-              <span>
-                Steps
-              </span>
+              Steps
             </div>
           </div>
           <div
@@ -1570,9 +2644,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             <div
               className="c15"
             >
-              <span>
-                Results
-              </span>
+              Results
             </div>
           </div>
           <div
@@ -1605,9 +2677,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             <div
               className="c15"
             >
-              <span>
-                Filters
-              </span>
+              Filters
             </div>
           </div>
           <div
@@ -1651,9 +2721,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             <div
               className="c15"
             >
-              <span>
-                Tags
-              </span>
+              Tags
             </div>
           </div>
         </div>
@@ -1662,9 +2730,825 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
     <div
       className="c17"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        className="c18"
+      />
+      <div
+        className="c19"
+      >
+        3 Steps
+      </div>
+      <div
+        className="c20"
+      >
+        <div
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="fileUpload"
+            style={
+              Object {
+                "position": "relative",
+                "top": 0,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": 0,
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "opacity": 1,
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+          </label>
+          <input
+            accept=".py"
+            aria-hidden={true}
+            disabled={false}
+            id="fileUpload"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="file"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      id="fieldStepsCheckboxGroup"
+      style={
+        Object {
+          "borderTop": "none",
+          "display": "flex",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "marginBottom": 20,
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Selected steps
+      </label>
+      <div
+        className="c21"
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottom": "1px solid #2F2F36",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "space-between",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            aria-hidden={true}
+            checked={true}
+            id="drag-checkbox-0"
+            name="steps"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+            value="1"
+          />
+          <span
+            style={
+              Object {
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            <div
+              className="c22"
+            >
+              <span>
+                <div
+                  className="c23"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "60px",
+                        "marginRight": 20,
+                        "width": 10,
+                      }
+                    }
+                    viewBox="0 0 10 60"
+                  >
+                    <path
+                      d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </span>
+              <a
+                className="c24"
+                href="/script/1"
+                onClick={[Function]}
+              >
+                <div
+                  className="c25"
+                >
+                   
+                  name 1
+                </div>
+                <div
+                  className="c26"
+                />
+                <div
+                  className="c27"
+                >
+                  Uploaded
+                </div>
+              </a>
+            </div>
+          </span>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <label
+              htmlFor="drag-checkbox-0"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <svg
+                stroke="#000"
+                style={
+                  Object {
+                    "height": "30px",
+                    "stroke": "#FFF",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M20.455 7.5H7.5v15h15v-6.136"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M11 12l5 5L26 7"
+                    strokeWidth={3}
+                  />
+                </g>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c21"
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottom": "1px solid #2F2F36",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "space-between",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            aria-hidden={true}
+            checked={true}
+            id="drag-checkbox-1"
+            name="steps"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+            value="2"
+          />
+          <span
+            style={
+              Object {
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            <div
+              className="c22"
+            >
+              <span>
+                <div
+                  className="c23"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "60px",
+                        "marginRight": 20,
+                        "width": 10,
+                      }
+                    }
+                    viewBox="0 0 10 60"
+                  >
+                    <path
+                      d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </span>
+              <a
+                className="c24"
+                href="/script/2/1"
+                onClick={[Function]}
+              >
+                <div
+                  className="c25"
+                >
+                   
+                  name 2
+                </div>
+                <div
+                  className="c26"
+                />
+                <div
+                  className="c27"
+                >
+                  Default
+                </div>
+              </a>
+            </div>
+          </span>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <label
+              htmlFor="drag-checkbox-1"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <svg
+                stroke="#000"
+                style={
+                  Object {
+                    "height": "30px",
+                    "stroke": "#FFF",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M20.455 7.5H7.5v15h15v-6.136"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M11 12l5 5L26 7"
+                    strokeWidth={3}
+                  />
+                </g>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c21"
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottom": "1px solid #2F2F36",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "space-between",
+              "width": "100%",
+            }
+          }
+        >
+          <input
+            aria-hidden={true}
+            checked={true}
+            id="drag-checkbox-2"
+            name="steps"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+            value="3"
+          />
+          <span
+            style={
+              Object {
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            <div
+              className="c22"
+            >
+              <span>
+                <div
+                  className="c23"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "60px",
+                        "marginRight": 20,
+                        "width": 10,
+                      }
+                    }
+                    viewBox="0 0 10 60"
+                  >
+                    <path
+                      d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </span>
+              <a
+                className="c24"
+                href="/script/3/1"
+                onClick={[Function]}
+              >
+                <div
+                  className="c25"
+                >
+                   
+                  name 3
+                </div>
+                <div
+                  className="c26"
+                />
+                <div
+                  className="c27"
+                >
+                  Custom
+                </div>
+              </a>
+            </div>
+          </span>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <label
+              htmlFor="drag-checkbox-2"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <svg
+                stroke="#000"
+                style={
+                  Object {
+                    "height": "30px",
+                    "stroke": "#FFF",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M20.455 7.5H7.5v15h15v-6.136"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M11 12l5 5L26 7"
+                    strokeWidth={3}
+                  />
+                </g>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c28"
+    >
+      <div
+        className="c29"
+      >
+        <div
+          className="c30"
+        >
+          <button
+            className="c31"
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c32"
+    >
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="sourceBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Source
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="fieldsBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Fields
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c16"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="stepsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "stroke": "#1d1d20",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Steps
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="resultsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "stroke": "#1d1d20",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Results
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="filtersBtn"
+            stroke="#FFF"
+            style={
+              Object {
+                "height": 54,
+                "stroke": "#FFF",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+              fill="none"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Filters
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="tagsBtn"
+            style={
+              Object {
+                "height": 54,
+                "stroke": "#FFF",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+              strokeWidth={1.8}
+              transform="rotate(-45 47.142 -.314)"
+            >
+              <path
+                d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+              />
+              <rect
+                height={6.3}
+                rx={3.15}
+                width={6.3}
+                x={17.1}
+                y={5.4}
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Tags
+        </div>
+      </div>
     </div>
   </span>
 </div>
@@ -1756,12 +3640,41 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
   word-break: break-word;
 }
 
-.c17 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
+.c21 {
+  height: 155px;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c22 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 70px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c24 {
+  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c12 {
@@ -1789,6 +3702,34 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
 }
 
 .c12 svg {
+  cursor: pointer;
+}
+
+.c25 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1d1d20;
+}
+
+.c25 svg {
   cursor: pointer;
 }
 
@@ -1851,6 +3792,36 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
   display: none;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.c19 {
+  width: 60%;
+  text-align: center;
+  color: #71737e;
+}
+
+.c18 {
+  width: 20%;
+}
+
+.c20 {
+  width: 20%;
+  text-align: right;
+}
+
 @media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
@@ -1866,6 +3837,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
     -ms-flex-align: center;
     align-items: center;
     margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1883,6 +3855,30 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
 }
 
 @media (min-width:1050px) {
+  .c23 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -1891,6 +3887,15 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
     display: -webkit-fixed;
     display: -ms-fixedbox;
     display: fixed;
+  }
+}
+
+@media (min-width:1050px) {
+  .c25 {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    display: none;
   }
 }
 
@@ -1982,9 +3987,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
                 }
               }
             >
-              <span>
-                Data Wrangling
-              </span>
+              Data Wrangling
             </h1>
           </div>
         </div>
@@ -2082,9 +4085,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
                 }
               }
             >
-              <span>
-                Data Wrangling
-              </span>
+              Data Wrangling
             </h1>
           </div>
         </div>
@@ -2105,9 +4106,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
                 id="settingsNavBtn"
                 onClick={[Function]}
               >
-                <span>
-                  Settings
-                </span>
+                Settings
               </a>
             </div>
             <div
@@ -2116,9 +4115,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
               <div
                 onClick={[Function]}
               >
-                <span>
-                  Log out
-                </span>
+                Log out
               </div>
             </div>
           </div>
@@ -2131,9 +4128,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
               id="aboutNavBtn"
               onClick={[Function]}
             >
-              <span>
-                About Schema CMS
-              </span>
+              About Schema CMS
             </a>
             <a
               className="c7"
@@ -2141,9 +4136,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
               id="apiNavBtn"
               onClick={[Function]}
             >
-              <span>
-                API Doc
-              </span>
+              API Doc
             </a>
             <a
               className="c7"
@@ -2151,9 +4144,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
               id="repositoryNavBtn"
               onClick={[Function]}
             >
-              <span>
-                GitHub Repository
-              </span>
+              GitHub Repository
             </a>
           </div>
         </div>
@@ -2232,9 +4223,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
             }
           }
         >
-          <span>
-            Data Wrangling
-          </span>
+          Data Wrangling
         </h1>
       </div>
       <div
@@ -2270,9 +4259,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Source
-              </span>
+              Source
             </div>
           </div>
           <div
@@ -2303,9 +4290,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Fields
-              </span>
+              Fields
             </div>
           </div>
           <div
@@ -2354,9 +4339,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Steps
-              </span>
+              Steps
             </div>
           </div>
           <div
@@ -2405,9 +4388,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Results
-              </span>
+              Results
             </div>
           </div>
           <div
@@ -2440,9 +4421,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Filters
-              </span>
+              Filters
             </div>
           </div>
           <div
@@ -2486,9 +4465,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
             <div
               className="c15"
             >
-              <span>
-                Tags
-              </span>
+              Tags
             </div>
           </div>
         </div>
@@ -2497,9 +4474,365 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
     <div
       className="c17"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        className="c18"
+      />
+      <div
+        className="c19"
+      >
+        0 Steps
+      </div>
+      <div
+        className="c20"
+      >
+        <div
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="fileUpload"
+            style={
+              Object {
+                "position": "relative",
+                "top": 0,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": 0,
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "opacity": 1,
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+          </label>
+          <input
+            accept=".py"
+            aria-hidden={true}
+            disabled={false}
+            id="fileUpload"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="file"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c21"
+    >
+      <div
+        className="c22"
+      >
+        <div
+          className="c23"
+        >
+          <button
+            className="c24"
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c25"
+    >
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="sourceBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Source
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="fieldsBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Fields
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c16"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="stepsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "stroke": "#1d1d20",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Steps
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="resultsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 54,
+                "stroke": "#1d1d20",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Results
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="filtersBtn"
+            stroke="#FFF"
+            style={
+              Object {
+                "height": 54,
+                "stroke": "#FFF",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+              fill="none"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Filters
+        </div>
+      </div>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="tagsBtn"
+            style={
+              Object {
+                "height": 54,
+                "stroke": "#FFF",
+                "width": 54,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+              strokeWidth={1.8}
+              transform="rotate(-45 47.142 -.314)"
+            >
+              <path
+                d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+              />
+              <rect
+                height={6.3}
+                rx={3.15}
+                width={6.3}
+                x={17.1}
+                y={5.4}
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c15"
+        >
+          Tags
+        </div>
+      </div>
     </div>
   </span>
 </div>

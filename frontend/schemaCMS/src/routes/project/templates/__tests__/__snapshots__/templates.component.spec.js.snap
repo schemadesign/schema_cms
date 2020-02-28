@@ -165,7 +165,7 @@ exports[`Templates: Component should render correctly 1`] = `
               "id": "project.templates.block",
             },
             "id": "blockTemplates",
-            "to": "/project/projectId/templates/block",
+            "to": "/project/projectId/block-templates",
             "value": 0,
           },
           Object {
@@ -174,7 +174,7 @@ exports[`Templates: Component should render correctly 1`] = `
               "id": "project.templates.page",
             },
             "id": "pageTemplates",
-            "to": "/project/projectId/templates/page",
+            "to": "/project/projectId/page-templates",
             "value": 0,
           },
           Object {
@@ -183,7 +183,7 @@ exports[`Templates: Component should render correctly 1`] = `
               "id": "project.templates.filter",
             },
             "id": "filterTemplates",
-            "to": "/project/projectId/templates/filter",
+            "to": "/project/projectId/filter-templates",
             "value": 0,
           },
           Object {
@@ -192,7 +192,7 @@ exports[`Templates: Component should render correctly 1`] = `
               "id": "project.templates.state",
             },
             "id": "stateTemplates",
-            "to": "/project/projectId/templates/state",
+            "to": "/project/projectId/state-templates",
             "value": 0,
           },
         ]
