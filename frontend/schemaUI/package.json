@@ -7,8 +7,8 @@
     "access": "restricted"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.11.0",
+    "react-dom": "^16.8.6"
   },
   "dependencies": {
     "@babel/core": "7.3.4",
@@ -78,8 +78,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "bash ../../install/run_tests.sh"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

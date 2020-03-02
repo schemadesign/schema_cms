@@ -22,6 +22,25 @@ function* fetchBlocks({ payload: { projectId } }) {
   }
 }
 
+function* createBlockTemplate({ payload: { projectId, formData } }) {
+  try {
+    yield put(BlockTemplatesRoutines.createBlockTemplate.request());
+
+    const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}`, formData);
+
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(BlockTemplatesRoutines.createBlockTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(BlockTemplatesRoutines.createBlockTemplate.failure(error));
+  } finally {
+    yield put(BlockTemplatesRoutines.createBlockTemplate.fulfill());
+  }
+}
+
 export function* watchBlockTemplates() {
-  yield all([takeLatest(BlockTemplatesRoutines.fetchBlocks.TRIGGER, fetchBlocks)]);
+  yield all([
+    takeLatest(BlockTemplatesRoutines.fetchBlocks.TRIGGER, fetchBlocks),
+    takeLatest(BlockTemplatesRoutines.createBlockTemplate.TRIGGER, createBlockTemplate),
+  ]);
 }

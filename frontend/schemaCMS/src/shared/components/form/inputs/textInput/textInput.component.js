@@ -34,7 +34,9 @@ export class TextInput extends PureComponent {
     onChange: Function.prototype,
   };
 
-  renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
+  renderError = renderWhenTrue(() => (
+    <ErrorWrapper isLabel={!!this.props.label}>{this.props.errors[this.props.name]}</ErrorWrapper>
+  ));
 
   renderEditIcon = renderWhenTrue(
     always(

@@ -6,10 +6,12 @@ const PREFIX = 'BLOCK_TEMPLATES/';
 
 export const BlockTemplatesRoutines = {
   fetchBlocks: createRoutine(`${PREFIX}FETCH_BLOCKS`),
+  createBlockTemplate: createRoutine(`${PREFIX}CREATE_BLOCK_TEMPLATE`),
 };
 
 export const INITIAL_STATE = new Immutable({
   blocks: [],
+  block: {},
 });
 
 const setBlocks = (state = INITIAL_STATE, { payload }) => state.set('blocks', payload);

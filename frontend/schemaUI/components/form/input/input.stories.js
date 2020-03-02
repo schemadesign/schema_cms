@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Input } from './input.component';
 import { withTheme } from '../../../.storybook/decorators';
 
-const defaultProps = {
-  defaultValue: 'value',
-};
+const defaultProps = {};
 const withCustomStyles = {
-  defaultValue: 'value',
+  ...defaultProps,
   customStyles: {
     color: 'blue',
   },
 };
+const withAutoWidth = {
+  ...defaultProps,
+  autoWidth: true,
+};
+
+const TestComponent = props => {
+  const [value, setValue] = useState('');
+
+  const handleChange = ({ target: { value } }) => setValue(value);
+
+  return <Input {...props} value={value} onChange={handleChange} />;
+};
 
 storiesOf('Form/Input', module)
   .addDecorator(withTheme())
-  .add('Default', () => <Input {...defaultProps} />)
-  .add('With custom styles', () => <Input {...withCustomStyles} />);
+  .add('Default', () => <TestComponent {...defaultProps} />)
+  .add('With auto width', () => <TestComponent {...withAutoWidth} />)
+  .add('With custom styles', () => <TestComponent {...withCustomStyles} />);
