@@ -5,7 +5,7 @@ from ..utils.views import NoListCreateDetailViewSet
 
 
 class BlockTemplateViewSet(NoListCreateDetailViewSet):
-    queryset = models.BlockTemplate.objects.all().select_related("project")
+    queryset = models.BlockTemplate.objects.all().select_related("project").prefetch_related("elements")
     serializer_class = serializers.BlockTemplateSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
