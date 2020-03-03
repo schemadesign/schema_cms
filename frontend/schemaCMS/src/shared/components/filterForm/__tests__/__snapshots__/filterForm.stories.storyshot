@@ -39,7 +39,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 .c1 {
-  width: 100%;
+  position: relative;
 }
 
 .c2 {
@@ -126,6 +126,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 
   </style>
   <form
+    action="#"
     className="c0"
     onReset={[Function]}
     onSubmit={[Function]}
@@ -171,8 +172,13 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
               "backgroundColor": "transparent",
               "border": "none",
               "color": "#FFF",
+              "fontFamily": "inherit",
               "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
               "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 100,
               "outline": "none",
               "padding": 0,
             }
@@ -512,8 +518,13 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "backgroundColor": "transparent",
                 "border": "none",
                 "color": "#FFF",
+                "fontFamily": "inherit",
                 "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
                 "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 100,
                 "outline": "none",
                 "padding": 0,
               }
@@ -574,8 +585,13 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "backgroundColor": "transparent",
                 "border": "none",
                 "color": "#FFF",
+                "fontFamily": "inherit",
                 "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
                 "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 100,
                 "outline": "none",
                 "padding": 0,
               }
@@ -699,7 +715,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 .c1 {
-  width: 100%;
+  position: relative;
 }
 
 .c2 {
@@ -814,6 +830,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 
   </style>
   <form
+    action="#"
     className="c0"
     onReset={[Function]}
     onSubmit={[Function]}
@@ -859,8 +876,13 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
               "backgroundColor": "transparent",
               "border": "none",
               "color": "#FFF",
+              "fontFamily": "inherit",
               "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
               "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 100,
               "outline": "none",
               "padding": 0,
             }
@@ -1200,8 +1222,13 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "backgroundColor": "transparent",
                 "border": "none",
                 "color": "#FFF",
+                "fontFamily": "inherit",
                 "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
                 "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 100,
                 "outline": "none",
                 "padding": 0,
               }
@@ -1262,8 +1289,13 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "backgroundColor": "transparent",
                 "border": "none",
                 "color": "#FFF",
+                "fontFamily": "inherit",
                 "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
                 "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 100,
                 "outline": "none",
                 "padding": 0,
               }

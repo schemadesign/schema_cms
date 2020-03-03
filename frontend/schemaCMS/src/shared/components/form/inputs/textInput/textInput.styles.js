@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  position: relative;
+  position: ${({ isAuthWidth }) => (isAuthWidth ? 'relative' : 'static')};
 `;
 
 export const IconWrapper = styled.div`

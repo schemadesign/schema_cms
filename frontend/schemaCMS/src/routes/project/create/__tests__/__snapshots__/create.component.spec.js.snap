@@ -138,6 +138,7 @@ exports[`Create: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
@@ -175,6 +176,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
@@ -212,6 +214,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}

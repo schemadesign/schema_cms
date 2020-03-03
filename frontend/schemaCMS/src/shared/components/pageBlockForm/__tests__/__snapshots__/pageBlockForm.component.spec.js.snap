@@ -3,6 +3,7 @@
 exports[`PageBlockForm: Component should render correctly 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -120,6 +121,7 @@ exports[`PageBlockForm: Component should render correctly 1`] = `
 exports[`PageBlockForm: Component should render correctly with code type 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -167,6 +169,7 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
     value="code"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -270,6 +273,7 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
 exports[`PageBlockForm: Component should render correctly with embed type 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -317,6 +321,7 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
     value="embed"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -421,6 +426,7 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
 exports[`PageBlockForm: Component should render correctly with image type 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -609,6 +615,7 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
 exports[`PageBlockForm: Component should render correctly with markdown type 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -656,6 +663,7 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
     value="markdown"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -758,6 +766,7 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
 exports[`PageBlockForm: Component should render correctly with multiple images  1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -955,6 +964,7 @@ exports[`PageBlockForm: Component should render correctly with multiple images  
 exports[`PageBlockForm: Component should render correctly with text type 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -1002,6 +1012,7 @@ exports[`PageBlockForm: Component should render correctly with text type 1`] = `
     value="text"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}

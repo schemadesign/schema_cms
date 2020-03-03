@@ -138,6 +138,7 @@ exports[`CreateFolder: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}

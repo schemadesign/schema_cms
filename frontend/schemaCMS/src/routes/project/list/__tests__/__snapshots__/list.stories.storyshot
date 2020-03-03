@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|List List (admin) 1`] = `
-.c9 {
-  display: none;
-}
-
-.c10 {
-  margin-right: 20px;
-}
-
-.c11 {
-  color: #FFF;
-}
-
-.c12 {
-  color: #FFF;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -135,6 +119,23 @@ exports[`Storyshots Project|List List (admin) 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+}
+
 .c16 {
   list-style: none;
   margin: 0;
@@ -197,25 +198,6 @@ exports[`Storyshots Project|List List (admin) 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c9 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
-}
-
-@media (min-width:1050px) {
   .c0 {
     display: none;
   }
@@ -246,6 +228,25 @@ exports[`Storyshots Project|List List (admin) 1`] = `
 @media (min-width:1050px) {
   .c13 {
     display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -362,6 +363,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -544,6 +546,7 @@ exports[`Storyshots Project|List List (admin) 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -936,22 +939,6 @@ exports[`Storyshots Project|List List (admin) 1`] = `
 `;
 
 exports[`Storyshots Project|List List (editor) 1`] = `
-.c9 {
-  display: none;
-}
-
-.c10 {
-  margin-right: 20px;
-}
-
-.c11 {
-  color: #1d1d20;
-}
-
-.c12 {
-  color: #1d1d20;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -1070,6 +1057,23 @@ exports[`Storyshots Project|List List (editor) 1`] = `
   background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
 }
 
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c11 {
+  color: #1d1d20;
+}
+
+.c12 {
+  color: #1d1d20;
+}
+
 .c15 {
   list-style: none;
   margin: 0;
@@ -1132,25 +1136,6 @@ exports[`Storyshots Project|List List (editor) 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c9 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
-}
-
-@media (min-width:1050px) {
   .c0 {
     display: none;
   }
@@ -1175,6 +1160,25 @@ exports[`Storyshots Project|List List (editor) 1`] = `
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
     width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1291,6 +1295,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -1473,6 +1478,7 @@ exports[`Storyshots Project|List List (editor) 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -1775,22 +1781,6 @@ exports[`Storyshots Project|List List (editor) 1`] = `
 `;
 
 exports[`Storyshots Project|List No data 1`] = `
-.c9 {
-  display: none;
-}
-
-.c10 {
-  margin-right: 20px;
-}
-
-.c11 {
-  color: #FFF;
-}
-
-.c12 {
-  color: #FFF;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -1909,31 +1899,29 @@ exports[`Storyshots Project|List No data 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+}
+
 .c14 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
   font-weight: 200;
   font-size: 20px;
-}
-
-@media (min-width:1050px) {
-  .c9 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
 }
 
 @media (min-width:1050px) {
@@ -1967,6 +1955,25 @@ exports[`Storyshots Project|List No data 1`] = `
 @media (min-width:1050px) {
   .c13 {
     display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -2064,6 +2071,7 @@ exports[`Storyshots Project|List No data 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -2246,6 +2254,7 @@ exports[`Storyshots Project|List No data 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={

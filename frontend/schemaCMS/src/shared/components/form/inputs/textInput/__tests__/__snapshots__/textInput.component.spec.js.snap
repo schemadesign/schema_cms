@@ -3,6 +3,7 @@
 exports[`TextInput: Component should render correctly 1`] = `
 <styled.div>
   <Component
+    autoWidth={false}
     error={false}
     handleChange={[Function]}
     iconComponent={null}
@@ -16,6 +17,7 @@ exports[`TextInput: Component should render correctly 1`] = `
 exports[`TextInput: Component should render edit icon 1`] = `
 <styled.div>
   <Component
+    autoWidth={false}
     error={false}
     handleChange={[Function]}
     iconComponent={
@@ -35,6 +37,7 @@ exports[`TextInput: Component should render edit icon 1`] = `
 exports[`TextInput: Component should render error 1`] = `
 <styled.div>
   <Component
+    autoWidth={false}
     error={true}
     handleChange={[Function]}
     iconComponent={null}
@@ -42,7 +45,10 @@ exports[`TextInput: Component should render error 1`] = `
     onChange={[Function]}
     value=""
   />
-  <styled.div>
+  <styled.div
+    isAuthWidth={false}
+    isLabel={false}
+  >
     An error message
   </styled.div>
 </styled.div>

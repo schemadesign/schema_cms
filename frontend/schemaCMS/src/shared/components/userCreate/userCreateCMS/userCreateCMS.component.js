@@ -51,7 +51,8 @@ export class UserCreateCMS extends PureComponent {
           [EMAIL]: '',
         }}
         enableReinitialize
-        render={({ handleSubmit, ...restProps }) => (
+      >
+        {({ handleSubmit, ...restProps }) => (
           <UserCreate
             handleSubmit={handleSubmit}
             onCancelClick={this.handleCancelClick}
@@ -60,7 +61,7 @@ export class UserCreateCMS extends PureComponent {
             {...restProps}
           />
         )}
-      />
+      </Formik>
     );
   }
 }

@@ -3,6 +3,7 @@
 exports[`DataSourceTagForm: Component should render correctly 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -32,6 +33,7 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
       key="0"
     >
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         customStyles={
           Object {
@@ -90,6 +92,7 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
       key="1"
     >
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         customStyles={
           Object {
@@ -162,6 +165,7 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
 exports[`DataSourceTagForm: Component should render empty 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}

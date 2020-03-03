@@ -78,6 +78,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
@@ -102,6 +103,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       values={Object {}}
     />
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
@@ -126,6 +128,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       values={Object {}}
     />
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
@@ -137,6 +140,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       touched={Object {}}
     />
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}

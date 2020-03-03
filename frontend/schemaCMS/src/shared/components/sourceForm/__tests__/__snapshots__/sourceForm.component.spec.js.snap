@@ -3,6 +3,7 @@
 exports[`SourceFormComponent: Component should render correctly 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={true}
     errors={Object {}}
     fullWidth={true}
@@ -431,6 +432,7 @@ exports[`SourceFormComponent: Component should render error wrapper 1`] = `
 exports[`SourceFormComponent: Component should render file uploader 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={true}
     errors={Object {}}
     fullWidth={true}

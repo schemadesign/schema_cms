@@ -154,6 +154,7 @@ exports[`View: Component should render content correctly 1`] = `
           </styled.span>
           <styled.div>
             <TextInput
+              autoWidth={false}
               checkOnlyErrors={false}
               customInputStyles={
                 Object {
@@ -273,6 +274,7 @@ exports[`View: Component should render content correctly 1`] = `
           </styled.span>
           <styled.div>
             <TextInput
+              autoWidth={false}
               checkOnlyErrors={false}
               customInputStyles={
                 Object {
@@ -696,6 +698,7 @@ exports[`View: Component should render correctly 1`] = `
               </styled.span>
               <styled.div>
                 <TextInput
+                  autoWidth={false}
                   checkOnlyErrors={false}
                   customInputStyles={
                     Object {
@@ -815,6 +818,7 @@ exports[`View: Component should render correctly 1`] = `
               </styled.span>
               <styled.div>
                 <TextInput
+                  autoWidth={false}
                   checkOnlyErrors={false}
                   customInputStyles={
                     Object {

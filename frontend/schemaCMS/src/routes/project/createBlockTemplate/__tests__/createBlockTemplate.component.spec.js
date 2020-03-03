@@ -1,17 +1,33 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import { CreateBlockTemplate } from '../createBlockTemplate.component';
+import { defaultProps } from '../createBlockTemplate.stories';
+import { makeContextRenderer } from '../../../../shared/utils/testUtils';
+
+const mockPushHistory = jest.fn();
+
+jest.mock('react-router', () => ({
+  ...jest.requireActual('react-router'),
+  useHistory: () => ({
+    push: mockPushHistory,
+  }),
+  useParams: () => ({
+    projectId: 'projectId',
+  }),
+}));
 
 describe('CreateBlockTemplate: Component', () => {
-  const defaultProps = {};
+  const render = props => makeContextRenderer(<CreateBlockTemplate {...defaultProps} {...props} />);
 
-  const component = props => <CreateBlockTemplate {...defaultProps} {...props} />;
-
-  const render = (props = {}) => shallow(component(props));
-
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render correctly', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should redirect to block templates', async () => {
+    const wrapper = await render();
+    wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
+
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates');
   });
 });

@@ -147,10 +147,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
         "fileName": "",
       }
     }
-    isInitialValid={false}
     onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
     validationSchema={
       ObjectSchema {
         "_blacklist": RefSet {

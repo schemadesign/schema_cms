@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
-.c8 {
-  display: none;
-}
-
-.c9 {
-  margin-right: 20px;
-}
-
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
-  color: #FFF;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -84,6 +68,23 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
 
 .c2 {
   word-break: break-word;
+}
+
+.c8 {
+  display: none;
+}
+
+.c9 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
 }
 
 .c12 {
@@ -237,6 +238,19 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
 }
 
 @media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -252,19 +266,6 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
     align-items: center;
     margin: 60px 0 40px 0;
     min-height: 63px;
-  }
-}
-
-@media (min-width:1050px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1050px) {
-  .c3 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
   }
 }
 
@@ -404,6 +405,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={
@@ -639,6 +641,7 @@ exports[`Storyshots Data Source|DataWranglingResult Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={

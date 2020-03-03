@@ -3,6 +3,7 @@
 exports[`PageForm: Component should render correctly 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -15,6 +16,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     value="title"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
@@ -28,6 +30,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     value="description"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}

@@ -3,6 +3,7 @@
 exports[`UserProfile: Component should render correctly 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={true}
     errors={Object {}}
@@ -21,6 +22,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     value="FirstName"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={true}
     errors={Object {}}
@@ -39,6 +41,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     value="LastName"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={true}
     errors={Object {}}
@@ -57,6 +60,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     value="email@example.com"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={true}
     errors={Object {}}
@@ -80,6 +84,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
 exports[`UserProfile: Component should render correctly current user 1`] = `
 <Fragment>
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={false}
     errors={Object {}}
@@ -98,6 +103,7 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
     value="FirstName"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={false}
     errors={Object {}}
@@ -116,6 +122,7 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
     value="LastName"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={true}
     errors={Object {}}
@@ -134,6 +141,7 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
     value="email@example.com"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     disabled={true}
     errors={Object {}}

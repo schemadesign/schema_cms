@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots BlockTemplateForm Default 1`] = `
+.c4 {
+  position: relative;
+}
+
+.c6 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+.c5 {
+  position: relative;
+}
+
+@media (min-width:1050px) {
+  .c7 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className=""
+  >
+    <div
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        <h2
+          className="c2"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            title
+          </span>
+        </h2>
+        <h1
+          className="c3"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <div
+            className="c4"
+          >
+            <div
+              className="c5"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": 0,
+                    "paddingRight": 40,
+                    "position": "static",
+                  }
+                }
+              >
+                <input
+                  id="name"
+                  name="name"
+                  onChange={[Function]}
+                  placeholder="Name"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 24,
+                      "fontWeight": 600,
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 100,
+                      "outline": "none",
+                      "padding": 0,
+                      "width": 105,
+                    }
+                  }
+                  type="text"
+                  value="name"
+                />
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 24,
+                      "fontWeight": 600,
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 100,
+                      "opacity": 0,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "absolute",
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  name
+                </div>
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="c6"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </h1>
+      </div>
+      <div
+        className=""
+      >
+        <div
+          className="c7"
+        >
+          <button
+            disabled={false}
+            id="createElement"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "shapeRendering": "crispEdges",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

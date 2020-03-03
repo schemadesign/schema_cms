@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|UserProfile Default 1`] = `
 .c0 {
-  width: 100%;
+  position: relative;
 }
 
 <div
@@ -61,8 +61,13 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -122,8 +127,13 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -183,8 +193,13 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -244,8 +259,13 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -269,7 +289,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
 
 exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 .c0 {
-  width: 100%;
+  position: relative;
 }
 
 .c1 {
@@ -333,8 +353,13 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -414,8 +439,13 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -495,8 +525,13 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -556,8 +591,13 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }

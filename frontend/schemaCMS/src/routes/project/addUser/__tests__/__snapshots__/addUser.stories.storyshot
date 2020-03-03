@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|AddUser List 1`] = `
-.c1 {
-  display: none;
-}
-
-.c2 {
-  margin-right: 20px;
-}
-
-.c3 {
-  color: #FFF;
-}
-
-.c4 {
-  color: #FFF;
-}
-
 .c5 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -123,6 +107,23 @@ exports[`Storyshots Project|AddUser List 1`] = `
   max-width: 240px;
 }
 
+.c1 {
+  display: none;
+}
+
+.c2 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+.c4 {
+  color: #FFF;
+}
+
 .c13 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -185,25 +186,6 @@ exports[`Storyshots Project|AddUser List 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
-}
-
-@media (min-width:1050px) {
   .c5 {
     display: none;
   }
@@ -237,6 +219,25 @@ exports[`Storyshots Project|AddUser List 1`] = `
 @media (min-width:1050px) {
   .c22 {
     width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -381,6 +382,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -618,6 +620,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -865,22 +868,6 @@ exports[`Storyshots Project|AddUser List 1`] = `
 `;
 
 exports[`Storyshots Project|AddUser No data 1`] = `
-.c1 {
-  display: none;
-}
-
-.c2 {
-  margin-right: 20px;
-}
-
-.c3 {
-  color: #FFF;
-}
-
-.c4 {
-  color: #FFF;
-}
-
 .c5 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -987,31 +974,29 @@ exports[`Storyshots Project|AddUser No data 1`] = `
   max-width: 240px;
 }
 
+.c1 {
+  display: none;
+}
+
+.c2 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+.c4 {
+  color: #FFF;
+}
+
 .c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
   font-weight: 200;
   font-size: 20px;
-}
-
-@media (min-width:1050px) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
 }
 
 @media (min-width:1050px) {
@@ -1048,6 +1033,25 @@ exports[`Storyshots Project|AddUser No data 1`] = `
 @media (min-width:1050px) {
   .c17 {
     width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -1192,6 +1196,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -1429,6 +1434,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={

@@ -3,7 +3,6 @@
 exports[`FilterForm: Component should render correctly 1`] = `
 <Fragment>
   <Formik
-    enableReinitialize={false}
     initialValues={
       Object {
         "field": "field",
@@ -13,10 +12,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
         "unique": "1",
       }
     }
-    isInitialValid={false}
     onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
     validationSchema={
       ObjectSchema {
         "_blacklist": RefSet {
@@ -164,10 +160,16 @@ exports[`FilterForm: Component should render create form 1`] = `
     Object {
       "dirty": false,
       "errors": Object {},
+      "getFieldHelpers": [Function],
+      "getFieldMeta": [Function],
+      "getFieldProps": [Function],
       "handleBlur": [Function],
       "handleChange": [Function],
       "handleReset": [Function],
       "handleSubmit": [Function],
+      "initialErrors": Object {},
+      "initialStatus": undefined,
+      "initialTouched": Object {},
       "initialValues": Object {
         "field": "field",
         "fieldType": "string",
@@ -176,11 +178,10 @@ exports[`FilterForm: Component should render create form 1`] = `
         "unique": "1",
       },
       "isSubmitting": false,
-      "isValid": false,
+      "isValid": true,
       "isValidating": false,
       "registerField": [Function],
       "resetForm": [Function],
-      "setError": [Function],
       "setErrors": [Function],
       "setFieldError": [Function],
       "setFieldTouched": [Function],
@@ -195,77 +196,11 @@ exports[`FilterForm: Component should render create form 1`] = `
       "submitForm": [Function],
       "touched": Object {},
       "unregisterField": [Function],
-      "validate": undefined,
       "validateField": [Function],
       "validateForm": [Function],
       "validateOnBlur": true,
       "validateOnChange": true,
-      "validationSchema": ObjectSchema {
-        "_blacklist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "_conditions": Array [],
-        "_defaultDefault": [Function],
-        "_deps": Array [],
-        "_excludedEdges": Array [],
-        "_exclusive": Object {},
-        "_mutate": undefined,
-        "_nodes": Array [
-          "name",
-        ],
-        "_options": Object {
-          "abortEarly": true,
-          "recursive": true,
-        },
-        "_type": "object",
-        "_typeError": [Function],
-        "_whitelist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "fields": Object {
-          "name": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "required": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-        },
-        "tests": Array [],
-        "transforms": Array [
-          [Function],
-        ],
-      },
+      "validateOnMount": false,
       "values": Object {
         "field": "field",
         "fieldType": "string",
@@ -278,12 +213,18 @@ exports[`FilterForm: Component should render create form 1`] = `
 >
   <Styled(Form)>
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
+      getFieldHelpers={[Function]}
+      getFieldMeta={[Function]}
+      getFieldProps={[Function]}
       handleBlur={[Function]}
       handleReset={[Function]}
       handleSubmit={[Function]}
+      initialErrors={Object {}}
+      initialTouched={Object {}}
       initialValues={
         Object {
           "field": "field",
@@ -306,7 +247,6 @@ exports[`FilterForm: Component should render create form 1`] = `
       onChange={[Function]}
       registerField={[Function]}
       resetForm={[Function]}
-      setError={[Function]}
       setErrors={[Function]}
       setFieldError={[Function]}
       setFieldTouched={[Function]}
@@ -323,6 +263,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       validateForm={[Function]}
       validateOnBlur={true}
       validateOnChange={true}
+      validateOnMount={false}
       value=""
     />
     <Select
@@ -369,13 +310,19 @@ exports[`FilterForm: Component should render create form 1`] = `
     />
     <styled.div>
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         disabled={true}
         errors={Object {}}
         fullWidth={true}
+        getFieldHelpers={[Function]}
+        getFieldMeta={[Function]}
+        getFieldProps={[Function]}
         handleBlur={[Function]}
         handleReset={[Function]}
         handleSubmit={[Function]}
+        initialErrors={Object {}}
+        initialTouched={Object {}}
         initialValues={
           Object {
             "field": "field",
@@ -398,7 +345,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         onChange={[Function]}
         registerField={[Function]}
         resetForm={[Function]}
-        setError={[Function]}
         setErrors={[Function]}
         setFieldError={[Function]}
         setFieldTouched={[Function]}
@@ -415,16 +361,23 @@ exports[`FilterForm: Component should render create form 1`] = `
         validateForm={[Function]}
         validateOnBlur={true}
         validateOnChange={true}
+        validateOnMount={false}
         value="string"
       />
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         disabled={true}
         errors={Object {}}
         fullWidth={true}
+        getFieldHelpers={[Function]}
+        getFieldMeta={[Function]}
+        getFieldProps={[Function]}
         handleBlur={[Function]}
         handleReset={[Function]}
         handleSubmit={[Function]}
+        initialErrors={Object {}}
+        initialTouched={Object {}}
         initialValues={
           Object {
             "field": "field",
@@ -447,7 +400,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         onChange={[Function]}
         registerField={[Function]}
         resetForm={[Function]}
-        setError={[Function]}
         setErrors={[Function]}
         setFieldError={[Function]}
         setFieldTouched={[Function]}
@@ -464,6 +416,7 @@ exports[`FilterForm: Component should render create form 1`] = `
         validateForm={[Function]}
         validateOnBlur={true}
         validateOnChange={true}
+        validateOnMount={false}
         value="1"
       />
     </styled.div>
@@ -506,10 +459,16 @@ exports[`FilterForm: Component should render edit form 1`] = `
     Object {
       "dirty": false,
       "errors": Object {},
+      "getFieldHelpers": [Function],
+      "getFieldMeta": [Function],
+      "getFieldProps": [Function],
       "handleBlur": [Function],
       "handleChange": [Function],
       "handleReset": [Function],
       "handleSubmit": [Function],
+      "initialErrors": Object {},
+      "initialStatus": undefined,
+      "initialTouched": Object {},
       "initialValues": Object {
         "datasource": Object {
           "id": 1,
@@ -522,11 +481,10 @@ exports[`FilterForm: Component should render edit form 1`] = `
         "unique": "1",
       },
       "isSubmitting": false,
-      "isValid": false,
+      "isValid": true,
       "isValidating": false,
       "registerField": [Function],
       "resetForm": [Function],
-      "setError": [Function],
       "setErrors": [Function],
       "setFieldError": [Function],
       "setFieldTouched": [Function],
@@ -541,77 +499,11 @@ exports[`FilterForm: Component should render edit form 1`] = `
       "submitForm": [Function],
       "touched": Object {},
       "unregisterField": [Function],
-      "validate": undefined,
       "validateField": [Function],
       "validateForm": [Function],
       "validateOnBlur": true,
       "validateOnChange": true,
-      "validationSchema": ObjectSchema {
-        "_blacklist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "_conditions": Array [],
-        "_defaultDefault": [Function],
-        "_deps": Array [],
-        "_excludedEdges": Array [],
-        "_exclusive": Object {},
-        "_mutate": undefined,
-        "_nodes": Array [
-          "name",
-        ],
-        "_options": Object {
-          "abortEarly": true,
-          "recursive": true,
-        },
-        "_type": "object",
-        "_typeError": [Function],
-        "_whitelist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "fields": Object {
-          "name": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "required": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-        },
-        "tests": Array [],
-        "transforms": Array [
-          [Function],
-        ],
-      },
+      "validateOnMount": false,
       "values": Object {
         "datasource": Object {
           "id": 1,
@@ -628,12 +520,18 @@ exports[`FilterForm: Component should render edit form 1`] = `
 >
   <Styled(Form)>
     <TextInput
+      autoWidth={false}
       checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
+      getFieldHelpers={[Function]}
+      getFieldMeta={[Function]}
+      getFieldProps={[Function]}
       handleBlur={[Function]}
       handleReset={[Function]}
       handleSubmit={[Function]}
+      initialErrors={Object {}}
+      initialTouched={Object {}}
       initialValues={
         Object {
           "datasource": Object {
@@ -660,7 +558,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
       onChange={[Function]}
       registerField={[Function]}
       resetForm={[Function]}
-      setError={[Function]}
       setErrors={[Function]}
       setFieldError={[Function]}
       setFieldTouched={[Function]}
@@ -677,6 +574,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       validateForm={[Function]}
       validateOnBlur={true}
       validateOnChange={true}
+      validateOnMount={false}
       value="name"
     />
     <Select
@@ -723,13 +621,19 @@ exports[`FilterForm: Component should render edit form 1`] = `
     />
     <styled.div>
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         disabled={true}
         errors={Object {}}
         fullWidth={true}
+        getFieldHelpers={[Function]}
+        getFieldMeta={[Function]}
+        getFieldProps={[Function]}
         handleBlur={[Function]}
         handleReset={[Function]}
         handleSubmit={[Function]}
+        initialErrors={Object {}}
+        initialTouched={Object {}}
         initialValues={
           Object {
             "datasource": Object {
@@ -756,7 +660,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         onChange={[Function]}
         registerField={[Function]}
         resetForm={[Function]}
-        setError={[Function]}
         setErrors={[Function]}
         setFieldError={[Function]}
         setFieldTouched={[Function]}
@@ -773,16 +676,23 @@ exports[`FilterForm: Component should render edit form 1`] = `
         validateForm={[Function]}
         validateOnBlur={true}
         validateOnChange={true}
+        validateOnMount={false}
         value="string"
       />
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         disabled={true}
         errors={Object {}}
         fullWidth={true}
+        getFieldHelpers={[Function]}
+        getFieldMeta={[Function]}
+        getFieldProps={[Function]}
         handleBlur={[Function]}
         handleReset={[Function]}
         handleSubmit={[Function]}
+        initialErrors={Object {}}
+        initialTouched={Object {}}
         initialValues={
           Object {
             "datasource": Object {
@@ -809,7 +719,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         onChange={[Function]}
         registerField={[Function]}
         resetForm={[Function]}
-        setError={[Function]}
         setErrors={[Function]}
         setFieldError={[Function]}
         setFieldTouched={[Function]}
@@ -826,6 +735,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
         validateForm={[Function]}
         validateOnBlur={true}
         validateOnChange={true}
+        validateOnMount={false}
         value="1"
       />
     </styled.div>

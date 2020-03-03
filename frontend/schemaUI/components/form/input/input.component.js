@@ -19,7 +19,9 @@ const InputComponent = memo(({ customStyles = {}, autoWidth = false, theme, inpu
       setAlternativeValue(restProps.value);
 
       setTimeout(() => {
-        setInputWidth(spanRef.current.offsetWidth);
+        if (spanRef.current) {
+          setInputWidth(spanRef.current.offsetWidth);
+        }
       });
     }
   });

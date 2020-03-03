@@ -100,8 +100,9 @@ export class Settings extends PureComponent {
             ...INITIAL_VALUES,
             ...userData,
           }}
-          render={this.renderContent}
-        />
+        >
+          {this.renderContent}
+        </Formik>
       </Fragment>
     );
   }

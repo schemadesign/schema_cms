@@ -2,7 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { CreateBlockTemplate } from './createBlockTemplate.component';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
+import { withTheme } from '../../../.storybook/decorators';
 
-const defaultProps = {};
+export const defaultProps = {
+  userRole: ROLES.ADMIN,
+  createBlockTemplate: Function.prototype,
+};
 
-storiesOf('CreateBlockTemplate', module).add('Default', () => <CreateBlockTemplate {...defaultProps} />);
+storiesOf('CreateBlockTemplate', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <CreateBlockTemplate {...defaultProps} />);

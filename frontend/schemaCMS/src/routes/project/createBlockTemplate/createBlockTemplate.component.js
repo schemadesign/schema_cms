@@ -49,12 +49,7 @@ export const CreateBlockTemplate = memo(({ userRole, createBlockTemplate }) => {
           >
             <FormattedMessage {...messages.cancel} />
           </BackButton>
-          <NextButton
-            id="createTemplateBlockMobile"
-            type="submit"
-            loading={loading}
-            disabled={!isValid || !dirty || loading}
-          >
+          <NextButton id="createTemplateBlock" type="submit" loading={loading} disabled={!isValid || !dirty || loading}>
             <FormattedMessage {...messages.save} />
           </NextButton>
         </NavigationContainer>

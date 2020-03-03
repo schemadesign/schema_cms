@@ -12,11 +12,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
       "role": "admin",
     }
   }
-  isInitialValid={false}
   onSubmit={[Function]}
-  render={[Function]}
-  validateOnBlur={true}
-  validateOnChange={true}
   validationSchema={
     ObjectSchema {
       "_blacklist": RefSet {
@@ -179,5 +175,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
       ],
     }
   }
-/>
+>
+  <Component />
+</Formik>
 `;
