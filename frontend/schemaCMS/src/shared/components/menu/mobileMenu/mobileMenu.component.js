@@ -106,11 +106,13 @@ export class MobileMenu extends PureComponent {
     const buttonProps = {
       onClick: this.handleToggleMenu,
       id: 'topHeaderOpenMenuBtn',
+      type: 'button',
     };
 
     const closeButtonProps = {
       customStyles: closeButtonStyles,
       id: 'topHeaderCloseMenuButton',
+      type: 'button',
     };
 
     const fixedMenuItems = [

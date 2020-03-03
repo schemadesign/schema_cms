@@ -80,6 +80,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={
@@ -317,6 +318,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={
@@ -340,7 +342,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     className="sc-ckVGcZ kavnbm"
   >
     <div
-      className="sc-jKJlTe beOlqz"
+      className="sc-jKJlTe bbYNJN"
     >
       <h2
         className="sc-eNQAEJ jraORh"
@@ -507,7 +509,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         }
       >
-        1 Element
+        0 Elements
       </div>
     </div>
     <div
@@ -587,7 +589,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         }
       >
-        2 Elements
+        0 Elements
       </div>
     </div>
   </section>

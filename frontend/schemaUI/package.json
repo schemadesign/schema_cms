@@ -7,8 +7,8 @@
     "access": "restricted"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "dependencies": {
     "@babel/core": "7.3.4",
@@ -31,7 +31,7 @@
     "chai-enzyme": "^1.0.0-beta.1",
     "chai-jest-diff": "^1.0.2",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "5.15.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-loader": "2.1.2",
@@ -78,8 +78,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "bash ../../install/run_tests.sh"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

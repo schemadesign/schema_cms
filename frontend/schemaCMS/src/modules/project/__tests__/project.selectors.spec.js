@@ -13,7 +13,9 @@ describe('Project: selectors', () => {
   const state = Immutable({
     project: {
       projects: [],
-      project: {},
+      project: {
+        id: null,
+      },
       editors: [],
       templates: {
         blocks: 0,

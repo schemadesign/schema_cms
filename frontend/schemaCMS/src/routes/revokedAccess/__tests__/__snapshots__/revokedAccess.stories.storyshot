@@ -187,6 +187,7 @@ exports[`Storyshots RevokedAccess Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       />
     </div>
     <div
@@ -330,6 +331,7 @@ exports[`Storyshots RevokedAccess Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={

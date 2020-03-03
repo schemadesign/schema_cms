@@ -5,5 +5,10 @@ export const selectBlockTemplatesDomain = prop('blockTemplates');
 
 export const selectBlockTemplates = createSelector(
   selectBlockTemplatesDomain,
-  prop('blocks')
+  prop('blockTemplates')
+);
+
+export const selectBlockTemplate = createSelector(
+  selectBlockTemplatesDomain,
+  prop('blockTemplate')
 );

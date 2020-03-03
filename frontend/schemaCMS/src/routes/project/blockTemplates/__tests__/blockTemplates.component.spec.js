@@ -17,7 +17,7 @@ jest.mock('react-router', () => ({
 }));
 
 describe('BlockTemplates: Component', () => {
-  const render = props => makeContextRenderer(<BlockTemplates {...defaultProps} {...props} />, BlockTemplates);
+  const render = props => makeContextRenderer(<BlockTemplates {...defaultProps} {...props} />);
 
   it('should render correctly', async () => {
     const wrapper = await render();
@@ -46,10 +46,10 @@ describe('BlockTemplates: Component', () => {
     expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates/create');
   });
 
-  it('should reditect to block template', async () => {
+  it('should redirect to block template', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'blockTemplateTitle-1' }).props.onClick();
 
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates/1');
+    expect(mockPushHistory).toHaveBeenCalledWith('/block-template/1');
   });
 });

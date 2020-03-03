@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 <div
@@ -60,8 +60,13 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -85,7 +90,7 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 
 exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -148,8 +153,13 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -193,17 +203,16 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 
 exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 0;
   color: #f21e29;
-  margin: -20px 0 20px 0;
-  font-size: 0.9em;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .c3 .c1 {
@@ -265,8 +274,13 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#f21e29",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }

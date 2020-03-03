@@ -9,7 +9,7 @@ import { withTheme } from '../../../.storybook/decorators';
 export const defaultProps = {
   userRole: ROLES.ADMIN,
   blockTemplates,
-  fetchBlocks: Function.prototype,
+  fetchBlockTemplates: Function.prototype,
 };
 
 storiesOf('BlockTemplates', module)

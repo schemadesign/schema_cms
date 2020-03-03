@@ -22,6 +22,7 @@ export class TextInput extends PureComponent {
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     readOnly: PropTypes.bool,
     isEdit: PropTypes.bool,
+    autoWidth: PropTypes.bool,
     handleBlur: PropTypes.func,
     onChange: PropTypes.func,
   };
@@ -31,10 +32,15 @@ export class TextInput extends PureComponent {
     touched: {},
     checkOnlyErrors: false,
     isEdit: false,
+    autoWidth: false,
     onChange: Function.prototype,
   };
 
-  renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
+  renderError = renderWhenTrue(() => (
+    <ErrorWrapper isLabel={!!this.props.label} isAuthWidth={this.props.autoWidth}>
+      {this.props.errors[this.props.name]}
+    </ErrorWrapper>
+  ));
 
   renderEditIcon = renderWhenTrue(
     always(

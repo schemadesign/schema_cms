@@ -6,7 +6,9 @@ import { reducer as projectReducer, ProjectRoutines } from '../project.redux';
 describe('Project: redux', () => {
   const defaultState = Immutable({
     projects: [],
-    project: {},
+    project: {
+      id: null,
+    },
     editors: [],
     templates: {
       blocks: 0,

@@ -79,11 +79,7 @@ exports[`Settings: Component should render correctly 1`] = `
         "role": "editor",
       }
     }
-    isInitialValid={false}
     onSubmit={[Function]}
-    render={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
     validationSchema={
       ObjectSchema {
         "_blacklist": RefSet {
@@ -217,7 +213,9 @@ exports[`Settings: Component should render correctly 1`] = `
         ],
       }
     }
-  />
+  >
+    <Component />
+  </Formik>
 </Fragment>
 `;
 
@@ -300,11 +298,7 @@ exports[`Settings: Component should render correctly 2`] = `
         "role": "editor",
       }
     }
-    isInitialValid={false}
     onSubmit={[Function]}
-    render={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
     validationSchema={
       ObjectSchema {
         "_blacklist": RefSet {
@@ -438,7 +432,9 @@ exports[`Settings: Component should render correctly 2`] = `
         ],
       }
     }
-  />
+  >
+    <Component />
+  </Formik>
 </Fragment>
 `;
 
@@ -448,10 +444,16 @@ exports[`Settings: Component should render correctly form 1`] = `
     Object {
       "dirty": false,
       "errors": Object {},
+      "getFieldHelpers": [Function],
+      "getFieldMeta": [Function],
+      "getFieldProps": [Function],
       "handleBlur": [Function],
       "handleChange": [Function],
       "handleReset": [Function],
       "handleSubmit": [Function],
+      "initialErrors": Object {},
+      "initialStatus": undefined,
+      "initialTouched": Object {},
       "initialValues": Object {
         "authMethod": "email",
         "email": "email@example.com",
@@ -461,11 +463,10 @@ exports[`Settings: Component should render correctly form 1`] = `
         "role": "editor",
       },
       "isSubmitting": false,
-      "isValid": false,
+      "isValid": true,
       "isValidating": false,
       "registerField": [Function],
       "resetForm": [Function],
-      "setError": [Function],
       "setErrors": [Function],
       "setFieldError": [Function],
       "setFieldTouched": [Function],
@@ -480,142 +481,11 @@ exports[`Settings: Component should render correctly form 1`] = `
       "submitForm": [Function],
       "touched": Object {},
       "unregisterField": [Function],
-      "validate": undefined,
       "validateField": [Function],
       "validateForm": [Function],
       "validateOnBlur": true,
       "validateOnChange": true,
-      "validationSchema": ObjectSchema {
-        "_blacklist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "_conditions": Array [],
-        "_defaultDefault": [Function],
-        "_deps": Array [],
-        "_excludedEdges": Array [],
-        "_exclusive": Object {},
-        "_mutate": undefined,
-        "_nodes": Array [
-          "email",
-          "lastName",
-          "firstName",
-        ],
-        "_options": Object {
-          "abortEarly": true,
-          "recursive": true,
-        },
-        "_type": "object",
-        "_typeError": [Function],
-        "_whitelist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "fields": Object {
-          "email": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "required": true,
-              "undefined": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-            ],
-          },
-          "firstName": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-          "lastName": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "required": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-        },
-        "tests": Array [],
-        "transforms": Array [
-          [Function],
-        ],
-      },
+      "validateOnMount": false,
       "values": Object {
         "authMethod": "email",
         "email": "email@example.com",
@@ -632,9 +502,14 @@ exports[`Settings: Component should render correctly form 1`] = `
   >
     <UserProfile
       errors={Object {}}
+      getFieldHelpers={[Function]}
+      getFieldMeta={[Function]}
+      getFieldProps={[Function]}
       handleBlur={[Function]}
       handleChange={[Function]}
       handleReset={[Function]}
+      initialErrors={Object {}}
+      initialTouched={Object {}}
       initialValues={
         Object {
           "authMethod": "email",
@@ -646,11 +521,10 @@ exports[`Settings: Component should render correctly form 1`] = `
         }
       }
       isCurrentUser={true}
-      isValid={false}
+      isValid={true}
       isValidating={false}
       registerField={[Function]}
       resetForm={[Function]}
-      setError={[Function]}
       setErrors={[Function]}
       setFieldError={[Function]}
       setFieldTouched={[Function]}
@@ -668,6 +542,7 @@ exports[`Settings: Component should render correctly form 1`] = `
       validateForm={[Function]}
       validateOnBlur={true}
       validateOnChange={true}
+      validateOnMount={false}
       values={
         Object {
           "authMethod": "email",
@@ -726,10 +601,16 @@ exports[`Settings: Component should render form without reset password link 1`] 
     Object {
       "dirty": false,
       "errors": Object {},
+      "getFieldHelpers": [Function],
+      "getFieldMeta": [Function],
+      "getFieldProps": [Function],
       "handleBlur": [Function],
       "handleChange": [Function],
       "handleReset": [Function],
       "handleSubmit": [Function],
+      "initialErrors": Object {},
+      "initialStatus": undefined,
+      "initialTouched": Object {},
       "initialValues": Object {
         "authMethod": "gmail",
         "email": "",
@@ -737,11 +618,10 @@ exports[`Settings: Component should render form without reset password link 1`] 
         "lastName": "",
       },
       "isSubmitting": false,
-      "isValid": false,
+      "isValid": true,
       "isValidating": false,
       "registerField": [Function],
       "resetForm": [Function],
-      "setError": [Function],
       "setErrors": [Function],
       "setFieldError": [Function],
       "setFieldTouched": [Function],
@@ -756,142 +636,11 @@ exports[`Settings: Component should render form without reset password link 1`] 
       "submitForm": [Function],
       "touched": Object {},
       "unregisterField": [Function],
-      "validate": undefined,
       "validateField": [Function],
       "validateForm": [Function],
       "validateOnBlur": true,
       "validateOnChange": true,
-      "validationSchema": ObjectSchema {
-        "_blacklist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "_conditions": Array [],
-        "_defaultDefault": [Function],
-        "_deps": Array [],
-        "_excludedEdges": Array [],
-        "_exclusive": Object {},
-        "_mutate": undefined,
-        "_nodes": Array [
-          "email",
-          "lastName",
-          "firstName",
-        ],
-        "_options": Object {
-          "abortEarly": true,
-          "recursive": true,
-        },
-        "_type": "object",
-        "_typeError": [Function],
-        "_whitelist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "fields": Object {
-          "email": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "required": true,
-              "undefined": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-            ],
-          },
-          "firstName": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-          "lastName": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "required": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-        },
-        "tests": Array [],
-        "transforms": Array [
-          [Function],
-        ],
-      },
+      "validateOnMount": false,
       "values": Object {
         "authMethod": "gmail",
         "email": "",
@@ -906,9 +655,14 @@ exports[`Settings: Component should render form without reset password link 1`] 
   >
     <UserProfile
       errors={Object {}}
+      getFieldHelpers={[Function]}
+      getFieldMeta={[Function]}
+      getFieldProps={[Function]}
       handleBlur={[Function]}
       handleChange={[Function]}
       handleReset={[Function]}
+      initialErrors={Object {}}
+      initialTouched={Object {}}
       initialValues={
         Object {
           "authMethod": "gmail",
@@ -918,11 +672,10 @@ exports[`Settings: Component should render form without reset password link 1`] 
         }
       }
       isCurrentUser={true}
-      isValid={false}
+      isValid={true}
       isValidating={false}
       registerField={[Function]}
       resetForm={[Function]}
-      setError={[Function]}
       setErrors={[Function]}
       setFieldError={[Function]}
       setFieldTouched={[Function]}
@@ -940,6 +693,7 @@ exports[`Settings: Component should render form without reset password link 1`] 
       validateForm={[Function]}
       validateOnBlur={true}
       validateOnChange={true}
+      validateOnMount={false}
       values={
         Object {
           "authMethod": "gmail",

@@ -14,7 +14,9 @@ import browserHistory from '../../../shared/utils/history';
 describe('Project: sagas', () => {
   const defaultState = Immutable({
     projects: [],
-    project: {},
+    project: {
+      id: null,
+    },
   });
 
   let item;

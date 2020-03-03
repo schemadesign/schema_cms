@@ -57,6 +57,43 @@ class TestCreateBlockTemplatesView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
 
+class TestUpdateBlockTemplatesView:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:blocktemplate-detail", kwargs=dict(pk=pk))
+
+    def test_response(self, api_client, admin, block_template):
+        new_name = "New Block Name"
+
+        payload = {"id": block_template.pk, "name": new_name}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(block_template.pk), data=payload, format="json")
+        block = pages_models.BlockTemplate.objects.get(id=response.data["id"])
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == page_serializer.BlockTemplateSerializer(block).data
+        assert block.name == new_name
+
+    def test_update_with_elements(self, api_client, admin, block_template, block_template_element_factory):
+        elements = block_template_element_factory.create_batch(3, template=block_template)
+        new_element_name = "New Element Name"
+
+        payload = {
+            "elements": [
+                {"id": elements[0].id, "name": new_element_name, "order": 1},
+                {"name": "NewElement", "type": ElementType.PLAIN_TEXT, "order": 2, "params": {}},
+            ]
+        }
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(block_template.pk), data=payload, format="json")
+        block_template.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(block_template.elements.all()) == 4
+        assert block_template.elements.get(pk=elements[0].id).name == new_element_name
+
+
 class TestListPageTemplatesView:
     @staticmethod
     def get_url(pk):

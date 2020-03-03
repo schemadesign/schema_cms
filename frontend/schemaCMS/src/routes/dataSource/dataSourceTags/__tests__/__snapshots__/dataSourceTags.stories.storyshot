@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
-.c8 {
-  display: none;
-}
-
-.c9 {
-  margin-right: 20px;
-}
-
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
-  color: #FFF;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -121,6 +105,23 @@ exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
 .c25 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c8 {
+  display: none;
+}
+
+.c9 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
 }
 
 .c12 {
@@ -274,25 +275,6 @@ exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c8 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
-}
-
-@media (min-width:1050px) {
   .c0 {
     display: none;
   }
@@ -326,6 +308,25 @@ exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
 @media (min-width:1050px) {
   .c25 {
     width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c8 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -465,6 +466,7 @@ exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={
@@ -700,6 +702,7 @@ exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={
@@ -1546,22 +1549,6 @@ exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
 `;
 
 exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
-.c8 {
-  display: none;
-}
-
-.c9 {
-  margin-right: 20px;
-}
-
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
-  color: #FFF;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -1666,6 +1653,23 @@ exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
 .c25 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c8 {
+  display: none;
+}
+
+.c9 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
 }
 
 .c12 {
@@ -1819,25 +1823,6 @@ exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c8 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
-}
-
-@media (min-width:1050px) {
   .c0 {
     display: none;
   }
@@ -1871,6 +1856,25 @@ exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
 @media (min-width:1050px) {
   .c25 {
     width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c8 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -2010,6 +2014,7 @@ exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={
@@ -2245,6 +2250,7 @@ exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={

@@ -18,6 +18,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
     placeholder="Select a dataset"
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     dataSources={
       Array [
@@ -64,6 +65,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
     }
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     dataSources={
       Array [
@@ -111,6 +113,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
     }
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     dataSources={
       Array [
@@ -156,6 +159,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
     }
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     dataSources={
       Array [
@@ -203,6 +207,7 @@ exports[`ProjectStateForm: Component should render correctly 1`] = `
     }
   />
   <TextInput
+    autoWidth={false}
     checkOnlyErrors={false}
     dataSources={
       Array [

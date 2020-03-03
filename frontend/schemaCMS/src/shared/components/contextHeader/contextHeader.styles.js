@@ -17,6 +17,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   margin-right: 20px;
+  overflow: hidden;
 `;
 
 export const Title = styled(Typography.H2)`

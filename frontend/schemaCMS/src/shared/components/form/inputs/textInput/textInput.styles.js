@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
+  position: ${({ isAuthWidth }) => (isAuthWidth ? 'relative' : 'static')};
 `;
 
 export const IconWrapper = styled.div`
@@ -10,8 +10,10 @@ export const IconWrapper = styled.div`
 `;
 
 export const ErrorWrapper = styled.div`
-  display: flex;
+  position: absolute;
+  top: ${({ isLabel }) => (isLabel ? '50px' : '30px')};
+  left: 0;
   color: ${({ theme: { textField } }) => textField.error};
-  margin: -20px 0 20px 0;
-  font-size: 0.9em;
+  font-size: 14px;
+  font-weight: normal;
 `;

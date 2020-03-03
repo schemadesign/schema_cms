@@ -125,7 +125,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 .c30 {
-  width: 100%;
+  position: static;
 }
 
 .c31 {
@@ -683,6 +683,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
+            type="button"
           >
             <svg
               style={
@@ -920,6 +921,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
+            type="button"
           >
             <svg
               style={
@@ -1514,8 +1516,13 @@ exports[`Storyshots Project|View Default 1`] = `
                           "backgroundColor": "transparent",
                           "border": "none",
                           "color": "#FFF",
+                          "fontFamily": "inherit",
                           "fontSize": "inherit",
+                          "fontWeight": "inherit",
+                          "letterSpacing": "normal",
                           "lineHeight": "inherit",
+                          "maxWidth": "100%",
+                          "minWidth": 100,
                           "outline": "none",
                           "padding": 0,
                         }

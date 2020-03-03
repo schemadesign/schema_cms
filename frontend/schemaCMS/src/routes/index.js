@@ -25,6 +25,7 @@ import { Settings } from './settings';
 import { User } from './user';
 import { DataSourceTag } from './dataSourceTag';
 import { ProjectState } from './projectState';
+import { BlockTemplate } from './blockTemplate';
 
 export const ROUTES = {
   HOME: '/',
@@ -45,6 +46,7 @@ export const ROUTES = {
   JOB_DETAIL: '/job',
   TAG: '/tag',
   STATE: '/state',
+  BLOCK_TEMPLATE: '/block-template',
 };
 
 export default class RootContainer extends Component {
@@ -62,6 +64,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={ROUTES.PROJECT} component={Project} />
 
             <AuthRoute path={`${ROUTES.DATA_SOURCE}/:dataSourceId`} component={DataSource} />
+
+            <AuthRoute path={`${ROUTES.BLOCK_TEMPLATE}/:blockTemplateId`} component={BlockTemplate} />
 
             <AuthRoute path={ROUTES.FOLDER} component={Folder} />
 

@@ -221,10 +221,7 @@ exports[`Filters: Component should render correctly 1`] = `
           "1",
         ]
       }
-      isInitialValid={false}
       onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
     >
       <Component />
     </Formik>
@@ -498,10 +495,7 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
     <Formik
       enableReinitialize={true}
       initialValues={Array []}
-      isInitialValid={false}
       onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
     >
       <Component />
     </Formik>
@@ -763,10 +757,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
           "1",
         ]
       }
-      isInitialValid={false}
       onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
     >
       <Component />
     </Formik>

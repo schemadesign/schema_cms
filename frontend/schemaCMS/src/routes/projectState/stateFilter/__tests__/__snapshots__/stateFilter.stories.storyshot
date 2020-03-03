@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ProjectState/StateFilter Default 1`] = `
-.c9 {
-  display: none;
-}
-
-.c10 {
-  margin-right: 20px;
-}
-
-.c11 {
-  color: #FFF;
-}
-
-.c12 {
-  color: #FFF;
-}
-
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -103,12 +87,42 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
   word-break: break-word;
 }
 
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+}
+
 .c13 {
   color: #f21e29;
   font-weight: 200;
   text-align: center;
   padding: 50px 10px;
   font-size: 20px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
 }
 
 @media (min-width:1050px) {
@@ -127,19 +141,6 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
     align-items: center;
     margin: 60px 0 40px 0;
     min-height: 63px;
-  }
-}
-
-@media (min-width:1050px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1050px) {
-  .c3 {
-    padding-bottom: 20px;
-    max-height: calc(100vh - 154px);
   }
 }
 
@@ -234,6 +235,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={
@@ -471,6 +473,7 @@ exports[`Storyshots ProjectState/StateFilter Default 1`] = `
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
+        type="button"
       >
         <svg
           style={

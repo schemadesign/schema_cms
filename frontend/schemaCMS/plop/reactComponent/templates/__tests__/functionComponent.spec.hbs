@@ -1,0 +1,14 @@
+import React from 'react';
+
+import { {{ pascalCase name }} } from '../{{ camelCase name }}.component';
+import { defaultProps } from '../{{ camelCase name }}.stories';
+import { makeContextRenderer } from '../../../utils/testUtils';
+
+describe('{{ pascalCase name }}: Component', () => {
+  const render = props => makeContextRenderer(<{{ pascalCase name }} {...defaultProps} {...props} />);
+
+  it('should render correctly', () => {
+    const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+});

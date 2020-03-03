@@ -75,6 +75,7 @@ exports[`Edit: Component should render correctly 1`] = `
       noDataContent={null}
     >
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         errors={Object {}}
         fetchFolder={
@@ -330,6 +331,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
       noDataContent={null}
     >
       <TextInput
+        autoWidth={false}
         checkOnlyErrors={false}
         errors={Object {}}
         fetchFolder={[Function]}

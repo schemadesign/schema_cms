@@ -18,7 +18,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchBlocks: promisifyRoutine(BlockTemplatesRoutines.fetchBlocks),
+      fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
     },
     dispatch
   ),

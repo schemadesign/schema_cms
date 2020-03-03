@@ -74,6 +74,11 @@ exports[`Project: Component should render correctly 1`] = `
   />
   <Route
     component={[Function]}
+    exact={true}
+    path="/project/:projectId/block-templates/create"
+  />
+  <Route
+    component={[Function]}
     path="*"
   />
 </Switch>

@@ -103,7 +103,8 @@ export class UserCreateProject extends PureComponent {
           ...this.props.user,
           [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
         }}
-        render={({ handleSubmit, ...restProps }) => (
+      >
+        {({ handleSubmit, ...restProps }) => (
           <UserCreate
             handleSubmit={handleSubmit}
             headerValues={headerValues}
@@ -112,7 +113,7 @@ export class UserCreateProject extends PureComponent {
             {...restProps}
           />
         )}
-      />
+      </Formik>
     );
   };
 

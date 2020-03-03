@@ -20,18 +20,14 @@ import { CounterHeader } from '../../../shared/components/counterHeader';
 
 const BlockTemplate = memo(({ created, createdBy, name, id, elements }) => {
   const history = useHistory();
-  const { projectId } = useParams();
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
   const header = <CardHeader list={list} />;
-  const footer = <FormattedMessage {...messages.elementsCounter} values={{ elements }} />;
+  const footer = <FormattedMessage {...messages.elementsCounter} values={{ elements: elements.length }} />;
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle
-        id={`blockTemplateTitle-${id}`}
-        onClick={() => history.push(`/project/${projectId}/block-templates/${id}`)}
-      >
+      <ListItemTitle id={`blockTemplateTitle-${id}`} onClick={() => history.push(`/block-template/${id}`)}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -43,10 +39,10 @@ BlockTemplate.propTypes = {
   createdBy: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  elements: PropTypes.number.isRequired,
+  elements: PropTypes.array.isRequired,
 };
 
-export const BlockTemplates = memo(({ fetchBlocks, blockTemplates, userRole }) => {
+export const BlockTemplates = memo(({ fetchBlockTemplates, blockTemplates, userRole }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
@@ -60,7 +56,7 @@ export const BlockTemplates = memo(({ fetchBlocks, blockTemplates, userRole }) =
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchBlocks({ projectId });
+        await fetchBlockTemplates({ projectId });
       } catch (e) {
         setError(e);
       } finally {
@@ -103,5 +99,5 @@ export const BlockTemplates = memo(({ fetchBlocks, blockTemplates, userRole }) =
 BlockTemplates.propTypes = {
   userRole: PropTypes.string.isRequired,
   blockTemplates: PropTypes.array.isRequired,
-  fetchBlocks: PropTypes.func.isRequired,
+  fetchBlockTemplates: PropTypes.func.isRequired,
 };

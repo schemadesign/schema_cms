@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|UserDetails Default 1`] = `
-.c0 {
-  display: none;
-}
-
-.c1 {
-  margin-right: 20px;
-}
-
-.c2 {
-  color: #FFF;
-}
-
-.c3 {
-  color: #FFF;
-}
-
 .c4 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -123,8 +107,25 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   max-width: 240px;
 }
 
+.c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
 .c12 {
-  width: 100%;
+  position: static;
 }
 
 .c14 {
@@ -153,25 +154,6 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-}
-
-@media (min-width:1050px) {
-  .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 60px 0 40px 0;
-    min-height: 63px;
-  }
 }
 
 @media (min-width:1050px) {
@@ -208,6 +190,25 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
 @media (min-width:1050px) {
   .c18 {
     width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
   }
 }
 
@@ -346,6 +347,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -583,6 +585,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
+          type="button"
         >
           <svg
             style={
@@ -643,8 +646,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               "backgroundColor": "transparent",
               "border": "none",
               "color": "#FFF",
+              "fontFamily": "inherit",
               "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
               "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 100,
               "outline": "none",
               "padding": 0,
             }
@@ -704,8 +712,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               "backgroundColor": "transparent",
               "border": "none",
               "color": "#FFF",
+              "fontFamily": "inherit",
               "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
               "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 100,
               "outline": "none",
               "padding": 0,
             }
@@ -765,8 +778,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               "backgroundColor": "transparent",
               "border": "none",
               "color": "#FFF",
+              "fontFamily": "inherit",
               "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
               "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 100,
               "outline": "none",
               "padding": 0,
             }
@@ -826,8 +844,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               "backgroundColor": "transparent",
               "border": "none",
               "color": "#FFF",
+              "fontFamily": "inherit",
               "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
               "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 100,
               "outline": "none",
               "padding": 0,
             }

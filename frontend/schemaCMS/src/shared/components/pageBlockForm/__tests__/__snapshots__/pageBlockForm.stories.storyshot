@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -89,8 +89,13 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -433,7 +438,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -520,8 +525,13 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -865,7 +875,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -1004,8 +1014,13 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -1462,7 +1477,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -1549,8 +1564,13 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -1892,7 +1912,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -2039,8 +2059,13 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -2586,7 +2611,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -2673,8 +2698,13 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }
@@ -2926,7 +2956,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
 .c0 {
-  width: 100%;
+  position: static;
 }
 
 .c1 {
@@ -3013,8 +3043,13 @@ exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "color": "#FFF",
+            "fontFamily": "inherit",
             "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
             "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 100,
             "outline": "none",
             "padding": 0,
           }

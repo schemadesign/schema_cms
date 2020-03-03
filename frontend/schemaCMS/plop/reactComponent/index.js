@@ -58,7 +58,7 @@ module.exports = plop => {
       {
         type: 'add',
         path: `${containerDirectory}/__tests__/{{ camelCase name }}.component.spec.js`,
-        templateFile: path.join(templatesPath, '__tests__/component.spec.hbs'),
+        templateFile: path.join(templatesPath, '__tests__/{{ type }}component.spec.hbs'),
       },
     ],
   });
