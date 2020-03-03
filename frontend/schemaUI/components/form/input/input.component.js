@@ -1,17 +1,28 @@
 import React, { Fragment, useRef, memo, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useEffectOnce } from 'react-use';
 
-import { getStyles } from './input.styles';
+import { getStyles, MIN_WIDTH } from './input.styles';
 import { withStyles } from '../../styles/withStyles';
 import { filterAllowedAttributes } from '../../../utils/helpers';
 
 const InputComponent = memo(({ customStyles = {}, autoWidth = false, theme, inputRef, ...restProps }) => {
   const spanRef = useRef(null);
-  const [inputWidth, setInputWidth] = useState(null);
+  const [inputWidth, setInputWidth] = useState(autoWidth ? MIN_WIDTH : null);
   const [alternativeValue, setAlternativeValue] = useState(restProps.value);
   const { defaultStyles, hiddenStyles } = getStyles(theme);
   const inputStyles = { ...defaultStyles, ...customStyles };
   const filteredProps = filterAllowedAttributes('input', restProps);
+
+  useEffectOnce(() => {
+    if (autoWidth) {
+      setAlternativeValue(restProps.value);
+
+      setTimeout(() => {
+        setInputWidth(spanRef.current.offsetWidth);
+      });
+    }
+  });
 
   const handleChange = e => {
     if (autoWidth) {

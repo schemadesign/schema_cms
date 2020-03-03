@@ -4,14 +4,14 @@ import { storiesOf } from '@storybook/react';
 import { Input } from './input.component';
 import { withTheme } from '../../../.storybook/decorators';
 
-const defaultProps = {};
-const withCustomStyles = {
+export const defaultProps = {};
+export const withCustomStyles = {
   ...defaultProps,
   customStyles: {
     color: 'blue',
   },
 };
-const withAutoWidth = {
+export const withAutoWidth = {
   ...defaultProps,
   autoWidth: true,
 };

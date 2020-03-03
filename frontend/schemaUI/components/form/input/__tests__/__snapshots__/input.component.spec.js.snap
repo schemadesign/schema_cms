@@ -2,54 +2,106 @@
 
 exports[`Input: Component should render correctly 1`] = `
 <Component>
-  <InputComponent
-    customStyles={Object {}}
-  >
+  <Memo()>
     <input
+      onChange={[Function]}
       style={
         Object {
           "backgroundColor": "transparent",
           "border": "none",
           "color": "#FFF",
+          "fontFamily": "inherit",
           "fontSize": "18px",
+          "fontWeight": "inherit",
+          "letterSpacing": "normal",
           "lineHeight": "24px",
+          "maxWidth": "100%",
+          "minWidth": 100,
           "outline": "none",
           "padding": 0,
         }
       }
     />
-  </InputComponent>
+  </Memo()>
+</Component>
+`;
+
+exports[`Input: Component should render with auto width 1`] = `
+<Component
+  withAutoWidth={
+    Object {
+      "autoWidth": true,
+    }
+  }
+>
+  <Memo()
+    withAutoWidth={
+      Object {
+        "autoWidth": true,
+      }
+    }
+  >
+    <input
+      onChange={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "color": "#FFF",
+          "fontFamily": "inherit",
+          "fontSize": "18px",
+          "fontWeight": "inherit",
+          "letterSpacing": "normal",
+          "lineHeight": "24px",
+          "maxWidth": "100%",
+          "minWidth": 100,
+          "outline": "none",
+          "padding": 0,
+        }
+      }
+    />
+  </Memo()>
 </Component>
 `;
 
 exports[`Input: Component should render with custom styles 1`] = `
 <Component
-  customStyles={
+  withCustomStyles={
     Object {
-      "color": "blue",
+      "customStyles": Object {
+        "color": "blue",
+      },
     }
   }
 >
-  <InputComponent
-    customStyles={
+  <Memo()
+    withCustomStyles={
       Object {
-        "color": "blue",
+        "customStyles": Object {
+          "color": "blue",
+        },
       }
     }
   >
     <input
+      onChange={[Function]}
       style={
         Object {
           "backgroundColor": "transparent",
           "border": "none",
-          "color": "blue",
+          "color": "#FFF",
+          "fontFamily": "inherit",
           "fontSize": "18px",
+          "fontWeight": "inherit",
+          "letterSpacing": "normal",
           "lineHeight": "24px",
+          "maxWidth": "100%",
+          "minWidth": 100,
           "outline": "none",
           "padding": 0,
         }
       }
     />
-  </InputComponent>
+  </Memo()>
 </Component>
 `;

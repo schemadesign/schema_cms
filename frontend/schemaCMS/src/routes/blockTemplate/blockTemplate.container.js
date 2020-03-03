@@ -4,21 +4,23 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
-import { injectIntl } from 'react-intl';
 
-import { BlockTemplates } from './blockTemplates.component';
-import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
-import { selectUserRole } from '../../../modules/userProfile';
+import { BlockTemplate } from './blockTemplate.component';
+import { BlockTemplatesRoutines, selectBlockTemplate } from '../../modules/blockTemplates';
+import { selectUserRole } from '../../modules/userProfile';
+import { selectProject } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
-  blockTemplates: selectBlockTemplates,
+  blockTemplate: selectBlockTemplate,
   userRole: selectUserRole,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
+      fetchBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplate),
+      updateBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.updateBlockTemplate),
     },
     dispatch
   ),
@@ -30,6 +32,5 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  injectIntl,
   withRouter
-)(BlockTemplates);
+)(BlockTemplate);

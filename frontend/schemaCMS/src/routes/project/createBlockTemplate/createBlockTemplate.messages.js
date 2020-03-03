@@ -6,6 +6,10 @@ export default defineMessages({
     id: 'project.createBlockTemplate.title',
     defaultMessage: 'Block Template',
   },
+  subtitle: {
+    id: 'project.createBlockTemplate.subtitle',
+    defaultMessage: 'Create',
+  },
   save: {
     id: 'project.createBlockTemplate.save',
     defaultMessage: 'Save Template',

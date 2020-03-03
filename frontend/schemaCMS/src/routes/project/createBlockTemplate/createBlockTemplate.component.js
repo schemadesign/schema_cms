@@ -4,26 +4,22 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
 import { useFormik } from 'formik';
 import { useHistory, useParams } from 'react-router';
-import { Icons } from 'schemaUI';
 
-import { Container, inputStyles, inputContainerStyles, Subtitle, IconsContainer } from './createBlockTemplate.styles';
+import { Container } from './createBlockTemplate.styles';
 import messages from './createBlockTemplate.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
-import { ContextHeader } from '../../../shared/components/contextHeader';
-import { PlusButton, NavigationContainer, NextButton, BackButton } from '../../../shared/components/navigation';
+import { NavigationContainer, NextButton, BackButton } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project.constants';
-import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { BLOCK_TEMPLATES_SCHEMA, INITIAL_VALUES } from '../../../modules/blockTemplates/blockTemplates.constants';
-
-const { EditIcon } = Icons;
+import { BlockTemplateForm } from '../../../shared/components/blockTemplateForm';
 
 export const CreateBlockTemplate = memo(({ userRole, createBlockTemplate }) => {
   const intl = useIntl();
   const { projectId } = useParams();
   const history = useHistory();
   const [loading, setLoading] = useState(false);
-  const { handleSubmit, handleChange, values, isValid, ...restFormikProps } = useFormik({
+  const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
     onSubmit: async formData => {
@@ -36,34 +32,15 @@ export const CreateBlockTemplate = memo(({ userRole, createBlockTemplate }) => {
     },
   });
   const title = <FormattedMessage {...messages.title} />;
-  const subtitle = (
-    <Subtitle>
-      <TextInput
-        onChange={handleChange}
-        name="name"
-        value={values.name}
-        customInputStyles={inputStyles}
-        customStyles={inputContainerStyles}
-        autoWidth
-        fullWidth
-        placeholder="Name"
-        {...restFormikProps}
-      />
-      <IconsContainer>
-        <EditIcon />
-      </IconsContainer>
-    </Subtitle>
-  );
+  const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
 
   return (
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
+      <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <form onSubmit={handleSubmit}>
-        <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
-        <ContextHeader title={title} subtitle={subtitle}>
-          <PlusButton id="createElement" onClick={() => {}} type="button" />
-        </ContextHeader>
+        <BlockTemplateForm title={title} {...restFormikProps} />
         <NavigationContainer fixed>
           <BackButton
             id="cancelBtn"
@@ -72,7 +49,12 @@ export const CreateBlockTemplate = memo(({ userRole, createBlockTemplate }) => {
           >
             <FormattedMessage {...messages.cancel} />
           </BackButton>
-          <NextButton id="createTemplateBlockMobile" type="submit" loading={loading} disabled={!isValid || loading}>
+          <NextButton
+            id="createTemplateBlockMobile"
+            type="submit"
+            loading={loading}
+            disabled={!isValid || !dirty || loading}
+          >
             <FormattedMessage {...messages.save} />
           </NextButton>
         </NavigationContainer>

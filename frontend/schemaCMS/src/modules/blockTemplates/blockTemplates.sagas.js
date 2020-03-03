@@ -21,11 +21,11 @@ function* fetchBlockTemplates({ payload: { projectId } }) {
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.fulfill());
   }
 }
-function* fetchBlockTemplate({ payload: { blockId } }) {
+function* fetchBlockTemplate({ payload: { blockTemplateId } }) {
   try {
     yield put(BlockTemplatesRoutines.fetchBlockTemplate.request());
 
-    const { data } = yield api.get(`${BLOCK_TEMPLATES_PATH}/${blockId}`);
+    const { data } = yield api.get(`${BLOCK_TEMPLATES_PATH}/${blockTemplateId}`);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(BlockTemplatesRoutines.fetchBlockTemplate.success(data.results));
@@ -53,14 +53,13 @@ function* createBlockTemplate({ payload: { projectId, formData } }) {
   }
 }
 
-function* updateBlockTemplate({ payload: { blockId, formData } }) {
+function* updateBlockTemplate({ payload: { blockTemplateId, formData } }) {
   try {
     yield put(BlockTemplatesRoutines.updateBlockTemplate.request());
 
-    const { data } = yield api.patch(`${BLOCK_TEMPLATES_PATH}/${blockId}`, formData);
+    const { data } = yield api.patch(`${BLOCK_TEMPLATES_PATH}/${blockTemplateId}`, formData);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
-    yield put(BlockTemplatesRoutines.updateBlockTemplate.success(data.results));
+    yield put(BlockTemplatesRoutines.updateBlockTemplate.success(data));
   } catch (error) {
     reportError(error);
     yield put(BlockTemplatesRoutines.updateBlockTemplate.failure(error));
@@ -69,14 +68,13 @@ function* updateBlockTemplate({ payload: { blockId, formData } }) {
   }
 }
 
-function* removeBlockTemplate({ payload: { blockId } }) {
+function* removeBlockTemplate({ payload: { blockTemplateId } }) {
   try {
     yield put(BlockTemplatesRoutines.removeBlockTemplate.request());
 
-    const { data } = yield api.delete(`${BLOCK_TEMPLATES_PATH}/${blockId}`);
+    const { data } = yield api.delete(`${BLOCK_TEMPLATES_PATH}/${blockTemplateId}`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
-    yield put(BlockTemplatesRoutines.removeBlockTemplate.success(data.results));
+    yield put(BlockTemplatesRoutines.removeBlockTemplate.success(data));
   } catch (error) {
     reportError(error);
     yield put(BlockTemplatesRoutines.removeBlockTemplate.failure(error));

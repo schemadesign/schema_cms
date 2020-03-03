@@ -17,7 +17,7 @@ jest.mock('react-router', () => ({
 }));
 
 describe('BlockTemplates: Component', () => {
-  const render = props => makeContextRenderer(<BlockTemplates {...defaultProps} {...props} />, BlockTemplates);
+  const render = props => makeContextRenderer(<BlockTemplates {...defaultProps} {...props} />);
 
   it('should render correctly', async () => {
     const wrapper = await render();

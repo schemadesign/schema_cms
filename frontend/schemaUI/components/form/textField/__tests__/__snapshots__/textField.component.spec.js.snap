@@ -28,7 +28,7 @@ exports[`TextField: Component should render correctly 1`] = `
         name="name"
         type="text"
       >
-        <InputComponent
+        <Memo()
           customStyles={Object {}}
           name="name"
           type="text"
@@ -36,20 +36,26 @@ exports[`TextField: Component should render correctly 1`] = `
           <input
             id="name"
             name="name"
+            onChange={[Function]}
             style={
               Object {
                 "backgroundColor": "transparent",
                 "border": "none",
                 "color": "#FFF",
+                "fontFamily": "inherit",
                 "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
                 "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 100,
                 "outline": "none",
                 "padding": 0,
               }
             }
             type="text"
           />
-        </InputComponent>
+        </Memo()>
       </Component>
       <div
         style={

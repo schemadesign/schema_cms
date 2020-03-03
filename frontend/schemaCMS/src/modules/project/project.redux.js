@@ -20,7 +20,9 @@ export const ProjectRoutines = {
 
 export const INITIAL_STATE = new Immutable({
   projects: [],
-  project: {},
+  project: {
+    id: null,
+  },
   editors: [],
   templates: {
     blocks: 0,

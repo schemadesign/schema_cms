@@ -1,5 +1,7 @@
 import { defaultTheme } from '../../../utils/theme';
 
+export const MIN_WIDTH = 100;
+
 export const getStyles = (theme = defaultTheme) => ({
   defaultStyles: {
     border: 'none',
@@ -11,7 +13,7 @@ export const getStyles = (theme = defaultTheme) => ({
     padding: 0,
     fontFamily: 'inherit',
     fontWeight: 'inherit',
-    minWidth: 100,
+    minWidth: MIN_WIDTH,
     maxWidth: '100%',
     letterSpacing: 'normal',
   },
