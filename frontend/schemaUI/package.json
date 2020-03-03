@@ -1,5 +1,5 @@
 {
-  "name": "schema_ui",
+  "name": "schemaUI",
   "version": "0.0.1",
   "homepage": ".",
   "main": "dist/index.js",

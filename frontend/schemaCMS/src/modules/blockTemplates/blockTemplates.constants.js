@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 export const BLOCK_TEMPLATES_NAME = 'name';
 
 export const INITIAL_VALUES = {
-  [BLOCK_TEMPLATES_NAME]: 'sdfsd',
+  [BLOCK_TEMPLATES_NAME]: '',
 };
 
 export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({
