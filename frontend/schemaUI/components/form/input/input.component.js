@@ -1,67 +1,74 @@
-import React, { Fragment, useRef, memo, useState } from 'react';
+import React, { Fragment, PureComponent, createRef } from 'react';
 import PropTypes from 'prop-types';
-import { useEffectOnce } from 'react-use';
 
 import { getStyles, MIN_WIDTH } from './input.styles';
 import { withStyles } from '../../styles/withStyles';
 import { filterAllowedAttributes } from '../../../utils/helpers';
 
-const InputComponent = memo(({ customStyles = {}, autoWidth = false, theme, inputRef, ...restProps }) => {
-  const spanRef = useRef(null);
-  const [inputWidth, setInputWidth] = useState(autoWidth ? MIN_WIDTH : null);
-  const [alternativeValue, setAlternativeValue] = useState(restProps.value);
-  const { defaultStyles, hiddenStyles } = getStyles(theme);
-  const inputStyles = { ...defaultStyles, ...customStyles };
-  const filteredProps = filterAllowedAttributes('input', restProps);
+class InputComponent extends PureComponent {
+  static propTypes = {
+    customStyles: PropTypes.object,
+    theme: PropTypes.object,
+    autoWidth: PropTypes.bool,
+  };
 
-  useEffectOnce(() => {
-    if (autoWidth) {
-      setAlternativeValue(restProps.value);
+  state = {
+    inputWidth: this.props.autoWidth ? MIN_WIDTH : null,
+    alternativeValue: this.props.value,
+  };
+
+  componentDidMount() {
+    if (this.props.autoWidth) {
+      this.setState({ alternativeValue: this.props.value });
 
       setTimeout(() => {
-        if (spanRef.current) {
-          setInputWidth(spanRef.current.offsetWidth);
+        if (this.spanRef.current) {
+          this.setState({ inputWidth: this.spanRef.current.offsetWidth });
         }
       });
     }
-  });
+  }
 
-  const handleChange = e => {
-    if (autoWidth) {
-      setAlternativeValue(e.target.value);
+  spanRef = createRef();
+
+  handleChange = e => {
+    if (this.props.autoWidth) {
+      this.setState({ alternativeValue: e.target.value });
       const { value, name, id } = e.target;
 
       return setTimeout(() => {
-        setInputWidth(spanRef.current.offsetWidth);
-        filteredProps.onChange({ target: { name, value, id } });
+        this.setState({ inputWidth: this.spanRef.current.offsetWidth });
+        this.props.onChange({ target: { name, value, id } });
       });
     }
 
-    filteredProps.onChange(e);
+    this.props.onChange(e);
   };
 
-  return (
-    <Fragment>
-      <input
-        id={restProps.name}
-        style={inputWidth ? { ...inputStyles, width: inputWidth + 5 } : inputStyles}
-        ref={inputRef}
-        {...filteredProps}
-        onChange={handleChange}
-      />
-      {autoWidth ? (
-        <div style={{ ...inputStyles, ...hiddenStyles }} ref={spanRef}>
-          {alternativeValue}
-        </div>
-      ) : null}
-    </Fragment>
-  );
-});
+  render() {
+    const { customStyles = {}, autoWidth = false, theme, inputRef, ...restProps } = this.props;
+    const { alternativeValue, inputWidth } = this.state;
+    const { defaultStyles, hiddenStyles } = getStyles(theme);
+    const inputStyles = { ...defaultStyles, ...customStyles };
+    const filteredProps = filterAllowedAttributes('input', restProps);
 
-InputComponent.propTypes = {
-  customStyles: PropTypes.object,
-  theme: PropTypes.object,
-  autoWidth: PropTypes.bool,
-};
+    return (
+      <Fragment>
+        <input
+          id={restProps.name}
+          style={inputWidth ? { ...inputStyles, width: inputWidth + 5 } : inputStyles}
+          ref={inputRef}
+          {...filteredProps}
+          onChange={this.handleChange}
+        />
+        {autoWidth ? (
+          <div style={{ ...inputStyles, ...hiddenStyles }} ref={this.spanRef}>
+            {alternativeValue}
+          </div>
+        ) : null}
+      </Fragment>
+    );
+  }
+}
 
 export const Input = withStyles(InputComponent);

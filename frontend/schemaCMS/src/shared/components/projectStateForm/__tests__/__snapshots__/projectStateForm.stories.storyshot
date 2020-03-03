@@ -2,7 +2,7 @@
 
 exports[`Storyshots ProjectStateForm Default 1`] = `
 .c2 {
-  position: relative;
+  position: static;
 }
 
 .c3 {

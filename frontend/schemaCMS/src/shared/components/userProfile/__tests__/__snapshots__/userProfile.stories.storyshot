@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|UserProfile Default 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 <div
@@ -289,7 +289,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
 
 exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {

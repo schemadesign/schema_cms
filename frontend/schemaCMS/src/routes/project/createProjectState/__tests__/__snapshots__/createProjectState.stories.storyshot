@@ -149,7 +149,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 .c19 {
-  position: relative;
+  position: static;
 }
 
 .c20 {

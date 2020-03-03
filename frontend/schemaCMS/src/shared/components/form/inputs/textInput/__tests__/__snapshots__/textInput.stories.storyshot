@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 <div
@@ -90,7 +90,7 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 
 exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -203,7 +203,7 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 
 exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c2 {

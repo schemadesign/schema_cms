@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -206,7 +206,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
 
 exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {

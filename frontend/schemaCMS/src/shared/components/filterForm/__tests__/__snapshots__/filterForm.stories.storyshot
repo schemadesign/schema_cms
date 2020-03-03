@@ -39,7 +39,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 .c1 {
-  position: relative;
+  position: static;
 }
 
 .c2 {
@@ -715,7 +715,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 .c1 {
-  position: relative;
+  position: static;
 }
 
 .c2 {

@@ -125,7 +125,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c13 {
@@ -1107,7 +1107,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c13 {
@@ -1977,7 +1977,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c13 {

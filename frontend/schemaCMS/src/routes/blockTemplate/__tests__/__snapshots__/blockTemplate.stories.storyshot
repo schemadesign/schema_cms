@@ -135,7 +135,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 .c13 {
-  position: relative;
+  position: static;
 }
 
 @media (min-width:1050px) {

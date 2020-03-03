@@ -125,7 +125,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c13 {
@@ -1001,7 +1001,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c13 {
@@ -1877,7 +1877,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c13 {

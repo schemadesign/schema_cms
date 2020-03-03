@@ -2,7 +2,7 @@
 
 exports[`Input: Component should render correctly 1`] = `
 <Component>
-  <Memo()>
+  <InputComponent>
     <input
       onChange={[Function]}
       style={
@@ -22,7 +22,7 @@ exports[`Input: Component should render correctly 1`] = `
         }
       }
     />
-  </Memo()>
+  </InputComponent>
 </Component>
 `;
 
@@ -34,7 +34,7 @@ exports[`Input: Component should render with auto width 1`] = `
     }
   }
 >
-  <Memo()
+  <InputComponent
     withAutoWidth={
       Object {
         "autoWidth": true,
@@ -60,7 +60,7 @@ exports[`Input: Component should render with auto width 1`] = `
         }
       }
     />
-  </Memo()>
+  </InputComponent>
 </Component>
 `;
 
@@ -74,7 +74,7 @@ exports[`Input: Component should render with custom styles 1`] = `
     }
   }
 >
-  <Memo()
+  <InputComponent
     withCustomStyles={
       Object {
         "customStyles": Object {
@@ -102,6 +102,6 @@ exports[`Input: Component should render with custom styles 1`] = `
         }
       }
     />
-  </Memo()>
+  </InputComponent>
 </Component>
 `;

@@ -28,7 +28,7 @@ exports[`TextField: Component should render correctly 1`] = `
         name="name"
         type="text"
       >
-        <Memo()
+        <InputComponent
           customStyles={Object {}}
           name="name"
           type="text"
@@ -55,7 +55,7 @@ exports[`TextField: Component should render correctly 1`] = `
             }
             type="text"
           />
-        </Memo()>
+        </InputComponent>
       </Component>
       <div
         style={

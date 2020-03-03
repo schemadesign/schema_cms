@@ -135,7 +135,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 .c13 {
-  position: relative;
+  position: static;
 }
 
 @media (min-width:1050px) {
@@ -634,7 +634,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                         }
                       }
                       type="text"
-                      value="sdfsd"
+                      value=""
                     />
                     <div
                       style={
@@ -658,7 +658,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                         }
                       }
                     >
-                      sdfsd
+                      
                     </div>
                     <div
                       style={

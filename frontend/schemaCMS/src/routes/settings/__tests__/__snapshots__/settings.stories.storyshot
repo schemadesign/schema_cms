@@ -142,7 +142,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 .c13 {
-  position: relative;
+  position: static;
 }
 
 .c14 {

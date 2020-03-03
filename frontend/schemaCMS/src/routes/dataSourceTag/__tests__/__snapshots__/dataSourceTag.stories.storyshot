@@ -125,7 +125,7 @@ exports[`Storyshots DataSourceTag Default 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c13 {

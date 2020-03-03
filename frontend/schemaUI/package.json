@@ -11,8 +11,6 @@
     "react-dom": "^16.13.0"
   },
   "dependencies": {
-    "react": "16.13.0",
-    "react-dom": "16.13.0",
     "@babel/core": "7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-export-default-from": "^7.5.2",
@@ -58,7 +56,6 @@
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "react-app-polyfill": "^0.2.2",
-    "react-use": "^13.27.0",
     "require-context.macro": "^1.0.4",
     "rollup": "^1.19.4",
     "rollup-plugin-babel": "^4.3.3",

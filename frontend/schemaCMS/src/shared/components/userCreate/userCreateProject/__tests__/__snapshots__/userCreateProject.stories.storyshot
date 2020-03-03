@@ -125,7 +125,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
 }
 
 .c13 {
-  position: relative;
+  position: static;
 }
 
 .c12 {

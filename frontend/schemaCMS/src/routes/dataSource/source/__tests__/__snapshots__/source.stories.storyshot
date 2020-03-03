@@ -125,7 +125,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 .c17 {
-  position: relative;
+  position: static;
 }
 
 .c18 {

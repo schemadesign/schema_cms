@@ -420,7 +420,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                       }
                     }
                     type="text"
-                    value="sdfsd"
+                    value=""
                   />
                   <div
                     style={
@@ -444,7 +444,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                       }
                     }
                   >
-                    sdfsd
+                    
                   </div>
                   <div
                     style={

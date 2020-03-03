@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|Source Form Default 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {

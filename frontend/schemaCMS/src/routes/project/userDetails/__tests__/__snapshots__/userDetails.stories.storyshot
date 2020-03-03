@@ -125,7 +125,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
 }
 
 .c12 {
-  position: relative;
+  position: static;
 }
 
 .c14 {

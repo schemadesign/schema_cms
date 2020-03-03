@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -438,7 +438,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -875,7 +875,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -1477,7 +1477,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -1912,7 +1912,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -2611,7 +2611,7 @@ exports[`Storyshots Shared Components|PageBlockForm Multiple images type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
@@ -2956,7 +2956,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Text type 1`] = `
 .c0 {
-  position: relative;
+  position: static;
 }
 
 .c1 {
