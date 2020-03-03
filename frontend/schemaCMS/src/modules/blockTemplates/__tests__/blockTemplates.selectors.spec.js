@@ -1,12 +1,14 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectBlockTemplatesDomain, selectBlockTemplates } from '../blockTemplates.selectors';
+import { selectBlockTemplatesDomain, selectBlockTemplates, selectBlockTemplate } from '../blockTemplates.selectors';
+import { blockTemplate, blockTemplates } from '../blockTemplates.mocks';
 
 describe('BlockTemplates: selectors', () => {
   const state = Immutable({
     blockTemplates: {
-      blocks: [],
+      blockTemplates,
+      blockTemplate,
     },
   });
 
@@ -17,8 +19,14 @@ describe('BlockTemplates: selectors', () => {
   });
 
   describe('selectBlockTemplates', () => {
-    it('should select a blocks', () => {
-      expect(selectBlockTemplates(state)).to.equal(state.blockTemplates.blocks);
+    it('should select a block templates', () => {
+      expect(selectBlockTemplates(state)).to.equal(state.blockTemplates.blockTemplates);
+    });
+  });
+
+  describe('selectBlockTemplate', () => {
+    it('should select a block template', () => {
+      expect(selectBlockTemplate(state)).to.equal(state.blockTemplates.blockTemplate);
     });
   });
 });

@@ -6,19 +6,34 @@ import { BlockTemplatesRoutines } from './blockTemplates.redux';
 import { ProjectRoutines } from '../project';
 import { BLOCK_TEMPLATES_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 
-function* fetchBlocks({ payload: { projectId } }) {
+function* fetchBlockTemplates({ payload: { projectId } }) {
   try {
-    yield put(BlockTemplatesRoutines.fetchBlocks.request());
+    yield put(BlockTemplatesRoutines.fetchBlockTemplates.request());
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}`);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
-    yield put(BlockTemplatesRoutines.fetchBlocks.success(data.results));
+    yield put(BlockTemplatesRoutines.fetchBlockTemplates.success(data.results));
   } catch (error) {
     reportError(error);
-    yield put(BlockTemplatesRoutines.fetchBlocks.failure(error));
+    yield put(BlockTemplatesRoutines.fetchBlockTemplates.failure(error));
   } finally {
-    yield put(BlockTemplatesRoutines.fetchBlocks.fulfill());
+    yield put(BlockTemplatesRoutines.fetchBlockTemplates.fulfill());
+  }
+}
+function* fetchBlockTemplate({ payload: { blockId } }) {
+  try {
+    yield put(BlockTemplatesRoutines.fetchBlockTemplate.request());
+
+    const { data } = yield api.get(`${BLOCK_TEMPLATES_PATH}/${blockId}`);
+
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(BlockTemplatesRoutines.fetchBlockTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(BlockTemplatesRoutines.fetchBlockTemplate.failure(error));
+  } finally {
+    yield put(BlockTemplatesRoutines.fetchBlockTemplate.fulfill());
   }
 }
 
@@ -38,9 +53,44 @@ function* createBlockTemplate({ payload: { projectId, formData } }) {
   }
 }
 
+function* updateBlockTemplate({ payload: { blockId, formData } }) {
+  try {
+    yield put(BlockTemplatesRoutines.updateBlockTemplate.request());
+
+    const { data } = yield api.patch(`${BLOCK_TEMPLATES_PATH}/${blockId}`, formData);
+
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(BlockTemplatesRoutines.updateBlockTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(BlockTemplatesRoutines.updateBlockTemplate.failure(error));
+  } finally {
+    yield put(BlockTemplatesRoutines.updateBlockTemplate.fulfill());
+  }
+}
+
+function* removeBlockTemplate({ payload: { blockId } }) {
+  try {
+    yield put(BlockTemplatesRoutines.removeBlockTemplate.request());
+
+    const { data } = yield api.delete(`${BLOCK_TEMPLATES_PATH}/${blockId}`);
+
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(BlockTemplatesRoutines.removeBlockTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(BlockTemplatesRoutines.removeBlockTemplate.failure(error));
+  } finally {
+    yield put(BlockTemplatesRoutines.removeBlockTemplate.fulfill());
+  }
+}
+
 export function* watchBlockTemplates() {
   yield all([
-    takeLatest(BlockTemplatesRoutines.fetchBlocks.TRIGGER, fetchBlocks),
+    takeLatest(BlockTemplatesRoutines.fetchBlockTemplates.TRIGGER, fetchBlockTemplates),
+    takeLatest(BlockTemplatesRoutines.fetchBlockTemplate.TRIGGER, fetchBlockTemplate),
     takeLatest(BlockTemplatesRoutines.createBlockTemplate.TRIGGER, createBlockTemplate),
+    takeLatest(BlockTemplatesRoutines.updateBlockTemplate.TRIGGER, updateBlockTemplate),
+    takeLatest(BlockTemplatesRoutines.removeBlockTemplate.TRIGGER, removeBlockTemplate),
   ]);
 }

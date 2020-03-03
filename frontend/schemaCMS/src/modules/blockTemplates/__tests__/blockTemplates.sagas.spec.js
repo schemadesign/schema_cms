@@ -11,8 +11,8 @@ import { ProjectRoutines } from '../../project';
 describe('BlockTemplates: sagas', () => {
   const defaultState = Immutable({});
 
-  describe('when /PROJECTS_FETCH_BLOCKS action is fired', () => {
-    it('should put fetchBlocks action', async () => {
+  describe('when /FETCH_BLOCK_TEMPLATES action is fired', () => {
+    it('should put fetchBlockTemplates action', async () => {
       const projectId = 'projectId';
       const response = {
         id: 1,
@@ -25,8 +25,90 @@ describe('BlockTemplates: sagas', () => {
       await expectSaga(watchBlockTemplates)
         .withState(defaultState)
         .put(ProjectRoutines.setProject.trigger(response.project))
-        .put(BlockTemplatesRoutines.fetchBlocks.success(response.results))
-        .dispatch(BlockTemplatesRoutines.fetchBlocks({ projectId }))
+        .put(BlockTemplatesRoutines.fetchBlockTemplates.success(response.results))
+        .dispatch(BlockTemplatesRoutines.fetchBlockTemplates({ projectId }))
+        .silentRun();
+    });
+  });
+
+  describe('when /FETCH_BLOCK_TEMPLATE action is fired', () => {
+    it('should put fetchBlockTemplate action', async () => {
+      const blockId = 'blockId';
+      const response = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
+      mockApi.get(`${BLOCK_TEMPLATES_PATH}/${blockId}`).reply(OK, response);
+
+      await expectSaga(watchBlockTemplates)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(BlockTemplatesRoutines.fetchBlockTemplate.success(response.results))
+        .dispatch(BlockTemplatesRoutines.fetchBlockTemplate({ blockId }))
+        .silentRun();
+    });
+  });
+
+  describe('when /CREATE_BLOCK_TEMPLATE action is fired', () => {
+    it('should put createBlockTemplate action', async () => {
+      const projectId = 'projectId';
+      const formData = {};
+      const response = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
+      mockApi.post(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}`).reply(OK, response);
+
+      await expectSaga(watchBlockTemplates)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(BlockTemplatesRoutines.createBlockTemplate.success(response.results))
+        .dispatch(BlockTemplatesRoutines.createBlockTemplate({ projectId, formData }))
+        .silentRun();
+    });
+  });
+
+  describe('when /UPDATE_BLOCK_TEMPLATE action is fired', () => {
+    it('should put updateBlockTemplate action', async () => {
+      const blockId = 'blockId';
+      const formData = {};
+      const response = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
+      mockApi.patch(`${BLOCK_TEMPLATES_PATH}/${blockId}`, formData).reply(OK, response);
+
+      await expectSaga(watchBlockTemplates)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(BlockTemplatesRoutines.updateBlockTemplate.success(response.results))
+        .dispatch(BlockTemplatesRoutines.updateBlockTemplate({ blockId, formData }))
+        .silentRun();
+    });
+  });
+
+  describe('when /REMOVE_BLOCK_TEMPLATE action is fired', () => {
+    it('should put removeBlockTemplate action', async () => {
+      const blockId = 'blockId';
+      const response = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
+      mockApi.delete(`${BLOCK_TEMPLATES_PATH}/${blockId}`).reply(OK, response);
+
+      await expectSaga(watchBlockTemplates)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(BlockTemplatesRoutines.removeBlockTemplate.success(response.results))
+        .dispatch(BlockTemplatesRoutines.removeBlockTemplate({ blockId }))
         .silentRun();
     });
   });
