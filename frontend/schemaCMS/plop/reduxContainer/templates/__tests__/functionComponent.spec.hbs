@@ -1,14 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import { {{ pascalCase name }} } from '../{{ camelCase name }}.component';
+import { defaultProps } from '../{{ camelCase name }}.stories';
+import { makeContextRenderer } from '../../utils/testUtils';
 
 describe('{{ pascalCase name }}: Component', () => {
-  const defaultProps = {};
-
-  const component = props => <{{ pascalCase name }} {...defaultProps} {...props} />;
-
-  const render = (props = {}) => shallow(component(props));
+  const render = props => makeContextRenderer(<{{ pascalCase name }} {...defaultProps} {...props} />);
 
   it('should render correctly', () => {
     const wrapper = render();
