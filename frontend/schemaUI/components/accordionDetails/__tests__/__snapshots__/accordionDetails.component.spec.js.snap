@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccordionDetails: Component should render correctly 1`] = `
+<Component>
+  <AccordionDetailsComponent>
+    <div
+      style={
+        Object {
+          "height": 0,
+          "marginBottom": 10,
+          "opacity": 1,
+          "overflow": "hidden",
+          "transition": "height 200ms ease-in-out, opacity 200ms ease-in-out",
+        }
+      }
+    >
+      AccordionDetails
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": 10,
+          "opacity": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "transition": "height 200ms ease-in-out, opacity 200ms ease-in-out",
+          "visibility": "hidden",
+        }
+      }
+    >
+      AccordionDetails
+    </div>
+  </AccordionDetailsComponent>
+</Component>
+`;

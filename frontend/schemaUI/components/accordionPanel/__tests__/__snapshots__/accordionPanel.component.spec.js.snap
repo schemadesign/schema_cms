@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccordionPanel: Component should render correctly 1`] = `
+<Component>
+  <AccordionPanelComponent>
+    <div
+      style={
+        Object {
+          "borderTop": "2px solid #2F2F36",
+        }
+      }
+    >
+      AccordionPanel
+    </div>
+  </AccordionPanelComponent>
+</Component>
+`;

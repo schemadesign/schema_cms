@@ -1,5 +1,5 @@
-import React from 'react';
+import { createContext } from 'react';
 
-const CheckboxGroupContext = React.createContext();
+const CheckboxGroupContext = createContext({});
 
 export default CheckboxGroupContext;
