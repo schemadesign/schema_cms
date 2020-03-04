@@ -20,7 +20,7 @@ export const getStyles = (theme = defaultTheme) => ({
   hiddenStyles: {
     opacity: 0,
     visibility: 'hidden',
-    position: 'absolute',
+    position: 'fixed',
     whiteSpace: 'pre',
   },
 });

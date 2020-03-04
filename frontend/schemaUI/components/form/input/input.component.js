@@ -56,7 +56,7 @@ class InputComponent extends PureComponent {
       <Fragment>
         <input
           id={restProps.name}
-          style={inputWidth ? { ...inputStyles, width: inputWidth + 5 } : inputStyles}
+          style={inputWidth ? { ...inputStyles, width: inputWidth + 20 } : inputStyles}
           ref={inputRef}
           {...filteredProps}
           onChange={this.handleChange}

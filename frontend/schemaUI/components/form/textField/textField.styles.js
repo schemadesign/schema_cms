@@ -1,10 +1,10 @@
 import { defaultTheme } from '../../../utils/theme';
 
-export const getStyles = (theme = defaultTheme) => ({
+export const getStyles = (theme = defaultTheme, autoWidth) => ({
   containerStyles: {
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: '30px',
+    paddingBottom: autoWidth ? 0 : '30px',
     position: 'relative',
   },
   defaultLabelStyles: {

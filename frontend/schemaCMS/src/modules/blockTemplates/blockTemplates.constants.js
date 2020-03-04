@@ -1,9 +1,20 @@
 import * as Yup from 'yup';
 
 export const BLOCK_TEMPLATES_NAME = 'name';
+export const BLOCK_TEMPLATES_ELEMENTS = 'elements';
+
+export const RICH_TEXT_TYPE = 'rich_text';
+export const PLAIN_TEXT_TYPE = 'plain_text';
 
 export const INITIAL_VALUES = {
   [BLOCK_TEMPLATES_NAME]: '',
+  [BLOCK_TEMPLATES_ELEMENTS]: [],
+};
+
+export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
+  type: RICH_TEXT_TYPE,
+  name: '',
+  params: {},
 };
 
 export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({

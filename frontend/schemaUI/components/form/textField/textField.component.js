@@ -47,7 +47,7 @@ class TextFieldComponent extends PureComponent {
       fullWidth,
       ...restProps
     } = this.props;
-    const { containerStyles, errorStyles, iconContainerStyles } = getStyles(theme);
+    const { containerStyles, errorStyles, iconContainerStyles } = getStyles(theme, restProps.autoWidth);
     const errorFieldStyles = error ? errorStyles : {};
     const styles = { ...containerStyles, ...customStyles };
     const fieldStyles = { ...customInputStyles, ...errorFieldStyles };
