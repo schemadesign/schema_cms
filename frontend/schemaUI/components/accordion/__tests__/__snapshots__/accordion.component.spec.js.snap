@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion: Component should render correctly 1`] = `
+<AccordionComponent
+  customDetailsStyles={Object {}}
+  customHeaderStyles={Object {}}
+  customPanelStyles={Object {}}
+>
+  <Component>
+    <Component>
+      First Panel
+    </Component>
+    <Component>
+      First Details
+    </Component>
+  </Component>
+  <Component>
+    <Component>
+      Second Panel
+    </Component>
+    <Component>
+      Second Details
+    </Component>
+  </Component>
+</AccordionComponent>
+`;
