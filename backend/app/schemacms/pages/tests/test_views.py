@@ -56,6 +56,14 @@ class TestCreateBlockTemplatesView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
+    def test_editor_can_not_create_template(self, api_client, editor, project):
+        payload = {"name": "Test Block"}
+
+        api_client.force_authenticate(editor)
+        response = api_client.post(self.get_url(project.pk), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
 
 class TestUpdateBlockTemplatesView:
     @staticmethod
@@ -103,6 +111,16 @@ class TestUpdateBlockTemplatesView:
 
         assert response.status_code == status.HTTP_200_OK
         assert len(block_template.elements.all()) == 1
+
+    def test_editor_can_not_update_template(self, api_client, editor, block_template):
+        new_name = "New Block Name"
+
+        payload = {"id": block_template.pk, "name": new_name}
+
+        api_client.force_authenticate(editor)
+        response = api_client.patch(self.get_url(block_template.pk), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
 
 
 class TestDeleteBlockTemplatesView:

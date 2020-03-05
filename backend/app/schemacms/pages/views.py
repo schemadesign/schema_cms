@@ -3,6 +3,7 @@ from rest_framework import permissions
 
 from . import models, serializers
 from ..utils.views import NoListCreateDetailViewSet
+from ..utils.permissions import IsSchemaAdmin
 
 
 class BlockTemplateViewSet(NoListCreateDetailViewSet):
@@ -14,7 +15,7 @@ class BlockTemplateViewSet(NoListCreateDetailViewSet):
         )
     )
     serializer_class = serializers.BlockTemplateSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
 
 
 class PageTemplateViewSet(NoListCreateDetailViewSet):
@@ -24,4 +25,4 @@ class PageTemplateViewSet(NoListCreateDetailViewSet):
         .prefetch_related(Prefetch("blocks", queryset=models.BlockTemplate.objects.order_by("order")))
     )
     serializer_class = serializers.PageTemplateSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)

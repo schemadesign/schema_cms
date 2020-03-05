@@ -19,6 +19,9 @@ class ProjectAccessPermission(permissions.BasePermission):
             project = get_project(project_id)
             return request.user.is_admin or request.user in project.editors.all()
 
+        if view.action in ["pages_templates", "block_templates"]:
+            return request.user.is_admin
+
         if request.method in permissions.SAFE_METHODS:
             return True
 
