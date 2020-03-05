@@ -24,24 +24,35 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
     @transaction.atomic()
     def create(self, validated_data):
-        with transaction.atomic():
-            elements = validated_data.pop("elements", [])
-            template = self.Meta.model(created_by=self.context["request"].user, **validated_data)
-            template.save()
-            models.BlockTemplateElement.objects.bulk_create(self.create_elements(elements, template))
+        elements = validated_data.pop("elements", [])
+
+        template = self.Meta.model(created_by=self.context["request"].user, **validated_data)
+        template.save()
+
+        models.BlockTemplateElement.objects.bulk_create(self.create_elements(elements, template))
 
         return template
 
     @transaction.atomic()
     def update(self, instance, validated_data):
         elements = validated_data.pop("elements", [])
+        elements_to_delete = self.initial_data.pop("delete_elements", [])
+
+        if elements_to_delete:
+            instance.elements.filter(id__in=elements_to_delete).delete()
+
         instance = super().update(instance, validated_data)
 
+        self.create_or_update_elements(instance, elements)
+
+        return instance
+
+    @staticmethod
+    def create_or_update_elements(instance, elements):
         for element in elements:
             models.BlockTemplateElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(template=instance, **element)
             )
-        return instance
 
     @staticmethod
     def create_elements(elements, template):
