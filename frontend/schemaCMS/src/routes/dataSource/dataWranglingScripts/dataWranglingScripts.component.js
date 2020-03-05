@@ -192,11 +192,13 @@ export class DataWranglingScripts extends PureComponent {
   renderCheckboxWithDrag = ({ id, name, type = SCRIPT_TYPES.CUSTOM }, index) => {
     return (
       <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
-        {makeDraggable => {
-          const draggableIcon = makeDraggable(
-            <IconWrapper>
-              <MenuIcon customStyles={menuIconStyles} />
-            </IconWrapper>
+        {drag => {
+          const draggableIcon = drag(
+            <div>
+              <IconWrapper>
+                <MenuIcon customStyles={menuIconStyles} />
+              </IconWrapper>
+            </div>
           );
 
           return this.renderCheckbox({ id, name, type, draggableIcon, idPrefix: 'drag-' }, index);

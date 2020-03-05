@@ -1,10 +1,17 @@
-import React, { memo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
 import { equals } from 'ramda';
 
-import { customLabelStyles, Header, IconsContainer, InputContainer } from './blockElementTemplate.styles';
+import {
+  customLabelStyles,
+  elementIcon,
+  Header,
+  IconsContainer,
+  iconStyles,
+  InputContainer,
+} from './blockElementTemplate.styles';
 import messages from './blockElementTemplate.messages';
 import { TextInput } from '../form/inputs/textInput';
 import {
@@ -19,68 +26,80 @@ import {
 import { Select } from '../form/select';
 import { renderWhenTrue } from '../../utils/rendering';
 
-const { EditIcon } = Icons;
+const { EditIcon, MinusIcon } = Icons;
 
-export const BlockElementTemplate = memo(
-  ({ element: { name, type, params }, handleChange, index, setFieldValue, blocksOptions, ...restFormikProps }) => {
-    const intl = useIntl();
-    const elementPath = `${BLOCK_TEMPLATES_ELEMENTS}.${index}`;
-    const typesOptions = ELEMENTS_TYPES.map(item => ({ label: intl.formatMessage(messages[item]), value: item }));
-    const handleSelectStatus = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
-    const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`, value);
+export const BlockElementTemplate = ({
+  element: { name, type, params },
+  handleChange,
+  index,
+  setFieldValue,
+  blocksOptions,
+  removeElement,
+  draggableIcon,
+  ...restFormikProps
+}) => {
+  const intl = useIntl();
+  const elementPath = `${BLOCK_TEMPLATES_ELEMENTS}.${index}`;
+  const typesOptions = ELEMENTS_TYPES.map(item => ({ label: intl.formatMessage(messages[item]), value: item }));
+  const handleSelectStatus = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
+  const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`, value);
 
-    const getAdditionalInputs = renderWhenTrue(() => (
-      <InputContainer>
-        <Select
-          label={intl.formatMessage(messages[PARAMS_BLOCK])}
-          name={`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`}
-          value={params[PARAMS_BLOCK] || ''}
-          options={blocksOptions}
-          onSelect={handleSelectBlock}
-          placeholder={intl.formatMessage(messages.blockPlaceholder)}
-          customLabelStyles={customLabelStyles}
-          {...restFormikProps}
-        />
-      </InputContainer>
-    ));
+  const getAdditionalInputs = renderWhenTrue(() => (
+    <InputContainer>
+      <Select
+        label={intl.formatMessage(messages[PARAMS_BLOCK])}
+        name={`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`}
+        value={params[PARAMS_BLOCK] || ''}
+        options={blocksOptions}
+        onSelect={handleSelectBlock}
+        placeholder={intl.formatMessage(messages.blockPlaceholder)}
+        customLabelStyles={customLabelStyles}
+        {...restFormikProps}
+      />
+    </InputContainer>
+  ));
 
-    return (
-      <AccordionPanel>
-        <AccordionHeader>
-          <Header>
-            <TextInput
-              name={`${elementPath}.${ELEMENT_NAME}`}
-              placeholder={intl.formatMessage(messages.namePlaceholder)}
-              onChange={handleChange}
-              autoWidth
-              fullWidth
-              value={name}
-              {...restFormikProps}
-            />
-            <IconsContainer>
-              <EditIcon />
-            </IconsContainer>
-          </Header>
-        </AccordionHeader>
-        <AccordionDetails>
-          <InputContainer>
-            <Select
-              label={intl.formatMessage(messages[ELEMENT_TYPE])}
-              name={`${elementPath}.${ELEMENT_TYPE}`}
-              value={type}
-              options={typesOptions}
-              onSelect={handleSelectStatus}
-              placeholder={intl.formatMessage(messages.typePlaceholder)}
-              customLabelStyles={customLabelStyles}
-              {...restFormikProps}
-            />
-          </InputContainer>
-          {getAdditionalInputs(equals(STACK_TYPE, type))}
-        </AccordionDetails>
-      </AccordionPanel>
-    );
-  }
-);
+  return (
+    <AccordionPanel>
+      <AccordionHeader>
+        <Header>
+          <IconsContainer>
+            {draggableIcon}
+            <MinusIcon customStyles={elementIcon} />
+          </IconsContainer>
+          <TextInput
+            name={`${elementPath}.${ELEMENT_NAME}`}
+            placeholder={intl.formatMessage(messages.namePlaceholder)}
+            onChange={handleChange}
+            autoWidth
+            fullWidth
+            value={name}
+            {...restFormikProps}
+          />
+          <IconsContainer>
+            <EditIcon />
+            <MinusIcon customStyles={iconStyles} onClick={() => removeElement(index)} />
+          </IconsContainer>
+        </Header>
+      </AccordionHeader>
+      <AccordionDetails>
+        <InputContainer>
+          <Select
+            label={intl.formatMessage(messages[ELEMENT_TYPE])}
+            name={`${elementPath}.${ELEMENT_TYPE}`}
+            value={type}
+            options={typesOptions}
+            onSelect={handleSelectStatus}
+            placeholder={intl.formatMessage(messages.typePlaceholder)}
+            customLabelStyles={customLabelStyles}
+            {...restFormikProps}
+          />
+        </InputContainer>
+        {getAdditionalInputs(equals(STACK_TYPE, type))}
+      </AccordionDetails>
+    </AccordionPanel>
+  );
+};
 
 BlockElementTemplate.propTypes = {
   element: PropTypes.object.isRequired,
@@ -88,4 +107,6 @@ BlockElementTemplate.propTypes = {
   index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  removeElement: PropTypes.func.isRequired,
+  draggableIcon: PropTypes.element.isRequired,
 };

@@ -1,6 +1,6 @@
 import { defaultTheme } from '../../../utils/theme';
 
-export const MIN_WIDTH = 100;
+export const MIN_WIDTH = 60;
 
 export const getStyles = (theme = defaultTheme) => ({
   defaultStyles: {

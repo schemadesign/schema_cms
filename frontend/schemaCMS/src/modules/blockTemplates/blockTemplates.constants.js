@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 
 export const BLOCK_TEMPLATES_NAME = 'name';
 export const BLOCK_TEMPLATES_ELEMENTS = 'elements';
+export const BLOCK_TEMPLATES_DELETE_ELEMENTS = 'deleteElements';
 
 export const ELEMENT_NAME = 'name';
 export const ELEMENT_TYPE = 'type';
@@ -22,12 +23,13 @@ export const ELEMENTS_TYPES = [RICH_TEXT_TYPE, PLAIN_TEXT_TYPE, IMAGE_TYPE, CODE
 export const INITIAL_VALUES = {
   [BLOCK_TEMPLATES_NAME]: '',
   [BLOCK_TEMPLATES_ELEMENTS]: [],
+  [BLOCK_TEMPLATES_DELETE_ELEMENTS]: [],
 };
 
 export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
-  type: '',
-  name: '',
-  params: {},
+  [ELEMENT_TYPE]: '',
+  [ELEMENT_NAME]: '',
+  [ELEMENT_PARAMS]: {},
 };
 
 export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({

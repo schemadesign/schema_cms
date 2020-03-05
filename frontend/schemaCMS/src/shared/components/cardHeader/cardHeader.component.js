@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { HeaderItem, HeaderList } from './cardHeader.styles';
 
-export const CardHeader = memo(({ list }) => {
+export const CardHeader = ({ list }) => {
   return (
     <HeaderList>
       {list.map((item, index) => (
@@ -13,7 +13,7 @@ export const CardHeader = memo(({ list }) => {
       ))}
     </HeaderList>
   );
-});
+};
 
 CardHeader.propTypes = {
   list: PropTypes.array.isRequired,

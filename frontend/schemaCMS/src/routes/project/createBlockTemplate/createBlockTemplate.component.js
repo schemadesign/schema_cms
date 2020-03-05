@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
@@ -16,7 +16,7 @@ import { BLOCK_TEMPLATES_SCHEMA, INITIAL_VALUES } from '../../../modules/blockTe
 import { BlockTemplateForm } from '../../../shared/components/blockTemplateForm';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
-export const CreateBlockTemplate = memo(({ userRole, createBlockTemplate, fetchBlockTemplates, blockTemplates }) => {
+export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockTemplates, blockTemplates }) => {
   const intl = useIntl();
   const { projectId } = useParams();
   const history = useHistory();
@@ -81,7 +81,7 @@ export const CreateBlockTemplate = memo(({ userRole, createBlockTemplate, fetchB
       </LoadingWrapper>
     </Container>
   );
-});
+};
 
 CreateBlockTemplate.propTypes = {
   userRole: PropTypes.string.isRequired,
