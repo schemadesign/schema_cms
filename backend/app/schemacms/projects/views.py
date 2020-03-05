@@ -23,6 +23,10 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     def get_queryset(self):
         if self.action == "retrieve":
             queryset = models.Project.objects.all()
+        elif self.action == "block_templates":
+            return models.Project.objects.all().prefetch_related(
+                "blocktemplate_set", "blocktemplate_set__elements"
+            )
         else:
             queryset = models.Project.get_projects_for_user(self.request.user)
 
