@@ -18,6 +18,10 @@ export class AccordionDetailsComponent extends PureComponent {
     this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
   }
 
+  componentDidUpdate() {
+    this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+  }
+
   detailsRef = createRef();
 
   render() {

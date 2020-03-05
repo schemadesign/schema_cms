@@ -71,7 +71,7 @@ export class TextInput extends PureComponent {
     const error = checkOnlyErrors ? isError : isError && isTouched;
 
     return (
-      <Container>
+      <Container isAuthWidth={this.props.autoWidth}>
         <TextField
           label={label}
           onChange={onChange}

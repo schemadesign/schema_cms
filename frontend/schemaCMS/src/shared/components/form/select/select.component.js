@@ -12,6 +12,7 @@ const { CaretIcon } = Icons;
 export class Select extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.array,
+    customLabelStyles: PropTypes.object,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     name: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -23,9 +24,16 @@ export class Select extends PureComponent {
   static defaultProps = {
     label: null,
     customStyles: null,
+    customLabelStyles: {},
   };
 
-  renderLabel = renderWhenTrue(always(<Label id="fieldProjectStatusLabel">{this.props.label}</Label>));
+  renderLabel = renderWhenTrue(
+    always(
+      <Label id="fieldProjectStatusLabel" customStyles={this.props.customLabelStyles}>
+        {this.props.label}
+      </Label>
+    )
+  );
 
   render() {
     const { label, name, options, onSelect, value, placeholder, customStyles, ...restProps } = this.props;

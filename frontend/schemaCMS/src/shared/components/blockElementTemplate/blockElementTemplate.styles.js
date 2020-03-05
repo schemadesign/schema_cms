@@ -9,3 +9,12 @@ export const Header = styled.div`
 `;
 
 export const IconsContainer = styled.div``;
+
+export const InputContainer = styled.div`
+  border-top: 1px solid ${({ theme }) => theme.border};
+  padding-left: 30px;
+`;
+
+export const customLabelStyles = {
+  borderTop: 'none',
+};

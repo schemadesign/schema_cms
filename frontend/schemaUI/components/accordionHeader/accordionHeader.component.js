@@ -16,11 +16,11 @@ export class AccordionHeaderComponent extends PureComponent {
     return (
       <AccordionPanelContext.Consumer>
         {({ icon, togglePanel, open, customHeaderStyles }) => {
-          const { containerStyles, iconContainerStyles, headerStyles } = getStyles({ open });
+          const { containerStyles, iconContainerStyles } = getStyles({ open });
 
           return (
             <div style={{ ...containerStyles, ...customHeaderStyles }}>
-              <div style={headerStyles}>{children}</div>
+              {children}
               <div onClick={togglePanel} style={iconContainerStyles}>
                 {icon}
               </div>
