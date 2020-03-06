@@ -3,13 +3,13 @@ import { storiesOf } from '@storybook/react';
 
 import { BlockTemplateForm } from './blockTemplateForm.component';
 import { withTheme } from '../../../.storybook/decorators';
-import { BLOCK_TEMPLATES_NAME } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { blockTemplates, blockTemplate } from '../../../modules/blockTemplates/blockTemplates.mocks';
 
 export const defaultProps = {
   handleChange: Function.prototype,
-  values: {
-    [BLOCK_TEMPLATES_NAME]: 'name',
-  },
+  setFieldValue: Function.prototype,
+  blockTemplates,
+  values: blockTemplate,
   title: <span>title</span>,
 };
 

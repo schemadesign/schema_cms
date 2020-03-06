@@ -70,11 +70,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   word-break: break-word;
 }
 
-.c14 {
+.c13 {
   height: 155px;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   width: 100%;
 }
 
-.c15 {
+.c14 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -102,7 +102,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c17 {
+.c16 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -124,10 +124,6 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   color: #FFF;
 }
 
-.c13 {
-  position: static;
-}
-
 .c12 {
   width: 100%;
 }
@@ -146,7 +142,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c15 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -155,7 +151,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c14 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -164,7 +160,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c16 {
     width: 240px;
   }
 }
@@ -531,7 +527,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className="c13"
+        className=""
       >
         <div
           style={
@@ -578,7 +574,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -597,7 +593,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="c13"
+        className=""
       >
         <div
           style={
@@ -644,7 +640,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -663,7 +659,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="c13"
+        className=""
       >
         <div
           style={
@@ -709,7 +705,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -728,7 +724,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="c13"
+        className=""
       >
         <div
           style={
@@ -774,7 +770,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -793,16 +789,16 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        className="c13"
       >
         <div
-          className="c15"
+          className="c14"
         >
           <div
-            className="c16"
+            className="c15"
           >
             <button
-              className="c17"
+              className="c16"
               disabled={false}
               onClick={[Function]}
               style={
@@ -827,7 +823,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               Cancel
             </button>
             <button
-              className="c17"
+              className="c16"
               disabled={false}
               style={
                 Object {

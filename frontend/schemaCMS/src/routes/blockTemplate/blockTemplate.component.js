@@ -64,8 +64,10 @@ export const BlockTemplate = ({
     (async () => {
       try {
         const { project } = await fetchBlockTemplate({ blockTemplateId });
+
         await fetchBlockTemplates({ projectId: project });
       } catch (e) {
+        reportError(e);
         setError(e);
       } finally {
         setLoading(false);

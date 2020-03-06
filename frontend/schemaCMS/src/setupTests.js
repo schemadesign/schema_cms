@@ -36,8 +36,8 @@ jest.doMock('react-dnd-multi-backend/dist/esm/HTML5toTouch', () => ({}));
 jest.mock('react-dnd', () => ({
   // eslint-disable-next-line react/prop-types
   DndProvider: ({ children }) => <span>{children}</span>,
-  useDrop: () => [null, Function.prototype],
-  useDrag: () => [{ isDragging: false }, Function.prototype],
+  useDrop: () => [null, data => data],
+  useDrag: () => [{ isDragging: false }, data => data, data => data],
 }));
 
 jest.mock('./shared/utils/reportError', () => ({

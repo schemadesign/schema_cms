@@ -1,28 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Draggable Default 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 <span>
   <div
-    className="c0"
     style={
       Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "space-between",
         "opacity": 1,
+        "position": "relative",
+        "transform": "translate3d(0, 0, 0)",
+        "width": "100%",
+        "zIndex": NaN,
       }
     }
   />

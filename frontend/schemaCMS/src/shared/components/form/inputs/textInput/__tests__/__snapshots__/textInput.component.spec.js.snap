@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextInput: Component should render correctly 1`] = `
-<styled.div>
+<styled.div
+  isAuthWidth={false}
+>
   <Component
     autoWidth={false}
     error={false}
@@ -15,7 +17,9 @@ exports[`TextInput: Component should render correctly 1`] = `
 `;
 
 exports[`TextInput: Component should render edit icon 1`] = `
-<styled.div>
+<styled.div
+  isAuthWidth={false}
+>
   <Component
     autoWidth={false}
     error={false}
@@ -35,7 +39,9 @@ exports[`TextInput: Component should render edit icon 1`] = `
 `;
 
 exports[`TextInput: Component should render error 1`] = `
-<styled.div>
+<styled.div
+  isAuthWidth={false}
+>
   <Component
     autoWidth={false}
     error={true}

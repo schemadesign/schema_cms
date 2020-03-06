@@ -71,6 +71,7 @@ exports[`PageList: Component should render correctly 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createPageDesktopBtn"
       onClick={[Function]}
@@ -153,6 +154,7 @@ exports[`PageList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={true}
       id="createPageBtn"
       onClick={[Function]}
@@ -232,6 +234,7 @@ exports[`PageList: Component should render correctly with loader 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createPageDesktopBtn"
       onClick={[Function]}
@@ -314,6 +317,7 @@ exports[`PageList: Component should render correctly with loader 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={true}
       id="createPageBtn"
       onClick={[Function]}

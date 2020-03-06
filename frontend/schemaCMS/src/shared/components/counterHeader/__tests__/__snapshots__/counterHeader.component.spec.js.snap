@@ -2,6 +2,7 @@
 
 exports[`CounterHeader: Component should render correctly 1`] = `
 <styled.div>
+  <styled.div />
   <FormattedMessage
     defaultMessage="{count, plural,one {# {copy}} other {# {copy}s}}"
     id="shared.components.counterHeader.counter"
@@ -12,5 +13,6 @@ exports[`CounterHeader: Component should render correctly 1`] = `
       }
     }
   />
+  <styled.div />
 </styled.div>
 `;

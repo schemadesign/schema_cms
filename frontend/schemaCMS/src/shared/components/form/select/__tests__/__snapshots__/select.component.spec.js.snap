@@ -5,6 +5,7 @@ exports[`Select: Component should render correctly 1`] = `
   customStyles={null}
 >
   <Component
+    customStyles={Object {}}
     id="fieldProjectStatusLabel"
   >
     Selector
@@ -19,6 +20,7 @@ exports[`Select: Component should render correctly 1`] = `
     <Component />
   </styled.div>
   <Component
+    customLabelStyles={Object {}}
     onSelect={[Function]}
     options={
       Array [

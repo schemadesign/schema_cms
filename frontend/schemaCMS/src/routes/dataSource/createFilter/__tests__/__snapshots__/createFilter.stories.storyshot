@@ -70,11 +70,11 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   word-break: break-word;
 }
 
-.c18 {
+.c17 {
   height: 155px;
 }
 
-.c20 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c18 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -102,7 +102,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c21 {
+.c20 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -125,15 +125,11 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
 }
 
 .c13 {
-  position: static;
-}
-
-.c14 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -146,17 +142,17 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   font-size: 18px;
 }
 
-.c15 label {
+.c14 label {
   margin-bottom: 2px;
 }
 
-.c16 {
+.c15 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c17 {
+.c16 {
   display: grid;
   grid-template-columns: 100%;
 }
@@ -179,7 +175,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -188,7 +184,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c18 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -197,7 +193,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c20 {
     width: 240px;
   }
 }
@@ -222,7 +218,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
 }
 
 @media (min-width:768px) {
-  .c17 {
+  .c16 {
     grid-template-columns: auto auto;
     grid-gap: 20px;
   }
@@ -628,7 +624,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className="c13"
+        className=""
       >
         <div
           style={
@@ -674,7 +670,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -692,7 +688,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
             }
           >
             <div
-              className="c14"
+              className="c13"
             >
               <svg
                 style={
@@ -714,7 +710,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
         </div>
       </div>
       <div
-        className="c15"
+        className="c14"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -740,7 +736,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
           value="fieldName"
         />
         <div
-          className="c16"
+          className="c15"
         >
           <svg
             style={
@@ -807,7 +803,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                   "display": "none",
                   "flexDirection": "column",
                   "left": "0",
-                  "maxHeight": "183px",
+                  "maxHeight": "184px",
                   "overflowY": "hidden",
                   "position": "absolute",
                   "top": "calc(100% + 5px)",
@@ -842,7 +838,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
         </div>
       </div>
       <div
-        className="c15"
+        className="c14"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -868,7 +864,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
           value="Filter Type 1"
         />
         <div
-          className="c16"
+          className="c15"
         >
           <svg
             style={
@@ -935,7 +931,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                   "display": "none",
                   "flexDirection": "column",
                   "left": "0",
-                  "maxHeight": "183px",
+                  "maxHeight": "184px",
                   "overflowY": "hidden",
                   "position": "absolute",
                   "top": "calc(100% + 5px)",
@@ -1010,10 +1006,10 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
         </div>
       </div>
       <div
-        className="c17"
+        className="c16"
       >
         <div
-          className="c13"
+          className=""
         >
           <div
             style={
@@ -1060,7 +1056,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                   "letterSpacing": "normal",
                   "lineHeight": "24px",
                   "maxWidth": "100%",
-                  "minWidth": 100,
+                  "minWidth": 60,
                   "outline": "none",
                   "padding": 0,
                 }
@@ -1080,7 +1076,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className=""
         >
           <div
             style={
@@ -1127,7 +1123,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
                   "letterSpacing": "normal",
                   "lineHeight": "24px",
                   "maxWidth": "100%",
-                  "minWidth": 100,
+                  "minWidth": 60,
                   "outline": "none",
                   "padding": 0,
                 }
@@ -1148,16 +1144,16 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
         </div>
       </div>
       <div
-        className="c18"
+        className="c17"
       >
         <div
-          className="c19"
+          className="c18"
         >
           <div
-            className="c20"
+            className="c19"
           >
             <button
-              className="c21"
+              className="c20"
               disabled={false}
               onClick={[Function]}
               style={
@@ -1182,7 +1178,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
               Cancel
             </button>
             <button
-              className="c21"
+              className="c20"
               disabled={true}
               style={
                 Object {

@@ -73,6 +73,7 @@ exports[`PageBlockList: Component should render correctly 1`] = `
   <styled.div>
     <styled.div>
       <PlusButton
+        customStyles={Object {}}
         hideOnDesktop={false}
         onClick={[Function]}
       />
@@ -263,6 +264,7 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
   <styled.div>
     <styled.div>
       <PlusButton
+        customStyles={Object {}}
         hideOnDesktop={false}
         onClick={[Function]}
       />
@@ -442,6 +444,7 @@ exports[`PageBlockList: Component should render correctly with one block 1`] = `
   <styled.div>
     <styled.div>
       <PlusButton
+        customStyles={Object {}}
         hideOnDesktop={false}
         onClick={[Function]}
       />

@@ -7,8 +7,8 @@ import { makeContextRenderer } from '../../../utils/testUtils';
 describe('BlockElementTemplate: Component', () => {
   const render = props => makeContextRenderer(<BlockElementTemplate {...defaultProps} {...props} />);
 
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render correctly', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

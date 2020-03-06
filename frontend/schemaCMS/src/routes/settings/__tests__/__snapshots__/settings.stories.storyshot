@@ -87,11 +87,11 @@ exports[`Storyshots Settings Default 1`] = `
   word-break: break-word;
 }
 
-.c17 {
+.c16 {
   height: 155px;
 }
 
-.c19 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`Storyshots Settings Default 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c17 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -119,7 +119,7 @@ exports[`Storyshots Settings Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c20 {
+.c19 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -142,15 +142,11 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 .c13 {
-  position: static;
-}
-
-.c14 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c16 {
+.c15 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -158,11 +154,11 @@ exports[`Storyshots Settings Default 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c16:hover {
+.c15:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c15 {
+.c14 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -192,7 +188,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c18 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -201,7 +197,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c17 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -210,7 +206,7 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c19 {
     width: 240px;
   }
 }
@@ -574,7 +570,7 @@ exports[`Storyshots Settings Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c13"
+      className=""
     >
       <div
         style={
@@ -621,7 +617,7 @@ exports[`Storyshots Settings Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -639,7 +635,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c14"
+            className="c13"
           >
             <svg
               style={
@@ -661,7 +657,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className=""
     >
       <div
         style={
@@ -708,7 +704,7 @@ exports[`Storyshots Settings Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -726,7 +722,7 @@ exports[`Storyshots Settings Default 1`] = `
           }
         >
           <div
-            className="c14"
+            className="c13"
           >
             <svg
               style={
@@ -748,7 +744,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className=""
     >
       <div
         style={
@@ -794,7 +790,7 @@ exports[`Storyshots Settings Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -814,7 +810,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className=""
     >
       <div
         style={
@@ -861,7 +857,7 @@ exports[`Storyshots Settings Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -881,10 +877,10 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c14"
     >
       <span
-        className="c16"
+        className="c15"
         id="resetPasswordLink"
         onClick={[Function]}
         style={
@@ -898,16 +894,16 @@ exports[`Storyshots Settings Default 1`] = `
       </span>
     </div>
     <div
-      className="c17"
+      className="c16"
     >
       <div
-        className="c18"
+        className="c17"
       >
         <div
-          className="c19"
+          className="c18"
         >
           <button
-            className="c20"
+            className="c19"
             disabled={false}
             id="settingsBackBtn"
             onClick={[Function]}
@@ -933,7 +929,7 @@ exports[`Storyshots Settings Default 1`] = `
             Back
           </button>
           <button
-            className="c20"
+            className="c19"
             disabled={true}
             id="settingsSaveBtn"
             style={

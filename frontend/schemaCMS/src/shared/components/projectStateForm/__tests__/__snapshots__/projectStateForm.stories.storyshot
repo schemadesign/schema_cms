@@ -2,10 +2,6 @@
 
 exports[`Storyshots ProjectStateForm Default 1`] = `
 .c2 {
-  position: static;
-}
-
-.c3 {
   padding-top: 7px;
   margin-top: 0;
 }
@@ -144,7 +140,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "183px",
+                "maxHeight": "184px",
                 "overflowY": "hidden",
                 "position": "absolute",
                 "top": "calc(100% + 5px)",
@@ -178,7 +174,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className=""
     >
       <div
         style={
@@ -223,7 +219,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -241,7 +237,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
           }
         >
           <div
-            className="c3"
+            className="c2"
           >
             <svg
               style={
@@ -263,7 +259,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className=""
     >
       <div
         style={
@@ -344,7 +340,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
           }
         >
           <div
-            className="c3"
+            className="c2"
           >
             <svg
               style={
@@ -366,7 +362,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className=""
     >
       <div
         style={
@@ -411,7 +407,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -428,7 +424,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
           }
         >
           <div
-            className="c3"
+            className="c2"
           >
             <svg
               style={
@@ -450,7 +446,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className=""
     >
       <div
         style={
@@ -496,7 +492,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -516,7 +512,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className=""
     >
       <div
         style={
@@ -562,7 +558,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }

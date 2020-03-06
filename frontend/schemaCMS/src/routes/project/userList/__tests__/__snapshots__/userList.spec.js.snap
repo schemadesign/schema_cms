@@ -140,6 +140,7 @@ exports[`UserList: Component should render correctly 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="addUserDesktopBtn"
       onClick={[Function]}
@@ -178,6 +179,7 @@ exports[`UserList: Component should render correctly 1`] = `
       />
     </BackArrowButton>
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="addUserBtn"
       onClick={[Function]}

@@ -70,11 +70,11 @@ exports[`Storyshots PageBlock Default 1`] = `
   word-break: break-word;
 }
 
-.c18 {
+.c17 {
   height: 155px;
 }
 
-.c20 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots PageBlock Default 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c18 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -102,7 +102,7 @@ exports[`Storyshots PageBlock Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c21 {
+.c20 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -125,15 +125,11 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 .c12 {
-  position: static;
-}
-
-.c13 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -146,17 +142,17 @@ exports[`Storyshots PageBlock Default 1`] = `
   font-size: 18px;
 }
 
-.c14 label {
+.c13 label {
   margin-bottom: 2px;
 }
 
-.c15 {
+.c14 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c17 {
+.c16 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -164,11 +160,11 @@ exports[`Storyshots PageBlock Default 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c17:hover {
+.c16:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c16 {
+.c15 {
   margin-top: 30px;
 }
 
@@ -186,7 +182,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -195,7 +191,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c18 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -204,7 +200,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c20 {
     width: 240px;
   }
 }
@@ -571,7 +567,7 @@ exports[`Storyshots PageBlock Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className="c12"
+        className=""
       >
         <div
           style={
@@ -617,7 +613,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -634,7 +630,7 @@ exports[`Storyshots PageBlock Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c12"
             >
               <svg
                 style={
@@ -656,7 +652,7 @@ exports[`Storyshots PageBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        className="c13"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -681,7 +677,7 @@ exports[`Storyshots PageBlock Default 1`] = `
           type="hidden"
         />
         <div
-          className="c15"
+          className="c14"
         >
           <svg
             style={
@@ -749,7 +745,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                   "display": "none",
                   "flexDirection": "column",
                   "left": "0",
-                  "maxHeight": "183px",
+                  "maxHeight": "184px",
                   "overflowY": "hidden",
                   "position": "absolute",
                   "top": "calc(100% + 5px)",
@@ -863,10 +859,10 @@ exports[`Storyshots PageBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c16"
+        className="c15"
       >
         <span
-          className="c17"
+          className="c16"
           id="removePageBlockDesktopBtn"
           onClick={[Function]}
           style={
@@ -880,16 +876,16 @@ exports[`Storyshots PageBlock Default 1`] = `
         </span>
       </div>
       <div
-        className="c18"
+        className="c17"
       >
         <div
-          className="c19"
+          className="c18"
         >
           <div
-            className="c20"
+            className="c19"
           >
             <button
-              className="c21"
+              className="c20"
               disabled={false}
               id="backBtn"
               onClick={[Function]}
@@ -915,7 +911,7 @@ exports[`Storyshots PageBlock Default 1`] = `
               Back
             </button>
             <button
-              className="c21"
+              className="c20"
               disabled={true}
               id="editPageBlockBtn"
               style={

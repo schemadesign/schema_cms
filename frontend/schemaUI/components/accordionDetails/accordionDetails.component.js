@@ -15,11 +15,15 @@ export class AccordionDetailsComponent extends PureComponent {
   };
 
   componentDidMount() {
-    this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    if (this.detailsRef.current) {
+      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    }
   }
 
   componentDidUpdate() {
-    this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    if (this.detailsRef.current) {
+      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    }
   }
 
   detailsRef = createRef();

@@ -70,11 +70,11 @@ exports[`Storyshots User|View Admin 1`] = `
   word-break: break-word;
 }
 
-.c15 {
+.c14 {
   height: 155px;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots User|View Admin 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -102,7 +102,7 @@ exports[`Storyshots User|View Admin 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -125,10 +125,6 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 .c12 {
-  position: static;
-}
-
-.c13 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -144,7 +140,7 @@ exports[`Storyshots User|View Admin 1`] = `
   align-items: flex-start;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -153,11 +149,11 @@ exports[`Storyshots User|View Admin 1`] = `
   margin-bottom: 30px;
 }
 
-.c14:hover {
+.c13:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c14:last-child {
+.c13:last-child {
   margin-bottom: 0;
 }
 
@@ -175,7 +171,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -184,7 +180,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -193,7 +189,7 @@ exports[`Storyshots User|View Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c17 {
     width: 240px;
   }
 }
@@ -556,7 +552,7 @@ exports[`Storyshots User|View Admin 1`] = `
       />
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -602,7 +598,7 @@ exports[`Storyshots User|View Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -622,7 +618,7 @@ exports[`Storyshots User|View Admin 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -668,7 +664,7 @@ exports[`Storyshots User|View Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -688,7 +684,7 @@ exports[`Storyshots User|View Admin 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -734,7 +730,7 @@ exports[`Storyshots User|View Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -754,7 +750,7 @@ exports[`Storyshots User|View Admin 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -800,7 +796,7 @@ exports[`Storyshots User|View Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -820,10 +816,10 @@ exports[`Storyshots User|View Admin 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c12"
     >
       <span
-        className="c14"
+        className="c13"
         onClick={[Function]}
         style={
           Object {
@@ -836,16 +832,16 @@ exports[`Storyshots User|View Admin 1`] = `
       </span>
     </div>
     <div
-      className="c15"
+      className="c14"
     >
       <div
-        className="c16"
+        className="c15"
       >
         <div
-          className="c17"
+          className="c16"
         >
           <button
-            className="c18"
+            className="c17"
             disabled={false}
             onClick={[Function]}
             style={
@@ -946,11 +942,11 @@ exports[`Storyshots User|View Editor 1`] = `
   word-break: break-word;
 }
 
-.c15 {
+.c14 {
   height: 155px;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -969,7 +965,7 @@ exports[`Storyshots User|View Editor 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -978,7 +974,7 @@ exports[`Storyshots User|View Editor 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1001,10 +997,6 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 .c12 {
-  position: static;
-}
-
-.c13 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -1020,7 +1012,7 @@ exports[`Storyshots User|View Editor 1`] = `
   align-items: flex-start;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -1029,11 +1021,11 @@ exports[`Storyshots User|View Editor 1`] = `
   margin-bottom: 30px;
 }
 
-.c14:hover {
+.c13:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c14:last-child {
+.c13:last-child {
   margin-bottom: 0;
 }
 
@@ -1051,7 +1043,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1060,7 +1052,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1069,7 +1061,7 @@ exports[`Storyshots User|View Editor 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c17 {
     width: 240px;
   }
 }
@@ -1432,7 +1424,7 @@ exports[`Storyshots User|View Editor 1`] = `
       />
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -1478,7 +1470,7 @@ exports[`Storyshots User|View Editor 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -1498,7 +1490,7 @@ exports[`Storyshots User|View Editor 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -1544,7 +1536,7 @@ exports[`Storyshots User|View Editor 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -1564,7 +1556,7 @@ exports[`Storyshots User|View Editor 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -1610,7 +1602,7 @@ exports[`Storyshots User|View Editor 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -1630,7 +1622,7 @@ exports[`Storyshots User|View Editor 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -1676,7 +1668,7 @@ exports[`Storyshots User|View Editor 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -1696,10 +1688,10 @@ exports[`Storyshots User|View Editor 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c12"
     >
       <span
-        className="c14"
+        className="c13"
         onClick={[Function]}
         style={
           Object {
@@ -1712,16 +1704,16 @@ exports[`Storyshots User|View Editor 1`] = `
       </span>
     </div>
     <div
-      className="c15"
+      className="c14"
     >
       <div
-        className="c16"
+        className="c15"
       >
         <div
-          className="c17"
+          className="c16"
         >
           <button
-            className="c18"
+            className="c17"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1822,11 +1814,11 @@ exports[`Storyshots User|View Make Admin 1`] = `
   word-break: break-word;
 }
 
-.c15 {
+.c14 {
   height: 155px;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1845,7 +1837,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1854,7 +1846,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1877,10 +1869,6 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 .c12 {
-  position: static;
-}
-
-.c13 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -1896,7 +1884,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
   align-items: flex-start;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -1905,11 +1893,11 @@ exports[`Storyshots User|View Make Admin 1`] = `
   margin-bottom: 30px;
 }
 
-.c14:hover {
+.c13:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c14:last-child {
+.c13:last-child {
   margin-bottom: 0;
 }
 
@@ -1927,7 +1915,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1936,7 +1924,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1945,7 +1933,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c17 {
     width: 240px;
   }
 }
@@ -2308,7 +2296,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
       />
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -2354,7 +2342,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -2374,7 +2362,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -2420,7 +2408,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -2440,7 +2428,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -2486,7 +2474,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -2506,7 +2494,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -2552,7 +2540,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -2572,10 +2560,10 @@ exports[`Storyshots User|View Make Admin 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c12"
     >
       <span
-        className="c14"
+        className="c13"
         onClick={[Function]}
         style={
           Object {
@@ -2587,7 +2575,7 @@ exports[`Storyshots User|View Make Admin 1`] = `
         Remove user
       </span>
       <span
-        className="c14"
+        className="c13"
         onClick={[Function]}
         style={
           Object {
@@ -2600,16 +2588,16 @@ exports[`Storyshots User|View Make Admin 1`] = `
       </span>
     </div>
     <div
-      className="c15"
+      className="c14"
     >
       <div
-        className="c16"
+        className="c15"
       >
         <div
-          className="c17"
+          className="c16"
         >
           <button
-            className="c18"
+            className="c17"
             disabled={false}
             onClick={[Function]}
             style={

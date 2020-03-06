@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
-.c6 {
+.c5 {
   height: 155px;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c6 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -33,21 +33,17 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c9 {
+.c8 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c1 {
-  position: static;
-}
-
-.c2 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -60,17 +56,17 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   font-size: 18px;
 }
 
-.c3 label {
+.c2 label {
   margin-bottom: 2px;
 }
 
-.c4 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c5 {
+.c4 {
   display: grid;
   grid-template-columns: 100%;
 }
@@ -80,7 +76,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c8 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -89,7 +85,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c7 {
+  .c6 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -98,13 +94,13 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c9 {
+  .c8 {
     width: 240px;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c4 {
     grid-template-columns: auto auto;
     grid-gap: 20px;
   }
@@ -132,7 +128,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c1"
+      className=""
     >
       <div
         style={
@@ -178,7 +174,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -196,7 +192,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
           }
         >
           <div
-            className="c2"
+            className="c1"
           >
             <svg
               style={
@@ -218,7 +214,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c3"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -244,7 +240,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
         value="field"
       />
       <div
-        className="c4"
+        className="c3"
       >
         <svg
           style={
@@ -311,7 +307,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "183px",
+                "maxHeight": "184px",
                 "overflowY": "hidden",
                 "position": "absolute",
                 "top": "calc(100% + 5px)",
@@ -346,7 +342,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c3"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -372,7 +368,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
         value="checkbox"
       />
       <div
-        className="c4"
+        className="c3"
       >
         <svg
           style={
@@ -439,7 +435,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "183px",
+                "maxHeight": "184px",
                 "overflowY": "hidden",
                 "position": "absolute",
                 "top": "calc(100% + 5px)",
@@ -474,10 +470,10 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c4"
     >
       <div
-        className="c1"
+        className=""
       >
         <div
           style={
@@ -524,7 +520,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -544,7 +540,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
         </div>
       </div>
       <div
-        className="c1"
+        className=""
       >
         <div
           style={
@@ -591,7 +587,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -612,16 +608,16 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="c6"
+      className="c5"
     >
       <div
-        className="c7"
+        className="c6"
       >
         <div
-          className="c8"
+          className="c7"
         >
           <button
-            className="c9"
+            className="c8"
             disabled={false}
             onClick={[Function]}
             style={
@@ -646,7 +642,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             Cancel
           </button>
           <button
-            className="c9"
+            className="c8"
             disabled={true}
             style={
               Object {
@@ -677,11 +673,11 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 `;
 
 exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
-.c8 {
+.c7 {
   height: 155px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -700,7 +696,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   width: 100%;
 }
 
-.c9 {
+.c8 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -709,21 +705,17 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c11 {
+.c10 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c1 {
-  position: static;
-}
-
-.c2 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -736,17 +728,17 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   font-size: 18px;
 }
 
-.c3 label {
+.c2 label {
   margin-bottom: 2px;
 }
 
-.c4 {
+.c3 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c5 {
+.c4 {
   display: grid;
   grid-template-columns: 100%;
 }
@@ -755,7 +747,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   padding-top: 24px;
 }
 
-.c7 {
+.c6 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -763,11 +755,11 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c7:hover {
+.c6:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c6 {
+.c5 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -784,7 +776,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -793,7 +785,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c9 {
+  .c8 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -802,13 +794,13 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c11 {
+  .c10 {
     width: 240px;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c4 {
     grid-template-columns: auto auto;
     grid-gap: 20px;
   }
@@ -836,7 +828,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c1"
+      className=""
     >
       <div
         style={
@@ -882,7 +874,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -900,7 +892,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
           }
         >
           <div
-            className="c2"
+            className="c1"
           >
             <svg
               style={
@@ -922,7 +914,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c3"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -948,7 +940,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
         value="field"
       />
       <div
-        className="c4"
+        className="c3"
       >
         <svg
           style={
@@ -1015,7 +1007,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "183px",
+                "maxHeight": "184px",
                 "overflowY": "hidden",
                 "position": "absolute",
                 "top": "calc(100% + 5px)",
@@ -1050,7 +1042,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c3"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -1076,7 +1068,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
         value="checkbox"
       />
       <div
-        className="c4"
+        className="c3"
       >
         <svg
           style={
@@ -1143,7 +1135,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "183px",
+                "maxHeight": "184px",
                 "overflowY": "hidden",
                 "position": "absolute",
                 "top": "calc(100% + 5px)",
@@ -1178,10 +1170,10 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c4"
     >
       <div
-        className="c1"
+        className=""
       >
         <div
           style={
@@ -1228,7 +1220,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -1248,7 +1240,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
         </div>
       </div>
       <div
-        className="c1"
+        className=""
       >
         <div
           style={
@@ -1295,7 +1287,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -1316,10 +1308,10 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="c6"
+      className="c5"
     >
       <span
-        className="c7"
+        className="c6"
         onClick={[Function]}
         style={
           Object {
@@ -1332,16 +1324,16 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
       </span>
     </div>
     <div
-      className="c8"
+      className="c7"
     >
       <div
-        className="c9"
+        className="c8"
       >
         <div
-          className="c10"
+          className="c9"
         >
           <button
-            className="c11"
+            className="c10"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1366,7 +1358,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             Back
           </button>
           <button
-            className="c11"
+            className="c10"
             disabled={true}
             style={
               Object {

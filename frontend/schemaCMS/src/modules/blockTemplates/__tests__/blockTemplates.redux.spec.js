@@ -5,8 +5,8 @@ import { reducer as blockTemplatesReducer, BlockTemplatesRoutines } from '../blo
 
 describe('BlockTemplates: redux', () => {
   const state = Immutable({
+    blockTemplate: { elements: [], name: '' },
     blockTemplates: [],
-    blockTemplate: {},
   });
 
   describe('reducer', () => {

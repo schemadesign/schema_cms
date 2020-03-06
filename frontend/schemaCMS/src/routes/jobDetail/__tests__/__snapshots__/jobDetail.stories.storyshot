@@ -70,11 +70,11 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   word-break: break-word;
 }
 
-.c19 {
+.c18 {
   height: 155px;
 }
 
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   width: 100%;
 }
 
-.c20 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -102,7 +102,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c22 {
+.c21 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -125,15 +125,11 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 .c12 {
-  position: static;
-}
-
-.c13 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -147,27 +143,27 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
   align-items: flex-start;
 }
 
-.c18 {
+.c17 {
   color: #FFF;
   padding: 10px 0;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
 }
 
-.c18:hover {
+.c17:hover {
   color: #71737e;
 }
 
-.c16 {
+.c15 {
   color: #FFF;
 }
 
-.c14 {
+.c13 {
   color: #71737e;
   margin-bottom: 10px;
 }
 
-.c15 {
+.c14 {
   list-style-type: circle;
   padding-left: 20px;
   margin-bottom: 40px;
@@ -187,7 +183,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c20 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -196,7 +192,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -205,7 +201,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c21 {
     width: 240px;
   }
 }
@@ -554,7 +550,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     />
   </div>
   <div
-    className="c12"
+    className=""
   >
     <div
       style={
@@ -600,7 +596,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -620,7 +616,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     </div>
   </div>
   <div
-    className="c12"
+    className=""
   >
     <div
       style={
@@ -666,7 +662,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -690,7 +686,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -771,7 +767,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c12"
           >
             <svg
               style={
@@ -794,7 +790,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     </div>
   </form>
   <div
-    className="c12"
+    className=""
   >
     <div
       style={
@@ -878,7 +874,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     </div>
   </div>
   <label
-    className="c14"
+    className="c13"
     style={
       Object {
         "border": "none",
@@ -895,24 +891,24 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     Steps:
   </label>
   <ul
-    className="c15"
+    className="c14"
   >
     <li
-      className="c16"
+      className="c15"
     >
       scriptName 1
     </li>
     <li
-      className="c16"
+      className="c15"
     >
       scriptName 2
     </li>
   </ul>
   <div
-    className="c17"
+    className="c16"
   >
     <a
-      className="c18"
+      className="c17"
       download={true}
       href="http://sourceFileUrl"
     >
@@ -920,16 +916,16 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
     </a>
   </div>
   <div
-    className="c19"
+    className="c18"
   >
     <div
-      className="c20"
+      className="c19"
     >
       <div
-        className="c21"
+        className="c20"
       >
         <button
-          className="c22"
+          className="c21"
           disabled={false}
           onClick={[Function]}
           style={
@@ -953,7 +949,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
           Back
         </button>
         <button
-          className="c22"
+          className="c21"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1052,11 +1048,11 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   word-break: break-word;
 }
 
-.c17 {
+.c16 {
   height: 155px;
 }
 
-.c19 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1075,7 +1071,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c17 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1084,7 +1080,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c20 {
+.c19 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1107,15 +1103,11 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 .c12 {
-  position: static;
-}
-
-.c13 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1129,17 +1121,6 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
   align-items: flex-start;
 }
 
-.c16 {
-  color: #FFF;
-  padding: 10px 0;
-  -webkit-transition: color 200ms ease-in-out;
-  transition: color 200ms ease-in-out;
-}
-
-.c16:hover {
-  color: #71737e;
-}
-
 .c15 {
   color: #FFF;
   padding: 10px 0;
@@ -1148,6 +1129,17 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 .c15:hover {
+  color: #71737e;
+}
+
+.c14 {
+  color: #FFF;
+  padding: 10px 0;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.c14:hover {
   color: #71737e;
 }
 
@@ -1165,7 +1157,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c18 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1174,7 +1166,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c17 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1183,7 +1175,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c19 {
     width: 240px;
   }
 }
@@ -1532,7 +1524,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
     />
   </div>
   <div
-    className="c12"
+    className=""
   >
     <div
       style={
@@ -1578,7 +1570,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -1598,7 +1590,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
     </div>
   </div>
   <div
-    className="c12"
+    className=""
   >
     <div
       style={
@@ -1644,7 +1636,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -1668,7 +1660,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -1749,7 +1741,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c12"
           >
             <svg
               style={
@@ -1772,17 +1764,17 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
     </div>
   </form>
   <div
-    className="c14"
+    className="c13"
   >
     <a
-      className="c15"
+      className="c14"
       href="/job/1/preview"
       onClick={[Function]}
     >
       Preview
     </a>
     <a
-      className="c16"
+      className="c15"
       download={true}
       href="http://sourceFileUrl"
     >
@@ -1790,16 +1782,16 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
     </a>
   </div>
   <div
-    className="c17"
+    className="c16"
   >
     <div
-      className="c18"
+      className="c17"
     >
       <div
-        className="c19"
+        className="c18"
       >
         <button
-          className="c20"
+          className="c19"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1823,7 +1815,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
           Back
         </button>
         <button
-          className="c20"
+          className="c19"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1922,11 +1914,11 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   word-break: break-word;
 }
 
-.c20 {
+.c19 {
   height: 155px;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1945,7 +1937,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   width: 100%;
 }
 
-.c21 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1954,7 +1946,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c23 {
+.c22 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1977,15 +1969,11 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 .c12 {
-  position: static;
-}
-
-.c13 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1999,17 +1987,6 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   align-items: flex-start;
 }
 
-.c19 {
-  color: #FFF;
-  padding: 10px 0;
-  -webkit-transition: color 200ms ease-in-out;
-  transition: color 200ms ease-in-out;
-}
-
-.c19:hover {
-  color: #71737e;
-}
-
 .c18 {
   color: #FFF;
   padding: 10px 0;
@@ -2021,16 +1998,27 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
   color: #71737e;
 }
 
-.c16 {
+.c17 {
+  color: #FFF;
+  padding: 10px 0;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.c17:hover {
+  color: #71737e;
+}
+
+.c15 {
   color: #FFF;
 }
 
-.c14 {
+.c13 {
   color: #71737e;
   margin-bottom: 10px;
 }
 
-.c15 {
+.c14 {
   list-style-type: circle;
   padding-left: 20px;
   margin-bottom: 40px;
@@ -2050,7 +2038,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c21 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2059,7 +2047,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -2068,7 +2056,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c22 {
     width: 240px;
   }
 }
@@ -2417,7 +2405,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
     />
   </div>
   <div
-    className="c12"
+    className=""
   >
     <div
       style={
@@ -2463,7 +2451,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -2483,7 +2471,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
     </div>
   </div>
   <div
-    className="c12"
+    className=""
   >
     <div
       style={
@@ -2529,7 +2517,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -2553,7 +2541,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c12"
+      className=""
     >
       <div
         style={
@@ -2634,7 +2622,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           }
         >
           <div
-            className="c13"
+            className="c12"
           >
             <svg
               style={
@@ -2657,7 +2645,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
     </div>
   </form>
   <label
-    className="c14"
+    className="c13"
     style={
       Object {
         "border": "none",
@@ -2674,43 +2662,43 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
     Steps:
   </label>
   <ul
-    className="c15"
+    className="c14"
   >
     <li
-      className="c16"
+      className="c15"
     >
       scriptName 1
     </li>
     <li
-      className="c16"
+      className="c15"
     >
       scriptName 2
     </li>
     <li
-      className="c16"
+      className="c15"
     >
       scriptName 3
     </li>
   </ul>
   <div
-    className="c17"
+    className="c16"
   >
     <a
-      className="c18"
+      className="c17"
       href="/job/1/preview"
       onClick={[Function]}
     >
       Preview
     </a>
     <a
-      className="c19"
+      className="c18"
       download={true}
       href="http://result"
     >
       Download Result File
     </a>
     <a
-      className="c19"
+      className="c18"
       download={true}
       href="http://sourceFileUrl"
     >
@@ -2718,16 +2706,16 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
     </a>
   </div>
   <div
-    className="c20"
+    className="c19"
   >
     <div
-      className="c21"
+      className="c20"
     >
       <div
-        className="c22"
+        className="c21"
       >
         <button
-          className="c23"
+          className="c22"
           disabled={false}
           onClick={[Function]}
           style={
@@ -2751,7 +2739,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
           Back
         </button>
         <button
-          className="c23"
+          className="c22"
           disabled={false}
           onClick={[Function]}
           style={

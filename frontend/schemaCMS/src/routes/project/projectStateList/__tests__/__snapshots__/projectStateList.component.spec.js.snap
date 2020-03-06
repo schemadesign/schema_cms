@@ -145,6 +145,7 @@ exports[`ProjectStateList: Component should render correctly 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createStateDesktopBtn"
       onClick={[Function]}
@@ -264,6 +265,7 @@ exports[`ProjectStateList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createStateBtn"
       onClick={[Function]}
@@ -417,6 +419,7 @@ exports[`ProjectStateList: Component should render correctly when no tags 1`] = 
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createStateDesktopBtn"
       onClick={[Function]}
@@ -447,6 +450,7 @@ exports[`ProjectStateList: Component should render correctly when no tags 1`] = 
       onClick={[Function]}
     />
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createStateBtn"
       onClick={[Function]}
@@ -600,6 +604,7 @@ exports[`ProjectStateList: Component should render correctly with loader 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createStateDesktopBtn"
       onClick={[Function]}
@@ -719,6 +724,7 @@ exports[`ProjectStateList: Component should render correctly with loader 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createStateBtn"
       onClick={[Function]}
