@@ -56,6 +56,14 @@ class TestCreateBlockTemplatesView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
+    def test_editor_can_not_create_template(self, api_client, editor, project):
+        payload = {"name": "Test Block"}
+
+        api_client.force_authenticate(editor)
+        response = api_client.post(self.get_url(project.pk), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
 
 class TestUpdateBlockTemplatesView:
     @staticmethod
@@ -92,6 +100,41 @@ class TestUpdateBlockTemplatesView:
         assert response.status_code == status.HTTP_200_OK
         assert len(block_template.elements.all()) == 4
         assert block_template.elements.get(pk=elements[0].id).name == new_element_name
+
+    def test_deleting_block_elements(self, api_client, admin, block_template, block_template_element_factory):
+        elements = block_template_element_factory.create_batch(3, template=block_template)
+        payload = {"delete_elements": [elements[0].id, elements[1].id]}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(block_template.pk), data=payload, format="json")
+        block_template.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(block_template.elements.all()) == 1
+
+    def test_editor_can_not_update_template(self, api_client, editor, block_template):
+        new_name = "New Block Name"
+
+        payload = {"id": block_template.pk, "name": new_name}
+
+        api_client.force_authenticate(editor)
+        response = api_client.patch(self.get_url(block_template.pk), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
+
+class TestDeleteBlockTemplatesView:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:blocktemplate-detail", kwargs=dict(pk=pk))
+
+    def test_delete_block_template(self, api_client, admin, block_template):
+        api_client.force_authenticate(admin)
+        delete_response = api_client.delete(self.get_url(block_template.pk))
+        get_response = api_client.get(self.get_url(block_template.pk))
+
+        assert delete_response.status_code == status.HTTP_204_NO_CONTENT
+        assert get_response.status_code == status.HTTP_404_NOT_FOUND
 
 
 class TestListPageTemplatesView:
