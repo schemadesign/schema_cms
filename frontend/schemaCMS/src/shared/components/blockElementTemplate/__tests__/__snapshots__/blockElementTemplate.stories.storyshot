@@ -528,7 +528,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
             id="elements.0.params.block"
             name="elements.0.params.block"
             type="hidden"
-            value="block name"
+            value="block name 2"
           />
           <div
             className="c5"
@@ -904,7 +904,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
             id="elements.0.params.block"
             name="elements.0.params.block"
             type="hidden"
-            value="block name"
+            value="block name 2"
           />
           <div
             className="c5"

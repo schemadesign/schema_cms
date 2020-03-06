@@ -76,6 +76,7 @@ export const BlockTemplate = ({
   });
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
+  const filteredBlockTemplates = blockTemplates.filter(({ id }) => id.toString() !== blockTemplateId);
 
   return (
     <Container>
@@ -83,7 +84,7 @@ export const BlockTemplate = ({
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
-          <BlockTemplateForm title={title} blockTemplates={blockTemplates} {...restFormikProps} />
+          <BlockTemplateForm title={title} blockTemplates={filteredBlockTemplates} {...restFormikProps} />
           <NavigationContainer fixed>
             <BackButton
               id="cancelBtn"

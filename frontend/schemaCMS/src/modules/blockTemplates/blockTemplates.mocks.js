@@ -11,7 +11,7 @@ export const blockTemplate = {
       id: 1,
       type: STACK_TYPE,
       params: {
-        block: 'block name',
+        block: 'block name 2',
       },
     },
   ],

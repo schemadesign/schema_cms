@@ -821,7 +821,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 id="elements.0.params.block"
                 name="elements.0.params.block"
                 type="hidden"
-                value="block name"
+                value="block name 2"
               />
               <div
                 className="sc-ckVGcZ bmUhXx"
@@ -881,7 +881,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                         }
                       }
                     >
-                      block name
+                      block name 2
                     </div>
                   </div>
                   <div
@@ -907,10 +907,9 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       onMouseOver={[Function]}
                       style={
                         Object {
-                          "backgroundColor": "#FFF",
                           "border": "1px solid  #2F2F36",
                           "borderTop": "1px solid  #2F2F36",
-                          "color": "#000",
+                          "color": "#71737e",
                           "cursor": "pointer",
                           "overflow": "hidden",
                           "padding": "20px 10px",
@@ -928,9 +927,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       onMouseOver={[Function]}
                       style={
                         Object {
+                          "backgroundColor": "#FFF",
                           "border": "1px solid  #2F2F36",
                           "borderTop": "none",
-                          "color": "#71737e",
+                          "color": "#000",
                           "cursor": "pointer",
                           "overflow": "hidden",
                           "padding": "20px 10px",
@@ -1218,7 +1218,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 id="elements.0.params.block"
                 name="elements.0.params.block"
                 type="hidden"
-                value="block name"
+                value="block name 2"
               />
               <div
                 className="sc-ckVGcZ bmUhXx"
@@ -1278,7 +1278,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                         }
                       }
                     >
-                      block name
+                      block name 2
                     </div>
                   </div>
                   <div
@@ -1304,10 +1304,9 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       onMouseOver={[Function]}
                       style={
                         Object {
-                          "backgroundColor": "#FFF",
                           "border": "1px solid  #2F2F36",
                           "borderTop": "1px solid  #2F2F36",
-                          "color": "#000",
+                          "color": "#71737e",
                           "cursor": "pointer",
                           "overflow": "hidden",
                           "padding": "20px 10px",
@@ -1325,9 +1324,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       onMouseOver={[Function]}
                       style={
                         Object {
+                          "backgroundColor": "#FFF",
                           "border": "1px solid  #2F2F36",
                           "borderTop": "none",
-                          "color": "#71737e",
+                          "color": "#000",
                           "cursor": "pointer",
                           "overflow": "hidden",
                           "padding": "20px 10px",
