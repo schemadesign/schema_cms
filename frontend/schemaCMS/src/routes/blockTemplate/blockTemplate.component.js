@@ -18,6 +18,7 @@ import {
   ELEMENT_NAME,
   ELEMENT_PARAMS,
   ELEMENT_TYPE,
+  INITIAL_VALUES,
 } from '../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../shared/components/blockTemplateForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
@@ -44,6 +45,7 @@ export const BlockTemplate = memo(
     const menuOptions = getProjectMenuOptions();
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
       initialValues: {
+        ...INITIAL_VALUES,
         name,
         elements: map(pick([ELEMENT_NAME, ELEMENT_TYPE, ELEMENT_ID, ELEMENT_PARAMS]), elements),
         [BLOCK_TEMPLATES_DELETE_ELEMENTS]: [],

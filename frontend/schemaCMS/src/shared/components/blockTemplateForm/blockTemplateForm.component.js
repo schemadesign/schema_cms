@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icons, Accordion } from 'schemaUI';
+import { Accordion, Form, Icons } from 'schemaUI';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { append, prepend, remove } from 'ramda';
@@ -13,27 +13,38 @@ import {
   IconsContainer,
   inputContainerStyles,
   inputStyles,
-  Subtitle,
   MobileInputName,
   MobilePlusContainer,
   mobilePlusStyles,
+  Subtitle,
+  Switches,
+  SwitchContainer,
+  SwitchLabel,
+  AvailableCopy,
+  SwitchContent,
+  SwitchCopy,
+  binStyles,
+  BinIconContainer,
 } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
 import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
-  BLOCK_TEMPLATES_ELEMENTS,
-  BLOCK_TEMPLATES_NAME,
   BLOCK_TEMPLATE_DEFAULT_ELEMENT,
+  BLOCK_TEMPLATES_ALLOW_ADD,
   BLOCK_TEMPLATES_DELETE_ELEMENTS,
+  BLOCK_TEMPLATES_ELEMENTS,
+  BLOCK_TEMPLATES_IS_AVAILABLE,
+  BLOCK_TEMPLATES_NAME,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockElementTemplate } from '../blockElementTemplate';
 import { CounterHeader } from '../counterHeader';
 import { Draggable } from '../draggable';
 import { IconWrapper, menuIconStyles } from '../../../routes/page/pageBlockList/pageBlockList.styles';
 
-const { EditIcon, MenuIcon } = Icons;
+const { EditIcon, MenuIcon, MinusIcon } = Icons;
+const { Switch } = Form;
 
 export const BlockTemplateForm = ({
   title,
@@ -154,6 +165,36 @@ export const BlockTemplateForm = ({
           ))}
         </DndProvider>
       </Accordion>
+      <Switches>
+        <SwitchContainer>
+          <SwitchContent>
+            <Switch
+              value={values[BLOCK_TEMPLATES_IS_AVAILABLE]}
+              id={BLOCK_TEMPLATES_IS_AVAILABLE}
+              onChange={handleChange}
+            />
+            <SwitchCopy>
+              <SwitchLabel htmlFor={BLOCK_TEMPLATES_IS_AVAILABLE}>
+                <FormattedMessage {...messages[BLOCK_TEMPLATES_IS_AVAILABLE]} />
+              </SwitchLabel>
+              <AvailableCopy>
+                <FormattedMessage {...messages.availableForEditors} />
+              </AvailableCopy>
+            </SwitchCopy>
+          </SwitchContent>
+          <BinIconContainer>
+            <MinusIcon customStyles={binStyles} />
+          </BinIconContainer>
+        </SwitchContainer>
+        <SwitchContainer>
+          <Switch value={values[BLOCK_TEMPLATES_ALLOW_ADD]} id={BLOCK_TEMPLATES_ALLOW_ADD} onChange={handleChange} />
+          <SwitchCopy>
+            <SwitchLabel htmlFor={BLOCK_TEMPLATES_ALLOW_ADD}>
+              <FormattedMessage {...messages[BLOCK_TEMPLATES_ALLOW_ADD]} />
+            </SwitchLabel>
+          </SwitchCopy>
+        </SwitchContainer>
+      </Switches>
     </Container>
   );
 };

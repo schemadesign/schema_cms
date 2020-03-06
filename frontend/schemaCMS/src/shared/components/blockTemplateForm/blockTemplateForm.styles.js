@@ -3,6 +3,47 @@ import { media } from '../../../theme/media';
 
 export const Container = styled.div``;
 
+export const Switches = styled.div`
+  margin-top: 30px;
+  border-top: 2px solid ${({ theme }) => theme.border};
+  padding-top: 15px;
+`;
+
+export const SwitchContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 15px;
+  position: relative;
+`;
+
+export const SwitchLabel = styled.label`
+  padding-right: 10px;
+`;
+
+export const SwitchCopy = styled.div`
+  padding-left: 10px;
+`;
+
+export const BinIconContainer = styled.div`
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+
+export const SwitchContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 40px;
+`;
+
+export const AvailableCopy = styled.span`
+  color: ${({ theme }) => theme.secondaryText};
+  min-width: 100%;
+`;
+
 export const Subtitle = styled.div`
   position: relative;
 `;
@@ -37,6 +78,11 @@ export const mobilePlusStyles = {
 export const inputStyles = {
   fontSize: 24,
   fontWeight: 600,
+};
+
+export const binStyles = {
+  width: 30,
+  height: 30,
 };
 
 export const inputContainerStyles = {

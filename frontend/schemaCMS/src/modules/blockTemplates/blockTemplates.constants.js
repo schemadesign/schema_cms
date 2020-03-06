@@ -4,6 +4,8 @@ import { complement, isEmpty } from 'ramda';
 export const BLOCK_TEMPLATES_NAME = 'name';
 export const BLOCK_TEMPLATES_ELEMENTS = 'elements';
 export const BLOCK_TEMPLATES_DELETE_ELEMENTS = 'deleteElements';
+export const BLOCK_TEMPLATES_IS_AVAILABLE = 'isAvailable';
+export const BLOCK_TEMPLATES_ALLOW_ADD = 'allowAdd';
 
 export const ELEMENT_NAME = 'name';
 export const ELEMENT_TYPE = 'type';
@@ -25,6 +27,8 @@ export const INITIAL_VALUES = {
   [BLOCK_TEMPLATES_NAME]: '',
   [BLOCK_TEMPLATES_ELEMENTS]: [],
   [BLOCK_TEMPLATES_DELETE_ELEMENTS]: [],
+  [BLOCK_TEMPLATES_IS_AVAILABLE]: true,
+  [BLOCK_TEMPLATES_ALLOW_ADD]: false,
 };
 
 export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {

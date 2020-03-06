@@ -25,6 +25,9 @@ export class SwitchComponent extends PureComponent {
     </div>
   );
 
+  renderSwitchWithoutLabel = ({ styles, id, circleStyles }) => (
+    <label htmlFor={id}>{this.renderSwitch({ styles, circleStyles })}</label>
+  );
   renderSwitchWithLabel = ({ styles, id, circleStyles, label, labelStyles }) => (
     <Label customStyles={labelStyles} name={id}>
       {label}
@@ -36,7 +39,7 @@ export class SwitchComponent extends PureComponent {
     const { customStyles, theme, value, label, id, ...restProps } = this.props;
     const { switchStyles, circleStyles, labelStyles, inputStyles } = getStyles(theme, value);
     const styles = { ...switchStyles, ...customStyles };
-    const renderContent = label ? this.renderSwitchWithLabel : this.renderSwitch;
+    const renderContent = label ? this.renderSwitchWithLabel : this.renderSwitchWithoutLabel;
     const filteredProps = filterAllowedAttributes('input', restProps);
 
     return (
