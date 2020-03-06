@@ -145,6 +145,7 @@ exports[`FolderList: Component should render correctly 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createFolderDesktopBtn"
       onClick={[Function]}
@@ -207,6 +208,7 @@ exports[`FolderList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createFolderBtn"
       onClick={[Function]}
@@ -360,6 +362,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createFolderDesktopBtn"
       onClick={[Function]}
@@ -422,6 +425,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="createFolderBtn"
       onClick={[Function]}

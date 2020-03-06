@@ -5,6 +5,25 @@ exports[`Storyshots CounterHeader Default 1`] = `
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 33%;
 }
 
 @media (min-width:1050px) {
@@ -31,7 +50,13 @@ exports[`Storyshots CounterHeader Default 1`] = `
   <div
     className="c0"
   >
+    <div
+      className="c1"
+    />
     3 copys
+    <div
+      className="c1"
+    />
   </div>
 </div>
 `;

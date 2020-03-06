@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserProfile Default 1`] = `
-.c0 {
-  position: static;
-}
-
 <div
   style={
     Object {
@@ -21,7 +17,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
 
   </style>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -67,7 +63,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -87,7 +83,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
     </div>
   </div>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -133,7 +129,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -153,7 +149,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
     </div>
   </div>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -199,7 +195,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -219,7 +215,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
     </div>
   </div>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -265,7 +261,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -289,10 +285,6 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
 
 exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 .c0 {
-  position: static;
-}
-
-.c1 {
   padding-top: 7px;
   margin-top: 0;
 }
@@ -313,7 +305,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 
   </style>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -359,7 +351,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -377,7 +369,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
         }
       >
         <div
-          className="c1"
+          className="c0"
         >
           <svg
             style={
@@ -399,7 +391,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
     </div>
   </div>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -445,7 +437,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -463,7 +455,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
         }
       >
         <div
-          className="c1"
+          className="c0"
         >
           <svg
             style={
@@ -485,7 +477,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
     </div>
   </div>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -531,7 +523,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }
@@ -551,7 +543,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
     </div>
   </div>
   <div
-    className="c0"
+    className=""
   >
     <div
       style={
@@ -597,7 +589,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
             "letterSpacing": "normal",
             "lineHeight": "24px",
             "maxWidth": "100%",
-            "minWidth": 100,
+            "minWidth": 60,
             "outline": "none",
             "padding": 0,
           }

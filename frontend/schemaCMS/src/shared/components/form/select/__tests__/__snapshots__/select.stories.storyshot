@@ -134,7 +134,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
                 "display": "none",
                 "flexDirection": "column",
                 "left": "0",
-                "maxHeight": "183px",
+                "maxHeight": "184px",
                 "overflowY": "hidden",
                 "position": "absolute",
                 "top": "calc(100% + 5px)",

@@ -425,9 +425,15 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-cMljjf BseZw"
+    className="sc-cMljjf dJYOVu"
   >
+    <div
+      className="sc-jAaTju fiLMI"
+    />
     2 Block Templates
+    <div
+      className="sc-jAaTju fiLMI"
+    />
   </div>
   <section
     className="sc-cvbbAY TbnuK"
@@ -509,7 +515,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         }
       >
-        0 Elements
+        1 Element
       </div>
     </div>
     <div

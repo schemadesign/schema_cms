@@ -6,12 +6,13 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { BlockTemplate } from './blockTemplate.component';
-import { BlockTemplatesRoutines, selectBlockTemplate } from '../../modules/blockTemplates';
+import { BlockTemplatesRoutines, selectBlockTemplate, selectBlockTemplates } from '../../modules/blockTemplates';
 import { selectUserRole } from '../../modules/userProfile';
 import { selectProject } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   blockTemplate: selectBlockTemplate,
+  blockTemplates: selectBlockTemplates,
   userRole: selectUserRole,
   project: selectProject,
 });
@@ -21,6 +22,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       fetchBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplate),
       updateBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.updateBlockTemplate),
+      fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
     },
     dispatch
   ),

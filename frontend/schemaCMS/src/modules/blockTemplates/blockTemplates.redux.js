@@ -14,7 +14,10 @@ export const BlockTemplatesRoutines = {
 
 export const INITIAL_STATE = new Immutable({
   blockTemplates: [],
-  blockTemplate: {},
+  blockTemplate: {
+    name: '',
+    elements: [],
+  },
 });
 
 const setBlocks = (state = INITIAL_STATE, { payload }) => state.set('blockTemplates', payload);

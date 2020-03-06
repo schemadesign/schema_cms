@@ -66,6 +66,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="addUserBtn"
       onClick={[Function]}
@@ -98,6 +99,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
       />
     </BackButton>
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="addUserBtn"
       onClick={[Function]}
@@ -172,6 +174,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
     }
   >
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="addUserBtn"
       onClick={[Function]}
@@ -215,6 +218,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
       />
     </BackButton>
     <PlusButton
+      customStyles={Object {}}
       hideOnDesktop={false}
       id="addUserBtn"
       onClick={[Function]}

@@ -1,7 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { identity } from 'ramda';
+
+import { styleWhenTrue } from '../../../../utils/rendering';
+
+const getAutoWidthStyles = styleWhenTrue(
+  identity,
+  css`
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+  `
+);
 
 export const Container = styled.div`
-  position: ${({ isAuthWidth }) => (isAuthWidth ? 'relative' : 'static')};
+  ${({ isAuthWidth }) => getAutoWidthStyles(isAuthWidth)};
 `;
 
 export const IconWrapper = styled.div`

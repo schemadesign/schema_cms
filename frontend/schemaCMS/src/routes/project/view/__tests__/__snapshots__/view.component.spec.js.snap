@@ -84,6 +84,7 @@ exports[`View: Component should render content correctly 1`] = `
             Status
           </styled.span>
           <Select
+            customLabelStyles={Object {}}
             customStyles={
               Array [
                 "
@@ -628,6 +629,7 @@ exports[`View: Component should render correctly 1`] = `
                 Status
               </styled.span>
               <Select
+                customLabelStyles={Object {}}
                 customStyles={
                   Array [
                     "

@@ -2,14 +2,14 @@ import React, { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
 
-import { Container } from './draggable.styles';
+import { containerStyles } from './draggable.styles';
 
 const DRAGGING_OPACITY = 0.4;
 const DEFAULT_OPACITY = 1;
 
-export const Draggable = ({ onMove, children, accept, id, index }) => {
+export const Draggable = ({ onMove, children, accept, id, index, count }) => {
   const ref = useRef(null);
-  const dragRef = useRef(null);
+
   const [, drop] = useDrop({
     accept,
     hover(item, monitor) {
@@ -41,6 +41,7 @@ export const Draggable = ({ onMove, children, accept, id, index }) => {
       if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
         return;
       }
+
       // Time to actually perform the action
       onMove(dragIndex, hoverIndex);
       // Note: we're mutating the monitor item here!
@@ -51,22 +52,21 @@ export const Draggable = ({ onMove, children, accept, id, index }) => {
     },
   });
 
-  const [{ isDragging }, drag] = useDrag({
+  const [{ isDragging }, drag, preview] = useDrag({
     item: { type: accept, id, index },
     collect: monitor => ({
       isDragging: monitor.isDragging(),
     }),
   });
 
-  const makeDraggable = content => <span ref={dragRef}>{content}</span>;
-
   const opacity = isDragging ? DRAGGING_OPACITY : DEFAULT_OPACITY;
-  drag(drop(dragRef));
 
-  return (
-    <Container ref={ref} style={{ opacity }}>
-      {children(makeDraggable)}
-    </Container>
+  return drop(
+    preview(
+      <div ref={ref} style={{ ...containerStyles, opacity, zIndex: count - index }}>
+        {children(drag)}
+      </div>
+    )
   );
 };
 

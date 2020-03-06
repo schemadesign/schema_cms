@@ -15,7 +15,15 @@ export class AccordionDetailsComponent extends PureComponent {
   };
 
   componentDidMount() {
-    this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    if (this.detailsRef.current) {
+      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.detailsRef.current) {
+      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    }
   }
 
   detailsRef = createRef();
@@ -26,7 +34,9 @@ export class AccordionDetailsComponent extends PureComponent {
     return (
       <AccordionPanelContext.Consumer style={containerStyles}>
         {({ open, customDetailsStyles }) => {
-          const openStyles = open ? { height: this.state.detailsHeight, opacity: 1 } : { height: 0 };
+          const openStyles = open
+            ? { height: this.state.detailsHeight, opacity: 1, visibility: 'visible' }
+            : { height: 0, visibility: 'hidden' };
 
           return (
             <Fragment>

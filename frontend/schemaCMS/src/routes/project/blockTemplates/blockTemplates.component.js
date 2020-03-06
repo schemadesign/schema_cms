@@ -1,4 +1,4 @@
-import React, { Fragment, memo, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useEffectOnce } from 'react-use';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -18,7 +18,7 @@ import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 
-const BlockTemplate = memo(({ created, createdBy, name, id, elements }) => {
+const BlockTemplate = ({ created, createdBy, name, id, elements }) => {
   const history = useHistory();
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
@@ -32,7 +32,7 @@ const BlockTemplate = memo(({ created, createdBy, name, id, elements }) => {
       </ListItemTitle>
     </ListItem>
   );
-});
+};
 
 BlockTemplate.propTypes = {
   created: PropTypes.string.isRequired,
@@ -42,7 +42,7 @@ BlockTemplate.propTypes = {
   elements: PropTypes.array.isRequired,
 };
 
-export const BlockTemplates = memo(({ fetchBlockTemplates, blockTemplates, userRole }) => {
+export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
@@ -94,7 +94,7 @@ export const BlockTemplates = memo(({ fetchBlockTemplates, blockTemplates, userR
       </NavigationContainer>
     </Container>
   );
-});
+};
 
 BlockTemplates.propTypes = {
   userRole: PropTypes.string.isRequired,

@@ -87,11 +87,11 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   word-break: break-word;
 }
 
-.c21 {
+.c20 {
   height: 155px;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -117,7 +117,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   flex-direction: column;
 }
 
-.c22 {
+.c21 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -126,7 +126,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c25 {
+.c24 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -149,10 +149,6 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 .c19 {
-  position: static;
-}
-
-.c20 {
   padding-top: 7px;
   margin-top: 0;
 }
@@ -226,7 +222,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   text-decoration: none;
 }
 
-.c24 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -256,7 +252,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c22 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -265,7 +261,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c21 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -274,7 +270,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c25 {
+  .c24 {
     width: 240px;
   }
 }
@@ -880,7 +876,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
                   "display": "none",
                   "flexDirection": "column",
                   "left": "0",
-                  "maxHeight": "183px",
+                  "maxHeight": "184px",
                   "overflowY": "hidden",
                   "position": "absolute",
                   "top": "calc(100% + 5px)",
@@ -914,7 +910,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className=""
       >
         <div
           style={
@@ -959,7 +955,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -977,7 +973,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
             }
           >
             <div
-              className="c20"
+              className="c19"
             >
               <svg
                 style={
@@ -999,7 +995,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className=""
       >
         <div
           style={
@@ -1080,7 +1076,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
             }
           >
             <div
-              className="c20"
+              className="c19"
             >
               <svg
                 style={
@@ -1102,7 +1098,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className=""
       >
         <div
           style={
@@ -1147,7 +1143,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -1164,7 +1160,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
             }
           >
             <div
-              className="c20"
+              className="c19"
             >
               <svg
                 style={
@@ -1186,7 +1182,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className=""
       >
         <div
           style={
@@ -1232,7 +1228,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
                 "letterSpacing": "normal",
                 "lineHeight": "24px",
                 "maxWidth": "100%",
-                "minWidth": 100,
+                "minWidth": 60,
                 "outline": "none",
                 "padding": 0,
               }
@@ -1319,19 +1315,19 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
       </div>
     </div>
     <div
-      className="c21"
+      className="c20"
     >
       <div
-        className="c22"
+        className="c21"
       >
         <div
-          className="c23"
+          className="c22"
         >
           <div
-            className="c24"
+            className="c23"
           >
             <button
-              className="c25"
+              className="c24"
               disabled={false}
               onClick={[Function]}
               style={
@@ -1356,7 +1352,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
               Cancel
             </button>
             <button
-              className="c25"
+              className="c24"
               disabled={false}
               style={
                 Object {

@@ -38,7 +38,7 @@ export const getStyles = (theme = defaultTheme) => ({
   },
   optionListStyles: menuOpen => ({
     display: menuOpen ? 'block' : 'none',
-    maxHeight: '183px',
+    maxHeight: '184px',
     overflowY: menuOpen ? 'auto' : 'hidden',
     flexDirection: 'column',
     position: 'absolute',

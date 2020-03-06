@@ -1,6 +1,10 @@
 export { Theme } from '../utils/theme';
 
 export { Card } from './card';
+export { Accordion } from './accordion';
+export { AccordionPanel } from './accordionPanel';
+export { AccordionDetails } from './accordionDetails';
+export { AccordionHeader } from './accordionHeader';
 export { Button } from './button';
 export { Header } from './header';
 export Icons from './icons';

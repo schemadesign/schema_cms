@@ -1,6 +1,6 @@
 import { defaultTheme } from '../../../utils/theme';
 
-export const MIN_WIDTH = 100;
+export const MIN_WIDTH = 60;
 
 export const getStyles = (theme = defaultTheme) => ({
   defaultStyles: {
@@ -20,7 +20,7 @@ export const getStyles = (theme = defaultTheme) => ({
   hiddenStyles: {
     opacity: 0,
     visibility: 'hidden',
-    position: 'absolute',
+    position: 'fixed',
     whiteSpace: 'pre',
   },
 });

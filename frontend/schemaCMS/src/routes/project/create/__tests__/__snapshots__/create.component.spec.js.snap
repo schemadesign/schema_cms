@@ -252,6 +252,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <Select
+      customLabelStyles={Object {}}
       customStyles={null}
       id="fieldProjectStatus"
       label="Status"

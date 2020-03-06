@@ -1,20 +1,22 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
 import { useHistory, useParams } from 'react-router';
 import { useEffectOnce } from 'react-use';
-import { pick } from 'ramda';
+import { pick, map } from 'ramda';
 
 import { Container } from './blockTemplate.styles';
 import messages from './blockTemplate.messages';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../shared/utils/helpers';
 import {
-  BLOCK_TEMPLATES_NAME,
   BLOCK_TEMPLATES_SCHEMA,
-  INITIAL_VALUES,
+  ELEMENT_ID,
+  ELEMENT_NAME,
+  ELEMENT_PARAMS,
+  ELEMENT_TYPE,
 } from '../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../shared/components/blockTemplateForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
@@ -22,7 +24,15 @@ import { getProjectMenuOptions } from '../project/project.constants';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import reportError from '../../shared/utils/reportError';
 
-export const BlockTemplate = memo(({ updateBlockTemplate, fetchBlockTemplate, userRole, blockTemplate, project }) => {
+export const BlockTemplate = ({
+  updateBlockTemplate,
+  fetchBlockTemplate,
+  fetchBlockTemplates,
+  userRole,
+  blockTemplate: { name, elements },
+  blockTemplates,
+  project,
+}) => {
   const { blockTemplateId } = useParams();
   const history = useHistory();
   const intl = useIntl();
@@ -31,12 +41,16 @@ export const BlockTemplate = memo(({ updateBlockTemplate, fetchBlockTemplate, us
   const [error, setError] = useState(null);
   const menuOptions = getProjectMenuOptions();
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: { ...INITIAL_VALUES, ...pick([BLOCK_TEMPLATES_NAME], blockTemplate) },
+    initialValues: {
+      name,
+      elements: map(pick([ELEMENT_NAME, ELEMENT_TYPE, ELEMENT_ID, ELEMENT_PARAMS]), elements),
+    },
     enableReinitialize: true,
     validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
     onSubmit: async formData => {
       try {
         setUpdateLoading(true);
+        formData.elements = formData.elements.map((data, index) => ({ ...data, order: index }));
         await updateBlockTemplate({ blockTemplateId, formData });
         setUpdateLoading(false);
         history.push(`/project/${project.id}/block-templates`);
@@ -49,8 +63,11 @@ export const BlockTemplate = memo(({ updateBlockTemplate, fetchBlockTemplate, us
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchBlockTemplate({ blockTemplateId });
+        const { project } = await fetchBlockTemplate({ blockTemplateId });
+
+        await fetchBlockTemplates({ projectId: project });
       } catch (e) {
+        reportError(e);
         setError(e);
       } finally {
         setLoading(false);
@@ -59,6 +76,7 @@ export const BlockTemplate = memo(({ updateBlockTemplate, fetchBlockTemplate, us
   });
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
+  const filteredBlockTemplates = blockTemplates.filter(({ id }) => id.toString() !== blockTemplateId);
 
   return (
     <Container>
@@ -66,7 +84,7 @@ export const BlockTemplate = memo(({ updateBlockTemplate, fetchBlockTemplate, us
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
-          <BlockTemplateForm title={title} {...restFormikProps} />
+          <BlockTemplateForm title={title} blockTemplates={filteredBlockTemplates} {...restFormikProps} />
           <NavigationContainer fixed>
             <BackButton
               id="cancelBtn"
@@ -88,12 +106,14 @@ export const BlockTemplate = memo(({ updateBlockTemplate, fetchBlockTemplate, us
       </LoadingWrapper>
     </Container>
   );
-});
+};
 
 BlockTemplate.propTypes = {
   blockTemplate: PropTypes.object.isRequired,
+  blockTemplates: PropTypes.array.isRequired,
   project: PropTypes.object.isRequired,
   userRole: PropTypes.string.isRequired,
   fetchBlockTemplate: PropTypes.func.isRequired,
   updateBlockTemplate: PropTypes.func.isRequired,
+  fetchBlockTemplates: PropTypes.func.isRequired,
 };

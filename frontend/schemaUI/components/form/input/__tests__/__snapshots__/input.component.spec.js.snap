@@ -16,7 +16,7 @@ exports[`Input: Component should render correctly 1`] = `
           "letterSpacing": "normal",
           "lineHeight": "24px",
           "maxWidth": "100%",
-          "minWidth": 100,
+          "minWidth": 60,
           "outline": "none",
           "padding": 0,
         }
@@ -54,7 +54,7 @@ exports[`Input: Component should render with auto width 1`] = `
           "letterSpacing": "normal",
           "lineHeight": "24px",
           "maxWidth": "100%",
-          "minWidth": 100,
+          "minWidth": 60,
           "outline": "none",
           "padding": 0,
         }
@@ -96,7 +96,7 @@ exports[`Input: Component should render with custom styles 1`] = `
           "letterSpacing": "normal",
           "lineHeight": "24px",
           "maxWidth": "100%",
-          "minWidth": 100,
+          "minWidth": 60,
           "outline": "none",
           "padding": 0,
         }

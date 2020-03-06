@@ -6,11 +6,12 @@ exports[`AccordionDetails: Component should render correctly 1`] = `
     <div
       style={
         Object {
+          "backgroundColor": "#000",
           "height": 0,
           "marginBottom": 10,
           "opacity": 1,
-          "overflow": "hidden",
           "transition": "height 200ms ease-in-out, opacity 200ms ease-in-out",
+          "visibility": "visible",
         }
       }
     >
@@ -19,9 +20,9 @@ exports[`AccordionDetails: Component should render correctly 1`] = `
     <div
       style={
         Object {
+          "backgroundColor": "#000",
           "marginBottom": 10,
           "opacity": 0,
-          "overflow": "hidden",
           "position": "absolute",
           "transition": "height 200ms ease-in-out, opacity 200ms ease-in-out",
           "visibility": "hidden",

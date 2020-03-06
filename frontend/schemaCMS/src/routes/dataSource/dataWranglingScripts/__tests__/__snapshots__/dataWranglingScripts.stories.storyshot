@@ -1797,11 +1797,11 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   word-break: break-word;
 }
 
-.c28 {
+.c27 {
   height: 155px;
 }
 
-.c30 {
+.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1820,7 +1820,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   width: 100%;
 }
 
-.c29 {
+.c28 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 70px;
@@ -1829,7 +1829,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c31 {
+.c30 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1879,7 +1879,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   cursor: pointer;
 }
 
-.c32 {
+.c31 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -1903,7 +1903,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   background-color: #1d1d20;
 }
 
-.c32 svg {
+.c31 svg {
   cursor: pointer;
 }
 
@@ -1996,14 +1996,14 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   text-align: right;
 }
 
-.c24 {
+.c23 {
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
   width: 100%;
 }
 
-.c26 {
+.c25 {
   display: none;
   width: 7px;
   height: 7px;
@@ -2012,12 +2012,12 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   background-color: #71737e;
 }
 
-.c27 {
+.c26 {
   color: #71737e;
   width: 100%;
 }
 
-.c25 {
+.c24 {
   overflow: hidden;
   min-width: 100%;
   padding-right: 30px;
@@ -2025,7 +2025,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   white-space: nowrap;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2036,29 +2036,13 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   align-items: center;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   cursor: move;
   touch-action: none;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 @media (min-width:1050px) {
@@ -2075,7 +2059,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 }
 
 @media (min-width:1050px) {
-  .c30 {
+  .c29 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2084,7 +2068,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 }
 
 @media (min-width:1050px) {
-  .c29 {
+  .c28 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -2093,7 +2077,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 }
 
 @media (min-width:1050px) {
-  .c31 {
+  .c30 {
     width: 240px;
   }
 }
@@ -2130,7 +2114,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 }
 
 @media (min-width:1050px) {
-  .c32 {
+  .c31 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -2165,20 +2149,20 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
 }
 
 @media (min-width:768px) {
-  .c26 {
+  .c25 {
     display: inline-block;
   }
 }
 
 @media (min-width:768px) {
-  .c27 {
+  .c26 {
     width: auto;
     display: inline;
   }
 }
 
 @media (min-width:768px) {
-  .c25 {
+  .c24 {
     width: auto;
     display: inline;
     padding-right: 0;
@@ -2848,10 +2832,16 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
         Selected steps
       </label>
       <div
-        className="c21"
         style={
           Object {
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "space-between",
             "opacity": 1,
+            "position": "relative",
+            "transform": "translate3d(0, 0, 0)",
+            "width": "100%",
+            "zIndex": NaN,
           }
         }
       >
@@ -2898,11 +2888,11 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             }
           >
             <div
-              className="c22"
+              className="c21"
             >
-              <span>
+              <div>
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   <svg
                     style={
@@ -2921,23 +2911,23 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                     />
                   </svg>
                 </div>
-              </span>
+              </div>
               <a
-                className="c24"
+                className="c23"
                 href="/script/1"
                 onClick={[Function]}
               >
                 <div
-                  className="c25"
+                  className="c24"
                 >
                    
                   name 1
                 </div>
                 <div
-                  className="c26"
+                  className="c25"
                 />
                 <div
-                  className="c27"
+                  className="c26"
                 >
                   Uploaded
                 </div>
@@ -2992,10 +2982,16 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
         </div>
       </div>
       <div
-        className="c21"
         style={
           Object {
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "space-between",
             "opacity": 1,
+            "position": "relative",
+            "transform": "translate3d(0, 0, 0)",
+            "width": "100%",
+            "zIndex": NaN,
           }
         }
       >
@@ -3042,11 +3038,11 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             }
           >
             <div
-              className="c22"
+              className="c21"
             >
-              <span>
+              <div>
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   <svg
                     style={
@@ -3065,23 +3061,23 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                     />
                   </svg>
                 </div>
-              </span>
+              </div>
               <a
-                className="c24"
+                className="c23"
                 href="/script/2/1"
                 onClick={[Function]}
               >
                 <div
-                  className="c25"
+                  className="c24"
                 >
                    
                   name 2
                 </div>
                 <div
-                  className="c26"
+                  className="c25"
                 />
                 <div
-                  className="c27"
+                  className="c26"
                 >
                   Default
                 </div>
@@ -3136,10 +3132,16 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
         </div>
       </div>
       <div
-        className="c21"
         style={
           Object {
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "space-between",
             "opacity": 1,
+            "position": "relative",
+            "transform": "translate3d(0, 0, 0)",
+            "width": "100%",
+            "zIndex": NaN,
           }
         }
       >
@@ -3186,11 +3188,11 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
             }
           >
             <div
-              className="c22"
+              className="c21"
             >
-              <span>
+              <div>
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   <svg
                     style={
@@ -3209,23 +3211,23 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                     />
                   </svg>
                 </div>
-              </span>
+              </div>
               <a
-                className="c24"
+                className="c23"
                 href="/script/3/1"
                 onClick={[Function]}
               >
                 <div
-                  className="c25"
+                  className="c24"
                 >
                    
                   name 3
                 </div>
                 <div
-                  className="c26"
+                  className="c25"
                 />
                 <div
-                  className="c27"
+                  className="c26"
                 >
                   Custom
                 </div>
@@ -3281,16 +3283,16 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
       </div>
     </div>
     <div
-      className="c28"
+      className="c27"
     >
       <div
-        className="c29"
+        className="c28"
       >
         <div
-          className="c30"
+          className="c29"
         >
           <button
-            className="c31"
+            className="c30"
             disabled={false}
             onClick={[Function]}
             style={
@@ -3317,7 +3319,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
       </div>
     </div>
     <div
-      className="c32"
+      className="c31"
     >
       <div
         className="c13"

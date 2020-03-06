@@ -70,11 +70,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   word-break: break-word;
 }
 
-.c22 {
+.c21 {
   height: 155px;
 }
 
-.c24 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   width: 100%;
 }
 
-.c23 {
+.c22 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 70px;
@@ -102,7 +102,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c25 {
+.c24 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -125,15 +125,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 .c17 {
-  position: static;
-}
-
-.c18 {
   padding-top: 7px;
   margin-top: 0;
 }
 
-.c20 {
+.c19 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -149,7 +145,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   align-items: flex-start;
 }
 
-.c21 {
+.c20 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -158,15 +154,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c21:hover {
+.c20:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c21:last-child {
+.c20:last-child {
   margin-bottom: 0;
 }
 
-.c19 {
+.c18 {
   position: relative;
 }
 
@@ -198,7 +194,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   cursor: pointer;
 }
 
-.c26 {
+.c25 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -222,7 +218,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c26 svg {
+.c25 svg {
   cursor: pointer;
 }
 
@@ -299,7 +295,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c24 {
+  .c23 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -308,7 +304,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c22 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -317,7 +313,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c25 {
+  .c24 {
     width: 240px;
   }
 }
@@ -354,7 +350,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c26 {
+  .c25 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -1018,7 +1014,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c17"
+      className=""
     >
       <div
         style={
@@ -1063,7 +1059,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
               "letterSpacing": "normal",
               "lineHeight": "24px",
               "maxWidth": "100%",
-              "minWidth": 100,
+              "minWidth": 60,
               "outline": "none",
               "padding": 0,
             }
@@ -1081,7 +1077,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           }
         >
           <div
-            className="c18"
+            className="c17"
           >
             <svg
               style={
@@ -1217,7 +1213,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c19"
+      className="c18"
     >
       <div
         style={
@@ -1363,10 +1359,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </label>
     </div>
     <div
-      className="c20"
+      className="c19"
     >
       <span
-        className="c21"
+        className="c20"
         onClick={[Function]}
         style={
           Object {
@@ -1378,7 +1374,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         View Past Versions
       </span>
       <span
-        className="c21"
+        className="c20"
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}
         style={
@@ -1392,16 +1388,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </span>
     </div>
     <div
-      className="c22"
+      className="c21"
     >
       <div
-        className="c23"
+        className="c22"
       >
         <div
-          className="c24"
+          className="c23"
         >
           <button
-            className="c25"
+            className="c24"
             disabled={true}
             onClick={[Function]}
             style={
@@ -1430,7 +1426,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     </div>
   </form>
   <div
-    className="c26"
+    className="c25"
   >
     <div
       className="c13"

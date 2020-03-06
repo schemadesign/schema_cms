@@ -87,11 +87,11 @@ exports[`Storyshots Project|View Default 1`] = `
   word-break: break-word;
 }
 
-.c36 {
+.c35 {
   height: 155px;
 }
 
-.c38 {
+.c37 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`Storyshots Project|View Default 1`] = `
   width: 100%;
 }
 
-.c37 {
+.c36 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -119,16 +119,12 @@ exports[`Storyshots Project|View Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c39 {
+.c38 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c30 {
-  position: static;
-}
-
-.c31 {
   padding-top: 0;
   margin-top: -2px;
 }
@@ -160,7 +156,7 @@ exports[`Storyshots Project|View Default 1`] = `
   top: 5px;
 }
 
-.c35 {
+.c34 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -168,11 +164,11 @@ exports[`Storyshots Project|View Default 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c35:hover {
+.c34:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c34 {
+.c33 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -327,7 +323,7 @@ exports[`Storyshots Project|View Default 1`] = `
   display: flex;
 }
 
-.c32 {
+.c31 {
   color: #FFF;
   margin-bottom: 4px;
   border-top: 2px solid #2F2F36;
@@ -337,7 +333,7 @@ exports[`Storyshots Project|View Default 1`] = `
   display: flex;
 }
 
-.c33 {
+.c32 {
   color: #FFF;
   margin-bottom: 4px;
   border-top: 2px solid #2F2F36;
@@ -378,7 +374,7 @@ exports[`Storyshots Project|View Default 1`] = `
   word-break: break-word;
 }
 
-.c29 .c40 {
+.c29 .c39 {
   margin: 5px 0 0;
 }
 
@@ -400,7 +396,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c38 {
+  .c37 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -409,7 +405,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c37 {
+  .c36 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -418,7 +414,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c39 {
+  .c38 {
     width: 240px;
   }
 }
@@ -548,7 +544,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c32 {
+  .c31 {
     border-top-color: #1d1d20;
     width: calc(50% - 10px);
     -webkit-flex: 0 0 auto;
@@ -561,7 +557,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c33 {
+  .c32 {
     border-top-color: #1d1d20;
     width: calc(50% - 10px);
     -webkit-flex: 0 0 auto;
@@ -1359,7 +1355,7 @@ exports[`Storyshots Project|View Default 1`] = `
                           "display": "none",
                           "flexDirection": "column",
                           "left": "0",
-                          "maxHeight": "183px",
+                          "maxHeight": "184px",
                           "overflowY": "hidden",
                           "position": "absolute",
                           "top": "calc(100% + 5px)",
@@ -1494,7 +1490,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 className="c29"
               >
                 <div
-                  className="c30"
+                  className=""
                 >
                   <div
                     style={
@@ -1522,7 +1518,7 @@ exports[`Storyshots Project|View Default 1`] = `
                           "letterSpacing": "normal",
                           "lineHeight": "inherit",
                           "maxWidth": "100%",
-                          "minWidth": 100,
+                          "minWidth": 60,
                           "outline": "none",
                           "padding": 0,
                         }
@@ -1540,7 +1536,7 @@ exports[`Storyshots Project|View Default 1`] = `
                       }
                     >
                       <div
-                        className="c31"
+                        className="c30"
                       >
                         <svg
                           style={
@@ -1565,7 +1561,7 @@ exports[`Storyshots Project|View Default 1`] = `
             </div>
           </li>
           <li
-            className="c32"
+            className="c31"
             order={4}
           >
             <div
@@ -1582,7 +1578,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 className="c29"
               >
                 <div
-                  className="c30"
+                  className=""
                 >
                   <div
                     style={
@@ -1646,7 +1642,7 @@ exports[`Storyshots Project|View Default 1`] = `
                       }
                     >
                       <div
-                        className="c31"
+                        className="c30"
                       >
                         <svg
                           style={
@@ -1671,7 +1667,7 @@ exports[`Storyshots Project|View Default 1`] = `
             </div>
           </li>
           <li
-            className="c33"
+            className="c32"
             order={6}
           >
             <div
@@ -1695,10 +1691,10 @@ exports[`Storyshots Project|View Default 1`] = `
         </ul>
       </div>
       <div
-        className="c34"
+        className="c33"
       >
         <span
-          className="c35"
+          className="c34"
           id="deleteProjectDesktopBtn"
           onClick={[Function]}
           style={
@@ -1713,13 +1709,13 @@ exports[`Storyshots Project|View Default 1`] = `
       </div>
     </div>
     <div
-      className="c36"
+      className="c35"
     >
       <div
-        className="c37"
+        className="c36"
       >
         <div
-          className="c38"
+          className="c37"
         >
           <button
             disabled={false}
@@ -1761,7 +1757,7 @@ exports[`Storyshots Project|View Default 1`] = `
             </svg>
           </button>
           <button
-            className="c39"
+            className="c38"
             disabled={true}
             onClick={[Function]}
             style={

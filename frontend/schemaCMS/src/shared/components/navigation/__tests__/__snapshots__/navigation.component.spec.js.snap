@@ -99,6 +99,7 @@ exports[`Navigation: Component should render PlusButton 1`] = `
     onClick={[Function]}
   >
     <Component
+      customStyles={Object {}}
       inverse={true}
     />
   </Component>
