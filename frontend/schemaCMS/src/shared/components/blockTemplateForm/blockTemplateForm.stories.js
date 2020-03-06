@@ -8,6 +8,7 @@ import { blockTemplates, blockTemplate } from '../../../modules/blockTemplates/b
 export const defaultProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
+  setValues: Function.prototype,
   blockTemplates,
   values: blockTemplate,
   title: <span>title</span>,

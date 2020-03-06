@@ -38,6 +38,7 @@ const { EditIcon, MenuIcon } = Icons;
 export const BlockTemplateForm = ({
   title,
   handleChange,
+  setValues,
   setFieldValue,
   values,
   blockTemplates,
@@ -70,14 +71,15 @@ export const BlockTemplateForm = ({
 
   const removeElement = index => {
     const removedElement = values[BLOCK_TEMPLATES_ELEMENTS][index];
-    setFieldValue(BLOCK_TEMPLATES_ELEMENTS, remove(index, 1, values[BLOCK_TEMPLATES_ELEMENTS]));
+    const newValues = { ...values };
 
     if (removedElement.id) {
-      setFieldValue(
-        BLOCK_TEMPLATES_DELETE_ELEMENTS,
-        append(removedElement.id, values[BLOCK_TEMPLATES_DELETE_ELEMENTS])
-      );
+      newValues[BLOCK_TEMPLATES_DELETE_ELEMENTS] = append(removedElement.id, values[BLOCK_TEMPLATES_DELETE_ELEMENTS]);
     }
+
+    newValues[BLOCK_TEMPLATES_ELEMENTS] = remove(index, 1, values[BLOCK_TEMPLATES_ELEMENTS]);
+
+    setValues({ ...newValues });
   };
 
   const handleMove = (dragIndex, hoverIndex) => {
@@ -158,6 +160,7 @@ export const BlockTemplateForm = ({
 
 BlockTemplateForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
+  setValues: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   values: PropTypes.object.isRequired,
   blockTemplates: PropTypes.array.isRequired,

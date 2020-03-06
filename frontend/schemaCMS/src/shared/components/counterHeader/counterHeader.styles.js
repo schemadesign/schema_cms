@@ -5,6 +5,7 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.secondaryText};
   text-align: center;
   margin-bottom: 20px;
+  min-height: 43px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,6 +13,7 @@ export const Container = styled.div`
 
   ${media.desktop`
     margin-top: -35px;
+    margin-bottom: 40px;
   `}
 `;
 export const Element = styled.div`
