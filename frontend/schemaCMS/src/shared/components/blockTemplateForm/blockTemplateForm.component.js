@@ -1,14 +1,23 @@
 import React from 'react';
 import { Icons, Accordion } from 'schemaUI';
 import PropTypes from 'prop-types';
-import { useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { append, prepend, remove } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
 
-import { Container, IconsContainer, inputContainerStyles, inputStyles, Subtitle } from './blockTemplateForm.styles';
+import {
+  Container,
+  IconsContainer,
+  inputContainerStyles,
+  inputStyles,
+  Subtitle,
+  MobileInputName,
+  MobilePlusContainer,
+  mobilePlusStyles,
+} from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
 import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
@@ -87,7 +96,25 @@ export const BlockTemplateForm = ({
       <ContextHeader title={title} subtitle={nameInput}>
         <PlusButton id="createElement" onClick={addElement} type="button" />
       </ContextHeader>
-      <CounterHeader copy={intl.formatMessage(messages.elements)} count={elementsCount} />
+      <MobileInputName>
+        <TextInput
+          onChange={handleChange}
+          name={BLOCK_TEMPLATES_NAME}
+          value={values[BLOCK_TEMPLATES_NAME]}
+          label={<FormattedMessage {...messages[BLOCK_TEMPLATES_NAME]} />}
+          fullWidth
+          {...restFormikProps}
+        />
+      </MobileInputName>
+      <CounterHeader
+        copy={intl.formatMessage(messages.elements)}
+        count={elementsCount}
+        right={
+          <MobilePlusContainer>
+            <PlusButton customStyles={mobilePlusStyles} id="createElement" onClick={addElement} type="button" />
+          </MobilePlusContainer>
+        }
+      />
       <Accordion>
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (

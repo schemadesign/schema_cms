@@ -11,4 +11,8 @@ export default defineMessages({
     id: 'shared.components.blockTemplateForm.elements',
     defaultMessage: 'Element',
   },
+  [BLOCK_TEMPLATES_NAME]: {
+    id: `shared.components.blockTemplateForm.${BLOCK_TEMPLATES_NAME}`,
+    defaultMessage: 'Name',
+  },
 });

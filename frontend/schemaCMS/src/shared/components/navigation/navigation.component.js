@@ -52,18 +52,20 @@ export class NavigationContainer extends PureComponent {
 export class PlusButton extends PureComponent {
   static propTypes = {
     hideOnDesktop: PropTypes.bool,
+    customStyles: PropTypes.object,
   };
 
   static defaultProps = {
     hideOnDesktop: false,
+    customStyles: {},
   };
 
   render() {
-    const { hideOnDesktop, ...restProps } = this.props;
+    const { hideOnDesktop, customStyles, ...restProps } = this.props;
     return (
       <ButtonContainer hideOnDesktop={hideOnDesktop}>
-        <Button inverse customStyles={buttonIconStyles} {...restProps}>
-          <PlusIcon inverse />
+        <Button inverse customStyles={{ ...buttonIconStyles, ...customStyles }} {...restProps}>
+          <PlusIcon customStyles={customStyles} inverse />
         </Button>
       </ButtonContainer>
     );
