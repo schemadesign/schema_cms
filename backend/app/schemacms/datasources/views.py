@@ -58,6 +58,11 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         else:
             serializer.save()
 
+    @transaction.atomic()
+    def perform_destroy(self, instance):
+        instance.delete_dynamo_item()
+        instance.delete()
+
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
