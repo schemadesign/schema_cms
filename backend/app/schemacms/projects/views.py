@@ -28,8 +28,11 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             queryset = models.Project.objects.all()
         elif self.action == "block_templates":
             return models.Project.objects.all().prefetch_related(
-                Prefetch("blocktemplate_set", queryset=pages_models.BlockTemplate.objects.all().order_by("-created")),
-                "blocktemplate_set__elements"
+                Prefetch(
+                    "blocktemplate_set",
+                    queryset=pages_models.BlockTemplate.objects.all().order_by("-created"),
+                ),
+                "blocktemplate_set__elements",
             )
         else:
             queryset = models.Project.get_projects_for_user(self.request.user)
