@@ -20,20 +20,26 @@ describe('BlockTemplates: redux', () => {
   });
 
   describe('when BLOCK_TEMPLATES/FETCH_BLOCK_TEMPLATES_SUCCESS action is received', () => {
-    it('should set templates', () => {
-      const blocks = [{ data: 'data' }];
-      const resultState = blockTemplatesReducer(state, BlockTemplatesRoutines.fetchBlockTemplates.success(blocks));
+    it('should set block templates', () => {
+      const blockTemplates = [{ data: 'data' }];
+      const resultState = blockTemplatesReducer(
+        state,
+        BlockTemplatesRoutines.fetchBlockTemplates.success(blockTemplates)
+      );
 
-      expect(resultState.blockTemplates).to.deep.equal(blocks);
+      expect(resultState.blockTemplates).to.deep.equal(blockTemplates);
     });
   });
 
   describe('when BLOCK_TEMPLATES/FETCH_BLOCK_TEMPLATES_SUCCESS action is received', () => {
     it('should set templates', () => {
-      const block = { data: 'data' };
-      const resultState = blockTemplatesReducer(state, BlockTemplatesRoutines.fetchBlockTemplate.success(block));
+      const blockTemplate = { data: 'data' };
+      const resultState = blockTemplatesReducer(
+        state,
+        BlockTemplatesRoutines.fetchBlockTemplate.success(blockTemplate)
+      );
 
-      expect(resultState.blockTemplate).to.deep.equal(block);
+      expect(resultState.blockTemplate).to.deep.equal(blockTemplate);
     });
   });
 });

@@ -25,14 +25,14 @@ describe('BlockTemplates: Component', () => {
     expect(wrapper.toJSON()).toMatchSnapshot();
   });
 
-  it('should redirect to create page', async () => {
+  it('should redirect to create block template', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'createTemplateBlock' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates/create');
   });
 
-  it('should redirect to create page on mobile', async () => {
+  it('should redirect to create block template on mobile', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'createTemplateBlockMobile' }).props.onClick();
 

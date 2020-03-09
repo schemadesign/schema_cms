@@ -16,6 +16,7 @@ import { watchPageBlock } from './pageBlock/pageBlock.sagas';
 import { watchDataSourceTag } from './dataSourceTag/dataSourceTag.sagas';
 import { watchProjectState } from './projectState/projectState.sagas';
 import { watchBlockTemplates } from './blockTemplates/blockTemplates.sagas';
+import { watchPageTemplates } from './pageTemplates/pageTemplates.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -36,6 +37,7 @@ export default function* rootSaga() {
       fork(watchDataSourceTag),
       fork(watchProjectState),
       fork(watchBlockTemplates),
+      fork(watchPageTemplates),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {

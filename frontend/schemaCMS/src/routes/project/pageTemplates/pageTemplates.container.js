@@ -5,19 +5,19 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
-import { BlockTemplates } from './blockTemplates.component';
-import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
+import { PageTemplates } from './pageTemplates.component';
+import { PageTemplatesRoutines, selectPageTemplates } from '../../../modules/pageTemplates';
 import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
-  blockTemplates: selectBlockTemplates,
+  pageTemplates: selectPageTemplates,
   userRole: selectUserRole,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
+      fetchPageTemplates: promisifyRoutine(PageTemplatesRoutines.fetchPageTemplates),
     },
     dispatch
   ),
@@ -30,4 +30,4 @@ export default compose(
     mapDispatchToProps
   ),
   withRouter
-)(BlockTemplates);
+)(PageTemplates);

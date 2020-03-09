@@ -13,6 +13,7 @@ import { reducer as pageBlockReducer } from './pageBlock/pageBlock.redux';
 import { reducer as DataSourceTagReducer } from './dataSourceTag/dataSourceTag.redux';
 import { reducer as projectStateReducer } from './projectState/projectState.redux';
 import { reducer as blockTemplatesReducer } from './blockTemplates/blockTemplates.redux';
+import { reducer as pageTemplatesReducer } from './pageTemplates/pageTemplates.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -32,6 +33,7 @@ export default function createReducer() {
     dataSourceTag: DataSourceTagReducer,
     projectState: projectStateReducer,
     blockTemplates: blockTemplatesReducer,
+    pageTemplates: pageTemplatesReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }
