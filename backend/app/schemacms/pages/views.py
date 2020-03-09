@@ -22,7 +22,7 @@ class PageTemplateViewSet(NoListCreateDetailViewSet):
     queryset = (
         models.PageTemplate.objects.all()
         .select_related("project")
-        .prefetch_related(Prefetch("blocks", queryset=models.BlockTemplate.objects.order_by("order")))
+        .prefetch_related(Prefetch("blocks", queryset=models.BlockTemplate.objects.all()))
     )
     serializer_class = serializers.PageTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
