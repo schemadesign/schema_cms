@@ -70,11 +70,11 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   word-break: break-word;
 }
 
-.c26 {
+.c33 {
   height: 155px;
 }
 
-.c28 {
+.c35 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   width: 100%;
 }
 
-.c27 {
+.c34 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -102,9 +102,66 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c29 {
+.c36 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c26 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c30 {
+  padding-right: 10px;
+}
+
+.c29 {
+  padding-left: 10px;
+}
+
+.c32 {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.c31 {
+  color: #71737e;
+  min-width: 100%;
 }
 
 .c12 {
@@ -209,6 +266,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
+  min-height: 43px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -253,7 +311,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c35 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -262,7 +320,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c27 {
+  .c34 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -271,7 +329,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c29 {
+  .c36 {
     width: 240px;
   }
 }
@@ -316,6 +374,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 @media (min-width:1050px) {
   .c17 {
     margin-top: -35px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1173,6 +1232,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                       />
                     </svg>
                     <svg
+                      id="removeElement-0"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1294,6 +1354,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                       }
                     >
                       <div
+                        id="elementTypeSelect"
                         style={
                           Object {
                             "cursor": "pointer",
@@ -1526,6 +1587,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                       }
                     >
                       <div
+                        id="elementBlockSelect"
                         style={
                           Object {
                             "cursor": "pointer",
@@ -1691,6 +1753,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                       }
                     >
                       <div
+                        id="elementTypeSelect"
                         style={
                           Object {
                             "cursor": "pointer",
@@ -1923,6 +1986,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                       }
                     >
                       <div
+                        id="elementBlockSelect"
                         style={
                           Object {
                             "cursor": "pointer",
@@ -2021,18 +2085,178 @@ exports[`Storyshots BlockTemplate Default 1`] = `
             </div>
           </div>
         </span>
-      </div>
-      <div
-        className="c26"
-      >
         <div
-          className="c27"
+          className="c26"
         >
           <div
-            className="c28"
+            className="c27"
+          >
+            <div
+              className="c28"
+            >
+              <div>
+                <input
+                  checked={false}
+                  id="isAvailable"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <label
+                  htmlFor="isAvailable"
+                >
+                  <div
+                    style={
+                      Object {
+                        "background": "#2F2F36",
+                        "borderRadius": 20,
+                        "boxSizing": "border-box",
+                        "cursor": "pointer",
+                        "height": 24,
+                        "padding": 2,
+                        "transition": "background 200ms ease-in-out",
+                        "width": 44,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "background": "#FFF",
+                          "borderRadius": "50%",
+                          "height": 20,
+                          "transform": "translateX(0)",
+                          "transition": "transform 200ms ease-in-out",
+                          "width": 20,
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </div>
+              <div
+                className="c29"
+              >
+                <label
+                  className="c30"
+                  htmlFor="isAvailable"
+                >
+                  Make it Available
+                </label>
+                <span
+                  className="c31"
+                >
+                  This Template is currently unavailable for Editors
+                </span>
+              </div>
+            </div>
+            <div
+              className="c32"
+              id="removeBlock"
+              onClick={[Function]}
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "shapeRendering": "crispEdges",
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M15 28h30v4H15z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="c27"
+          >
+            <div>
+              <input
+                checked={false}
+                id="allowAdd"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="checkbox"
+              />
+              <label
+                htmlFor="allowAdd"
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#2F2F36",
+                      "borderRadius": 20,
+                      "boxSizing": "border-box",
+                      "cursor": "pointer",
+                      "height": 24,
+                      "padding": 2,
+                      "transition": "background 200ms ease-in-out",
+                      "width": 44,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "background": "#FFF",
+                        "borderRadius": "50%",
+                        "height": 20,
+                        "transform": "translateX(0)",
+                        "transition": "transform 200ms ease-in-out",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="c29"
+            >
+              <label
+                className="c30"
+                htmlFor="allowAdd"
+              >
+                Allow new Elements to be added to this Block Template
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c33"
+      >
+        <div
+          className="c34"
+        >
+          <div
+            className="c35"
           >
             <button
-              className="c29"
+              className="c36"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -2058,7 +2282,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
               Back
             </button>
             <button
-              className="c29"
+              className="c36"
               disabled={true}
               id="createTemplateBlockMobile"
               style={

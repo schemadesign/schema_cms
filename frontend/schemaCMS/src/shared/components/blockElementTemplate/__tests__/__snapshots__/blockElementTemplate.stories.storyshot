@@ -223,6 +223,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
             />
           </svg>
           <svg
+            id="removeElement-0"
             onClick={[Function]}
             style={
               Object {
@@ -327,6 +328,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
             }
           >
             <div
+              id="elementTypeSelect"
               style={
                 Object {
                   "cursor": "pointer",
@@ -559,6 +561,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
             }
           >
             <div
+              id="elementBlockSelect"
               style={
                 Object {
                   "cursor": "pointer",
@@ -703,6 +706,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
             }
           >
             <div
+              id="elementTypeSelect"
               style={
                 Object {
                   "cursor": "pointer",
@@ -935,6 +939,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
             }
           >
             <div
+              id="elementBlockSelect"
               style={
                 Object {
                   "cursor": "pointer",

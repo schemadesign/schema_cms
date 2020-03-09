@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
@@ -12,101 +12,146 @@ import messages from './blockTemplate.messages';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../shared/utils/helpers';
 import {
+  BLOCK_TEMPLATES_DELETE_ELEMENTS,
   BLOCK_TEMPLATES_SCHEMA,
   ELEMENT_ID,
   ELEMENT_NAME,
   ELEMENT_PARAMS,
   ELEMENT_TYPE,
+  INITIAL_VALUES,
 } from '../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../shared/components/blockTemplateForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project/project.constants';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import reportError from '../../shared/utils/reportError';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 
-export const BlockTemplate = ({
-  updateBlockTemplate,
-  fetchBlockTemplate,
-  fetchBlockTemplates,
-  userRole,
-  blockTemplate: { name, elements },
-  blockTemplates,
-  project,
-}) => {
-  const { blockTemplateId } = useParams();
-  const history = useHistory();
-  const intl = useIntl();
-  const [loading, setLoading] = useState(true);
-  const [updateLoading, setUpdateLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const menuOptions = getProjectMenuOptions();
-  const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: {
-      name,
-      elements: map(pick([ELEMENT_NAME, ELEMENT_TYPE, ELEMENT_ID, ELEMENT_PARAMS]), elements),
-    },
-    enableReinitialize: true,
-    validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
-    onSubmit: async formData => {
+export const BlockTemplate = memo(
+  ({
+    updateBlockTemplate,
+    fetchBlockTemplate,
+    fetchBlockTemplates,
+    removeBlockTemplate,
+    userRole,
+    blockTemplate: { name, elements },
+    blockTemplates,
+    project,
+  }) => {
+    const { blockTemplateId } = useParams();
+    const history = useHistory();
+    const intl = useIntl();
+    const [loading, setLoading] = useState(true);
+    const [updateLoading, setUpdateLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [removeModalOpen, setRemoveModalOpen] = useState(false);
+    const [removeLoading, setRemoveLoading] = useState(false);
+    const handleConfirmRemove = async () => {
       try {
-        setUpdateLoading(true);
-        formData.elements = formData.elements.map((data, index) => ({ ...data, order: index }));
-        await updateBlockTemplate({ blockTemplateId, formData });
-        setUpdateLoading(false);
+        setRemoveLoading(true);
+        await removeBlockTemplate({ blockTemplateId });
         history.push(`/project/${project.id}/block-templates`);
       } catch (e) {
         reportError(e);
-        setUpdateLoading(false);
+        setRemoveLoading(false);
       }
-    },
-  });
-  useEffectOnce(() => {
-    (async () => {
-      try {
-        const { project } = await fetchBlockTemplate({ blockTemplateId });
+    };
 
-        await fetchBlockTemplates({ projectId: project });
-      } catch (e) {
-        reportError(e);
-        setError(e);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  });
-  const title = <FormattedMessage {...messages.title} />;
-  const subtitle = <FormattedMessage {...messages.subtitle} />;
-  const filteredBlockTemplates = blockTemplates.filter(({ id }) => id.toString() !== blockTemplateId);
+    const menuOptions = getProjectMenuOptions();
+    const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
+      initialValues: {
+        ...INITIAL_VALUES,
+        name,
+        elements: map(pick([ELEMENT_NAME, ELEMENT_TYPE, ELEMENT_ID, ELEMENT_PARAMS]), elements),
+        [BLOCK_TEMPLATES_DELETE_ELEMENTS]: [],
+      },
+      enableReinitialize: true,
+      validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
+      onSubmit: async formData => {
+        try {
+          setUpdateLoading(true);
+          formData.elements = formData.elements.map((data, index) => ({ ...data, order: index }));
+          await updateBlockTemplate({ blockTemplateId, formData });
+          setUpdateLoading(false);
+          history.push(`/project/${project.id}/block-templates`);
+        } catch (e) {
+          reportError(e);
+          setUpdateLoading(false);
+        }
+      },
+    });
 
-  return (
-    <Container>
-      <Helmet title={intl.formatMessage(messages.title)} />
-      <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
-      <LoadingWrapper loading={loading} error={error}>
-        <form onSubmit={handleSubmit}>
-          <BlockTemplateForm title={title} blockTemplates={filteredBlockTemplates} {...restFormikProps} />
-          <NavigationContainer fixed>
-            <BackButton
-              id="cancelBtn"
-              type="button"
-              onClick={() => history.push(`/project/${project.id}/block-templates`)}
-            >
-              <FormattedMessage {...messages.cancel} />
+    useEffectOnce(() => {
+      (async () => {
+        try {
+          const { project } = await fetchBlockTemplate({ blockTemplateId });
+
+          await fetchBlockTemplates({ projectId: project });
+        } catch (e) {
+          reportError(e);
+          setError(e);
+        } finally {
+          setLoading(false);
+        }
+      })();
+    });
+    const title = <FormattedMessage {...messages.title} />;
+    const subtitle = <FormattedMessage {...messages.subtitle} />;
+    const filteredBlockTemplates = blockTemplates.filter(({ id }) => id.toString() !== blockTemplateId);
+
+    return (
+      <Container>
+        <Helmet title={intl.formatMessage(messages.title)} />
+        <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+        <LoadingWrapper loading={loading} error={error}>
+          <form onSubmit={handleSubmit}>
+            <BlockTemplateForm
+              title={title}
+              blockTemplates={filteredBlockTemplates}
+              setRemoveModalOpen={setRemoveModalOpen}
+              {...restFormikProps}
+            />
+            <NavigationContainer fixed>
+              <BackButton
+                id="cancelBtn"
+                type="button"
+                onClick={() => history.push(`/project/${project.id}/block-templates`)}
+              >
+                <FormattedMessage {...messages.cancel} />
+              </BackButton>
+              <NextButton
+                id="createTemplateBlockMobile"
+                type="submit"
+                loading={updateLoading}
+                disabled={!isValid || !dirty || updateLoading}
+              >
+                <FormattedMessage {...messages.save} />
+              </NextButton>
+            </NavigationContainer>
+          </form>
+        </LoadingWrapper>
+        <Modal ariaHideApp={false} isOpen={removeModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={() => setRemoveModalOpen(false)} disabled={removeLoading}>
+              <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
             <NextButton
-              id="createTemplateBlockMobile"
-              type="submit"
-              loading={updateLoading}
-              disabled={!isValid || !dirty || updateLoading}
+              id="confirmRemovalBtn"
+              onClick={handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
             >
-              <FormattedMessage {...messages.save} />
+              <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
-          </NavigationContainer>
-        </form>
-      </LoadingWrapper>
-    </Container>
-  );
-};
+          </ModalActions>
+        </Modal>
+      </Container>
+    );
+  }
+);
 
 BlockTemplate.propTypes = {
   blockTemplate: PropTypes.object.isRequired,
@@ -116,4 +161,5 @@ BlockTemplate.propTypes = {
   fetchBlockTemplate: PropTypes.func.isRequired,
   updateBlockTemplate: PropTypes.func.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,
+  removeBlockTemplate: PropTypes.func.isRequired,
 };

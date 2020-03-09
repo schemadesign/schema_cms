@@ -51,7 +51,6 @@ export const Draggable = ({ onMove, children, accept, id, index, count }) => {
       item.index = hoverIndex;
     },
   });
-
   const [{ isDragging }, drag, preview] = useDrag({
     item: { type: accept, id, index },
     collect: monitor => ({

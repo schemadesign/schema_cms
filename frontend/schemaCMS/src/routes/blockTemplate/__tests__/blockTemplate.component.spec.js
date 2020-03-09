@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { BlockTemplate } from '../blockTemplate.component';
 import { defaultProps } from '../blockTemplate.stories';
@@ -36,6 +37,22 @@ describe('BlockTemplate: Component', () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
 
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates');
+  });
+
+  it('should remove block and redirect to list', async () => {
+    jest.spyOn(defaultProps, 'removeBlockTemplate');
+    const wrapper = await render();
+
+    act(() => {
+      wrapper.root.findByProps({ id: 'removeBlock' }).props.onClick();
+    });
+    act(() => {
+      wrapper.root.findByProps({ id: 'confirmRemovalBtn' }).props.onClick();
+    });
+
+    await Promise.resolve();
+    expect(defaultProps.removeBlockTemplate).toHaveBeenCalledWith({ blockTemplateId: 'blockTemplateId' });
     expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates');
   });
 });

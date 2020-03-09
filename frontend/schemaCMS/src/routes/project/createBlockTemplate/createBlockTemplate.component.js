@@ -15,6 +15,7 @@ import { getProjectMenuOptions } from '../project.constants';
 import { BLOCK_TEMPLATES_SCHEMA, INITIAL_VALUES } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../../shared/components/blockTemplateForm';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import reportError from '../../../shared/utils/reportError';
 
 export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockTemplates, blockTemplates }) => {
   const intl = useIntl();
@@ -32,7 +33,8 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockT
         formData.elements = formData.elements.map((data, index) => ({ ...data, order: index }));
         await createBlockTemplate({ projectId, formData });
         history.push(`/project/${projectId}/block-templates`);
-      } finally {
+      } catch (e) {
+        reportError(e);
         setCreateLoading(false);
       }
     },

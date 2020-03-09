@@ -18,4 +18,16 @@ export default defineMessages({
     id: 'blockTemplate.save',
     defaultMessage: 'Save',
   },
+  cancelRemoval: {
+    id: 'blockTemplate.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'blockTemplate.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'blockTemplate.removeTitle',
+    defaultMessage: 'Are you sure you want to remove the block template?',
+  },
 });

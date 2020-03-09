@@ -70,11 +70,11 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   word-break: break-word;
 }
 
-.c20 {
+.c26 {
   height: 155px;
 }
 
-.c22 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   width: 100%;
 }
 
-.c21 {
+.c27 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -102,9 +102,59 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c23 {
+.c29 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c20 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c24 {
+  padding-right: 10px;
+}
+
+.c23 {
+  padding-left: 10px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.c25 {
+  color: #71737e;
+  min-width: 100%;
 }
 
 .c12 {
@@ -159,6 +209,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
+  min-height: 43px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -194,7 +245,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c28 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -203,7 +254,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c27 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -212,7 +263,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c29 {
     width: 240px;
   }
 }
@@ -257,6 +308,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 @media (min-width:1050px) {
   .c17 {
     margin-top: -35px;
+    margin-bottom: 40px;
   }
 }
 
@@ -936,18 +988,157 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
           </div>
         </div>
         <span />
-      </div>
-      <div
-        className="c20"
-      >
         <div
-          className="c21"
+          className="c20"
         >
           <div
-            className="c22"
+            className="c21"
+          >
+            <div
+              className="c22"
+            >
+              <div>
+                <input
+                  checked={false}
+                  id="isAvailable"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <label
+                  htmlFor="isAvailable"
+                >
+                  <div
+                    style={
+                      Object {
+                        "background": "#2F2F36",
+                        "borderRadius": 20,
+                        "boxSizing": "border-box",
+                        "cursor": "pointer",
+                        "height": 24,
+                        "padding": 2,
+                        "transition": "background 200ms ease-in-out",
+                        "width": 44,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "background": "#FFF",
+                          "borderRadius": "50%",
+                          "height": 20,
+                          "transform": "translateX(0)",
+                          "transition": "transform 200ms ease-in-out",
+                          "width": 20,
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </div>
+              <div
+                className="c23"
+              >
+                <label
+                  className="c24"
+                  htmlFor="isAvailable"
+                >
+                  Make it Available
+                </label>
+                <span
+                  className="c25"
+                >
+                  This Template is currently unavailable for Editors
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c21"
+          >
+            <div>
+              <input
+                checked={false}
+                id="allowAdd"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="checkbox"
+              />
+              <label
+                htmlFor="allowAdd"
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#2F2F36",
+                      "borderRadius": 20,
+                      "boxSizing": "border-box",
+                      "cursor": "pointer",
+                      "height": 24,
+                      "padding": 2,
+                      "transition": "background 200ms ease-in-out",
+                      "width": 44,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "background": "#FFF",
+                        "borderRadius": "50%",
+                        "height": 20,
+                        "transform": "translateX(0)",
+                        "transition": "transform 200ms ease-in-out",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="c23"
+            >
+              <label
+                className="c24"
+                htmlFor="allowAdd"
+              >
+                Allow new Elements to be added to this Block Template
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c26"
+      >
+        <div
+          className="c27"
+        >
+          <div
+            className="c28"
           >
             <button
-              className="c23"
+              className="c29"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -973,7 +1164,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               Cancel
             </button>
             <button
-              className="c23"
+              className="c29"
               disabled={true}
               id="createTemplateBlock"
               style={

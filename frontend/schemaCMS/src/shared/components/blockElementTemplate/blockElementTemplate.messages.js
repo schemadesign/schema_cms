@@ -56,4 +56,8 @@ export default defineMessages({
     id: 'shared.components.blockElementTemplate.typePlaceholder',
     defaultMessage: 'Select Block Type',
   },
+  noBlocksPlaceholder: {
+    id: 'shared.components.blockElementTemplate.noBlocksPlaceholder',
+    defaultMessage: 'No blocks available',
+  },
 });

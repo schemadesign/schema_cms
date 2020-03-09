@@ -41,7 +41,7 @@ export const BlockElementTemplate = ({
   const intl = useIntl();
   const elementPath = `${BLOCK_TEMPLATES_ELEMENTS}.${index}`;
   const typesOptions = ELEMENTS_TYPES.map(item => ({ label: intl.formatMessage(messages[item]), value: item }));
-  const handleSelectStatus = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
+  const handleSelectType = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
   const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`, value);
 
   const getAdditionalInputs = renderWhenTrue(() => (
@@ -51,8 +51,9 @@ export const BlockElementTemplate = ({
         name={`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`}
         value={params[PARAMS_BLOCK] || ''}
         options={blocksOptions}
+        id="elementBlockSelect"
         onSelect={handleSelectBlock}
-        placeholder={intl.formatMessage(messages.blockPlaceholder)}
+        placeholder={intl.formatMessage(messages[blocksOptions.length ? 'blockPlaceholder' : 'noBlocksPlaceholder'])}
         customLabelStyles={customLabelStyles}
         {...restFormikProps}
       />
@@ -78,7 +79,7 @@ export const BlockElementTemplate = ({
           />
           <IconsContainer>
             <EditIcon />
-            <MinusIcon customStyles={iconStyles} onClick={() => removeElement(index)} />
+            <MinusIcon id={`removeElement-${index}`} customStyles={iconStyles} onClick={() => removeElement(index)} />
           </IconsContainer>
         </Header>
       </AccordionHeader>
@@ -88,8 +89,9 @@ export const BlockElementTemplate = ({
             label={intl.formatMessage(messages[ELEMENT_TYPE])}
             name={`${elementPath}.${ELEMENT_TYPE}`}
             value={type}
+            id="elementTypeSelect"
             options={typesOptions}
-            onSelect={handleSelectStatus}
+            onSelect={handleSelectType}
             placeholder={intl.formatMessage(messages.typePlaceholder)}
             customLabelStyles={customLabelStyles}
             {...restFormikProps}
