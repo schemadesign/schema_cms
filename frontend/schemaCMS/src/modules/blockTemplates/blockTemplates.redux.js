@@ -20,10 +20,10 @@ export const INITIAL_STATE = new Immutable({
   },
 });
 
-const setBlocks = (state = INITIAL_STATE, { payload }) => state.set('blockTemplates', payload);
-const setBlock = (state = INITIAL_STATE, { payload }) => state.set('blockTemplate', payload);
+const setBlockTemplates = (state = INITIAL_STATE, { payload }) => state.set('blockTemplates', payload);
+const setBlockTemplate = (state = INITIAL_STATE, { payload }) => state.set('blockTemplate', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [BlockTemplatesRoutines.fetchBlockTemplates.SUCCESS]: setBlocks,
-  [BlockTemplatesRoutines.fetchBlockTemplate.SUCCESS]: setBlock,
+  [BlockTemplatesRoutines.fetchBlockTemplates.SUCCESS]: setBlockTemplates,
+  [BlockTemplatesRoutines.fetchBlockTemplate.SUCCESS]: setBlockTemplate,
 });

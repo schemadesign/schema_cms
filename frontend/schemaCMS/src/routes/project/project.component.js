@@ -18,6 +18,7 @@ import { CreateProjectState } from './createProjectState';
 import { Templates } from './templates';
 import { BlockTemplates } from './blockTemplates';
 import { CreateBlockTemplate } from './createBlockTemplate';
+import { PageTemplates } from './pageTemplates';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -44,6 +45,7 @@ export class Project extends PureComponent {
     const templatesPath = `${viewPath}/templates`;
     const blockTemplatesPath = `${viewPath}/block-templates`;
     const createBlockTemplatePath = `${blockTemplatesPath}/create`;
+    const pageTemplatesPath = `${viewPath}/page-templates`;
 
     return (
       <Switch>
@@ -62,6 +64,7 @@ export class Project extends PureComponent {
         <Route exact path={templatesPath} component={Templates} />
         <Route exact path={blockTemplatesPath} component={BlockTemplates} />
         <Route exact path={createBlockTemplatePath} component={CreateBlockTemplate} />
+        <Route exact path={pageTemplatesPath} component={PageTemplates} />
         <Route path="*" component={NotFound} />
       </Switch>
     );
