@@ -52,7 +52,7 @@ export const BlockElementTemplate = ({
         value={params[PARAMS_BLOCK] || ''}
         options={blocksOptions}
         onSelect={handleSelectBlock}
-        placeholder={intl.formatMessage(messages.blockPlaceholder)}
+        placeholder={intl.formatMessage(messages[blocksOptions.length ? 'blockPlaceholder' : 'noBlocksPlaceholder'])}
         customLabelStyles={customLabelStyles}
         {...restFormikProps}
       />

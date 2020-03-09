@@ -23,6 +23,7 @@ export const mapDispatchToProps = dispatch => ({
       fetchBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplate),
       updateBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.updateBlockTemplate),
       fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
+      removeBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.removeBlockTemplate),
     },
     dispatch
   ),

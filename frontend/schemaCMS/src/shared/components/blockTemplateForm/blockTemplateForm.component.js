@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, Form, Icons } from 'schemaUI';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { append, prepend, remove } from 'ramda';
+import { append, identity, ifElse, prepend, propIs, remove, pipe } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
@@ -53,6 +53,7 @@ export const BlockTemplateForm = ({
   setFieldValue,
   values,
   blockTemplates,
+  setRemoveModalOpen = null,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -77,8 +78,14 @@ export const BlockTemplateForm = ({
     </Subtitle>
   );
 
-  const addElement = () =>
-    setFieldValue(BLOCK_TEMPLATES_ELEMENTS, prepend(BLOCK_TEMPLATE_DEFAULT_ELEMENT, values[BLOCK_TEMPLATES_ELEMENTS]));
+  const addElement = () => {
+    const elements = pipe(
+      prepend(BLOCK_TEMPLATE_DEFAULT_ELEMENT),
+      data => data.map(ifElse(propIs(Number, 'id'), identity, (element, index) => ({ ...element, id: `box-${index}` })))
+    )(values[BLOCK_TEMPLATES_ELEMENTS]);
+
+    setFieldValue(BLOCK_TEMPLATES_ELEMENTS, elements);
+  };
 
   const removeElement = index => {
     const removedElement = values[BLOCK_TEMPLATES_ELEMENTS][index];
@@ -103,6 +110,11 @@ export const BlockTemplateForm = ({
     setFieldValue(BLOCK_TEMPLATES_ELEMENTS, mutableValues);
   };
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
+  const binIcon = setRemoveModalOpen ? (
+    <BinIconContainer onClick={() => setRemoveModalOpen(true)}>
+      <MinusIcon customStyles={binStyles} />
+    </BinIconContainer>
+  ) : null;
 
   return (
     <Container>
@@ -132,10 +144,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.id || `box-${index}`}
+              key={element.id || index}
               accept="box"
               onMove={handleMove}
-              id={element.id || `box-${index}`}
+              id={element.id || index}
               index={index}
               count={elementsCount}
             >
@@ -182,9 +194,7 @@ export const BlockTemplateForm = ({
               </AvailableCopy>
             </SwitchCopy>
           </SwitchContent>
-          <BinIconContainer>
-            <MinusIcon customStyles={binStyles} />
-          </BinIconContainer>
+          {binIcon}
         </SwitchContainer>
         <SwitchContainer>
           <Switch value={values[BLOCK_TEMPLATES_ALLOW_ADD]} id={BLOCK_TEMPLATES_ALLOW_ADD} onChange={handleChange} />
@@ -201,6 +211,7 @@ export const BlockTemplateForm = ({
 
 BlockTemplateForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
+  setRemoveModalOpen: PropTypes.func,
   setValues: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   values: PropTypes.object.isRequired,

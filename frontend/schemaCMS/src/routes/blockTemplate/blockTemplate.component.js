@@ -25,12 +25,14 @@ import { BackButton, NavigationContainer, NextButton } from '../../shared/compon
 import { getProjectMenuOptions } from '../project/project.constants';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import reportError from '../../shared/utils/reportError';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 
 export const BlockTemplate = memo(
   ({
     updateBlockTemplate,
     fetchBlockTemplate,
     fetchBlockTemplates,
+    removeBlockTemplate,
     userRole,
     blockTemplate: { name, elements },
     blockTemplates,
@@ -42,6 +44,19 @@ export const BlockTemplate = memo(
     const [loading, setLoading] = useState(true);
     const [updateLoading, setUpdateLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [removeModalOpen, setRemoveModalOpen] = useState(false);
+    const [removeLoading, setRemoveLoading] = useState(false);
+    const handleConfirmRemove = async () => {
+      try {
+        setRemoveLoading(true);
+        await removeBlockTemplate({ blockTemplateId });
+        history.push(`/project/${project.id}/block-templates`);
+      } catch (e) {
+        reportError(e);
+        setRemoveLoading(false);
+      }
+    };
+
     const menuOptions = getProjectMenuOptions();
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
       initialValues: {
@@ -90,7 +105,12 @@ export const BlockTemplate = memo(
         <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
         <LoadingWrapper loading={loading} error={error}>
           <form onSubmit={handleSubmit}>
-            <BlockTemplateForm title={title} blockTemplates={filteredBlockTemplates} {...restFormikProps} />
+            <BlockTemplateForm
+              title={title}
+              blockTemplates={filteredBlockTemplates}
+              setRemoveModalOpen={setRemoveModalOpen}
+              {...restFormikProps}
+            />
             <NavigationContainer fixed>
               <BackButton
                 id="cancelBtn"
@@ -110,6 +130,24 @@ export const BlockTemplate = memo(
             </NavigationContainer>
           </form>
         </LoadingWrapper>
+        <Modal isOpen={removeModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={() => setRemoveModalOpen(false)} disabled={removeLoading}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </BackButton>
+            <NextButton
+              id="confirmRemovalBtn"
+              onClick={handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
+              <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
       </Container>
     );
   }
@@ -123,4 +161,5 @@ BlockTemplate.propTypes = {
   fetchBlockTemplate: PropTypes.func.isRequired,
   updateBlockTemplate: PropTypes.func.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,
+  removeBlockTemplate: PropTypes.func.isRequired,
 };
