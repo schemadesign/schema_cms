@@ -25,6 +25,14 @@ describe('BlockTemplates: Component', () => {
     expect(wrapper.toJSON()).toMatchSnapshot();
   });
 
+  it('should fetch block and blocks', async () => {
+    jest.spyOn(defaultProps, 'fetchBlockTemplates');
+
+    await render();
+
+    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
+  });
+
   it('should redirect to create block template', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'createTemplateBlock' }).props.onClick();

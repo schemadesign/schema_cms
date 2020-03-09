@@ -7,8 +7,8 @@ import { makeContextRenderer } from '../../../utils/testUtils';
 describe('{{ pascalCase name }}: Component', () => {
   const render = props => makeContextRenderer(<{{ pascalCase name }} {...defaultProps} {...props} />);
 
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render correctly', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

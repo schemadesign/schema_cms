@@ -19,9 +19,17 @@ jest.mock('react-router', () => ({
 describe('PageTemplates: Component', () => {
   const render = props => makeContextRenderer(<PageTemplates {...defaultProps} {...props} />);
 
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render correctly', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should fetch block and blocks', async () => {
+    jest.spyOn(defaultProps, 'fetchPageTemplates');
+
+    await render();
+
+    expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
   });
 
   it('should redirect to create page template', async () => {
