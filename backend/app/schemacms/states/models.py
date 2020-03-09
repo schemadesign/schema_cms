@@ -82,6 +82,6 @@ class InStateFilter(MetaGeneratorMixin, softdelete.models.SoftDeleteObject):
     filter = models.ForeignKey("datasources.Filter", on_delete=models.CASCADE)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     filter_type = models.CharField(max_length=25)
-    field = models.CharField(max_length=25)
+    field = models.TextField()
     field_type = models.CharField(max_length=25)
     condition = pg_fields.JSONField(blank=True, default=dict)
