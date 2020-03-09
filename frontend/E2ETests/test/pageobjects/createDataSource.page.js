@@ -1,7 +1,14 @@
 import path from 'path';
 import Page from './page';
 import SubHeaderComponent from './components/subHeader.component';
-import { clickElement, setValue, waitForElement, waitForTitle } from '../utils/utils';
+import {
+  clickElement,
+  generateRandomString,
+  makeFileInputVisible,
+  setValue,
+  waitForElement,
+  waitForTitle,
+} from '../utils/utils';
 import {
   CREATE_DATASOURCE_PAGE_TITLE,
   CREATE_DATASOURCE_VALID_TITLE,
@@ -9,6 +16,7 @@ import {
 } from '../constants/createDatasource.constants';
 
 class CreateDataSourcePage extends Page {
+
   get SubHeader() {
     return SubHeaderComponent;
   }
@@ -48,9 +56,10 @@ class CreateDataSourcePage extends Page {
   uploadCsvFile(fileState) {
     waitForTitle(CREATE_DATASOURCE_PAGE_TITLE);
     clickElement(this, 'nameValue');
-    setValue(this, 'nameValue', CREATE_DATASOURCE_VALID_TITLE);
+    this.projectName = `DataSource ${generateRandomString(8)}`;
+    setValue(this, 'nameValue', this.projectName);
     clickElement(this, 'csvIcon');
-    this.makeFileInputVisible(this.fileUploadInput);
+    makeFileInputVisible(this.fileUploadInput);
     waitForElement(this, 'fileUploadInput');
     this.passFileToInput(fileState);
     clickElement(this, 'saveBtn');
@@ -59,14 +68,6 @@ class CreateDataSourcePage extends Page {
   passFileToInput(fileState) {
     const filePath = path.join(__dirname, CSV_FILE[fileState]);
     this.fileUploadInput.setValue(filePath);
-  }
-
-  makeFileInputVisible(inputName) {
-    browser.execute(inputName => {
-      inputName.style.display = 'block';
-      inputName.style.height = '50px';
-      inputName.style.visibility = 'visible';
-    }, inputName);
   }
 }
 export default new CreateDataSourcePage();

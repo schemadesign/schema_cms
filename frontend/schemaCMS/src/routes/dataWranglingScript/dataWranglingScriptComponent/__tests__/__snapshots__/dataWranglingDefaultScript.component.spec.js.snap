@@ -57,6 +57,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
         "minHeight": 100,
       }
     }
+    id="pythonCode"
     language="python"
   >
     
@@ -200,6 +201,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
         "minHeight": 100,
       }
     }
+    id="pythonCode"
     language="python"
   >
     

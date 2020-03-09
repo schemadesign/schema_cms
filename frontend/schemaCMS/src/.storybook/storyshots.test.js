@@ -26,3 +26,4 @@ initStoryshots({
   asyncJest: true,
   test: asyncSnapshot,
 });
+

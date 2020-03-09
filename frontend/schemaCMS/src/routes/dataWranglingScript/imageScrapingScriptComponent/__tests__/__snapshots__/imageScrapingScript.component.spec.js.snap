@@ -60,6 +60,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
           "minHeight": 100,
         }
       }
+      id="imageScrapingPreviewCode"
       language="python"
     >
       
@@ -132,7 +133,9 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       df = df.dropna(how='any', axis=1)
     
     </SyntaxHighlighter>
-    <Component>
+    <Component
+      id="imageScrapingUrlFieldsHeader"
+    >
       <FormattedMessage
         defaultMessage="Fields with URLs"
         id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"
@@ -241,6 +244,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
           "minHeight": 100,
         }
       }
+      id="imageScrapingPreviewCode"
       language="python"
     >
       
@@ -313,7 +317,9 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       df = df.dropna(how='any', axis=1)
     
     </SyntaxHighlighter>
-    <Component>
+    <Component
+      id="imageScrapingUrlFieldsHeader"
+    >
       <FormattedMessage
         defaultMessage="Fields with URLs"
         id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"

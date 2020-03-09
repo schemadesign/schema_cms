@@ -1,4 +1,6 @@
 import { TIMEOUT } from '../constants/config.constants';
+import path from 'path';
+import { CSV_FILE } from '../constants/createDatasource.constants';
 
 export const waitForElement = (that, elemName, timeout = TIMEOUT) => {
   browser.waitUntil(() => that[elemName].isDisplayed(), timeout, `${elemName} not load after ${timeout} miliseconds`);
@@ -64,3 +66,28 @@ export const generateRandomString = length => {
   }
   return result;
 };
+
+export const makeFileInputVisible = inputName => {
+  browser.execute(inputName => {
+    inputName.style.display = 'block';
+    inputName.style.height = '50px';
+    inputName.style.visibility = 'visible';
+  }, inputName);
+};
+
+const jquerySelector = (selector, func) => () => func(selector);
+
+const convertSelectors = (selectors, func) =>
+  Object.keys(selectors).reduce(
+    (prevValue, value) => ({
+      ...prevValue,
+      [value]: jquerySelector(selectors[value], func),
+    }),
+    {}
+  );
+
+export const createSelectors = ({ rest, singleSelectors, multiSelectors }) => ({
+  ...rest,
+  ...convertSelectors(singleSelectors, $),
+  ...convertSelectors(multiSelectors, $$),
+});

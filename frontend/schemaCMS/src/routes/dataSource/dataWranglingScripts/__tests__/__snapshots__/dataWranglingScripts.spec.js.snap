@@ -136,7 +136,9 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
   >
     <styled.div>
       <styled.div />
-      <styled.div>
+      <styled.div
+        id="stepCounter"
+      >
         <FormattedMessage
           defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
           id="dataSource.dataWranglingScripts.counterSteps"
@@ -183,6 +185,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             "marginBottom": 20,
           }
         }
+        id="selectedStepsHeader"
       >
         <FormattedMessage
           defaultMessage="Selected steps"
@@ -191,6 +194,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         />
       </Component>
       <div
+        id="selectedScript-0"
         key="0"
       >
         <Component
@@ -203,12 +207,15 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             >
               <styled.div
                 drag={false}
+                id="checkboxName-0"
               >
                  
                 name 1
               </styled.div>
               <styled.div />
-              <styled.div>
+              <styled.div
+                id="checkboxType-0"
+              >
                 <FormattedMessage
                   defaultMessage="Uploaded"
                   id="dataSource.dataWranglingScripts.0"
@@ -225,6 +232,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             "margin": "40px 0 20px 0",
           }
         }
+        id="deselectedStepsHeader"
       >
         <FormattedMessage
           defaultMessage="Steps"
@@ -233,6 +241,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         />
       </Component>
       <div
+        id="deselectedScript-0"
         key="0"
       >
         <Component
@@ -245,12 +254,15 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             >
               <styled.div
                 drag={false}
+                id="checkboxName-0"
               >
                  
                 name 1
               </styled.div>
               <styled.div />
-              <styled.div>
+              <styled.div
+                id="checkboxType-0"
+              >
                 <FormattedMessage
                   defaultMessage="Uploaded"
                   id="dataSource.dataWranglingScripts.0"
@@ -262,6 +274,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         </Component>
       </div>
       <div
+        id="deselectedScript-1"
         key="1"
       >
         <Component
@@ -274,12 +287,15 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
             >
               <styled.div
                 drag={false}
+                id="checkboxName-1"
               >
                  
                 name 2
               </styled.div>
               <styled.div />
-              <styled.div>
+              <styled.div
+                id="checkboxType-1"
+              >
                 <FormattedMessage
                   defaultMessage="Default"
                   id="dataSource.dataWranglingScripts.2"
@@ -300,6 +316,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
     >
       <NextButton
         disabled={false}
+        id="saveStepsBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -547,7 +564,9 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
   >
     <styled.div>
       <styled.div />
-      <styled.div>
+      <styled.div
+        id="stepCounter"
+      >
         <FormattedMessage
           defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
           id="dataSource.dataWranglingScripts.counterSteps"
@@ -596,6 +615,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
             "marginBottom": 20,
           }
         }
+        id="selectedStepsHeader"
       >
         <FormattedMessage
           defaultMessage="Selected steps"
@@ -640,6 +660,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
     >
       <NextButton
         disabled={false}
+        id="saveStepsBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -861,7 +882,9 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
   >
     <styled.div>
       <styled.div />
-      <styled.div>
+      <styled.div
+        id="stepCounter"
+      >
         <FormattedMessage
           defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
           id="dataSource.dataWranglingScripts.counterSteps"
@@ -891,6 +914,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
     >
       <NextButton
         disabled={false}
+        id="saveStepsBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -1096,7 +1120,9 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
   >
     <styled.div>
       <styled.div />
-      <styled.div>
+      <styled.div
+        id="stepCounter"
+      >
         <FormattedMessage
           defaultMessage="{steps, plural,one {# Step} other {# Steps}}"
           id="dataSource.dataWranglingScripts.counterSteps"
@@ -1143,6 +1169,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
             "marginBottom": 20,
           }
         }
+        id="selectedStepsHeader"
       >
         <FormattedMessage
           defaultMessage="Selected steps"
@@ -1151,6 +1178,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
         />
       </Component>
       <div
+        id="selectedScript-0"
         key="0"
       >
         <Component
@@ -1163,12 +1191,15 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
             >
               <styled.div
                 drag={false}
+                id="checkboxName-0"
               >
                  
                 name 1
               </styled.div>
               <styled.div />
-              <styled.div>
+              <styled.div
+                id="checkboxType-0"
+              >
                 <FormattedMessage
                   defaultMessage="Uploaded"
                   id="dataSource.dataWranglingScripts.0"
@@ -1189,6 +1220,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
     >
       <NextButton
         disabled={false}
+        id="saveStepsBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -1307,6 +1339,7 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
         "margin": "40px 0 20px 0",
       }
     }
+    id="deselectedStepsHeader"
   >
     <FormattedMessage
       defaultMessage="Steps"
@@ -1315,6 +1348,7 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
     />
   </Component>
   <div
+    id="deselectedScript-0"
     key="0"
   >
     <Component
@@ -1327,12 +1361,15 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
         >
           <styled.div
             drag={false}
+            id="checkboxName-0"
           >
              
             name 1
           </styled.div>
           <styled.div />
-          <styled.div>
+          <styled.div
+            id="checkboxType-0"
+          >
             <FormattedMessage
               defaultMessage="Uploaded"
               id="dataSource.dataWranglingScripts.0"
@@ -1344,6 +1381,7 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
     </Component>
   </div>
   <div
+    id="deselectedScript-1"
     key="1"
   >
     <Component
@@ -1356,12 +1394,15 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
         >
           <styled.div
             drag={false}
+            id="checkboxName-1"
           >
              
             name 2
           </styled.div>
           <styled.div />
-          <styled.div>
+          <styled.div
+            id="checkboxType-1"
+          >
             <FormattedMessage
               defaultMessage="Default"
               id="dataSource.dataWranglingScripts.2"

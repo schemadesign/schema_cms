@@ -564,6 +564,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
       </span>
     </label>
     <pre
+      id="pythonCode"
       style={
         Object {
           "background": "#F0F0F0",
@@ -1874,6 +1875,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
       </span>
     </label>
     <pre
+      id="pythonCode"
       style={
         Object {
           "background": "#F0F0F0",

@@ -67,6 +67,17 @@ class DataSourcePreviewPage extends Page {
     expect(element.getText()).to.equal(CSV_FILE.rows[index]);
   }
 
+  expectRowsOfTableToBeCased = (element, index) => dataFormat => {
+    expect(element.getText()).to.equal(
+      dataFormat === 'upper' ? CSV_FILE.rows[index].toUpperCase() : CSV_FILE.rows[index].toLowerCase()
+    );
+  };
+
+  expectPreviewTableToBeCased(dataFormat) {
+    this.columns.forEach(this.expectHeaderOfTableToMatchFile);
+    this.rows.forEach((element, index) => this.expectRowsOfTableToBeCased(element, index, dataFormat));
+  }
+
   expectPreviewTableToMatchFile() {
     this.columns.forEach(this.expectHeaderOfTableToMatchFile);
     this.rows.forEach(this.expectRowsOfTableToMatchFile);

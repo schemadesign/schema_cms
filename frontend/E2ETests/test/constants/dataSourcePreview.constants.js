@@ -1,4 +1,4 @@
-export const DATA_SOURCE_PREVIEW_PAGE_TITLE = 'Fields - Schema CMS';
+export const DATA_SOURCE_PAGE_TITLE = { preview: 'Fields - Schema CMS', results: 'Data Wrangling Result - Schema CMS' };
 export const DATA_SOURCE_PREVIEW_FIELDS_LABEL = '7 Fields';
 export const FIRST_FIELD = [
   'Field',

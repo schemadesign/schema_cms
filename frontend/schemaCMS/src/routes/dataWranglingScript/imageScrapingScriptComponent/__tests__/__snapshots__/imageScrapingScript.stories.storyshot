@@ -576,6 +576,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
         </span>
       </label>
       <pre
+        id="imageScrapingPreviewCode"
         style={
           Object {
             "background": "#F0F0F0",
@@ -1281,6 +1282,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (admin) 1`
         </code>
       </pre>
       <label
+        id="imageScrapingUrlFieldsHeader"
         style={
           Object {
             "border": "none",
@@ -1952,6 +1954,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
         </span>
       </label>
       <pre
+        id="imageScrapingPreviewCode"
         style={
           Object {
             "background": "#F0F0F0",
@@ -2657,6 +2660,7 @@ exports[`Storyshots Data Wrangling Script|ImageScrapingScript Default (editor) 1
         </code>
       </pre>
       <label
+        id="imageScrapingUrlFieldsHeader"
         style={
           Object {
             "border": "none",

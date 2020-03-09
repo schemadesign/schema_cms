@@ -175,10 +175,15 @@ export class ImageScrapingScript extends PureComponent {
           <Label>
             <FormattedMessage {...messages.pythonCode} />
           </Label>
-          <SyntaxHighlighter language="python" style={syntaxTheme} customStyle={syntaxCustomStyles}>
+          <SyntaxHighlighter
+            id="imageScrapingPreviewCode"
+            language="python"
+            style={syntaxTheme}
+            customStyle={syntaxCustomStyles}
+          >
             {dataWranglingScript.body}
           </SyntaxHighlighter>
-          <Label>
+          <Label id="imageScrapingUrlFieldsHeader">
             <FormattedMessage {...messages.fieldsWithUrls} />
           </Label>
           <LoadingWrapper loading={loading} error={error}>
