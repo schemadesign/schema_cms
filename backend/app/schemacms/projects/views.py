@@ -1,9 +1,12 @@
+from django.db.models import Prefetch
+
 from rest_framework import decorators, permissions, response, status, viewsets
 
 from . import models, serializers
 from ..datasources import serializers as ds_serializers
 from ..states import serializers as st_serializers
 from ..pages import serializers as pages_serializers
+from ..pages import models as pages_models
 from ..users import permissions as user_permissions
 from ..utils import serializers as utils_serializers
 
@@ -25,7 +28,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             queryset = models.Project.objects.all()
         elif self.action == "block_templates":
             return models.Project.objects.all().prefetch_related(
-                "blocktemplate_set", "blocktemplate_set__elements"
+                Prefetch("blocktemplate_set", queryset=pages_models.BlockTemplate.objects.all().order_by("-created")),
+                "blocktemplate_set__elements"
             )
         else:
             queryset = models.Project.get_projects_for_user(self.request.user)
