@@ -99,6 +99,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
   padding: 40px 0 70px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
@@ -335,6 +336,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
   .c27 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
@@ -1826,6 +1828,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   padding: 40px 0 70px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
@@ -2071,6 +2074,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
   .c28 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
@@ -3661,6 +3665,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
   padding: 40px 0 70px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
@@ -3857,6 +3862,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
   .c22 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }

@@ -116,6 +116,7 @@ exports[`Storyshots User|List List 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
@@ -220,6 +221,7 @@ exports[`Storyshots User|List List 1`] = `
   .c21 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
@@ -1042,6 +1044,7 @@ exports[`Storyshots User|List No data 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
@@ -1098,6 +1101,7 @@ exports[`Storyshots User|List No data 1`] = `
   .c16 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }

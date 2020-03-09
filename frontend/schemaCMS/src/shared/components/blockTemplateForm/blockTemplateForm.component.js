@@ -81,7 +81,8 @@ export const BlockTemplateForm = ({
   const addElement = () => {
     const elements = pipe(
       prepend(BLOCK_TEMPLATE_DEFAULT_ELEMENT),
-      data => data.map(ifElse(propIs(Number, 'id'), identity, (element, index) => ({ ...element, id: `box-${index}` })))
+      data =>
+        data.map(ifElse(propIs(Number, 'id'), identity, (element, index) => ({ ...element, key: `box-${index}` })))
     )(values[BLOCK_TEMPLATES_ELEMENTS]);
 
     setFieldValue(BLOCK_TEMPLATES_ELEMENTS, elements);
@@ -144,10 +145,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.id}
+              key={element.key || element.id}
               accept="box"
               onMove={handleMove}
-              id={element.id}
+              id={element.key || element.id}
               index={index}
               count={elementsCount}
             >

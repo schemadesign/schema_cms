@@ -99,6 +99,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
@@ -155,6 +156,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }

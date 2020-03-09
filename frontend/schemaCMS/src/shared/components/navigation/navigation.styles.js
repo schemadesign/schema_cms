@@ -28,6 +28,7 @@ export const NavigationContent = styled.div`
 const fixedStyles = css`
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient(
     to top,
     ${({ theme: { background } }) => `${background}, ${background} 30%`},

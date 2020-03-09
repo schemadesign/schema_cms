@@ -99,6 +99,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
@@ -157,6 +158,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
@@ -1395,6 +1397,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
+  z-index: 9999;
   background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
 }
 
@@ -1453,6 +1456,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   .c14 {
     position: fixed;
     width: calc(100% - 40px);
+    z-index: 9999;
     background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(255,255,255,0) );
     width: 1000px;
   }
