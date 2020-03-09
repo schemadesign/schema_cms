@@ -48,4 +48,4 @@ class BlockTemplateElement(Element):
 
 
 class PageTemplate(Template):
-    blocks = models.ManyToManyField(BlockTemplate, related_name="page_templates")
+    blocks = models.ManyToManyField(BlockTemplate, related_name="page_templates", blank=True)
