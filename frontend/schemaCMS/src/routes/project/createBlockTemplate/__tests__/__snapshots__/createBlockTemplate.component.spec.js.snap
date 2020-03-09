@@ -345,13 +345,13 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
       className="sc-kGXeez eIIwaK"
     >
       <div
-        className="sc-eNQAEJ cdjLbz"
+        className="sc-cvbbAY eMeTVi"
       >
         <div
-          className="sc-hMqMXs iyMKdh"
+          className="sc-jWBwVP bqSGJf"
         >
           <h2
-            className="sc-kEYyzF duTgan"
+            className="sc-brqgnP iTSvAk"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -365,7 +365,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Block Template
           </h2>
           <h1
-            className="sc-kkGfuU diXTcM"
+            className="sc-cMljjf beoPtZ"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -379,10 +379,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-kpOJdX dEeRhR"
+              className="sc-kkGfuU hPxXlr"
             >
               <div
-                className="sc-hSdWYo hBmTId"
+                className="sc-jDwBTQ KDUOI"
               >
                 <div
                   style={
@@ -458,7 +458,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-dxgOiQ gLysol"
+                className="sc-iAyFgw ijvpvk"
               >
                 <svg
                   style={
@@ -480,7 +480,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-iAyFgw gPlgsX"
+          className="sc-jAaTju fNCBho"
         >
           <div
             className="sc-kgoBCf ifKHSM"
@@ -530,10 +530,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-ckVGcZ cmshlk"
+        className="sc-hSdWYo gVXXxh"
       >
         <div
-          className="sc-hSdWYo bIwqbO"
+          className="sc-jDwBTQ crfQUj"
         >
           <div
             style={
@@ -600,17 +600,17 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-iRbamj iRHJtk"
+        className="sc-jhAzac dzFuUB"
       >
         <div
-          className="sc-jlyJG COxoB"
+          className="sc-fBuWsC bhAWGQ"
         />
         0 Elements
         <div
-          className="sc-jlyJG COxoB"
+          className="sc-fBuWsC bhAWGQ"
         >
           <div
-            className="sc-jKJlTe epHyPe"
+            className="sc-eHgmQL grjLGM"
           >
             <div
               className="sc-kgoBCf ifKHSM"
@@ -662,6 +662,145 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <span />
+      <div
+        className="sc-kpOJdX cpixyt"
+      >
+        <div
+          className="sc-dxgOiQ kCwcJU"
+        >
+          <div
+            className="sc-hMqMXs hLffqw"
+          >
+            <div>
+              <input
+                checked={false}
+                id="isAvailable"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="checkbox"
+              />
+              <label
+                htmlFor="isAvailable"
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#2F2F36",
+                      "borderRadius": 20,
+                      "boxSizing": "border-box",
+                      "cursor": "pointer",
+                      "height": 24,
+                      "padding": 2,
+                      "transition": "background 200ms ease-in-out",
+                      "width": 44,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "background": "#FFF",
+                        "borderRadius": "50%",
+                        "height": 20,
+                        "transform": "translateX(0)",
+                        "transition": "transform 200ms ease-in-out",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="sc-jKJlTe hRKwwe"
+            >
+              <label
+                className="sc-ckVGcZ fdSapw"
+                htmlFor="isAvailable"
+              >
+                Make it Available
+              </label>
+              <span
+                className="sc-kEYyzF eBnvfN"
+              >
+                This Template is currently unavailable for Editors
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-dxgOiQ kCwcJU"
+        >
+          <div>
+            <input
+              checked={false}
+              id="allowAdd"
+              onChange={[Function]}
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                }
+              }
+              type="checkbox"
+            />
+            <label
+              htmlFor="allowAdd"
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#2F2F36",
+                    "borderRadius": 20,
+                    "boxSizing": "border-box",
+                    "cursor": "pointer",
+                    "height": 24,
+                    "padding": 2,
+                    "transition": "background 200ms ease-in-out",
+                    "width": 44,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#FFF",
+                      "borderRadius": "50%",
+                      "height": 20,
+                      "transform": "translateX(0)",
+                      "transition": "transform 200ms ease-in-out",
+                      "width": 20,
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            className="sc-jKJlTe hRKwwe"
+          >
+            <label
+              className="sc-ckVGcZ fdSapw"
+              htmlFor="allowAdd"
+            >
+              Allow new Elements to be added to this Block Template
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       className="sc-fjdhpX jevcr"

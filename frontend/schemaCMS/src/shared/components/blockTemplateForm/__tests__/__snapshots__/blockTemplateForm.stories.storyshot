@@ -1,6 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots BlockTemplateForm Default 1`] = `
+.c18 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c22 {
+  padding-right: 10px;
+}
+
+.c21 {
+  padding-left: 10px;
+}
+
+.c24 {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.c23 {
+  color: #71737e;
+  min-width: 100%;
+}
+
 .c4 {
   position: relative;
 }
@@ -103,6 +160,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
+  min-height: 43px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -173,6 +231,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
 @media (min-width:1050px) {
   .c9 {
     margin-top: -35px;
+    margin-bottom: 40px;
   }
 }
 
@@ -689,6 +748,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                   />
                 </svg>
                 <svg
+                  id="removeElement-0"
                   onClick={[Function]}
                   style={
                     Object {
@@ -810,6 +870,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                   }
                 >
                   <div
+                    id="elementTypeSelect"
                     style={
                       Object {
                         "cursor": "pointer",
@@ -1042,6 +1103,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                   }
                 >
                   <div
+                    id="elementBlockSelect"
                     style={
                       Object {
                         "cursor": "pointer",
@@ -1207,6 +1269,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                   }
                 >
                   <div
+                    id="elementTypeSelect"
                     style={
                       Object {
                         "cursor": "pointer",
@@ -1439,6 +1502,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                   }
                 >
                   <div
+                    id="elementBlockSelect"
                     style={
                       Object {
                         "cursor": "pointer",
@@ -1537,6 +1601,164 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
         </div>
       </div>
     </span>
+    <div
+      className="c18"
+    >
+      <div
+        className="c19"
+      >
+        <div
+          className="c20"
+        >
+          <div>
+            <input
+              id="isAvailable"
+              onChange={[Function]}
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                }
+              }
+              type="checkbox"
+            />
+            <label
+              htmlFor="isAvailable"
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#2F2F36",
+                    "borderRadius": 20,
+                    "boxSizing": "border-box",
+                    "cursor": "pointer",
+                    "height": 24,
+                    "padding": 2,
+                    "transition": "background 200ms ease-in-out",
+                    "width": 44,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#FFF",
+                      "borderRadius": "50%",
+                      "height": 20,
+                      "transform": "translateX(0)",
+                      "transition": "transform 200ms ease-in-out",
+                      "width": 20,
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            className="c21"
+          >
+            <label
+              className="c22"
+              htmlFor="isAvailable"
+            >
+              Make it Available
+            </label>
+            <span
+              className="c23"
+            >
+              This Template is currently unavailable for Editors
+            </span>
+          </div>
+        </div>
+        <div
+          className="c24"
+          id="removeBlock"
+          onClick={[Function]}
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "shapeRendering": "crispEdges",
+                "width": 30,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M15 28h30v4H15z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c19"
+      >
+        <div>
+          <input
+            id="allowAdd"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+          />
+          <label
+            htmlFor="allowAdd"
+          >
+            <div
+              style={
+                Object {
+                  "background": "#2F2F36",
+                  "borderRadius": 20,
+                  "boxSizing": "border-box",
+                  "cursor": "pointer",
+                  "height": 24,
+                  "padding": 2,
+                  "transition": "background 200ms ease-in-out",
+                  "width": 44,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#FFF",
+                    "borderRadius": "50%",
+                    "height": 20,
+                    "transform": "translateX(0)",
+                    "transition": "transform 200ms ease-in-out",
+                    "width": 20,
+                  }
+                }
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          className="c21"
+        >
+          <label
+            className="c22"
+            htmlFor="allowAdd"
+          >
+            Allow new Elements to be added to this Block Template
+          </label>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

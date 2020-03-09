@@ -130,7 +130,7 @@ export const BlockTemplate = memo(
             </NavigationContainer>
           </form>
         </LoadingWrapper>
-        <Modal isOpen={removeModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal ariaHideApp={false} isOpen={removeModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>

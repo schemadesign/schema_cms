@@ -5,6 +5,7 @@ exports[`Storyshots CounterHeader Default 1`] = `
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
+  min-height: 43px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,6 +30,7 @@ exports[`Storyshots CounterHeader Default 1`] = `
 @media (min-width:1050px) {
   .c0 {
     margin-top: -35px;
+    margin-bottom: 40px;
   }
 }
 

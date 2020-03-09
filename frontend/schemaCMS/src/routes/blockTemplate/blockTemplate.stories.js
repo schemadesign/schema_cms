@@ -16,6 +16,7 @@ export const defaultProps = {
   updateBlockTemplate: Function.prototype,
   fetchBlockTemplate: jest.fn().mockReturnValue(Promise.resolve({ project: 'projectId' })),
   fetchBlockTemplates: Function.prototype,
+  removeBlockTemplate: jest.fn().mockReturnValue(Promise.resolve({})),
 };
 
 storiesOf('BlockTemplate', module)

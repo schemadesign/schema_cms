@@ -111,7 +111,7 @@ export const BlockTemplateForm = ({
   };
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
   const binIcon = setRemoveModalOpen ? (
-    <BinIconContainer onClick={() => setRemoveModalOpen(true)}>
+    <BinIconContainer id="removeBlock" onClick={() => setRemoveModalOpen(true)}>
       <MinusIcon customStyles={binStyles} />
     </BinIconContainer>
   ) : null;
@@ -144,10 +144,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.id || index}
+              key={element.id}
               accept="box"
               onMove={handleMove}
-              id={element.id || index}
+              id={element.id}
               index={index}
               count={elementsCount}
             >

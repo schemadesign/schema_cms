@@ -9,6 +9,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   setValues: Function.prototype,
+  setRemoveModalOpen: Function.prototype,
   blockTemplates,
   values: blockTemplate,
   title: <span>title</span>,

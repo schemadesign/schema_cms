@@ -30,7 +30,10 @@ jest.doMock('dayjs', () => dayjs);
 jest.doMock('react-syntax-highlighter/dist/esm/styles/hljs', () => ({
   docco: {},
 }));
-
+jest.mock('react-dom', () => ({
+  ...jest.requireActual('react-dom'),
+  createPortal: node => node,
+}));
 jest.doMock('react-dnd-multi-backend/dist/esm/HTML5toTouch', () => ({}));
 
 jest.mock('react-dnd', () => ({
