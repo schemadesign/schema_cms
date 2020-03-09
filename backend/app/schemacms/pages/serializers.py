@@ -20,7 +20,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
     class Meta:
         model = models.BlockTemplate
-        fields = ("id", "project", "name", "created_by", "elements", "created")
+        fields = ("id", "project", "name", "created_by", "elements", "created", "is_available", "allow_add")
 
     @transaction.atomic()
     def create(self, validated_data):
@@ -69,7 +69,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
 class PageTemplateSerializer(CustomModelSerializer):
     class Meta:
         model = models.PageTemplate
-        fields = ("id", "project", "name", "created_by", "blocks", "created")
+        fields = ("id", "project", "name", "created_by", "blocks", "created", "is_available", "allow_add")
 
     def create(self, validated_data):
         blocks = validated_data.pop("blocks")

@@ -35,4 +35,5 @@ class TestProject:
 
     def test_get_projects_for_user(self, faker, project_factory, user):
         projects = project_factory.create_batch(3, editors=[user])
-        assert projects == list(project_models.Project.get_projects_for_user(user))
+        assert len(projects) == len(project_models.Project.get_projects_for_user(user))
+        assert projects == list(project_models.Project.get_projects_for_user(user).order_by("id"))

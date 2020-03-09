@@ -25,6 +25,8 @@ class Template(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    is_available = models.BooleanField(default=False)
+    allow_add = models.BooleanField(default=False)
 
     class Meta:
         abstract = True
