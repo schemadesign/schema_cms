@@ -14,7 +14,7 @@ pytestmark = [pytest.mark.django_db]
 class TestListBlockTemplatesView:
     @staticmethod
     def get_url(pk):
-        return reverse("projects:project-block-templates", kwargs=dict(pk=pk))
+        return reverse("pages:block_templates_list_create", kwargs=dict(project_pk=pk))
 
     def test_response(self, api_client, admin, project, block_template_factory):
         block_template_factory.create_batch(3, project=project)
@@ -30,7 +30,7 @@ class TestListBlockTemplatesView:
 class TestCreateBlockTemplatesView:
     @staticmethod
     def get_url(pk):
-        return reverse("projects:project-block-templates", kwargs=dict(pk=pk))
+        return reverse("pages:block_templates_list_create", kwargs=dict(project_pk=pk))
 
     def test_response(self, api_client, admin, project):
         name = "Test Block"
@@ -140,7 +140,7 @@ class TestDeleteBlockTemplatesView:
 class TestListPageTemplatesView:
     @staticmethod
     def get_url(pk):
-        return reverse("projects:project-page-templates", kwargs=dict(pk=pk))
+        return reverse("pages:page_templates_list_create", kwargs=dict(project_pk=pk))
 
     def test_response(self, api_client, admin, project, page_template_factory):
         page_template_factory.create_batch(3, project=project)

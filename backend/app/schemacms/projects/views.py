@@ -1,5 +1,3 @@
-from django.db.models import Prefetch
-
 from django.db import transaction
 
 from rest_framework import decorators, permissions, response, status, viewsets
@@ -7,8 +5,6 @@ from rest_framework import decorators, permissions, response, status, viewsets
 from . import models, serializers
 from ..datasources import serializers as ds_serializers
 from ..states import serializers as st_serializers
-from ..pages import serializers as pages_serializers
-from ..pages import models as pages_models
 from ..users import permissions as user_permissions
 from ..utils import serializers as utils_serializers
 
@@ -21,21 +17,11 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         "datasources": ds_serializers.DataSourceSerializer,
         "users": serializers.UserSerializer,
         "states": st_serializers.StateSerializer,
-        "block_templates": pages_serializers.BlockTemplateSerializer,
-        "page_templates": pages_serializers.PageTemplateSerializer,
     }
 
     def get_queryset(self):
         if self.action == "retrieve":
             queryset = models.Project.objects.all()
-        elif self.action == "block_templates":
-            return models.Project.objects.all().prefetch_related(
-                Prefetch(
-                    "blocktemplate_set",
-                    queryset=pages_models.BlockTemplate.objects.all().order_by("-created"),
-                ),
-                "blocktemplate_set__elements",
-            )
         else:
             queryset = models.Project.get_projects_for_user(self.request.user)
 
@@ -151,15 +137,3 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         data = {"project": project.project_info, "results": project.templates_count}
 
         return response.Response(data, status=status.HTTP_200_OK)
-
-    @decorators.action(detail=True, url_path="block-templates", methods=["get", "post"])
-    def block_templates(self, request, **kwargs):
-        return self.generate_action_post_get_response(
-            request, related_objects_name="blocktemplate_set", parent_object_name="project"
-        )
-
-    @decorators.action(detail=True, url_path="page-templates", methods=["get", "post"])
-    def page_templates(self, request, **kwargs):
-        return self.generate_action_post_get_response(
-            request, related_objects_name="pagetemplate_set", parent_object_name="project"
-        )
