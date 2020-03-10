@@ -61,7 +61,7 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockT
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
-          <BlockTemplateForm title={title} blockTemplates={blockTemplates} {...restFormikProps} />
+          <BlockTemplateForm title={title} blockTemplates={blockTemplates} isValid={isValid} {...restFormikProps} />
           <NavigationContainer fixed>
             <BackButton
               id="cancelBtn"

@@ -52,6 +52,7 @@ export const BlockTemplateForm = ({
   setValues,
   setFieldValue,
   values,
+  isValid,
   blockTemplates,
   setRemoveModalOpen = null,
   ...restFormikProps
@@ -120,7 +121,7 @@ export const BlockTemplateForm = ({
   return (
     <Container>
       <ContextHeader title={title} subtitle={nameInput}>
-        <PlusButton id="createElement" onClick={addElement} type="button" />
+        <PlusButton id="createElement" onClick={addElement} type="button" disabled={!isValid} />
       </ContextHeader>
       <MobileInputName>
         <TextInput
@@ -218,6 +219,7 @@ BlockTemplateForm.propTypes = {
   setRemoveModalOpen: PropTypes.func,
   setValues: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  isValid: PropTypes.func.isRequired,
   values: PropTypes.object.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,

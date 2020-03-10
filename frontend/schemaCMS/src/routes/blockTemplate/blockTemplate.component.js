@@ -111,6 +111,7 @@ export const BlockTemplate = memo(
               title={title}
               blockTemplates={filteredBlockTemplates}
               setRemoveModalOpen={setRemoveModalOpen}
+              isValid={isValid}
               {...restFormikProps}
             />
             <NavigationContainer fixed>
