@@ -23,7 +23,7 @@ export const IconWrapper = styled.div`
 `;
 
 export const ErrorWrapper = styled.div`
-  position: absolute;
+  position: ${({ isLabel }) => (isLabel ? 'absolute' : 'positive')};
   top: ${({ isLabel }) => (isLabel ? '50px' : '30px')};
   left: 0;
   color: ${({ theme: { textField } }) => textField.error};
