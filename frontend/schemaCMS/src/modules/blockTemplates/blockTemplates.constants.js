@@ -27,6 +27,7 @@ export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
   [ELEMENT_TYPE]: '',
   [ELEMENT_NAME]: '',
   [ELEMENT_PARAMS]: {},
+  autoOpen: true,
 };
 
 export const INITIAL_VALUES = {

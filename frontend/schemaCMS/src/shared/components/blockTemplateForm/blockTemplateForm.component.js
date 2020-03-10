@@ -146,10 +146,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.key || element.id}
+              key={element.key || element.id || index}
               accept="box"
               onMove={handleMove}
-              id={element.key || element.id}
+              id={element.key || element.id || index}
               index={index}
               count={elementsCount}
             >
@@ -219,7 +219,7 @@ BlockTemplateForm.propTypes = {
   setRemoveModalOpen: PropTypes.func,
   setValues: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
-  isValid: PropTypes.func.isRequired,
+  isValid: PropTypes.bool.isRequired,
   values: PropTypes.object.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,

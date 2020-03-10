@@ -12,7 +12,11 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { NavigationContainer, NextButton, BackButton } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project.constants';
-import { BLOCK_TEMPLATES_SCHEMA, INITIAL_VALUES } from '../../../modules/blockTemplates/blockTemplates.constants';
+import {
+  BLOCK_TEMPLATES_NAME,
+  BLOCK_TEMPLATES_SCHEMA,
+  INITIAL_VALUES,
+} from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../../shared/components/blockTemplateForm';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
@@ -27,6 +31,7 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockT
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
+    initialErrors: { [BLOCK_TEMPLATES_NAME]: 'required' },
     onSubmit: async formData => {
       try {
         setCreateLoading(true);

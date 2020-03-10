@@ -12,6 +12,7 @@ export const defaultProps = {
   setRemoveModalOpen: Function.prototype,
   blockTemplates,
   values: blockTemplate,
+  isValid: true,
   title: <span>title</span>,
 };
 

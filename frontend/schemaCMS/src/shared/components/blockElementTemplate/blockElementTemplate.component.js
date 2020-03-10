@@ -29,7 +29,7 @@ import { renderWhenTrue } from '../../utils/rendering';
 const { EditIcon, MinusIcon } = Icons;
 
 export const BlockElementTemplate = ({
-  element: { name, type, params },
+  element: { name, type, params, autoOpen },
   handleChange,
   index,
   setFieldValue,
@@ -43,7 +43,6 @@ export const BlockElementTemplate = ({
   const typesOptions = ELEMENTS_TYPES.map(item => ({ label: intl.formatMessage(messages[item]), value: item }));
   const handleSelectType = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
   const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`, value);
-
   const getAdditionalInputs = renderWhenTrue(() => (
     <InputContainer>
       <Select
@@ -61,7 +60,7 @@ export const BlockElementTemplate = ({
   ));
 
   return (
-    <AccordionPanel>
+    <AccordionPanel autoOpen={autoOpen}>
       <AccordionHeader>
         <Header>
           <IconsContainer>
