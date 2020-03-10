@@ -18,7 +18,7 @@ describe('BlockTemplateForm: Component', () => {
     wrapper.root.findAllByProps({ id: 'createElement' })[0].props.onClick();
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements', [
-      { key: 'box-0', name: '', params: {}, type: '' },
+      { key: 'box-0', name: '', params: {}, type: '', autoOpen: true },
       { id: 1, name: 'element name', params: { block: 'block name 2' }, type: 'stack' },
     ]);
   });
@@ -35,6 +35,8 @@ describe('BlockTemplateForm: Component', () => {
       elements: [],
       id: 1,
       name: 'block name',
+      allowAdd: false,
+      isAvailable: true,
     });
   });
 });

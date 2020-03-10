@@ -2,7 +2,9 @@
 
 exports[`AccordionPanel: Component should render correctly 1`] = `
 <Component>
-  <AccordionPanelComponent>
+  <AccordionPanelComponent
+    autoOpen={false}
+  >
     <div
       style={
         Object {

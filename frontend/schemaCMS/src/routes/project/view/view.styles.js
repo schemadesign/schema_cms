@@ -93,6 +93,8 @@ export const selectContainerStyles = css`
 `;
 
 export const InputContainer = styled.div`
+  width: 100%;
+  padding-right: 30px;
   ${ErrorWrapper} {
     margin: 5px 0 0;
   }

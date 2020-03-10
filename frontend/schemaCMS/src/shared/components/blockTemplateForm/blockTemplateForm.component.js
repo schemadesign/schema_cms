@@ -52,6 +52,7 @@ export const BlockTemplateForm = ({
   setValues,
   setFieldValue,
   values,
+  isValid,
   blockTemplates,
   setRemoveModalOpen = null,
   ...restFormikProps
@@ -120,7 +121,7 @@ export const BlockTemplateForm = ({
   return (
     <Container>
       <ContextHeader title={title} subtitle={nameInput}>
-        <PlusButton id="createElement" onClick={addElement} type="button" />
+        <PlusButton id="createElement" onClick={addElement} type="button" disabled={!isValid} />
       </ContextHeader>
       <MobileInputName>
         <TextInput
@@ -145,10 +146,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.key || element.id}
+              key={element.key || element.id || index}
               accept="box"
               onMove={handleMove}
-              id={element.key || element.id}
+              id={element.key || element.id || index}
               index={index}
               count={elementsCount}
             >
@@ -191,7 +192,10 @@ export const BlockTemplateForm = ({
                 <FormattedMessage {...messages[BLOCK_TEMPLATES_IS_AVAILABLE]} />
               </SwitchLabel>
               <AvailableCopy>
-                <FormattedMessage {...messages.availableForEditors} />
+                <FormattedMessage
+                  {...messages.availableForEditors}
+                  values={{ negative: values[BLOCK_TEMPLATES_IS_AVAILABLE] ? '' : 'un' }}
+                />
               </AvailableCopy>
             </SwitchCopy>
           </SwitchContent>
@@ -215,6 +219,7 @@ BlockTemplateForm.propTypes = {
   setRemoveModalOpen: PropTypes.func,
   setValues: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  isValid: PropTypes.bool.isRequired,
   values: PropTypes.object.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,

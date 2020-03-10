@@ -375,6 +375,11 @@ exports[`Storyshots Project|View Default 1`] = `
   word-break: break-word;
 }
 
+.c29 {
+  width: 100%;
+  padding-right: 30px;
+}
+
 .c29 .c39 {
   margin: 5px 0 0;
 }

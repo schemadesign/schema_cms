@@ -9,10 +9,15 @@ import AccordionPanelContext from './accordionPanel.context';
 export class AccordionPanelComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    autoOpen: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    autoOpen: false,
   };
 
   state = {
-    open: false,
+    open: this.props.autoOpen,
   };
 
   togglePanel = () => {
