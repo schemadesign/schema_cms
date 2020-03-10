@@ -1,5 +1,7 @@
 from django.db.models import Prefetch
 
+from django.db import transaction
+
 from rest_framework import decorators, permissions, response, status, viewsets
 
 from . import models, serializers
@@ -45,6 +47,17 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .prefetch_related("editors", "states", "blocktemplate_set", "pagetemplate_set")
             .order_by("-created")
         )
+
+    @transaction.atomic()
+    def perform_destroy(self, instance):
+        self._delete_data_sources_from_dynamo_on_destroy(instance)
+        instance.delete_dynamo_item()
+        instance.delete()
+
+    @staticmethod
+    def _delete_data_sources_from_dynamo_on_destroy(instance):
+        for ds in instance.data_sources.all():
+            ds.delete_dynamo_item()
 
     @decorators.action(detail=True, url_path="datasources", methods=["get"])
     def datasources(self, request, **kwargs):

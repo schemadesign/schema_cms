@@ -14,3 +14,7 @@ class MetaGeneratorMixin:
     def create_dynamo_item(self):
         table = dynamo.Table(self.dynamo_table_name)
         table.put_item(Item=self.meta_file_serialization())
+
+    def delete_dynamo_item(self):
+        table = dynamo.Table(self.dynamo_table_name)
+        table.delete_item(Key={"id": self.id})
