@@ -191,7 +191,10 @@ export const BlockTemplateForm = ({
                 <FormattedMessage {...messages[BLOCK_TEMPLATES_IS_AVAILABLE]} />
               </SwitchLabel>
               <AvailableCopy>
-                <FormattedMessage {...messages.availableForEditors} />
+                <FormattedMessage
+                  {...messages.availableForEditors}
+                  values={{ negative: values[BLOCK_TEMPLATES_IS_AVAILABLE] ? '' : 'un' }}
+                />
               </AvailableCopy>
             </SwitchCopy>
           </SwitchContent>

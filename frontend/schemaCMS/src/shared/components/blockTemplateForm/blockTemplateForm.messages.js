@@ -29,6 +29,6 @@ export default defineMessages({
   },
   availableForEditors: {
     id: 'shared.components.blockTemplateForm.availableForEditors',
-    defaultMessage: 'This Template is currently unavailable for Editors',
+    defaultMessage: 'This Template is currently {negative}available for Editors',
   },
 });
