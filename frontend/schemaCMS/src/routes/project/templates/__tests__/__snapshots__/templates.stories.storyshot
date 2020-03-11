@@ -764,7 +764,7 @@ exports[`Storyshots Templates Default 1`] = `
               <span
                 className="c18"
               >
-                Block
+                Block Templates
               </span>
             </div>
             <span
@@ -818,7 +818,7 @@ exports[`Storyshots Templates Default 1`] = `
               <span
                 className="c18"
               >
-                Page
+                Page Templates
               </span>
             </div>
             <span
@@ -872,7 +872,7 @@ exports[`Storyshots Templates Default 1`] = `
               <span
                 className="c18"
               >
-                Filter
+                Filter Templates
               </span>
             </div>
             <span
@@ -926,7 +926,7 @@ exports[`Storyshots Templates Default 1`] = `
               <span
                 className="c18"
               >
-                State
+                State Templates
               </span>
             </div>
             <span
