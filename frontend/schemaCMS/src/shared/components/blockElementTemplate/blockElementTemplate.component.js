@@ -10,6 +10,7 @@ import {
   Header,
   IconsContainer,
   iconStyles,
+  INPUT_HEIGHT,
   InputContainer,
 } from './blockElementTemplate.styles';
 import messages from './blockElementTemplate.messages';
@@ -58,6 +59,7 @@ export const BlockElementTemplate = ({
       />
     </InputContainer>
   ));
+  const isStackType = equals(STACK_TYPE, type);
 
   return (
     <AccordionPanel autoOpen={autoOpen}>
@@ -82,7 +84,7 @@ export const BlockElementTemplate = ({
           </IconsContainer>
         </Header>
       </AccordionHeader>
-      <AccordionDetails>
+      <AccordionDetails height={isStackType ? 2 * INPUT_HEIGHT : INPUT_HEIGHT}>
         <InputContainer>
           <Select
             label={intl.formatMessage(messages[ELEMENT_TYPE])}
@@ -96,7 +98,7 @@ export const BlockElementTemplate = ({
             {...restFormikProps}
           />
         </InputContainer>
-        {getAdditionalInputs(equals(STACK_TYPE, type))}
+        {getAdditionalInputs(isStackType)}
       </AccordionDetails>
     </AccordionPanel>
   );

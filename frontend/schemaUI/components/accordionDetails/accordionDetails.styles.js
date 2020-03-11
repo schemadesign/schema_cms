@@ -1,15 +1,14 @@
 import { defaultTheme } from '../../utils/theme';
 
-export const getStyles = (theme = defaultTheme) => ({
+const TIMING_FUNCTION = 'linear';
+export const ANIMATION_DURATION = 300;
+
+export const getStyles = ({ theme = defaultTheme, transitionProperty }) => ({
   containerStyles: {
-    transition: 'height 200ms ease-in-out, opacity 200ms ease-in-out',
+    transition: `${transitionProperty} ${ANIMATION_DURATION}ms ${TIMING_FUNCTION}, transform ${ANIMATION_DURATION}ms ${TIMING_FUNCTION}`,
     marginBottom: 10,
-    opacity: 0,
     backgroundColor: theme.background,
-  },
-  hiddenStyles: {
-    visibility: 'hidden',
-    opacity: 0,
-    position: 'absolute',
+    transform: 'scaleY(0)',
+    transformOrigin: 'top',
   },
 });

@@ -1,51 +1,49 @@
-import React, { PureComponent, createRef, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { getStyles } from './accordionDetails.styles';
+import { getStyles, ANIMATION_DURATION } from './accordionDetails.styles';
 import { withStyles } from '../styles/withStyles';
 import AccordionPanelContext from '../accordionPanel/accordionPanel.context';
 
 export class AccordionDetailsComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    maxHeight: PropTypes.number,
+    height: PropTypes.number,
+  };
+
+  static defaultProps = {
+    maxHeight: 200,
+    height: null,
   };
 
   state = {
-    detailsHeight: 0,
+    overflow: 'inherit',
   };
 
-  componentDidMount() {
-    if (this.detailsRef.current) {
-      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+  componentDidUpdate(prevProps) {
+    if (prevProps.height !== this.props.height) {
+      this.setState({ overflow: 'hidden' });
+      setTimeout(() => this.setState({ overflow: 'inherit' }), ANIMATION_DURATION);
     }
   }
-
-  componentDidUpdate() {
-    if (this.detailsRef.current) {
-      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
-    }
-  }
-
-  detailsRef = createRef();
 
   render() {
-    const { children } = this.props;
-    const { containerStyles, hiddenStyles } = getStyles();
+    const { children, height, maxHeight } = this.props;
+    const { overflow } = this.state;
+    const transitionProperty = height ? 'height' : 'max-height';
+    const { containerStyles } = getStyles({ transitionProperty });
+    const heightProperty = height ? { height } : { maxHeight };
+    const heightHiddenProperty = height ? { height: 0 } : { maxHeight: 0 };
+
     return (
       <AccordionPanelContext.Consumer style={containerStyles}>
         {({ open, customDetailsStyles }) => {
           const openStyles = open
-            ? { height: this.state.detailsHeight, opacity: 1, visibility: 'visible' }
-            : { height: 0, visibility: 'hidden' };
+            ? { ...heightProperty, transform: 'scaleY(1)', overflow }
+            : { ...heightHiddenProperty, transform: 'scaleY(0)', overflow };
 
-          return (
-            <Fragment>
-              <div style={{ ...containerStyles, ...customDetailsStyles, ...openStyles }}>{children}</div>
-              <div style={{ ...containerStyles, ...customDetailsStyles, ...hiddenStyles }} ref={this.detailsRef}>
-                {children}
-              </div>
-            </Fragment>
-          );
+          return <div style={{ ...containerStyles, ...customDetailsStyles, ...openStyles }}>{children}</div>;
         }}
       </AccordionPanelContext.Consumer>
     );
