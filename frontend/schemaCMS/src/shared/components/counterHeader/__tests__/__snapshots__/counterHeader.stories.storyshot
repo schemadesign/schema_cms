@@ -58,7 +58,11 @@ exports[`Storyshots CounterHeader Default 1`] = `
     3 copys
     <div
       className="c1"
-    />
+    >
+      <div>
+        right
+      </div>
+    </div>
   </div>
 </div>
 `;

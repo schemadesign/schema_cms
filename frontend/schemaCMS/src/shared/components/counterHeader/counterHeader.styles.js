@@ -17,5 +17,5 @@ export const Container = styled.div`
   `}
 `;
 export const Element = styled.div`
-  width: 33%;
+  width: ${({ renderElement }) => (renderElement ? 33 : 0)}%;
 `;
