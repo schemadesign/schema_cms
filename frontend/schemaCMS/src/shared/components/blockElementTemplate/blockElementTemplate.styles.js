@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const ICON_SIZE = 30;
-export const INPUT_HEIGHT = 77;
 
 export const Container = styled.div``;
 
@@ -14,7 +13,6 @@ export const Header = styled.div`
 export const IconsContainer = styled.div`
   display: flex;
   align-items: center;
-  height: ${INPUT_HEIGHT}px;
 `;
 
 export const InputContainer = styled.div`

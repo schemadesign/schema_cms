@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { getStyles, ANIMATION_DURATION } from './accordionDetails.styles';
@@ -8,42 +8,55 @@ import AccordionPanelContext from '../accordionPanel/accordionPanel.context';
 export class AccordionDetailsComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    maxHeight: PropTypes.number,
-    height: PropTypes.number,
-  };
-
-  static defaultProps = {
-    maxHeight: 200,
-    height: null,
   };
 
   state = {
-    overflow: 'inherit',
+    overflow: 'hidden',
+    height: 0,
   };
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.height !== this.props.height) {
-      this.setState({ overflow: 'hidden' });
-      setTimeout(() => this.setState({ overflow: 'inherit' }), ANIMATION_DURATION);
+  componentDidMount() {
+    if (this.innerRef.current) {
+      this.setState({ height: this.innerRef.current.offsetHeight });
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.innerRef.current && this.innerRef.current.offsetHeight !== this.state.height) {
+      this.setState({ height: this.innerRef.current.offsetHeight, overflow: 'hidden' });
+    }
+  }
+
+  delayOverflow = () => setTimeout(() => this.setState({ overflow: 'inherit' }), ANIMATION_DURATION);
+
+  containerRef = createRef();
+  innerRef = createRef();
+
+  open = false;
+
   render() {
-    const { children, height, maxHeight } = this.props;
-    const { overflow } = this.state;
-    const transitionProperty = height ? 'height' : 'max-height';
-    const { containerStyles } = getStyles({ transitionProperty });
-    const heightProperty = height ? { height } : { maxHeight };
-    const heightHiddenProperty = height ? { height: 0 } : { maxHeight: 0 };
+    const { children } = this.props;
+    const { overflow, height } = this.state;
+    const { containerStyles } = getStyles();
 
     return (
       <AccordionPanelContext.Consumer style={containerStyles}>
         {({ open, customDetailsStyles }) => {
-          const openStyles = open
-            ? { ...heightProperty, transform: 'scaleY(1)', overflow }
-            : { ...heightHiddenProperty, transform: 'scaleY(0)', overflow };
+          const openStyles = open ? { height, overflow } : { height: 0, overflow };
+          if (this.open !== open) {
+            this.open = open;
 
-          return <div style={{ ...containerStyles, ...customDetailsStyles, ...openStyles }}>{children}</div>;
+            this.setState({ overflow: 'hidden' });
+            if (open) {
+              this.delayOverflow();
+            }
+          }
+
+          return (
+            <div ref={this.containerRef} style={{ ...containerStyles, ...customDetailsStyles, ...openStyles }}>
+              <div ref={this.innerRef}>{children}</div>
+            </div>
+          );
         }}
       </AccordionPanelContext.Consumer>
     );

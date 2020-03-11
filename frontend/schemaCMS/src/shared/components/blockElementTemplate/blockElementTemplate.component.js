@@ -10,7 +10,6 @@ import {
   Header,
   IconsContainer,
   iconStyles,
-  INPUT_HEIGHT,
   InputContainer,
 } from './blockElementTemplate.styles';
 import messages from './blockElementTemplate.messages';
@@ -86,7 +85,7 @@ export const BlockElementTemplate = ({
           </IconsContainer>
         </Header>
       </AccordionHeader>
-      <AccordionDetails height={isStackType ? 2 * INPUT_HEIGHT : INPUT_HEIGHT}>
+      <AccordionDetails>
         <InputContainer>
           <Select
             label={intl.formatMessage(messages[ELEMENT_TYPE])}

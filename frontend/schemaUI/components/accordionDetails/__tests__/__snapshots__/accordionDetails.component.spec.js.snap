@@ -2,24 +2,20 @@
 
 exports[`AccordionDetails: Component should render correctly 1`] = `
 <Component>
-  <AccordionDetailsComponent
-    height={null}
-    maxHeight={200}
-  >
+  <AccordionDetailsComponent>
     <div
       style={
         Object {
           "backgroundColor": "#000",
-          "marginBottom": 10,
-          "maxHeight": 200,
-          "overflow": "inherit",
-          "transform": "scaleY(1)",
-          "transformOrigin": "top",
-          "transition": "max-height 300ms linear, transform 300ms linear",
+          "height": 0,
+          "overflow": "hidden",
+          "transition": "height 200ms linear, overflow 0s linear 200ms",
         }
       }
     >
-      AccordionDetails
+      <div>
+        AccordionDetails
+      </div>
     </div>
   </AccordionDetailsComponent>
 </Component>
