@@ -12,6 +12,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   removeElement: Function.prototype,
+  autoFocus: false,
   draggableIcon: <span>icon</span>,
 };
 

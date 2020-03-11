@@ -13,8 +13,10 @@ import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { NavigationContainer, NextButton, BackButton } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project.constants';
 import {
+  BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_NAME,
   BLOCK_TEMPLATES_SCHEMA,
+  getDefaultBlockElement,
   INITIAL_VALUES,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../../shared/components/blockTemplateForm';
@@ -29,7 +31,7 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockT
   const [error, setError] = useState(null);
   const [createLoading, setCreateLoading] = useState(false);
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: INITIAL_VALUES,
+    initialValues: { ...INITIAL_VALUES, [BLOCK_TEMPLATES_ELEMENTS]: [getDefaultBlockElement()] },
     validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
     initialErrors: { [BLOCK_TEMPLATES_NAME]: 'required' },
     onSubmit: async formData => {

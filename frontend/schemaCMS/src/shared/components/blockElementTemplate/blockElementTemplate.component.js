@@ -37,6 +37,7 @@ export const BlockElementTemplate = ({
   blocksOptions,
   removeElement,
   draggableIcon,
+  autoFocus,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -76,6 +77,7 @@ export const BlockElementTemplate = ({
             autoWidth
             fullWidth
             value={name}
+            autoFocus={autoFocus && !name.length}
             {...restFormikProps}
           />
           <IconsContainer>
@@ -112,4 +114,5 @@ BlockElementTemplate.propTypes = {
   setFieldValue: PropTypes.func.isRequired,
   removeElement: PropTypes.func.isRequired,
   draggableIcon: PropTypes.element.isRequired,
+  autoFocus: PropTypes.bool.isRequired,
 };

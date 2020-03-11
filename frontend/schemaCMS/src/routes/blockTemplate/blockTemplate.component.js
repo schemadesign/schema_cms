@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
 import { useHistory, useParams } from 'react-router';
 import { useEffectOnce } from 'react-use';
-import { pick, map } from 'ramda';
+import { pick } from 'ramda';
 
 import { Container } from './blockTemplate.styles';
 import messages from './blockTemplate.messages';
@@ -64,7 +64,10 @@ export const BlockTemplate = memo(
         name,
         isAvailable,
         allowAdd,
-        elements: map(pick([ELEMENT_NAME, ELEMENT_TYPE, ELEMENT_ID, ELEMENT_PARAMS]), elements),
+        elements: elements.map(element => ({
+          ...pick([ELEMENT_NAME, ELEMENT_TYPE, ELEMENT_ID, ELEMENT_PARAMS], element),
+          key: element.id,
+        })),
         [BLOCK_TEMPLATES_DELETE_ELEMENTS]: [],
       },
       enableReinitialize: true,
