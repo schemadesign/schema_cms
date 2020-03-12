@@ -1,3 +1,6 @@
+import '@formatjs/intl-pluralrules/polyfill';
+import '@formatjs/intl-pluralrules/dist/locale-data/en';
+
 import enTranslationMessages from './translations/en.json';
 
 export const LOCALES = {

@@ -13,7 +13,7 @@ export default defineMessages({
   contact: {
     id: 'revokedAccess.contact',
     defaultMessage:
-      'If you believe this is an error, please contact your administrator or <a href="/">log with different credentials</a>.',
+      'If you believe this is an error, please contact your administrator or <a>log with different credentials</a>.',
   },
   title: {
     id: 'revokedAccess.title',
