@@ -71,7 +71,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole }
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ContextHeader title={title} subtitle={subtitle}>
         <PlusButton
-          id="createTemplateBlock"
+          id="createBlockTemplate"
           onClick={() => history.push(`/project/${projectId}/block-templates/create`)}
         />
       </ContextHeader>
@@ -85,10 +85,11 @@ export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole }
           </ListContainer>
         </Fragment>
       </LoadingWrapper>
-      <NavigationContainer fixed hideOnDesktop>
+      <NavigationContainer fixed>
         <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}/templates`)} />
         <PlusButton
-          id="createTemplateBlockMobile"
+          hideOnDesktop
+          id="createBlockTemplateMobile"
           onClick={() => history.push(`/project/${projectId}/block-templates/create`)}
         />
       </NavigationContainer>

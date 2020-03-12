@@ -1,13 +1,14 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectPageTemplatesDomain, selectPageTemplates } from '../pageTemplates.selectors';
-import { pageTemplates } from '../pageTemplates.mocks';
+import { selectPageTemplatesDomain, selectPageTemplates, selectPageTemplate } from '../pageTemplates.selectors';
+import { pageTemplate, pageTemplates } from '../pageTemplates.mocks';
 
 describe('PageTemplates: selectors', () => {
   const state = Immutable({
     pageTemplates: {
       pageTemplates,
+      pageTemplate,
     },
   });
 
@@ -20,6 +21,12 @@ describe('PageTemplates: selectors', () => {
   describe('selectPageTemplates', () => {
     it('should select a page templates', () => {
       expect(selectPageTemplates(state)).to.equal(state.pageTemplates.pageTemplates);
+    });
+  });
+
+  describe('selectPageTemplate', () => {
+    it('should select a page template', () => {
+      expect(selectPageTemplate(state)).to.equal(state.pageTemplates.pageTemplate);
     });
   });
 });

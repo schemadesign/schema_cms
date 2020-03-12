@@ -39,4 +39,12 @@ describe('BlockTemplateForm: Component', () => {
       isAvailable: true,
     });
   });
+
+  it('should call setRemoveModalOpen', async () => {
+    jest.spyOn(defaultProps, 'setRemoveModalOpen');
+    const wrapper = await render();
+    wrapper.root.findByProps({ id: 'removeBlock' }).props.onClick();
+
+    expect(defaultProps.setRemoveModalOpen).toHaveBeenCalledWith(true);
+  });
 });

@@ -71,7 +71,7 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole }) =
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ContextHeader title={title} subtitle={subtitle}>
         <PlusButton
-          id="createTemplatePage"
+          id="createPageTemplate"
           onClick={() => history.push(`/project/${projectId}/page-templates/create`)}
         />
       </ContextHeader>
@@ -85,10 +85,11 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole }) =
           </ListContainer>
         </Fragment>
       </LoadingWrapper>
-      <NavigationContainer fixed hideOnDesktop>
+      <NavigationContainer fixed>
         <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}/templates`)} />
         <PlusButton
-          id="createTemplatePageMobile"
+          hideOnDesktop
+          id="createPageTemplateMobile"
           onClick={() => history.push(`/project/${projectId}/page-templates/create`)}
         />
       </NavigationContainer>

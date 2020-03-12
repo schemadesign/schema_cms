@@ -2,7 +2,7 @@
 
 exports[`BlockTemplateForm: Component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-gZMcBi giNnHm"
 >
   <div
     className="sc-gqjmRU eNIUbD"
@@ -41,7 +41,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-htoDjs fHktW"
+          className="sc-gzVnrw ihHoGK"
         >
           <div
             className="sc-dxgOiQ iPrVVI"
@@ -119,7 +119,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-dnqmqq klJvpP"
+            className="sc-htoDjs ixahcd"
           >
             <svg
               style={
@@ -191,7 +191,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iwsKbI hwjYqO"
+    className="sc-dnqmqq daNrns"
   >
     <div
       className="sc-dxgOiQ gNASfZ"
@@ -270,7 +270,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
       className="sc-cvbbAY kNNELi"
     >
       <div
-        className="sc-gZMcBi gWXMtb"
+        className="sc-iwsKbI eFsHMW"
       >
         <div
           className="sc-kpOJdX deHBhx"
@@ -954,13 +954,13 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     </div>
   </span>
   <div
-    className="sc-bwzfXH fAcqPw"
+    className="sc-bdVaJa bXZEwD"
   >
     <div
-      className="sc-htpNat kPhDHx"
+      className="sc-bwzfXH bCvdRp"
     >
       <div
-        className="sc-bZQynM fpPeNo"
+        className="sc-ifAKCX ifLOSP"
       >
         <div>
           <input
@@ -1012,16 +1012,16 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-ifAKCX iYZAfF"
+          className="sc-bxivhb iybNEM"
         >
           <label
-            className="sc-bxivhb kjXQwy"
+            className="sc-htpNat dQkmmE"
             htmlFor="isAvailable"
           >
             Make it Available
           </label>
           <span
-            className="sc-gzVnrw kXlObI"
+            className="sc-bZQynM cVkqiJ"
           >
             This Template is currently available for Editors
           </span>
@@ -1050,7 +1050,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-htpNat kPhDHx"
+      className="sc-bwzfXH bCvdRp"
     >
       <div>
         <input
@@ -1102,10 +1102,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         </label>
       </div>
       <div
-        className="sc-ifAKCX iYZAfF"
+        className="sc-bxivhb iybNEM"
       >
         <label
-          className="sc-bxivhb kjXQwy"
+          className="sc-htpNat dQkmmE"
           htmlFor="allowAdd"
         >
           Allow new Elements to be added to this Block Template

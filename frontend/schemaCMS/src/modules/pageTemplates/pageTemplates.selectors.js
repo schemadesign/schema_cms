@@ -7,3 +7,8 @@ export const selectPageTemplates = createSelector(
   selectPageTemplatesDomain,
   prop('pageTemplates')
 );
+
+export const selectPageTemplate = createSelector(
+  selectPageTemplatesDomain,
+  prop('pageTemplate')
+);
