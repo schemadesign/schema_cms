@@ -9,6 +9,7 @@ exports[`AccordionPanel: Component should render correctly 1`] = `
       style={
         Object {
           "borderTop": "2px solid #FFF",
+          "overflow": "hidden",
           "position": "relative",
           "width": "100%",
         }

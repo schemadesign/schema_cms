@@ -5,6 +5,7 @@ import { getStyles } from './accordionPanel.styles';
 import { withStyles } from '../styles/withStyles';
 import AccordionContext from '../accordion/accordion.context';
 import AccordionPanelContext from './accordionPanel.context';
+import { ANIMATION_DURATION } from '../accordionDetails/accordionDetails.styles';
 
 export class AccordionPanelComponent extends PureComponent {
   static propTypes = {
@@ -18,15 +19,22 @@ export class AccordionPanelComponent extends PureComponent {
 
   state = {
     open: this.props.autoOpen,
+    overflow: 'hidden',
   };
 
   togglePanel = () => {
-    this.setState({ open: !this.state.open });
+    const open = !this.state.open;
+    this.setState({ open, overflow: 'hidden' });
+    if (open) {
+      this.delayOverflow();
+    }
   };
+
+  delayOverflow = () => setTimeout(() => this.setState({ overflow: 'inherit' }), ANIMATION_DURATION);
 
   render() {
     const { children } = this.props;
-    const { open } = this.state;
+    const { open, overflow } = this.state;
     const { containerStyles } = getStyles();
 
     return (
@@ -34,7 +42,7 @@ export class AccordionPanelComponent extends PureComponent {
         {({ customPanelStyles, ...rest }) => {
           return (
             <AccordionPanelContext.Provider value={{ ...rest, open, togglePanel: this.togglePanel }}>
-              <div style={{ ...containerStyles, ...customPanelStyles }}>{children}</div>
+              <div style={{ ...containerStyles, ...customPanelStyles, overflow }}>{children}</div>
             </AccordionPanelContext.Provider>
           );
         }}
