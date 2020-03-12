@@ -26,22 +26,25 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     options={Array []}
   />
   <styled.div>
-    <FormattedHTMLMessage
+    <FormattedMessage
       defaultMessage="Account with email <b>{email}</b> is not registered."
       id="notRegistered.info"
-      tagName="span"
       values={
         Object {
+          "b": [Function],
           "email": "some-mail@example.com",
         }
       }
     />
     <br />
-    <FormattedHTMLMessage
-      defaultMessage="If you believe this is an error, please contact your administrator or <a href=\\"/\\">log in again</a>."
+    <FormattedMessage
+      defaultMessage="If you believe this is an error, please contact your administrator or <a>log in again</a>."
       id="notRegistered.contact"
-      tagName="span"
-      values={Object {}}
+      values={
+        Object {
+          "a": [Function],
+        }
+      }
     />
   </styled.div>
 </Fragment>

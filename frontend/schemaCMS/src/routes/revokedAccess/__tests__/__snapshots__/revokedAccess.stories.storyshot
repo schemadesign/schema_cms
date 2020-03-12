@@ -354,21 +354,19 @@ exports[`Storyshots RevokedAccess Default 1`] = `
   <div
     className="c8"
   >
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "The access for account with email <b>some-mail@example.com</b> has been revoked.",
-        }
-      }
-    />
+    The access for account with email 
+    <b>
+      some-mail@example.com
+    </b>
+     has been revoked.
     <br />
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "If you believe this is an error, please contact your administrator or <a href=\\"/\\">log with different credentials</a>.",
-        }
-      }
-    />
+    If you believe this is an error, please contact your administrator or 
+    <a
+      href="/"
+    >
+      log with different credentials
+    </a>
+    .
   </div>
 </div>
 `;

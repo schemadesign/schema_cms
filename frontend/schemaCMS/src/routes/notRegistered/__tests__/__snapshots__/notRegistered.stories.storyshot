@@ -354,21 +354,19 @@ exports[`Storyshots NotRegistered Default 1`] = `
   <div
     className="c8"
   >
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Account with email <b>some-mail@example.com</b> is not registered.",
-        }
-      }
-    />
+    Account with email 
+    <b>
+      some-mail@example.com
+    </b>
+     is not registered.
     <br />
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "If you believe this is an error, please contact your administrator or <a href=\\"/\\">log in again</a>.",
-        }
-      }
-    />
+    If you believe this is an error, please contact your administrator or 
+    <a
+      href="/"
+    >
+      log in again
+    </a>
+    .
   </div>
 </div>
 `;
