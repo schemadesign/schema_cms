@@ -26,22 +26,25 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
     options={Array []}
   />
   <styled.div>
-    <FormattedHTMLMessage
+    <FormattedMessage
       defaultMessage="The access for account with email <b>{email}</b> has been revoked."
       id="revokedAccess.info"
-      tagName="span"
       values={
         Object {
+          "b": [Function],
           "email": "some-mail@example.com",
         }
       }
     />
     <br />
-    <FormattedHTMLMessage
-      defaultMessage="If you believe this is an error, please contact your administrator or <a href=\\"/\\">log with different credentials</a>."
+    <FormattedMessage
+      defaultMessage="If you believe this is an error, please contact your administrator or <a>log with different credentials</a>."
       id="revokedAccess.contact"
-      tagName="span"
-      values={Object {}}
+      values={
+        Object {
+          "a": [Function],
+        }
+      }
     />
   </styled.div>
 </Fragment>

@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { injectIntl, FormattedHTMLMessage, FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import { compose } from 'ramda';
 
 import messages from './notRegistered.messages';
@@ -28,9 +28,9 @@ export class NotRegisteredComponent extends PureComponent {
         <MobileMenu headerTitle={headerTitle} headerSubtitle={headerSubtitle} iconComponent={null} />
 
         <InfoContainer>
-          <FormattedHTMLMessage {...messages.info} values={{ email }} />
+          <FormattedMessage {...messages.info} values={{ email, b: msg => <b>{msg}</b> }} />
           <br />
-          <FormattedHTMLMessage {...messages.contact} />
+          <FormattedMessage {...messages.contact} values={{ a: msg => <a href="/">{msg}</a> }} />
         </InfoContainer>
       </Fragment>
     );

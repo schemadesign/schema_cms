@@ -1391,6 +1391,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                           <div
                             style={
                               Object {
+                                "WebkitOverflowScrolling": "touch",
                                 "backgroundColor": "#1d1d20",
                                 "display": "none",
                                 "flexDirection": "column",
@@ -1624,6 +1625,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                           <div
                             style={
                               Object {
+                                "WebkitOverflowScrolling": "touch",
                                 "backgroundColor": "#1d1d20",
                                 "display": "none",
                                 "flexDirection": "column",

@@ -47,6 +47,7 @@ export const getStyles = (theme = defaultTheme) => ({
     left: '0',
     zIndex: 2,
     backgroundColor: theme.select.background,
+    WebkitOverflowScrolling: 'touch',
   }),
   hoverStyles: {
     backgroundColor: theme.text,

@@ -1067,7 +1067,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               style={
                 Object {
                   "borderTop": "2px solid #FFF",
-                  "overflow": "hidden",
+                  "overflow": "inherit",
                   "position": "relative",
                   "width": "100%",
                 }
@@ -1384,6 +1384,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                           <div
                             style={
                               Object {
+                                "WebkitOverflowScrolling": "touch",
                                 "backgroundColor": "#1d1d20",
                                 "display": "none",
                                 "flexDirection": "column",

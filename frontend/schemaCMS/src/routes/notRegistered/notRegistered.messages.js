@@ -12,8 +12,7 @@ export default defineMessages({
   },
   contact: {
     id: 'notRegistered.contact',
-    defaultMessage:
-      'If you believe this is an error, please contact your administrator or <a href="/">log in again</a>.',
+    defaultMessage: 'If you believe this is an error, please contact your administrator or <a>log in again</a>.',
   },
   title: {
     id: 'notRegistered.title',
