@@ -22,6 +22,73 @@ function* fetchPageTemplates({ payload: { projectId } }) {
   }
 }
 
+function* fetchPageTemplate({ payload: { pageTemplateId } }) {
+  try {
+    yield put(PageTemplatesRoutines.fetchPageTemplate.request());
+
+    const { data } = yield api.get(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`);
+
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(PageTemplatesRoutines.fetchPageTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(PageTemplatesRoutines.fetchPageTemplate.failure(error));
+  } finally {
+    yield put(PageTemplatesRoutines.fetchPageTemplate.fulfill());
+  }
+}
+
+function* createPageTemplate({ payload: { projectId, formData } }) {
+  try {
+    yield put(PageTemplatesRoutines.createPageTemplate.request());
+
+    const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${PAGE_TEMPLATES_PATH}`, formData);
+
+    yield put(PageTemplatesRoutines.createPageTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(PageTemplatesRoutines.createPageTemplate.failure(error));
+  } finally {
+    yield put(PageTemplatesRoutines.createPageTemplate.fulfill());
+  }
+}
+
+function* updatePageTemplate({ payload: { pageTemplateId, formData } }) {
+  try {
+    yield put(PageTemplatesRoutines.updatePageTemplate.request());
+
+    const { data } = yield api.patch(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`, formData);
+
+    yield put(PageTemplatesRoutines.updatePageTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(PageTemplatesRoutines.updatePageTemplate.failure(error));
+  } finally {
+    yield put(PageTemplatesRoutines.updatePageTemplate.fulfill());
+  }
+}
+
+function* removePageTemplate({ payload: { pageTemplateId } }) {
+  try {
+    yield put(PageTemplatesRoutines.removePageTemplate.request());
+
+    const { data } = yield api.delete(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`);
+
+    yield put(PageTemplatesRoutines.removePageTemplate.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(PageTemplatesRoutines.removePageTemplate.failure(error));
+  } finally {
+    yield put(PageTemplatesRoutines.removePageTemplate.fulfill());
+  }
+}
+
 export function* watchPageTemplates() {
-  yield all([takeLatest(PageTemplatesRoutines.fetchPageTemplates.TRIGGER, fetchPageTemplates)]);
+  yield all([
+    takeLatest(PageTemplatesRoutines.fetchPageTemplates.TRIGGER, fetchPageTemplates),
+    takeLatest(PageTemplatesRoutines.fetchPageTemplate.TRIGGER, fetchPageTemplate),
+    takeLatest(PageTemplatesRoutines.createPageTemplate.TRIGGER, createPageTemplate),
+    takeLatest(PageTemplatesRoutines.updatePageTemplate.TRIGGER, updatePageTemplate),
+    takeLatest(PageTemplatesRoutines.removePageTemplate.TRIGGER, removePageTemplate),
+  ]);
 }

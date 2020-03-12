@@ -34,14 +34,14 @@ describe('PageTemplates: Component', () => {
 
   it('should redirect to create page template', async () => {
     const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createTemplatePage' }).props.onClick();
+    wrapper.root.findByProps({ id: 'createPageTemplate' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/page-templates/create');
   });
 
   it('should redirect to create page template on mobile', async () => {
     const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createTemplatePageMobile' }).props.onClick();
+    wrapper.root.findByProps({ id: 'createPageTemplateMobile' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/page-templates/create');
   });

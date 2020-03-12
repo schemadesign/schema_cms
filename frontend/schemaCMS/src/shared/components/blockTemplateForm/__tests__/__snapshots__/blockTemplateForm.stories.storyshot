@@ -31,13 +31,6 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   padding-left: 10px;
 }
 
-.c24 {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
 .c20 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -51,6 +44,13 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding-right: 40px;
+}
+
+.c24 {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c23 {

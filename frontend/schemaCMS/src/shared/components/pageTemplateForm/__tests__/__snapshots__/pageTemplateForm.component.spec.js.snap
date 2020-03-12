@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTemplateForm: Component should render correctly 1`] = `
+<div
+  className="sc-bdVaJa bDWFJH"
+>
+  <div
+    className="sc-bwzfXH hFihFv"
+  >
+    <div
+      className="sc-htpNat izDCuh"
+    >
+      <h2
+        className="sc-bxivhb gmWEdw"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          title
+        </span>
+      </h2>
+      <h1
+        className="sc-ifAKCX gQQhZX"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <div
+          className="sc-chPdSV gWxTLm"
+        >
+          <div
+            className="sc-dxgOiQ iPrVVI"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "paddingRight": 40,
+                  "position": "static",
+                }
+              }
+            >
+              <input
+                id="name"
+                name="name"
+                onChange={[Function]}
+                placeholder="Name"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": 24,
+                    "fontWeight": 600,
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                    "width": 80,
+                  }
+                }
+                type="text"
+                value="Page template"
+              />
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": 24,
+                    "fontWeight": 600,
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "opacity": 0,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "fixed",
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                Page template
+              </div>
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-kgoBCf kfQFPg"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </h1>
+    </div>
+    <div
+      className="sc-EHOje jvzENE"
+    >
+      <div
+        className="sc-gZMcBi fFmEnj"
+      >
+        <button
+          disabled={false}
+          id="createBlock"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
+            }
+          }
+          type="button"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "shapeRendering": "crispEdges",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-kGXeez hfOfnG"
+  >
+    <div
+      className="sc-dxgOiQ gNASfZ"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="Page template"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-eNQAEJ flJfdT"
+  >
+    <div
+      className="sc-hMqMXs fBfRQX"
+    />
+    0 Blocks
+    <div
+      className="sc-hMqMXs fBfRQX"
+    >
+      <div
+        className="sc-kpOJdX jtnqpy"
+      >
+        <div
+          className="sc-gZMcBi fFmEnj"
+        >
+          <button
+            disabled={false}
+            id="createBlock"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-gqjmRU gxdJvX"
+  >
+    <div
+      className="sc-VigVT eSjych"
+    >
+      <div
+        className="sc-jzJRlG itrHXU"
+      >
+        <div>
+          <input
+            id="isAvailable"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+          />
+          <label
+            htmlFor="isAvailable"
+          >
+            <div
+              style={
+                Object {
+                  "background": "#2F2F36",
+                  "borderRadius": 20,
+                  "boxSizing": "border-box",
+                  "cursor": "pointer",
+                  "height": 24,
+                  "padding": 2,
+                  "transition": "background 200ms ease-in-out",
+                  "width": 44,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#FFF",
+                    "borderRadius": "50%",
+                    "height": 20,
+                    "transform": "translateX(0)",
+                    "transition": "transform 200ms ease-in-out",
+                    "width": 20,
+                  }
+                }
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          className="sc-fjdhpX bYOmCx"
+        >
+          <label
+            className="sc-jTzLTM frXRWe"
+            htmlFor="isAvailable"
+          >
+            Make it Available
+          </label>
+          <span
+            className="sc-kAzzGY fWKXcr"
+          >
+            This Template is currently unavailable for Editors
+          </span>
+        </div>
+      </div>
+      <div
+        className="sc-cSHVUG nuiJH"
+        id="removePage"
+        onClick={[Function]}
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 30,
+              "shapeRendering": "crispEdges",
+              "width": 30,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 28h30v4H15z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="sc-VigVT eSjych"
+    >
+      <div>
+        <input
+          id="allowAdd"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="allowAdd"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fjdhpX bYOmCx"
+      >
+        <label
+          className="sc-jTzLTM frXRWe"
+          htmlFor="allowAdd"
+        >
+          Allow new Blocks to be added to this Page Template
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;

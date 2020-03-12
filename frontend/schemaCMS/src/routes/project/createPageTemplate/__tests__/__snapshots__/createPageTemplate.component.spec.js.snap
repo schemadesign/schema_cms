@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateBlockTemplate: Component should render correctly 1`] = `
+exports[`CreatePageTemplate: Component should render correctly 1`] = `
 <div
   className="sc-bdVaJa bDWFJH"
 >
@@ -36,7 +36,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Block Template
+            Page Template
           </h2>
           <h1
             className="sc-iwsKbI bxRSJa"
@@ -137,7 +137,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Block Template
+            Page Template
           </h2>
           <h1
             className="sc-iwsKbI bxRSJa"
@@ -342,16 +342,16 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-eHgmQL gmKbQu"
+      className="sc-ckVGcZ foYhJp"
     >
       <div
-        className="sc-cvbbAY eMeTVi"
+        className="sc-jKJlTe gEQAlP"
       >
         <div
-          className="sc-jWBwVP bqSGJf"
+          className="sc-eNQAEJ dWMsXQ"
         >
           <h2
-            className="sc-brqgnP iTSvAk"
+            className="sc-hMqMXs NSfhp"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -362,10 +362,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Block Template
+            Page Template
           </h2>
           <h1
-            className="sc-cMljjf beoPtZ"
+            className="sc-kEYyzF duTgan"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -379,10 +379,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-kEYyzF kkFIwK"
+              className="sc-jAaTju lEldS"
             >
               <div
-                className="sc-jDwBTQ KDUOI"
+                className="sc-jlyJG hVSXOI"
               >
                 <div
                   style={
@@ -458,7 +458,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-kkGfuU jFeYHv"
+                className="sc-jDwBTQ dTsjtS"
               >
                 <svg
                   style={
@@ -480,14 +480,14 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-jAaTju fNCBho"
+          className="sc-kkGfuU gqJIVH"
         >
           <div
             className="sc-kgoBCf ifKHSM"
           >
             <button
               disabled={true}
-              id="createElement"
+              id="createBlock"
               onClick={[Function]}
               style={
                 Object {
@@ -530,10 +530,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-iAyFgw evfwkd"
+        className="sc-gPEVay hARQLZ"
       >
         <div
-          className="sc-jDwBTQ crfQUj"
+          className="sc-jlyJG dPdoZU"
         >
           <div
             style={
@@ -600,24 +600,24 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-jhAzac dzFuUB"
+        className="sc-Rmtcm digGrX"
       >
         <div
-          className="sc-fBuWsC bhAWGQ"
+          className="sc-bRBYWo bXAVwg"
         />
-        1 Element
+        0 Blocks
         <div
-          className="sc-fBuWsC bhAWGQ"
+          className="sc-bRBYWo bXAVwg"
         >
           <div
-            className="sc-hSdWYo fnUMtJ"
+            className="sc-iRbamj btwYWo"
           >
             <div
               className="sc-kgoBCf ifKHSM"
             >
               <button
                 disabled={false}
-                id="createElement"
+                id="createBlock"
                 onClick={[Function]}
                 style={
                   Object {
@@ -661,493 +661,14 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
-      <span>
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "justifyContent": "space-between",
-              "opacity": 1,
-              "position": "relative",
-              "transform": "translate3d(0, 0, 0)",
-              "width": "100%",
-              "zIndex": 1,
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "borderTop": "2px solid #FFF",
-                "overflow": "hidden",
-                "position": "relative",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#000",
-                  "display": "flex",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "minHeight": 60,
-                  "paddingRight": 40,
-                  "position": "relative",
-                }
-              }
-            >
-              <div
-                className="sc-gipzik eOjNbE"
-              >
-                <div
-                  className="sc-csuQGl fUdZHz"
-                >
-                  <div>
-                    <div
-                      className="sc-cHGsZl dfXCel"
-                    >
-                      <svg
-                        style={
-                          Object {
-                            "fill": "#FFF",
-                            "height": "60px",
-                            "marginRight": 20,
-                            "width": 10,
-                          }
-                        }
-                        viewBox="0 0 10 60"
-                      >
-                        <path
-                          d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <svg
-                    style={
-                      Object {
-                        "cursor": "default",
-                        "fill": "#FFF",
-                        "height": 30,
-                        "marginLeft": 5,
-                        "marginRight": 25,
-                        "shapeRendering": "crispEdges",
-                        "width": 30,
-                      }
-                    }
-                    viewBox="0 0 60 60"
-                  >
-                    <path
-                      d="M15 28h30v4H15z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="sc-jDwBTQ KDUOI"
-                >
-                  <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "maxWidth": "100%",
-                        "paddingBottom": 0,
-                        "position": "relative",
-                      }
-                    }
-                  >
-                    <input
-                      id="elements.0.name"
-                      name="elements.0.name"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      placeholder="Name"
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "outline": "none",
-                          "padding": 0,
-                          "width": 80,
-                        }
-                      }
-                      type="text"
-                      value=""
-                    />
-                    <div
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "opacity": 0,
-                          "outline": "none",
-                          "padding": 0,
-                          "position": "fixed",
-                          "visibility": "hidden",
-                          "whiteSpace": "pre",
-                        }
-                      }
-                    >
-                      
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-                <div
-                  className="sc-csuQGl fUdZHz"
-                >
-                  <svg
-                    style={
-                      Object {
-                        "fill": "#FFF",
-                        "height": "30px",
-                        "width": "30px",
-                      }
-                    }
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    id="removeElement-0"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "cursor": "pointer",
-                        "fill": "#FFF",
-                        "height": 30,
-                        "shapeRendering": "crispEdges",
-                        "width": 30,
-                      }
-                    }
-                    viewBox="0 0 60 60"
-                  >
-                    <path
-                      d="M15 28h30v4H15z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "fontSize": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 9,
-                    "transform": "rotate(180deg)",
-                    "transformOrigin": "center center",
-                    "transition": "transform 200ms ease-in-out",
-                  }
-                }
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "userSelect": "none",
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M15.117 18L9 12h12z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              style={
-                Object {
-                  "backgroundColor": "#000",
-                  "height": 0,
-                  "transition": "height 200ms linear, overflow 0s linear 200ms",
-                }
-              }
-            >
-              <div>
-                <div
-                  className="sc-Rmtcm jHYJGg"
-                >
-                  <div
-                    className="sc-bRBYWo igShYD"
-                  >
-                    <label
-                      id="fieldProjectStatusLabel"
-                      style={
-                        Object {
-                          "border": "none",
-                          "borderTop": "none",
-                          "color": "#71737e",
-                          "display": "block",
-                          "fontSize": "14px",
-                          "outline": "none",
-                          "paddingTop": "8px",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      Element Type
-                    </label>
-                    <input
-                      id="elements.0.type"
-                      name="elements.0.type"
-                      type="hidden"
-                      value=""
-                    />
-                    <div
-                      className="sc-hzDkRC ixGhoK"
-                    >
-                      <svg
-                        style={
-                          Object {
-                            "fill": "#FFF",
-                            "height": "30px",
-                            "width": "30px",
-                          }
-                        }
-                        viewBox="0 0 30 30"
-                      >
-                        <path
-                          d="M15.117 18L9 12h12z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "color": "#FFF",
-                          "display": "flex",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      <div
-                        id="elementTypeSelect"
-                        style={
-                          Object {
-                            "cursor": "pointer",
-                            "display": "flex",
-                            "position": "relative",
-                            "width": "100%",
-                          }
-                        }
-                      >
-                        <div
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "cursor": "pointer",
-                              "display": "flex",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Select Element Type
-                          </div>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "backgroundColor": "#1d1d20",
-                              "display": "none",
-                              "flexDirection": "column",
-                              "left": "0",
-                              "maxHeight": "184px",
-                              "overflowY": "hidden",
-                              "position": "absolute",
-                              "top": "calc(100% + 5px)",
-                              "width": "100%",
-                              "zIndex": 2,
-                            }
-                          }
-                        >
-                          <div
-                            id="select-item-0"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "1px solid  #2F2F36",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Rich text
-                          </div>
-                          <div
-                            id="select-item-1"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "none",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Plain text
-                          </div>
-                          <div
-                            id="select-item-2"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "none",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Image
-                          </div>
-                          <div
-                            id="select-item-3"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "none",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Code
-                          </div>
-                          <div
-                            id="select-item-4"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "none",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Connection
-                          </div>
-                          <div
-                            id="select-item-5"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "none",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Block Stack
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </span>
       <div
-        className="sc-kGXeez fehvdq"
+        className="sc-iAyFgw ZYbtF"
       >
         <div
-          className="sc-kpOJdX kgEKiv"
+          className="sc-hSdWYo hCOKAt"
         >
           <div
-            className="sc-jKJlTe cFoNiW"
+            className="sc-jWBwVP gGRvYX"
           >
             <div>
               <input
@@ -1199,16 +720,16 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-ckVGcZ IDTNX"
+              className="sc-cvbbAY WkBHn"
             >
               <label
-                className="sc-dxgOiQ jAQHf"
+                className="sc-eHgmQL dHuHVJ"
                 htmlFor="isAvailable"
               >
                 Make it Available
               </label>
               <span
-                className="sc-hMqMXs bIGpOl"
+                className="sc-cMljjf lbNnfn"
               >
                 This Template is currently unavailable for Editors
               </span>
@@ -1216,7 +737,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-kpOJdX kgEKiv"
+          className="sc-hSdWYo hCOKAt"
         >
           <div>
             <input
@@ -1268,13 +789,13 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-ckVGcZ IDTNX"
+            className="sc-cvbbAY WkBHn"
           >
             <label
-              className="sc-dxgOiQ jAQHf"
+              className="sc-eHgmQL dHuHVJ"
               htmlFor="allowAdd"
             >
-              Allow new Elements to be added to this Block Template
+              Allow new Blocks to be added to this Page Template
             </label>
           </div>
         </div>

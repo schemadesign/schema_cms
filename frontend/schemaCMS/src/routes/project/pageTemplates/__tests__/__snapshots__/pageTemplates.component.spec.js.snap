@@ -383,7 +383,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       >
         <button
           disabled={false}
-          id="createTemplatePage"
+          id="createPageTemplate"
           onClick={[Function]}
           style={
             Object {
@@ -606,7 +606,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       className="sc-kgoBCf bUXYRn"
     >
       <div
-        className="sc-chPdSV gnjuAS"
+        className="sc-chPdSV drfzAf"
       >
         <button
           disabled={false}
@@ -648,11 +648,11 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           </svg>
         </button>
         <div
-          className="sc-dxgOiQ dhqWEZ"
+          className="sc-dxgOiQ dwMPSu"
         >
           <button
             disabled={false}
-            id="createTemplatePageMobile"
+            id="createPageTemplateMobile"
             onClick={[Function]}
             style={
               Object {

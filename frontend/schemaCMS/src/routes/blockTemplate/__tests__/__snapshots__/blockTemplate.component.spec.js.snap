@@ -342,7 +342,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-kGXeez eIIwaK"
+      className="sc-eHgmQL gmKbQu"
     >
       <div
         className="sc-cvbbAY eMeTVi"
@@ -379,7 +379,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-kkGfuU hPxXlr"
+              className="sc-kEYyzF kkFIwK"
             >
               <div
                 className="sc-jDwBTQ KDUOI"
@@ -458,7 +458,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iAyFgw ijvpvk"
+                className="sc-kkGfuU jFeYHv"
               >
                 <svg
                   style={
@@ -530,7 +530,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-hSdWYo gVXXxh"
+        className="sc-iAyFgw evfwkd"
       >
         <div
           className="sc-jDwBTQ crfQUj"
@@ -610,7 +610,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
           className="sc-fBuWsC bhAWGQ"
         >
           <div
-            className="sc-eHgmQL grjLGM"
+            className="sc-hSdWYo fnUMtJ"
           >
             <div
               className="sc-kgoBCf ifKHSM"
@@ -1295,13 +1295,13 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         </div>
       </span>
       <div
-        className="sc-kpOJdX cpixyt"
+        className="sc-kGXeez fehvdq"
       >
         <div
-          className="sc-dxgOiQ kCwcJU"
+          className="sc-kpOJdX kgEKiv"
         >
           <div
-            className="sc-hMqMXs hLffqw"
+            className="sc-jKJlTe cFoNiW"
           >
             <div>
               <input
@@ -1353,16 +1353,16 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-jKJlTe hRKwwe"
+              className="sc-ckVGcZ IDTNX"
             >
               <label
-                className="sc-ckVGcZ fdSapw"
+                className="sc-dxgOiQ jAQHf"
                 htmlFor="isAvailable"
               >
                 Make it Available
               </label>
               <span
-                className="sc-kEYyzF eBnvfN"
+                className="sc-hMqMXs bIGpOl"
               >
                 This Template is currently available for Editors
               </span>
@@ -1391,7 +1391,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-dxgOiQ kCwcJU"
+          className="sc-kpOJdX kgEKiv"
         >
           <div>
             <input
@@ -1443,10 +1443,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-jKJlTe hRKwwe"
+            className="sc-ckVGcZ IDTNX"
           >
             <label
-              className="sc-ckVGcZ fdSapw"
+              className="sc-dxgOiQ jAQHf"
               htmlFor="allowAdd"
             >
               Allow new Elements to be added to this Block Template

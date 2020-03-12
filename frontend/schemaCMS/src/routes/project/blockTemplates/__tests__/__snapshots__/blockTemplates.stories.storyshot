@@ -209,7 +209,10 @@ exports[`Storyshots BlockTemplates Default 1`] = `
 
 @media (min-width:1050px) {
   .c22 {
-    display: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -226,6 +229,12 @@ exports[`Storyshots BlockTemplates Default 1`] = `
 @media (min-width:1050px) {
   .c12 {
     display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    display: none;
   }
 }
 
@@ -671,7 +680,7 @@ exports[`Storyshots BlockTemplates Default 1`] = `
         >
           <button
             disabled={false}
-            id="createTemplateBlock"
+            id="createBlockTemplate"
             onClick={[Function]}
             style={
               Object {
@@ -936,11 +945,11 @@ exports[`Storyshots BlockTemplates Default 1`] = `
             </svg>
           </button>
           <div
-            className="c12"
+            className="c23"
           >
             <button
               disabled={false}
-              id="createTemplateBlockMobile"
+              id="createBlockTemplateMobile"
               onClick={[Function]}
               style={
                 Object {

@@ -9,6 +9,6 @@ describe('{{ pascalCase name }}: Component', () => {
 
   it('should render correctly', async () => {
     const wrapper = await render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

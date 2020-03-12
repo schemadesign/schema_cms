@@ -30,4 +30,81 @@ describe('PageTemplates: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when /FETCH_PAGE_TEMPLATE action is fired', () => {
+    it('should put fetchPageTemplate action', async () => {
+      const pageTemplateId = 'pageTemplateId';
+      const response = {
+        id: 1,
+        results: [],
+        project: {},
+      };
+
+      mockApi.get(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`).reply(OK, response);
+
+      await expectSaga(watchPageTemplates)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(PageTemplatesRoutines.fetchPageTemplate.success(response.results))
+        .dispatch(PageTemplatesRoutines.fetchPageTemplate({ pageTemplateId }))
+        .silentRun();
+    });
+  });
+
+  describe('when /CREATE_PAGE_TEMPLATE action is fired', () => {
+    it('should put createPageTemplate action', async () => {
+      const projectId = 'projectId';
+      const formData = {};
+      const response = {
+        id: 1,
+        results: [],
+        project: {},
+      };
+
+      mockApi.post(`${PROJECTS_PATH}/${projectId}${PAGE_TEMPLATES_PATH}`, formData).reply(OK, response);
+
+      await expectSaga(watchPageTemplates)
+        .withState(defaultState)
+        .put(PageTemplatesRoutines.createPageTemplate.success(response.results))
+        .dispatch(PageTemplatesRoutines.createPageTemplate({ projectId, formData }))
+        .silentRun();
+    });
+  });
+
+  describe('when /UPDATE_PAGE_TEMPLATE action is fired', () => {
+    it('should put updatePageTemplate action', async () => {
+      const pageTemplateId = 'pageTemplateId';
+      const formData = {};
+      const response = {
+        id: 1,
+        results: [],
+      };
+
+      mockApi.patch(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`, formData).reply(OK, response);
+
+      await expectSaga(watchPageTemplates)
+        .withState(defaultState)
+        .put(PageTemplatesRoutines.updatePageTemplate.success(response.results))
+        .dispatch(PageTemplatesRoutines.updatePageTemplate({ pageTemplateId, formData }))
+        .silentRun();
+    });
+  });
+
+  describe('when /REMOVE_PAGE_TEMPLATE action is fired', () => {
+    it('should put removePageTemplate action', async () => {
+      const pageTemplateId = 'pageTemplateId';
+      const response = {
+        id: 1,
+        results: [],
+      };
+
+      mockApi.delete(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`).reply(OK, response);
+
+      await expectSaga(watchPageTemplates)
+        .withState(defaultState)
+        .put(PageTemplatesRoutines.removePageTemplate.success(response.results))
+        .dispatch(PageTemplatesRoutines.removePageTemplate({ pageTemplateId }))
+        .silentRun();
+    });
+  });
 });

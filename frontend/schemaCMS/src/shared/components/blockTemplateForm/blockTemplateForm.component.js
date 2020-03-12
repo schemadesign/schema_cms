@@ -9,7 +9,6 @@ import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
 
 import {
-  Container,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -25,7 +24,8 @@ import {
   SwitchCopy,
   binStyles,
   BinIconContainer,
-} from './blockTemplateForm.styles';
+} from '../form/frequentComponents.styles';
+import { Container } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
 import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
