@@ -1,4 +1,4 @@
-import React, { PureComponent, createRef, Fragment } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { getStyles } from './accordionDetails.styles';
@@ -11,40 +11,37 @@ export class AccordionDetailsComponent extends PureComponent {
   };
 
   state = {
-    detailsHeight: 0,
+    height: 0,
   };
 
   componentDidMount() {
-    if (this.detailsRef.current) {
-      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    if (this.innerRef.current) {
+      this.setState({ height: this.innerRef.current.offsetHeight });
     }
   }
 
   componentDidUpdate() {
-    if (this.detailsRef.current) {
-      this.setState({ detailsHeight: this.detailsRef.current.offsetHeight });
+    if (this.innerRef.current && this.innerRef.current.offsetHeight !== this.state.height) {
+      this.setState({ height: this.innerRef.current.offsetHeight });
     }
   }
 
-  detailsRef = createRef();
+  containerRef = createRef();
+  innerRef = createRef();
 
   render() {
     const { children } = this.props;
-    const { containerStyles, hiddenStyles } = getStyles();
+    const { containerStyles } = getStyles();
+
     return (
       <AccordionPanelContext.Consumer style={containerStyles}>
         {({ open, customDetailsStyles }) => {
-          const openStyles = open
-            ? { height: this.state.detailsHeight, opacity: 1, visibility: 'visible' }
-            : { height: 0, visibility: 'hidden' };
+          const height = open ? this.state.height : 0;
 
           return (
-            <Fragment>
-              <div style={{ ...containerStyles, ...customDetailsStyles, ...openStyles }}>{children}</div>
-              <div style={{ ...containerStyles, ...customDetailsStyles, ...hiddenStyles }} ref={this.detailsRef}>
-                {children}
-              </div>
-            </Fragment>
+            <div ref={this.containerRef} style={{ ...containerStyles, ...customDetailsStyles, height }}>
+              <div ref={this.innerRef}>{children}</div>
+            </div>
           );
         }}
       </AccordionPanelContext.Consumer>

@@ -15,6 +15,7 @@ export const blockTemplate = {
     {
       name: 'element name',
       id: 1,
+      key: 1,
       type: STACK_TYPE,
       params: {
         block: 'block name 2',

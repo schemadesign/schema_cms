@@ -8,9 +8,9 @@ import messages from './counterHeader.messages';
 export const CounterHeader = ({ copy, count, right = null }) => {
   return (
     <Container>
-      <Element />
+      <Element renderElement={!!right} />
       <FormattedMessage values={{ copy, count }} {...messages.counter} />
-      <Element>{right}</Element>
+      <Element renderElement={!!right}>{right}</Element>
     </Container>
   );
 };

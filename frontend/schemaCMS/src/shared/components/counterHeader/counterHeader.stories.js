@@ -7,6 +7,7 @@ import { withTheme } from '../../../.storybook/decorators';
 export const defaultProps = {
   copy: 'copy',
   count: 3,
+  right: <div>right</div>,
 };
 
 storiesOf('CounterHeader', module)

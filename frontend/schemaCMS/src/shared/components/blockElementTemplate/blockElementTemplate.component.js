@@ -36,6 +36,7 @@ export const BlockElementTemplate = ({
   blocksOptions,
   removeElement,
   draggableIcon,
+  autoFocus,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -58,6 +59,7 @@ export const BlockElementTemplate = ({
       />
     </InputContainer>
   ));
+  const isStackType = equals(STACK_TYPE, type);
 
   return (
     <AccordionPanel autoOpen={autoOpen}>
@@ -74,6 +76,7 @@ export const BlockElementTemplate = ({
             autoWidth
             fullWidth
             value={name}
+            autoFocus={autoFocus && !name.length}
             {...restFormikProps}
           />
           <IconsContainer>
@@ -96,7 +99,7 @@ export const BlockElementTemplate = ({
             {...restFormikProps}
           />
         </InputContainer>
-        {getAdditionalInputs(equals(STACK_TYPE, type))}
+        {getAdditionalInputs(isStackType)}
       </AccordionDetails>
     </AccordionPanel>
   );
@@ -110,4 +113,5 @@ BlockElementTemplate.propTypes = {
   setFieldValue: PropTypes.func.isRequired,
   removeElement: PropTypes.func.isRequired,
   draggableIcon: PropTypes.element.isRequired,
+  autoFocus: PropTypes.bool.isRequired,
 };

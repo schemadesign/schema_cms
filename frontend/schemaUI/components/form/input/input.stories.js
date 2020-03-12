@@ -15,6 +15,10 @@ export const withAutoWidth = {
   ...defaultProps,
   autoWidth: true,
 };
+export const withAutoFocus = {
+  ...defaultProps,
+  autoFocus: true,
+};
 
 const TestComponent = props => {
   const [value, setValue] = useState('');
@@ -28,4 +32,5 @@ storiesOf('Form/Input', module)
   .addDecorator(withTheme())
   .add('Default', () => <TestComponent {...defaultProps} />)
   .add('With auto width', () => <TestComponent {...withAutoWidth} />)
-  .add('With custom styles', () => <TestComponent {...withCustomStyles} />);
+  .add('With custom styles', () => <TestComponent {...withCustomStyles} />)
+  .add('With auto focus', () => <TestComponent {...withAutoFocus} />);

@@ -12,18 +12,18 @@ export default defineMessages({
   },
   block: {
     id: 'project.templates.block',
-    defaultMessage: 'Block',
+    defaultMessage: 'Block Templates',
   },
   page: {
     id: 'project.templates.page',
-    defaultMessage: 'Page',
+    defaultMessage: 'Page Templates',
   },
   filter: {
     id: 'project.templates.filter',
-    defaultMessage: 'Filter',
+    defaultMessage: 'Filter Templates',
   },
   state: {
     id: 'project.templates.state',
-    defaultMessage: 'State',
+    defaultMessage: 'State Templates',
   },
 });

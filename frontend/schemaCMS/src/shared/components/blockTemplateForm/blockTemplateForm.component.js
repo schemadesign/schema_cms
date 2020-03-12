@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, Form, Icons } from 'schemaUI';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { append, identity, ifElse, prepend, propIs, remove, pipe } from 'ramda';
+import { append, prepend, remove } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
@@ -31,12 +31,12 @@ import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
-  BLOCK_TEMPLATE_DEFAULT_ELEMENT,
   BLOCK_TEMPLATES_ALLOW_ADD,
   BLOCK_TEMPLATES_DELETE_ELEMENTS,
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
+  getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockElementTemplate } from '../blockElementTemplate';
 import { CounterHeader } from '../counterHeader';
@@ -70,6 +70,7 @@ export const BlockTemplateForm = ({
         customStyles={inputContainerStyles}
         autoWidth
         fullWidth
+        autoFocus={!values[BLOCK_TEMPLATES_NAME].length}
         placeholder={intl.formatMessage(messages[`${BLOCK_TEMPLATES_NAME}Placeholder`])}
         {...restFormikProps}
       />
@@ -80,11 +81,7 @@ export const BlockTemplateForm = ({
   );
 
   const addElement = () => {
-    const elements = pipe(
-      prepend(BLOCK_TEMPLATE_DEFAULT_ELEMENT),
-      data =>
-        data.map(ifElse(propIs(Number, 'id'), identity, (element, index) => ({ ...element, key: `box-${index}` })))
-    )(values[BLOCK_TEMPLATES_ELEMENTS]);
+    const elements = prepend(getDefaultBlockElement(), values[BLOCK_TEMPLATES_ELEMENTS]);
 
     setFieldValue(BLOCK_TEMPLATES_ELEMENTS, elements);
   };
@@ -130,6 +127,7 @@ export const BlockTemplateForm = ({
           value={values[BLOCK_TEMPLATES_NAME]}
           label={<FormattedMessage {...messages[BLOCK_TEMPLATES_NAME]} />}
           fullWidth
+          autoFocus={!values[BLOCK_TEMPLATES_NAME].length}
           {...restFormikProps}
         />
       </MobileInputName>
@@ -146,10 +144,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.key || element.id || index}
+              key={element.key}
               accept="box"
               onMove={handleMove}
-              id={element.key || element.id || index}
+              id={element.key}
               index={index}
               count={elementsCount}
             >
@@ -171,6 +169,7 @@ export const BlockTemplateForm = ({
                     blocksOptions={blocksOptions}
                     draggableIcon={draggableIcon}
                     removeElement={removeElement}
+                    autoFocus={!!values[BLOCK_TEMPLATES_NAME].length}
                     {...restFormikProps}
                   />
                 );
