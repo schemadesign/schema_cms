@@ -73,13 +73,12 @@ class PageTemplateBlockSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.PageTemplateBlock
         fields = ("block", "name", "type", "order")
-        extra_kwargs = {"block_template": {"write_only": True}}
 
     def get_type(self, block):
         return block.block_template.name
 
     def get_block(self, block):
-        block.block_template.id
+        return block.block_template.id
 
 
 class PageTemplateSerializer(CustomModelSerializer):
