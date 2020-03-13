@@ -68,18 +68,18 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
 class PageTemplateBlockSerializer(serializers.ModelSerializer):
     type = serializers.SerializerMethodField(read_only=True)
-    id = serializers.SerializerMethodField(read_only=True)
+    block = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.PageTemplateBlock
-        fields = ("id", "name", "type", "order")
+        fields = ("block", "name", "type", "order")
         extra_kwargs = {"block_template": {"write_only": True}}
 
     def get_type(self, block):
         return block.block_template.name
 
-    def get_id(self, block):
-        block.block_template.id
+    def get_block(self, block):
+        block.block_template.block
 
 
 class PageTemplateSerializer(CustomModelSerializer):
@@ -119,7 +119,7 @@ class PageTemplateSerializer(CustomModelSerializer):
     @staticmethod
     def add_blocks(template, blocks):
         for block in blocks:
-            block_id = block.pop("id")
+            block_id = block.pop("block")
             template.blocks.add(block_id, through_defaults={**block})
 
     def get_blocks(self, template):
