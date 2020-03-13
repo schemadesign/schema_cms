@@ -6,11 +6,11 @@ import { equals } from 'ramda';
 
 import {
   customLabelStyles,
-  elementIcon,
   Header,
   IconsContainer,
   iconStyles,
   InputContainer,
+  ElementIcon,
 } from './blockElementTemplate.styles';
 import messages from './blockElementTemplate.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -67,7 +67,9 @@ export const BlockElementTemplate = ({
         <Header>
           <IconsContainer>
             {draggableIcon}
-            <MinusIcon customStyles={elementIcon} />
+            <ElementIcon>
+              <MinusIcon />
+            </ElementIcon>
           </IconsContainer>
           <TextInput
             name={`${elementPath}.${ELEMENT_NAME}`}

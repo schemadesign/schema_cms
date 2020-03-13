@@ -5,11 +5,11 @@ import { useIntl } from 'react-intl';
 
 import {
   customLabelStyles,
-  elementIcon,
   Header,
   IconsContainer,
   iconStyles,
   InputContainer,
+  Type,
 } from './pageBlockTemplate.styles';
 import messages from './pageBlockTemplate.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -38,10 +38,7 @@ export const PageBlockTemplate = ({
     <AccordionPanel autoOpen={autoOpen}>
       <AccordionHeader>
         <Header>
-          <IconsContainer>
-            {draggableIcon}
-            <MinusIcon customStyles={elementIcon} />
-          </IconsContainer>
+          <IconsContainer>{draggableIcon}</IconsContainer>
           <TextInput
             name={`${elementPath}.${BLOCK_NAME}`}
             placeholder={intl.formatMessage(messages.namePlaceholder)}
@@ -57,6 +54,7 @@ export const PageBlockTemplate = ({
             <MinusIcon id={`removeBlock-${index}`} customStyles={iconStyles} onClick={() => removeBlock(index)} />
           </IconsContainer>
         </Header>
+        <Type>{type}</Type>
       </AccordionHeader>
       <AccordionDetails>
         <InputContainer>
