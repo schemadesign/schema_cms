@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { BlockElementTemplate } from '../blockElementTemplate.component';
-import { defaultProps } from '../blockElementTemplate.stories';
+import { BlockPageTemplate } from '../blockPageTemplate.component';
+import { defaultProps } from '../blockPageTemplate.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 
-describe('BlockElementTemplate: Component', () => {
-  const render = props => makeContextRenderer(<BlockElementTemplate {...defaultProps} {...props} />);
+describe('PageBlockTemplate: Component', () => {
+  const render = props => makeContextRenderer(<BlockPageTemplate {...defaultProps} {...props} />);
 
   it('should render correctly', async () => {
     const wrapper = await render();

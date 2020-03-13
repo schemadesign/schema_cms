@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BlockElementTemplate } from './blockElementTemplate.component';
+import { BlockPageTemplate } from './blockPageTemplate.component';
 import { blockTemplate } from '../../../modules/blockTemplates/blockTemplates.mocks';
 import { withTheme } from '../../../.storybook/decorators';
 
@@ -16,6 +16,6 @@ export const defaultProps = {
   draggableIcon: <span>icon</span>,
 };
 
-storiesOf('BlockElementTemplate', module)
+storiesOf('PageBlockTemplate', module)
   .addDecorator(withTheme())
-  .add('Default', () => <BlockElementTemplate {...defaultProps} />);
+  .add('Default', () => <BlockPageTemplate {...defaultProps} />);

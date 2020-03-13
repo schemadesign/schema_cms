@@ -38,7 +38,7 @@ import {
   BLOCK_TEMPLATES_NAME,
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
-import { BlockElementTemplate } from '../blockElementTemplate';
+import { ElementBlockTemplate } from '../elementBlockTemplate';
 import { CounterHeader } from '../counterHeader';
 import { Draggable } from '../draggable';
 import { IconWrapper, menuIconStyles } from '../../../routes/page/pageBlockList/pageBlockList.styles';
@@ -161,7 +161,7 @@ export const BlockTemplateForm = ({
                 );
 
                 return (
-                  <BlockElementTemplate
+                  <ElementBlockTemplate
                     index={index}
                     element={element}
                     handleChange={handleChange}

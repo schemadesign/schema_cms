@@ -10,8 +10,8 @@ import {
   iconStyles,
   InputContainer,
   Type,
-} from './pageBlockTemplate.styles';
-import messages from './pageBlockTemplate.messages';
+} from './blockPageTemplate.styles';
+import messages from './blockPageTemplate.messages';
 import { TextInput } from '../form/inputs/textInput';
 import { Select } from '../form/select';
 import { BLOCK_TYPE, PAGE_TEMPLATES_BLOCKS } from '../../../modules/pageTemplates/pageTemplates.constants';
@@ -19,7 +19,7 @@ import { BLOCK_NAME } from '../../../modules/pageBlock/pageBlock.constants';
 
 const { EditIcon, MinusIcon } = Icons;
 
-export const PageBlockTemplate = ({
+export const BlockPageTemplate = ({
   block: { name, type, autoOpen },
   handleChange,
   index,
@@ -75,7 +75,7 @@ export const PageBlockTemplate = ({
   );
 };
 
-PageBlockTemplate.propTypes = {
+BlockPageTemplate.propTypes = {
   block: PropTypes.object.isRequired,
   blocksOptions: PropTypes.array.isRequired,
   index: PropTypes.number.isRequired,
