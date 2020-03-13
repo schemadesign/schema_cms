@@ -50,7 +50,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         project = self.get_object()
 
         if "raw_list" in request.query_params:
-            serializer_ = utils_serializers.DataSourceNameSerializer(project.data_sources, many=True)
+            serializer_ = utils_serializers.IDNameSerializer(project.data_sources, many=True)
             response_ = dict(project=project.project_info, results=serializer_.data)
             return response.Response(response_, status=status.HTTP_200_OK)
 

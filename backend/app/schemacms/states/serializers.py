@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 from . import models
 from ..datasources import models as ds_models
-from ..utils.serializers import NestedRelatedModelSerializer, DataSourceNameSerializer
+from ..utils.serializers import NestedRelatedModelSerializer, IDNameSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
@@ -72,7 +72,7 @@ class TagsListSerializer(serializers.ModelSerializer):
 
 
 class TagsListDetailSerializer(TagsListSerializer):
-    datasource = NestedRelatedModelSerializer(serializer=DataSourceNameSerializer(), read_only=True)
+    datasource = NestedRelatedModelSerializer(serializer=IDNameSerializer(), read_only=True)
 
     class Meta(TagsListSerializer.Meta):
         fields = TagsListSerializer.Meta.fields + ("datasource",)

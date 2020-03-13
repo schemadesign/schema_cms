@@ -8,7 +8,7 @@ from softdelete.models import SoftDeleteObject
 from . import constants
 
 
-class Element(models.Model):
+class Element(SoftDeleteObject, models.Model):
     name = models.CharField(max_length=constants.ELEMENT_NAME_MAX_LENGTH)
     type = models.CharField(max_length=25, choices=constants.ELEMENT_TYPE_CHOICES)
     order = models.PositiveIntegerField(default=0)
@@ -48,4 +48,14 @@ class BlockTemplateElement(Element):
 
 
 class PageTemplate(Template):
-    blocks = models.ManyToManyField(BlockTemplate, related_name="page_templates", blank=True)
+    blocks = models.ManyToManyField(BlockTemplate, through="PageTemplateBlock")
+
+
+class PageTemplateBlock(SoftDeleteObject, models.Model):
+    block_template = models.ForeignKey(BlockTemplate, on_delete=models.CASCADE)
+    page_template = models.ForeignKey(PageTemplate, on_delete=models.CASCADE)
+    name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
+    order = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.name}"

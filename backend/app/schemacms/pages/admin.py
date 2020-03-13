@@ -22,6 +22,6 @@ class BlockTemplateAdmin(SoftDeleteObjectAdmin):
 @admin.register(models.PageTemplate)
 class PageTemplateAdmin(SoftDeleteObjectAdmin):
     list_display = ("name", "project", "deleted_at")
-    fields = ("project", "name", "blocks", "deleted_at")
+    fields = ("project", "name", "deleted_at")
     list_filter = ("project", "deleted_at")
     readonly_on_update_fields = ("project",)

@@ -1,7 +1,6 @@
 from rest_framework import response, serializers, status
 
 from ..users.models import User
-from ..datasources.models import DataSource
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -10,10 +9,9 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ("id", "first_name", "last_name", "role")
 
 
-class DataSourceNameSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DataSource
-        fields = ("id", "name")
+class IDNameSerializer(serializers.Serializer):
+    id = serializers.IntegerField(min_value=0)
+    name = serializers.CharField(max_length=200)
 
 
 class CustomModelSerializer(serializers.ModelSerializer):

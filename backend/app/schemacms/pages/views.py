@@ -4,6 +4,7 @@ from rest_framework import generics, permissions, response
 from . import models, serializers
 from ..projects.models import Project
 from ..utils.views import NoListCreateDetailViewSet
+from ..utils.serializers import IDNameSerializer
 from ..utils.permissions import IsSchemaAdmin
 
 
@@ -42,6 +43,15 @@ class BlockTemplateListCreteView(TemplateListCreateView):
         Prefetch("elements", queryset=models.BlockTemplateElement.objects.all().order_by("order"))
     )
 
+    def list(self, request, *args, **kwargs):
+        if "raw_list" in request.query_params:
+            queryset = self.get_queryset()
+
+            serializer = IDNameSerializer(queryset, many=True)
+            return response.Response(serializer.data)
+
+        return super().list(request, args, kwargs)
+
 
 class BlockTemplateViewSet(NoListCreateDetailViewSet):
     queryset = (
@@ -58,7 +68,10 @@ class BlockTemplateViewSet(NoListCreateDetailViewSet):
 class PageTemplateListCreteView(TemplateListCreateView):
     serializer_class = serializers.PageTemplateSerializer
     queryset = models.PageTemplate.objects.select_related("project", "created_by").prefetch_related(
-        Prefetch("blocks", queryset=models.BlockTemplate.objects.all())
+        Prefetch(
+            "pagetemplateblock_set",
+            queryset=models.PageTemplateBlock.objects.all().select_related("block_template"),
+        )
     )
 
 

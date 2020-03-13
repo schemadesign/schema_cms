@@ -67,23 +67,60 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
 
 class PageTemplateBlockSerializer(serializers.ModelSerializer):
+    type = serializers.SerializerMethodField(read_only=True)
+    id = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
-        model = models.BlockTemplateElement
-        fields = ("id", "template", "name", "type", "order", "params")
+        model = models.PageTemplateBlock
+        fields = ("id", "name", "type", "order")
+        extra_kwargs = {"block_template": {"write_only": True}}
+
+    def get_type(self, block):
+        return block.block_template.name
+
+    def get_id(self, block):
+        block.block_template.id
 
 
 class PageTemplateSerializer(CustomModelSerializer):
+    blocks = serializers.SerializerMethodField()
+
     class Meta:
         model = models.PageTemplate
         fields = ("id", "project", "name", "created_by", "created", "blocks", "is_available", "allow_add")
 
+    @transaction.atomic()
     def create(self, validated_data):
-        blocks = validated_data.pop("blocks", [])
-        with transaction.atomic():
-            template = self.Meta.model(created_by=self.context["request"].user, **validated_data)
-            template.save()
+        blocks = self.initial_data.pop("blocks", [])
+        template = self.Meta.model(created_by=self.context["request"].user, **validated_data)
+        template.save()
 
-            if blocks:
-                template.add(*blocks)
+        if blocks:
+            self.add_blocks(template, blocks)
 
         return template
+
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        blocks = self.initial_data.pop("blocks", [])
+        blocks_to_delete = self.initial_data.pop("delete_blocks", [])
+
+        if blocks_to_delete:
+            instance.blocks.remove(blocks_to_delete)
+
+        instance = super().update(instance, validated_data)
+
+        if blocks:
+            instance.blocks.clear()
+            self.add_blocks(instance, blocks)
+
+        return instance
+
+    @staticmethod
+    def add_blocks(template, blocks):
+        for block in blocks:
+            template.blocks.add(block.pop("block_template"), through_defaults={**block})
+
+    def get_blocks(self, template):
+        blocks = template.pagetemplateblock_set.all()
+        return PageTemplateBlockSerializer(blocks, many=True).data
