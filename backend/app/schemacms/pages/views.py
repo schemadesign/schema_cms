@@ -48,7 +48,9 @@ class BlockTemplateListCreteView(TemplateListCreateView):
             queryset = self.get_queryset()
 
             serializer = IDNameSerializer(queryset, many=True)
-            return response.Response(serializer.data)
+            data = {"project": self.project_info, "results": serializer.data}
+
+            return response.Response(data)
 
         return super().list(request, args, kwargs)
 

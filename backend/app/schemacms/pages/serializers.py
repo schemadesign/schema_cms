@@ -72,7 +72,7 @@ class PageTemplateBlockSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.PageTemplateBlock
-        fields = ("block", "name", "type", "order")
+        fields = ("id", "block", "name", "type", "order")
 
     def get_type(self, block):
         return block.block_template.name
