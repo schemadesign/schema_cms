@@ -44,7 +44,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           className="sc-chPdSV gWxTLm"
         >
           <div
-            className="sc-dxgOiQ iPrVVI"
+            className="sc-dxgOiQ eOaUUE"
           >
             <div
               style={
@@ -112,7 +112,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                   Object {
                     "position": "absolute",
                     "right": 0,
-                    "top": 0,
+                    "top": 2,
                   }
                 }
               />
@@ -194,7 +194,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     className="sc-kGXeez hfOfnG"
   >
     <div
-      className="sc-dxgOiQ gNASfZ"
+      className="sc-dxgOiQ jsETHj"
     >
       <div
         style={
@@ -252,7 +252,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         />

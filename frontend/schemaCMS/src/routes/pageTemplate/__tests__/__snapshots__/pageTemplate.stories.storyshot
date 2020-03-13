@@ -70,11 +70,11 @@ exports[`Storyshots PageTemplate Default 1`] = `
   word-break: break-word;
 }
 
-.c27 {
+.c28 {
   height: 155px;
 }
 
-.c29 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   width: 100%;
 }
 
-.c28 {
+.c29 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots PageTemplate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c30 {
+.c31 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c20 {
+.c21 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,15 +130,15 @@ exports[`Storyshots PageTemplate Default 1`] = `
   position: relative;
 }
 
-.c24 {
+.c25 {
   padding-right: 10px;
 }
 
-.c23 {
+.c24 {
   padding-left: 10px;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -153,14 +153,14 @@ exports[`Storyshots PageTemplate Default 1`] = `
   padding-right: 40px;
 }
 
-.c26 {
+.c27 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c25 {
+.c26 {
   color: #71737e;
   min-width: 100%;
 }
@@ -179,7 +179,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   position: relative;
 }
 
-.c19 {
+.c20 {
   text-align: right;
 }
 
@@ -211,9 +211,14 @@ exports[`Storyshots PageTemplate Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
 }
 
 .c17 {
+  position: relative;
+}
+
+.c18 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -235,7 +240,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   align-items: center;
 }
 
-.c18 {
+.c19 {
   width: 33%;
 }
 
@@ -253,7 +258,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c29 {
+  .c30 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -262,7 +267,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c29 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -272,7 +277,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c30 {
+  .c31 {
     width: 240px;
   }
 }
@@ -290,7 +295,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
@@ -315,7 +320,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c18 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -786,7 +791,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
                         Object {
                           "position": "absolute",
                           "right": 0,
-                          "top": 0,
+                          "top": 2,
                         }
                       }
                     />
@@ -868,7 +873,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
           className="c16"
         >
           <div
-            className=""
+            className="c17"
           >
             <div
               style={
@@ -927,7 +932,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
                   Object {
                     "position": "absolute",
                     "right": 0,
-                    "top": 0,
+                    "top": 2,
                   }
                 }
               />
@@ -935,17 +940,17 @@ exports[`Storyshots PageTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c17"
+          className="c18"
         >
           <div
-            className="c18"
+            className="c19"
           />
           0 Blocks
           <div
-            className="c18"
+            className="c19"
           >
             <div
-              className="c19"
+              className="c20"
             >
               <div
                 className="c15"
@@ -997,13 +1002,13 @@ exports[`Storyshots PageTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c20"
+          className="c21"
         >
           <div
-            className="c21"
+            className="c22"
           >
             <div
-              className="c22"
+              className="c23"
             >
               <div>
                 <input
@@ -1054,23 +1059,23 @@ exports[`Storyshots PageTemplate Default 1`] = `
                 </label>
               </div>
               <div
-                className="c23"
+                className="c24"
               >
                 <label
-                  className="c24"
+                  className="c25"
                   htmlFor="isAvailable"
                 >
                   Make it Available
                 </label>
                 <span
-                  className="c25"
+                  className="c26"
                 >
                   This Template is currently unavailable for Editors
                 </span>
               </div>
             </div>
             <div
-              className="c26"
+              className="c27"
               id="removePage"
               onClick={[Function]}
             >
@@ -1092,7 +1097,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
             </div>
           </div>
           <div
-            className="c21"
+            className="c22"
           >
             <div>
               <input
@@ -1143,10 +1148,10 @@ exports[`Storyshots PageTemplate Default 1`] = `
               </label>
             </div>
             <div
-              className="c23"
+              className="c24"
             >
               <label
-                className="c24"
+                className="c25"
                 htmlFor="allowAdd"
               >
                 Allow new Blocks to be added to this Page Template
@@ -1156,16 +1161,16 @@ exports[`Storyshots PageTemplate Default 1`] = `
         </div>
       </div>
       <div
-        className="c27"
+        className="c28"
       >
         <div
-          className="c28"
+          className="c29"
         >
           <div
-            className="c29"
+            className="c30"
           >
             <button
-              className="c30"
+              className="c31"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1191,7 +1196,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
               Back
             </button>
             <button
-              className="c30"
+              className="c31"
               disabled={true}
               id="createTemplatePageMobile"
               style={

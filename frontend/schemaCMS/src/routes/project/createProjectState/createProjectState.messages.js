@@ -20,6 +20,6 @@ export default defineMessages({
   },
   noData: {
     id: 'project.createProjectState.noData',
-    defaultMessage: 'Please create data source first',
+    defaultMessage: 'Please create a data source first',
   },
 });

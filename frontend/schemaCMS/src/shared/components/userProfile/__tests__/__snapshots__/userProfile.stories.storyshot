@@ -1,292 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserProfile Default 1`] = `
-<div
-  style={
-    Object {
-      "minHeight": "100vh",
-    }
-  }
->
-  <style>
-    
-  body {
-    color: #FFF;
-    background-color: #000;
-  }
-
-  </style>
-  <div
-    className=""
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="firstName"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        First Name
-      </label>
-      <input
-        disabled={true}
-        id="firstName"
-        name="firstName"
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="FirstName"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className=""
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="lastName"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Last Name
-      </label>
-      <input
-        disabled={true}
-        id="lastName"
-        name="lastName"
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="LastName"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className=""
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="email"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Email
-      </label>
-      <input
-        disabled={true}
-        id="email"
-        name="email"
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="email@example.com"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className=""
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="role"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Role
-      </label>
-      <input
-        disabled={true}
-        id="role"
-        name="role"
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="editor"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
-        }
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 .c0 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
 }
 
 <div
@@ -305,7 +21,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -336,7 +52,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
         First Name
       </label>
       <input
-        disabled={false}
+        disabled={true}
         id="firstName"
         name="firstName"
         onChange={[Function]}
@@ -364,34 +80,14 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           Object {
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 2,
           }
         }
-      >
-        <div
-          className="c0"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
-            }
-            viewBox="0 0 30 30"
-          >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
-      </div>
+      />
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -422,7 +118,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
         Last Name
       </label>
       <input
-        disabled={false}
+        disabled={true}
         id="lastName"
         name="lastName"
         onChange={[Function]}
@@ -450,34 +146,14 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           Object {
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 2,
           }
         }
-      >
-        <div
-          className="c0"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
-            }
-            viewBox="0 0 30 30"
-          >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
-      </div>
+      />
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -536,14 +212,14 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           Object {
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 2,
           }
         }
       />
     </div>
   </div>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -602,7 +278,344 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           Object {
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 2,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c1 {
+  margin-top: 25px;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    margin-top: 0;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="firstName"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        First Name
+      </label>
+      <input
+        disabled={false}
+        id="firstName"
+        name="firstName"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="FirstName"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="lastName"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Last Name
+      </label>
+      <input
+        disabled={false}
+        id="lastName"
+        name="lastName"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="LastName"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="email"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Email
+      </label>
+      <input
+        disabled={true}
+        id="email"
+        name="email"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="email@example.com"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="role"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Role
+      </label>
+      <input
+        disabled={true}
+        id="role"
+        name="role"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="editor"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
           }
         }
       />

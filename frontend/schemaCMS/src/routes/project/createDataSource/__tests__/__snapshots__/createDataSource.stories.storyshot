@@ -70,11 +70,11 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   word-break: break-word;
 }
 
-.c13 {
+.c14 {
   height: 155px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,7 +103,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -126,8 +126,11 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 .c12 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
+}
+
+.c13 {
+  margin-top: 25px;
 }
 
 @media (min-width:1050px) {
@@ -144,7 +147,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -153,7 +156,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -163,7 +166,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c17 {
     width: 240px;
   }
 }
@@ -184,6 +187,12 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     align-items: center;
     margin: 60px 0 40px 0;
     min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    margin-top: 0;
   }
 }
 
@@ -578,7 +587,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     />
   </div>
   <div
-    className=""
+    className="c12"
   >
     <div
       style={
@@ -637,12 +646,12 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
           Object {
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 2,
           }
         }
       >
         <div
-          className="c12"
+          className="c13"
         >
           <svg
             style={
@@ -778,16 +787,16 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
-      className="c14"
+      className="c15"
     >
       <div
-        className="c15"
+        className="c16"
       >
         <button
-          className="c16"
+          className="c17"
           disabled={false}
           id="createDataSourceBackBtn"
           onClick={[Function]}
@@ -812,7 +821,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
           Cancel
         </button>
         <button
-          className="c16"
+          className="c17"
           disabled={true}
           id="createDataSourceSaveBtn"
           onClick={null}

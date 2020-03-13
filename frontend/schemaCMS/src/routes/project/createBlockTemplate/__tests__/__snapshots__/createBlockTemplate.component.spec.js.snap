@@ -382,7 +382,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               className="sc-kEYyzF kkFIwK"
             >
               <div
-                className="sc-jDwBTQ KDUOI"
+                className="sc-jDwBTQ iqndZj"
               >
                 <div
                   style={
@@ -451,7 +451,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                       Object {
                         "position": "absolute",
                         "right": 0,
-                        "top": 0,
+                        "top": 2,
                       }
                     }
                   />
@@ -533,7 +533,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         className="sc-iAyFgw evfwkd"
       >
         <div
-          className="sc-jDwBTQ crfQUj"
+          className="sc-jDwBTQ erYdBQ"
         >
           <div
             style={
@@ -592,7 +592,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 Object {
                   "position": "absolute",
                   "right": 0,
-                  "top": 0,
+                  "top": 2,
                 }
               }
             />
@@ -748,7 +748,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                   </svg>
                 </div>
                 <div
-                  className="sc-jDwBTQ KDUOI"
+                  className="sc-jDwBTQ iqndZj"
                 >
                   <div
                     style={
@@ -816,7 +816,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                         Object {
                           "position": "absolute",
                           "right": 0,
-                          "top": 0,
+                          "top": 2,
                         }
                       }
                     />

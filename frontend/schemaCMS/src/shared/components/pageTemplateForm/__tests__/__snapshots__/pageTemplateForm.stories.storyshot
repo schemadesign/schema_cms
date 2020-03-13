@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots PageTemplateForm Default 1`] = `
-.c12 {
+.c13 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,15 +23,15 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   position: relative;
 }
 
-.c16 {
+.c17 {
   padding-right: 10px;
 }
 
-.c15 {
+.c16 {
   padding-left: 10px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -46,14 +46,14 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   padding-right: 40px;
 }
 
-.c18 {
+.c19 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c17 {
+.c18 {
   color: #71737e;
   min-width: 100%;
 }
@@ -72,7 +72,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   position: relative;
 }
 
-.c11 {
+.c12 {
   text-align: right;
 }
 
@@ -104,9 +104,14 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
 }
 
 .c9 {
+  position: relative;
+}
+
+.c10 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -128,7 +133,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c11 {
   width: 33%;
 }
 
@@ -145,7 +150,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c11 {
+  .c12 {
     display: none;
   }
 }
@@ -170,7 +175,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c9 {
+  .c10 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -302,7 +307,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
                     Object {
                       "position": "absolute",
                       "right": 0,
-                      "top": 0,
+                      "top": 2,
                     }
                   }
                 />
@@ -384,7 +389,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
       className="c8"
     >
       <div
-        className=""
+        className="c9"
       >
         <div
           style={
@@ -442,7 +447,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />
@@ -450,17 +455,17 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      className="c10"
     >
       <div
-        className="c10"
+        className="c11"
       />
       0 Blocks
       <div
-        className="c10"
+        className="c11"
       >
         <div
-          className="c11"
+          className="c12"
         >
           <div
             className="c7"
@@ -512,13 +517,13 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className="c13"
     >
       <div
-        className="c13"
+        className="c14"
       >
         <div
-          className="c14"
+          className="c15"
         >
           <div>
             <input
@@ -569,23 +574,23 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
             </label>
           </div>
           <div
-            className="c15"
+            className="c16"
           >
             <label
-              className="c16"
+              className="c17"
               htmlFor="isAvailable"
             >
               Make it Available
             </label>
             <span
-              className="c17"
+              className="c18"
             >
               This Template is currently unavailable for Editors
             </span>
           </div>
         </div>
         <div
-          className="c18"
+          className="c19"
           id="removePage"
           onClick={[Function]}
         >
@@ -607,7 +612,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
         </div>
       </div>
       <div
-        className="c13"
+        className="c14"
       >
         <div>
           <input
@@ -658,10 +663,10 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
           </label>
         </div>
         <div
-          className="c15"
+          className="c16"
         >
           <label
-            className="c16"
+            className="c17"
             htmlFor="allowAdd"
           >
             Allow new Blocks to be added to this Page Template

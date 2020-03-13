@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
-import { identity } from 'ramda';
+import { identity, ifElse, equals, always } from 'ramda';
 
 import { styleWhenTrue } from '../../../../utils/rendering';
+import { media } from '../../../../../theme/media';
 
 const getAutoWidthStyles = styleWhenTrue(
   identity,
@@ -15,18 +16,33 @@ const getAutoWidthStyles = styleWhenTrue(
 
 export const Container = styled.div`
   ${({ isAuthWidth }) => getAutoWidthStyles(isAuthWidth)};
+  position: relative;
 `;
 
 export const IconWrapper = styled.div`
-  padding-top: ${({ isLabel }) => (isLabel ? '7px' : 0)};
-  margin-top: ${({ isLabel }) => (isLabel ? 0 : '-2px')};
+  margin-top: 25px;
+
+  ${media.desktop`
+    margin-top: 0;
+  `};
 `;
 
 export const ErrorWrapper = styled.div`
   position: ${({ isLabel, isAuthWidth }) => (isLabel || isAuthWidth ? 'absolute' : 'relative')};
-  top: ${({ isLabel }) => (isLabel ? '50px' : '30px')};
+  top: ${({ isLabel, isAuthWidth }) => (isLabel || isAuthWidth ? '50px' : '0')};
   left: 0;
   color: ${({ theme: { textField } }) => textField.error};
   font-size: 14px;
   font-weight: normal;
 `;
+
+export const getIconStyles = ifElse(
+  equals(true),
+  always({
+    top: 2,
+  }),
+  always({
+    top: -40,
+    right: -30,
+  })
+);

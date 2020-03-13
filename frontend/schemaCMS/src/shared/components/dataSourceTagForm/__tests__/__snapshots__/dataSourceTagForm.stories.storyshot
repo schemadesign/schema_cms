@@ -2,11 +2,14 @@
 
 exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
 .c0 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
 }
 
 .c1 {
+  margin-top: 25px;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,7 +21,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
   padding-bottom: 20px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,8 +32,14 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
   justify-content: flex-end;
 }
 
-.c3 {
+.c4 {
   height: 60px;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    margin-top: 0;
+  }
 }
 
 <div
@@ -49,7 +58,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -107,12 +116,12 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
           Object {
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 2,
           }
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -150,15 +159,15 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
     Tags
   </label>
   <div
-    className="c1"
+    className="c2"
   >
     No Tags
   </div>
   <div
-    className="c2"
+    className="c3"
   >
     <button
-      className="c3"
+      className="c4"
       disabled={false}
       onClick={[Function]}
       style={
@@ -202,16 +211,14 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
 
 exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
 .c0 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
+}
+
+.c1 {
+  margin-top: 25px;
 }
 
 .c3 {
-  padding-top: 0;
-  margin-top: -2px;
-}
-
-.c2 {
   border-bottom: 2px solid #2F2F36;
   padding: 10px 0;
   display: -webkit-box;
@@ -227,7 +234,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
   align-items: center;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -254,6 +261,12 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
   height: 60px;
 }
 
+@media (min-width:1050px) {
+  .c1 {
+    margin-top: 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -270,7 +283,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
 
   </style>
   <div
-    className=""
+    className="c0"
   >
     <div
       style={
@@ -328,12 +341,12 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
           Object {
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 2,
           }
         }
       >
         <div
-          className="c0"
+          className="c1"
         >
           <svg
             style={
@@ -371,13 +384,13 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
     Tags
   </label>
   <div
-    className="c1"
+    className="c2"
   >
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className=""
+        className="c0"
       >
         <div
           style={
@@ -421,13 +434,13 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
             style={
               Object {
                 "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "right": -30,
+                "top": -40,
               }
             }
           >
             <div
-              className="c3"
+              className="c1"
             >
               <svg
                 style={
@@ -469,10 +482,10 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
       </svg>
     </div>
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className=""
+        className="c0"
       >
         <div
           style={
@@ -516,13 +529,13 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
             style={
               Object {
                 "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "right": -30,
+                "top": -40,
               }
             }
           >
             <div
-              className="c3"
+              className="c1"
             >
               <svg
                 style={

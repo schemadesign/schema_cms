@@ -2,8 +2,11 @@
 
 exports[`Storyshots ProjectStateForm Default 1`] = `
 .c2 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
+}
+
+.c3 {
+  margin-top: 25px;
 }
 
 .c0 {
@@ -27,6 +30,12 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
   position: absolute;
   right: 0;
   top: 5px;
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    margin-top: 0;
+  }
 }
 
 <div
@@ -175,7 +184,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c2"
     >
       <div
         style={
@@ -233,12 +242,12 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         >
           <div
-            className="c2"
+            className="c3"
           >
             <svg
               style={
@@ -260,7 +269,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c2"
     >
       <div
         style={
@@ -336,12 +345,12 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         >
           <div
-            className="c2"
+            className="c3"
           >
             <svg
               style={
@@ -363,7 +372,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c2"
     >
       <div
         style={
@@ -420,12 +429,12 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         >
           <div
-            className="c2"
+            className="c3"
           >
             <svg
               style={
@@ -447,7 +456,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c2"
     >
       <div
         style={
@@ -506,14 +515,14 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         />
       </div>
     </div>
     <div
-      className=""
+      className="c2"
     >
       <div
         style={
@@ -572,7 +581,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         />
