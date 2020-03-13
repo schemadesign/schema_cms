@@ -152,7 +152,7 @@ exports[`CreateProjectState: Component should render correctly 1`] = `
     noData={false}
     noDataContent={
       <FormattedMessage
-        defaultMessage="Please create data source first"
+        defaultMessage="Please create a data source first"
         id="project.createProjectState.noData"
         values={Object {}}
       />
