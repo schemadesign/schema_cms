@@ -26,7 +26,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-bwzfXH fQFCQE"
+      className="sc-bwzfXH hIfASN"
     >
       <div
         className="sc-htpNat iTScjb"
@@ -34,27 +34,28 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
         <span>
           icon
         </span>
-        <svg
-          style={
-            Object {
-              "cursor": "default",
-              "fill": "#FFF",
-              "height": 30,
-              "marginLeft": 5,
-              "marginRight": 25,
-              "shapeRendering": "crispEdges",
-              "width": 30,
-            }
-          }
-          viewBox="0 0 60 60"
+        <div
+          className="sc-ifAKCX fkQgZK"
         >
-          <path
-            d="M15 28h30v4H15z"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "shapeRendering": "crispEdges",
+                "width": 30,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M15 28h30v4H15z"
+            />
+          </svg>
+        </div>
       </div>
       <div
-        className="sc-ifAKCX fssyPp"
+        className="sc-EHOje klFrKk"
       >
         <div
           style={
@@ -121,7 +122,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 2,
+                "top": 0,
               }
             }
           />
@@ -192,10 +193,10 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
   >
     <div>
       <div
-        className="sc-bxivhb foFWhw"
+        className="sc-bxivhb eqWwbl"
       >
         <div
-          className="sc-gzVnrw efPizF"
+          className="sc-htoDjs eyjKUW"
         >
           <label
             id="fieldProjectStatusLabel"
@@ -221,7 +222,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
             value="stack"
           />
           <div
-            className="sc-htoDjs bXbZEt"
+            className="sc-dnqmqq jrrDDY"
           >
             <svg
               style={
@@ -426,10 +427,10 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bxivhb foFWhw"
+        className="sc-bxivhb eqWwbl"
       >
         <div
-          className="sc-gzVnrw efPizF"
+          className="sc-htoDjs eyjKUW"
         >
           <label
             id="fieldProjectStatusLabel"
@@ -455,7 +456,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
             value="block name 2"
           />
           <div
-            className="sc-htoDjs bXbZEt"
+            className="sc-dnqmqq jrrDDY"
           >
             <svg
               style={

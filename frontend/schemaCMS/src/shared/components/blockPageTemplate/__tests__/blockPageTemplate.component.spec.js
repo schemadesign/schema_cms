@@ -12,27 +12,19 @@ describe('PageBlockTemplate: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should remove element', async () => {
-    jest.spyOn(defaultProps, 'removeElement');
+  it('should remove block', async () => {
+    jest.spyOn(defaultProps, 'removeBlock');
     const wrapper = await render();
-    wrapper.root.findByProps({ id: 'removeElement-0' }).props.onClick();
+    wrapper.root.findByProps({ id: 'removeBlock-0' }).props.onClick();
 
-    expect(defaultProps.removeElement).toHaveBeenCalledWith(0);
+    expect(defaultProps.removeBlock).toHaveBeenCalledWith(0);
   });
 
-  it('should set type of element', async () => {
+  it('should set type of block', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
     const wrapper = await render();
-    wrapper.root.findAllByProps({ id: 'elementTypeSelect' })[0].props.onSelect({ value: 'value' });
+    wrapper.root.findAllByProps({ id: 'blockTypeSelect' })[0].props.onSelect({ value: 'value' });
 
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements.0.type', 'value');
-  });
-
-  it('should set block of element', async () => {
-    jest.spyOn(defaultProps, 'setFieldValue');
-    const wrapper = await render();
-    wrapper.root.findAllByProps({ id: 'elementBlockSelect' })[0].props.onSelect({ value: 'value' });
-
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements.0.params.block', 'value');
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blocks.0.type', 'value');
   });
 });

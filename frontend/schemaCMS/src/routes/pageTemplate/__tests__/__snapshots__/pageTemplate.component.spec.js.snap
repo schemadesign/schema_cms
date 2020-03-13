@@ -605,7 +605,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         <div
           className="sc-bRBYWo bXAVwg"
         />
-        0 Blocks
+        1 Block
         <div
           className="sc-bRBYWo bXAVwg"
         >
@@ -661,6 +661,393 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <span>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "justifyContent": "space-between",
+              "opacity": 1,
+              "position": "relative",
+              "transform": "translate3d(0, 0, 0)",
+              "width": "100%",
+              "zIndex": 1,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderTop": "2px solid #FFF",
+                "overflow": "hidden",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#000",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "minHeight": 60,
+                  "paddingRight": 40,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                className="sc-kjoXOD kLDMsF"
+              >
+                <div
+                  className="sc-cHGsZl hGuQbs"
+                >
+                  <div>
+                    <div
+                      className="sc-caSCKo bNHHVl"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "60px",
+                            "marginRight": 20,
+                            "width": 10,
+                          }
+                        }
+                        viewBox="0 0 10 60"
+                      >
+                        <path
+                          d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="sc-jlyJG hVSXOI"
+                >
+                  <div
+                    style={
+                      Object {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "maxWidth": "100%",
+                        "paddingBottom": 0,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <input
+                      id="blocks.0.name"
+                      name="blocks.0.name"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="Name"
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "border": "none",
+                          "color": "#FFF",
+                          "fontFamily": "inherit",
+                          "fontSize": "18px",
+                          "fontWeight": "inherit",
+                          "letterSpacing": "normal",
+                          "lineHeight": "24px",
+                          "maxWidth": "100%",
+                          "minWidth": 60,
+                          "outline": "none",
+                          "padding": 0,
+                          "width": 80,
+                        }
+                      }
+                      type="text"
+                      value="block name"
+                    />
+                    <div
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "border": "none",
+                          "color": "#FFF",
+                          "fontFamily": "inherit",
+                          "fontSize": "18px",
+                          "fontWeight": "inherit",
+                          "letterSpacing": "normal",
+                          "lineHeight": "24px",
+                          "maxWidth": "100%",
+                          "minWidth": 60,
+                          "opacity": 0,
+                          "outline": "none",
+                          "padding": 0,
+                          "position": "fixed",
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      block name
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+                <div
+                  className="sc-cHGsZl hGuQbs"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    id="removeBlock-0"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fill": "#FFF",
+                        "height": 30,
+                        "shapeRendering": "crispEdges",
+                        "width": 30,
+                      }
+                    }
+                    viewBox="0 0 60 60"
+                  >
+                    <path
+                      d="M15 28h30v4H15z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="sc-kgAjT iOzaoG"
+              >
+                block type
+              </div>
+              <div
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "fontSize": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 9,
+                    "transform": "rotate(0deg)",
+                    "transformOrigin": "center center",
+                    "transition": "transform 200ms ease-in-out",
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "userSelect": "none",
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M15.117 18L9 12h12z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#000",
+                  "height": 0,
+                  "transition": "height 200ms linear, overflow 0s linear 200ms",
+                }
+              }
+            >
+              <div>
+                <div
+                  className="sc-TOsTZ fuZnAe"
+                >
+                  <div
+                    className="sc-cJSrbW gDuLXM"
+                  >
+                    <label
+                      id="fieldProjectStatusLabel"
+                      style={
+                        Object {
+                          "border": "none",
+                          "borderTop": "none",
+                          "color": "#71737e",
+                          "display": "block",
+                          "fontSize": "14px",
+                          "outline": "none",
+                          "paddingTop": "8px",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      Block Type
+                    </label>
+                    <input
+                      id="blocks.0.type"
+                      name="blocks.0.type"
+                      type="hidden"
+                      value="block type"
+                    />
+                    <div
+                      className="sc-ksYbfQ bInuQF"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "30px",
+                            "width": "30px",
+                          }
+                        }
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M15.117 18L9 12h12z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "color": "#FFF",
+                          "display": "flex",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        id="blockTypeSelect"
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "position": "relative",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Select Block Type
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "backgroundColor": "#1d1d20",
+                              "display": "none",
+                              "flexDirection": "column",
+                              "left": "0",
+                              "maxHeight": "184px",
+                              "overflowY": "hidden",
+                              "position": "absolute",
+                              "top": "calc(100% + 5px)",
+                              "width": "100%",
+                              "zIndex": 2,
+                            }
+                          }
+                        >
+                          <div
+                            id="select-item-0"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "1px solid  #2F2F36",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            block name
+                          </div>
+                          <div
+                            id="select-item-1"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            block name 2
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
       <div
         className="sc-iAyFgw ZYbtF"
       >

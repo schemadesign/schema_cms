@@ -26,7 +26,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-bwzfXH fQFCQE"
+      className="sc-bwzfXH hWKYut"
     >
       <div
         className="sc-htpNat iTScjb"
@@ -34,27 +34,9 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
         <span>
           icon
         </span>
-        <svg
-          style={
-            Object {
-              "cursor": "default",
-              "fill": "#FFF",
-              "height": 30,
-              "marginLeft": 5,
-              "marginRight": 25,
-              "shapeRendering": "crispEdges",
-              "width": 30,
-            }
-          }
-          viewBox="0 0 60 60"
-        >
-          <path
-            d="M15 28h30v4H15z"
-          />
-        </svg>
       </div>
       <div
-        className="sc-ifAKCX lfikpP"
+        className="sc-EHOje klFrKk"
       >
         <div
           style={
@@ -68,8 +50,8 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
           }
         >
           <input
-            id="elements.0.name"
-            name="elements.0.name"
+            id="blocks.0.name"
+            name="blocks.0.name"
             onChange={[Function]}
             placeholder="Name"
             style={
@@ -90,7 +72,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
               }
             }
             type="text"
-            value="element name"
+            value="block name"
           />
           <div
             style={
@@ -114,7 +96,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            element name
+            block name
           </div>
           <div
             style={
@@ -146,7 +128,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
           />
         </svg>
         <svg
-          id="removeElement-0"
+          id="removeBlock-0"
           onClick={[Function]}
           style={
             Object {
@@ -164,6 +146,11 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
           />
         </svg>
       </div>
+    </div>
+    <div
+      className="sc-ifAKCX ftXYKK"
+    >
+      block type
     </div>
     <div
       onClick={[Function]}
@@ -192,10 +179,10 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
   >
     <div>
       <div
-        className="sc-bxivhb foFWhw"
+        className="sc-bxivhb eqWwbl"
       >
         <div
-          className="sc-gzVnrw efPizF"
+          className="sc-htoDjs eyjKUW"
         >
           <label
             id="fieldProjectStatusLabel"
@@ -212,16 +199,16 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Element Type
+            Block Type
           </label>
           <input
-            id="elements.0.type"
-            name="elements.0.type"
+            id="blocks.0.type"
+            name="blocks.0.type"
             type="hidden"
-            value="stack"
+            value="block type"
           />
           <div
-            className="sc-htoDjs bXbZEt"
+            className="sc-dnqmqq jrrDDY"
           >
             <svg
               style={
@@ -249,241 +236,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              id="elementTypeSelect"
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "position": "relative",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "display": "flex",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Block Stack
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "WebkitOverflowScrolling": "touch",
-                    "backgroundColor": "#1d1d20",
-                    "display": "none",
-                    "flexDirection": "column",
-                    "left": "0",
-                    "maxHeight": "184px",
-                    "overflowY": "hidden",
-                    "position": "absolute",
-                    "top": "calc(100% + 5px)",
-                    "width": "100%",
-                    "zIndex": 2,
-                  }
-                }
-              >
-                <div
-                  id="select-item-0"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "1px solid  #2F2F36",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Rich text
-                </div>
-                <div
-                  id="select-item-1"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Plain text
-                </div>
-                <div
-                  id="select-item-2"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Image
-                </div>
-                <div
-                  id="select-item-3"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Code
-                </div>
-                <div
-                  id="select-item-4"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Connection
-                </div>
-                <div
-                  id="select-item-5"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#FFF",
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#000",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Block Stack
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="sc-bxivhb foFWhw"
-      >
-        <div
-          className="sc-gzVnrw efPizF"
-        >
-          <label
-            id="fieldProjectStatusLabel"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "none",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Block
-          </label>
-          <input
-            id="elements.0.params.block"
-            name="elements.0.params.block"
-            type="hidden"
-            value="block name 2"
-          />
-          <div
-            className="sc-htoDjs bXbZEt"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M15.117 18L9 12h12z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-          <div
-            style={
-              Object {
-                "color": "#FFF",
-                "display": "flex",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              id="elementBlockSelect"
+              id="blockTypeSelect"
               style={
                 Object {
                   "cursor": "pointer",

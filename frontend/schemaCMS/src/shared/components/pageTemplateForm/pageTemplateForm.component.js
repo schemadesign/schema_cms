@@ -34,7 +34,7 @@ import {
   getDefaultPageBlock,
   PAGE_TEMPLATES_ALLOW_ADD,
   PAGE_TEMPLATES_BLOCKS,
-  PAGE_TEMPLATES_DELETE_ELEMENTS,
+  PAGE_TEMPLATES_DELETE_BLOCKS,
   PAGE_TEMPLATES_IS_AVAILABLE,
   PAGE_TEMPLATES_NAME,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
@@ -89,7 +89,7 @@ export const PageTemplateForm = ({
     const newValues = { ...values };
 
     if (removedElement.id) {
-      newValues[PAGE_TEMPLATES_DELETE_ELEMENTS] = append(removedElement.id, values[PAGE_TEMPLATES_DELETE_ELEMENTS]);
+      newValues[PAGE_TEMPLATES_DELETE_BLOCKS] = append(removedElement.id, values[PAGE_TEMPLATES_DELETE_BLOCKS]);
     }
 
     newValues[PAGE_TEMPLATES_BLOCKS] = remove(index, 1, values[PAGE_TEMPLATES_BLOCKS]);
@@ -116,7 +116,7 @@ export const PageTemplateForm = ({
   return (
     <Container>
       <ContextHeader title={title} subtitle={nameInput}>
-        <PlusButton id="createBlock" onClick={addBlock} type="button" disabled={!isValid && blocksCount} />
+        <PlusButton id="createBlock" onClick={addBlock} type="button" disabled={!isValid && !!blocksCount} />
       </ContextHeader>
       <MobileInputName>
         <TextInput
@@ -139,7 +139,7 @@ export const PageTemplateForm = ({
               id="createBlock"
               onClick={addBlock}
               type="button"
-              disabled={!isValid && blocksCount}
+              disabled={!isValid && !!blocksCount}
             />
           </MobilePlusContainer>
         }

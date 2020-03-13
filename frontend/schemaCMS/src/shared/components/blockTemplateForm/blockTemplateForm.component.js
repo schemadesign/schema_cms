@@ -118,7 +118,7 @@ export const BlockTemplateForm = ({
   return (
     <Container>
       <ContextHeader title={title} subtitle={nameInput}>
-        <PlusButton id="createElement" onClick={addElement} type="button" disabled={!isValid && elementsCount} />
+        <PlusButton id="createElement" onClick={addElement} type="button" disabled={!isValid && !!elementsCount} />
       </ContextHeader>
       <MobileInputName>
         <TextInput
@@ -141,7 +141,7 @@ export const BlockTemplateForm = ({
               id="createElement"
               onClick={addElement}
               type="button"
-              disabled={!isValid && elementsCount}
+              disabled={!isValid && !!elementsCount}
             />
           </MobilePlusContainer>
         }

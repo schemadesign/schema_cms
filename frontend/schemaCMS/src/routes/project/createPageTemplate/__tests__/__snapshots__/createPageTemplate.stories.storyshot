@@ -819,16 +819,16 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
               className="c15"
             >
               <button
-                disabled={true}
+                disabled={false}
                 id="createBlock"
                 onClick={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "#1d1d20",
+                    "backgroundColor": "#FFF",
                     "border": "none",
                     "borderRadius": "48px",
-                    "color": "#71737e",
-                    "cursor": "default",
+                    "color": "#000",
+                    "cursor": "pointer",
                     "display": "inline-block",
                     "fill": "#FFF",
                     "fontSize": "18px",
@@ -994,6 +994,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
             </div>
           </div>
         </div>
+        <span />
         <div
           className="c21"
         >

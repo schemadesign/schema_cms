@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots BlockElementTemplate Default 1`] = `
-.c2 {
+.c3 {
   position: relative;
   max-width: 100%;
   display: -webkit-box;
@@ -23,7 +23,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  max-width: calc(100% - 170px);
+  max-width: calc(100% - 90px);
 }
 
 .c1 {
@@ -37,12 +37,17 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
   align-items: center;
 }
 
-.c3 {
+.c4 {
   border-top: 1px solid #2F2F36;
-  padding-left: 30px;
+  padding-left: 0;
 }
 
-.c4 {
+.c2 {
+  margin: 0 25px 0 5px;
+  display: none;
+}
+
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -55,14 +60,32 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
   font-size: 18px;
 }
 
-.c4 label {
+.c5 label {
   margin-bottom: 2px;
 }
 
-.c5 {
+.c6 {
   position: absolute;
   right: 0;
   top: 5px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    max-width: calc(100% - 170px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    padding-left: 30px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c2 {
+    display: block;
+  }
 }
 
 <div
@@ -113,27 +136,28 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
           <span>
             icon
           </span>
-          <svg
-            style={
-              Object {
-                "cursor": "default",
-                "fill": "#FFF",
-                "height": 30,
-                "marginLeft": 5,
-                "marginRight": 25,
-                "shapeRendering": "crispEdges",
-                "width": 30,
-              }
-            }
-            viewBox="0 0 60 60"
+          <div
+            className="c2"
           >
-            <path
-              d="M15 28h30v4H15z"
-            />
-          </svg>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 30,
+                  "shapeRendering": "crispEdges",
+                  "width": 30,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M15 28h30v4H15z"
+              />
+            </svg>
+          </div>
         </div>
         <div
-          className="c2"
+          className="c3"
         >
           <div
             style={
@@ -271,10 +295,10 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
     >
       <div>
         <div
-          className="c3"
+          className="c4"
         >
           <div
-            className="c4"
+            className="c5"
           >
             <label
               id="fieldProjectStatusLabel"
@@ -300,7 +324,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
               value="stack"
             />
             <div
-              className="c5"
+              className="c6"
             >
               <svg
                 style={
@@ -505,10 +529,10 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c3"
+          className="c4"
         >
           <div
-            className="c4"
+            className="c5"
           >
             <label
               id="fieldProjectStatusLabel"
@@ -534,7 +558,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
               value="block name 2"
             />
             <div
-              className="c5"
+              className="c6"
             >
               <svg
                 style={

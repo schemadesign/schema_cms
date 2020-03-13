@@ -2,16 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { BlockPageTemplate } from './blockPageTemplate.component';
-import { blockTemplate } from '../../../modules/blockTemplates/blockTemplates.mocks';
 import { withTheme } from '../../../.storybook/decorators';
+import { pageTemplate } from '../../../modules/pageTemplates/pageTemplates.mocks';
+import { PAGE_TEMPLATES_BLOCKS } from '../../../modules/pageTemplates/pageTemplates.constants';
 
 export const defaultProps = {
-  element: blockTemplate.elements[0],
+  block: pageTemplate[PAGE_TEMPLATES_BLOCKS][0],
   blocksOptions: [{ label: 'block', value: 'block' }],
   index: 0,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
-  removeElement: Function.prototype,
+  removeBlock: Function.prototype,
   autoFocus: false,
   draggableIcon: <span>icon</span>,
 };

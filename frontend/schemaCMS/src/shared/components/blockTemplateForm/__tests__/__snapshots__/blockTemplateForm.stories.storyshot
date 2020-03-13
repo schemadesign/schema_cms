@@ -72,7 +72,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   position: relative;
 }
 
-.c12 {
+.c11 {
   text-align: right;
 }
 
@@ -104,14 +104,9 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -119,10 +114,10 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  max-width: calc(100% - 170px);
+  max-width: calc(100% - 90px);
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -135,7 +130,12 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
 
 .c16 {
   border-top: 1px solid #2F2F36;
-  padding-left: 30px;
+  padding-left: 0;
+}
+
+.c15 {
+  margin: 0 25px 0 5px;
+  display: none;
 }
 
 .c17 {
@@ -161,7 +161,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   top: 5px;
 }
 
-.c10 {
+.c9 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -183,11 +183,11 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c10 {
   width: 33%;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,7 +209,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c12 {
+  .c11 {
     display: none;
   }
 }
@@ -234,7 +234,25 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c10 {
+  .c12 {
+    max-width: calc(100% - 170px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c16 {
+    padding-left: 30px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c15 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -366,7 +384,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                     Object {
                       "position": "absolute",
                       "right": 0,
-                      "top": 2,
+                      "top": 0,
                     }
                   }
                 />
@@ -448,7 +466,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
       className="c8"
     >
       <div
-        className="c9"
+        className=""
       >
         <div
           style={
@@ -506,7 +524,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 2,
+                "top": 0,
               }
             }
           />
@@ -514,17 +532,17 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="c9"
     >
       <div
-        className="c11"
+        className="c10"
       />
       1 Element
       <div
-        className="c11"
+        className="c10"
       >
         <div
-          className="c12"
+          className="c11"
         >
           <div
             className="c7"
@@ -615,14 +633,14 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c12"
             >
               <div
-                className="c14"
+                className="c13"
               >
                 <div>
                   <div
-                    className="c15"
+                    className="c14"
                   >
                     <svg
                       style={
@@ -642,24 +660,25 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                     </svg>
                   </div>
                 </div>
-                <svg
-                  style={
-                    Object {
-                      "cursor": "default",
-                      "fill": "#FFF",
-                      "height": 30,
-                      "marginLeft": 5,
-                      "marginRight": 25,
-                      "shapeRendering": "crispEdges",
-                      "width": 30,
-                    }
-                  }
-                  viewBox="0 0 60 60"
+                <div
+                  className="c15"
                 >
-                  <path
-                    d="M15 28h30v4H15z"
-                  />
-                </svg>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": 30,
+                        "shapeRendering": "crispEdges",
+                        "width": 30,
+                      }
+                    }
+                    viewBox="0 0 60 60"
+                  >
+                    <path
+                      d="M15 28h30v4H15z"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
                 className="c5"
@@ -729,14 +748,14 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                       Object {
                         "position": "absolute",
                         "right": 0,
-                        "top": 2,
+                        "top": 0,
                       }
                     }
                   />
                 </div>
               </div>
               <div
-                className="c14"
+                className="c13"
               >
                 <svg
                   style={

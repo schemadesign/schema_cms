@@ -172,7 +172,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   position: relative;
 }
 
-.c20 {
+.c19 {
   text-align: right;
 }
 
@@ -204,14 +204,9 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
 }
 
-.c17 {
-  position: relative;
-}
-
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -219,10 +214,10 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  max-width: calc(100% - 170px);
+  max-width: calc(100% - 90px);
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -235,7 +230,12 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 
 .c24 {
   border-top: 1px solid #2F2F36;
-  padding-left: 30px;
+  padding-left: 0;
+}
+
+.c23 {
+  margin: 0 25px 0 5px;
+  display: none;
 }
 
 .c25 {
@@ -261,7 +261,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   top: 5px;
 }
 
-.c18 {
+.c17 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -283,11 +283,11 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   align-items: center;
 }
 
-.c19 {
+.c18 {
   width: 33%;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -347,7 +347,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c19 {
     display: none;
   }
 }
@@ -372,7 +372,25 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c20 {
+    max-width: calc(100% - 170px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
+    padding-left: 30px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c17 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -843,7 +861,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                         Object {
                           "position": "absolute",
                           "right": 0,
-                          "top": 2,
+                          "top": 0,
                         }
                       }
                     />
@@ -925,7 +943,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
           className="c16"
         >
           <div
-            className="c17"
+            className=""
           >
             <div
               style={
@@ -984,7 +1002,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                   Object {
                     "position": "absolute",
                     "right": 0,
-                    "top": 2,
+                    "top": 0,
                   }
                 }
               />
@@ -992,32 +1010,32 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c18"
+          className="c17"
         >
           <div
-            className="c19"
+            className="c18"
           />
           1 Element
           <div
-            className="c19"
+            className="c18"
           >
             <div
-              className="c20"
+              className="c19"
             >
               <div
                 className="c15"
               >
                 <button
-                  disabled={false}
+                  disabled={true}
                   id="createElement"
                   onClick={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFF",
+                      "backgroundColor": "#1d1d20",
                       "border": "none",
                       "borderRadius": "48px",
-                      "color": "#000",
-                      "cursor": "pointer",
+                      "color": "#71737e",
+                      "cursor": "default",
                       "display": "inline-block",
                       "fill": "#FFF",
                       "fontSize": "18px",
@@ -1093,14 +1111,14 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                 }
               >
                 <div
-                  className="c21"
+                  className="c20"
                 >
                   <div
-                    className="c22"
+                    className="c21"
                   >
                     <div>
                       <div
-                        className="c23"
+                        className="c22"
                       >
                         <svg
                           style={
@@ -1120,24 +1138,25 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                         </svg>
                       </div>
                     </div>
-                    <svg
-                      style={
-                        Object {
-                          "cursor": "default",
-                          "fill": "#FFF",
-                          "height": 30,
-                          "marginLeft": 5,
-                          "marginRight": 25,
-                          "shapeRendering": "crispEdges",
-                          "width": 30,
-                        }
-                      }
-                      viewBox="0 0 60 60"
+                    <div
+                      className="c23"
                     >
-                      <path
-                        d="M15 28h30v4H15z"
-                      />
-                    </svg>
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": 30,
+                            "shapeRendering": "crispEdges",
+                            "width": 30,
+                          }
+                        }
+                        viewBox="0 0 60 60"
+                      >
+                        <path
+                          d="M15 28h30v4H15z"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <div
                     className="c13"
@@ -1208,14 +1227,14 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                           Object {
                             "position": "absolute",
                             "right": 0,
-                            "top": 2,
+                            "top": 0,
                           }
                         }
                       />
                     </div>
                   </div>
                   <div
-                    className="c22"
+                    className="c21"
                   >
                     <svg
                       style={

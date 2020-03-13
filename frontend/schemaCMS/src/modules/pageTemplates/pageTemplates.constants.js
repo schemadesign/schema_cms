@@ -4,7 +4,7 @@ import { BLOCK_TEMPLATES_ELEMENTS } from '../blockTemplates/blockTemplates.const
 
 export const PAGE_TEMPLATES_NAME = 'name';
 export const PAGE_TEMPLATES_BLOCKS = 'blocks';
-export const PAGE_TEMPLATES_DELETE_ELEMENTS = 'deleteElements';
+export const PAGE_TEMPLATES_DELETE_BLOCKS = 'deleteBlocks';
 export const PAGE_TEMPLATES_IS_AVAILABLE = 'isAvailable';
 export const PAGE_TEMPLATES_ALLOW_ADD = 'allowAdd';
 
@@ -27,7 +27,7 @@ export const getDefaultPageBlock = () => ({
 export const INITIAL_VALUES = {
   [PAGE_TEMPLATES_NAME]: '',
   [PAGE_TEMPLATES_BLOCKS]: [],
-  [PAGE_TEMPLATES_DELETE_ELEMENTS]: [],
+  [PAGE_TEMPLATES_DELETE_BLOCKS]: [],
   [PAGE_TEMPLATES_IS_AVAILABLE]: false,
   [PAGE_TEMPLATES_ALLOW_ADD]: false,
 };
