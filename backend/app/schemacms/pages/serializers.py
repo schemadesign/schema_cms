@@ -119,7 +119,8 @@ class PageTemplateSerializer(CustomModelSerializer):
     @staticmethod
     def add_blocks(template, blocks):
         for block in blocks:
-            template.blocks.add(block.pop("block_template"), through_defaults={**block})
+            block_id = block.pop("id")
+            template.blocks.add(block_id, through_defaults={**block})
 
     def get_blocks(self, template):
         blocks = template.pagetemplateblock_set.all()
