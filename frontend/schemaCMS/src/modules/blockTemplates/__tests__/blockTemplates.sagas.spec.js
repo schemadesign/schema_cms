@@ -29,6 +29,24 @@ describe('BlockTemplates: sagas', () => {
         .dispatch(BlockTemplatesRoutines.fetchBlockTemplates({ projectId }))
         .silentRun();
     });
+
+    it('should put fetchBlockTemplates action with raw list', async () => {
+      const projectId = 'projectId';
+      const response = {
+        id: 1,
+        results: [],
+        project: {},
+      };
+
+      mockApi.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}?raw_list=true`).reply(OK, response);
+
+      await expectSaga(watchBlockTemplates)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(BlockTemplatesRoutines.fetchBlockTemplates.success(response.results))
+        .dispatch(BlockTemplatesRoutines.fetchBlockTemplates({ projectId, raw: true }))
+        .silentRun();
+    });
   });
 
   describe('when /FETCH_BLOCK_TEMPLATE action is fired', () => {

@@ -30,7 +30,7 @@ describe('PageTemplate: Component', () => {
     jest.spyOn(defaultProps, 'fetchBlockTemplates');
     await render();
     expect(defaultProps.fetchPageTemplate).toHaveBeenCalledWith({ pageTemplateId: 'pageTemplateId' });
-    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
+    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId', raw: true });
   });
 
   it('should redirect to page templates', async () => {

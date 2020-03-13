@@ -6,11 +6,13 @@ import { BlockTemplatesRoutines } from './blockTemplates.redux';
 import { ProjectRoutines } from '../project';
 import { BLOCK_TEMPLATES_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 
-function* fetchBlockTemplates({ payload: { projectId } }) {
+function* fetchBlockTemplates({ payload: { projectId, raw } }) {
   try {
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.request());
 
-    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}`);
+    const queryRaw = raw ? '?raw_list=true' : '';
+
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}${queryRaw}`);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.success(data.results));

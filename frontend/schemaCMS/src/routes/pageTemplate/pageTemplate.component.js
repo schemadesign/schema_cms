@@ -79,7 +79,7 @@ export const PageTemplate = memo(
             formData: {
               ...formData,
               [PAGE_TEMPLATES_BLOCKS]: formData[PAGE_TEMPLATES_BLOCKS].map((block, index) => ({
-                ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID])(block),
+                ...pick([BLOCK_NAME, BLOCK_TYPE])(block),
                 order: index,
               })),
             },
@@ -98,7 +98,7 @@ export const PageTemplate = memo(
         try {
           const { project } = await fetchPageTemplate({ pageTemplateId });
 
-          await fetchBlockTemplates({ projectId: project });
+          await fetchBlockTemplates({ projectId: project, raw: true });
         } catch (e) {
           reportError(e);
           setError(e);
