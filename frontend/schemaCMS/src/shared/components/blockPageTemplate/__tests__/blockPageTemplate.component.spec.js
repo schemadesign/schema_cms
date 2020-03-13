@@ -25,6 +25,6 @@ describe('PageBlockTemplate: Component', () => {
     const wrapper = await render();
     wrapper.root.findAllByProps({ id: 'blockTypeSelect' })[0].props.onSelect({ value: 'value' });
 
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blocks.0.type', 'value');
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blocks.0.block', 'value');
   });
 });

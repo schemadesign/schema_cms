@@ -5,6 +5,7 @@ import { useEffectOnce } from 'react-use';
 import Helmet from 'react-helmet';
 import { useHistory, useParams } from 'react-router';
 import { useFormik } from 'formik';
+import { map, pick } from 'ramda';
 
 import { Container } from './createPageTemplate.styles';
 import messages from './createPageTemplate.messages';
@@ -18,6 +19,10 @@ import {
   PAGE_TEMPLATES_SCHEMA,
   INITIAL_VALUES,
   PAGE_TEMPLATES_NAME,
+  PAGE_TEMPLATES_BLOCKS,
+  BLOCK_NAME,
+  BLOCK_TYPE,
+  BLOCK_ID,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 import { PageTemplateForm } from '../../../shared/components/pageTemplateForm';
 
@@ -35,7 +40,13 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
     onSubmit: async formData => {
       try {
         setCreateLoading(true);
-        await createPageTemplate({ projectId, formData });
+        await createPageTemplate({
+          projectId,
+          formData: {
+            ...formData,
+            [PAGE_TEMPLATES_BLOCKS]: map(pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID]))(formData[PAGE_TEMPLATES_BLOCKS]),
+          },
+        });
         history.push(`/project/${projectId}/page-templates`);
       } catch (e) {
         reportError(e);

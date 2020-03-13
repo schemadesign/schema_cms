@@ -14,13 +14,17 @@ import {
 import messages from './blockPageTemplate.messages';
 import { TextInput } from '../form/inputs/textInput';
 import { Select } from '../form/select';
-import { BLOCK_TYPE, PAGE_TEMPLATES_BLOCKS } from '../../../modules/pageTemplates/pageTemplates.constants';
+import {
+  BLOCK_AUTO_OPEN,
+  BLOCK_TYPE,
+  PAGE_TEMPLATES_BLOCKS,
+} from '../../../modules/pageTemplates/pageTemplates.constants';
 import { BLOCK_NAME } from '../../../modules/pageBlock/pageBlock.constants';
 
 const { EditIcon, MinusIcon } = Icons;
 
 export const BlockPageTemplate = ({
-  block: { name, type, autoOpen },
+  block,
   handleChange,
   index,
   setFieldValue,
@@ -35,7 +39,7 @@ export const BlockPageTemplate = ({
   const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${BLOCK_TYPE}`, value);
 
   return (
-    <AccordionPanel autoOpen={autoOpen}>
+    <AccordionPanel autoOpen={block[BLOCK_AUTO_OPEN]}>
       <AccordionHeader>
         <Header>
           <IconsContainer>{draggableIcon}</IconsContainer>
@@ -45,7 +49,7 @@ export const BlockPageTemplate = ({
             onChange={handleChange}
             autoWidth
             fullWidth
-            value={name}
+            value={block[BLOCK_NAME]}
             autoFocus={autoFocus && !name.length}
             {...restFormikProps}
           />
@@ -54,14 +58,14 @@ export const BlockPageTemplate = ({
             <MinusIcon id={`removeBlock-${index}`} customStyles={iconStyles} onClick={() => removeBlock(index)} />
           </IconsContainer>
         </Header>
-        <Type>{type}</Type>
+        <Type>{block[BLOCK_TYPE]}</Type>
       </AccordionHeader>
       <AccordionDetails>
         <InputContainer>
           <Select
             label={intl.formatMessage(messages[BLOCK_TYPE])}
             name={`${elementPath}.${BLOCK_TYPE}`}
-            value={type}
+            value={block[BLOCK_TYPE]}
             id="blockTypeSelect"
             options={blocksOptions}
             onSelect={handleSelectBlock}

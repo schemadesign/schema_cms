@@ -79,7 +79,7 @@ class PageTemplateBlockSerializer(serializers.ModelSerializer):
         return block.block_template.name
 
     def get_block(self, block):
-        block.block_template.block
+        block.block_template.id
 
 
 class PageTemplateSerializer(CustomModelSerializer):

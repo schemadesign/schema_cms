@@ -36,6 +36,7 @@ import {
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
+  ELEMENT_KEY,
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { ElementBlockTemplate } from '../elementBlockTemplate';
@@ -150,10 +151,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.key}
+              key={element[ELEMENT_KEY]}
               accept="box"
               onMove={handleMove}
-              id={element.key}
+              id={element[ELEMENT_KEY]}
               index={index}
               count={elementsCount}
             >

@@ -307,8 +307,8 @@ exports[`Storyshots PageBlockTemplate Default 1`] = `
               Block Type
             </label>
             <input
-              id="blocks.0.type"
-              name="blocks.0.type"
+              id="blocks.0.block"
+              name="blocks.0.block"
               type="hidden"
               value="block type"
             />

@@ -18,8 +18,8 @@ describe('PageTemplateForm: Component', () => {
     wrapper.root.findAllByProps({ id: 'createBlock' })[0].props.onClick();
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blocks', [
-      { autoOpen: true, key: 1575162000000, name: '', type: '' },
-      { id: 1, key: 1, name: 'block name', type: 'block type' },
+      { autoOpen: true, key: 1575162000000, name: '', block: '' },
+      { id: 1, key: 1, name: 'block name', block: 'block type' },
     ]);
   });
 

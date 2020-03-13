@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router';
 import { useFormik } from 'formik';
 import { useEffectOnce } from 'react-use';
 import Helmet from 'react-helmet';
+import { map, pick } from 'ramda';
 
 import { Container } from './pageTemplate.styles';
 import messages from './pageTemplate.messages';
@@ -16,7 +17,13 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageTemplateForm } from '../../shared/components/pageTemplateForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
-import { PAGE_TEMPLATES_SCHEMA } from '../../modules/pageTemplates/pageTemplates.constants';
+import {
+  BLOCK_ID,
+  BLOCK_TYPE,
+  BLOCK_NAME,
+  PAGE_TEMPLATES_BLOCKS,
+  PAGE_TEMPLATES_SCHEMA,
+} from '../../modules/pageTemplates/pageTemplates.constants';
 
 export const PageTemplate = memo(
   ({
@@ -56,7 +63,14 @@ export const PageTemplate = memo(
       onSubmit: async formData => {
         try {
           setUpdateLoading(true);
-          await updatePageTemplate({ pageTemplateId, formData });
+
+          await updatePageTemplate({
+            pageTemplateId,
+            formData: {
+              ...formData,
+              [PAGE_TEMPLATES_BLOCKS]: map(pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID]))(formData[PAGE_TEMPLATES_BLOCKS]),
+            },
+          });
           setUpdateLoading(false);
           history.push(`/project/${project.id}/page-templates`);
         } catch (e) {

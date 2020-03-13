@@ -31,6 +31,7 @@ import {
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageTemplateForm.messages';
 import {
+  BLOCK_KEY,
   getDefaultPageBlock,
   PAGE_TEMPLATES_ALLOW_ADD,
   PAGE_TEMPLATES_BLOCKS,
@@ -111,7 +112,7 @@ export const PageTemplateForm = ({
     </BinIconContainer>
   ) : null;
   const blocksCount = values[PAGE_TEMPLATES_BLOCKS].length;
-  const blocksOptions = blockTemplates.map(({ name }) => ({ label: name, value: name }));
+  const blocksOptions = blockTemplates.map(({ name, id }) => ({ label: name, value: id }));
 
   return (
     <Container>
@@ -148,10 +149,10 @@ export const PageTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[PAGE_TEMPLATES_BLOCKS].map((block, index) => (
             <Draggable
-              key={block.key}
+              key={block[BLOCK_KEY]}
               accept="box"
               onMove={handleMove}
-              id={block.key}
+              id={block[BLOCK_KEY]}
               index={index}
               count={blocksCount}
             >

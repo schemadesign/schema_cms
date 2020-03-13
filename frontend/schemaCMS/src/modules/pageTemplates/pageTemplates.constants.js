@@ -9,9 +9,10 @@ export const PAGE_TEMPLATES_IS_AVAILABLE = 'isAvailable';
 export const PAGE_TEMPLATES_ALLOW_ADD = 'allowAdd';
 
 export const BLOCK_NAME = 'name';
-export const BLOCK_TYPE = 'type';
+export const BLOCK_TYPE = 'block';
 export const BLOCK_AUTO_OPEN = 'autoOpen';
 export const BLOCK_KEY = 'key';
+export const BLOCK_ID = 'id';
 
 export const PAGE_TEMPLATE_DEFAULT_BLOCK = {
   [BLOCK_TYPE]: '',
