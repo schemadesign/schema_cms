@@ -87,11 +87,11 @@ exports[`Storyshots Project|View Default 1`] = `
   word-break: break-word;
 }
 
-.c35 {
+.c36 {
   height: 155px;
 }
 
-.c37 {
+.c38 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`Storyshots Project|View Default 1`] = `
   width: 100%;
 }
 
-.c36 {
+.c37 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -120,14 +120,17 @@ exports[`Storyshots Project|View Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c38 {
+.c39 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
 .c30 {
-  padding-top: 0;
-  margin-top: -2px;
+  position: relative;
+}
+
+.c31 {
+  margin-top: 25px;
 }
 
 .c25 {
@@ -157,7 +160,7 @@ exports[`Storyshots Project|View Default 1`] = `
   top: 5px;
 }
 
-.c34 {
+.c35 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -165,11 +168,11 @@ exports[`Storyshots Project|View Default 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c34:hover {
+.c35:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c33 {
+.c34 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -324,7 +327,7 @@ exports[`Storyshots Project|View Default 1`] = `
   display: flex;
 }
 
-.c31 {
+.c32 {
   color: #FFF;
   margin-bottom: 4px;
   border-top: 2px solid #2F2F36;
@@ -334,7 +337,7 @@ exports[`Storyshots Project|View Default 1`] = `
   display: flex;
 }
 
-.c32 {
+.c33 {
   color: #FFF;
   margin-bottom: 4px;
   border-top: 2px solid #2F2F36;
@@ -380,7 +383,7 @@ exports[`Storyshots Project|View Default 1`] = `
   padding-right: 30px;
 }
 
-.c29 .c39 {
+.c29 .c40 {
   margin: 5px 0 0;
 }
 
@@ -402,7 +405,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c37 {
+  .c38 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -411,7 +414,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c36 {
+  .c37 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -421,8 +424,14 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c38 {
+  .c39 {
     width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c31 {
+    margin-top: 0;
   }
 }
 
@@ -551,7 +560,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c31 {
+  .c32 {
     border-top-color: #1d1d20;
     width: calc(50% - 10px);
     -webkit-flex: 0 0 auto;
@@ -564,7 +573,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c32 {
+  .c33 {
     border-top-color: #1d1d20;
     width: calc(50% - 10px);
     -webkit-flex: 0 0 auto;
@@ -1498,7 +1507,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 className="c29"
               >
                 <div
-                  className=""
+                  className="c30"
                 >
                   <div
                     style={
@@ -1538,13 +1547,13 @@ exports[`Storyshots Project|View Default 1`] = `
                       style={
                         Object {
                           "position": "absolute",
-                          "right": 0,
-                          "top": 0,
+                          "right": -30,
+                          "top": -40,
                         }
                       }
                     >
                       <div
-                        className="c30"
+                        className="c31"
                       >
                         <svg
                           style={
@@ -1569,7 +1578,7 @@ exports[`Storyshots Project|View Default 1`] = `
             </div>
           </li>
           <li
-            className="c31"
+            className="c32"
             order={4}
           >
             <div
@@ -1586,7 +1595,7 @@ exports[`Storyshots Project|View Default 1`] = `
                 className="c29"
               >
                 <div
-                  className=""
+                  className="c30"
                 >
                   <div
                     style={
@@ -1644,13 +1653,13 @@ exports[`Storyshots Project|View Default 1`] = `
                       style={
                         Object {
                           "position": "absolute",
-                          "right": 0,
-                          "top": 0,
+                          "right": -30,
+                          "top": -40,
                         }
                       }
                     >
                       <div
-                        className="c30"
+                        className="c31"
                       >
                         <svg
                           style={
@@ -1675,7 +1684,7 @@ exports[`Storyshots Project|View Default 1`] = `
             </div>
           </li>
           <li
-            className="c32"
+            className="c33"
             order={6}
           >
             <div
@@ -1699,10 +1708,10 @@ exports[`Storyshots Project|View Default 1`] = `
         </ul>
       </div>
       <div
-        className="c33"
+        className="c34"
       >
         <span
-          className="c34"
+          className="c35"
           id="deleteProjectDesktopBtn"
           onClick={[Function]}
           style={
@@ -1717,13 +1726,13 @@ exports[`Storyshots Project|View Default 1`] = `
       </div>
     </div>
     <div
-      className="c35"
+      className="c36"
     >
       <div
-        className="c36"
+        className="c37"
       >
         <div
-          className="c37"
+          className="c38"
         >
           <button
             disabled={false}
@@ -1765,7 +1774,7 @@ exports[`Storyshots Project|View Default 1`] = `
             </svg>
           </button>
           <button
-            className="c38"
+            className="c39"
             disabled={true}
             onClick={[Function]}
             style={

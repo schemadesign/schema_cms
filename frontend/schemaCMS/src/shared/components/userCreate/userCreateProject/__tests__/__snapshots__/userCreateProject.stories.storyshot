@@ -70,11 +70,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
   word-break: break-word;
 }
 
-.c13 {
+.c14 {
   height: 155px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
   width: 100%;
 }
 
-.c14 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,7 +103,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c16 {
+.c17 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -125,6 +125,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
   color: #FFF;
 }
 
+.c13 {
+  position: relative;
+}
+
 .c12 {
   width: 100%;
 }
@@ -143,7 +147,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -152,7 +156,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -162,7 +166,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c17 {
     width: 240px;
   }
 }
@@ -529,7 +533,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
       onSubmit={[Function]}
     >
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -589,14 +593,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />
         </div>
       </div>
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -656,14 +660,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />
         </div>
       </div>
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -721,14 +725,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />
         </div>
       </div>
       <div
-        className=""
+        className="c13"
       >
         <div
           style={
@@ -787,23 +791,23 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />
         </div>
       </div>
       <div
-        className="c13"
+        className="c14"
       >
         <div
-          className="c14"
+          className="c15"
         >
           <div
-            className="c15"
+            className="c16"
           >
             <button
-              className="c16"
+              className="c17"
               disabled={false}
               onClick={[Function]}
               style={
@@ -828,7 +832,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               Cancel
             </button>
             <button
-              className="c16"
+              className="c17"
               disabled={false}
               style={
                 Object {

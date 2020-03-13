@@ -382,7 +382,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               className="sc-jAaTju lEldS"
             >
               <div
-                className="sc-jlyJG hVSXOI"
+                className="sc-jlyJG dAHAOh"
               >
                 <div
                   style={
@@ -451,7 +451,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                       Object {
                         "position": "absolute",
                         "right": 0,
-                        "top": 0,
+                        "top": 2,
                       }
                     }
                   />
@@ -533,7 +533,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         className="sc-gPEVay hARQLZ"
       >
         <div
-          className="sc-jlyJG dPdoZU"
+          className="sc-jlyJG bYQXFu"
         >
           <div
             style={
@@ -592,7 +592,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 Object {
                   "position": "absolute",
                   "right": 0,
-                  "top": 0,
+                  "top": 2,
                 }
               }
             />

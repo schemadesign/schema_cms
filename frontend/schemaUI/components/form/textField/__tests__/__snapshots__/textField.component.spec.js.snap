@@ -5,6 +5,7 @@ exports[`TextField: Component should render correctly 1`] = `
   name="name"
 >
   <TextFieldComponent
+    customIconStyles={Object {}}
     customInputStyles={Object {}}
     customLabelStyles={Object {}}
     error={false}

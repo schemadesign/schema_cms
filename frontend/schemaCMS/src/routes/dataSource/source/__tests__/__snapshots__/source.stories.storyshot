@@ -70,11 +70,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   word-break: break-word;
 }
 
-.c21 {
+.c22 {
   height: 155px;
 }
 
-.c23 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   width: 100%;
 }
 
-.c22 {
+.c23 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 70px;
@@ -103,7 +103,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c24 {
+.c25 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -126,11 +126,14 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 .c17 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
 }
 
-.c19 {
+.c18 {
+  margin-top: 25px;
+}
+
+.c20 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -146,7 +149,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   align-items: flex-start;
 }
 
-.c20 {
+.c21 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -155,15 +158,15 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c20:hover {
+.c21:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c20:last-child {
+.c21:last-child {
   margin-bottom: 0;
 }
 
-.c18 {
+.c19 {
   position: relative;
 }
 
@@ -195,7 +198,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   cursor: pointer;
 }
 
-.c25 {
+.c26 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -219,7 +222,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c25 svg {
+.c26 svg {
   cursor: pointer;
 }
 
@@ -296,7 +299,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c24 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -305,7 +308,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c23 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -315,7 +318,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c24 {
+  .c25 {
     width: 240px;
   }
 }
@@ -340,6 +343,12 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
+  .c18 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
   .c12 {
     position: static;
     background-color: transparent;
@@ -352,7 +361,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c25 {
+  .c26 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -1016,7 +1025,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className=""
+      className="c17"
     >
       <div
         style={
@@ -1074,12 +1083,12 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         >
           <div
-            className="c17"
+            className="c18"
           >
             <svg
               style={
@@ -1215,7 +1224,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className="c18"
+      className="c19"
     >
       <div
         style={
@@ -1361,10 +1370,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </label>
     </div>
     <div
-      className="c19"
+      className="c20"
     >
       <span
-        className="c20"
+        className="c21"
         onClick={[Function]}
         style={
           Object {
@@ -1376,7 +1385,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         View Past Versions
       </span>
       <span
-        className="c20"
+        className="c21"
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}
         style={
@@ -1390,16 +1399,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </span>
     </div>
     <div
-      className="c21"
+      className="c22"
     >
       <div
-        className="c22"
+        className="c23"
       >
         <div
-          className="c23"
+          className="c24"
         >
           <button
-            className="c24"
+            className="c25"
             disabled={true}
             onClick={[Function]}
             style={
@@ -1428,7 +1437,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     </div>
   </form>
   <div
-    className="c25"
+    className="c26"
   >
     <div
       className="c13"

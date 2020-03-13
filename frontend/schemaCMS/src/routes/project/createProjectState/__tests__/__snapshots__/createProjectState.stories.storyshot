@@ -87,11 +87,11 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   word-break: break-word;
 }
 
-.c20 {
+.c21 {
   height: 155px;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -117,7 +117,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   flex-direction: column;
 }
 
-.c21 {
+.c22 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -127,7 +127,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c24 {
+.c25 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -150,8 +150,11 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 .c19 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
+}
+
+.c20 {
+  margin-top: 25px;
 }
 
 .c17 {
@@ -223,7 +226,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
   text-decoration: none;
 }
 
-.c23 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -253,7 +256,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c23 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -262,7 +265,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c22 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -272,7 +275,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c24 {
+  .c25 {
     width: 240px;
   }
 }
@@ -293,6 +296,12 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
     align-items: center;
     margin: 60px 0 40px 0;
     min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c20 {
+    margin-top: 0;
   }
 }
 
@@ -913,7 +922,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c19"
       >
         <div
           style={
@@ -971,12 +980,12 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           >
             <div
-              className="c19"
+              className="c20"
             >
               <svg
                 style={
@@ -998,7 +1007,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c19"
       >
         <div
           style={
@@ -1074,12 +1083,12 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           >
             <div
-              className="c19"
+              className="c20"
             >
               <svg
                 style={
@@ -1101,7 +1110,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c19"
       >
         <div
           style={
@@ -1158,12 +1167,12 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           >
             <div
-              className="c19"
+              className="c20"
             >
               <svg
                 style={
@@ -1185,7 +1194,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="c19"
       >
         <div
           style={
@@ -1244,7 +1253,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />
@@ -1318,19 +1327,19 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
       </div>
     </div>
     <div
-      className="c20"
+      className="c21"
     >
       <div
-        className="c21"
+        className="c22"
       >
         <div
-          className="c22"
+          className="c23"
         >
           <div
-            className="c23"
+            className="c24"
           >
             <button
-              className="c24"
+              className="c25"
               disabled={false}
               onClick={[Function]}
               style={
@@ -1355,7 +1364,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
               Cancel
             </button>
             <button
-              className="c24"
+              className="c25"
               disabled={false}
               style={
                 Object {

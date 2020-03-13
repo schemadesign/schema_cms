@@ -12,6 +12,7 @@ class TextFieldComponent extends PureComponent {
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     customLabelStyles: PropTypes.object,
+    customIconStyles: PropTypes.object,
     iconComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     name: PropTypes.string.isRequired,
@@ -27,6 +28,7 @@ class TextFieldComponent extends PureComponent {
     fullWidth: false,
     customInputStyles: {},
     customLabelStyles: {},
+    customIconStyles: {},
   };
 
   renderLabel = ({ label, ...props }) => (label ? <Label {...props}>{label}</Label> : null);
@@ -38,6 +40,7 @@ class TextFieldComponent extends PureComponent {
       customStyles,
       customInputStyles,
       customLabelStyles,
+      customIconStyles,
       iconComponent,
       name,
       label,
@@ -59,7 +62,7 @@ class TextFieldComponent extends PureComponent {
       <div style={styles}>
         {this.renderLabel({ label, name, customStyles: customLabelStyles })}
         {renderField({ name, ...restProps, customStyles: fieldStyles })}
-        <div style={iconContainerStyles}>{this.props.iconComponent}</div>
+        <div style={{ ...iconContainerStyles, ...customIconStyles }}>{this.props.iconComponent}</div>
       </div>
     );
   }

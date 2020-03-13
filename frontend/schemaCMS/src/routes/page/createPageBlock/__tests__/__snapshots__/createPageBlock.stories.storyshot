@@ -70,11 +70,11 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   word-break: break-word;
 }
 
-.c15 {
+.c16 {
   height: 155px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c17 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,7 +103,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c19 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -126,11 +126,14 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 }
 
 .c12 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
 }
 
 .c13 {
+  margin-top: 25px;
+}
+
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -143,11 +146,11 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
   font-size: 18px;
 }
 
-.c13 label {
+.c14 label {
   margin-bottom: 2px;
 }
 
-.c14 {
+.c15 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -167,7 +170,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c18 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -176,7 +179,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c17 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -186,7 +189,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c19 {
     width: 240px;
   }
 }
@@ -207,6 +210,12 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
     align-items: center;
     margin: 60px 0 40px 0;
     min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    margin-top: 0;
   }
 }
 
@@ -553,7 +562,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className=""
+        className="c12"
       >
         <div
           style={
@@ -612,12 +621,12 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           >
             <div
-              className="c12"
+              className="c13"
             >
               <svg
                 style={
@@ -639,7 +648,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c13"
+        className="c14"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -665,7 +674,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
           value="none"
         />
         <div
-          className="c14"
+          className="c15"
         >
           <svg
             style={
@@ -848,16 +857,16 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
           >
             <button
-              className="c18"
+              className="c19"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -883,7 +892,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
               Cancel
             </button>
             <button
-              className="c18"
+              className="c19"
               disabled={true}
               id="createPageBlockBtn"
               style={

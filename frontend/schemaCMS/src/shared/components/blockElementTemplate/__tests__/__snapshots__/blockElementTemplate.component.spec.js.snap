@@ -54,7 +54,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
         </svg>
       </div>
       <div
-        className="sc-ifAKCX lfikpP"
+        className="sc-ifAKCX fssyPp"
       >
         <div
           style={
@@ -121,7 +121,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />

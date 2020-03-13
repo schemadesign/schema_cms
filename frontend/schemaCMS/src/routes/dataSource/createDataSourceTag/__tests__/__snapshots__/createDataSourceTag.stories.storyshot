@@ -70,11 +70,11 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
   word-break: break-word;
 }
 
-.c16 {
+.c17 {
   height: 155px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c18 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,7 +103,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c19 {
+.c20 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -126,11 +126,14 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
 }
 
 .c12 {
-  padding-top: 7px;
-  margin-top: 0;
+  position: relative;
 }
 
 .c13 {
+  margin-top: 25px;
+}
+
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -142,7 +145,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
   padding-bottom: 20px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -153,7 +156,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
   justify-content: flex-end;
 }
 
-.c15 {
+.c16 {
   height: 60px;
 }
 
@@ -171,7 +174,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -180,7 +183,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c18 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -190,7 +193,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c20 {
     width: 240px;
   }
 }
@@ -211,6 +214,12 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
     align-items: center;
     margin: 60px 0 40px 0;
     min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    margin-top: 0;
   }
 }
 
@@ -609,7 +618,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
       />
     </div>
     <div
-      className=""
+      className="c12"
     >
       <div
         style={
@@ -667,12 +676,12 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
             Object {
               "position": "absolute",
               "right": 0,
-              "top": 0,
+              "top": 2,
             }
           }
         >
           <div
-            className="c12"
+            className="c13"
           >
             <svg
               style={
@@ -710,15 +719,15 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
       Tags
     </label>
     <div
-      className="c13"
+      className="c14"
     >
       No Tags
     </div>
     <div
-      className="c14"
+      className="c15"
     >
       <button
-        className="c15"
+        className="c16"
         disabled={false}
         onClick={[Function]}
         style={
@@ -758,16 +767,16 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
       </button>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
       >
         <div
-          className="c18"
+          className="c19"
         >
           <button
-            className="c19"
+            className="c20"
             disabled={false}
             onClick={[Function]}
             style={
@@ -792,7 +801,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
             Cancel
           </button>
           <button
-            className="c19"
+            className="c20"
             disabled={true}
             style={
               Object {

@@ -70,11 +70,11 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   word-break: break-word;
 }
 
-.c33 {
+.c34 {
   height: 155px;
 }
 
-.c35 {
+.c36 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   width: 100%;
 }
 
-.c34 {
+.c35 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c36 {
+.c37 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c26 {
+.c27 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c27 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,15 +130,15 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   position: relative;
 }
 
-.c30 {
+.c31 {
   padding-right: 10px;
 }
 
-.c29 {
+.c30 {
   padding-left: 10px;
 }
 
-.c28 {
+.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -153,14 +153,14 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   padding-right: 40px;
 }
 
-.c32 {
+.c33 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c31 {
+.c32 {
   color: #71737e;
   min-width: 100%;
 }
@@ -179,7 +179,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   position: relative;
 }
 
-.c19 {
+.c20 {
   text-align: right;
 }
 
@@ -211,9 +211,14 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
 }
 
-.c20 {
+.c17 {
+  position: relative;
+}
+
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -224,7 +229,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   max-width: calc(100% - 170px);
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -235,12 +240,12 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   align-items: center;
 }
 
-.c23 {
+.c24 {
   border-top: 1px solid #2F2F36;
   padding-left: 30px;
 }
 
-.c24 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -253,17 +258,17 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   font-size: 18px;
 }
 
-.c24 label {
+.c25 label {
   margin-bottom: 2px;
 }
 
-.c25 {
+.c26 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c17 {
+.c18 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -285,11 +290,11 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   align-items: center;
 }
 
-.c18 {
+.c19 {
   width: 33%;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -312,7 +317,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c35 {
+  .c36 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -321,7 +326,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c34 {
+  .c35 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -331,7 +336,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c36 {
+  .c37 {
     width: 240px;
   }
 }
@@ -349,7 +354,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
@@ -374,7 +379,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c18 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -845,7 +850,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                         Object {
                           "position": "absolute",
                           "right": 0,
-                          "top": 0,
+                          "top": 2,
                         }
                       }
                     />
@@ -927,7 +932,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
           className="c16"
         >
           <div
-            className=""
+            className="c17"
           >
             <div
               style={
@@ -986,7 +991,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                   Object {
                     "position": "absolute",
                     "right": 0,
-                    "top": 0,
+                    "top": 2,
                   }
                 }
               />
@@ -994,17 +999,17 @@ exports[`Storyshots BlockTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c17"
+          className="c18"
         >
           <div
-            className="c18"
+            className="c19"
           />
           1 Element
           <div
-            className="c18"
+            className="c19"
           >
             <div
-              className="c19"
+              className="c20"
             >
               <div
                 className="c15"
@@ -1095,14 +1100,14 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                 }
               >
                 <div
-                  className="c20"
+                  className="c21"
                 >
                   <div
-                    className="c21"
+                    className="c22"
                   >
                     <div>
                       <div
-                        className="c22"
+                        className="c23"
                       >
                         <svg
                           style={
@@ -1210,14 +1215,14 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                           Object {
                             "position": "absolute",
                             "right": 0,
-                            "top": 0,
+                            "top": 2,
                           }
                         }
                       />
                     </div>
                   </div>
                   <div
-                    className="c21"
+                    className="c22"
                   >
                     <svg
                       style={
@@ -1298,10 +1303,10 @@ exports[`Storyshots BlockTemplate Default 1`] = `
               >
                 <div>
                   <div
-                    className="c23"
+                    className="c24"
                   >
                     <div
-                      className="c24"
+                      className="c25"
                     >
                       <label
                         id="fieldProjectStatusLabel"
@@ -1327,7 +1332,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                         value="stack"
                       />
                       <div
-                        className="c25"
+                        className="c26"
                       >
                         <svg
                           style={
@@ -1532,10 +1537,10 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                     </div>
                   </div>
                   <div
-                    className="c23"
+                    className="c24"
                   >
                     <div
-                      className="c24"
+                      className="c25"
                     >
                       <label
                         id="fieldProjectStatusLabel"
@@ -1561,7 +1566,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                         value="block name 2"
                       />
                       <div
-                        className="c25"
+                        className="c26"
                       >
                         <svg
                           style={
@@ -1691,13 +1696,13 @@ exports[`Storyshots BlockTemplate Default 1`] = `
           </div>
         </span>
         <div
-          className="c26"
+          className="c27"
         >
           <div
-            className="c27"
+            className="c28"
           >
             <div
-              className="c28"
+              className="c29"
             >
               <div>
                 <input
@@ -1749,23 +1754,23 @@ exports[`Storyshots BlockTemplate Default 1`] = `
                 </label>
               </div>
               <div
-                className="c29"
+                className="c30"
               >
                 <label
-                  className="c30"
+                  className="c31"
                   htmlFor="isAvailable"
                 >
                   Make it Available
                 </label>
                 <span
-                  className="c31"
+                  className="c32"
                 >
                   This Template is currently available for Editors
                 </span>
               </div>
             </div>
             <div
-              className="c32"
+              className="c33"
               id="removeBlock"
               onClick={[Function]}
             >
@@ -1787,7 +1792,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
             </div>
           </div>
           <div
-            className="c27"
+            className="c28"
           >
             <div>
               <input
@@ -1839,10 +1844,10 @@ exports[`Storyshots BlockTemplate Default 1`] = `
               </label>
             </div>
             <div
-              className="c29"
+              className="c30"
             >
               <label
-                className="c30"
+                className="c31"
                 htmlFor="allowAdd"
               >
                 Allow new Elements to be added to this Block Template
@@ -1852,16 +1857,16 @@ exports[`Storyshots BlockTemplate Default 1`] = `
         </div>
       </div>
       <div
-        className="c33"
+        className="c34"
       >
         <div
-          className="c34"
+          className="c35"
         >
           <div
-            className="c35"
+            className="c36"
           >
             <button
-              className="c36"
+              className="c37"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1887,7 +1892,7 @@ exports[`Storyshots BlockTemplate Default 1`] = `
               Back
             </button>
             <button
-              className="c36"
+              className="c37"
               disabled={true}
               id="createTemplateBlockMobile"
               style={

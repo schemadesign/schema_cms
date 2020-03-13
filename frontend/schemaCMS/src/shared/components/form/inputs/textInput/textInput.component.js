@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Icons } from 'schemaUI';
 import { always } from 'ramda';
 
-import { Container, ErrorWrapper, IconWrapper } from './textInput.styles';
+import { Container, ErrorWrapper, IconWrapper, getIconStyles } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
 
 const { TextField } = Form;
@@ -64,6 +64,7 @@ export class TextInput extends PureComponent {
       checkOnlyErrors,
       readOnly,
       isEdit,
+      autoWidth,
       ...restProps
     } = this.props;
     const isError = !!errors[restProps.name];
@@ -80,6 +81,8 @@ export class TextInput extends PureComponent {
           multiline={multiline}
           customStyles={customStyles}
           customInputStyles={customInputStyles}
+          customIconStyles={getIconStyles(!!label || autoWidth)}
+          autoWidth={autoWidth}
           fullWidth={fullWidth}
           readOnly={readOnly}
           iconComponent={this.renderEditIcon(isEdit)}
