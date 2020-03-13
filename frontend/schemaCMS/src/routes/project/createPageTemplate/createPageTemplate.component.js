@@ -5,7 +5,7 @@ import { useEffectOnce } from 'react-use';
 import Helmet from 'react-helmet';
 import { useHistory, useParams } from 'react-router';
 import { useFormik } from 'formik';
-import { map, pick } from 'ramda';
+import { pick } from 'ramda';
 
 import { Container } from './createPageTemplate.styles';
 import messages from './createPageTemplate.messages';
@@ -44,7 +44,10 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
           projectId,
           formData: {
             ...formData,
-            [PAGE_TEMPLATES_BLOCKS]: map(pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID]))(formData[PAGE_TEMPLATES_BLOCKS]),
+            [PAGE_TEMPLATES_BLOCKS]: formData[PAGE_TEMPLATES_BLOCKS].map((block, index) => ({
+              ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID])(block),
+              order: index,
+            })),
           },
         });
         history.push(`/project/${projectId}/page-templates`);

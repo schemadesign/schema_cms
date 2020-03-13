@@ -255,7 +255,7 @@ exports[`Storyshots PageBlockTemplate Default 1`] = `
       <div
         className="c3"
       >
-        block type
+        block name
       </div>
       <div
         onClick={[Function]}
@@ -310,7 +310,7 @@ exports[`Storyshots PageBlockTemplate Default 1`] = `
               id="blocks.0.block"
               name="blocks.0.block"
               type="hidden"
-              value="block type"
+              value={1}
             />
             <div
               className="c6"
@@ -371,7 +371,7 @@ exports[`Storyshots PageBlockTemplate Default 1`] = `
                       }
                     }
                   >
-                    Select Block Type
+                    block name
                   </div>
                 </div>
                 <div
@@ -398,9 +398,10 @@ exports[`Storyshots PageBlockTemplate Default 1`] = `
                     onMouseOver={[Function]}
                     style={
                       Object {
+                        "backgroundColor": "#FFF",
                         "border": "1px solid  #2F2F36",
                         "borderTop": "1px solid  #2F2F36",
-                        "color": "#71737e",
+                        "color": "#000",
                         "cursor": "pointer",
                         "overflow": "hidden",
                         "padding": "20px 10px",
@@ -409,7 +410,7 @@ exports[`Storyshots PageBlockTemplate Default 1`] = `
                       }
                     }
                   >
-                    block
+                    block name
                   </div>
                 </div>
               </div>

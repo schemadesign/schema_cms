@@ -7,7 +7,7 @@ export const pageTemplate = {
   blocks: [
     {
       [BLOCK_NAME]: 'block name',
-      [BLOCK_TYPE]: 'block type',
+      [BLOCK_TYPE]: 1,
       key: 1,
       id: 1,
     },

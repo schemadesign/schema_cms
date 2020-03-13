@@ -4,7 +4,12 @@ import Immutable from 'seamless-immutable';
 import { reducer as pageTemplatesReducer, PageTemplatesRoutines } from '../pageTemplates.redux';
 
 describe('PageTemplates: redux', () => {
-  const state = Immutable({ pageTemplate: {}, pageTemplates: [] });
+  const state = Immutable({
+    pageTemplate: {
+      blocks: [],
+    },
+    pageTemplates: [],
+  });
 
   describe('reducer', () => {
     it('should return initial state', () => {

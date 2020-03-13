@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
+import { propEq, propOr, find, pipe } from 'ramda';
 
 import {
   customLabelStyles,
@@ -37,6 +38,10 @@ export const BlockPageTemplate = ({
   const intl = useIntl();
   const elementPath = `${PAGE_TEMPLATES_BLOCKS}.${index}`;
   const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${BLOCK_TYPE}`, value);
+  const type = pipe(
+    find(propEq('value', block[BLOCK_TYPE])),
+    propOr('', 'label')
+  )(blocksOptions);
 
   return (
     <AccordionPanel autoOpen={block[BLOCK_AUTO_OPEN]}>
@@ -58,7 +63,7 @@ export const BlockPageTemplate = ({
             <MinusIcon id={`removeBlock-${index}`} customStyles={iconStyles} onClick={() => removeBlock(index)} />
           </IconsContainer>
         </Header>
-        <Type>{block[BLOCK_TYPE]}</Type>
+        <Type>{type}</Type>
       </AccordionHeader>
       <AccordionDetails>
         <InputContainer>

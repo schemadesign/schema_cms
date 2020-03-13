@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router';
 import { useFormik } from 'formik';
 import { useEffectOnce } from 'react-use';
 import Helmet from 'react-helmet';
-import { map, pick } from 'ramda';
+import { pick } from 'ramda';
 
 import { Container } from './pageTemplate.styles';
 import messages from './pageTemplate.messages';
@@ -23,6 +23,10 @@ import {
   BLOCK_NAME,
   PAGE_TEMPLATES_BLOCKS,
   PAGE_TEMPLATES_SCHEMA,
+  BLOCK_KEY,
+  PAGE_TEMPLATES_NAME,
+  PAGE_TEMPLATES_ALLOW_ADD,
+  PAGE_TEMPLATES_IS_AVAILABLE,
 } from '../../modules/pageTemplates/pageTemplates.constants';
 
 export const PageTemplate = memo(
@@ -32,7 +36,7 @@ export const PageTemplate = memo(
     fetchBlockTemplates,
     removePageTemplate,
     userRole,
-    pageTemplate: { name, blocks, isAvailable, allowAdd },
+    pageTemplate,
     blockTemplates,
     project,
   }) => {
@@ -57,7 +61,13 @@ export const PageTemplate = memo(
 
     const menuOptions = getProjectMenuOptions();
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-      initialValues: { name, blocks, isAvailable, allowAdd },
+      initialValues: {
+        ...pick([PAGE_TEMPLATES_NAME, PAGE_TEMPLATES_ALLOW_ADD, PAGE_TEMPLATES_IS_AVAILABLE], pageTemplate),
+        blocks: pageTemplate[PAGE_TEMPLATES_BLOCKS].map(block => ({
+          ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID], block),
+          [BLOCK_KEY]: block[BLOCK_ID],
+        })),
+      },
       enableReinitialize: true,
       validationSchema: () => PAGE_TEMPLATES_SCHEMA,
       onSubmit: async formData => {
@@ -68,7 +78,10 @@ export const PageTemplate = memo(
             pageTemplateId,
             formData: {
               ...formData,
-              [PAGE_TEMPLATES_BLOCKS]: map(pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID]))(formData[PAGE_TEMPLATES_BLOCKS]),
+              [PAGE_TEMPLATES_BLOCKS]: formData[PAGE_TEMPLATES_BLOCKS].map((block, index) => ({
+                ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID])(block),
+                order: index,
+              })),
             },
           });
           setUpdateLoading(false);

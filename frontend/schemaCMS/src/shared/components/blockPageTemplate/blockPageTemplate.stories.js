@@ -8,7 +8,7 @@ import { PAGE_TEMPLATES_BLOCKS } from '../../../modules/pageTemplates/pageTempla
 
 export const defaultProps = {
   block: pageTemplate[PAGE_TEMPLATES_BLOCKS][0],
-  blocksOptions: [{ label: 'block', value: 'block' }],
+  blocksOptions: [{ label: 'block name', value: 1 }],
   index: 0,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
