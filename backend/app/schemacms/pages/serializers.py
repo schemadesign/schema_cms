@@ -4,22 +4,23 @@ from rest_framework import serializers
 
 from . import models
 from ..utils.serializers import CustomModelSerializer
+from ..utils.validators import CustomUniqueTogetherValidator
 
 
-class BlockTemplateElementSerializer(serializers.ModelSerializer):
+class BlockElementSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
 
     class Meta:
-        model = models.BlockTemplateElement
+        model = models.BlockElement
         fields = ("id", "template", "name", "type", "order", "params")
         extra_kwargs = {"template": {"required": False}}
 
 
 class BlockTemplateSerializer(CustomModelSerializer):
-    elements = BlockTemplateElementSerializer(many=True)
+    elements = BlockElementSerializer(many=True)
 
     class Meta:
-        model = models.BlockTemplate
+        model = models.Block
         fields = ("id", "project", "name", "created_by", "elements", "created", "is_available", "allow_add")
 
     @transaction.atomic()
@@ -29,7 +30,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
         template = self.Meta.model(created_by=self.context["request"].user, **validated_data)
         template.save()
 
-        models.BlockTemplateElement.objects.bulk_create(self.create_elements(elements, template))
+        models.BlockElement.objects.bulk_create(self.create_elements(elements, template))
 
         return template
 
@@ -39,7 +40,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
         elements_to_delete = self.initial_data.pop("delete_elements", [])
 
         if elements_to_delete:
-            instance.elements.filter(id__in=elements_to_delete).delete()
+            instance.delete_elements(elements_to_delete)
 
         instance = super().update(instance, validated_data)
 
@@ -50,14 +51,14 @@ class BlockTemplateSerializer(CustomModelSerializer):
     @staticmethod
     def create_or_update_elements(instance, elements):
         for element in elements:
-            models.BlockTemplateElement.objects.update_or_create(
+            models.BlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(template=instance, **element)
             )
 
     @staticmethod
     def create_elements(elements, template):
         for element in elements:
-            element_instance = models.BlockTemplateElement()
+            element_instance = models.BlockElement()
             element_instance.name = element["name"]
             element_instance.template = template
             element_instance.type = element["type"]
@@ -67,26 +68,32 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
 
 class PageTemplateBlockSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(required=False)
     type = serializers.SerializerMethodField(read_only=True)
-    block = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
-        model = models.PageTemplateBlock
+        model = models.PageBlock
         fields = ("id", "block", "name", "type", "order")
 
-    def get_type(self, block):
-        return block.block_template.name
-
-    def get_block(self, block):
-        return block.block_template.id
+    def get_type(self, template):
+        return template.block.name
 
 
 class PageTemplateSerializer(CustomModelSerializer):
     blocks = serializers.SerializerMethodField()
 
     class Meta:
-        model = models.PageTemplate
+        model = models.Page
         fields = ("id", "project", "name", "created_by", "created", "blocks", "is_available", "allow_add")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Page.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="projectPageTemplateNameUnique",
+                message="Page Template with this name already exist in project.",
+            )
+        ]
 
     @transaction.atomic()
     def create(self, validated_data):
@@ -95,7 +102,7 @@ class PageTemplateSerializer(CustomModelSerializer):
         template.save()
 
         if blocks:
-            self.add_blocks(template, blocks)
+            template.create_or_update_blocks(blocks)
 
         return template
 
@@ -105,22 +112,16 @@ class PageTemplateSerializer(CustomModelSerializer):
         blocks_to_delete = self.initial_data.pop("delete_blocks", [])
 
         if blocks_to_delete:
-            instance.blocks.remove(blocks_to_delete)
+            instance.delete_blocks(blocks_to_delete)
 
         instance = super().update(instance, validated_data)
 
         if blocks:
-            instance.blocks.clear()
-            self.add_blocks(instance, blocks)
+            instance.create_or_update_blocks(blocks)
 
         return instance
 
     @staticmethod
-    def add_blocks(template, blocks):
-        for block in blocks:
-            block_id = block.pop("block")
-            template.blocks.add(block_id, through_defaults={**block})
-
-    def get_blocks(self, template):
-        blocks = template.pagetemplateblock_set.all()
+    def get_blocks(template):
+        blocks = template.pageblock_set.all()
         return PageTemplateBlockSerializer(blocks, many=True).data

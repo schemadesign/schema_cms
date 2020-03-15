@@ -39,8 +39,10 @@ class TemplateListCreateView(generics.ListCreateAPIView):
 
 class BlockTemplateListCreteView(TemplateListCreateView):
     serializer_class = serializers.BlockTemplateSerializer
-    queryset = models.BlockTemplate.objects.select_related("project", "created_by").prefetch_related(
-        Prefetch("elements", queryset=models.BlockTemplateElement.objects.all().order_by("order"))
+    queryset = (
+        models.Block.objects.filter(is_template=True)
+        .select_related("project", "created_by")
+        .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.all().order_by("order")))
     )
 
     def list(self, request, *args, **kwargs):
@@ -57,11 +59,9 @@ class BlockTemplateListCreteView(TemplateListCreateView):
 
 class BlockTemplateViewSet(NoListCreateDetailViewSet):
     queryset = (
-        models.BlockTemplate.objects.all()
+        models.Block.objects.filter(is_template=True)
         .select_related("project", "created_by")
-        .prefetch_related(
-            Prefetch("elements", queryset=models.BlockTemplateElement.objects.order_by("order"))
-        )
+        .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.order_by("order")))
     )
     serializer_class = serializers.BlockTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
@@ -69,19 +69,24 @@ class BlockTemplateViewSet(NoListCreateDetailViewSet):
 
 class PageTemplateListCreteView(TemplateListCreateView):
     serializer_class = serializers.PageTemplateSerializer
-    queryset = models.PageTemplate.objects.select_related("project", "created_by").prefetch_related(
-        Prefetch(
-            "pagetemplateblock_set",
-            queryset=models.PageTemplateBlock.objects.all().select_related("block_template"),
+    queryset = (
+        models.Page.objects.filter(is_template=True)
+        .select_related("project", "created_by")
+        .prefetch_related(
+            Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"),)
         )
     )
 
 
 class PageTemplateViewSet(NoListCreateDetailViewSet):
     queryset = (
-        models.PageTemplate.objects.all()
+        models.Page.objects.filter(is_template=True)
         .select_related("project", "created_by")
-        .prefetch_related(Prefetch("blocks", queryset=models.BlockTemplate.objects.all()))
+        .prefetch_related(
+            Prefetch(
+                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
+            ),
+        )
     )
     serializer_class = serializers.PageTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
