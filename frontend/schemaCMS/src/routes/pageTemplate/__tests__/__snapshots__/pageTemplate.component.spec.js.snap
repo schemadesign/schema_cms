@@ -730,7 +730,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-jlyJG hVSXOI"
+                  className="sc-jlyJG dAHAOh"
                 >
                   <div
                     style={
@@ -798,7 +798,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                         Object {
                           "position": "absolute",
                           "right": 0,
-                          "top": 0,
+                          "top": 2,
                         }
                       }
                     />

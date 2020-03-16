@@ -70,11 +70,11 @@ exports[`Storyshots PageTemplate Default 1`] = `
   word-break: break-word;
 }
 
-.c34 {
+.c35 {
   height: 155px;
 }
 
-.c36 {
+.c37 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   width: 100%;
 }
 
-.c35 {
+.c36 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots PageTemplate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c37 {
+.c38 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c27 {
+.c28 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c28 {
+.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,15 +130,15 @@ exports[`Storyshots PageTemplate Default 1`] = `
   position: relative;
 }
 
-.c31 {
+.c32 {
   padding-right: 10px;
 }
 
-.c30 {
+.c31 {
   padding-left: 10px;
 }
 
-.c29 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -153,14 +153,14 @@ exports[`Storyshots PageTemplate Default 1`] = `
   padding-right: 40px;
 }
 
-.c33 {
+.c34 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c32 {
+.c33 {
   color: #71737e;
   min-width: 100%;
 }
@@ -179,7 +179,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   position: relative;
 }
 
-.c19 {
+.c20 {
   text-align: right;
 }
 
@@ -211,9 +211,14 @@ exports[`Storyshots PageTemplate Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
 }
 
-.c25 {
+.c17 {
+  position: relative;
+}
+
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -226,17 +231,17 @@ exports[`Storyshots PageTemplate Default 1`] = `
   font-size: 18px;
 }
 
-.c25 label {
+.c26 label {
   margin-bottom: 2px;
 }
 
-.c26 {
+.c27 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c17 {
+.c18 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -258,11 +263,11 @@ exports[`Storyshots PageTemplate Default 1`] = `
   align-items: center;
 }
 
-.c18 {
+.c19 {
   width: 33%;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -271,7 +276,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   touch-action: none;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -282,7 +287,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   max-width: calc(100% - 90px);
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -293,12 +298,12 @@ exports[`Storyshots PageTemplate Default 1`] = `
   align-items: center;
 }
 
-.c24 {
+.c25 {
   border-top: 1px solid #2F2F36;
   padding-left: 0;
 }
 
-.c23 {
+.c24 {
   color: #71737e;
   max-width: 100px;
   white-space: nowrap;
@@ -321,7 +326,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c36 {
+  .c37 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -330,7 +335,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c35 {
+  .c36 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -340,7 +345,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c37 {
+  .c38 {
     width: 240px;
   }
 }
@@ -358,7 +363,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
@@ -383,26 +388,26 @@ exports[`Storyshots PageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c18 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c21 {
     max-width: calc(100% - 210px);
   }
 }
 
 @media (min-width:1050px) {
-  .c24 {
+  .c25 {
     padding-left: 30px;
   }
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c24 {
     display: block;
   }
 }
@@ -872,7 +877,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
                         Object {
                           "position": "absolute",
                           "right": 0,
-                          "top": 0,
+                          "top": 2,
                         }
                       }
                     />
@@ -954,7 +959,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
           className="c16"
         >
           <div
-            className=""
+            className="c17"
           >
             <div
               style={
@@ -1013,7 +1018,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
                   Object {
                     "position": "absolute",
                     "right": 0,
-                    "top": 0,
+                    "top": 2,
                   }
                 }
               />
@@ -1021,17 +1026,17 @@ exports[`Storyshots PageTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c17"
+          className="c18"
         >
           <div
-            className="c18"
+            className="c19"
           />
           1 Block
           <div
-            className="c18"
+            className="c19"
           >
             <div
-              className="c19"
+              className="c20"
             >
               <div
                 className="c15"
@@ -1122,14 +1127,14 @@ exports[`Storyshots PageTemplate Default 1`] = `
                 }
               >
                 <div
-                  className="c20"
+                  className="c21"
                 >
                   <div
-                    className="c21"
+                    className="c22"
                   >
                     <div>
                       <div
-                        className="c22"
+                        className="c23"
                       >
                         <svg
                           style={
@@ -1219,14 +1224,14 @@ exports[`Storyshots PageTemplate Default 1`] = `
                           Object {
                             "position": "absolute",
                             "right": 0,
-                            "top": 0,
+                            "top": 2,
                           }
                         }
                       />
                     </div>
                   </div>
                   <div
-                    className="c21"
+                    className="c22"
                   >
                     <svg
                       style={
@@ -1264,7 +1269,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c23"
+                  className="c24"
                 >
                   block name
                 </div>
@@ -1312,10 +1317,10 @@ exports[`Storyshots PageTemplate Default 1`] = `
               >
                 <div>
                   <div
-                    className="c24"
+                    className="c25"
                   >
                     <div
-                      className="c25"
+                      className="c26"
                     >
                       <label
                         id="fieldProjectStatusLabel"
@@ -1341,7 +1346,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
                         value={1}
                       />
                       <div
-                        className="c26"
+                        className="c27"
                       >
                         <svg
                           style={
@@ -1471,13 +1476,13 @@ exports[`Storyshots PageTemplate Default 1`] = `
           </div>
         </span>
         <div
-          className="c27"
+          className="c28"
         >
           <div
-            className="c28"
+            className="c29"
           >
             <div
-              className="c29"
+              className="c30"
             >
               <div>
                 <input
@@ -1528,23 +1533,23 @@ exports[`Storyshots PageTemplate Default 1`] = `
                 </label>
               </div>
               <div
-                className="c30"
+                className="c31"
               >
                 <label
-                  className="c31"
+                  className="c32"
                   htmlFor="isAvailable"
                 >
                   Make it Available
                 </label>
                 <span
-                  className="c32"
+                  className="c33"
                 >
                   This Template is currently unavailable for Editors
                 </span>
               </div>
             </div>
             <div
-              className="c33"
+              className="c34"
               id="removePage"
               onClick={[Function]}
             >
@@ -1566,7 +1571,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
             </div>
           </div>
           <div
-            className="c28"
+            className="c29"
           >
             <div>
               <input
@@ -1617,10 +1622,10 @@ exports[`Storyshots PageTemplate Default 1`] = `
               </label>
             </div>
             <div
-              className="c30"
+              className="c31"
             >
               <label
-                className="c31"
+                className="c32"
                 htmlFor="allowAdd"
               >
                 Allow new Blocks to be added to this Page Template
@@ -1630,16 +1635,16 @@ exports[`Storyshots PageTemplate Default 1`] = `
         </div>
       </div>
       <div
-        className="c34"
+        className="c35"
       >
         <div
-          className="c35"
+          className="c36"
         >
           <div
-            className="c36"
+            className="c37"
           >
             <button
-              className="c37"
+              className="c38"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1665,7 +1670,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
               Back
             </button>
             <button
-              className="c37"
+              className="c38"
               disabled={true}
               id="createTemplatePageMobile"
               style={

@@ -390,7 +390,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-dxgOiQ iPrVVI"
+              className="sc-dxgOiQ eOaUUE"
             >
               <div
                 style={
@@ -457,7 +457,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                     Object {
                       "position": "absolute",
                       "right": 0,
-                      "top": 0,
+                      "top": 2,
                     }
                   }
                 />

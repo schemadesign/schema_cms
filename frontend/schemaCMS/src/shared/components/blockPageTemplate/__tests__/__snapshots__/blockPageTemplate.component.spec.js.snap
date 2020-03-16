@@ -36,7 +36,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
         </span>
       </div>
       <div
-        className="sc-EHOje klFrKk"
+        className="sc-EHOje dTqITm"
       >
         <div
           style={
@@ -103,7 +103,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
               Object {
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
+                "top": 2,
               }
             }
           />
