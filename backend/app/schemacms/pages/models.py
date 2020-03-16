@@ -76,9 +76,7 @@ class Page(Content):
             if "block" in block:
                 block["block_id"] = block.pop("block")
 
-            self.pageblock_set.update_or_create(
-                id=block.get("id", None), defaults={"page": self, **block},
-            )
+            self.pageblock_set.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
 
     def delete_blocks(self, blocks: list):
         self.pageblock_set.filter(id__in=blocks).delete()

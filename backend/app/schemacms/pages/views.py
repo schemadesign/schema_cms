@@ -73,7 +73,7 @@ class PageTemplateListCreteView(TemplateListCreateView):
         models.Page.objects.filter(is_template=True)
         .select_related("project", "created_by")
         .prefetch_related(
-            Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"),)
+            Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
         )
     )
 
@@ -85,7 +85,7 @@ class PageTemplateViewSet(NoListCreateDetailViewSet):
         .prefetch_related(
             Prefetch(
                 "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
-            ),
+            )
         )
     )
     serializer_class = serializers.PageTemplateSerializer
