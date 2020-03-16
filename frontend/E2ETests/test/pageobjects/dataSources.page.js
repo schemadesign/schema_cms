@@ -2,7 +2,7 @@ import Page from './page';
 import TopHeaderComponent from './components/topHeader.component';
 import MenuComponent from './components/menu.component';
 import { waitForText } from '../utils/utils';
-import { CREATE_DATASOURCE_STATUS } from '../constants/createDatasource.constants';
+import { DATASOURCE_STATUS } from '../constants/createDatasource.constants';
 
 class DataSourcesPage extends Page {
   get TopHeader() {
@@ -109,8 +109,8 @@ class DataSourcesPage extends Page {
     return $('#jobUpdatedAtValue');
   }
 
-  waitForDataSourceStatusToChange() {
-    CREATE_DATASOURCE_STATUS.forEach(item => waitForText(this, 'dataSourceStatus', item));
+  waitForDataSourceStatusToChange(dataSourceState) {
+    DATASOURCE_STATUS[dataSourceState].forEach(item => waitForText(this, 'dataSourceStatus', item));
   }
 }
 export default new DataSourcesPage();

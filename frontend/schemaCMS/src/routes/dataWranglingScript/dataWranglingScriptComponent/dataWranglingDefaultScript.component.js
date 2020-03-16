@@ -59,7 +59,7 @@ export class DataWranglingDefaultScript extends PureComponent {
         <Label>
           <FormattedMessage {...messages.pythonCode} />
         </Label>
-        <SyntaxHighlighter language="python" style={syntaxTheme} customStyle={syntaxCustomStyles}>
+        <SyntaxHighlighter id="pythonCode" language="python" style={syntaxTheme} customStyle={syntaxCustomStyles}>
           {dataWranglingScript.body}
         </SyntaxHighlighter>
         <NavigationContainer fixed>

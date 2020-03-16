@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio"
+    "test": "rimraf allure-results && rimraf allure-report && wdio",
+    "allure-reports": "allure generate allure-results && allure open"
   },
   "keywords": [],
   "author": "",
@@ -18,15 +19,18 @@
     "@apptension/eslint-config": "^1.3.0",
     "@babel/cli": "^7.8.0",
     "@babel/core": "^7.8.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.2",
     "@babel/register": "^7.8.0",
+    "@babel/traverse": "^7.8.6",
+    "@babel/types": "^7.8.7",
     "@wdio/allure-reporter": "^5.16.16",
     "@wdio/cli": "^5.18.5",
     "@wdio/cucumber-framework": "^5.16.15",
     "@wdio/local-runner": "^5.18.5",
     "@wdio/selenium-standalone-service": "^5.16.10",
     "@wdio/spec-reporter": "^5.16.11",
-    "@wdio/sync": "^5.18.5",
+    "@wdio/sync": "^5.18.7",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -38,7 +42,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2"
   },
   "babel": {
     "presets": [
@@ -50,6 +55,9 @@
           }
         }
       ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
     ]
   }
 }

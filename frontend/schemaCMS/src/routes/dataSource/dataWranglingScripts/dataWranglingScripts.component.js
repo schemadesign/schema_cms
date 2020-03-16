@@ -179,9 +179,11 @@ export class DataWranglingScripts extends PureComponent {
       <CheckboxContent>
         {draggableIcon}
         <Link to={this.getScriptLink({ id, type })}>
-          <StepName drag={!!draggableIcon}> {name}</StepName>
+          <StepName id={`checkboxName-${index}`} drag={!!draggableIcon}>
+            {name}
+          </StepName>
           <Dot />
-          <Type>
+          <Type id={`checkboxType-${index}`}>
             <FormattedMessage {...messages[type]} />
           </Type>
         </Link>
@@ -211,7 +213,9 @@ export class DataWranglingScripts extends PureComponent {
     renderWhenTrueOtherwise(
       always(
         scripts.map((item, index) => (
-          <div key={index}>{this.renderCheckbox({ ...item, idPrefix: 'drag-' }, index)}</div>
+          <div id={`selectedScript-${index}`} key={index}>
+            {this.renderCheckbox({ ...item, idPrefix: 'drag-' }, index)}
+          </div>
         ))
       ),
       always(scripts.map(this.renderCheckboxWithDrag))
@@ -221,7 +225,7 @@ export class DataWranglingScripts extends PureComponent {
     renderWhenTrue(
       always(
         <Fragment>
-          <Label customStyles={selectedLabelStyles}>
+          <Label id="selectedStepsHeader" customStyles={selectedLabelStyles}>
             <FormattedMessage {...messages.selectedScripts} />
           </Label>
           {this.renderCheckedScripts(checkedScripts)}
@@ -233,11 +237,13 @@ export class DataWranglingScripts extends PureComponent {
     renderWhenTrue(
       always(
         <Fragment>
-          <Label customStyles={labelStyles}>
+          <Label id="deselectedStepsHeader" customStyles={labelStyles}>
             <FormattedMessage {...messages.steps} />
           </Label>
           {uncheckedScripts.map((item, index) => (
-            <div key={index}>{this.renderCheckbox(item, index)}</div>
+            <div id={`deselectedScript-${index}`} key={index}>
+              {this.renderCheckbox(item, index)}
+            </div>
           ))}
         </Fragment>
       )
@@ -319,7 +325,7 @@ export class DataWranglingScripts extends PureComponent {
         <LoadingWrapper loading={loading} error={error}>
           <Header>
             <Empty />
-            <StepCounter>
+            <StepCounter id="stepCounter">
               <FormattedMessage values={{ steps: dataWranglingScripts.length }} {...messages.counterSteps} />
               {this.renderUploadingError(errorMessage)}
               {this.renderProcessingWarning(isProcessing)}
@@ -333,6 +339,7 @@ export class DataWranglingScripts extends PureComponent {
                 onClick={this.handleSubmit}
                 disabled={isSubmitting || isProcessing || !steps.length}
                 loading={isSubmitting}
+                id="saveStepsBtn"
               >
                 <FormattedMessage {...messages.save} />
               </NextButton>
