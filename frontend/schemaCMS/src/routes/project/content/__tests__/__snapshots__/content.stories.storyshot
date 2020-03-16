@@ -1,0 +1,1153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Content Default 1`] = `
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c3 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  padding: 40px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a,
+.c5 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  display: block;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c25 {
+  height: 155px;
+}
+
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c26 {
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 9999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c13 {
+  display: none;
+}
+
+.c14 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c15 {
+  color: #FFF;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c18 {
+  color: #71737e;
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c19 {
+  width: 0%;
+}
+
+.c9 {
+  display: none;
+}
+
+.c10 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c10:hover {
+  border-bottom-color: #FFF;
+}
+
+.c12 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c12:hover {
+  border-bottom-color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c21 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
+.c24 {
+  word-break: break-word;
+  cursor: pointer;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c22 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c23 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c23::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c27 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c26 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 9999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c17 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c18 {
+    margin-top: -35px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c21 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c20 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className=""
+  >
+    <div
+      className="c0"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingBottom": "18px",
+            "width": "100%",
+          }
+        }
+      >
+        <div>
+          <div
+            className=""
+          >
+            <h2
+              className="c1"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              Content
+            </h2>
+            <h1
+              className="c2"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Sections
+            </h1>
+          </div>
+        </div>
+        <button
+          disabled={false}
+          id="topHeaderOpenMenuBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 0,
+              "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="button"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 10 60"
+          >
+            <path
+              d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "color": "#FFF",
+            "maxWidth": null,
+            "minHeight": "100vh",
+            "padding": "18px 20px 27px",
+            "position": "absolute",
+            "right": 0,
+            "textAlign": "left",
+            "top": 0,
+            "transform": "translateX(100%)",
+            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+            "visibility": 0,
+            "width": "100%",
+            "zIndex": 9999,
+          }
+        }
+      >
+        <div
+          className=""
+        >
+          <div
+            className=""
+          >
+            <h2
+              className="c1"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              Content
+            </h2>
+            <h1
+              className="c2"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Sections
+            </h1>
+          </div>
+        </div>
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+          >
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/"
+                id="projectsNavBtn"
+                onClick={[Function]}
+              >
+                Projects
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/user/"
+                id="usersPageNavBtn"
+                onClick={[Function]}
+              >
+                Users
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined"
+                id="projectDetailsNavBtn"
+                onClick={[Function]}
+              >
+                Project details
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/datasource"
+                id="dataSourceNavBtn"
+                onClick={[Function]}
+              >
+                Data Sources
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                States
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/user"
+                id="usersNavBtn"
+                onClick={[Function]}
+              >
+                Project Users
+              </a>
+            </div>
+            <div
+              className="c6"
+            >
+              <a
+                href="/project/undefined/content"
+                id="contentNavBtn"
+                onClick={[Function]}
+              >
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
+              </a>
+            </div>
+          </div>
+          <div
+            className="c4"
+          >
+            <div
+              className="c5"
+            >
+              <a
+                href="/settings"
+                id="settingsNavBtn"
+                onClick={[Function]}
+              >
+                Settings
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <div
+                onClick={[Function]}
+              >
+                Log out
+              </div>
+            </div>
+          </div>
+          <div
+            className="c7"
+          >
+            <a
+              className="c8"
+              href="/"
+              id="aboutNavBtn"
+              onClick={[Function]}
+            >
+              About Schema CMS
+            </a>
+            <a
+              className="c8"
+              href="/"
+              id="apiNavBtn"
+              onClick={[Function]}
+            >
+              API Doc
+            </a>
+            <a
+              className="c8"
+              href="/"
+              id="repositoryNavBtn"
+              onClick={[Function]}
+            >
+              GitHub Repository
+            </a>
+          </div>
+        </div>
+        <button
+          disabled={false}
+          id="topHeaderCloseMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 0,
+              "top": "6px",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="button"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className=""
+      id="tabsContainer"
+    >
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/undefined"
+            id="settingsTab"
+            onClick={[Function]}
+          >
+            Settings
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/undefined/datasource"
+            id="sourcesTab"
+            onClick={[Function]}
+          >
+            Sources
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/undefined/state"
+            id="stateTab"
+            onClick={[Function]}
+          >
+            States
+          </a>
+        </div>
+        <div
+          className="c12"
+        >
+          <a
+            className="c11"
+            href="/project/undefined/content"
+            id="contentTab"
+            onClick={[Function]}
+          >
+            Content
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/undefined/templates"
+            id="templatesTab"
+            onClick={[Function]}
+          >
+            Templates
+          </a>
+        </div>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/project/undefined/user"
+            id="usersTab"
+            onClick={[Function]}
+          >
+            Users
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+      >
+        <h2
+          className="c15"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Content
+        </h2>
+        <h1
+          className="c16"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          Sections
+        </h1>
+      </div>
+      <div
+        className=""
+      >
+        <div
+          className="c17"
+        >
+          <button
+            disabled={false}
+            id="createSection"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "shapeRendering": "crispEdges",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c18"
+    >
+      <div
+        className="c19"
+      />
+      2 sections
+      <div
+        className="c19"
+      />
+    </div>
+    <section
+      className="c20"
+    >
+      <div
+        className="c21"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <ul
+              className="c22"
+            >
+              <li
+                className="c23"
+                id="headerItem-0"
+              >
+                in 3 months
+              </li>
+              <li
+                className="c23"
+                id="headerItem-1"
+              >
+                owner
+              </li>
+            </ul>
+          </div>
+          <h1
+            className="c24"
+            id="section-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Section
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          0 Pages
+        </div>
+      </div>
+      <div
+        className="c21"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <ul
+              className="c22"
+            >
+              <li
+                className="c23"
+                id="headerItem-0"
+              >
+                in 3 months
+              </li>
+              <li
+                className="c23"
+                id="headerItem-1"
+              >
+                owner 2
+              </li>
+            </ul>
+          </div>
+          <h1
+            className="c24"
+            id="section-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Section 2
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          0 Pages
+        </div>
+      </div>
+    </section>
+    <div
+      className="c25"
+    >
+      <div
+        className="c26"
+      >
+        <div
+          className="c27"
+        >
+          <button
+            disabled={false}
+            id="backBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+              />
+            </svg>
+          </button>
+          <div
+            className="c17"
+          >
+            <button
+              disabled={false}
+              id="creatSectionMobile"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  "width": "60px",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "shapeRendering": "crispEdges",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

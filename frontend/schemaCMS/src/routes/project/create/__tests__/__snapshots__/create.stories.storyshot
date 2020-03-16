@@ -470,11 +470,22 @@ exports[`Storyshots Project|Create Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/undefined/folder"
-                id="folderNavBtn"
+                href="/project/undefined/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>

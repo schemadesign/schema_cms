@@ -233,11 +233,22 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined/folder"
-              id="folderNavBtn"
+              href="/project/undefined/content"
+              id="contentNavBtn"
               onClick={[Function]}
             >
-              Pages
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-bZQynM dHaYym"
+          >
+            <a
+              href="/project/undefined/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
             </a>
           </div>
         </div>
@@ -345,13 +356,13 @@ exports[`PageTemplate: Component should render correctly 1`] = `
       className="sc-ckVGcZ foYhJp"
     >
       <div
-        className="sc-jKJlTe gEQAlP"
+        className="sc-eNQAEJ cdjLbz"
       >
         <div
-          className="sc-eNQAEJ dWMsXQ"
+          className="sc-hMqMXs iyMKdh"
         >
           <h2
-            className="sc-hMqMXs NSfhp"
+            className="sc-kEYyzF duTgan"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -365,7 +376,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Page Template
           </h2>
           <h1
-            className="sc-kEYyzF duTgan"
+            className="sc-kkGfuU diXTcM"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -379,10 +390,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-jAaTju lEldS"
+              className="sc-jDwBTQ johwsq"
             >
               <div
-                className="sc-jlyJG dAHAOh"
+                className="sc-gipzik cSaQxt"
               >
                 <div
                   style={
@@ -458,7 +469,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-jDwBTQ dTsjtS"
+                className="sc-gPEVay dthIer"
               >
                 <svg
                   style={
@@ -480,7 +491,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-kkGfuU gqJIVH"
+          className="sc-iAyFgw gPlgsX"
         >
           <div
             className="sc-kgoBCf ifKHSM"
@@ -530,10 +541,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-gPEVay hARQLZ"
+        className="sc-iRbamj hurrdT"
       >
         <div
-          className="sc-jlyJG bYQXFu"
+          className="sc-gipzik edHMYQ"
         >
           <div
             style={
@@ -600,17 +611,17 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-Rmtcm digGrX"
+        className="sc-bRBYWo kMwySd"
       >
         <div
-          className="sc-bRBYWo bXAVwg"
+          className="sc-hzDkRC fsdhUX"
         />
         1 Block
         <div
-          className="sc-bRBYWo bXAVwg"
+          className="sc-hzDkRC fsdhUX"
         >
           <div
-            className="sc-iRbamj btwYWo"
+            className="sc-jlyJG cZljSU"
           >
             <div
               className="sc-kgoBCf ifKHSM"
@@ -701,14 +712,14 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-kjoXOD kLDMsF"
+                className="sc-fBuWsC hMHZqI"
               >
                 <div
-                  className="sc-cHGsZl hGuQbs"
+                  className="sc-fMiknA anWfE"
                 >
                   <div>
                     <div
-                      className="sc-caSCKo bNHHVl"
+                      className="sc-jKJlTe bsIWpZ"
                     >
                       <svg
                         style={
@@ -730,7 +741,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-jlyJG dAHAOh"
+                  className="sc-gipzik cSaQxt"
                 >
                   <div
                     style={
@@ -805,7 +816,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-cHGsZl hGuQbs"
+                  className="sc-fMiknA anWfE"
                 >
                   <svg
                     style={
@@ -843,7 +854,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-kgAjT iOzaoG"
+                className="sc-eqIVtm hGlwjT"
               >
                 block name
               </div>
@@ -891,10 +902,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             >
               <div>
                 <div
-                  className="sc-TOsTZ fuZnAe"
+                  className="sc-dVhcbM dnunAv"
                 >
                   <div
-                    className="sc-cJSrbW gDuLXM"
+                    className="sc-fAjcbJ bNKUTJ"
                   >
                     <label
                       id="fieldProjectStatusLabel"
@@ -920,7 +931,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                       value={1}
                     />
                     <div
-                      className="sc-ksYbfQ bInuQF"
+                      className="sc-caSCKo eOCUqf"
                     >
                       <svg
                         style={
@@ -1050,13 +1061,13 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         </div>
       </span>
       <div
-        className="sc-iAyFgw ZYbtF"
+        className="sc-hSdWYo hPagPA"
       >
         <div
-          className="sc-hSdWYo hCOKAt"
+          className="sc-eHgmQL kwJpzj"
         >
           <div
-            className="sc-jWBwVP gGRvYX"
+            className="sc-brqgnP fiOfdH"
           >
             <div>
               <input
@@ -1107,23 +1118,23 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-cvbbAY WkBHn"
+              className="sc-jWBwVP kqwNhC"
             >
               <label
-                className="sc-eHgmQL dHuHVJ"
+                className="sc-cvbbAY blYLdr"
                 htmlFor="isAvailable"
               >
                 Make it Available
               </label>
               <span
-                className="sc-cMljjf lbNnfn"
+                className="sc-jAaTju ezVhFu"
               >
                 This Template is currently unavailable for Editors
               </span>
             </div>
           </div>
           <div
-            className="sc-brqgnP dLyJCX"
+            className="sc-cMljjf fFfxnc"
             id="removePage"
             onClick={[Function]}
           >
@@ -1145,7 +1156,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-hSdWYo hCOKAt"
+          className="sc-eHgmQL kwJpzj"
         >
           <div>
             <input
@@ -1196,10 +1207,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-cvbbAY WkBHn"
+            className="sc-jWBwVP kqwNhC"
           >
             <label
-              className="sc-eHgmQL dHuHVJ"
+              className="sc-cvbbAY blYLdr"
               htmlFor="allowAdd"
             >
               Allow new Blocks to be added to this Page Template

@@ -50,7 +50,7 @@ describe('PageTemplates: Component', () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
 
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/page-templates/create');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/templates');
   });
 
   it('should redirect to page template', async () => {

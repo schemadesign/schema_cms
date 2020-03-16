@@ -183,6 +183,15 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   text-align: right;
 }
 
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
 .c8 {
   display: none;
 }
@@ -297,15 +306,6 @@ exports[`Storyshots BlockTemplate Default 1`] = `
 
 .c19 {
   width: 33%;
-}
-
-.c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: move;
-  touch-action: none;
 }
 
 @media (min-width:1050px) {
@@ -655,11 +655,22 @@ exports[`Storyshots BlockTemplate Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/undefined/folder"
-                id="folderNavBtn"
+                href="/project/undefined/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/undefined/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>

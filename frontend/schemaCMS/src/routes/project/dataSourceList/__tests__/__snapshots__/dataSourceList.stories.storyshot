@@ -503,11 +503,22 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               className="c5"
             >
               <a
-                href="/project/1/folder"
-                id="folderNavBtn"
+                href="/project/1/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -656,11 +667,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/folder"
-            id="folderTab"
+            href="/project/1/content"
+            id="contentTab"
             onClick={[Function]}
           >
-            Pages
+            Content
           </a>
         </div>
         <div
@@ -1473,11 +1484,22 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c5"
             >
               <a
-                href="/project/1/folder"
-                id="folderNavBtn"
+                href="/project/1/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -1626,11 +1648,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/folder"
-            id="folderTab"
+            href="/project/1/content"
+            id="contentTab"
             onClick={[Function]}
           >
-            Pages
+            Content
           </a>
         </div>
         <div

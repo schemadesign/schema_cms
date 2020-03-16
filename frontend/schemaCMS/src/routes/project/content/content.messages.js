@@ -10,4 +10,12 @@ export default defineMessages({
     id: 'project.content.subtitle',
     defaultMessage: 'Sections',
   },
+  section: {
+    id: 'project.content.section',
+    defaultMessage: 'section',
+  },
+  pagesCounter: {
+    id: 'project.content.pagesCounter',
+    defaultMessage: '{pages, plural,one {# Page} other {# Pages}}',
+  },
 });

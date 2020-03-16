@@ -106,13 +106,26 @@ exports[`StateFilter: Component should render correctly 1`] = `
             "admin",
             "editor",
           ],
-          "id": "folderNavBtn",
+          "id": "contentNavBtn",
           "label": <FormattedMessage
-            defaultMessage="Pages"
-            id="project.view.projectPages"
+            defaultMessage="Content"
+            id="project.view.content"
             values={Object {}}
           />,
-          "to": "/project/1/folder",
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
           "type": "link_item",
         },
       ]

@@ -5,13 +5,13 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
   className="sc-gZMcBi giNnHm"
 >
   <div
-    className="sc-gqjmRU eNIUbD"
+    className="sc-VigVT bPlQbK"
   >
     <div
-      className="sc-VigVT dqOhen"
+      className="sc-jTzLTM kvTaiG"
     >
       <h2
-        className="sc-jTzLTM bHsUeM"
+        className="sc-fjdhpX egZimZ"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -27,7 +27,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-fjdhpX egZimZ"
+        className="sc-jzJRlG kYmRlY"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -44,7 +44,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           className="sc-gzVnrw ihHoGK"
         >
           <div
-            className="sc-dxgOiQ eOaUUE"
+            className="sc-ckVGcZ fIDDmP"
           >
             <div
               style={
@@ -141,10 +141,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-jzJRlG enxKql"
+      className="sc-cSHVUG CAuLq"
     >
       <div
-        className="sc-kpOJdX deHBhx"
+        className="sc-dxgOiQ dhqWEZ"
       >
         <button
           disabled={false}
@@ -194,7 +194,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     className="sc-dnqmqq daNrns"
   >
     <div
-      className="sc-dxgOiQ jsETHj"
+      className="sc-ckVGcZ jvWahu"
     >
       <div
         style={
@@ -260,20 +260,20 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-cvbbAY cNZSjQ"
+    className="sc-jWBwVP jPlRxs"
   >
     <div
-      className="sc-jWBwVP eqoRZu"
+      className="sc-brqgnP hMPvOi"
     />
     1 Element
     <div
-      className="sc-jWBwVP eqoRZu"
+      className="sc-brqgnP hMPvOi"
     >
       <div
         className="sc-iwsKbI eFsHMW"
       >
         <div
-          className="sc-kpOJdX deHBhx"
+          className="sc-dxgOiQ dhqWEZ"
         >
           <button
             disabled={false}
@@ -361,14 +361,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-hMqMXs cSPRkv"
+            className="sc-kEYyzF eNnfGN"
           >
             <div
-              className="sc-kEYyzF fEebBv"
+              className="sc-kkGfuU dVEktx"
             >
               <div>
                 <div
-                  className="sc-gipzik izWywq"
+                  className="sc-gqjmRU aQaPr"
                 >
                   <svg
                     style={
@@ -389,7 +389,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iAyFgw WToGA"
+                className="sc-hSdWYo fFdDEu"
               >
                 <svg
                   style={
@@ -409,7 +409,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-dxgOiQ eOaUUE"
+              className="sc-ckVGcZ fIDDmP"
             >
               <div
                 style={
@@ -483,7 +483,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-kEYyzF fEebBv"
+              className="sc-kkGfuU dVEktx"
             >
               <svg
                 style={
@@ -564,10 +564,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         >
           <div>
             <div
-              className="sc-kkGfuU fXPQVL"
+              className="sc-iAyFgw fUoHgE"
             >
               <div
-                className="sc-hSdWYo inWZGF"
+                className="sc-eHgmQL fHnctB"
               >
                 <label
                   id="fieldProjectStatusLabel"
@@ -593,7 +593,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   value="stack"
                 />
                 <div
-                  className="sc-eHgmQL bnyqAl"
+                  className="sc-cvbbAY gPcBRu"
                 >
                   <svg
                     style={
@@ -798,10 +798,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-kkGfuU fXPQVL"
+              className="sc-iAyFgw fUoHgE"
             >
               <div
-                className="sc-hSdWYo inWZGF"
+                className="sc-eHgmQL fHnctB"
               >
                 <label
                   id="fieldProjectStatusLabel"
@@ -827,7 +827,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   value="block name 2"
                 />
                 <div
-                  className="sc-eHgmQL bnyqAl"
+                  className="sc-cvbbAY gPcBRu"
                 >
                   <svg
                     style={

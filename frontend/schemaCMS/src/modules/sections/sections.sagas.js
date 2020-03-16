@@ -5,16 +5,12 @@ import { SectionsRoutines } from './sections.redux';
 import api from '../../shared/services/api';
 import { SECTIONS_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { ProjectRoutines } from '../project';
-// import { sections } from './sections.mocks';
 
 function* fetchSections({ payload: { projectId } }) {
   try {
     yield put(SectionsRoutines.fetchSections.request());
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${SECTIONS_PATH}`);
-    // const data = {
-    //   results: sections,
-    // };
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(SectionsRoutines.fetchSections.success(data.results));

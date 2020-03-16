@@ -45,12 +45,7 @@ exports[`Project: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/folder"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/project/:projectId/folder/create"
+    path="/project/:projectId/content"
   />
   <Route
     component={[Function]}
@@ -86,6 +81,11 @@ exports[`Project: Component should render correctly 1`] = `
     component={[Function]}
     exact={true}
     path="/project/:projectId/page-templates/create"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/section/create"
   />
   <Route
     component={[Function]}
