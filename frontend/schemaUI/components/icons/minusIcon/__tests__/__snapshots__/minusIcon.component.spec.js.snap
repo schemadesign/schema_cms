@@ -5,9 +5,9 @@ exports[`MinusIcon: Component should render correctly 1`] = `
   style={
     Object {
       "fill": "#FFF",
-      "height": "60px",
+      "height": 30,
       "shapeRendering": "crispEdges",
-      "width": "60px",
+      "width": 30,
     }
   }
 />
@@ -18,9 +18,9 @@ exports[`MinusIcon: Component should render with custom styles 1`] = `
   style={
     Object {
       "fill": "blue",
-      "height": "60px",
+      "height": 30,
       "shapeRendering": "crispEdges",
-      "width": "60px",
+      "width": 30,
     }
   }
 />

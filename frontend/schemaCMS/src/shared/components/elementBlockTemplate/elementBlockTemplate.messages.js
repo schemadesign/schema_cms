@@ -13,51 +13,51 @@ import {
 
 export default defineMessages({
   typePlaceholder: {
-    id: 'shared.components.blockElementTemplate.typePlaceholder',
+    id: 'shared.components.elementBlockTemplate.typePlaceholder',
     defaultMessage: 'Select Element Type',
   },
   namePlaceholder: {
-    id: 'shared.components.blockElementTemplate.namePlaceholder',
+    id: 'shared.components.elementBlockTemplate.namePlaceholder',
     defaultMessage: 'Name',
   },
   [ELEMENT_TYPE]: {
-    id: `shared.components.blockElementTemplate.${ELEMENT_TYPE}`,
+    id: `shared.components.elementBlockTemplate.${ELEMENT_TYPE}`,
     defaultMessage: 'Element Type',
   },
   [RICH_TEXT_TYPE]: {
-    id: `shared.components.blockElementTemplate.${RICH_TEXT_TYPE}`,
+    id: `shared.components.elementBlockTemplate.${RICH_TEXT_TYPE}`,
     defaultMessage: 'Rich text',
   },
   [PLAIN_TEXT_TYPE]: {
-    id: `shared.components.blockElementTemplate.${PLAIN_TEXT_TYPE}`,
+    id: `shared.components.elementBlockTemplate.${PLAIN_TEXT_TYPE}`,
     defaultMessage: 'Plain text',
   },
   [IMAGE_TYPE]: {
-    id: `shared.components.blockElementTemplate.${IMAGE_TYPE}`,
+    id: `shared.components.elementBlockTemplate.${IMAGE_TYPE}`,
     defaultMessage: 'Image',
   },
   [CODE_TYPE]: {
-    id: `shared.components.blockElementTemplate.${CODE_TYPE}`,
+    id: `shared.components.elementBlockTemplate.${CODE_TYPE}`,
     defaultMessage: 'Code',
   },
   [CONNECTION_TYPE]: {
-    id: `shared.components.blockElementTemplate.${CONNECTION_TYPE}`,
+    id: `shared.components.elementBlockTemplate.${CONNECTION_TYPE}`,
     defaultMessage: 'Connection',
   },
   [STACK_TYPE]: {
-    id: `shared.components.blockElementTemplate.${STACK_TYPE}`,
+    id: `shared.components.elementBlockTemplate.${STACK_TYPE}`,
     defaultMessage: 'Block Stack',
   },
   [PARAMS_BLOCK]: {
-    id: `shared.components.blockElementTemplate.${PARAMS_BLOCK}`,
+    id: `shared.components.elementBlockTemplate.${PARAMS_BLOCK}`,
     defaultMessage: 'Block',
   },
   blockPlaceholder: {
-    id: 'shared.components.blockElementTemplate.typePlaceholder',
+    id: 'shared.components.elementBlockTemplate.typePlaceholder',
     defaultMessage: 'Select Block Type',
   },
   noBlocksPlaceholder: {
-    id: 'shared.components.blockElementTemplate.noBlocksPlaceholder',
+    id: 'shared.components.elementBlockTemplate.noBlocksPlaceholder',
     defaultMessage: 'No blocks available',
   },
 });

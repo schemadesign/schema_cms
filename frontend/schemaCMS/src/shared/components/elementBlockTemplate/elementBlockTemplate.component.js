@@ -6,16 +6,17 @@ import { equals } from 'ramda';
 
 import {
   customLabelStyles,
-  elementIcon,
   Header,
   IconsContainer,
   iconStyles,
   InputContainer,
-} from './blockElementTemplate.styles';
-import messages from './blockElementTemplate.messages';
+  ElementIcon,
+} from './elementBlockTemplate.styles';
+import messages from './elementBlockTemplate.messages';
 import { TextInput } from '../form/inputs/textInput';
 import {
   BLOCK_TEMPLATES_ELEMENTS,
+  ELEMENT_AUTO_OPEN,
   ELEMENT_NAME,
   ELEMENT_PARAMS,
   ELEMENT_TYPE,
@@ -28,8 +29,8 @@ import { renderWhenTrue } from '../../utils/rendering';
 
 const { EditIcon, MinusIcon } = Icons;
 
-export const BlockElementTemplate = ({
-  element: { name, type, params, autoOpen },
+export const ElementBlockTemplate = ({
+  element,
   handleChange,
   index,
   setFieldValue,
@@ -49,7 +50,7 @@ export const BlockElementTemplate = ({
       <Select
         label={intl.formatMessage(messages[PARAMS_BLOCK])}
         name={`${elementPath}.${ELEMENT_PARAMS}.${PARAMS_BLOCK}`}
-        value={params[PARAMS_BLOCK] || ''}
+        value={element[ELEMENT_PARAMS][PARAMS_BLOCK] || ''}
         options={blocksOptions}
         id="elementBlockSelect"
         onSelect={handleSelectBlock}
@@ -59,15 +60,17 @@ export const BlockElementTemplate = ({
       />
     </InputContainer>
   ));
-  const isStackType = equals(STACK_TYPE, type);
+  const isStackType = equals(STACK_TYPE, element[ELEMENT_TYPE]);
 
   return (
-    <AccordionPanel autoOpen={autoOpen}>
+    <AccordionPanel autoOpen={element[ELEMENT_AUTO_OPEN]}>
       <AccordionHeader>
         <Header>
           <IconsContainer>
             {draggableIcon}
-            <MinusIcon customStyles={elementIcon} />
+            <ElementIcon>
+              <MinusIcon />
+            </ElementIcon>
           </IconsContainer>
           <TextInput
             name={`${elementPath}.${ELEMENT_NAME}`}
@@ -75,8 +78,8 @@ export const BlockElementTemplate = ({
             onChange={handleChange}
             autoWidth
             fullWidth
-            value={name}
-            autoFocus={autoFocus && !name.length}
+            value={element[ELEMENT_NAME]}
+            autoFocus={autoFocus && !element[ELEMENT_NAME].length}
             {...restFormikProps}
           />
           <IconsContainer>
@@ -90,7 +93,7 @@ export const BlockElementTemplate = ({
           <Select
             label={intl.formatMessage(messages[ELEMENT_TYPE])}
             name={`${elementPath}.${ELEMENT_TYPE}`}
-            value={type}
+            value={element[ELEMENT_TYPE]}
             id="elementTypeSelect"
             options={typesOptions}
             onSelect={handleSelectType}
@@ -105,7 +108,7 @@ export const BlockElementTemplate = ({
   );
 };
 
-BlockElementTemplate.propTypes = {
+ElementBlockTemplate.propTypes = {
   element: PropTypes.object.isRequired,
   blocksOptions: PropTypes.array.isRequired,
   index: PropTypes.number.isRequired,

@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router';
 import { useFormik } from 'formik';
 import { useEffectOnce } from 'react-use';
 import Helmet from 'react-helmet';
+import { pick } from 'ramda';
 
 import { Container } from './pageTemplate.styles';
 import messages from './pageTemplate.messages';
@@ -16,7 +17,17 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageTemplateForm } from '../../shared/components/pageTemplateForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
-import { PAGE_TEMPLATES_SCHEMA } from '../../modules/pageTemplates/pageTemplates.constants';
+import {
+  BLOCK_ID,
+  BLOCK_TYPE,
+  BLOCK_NAME,
+  PAGE_TEMPLATES_BLOCKS,
+  PAGE_TEMPLATES_SCHEMA,
+  BLOCK_KEY,
+  PAGE_TEMPLATES_NAME,
+  PAGE_TEMPLATES_ALLOW_ADD,
+  PAGE_TEMPLATES_IS_AVAILABLE,
+} from '../../modules/pageTemplates/pageTemplates.constants';
 
 export const PageTemplate = memo(
   ({
@@ -25,7 +36,7 @@ export const PageTemplate = memo(
     fetchBlockTemplates,
     removePageTemplate,
     userRole,
-    pageTemplate: { name, blocks, isAvailable, allowAdd },
+    pageTemplate,
     blockTemplates,
     project,
   }) => {
@@ -50,13 +61,28 @@ export const PageTemplate = memo(
 
     const menuOptions = getProjectMenuOptions();
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-      initialValues: { name, blocks, isAvailable, allowAdd },
+      initialValues: {
+        ...pick([PAGE_TEMPLATES_NAME, PAGE_TEMPLATES_ALLOW_ADD, PAGE_TEMPLATES_IS_AVAILABLE], pageTemplate),
+        blocks: pageTemplate[PAGE_TEMPLATES_BLOCKS].map(block => ({
+          ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID], block),
+          [BLOCK_KEY]: block[BLOCK_ID],
+        })),
+      },
       enableReinitialize: true,
       validationSchema: () => PAGE_TEMPLATES_SCHEMA,
       onSubmit: async formData => {
         try {
           setUpdateLoading(true);
-          await updatePageTemplate({ pageTemplateId, formData });
+          await updatePageTemplate({
+            pageTemplateId,
+            formData: {
+              ...formData,
+              [PAGE_TEMPLATES_BLOCKS]: formData[PAGE_TEMPLATES_BLOCKS].map((block, index) => ({
+                ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID])(block),
+                order: index,
+              })),
+            },
+          });
           setUpdateLoading(false);
           history.push(`/project/${project.id}/page-templates`);
         } catch (e) {
@@ -71,7 +97,7 @@ export const PageTemplate = memo(
         try {
           const { project } = await fetchPageTemplate({ pageTemplateId });
 
-          await fetchBlockTemplates({ projectId: project });
+          await fetchBlockTemplates({ projectId: project, raw: true });
         } catch (e) {
           reportError(e);
           setError(e);

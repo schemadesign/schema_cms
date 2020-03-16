@@ -1,6 +1,7 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
+import { PAGE_TEMPLATES_BLOCKS } from './pageTemplates.constants';
 
 const PREFIX = 'PAGE_TEMPLATES/';
 
@@ -12,7 +13,12 @@ export const PageTemplatesRoutines = {
   removePageTemplate: createRoutine(`${PREFIX}REMOVE_PAGE_TEMPLATE`),
 };
 
-export const INITIAL_STATE = new Immutable({ pageTemplates: [], pageTemplate: {} });
+export const INITIAL_STATE = new Immutable({
+  pageTemplates: [],
+  pageTemplate: {
+    [PAGE_TEMPLATES_BLOCKS]: [],
+  },
+});
 
 const setPageTemplates = (state = INITIAL_STATE, { payload }) => state.set('pageTemplates', payload);
 const setPageTemplate = (state = INITIAL_STATE, { payload }) => state.set('pageTemplate', payload);

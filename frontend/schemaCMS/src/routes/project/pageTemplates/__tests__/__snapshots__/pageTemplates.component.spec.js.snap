@@ -515,7 +515,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         }
       >
-        0 Blocks
+        1 Block
       </div>
     </div>
     <div
@@ -595,7 +595,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         }
       >
-        2 Blocks
+        0 Blocks
       </div>
     </div>
   </section>

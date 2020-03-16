@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BlockElementTemplate } from './blockElementTemplate.component';
+import { ElementBlockTemplate } from './elementBlockTemplate.component';
 import { blockTemplate } from '../../../modules/blockTemplates/blockTemplates.mocks';
 import { withTheme } from '../../../.storybook/decorators';
 
@@ -18,4 +18,4 @@ export const defaultProps = {
 
 storiesOf('BlockElementTemplate', module)
   .addDecorator(withTheme())
-  .add('Default', () => <BlockElementTemplate {...defaultProps} />);
+  .add('Default', () => <ElementBlockTemplate {...defaultProps} />);

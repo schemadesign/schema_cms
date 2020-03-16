@@ -36,9 +36,10 @@ import {
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
+  ELEMENT_KEY,
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
-import { BlockElementTemplate } from '../blockElementTemplate';
+import { ElementBlockTemplate } from '../elementBlockTemplate';
 import { CounterHeader } from '../counterHeader';
 import { Draggable } from '../draggable';
 import { IconWrapper, menuIconStyles } from '../../../routes/page/pageBlockList/pageBlockList.styles';
@@ -118,7 +119,7 @@ export const BlockTemplateForm = ({
   return (
     <Container>
       <ContextHeader title={title} subtitle={nameInput}>
-        <PlusButton id="createElement" onClick={addElement} type="button" disabled={!isValid} />
+        <PlusButton id="createElement" onClick={addElement} type="button" disabled={!isValid && !!elementsCount} />
       </ContextHeader>
       <MobileInputName>
         <TextInput
@@ -136,7 +137,13 @@ export const BlockTemplateForm = ({
         count={elementsCount}
         right={
           <MobilePlusContainer>
-            <PlusButton customStyles={mobilePlusStyles} id="createElement" onClick={addElement} type="button" />
+            <PlusButton
+              customStyles={mobilePlusStyles}
+              id="createElement"
+              onClick={addElement}
+              type="button"
+              disabled={!isValid && !!elementsCount}
+            />
           </MobilePlusContainer>
         }
       />
@@ -144,10 +151,10 @@ export const BlockTemplateForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
             <Draggable
-              key={element.key}
+              key={element[ELEMENT_KEY]}
               accept="box"
               onMove={handleMove}
-              id={element.key}
+              id={element[ELEMENT_KEY]}
               index={index}
               count={elementsCount}
             >
@@ -161,7 +168,7 @@ export const BlockTemplateForm = ({
                 );
 
                 return (
-                  <BlockElementTemplate
+                  <ElementBlockTemplate
                     index={index}
                     element={element}
                     handleChange={handleChange}

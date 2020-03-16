@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots BlockTemplateForm Default 1`] = `
-.c19 {
+.c20 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,15 +23,15 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   position: relative;
 }
 
-.c23 {
+.c24 {
   padding-right: 10px;
 }
 
-.c22 {
+.c23 {
   padding-left: 10px;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -46,14 +46,14 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   padding-right: 40px;
 }
 
-.c25 {
+.c26 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c24 {
+.c25 {
   color: #71737e;
   min-width: 100%;
 }
@@ -119,7 +119,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  max-width: calc(100% - 170px);
+  max-width: calc(100% - 90px);
 }
 
 .c14 {
@@ -133,12 +133,17 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   align-items: center;
 }
 
-.c16 {
+.c17 {
   border-top: 1px solid #2F2F36;
-  padding-left: 30px;
+  padding-left: 0;
 }
 
-.c17 {
+.c16 {
+  margin: 0 25px 0 5px;
+  display: none;
+}
+
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -151,11 +156,11 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   font-size: 18px;
 }
 
-.c17 label {
+.c18 label {
   margin-bottom: 2px;
 }
 
-.c18 {
+.c19 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -230,6 +235,24 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
     align-items: center;
     margin: 60px 0 40px 0;
     min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    max-width: calc(100% - 170px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c17 {
+    padding-left: 30px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c16 {
+    display: block;
   }
 }
 
@@ -642,24 +665,25 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                     </svg>
                   </div>
                 </div>
-                <svg
-                  style={
-                    Object {
-                      "cursor": "default",
-                      "fill": "#FFF",
-                      "height": 30,
-                      "marginLeft": 5,
-                      "marginRight": 25,
-                      "shapeRendering": "crispEdges",
-                      "width": 30,
-                    }
-                  }
-                  viewBox="0 0 60 60"
+                <div
+                  className="c16"
                 >
-                  <path
-                    d="M15 28h30v4H15z"
-                  />
-                </svg>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": 30,
+                        "shapeRendering": "crispEdges",
+                        "width": 30,
+                      }
+                    }
+                    viewBox="0 0 60 60"
+                  >
+                    <path
+                      d="M15 28h30v4H15z"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
                 className="c5"
@@ -817,10 +841,10 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
           >
             <div>
               <div
-                className="c16"
+                className="c17"
               >
                 <div
-                  className="c17"
+                  className="c18"
                 >
                   <label
                     id="fieldProjectStatusLabel"
@@ -846,7 +870,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                     value="stack"
                   />
                   <div
-                    className="c18"
+                    className="c19"
                   >
                     <svg
                       style={
@@ -1051,10 +1075,10 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                 </div>
               </div>
               <div
-                className="c16"
+                className="c17"
               >
                 <div
-                  className="c17"
+                  className="c18"
                 >
                   <label
                     id="fieldProjectStatusLabel"
@@ -1080,7 +1104,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                     value="block name 2"
                   />
                   <div
-                    className="c18"
+                    className="c19"
                   >
                     <svg
                       style={
@@ -1210,13 +1234,13 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
       </div>
     </span>
     <div
-      className="c19"
+      className="c20"
     >
       <div
-        className="c20"
+        className="c21"
       >
         <div
-          className="c21"
+          className="c22"
         >
           <div>
             <input
@@ -1268,23 +1292,23 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
             </label>
           </div>
           <div
-            className="c22"
+            className="c23"
           >
             <label
-              className="c23"
+              className="c24"
               htmlFor="isAvailable"
             >
               Make it Available
             </label>
             <span
-              className="c24"
+              className="c25"
             >
               This Template is currently available for Editors
             </span>
           </div>
         </div>
         <div
-          className="c25"
+          className="c26"
           id="removeBlock"
           onClick={[Function]}
         >
@@ -1306,7 +1330,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
         </div>
       </div>
       <div
-        className="c20"
+        className="c21"
       >
         <div>
           <input
@@ -1358,10 +1382,10 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
           </label>
         </div>
         <div
-          className="c22"
+          className="c23"
         >
           <label
-            className="c23"
+            className="c24"
             htmlFor="allowAdd"
           >
             Allow new Elements to be added to this Block Template

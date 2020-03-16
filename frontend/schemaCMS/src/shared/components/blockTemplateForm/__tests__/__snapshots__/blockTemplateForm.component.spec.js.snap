@@ -260,14 +260,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-eHgmQL dXbgNc"
+    className="sc-cvbbAY cNZSjQ"
   >
     <div
-      className="sc-cvbbAY kNNELi"
+      className="sc-jWBwVP eqoRZu"
     />
     1 Element
     <div
-      className="sc-cvbbAY kNNELi"
+      className="sc-jWBwVP eqoRZu"
     >
       <div
         className="sc-iwsKbI eFsHMW"
@@ -361,14 +361,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-hMqMXs cNNYzV"
+            className="sc-hMqMXs cSPRkv"
           >
             <div
               className="sc-kEYyzF fEebBv"
             >
               <div>
                 <div
-                  className="sc-jlyJG ksSOGS"
+                  className="sc-gipzik izWywq"
                 >
                   <svg
                     style={
@@ -388,24 +388,25 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   </svg>
                 </div>
               </div>
-              <svg
-                style={
-                  Object {
-                    "cursor": "default",
-                    "fill": "#FFF",
-                    "height": 30,
-                    "marginLeft": 5,
-                    "marginRight": 25,
-                    "shapeRendering": "crispEdges",
-                    "width": 30,
-                  }
-                }
-                viewBox="0 0 60 60"
+              <div
+                className="sc-iAyFgw WToGA"
               >
-                <path
-                  d="M15 28h30v4H15z"
-                />
-              </svg>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 30,
+                      "shapeRendering": "crispEdges",
+                      "width": 30,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M15 28h30v4H15z"
+                  />
+                </svg>
+              </div>
             </div>
             <div
               className="sc-dxgOiQ eOaUUE"
@@ -563,10 +564,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         >
           <div>
             <div
-              className="sc-kkGfuU cBxuyS"
+              className="sc-kkGfuU fXPQVL"
             >
               <div
-                className="sc-iAyFgw jeWkSK"
+                className="sc-hSdWYo inWZGF"
               >
                 <label
                   id="fieldProjectStatusLabel"
@@ -592,7 +593,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   value="stack"
                 />
                 <div
-                  className="sc-hSdWYo grNkFE"
+                  className="sc-eHgmQL bnyqAl"
                 >
                   <svg
                     style={
@@ -797,10 +798,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-kkGfuU cBxuyS"
+              className="sc-kkGfuU fXPQVL"
             >
               <div
-                className="sc-iAyFgw jeWkSK"
+                className="sc-hSdWYo inWZGF"
               >
                 <label
                   id="fieldProjectStatusLabel"
@@ -826,7 +827,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   value="block name 2"
                 />
                 <div
-                  className="sc-hSdWYo grNkFE"
+                  className="sc-eHgmQL bnyqAl"
                 >
                   <svg
                     style={

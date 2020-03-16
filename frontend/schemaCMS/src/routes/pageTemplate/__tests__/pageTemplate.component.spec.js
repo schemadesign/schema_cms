@@ -22,7 +22,7 @@ describe('PageTemplate: Component', () => {
 
   it('should render correctly', async () => {
     const wrapper = await render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should fetch page and pages', async () => {
@@ -30,7 +30,7 @@ describe('PageTemplate: Component', () => {
     jest.spyOn(defaultProps, 'fetchBlockTemplates');
     await render();
     expect(defaultProps.fetchPageTemplate).toHaveBeenCalledWith({ pageTemplateId: 'pageTemplateId' });
-    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
+    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId', raw: true });
   });
 
   it('should redirect to page templates', async () => {

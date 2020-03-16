@@ -17,7 +17,10 @@ describe('PageTemplateForm: Component', () => {
     const wrapper = await render();
     wrapper.root.findAllByProps({ id: 'createBlock' })[0].props.onClick();
 
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blocks', [{}]);
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blocks', [
+      { autoOpen: true, key: 1575162000000, name: '', block: '' },
+      { id: 1, key: 1, name: 'block name', block: 1 },
+    ]);
   });
 
   it('should call setRemoveModalOpen', async () => {

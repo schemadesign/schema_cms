@@ -91,7 +91,7 @@ export const BlockTemplate = memo(
         try {
           const { project } = await fetchBlockTemplate({ blockTemplateId });
 
-          await fetchBlockTemplates({ projectId: project });
+          await fetchBlockTemplates({ projectId: project, raw: true });
         } catch (e) {
           reportError(e);
           setError(e);
