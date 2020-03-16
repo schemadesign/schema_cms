@@ -4,7 +4,7 @@ export const SOURCES = 'sources';
 
 export const USERS = 'users';
 
-export const FOLDER = 'folder';
+export const CONTENT = 'content';
 
 export const STATES = 'state';
 

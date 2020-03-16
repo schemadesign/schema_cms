@@ -8,7 +8,7 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { asMutable } from 'seamless-immutable';
 
-import { Container } from './pageTemplateForm.styles';
+import { Container, IconWrapper, menuIconStyles } from './pageTemplateForm.styles';
 import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
 import {
@@ -42,7 +42,6 @@ import {
 import { CounterHeader } from '../counterHeader';
 import { BLOCK_TEMPLATES_NAME } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Draggable } from '../draggable';
-import { IconWrapper, menuIconStyles } from '../../../routes/page/pageBlockList/pageBlockList.styles';
 import { BlockPageTemplate } from '../blockPageTemplate';
 
 const { EditIcon, MinusIcon, MenuIcon } = Icons;

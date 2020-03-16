@@ -7,13 +7,13 @@ import { reducer as dataWranglingScriptsReducer } from './dataWranglingScripts/d
 import { reducer as userReducer } from './user/user.redux';
 import { reducer as jobReducer } from './job/job.redux';
 import { reducer as filterReducer } from './filter/filter.redux';
-import { reducer as folderReducer } from './folder/folder.redux';
 import { reducer as pageReducer } from './page/page.redux';
 import { reducer as pageBlockReducer } from './pageBlock/pageBlock.redux';
 import { reducer as DataSourceTagReducer } from './dataSourceTag/dataSourceTag.redux';
 import { reducer as projectStateReducer } from './projectState/projectState.redux';
 import { reducer as blockTemplatesReducer } from './blockTemplates/blockTemplates.redux';
 import { reducer as pageTemplatesReducer } from './pageTemplates/pageTemplates.redux';
+import { reducer as sectionsReducer } from './sections/sections.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -27,13 +27,13 @@ export default function createReducer() {
     user: userReducer,
     job: jobReducer,
     filter: filterReducer,
-    folder: folderReducer,
     page: pageReducer,
     pageBlock: pageBlockReducer,
     dataSourceTag: DataSourceTagReducer,
     projectState: projectStateReducer,
     blockTemplates: blockTemplatesReducer,
     pageTemplates: pageTemplatesReducer,
+    sections: sectionsReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }
