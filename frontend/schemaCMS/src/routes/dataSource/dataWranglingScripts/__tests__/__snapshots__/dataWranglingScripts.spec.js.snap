@@ -209,7 +209,6 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
                 drag={false}
                 id="checkboxName-0"
               >
-                 
                 name 1
               </styled.div>
               <styled.div />
@@ -256,7 +255,6 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
                 drag={false}
                 id="checkboxName-0"
               >
-                 
                 name 1
               </styled.div>
               <styled.div />
@@ -289,7 +287,6 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
                 drag={false}
                 id="checkboxName-1"
               >
-                 
                 name 2
               </styled.div>
               <styled.div />
@@ -1193,7 +1190,6 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
                 drag={false}
                 id="checkboxName-0"
               >
-                 
                 name 1
               </styled.div>
               <styled.div />
@@ -1363,7 +1359,6 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
             drag={false}
             id="checkboxName-0"
           >
-             
             name 1
           </styled.div>
           <styled.div />
@@ -1396,7 +1391,6 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
             drag={false}
             id="checkboxName-1"
           >
-             
             name 2
           </styled.div>
           <styled.div />
