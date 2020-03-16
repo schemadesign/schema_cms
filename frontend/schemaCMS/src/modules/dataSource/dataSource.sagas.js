@@ -82,7 +82,7 @@ function* uploadProgressWatcher(channel, id) {
       }
 
       if (data || error) {
-        yield put(DataSourceRoutines.removeUploadingDataSource(data));
+        yield put(DataSourceRoutines.updateUploadingDataSourceStatus({ data, error }));
       }
     } catch (error) {
       reportError(error);
