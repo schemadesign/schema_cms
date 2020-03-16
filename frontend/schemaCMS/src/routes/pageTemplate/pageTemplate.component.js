@@ -73,13 +73,12 @@ export const PageTemplate = memo(
       onSubmit: async formData => {
         try {
           setUpdateLoading(true);
-
           await updatePageTemplate({
             pageTemplateId,
             formData: {
               ...formData,
               [PAGE_TEMPLATES_BLOCKS]: formData[PAGE_TEMPLATES_BLOCKS].map((block, index) => ({
-                ...pick([BLOCK_NAME, BLOCK_TYPE])(block),
+                ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID])(block),
                 order: index,
               })),
             },
