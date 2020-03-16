@@ -42,7 +42,7 @@ describe('DataSource: sagas', () => {
           })
         )
         .put(DataSourceRoutines.updateProgress.success({ id: responseData.id, progress: 0 }))
-        .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
+        .put(DataSourceRoutines.updateUploadingDataSourceStatus.trigger({ data: responseData, error: {} }))
         .dispatch(DataSourceRoutines.create(payload))
         .silentRun();
 
@@ -252,7 +252,7 @@ describe('DataSource: sagas', () => {
               isUpload: true,
             })
           )
-          .put(DataSourceRoutines.removeUploadingDataSource.trigger(responseData))
+          .put(DataSourceRoutines.updateUploadingDataSourceStatus.trigger({ data: responseData, error: {} }))
           .silentRun();
 
         expect(browserHistory.push).toBeCalledWith('/project/1/datasource');

@@ -1786,7 +1786,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c20"
               id="dataSourceStatus"
             >
-              Uploading file failed
+              No data source uploaded
             </span>
           </div>
           <h1
@@ -1954,7 +1954,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c20"
               id="dataSourceStatus"
             >
-              Uploading file failed
+              No data source uploaded
             </span>
           </div>
           <h1
@@ -2122,7 +2122,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c20"
               id="dataSourceStatus"
             >
-              Uploading file failed
+              No data source uploaded
             </span>
           </div>
           <h1
@@ -2290,7 +2290,511 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c20"
               id="dataSourceStatus"
             >
-              Uploading file failed
+              No data source uploaded
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c23"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              No data source uploaded
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              No data source uploaded
+            </span>
+          </div>
+          <h1
+            className="c21"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="c22"
+          >
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c26"
+            >
+              <span
+                className="c24"
+                id="metaItem-4"
+              >
+                Tags
+              </span>
+              <span
+                className="c25"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c19"
+        id="dataSourceContainer"
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
+            "padding": "12px 14px 14px",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <span
+              className="c20"
+              id="dataSourceStatus"
+            >
+              No data source uploaded
             </span>
           </div>
           <h1
@@ -2571,342 +3075,6 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             </div>
             <div
               className="c26"
-            >
-              <span
-                className="c24"
-                id="metaItem-4"
-              >
-                Tags
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-4"
-              >
-                —
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="c19"
-        id="dataSourceContainer"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": "#71737e",
-                "marginBottom": 14,
-              }
-            }
-          >
-            <span
-              className="c20"
-              id="dataSourceStatus"
-            >
-              Uploading file failed
-            </span>
-          </div>
-          <h1
-            className="c21"
-            id="dataSourceTitle"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            name
-          </h1>
-        </div>
-        <div
-          style={
-            Object {
-              "color": "#71737e",
-              "marginBottom": 4,
-              "marginTop": 10,
-            }
-          }
-        >
-          <div
-            className="c22"
-          >
-            <div
-              className="c26"
-            >
-              <span
-                className="c24"
-                id="metaItem-0"
-              >
-                Source
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-0"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="c26"
-            >
-              <span
-                className="c24"
-                id="metaItem-1"
-              >
-                Items
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-1"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c26"
-            >
-              <span
-                className="c24"
-                id="metaItem-2"
-              >
-                Fields
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-2"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c26"
-            >
-              <span
-                className="c24"
-                id="metaItem-3"
-              >
-                Filters
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-3"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c26"
-            >
-              <span
-                className="c24"
-                id="metaItem-4"
-              >
-                Tags
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-4"
-              >
-                —
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="c19"
-        id="dataSourceContainer"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": "#71737e",
-                "marginBottom": 14,
-              }
-            }
-          >
-            <span
-              className="c20"
-              id="dataSourceStatus"
-            >
-              Uploading file failed
-            </span>
-          </div>
-          <h1
-            className="c21"
-            id="dataSourceTitle"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            name
-          </h1>
-        </div>
-        <div
-          style={
-            Object {
-              "color": "#71737e",
-              "marginBottom": 4,
-              "marginTop": 10,
-            }
-          }
-        >
-          <div
-            className="c22"
-          >
-            <div
-              className="c23"
-            >
-              <span
-                className="c24"
-                id="metaItem-0"
-              >
-                Source
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-0"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="c23"
-            >
-              <span
-                className="c24"
-                id="metaItem-1"
-              >
-                Items
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-1"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c23"
-            >
-              <span
-                className="c24"
-                id="metaItem-2"
-              >
-                Fields
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-2"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c23"
-            >
-              <span
-                className="c24"
-                id="metaItem-3"
-              >
-                Filters
-              </span>
-              <span
-                className="c25"
-                id="metaItemValue-3"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c23"
             >
               <span
                 className="c24"
@@ -3130,7 +3298,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               className="c20"
               id="dataSourceStatus"
             >
-              Uploading file failed
+              No data source uploaded
             </span>
           </div>
           <h1

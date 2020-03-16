@@ -45,7 +45,7 @@ const updateUploadingDataSourceStatus = (state = INITIAL_STATE, { payload: { dat
   state
     .update(
       'uploadingDataSources',
-      error ? map(ifElse(propEq('id', data.id), item => ({ ...item, error }), identity)) : reject(propEq('id', data.id))
+      error ? map(ifElse(propEq('id', data.id), () => ({ ...data, error }), identity)) : reject(propEq('id', data.id))
     )
     .update('dataSources', dataSources =>
       data.name ? map(when(propEq('id', data.id), always(data)))(dataSources) : dataSources

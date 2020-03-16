@@ -13,12 +13,12 @@ describe('DataSourceList: Component', () => {
 
   it('should render empty', async () => {
     const wrapper = await render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
     const wrapper = await render(propsWithDataSources);
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should go to source', async () => {
