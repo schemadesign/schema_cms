@@ -223,8 +223,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -328,8 +328,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -433,8 +433,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -538,8 +538,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
@@ -643,14 +643,224 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
         }
         id="dataSourceContainer"
         key="4"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "fill": "#71737e",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Tags
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <ForwardRef(styled.span)
+            id="dataSourceStatus"
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
+        }
+        id="dataSourceContainer"
+        key="5"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Tags
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <ForwardRef(styled.span)
+            id="dataSourceStatus"
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
+        }
+        id="dataSourceContainer"
+        key="6"
       >
         <Styled(H1)
           id="dataSourceTitle"
@@ -755,112 +965,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.span)>
         }
         id="dataSourceContainer"
-        key="5"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
-        >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="6"
+        key="7"
       >
         <Styled(H1)
           id="dataSourceTitle"
@@ -969,7 +1074,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.span)>
         }
         id="dataSourceContainer"
-        key="7"
+        key="8"
       >
         <Styled(H1)
           id="dataSourceTitle"
@@ -1067,14 +1172,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             metaProcessing={true}
           >
             <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
+              defaultMessage="No data source uploaded"
+              id="project.dataSourceList.noDataSourceUploaded"
               values={Object {}}
             />
           </ForwardRef(styled.span)>
         }
         id="dataSourceContainer"
-        key="8"
+        key="9"
       >
         <Styled(H1)
           id="dataSourceTitle"

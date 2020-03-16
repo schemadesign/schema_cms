@@ -75,14 +75,14 @@ function* uploadProgressWatcher(channel, id) {
   while (true) {
     try {
       yield put(DataSourceRoutines.updateProgress.request());
-      const { progress, data, error } = yield take(channel);
+      const { progress, data, error = {} } = yield take(channel);
 
       if (is(Number, progress)) {
         yield put(DataSourceRoutines.updateProgress.success({ progress, id }));
       }
 
       if (data || error) {
-        yield put(DataSourceRoutines.removeUploadingDataSource(data));
+        yield put(DataSourceRoutines.updateUploadingDataSourceStatus({ data, error }));
       }
     } catch (error) {
       reportError(error);

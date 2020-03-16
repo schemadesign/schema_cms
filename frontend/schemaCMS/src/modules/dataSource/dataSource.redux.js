@@ -1,7 +1,7 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
-import { always, propEq, reject, when, map } from 'ramda';
+import { always, propEq, reject, when, map, identity, ifElse } from 'ramda';
 
 const prefix = 'DATA_SOURCE/';
 
@@ -15,7 +15,7 @@ export const DataSourceRoutines = {
   fetchFieldsInfo: createRoutine(`${prefix}FETCH_FIELDS_INFO`),
   revertToJob: createRoutine(`${prefix}REVERT_TO_JOB`),
   fetchPreview: createRoutine(`${prefix}FETCH_PREVIEW`),
-  removeUploadingDataSource: createRoutine(`${prefix}REMOVE_UPLOADING_DATA_SOURCE`),
+  updateUploadingDataSourceStatus: createRoutine(`${prefix}UPDATE_UPLOADING_DATA_SOURCE_STATUS`),
   updateProgress: createRoutine(`${prefix}UPDATE_PROGRESS`),
 };
 
@@ -41,15 +41,18 @@ const updateProgress = (state = INITIAL_STATE, { payload: { id, progress } }) =>
   state.update('uploadingDataSources', uploadingDataSources =>
     uploadingDataSources.map(data => (data.id === id ? { ...data, progress } : data))
   );
-const removeUploadingDataSource = (state = INITIAL_STATE, { payload }) =>
+const updateUploadingDataSourceStatus = (state = INITIAL_STATE, { payload: { data, error } }) =>
   state
-    .update('uploadingDataSources', reject(propEq('id', payload.id)))
+    .update(
+      'uploadingDataSources',
+      error ? map(ifElse(propEq('id', data.id), () => ({ ...data, error }), identity)) : reject(propEq('id', data.id))
+    )
     .update('dataSources', dataSources =>
-      payload.name ? map(when(propEq('id', payload.id), always(payload)))(dataSources) : dataSources
+      data.name ? map(when(propEq('id', data.id), always(data)))(dataSources) : dataSources
     );
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [DataSourceRoutines.removeUploadingDataSource.TRIGGER]: removeUploadingDataSource,
+  [DataSourceRoutines.updateUploadingDataSourceStatus.TRIGGER]: updateUploadingDataSourceStatus,
   [DataSourceRoutines.create.SUCCESS]: setUploadingDataSource,
   [DataSourceRoutines.updateOne.SUCCESS]: setUploadingDataSource,
   [DataSourceRoutines.fetchOne.SUCCESS]: updateDataSource,

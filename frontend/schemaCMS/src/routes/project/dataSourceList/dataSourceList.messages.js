@@ -38,6 +38,10 @@ export default defineMessages({
     id: 'project.dataSourceList.fileUploadingError',
     defaultMessage: 'Uploading file failed',
   },
+  noDataSourceUploaded: {
+    id: 'project.dataSourceList.noDataSourceUploaded',
+    defaultMessage: 'No data source uploaded',
+  },
   metaFailed: {
     id: 'project.dataSourceList.metaFailed',
     defaultMessage: 'Processing meta data failed',

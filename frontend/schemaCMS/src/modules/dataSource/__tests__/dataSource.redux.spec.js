@@ -110,18 +110,39 @@ describe('DataSource: redux', () => {
       expect(resultState.fieldsInfo).to.deep.equal(data);
     });
 
-    describe('when REMOVE_UPLOADING_DATA_SOURCE/TRIGGER action is received', () => {
-      it('should set fields info ', () => {
+    describe('when UPDATE_UPLOADING_DATA_SOURCE_STATUS/TRIGGER action is received', () => {
+      it('should set uploadingDataSources and dataSources', () => {
         const data = [{ id: 'id', name: 'name 1' }, { id: 'id 2', name: 'name 2' }];
         const updatedElement = { id: 'id', name: 'updated name' };
         const state = Immutable({
           uploadingDataSources: data,
           dataSources: data,
         });
-        const resultState = dataSourceReducer(state, DataSourceRoutines.removeUploadingDataSource(updatedElement));
+        const resultState = dataSourceReducer(
+          state,
+          DataSourceRoutines.updateUploadingDataSourceStatus({ data: updatedElement })
+        );
 
         expect(resultState.uploadingDataSources).to.deep.equal([data[1]]);
         expect(resultState.dataSources).to.deep.equal([updatedElement, data[1]]);
+      });
+
+      it('should set error on uploadingDataSources', () => {
+        const data = [{ id: 'id', name: 'name 1' }, { id: 'id 2', name: 'name 2' }];
+        const updatedElement = { id: 'id', name: 'updated name' };
+        const state = Immutable({
+          uploadingDataSources: data,
+          dataSources: data,
+        });
+        const resultState = dataSourceReducer(
+          state,
+          DataSourceRoutines.updateUploadingDataSourceStatus({ data: updatedElement, error: 'error' })
+        );
+
+        expect(resultState.uploadingDataSources).to.deep.equal([
+          { error: 'error', id: 'id', name: 'updated name' },
+          { id: 'id 2', name: 'name 2' },
+        ]);
       });
     });
   });

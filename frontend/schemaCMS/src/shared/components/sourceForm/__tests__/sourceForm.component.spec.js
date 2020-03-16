@@ -36,6 +36,7 @@ describe('SourceFormComponent: Component', () => {
         type: 'file',
         fileName: null,
       },
+      uploadingDataSources: [{ id: 'id', error: new Error('error') }],
     };
     const warningWrapper = render(props).find(ErrorWrapper);
 

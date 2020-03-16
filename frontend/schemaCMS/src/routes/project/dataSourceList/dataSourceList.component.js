@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, equals, propEq, T, find } from 'ramda';
+import { always, cond, equals, find, propEq, propOr, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -158,8 +158,13 @@ export class DataSourceList extends PureComponent {
     isUploading,
     uploadProgress,
     fileUploadingError,
+    noDataSourceUploaded,
   }) =>
     cond([
+      [
+        propEq('fileUploadingError', true),
+        always(this.renderLoading(<FormattedMessage id="fileUploadingErrorStatus" {...messages.fileUploadingError} />)),
+      ],
       [
         propEq('isUploading', true),
         always(
@@ -169,8 +174,10 @@ export class DataSourceList extends PureComponent {
         ),
       ],
       [
-        propEq('fileUploadingError', true),
-        always(this.renderLoading(<FormattedMessage id="fileUploadingErrorStatus" {...messages.fileUploadingError} />)),
+        propEq('noDataSourceUploaded', true),
+        always(
+          this.renderLoading(<FormattedMessage id="noDataSourceUploadedStatus" {...messages.noDataSourceUploaded} />)
+        ),
       ],
       [
         propEq('metaProcessing', true),
@@ -189,7 +196,7 @@ export class DataSourceList extends PureComponent {
         always(this.renderLoading(<FormattedMessage id="dataWranglingErrorStatus" {...messages.jobFailed} />)),
       ],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
-    ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed });
+    ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed, noDataSourceUploaded });
 
   renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsState = {}, fileName }, index) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
@@ -197,8 +204,9 @@ export class DataSourceList extends PureComponent {
     const jobFailed = propEq('lastJobStatus', JOB_STATE_FAILURE)(jobsState);
     const metaFailed = propEq('status', META_FAILED)(metaData);
     const { metaProcessing, jobProcessing } = isProcessingData({ jobsState, metaData });
-    const fileUploadingError = !fileName;
+    const noDataSourceUploaded = !fileName;
     const fileUploading = find(propEq('id', id), this.props.uploadingDataSources);
+    const fileUploadingError = !!propOr(false, 'error', fileUploading);
     const isUploading = !!fileUploading;
     const uploadProgress = fileUploading && fileUploading.progress;
 
@@ -213,6 +221,7 @@ export class DataSourceList extends PureComponent {
       metaFailed,
       isUploading,
       fileUploadingError,
+      noDataSourceUploaded,
     });
     const footer = this.renderMetaData({ metaData, metaProcessing });
 

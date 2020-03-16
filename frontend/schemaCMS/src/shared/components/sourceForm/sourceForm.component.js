@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, find, cond, equals, is, pathOr, propEq, T, ifElse, isNil, prop } from 'ramda';
+import { always, find, cond, equals, pathOr, propEq, T, ifElse, isNil, prop, propOr } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'styled-components';
@@ -56,19 +56,19 @@ export class SourceFormComponent extends PureComponent {
 
   renderProcessingMessage = cond([
     [
-      propEq('fileUploading', true),
-      always(
-        <WarningWrapper>
-          <FormattedMessage {...messages.uploadingFile} />
-        </WarningWrapper>
-      ),
-    ],
-    [
       propEq('fileUploadingError', true),
       always(
         <ErrorWrapper>
           <FormattedMessage {...messages.uploadingError} />
         </ErrorWrapper>
+      ),
+    ],
+    [
+      propEq('fileUploading', true),
+      always(
+        <WarningWrapper>
+          <FormattedMessage {...messages.uploadingFile} />
+        </WarningWrapper>
       ),
     ],
     [
@@ -104,7 +104,10 @@ export class SourceFormComponent extends PureComponent {
         equals(SOURCE_TYPE_FILE),
         () => (
           <Fragment>
-            {this.renderCsvUploader({ ...restProps, disabled: (isProcessing && !fileUploadingError) || fileUploading })}
+            {this.renderCsvUploader({
+              ...restProps,
+              disabled: (isProcessing && this.props.dataSource.fileName) || fileUploading,
+            })}
             {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
           </Fragment>
         ),
@@ -137,8 +140,8 @@ export class SourceFormComponent extends PureComponent {
     const { isProcessing } = isProcessingData({ jobsState, metaData });
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
     const { name, type } = values;
-    const fileUploadingError = id && !is(String, dataSource.fileName);
-    const fileUploading = !!uploadingDataSource;
+    const fileUploadingError = !!propOr(false, 'error', uploadingDataSource);
+    const fileUploading = !!uploadingDataSource && !fileUploadingError;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
 
     return (
@@ -166,7 +169,14 @@ export class SourceFormComponent extends PureComponent {
         >
           {this.renderRadioButton(type)}
         </RadioGroup>
-        {this.renderSourceUpload({ type, fileName, isProcessing, fileUploadingError, fileUploading, ...restProps })}
+        {this.renderSourceUpload({
+          type,
+          fileName,
+          isProcessing,
+          fileUploadingError,
+          fileUploading,
+          ...restProps,
+        })}
       </Fragment>
     );
   }
