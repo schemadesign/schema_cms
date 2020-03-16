@@ -44,6 +44,23 @@ exports[`Storyshots Templates Default 1`] = `
 }
 
 .c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7 {
   margin: 10px 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -54,7 +71,7 @@ exports[`Storyshots Templates Default 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   color: #FFF;
   font-size: 14px;
   -webkit-text-decoration: none;
@@ -70,28 +87,28 @@ exports[`Storyshots Templates Default 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c13 {
   display: none;
 }
 
-.c13 {
+.c14 {
   margin-right: 20px;
   overflow: hidden;
-}
-
-.c14 {
-  color: #FFF;
 }
 
 .c15 {
   color: #FFF;
 }
 
-.c8 {
-  display: none;
+.c16 {
+  color: #FFF;
 }
 
 .c9 {
+  display: none;
+}
+
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -104,11 +121,11 @@ exports[`Storyshots Templates Default 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c11 {
+.c12 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -121,11 +138,11 @@ exports[`Storyshots Templates Default 1`] = `
   cursor: pointer;
 }
 
-.c11:hover {
+.c12:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -133,31 +150,31 @@ exports[`Storyshots Templates Default 1`] = `
   text-decoration: none;
 }
 
-.c16 {
+.c17 {
   margin-bottom: 15px;
   padding: 0;
 }
 
-.c17 {
+.c18 {
   font-size: 12px;
   display: inline-block;
   width: calc(50% - 7px);
   margin-bottom: 14px;
 }
 
-.c17:nth-child(2n + 1) {
+.c18:nth-child(2n + 1) {
   margin-right: 7px;
 }
 
-.c17:nth-child(2n) {
+.c18:nth-child(2n) {
   margin-left: 7px;
 }
 
-.c18 {
+.c19 {
   font-size: 12px;
 }
 
-.c19 {
+.c20 {
   display: block;
   font-size: 66px;
   line-height: 1.09;
@@ -178,7 +195,7 @@ exports[`Storyshots Templates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c12 {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -197,7 +214,7 @@ exports[`Storyshots Templates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c8 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -208,37 +225,37 @@ exports[`Storyshots Templates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c17 {
     margin-bottom: 30px;
     margin-left: -15px;
   }
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c18 {
     font-size: 18px;
     width: calc(25% - 15px);
   }
 
-  .c17:nth-child(2n + 1) {
+  .c18:nth-child(2n + 1) {
     margin-right: 0;
     margin-left: 15px;
   }
 
-  .c17:nth-child(2n) {
+  .c18:nth-child(2n) {
     margin-left: 15px;
   }
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c19 {
     color: #FFF;
     font-size: 18px;
   }
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c20 {
     padding-top: 40px;
     font-size: 108px;
     line-height: 1em;
@@ -492,11 +509,22 @@ exports[`Storyshots Templates Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/projectId/folder"
-                id="folderNavBtn"
+                href="/project/projectId/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c6"
+            >
+              <a
+                href="/project/projectId/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -525,10 +553,10 @@ exports[`Storyshots Templates Default 1`] = `
             </div>
           </div>
           <div
-            className="c6"
+            className="c7"
           >
             <a
-              className="c7"
+              className="c8"
               href="/"
               id="aboutNavBtn"
               onClick={[Function]}
@@ -536,7 +564,7 @@ exports[`Storyshots Templates Default 1`] = `
               About Schema CMS
             </a>
             <a
-              className="c7"
+              className="c8"
               href="/"
               id="apiNavBtn"
               onClick={[Function]}
@@ -544,7 +572,7 @@ exports[`Storyshots Templates Default 1`] = `
               API Doc
             </a>
             <a
-              className="c7"
+              className="c8"
               href="/"
               id="repositoryNavBtn"
               onClick={[Function]}
@@ -602,13 +630,13 @@ exports[`Storyshots Templates Default 1`] = `
       id="tabsContainer"
     >
       <div
-        className="c8"
+        className="c9"
       >
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/projectId"
             id="settingsTab"
             onClick={[Function]}
@@ -617,10 +645,10 @@ exports[`Storyshots Templates Default 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/projectId/datasource"
             id="sourcesTab"
             onClick={[Function]}
@@ -629,10 +657,10 @@ exports[`Storyshots Templates Default 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/projectId/state"
             id="stateTab"
             onClick={[Function]}
@@ -641,22 +669,22 @@ exports[`Storyshots Templates Default 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
-            href="/project/projectId/folder"
-            id="folderTab"
+            className="c11"
+            href="/project/projectId/content"
+            id="contentTab"
             onClick={[Function]}
           >
-            Pages
+            Content
           </a>
         </div>
         <div
-          className="c11"
+          className="c12"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/projectId/templates"
             id="templatesTab"
             onClick={[Function]}
@@ -665,10 +693,10 @@ exports[`Storyshots Templates Default 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/projectId/user"
             id="usersTab"
             onClick={[Function]}
@@ -679,13 +707,13 @@ exports[`Storyshots Templates Default 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className="c13"
     >
       <div
-        className="c13"
+        className="c14"
       >
         <h2
-          className="c14"
+          className="c15"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -699,7 +727,7 @@ exports[`Storyshots Templates Default 1`] = `
           Templates
         </h2>
         <h1
-          className="c15"
+          className="c16"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -720,10 +748,10 @@ exports[`Storyshots Templates Default 1`] = `
       />
     </div>
     <ul
-      className="c16"
+      className="c17"
     >
       <li
-        className="c17"
+        className="c18"
       >
         <div
           id="blockTemplates"
@@ -762,13 +790,13 @@ exports[`Storyshots Templates Default 1`] = `
               }
             >
               <span
-                className="c18"
+                className="c19"
               >
                 Block Templates
               </span>
             </div>
             <span
-              className="c19"
+              className="c20"
               id="blockTemplatesValue"
             >
               0
@@ -777,7 +805,7 @@ exports[`Storyshots Templates Default 1`] = `
         </div>
       </li>
       <li
-        className="c17"
+        className="c18"
       >
         <div
           id="pageTemplates"
@@ -816,13 +844,13 @@ exports[`Storyshots Templates Default 1`] = `
               }
             >
               <span
-                className="c18"
+                className="c19"
               >
                 Page Templates
               </span>
             </div>
             <span
-              className="c19"
+              className="c20"
               id="pageTemplatesValue"
             >
               0
@@ -831,7 +859,7 @@ exports[`Storyshots Templates Default 1`] = `
         </div>
       </li>
       <li
-        className="c17"
+        className="c18"
       >
         <div
           id="filterTemplates"
@@ -870,13 +898,13 @@ exports[`Storyshots Templates Default 1`] = `
               }
             >
               <span
-                className="c18"
+                className="c19"
               >
                 Filter Templates
               </span>
             </div>
             <span
-              className="c19"
+              className="c20"
               id="filterTemplatesValue"
             >
               0
@@ -885,7 +913,7 @@ exports[`Storyshots Templates Default 1`] = `
         </div>
       </li>
       <li
-        className="c17"
+        className="c18"
       >
         <div
           id="stateTemplates"
@@ -924,13 +952,13 @@ exports[`Storyshots Templates Default 1`] = `
               }
             >
               <span
-                className="c18"
+                className="c19"
               >
                 State Templates
               </span>
             </div>
             <span
-              className="c19"
+              className="c20"
               id="stateTemplatesValue"
             >
               0

@@ -233,11 +233,22 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined/folder"
-              id="folderNavBtn"
+              href="/project/undefined/content"
+              id="contentNavBtn"
               onClick={[Function]}
             >
-              Pages
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-bZQynM dHaYym"
+          >
+            <a
+              href="/project/undefined/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
             </a>
           </div>
         </div>
@@ -345,13 +356,13 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
       className="sc-eHgmQL gmKbQu"
     >
       <div
-        className="sc-cvbbAY eMeTVi"
+        className="sc-jWBwVP eEmYFC"
       >
         <div
-          className="sc-jWBwVP bqSGJf"
+          className="sc-brqgnP liVtPo"
         >
           <h2
-            className="sc-brqgnP iTSvAk"
+            className="sc-cMljjf beoPtZ"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -365,7 +376,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Block Template
           </h2>
           <h1
-            className="sc-cMljjf beoPtZ"
+            className="sc-jAaTju hzRaBi"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -382,7 +393,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               className="sc-kEYyzF kkFIwK"
             >
               <div
-                className="sc-jDwBTQ iqndZj"
+                className="sc-gPEVay fAoYOA"
               >
                 <div
                   style={
@@ -480,7 +491,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-jAaTju fNCBho"
+          className="sc-jDwBTQ dWtMUn"
         >
           <div
             className="sc-kgoBCf ifKHSM"
@@ -533,7 +544,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         className="sc-iAyFgw evfwkd"
       >
         <div
-          className="sc-jDwBTQ erYdBQ"
+          className="sc-gPEVay kqyxhV"
         >
           <div
             style={
@@ -600,14 +611,14 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fBuWsC fGOChB"
+        className="sc-fMiknA eXpZXc"
       >
         <div
-          className="sc-fMiknA jZcHzj"
+          className="sc-dVhcbM clGJRS"
         />
         1 Element
         <div
-          className="sc-fMiknA jZcHzj"
+          className="sc-dVhcbM clGJRS"
         >
           <div
             className="sc-hSdWYo fnUMtJ"
@@ -701,14 +712,14 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-gipzik izXdgY"
+                className="sc-csuQGl imStZE"
               >
                 <div
-                  className="sc-csuQGl fUdZHz"
+                  className="sc-Rmtcm kbfHgk"
                 >
                   <div>
                     <div
-                      className="sc-TOsTZ kbfDtQ"
+                      className="sc-cvbbAY dBzGvN"
                     >
                       <svg
                         style={
@@ -729,7 +740,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-bRBYWo hmksWS"
+                    className="sc-hzDkRC cnRVGK"
                   >
                     <svg
                       style={
@@ -749,7 +760,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-jDwBTQ iqndZj"
+                  className="sc-gPEVay fAoYOA"
                 >
                   <div
                     style={
@@ -824,7 +835,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-csuQGl fUdZHz"
+                  className="sc-Rmtcm kbfHgk"
                 >
                   <svg
                     style={
@@ -905,10 +916,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             >
               <div>
                 <div
-                  className="sc-Rmtcm ctogBb"
+                  className="sc-bRBYWo jBJylU"
                 >
                   <div
-                    className="sc-hzDkRC bqtEqb"
+                    className="sc-jhAzac jMjIML"
                   >
                     <label
                       id="fieldProjectStatusLabel"
@@ -934,7 +945,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                       value="stack"
                     />
                     <div
-                      className="sc-jhAzac EScZB"
+                      className="sc-fBuWsC eEpVEN"
                     >
                       <svg
                         style={
@@ -1139,10 +1150,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-Rmtcm ctogBb"
+                  className="sc-bRBYWo jBJylU"
                 >
                   <div
-                    className="sc-hzDkRC bqtEqb"
+                    className="sc-jhAzac jMjIML"
                   >
                     <label
                       id="fieldProjectStatusLabel"
@@ -1168,7 +1179,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                       value="block name 2"
                     />
                     <div
-                      className="sc-jhAzac EScZB"
+                      className="sc-fBuWsC eEpVEN"
                     >
                       <svg
                         style={

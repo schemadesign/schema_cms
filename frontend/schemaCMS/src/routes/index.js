@@ -9,15 +9,12 @@ import JWT from './jwt/jwt.container';
 import { DataSource } from './dataSource';
 import { DataWranglingScript } from './dataWranglingScript';
 import { Filter } from './filter';
-import { Folder } from './folder';
 import { JobDetail } from './jobDetail';
 import { Logout } from './logout';
 import { NotAuthorized } from './notAuthorized';
 import { NotFound } from './notFound';
 import { NotRegistered } from './notRegistered';
 import { RevokedAccess } from './revokedAccess';
-import { Page } from './page';
-import { PageBlock } from './pageBlock';
 import { Preview as JobPreview } from './jobDetail/preview';
 import { Project } from './project';
 import { ResetPassword } from './resetPassword';
@@ -70,12 +67,6 @@ export default class RootContainer extends Component {
             <AuthRoute path={`${ROUTES.BLOCK_TEMPLATE}/:blockTemplateId`} component={BlockTemplate} />
 
             <AuthRoute path={`${ROUTES.PAGE_TEMPLATE}/:pageTemplateId`} component={PageTemplate} />
-
-            <AuthRoute path={ROUTES.FOLDER} component={Folder} />
-
-            <AuthRoute path={ROUTES.PAGE} component={Page} />
-
-            <AuthRoute exact path={`${ROUTES.BLOCK}/:blockId`} component={PageBlock} />
 
             <AuthRoute
               exact

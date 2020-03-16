@@ -10,10 +10,10 @@ export const PROJECTS_ID = 'projectsNavBtn';
 export const PROJECT_DETAILS_ID = 'projectDetailsNavBtn';
 export const PROJECT_DATASOURCE_ID = 'dataSourceNavBtn';
 export const PROJECT_STATE_ID = 'stateNavBtn';
-export const PROJECT_FOLDER_ID = 'folderNavBtn';
+export const PROJECT_CONTENT_ID = 'contentNavBtn';
 export const PROJECT_USERS_ID = 'usersNavBtn';
 export const USERS_PAGE_ID = 'usersPageNavBtn';
-export const TEMPLATES_ID = 'templatesNavBtn';
+export const PROJECT_TEMPLATES_ID = 'templatesNavBtn';
 
 export const PROJECT_LIST_MENU_OPTIONS = [
   {
@@ -63,10 +63,17 @@ export const getProjectMenuOptions = projectId => [
     allowedRoles: [ROLES.ADMIN],
   },
   {
-    label: <FormattedMessage {...messages.projectPages} />,
-    to: `/project/${projectId}/folder`,
-    id: PROJECT_FOLDER_ID,
+    label: <FormattedMessage {...messages.content} />,
+    to: `/project/${projectId}/content`,
+    id: PROJECT_CONTENT_ID,
     type: LINK_ITEM,
     allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
+  },
+  {
+    label: <FormattedMessage {...messages.templates} />,
+    to: `/project/${projectId}/templates`,
+    id: PROJECT_TEMPLATES_ID,
+    type: LINK_ITEM,
+    allowedRoles: [ROLES.ADMIN],
   },
 ];

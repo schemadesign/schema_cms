@@ -183,6 +183,33 @@ exports[`Storyshots ProjectStateList Default 1`] = `
   text-decoration: none;
 }
 
+.c19 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
+.c22 {
+  word-break: break-word;
+  cursor: pointer;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .c20 {
   list-style: none;
   margin: 0;
@@ -209,33 +236,6 @@ exports[`Storyshots ProjectStateList Default 1`] = `
   cursor: pointer;
   white-space: pre-wrap;
   word-break: break-word;
-}
-
-.c19 {
-  margin-bottom: 20px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 100%;
-  min-height: 150px;
-}
-
-.c22 {
-  word-break: break-word;
-  cursor: pointer;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 @media (min-width:1050px) {
@@ -569,11 +569,22 @@ exports[`Storyshots ProjectStateList Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/1/folder"
-                id="folderNavBtn"
+                href="/project/1/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -722,11 +733,11 @@ exports[`Storyshots ProjectStateList Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/folder"
-            id="folderTab"
+            href="/project/1/content"
+            id="contentTab"
             onClick={[Function]}
           >
-            Pages
+            Content
           </a>
         </div>
         <div
@@ -1627,11 +1638,22 @@ exports[`Storyshots ProjectStateList No states 1`] = `
               className="c5"
             >
               <a
-                href="/project/1/folder"
-                id="folderNavBtn"
+                href="/project/1/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -1780,11 +1802,11 @@ exports[`Storyshots ProjectStateList No states 1`] = `
         >
           <a
             className="c11"
-            href="/project/1/folder"
-            id="folderTab"
+            href="/project/1/content"
+            id="contentTab"
             onClick={[Function]}
           >
-            Pages
+            Content
           </a>
         </div>
         <div

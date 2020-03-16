@@ -76,6 +76,15 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
   text-align: right;
 }
 
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
 .c0 {
   display: none;
 }
@@ -190,15 +199,6 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
 
 .c11 {
   width: 33%;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: move;
-  touch-action: none;
 }
 
 @media (min-width:1050px) {

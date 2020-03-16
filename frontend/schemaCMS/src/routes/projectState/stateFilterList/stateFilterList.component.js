@@ -15,7 +15,7 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { contentStyles, NavigationButtons } from '../../project/createProjectState/createProjectState.styles';
 import { PROJECT_STATE_FILTERS } from '../../../modules/projectState/projectState.constants';
-import { Link } from '../../page/pageBlockList/pageBlockList.styles';
+import { Link } from './stateFilterList.styles';
 
 const { CheckboxGroup, Checkbox } = FormUI;
 
@@ -83,9 +83,7 @@ export class StateFilterList extends PureComponent {
 
   renderFilters = ({ id, name }, index) => (
     <Checkbox key={index} id={`checkbox-${index}`} value={id}>
-      <Link to={`/state/${this.props.state.id}/filter/${id}`} onClick={this.handleGoToBlock}>
-        {name}
-      </Link>
+      <Link to={`/state/${this.props.state.id}/filter/${id}`}>{name}</Link>
     </Checkbox>
   );
 

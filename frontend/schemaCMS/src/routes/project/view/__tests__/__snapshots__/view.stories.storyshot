@@ -848,11 +848,22 @@ exports[`Storyshots Project|View Default 1`] = `
                 className="c6"
               >
                 <a
-                  href="/project/100/folder"
-                  id="folderNavBtn"
+                  href="/project/100/content"
+                  id="contentNavBtn"
                   onClick={[Function]}
                 >
-                  Pages
+                  Content
+                </a>
+              </div>
+              <div
+                className="c6"
+              >
+                <a
+                  href="/project/100/templates"
+                  id="templatesNavBtn"
+                  onClick={[Function]}
+                >
+                  Templates
                 </a>
               </div>
             </div>
@@ -1001,11 +1012,11 @@ exports[`Storyshots Project|View Default 1`] = `
           >
             <a
               className="c12"
-              href="/project/100/folder"
-              id="folderTab"
+              href="/project/100/content"
+              id="contentTab"
               onClick={[Function]}
             >
-              Pages
+              Content
             </a>
           </div>
           <div

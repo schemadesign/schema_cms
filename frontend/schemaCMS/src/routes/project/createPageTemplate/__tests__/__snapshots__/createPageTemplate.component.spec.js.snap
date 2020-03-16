@@ -233,11 +233,22 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/projectId/folder"
-              id="folderNavBtn"
+              href="/project/projectId/content"
+              id="contentNavBtn"
               onClick={[Function]}
             >
-              Pages
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-bZQynM dHaYym"
+          >
+            <a
+              href="/project/projectId/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
             </a>
           </div>
         </div>
@@ -345,13 +356,13 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
       className="sc-ckVGcZ foYhJp"
     >
       <div
-        className="sc-jKJlTe gEQAlP"
+        className="sc-eNQAEJ cdjLbz"
       >
         <div
-          className="sc-eNQAEJ dWMsXQ"
+          className="sc-hMqMXs iyMKdh"
         >
           <h2
-            className="sc-hMqMXs NSfhp"
+            className="sc-kEYyzF duTgan"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -365,7 +376,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Page Template
           </h2>
           <h1
-            className="sc-kEYyzF duTgan"
+            className="sc-kkGfuU diXTcM"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -379,10 +390,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-jAaTju lEldS"
+              className="sc-jDwBTQ johwsq"
             >
               <div
-                className="sc-jlyJG dAHAOh"
+                className="sc-gipzik cSaQxt"
               >
                 <div
                   style={
@@ -458,7 +469,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-jDwBTQ dTsjtS"
+                className="sc-gPEVay dthIer"
               >
                 <svg
                   style={
@@ -480,7 +491,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-kkGfuU gqJIVH"
+          className="sc-iAyFgw gPlgsX"
         >
           <div
             className="sc-kgoBCf ifKHSM"
@@ -530,10 +541,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-gPEVay hARQLZ"
+        className="sc-iRbamj hurrdT"
       >
         <div
-          className="sc-jlyJG bYQXFu"
+          className="sc-gipzik edHMYQ"
         >
           <div
             style={
@@ -600,17 +611,17 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-Rmtcm digGrX"
+        className="sc-bRBYWo kMwySd"
       >
         <div
-          className="sc-bRBYWo bXAVwg"
+          className="sc-hzDkRC fsdhUX"
         />
         0 Blocks
         <div
-          className="sc-bRBYWo bXAVwg"
+          className="sc-hzDkRC fsdhUX"
         >
           <div
-            className="sc-iRbamj btwYWo"
+            className="sc-jlyJG cZljSU"
           >
             <div
               className="sc-kgoBCf ifKHSM"
@@ -663,13 +674,13 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
       </div>
       <span />
       <div
-        className="sc-iAyFgw ZYbtF"
+        className="sc-hSdWYo hPagPA"
       >
         <div
-          className="sc-hSdWYo hCOKAt"
+          className="sc-eHgmQL kwJpzj"
         >
           <div
-            className="sc-jWBwVP gGRvYX"
+            className="sc-brqgnP fiOfdH"
           >
             <div>
               <input
@@ -721,16 +732,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-cvbbAY WkBHn"
+              className="sc-jWBwVP kqwNhC"
             >
               <label
-                className="sc-eHgmQL dHuHVJ"
+                className="sc-cvbbAY blYLdr"
                 htmlFor="isAvailable"
               >
                 Make it Available
               </label>
               <span
-                className="sc-cMljjf lbNnfn"
+                className="sc-jAaTju ezVhFu"
               >
                 This Template is currently unavailable for Editors
               </span>
@@ -738,7 +749,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-hSdWYo hCOKAt"
+          className="sc-eHgmQL kwJpzj"
         >
           <div>
             <input
@@ -790,10 +801,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-cvbbAY WkBHn"
+            className="sc-jWBwVP kqwNhC"
           >
             <label
-              className="sc-eHgmQL dHuHVJ"
+              className="sc-cvbbAY blYLdr"
               htmlFor="allowAdd"
             >
               Allow new Blocks to be added to this Page Template

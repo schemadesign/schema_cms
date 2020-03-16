@@ -18,3 +18,4 @@ export const STATES_PATH = '/states';
 export const RESET_PASSWORD_PATH = `${ME_PATH}/reset-password`;
 export const BLOCK_TEMPLATES_PATH = '/block-templates';
 export const PAGE_TEMPLATES_PATH = '/page-templates';
+export const SECTIONS_PATH = '/sections';

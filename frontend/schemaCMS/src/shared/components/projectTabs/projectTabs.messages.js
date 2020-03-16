@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
 
-import { FOLDER, SETTINGS, SOURCES, STATES, TEMPLATES, USERS } from './projectTabs.constants';
+import { CONTENT, SETTINGS, SOURCES, STATES, TEMPLATES, USERS } from './projectTabs.constants';
 
 export default defineMessages({
   [SETTINGS]: {
@@ -16,9 +16,9 @@ export default defineMessages({
     id: `shared.components.projectTabs.${USERS}`,
     defaultMessage: 'Users',
   },
-  [FOLDER]: {
-    id: `shared.components.projectTabs.${FOLDER}`,
-    defaultMessage: 'Pages',
+  [CONTENT]: {
+    id: `shared.components.projectTabs.${CONTENT}`,
+    defaultMessage: 'Content',
   },
   [STATES]: {
     id: `shared.components.projectTabs.${STATES}`,

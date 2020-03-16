@@ -121,11 +121,11 @@ exports[`Storyshots ProjectState Default 1`] = `
       >
         <a
           className="c2"
-          href="/project/projectId/folder"
-          id="folderTab"
+          href="/project/projectId/content"
+          id="contentTab"
           onClick={[Function]}
         >
-          Pages
+          Content
         </a>
       </div>
       <div

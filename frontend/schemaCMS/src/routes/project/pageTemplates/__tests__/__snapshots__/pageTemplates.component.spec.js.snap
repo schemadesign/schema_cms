@@ -233,11 +233,22 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             className="sc-dnqmqq bkzxAx"
           >
             <a
-              href="/project/projectId/folder"
-              id="folderNavBtn"
+              href="/project/projectId/content"
+              id="contentNavBtn"
               onClick={[Function]}
             >
-              Pages
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-dnqmqq bkzxAx"
+          >
+            <a
+              href="/project/projectId/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
             </a>
           </div>
         </div>

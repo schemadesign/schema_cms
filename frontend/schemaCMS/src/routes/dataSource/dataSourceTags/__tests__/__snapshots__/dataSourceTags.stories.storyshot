@@ -619,11 +619,22 @@ exports[`Storyshots Data Source|DataSourceTags Default 1`] = `
             className="c5"
           >
             <a
-              href="/project/1/folder"
-              id="folderNavBtn"
+              href="/project/1/content"
+              id="contentNavBtn"
               onClick={[Function]}
             >
-              Pages
+              Content
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
             </a>
           </div>
         </div>
@@ -2169,11 +2180,22 @@ exports[`Storyshots Data Source|DataSourceTags No Data 1`] = `
             className="c5"
           >
             <a
-              href="/project/1/folder"
-              id="folderNavBtn"
+              href="/project/1/content"
+              id="contentNavBtn"
               onClick={[Function]}
             >
-              Pages
+              Content
+            </a>
+          </div>
+          <div
+            className="c5"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
             </a>
           </div>
         </div>

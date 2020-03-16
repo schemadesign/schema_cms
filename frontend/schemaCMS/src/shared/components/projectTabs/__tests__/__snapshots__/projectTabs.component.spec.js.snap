@@ -40,12 +40,12 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
         Object {
           "active": false,
           "content": <FormattedMessage
-            defaultMessage="Pages"
-            id="shared.components.projectTabs.folder"
+            defaultMessage="Content"
+            id="shared.components.projectTabs.content"
             values={Object {}}
           />,
-          "id": "folder",
-          "to": "/project/1/folder",
+          "id": "content",
+          "to": "/project/1/content",
         },
         Object {
           "active": false,

@@ -564,11 +564,22 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/projectId/folder"
-                id="folderNavBtn"
+                href="/project/projectId/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/projectId/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -717,11 +728,11 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/projectId/folder"
-            id="folderTab"
+            href="/project/projectId/content"
+            id="contentTab"
             onClick={[Function]}
           >
-            Pages
+            Content
           </a>
         </div>
         <div

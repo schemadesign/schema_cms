@@ -10,8 +10,7 @@ import { DataSourceList } from './dataSourceList';
 import UserList from './userList/userList.container';
 import { AddUser } from './addUser';
 import { CreateDataSource } from './createDataSource';
-import { FolderList } from './folderList';
-import { CreateFolder } from './createFolder';
+import { Content } from './content';
 import { NotFound } from '../notFound';
 import { ProjectStateList } from './projectStateList';
 import { CreateProjectState } from './createProjectState';
@@ -20,6 +19,7 @@ import { BlockTemplates } from './blockTemplates';
 import { CreateBlockTemplate } from './createBlockTemplate';
 import { PageTemplates } from './pageTemplates';
 import { CreatePageTemplate } from './createPageTemplate';
+import { CreateSection } from './createSection';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -39,8 +39,7 @@ export class Project extends PureComponent {
     const addUserList = `${usersPath}/add`;
     const dataSourceListPath = `${viewPath}/datasource`;
     const createDataSourcePath = `${dataSourceListPath}/add`;
-    const folderListPath = `${viewPath}/folder`;
-    const folderCreatePath = `${viewPath}/folder/create`;
+    const contentPath = `${viewPath}/content`;
     const stateListPath = `${viewPath}/state`;
     const stateCreatePath = `${viewPath}/state/create`;
     const templatesPath = `${viewPath}/templates`;
@@ -48,6 +47,7 @@ export class Project extends PureComponent {
     const createBlockTemplatePath = `${blockTemplatesPath}/create`;
     const pageTemplatesPath = `${viewPath}/page-templates`;
     const createPageTemplatePath = `${viewPath}/page-templates/create`;
+    const createSectionPath = `${viewPath}/section/create`;
 
     return (
       <Switch>
@@ -59,8 +59,7 @@ export class Project extends PureComponent {
         <Route exact path={usersPath} component={UserList} />
         <Route exact path={addUserList} component={AddUser} />
         <Route exact path={userPath} component={UserDetails} />
-        <Route exact path={folderListPath} component={FolderList} />
-        <Route exact path={folderCreatePath} component={CreateFolder} />
+        <Route exact path={contentPath} component={Content} />
         <Route exact path={stateListPath} component={ProjectStateList} />
         <Route exact path={stateCreatePath} component={CreateProjectState} />
         <Route exact path={templatesPath} component={Templates} />
@@ -68,6 +67,7 @@ export class Project extends PureComponent {
         <Route exact path={createBlockTemplatePath} component={CreateBlockTemplate} />
         <Route exact path={pageTemplatesPath} component={PageTemplates} />
         <Route exact path={createPageTemplatePath} component={CreatePageTemplate} />
+        <Route exact path={createSectionPath} component={CreateSection} />
         <Route path="*" component={NotFound} />
       </Switch>
     );

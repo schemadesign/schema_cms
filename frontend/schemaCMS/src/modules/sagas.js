@@ -10,13 +10,13 @@ import { watchDataWranglingScripts } from './dataWranglingScripts/dataWranglingS
 import { watchUser } from './user/user.sagas';
 import { watchJob } from './job/job.sagas';
 import { watchFilter } from './filter/filter.sagas';
-import { watchFolder } from './folder/folder.sagas';
 import { watchPage } from './page/page.sagas';
 import { watchPageBlock } from './pageBlock/pageBlock.sagas';
 import { watchDataSourceTag } from './dataSourceTag/dataSourceTag.sagas';
 import { watchProjectState } from './projectState/projectState.sagas';
 import { watchBlockTemplates } from './blockTemplates/blockTemplates.sagas';
 import { watchPageTemplates } from './pageTemplates/pageTemplates.sagas';
+import { watchSections } from './sections/sections.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -31,13 +31,13 @@ export default function* rootSaga() {
       fork(watchUser),
       fork(watchJob),
       fork(watchFilter),
-      fork(watchFolder),
       fork(watchPage),
       fork(watchPageBlock),
       fork(watchDataSourceTag),
       fork(watchProjectState),
       fork(watchBlockTemplates),
       fork(watchPageTemplates),
+      fork(watchSections),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {

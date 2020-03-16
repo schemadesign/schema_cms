@@ -537,11 +537,22 @@ exports[`Storyshots Project|AddUser List 1`] = `
               className="c10"
             >
               <a
-                href="/project/1/folder"
-                id="folderNavBtn"
+                href="/project/1/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
+                href="/project/1/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -1353,11 +1364,22 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               className="c10"
             >
               <a
-                href="/project/1/folder"
-                id="folderNavBtn"
+                href="/project/1/content"
+                id="contentNavBtn"
                 onClick={[Function]}
               >
-                Pages
+                Content
+              </a>
+            </div>
+            <div
+              className="c10"
+            >
+              <a
+                href="/project/1/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>

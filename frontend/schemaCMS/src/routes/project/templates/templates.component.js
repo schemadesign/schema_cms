@@ -7,7 +7,7 @@ import { Container } from './templates.styles';
 import messages from './templates.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
-import { getProjectMenuOptions, TEMPLATES_ID } from '../project.constants';
+import { getProjectMenuOptions, PROJECT_TEMPLATES_ID } from '../project.constants';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { TEMPLATES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -89,7 +89,7 @@ export class Templates extends PureComponent {
           headerTitle={title}
           headerSubtitle={subtitle}
           options={filterMenuOptions(menuOptions, userRole)}
-          active={TEMPLATES_ID}
+          active={PROJECT_TEMPLATES_ID}
         />
         <ProjectTabs active={TEMPLATES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle} />

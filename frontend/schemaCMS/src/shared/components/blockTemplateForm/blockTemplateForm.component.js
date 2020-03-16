@@ -25,7 +25,7 @@ import {
   binStyles,
   BinIconContainer,
 } from '../form/frequentComponents.styles';
-import { Container } from './blockTemplateForm.styles';
+import { Container, IconWrapper, menuIconStyles } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
 import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
@@ -42,7 +42,6 @@ import {
 import { ElementBlockTemplate } from '../elementBlockTemplate';
 import { CounterHeader } from '../counterHeader';
 import { Draggable } from '../draggable';
-import { IconWrapper, menuIconStyles } from '../../../routes/page/pageBlockList/pageBlockList.styles';
 
 const { EditIcon, MenuIcon, MinusIcon } = Icons;
 const { Switch } = Form;

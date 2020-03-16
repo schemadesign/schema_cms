@@ -105,9 +105,13 @@ export default defineMessages({
     id: 'project.view.projectDataSources',
     defaultMessage: 'Data Sources',
   },
-  projectPages: {
-    id: 'project.view.projectPages',
-    defaultMessage: 'Pages',
+  content: {
+    id: 'project.view.content',
+    defaultMessage: 'Content',
+  },
+  templates: {
+    id: 'project.view.templates',
+    defaultMessage: 'Templates',
   },
   projectsListPage: {
     id: 'project.view.projectsListPage',
