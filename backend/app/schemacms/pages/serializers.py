@@ -8,9 +8,11 @@ from ..utils.validators import CustomUniqueTogetherValidator
 
 
 class SectionSerializer(CustomModelSerializer):
+    pages_count = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = models.Section
-        fields = ("id", "project", "name", "created_by", "created", "is_public")
+        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages_count")
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Section.objects.all(),
@@ -20,6 +22,9 @@ class SectionSerializer(CustomModelSerializer):
                 message="Section with this name already exist in project.",
             )
         ]
+
+    def get_pages_count(self, section):
+        return 0
 
 
 class BlockElementSerializer(serializers.ModelSerializer):
