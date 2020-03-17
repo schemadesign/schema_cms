@@ -162,7 +162,6 @@ class PageSerializer(CustomModelSerializer):
         model = models.Page
         fields = (
             "id",
-            "project",
             "section",
             "template",
             "name",
@@ -176,9 +175,17 @@ class PageSerializer(CustomModelSerializer):
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Page.objects.filter(is_template=False),
-                fields=("project", "name"),
+                fields=("section", "name"),
                 key_field_name="name",
                 code="pageNameUnique",
-                message="Page with this name already exist in project.",
+                message="Page with this name already exist in section.",
             )
         ]
+
+    @transaction.atomic()
+    def create(self, validated_data):
+        project = validated_data.get("section").project
+        page = self.Meta.model(project=project, **validated_data)
+        page.save()
+
+        return page

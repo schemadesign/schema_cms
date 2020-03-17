@@ -118,7 +118,9 @@ class SectionViewSet(NoListCreateDetailViewSet):
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class PageListCreateView(TemplateListCreateView):
+class PageListCreateView(generics.ListCreateAPIView):
+    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
+    project_info = {}
     serializer_class = serializers.PageSerializer
     queryset = (
         models.Page.objects.filter(is_template=False)
@@ -135,6 +137,19 @@ class PageListCreateView(TemplateListCreateView):
 
     def get_queryset(self):
         return self.queryset.filter(section=self.get_parent())
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+        serializer = self.get_serializer(queryset, many=True)
+        data = {"project": self.project_info, "results": serializer.data}
+
+        return response.Response(data)
+
+    def create(self, request, *args, **kwargs):
+        if "sections" not in request.data:
+            request.data["section"] = kwargs["section_pk"]
+        return super().create(request, *args, **kwargs)
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user, is_template=False)
