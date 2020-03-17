@@ -12,13 +12,13 @@ class TemplateListCreateView(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
     project_info = {}
 
-    def get_project(self):
+    def get_parent(self):
         project = generics.get_object_or_404(Project.objects.all(), pk=self.kwargs["project_pk"])
         self.project_info = project.project_info
         return project
 
     def get_queryset(self):
-        return self.queryset.filter(project=self.get_project())
+        return self.queryset.filter(project=self.get_parent())
 
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
@@ -92,8 +92,13 @@ class PageTemplateViewSet(NoListCreateDetailViewSet):
     permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
 
 
-class SectionListCreateViewSet(TemplateListCreateView):
-    queryset = models.Section.objects.all().select_related("project", "created_by")
+class SectionListCreateView(TemplateListCreateView):
+    queryset = (
+        models.Section.objects.all()
+        .annotate_pages_count()
+        .select_related("project", "created_by")
+        .prefetch_related("pages")
+    )
     serializer_class = serializers.SectionSerializer
     permission_classes = (permissions.IsAuthenticated,)
     project_info = {}
@@ -103,6 +108,47 @@ class SectionListCreateViewSet(TemplateListCreateView):
 
 
 class SectionViewSet(NoListCreateDetailViewSet):
-    queryset = models.Section.objects.all().select_related("project", "created_by")
+    queryset = (
+        models.Section.objects.all()
+        .annotate_pages_count()
+        .select_related("project", "created_by")
+        .prefetch_related("pages")
+    )
     serializer_class = serializers.SectionSerializer
     permission_classes = (permissions.IsAuthenticated,)
+
+
+class PageListCreateView(TemplateListCreateView):
+    serializer_class = serializers.PageSerializer
+    queryset = (
+        models.Page.objects.filter(is_template=False)
+        .select_related("project", "created_by", "template", "section")
+        .prefetch_related(
+            Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
+        )
+    )
+
+    def get_parent(self):
+        section = generics.get_object_or_404(models.Section.objects.all(), pk=self.kwargs["section_pk"])
+        self.project_info = section.project.project_info
+        return section
+
+    def get_queryset(self):
+        return self.queryset.filter(section=self.get_parent())
+
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user, is_template=False)
+
+
+class PageViewSet(NoListCreateDetailViewSet):
+    queryset = (
+        models.Page.objects.filter(is_template=False)
+        .select_related("project", "created_by", "template", "section")
+        .prefetch_related(
+            Prefetch(
+                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
+            )
+        )
+    )
+    serializer_class = serializers.PageSerializer
+    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)

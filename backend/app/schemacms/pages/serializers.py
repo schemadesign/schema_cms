@@ -8,7 +8,7 @@ from ..utils.validators import CustomUniqueTogetherValidator
 
 
 class SectionSerializer(CustomModelSerializer):
-    pages_count = serializers.SerializerMethodField(read_only=True)
+    pages_count = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Section
@@ -24,7 +24,7 @@ class SectionSerializer(CustomModelSerializer):
         ]
 
     def get_pages_count(self, section):
-        return 0
+        return section.pages_count
 
 
 class BlockElementSerializer(serializers.ModelSerializer):
@@ -108,7 +108,7 @@ class PageTemplateSerializer(CustomModelSerializer):
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Page.objects.all(),
-                fields=("project", "name"),
+                fields=("project", "name", "is_template"),
                 key_field_name="name",
                 code="projectPageTemplateNameUnique",
                 message="Page Template with this name already exist in project.",
@@ -145,3 +145,21 @@ class PageTemplateSerializer(CustomModelSerializer):
     def get_blocks(template):
         blocks = template.pageblock_set.all()
         return PageTemplateBlockSerializer(blocks, many=True).data
+
+
+class PageSerializer(CustomModelSerializer):
+    class Meta:
+        model = models.Page
+        fields = (
+            "id",
+            "project",
+            "section",
+            "template",
+            "name",
+            "display_name",
+            "description",
+            "keywords",
+            "created_by",
+            "created",
+            "blocks",
+        )
