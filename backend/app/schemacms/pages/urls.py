@@ -9,8 +9,8 @@ app_name = "pages"
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"block-templates", views.BlockTemplateViewSet)
 router.register(r"page-templates", views.PageTemplateViewSet)
+router.register(r"sections", views.SectionViewSet)
 
-section_list_create = views.SectionViewSet.as_view({"get": "list", "post": "create"})
 
 urlpatterns = [
     path(
@@ -23,6 +23,10 @@ urlpatterns = [
         views.PageTemplateListCreteView.as_view(),
         name="page_templates_list_create",
     ),
-    path("projects/<project_pk>/sections", section_list_create, name="section_list_create",),
+    path(
+        "projects/<project_pk>/sections",
+        views.SectionListCreateViewSet.as_view(),
+        name="section_list_create",
+    ),
     path("", include(router.urls)),
 ]

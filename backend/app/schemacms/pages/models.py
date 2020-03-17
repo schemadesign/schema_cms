@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.postgres import fields as pg_fields
 from django.db import models
 from django.utils import functional
-from django_extensions.db.models import TimeStampedModel
+from django_extensions.db.models import AutoSlugField, TimeStampedModel
 from softdelete.models import SoftDeleteObject
 
 from . import constants
@@ -95,11 +95,16 @@ class PageBlock(models.Model):
 class Section(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="sections")
     name = models.CharField(max_length=constants.SECTION_NAME_MAX_LENGTH)
+    slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     is_public = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.name}"
+
+    @functional.cached_property
+    def project_info(self):
+        return self.project.project_info
 
     class Meta:
         constraints = [
