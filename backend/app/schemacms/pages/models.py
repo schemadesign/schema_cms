@@ -90,3 +90,20 @@ class PageBlock(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class Section(SoftDeleteObject, TimeStampedModel):
+    project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="sections")
+    name = models.CharField(max_length=constants.SECTION_NAME_MAX_LENGTH)
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    is_public = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"], name="unique_section_name", condition=models.Q(deleted_at=None),
+            )
+        ]

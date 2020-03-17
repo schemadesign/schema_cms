@@ -222,3 +222,26 @@ class TestDeletePageTemplatesView:
 
         assert delete_response.status_code == status.HTTP_204_NO_CONTENT
         assert get_response.status_code == status.HTTP_404_NOT_FOUND
+
+
+class TestListCreateSectionView:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:section_list_create", kwargs=dict(project_pk=pk))
+
+    def test_list(self, api_client, admin, section):
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(section.project_id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["results"]) == 1
+
+    def test_create(self, api_client, admin, project):
+        payload = {"name": "Test Name"}
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(project.id), data=payload, format="json")
+        section = pages_models.Section.objects.get(id=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == page_serializer.SectionSerializer(section).data
