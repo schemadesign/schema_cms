@@ -35,7 +35,7 @@ import { Select } from '../form/select';
 
 const { EditIcon, MinusIcon } = Icons;
 const { Switch } = Form;
-const TEMPORARY_PAGE_URL = 'https://scehmacms.com';
+const TEMPORARY_PAGE_URL = 'https://schemacms.com';
 
 export const PageForm = ({
   title,

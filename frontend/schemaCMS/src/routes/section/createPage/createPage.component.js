@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
 import { useEffectOnce } from 'react-use';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useFormik } from 'formik';
 
 import { Container } from './createPage.styles';
@@ -23,6 +23,7 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [createLoading, setCreateLoading] = useState(false);
+  const history = useHistory();
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(project.id);

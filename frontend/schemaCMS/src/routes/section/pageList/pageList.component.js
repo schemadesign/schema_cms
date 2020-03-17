@@ -53,7 +53,7 @@ import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/co
 
 const { EditIcon, MinusIcon } = Icons;
 const { Switch } = FormUI;
-const TEMPORARY_PAGE_URL = 'https://scehmacms.com';
+const TEMPORARY_PAGE_URL = 'https://schemacms.com';
 
 const Page = ({ created, createdBy, name, id, pageTemplate }) => {
   const history = useHistory();

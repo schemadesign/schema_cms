@@ -4,6 +4,30 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'page.title',
-    defaultMessage: 'Page component',
+    defaultMessage: 'Edit',
+  },
+  subtitle: {
+    id: 'page..title',
+    defaultMessage: 'Page',
+  },
+  create: {
+    id: 'page.create',
+    defaultMessage: 'Save Page',
+  },
+  cancel: {
+    id: 'page.cancel',
+    defaultMessage: 'Cancel',
+  },
+  cancelRemoval: {
+    id: 'section.pageList.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'section.pageList.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'section.pageList.removeTitle',
+    defaultMessage: 'Are you sure you want to remove the page?',
   },
 });
