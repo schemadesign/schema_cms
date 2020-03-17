@@ -2,91 +2,80 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { PageRoutines } from './page.redux';
 import api from '../../shared/services/api';
-import { PAGES_PATH, FOLDERS_PATH } from '../../shared/utils/api.constants';
+import { PAGES_PATH, SECTIONS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { ProjectRoutines } from '../project';
+import reportError from '../../shared/utils/reportError';
 
-function* fetchList({ payload: { folderId } }) {
+function* fetchPage({ payload: { pageId } }) {
   try {
-    yield put(PageRoutines.fetchList.request());
-
-    const { data } = yield api.get(`${FOLDERS_PATH}/${folderId}${PAGES_PATH}`);
-
-    yield put(ProjectRoutines.setProject.trigger(data.project));
-    yield put(PageRoutines.fetchList.success(data.results));
-  } catch (e) {
-    yield put(PageRoutines.fetchList.failure(e));
-  } finally {
-    yield put(PageRoutines.fetchList.fulfill());
-  }
-}
-
-function* fetchOne({ payload: { pageId } }) {
-  try {
-    yield put(PageRoutines.fetchList.request());
+    yield put(PageRoutines.fetchPage.request());
 
     const { data } = yield api.get(`${PAGES_PATH}/${pageId}`);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
-    yield put(PageRoutines.fetchOne.success(data));
+    yield put(PageRoutines.fetchPage.success(data));
   } catch (e) {
-    yield put(PageRoutines.fetchOne.failure(e));
+    reportError(e);
+    yield put(PageRoutines.fetchPage.failure(e));
   } finally {
-    yield put(PageRoutines.fetchOne.fulfill());
+    yield put(PageRoutines.fetchPage.fulfill());
   }
 }
 
-function* create({ payload: { folderId, ...payload } }) {
+function* createPage({ payload: { folderId, ...payload } }) {
   try {
-    yield put(PageRoutines.create.request());
+    yield put(PageRoutines.createPage.request());
 
-    const { data } = yield api.post(`${FOLDERS_PATH}/${folderId}${PAGES_PATH}`, { ...payload });
+    const { data } = yield api.post(`${SECTIONS_PATH}/${folderId}${PAGES_PATH}`, { ...payload });
 
-    yield put(PageRoutines.create.success(data));
+    yield put(PageRoutines.createPage.success(data));
     browserHistory.push(`/folder/${folderId}`);
   } catch (e) {
-    yield put(PageRoutines.create.failure(e));
+    reportError(e);
+    yield put(PageRoutines.createPage.failure(e));
   } finally {
-    yield put(PageRoutines.create.fulfill());
+    yield put(PageRoutines.createPage.fulfill());
   }
 }
 
-function* update({ payload: { pageId, folderId, ...payload } }) {
+function* updatePage({ payload: { pageId, folderId, ...payload } }) {
   try {
-    yield put(PageRoutines.update.request());
+    yield put(PageRoutines.updatePage.request());
 
     const { data } = yield api.patch(`${PAGES_PATH}/${pageId}`, { ...payload });
 
-    yield put(PageRoutines.update.success(data));
+    yield put(PageRoutines.updatePage.success(data));
     browserHistory.push(`/folder/${folderId}`);
   } catch (e) {
-    yield put(PageRoutines.update.failure(e));
+    reportError(e);
+    yield put(PageRoutines.updatePage.failure(e));
   } finally {
-    yield put(PageRoutines.update.fulfill());
+    yield put(PageRoutines.updatePage.fulfill());
   }
 }
 
-function* removeOne({ payload: { pageId, folderId } }) {
+function* removePage({ payload: { pageId, folderId } }) {
   try {
-    yield put(PageRoutines.removeOne.request());
+    yield put(PageRoutines.removePage.request());
 
     yield api.delete(`${PAGES_PATH}/${pageId}`);
 
-    yield put(PageRoutines.removeOne.success());
+    yield put(PageRoutines.removePage.success());
     browserHistory.push(`/folder/${folderId}`);
   } catch (e) {
-    yield put(PageRoutines.removeOne.failure(e));
+    reportError(e);
+    yield put(PageRoutines.removePage.failure(e));
   } finally {
-    yield put(PageRoutines.removeOne.fulfill());
+    yield put(PageRoutines.removePage.fulfill());
   }
 }
 
 export function* watchPage() {
   yield all([
-    takeLatest(PageRoutines.fetchList.TRIGGER, fetchList),
-    takeLatest(PageRoutines.fetchOne.TRIGGER, fetchOne),
-    takeLatest(PageRoutines.create.TRIGGER, create),
-    takeLatest(PageRoutines.update.TRIGGER, update),
-    takeLatest(PageRoutines.removeOne.TRIGGER, removeOne),
+    takeLatest(PageRoutines.fetchPage.TRIGGER, fetchPage),
+    takeLatest(PageRoutines.createPage.TRIGGER, createPage),
+    takeLatest(PageRoutines.updatePage.TRIGGER, updatePage),
+    takeLatest(PageRoutines.removePage.TRIGGER, removePage),
   ]);
 }

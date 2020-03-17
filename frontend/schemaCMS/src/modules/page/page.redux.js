@@ -5,23 +5,19 @@ import { createRoutine } from 'redux-saga-routines';
 const PREFIX = 'PAGE/';
 
 export const PageRoutines = {
-  fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
-  create: createRoutine(`${PREFIX}CREATE`),
-  fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
-  update: createRoutine(`${PREFIX}UPDATE`),
-  removeOne: createRoutine(`${PREFIX}REMOVE_ONE`),
+  createPage: createRoutine(`${PREFIX}CREATE_PAGE`),
+  fetchPage: createRoutine(`${PREFIX}FETCH_PAGE`),
+  updatePage: createRoutine(`${PREFIX}UPDATE_PAGE`),
+  removePage: createRoutine(`${PREFIX}REMOVE_PAGE`),
 };
 
 export const INITIAL_STATE = new Immutable({
-  pages: [],
   page: {},
 });
 
-const setPages = (state = INITIAL_STATE, { payload }) => state.set('pages', payload);
 const setPage = (state = INITIAL_STATE, { payload }) => state.set('page', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [PageRoutines.fetchList.success]: setPages,
-  [PageRoutines.update.success]: setPage,
-  [PageRoutines.fetchOne.success]: setPage,
+  [PageRoutines.updatePage.success]: setPage,
+  [PageRoutines.fetchPage.success]: setPage,
 });

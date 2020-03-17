@@ -6,7 +6,6 @@ export const LOGOUT_URL = `${API_PREFIX}/auth/logout`;
 export const ME_PATH = '/users/me';
 export const PROJECTS_PATH = '/projects';
 export const DATA_SOURCES_PATH = '/datasources';
-export const FOLDERS_PATH = '/folders';
 export const PAGES_PATH = '/pages';
 export const BLOCK_PATH = '/blocks';
 export const FILTERS_PATH = '/filters';
