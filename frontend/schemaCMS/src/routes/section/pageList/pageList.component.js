@@ -8,7 +8,7 @@ import { useFormik } from 'formik';
 import { pick } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
-import { Container, Form } from './pageList.styles';
+import { Container, Form, CopySeparator } from './pageList.styles';
 import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
@@ -52,6 +52,7 @@ import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/co
 
 const { EditIcon, MinusIcon } = Icons;
 const { Switch } = FormUI;
+const TEMPORARY_PAGE_URL = 'https://scehmacms.com';
 
 const Page = ({ created, createdBy, name, id, pageTemplate }) => {
   const history = useHistory();
@@ -95,6 +96,7 @@ export const PageList = ({
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
+  const visitPage = `${TEMPORARY_PAGE_URL}/${section.slug}`;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH], section),
     enableReinitialize: true,
@@ -201,7 +203,7 @@ export const PageList = ({
             <SwitchContainer>
               <SwitchContent>
                 <Switch value={values[SECTIONS_PUBLISH]} id={SECTIONS_PUBLISH} onChange={handleChange} />
-                <SwitchCopy>
+                <SwitchCopy isLink>
                   <SwitchLabel htmlFor={SECTIONS_PUBLISH}>
                     <FormattedMessage {...messages[SECTIONS_PUBLISH]} />
                   </SwitchLabel>
@@ -214,6 +216,8 @@ export const PageList = ({
                         ),
                       }}
                     />
+                    <CopySeparator />
+                    <FormattedMessage {...messages.visitPage} values={{ page: <a href={visitPage}>{visitPage}</a> }} />
                   </AvailableCopy>
                 </SwitchCopy>
               </SwitchContent>

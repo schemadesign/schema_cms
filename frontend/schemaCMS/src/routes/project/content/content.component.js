@@ -21,12 +21,12 @@ import { CounterHeader } from '../../../shared/components/counterHeader';
 import reportError from '../../../shared/utils/reportError';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
-const Section = ({ created, createdBy, name, id, pages }) => {
+const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
   const history = useHistory();
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
   const header = <CardHeader list={list} />;
-  const footer = <FormattedMessage {...messages.pagesCounter} values={{ pages: pages.length }} />;
+  const footer = <FormattedMessage {...messages.pagesCounter} values={{ pagesCount }} />;
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
@@ -42,7 +42,7 @@ Section.propTypes = {
   createdBy: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  pages: PropTypes.array.isRequired,
+  pagesCount: PropTypes.number.isRequired,
 };
 
 export const Content = ({ userRole, fetchSections, sections }) => {

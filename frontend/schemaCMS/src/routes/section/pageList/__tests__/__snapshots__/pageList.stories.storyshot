@@ -87,11 +87,11 @@ exports[`Storyshots PageList Default 1`] = `
   word-break: break-word;
 }
 
-.c39 {
+.c40 {
   height: 155px;
 }
 
-.c41 {
+.c42 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`Storyshots PageList Default 1`] = `
   width: 100%;
 }
 
-.c40 {
+.c41 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -120,7 +120,7 @@ exports[`Storyshots PageList Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c42 {
+.c43 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -153,6 +153,8 @@ exports[`Storyshots PageList Default 1`] = `
 
 .c35 {
   padding-left: 10px;
+  padding-right: 40px;
+  max-width: 100%;
 }
 
 .c34 {
@@ -168,9 +170,10 @@ exports[`Storyshots PageList Default 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding-right: 40px;
+  max-width: 100%;
 }
 
-.c38 {
+.c39 {
   cursor: pointer;
   position: absolute;
   right: 0;
@@ -180,6 +183,13 @@ exports[`Storyshots PageList Default 1`] = `
 .c37 {
   color: #71737e;
   min-width: 100%;
+}
+
+.c37 a {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  word-wrap: break-word;
 }
 
 .c17 {
@@ -359,6 +369,15 @@ exports[`Storyshots PageList Default 1`] = `
   padding: 0 7px;
 }
 
+.c38 {
+  padding: 0 10px;
+}
+
+.c38:before {
+  content: '|';
+  display: inline;
+}
+
 @media (min-width:1050px) {
   .c0 {
     display: none;
@@ -373,7 +392,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c41 {
+  .c42 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -382,7 +401,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c40 {
+  .c41 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -392,7 +411,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c42 {
+  .c43 {
     width: 240px;
   }
 }
@@ -1001,7 +1020,7 @@ exports[`Storyshots PageList Default 1`] = `
                       }
                     }
                     type="text"
-                    value="Section"
+                    value="Section name"
                   />
                   <div
                     style={
@@ -1025,7 +1044,7 @@ exports[`Storyshots PageList Default 1`] = `
                       }
                     }
                   >
-                    Section
+                    Section name
                   </div>
                   <div
                     style={
@@ -1165,7 +1184,7 @@ exports[`Storyshots PageList Default 1`] = `
                 }
               }
               type="text"
-              value="Section"
+              value="Section name"
             />
             <div
               style={
@@ -1416,11 +1435,20 @@ exports[`Storyshots PageList Default 1`] = `
                 className="c37"
               >
                 This Section is currently Public
+                <span
+                  className="c38"
+                />
+                Visit Page: 
+                <a
+                  href="https://scehmacms.com/section-name"
+                >
+                  https://scehmacms.com/section-name
+                </a>
               </span>
             </div>
           </div>
           <div
-            className="c38"
+            className="c39"
             id="removeSection"
             onClick={[Function]}
           >
@@ -1443,13 +1471,13 @@ exports[`Storyshots PageList Default 1`] = `
         </div>
       </div>
       <div
-        className="c39"
+        className="c40"
       >
         <div
-          className="c40"
+          className="c41"
         >
           <div
-            className="c41"
+            className="c42"
           >
             <button
               disabled={false}
@@ -1491,7 +1519,7 @@ exports[`Storyshots PageList Default 1`] = `
               </svg>
             </button>
             <button
-              className="c42"
+              className="c43"
               disabled={true}
               id="updateSection"
               style={

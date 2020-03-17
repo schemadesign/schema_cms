@@ -16,6 +16,6 @@ export default defineMessages({
   },
   pagesCounter: {
     id: 'project.content.pagesCounter',
-    defaultMessage: '{pages, plural,one {# Page} other {# Pages}}',
+    defaultMessage: '{pagesCount, plural,one {# Page} other {# Pages}}',
   },
 });

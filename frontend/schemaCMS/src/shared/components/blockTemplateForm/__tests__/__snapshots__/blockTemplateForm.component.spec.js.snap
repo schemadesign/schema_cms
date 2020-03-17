@@ -963,7 +963,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
       className="sc-bwzfXH bCvdRp"
     >
       <div
-        className="sc-ifAKCX ifLOSP"
+        className="sc-ifAKCX fUMogR"
       >
         <div>
           <input
@@ -1015,7 +1015,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-bxivhb iybNEM"
+          className="sc-bxivhb dGjqot"
         >
           <label
             className="sc-htpNat dQkmmE"
@@ -1024,7 +1024,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-bZQynM cVkqiJ"
+            className="sc-bZQynM jgKyvt"
           >
             This Template is currently available for Editors
           </span>
@@ -1105,7 +1105,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         </label>
       </div>
       <div
-        className="sc-bxivhb iybNEM"
+        className="sc-bxivhb dGjqot"
       >
         <label
           className="sc-htpNat dQkmmE"

@@ -136,6 +136,8 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 
 .c31 {
   padding-left: 10px;
+  padding-right: 0px;
+  max-width: 100%;
 }
 
 .c30 {
@@ -151,11 +153,19 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding-right: 40px;
+  max-width: 100%;
 }
 
 .c33 {
   color: #71737e;
   min-width: 100%;
+}
+
+.c33 a {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  word-wrap: break-word;
 }
 
 .c12 {

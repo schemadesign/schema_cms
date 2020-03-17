@@ -15,5 +15,3 @@ export const Section = () => {
     </Switch>
   );
 };
-
-Section.propTypes = {};

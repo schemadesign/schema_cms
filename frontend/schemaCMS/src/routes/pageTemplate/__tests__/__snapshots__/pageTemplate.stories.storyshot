@@ -136,6 +136,8 @@ exports[`Storyshots PageTemplate Default 1`] = `
 
 .c32 {
   padding-left: 10px;
+  padding-right: 0px;
+  max-width: 100%;
 }
 
 .c31 {
@@ -151,6 +153,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding-right: 40px;
+  max-width: 100%;
 }
 
 .c35 {
@@ -163,6 +166,13 @@ exports[`Storyshots PageTemplate Default 1`] = `
 .c34 {
   color: #71737e;
   min-width: 100%;
+}
+
+.c34 a {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  word-wrap: break-word;
 }
 
 .c12 {

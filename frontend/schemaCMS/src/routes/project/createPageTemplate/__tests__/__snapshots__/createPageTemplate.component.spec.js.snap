@@ -700,7 +700,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           className="sc-eHgmQL kwJpzj"
         >
           <div
-            className="sc-brqgnP fiOfdH"
+            className="sc-brqgnP IrynP"
           >
             <div>
               <input
@@ -752,7 +752,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-jWBwVP kqwNhC"
+              className="sc-jWBwVP eIUSPB"
             >
               <label
                 className="sc-cvbbAY blYLdr"
@@ -761,7 +761,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-jAaTju ezVhFu"
+                className="sc-jAaTju fMNTQY"
               >
                 This Template is currently unavailable for Editors
               </span>
@@ -821,7 +821,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-jWBwVP kqwNhC"
+            className="sc-jWBwVP eIUSPB"
           >
             <label
               className="sc-cvbbAY blYLdr"

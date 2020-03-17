@@ -55,4 +55,8 @@ export default defineMessages({
     id: 'section.pageList.publicCopy',
     defaultMessage: 'Public',
   },
+  visitPage: {
+    id: 'section.pageList.visitPage',
+    defaultMessage: 'Visit Page: {page}',
+  },
 });

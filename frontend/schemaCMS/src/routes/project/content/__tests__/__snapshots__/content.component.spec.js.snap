@@ -595,7 +595,7 @@ exports[`Content: Component should render correctly 1`] = `
             }
           }
         >
-          Section
+          Section name
         </h1>
       </div>
       <div
@@ -675,7 +675,7 @@ exports[`Content: Component should render correctly 1`] = `
             }
           }
         >
-          Section 2
+          Section name 2
         </h1>
       </div>
       <div
