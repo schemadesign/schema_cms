@@ -991,6 +991,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
       />
       <div
         className="c19"
+        id="stepCounter"
       >
         3 Steps
       </div>
@@ -1081,6 +1082,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
       }
     >
       <label
+        id="selectedStepsHeader"
         style={
           Object {
             "border": "none",
@@ -1097,7 +1099,9 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
       >
         Selected steps
       </label>
-      <div>
+      <div
+        id="selectedScript-0"
+      >
         <div
           style={
             Object {
@@ -1150,8 +1154,8 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               >
                 <div
                   className="c23"
+                  id="checkboxName-0"
                 >
-                   
                   name 1
                 </div>
                 <div
@@ -1159,6 +1163,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                 />
                 <div
                   className="c25"
+                  id="checkboxType-0"
                 >
                   Uploaded
                 </div>
@@ -1213,6 +1218,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
         </div>
       </div>
       <label
+        id="deselectedStepsHeader"
         style={
           Object {
             "border": "none",
@@ -1229,7 +1235,9 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
       >
         Steps
       </label>
-      <div>
+      <div
+        id="deselectedScript-0"
+      >
         <div
           style={
             Object {
@@ -1282,8 +1290,8 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               >
                 <div
                   className="c23"
+                  id="checkboxName-0"
                 >
-                   
                   name 1
                 </div>
                 <div
@@ -1291,6 +1299,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                 />
                 <div
                   className="c25"
+                  id="checkboxType-0"
                 >
                   Uploaded
                 </div>
@@ -1344,7 +1353,9 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
           </div>
         </div>
       </div>
-      <div>
+      <div
+        id="deselectedScript-1"
+      >
         <div
           style={
             Object {
@@ -1397,8 +1408,8 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
               >
                 <div
                   className="c23"
+                  id="checkboxName-1"
                 >
-                   
                   name 2
                 </div>
                 <div
@@ -1406,6 +1417,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                 />
                 <div
                   className="c25"
+                  id="checkboxType-1"
                 >
                   Default
                 </div>
@@ -1461,6 +1473,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
           <button
             className="c29"
             disabled={false}
+            id="saveStepsBtn"
             onClick={[Function]}
             style={
               Object {
@@ -2729,6 +2742,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
       />
       <div
         className="c19"
+        id="stepCounter"
       >
         3 Steps
       </div>
@@ -2819,6 +2833,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
       }
     >
       <label
+        id="selectedStepsHeader"
         style={
           Object {
             "border": "none",
@@ -2923,8 +2938,8 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
               >
                 <div
                   className="c24"
+                  id="checkboxName-0"
                 >
-                   
                   name 1
                 </div>
                 <div
@@ -2932,6 +2947,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                 />
                 <div
                   className="c26"
+                  id="checkboxType-0"
                 >
                   Uploaded
                 </div>
@@ -3073,8 +3089,8 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
               >
                 <div
                   className="c24"
+                  id="checkboxName-1"
                 >
-                   
                   name 2
                 </div>
                 <div
@@ -3082,6 +3098,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                 />
                 <div
                   className="c26"
+                  id="checkboxType-1"
                 >
                   Default
                 </div>
@@ -3223,8 +3240,8 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
               >
                 <div
                   className="c24"
+                  id="checkboxName-2"
                 >
-                   
                   name 3
                 </div>
                 <div
@@ -3232,6 +3249,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
                 />
                 <div
                   className="c26"
+                  id="checkboxType-2"
                 >
                   Custom
                 </div>
@@ -3298,6 +3316,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Multiple checked scripts 1`
           <button
             className="c30"
             disabled={false}
+            id="saveStepsBtn"
             onClick={[Function]}
             style={
               Object {
@@ -4496,6 +4515,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
       />
       <div
         className="c19"
+        id="stepCounter"
       >
         0 Steps
       </div>
@@ -4587,6 +4607,7 @@ exports[`Storyshots Data Source|DataWranglingScripts No data 1`] = `
           <button
             className="c24"
             disabled={false}
+            id="saveStepsBtn"
             onClick={[Function]}
             style={
               Object {

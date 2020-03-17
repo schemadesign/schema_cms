@@ -554,6 +554,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingScript Default 1`] = `
       Python Code
     </label>
     <pre
+      id="pythonCode"
       style={
         Object {
           "background": "#F0F0F0",
