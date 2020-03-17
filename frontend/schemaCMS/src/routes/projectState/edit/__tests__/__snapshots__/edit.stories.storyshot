@@ -154,7 +154,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
 }
 
 .c16 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c13 {

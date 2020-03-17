@@ -5,16 +5,22 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Theme } from 'schemaUI';
 import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
 
 import { DEFAULT_LOCALE, translationMessages } from '../../i18n';
 import browserHistory from './history';
+import configureStore from '../../modules/store';
+
+const { store } = configureStore({});
 
 const ProvidersWrapper = ({ children }) => (
-  <Router history={browserHistory}>
-    <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
-      <ThemeProvider theme={Theme.dark}>{children}</ThemeProvider>
-    </IntlProvider>
-  </Router>
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
+        <ThemeProvider theme={Theme.dark}>{children}</ThemeProvider>
+      </IntlProvider>
+    </Router>
+  </Provider>
 );
 
 ProvidersWrapper.propTypes = {

@@ -130,7 +130,7 @@ exports[`Storyshots Project|Create Default 1`] = `
 }
 
 .c14 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c15 {

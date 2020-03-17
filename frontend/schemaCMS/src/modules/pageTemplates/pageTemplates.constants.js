@@ -36,7 +36,7 @@ export const INITIAL_VALUES = {
 export const PAGE_TEMPLATES_SCHEMA = Yup.object().shape({
   [PAGE_TEMPLATES_NAME]: Yup.string()
     .trim()
-    .min(3, 'Page Template Name should have at least 3 characters')
+    .min(1, 'Page Template Name should have at least 1 character')
     .max(25, 'Page Template Name should have maximum 25 characters')
     .required('Required'),
   [PAGE_TEMPLATES_BLOCKS]: Yup.array()
@@ -45,7 +45,7 @@ export const PAGE_TEMPLATES_SCHEMA = Yup.object().shape({
       Yup.object().shape({
         [BLOCK_NAME]: Yup.string()
           .trim()
-          .min(3, 'Block Name should have at least 3 characters')
+          .min(1, 'Block Name should have at least 1 character')
           .max(25, 'Block Name should have maximum 25 characters')
           .required('Required'),
         [BLOCK_TYPE]: Yup.string()

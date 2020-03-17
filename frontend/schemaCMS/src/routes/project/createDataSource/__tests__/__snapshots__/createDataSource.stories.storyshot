@@ -130,7 +130,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 .c13 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 @media (min-width:1050px) {

@@ -6,7 +6,7 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
 }
 
 .c3 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c0 {

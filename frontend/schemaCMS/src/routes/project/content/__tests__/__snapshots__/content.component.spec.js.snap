@@ -607,7 +607,7 @@ exports[`Content: Component should render correctly 1`] = `
           }
         }
       >
-        0 Pages
+        1 Page
       </div>
     </div>
     <div

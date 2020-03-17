@@ -1,6 +1,7 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
+import { SECTIONS_NAME, SECTIONS_PUBLISH } from './sections.constants';
 
 const PREFIX = 'SECTIONS/';
 
@@ -13,7 +14,11 @@ export const SectionsRoutines = {
 };
 
 export const INITIAL_STATE = new Immutable({
-  section: {},
+  section: {
+    pages: [],
+    [SECTIONS_NAME]: '',
+    [SECTIONS_PUBLISH]: false,
+  },
   sections: [],
 });
 

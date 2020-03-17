@@ -293,7 +293,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 }
 
 .c1 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 @media (min-width:1050px) {

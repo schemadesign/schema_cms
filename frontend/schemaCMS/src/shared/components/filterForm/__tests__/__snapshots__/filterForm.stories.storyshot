@@ -44,7 +44,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 .c2 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c3 {
@@ -729,7 +729,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 .c2 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c3 {

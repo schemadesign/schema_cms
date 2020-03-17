@@ -70,11 +70,11 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
   word-break: break-word;
 }
 
-.c27 {
+.c28 {
   height: 155px;
 }
 
-.c29 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
   width: 100%;
 }
 
-.c28 {
+.c29 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c30 {
+.c31 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c21 {
+.c22 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,15 +130,15 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
   position: relative;
 }
 
-.c25 {
+.c26 {
   padding-right: 10px;
 }
 
-.c24 {
+.c25 {
   padding-left: 10px;
 }
 
-.c23 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -153,7 +153,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
   padding-right: 40px;
 }
 
-.c26 {
+.c27 {
   color: #71737e;
   min-width: 100%;
 }
@@ -172,7 +172,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
   position: relative;
 }
 
-.c20 {
+.c21 {
   text-align: right;
 }
 
@@ -212,6 +212,10 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
 }
 
 .c18 {
+  margin-top: 0;
+}
+
+.c19 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -233,7 +237,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
   align-items: center;
 }
 
-.c19 {
+.c20 {
   width: 33%;
 }
 
@@ -251,7 +255,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c29 {
+  .c30 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -260,7 +264,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c29 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -270,7 +274,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c30 {
+  .c31 {
     width: 240px;
   }
 }
@@ -288,7 +292,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c21 {
     display: none;
   }
 }
@@ -314,6 +318,12 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
 
 @media (min-width:1050px) {
   .c18 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -939,22 +949,42 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
                     "top": 2,
                   }
                 }
-              />
+              >
+                <div
+                  className="c18"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div
-          className="c18"
+          className="c19"
         >
           <div
-            className="c19"
+            className="c20"
           />
           0 Blocks
           <div
-            className="c19"
+            className="c20"
           >
             <div
-              className="c20"
+              className="c21"
             >
               <div
                 className="c15"
@@ -1007,13 +1037,13 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
         </div>
         <span />
         <div
-          className="c21"
+          className="c22"
         >
           <div
-            className="c22"
+            className="c23"
           >
             <div
-              className="c23"
+              className="c24"
             >
               <div>
                 <input
@@ -1065,16 +1095,16 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
                 </label>
               </div>
               <div
-                className="c24"
+                className="c25"
               >
                 <label
-                  className="c25"
+                  className="c26"
                   htmlFor="isAvailable"
                 >
                   Make it Available
                 </label>
                 <span
-                  className="c26"
+                  className="c27"
                 >
                   This Template is currently unavailable for Editors
                 </span>
@@ -1082,7 +1112,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
             </div>
           </div>
           <div
-            className="c22"
+            className="c23"
           >
             <div>
               <input
@@ -1134,10 +1164,10 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
               </label>
             </div>
             <div
-              className="c24"
+              className="c25"
             >
               <label
-                className="c25"
+                className="c26"
                 htmlFor="allowAdd"
               >
                 Allow new Blocks to be added to this Page Template
@@ -1147,16 +1177,16 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
         </div>
       </div>
       <div
-        className="c27"
+        className="c28"
       >
         <div
-          className="c28"
+          className="c29"
         >
           <div
-            className="c29"
+            className="c30"
           >
             <button
-              className="c30"
+              className="c31"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1182,7 +1212,7 @@ exports[`Storyshots CreatePageTemplate Default 1`] = `
               Cancel
             </button>
             <button
-              className="c30"
+              className="c31"
               disabled={true}
               id="createTemplateBlock"
               style={

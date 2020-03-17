@@ -126,6 +126,7 @@ export const PageTemplateForm = ({
           label={<FormattedMessage {...messages[PAGE_TEMPLATES_NAME]} />}
           fullWidth
           autoFocus={!values[PAGE_TEMPLATES_NAME].length}
+          isEdit
           {...restFormikProps}
         />
       </MobileInputName>

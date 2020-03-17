@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Content Default 1`] = `
+exports[`Storyshots PageList Default 1`] = `
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -87,11 +87,11 @@ exports[`Storyshots Content Default 1`] = `
   word-break: break-word;
 }
 
-.c25 {
+.c39 {
   height: 155px;
 }
 
-.c27 {
+.c41 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`Storyshots Content Default 1`] = `
   width: 100%;
 }
 
-.c26 {
+.c40 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -118,6 +118,86 @@ exports[`Storyshots Content Default 1`] = `
   width: calc(100% - 40px);
   z-index: 9999;
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c42 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c32 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c33 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c36 {
+  padding-right: 10px;
+}
+
+.c35 {
+  padding-left: 10px;
+}
+
+.c34 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.c38 {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c37 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+.c17 {
+  position: relative;
+}
+
+.c19 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c21 {
+  position: relative;
+}
+
+.c26 {
+  text-align: right;
 }
 
 .c13 {
@@ -138,6 +218,28 @@ exports[`Storyshots Content Default 1`] = `
 }
 
 .c18 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c22 {
+  position: relative;
+}
+
+.c23 {
+  margin-top: 0;
+}
+
+.c24 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -159,8 +261,8 @@ exports[`Storyshots Content Default 1`] = `
   align-items: center;
 }
 
-.c19 {
-  width: 0%;
+.c25 {
+  width: 33%;
 }
 
 .c9 {
@@ -209,7 +311,7 @@ exports[`Storyshots Content Default 1`] = `
   text-decoration: none;
 }
 
-.c21 {
+.c28 {
   margin-bottom: 20px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -218,12 +320,12 @@ exports[`Storyshots Content Default 1`] = `
   min-height: 150px;
 }
 
-.c24 {
+.c31 {
   word-break: break-word;
   cursor: pointer;
 }
 
-.c20 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -236,21 +338,21 @@ exports[`Storyshots Content Default 1`] = `
   flex-wrap: wrap;
 }
 
-.c22 {
+.c29 {
   list-style: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-.c23 {
+.c30 {
   display: inline-block;
   line-height: 1.25;
   margin-right: 1.5em;
   color: #71737e;
 }
 
-.c23::before {
+.c30::before {
   content: '•';
   margin-left: -1.5em;
   display: inline-block;
@@ -271,13 +373,16 @@ exports[`Storyshots Content Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c27 {
-    display: none;
+  .c41 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
 @media (min-width:1050px) {
-  .c26 {
+  .c40 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -287,8 +392,26 @@ exports[`Storyshots Content Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c42 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c20 {
     display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c21 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c26 {
+    display: none;
   }
 }
 
@@ -312,7 +435,13 @@ exports[`Storyshots Content Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c23 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -330,7 +459,7 @@ exports[`Storyshots Content Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c28 {
     width: calc(100%/3 - 20px);
     max-width: 320px;
     min-height: 192px;
@@ -339,7 +468,7 @@ exports[`Storyshots Content Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c27 {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
@@ -398,7 +527,7 @@ exports[`Storyshots Content Default 1`] = `
                 }
               }
             >
-              Content
+              Section
             </h2>
             <h1
               className="c2"
@@ -414,7 +543,7 @@ exports[`Storyshots Content Default 1`] = `
                 }
               }
             >
-              Sections
+              Edit
             </h1>
           </div>
         </div>
@@ -499,7 +628,7 @@ exports[`Storyshots Content Default 1`] = `
                 }
               }
             >
-              Content
+              Section
             </h2>
             <h1
               className="c2"
@@ -515,7 +644,7 @@ exports[`Storyshots Content Default 1`] = `
                 }
               }
             >
-              Sections
+              Edit
             </h1>
           </div>
         </div>
@@ -551,7 +680,7 @@ exports[`Storyshots Content Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/undefined"
+                href="/project/projectId"
                 id="projectDetailsNavBtn"
                 onClick={[Function]}
               >
@@ -562,7 +691,7 @@ exports[`Storyshots Content Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/undefined/datasource"
+                href="/project/projectId/datasource"
                 id="dataSourceNavBtn"
                 onClick={[Function]}
               >
@@ -573,7 +702,7 @@ exports[`Storyshots Content Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/undefined/state"
+                href="/project/projectId/state"
                 id="stateNavBtn"
                 onClick={[Function]}
               >
@@ -584,7 +713,7 @@ exports[`Storyshots Content Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/undefined/user"
+                href="/project/projectId/user"
                 id="usersNavBtn"
                 onClick={[Function]}
               >
@@ -595,7 +724,7 @@ exports[`Storyshots Content Default 1`] = `
               className="c6"
             >
               <a
-                href="/project/undefined/content"
+                href="/project/projectId/content"
                 id="contentNavBtn"
                 onClick={[Function]}
               >
@@ -606,7 +735,7 @@ exports[`Storyshots Content Default 1`] = `
               className="c5"
             >
               <a
-                href="/project/undefined/templates"
+                href="/project/projectId/templates"
                 id="templatesNavBtn"
                 onClick={[Function]}
               >
@@ -723,7 +852,7 @@ exports[`Storyshots Content Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/undefined"
+            href="/project/projectId"
             id="settingsTab"
             onClick={[Function]}
           >
@@ -735,7 +864,7 @@ exports[`Storyshots Content Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/undefined/datasource"
+            href="/project/projectId/datasource"
             id="sourcesTab"
             onClick={[Function]}
           >
@@ -747,7 +876,7 @@ exports[`Storyshots Content Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/undefined/state"
+            href="/project/projectId/state"
             id="stateTab"
             onClick={[Function]}
           >
@@ -759,7 +888,7 @@ exports[`Storyshots Content Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/undefined/content"
+            href="/project/projectId/content"
             id="contentTab"
             onClick={[Function]}
           >
@@ -771,7 +900,7 @@ exports[`Storyshots Content Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/undefined/templates"
+            href="/project/projectId/templates"
             id="templatesTab"
             onClick={[Function]}
           >
@@ -783,7 +912,7 @@ exports[`Storyshots Content Default 1`] = `
         >
           <a
             className="c11"
-            href="/project/undefined/user"
+            href="/project/projectId/user"
             id="usersTab"
             onClick={[Function]}
           >
@@ -792,240 +921,33 @@ exports[`Storyshots Content Default 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="c13"
+    <form
+      className=""
+      onSubmit={[Function]}
     >
       <div
-        className="c14"
-      >
-        <h2
-          className="c15"
-          id="desktopHeaderTitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
-          Content
-        </h2>
-        <h1
-          className="c16"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          Sections
-        </h1>
-      </div>
-      <div
-        className=""
+        className="c13"
       >
         <div
-          className="c17"
+          className="c14"
         >
-          <button
-            disabled={false}
-            id="createSection"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": "60px",
-                  "shapeRendering": "crispEdges",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c18"
-    >
-      <div
-        className="c19"
-      />
-      2 sections
-      <div
-        className="c19"
-      />
-    </div>
-    <section
-      className="c20"
-    >
-      <div
-        className="c21"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": "#71737e",
-                "marginBottom": 14,
-              }
-            }
-          >
-            <ul
-              className="c22"
-            >
-              <li
-                className="c23"
-                id="headerItem-0"
-              >
-                in 3 months
-              </li>
-              <li
-                className="c23"
-                id="headerItem-1"
-              >
-                owner
-              </li>
-            </ul>
-          </div>
-          <h1
-            className="c24"
-            id="section-1"
-            onClick={[Function]}
+          <h2
+            className="c15"
+            id="desktopHeaderTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                 "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "fontWeight": 100,
                 "margin": 0,
               }
             }
           >
             Section
-          </h1>
-        </div>
-        <div
-          style={
-            Object {
-              "color": "#71737e",
-              "marginBottom": 4,
-              "marginTop": 10,
-            }
-          }
-        >
-          1 Page
-        </div>
-      </div>
-      <div
-        className="c21"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": "#71737e",
-                "marginBottom": 14,
-              }
-            }
-          >
-            <ul
-              className="c22"
-            >
-              <li
-                className="c23"
-                id="headerItem-0"
-              >
-                in 3 months
-              </li>
-              <li
-                className="c23"
-                id="headerItem-1"
-              >
-                owner 2
-              </li>
-            </ul>
-          </div>
+          </h2>
           <h1
-            className="c24"
-            id="section-2"
-            onClick={[Function]}
+            className="c16"
+            id="desktopHeaderSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -1037,76 +959,116 @@ exports[`Storyshots Content Default 1`] = `
               }
             }
           >
-            Section 2
+            <div
+              className="c17"
+            >
+              <div
+                className="c18"
+              >
+                <div
+                  style={
+                    Object {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "maxWidth": "100%",
+                      "paddingBottom": 0,
+                      "paddingRight": 40,
+                      "position": "static",
+                    }
+                  }
+                >
+                  <input
+                    id="name"
+                    name="name"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="Name"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "color": "#FFF",
+                        "fontFamily": "inherit",
+                        "fontSize": 24,
+                        "fontWeight": 600,
+                        "letterSpacing": "normal",
+                        "lineHeight": "24px",
+                        "maxWidth": "100%",
+                        "minWidth": 60,
+                        "outline": "none",
+                        "padding": 0,
+                        "width": 80,
+                      }
+                    }
+                    type="text"
+                    value="Section"
+                  />
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "color": "#FFF",
+                        "fontFamily": "inherit",
+                        "fontSize": 24,
+                        "fontWeight": 600,
+                        "letterSpacing": "normal",
+                        "lineHeight": "24px",
+                        "maxWidth": "100%",
+                        "minWidth": 60,
+                        "opacity": 0,
+                        "outline": "none",
+                        "padding": 0,
+                        "position": "fixed",
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    Section
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 2,
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="c19"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
           </h1>
         </div>
         <div
-          style={
-            Object {
-              "color": "#71737e",
-              "marginBottom": 4,
-              "marginTop": 10,
-            }
-          }
+          className=""
         >
-          0 Pages
-        </div>
-      </div>
-    </section>
-    <div
-      className="c25"
-    >
-      <div
-        className="c26"
-      >
-        <div
-          className="c27"
-        >
-          <button
-            disabled={false}
-            id="backBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "60px",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-              />
-            </svg>
-          </button>
           <div
-            className="c17"
+            className="c20"
           >
             <button
               disabled={false}
-              id="creatSectionMobile"
+              id="createPage"
               onClick={[Function]}
               style={
                 Object {
@@ -1147,7 +1109,416 @@ exports[`Storyshots Content Default 1`] = `
           </div>
         </div>
       </div>
-    </div>
+      <div
+        className="c21"
+      >
+        <div
+          className="c22"
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "maxWidth": "100%",
+                "paddingBottom": "30px",
+                "position": "relative",
+              }
+            }
+          >
+            <label
+              htmlFor="name"
+              style={
+                Object {
+                  "border": "none",
+                  "borderTop": "2px solid #2F2F36",
+                  "color": "#71737e",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
+                }
+              }
+            >
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "border": "none",
+                  "color": "#FFF",
+                  "fontFamily": "inherit",
+                  "fontSize": "18px",
+                  "fontWeight": "inherit",
+                  "letterSpacing": "normal",
+                  "lineHeight": "24px",
+                  "maxWidth": "100%",
+                  "minWidth": 60,
+                  "outline": "none",
+                  "padding": 0,
+                }
+              }
+              type="text"
+              value="Section"
+            />
+            <div
+              style={
+                Object {
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 2,
+                }
+              }
+            >
+              <div
+                className="c23"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c24"
+      >
+        <div
+          className="c25"
+        />
+        1 page
+        <div
+          className="c25"
+        >
+          <div
+            className="c26"
+          >
+            <div
+              className="c20"
+            >
+              <button
+                disabled={false}
+                id="createPageMobile"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#000",
+                    "cursor": "pointer",
+                    "display": "inline-block",
+                    "fill": "#FFF",
+                    "fontSize": "18px",
+                    "height": 40,
+                    "margin": "0",
+                    "minHeight": 40,
+                    "outline": "none",
+                    "padding": "0",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                    "width": 40,
+                  }
+                }
+                type="button"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#000",
+                      "height": 40,
+                      "minHeight": 40,
+                      "shapeRendering": "crispEdges",
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section
+        className="c27"
+      >
+        <div
+          className="c28"
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "borderTop": "2px solid #FFF",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "12px",
+              "justifyContent": "space-between",
+              "padding": "12px 14px 14px",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "color": "#71737e",
+                  "marginBottom": 14,
+                }
+              }
+            >
+              <ul
+                className="c29"
+              >
+                <li
+                  className="c30"
+                  id="headerItem-0"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="c30"
+                  id="headerItem-1"
+                >
+                  owner
+                </li>
+              </ul>
+            </div>
+            <h1
+              className="c31"
+              id="page-1"
+              onClick={[Function]}
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              page name
+            </h1>
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 4,
+                "marginTop": 10,
+              }
+            }
+          >
+            pageTemplate
+          </div>
+        </div>
+      </section>
+      <div
+        className="c32"
+      >
+        <div
+          className="c33"
+        >
+          <div
+            className="c34"
+          >
+            <div>
+              <input
+                checked={true}
+                id="isPublish"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="checkbox"
+              />
+              <label
+                htmlFor="isPublish"
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#71737e",
+                      "borderRadius": 20,
+                      "boxSizing": "border-box",
+                      "cursor": "pointer",
+                      "height": 24,
+                      "padding": 2,
+                      "transition": "background 200ms ease-in-out",
+                      "width": 44,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "background": "#FFF",
+                        "borderRadius": "50%",
+                        "height": 20,
+                        "transform": "translateX(20px)",
+                        "transition": "transform 200ms ease-in-out",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+            <div
+              className="c35"
+            >
+              <label
+                className="c36"
+                htmlFor="isPublish"
+              >
+                Make it Public
+              </label>
+              <span
+                className="c37"
+              >
+                This Section is currently Public
+              </span>
+            </div>
+          </div>
+          <div
+            className="c38"
+            id="removeSection"
+            onClick={[Function]}
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 30,
+                  "shapeRendering": "crispEdges",
+                  "width": 30,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M15 28h30v4H15z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c39"
+      >
+        <div
+          className="c40"
+        >
+          <div
+            className="c41"
+          >
+            <button
+              disabled={false}
+              id="backBtn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  "width": "60px",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+                />
+              </svg>
+            </button>
+            <button
+              className="c42"
+              disabled={true}
+              id="updateSection"
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#71737e",
+                  "cursor": "default",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 `;

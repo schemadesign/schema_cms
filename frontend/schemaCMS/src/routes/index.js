@@ -24,6 +24,7 @@ import { DataSourceTag } from './dataSourceTag';
 import { ProjectState } from './projectState';
 import { BlockTemplate } from './blockTemplate';
 import { PageTemplate } from './pageTemplate';
+import { Section } from './section';
 
 export const ROUTES = {
   HOME: '/',
@@ -46,6 +47,7 @@ export const ROUTES = {
   STATE: '/state',
   BLOCK_TEMPLATE: '/block-template',
   PAGE_TEMPLATE: '/page-template',
+  SECTION: '/section',
 };
 
 export default class RootContainer extends Component {
@@ -67,6 +69,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={`${ROUTES.BLOCK_TEMPLATE}/:blockTemplateId`} component={BlockTemplate} />
 
             <AuthRoute path={`${ROUTES.PAGE_TEMPLATE}/:pageTemplateId`} component={PageTemplate} />
+
+            <AuthRoute path={ROUTES.SECTION} component={Section} />
 
             <AuthRoute
               exact

@@ -154,7 +154,7 @@ exports[`Storyshots Project|CreateProjectState Default 1`] = `
 }
 
 .c20 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c17 {
