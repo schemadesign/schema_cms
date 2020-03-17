@@ -23,14 +23,13 @@ function* fetchPage({ payload: { pageId } }) {
   }
 }
 
-function* createPage({ payload: { folderId, ...payload } }) {
+function* createPage({ payload: { sectionId, formData } }) {
   try {
     yield put(PageRoutines.createPage.request());
 
-    const { data } = yield api.post(`${SECTIONS_PATH}/${folderId}${PAGES_PATH}`, { ...payload });
+    const { data } = yield api.post(`${SECTIONS_PATH}/${sectionId}${PAGES_PATH}`, formData);
 
     yield put(PageRoutines.createPage.success(data));
-    browserHistory.push(`/folder/${folderId}`);
   } catch (e) {
     reportError(e);
     yield put(PageRoutines.createPage.failure(e));
@@ -39,14 +38,13 @@ function* createPage({ payload: { folderId, ...payload } }) {
   }
 }
 
-function* updatePage({ payload: { pageId, folderId, ...payload } }) {
+function* updatePage({ payload: { pageId, formData } }) {
   try {
     yield put(PageRoutines.updatePage.request());
 
-    const { data } = yield api.patch(`${PAGES_PATH}/${pageId}`, { ...payload });
+    const { data } = yield api.patch(`${PAGES_PATH}/${pageId}`, formData);
 
     yield put(PageRoutines.updatePage.success(data));
-    browserHistory.push(`/folder/${folderId}`);
   } catch (e) {
     reportError(e);
     yield put(PageRoutines.updatePage.failure(e));

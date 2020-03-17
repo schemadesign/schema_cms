@@ -41,11 +41,13 @@ describe('Page: sagas', () => {
         id: 1,
       };
       const payload = {
-        folderId: 1,
-        title: 'a title',
+        sectionId: 1,
+        formData: {
+          title: 'a title',
+        },
       };
 
-      mockApi.post(`/sections/${payload.folderId}/pages`, { title: payload.title }).reply(OK, response);
+      mockApi.post(`/sections/${payload.sectionId}/pages`, payload.formData).reply(OK, response);
 
       await expectSaga(watchPage)
         .withState(defaultState)
@@ -62,20 +64,19 @@ describe('Page: sagas', () => {
         id: 1,
       };
       const payload = {
-        folderId: 1,
         pageId: 2,
-        title: 'a title',
+        formData: {
+          title: 'a title',
+        },
       };
 
-      mockApi.patch(`/pages/${payload.pageId}`, { title: payload.title }).reply(OK, response);
+      mockApi.patch(`/pages/${payload.pageId}`, payload.formData).reply(OK, response);
 
       await expectSaga(watchPage)
         .withState(defaultState)
         .put(PageRoutines.updatePage.success(response))
         .dispatch(PageRoutines.updatePage(payload))
         .silentRun();
-
-      expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}`);
     });
   });
 
