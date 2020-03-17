@@ -7,6 +7,21 @@ from ..utils.serializers import CustomModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
+class SectionSerializer(CustomModelSerializer):
+    class Meta:
+        model = models.Section
+        fields = ("id", "project", "name", "created_by", "created", "is_public")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Section.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="sectionNameUnique",
+                message="Section with this name already exist in project.",
+            )
+        ]
+
+
 class BlockElementSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
 

@@ -23,3 +23,4 @@ pytest_factoryboy.register(pages_factories.BlockTemplateFactory, "block_template
 pytest_factoryboy.register(pages_factories.PageTemplateFactory, "page_template")
 pytest_factoryboy.register(pages_factories.BlockTemplateElementFactory, "block_template_element")
 pytest_factoryboy.register(pages_factories.PageBlockFactory, "page_block")
+pytest_factoryboy.register(pages_factories.SectionFactory, "section")

@@ -40,3 +40,12 @@ class PageBlockFactory(factory.django.DjangoModelFactory):
     block = factory.SubFactory(BlockTemplateFactory)
     page = factory.SubFactory(BlockTemplateFactory)
     name = factory.Faker("text", max_nb_chars=constants.TEMPLATE_NAME_MAX_LENGTH)
+
+
+class SectionFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "pages.Section"
+
+    project = factory.SubFactory(ProjectFactory)
+    name = factory.Faker("text", max_nb_chars=constants.SECTION_NAME_MAX_LENGTH)
+    created_by = factory.SubFactory(UserFactory)
