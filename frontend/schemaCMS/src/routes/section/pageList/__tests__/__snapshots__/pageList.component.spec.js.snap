@@ -865,8 +865,7 @@ exports[`PageList: Component should render correctly 1`] = `
         >
           <div>
             <input
-              checked={true}
-              id="isPublish"
+              id="isPublic"
               onChange={[Function]}
               style={
                 Object {
@@ -881,12 +880,12 @@ exports[`PageList: Component should render correctly 1`] = `
               type="checkbox"
             />
             <label
-              htmlFor="isPublish"
+              htmlFor="isPublic"
             >
               <div
                 style={
                   Object {
-                    "background": "#71737e",
+                    "background": "#2F2F36",
                     "borderRadius": 20,
                     "boxSizing": "border-box",
                     "cursor": "pointer",
@@ -903,7 +902,7 @@ exports[`PageList: Component should render correctly 1`] = `
                       "background": "#FFF",
                       "borderRadius": "50%",
                       "height": 20,
-                      "transform": "translateX(20px)",
+                      "transform": "translateX(0)",
                       "transition": "transform 200ms ease-in-out",
                       "width": 20,
                     }
@@ -917,14 +916,14 @@ exports[`PageList: Component should render correctly 1`] = `
           >
             <label
               className="sc-hzDkRC iUryHs"
-              htmlFor="isPublish"
+              htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
               className="sc-dVhcbM fEQJvc"
             >
-              This Section is currently Public
+              This Section is currently Private
               <span
                 className="sc-htpNat fkWeNN"
               />

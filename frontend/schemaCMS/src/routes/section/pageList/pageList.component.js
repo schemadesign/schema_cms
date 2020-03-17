@@ -85,6 +85,7 @@ export const PageList = ({
   updateSection,
   userRole,
 }) => {
+  const { pages = [], slug = '', pagesCount = 0 } = section;
   const [loading, setLoading] = useState(true);
   const [updateLoading, setUpdateLoading] = useState(false);
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
@@ -96,7 +97,7 @@ export const PageList = ({
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
-  const visitPage = `${TEMPORARY_PAGE_URL}/${section.slug}`;
+  const visitPage = `${TEMPORARY_PAGE_URL}/${slug}`;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH], section),
     enableReinitialize: true,
@@ -182,7 +183,7 @@ export const PageList = ({
           </MobileInputName>
           <CounterHeader
             copy={intl.formatMessage(messages.page)}
-            count={section.pages.length}
+            count={pagesCount}
             right={
               <MobilePlusContainer>
                 <PlusButton
@@ -195,8 +196,8 @@ export const PageList = ({
             }
           />
           <ListContainer>
-            {section.pages.map((section, index) => (
-              <Page key={index} {...section} />
+            {pages.map((page, index) => (
+              <Page key={index} {...page} />
             ))}
           </ListContainer>
           <Switches>

@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 export const SECTIONS_NAME = 'name';
-export const SECTIONS_PUBLISH = 'isPublish';
+export const SECTIONS_PUBLISH = 'isPublic';
 
 export const INITIAL_VALUES = {
   [SECTIONS_NAME]: '',
