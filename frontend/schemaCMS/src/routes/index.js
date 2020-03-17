@@ -25,6 +25,7 @@ import { ProjectState } from './projectState';
 import { BlockTemplate } from './blockTemplate';
 import { PageTemplate } from './pageTemplate';
 import { Section } from './section';
+import { Page } from './page';
 
 export const ROUTES = {
   HOME: '/',
@@ -36,7 +37,6 @@ export const ROUTES = {
   LOGOUT: '/logout',
   DATA_SOURCE: '/datasource',
   FOLDER: '/folder',
-  PAGE: '/page',
   BLOCK: '/block',
   DATA_WRANGLING_SCRIPTS: '/script',
   SETTINGS: '/settings',
@@ -48,6 +48,7 @@ export const ROUTES = {
   BLOCK_TEMPLATE: '/block-template',
   PAGE_TEMPLATE: '/page-template',
   SECTION: '/section',
+  PAGE: '/page',
 };
 
 export default class RootContainer extends Component {
@@ -71,6 +72,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={`${ROUTES.PAGE_TEMPLATE}/:pageTemplateId`} component={PageTemplate} />
 
             <AuthRoute path={ROUTES.SECTION} component={Section} />
+
+            <AuthRoute path={`${ROUTES.PAGE}/:pageId`} component={Page} />
 
             <AuthRoute
               exact
