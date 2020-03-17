@@ -192,15 +192,21 @@ class SectionListCreateSerializer(CustomModelSerializer):
 
 
 class SectionPageListView(CustomModelSerializer):
+    template_name = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = models.Page
         fields = (
             "id",
             "template",
+            "template_name",
             "name",
             "created_by",
             "created",
         )
+
+    def get_template_name(self, page):
+        return page.template.name
 
 
 class SectionDetailSerializer(CustomModelSerializer):
