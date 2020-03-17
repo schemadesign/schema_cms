@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots PageTemplateForm Default 1`] = `
-.c20 {
+.c21 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,15 +23,17 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   position: relative;
 }
 
-.c24 {
+.c25 {
   padding-right: 10px;
 }
 
-.c23 {
+.c24 {
   padding-left: 10px;
+  padding-right: 0px;
+  max-width: 100%;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -44,18 +46,26 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding-right: 40px;
+  max-width: 100%;
 }
 
-.c26 {
+.c27 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c25 {
+.c26 {
   color: #71737e;
   min-width: 100%;
+}
+
+.c26 a {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  word-wrap: break-word;
 }
 
 .c4 {
@@ -72,7 +82,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   position: relative;
 }
 
-.c12 {
+.c13 {
   text-align: right;
 }
 
@@ -111,7 +121,11 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   position: relative;
 }
 
-.c18 {
+.c10 {
+  margin-top: 0;
+}
+
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -124,17 +138,17 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   font-size: 18px;
 }
 
-.c18 label {
+.c19 label {
   margin-bottom: 2px;
 }
 
-.c19 {
+.c20 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c10 {
+.c11 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -156,11 +170,11 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c12 {
   width: 33%;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -169,7 +183,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   touch-action: none;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -180,7 +194,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   max-width: calc(100% - 90px);
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -191,12 +205,12 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c18 {
   border-top: 1px solid #2F2F36;
   padding-left: 0;
 }
 
-.c16 {
+.c17 {
   color: #71737e;
   max-width: 100px;
   white-space: nowrap;
@@ -218,7 +232,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c12 {
+  .c13 {
     display: none;
   }
 }
@@ -244,25 +258,31 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
 
 @media (min-width:1050px) {
   .c10 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c11 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
 }
 
 @media (min-width:1050px) {
-  .c13 {
+  .c14 {
     max-width: calc(100% - 210px);
   }
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c18 {
     padding-left: 30px;
   }
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c17 {
     display: block;
   }
 }
@@ -536,22 +556,42 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
                 "top": 2,
               }
             }
-          />
+          >
+            <div
+              className="c10"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div
-      className="c10"
+      className="c11"
     >
       <div
-        className="c11"
+        className="c12"
       />
       1 Block
       <div
-        className="c11"
+        className="c12"
       >
         <div
-          className="c12"
+          className="c13"
         >
           <div
             className="c7"
@@ -642,14 +682,14 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
             }
           >
             <div
-              className="c13"
+              className="c14"
             >
               <div
-                className="c14"
+                className="c15"
               >
                 <div>
                   <div
-                    className="c15"
+                    className="c16"
                   >
                     <svg
                       style={
@@ -745,7 +785,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
                 </div>
               </div>
               <div
-                className="c14"
+                className="c15"
               >
                 <svg
                   style={
@@ -783,7 +823,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
               </div>
             </div>
             <div
-              className="c16"
+              className="c17"
             >
               block name
             </div>
@@ -831,10 +871,10 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
           >
             <div>
               <div
-                className="c17"
+                className="c18"
               >
                 <div
-                  className="c18"
+                  className="c19"
                 >
                   <label
                     id="fieldProjectStatusLabel"
@@ -860,7 +900,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
                     value={1}
                   />
                   <div
-                    className="c19"
+                    className="c20"
                   >
                     <svg
                       style={
@@ -990,13 +1030,13 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
       </div>
     </span>
     <div
-      className="c20"
+      className="c21"
     >
       <div
-        className="c21"
+        className="c22"
       >
         <div
-          className="c22"
+          className="c23"
         >
           <div>
             <input
@@ -1047,23 +1087,23 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
             </label>
           </div>
           <div
-            className="c23"
+            className="c24"
           >
             <label
-              className="c24"
+              className="c25"
               htmlFor="isAvailable"
             >
               Make it Available
             </label>
             <span
-              className="c25"
+              className="c26"
             >
               This Template is currently unavailable for Editors
             </span>
           </div>
         </div>
         <div
-          className="c26"
+          className="c27"
           id="removePage"
           onClick={[Function]}
         >
@@ -1085,7 +1125,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
         </div>
       </div>
       <div
-        className="c21"
+        className="c22"
       >
         <div>
           <input
@@ -1136,10 +1176,10 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
           </label>
         </div>
         <div
-          className="c23"
+          className="c24"
         >
           <label
-            className="c24"
+            className="c25"
             htmlFor="allowAdd"
           >
             Allow new Blocks to be added to this Page Template

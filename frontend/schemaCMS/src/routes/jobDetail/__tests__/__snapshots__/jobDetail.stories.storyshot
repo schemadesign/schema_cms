@@ -130,7 +130,7 @@ exports[`Storyshots Data Source|JobDetail Failure job 1`] = `
 }
 
 .c13 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c17 {
@@ -1119,7 +1119,7 @@ exports[`Storyshots Data Source|JobDetail Fake job 1`] = `
 }
 
 .c13 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c14 {
@@ -1996,7 +1996,7 @@ exports[`Storyshots Data Source|JobDetail Success job 1`] = `
 }
 
 .c13 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c17 {

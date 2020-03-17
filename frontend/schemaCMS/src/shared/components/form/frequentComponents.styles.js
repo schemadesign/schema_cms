@@ -21,6 +21,8 @@ export const SwitchLabel = styled.label`
 
 export const SwitchCopy = styled.div`
   padding-left: 10px;
+  padding-right: ${({ isLink }) => (isLink ? 40 : 0)}px;
+  max-width: 100%;
 `;
 
 export const SwitchContent = styled.div`
@@ -28,6 +30,7 @@ export const SwitchContent = styled.div`
   flex-direction: row;
   align-items: center;
   padding-right: 40px;
+  max-width: 100%;
 `;
 
 export const BinIconContainer = styled.div`
@@ -40,6 +43,12 @@ export const BinIconContainer = styled.div`
 export const AvailableCopy = styled.span`
   color: ${({ theme }) => theme.secondaryText};
   min-width: 100%;
+
+  a {
+    color: ${({ theme }) => theme.text};
+    text-decoration: none;
+    word-wrap: break-word;
+  }
 `;
 
 export const Subtitle = styled.div`

@@ -20,7 +20,7 @@ export const Container = styled.div`
 `;
 
 export const IconWrapper = styled.div`
-  margin-top: 25px;
+  margin-top: ${({ isLabel }) => (isLabel ? '0' : '25px')};
 
   ${media.desktop`
     margin-top: 0;

@@ -6,7 +6,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
 }
 
 .c1 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c2 {

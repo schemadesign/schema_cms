@@ -5,7 +5,7 @@ import { reducer as sectionsReducer, SectionsRoutines } from '../sections.redux'
 
 describe('Sections: redux', () => {
   const state = Immutable({
-    section: {},
+    section: { isPublic: false, name: '', pages: [] },
     sections: [],
   });
 

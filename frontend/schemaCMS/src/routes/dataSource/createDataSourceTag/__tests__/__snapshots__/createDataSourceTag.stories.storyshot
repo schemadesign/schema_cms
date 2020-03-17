@@ -130,7 +130,7 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
 }
 
 .c13 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c14 {

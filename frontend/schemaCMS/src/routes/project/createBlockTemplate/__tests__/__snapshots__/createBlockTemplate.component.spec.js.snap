@@ -1160,7 +1160,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
           className="sc-kpOJdX kgEKiv"
         >
           <div
-            className="sc-jKJlTe cFoNiW"
+            className="sc-jKJlTe iiUiFR"
           >
             <div>
               <input
@@ -1212,7 +1212,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-ckVGcZ IDTNX"
+              className="sc-ckVGcZ evefTg"
             >
               <label
                 className="sc-dxgOiQ jAQHf"
@@ -1221,7 +1221,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-hMqMXs bIGpOl"
+                className="sc-hMqMXs dRBwva"
               >
                 This Template is currently unavailable for Editors
               </span>
@@ -1281,7 +1281,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-ckVGcZ IDTNX"
+            className="sc-ckVGcZ evefTg"
           >
             <label
               className="sc-dxgOiQ jAQHf"

@@ -490,7 +490,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <label
-          htmlFor="sections"
+          htmlFor="name"
           style={
             Object {
               "border": "none",
@@ -507,8 +507,8 @@ exports[`CreateSection: Component should render correctly 1`] = `
           Name
         </label>
         <input
-          id="sections"
-          name="sections"
+          id="name"
+          name="name"
           onBlur={[Function]}
           onChange={[Function]}
           style={

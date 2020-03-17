@@ -6,7 +6,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Create form 1`] = `
 }
 
 .c1 {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .c2 {
@@ -215,6 +215,10 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
 }
 
 .c1 {
+  margin-top: 0;
+}
+
+.c4 {
   margin-top: 25px;
 }
 
@@ -246,7 +250,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
   padding-bottom: 20px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -257,12 +261,18 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
   justify-content: flex-end;
 }
 
-.c5 {
+.c6 {
   height: 60px;
 }
 
 @media (min-width:1050px) {
   .c1 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
     margin-top: 0;
   }
 }
@@ -440,7 +450,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
             }
           >
             <div
-              className="c1"
+              className="c4"
             >
               <svg
                 style={
@@ -535,7 +545,7 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
             }
           >
             <div
-              className="c1"
+              className="c4"
             >
               <svg
                 style={
@@ -578,10 +588,10 @@ exports[`Storyshots Shared Components|DataSourceTagForm Edit form 1`] = `
     </div>
   </div>
   <div
-    className="c4"
+    className="c5"
   >
     <button
-      className="c5"
+      className="c6"
       disabled={false}
       onClick={[Function]}
       style={
