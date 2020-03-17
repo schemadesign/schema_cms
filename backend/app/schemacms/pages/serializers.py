@@ -104,13 +104,23 @@ class PageTemplateSerializer(CustomModelSerializer):
 
     class Meta:
         model = models.Page
-        fields = ("id", "project", "name", "created_by", "created", "blocks", "is_available", "allow_add")
+        fields = (
+            "id",
+            "project",
+            "name",
+            "slug",
+            "created_by",
+            "created",
+            "blocks",
+            "is_available",
+            "allow_add",
+        )
         validators = [
             CustomUniqueTogetherValidator(
-                queryset=models.Page.objects.all(),
-                fields=("project", "name", "is_template"),
+                queryset=models.Page.objects.filter(is_template=True),
+                fields=("project", "name"),
                 key_field_name="name",
-                code="projectPageTemplateNameUnique",
+                code="pageTemplateNameUnique",
                 message="Page Template with this name already exist in project.",
             )
         ]
@@ -163,3 +173,12 @@ class PageSerializer(CustomModelSerializer):
             "created",
             "blocks",
         )
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Page.objects.filter(is_template=False),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="pageNameUnique",
+                message="Page with this name already exist in project.",
+            )
+        ]

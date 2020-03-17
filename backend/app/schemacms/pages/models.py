@@ -64,6 +64,7 @@ class Page(Content):
     display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
+    slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     blocks = models.ManyToManyField(Block, through="PageBlock")
 
     class Meta:
