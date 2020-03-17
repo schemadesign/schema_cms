@@ -6,6 +6,7 @@ import {
   PAGE_DESCRIPTION,
   PAGE_DISPLAY_NAME,
   PAGE_TEMPLATE,
+  PAGE_IS_PUBLIC,
 } from '../../../modules/page/page.constants';
 
 export default defineMessages({
@@ -32,5 +33,29 @@ export default defineMessages({
   [PAGE_TEMPLATE]: {
     id: `shared.components.pageForm.${PAGE_TEMPLATE}`,
     defaultMessage: 'Page Template',
+  },
+  [`${PAGE_TEMPLATE}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_TEMPLATE}Placeholder`,
+    defaultMessage: 'Select Page Template',
+  },
+  [PAGE_IS_PUBLIC]: {
+    id: `shared.components.pageForm.${PAGE_IS_PUBLIC}`,
+    defaultMessage: 'Make it Public',
+  },
+  pageAvailability: {
+    id: 'shared.components.pageForm.pageAvailability',
+    defaultMessage: 'This Page is currently {availability}',
+  },
+  privateCopy: {
+    id: 'shared.components.pageForm.privateCopy',
+    defaultMessage: 'Private',
+  },
+  publicCopy: {
+    id: 'shared.components.pageForm.publicCopy',
+    defaultMessage: 'Public',
+  },
+  visitPage: {
+    id: 'section.pageList.visitPage',
+    defaultMessage: 'Visit Page: {page}',
   },
 });

@@ -43,8 +43,8 @@ export default defineMessages({
     id: `section.pageList.${SECTIONS_PUBLISH}`,
     defaultMessage: 'Make it Public',
   },
-  availableForEditors: {
-    id: 'section.pageList.availableForEditors',
+  sectionAvailability: {
+    id: 'section.pageList.sectionAvailability',
     defaultMessage: 'This Section is currently {availability}',
   },
   privateCopy: {

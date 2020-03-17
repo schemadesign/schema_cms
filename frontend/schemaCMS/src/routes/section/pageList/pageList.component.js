@@ -8,7 +8,7 @@ import { useFormik } from 'formik';
 import { pick } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
-import { Container, Form, CopySeparator } from './pageList.styles';
+import { Container, Form } from './pageList.styles';
 import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
@@ -46,6 +46,7 @@ import {
   SwitchCopy,
   Switches,
   SwitchLabel,
+  CopySeparator,
 } from '../../../shared/components/form/frequentComponents.styles';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
@@ -210,7 +211,7 @@ export const PageList = ({
                   </SwitchLabel>
                   <AvailableCopy>
                     <FormattedMessage
-                      {...messages.availableForEditors}
+                      {...messages.sectionAvailability}
                       values={{
                         availability: intl.formatMessage(
                           messages[values[SECTIONS_PUBLISH] ? 'publicCopy' : 'privateCopy']

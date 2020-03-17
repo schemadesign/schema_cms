@@ -1,25 +1,67 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Icons } from 'schemaUI';
+import { Icons, Form } from 'schemaUI';
 
 import { Container } from './pageForm.styles';
 import {
+  AvailableCopy,
+  BinIconContainer,
+  binStyles,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
   MobileInputName,
   Subtitle,
+  SwitchContainer,
+  SwitchContent,
+  SwitchCopy,
+  Switches,
+  SwitchLabel,
+  CopySeparator,
 } from '../form/frequentComponents.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageForm.messages';
 import { ContextHeader } from '../contextHeader';
-import { PAGE_NAME, PAGE_DESCRIPTION, PAGE_DISPLAY_NAME, PAGE_KEYWORDS } from '../../../modules/page/page.constants';
+import {
+  PAGE_NAME,
+  PAGE_DESCRIPTION,
+  PAGE_DISPLAY_NAME,
+  PAGE_KEYWORDS,
+  PAGE_TEMPLATE,
+  PAGE_IS_PUBLIC,
+} from '../../../modules/page/page.constants';
+import { Select } from '../form/select';
 
-const { EditIcon } = Icons;
+const { EditIcon, MinusIcon } = Icons;
+const { Switch } = Form;
+const TEMPORARY_PAGE_URL = 'https://scehmacms.com';
 
-export const PageForm = ({ title, values, handleChange, ...restFormikProps }) => {
+export const PageForm = ({
+  title,
+  slug,
+  values,
+  handleChange,
+  setFieldValue,
+  pageTemplates,
+  setRemoveModalOpen,
+  ...restFormikProps
+}) => {
   const intl = useIntl();
+  const pageTemplatesOptions = pageTemplates.map(({ name, id }) => ({ value: id, label: name }));
+  const handleSelectPageTemplate = ({ value }) => setFieldValue(PAGE_TEMPLATE, value);
+  const binIcon = setRemoveModalOpen ? (
+    <BinIconContainer id="removePage" onClick={() => setRemoveModalOpen(true)}>
+      <MinusIcon customStyles={binStyles} />
+    </BinIconContainer>
+  ) : null;
+  const pageUrl = `${TEMPORARY_PAGE_URL}/${title}`;
+  const visitPage = slug ? (
+    <Fragment>
+      <CopySeparator />
+      <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
+    </Fragment>
+  ) : null;
   const nameInput = (
     <Subtitle>
       <TextInput
@@ -80,6 +122,38 @@ export const PageForm = ({ title, values, handleChange, ...restFormikProps }) =>
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
         {...restFormikProps}
       />
+      <Select
+        label={intl.formatMessage(messages[PAGE_TEMPLATE])}
+        name={PAGE_TEMPLATE}
+        value={values[PAGE_TEMPLATE]}
+        id="blockTypeSelect"
+        options={pageTemplatesOptions}
+        onSelect={handleSelectPageTemplate}
+        placeholder={intl.formatMessage(messages[`${PAGE_TEMPLATE}Placeholder`])}
+        {...restFormikProps}
+      />
+      <Switches>
+        <SwitchContainer>
+          <SwitchContent>
+            <Switch value={values[PAGE_IS_PUBLIC]} id={PAGE_IS_PUBLIC} onChange={handleChange} />
+            <SwitchCopy isLink>
+              <SwitchLabel htmlFor={PAGE_IS_PUBLIC}>
+                <FormattedMessage {...messages[PAGE_IS_PUBLIC]} />
+              </SwitchLabel>
+              <AvailableCopy>
+                <FormattedMessage
+                  {...messages.pageAvailability}
+                  values={{
+                    availability: intl.formatMessage(messages[values[PAGE_IS_PUBLIC] ? 'publicCopy' : 'privateCopy']),
+                  }}
+                />
+                {visitPage}
+              </AvailableCopy>
+            </SwitchCopy>
+          </SwitchContent>
+          {binIcon}
+        </SwitchContainer>
+      </Switches>
     </Container>
   );
 };
@@ -93,4 +167,5 @@ PageForm.propTypes = {
   pageTemplates: PropTypes.array.isRequired,
   isValid: PropTypes.bool.isRequired,
   title: PropTypes.node.isRequired,
+  slug: PropTypes.string,
 };
