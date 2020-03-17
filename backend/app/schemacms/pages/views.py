@@ -1,5 +1,5 @@
 from django.db.models import Prefetch
-from rest_framework import generics, permissions, response, viewsets
+from rest_framework import generics, permissions, response
 
 from . import models, serializers
 from ..projects.models import Project
@@ -92,8 +92,8 @@ class PageTemplateViewSet(NoListCreateDetailViewSet):
     permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
 
 
-class SectionViewSet(viewsets.ModelViewSet):
-    queryset = models.Section.objects.all()
+class SectionListCreateViewSet(TemplateListCreateView):
+    queryset = models.Section.objects.all().select_related("project", "created_by")
     serializer_class = serializers.SectionSerializer
     permission_classes = (permissions.IsAuthenticated,)
     project_info = {}
@@ -101,23 +101,8 @@ class SectionViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
-    def get_project(self):
-        project = generics.get_object_or_404(Project.objects.all(), pk=self.kwargs["project_pk"])
-        self.project_info = project.project_info
-        return project
 
-    def get_queryset(self):
-        return self.queryset.filter(project=self.get_project())
-
-    def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-
-        serializer = self.get_serializer(queryset, many=True)
-        data = {"project": self.project_info, "results": serializer.data}
-
-        return response.Response(data)
-
-    def create(self, request, *args, **kwargs):
-        if "project" not in request.data:
-            request.data["project"] = kwargs["project_pk"]
-        return super().create(request, *args, **kwargs)
+class SectionViewSet(NoListCreateDetailViewSet):
+    queryset = models.Section.objects.all().select_related("project", "created_by")
+    serializer_class = serializers.SectionSerializer
+    permission_classes = (permissions.IsAuthenticated,)

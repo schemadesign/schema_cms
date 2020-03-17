@@ -101,6 +101,10 @@ class Section(SoftDeleteObject, TimeStampedModel):
     def __str__(self):
         return f"{self.name}"
 
+    @functional.cached_property
+    def project_info(self):
+        return self.project.project_info
+
     class Meta:
         constraints = [
             models.UniqueConstraint(
