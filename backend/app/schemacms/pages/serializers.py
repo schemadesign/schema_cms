@@ -7,26 +7,6 @@ from ..utils.serializers import CustomModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
-class SectionSerializer(CustomModelSerializer):
-    pages_count = serializers.SerializerMethodField()
-
-    class Meta:
-        model = models.Section
-        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages_count")
-        validators = [
-            CustomUniqueTogetherValidator(
-                queryset=models.Section.objects.all(),
-                fields=("project", "name"),
-                key_field_name="name",
-                code="sectionNameUnique",
-                message="Section with this name already exist in project.",
-            )
-        ]
-
-    def get_pages_count(self, section):
-        return section.pages_count
-
-
 class BlockElementSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
 
@@ -189,3 +169,52 @@ class PageSerializer(CustomModelSerializer):
         page.save()
 
         return page
+
+
+class SectionListCreateSerializer(CustomModelSerializer):
+    pages_count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = models.Section
+        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages_count")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Section.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="sectionNameUnique",
+                message="Section with this name already exist in project.",
+            )
+        ]
+
+    def get_pages_count(self, section):
+        return section.pages_count
+
+
+class SectionPageListView(CustomModelSerializer):
+    class Meta:
+        model = models.Page
+        fields = (
+            "id",
+            "template",
+            "name",
+            "created_by",
+            "created",
+        )
+
+
+class SectionDetailSerializer(CustomModelSerializer):
+    pages = SectionPageListView(read_only=True, many=True)
+
+    class Meta:
+        model = models.Section
+        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Section.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="sectionNameUnique",
+                message="Section with this name already exist in project.",
+            )
+        ]

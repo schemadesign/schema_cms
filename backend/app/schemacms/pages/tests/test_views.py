@@ -244,4 +244,4 @@ class TestListCreateSectionView:
         section = pages_models.Section.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == page_serializer.SectionSerializer(section).data
+        assert response.data == page_serializer.SectionListCreateSerializer(section).data

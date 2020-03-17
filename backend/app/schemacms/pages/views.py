@@ -99,7 +99,7 @@ class SectionListCreateView(TemplateListCreateView):
         .select_related("project", "created_by")
         .prefetch_related("pages")
     )
-    serializer_class = serializers.SectionSerializer
+    serializer_class = serializers.SectionListCreateSerializer
     permission_classes = (permissions.IsAuthenticated,)
     project_info = {}
 
@@ -114,7 +114,7 @@ class SectionViewSet(NoListCreateDetailViewSet):
         .select_related("project", "created_by")
         .prefetch_related("pages")
     )
-    serializer_class = serializers.SectionSerializer
+    serializer_class = serializers.SectionDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
