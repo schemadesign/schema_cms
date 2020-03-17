@@ -5,7 +5,7 @@ from django.utils import functional
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
 from softdelete.models import SoftDeleteObject
 
-from . import constants
+from . import constants, managers
 
 
 class Element(SoftDeleteObject, models.Model):
@@ -59,6 +59,11 @@ class BlockElement(Element):
 
 
 class Page(Content):
+    section = models.ForeignKey("Section", on_delete=models.CASCADE, null=True, related_name="pages")
+    template = models.ForeignKey("Page", on_delete=models.SET_NULL, null=True)
+    display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
+    description = models.TextField(blank=True, default="")
+    keywords = models.TextField(blank=True, default="")
     blocks = models.ManyToManyField(Block, through="PageBlock")
 
     class Meta:
@@ -99,12 +104,18 @@ class Section(SoftDeleteObject, TimeStampedModel):
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     is_public = models.BooleanField(default=False)
 
+    objects = managers.SectionManager()
+
     def __str__(self):
         return f"{self.name}"
 
     @functional.cached_property
     def project_info(self):
         return self.project.project_info
+
+    @functional.cached_property
+    def pages_count(self):
+        return self.pages.count()
 
     class Meta:
         constraints = [

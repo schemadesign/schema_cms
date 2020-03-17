@@ -140,7 +140,7 @@ class TestDeleteBlockTemplatesView:
 class TestUpdatePageTemplatesView:
     @staticmethod
     def get_url(pk):
-        return reverse("pages:page-detail", kwargs=dict(pk=pk))
+        return reverse("pages:page-template-detail", kwargs=dict(pk=pk))
 
     def test_response(self, api_client, admin, page_template):
         new_name = "New Page Name"
@@ -213,7 +213,7 @@ class TestListPageTemplatesView:
 class TestDeletePageTemplatesView:
     @staticmethod
     def get_url(pk):
-        return reverse("pages:page-detail", kwargs=dict(pk=pk))
+        return reverse("pages:page-template-detail", kwargs=dict(pk=pk))
 
     def test_delete_block_template(self, api_client, admin, page_template):
         api_client.force_authenticate(admin)
