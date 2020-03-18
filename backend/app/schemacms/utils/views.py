@@ -1,7 +1,7 @@
 from rest_framework import response, viewsets, mixins
 
 
-class NoListCreateDetailViewSet(
+class DetailViewSet(
     mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     def retrieve(self, request, *args, **kwargs):

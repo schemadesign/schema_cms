@@ -9,7 +9,7 @@ export const section = {
       created: '2020-03-09T10:41:17+0000',
       name: 'page name',
       id: 1,
-      pageTemplate: 'pageTemplate',
+      templateName: 'templateName',
     },
   ],
   pagesCount: 1,

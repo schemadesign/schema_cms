@@ -44,7 +44,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           className="sc-kgoBCf eXDsoh"
         >
           <div
-            className="sc-ckVGcZ fIDDmP"
+            className="sc-jKJlTe bCRSMS"
           >
             <div
               style={
@@ -194,7 +194,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     className="sc-kpOJdX fVujYp"
   >
     <div
-      className="sc-ckVGcZ jvWahu"
+      className="sc-jKJlTe igmhkh"
     >
       <div
         style={
@@ -257,7 +257,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jKJlTe jctvsh"
+            className="sc-eNQAEJ iCEWpw"
           >
             <svg
               style={
@@ -280,14 +280,14 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-hMqMXs fTKzHs"
+    className="sc-kEYyzF cAZqOc"
   >
     <div
-      className="sc-kEYyzF dFGIbM"
+      className="sc-kkGfuU gVqODu"
     />
     1 Block
     <div
-      className="sc-kEYyzF dFGIbM"
+      className="sc-kkGfuU gVqODu"
     >
       <div
         className="sc-dxgOiQ eodFDn"
@@ -381,10 +381,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-iAyFgw ddaGEE"
+            className="sc-hSdWYo jQHKal"
           >
             <div
-              className="sc-hSdWYo cWiSKh"
+              className="sc-eHgmQL fFTaty"
             >
               <div>
                 <div
@@ -410,7 +410,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-ckVGcZ fIDDmP"
+              className="sc-jKJlTe bCRSMS"
             >
               <div
                 style={
@@ -484,7 +484,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-hSdWYo cWiSKh"
+              className="sc-eHgmQL fFTaty"
             >
               <svg
                 style={
@@ -522,7 +522,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-cvbbAY fewXpy"
+            className="sc-jWBwVP gFmCop"
           >
             block name
           </div>
@@ -570,10 +570,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         >
           <div>
             <div
-              className="sc-eHgmQL fZdrzM"
+              className="sc-cvbbAY ezOHmn"
             >
               <div
-                className="sc-jWBwVP fWqMFz"
+                className="sc-brqgnP jjStct"
               >
                 <label
                   id="fieldProjectStatusLabel"
@@ -599,7 +599,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                   value={1}
                 />
                 <div
-                  className="sc-brqgnP egrDOd"
+                  className="sc-cMljjf fAiMPy"
                 >
                   <svg
                     style={

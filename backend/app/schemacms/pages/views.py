@@ -3,7 +3,7 @@ from rest_framework import generics, permissions, response
 
 from . import models, serializers
 from ..projects.models import Project
-from ..utils.views import NoListCreateDetailViewSet
+from ..utils.views import DetailViewSet
 from ..utils.serializers import IDNameSerializer
 from ..utils.permissions import IsSchemaAdmin
 
@@ -57,7 +57,7 @@ class BlockTemplateListCreteView(TemplateListCreateView):
         return super().list(request, args, kwargs)
 
 
-class BlockTemplateViewSet(NoListCreateDetailViewSet):
+class BlockTemplateViewSet(DetailViewSet):
     queryset = (
         models.Block.objects.filter(is_template=True)
         .select_related("project", "created_by")
@@ -78,7 +78,7 @@ class PageTemplateListCreteView(TemplateListCreateView):
     )
 
 
-class PageTemplateViewSet(NoListCreateDetailViewSet):
+class PageTemplateViewSet(DetailViewSet):
     queryset = (
         models.Page.objects.filter(is_template=True)
         .select_related("project", "created_by")
@@ -99,7 +99,7 @@ class SectionListCreateView(TemplateListCreateView):
         .select_related("project", "created_by")
         .prefetch_related("pages")
     )
-    serializer_class = serializers.SectionSerializer
+    serializer_class = serializers.SectionListCreateSerializer
     permission_classes = (permissions.IsAuthenticated,)
     project_info = {}
 
@@ -107,18 +107,20 @@ class SectionListCreateView(TemplateListCreateView):
         serializer.save(created_by=self.request.user)
 
 
-class SectionViewSet(NoListCreateDetailViewSet):
+class SectionViewSet(DetailViewSet):
     queryset = (
         models.Section.objects.all()
         .annotate_pages_count()
         .select_related("project", "created_by")
         .prefetch_related("pages")
     )
-    serializer_class = serializers.SectionSerializer
+    serializer_class = serializers.SectionDetailSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class PageListCreateView(TemplateListCreateView):
+class PageListCreateView(generics.ListCreateAPIView):
+    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
+    project_info = {}
     serializer_class = serializers.PageSerializer
     queryset = (
         models.Page.objects.filter(is_template=False)
@@ -136,11 +138,24 @@ class PageListCreateView(TemplateListCreateView):
     def get_queryset(self):
         return self.queryset.filter(section=self.get_parent())
 
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+        serializer = self.get_serializer(queryset, many=True)
+        data = {"project": self.project_info, "results": serializer.data}
+
+        return response.Response(data)
+
+    def create(self, request, *args, **kwargs):
+        if "sections" not in request.data:
+            request.data["section"] = kwargs["section_pk"]
+        return super().create(request, *args, **kwargs)
+
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user, is_template=False)
 
 
-class PageViewSet(NoListCreateDetailViewSet):
+class PageViewSet(DetailViewSet):
     queryset = (
         models.Page.objects.filter(is_template=False)
         .select_related("project", "created_by", "template", "section")

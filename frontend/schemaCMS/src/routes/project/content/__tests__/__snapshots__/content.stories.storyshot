@@ -272,7 +272,10 @@ exports[`Storyshots Content Default 1`] = `
 
 @media (min-width:1050px) {
   .c27 {
-    display: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -289,6 +292,12 @@ exports[`Storyshots Content Default 1`] = `
 @media (min-width:1050px) {
   .c17 {
     display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c28 {
+    display: none;
   }
 }
 
@@ -1102,7 +1111,7 @@ exports[`Storyshots Content Default 1`] = `
             </svg>
           </button>
           <div
-            className="c17"
+            className="c28"
           >
             <button
               disabled={false}

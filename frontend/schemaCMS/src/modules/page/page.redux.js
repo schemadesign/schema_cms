@@ -1,27 +1,38 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
+import {
+  PAGE_NAME,
+  PAGE_IS_PUBLIC,
+  PAGE_TEMPLATE,
+  PAGE_DISPLAY_NAME,
+  PAGE_DESCRIPTION,
+  PAGE_KEYWORDS,
+} from './page.constants';
 
 const PREFIX = 'PAGE/';
 
 export const PageRoutines = {
-  fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
-  create: createRoutine(`${PREFIX}CREATE`),
-  fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
-  update: createRoutine(`${PREFIX}UPDATE`),
-  removeOne: createRoutine(`${PREFIX}REMOVE_ONE`),
+  createPage: createRoutine(`${PREFIX}CREATE_PAGE`),
+  fetchPage: createRoutine(`${PREFIX}FETCH_PAGE`),
+  updatePage: createRoutine(`${PREFIX}UPDATE_PAGE`),
+  removePage: createRoutine(`${PREFIX}REMOVE_PAGE`),
 };
 
 export const INITIAL_STATE = new Immutable({
-  pages: [],
-  page: {},
+  page: {
+    [PAGE_NAME]: '',
+    [PAGE_TEMPLATE]: '',
+    [PAGE_DISPLAY_NAME]: '',
+    [PAGE_DESCRIPTION]: '',
+    [PAGE_KEYWORDS]: '',
+    [PAGE_IS_PUBLIC]: false,
+  },
 });
 
-const setPages = (state = INITIAL_STATE, { payload }) => state.set('pages', payload);
 const setPage = (state = INITIAL_STATE, { payload }) => state.set('page', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [PageRoutines.fetchList.success]: setPages,
-  [PageRoutines.update.success]: setPage,
-  [PageRoutines.fetchOne.success]: setPage,
+  [PageRoutines.updatePage.success]: setPage,
+  [PageRoutines.fetchPage.success]: setPage,
 });

@@ -210,6 +210,15 @@ exports[`Storyshots PageList Default 1`] = `
   text-align: right;
 }
 
+.c38 {
+  padding: 0 10px;
+}
+
+.c38:before {
+  content: '|';
+  display: inline;
+}
+
 .c13 {
   display: none;
 }
@@ -367,15 +376,6 @@ exports[`Storyshots PageList Default 1`] = `
   margin-left: -1.5em;
   display: inline-block;
   padding: 0 7px;
-}
-
-.c38 {
-  padding: 0 10px;
-}
-
-.c38:before {
-  content: '|';
-  display: inline;
 }
 
 @media (min-width:1050px) {
@@ -1360,7 +1360,7 @@ exports[`Storyshots PageList Default 1`] = `
               }
             }
           >
-            pageTemplate
+            templateName
           </div>
         </div>
       </section>
@@ -1439,9 +1439,9 @@ exports[`Storyshots PageList Default 1`] = `
                 />
                 Visit Page: 
                 <a
-                  href="https://scehmacms.com/section-name"
+                  href="https://schemacms.com/section-name"
                 >
-                  https://scehmacms.com/section-name
+                  https://schemacms.com/section-name
                 </a>
               </span>
             </div>

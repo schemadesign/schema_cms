@@ -18,9 +18,9 @@ import { Select } from '../form/select';
 import {
   BLOCK_AUTO_OPEN,
   BLOCK_TYPE,
+  BLOCK_NAME,
   PAGE_TEMPLATES_BLOCKS,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
-import { BLOCK_NAME } from '../../../modules/pageBlock/pageBlock.constants';
 
 const { EditIcon, MinusIcon } = Icons;
 

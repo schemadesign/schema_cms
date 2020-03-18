@@ -3,18 +3,20 @@ import { storiesOf } from '@storybook/react';
 
 import { PageForm } from './pageForm.component';
 import { withTheme } from '../../../.storybook/decorators';
-import { intl } from '../../../.storybook/helpers';
+import { page } from '../../../modules/page/page.mocks';
+import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mocks';
 
 export const defaultProps = {
-  values: {
-    title: 'title',
-    description: 'description',
-    keywords: 'keywords',
-  },
   handleChange: Function.prototype,
-  intl,
+  setFieldValue: Function.prototype,
+  setRemoveModalOpen: Function.prototype,
+  values: page,
+  pageTemplates,
+  isValid: true,
+  title: 'title',
+  displayName: 'displayName',
 };
 
-storiesOf('Shared Components|PageForm', module)
+storiesOf('PageForm', module)
   .addDecorator(withTheme())
   .add('Default', () => <PageForm {...defaultProps} />);

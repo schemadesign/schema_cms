@@ -97,3 +97,12 @@ export const inputContainerStyles = {
   paddingRight: 40,
   position: 'static',
 };
+
+export const CopySeparator = styled.span`
+  padding: 0 10px;
+
+  &:before {
+    content: '|';
+    display: inline;
+  }
+`;

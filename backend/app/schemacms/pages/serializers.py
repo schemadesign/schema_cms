@@ -7,26 +7,6 @@ from ..utils.serializers import CustomModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
-class SectionSerializer(CustomModelSerializer):
-    pages_count = serializers.SerializerMethodField()
-
-    class Meta:
-        model = models.Section
-        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages_count")
-        validators = [
-            CustomUniqueTogetherValidator(
-                queryset=models.Section.objects.all(),
-                fields=("project", "name"),
-                key_field_name="name",
-                code="sectionNameUnique",
-                message="Section with this name already exist in project.",
-            )
-        ]
-
-    def get_pages_count(self, section):
-        return section.pages_count
-
-
 class BlockElementSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
 
@@ -162,7 +142,6 @@ class PageSerializer(CustomModelSerializer):
         model = models.Page
         fields = (
             "id",
-            "project",
             "section",
             "template",
             "name",
@@ -172,13 +151,77 @@ class PageSerializer(CustomModelSerializer):
             "created_by",
             "created",
             "blocks",
+            "is_public",
         )
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Page.objects.filter(is_template=False),
-                fields=("project", "name"),
+                fields=("section", "name"),
                 key_field_name="name",
                 code="pageNameUnique",
-                message="Page with this name already exist in project.",
+                message="Page with this name already exist in section.",
+            )
+        ]
+
+    @transaction.atomic()
+    def create(self, validated_data):
+        project = validated_data.get("section").project
+        page = self.Meta.model(project=project, **validated_data)
+        page.save()
+
+        return page
+
+
+class SectionListCreateSerializer(CustomModelSerializer):
+    pages_count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = models.Section
+        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages_count")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Section.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="sectionNameUnique",
+                message="Section with this name already exist in project.",
+            )
+        ]
+
+    def get_pages_count(self, section):
+        return section.pages_count
+
+
+class SectionPageListView(CustomModelSerializer):
+    template_name = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = models.Page
+        fields = (
+            "id",
+            "template",
+            "template_name",
+            "name",
+            "created_by",
+            "created",
+        )
+
+    def get_template_name(self, page):
+        return page.template.name
+
+
+class SectionDetailSerializer(CustomModelSerializer):
+    pages = SectionPageListView(read_only=True, many=True)
+
+    class Meta:
+        model = models.Section
+        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Section.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="sectionNameUnique",
+                message="Section with this name already exist in project.",
             )
         ]

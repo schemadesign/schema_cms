@@ -5,8 +5,7 @@ import { reducer as pageReducer, PageRoutines } from '../page.redux';
 
 describe('Page: redux', () => {
   const state = Immutable({
-    pages: [],
-    page: {},
+    page: { description: '', displayName: '', isPublic: false, keywords: '', name: '', template: '' },
   });
 
   describe('reducer', () => {
@@ -19,29 +18,20 @@ describe('Page: redux', () => {
     });
   });
 
-  describe('when PAGE/FETCH_LIST action is received', () => {
-    it('should set pages', () => {
-      const pages = [{ data: 'data' }];
-
-      const resultState = pageReducer(state, PageRoutines.fetchList.success(pages));
-      expect(resultState.pages).to.deep.equal(pages);
-    });
-  });
-
-  describe('when PAGE/FETCH_ONE action is received', () => {
+  describe('when PAGE/FETCH_PAGE action is received', () => {
     it('should set page', () => {
       const page = { data: 'data' };
 
-      const resultState = pageReducer(state, PageRoutines.fetchOne.success(page));
+      const resultState = pageReducer(state, PageRoutines.fetchPage.success(page));
       expect(resultState.page).to.deep.equal(page);
     });
   });
 
-  describe('when PAGE/UPDATE success action is received', () => {
+  describe('when PAGE/UPDATE_PAGE success action is received', () => {
     it('should set page', () => {
       const page = { data: 'data' };
 
-      const resultState = pageReducer(state, PageRoutines.update.success(page));
+      const resultState = pageReducer(state, PageRoutines.updatePage.success(page));
       expect(resultState.page).to.deep.equal(page);
     });
   });

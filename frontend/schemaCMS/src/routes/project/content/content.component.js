@@ -91,9 +91,13 @@ export const Content = ({ userRole, fetchSections, sections }) => {
           </ListContainer>
         </Fragment>
       </LoadingWrapper>
-      <NavigationContainer fixed hideOnDesktop>
+      <NavigationContainer fixed>
         <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}`)} />
-        <PlusButton id="creatSectionMobile" onClick={() => history.push(`/project/${projectId}/section/create`)} />
+        <PlusButton
+          hideOnDesktop
+          id="creatSectionMobile"
+          onClick={() => history.push(`/project/${projectId}/section/create`)}
+        />
       </NavigationContainer>
     </Container>
   );
