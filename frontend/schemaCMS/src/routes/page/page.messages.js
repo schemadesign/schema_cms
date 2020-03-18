@@ -19,15 +19,15 @@ export default defineMessages({
     defaultMessage: 'Back',
   },
   cancelRemoval: {
-    id: 'section.pageList.cancelRemoval',
+    id: 'page.cancelRemoval',
     defaultMessage: 'Cancel',
   },
   confirmRemoval: {
-    id: 'section.pageList.confirmRemoval',
+    id: 'page.confirmRemoval',
     defaultMessage: 'Confirm',
   },
   removeTitle: {
-    id: 'section.pageList.removeTitle',
+    id: 'page.removeTitle',
     defaultMessage: 'Are you sure you want to remove the page?',
   },
 });

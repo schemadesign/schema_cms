@@ -55,7 +55,7 @@ export default defineMessages({
     defaultMessage: 'Public',
   },
   visitPage: {
-    id: 'section.pageList.visitPage',
+    id: 'shared.components.pageForm.visitPage',
     defaultMessage: 'Visit Page: {page}',
   },
 });
