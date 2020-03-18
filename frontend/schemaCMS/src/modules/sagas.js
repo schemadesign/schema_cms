@@ -11,7 +11,6 @@ import { watchUser } from './user/user.sagas';
 import { watchJob } from './job/job.sagas';
 import { watchFilter } from './filter/filter.sagas';
 import { watchPage } from './page/page.sagas';
-import { watchPageBlock } from './pageBlock/pageBlock.sagas';
 import { watchDataSourceTag } from './dataSourceTag/dataSourceTag.sagas';
 import { watchProjectState } from './projectState/projectState.sagas';
 import { watchBlockTemplates } from './blockTemplates/blockTemplates.sagas';
@@ -32,7 +31,6 @@ export default function* rootSaga() {
       fork(watchJob),
       fork(watchFilter),
       fork(watchPage),
-      fork(watchPageBlock),
       fork(watchDataSourceTag),
       fork(watchProjectState),
       fork(watchBlockTemplates),

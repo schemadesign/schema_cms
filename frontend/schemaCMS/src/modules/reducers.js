@@ -8,7 +8,6 @@ import { reducer as userReducer } from './user/user.redux';
 import { reducer as jobReducer } from './job/job.redux';
 import { reducer as filterReducer } from './filter/filter.redux';
 import { reducer as pageReducer } from './page/page.redux';
-import { reducer as pageBlockReducer } from './pageBlock/pageBlock.redux';
 import { reducer as DataSourceTagReducer } from './dataSourceTag/dataSourceTag.redux';
 import { reducer as projectStateReducer } from './projectState/projectState.redux';
 import { reducer as blockTemplatesReducer } from './blockTemplates/blockTemplates.redux';
@@ -28,7 +27,6 @@ export default function createReducer() {
     job: jobReducer,
     filter: filterReducer,
     page: pageReducer,
-    pageBlock: pageBlockReducer,
     dataSourceTag: DataSourceTagReducer,
     projectState: projectStateReducer,
     blockTemplates: blockTemplatesReducer,
