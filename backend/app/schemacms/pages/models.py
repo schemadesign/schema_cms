@@ -65,6 +65,7 @@ class Page(Content):
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
+    is_public = models.BooleanField(default=False)
     blocks = models.ManyToManyField(Block, through="PageBlock")
 
     class Meta:

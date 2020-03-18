@@ -245,3 +245,32 @@ class TestListCreateSectionView:
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.SectionListCreateSerializer(section).data
+
+
+class TestUpdateDeleteSectionView:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:section-detail", kwargs=dict(pk=pk))
+
+    def test_retrieve(self, api_client, admin, section):
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(section.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["results"] == page_serializer.SectionDetailSerializer(section).data
+
+    def test_update(self, api_client, admin, section):
+        new_name = "Test Section Name"
+        payload = {"name": new_name}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(section.id), data=payload, format="json")
+        section.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert section.name == new_name
+
+    def test_delete_section(self, api_client, admin, section):
+        api_client.force_authenticate(admin)
+        response = api_client.delete(self.get_url(section.id))
+        assert response.status_code == status.HTTP_200_OK

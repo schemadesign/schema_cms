@@ -151,6 +151,7 @@ class PageSerializer(CustomModelSerializer):
             "created_by",
             "created",
             "blocks",
+            "is_public",
         )
         validators = [
             CustomUniqueTogetherValidator(

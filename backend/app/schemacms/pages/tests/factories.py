@@ -49,3 +49,15 @@ class SectionFactory(factory.django.DjangoModelFactory):
     project = factory.SubFactory(ProjectFactory)
     name = factory.Faker("text", max_nb_chars=constants.SECTION_NAME_MAX_LENGTH)
     created_by = factory.SubFactory(UserFactory)
+
+
+class PageFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "pages.Page"
+
+    template = factory.SubFactory(PageTemplateFactory)
+    section = factory.SubFactory(SectionFactory)
+    project = factory.SubFactory(ProjectFactory)
+    name = factory.Faker("text", max_nb_chars=constants.TEMPLATE_NAME_MAX_LENGTH)
+    display_name = factory.Faker("text", max_nb_chars=constants.PAGE_DISPLAY_NAME_MAX_LENGTH)
+    is_template = False

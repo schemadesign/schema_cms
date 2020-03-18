@@ -3,7 +3,7 @@ from rest_framework import generics, permissions, response
 
 from . import models, serializers
 from ..projects.models import Project
-from ..utils.views import NoListCreateDetailViewSet
+from ..utils.views import DetailViewSet
 from ..utils.serializers import IDNameSerializer
 from ..utils.permissions import IsSchemaAdmin
 
@@ -57,7 +57,7 @@ class BlockTemplateListCreteView(TemplateListCreateView):
         return super().list(request, args, kwargs)
 
 
-class BlockTemplateViewSet(NoListCreateDetailViewSet):
+class BlockTemplateViewSet(DetailViewSet):
     queryset = (
         models.Block.objects.filter(is_template=True)
         .select_related("project", "created_by")
@@ -78,7 +78,7 @@ class PageTemplateListCreteView(TemplateListCreateView):
     )
 
 
-class PageTemplateViewSet(NoListCreateDetailViewSet):
+class PageTemplateViewSet(DetailViewSet):
     queryset = (
         models.Page.objects.filter(is_template=True)
         .select_related("project", "created_by")
@@ -107,7 +107,7 @@ class SectionListCreateView(TemplateListCreateView):
         serializer.save(created_by=self.request.user)
 
 
-class SectionViewSet(NoListCreateDetailViewSet):
+class SectionViewSet(DetailViewSet):
     queryset = (
         models.Section.objects.all()
         .annotate_pages_count()
@@ -155,7 +155,7 @@ class PageListCreateView(generics.ListCreateAPIView):
         serializer.save(created_by=self.request.user, is_template=False)
 
 
-class PageViewSet(NoListCreateDetailViewSet):
+class PageViewSet(DetailViewSet):
     queryset = (
         models.Page.objects.filter(is_template=False)
         .select_related("project", "created_by", "template", "section")
