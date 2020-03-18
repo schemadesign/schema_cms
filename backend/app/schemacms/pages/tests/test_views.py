@@ -65,7 +65,7 @@ class TestCreateBlockTemplatesView:
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
 
-class TestUpdateBlockTemplatesView:
+class TestUpdateDeleteBlockTemplatesView:
     @staticmethod
     def get_url(pk):
         return reverse("pages:block-detail", kwargs=dict(pk=pk))
@@ -122,19 +122,13 @@ class TestUpdateBlockTemplatesView:
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
-
-class TestDeleteBlockTemplatesView:
-    @staticmethod
-    def get_url(pk):
-        return reverse("pages:block-detail", kwargs=dict(pk=pk))
-
     def test_delete_block_template(self, api_client, admin, block_template):
+        template_id = block_template.id
         api_client.force_authenticate(admin)
-        delete_response = api_client.delete(self.get_url(block_template.pk))
-        get_response = api_client.get(self.get_url(block_template.pk))
+        response = api_client.delete(self.get_url(block_template.id))
 
-        assert delete_response.status_code == status.HTTP_204_NO_CONTENT
-        assert get_response.status_code == status.HTTP_404_NOT_FOUND
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not pages_models.Block.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
 
 
 class TestUpdatePageTemplatesView:
@@ -215,13 +209,13 @@ class TestDeletePageTemplatesView:
     def get_url(pk):
         return reverse("pages:page-template-detail", kwargs=dict(pk=pk))
 
-    def test_delete_block_template(self, api_client, admin, page_template):
+    def test_delete_page_template(self, api_client, admin, page_template):
+        template_id = page_template.id
         api_client.force_authenticate(admin)
-        delete_response = api_client.delete(self.get_url(page_template.pk))
-        get_response = api_client.get(self.get_url(page_template.pk))
+        response = api_client.delete(self.get_url(page_template.pk))
 
-        assert delete_response.status_code == status.HTTP_204_NO_CONTENT
-        assert get_response.status_code == status.HTTP_404_NOT_FOUND
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not pages_models.Page.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
 
 
 class TestListCreateSectionView:
@@ -229,14 +223,14 @@ class TestListCreateSectionView:
     def get_url(pk):
         return reverse("pages:section_list_create", kwargs=dict(project_pk=pk))
 
-    def test_list(self, api_client, admin, section):
+    def test_list_section(self, api_client, admin, section):
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(section.project_id))
 
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["results"]) == 1
 
-    def test_create(self, api_client, admin, project):
+    def test_create_section(self, api_client, admin, project):
         payload = {"name": "Test Name"}
 
         api_client.force_authenticate(admin)
@@ -252,25 +246,96 @@ class TestUpdateDeleteSectionView:
     def get_url(pk):
         return reverse("pages:section-detail", kwargs=dict(pk=pk))
 
-    def test_retrieve(self, api_client, admin, section):
+    def test_retrieve_section(self, api_client, admin, section):
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(section.id))
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.SectionDetailSerializer(section).data
 
-    def test_update(self, api_client, admin, section):
-        new_name = "Test Section Name"
+    def test_update_section(self, api_client, admin, section):
+        new_name = "New Section Name"
         payload = {"name": new_name}
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(section.id), data=payload, format="json")
-        section.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert section.name == new_name
 
     def test_delete_section(self, api_client, admin, section):
+        section_id = section.id
         api_client.force_authenticate(admin)
         response = api_client.delete(self.get_url(section.id))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not pages_models.Section.objects.filter(pk=section_id, deleted_at__isnull=True).exists()
+
+
+class TestListCreatePage:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:page_list_create", kwargs=dict(section_pk=pk))
+
+    def test_list_pages(self, api_client, admin, page):
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(page.section_id))
+
         assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["results"]) == 1
+
+    def test_create_page_without_blocks(
+        self, api_client, admin, project, page_template_factory, section_factory
+    ):
+        section = section_factory(project=project)
+        page_template = page_template_factory(project=project)
+
+        payload = {
+            "name": "Test",
+            "section": section.id,
+            "template": page_template.id,
+            "display_name": "Display Name",
+            "description": "description",
+            "keywords": "word;word1",
+            "is_public": True,
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(section.id), data=payload, format="json")
+        page = pages_models.Page.objects.get(id=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == page_serializer.PageSerializer(page).data
+        assert page.is_template is False
+        assert section.project == page_template.project == page.project
+
+
+class TestUpdateDeletePageView:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:page-detail", kwargs=dict(pk=pk))
+
+    def test_retrieve_page(self, api_client, admin, page):
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(page.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["results"] == page_serializer.PageSerializer(page).data
+
+    def test_update_page(self, api_client, admin, page):
+        new_name = "New Page Name"
+        payload = {"name": new_name}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(page.id), data=payload, format="json")
+        page.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert page.name == new_name
+
+    def test_delete_page(self, api_client, admin, page):
+        page_id = page.id
+        api_client.force_authenticate(admin)
+        response = api_client.delete(self.get_url(page.id))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not pages_models.Page.objects.filter(pk=page_id, deleted_at__isnull=True).exists()
