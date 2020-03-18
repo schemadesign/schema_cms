@@ -18,7 +18,10 @@ describe('Page: sagas', () => {
     it('should put fetchPage.success action', async () => {
       const response = {
         id: 1,
-        project: {},
+        project: {
+          id: 1,
+        },
+        results: {},
       };
       const payload = {
         pageId: 1,
@@ -29,7 +32,7 @@ describe('Page: sagas', () => {
       await expectSaga(watchPage)
         .withState(defaultState)
         .put(ProjectRoutines.setProject.trigger(response.project))
-        .put(PageRoutines.fetchPage.success(response))
+        .put(PageRoutines.fetchPage.success({ ...response.results, projectId: response.project.id }))
         .dispatch(PageRoutines.fetchPage(payload))
         .silentRun();
     });

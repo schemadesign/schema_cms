@@ -11,10 +11,12 @@ function* fetchPage({ payload: { pageId } }) {
   try {
     yield put(PageRoutines.fetchPage.request());
 
-    const { data } = yield api.get(`${PAGES_PATH}/${pageId}`);
+    const {
+      data: { project, results },
+    } = yield api.get(`${PAGES_PATH}/${pageId}`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
-    yield put(PageRoutines.fetchPage.success(data));
+    yield put(ProjectRoutines.setProject.trigger(project));
+    yield put(PageRoutines.fetchPage.success({ ...results, projectId: project.id }));
   } catch (e) {
     reportError(e);
     yield put(PageRoutines.fetchPage.failure(e));

@@ -12,11 +12,11 @@ export default defineMessages({
   },
   create: {
     id: 'page.create',
-    defaultMessage: 'Save Page',
+    defaultMessage: 'Save',
   },
-  cancel: {
-    id: 'page.cancel',
-    defaultMessage: 'Cancel',
+  back: {
+    id: 'page.back',
+    defaultMessage: 'Back',
   },
   cancelRemoval: {
     id: 'section.pageList.cancelRemoval',

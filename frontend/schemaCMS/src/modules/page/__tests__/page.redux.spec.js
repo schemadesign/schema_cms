@@ -5,7 +5,7 @@ import { reducer as pageReducer, PageRoutines } from '../page.redux';
 
 describe('Page: redux', () => {
   const state = Immutable({
-    page: {},
+    page: { description: '', displayName: '', isPublic: false, keywords: '', name: '', template: '' },
   });
 
   describe('reducer', () => {

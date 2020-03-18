@@ -33,7 +33,8 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
     onSubmit: async formData => {
       try {
         setCreateLoading(true);
-        await createPage({ formData, sectionId });
+        const { id } = await createPage({ formData, sectionId });
+        history.push(`/page/${id}`);
       } catch (e) {
         reportError(e);
         setCreateLoading(false);
@@ -45,7 +46,7 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
     (async () => {
       try {
         const { project } = await fetchSection({ sectionId });
-        await fetchPageTemplates({ projectId: project, raw: true });
+        await fetchPageTemplates({ projectId: project });
       } catch (e) {
         reportError(e);
         setError(e);

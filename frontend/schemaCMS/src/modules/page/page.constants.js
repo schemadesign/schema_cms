@@ -7,6 +7,15 @@ export const PAGE_DESCRIPTION = 'description';
 export const PAGE_TEMPLATE = 'template';
 export const PAGE_IS_PUBLIC = 'isPublic';
 
+export const FORM_VALUES = [
+  PAGE_NAME,
+  PAGE_DISPLAY_NAME,
+  PAGE_KEYWORDS,
+  PAGE_DESCRIPTION,
+  PAGE_TEMPLATE,
+  PAGE_IS_PUBLIC,
+];
+
 export const INITIAL_VALUES = {
   [PAGE_NAME]: '',
   [PAGE_DISPLAY_NAME]: '',

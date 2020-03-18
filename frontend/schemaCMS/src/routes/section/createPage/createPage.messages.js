@@ -12,7 +12,7 @@ export default defineMessages({
   },
   create: {
     id: 'section.createPage.create',
-    defaultMessage: 'Create Page',
+    defaultMessage: 'Create',
   },
   cancel: {
     id: 'section.createPage.cancel',

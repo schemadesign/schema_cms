@@ -39,7 +39,7 @@ const TEMPORARY_PAGE_URL = 'https://schemacms.com';
 
 export const PageForm = ({
   title,
-  slug,
+  displayName,
   values,
   handleChange,
   setFieldValue,
@@ -55,8 +55,8 @@ export const PageForm = ({
       <MinusIcon customStyles={binStyles} />
     </BinIconContainer>
   ) : null;
-  const pageUrl = `${TEMPORARY_PAGE_URL}/${title}`;
-  const visitPage = slug ? (
+  const pageUrl = `${TEMPORARY_PAGE_URL}/${displayName}`;
+  const visitPage = displayName ? (
     <Fragment>
       <CopySeparator />
       <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
@@ -167,5 +167,5 @@ PageForm.propTypes = {
   pageTemplates: PropTypes.array.isRequired,
   isValid: PropTypes.bool.isRequired,
   title: PropTypes.node.isRequired,
-  slug: PropTypes.string,
+  displayName: PropTypes.string,
 };

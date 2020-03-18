@@ -5,6 +5,7 @@ import { useEffectOnce } from 'react-use';
 import { useHistory, useParams } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
+import { pick } from 'ramda';
 
 import { Container } from './page.styles';
 import messages from './page.messages';
@@ -15,7 +16,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageForm } from '../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project/project.constants';
-import { PAGE_SCHEMA } from '../../modules/page/page.constants';
+import { PAGE_SCHEMA, FORM_VALUES } from '../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 
 export const Page = ({
@@ -29,26 +30,28 @@ export const Page = ({
   fetchPage,
 }) => {
   const intl = useIntl();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
-  const [createLoading, setCreateLoading] = useState(false);
+  const [updateLoading, setUpdateLoading] = useState(false);
   const { pageId } = useParams();
   const history = useHistory();
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(project.id);
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: page,
+    initialValues: pick(FORM_VALUES, page),
+    enableReinitialize: true,
     validationSchema: () => PAGE_SCHEMA,
     onSubmit: async formData => {
       try {
-        setCreateLoading(true);
+        setUpdateLoading(true);
         await updatePage({ formData, pageId });
       } catch (e) {
         reportError(e);
-        setCreateLoading(false);
+      } finally {
+        setUpdateLoading(false);
       }
     },
   });
@@ -56,7 +59,7 @@ export const Page = ({
     try {
       setRemoveLoading(true);
       await removePage({ pageId });
-      history.push(`/section/${page.sectionId}`);
+      history.push(`/section/${page.section}`);
     } catch (e) {
       reportError(e);
       setRemoveLoading(false);
@@ -66,8 +69,8 @@ export const Page = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        const { project } = await fetchPage({ pageId });
-        await fetchPageTemplates({ projectId: project, raw: true });
+        const { projectId } = await fetchPage({ pageId });
+        await fetchPageTemplates({ projectId });
       } catch (e) {
         reportError(e);
         setError(e);
@@ -84,7 +87,7 @@ export const Page = ({
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
           <PageForm
-            slug={page.slug}
+            displayName={page.displayName}
             title={title}
             pageTemplates={pageTemplates}
             isValid={isValid}
@@ -92,14 +95,14 @@ export const Page = ({
             {...restFormikProps}
           />
           <NavigationContainer fixed>
-            <BackButton id="backBtn" type="button" onClick={() => history.push(`/section/${page.sectionId}`)}>
-              <FormattedMessage {...messages.cancel} />
+            <BackButton id="backBtn" type="button" onClick={() => history.push(`/section/${page.section}`)}>
+              <FormattedMessage {...messages.back} />
             </BackButton>
             <NextButton
               id="savePage"
               type="submit"
-              loading={createLoading}
-              disabled={!isValid || !dirty || createLoading}
+              loading={updateLoading}
+              disabled={!isValid || !dirty || updateLoading}
             >
               <FormattedMessage {...messages.create} />
             </NextButton>
