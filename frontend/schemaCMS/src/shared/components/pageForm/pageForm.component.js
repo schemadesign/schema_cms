@@ -161,7 +161,6 @@ export const PageForm = ({
 PageForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
-  setValues: PropTypes.func.isRequired,
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
   pageTemplates: PropTypes.array.isRequired,

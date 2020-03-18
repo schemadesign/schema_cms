@@ -698,7 +698,7 @@ exports[`Content: Component should render correctly 1`] = `
       className="sc-cSHVUG cqBrSp"
     >
       <div
-        className="sc-jzJRlG kSyXDX"
+        className="sc-jzJRlG dfKXm"
       >
         <button
           disabled={false}
@@ -740,7 +740,7 @@ exports[`Content: Component should render correctly 1`] = `
           </svg>
         </button>
         <div
-          className="sc-kgoBCf ifKHSM"
+          className="sc-kgoBCf eXdgEj"
         >
           <button
             disabled={false}

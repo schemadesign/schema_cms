@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageTemplate: Component should render correctly 1`] = `
+exports[`Page: Component should render correctly 1`] = `
 <div
   className="sc-bdVaJa bDWFJH"
 >
@@ -36,7 +36,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Page Template
+            Edit
           </h2>
           <h1
             className="sc-iwsKbI bxRSJa"
@@ -52,7 +52,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Edit
+            Page
           </h1>
         </div>
       </div>
@@ -137,7 +137,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Page Template
+            Edit
           </h2>
           <h1
             className="sc-iwsKbI bxRSJa"
@@ -153,7 +153,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Edit
+            Page
           </h1>
         </div>
       </div>
@@ -189,7 +189,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined"
+              href="/project/projectId"
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
@@ -200,7 +200,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined/datasource"
+              href="/project/projectId/datasource"
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
@@ -211,7 +211,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined/state"
+              href="/project/projectId/state"
               id="stateNavBtn"
               onClick={[Function]}
             >
@@ -222,7 +222,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined/user"
+              href="/project/projectId/user"
               id="usersNavBtn"
               onClick={[Function]}
             >
@@ -233,7 +233,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined/content"
+              href="/project/projectId/content"
               id="contentNavBtn"
               onClick={[Function]}
             >
@@ -244,7 +244,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-bZQynM dHaYym"
           >
             <a
-              href="/project/undefined/templates"
+              href="/project/projectId/templates"
               id="templatesNavBtn"
               onClick={[Function]}
             >
@@ -356,13 +356,13 @@ exports[`PageTemplate: Component should render correctly 1`] = `
       className="sc-ckVGcZ foYhJp"
     >
       <div
-        className="sc-eNQAEJ cdjLbz"
+        className="sc-iRbamj vALsX"
       >
         <div
-          className="sc-hMqMXs iyMKdh"
+          className="sc-jlyJG bdSVo"
         >
           <h2
-            className="sc-kEYyzF duTgan"
+            className="sc-gipzik dBSGMo"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -373,10 +373,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Page Template
+            Edit
           </h2>
           <h1
-            className="sc-kkGfuU diXTcM"
+            className="sc-csuQGl dVHGhO"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -390,10 +390,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-jDwBTQ johwsq"
+              className="sc-eHgmQL dpAtYH"
             >
               <div
-                className="sc-csuQGl hurRaL"
+                className="sc-jAaTju flPFMG"
               >
                 <div
                   style={
@@ -431,7 +431,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                       }
                     }
                     type="text"
-                    value="Page template"
+                    value="page name"
                   />
                   <div
                     style={
@@ -455,7 +455,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                       }
                     }
                   >
-                    Page template
+                    page name
                   </div>
                   <div
                     style={
@@ -469,7 +469,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-gPEVay dthIer"
+                className="sc-cvbbAY kiGtcn"
               >
                 <svg
                   style={
@@ -491,60 +491,14 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-iAyFgw gPlgsX"
-        >
-          <div
-            className="sc-kgoBCf ifKHSM"
-          >
-            <button
-              disabled={false}
-              id="createBlock"
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#FFF",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": "60px",
-                  "margin": "0",
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": "60px",
-                }
-              }
-              type="button"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#000",
-                    "height": "60px",
-                    "shapeRendering": "crispEdges",
-                    "width": "60px",
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+          className="sc-Rmtcm gwGgYM"
+        />
       </div>
       <div
-        className="sc-iRbamj hurrdT"
+        className="sc-jWBwVP kxqwHw"
       >
         <div
-          className="sc-csuQGl jlbbeA"
+          className="sc-jAaTju iDxCWa"
         >
           <div
             style={
@@ -596,7 +550,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 }
               }
               type="text"
-              value="Page template"
+              value="page name"
             />
             <div
               style={
@@ -608,7 +562,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-Rmtcm exAPhr"
+                className="sc-jDwBTQ cTwjft"
               >
                 <svg
                   style={
@@ -631,467 +585,383 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-hzDkRC dJvbIS"
+        className="sc-jAaTju iDxCWa"
       >
-        <div
-          className="sc-jhAzac hpYpAQ"
-        />
-        1 Block
-        <div
-          className="sc-jhAzac hpYpAQ"
-        >
-          <div
-            className="sc-jlyJG cZljSU"
-          >
-            <div
-              className="sc-kgoBCf ifKHSM"
-            >
-              <button
-                disabled={false}
-                id="createBlock"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#FFF",
-                    "border": "none",
-                    "borderRadius": "48px",
-                    "color": "#000",
-                    "cursor": "pointer",
-                    "display": "inline-block",
-                    "fill": "#FFF",
-                    "fontSize": "18px",
-                    "height": 40,
-                    "margin": "0",
-                    "minHeight": 40,
-                    "outline": "none",
-                    "padding": "0",
-                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                    "width": 40,
-                  }
-                }
-                type="button"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#000",
-                      "height": 40,
-                      "minHeight": 40,
-                      "shapeRendering": "crispEdges",
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <span>
         <div
           style={
             Object {
-              "alignItems": "center",
               "display": "flex",
-              "justifyContent": "space-between",
-              "opacity": 1,
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
               "position": "relative",
-              "transform": "translate3d(0, 0, 0)",
+            }
+          }
+        >
+          <label
+            htmlFor="displayName"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            URL Display Name
+          </label>
+          <input
+            id="displayName"
+            name="displayName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 60,
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="page-name"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-jAaTju iDxCWa"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="description"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            SEO Page Description
+          </label>
+          <textarea
+            id="description"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "background": "#000",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "height": 0,
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": "0",
+                "resize": "none",
+              }
+            }
+            value="description"
+          />
+          <textarea
+            aria-hidden={true}
+            readOnly={true}
+            style={
+              Object {
+                "background": "#000",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "height": 0,
+                "left": 0,
+                "lineHeight": "24px",
+                "outline": "none",
+                "overflow": "hidden",
+                "padding": "0",
+                "position": "absolute",
+                "resize": "none",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            tabIndex={-1}
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-jAaTju iDxCWa"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="keywords"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            SEO Keywords
+          </label>
+          <input
+            id="keywords"
+            name="keywords"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 60,
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="keyword;"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-bRBYWo igShYD"
+      >
+        <label
+          id="fieldProjectStatusLabel"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
               "width": "100%",
-              "zIndex": 1,
+            }
+          }
+        >
+          Page Template
+        </label>
+        <input
+          id="template"
+          name="template"
+          type="hidden"
+          value="template"
+        />
+        <div
+          className="sc-hzDkRC ixGhoK"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#FFF",
+              "display": "flex",
+              "width": "100%",
             }
           }
         >
           <div
+            id="blockTypeSelect"
             style={
               Object {
-                "borderTop": "2px solid #FFF",
-                "overflow": "hidden",
+                "cursor": "pointer",
+                "display": "flex",
                 "position": "relative",
                 "width": "100%",
               }
             }
           >
             <div
+              onClick={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#000",
+                  "cursor": "pointer",
                   "display": "flex",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "minHeight": 60,
-                  "paddingRight": 40,
-                  "position": "relative",
+                  "width": "100%",
                 }
               }
             >
               <div
-                className="sc-fMiknA hHhczf"
-              >
-                <div
-                  className="sc-dVhcbM esJDHn"
-                >
-                  <div>
-                    <div
-                      className="sc-jKJlTe bsIWpZ"
-                    >
-                      <svg
-                        style={
-                          Object {
-                            "fill": "#FFF",
-                            "height": "60px",
-                            "marginRight": 20,
-                            "width": 10,
-                          }
-                        }
-                        viewBox="0 0 10 60"
-                      >
-                        <path
-                          d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="sc-csuQGl hurRaL"
-                >
-                  <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "maxWidth": "100%",
-                        "paddingBottom": 0,
-                        "position": "relative",
-                      }
-                    }
-                  >
-                    <input
-                      id="blocks.0.name"
-                      name="blocks.0.name"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      placeholder="Name"
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "outline": "none",
-                          "padding": 0,
-                          "width": 80,
-                        }
-                      }
-                      type="text"
-                      value="block name"
-                    />
-                    <div
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "opacity": 0,
-                          "outline": "none",
-                          "padding": 0,
-                          "position": "fixed",
-                          "visibility": "hidden",
-                          "whiteSpace": "pre",
-                        }
-                      }
-                    >
-                      block name
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 2,
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-                <div
-                  className="sc-dVhcbM esJDHn"
-                >
-                  <svg
-                    style={
-                      Object {
-                        "fill": "#FFF",
-                        "height": "30px",
-                        "width": "30px",
-                      }
-                    }
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    id="removeBlock-0"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "cursor": "pointer",
-                        "fill": "#FFF",
-                        "height": 30,
-                        "shapeRendering": "crispEdges",
-                        "width": 30,
-                      }
-                    }
-                    viewBox="0 0 60 60"
-                  >
-                    <path
-                      d="M15 28h30v4H15z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                className="sc-fAjcbJ gzMAq"
-              >
-                block name
-              </div>
-              <div
-                onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
-                    "fontSize": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 9,
-                    "transform": "rotate(0deg)",
-                    "transformOrigin": "center center",
-                    "transition": "transform 200ms ease-in-out",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
                   }
                 }
               >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "userSelect": "none",
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M15.117 18L9 12h12z"
-                    fillRule="evenodd"
-                  />
-                </svg>
+                Select Page Template
               </div>
             </div>
             <div
               style={
                 Object {
-                  "backgroundColor": "#000",
-                  "height": 0,
-                  "transition": "height 200ms linear, overflow 0s linear 200ms",
+                  "WebkitOverflowScrolling": "touch",
+                  "backgroundColor": "#1d1d20",
+                  "display": "none",
+                  "flexDirection": "column",
+                  "left": "0",
+                  "maxHeight": "184px",
+                  "overflowY": "hidden",
+                  "position": "absolute",
+                  "top": "calc(100% + 5px)",
+                  "width": "100%",
+                  "zIndex": 2,
                 }
               }
             >
-              <div>
-                <div
-                  className="sc-eqIVtm iTgDvD"
-                >
-                  <div
-                    className="sc-caSCKo dYYUJK"
-                  >
-                    <label
-                      id="fieldProjectStatusLabel"
-                      style={
-                        Object {
-                          "border": "none",
-                          "borderTop": "none",
-                          "color": "#71737e",
-                          "display": "block",
-                          "fontSize": "14px",
-                          "outline": "none",
-                          "paddingTop": "8px",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      Block Type
-                    </label>
-                    <input
-                      id="blocks.0.block"
-                      name="blocks.0.block"
-                      type="hidden"
-                      value={1}
-                    />
-                    <div
-                      className="sc-gisBJw gIEAUy"
-                    >
-                      <svg
-                        style={
-                          Object {
-                            "fill": "#FFF",
-                            "height": "30px",
-                            "width": "30px",
-                          }
-                        }
-                        viewBox="0 0 30 30"
-                      >
-                        <path
-                          d="M15.117 18L9 12h12z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "color": "#FFF",
-                          "display": "flex",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      <div
-                        id="blockTypeSelect"
-                        style={
-                          Object {
-                            "cursor": "pointer",
-                            "display": "flex",
-                            "position": "relative",
-                            "width": "100%",
-                          }
-                        }
-                      >
-                        <div
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "cursor": "pointer",
-                              "display": "flex",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            block name
-                          </div>
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "WebkitOverflowScrolling": "touch",
-                              "backgroundColor": "#1d1d20",
-                              "display": "none",
-                              "flexDirection": "column",
-                              "left": "0",
-                              "maxHeight": "184px",
-                              "overflowY": "hidden",
-                              "position": "absolute",
-                              "top": "calc(100% + 5px)",
-                              "width": "100%",
-                              "zIndex": 2,
-                            }
-                          }
-                        >
-                          <div
-                            id="select-item-0"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "#FFF",
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "1px solid  #2F2F36",
-                                "color": "#000",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            block name
-                          </div>
-                          <div
-                            id="select-item-1"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "none",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            block name 2
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div
+                id="select-item-0"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "1px solid  #2F2F36",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Page template
+              </div>
+              <div
+                id="select-item-1"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Page template 2
               </div>
             </div>
           </div>
         </div>
-      </span>
+      </div>
       <div
-        className="sc-hSdWYo hPagPA"
+        className="sc-jKJlTe ewxNTP"
       >
         <div
-          className="sc-eHgmQL kwJpzj"
+          className="sc-eNQAEJ iKKHiF"
         >
           <div
-            className="sc-brqgnP IrynP"
+            className="sc-kkGfuU bNunNX"
           >
             <div>
               <input
-                id="isAvailable"
+                checked={false}
+                id="isPublic"
                 onChange={[Function]}
                 style={
                   Object {
@@ -1106,7 +976,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 type="checkbox"
               />
               <label
-                htmlFor="isAvailable"
+                htmlFor="isPublic"
               >
                 <div
                   style={
@@ -1138,23 +1008,32 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-jWBwVP eIUSPB"
+              className="sc-kEYyzF JwlHG"
             >
               <label
-                className="sc-cvbbAY blYLdr"
-                htmlFor="isAvailable"
+                className="sc-hMqMXs fEsWKP"
+                htmlFor="isPublic"
               >
-                Make it Available
+                Make it Public
               </label>
               <span
-                className="sc-jAaTju fMNTQY"
+                className="sc-hSdWYo cxbcjS"
               >
-                This Template is currently unavailable for Editors
+                This Page is currently Private
+                <span
+                  className="sc-cMljjf NEibj"
+                />
+                Visit Page: 
+                <a
+                  href="https://schemacms.com/page-name"
+                >
+                  https://schemacms.com/page-name
+                </a>
               </span>
             </div>
           </div>
           <div
-            className="sc-cMljjf fFfxnc"
+            className="sc-iAyFgw iAxYSp"
             id="removePage"
             onClick={[Function]}
           >
@@ -1175,68 +1054,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </svg>
           </div>
         </div>
-        <div
-          className="sc-eHgmQL kwJpzj"
-        >
-          <div>
-            <input
-              id="allowAdd"
-              onChange={[Function]}
-              style={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "overflow": "hidden",
-                  "position": "absolute",
-                  "top": 0,
-                  "visibility": "hidden",
-                }
-              }
-              type="checkbox"
-            />
-            <label
-              htmlFor="allowAdd"
-            >
-              <div
-                style={
-                  Object {
-                    "background": "#2F2F36",
-                    "borderRadius": 20,
-                    "boxSizing": "border-box",
-                    "cursor": "pointer",
-                    "height": 24,
-                    "padding": 2,
-                    "transition": "background 200ms ease-in-out",
-                    "width": 44,
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "background": "#FFF",
-                      "borderRadius": "50%",
-                      "height": 20,
-                      "transform": "translateX(0)",
-                      "transition": "transform 200ms ease-in-out",
-                      "width": 20,
-                    }
-                  }
-                />
-              </div>
-            </label>
-          </div>
-          <div
-            className="sc-jWBwVP eIUSPB"
-          >
-            <label
-              className="sc-cvbbAY blYLdr"
-              htmlFor="allowAdd"
-            >
-              Allow new Blocks to be added to this Page Template
-            </label>
-          </div>
-        </div>
       </div>
     </div>
     <div
@@ -1251,7 +1068,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           <button
             className="sc-kAzzGY iLakCl"
             disabled={false}
-            id="cancelBtn"
+            id="backBtn"
             onClick={[Function]}
             style={
               Object {
@@ -1277,7 +1094,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           <button
             className="sc-kAzzGY iLakCl"
             disabled={true}
-            id="createTemplatePageMobile"
+            id="savePage"
             style={
               Object {
                 "backgroundColor": "#1d1d20",

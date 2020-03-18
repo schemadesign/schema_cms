@@ -20,7 +20,7 @@ import { getProjectMenuOptions } from '../../project/project.constants';
 export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTemplates, fetchSection, project }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [createLoading, setCreateLoading] = useState(false);
   const history = useHistory();

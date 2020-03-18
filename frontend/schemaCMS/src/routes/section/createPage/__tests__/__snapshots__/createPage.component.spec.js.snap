@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreatePageTemplate: Component should render correctly 1`] = `
+exports[`CreatePage: Component should render correctly 1`] = `
 <div
   className="sc-bdVaJa bDWFJH"
 >
   <div
-    className="sc-bwzfXH jguWiy"
+    className="sc-ckVGcZ jsLXRN"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-jKJlTe loXQau"
         >
           <h2
-            className="sc-dnqmqq bPutyk"
+            className="sc-eHgmQL jUbgSU"
             id="headerTitle"
             style={
               Object {
@@ -36,10 +36,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Page Template
+            Create
           </h2>
           <h1
-            className="sc-iwsKbI bxRSJa"
+            className="sc-cvbbAY lnzqFz"
             id="headerSubtitle"
             style={
               Object {
@@ -52,7 +52,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Create
+            Page
           </h1>
         </div>
       </div>
@@ -120,13 +120,13 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-eNQAEJ fAbPPh"
       >
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-jKJlTe loXQau"
         >
           <h2
-            className="sc-dnqmqq bPutyk"
+            className="sc-eHgmQL jUbgSU"
             id="headerTitle"
             style={
               Object {
@@ -137,10 +137,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Page Template
+            Create
           </h2>
           <h1
-            className="sc-iwsKbI bxRSJa"
+            className="sc-cvbbAY lnzqFz"
             id="headerSubtitle"
             style={
               Object {
@@ -153,18 +153,18 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Create
+            Page
           </h1>
         </div>
       </div>
       <div
-        className="sc-ifAKCX YtKgc"
+        className="sc-hMqMXs hwDeeT"
       >
         <div
-          className="sc-EHOje jndxID"
+          className="sc-kEYyzF fnWZcM"
         >
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/project/projectId/state"
@@ -219,7 +219,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/project/projectId/user"
@@ -230,7 +230,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/project/projectId/content"
@@ -241,7 +241,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/project/projectId/templates"
@@ -253,10 +253,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-EHOje jndxID"
+          className="sc-kEYyzF fnWZcM"
         >
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-kkGfuU fkfbbR"
           >
             <div
               onClick={[Function]}
@@ -277,10 +277,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-gzVnrw jHfMTZ"
+          className="sc-iAyFgw fzfhAS"
         >
           <a
-            className="sc-htoDjs dmeaZZ"
+            className="sc-hSdWYo lfURxg"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -288,7 +288,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-htoDjs dmeaZZ"
+            className="sc-hSdWYo lfURxg"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -296,7 +296,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-htoDjs dmeaZZ"
+            className="sc-hSdWYo lfURxg"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -353,16 +353,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-ckVGcZ foYhJp"
+      className="sc-bwzfXH uTxCW"
     >
       <div
-        className="sc-eNQAEJ cdjLbz"
+        className="sc-cSHVUG koYINE"
       >
         <div
-          className="sc-hMqMXs iyMKdh"
+          className="sc-kAzzGY fWonDE"
         >
           <h2
-            className="sc-kEYyzF duTgan"
+            className="sc-chPdSV kgWIQe"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -373,10 +373,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               }
             }
           >
-            Page Template
+            Create
           </h2>
           <h1
-            className="sc-kkGfuU diXTcM"
+            className="sc-kgoBCf esFMBq"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -390,10 +390,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-jDwBTQ johwsq"
+              className="sc-dnqmqq hHLyWY"
             >
               <div
-                className="sc-csuQGl hurRaL"
+                className="sc-jTzLTM bQZHDy"
               >
                 <div
                   style={
@@ -469,7 +469,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-gPEVay dthIer"
+                className="sc-iwsKbI ifgozk"
               >
                 <svg
                   style={
@@ -491,60 +491,14 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-iAyFgw gPlgsX"
-        >
-          <div
-            className="sc-kgoBCf ifKHSM"
-          >
-            <button
-              disabled={false}
-              id="createBlock"
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#FFF",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": "60px",
-                  "margin": "0",
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": "60px",
-                }
-              }
-              type="button"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#000",
-                    "height": "60px",
-                    "shapeRendering": "crispEdges",
-                    "width": "60px",
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+          className="sc-kGXeez eIIwaK"
+        />
       </div>
       <div
-        className="sc-iRbamj hurrdT"
+        className="sc-gZMcBi fGqrZo"
       >
         <div
-          className="sc-csuQGl jlbbeA"
+          className="sc-jTzLTM dIZNvj"
         >
           <div
             style={
@@ -608,7 +562,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-Rmtcm exAPhr"
+                className="sc-fjdhpX dBFMNk"
               >
                 <svg
                   style={
@@ -631,81 +585,383 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-hzDkRC dJvbIS"
+        className="sc-jTzLTM dIZNvj"
       >
         <div
-          className="sc-jhAzac hpYpAQ"
-        />
-        0 Blocks
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="displayName"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            URL Display Name
+          </label>
+          <input
+            id="displayName"
+            name="displayName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 60,
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-jTzLTM dIZNvj"
+      >
         <div
-          className="sc-jhAzac hpYpAQ"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="description"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            SEO Page Description
+          </label>
+          <textarea
+            id="description"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "background": "#000",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "height": 0,
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": "0",
+                "resize": "none",
+              }
+            }
+            value=""
+          />
+          <textarea
+            aria-hidden={true}
+            readOnly={true}
+            style={
+              Object {
+                "background": "#000",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "height": 0,
+                "left": 0,
+                "lineHeight": "24px",
+                "outline": "none",
+                "overflow": "hidden",
+                "padding": "0",
+                "position": "absolute",
+                "resize": "none",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            tabIndex={-1}
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-jTzLTM dIZNvj"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="keywords"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            SEO Keywords
+          </label>
+          <input
+            id="keywords"
+            name="keywords"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 60,
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-kpOJdX fCdnbP"
+      >
+        <label
+          id="fieldProjectStatusLabel"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Page Template
+        </label>
+        <input
+          id="template"
+          name="template"
+          type="hidden"
+          value=""
+        />
+        <div
+          className="sc-dxgOiQ hqDAJR"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#FFF",
+              "display": "flex",
+              "width": "100%",
+            }
+          }
         >
           <div
-            className="sc-jlyJG cZljSU"
+            id="blockTypeSelect"
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
             <div
-              className="sc-kgoBCf ifKHSM"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
             >
-              <button
-                disabled={false}
-                id="createBlock"
-                onClick={[Function]}
+              <div
                 style={
                   Object {
-                    "backgroundColor": "#FFF",
-                    "border": "none",
-                    "borderRadius": "48px",
-                    "color": "#000",
                     "cursor": "pointer",
-                    "display": "inline-block",
-                    "fill": "#FFF",
-                    "fontSize": "18px",
-                    "height": 40,
-                    "margin": "0",
-                    "minHeight": 40,
-                    "outline": "none",
-                    "padding": "0",
-                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                    "width": 40,
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
                   }
                 }
-                type="button"
               >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#000",
-                      "height": 40,
-                      "minHeight": 40,
-                      "shapeRendering": "crispEdges",
-                      "width": 40,
-                    }
+                Select Page Template
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "WebkitOverflowScrolling": "touch",
+                  "backgroundColor": "#1d1d20",
+                  "display": "none",
+                  "flexDirection": "column",
+                  "left": "0",
+                  "maxHeight": "184px",
+                  "overflowY": "hidden",
+                  "position": "absolute",
+                  "top": "calc(100% + 5px)",
+                  "width": "100%",
+                  "zIndex": 2,
+                }
+              }
+            >
+              <div
+                id="select-item-0"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "1px solid  #2F2F36",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
                   }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-                  />
-                </svg>
-              </button>
+                }
+              >
+                Page template
+              </div>
+              <div
+                id="select-item-1"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Page template 2
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <span />
       <div
-        className="sc-hSdWYo hPagPA"
+        className="sc-htpNat iIQxmA"
       >
         <div
-          className="sc-eHgmQL kwJpzj"
+          className="sc-bxivhb gBSzyX"
         >
           <div
-            className="sc-brqgnP IrynP"
+            className="sc-bZQynM juHlRC"
           >
             <div>
               <input
                 checked={false}
-                id="isAvailable"
+                id="isPublic"
                 onChange={[Function]}
                 style={
                   Object {
@@ -720,7 +976,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 type="checkbox"
               />
               <label
-                htmlFor="isAvailable"
+                htmlFor="isPublic"
               >
                 <div
                   style={
@@ -752,98 +1008,35 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-jWBwVP eIUSPB"
+              className="sc-EHOje bpPDHV"
             >
               <label
-                className="sc-cvbbAY blYLdr"
-                htmlFor="isAvailable"
+                className="sc-ifAKCX hlHGUd"
+                htmlFor="isPublic"
               >
-                Make it Available
+                Make it Public
               </label>
               <span
-                className="sc-jAaTju fMNTQY"
+                className="sc-htoDjs haBwGb"
               >
-                This Template is currently unavailable for Editors
+                This Page is currently Private
               </span>
             </div>
-          </div>
-        </div>
-        <div
-          className="sc-eHgmQL kwJpzj"
-        >
-          <div>
-            <input
-              checked={false}
-              id="allowAdd"
-              onChange={[Function]}
-              style={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "overflow": "hidden",
-                  "position": "absolute",
-                  "top": 0,
-                  "visibility": "hidden",
-                }
-              }
-              type="checkbox"
-            />
-            <label
-              htmlFor="allowAdd"
-            >
-              <div
-                style={
-                  Object {
-                    "background": "#2F2F36",
-                    "borderRadius": 20,
-                    "boxSizing": "border-box",
-                    "cursor": "pointer",
-                    "height": 24,
-                    "padding": 2,
-                    "transition": "background 200ms ease-in-out",
-                    "width": 44,
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "background": "#FFF",
-                      "borderRadius": "50%",
-                      "height": 20,
-                      "transform": "translateX(0)",
-                      "transition": "transform 200ms ease-in-out",
-                      "width": 20,
-                    }
-                  }
-                />
-              </div>
-            </label>
-          </div>
-          <div
-            className="sc-jWBwVP eIUSPB"
-          >
-            <label
-              className="sc-cvbbAY blYLdr"
-              htmlFor="allowAdd"
-            >
-              Allow new Blocks to be added to this Page Template
-            </label>
           </div>
         </div>
       </div>
     </div>
     <div
-      className="sc-fjdhpX jevcr"
+      className="sc-jDwBTQ gfiffR"
     >
       <div
-        className="sc-cSHVUG cqBrSp"
+        className="sc-iRbamj jPAVXf"
       >
         <div
-          className="sc-jzJRlG dfKXm"
+          className="sc-gPEVay kjnucl"
         >
           <button
-            className="sc-kAzzGY iLakCl"
+            className="sc-jlyJG YgTtd"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -869,9 +1062,9 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Cancel
           </button>
           <button
-            className="sc-kAzzGY iLakCl"
+            className="sc-jlyJG YgTtd"
             disabled={true}
-            id="createTemplateBlock"
+            id="createPage"
             style={
               Object {
                 "backgroundColor": "#1d1d20",
@@ -891,7 +1084,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             }
             type="submit"
           >
-            Save Template
+            Create
           </button>
         </div>
       </div>

@@ -11,4 +11,12 @@ describe('PageForm: Component', () => {
     const wrapper = await render();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call setRemoveModalOpen', async () => {
+    jest.spyOn(defaultProps, 'setRemoveModalOpen');
+    const wrapper = await render();
+    wrapper.root.findByProps({ id: 'removePage' }).props.onClick();
+
+    expect(defaultProps.setRemoveModalOpen).toHaveBeenCalledWith(true);
+  });
 });
