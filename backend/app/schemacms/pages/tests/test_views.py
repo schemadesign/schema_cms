@@ -175,7 +175,7 @@ class TestUpdatePageTemplatesView:
         page_template.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert len(page_template.blocks.all()) == 1
+        assert len(page_template.blocks.through.objects.all()) == 1
 
     def test_editor_can_not_update_template(self, api_client, editor, page_template):
         new_name = "New Page Name"

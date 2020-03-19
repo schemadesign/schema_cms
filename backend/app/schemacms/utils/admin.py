@@ -1,5 +1,6 @@
 import itertools
 
+
 from django.core.validators import ValidationError
 from django.contrib import messages
 from django.db import models

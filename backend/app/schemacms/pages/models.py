@@ -89,7 +89,12 @@ class Page(Content):
         self.pageblock_set.filter(id__in=blocks).delete()
 
 
-class PageBlock(models.Model):
+class PageTemplate(Page):
+    class Meta:
+        proxy = True
+
+
+class PageBlock(SoftDeleteObject):
     block = models.ForeignKey("Block", on_delete=models.CASCADE)
     page = models.ForeignKey("Page", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
