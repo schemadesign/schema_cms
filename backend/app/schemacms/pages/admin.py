@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from . import models
-from ..utils.admin import create_model_admin, SoftDeleteObjectAdmin
+from ..utils.admin import SoftDeleteObjectAdmin
 
 
 class ElementInline(admin.TabularInline):
@@ -25,6 +25,7 @@ class BlockInline(admin.TabularInline):
     extra = 0
 
 
+@admin.register(models.PageTemplate)
 class PageTemplateAdmin(SoftDeleteObjectAdmin):
     list_display = ("name", "project", "deleted_at")
     fields = ("project", "name", "deleted_at")
@@ -36,9 +37,6 @@ class PageTemplateAdmin(SoftDeleteObjectAdmin):
         return super().get_queryset(request).filter(is_template=True)
 
 
-create_model_admin(PageTemplateAdmin, name="PageTemplate", model=models.Page)
-
-
 @admin.register(models.Section)
 class SectionAdmin(SoftDeleteObjectAdmin):
     list_display = ("name", "project", "deleted_at")
@@ -47,9 +45,20 @@ class SectionAdmin(SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("project",)
 
 
+@admin.register(models.Page)
 class PageAdmin(SoftDeleteObjectAdmin):
     list_display = ("name", "section", "project", "deleted_at")
-    fields = ("project", "section", "template", "name", "deleted_at")
+    fields = (
+        "project",
+        "section",
+        "template",
+        "name",
+        "display_name",
+        "description",
+        "keywords",
+        "is_public",
+        "deleted_at",
+    )
     list_filter = ("project", "section", "deleted_at")
     readonly_on_update_fields = ("project",)
 
@@ -61,6 +70,3 @@ class PageAdmin(SoftDeleteObjectAdmin):
 
     def get_queryset(self, request):
         return super().get_queryset(request).filter(is_template=False)
-
-
-create_model_admin(PageAdmin, name="ContentPage", model=models.Page)

@@ -2,7 +2,7 @@ import itertools
 
 
 from django.core.validators import ValidationError
-from django.contrib import admin, messages
+from django.contrib import messages
 from django.db import models
 from django.forms import ModelForm
 from django.template.loader import render_to_string
@@ -11,19 +11,6 @@ from django.utils import safestring
 
 import softdelete.admin
 from softdelete.models import SoftDeleteObject
-
-
-def create_model_admin(model_admin, model, name=None):
-    class Meta:
-        proxy = True
-        app_label = model._meta.app_label
-
-    attrs = {"__module__": "", "Meta": Meta}
-
-    new_model = type(name, (model,), attrs)
-
-    admin.site.register(new_model, model_admin)
-    return model_admin
 
 
 class SoftDeleteFormWithUniqueTogetherValidation(ModelForm):
