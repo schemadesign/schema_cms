@@ -31,6 +31,15 @@ export const PAGE_SCHEMA = Yup.object().shape({
     .min(1, 'Page Name should have at least 1 characters')
     .max(25, 'Page Name should have maximum 25 characters')
     .required('Required'),
+  [PAGE_DISPLAY_NAME]: Yup.string()
+    .trim()
+    .max(25, 'Page URL Display Name should have maximum 1000 characters'),
+  [PAGE_DESCRIPTION]: Yup.string()
+    .trim()
+    .max(1000, 'Page Description should have maximum 1000 characters'),
+  [PAGE_KEYWORDS]: Yup.string()
+    .trim()
+    .max(1000, 'Page Keywords should have maximum 1000 characters'),
   [PAGE_TEMPLATE]: Yup.string()
     .min(1, 'Required')
     .required('Required'),
