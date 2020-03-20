@@ -83,7 +83,7 @@ class PageTemplateSerializer(CustomModelSerializer):
     blocks = serializers.SerializerMethodField()
 
     class Meta:
-        model = models.Page
+        model = models.PageTemplate
         fields = (
             "id",
             "project",
@@ -97,7 +97,7 @@ class PageTemplateSerializer(CustomModelSerializer):
         )
         validators = [
             CustomUniqueTogetherValidator(
-                queryset=models.Page.objects.filter(is_template=True),
+                queryset=models.PageTemplate.objects.all(),
                 fields=("project", "name"),
                 key_field_name="name",
                 code="pageTemplateNameUnique",
@@ -155,7 +155,7 @@ class PageSerializer(CustomModelSerializer):
         )
         validators = [
             CustomUniqueTogetherValidator(
-                queryset=models.Page.objects.filter(is_template=False),
+                queryset=models.Page.objects.all(),
                 fields=("section", "name"),
                 key_field_name="name",
                 code="pageNameUnique",

@@ -60,13 +60,15 @@ class BlockElement(Element):
 
 class Page(Content):
     section = models.ForeignKey("Section", on_delete=models.CASCADE, null=True, related_name="pages")
-    template = models.ForeignKey("Page", on_delete=models.SET_NULL, null=True)
+    template = models.ForeignKey("PageTemplate", on_delete=models.SET_NULL, null=True)
     display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     is_public = models.BooleanField(default=False)
     blocks = models.ManyToManyField(Block, through="PageBlock")
+
+    objects = managers.PageManager()
 
     class Meta:
         constraints = [
@@ -90,6 +92,8 @@ class Page(Content):
 
 
 class PageTemplate(Page):
+    objects = managers.PageTemplateManager()
+
     class Meta:
         proxy = True
 

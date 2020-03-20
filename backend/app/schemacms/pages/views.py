@@ -70,7 +70,7 @@ class BlockTemplateViewSet(DetailViewSet):
 class PageTemplateListCreteView(TemplateListCreateView):
     serializer_class = serializers.PageTemplateSerializer
     queryset = (
-        models.Page.objects.filter(is_template=True)
+        models.PageTemplate.objects.all()
         .select_related("project", "created_by")
         .prefetch_related(
             Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
@@ -80,7 +80,7 @@ class PageTemplateListCreteView(TemplateListCreateView):
 
 class PageTemplateViewSet(DetailViewSet):
     queryset = (
-        models.Page.objects.filter(is_template=True)
+        models.PageTemplate.objects.all()
         .select_related("project", "created_by")
         .prefetch_related(
             Prefetch(
@@ -123,7 +123,7 @@ class PageListCreateView(generics.ListCreateAPIView):
     project_info = {}
     serializer_class = serializers.PageSerializer
     queryset = (
-        models.Page.objects.filter(is_template=False)
+        models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
@@ -157,7 +157,7 @@ class PageListCreateView(generics.ListCreateAPIView):
 
 class PageViewSet(DetailViewSet):
     queryset = (
-        models.Page.objects.filter(is_template=False)
+        models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             Prefetch(
