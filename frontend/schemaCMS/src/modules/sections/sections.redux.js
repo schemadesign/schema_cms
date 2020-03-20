@@ -28,4 +28,5 @@ const setSection = (state = INITIAL_STATE, { payload }) => state.set('section', 
 export const reducer = createReducer(INITIAL_STATE, {
   [SectionsRoutines.fetchSections.SUCCESS]: setSections,
   [SectionsRoutines.fetchSection.SUCCESS]: setSection,
+  [SectionsRoutines.updateSection.SUCCESS]: setSection,
 });

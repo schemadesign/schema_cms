@@ -36,4 +36,13 @@ describe('Sections: redux', () => {
       expect(resultState.section).to.deep.equal(section);
     });
   });
+
+  describe('when SECTIONS/UPDATE_SECTION_SUCCESS action is received', () => {
+    it('should set page templates', () => {
+      const section = { data: 'data' };
+      const resultState = sectionsReducer(state, SectionsRoutines.updateSection.success(section));
+
+      expect(resultState.section).to.deep.equal(section);
+    });
+  });
 });
