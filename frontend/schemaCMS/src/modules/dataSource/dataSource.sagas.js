@@ -64,6 +64,7 @@ function createUploaderChannel({ formData, id }) {
         emit({ data });
       })
       .catch(error => {
+        reportError(error);
         emit({ error, data: { id } });
       });
 

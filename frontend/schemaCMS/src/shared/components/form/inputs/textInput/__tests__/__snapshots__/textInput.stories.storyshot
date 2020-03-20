@@ -213,7 +213,7 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
 
 .c2 {
   position: absolute;
-  top: 50px;
+  top: calc(100% - 30px);
   left: 0;
   color: #f21e29;
   font-size: 14px;
