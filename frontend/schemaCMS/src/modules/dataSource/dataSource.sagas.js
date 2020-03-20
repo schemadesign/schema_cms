@@ -64,6 +64,7 @@ function createUploaderChannel({ formData, id }) {
         emit({ data });
       })
       .catch(error => {
+        reportError(error);
         emit({ error, data: { id } });
       });
 
@@ -75,7 +76,7 @@ function* uploadProgressWatcher(channel, id) {
   while (true) {
     try {
       yield put(DataSourceRoutines.updateProgress.request());
-      const { progress, data, error = {} } = yield take(channel);
+      const { progress, data, error = null } = yield take(channel);
 
       if (is(Number, progress)) {
         yield put(DataSourceRoutines.updateProgress.success({ progress, id }));

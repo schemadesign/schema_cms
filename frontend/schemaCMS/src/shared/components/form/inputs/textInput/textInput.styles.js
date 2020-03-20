@@ -29,7 +29,7 @@ export const IconWrapper = styled.div`
 
 export const ErrorWrapper = styled.div`
   position: ${({ isLabel, isAuthWidth }) => (isLabel || isAuthWidth ? 'absolute' : 'relative')};
-  top: ${({ isLabel, isAuthWidth }) => (isLabel || isAuthWidth ? '50px' : '0')};
+  top: ${({ isLabel, isAuthWidth }) => (isLabel || isAuthWidth ? 'calc(100% - 30px);' : '0')};
   left: 0;
   color: ${({ theme: { textField } }) => textField.error};
   font-size: 14px;

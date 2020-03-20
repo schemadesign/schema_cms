@@ -77,14 +77,13 @@ describe('Sections: sagas', () => {
       const formData = {};
       const response = {
         id: 1,
-        results: [],
       };
 
       mockApi.patch(`${SECTIONS_PATH}/${sectionId}`, formData).reply(OK, response);
 
       await expectSaga(watchSections)
         .withState(defaultState)
-        .put(SectionsRoutines.updateSection.success(response.results))
+        .put(SectionsRoutines.updateSection.success(response))
         .dispatch(SectionsRoutines.updateSection({ sectionId, formData }))
         .silentRun();
     });

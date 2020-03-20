@@ -106,7 +106,7 @@ export class SourceFormComponent extends PureComponent {
           <Fragment>
             {this.renderCsvUploader({
               ...restProps,
-              disabled: (isProcessing && this.props.dataSource.fileName) || fileUploading,
+              disabled: isProcessing || fileUploading,
             })}
             {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
           </Fragment>
@@ -172,7 +172,7 @@ export class SourceFormComponent extends PureComponent {
         {this.renderSourceUpload({
           type,
           fileName,
-          isProcessing,
+          isProcessing: isProcessing && !!dataSource.fileName,
           fileUploadingError,
           fileUploading,
           ...restProps,
