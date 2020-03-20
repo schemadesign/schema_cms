@@ -143,7 +143,7 @@ class TestUpdatePageTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(page_template.pk), data=payload, format="json")
-        page = pages_models.Page.objects.get(id=response.data["id"])
+        page = pages_models.PageTemplate.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data == page_serializer.PageTemplateSerializer(page).data
@@ -198,7 +198,7 @@ class TestListPageTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(project.pk))
-        queryset = projects_models.Project.objects.get(id=project.pk).page_set.filter(is_template=True)
+        queryset = pages_models.PageTemplate.objects.filter(project=project.pk)
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.PageTemplateSerializer(queryset, many=True).data

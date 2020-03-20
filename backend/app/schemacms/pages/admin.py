@@ -33,9 +33,6 @@ class PageTemplateAdmin(SoftDeleteObjectAdmin):
     readonly_on_update_fields = ("project",)
     inlines = (BlockInline,)
 
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(is_template=True)
-
 
 @admin.register(models.Section)
 class SectionAdmin(SoftDeleteObjectAdmin):
@@ -64,9 +61,6 @@ class PageAdmin(SoftDeleteObjectAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
-        form.base_fields["template"].queryset = models.Page.objects.filter(is_template=True)
+        form.base_fields["template"].queryset = models.PageTemplate.objects.filter(project=obj.project)
         form.base_fields["section"].queryset = models.Section.objects.filter(project=obj.project)
         return form
-
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(is_template=False)
