@@ -11,6 +11,13 @@ export const section = {
       id: 1,
       templateName: 'templateName',
     },
+    {
+      createdBy: 'owner',
+      created: '2020-03-09T10:41:17+0000',
+      name: 'page name 2',
+      id: 2,
+      templateName: null,
+    },
   ],
   pagesCount: 1,
   isPublish: true,

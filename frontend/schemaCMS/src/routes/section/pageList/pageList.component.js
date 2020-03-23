@@ -57,12 +57,13 @@ const TEMPORARY_PAGE_URL = 'https://schemacms.com';
 
 const Page = ({ created, createdBy, name, id, templateName }) => {
   const history = useHistory();
+  const intl = useIntl();
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
   const header = <CardHeader list={list} />;
 
   return (
-    <ListItem headerComponent={header} footerComponent={templateName}>
+    <ListItem headerComponent={header} footerComponent={templateName || intl.formatMessage(messages.blankTemplate)}>
       <ListItemTitle id={`page-${id}`} onClick={() => history.push(`/page/${id}`)}>
         {name}
       </ListItemTitle>
@@ -75,7 +76,7 @@ Page.propTypes = {
   createdBy: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  templateName: PropTypes.string.isRequired,
+  templateName: PropTypes.string,
 };
 
 export const PageList = ({
