@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Icons, Form } from 'schemaUI';
+import { map, prepend, pipe, isEmpty } from 'ramda';
 
 import { Container } from './pageForm.styles';
 import {
@@ -30,8 +31,11 @@ import {
   PAGE_KEYWORDS,
   PAGE_TEMPLATE,
   PAGE_IS_PUBLIC,
+  PAGE_TEMPLATE_BLOCKS,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
+import { BackButton, NextButton } from '../navigation';
 
 const { EditIcon, MinusIcon } = Icons;
 const { Switch } = Form;
@@ -48,8 +52,25 @@ export const PageForm = ({
   ...restFormikProps
 }) => {
   const intl = useIntl();
-  const pageTemplatesOptions = pageTemplates.map(({ name, id }) => ({ value: id, label: name }));
-  const handleSelectPageTemplate = ({ value }) => setFieldValue(PAGE_TEMPLATE, value);
+  const [changeTemplateModalOpen, setChangeTemplateModalOpen] = useState(false);
+  const [temporaryPageTemplate, setTemporaryPageTemplate] = useState(null);
+  const pageTemplatesOptions = pipe(
+    map(({ name, id }) => ({ value: id, label: name })),
+    prepend({ value: null, label: intl.formatMessage(messages.blankTemplate) })
+  )(pageTemplates);
+  const handleSelectPageTemplate = ({ value }) => {
+    const oldValue = values[PAGE_TEMPLATE];
+
+    if (!!oldValue && !isEmpty(values[PAGE_TEMPLATE_BLOCKS]) && oldValue !== value) {
+      setTemporaryPageTemplate(value);
+      return setChangeTemplateModalOpen(true);
+    }
+    return setFieldValue(PAGE_TEMPLATE, value);
+  };
+  const handleConfirmChangeTemplate = () => {
+    setChangeTemplateModalOpen(false);
+    setFieldValue(PAGE_TEMPLATE, temporaryPageTemplate);
+  };
   const binIcon = setRemoveModalOpen ? (
     <BinIconContainer id="removePage" onClick={() => setRemoveModalOpen(true)}>
       <MinusIcon customStyles={binStyles} />
@@ -125,8 +146,8 @@ export const PageForm = ({
       <Select
         label={intl.formatMessage(messages[PAGE_TEMPLATE])}
         name={PAGE_TEMPLATE}
-        value={values[PAGE_TEMPLATE]}
-        id="blockTypeSelect"
+        value={values[PAGE_TEMPLATE] || ''}
+        id="pageTemplateSelect"
         options={pageTemplatesOptions}
         onSelect={handleSelectPageTemplate}
         placeholder={intl.formatMessage(messages[`${PAGE_TEMPLATE}Placeholder`])}
@@ -154,6 +175,19 @@ export const PageForm = ({
           {binIcon}
         </SwitchContainer>
       </Switches>
+      <Modal ariaHideApp={false} isOpen={changeTemplateModalOpen} contentLabel="Confirm Change" style={modalStyles}>
+        <ModalTitle>
+          <FormattedMessage {...messages.changeTitle} />
+        </ModalTitle>
+        <ModalActions>
+          <BackButton onClick={() => setChangeTemplateModalOpen(false)}>
+            <FormattedMessage {...messages.cancelChange} />
+          </BackButton>
+          <NextButton id="confirmChangeTemplateBtn" onClick={handleConfirmChangeTemplate}>
+            <FormattedMessage {...messages.confirmChange} />
+          </NextButton>
+        </ModalActions>
+      </Modal>
     </Container>
   );
 };

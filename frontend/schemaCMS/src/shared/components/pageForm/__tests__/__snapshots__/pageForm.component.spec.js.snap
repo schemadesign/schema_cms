@@ -499,7 +499,7 @@ exports[`PageForm: Component should render correctly 1`] = `
       }
     >
       <div
-        id="blockTypeSelect"
+        id="pageTemplateSelect"
         style={
           Object {
             "cursor": "pointer",
@@ -567,10 +567,30 @@ exports[`PageForm: Component should render correctly 1`] = `
               }
             }
           >
-            Page template
+            Blank
           </div>
           <div
             id="select-item-1"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            style={
+              Object {
+                "border": "1px solid  #2F2F36",
+                "borderTop": "none",
+                "color": "#71737e",
+                "cursor": "pointer",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            Page template
+          </div>
+          <div
+            id="select-item-2"
             onClick={[Function]}
             onMouseOut={[Function]}
             onMouseOver={[Function]}
