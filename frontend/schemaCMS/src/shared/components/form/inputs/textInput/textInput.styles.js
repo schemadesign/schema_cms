@@ -10,7 +10,8 @@ const getAutoWidthStyles = styleWhenTrue(
     position: relative;
     max-width: 100%;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   `
 );
 
@@ -28,8 +29,8 @@ export const IconWrapper = styled.div`
 `;
 
 export const ErrorWrapper = styled.div`
-  position: ${({ isLabel, isAuthWidth }) => (isLabel || isAuthWidth ? 'absolute' : 'relative')};
-  top: ${({ isLabel, isAuthWidth }) => (isLabel || isAuthWidth ? 'calc(100% - 30px);' : '0')};
+  position: ${({ isLabel }) => (isLabel ? 'absolute' : 'relative')};
+  top: ${({ isLabel }) => (isLabel ? 'calc(100% - 30px);' : '0')};
   left: 0;
   color: ${({ theme: { textField } }) => textField.error};
   font-size: 14px;
