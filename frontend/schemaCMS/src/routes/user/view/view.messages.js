@@ -20,7 +20,7 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'user.view.removeTitle',
-    defaultMessage: 'Are you sure you want to remove user?',
+    defaultMessage: 'Are you sure you want to remove this user?',
   },
   makeAdminTitle: {
     id: 'user.view.makeAdminTitle',

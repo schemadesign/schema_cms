@@ -75,7 +75,7 @@ exports[`Page: Component should render correctly 1`] = `
             "outline": "none",
             "padding": "0",
             "position": "absolute",
-            "right": 0,
+            "right": -6,
             "top": 6,
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
@@ -393,7 +393,7 @@ exports[`Page: Component should render correctly 1`] = `
               className="sc-eHgmQL dpAtYH"
             >
               <div
-                className="sc-jAaTju flPFMG"
+                className="sc-jAaTju kVLVck"
               >
                 <div
                   style={

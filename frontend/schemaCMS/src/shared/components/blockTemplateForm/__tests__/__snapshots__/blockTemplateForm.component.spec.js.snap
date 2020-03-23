@@ -44,7 +44,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           className="sc-gzVnrw ihHoGK"
         >
           <div
-            className="sc-jKJlTe bCRSMS"
+            className="sc-jKJlTe bSHSYF"
           >
             <div
               style={
@@ -409,7 +409,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jKJlTe bCRSMS"
+              className="sc-jKJlTe bSHSYF"
             >
               <div
                 style={

@@ -810,7 +810,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove the data source?"
+        defaultMessage="Are you sure you want to remove this data source?"
         id="dataSource.source.removeTitle"
         values={Object {}}
       />
@@ -1692,7 +1692,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove the data source?"
+        defaultMessage="Are you sure you want to remove this data source?"
         id="dataSource.source.removeTitle"
         values={Object {}}
       />

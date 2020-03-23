@@ -24,7 +24,7 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'dataSource.source.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the data source?',
+    defaultMessage: 'Are you sure you want to remove this data source?',
   },
   cancelRunLastJob: {
     id: 'dataSource.source.cancelRemoval',

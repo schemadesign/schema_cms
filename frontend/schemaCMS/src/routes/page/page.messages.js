@@ -28,6 +28,6 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'page.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the page?',
+    defaultMessage: 'Are you sure you want to remove this page?',
   },
 });
