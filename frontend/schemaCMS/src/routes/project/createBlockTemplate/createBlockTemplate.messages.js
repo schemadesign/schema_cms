@@ -12,7 +12,7 @@ export default defineMessages({
   },
   save: {
     id: 'project.createBlockTemplate.save',
-    defaultMessage: 'Save Template',
+    defaultMessage: 'Create',
   },
   cancel: {
     id: 'project.createBlockTemplate.cancel',

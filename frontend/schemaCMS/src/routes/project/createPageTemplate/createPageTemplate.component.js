@@ -23,6 +23,7 @@ import {
   BLOCK_NAME,
   BLOCK_TYPE,
   BLOCK_ID,
+  getDefaultPageBlock,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 import { PageTemplateForm } from '../../../shared/components/pageTemplateForm';
 
@@ -34,7 +35,7 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
   const [error, setError] = useState(null);
   const [createLoading, setCreateLoading] = useState(false);
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: INITIAL_VALUES,
+    initialValues: { ...INITIAL_VALUES, [PAGE_TEMPLATES_BLOCKS]: [getDefaultPageBlock()] },
     validationSchema: () => PAGE_TEMPLATES_SCHEMA,
     initialErrors: { [PAGE_TEMPLATES_NAME]: 'required' },
     onSubmit: async formData => {
