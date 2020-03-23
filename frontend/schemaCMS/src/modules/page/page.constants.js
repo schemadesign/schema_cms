@@ -6,6 +6,7 @@ export const PAGE_KEYWORDS = 'keywords';
 export const PAGE_DESCRIPTION = 'description';
 export const PAGE_TEMPLATE = 'template';
 export const PAGE_IS_PUBLIC = 'isPublic';
+export const PAGE_TEMPLATE_BLOCKS = 'blocks';
 
 export const FORM_VALUES = [
   PAGE_NAME,
@@ -22,6 +23,7 @@ export const INITIAL_VALUES = {
   [PAGE_KEYWORDS]: '',
   [PAGE_DESCRIPTION]: '',
   [PAGE_TEMPLATE]: '',
+  [PAGE_TEMPLATE_BLOCKS]: [],
   [PAGE_IS_PUBLIC]: false,
 };
 

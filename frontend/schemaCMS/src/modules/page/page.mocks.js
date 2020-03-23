@@ -5,6 +5,7 @@ import {
   PAGE_KEYWORDS,
   PAGE_NAME,
   PAGE_TEMPLATE,
+  PAGE_TEMPLATE_BLOCKS,
 } from './page.constants';
 
 export const page = {
@@ -14,5 +15,6 @@ export const page = {
   [PAGE_DESCRIPTION]: 'description',
   [PAGE_TEMPLATE]: 'template',
   [PAGE_IS_PUBLIC]: false,
+  [PAGE_TEMPLATE_BLOCKS]: [{ name: 'name' }],
   section: 'sectionId',
 };

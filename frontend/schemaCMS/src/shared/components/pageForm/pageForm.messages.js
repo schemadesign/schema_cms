@@ -58,4 +58,20 @@ export default defineMessages({
     id: 'shared.components.pageForm.visitPage',
     defaultMessage: 'Visit Page: {page}',
   },
+  blankTemplate: {
+    id: 'shared.components.pageForm.blankTemplate',
+    defaultMessage: 'Blank',
+  },
+  changeTitle: {
+    id: 'shared.components.pageForm.changeTitle',
+    defaultMessage: 'Changing a template will remove any blocks you added. Are you sure you want to proceed?',
+  },
+  cancelChange: {
+    id: 'shared.components.pageForm.cancelChange',
+    defaultMessage: 'Cancel',
+  },
+  confirmChange: {
+    id: 'shared.components.pageForm.confirmChange',
+    defaultMessage: 'Confirm',
+  },
 });
