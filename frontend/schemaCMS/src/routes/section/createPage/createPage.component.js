@@ -13,7 +13,7 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
+import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/page/page.constants';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../../project/project.constants';
 
@@ -30,9 +30,10 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => PAGE_SCHEMA,
-    onSubmit: async formData => {
+    onSubmit: async data => {
       try {
         setCreateLoading(true);
+        const formData = { ...data, [PAGE_TEMPLATE]: data[PAGE_TEMPLATE] || null };
         const { id } = await createPage({ formData, sectionId });
         history.push(`/page/${id}`);
       } catch (e) {

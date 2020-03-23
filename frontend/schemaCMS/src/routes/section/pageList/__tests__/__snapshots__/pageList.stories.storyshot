@@ -1227,7 +1227,7 @@ exports[`Storyshots PageList Default 1`] = `
         <div
           className="c25"
         />
-        1 page
+        2 pages
         <div
           className="c25"
         >
@@ -1364,6 +1364,86 @@ exports[`Storyshots PageList Default 1`] = `
             }
           >
             templateName
+          </div>
+        </div>
+        <div
+          className="c28"
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "borderTop": "2px solid #FFF",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "12px",
+              "justifyContent": "space-between",
+              "padding": "12px 14px 14px",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "color": "#71737e",
+                  "marginBottom": 14,
+                }
+              }
+            >
+              <ul
+                className="c29"
+              >
+                <li
+                  className="c30"
+                  id="headerItem-0"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="c30"
+                  id="headerItem-1"
+                >
+                  owner
+                </li>
+              </ul>
+            </div>
+            <h1
+              className="c31"
+              id="page-2"
+              onClick={[Function]}
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              page name 2
+            </h1>
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#71737e",
+                "marginBottom": 4,
+                "marginTop": 10,
+              }
+            }
+          >
+            Blank
           </div>
         </div>
       </section>

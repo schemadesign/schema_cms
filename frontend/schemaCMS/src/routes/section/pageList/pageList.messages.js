@@ -59,4 +59,8 @@ export default defineMessages({
     id: 'section.pageList.visitPage',
     defaultMessage: 'Visit Page: {page}',
   },
+  blankTemplate: {
+    id: 'section.pageList.visitPage',
+    defaultMessage: 'Blank',
+  },
 });

@@ -14,6 +14,7 @@ export const FORM_VALUES = [
   PAGE_KEYWORDS,
   PAGE_DESCRIPTION,
   PAGE_TEMPLATE,
+  PAGE_TEMPLATE_BLOCKS,
   PAGE_IS_PUBLIC,
 ];
 
@@ -35,7 +36,7 @@ export const PAGE_SCHEMA = Yup.object().shape({
     .required('Required'),
   [PAGE_DISPLAY_NAME]: Yup.string()
     .trim()
-    .max(25, 'Page URL Display Name should have maximum 1000 characters'),
+    .max(25, 'Page URL Display Name should have maximum 25 characters'),
   [PAGE_DESCRIPTION]: Yup.string()
     .trim()
     .max(1000, 'Page Description should have maximum 1000 characters'),

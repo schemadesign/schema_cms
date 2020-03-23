@@ -56,7 +56,7 @@ export const PageForm = ({
   const [temporaryPageTemplate, setTemporaryPageTemplate] = useState(null);
   const pageTemplatesOptions = pipe(
     map(({ name, id }) => ({ value: id, label: name })),
-    prepend({ value: null, label: intl.formatMessage(messages.blankTemplate) })
+    prepend({ value: 0, label: intl.formatMessage(messages.blankTemplate) })
   )(pageTemplates);
   const handleSelectPageTemplate = ({ value }) => {
     const oldValue = values[PAGE_TEMPLATE];
@@ -146,7 +146,7 @@ export const PageForm = ({
       <Select
         label={intl.formatMessage(messages[PAGE_TEMPLATE])}
         name={PAGE_TEMPLATE}
-        value={values[PAGE_TEMPLATE] || ''}
+        value={values[PAGE_TEMPLATE]}
         id="pageTemplateSelect"
         options={pageTemplatesOptions}
         onSelect={handleSelectPageTemplate}
