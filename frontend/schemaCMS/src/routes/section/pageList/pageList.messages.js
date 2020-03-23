@@ -37,7 +37,7 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'section.pageList.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the section?',
+    defaultMessage: 'Are you sure you want to remove this section?',
   },
   [SECTIONS_PUBLISH]: {
     id: `section.pageList.${SECTIONS_PUBLISH}`,

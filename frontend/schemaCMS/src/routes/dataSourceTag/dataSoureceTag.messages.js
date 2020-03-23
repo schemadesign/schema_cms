@@ -32,7 +32,7 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'dataSourceTag.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the tag?',
+    defaultMessage: 'Are you sure you want to remove this tag?',
   },
   nameTagsListNameNotUniqueError: {
     id: 'dataSourceTag.nameTagsListNameNotUniqueError',

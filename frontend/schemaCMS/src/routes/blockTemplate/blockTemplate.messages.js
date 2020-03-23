@@ -28,6 +28,6 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'blockTemplate.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the block template?',
+    defaultMessage: 'Are you sure you want to remove this block template?',
   },
 });

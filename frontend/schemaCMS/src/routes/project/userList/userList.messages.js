@@ -12,7 +12,7 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'project.userList.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the user from the project?',
+    defaultMessage: 'Are you sure you want to remove this user from the project?',
   },
   cancelRemoval: {
     id: 'project.userList.cancelRemoval',

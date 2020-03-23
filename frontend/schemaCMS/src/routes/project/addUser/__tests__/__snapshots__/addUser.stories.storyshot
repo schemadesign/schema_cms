@@ -379,7 +379,7 @@ exports[`Storyshots Project|AddUser List 1`] = `
               "outline": "none",
               "padding": "0",
               "position": "absolute",
-              "right": 0,
+              "right": -6,
               "top": 6,
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
@@ -1206,7 +1206,7 @@ exports[`Storyshots Project|AddUser No data 1`] = `
               "outline": "none",
               "padding": "0",
               "position": "absolute",
-              "right": 0,
+              "right": -6,
               "top": 6,
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }

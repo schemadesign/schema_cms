@@ -121,7 +121,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove the filter?"
+        defaultMessage="Are you sure you want to remove this filter?"
         id="shared.components.filterForm.removeTitle"
         values={Object {}}
       />

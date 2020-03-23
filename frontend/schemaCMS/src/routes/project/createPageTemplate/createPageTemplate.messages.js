@@ -12,7 +12,7 @@ export default defineMessages({
   },
   save: {
     id: 'project.createPageTemplate.save',
-    defaultMessage: 'Save Template',
+    defaultMessage: 'Create',
   },
   cancel: {
     id: 'project.createPageTemplate.cancel',

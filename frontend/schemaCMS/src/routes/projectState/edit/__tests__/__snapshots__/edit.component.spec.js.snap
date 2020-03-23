@@ -283,7 +283,7 @@ exports[`Edit: Component should render correctly 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove the state?"
+        defaultMessage="Are you sure you want to remove this state?"
         id="projectState.edit.removeTitle"
         values={Object {}}
       />

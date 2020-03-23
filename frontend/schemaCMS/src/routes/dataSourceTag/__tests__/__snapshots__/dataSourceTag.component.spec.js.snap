@@ -181,7 +181,7 @@ exports[`DataSourceTag: Component should render correctly 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove the tag?"
+        defaultMessage="Are you sure you want to remove this tag?"
         id="dataSourceTag.removeTitle"
         values={Object {}}
       />
@@ -379,7 +379,7 @@ exports[`DataSourceTag: Component should render correctly with loader 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove the tag?"
+        defaultMessage="Are you sure you want to remove this tag?"
         id="dataSourceTag.removeTitle"
         values={Object {}}
       />

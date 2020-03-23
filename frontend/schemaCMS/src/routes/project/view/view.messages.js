@@ -87,7 +87,7 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'project.view.removeTitle',
-    defaultMessage: 'Are you sure you want to delete the project?',
+    defaultMessage: 'Are you sure you want to delete this project?',
   },
   cancelRemoval: {
     id: 'project.view.cancelRemoval',

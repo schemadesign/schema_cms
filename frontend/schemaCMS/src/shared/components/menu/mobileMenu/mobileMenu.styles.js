@@ -96,4 +96,8 @@ export const closeButtonStyles = {
   backgroundColor: 'transparent',
 };
 
+export const customButtonStyles = {
+  right: -6,
+};
+
 export const Divider = styled.div``;

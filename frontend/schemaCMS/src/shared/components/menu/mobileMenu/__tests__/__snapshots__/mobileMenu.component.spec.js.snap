@@ -10,6 +10,11 @@ exports[`MobileMenu: Component should render correctly 1`] = `
         "type": "button",
       }
     }
+    customButtonStyles={
+      Object {
+        "right": -6,
+      }
+    }
   >
     <styled.div>
       <Styled(H2)

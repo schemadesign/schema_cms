@@ -219,10 +219,13 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
 }
 
@@ -500,7 +503,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               "outline": "none",
               "padding": "0",
               "position": "absolute",
-              "right": 0,
+              "right": -6,
               "top": 6,
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
@@ -1776,7 +1779,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               }
               type="submit"
             >
-              Save Template
+              Create
             </button>
           </div>
         </div>

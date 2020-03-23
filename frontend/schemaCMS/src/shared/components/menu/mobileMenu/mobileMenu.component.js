@@ -19,6 +19,7 @@ import {
   Divider,
   HelperLink,
   HelperList,
+  customButtonStyles,
 } from './mobileMenu.styles';
 import messages from './mobileMenu.messages';
 import { LogoutModal } from '../../logoutModal';
@@ -133,7 +134,7 @@ export class MobileMenu extends PureComponent {
 
     return (
       <Container>
-        <Header buttonProps={buttonProps} iconComponent={iconComponent}>
+        <Header buttonProps={buttonProps} customButtonStyles={customButtonStyles} iconComponent={iconComponent}>
           {headerContent}
         </Header>
         <Menu

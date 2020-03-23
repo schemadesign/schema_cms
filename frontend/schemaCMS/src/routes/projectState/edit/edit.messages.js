@@ -20,7 +20,7 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'projectState.edit.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the state?',
+    defaultMessage: 'Are you sure you want to remove this state?',
   },
   cancelRemoval: {
     id: 'projectState.edit.cancelRemoval',

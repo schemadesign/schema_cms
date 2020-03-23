@@ -43,10 +43,10 @@ class InputComponent extends PureComponent {
   handleChange = e => {
     if (this.props.autoWidth) {
       const { value, name, id } = e.target;
-      this.setState({ alternativeValue: value });
+      this.setState({ alternativeValue: value, stateValue: value });
 
       return setTimeout(() => {
-        this.setState({ inputWidth: this.spanRef.current.offsetWidth, stateValue: value });
+        this.setState({ inputWidth: this.spanRef.current.offsetWidth });
         this.handleThrottle({ target: { value, name, id } });
       });
     }

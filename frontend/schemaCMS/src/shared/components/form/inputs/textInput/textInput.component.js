@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Icons } from 'schemaUI';
-import { always } from 'ramda';
+import { always, split, pathOr, path } from 'ramda';
 
 import { Container, ErrorWrapper, IconWrapper, getIconStyles } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
@@ -36,11 +36,12 @@ export class TextInput extends PureComponent {
     onChange: Function.prototype,
   };
 
-  renderError = renderWhenTrue(() => (
-    <ErrorWrapper isLabel={!!this.props.label} isAuthWidth={this.props.autoWidth}>
-      {this.props.errors[this.props.name]}
-    </ErrorWrapper>
-  ));
+  renderError = ({ error, errorMessage }) =>
+    renderWhenTrue(() => (
+      <ErrorWrapper isLabel={!!this.props.label} isAuthWidth={this.props.autoWidth}>
+        {errorMessage}
+      </ErrorWrapper>
+    ))(error);
 
   renderEditIcon = renderWhenTrue(
     always(
@@ -67,8 +68,9 @@ export class TextInput extends PureComponent {
       autoWidth,
       ...restProps
     } = this.props;
-    const isError = !!errors[restProps.name];
-    const isTouched = touched[restProps.name];
+    const errorMessage = path(split('.', restProps.name), errors);
+    const isError = !!errorMessage;
+    const isTouched = pathOr(false, split('.', restProps.name), touched);
     const error = checkOnlyErrors ? isError : isError && isTouched;
 
     return (
@@ -88,7 +90,7 @@ export class TextInput extends PureComponent {
           iconComponent={this.renderEditIcon(isEdit)}
           {...restProps}
         />
-        {this.renderError(error)}
+        {this.renderError({ error, errorMessage })}
       </Container>
     );
   }
