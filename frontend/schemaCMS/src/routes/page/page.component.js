@@ -16,7 +16,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageForm } from '../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project/project.constants';
-import { PAGE_SCHEMA, FORM_VALUES } from '../../modules/page/page.constants';
+import { PAGE_SCHEMA, FORM_VALUES, PAGE_TEMPLATE } from '../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 
 export const Page = ({
@@ -40,13 +40,16 @@ export const Page = ({
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(project.id);
+  const initialValues = { ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
+
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: pick(FORM_VALUES, page),
+    initialValues,
     enableReinitialize: true,
     validationSchema: () => PAGE_SCHEMA,
-    onSubmit: async formData => {
+    onSubmit: async data => {
       try {
         setUpdateLoading(true);
+        const formData = { ...data, [PAGE_TEMPLATE]: data[PAGE_TEMPLATE] || null };
         await updatePage({ formData, pageId });
       } catch (e) {
         reportError(e);
