@@ -71,6 +71,7 @@ class PageTemplateListCreteView(TemplateListCreateView):
     serializer_class = serializers.PageTemplateSerializer
     queryset = (
         models.PageTemplate.objects.all()
+        .order_by("-created")
         .select_related("project", "created_by")
         .prefetch_related(
             Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
@@ -128,6 +129,7 @@ class PageListCreateView(generics.ListCreateAPIView):
         .prefetch_related(
             Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
         )
+        .order_by("-created")
     )
 
     def get_parent(self):

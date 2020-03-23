@@ -112,7 +112,8 @@ class PageTemplateSerializer(CustomModelSerializer):
         template.save()
 
         if blocks:
-            template.create_or_update_blocks(blocks)
+            blocks_data = self.validate_block_data(blocks)
+            template.create_or_update_blocks(blocks_data)
 
         return template
 
@@ -127,9 +128,16 @@ class PageTemplateSerializer(CustomModelSerializer):
         instance = super().update(instance, validated_data)
 
         if blocks:
-            instance.create_or_update_blocks(blocks)
+            blocks_data = self.validate_block_data(blocks)
+            instance.create_or_update_blocks(blocks_data)
 
         return instance
+
+    @staticmethod
+    def validate_block_data(blocks: dict):
+        serializer = PageTemplateBlockSerializer(data=blocks, many=True, partial=True)
+        serializer.is_valid(raise_exception=True)
+        return serializer.validated_data
 
     @staticmethod
     def get_blocks(template):
