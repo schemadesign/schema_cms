@@ -22,6 +22,15 @@ class BlockTemplateSerializer(CustomModelSerializer):
     class Meta:
         model = models.Block
         fields = ("id", "project", "name", "created_by", "elements", "created", "is_available", "allow_add")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Block.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="blockTemplateNameUnique",
+                message="Block template with this name already exist in project.",
+            )
+        ]
 
     @transaction.atomic()
     def create(self, validated_data):
