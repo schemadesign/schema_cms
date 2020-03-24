@@ -78,7 +78,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole }
       <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!blockTemplates.length}>
         {() => (
           <Fragment>
-            <CounterHeader copy={intl.formatMessage(messages.blockTemplate)} count={blockTemplates.length} />
+            <CounterHeader moveToTop copy={intl.formatMessage(messages.blockTemplate)} count={blockTemplates.length} />
             <ListContainer>
               {blockTemplates.map((block, index) => (
                 <BlockTemplate key={index} {...block} />

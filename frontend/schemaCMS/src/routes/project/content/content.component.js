@@ -83,7 +83,7 @@ export const Content = ({ userRole, fetchSections, sections }) => {
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error}>
         <Fragment>
-          <CounterHeader copy={intl.formatMessage(messages.section)} count={sections.length} />
+          <CounterHeader moveToTop copy={intl.formatMessage(messages.section)} count={sections.length} />
           <ListContainer>
             {sections.map((section, index) => (
               <Section key={index} {...section} />

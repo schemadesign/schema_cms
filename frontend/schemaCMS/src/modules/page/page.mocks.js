@@ -5,8 +5,19 @@ import {
   PAGE_KEYWORDS,
   PAGE_NAME,
   PAGE_TEMPLATE,
-  PAGE_TEMPLATE_BLOCKS,
+  PAGE_BLOCKS,
+  BLOCK_TYPE,
+  BLOCK_NAME,
+  BLOCK_KEY,
+  BLOCK_ID,
 } from './page.constants';
+
+export const block = {
+  [BLOCK_NAME]: 'name',
+  [BLOCK_TYPE]: 'type',
+  [BLOCK_KEY]: 1,
+  [BLOCK_ID]: 1,
+};
 
 export const page = {
   [PAGE_NAME]: 'page name',
@@ -15,6 +26,6 @@ export const page = {
   [PAGE_DESCRIPTION]: 'description',
   [PAGE_TEMPLATE]: 'template',
   [PAGE_IS_PUBLIC]: false,
-  [PAGE_TEMPLATE_BLOCKS]: [{ name: 'name' }],
+  [PAGE_BLOCKS]: [block],
   section: 'sectionId',
 };

@@ -353,16 +353,16 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-cvbbAY dbHDoR"
+      className="sc-jWBwVP fDrbnp"
     >
       <div
-        className="sc-brqgnP jNrwSA"
+        className="sc-cMljjf ejBmwZ"
       >
         <div
-          className="sc-cMljjf dojRdE"
+          className="sc-jAaTju gPpNSu"
         >
           <h2
-            className="sc-jAaTju hzRaBi"
+            className="sc-jDwBTQ jiOExw"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -376,7 +376,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Block Template
           </h2>
           <h1
-            className="sc-jDwBTQ jiOExw"
+            className="sc-gPEVay exeowC"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -393,7 +393,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               className="sc-kEYyzF kkFIwK"
             >
               <div
-                className="sc-iRbamj fVHPZl"
+                className="sc-jlyJG gvNmqF"
               >
                 <div
                   style={
@@ -491,7 +491,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-gPEVay eQYmiW"
+          className="sc-iRbamj blSEcj"
         >
           <div
             className="sc-kgoBCf ifKHSM"
@@ -544,7 +544,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         className="sc-iAyFgw evfwkd"
       >
         <div
-          className="sc-iRbamj kjoJLW"
+          className="sc-jlyJG bYQXFu"
         >
           <div
             style={
@@ -611,17 +611,17 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-dVhcbM keanHd"
+        className="sc-eqIVtm kQLCdp"
       >
         <div
-          className="sc-eqIVtm bdskEI"
+          className="sc-fAjcbJ iePIVW"
         />
         1 Element
         <div
-          className="sc-eqIVtm bdskEI"
+          className="sc-fAjcbJ iePIVW"
         >
           <div
-            className="sc-hSdWYo fnUMtJ"
+            className="sc-eHgmQL grjLGM"
           >
             <div
               className="sc-kgoBCf ifKHSM"
@@ -712,14 +712,14 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-Rmtcm faZHIU"
+                className="sc-bRBYWo slmIV"
               >
                 <div
-                  className="sc-bRBYWo hgVZri"
+                  className="sc-hzDkRC ktZwAf"
                 >
                   <div>
                     <div
-                      className="sc-jWBwVP jFvmzb"
+                      className="sc-brqgnP bKqdmL"
                     >
                       <svg
                         style={
@@ -740,7 +740,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-jhAzac fDKKUd"
+                    className="sc-fBuWsC eKiOQg"
                   >
                     <svg
                       style={
@@ -760,7 +760,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-iRbamj fVHPZl"
+                  className="sc-jlyJG gvNmqF"
                 >
                   <div
                     style={
@@ -835,7 +835,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-bRBYWo hgVZri"
+                  className="sc-hzDkRC ktZwAf"
                 >
                   <svg
                     style={
@@ -916,10 +916,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             >
               <div>
                 <div
-                  className="sc-hzDkRC bqqXDX"
+                  className="sc-jhAzac kaiuxj"
                 >
                   <div
-                    className="sc-fBuWsC fMpBXQ"
+                    className="sc-fMiknA cBPGSI"
                   >
                     <label
                       id="fieldProjectStatusLabel"
@@ -945,7 +945,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                       value=""
                     />
                     <div
-                      className="sc-fMiknA gJwzOS"
+                      className="sc-dVhcbM elOgpX"
                     >
                       <svg
                         style={

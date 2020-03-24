@@ -1,8 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Icons, Form } from 'schemaUI';
-import { map, prepend, pipe, isEmpty } from 'ramda';
+import { Icons, Form, Accordion } from 'schemaUI';
+import { useRouteMatch, useHistory } from 'react-router';
+import { map, prepend, pipe, isEmpty, append, remove, propEq, find, propOr } from 'ramda';
+import { asMutable } from 'seamless-immutable';
+import { DndProvider } from 'react-dnd';
+import MultiBackend from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 
 import { Container } from './pageForm.styles';
 import {
@@ -20,6 +25,8 @@ import {
   Switches,
   SwitchLabel,
   CopySeparator,
+  mobilePlusStyles,
+  PlusContainer,
 } from '../form/frequentComponents.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageForm.messages';
@@ -31,13 +38,19 @@ import {
   PAGE_KEYWORDS,
   PAGE_TEMPLATE,
   PAGE_IS_PUBLIC,
-  PAGE_TEMPLATE_BLOCKS,
+  PAGE_BLOCKS,
+  PAGE_DELETE_BLOCKS,
+  BLOCK_KEY,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
-import { BackButton, NextButton } from '../navigation';
+import { BackButton, NextButton, PlusButton } from '../navigation';
+import { BlockPage } from '../blockPage';
+import { Draggable } from '../draggable';
+import { IconWrapper, menuIconStyles } from '../pageTemplateForm/pageTemplateForm.styles';
+import { CounterHeader } from '../counterHeader';
 
-const { EditIcon, MinusIcon } = Icons;
+const { EditIcon, MinusIcon, MenuIcon } = Icons;
 const { Switch } = Form;
 const TEMPORARY_PAGE_URL = 'https://schemacms.com';
 
@@ -46,29 +59,45 @@ export const PageForm = ({
   displayName,
   values,
   handleChange,
+  setValues,
   setFieldValue,
   pageTemplates,
   setRemoveModalOpen,
+  setTemporaryPageBlocks,
   ...restFormikProps
 }) => {
   const intl = useIntl();
+  const history = useHistory();
+  const { url } = useRouteMatch();
   const [changeTemplateModalOpen, setChangeTemplateModalOpen] = useState(false);
   const [temporaryPageTemplate, setTemporaryPageTemplate] = useState(null);
   const pageTemplatesOptions = pipe(
     map(({ name, id }) => ({ value: id, label: name })),
     prepend({ value: 0, label: intl.formatMessage(messages.blankTemplate) })
   )(pageTemplates);
+  const setBlocks = value => {
+    const templateBlocks = pipe(
+      find(propEq('id', value)),
+      propOr([], [PAGE_BLOCKS])
+    )(pageTemplates);
+
+    setFieldValue(PAGE_BLOCKS, templateBlocks.map(block => ({ ...block, key: block.id })));
+  };
   const handleSelectPageTemplate = ({ value }) => {
     const oldValue = values[PAGE_TEMPLATE];
 
-    if (!!oldValue && !isEmpty(values[PAGE_TEMPLATE_BLOCKS]) && oldValue !== value) {
+    if (!!oldValue && !isEmpty(values[PAGE_BLOCKS]) && oldValue !== value) {
       setTemporaryPageTemplate(value);
       return setChangeTemplateModalOpen(true);
     }
+
+    setBlocks(value);
     return setFieldValue(PAGE_TEMPLATE, value);
   };
   const handleConfirmChangeTemplate = () => {
     setChangeTemplateModalOpen(false);
+
+    setBlocks(temporaryPageTemplate);
     setFieldValue(PAGE_TEMPLATE, temporaryPageTemplate);
   };
   const binIcon = setRemoveModalOpen ? (
@@ -102,6 +131,32 @@ export const PageForm = ({
       </IconsContainer>
     </Subtitle>
   );
+  const addBlock = () => {
+    setTemporaryPageBlocks(values[PAGE_BLOCKS]);
+    history.push(`${url}/add-block`);
+  };
+  const removeBlock = index => {
+    const removedElement = values[PAGE_BLOCKS][index];
+    const newValues = { ...values };
+
+    if (removedElement.id) {
+      newValues[PAGE_DELETE_BLOCKS] = append(removedElement.id, values[PAGE_DELETE_BLOCKS]);
+    }
+
+    newValues[PAGE_BLOCKS] = remove(index, 1, values[PAGE_BLOCKS]);
+
+    setValues({ ...newValues });
+  };
+  const handleMove = (dragIndex, hoverIndex) => {
+    const dragCard = values[PAGE_BLOCKS][dragIndex];
+    const mutableValues = asMutable(values[PAGE_BLOCKS]);
+
+    mutableValues.splice(dragIndex, 1);
+    mutableValues.splice(hoverIndex, 0, dragCard);
+
+    setFieldValue(PAGE_BLOCKS, mutableValues);
+  };
+  const blocksCount = values[PAGE_BLOCKS].length;
 
   return (
     <Container>
@@ -153,6 +208,57 @@ export const PageForm = ({
         placeholder={intl.formatMessage(messages[`${PAGE_TEMPLATE}Placeholder`])}
         {...restFormikProps}
       />
+      <CounterHeader
+        copy={intl.formatMessage(messages.blocks)}
+        count={blocksCount}
+        right={
+          <PlusContainer>
+            <PlusButton
+              customStyles={mobilePlusStyles}
+              id="addBlock"
+              onClick={addBlock}
+              type="button"
+              disabled={!restFormikProps.isValid && !!blocksCount}
+            />
+          </PlusContainer>
+        }
+      />
+      <Accordion>
+        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+          {values[PAGE_BLOCKS].map((block, index) => (
+            <Draggable
+              key={block[BLOCK_KEY]}
+              accept="box"
+              onMove={handleMove}
+              id={block[BLOCK_KEY]}
+              index={index}
+              count={blocksCount}
+            >
+              {drag => {
+                const draggableIcon = drag(
+                  <div>
+                    <IconWrapper>
+                      <MenuIcon customStyles={menuIconStyles} />
+                    </IconWrapper>
+                  </div>
+                );
+
+                return (
+                  <BlockPage
+                    index={index}
+                    block={block}
+                    draggableIcon={draggableIcon}
+                    removeBlock={removeBlock}
+                    handleChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    {...restFormikProps}
+                  />
+                );
+              }}
+            </Draggable>
+          ))}
+        </DndProvider>
+      </Accordion>
       <Switches>
         <SwitchContainer>
           <SwitchContent>
@@ -195,10 +301,11 @@ export const PageForm = ({
 PageForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  setValues: PropTypes.func.isRequired,
+  setTemporaryPageBlocks: PropTypes.func.isRequired,
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
   pageTemplates: PropTypes.array.isRequired,
-  isValid: PropTypes.bool.isRequired,
   title: PropTypes.node.isRequired,
   displayName: PropTypes.string,
 };

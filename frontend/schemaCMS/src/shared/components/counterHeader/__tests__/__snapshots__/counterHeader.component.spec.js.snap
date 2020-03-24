@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CounterHeader: Component should render correctly 1`] = `
-<styled.div>
+<styled.div
+  moveToTop={false}
+>
   <styled.div
     renderElement={true}
   />

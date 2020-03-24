@@ -8,8 +8,10 @@ import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mock
 
 export const defaultProps = {
   handleChange: Function.prototype,
+  setValues: Function.prototype,
   setFieldValue: Function.prototype,
   setRemoveModalOpen: Function.prototype,
+  setTemporaryPageBlocks: Function.prototype,
   values: page,
   pageTemplates,
   isValid: true,

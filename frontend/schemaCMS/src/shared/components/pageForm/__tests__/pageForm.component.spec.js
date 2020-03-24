@@ -7,6 +7,18 @@ import { makeContextRenderer } from '../../../utils/testUtils';
 import { PAGE_TEMPLATES_BLOCKS } from '../../../../modules/pageTemplates/pageTemplates.constants';
 import { page } from '../../../../modules/page/page.mocks';
 
+const mockPushHistory = jest.fn();
+
+jest.mock('react-router', () => ({
+  ...jest.requireActual('react-router'),
+  useHistory: () => ({
+    push: mockPushHistory,
+  }),
+  useRouteMatch: () => ({
+    url: 'url',
+  }),
+}));
+
 describe('PageForm: Component', () => {
   const render = props => makeContextRenderer(<PageForm {...defaultProps} {...props} />);
 
@@ -46,5 +58,17 @@ describe('PageForm: Component', () => {
     });
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('template', 'value');
+  });
+
+  it('should setTemporaryPageBlocks and redirect to add block page', async () => {
+    jest.spyOn(defaultProps, 'setTemporaryPageBlocks');
+    const wrapper = await render();
+
+    act(() => {
+      wrapper.root.findByProps({ id: 'addBlock' }).props.onClick();
+    });
+
+    expect(defaultProps.setTemporaryPageBlocks).toHaveBeenCalledWith([{ id: 1, key: 1, name: 'name', type: 'type' }]);
+    expect(mockPushHistory).toHaveBeenCalledWith('url/add-block');
   });
 });

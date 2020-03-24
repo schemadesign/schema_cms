@@ -6,6 +6,7 @@ import { reducer as pageReducer, PageRoutines } from '../page.redux';
 describe('Page: redux', () => {
   const state = Immutable({
     page: { description: '', displayName: '', isPublic: false, keywords: '', name: '', template: '' },
+    temporaryPageBlocks: [],
   });
 
   describe('reducer', () => {
@@ -33,6 +34,15 @@ describe('Page: redux', () => {
 
       const resultState = pageReducer(state, PageRoutines.updatePage.success(page));
       expect(resultState.page).to.deep.equal(page);
+    });
+  });
+
+  describe('when PAGE/SET_TEMPORARY_PAGE_BLOCKS success action is received', () => {
+    it('should set temporaryPageBlocks', () => {
+      const temporaryPageBlocks = [{ data: 'data' }];
+
+      const resultState = pageReducer(state, PageRoutines.setTemporaryPageBlocks.trigger(temporaryPageBlocks));
+      expect(resultState.temporaryPageBlocks).to.deep.equal(temporaryPageBlocks);
     });
   });
 });

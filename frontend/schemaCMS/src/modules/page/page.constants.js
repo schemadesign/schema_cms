@@ -6,7 +6,13 @@ export const PAGE_KEYWORDS = 'keywords';
 export const PAGE_DESCRIPTION = 'description';
 export const PAGE_TEMPLATE = 'template';
 export const PAGE_IS_PUBLIC = 'isPublic';
-export const PAGE_TEMPLATE_BLOCKS = 'blocks';
+export const PAGE_BLOCKS = 'blocks';
+export const PAGE_DELETE_BLOCKS = 'deleteBlocks';
+
+export const BLOCK_NAME = 'name';
+export const BLOCK_TYPE = 'type';
+export const BLOCK_KEY = 'key';
+export const BLOCK_ID = 'id';
 
 export const FORM_VALUES = [
   PAGE_NAME,
@@ -14,7 +20,7 @@ export const FORM_VALUES = [
   PAGE_KEYWORDS,
   PAGE_DESCRIPTION,
   PAGE_TEMPLATE,
-  PAGE_TEMPLATE_BLOCKS,
+  PAGE_BLOCKS,
   PAGE_IS_PUBLIC,
 ];
 
@@ -24,7 +30,8 @@ export const INITIAL_VALUES = {
   [PAGE_KEYWORDS]: '',
   [PAGE_DESCRIPTION]: '',
   [PAGE_TEMPLATE]: '',
-  [PAGE_TEMPLATE_BLOCKS]: [],
+  [PAGE_BLOCKS]: [],
+  [PAGE_DELETE_BLOCKS]: [],
   [PAGE_IS_PUBLIC]: false,
 };
 

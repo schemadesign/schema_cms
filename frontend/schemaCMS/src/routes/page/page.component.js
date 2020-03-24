@@ -28,6 +28,7 @@ export const Page = ({
   userRole,
   removePage,
   fetchPage,
+  setTemporaryPageBlocks,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
@@ -95,6 +96,7 @@ export const Page = ({
             pageTemplates={pageTemplates}
             isValid={isValid}
             setRemoveModalOpen={setRemoveModalOpen}
+            setTemporaryPageBlocks={setTemporaryPageBlocks}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -141,6 +143,7 @@ Page.propTypes = {
   fetchPageTemplates: PropTypes.func.isRequired,
   fetchPage: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
+  setTemporaryPageBlocks: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
 };

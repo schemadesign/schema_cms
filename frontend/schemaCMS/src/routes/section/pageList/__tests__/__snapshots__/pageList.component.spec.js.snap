@@ -472,7 +472,7 @@ exports[`PageList: Component should render correctly 1`] = `
             className="sc-dVhcbM KPvEY"
           >
             <div
-              className="sc-kjoXOD kAoFrC"
+              className="sc-cHGsZl hLGuJQ"
             >
               <div
                 style={
@@ -622,7 +622,7 @@ exports[`PageList: Component should render correctly 1`] = `
       className="sc-fAjcbJ cZBeyZ"
     >
       <div
-        className="sc-kjoXOD dZgkoN"
+        className="sc-cHGsZl bBckqV"
       >
         <div
           style={
@@ -686,7 +686,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-cHGsZl eEMikf"
+              className="sc-TOsTZ ivcocm"
             >
               <svg
                 style={
@@ -719,7 +719,7 @@ exports[`PageList: Component should render correctly 1`] = `
         className="sc-brqgnP hMPvOi"
       >
         <div
-          className="sc-caSCKo wJspA"
+          className="sc-gisBJw ivnysh"
         >
           <div
             className="sc-kGXeez icYmUS"
@@ -1005,7 +1005,7 @@ exports[`PageList: Component should render correctly 1`] = `
             >
               This Section is currently Private
               <span
-                className="sc-gisBJw bXCHGH"
+                className="sc-kjoXOD fiGmNc"
               />
               Visit Page: 
               <a

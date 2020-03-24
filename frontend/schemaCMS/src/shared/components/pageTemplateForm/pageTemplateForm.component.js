@@ -131,6 +131,7 @@ export const PageTemplateForm = ({
         />
       </MobileInputName>
       <CounterHeader
+        moveToTop
         copy={intl.formatMessage(messages.blocks)}
         count={blocksCount}
         right={
