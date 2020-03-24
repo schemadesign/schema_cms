@@ -48,6 +48,6 @@ export default defineMessages({
   },
   nameDataSourceProjectNameUniqueError: {
     id: 'project.createDataSource.nameDataSourceProjectNameUniqueError',
-    defaultMessage: 'A data source with this name already exists in project.',
+    defaultMessage: 'A data source with this name already exists in project',
   },
 });

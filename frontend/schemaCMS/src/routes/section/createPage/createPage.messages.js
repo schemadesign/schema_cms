@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'section.createPage.cancel',
     defaultMessage: 'Cancel',
   },
+  namePageNameUniqueError: {
+    id: 'section.createPage.namePageNameUniqueError',
+    defaultMessage: 'A page with this name already exists in section in project',
+  },
 });

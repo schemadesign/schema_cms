@@ -1111,6 +1111,7 @@ exports[`Storyshots PageList Default 1`] = `
                   "width": "60px",
                 }
               }
+              type="button"
             >
               <svg
                 style={
@@ -1584,6 +1585,7 @@ exports[`Storyshots PageList Default 1`] = `
                   "width": "60px",
                 }
               }
+              type="button"
             >
               <svg
                 style={

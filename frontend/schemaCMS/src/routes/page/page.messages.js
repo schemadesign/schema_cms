@@ -30,4 +30,8 @@ export default defineMessages({
     id: 'page.removeTitle',
     defaultMessage: 'Are you sure you want to remove this page?',
   },
+  namePageNameUniqueError: {
+    id: 'page.namePageNameUniqueError',
+    defaultMessage: 'A page with this name already exists in section',
+  },
 });

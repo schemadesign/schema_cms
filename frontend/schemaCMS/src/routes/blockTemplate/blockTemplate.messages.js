@@ -30,4 +30,8 @@ export default defineMessages({
     id: 'blockTemplate.removeTitle',
     defaultMessage: 'Are you sure you want to remove this block template?',
   },
+  nameBlockTemplateNameUniqueError: {
+    id: 'blockTemplate.nameBlockTemplateNameUniqueError',
+    defaultMessage: 'A block template with this name already exists in project',
+  },
 });

@@ -30,4 +30,8 @@ export default defineMessages({
     id: 'pageTemplate.removeTitle',
     defaultMessage: 'Are you sure you want to remove this page template?',
   },
+  namePageTemplateNameUniqueError: {
+    id: 'pageTemplate.namePageTemplateNameUniqueError',
+    defaultMessage: 'A page template with this name already exists  in project',
+  },
 });

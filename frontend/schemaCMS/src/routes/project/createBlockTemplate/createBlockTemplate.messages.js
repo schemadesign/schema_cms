@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'project.createBlockTemplate.cancel',
     defaultMessage: 'Cancel',
   },
+  nameBlockTemplateNameUniqueError: {
+    id: 'project.createBlockTemplate.nameBlockTemplateNameUniqueError',
+    defaultMessage: 'A block template with this name already exists  in project',
+  },
 });

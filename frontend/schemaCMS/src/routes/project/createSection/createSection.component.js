@@ -8,7 +8,7 @@ import { useFormik } from 'formik';
 import { Container, Form } from './createSection.styles';
 import messages from './createSection.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../project.constants';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { CONTENT } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -29,14 +29,18 @@ export const CreateSection = ({ userRole, createSection }) => {
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => SECTIONS_SCHEMA,
-    onSubmit: async formData => {
+    onSubmit: async (formData, { setErrors }) => {
       try {
         setCreateLoading(true);
         await createSection({ projectId, formData });
         setCreateLoading(false);
         history.push(`/project/${projectId}/content`);
-      } catch (e) {
-        reportError(e);
+      } catch (errors) {
+        reportError(errors);
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
         setCreateLoading(false);
       }
     },

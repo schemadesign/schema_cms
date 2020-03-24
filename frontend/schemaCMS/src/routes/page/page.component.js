@@ -11,7 +11,7 @@ import { Container } from './page.styles';
 import messages from './page.messages';
 import reportError from '../../shared/utils/reportError';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../shared/utils/helpers';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageForm } from '../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
@@ -47,13 +47,17 @@ export const Page = ({
     initialValues,
     enableReinitialize: true,
     validationSchema: () => PAGE_SCHEMA,
-    onSubmit: async data => {
+    onSubmit: async (data, { setErrors }) => {
       try {
         setUpdateLoading(true);
         const formData = { ...data, [PAGE_TEMPLATE]: data[PAGE_TEMPLATE] || null };
         await updatePage({ formData, pageId });
-      } catch (e) {
-        reportError(e);
+      } catch (errors) {
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
+        reportError(errors);
       } finally {
         setUpdateLoading(false);
       }
