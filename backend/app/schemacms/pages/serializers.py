@@ -69,14 +69,19 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
 class PageTemplateBlockSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
-    type = serializers.SerializerMethodField(read_only=True)
+    type = serializers.SerializerMethodField()
+    elements = serializers.SerializerMethodField()
 
     class Meta:
         model = models.PageBlock
-        fields = ("id", "block", "name", "type", "order")
+        fields = ("id", "block", "name", "type", "order", "elements")
 
     def get_type(self, template):
         return template.block.name
+
+    def get_elements(self, template):
+        elements = template.block.elements.all()
+        return BlockElementSerializer(elements, many=True).data
 
 
 class PageTemplateSerializer(CustomModelSerializer):
