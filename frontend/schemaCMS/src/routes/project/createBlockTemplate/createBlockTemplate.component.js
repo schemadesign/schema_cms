@@ -9,7 +9,7 @@ import { useEffectOnce } from 'react-use';
 import { Container } from './createBlockTemplate.styles';
 import messages from './createBlockTemplate.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
 import { NavigationContainer, NextButton, BackButton } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project.constants';
 import {
@@ -34,18 +34,23 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockT
     initialValues: { ...INITIAL_VALUES, [BLOCK_TEMPLATES_ELEMENTS]: [getDefaultBlockElement()] },
     validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
     initialErrors: { [BLOCK_TEMPLATES_NAME]: 'required' },
-    onSubmit: async formData => {
+    onSubmit: async (formData, { setErrors }) => {
       try {
         setCreateLoading(true);
         formData.elements = formData.elements.map((data, index) => ({ ...data, order: index }));
         await createBlockTemplate({ projectId, formData });
         history.push(`/project/${projectId}/block-templates`);
-      } catch (e) {
-        reportError(e);
+      } catch (errors) {
+        reportError(errors);
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
         setCreateLoading(false);
       }
     },
   });
+
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);

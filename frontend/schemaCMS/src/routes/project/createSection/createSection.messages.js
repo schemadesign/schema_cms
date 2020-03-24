@@ -23,4 +23,8 @@ export default defineMessages({
     id: `project.createSection.${SECTIONS_NAME}`,
     defaultMessage: 'Name',
   },
+  nameSectionNameUniqueError: {
+    id: 'project.createSection.nameSectionNameUniqueError',
+    defaultMessage: 'A section with this name already exists in project',
+  },
 });

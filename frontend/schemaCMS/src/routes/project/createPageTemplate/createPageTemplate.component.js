@@ -12,7 +12,7 @@ import messages from './createPageTemplate.messages';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import {
@@ -38,7 +38,7 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
     initialValues: { ...INITIAL_VALUES, [PAGE_TEMPLATES_BLOCKS]: [getDefaultPageBlock()] },
     validationSchema: () => PAGE_TEMPLATES_SCHEMA,
     initialErrors: { [PAGE_TEMPLATES_NAME]: 'required' },
-    onSubmit: async formData => {
+    onSubmit: async (formData, { setErrors }) => {
       try {
         setCreateLoading(true);
         await createPageTemplate({
@@ -52,8 +52,12 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
           },
         });
         history.push(`/project/${projectId}/page-templates`);
-      } catch (e) {
-        reportError(e);
+      } catch (errors) {
+        reportError(errors);
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
         setCreateLoading(false);
       }
     },

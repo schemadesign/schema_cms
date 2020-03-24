@@ -598,6 +598,7 @@ exports[`PageList: Component should render correctly 1`] = `
                 "width": "60px",
               }
             }
+            type="button"
           >
             <svg
               style={
@@ -1071,6 +1072,7 @@ exports[`PageList: Component should render correctly 1`] = `
                 "width": "60px",
               }
             }
+            type="button"
           >
             <svg
               style={

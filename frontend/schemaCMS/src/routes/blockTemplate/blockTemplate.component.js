@@ -10,7 +10,7 @@ import { pick } from 'ramda';
 import { Container } from './blockTemplate.styles';
 import messages from './blockTemplate.messages';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../shared/utils/helpers';
 import {
   BLOCK_TEMPLATES_DELETE_ELEMENTS,
   BLOCK_TEMPLATES_SCHEMA,
@@ -72,15 +72,19 @@ export const BlockTemplate = memo(
       },
       enableReinitialize: true,
       validationSchema: () => BLOCK_TEMPLATES_SCHEMA,
-      onSubmit: async formData => {
+      onSubmit: async (formData, { setErrors }) => {
         try {
           setUpdateLoading(true);
           formData.elements = formData.elements.map((data, index) => ({ ...data, order: index }));
           await updateBlockTemplate({ blockTemplateId, formData });
           setUpdateLoading(false);
           history.push(`/project/${project.id}/block-templates`);
-        } catch (e) {
-          reportError(e);
+        } catch (errors) {
+          reportError(errors);
+          const { formatMessage } = intl;
+          const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+          setErrors(errorMessages);
           setUpdateLoading(false);
         }
       },

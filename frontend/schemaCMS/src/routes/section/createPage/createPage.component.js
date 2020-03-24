@@ -10,7 +10,7 @@ import { Container } from './createPage.styles';
 import messages from './createPage.messages';
 import { PageForm } from '../../../shared/components/pageForm';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/page/page.constants';
@@ -38,14 +38,18 @@ export const CreatePage = ({
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => PAGE_SCHEMA,
-    onSubmit: async data => {
+    onSubmit: async (data, { setErrors }) => {
       try {
         setCreateLoading(true);
         const formData = { ...data, [PAGE_TEMPLATE]: data[PAGE_TEMPLATE] || null };
         const { id } = await createPage({ formData, sectionId });
         history.push(`/page/${id}`);
-      } catch (e) {
-        reportError(e);
+      } catch (errors) {
+        reportError(errors);
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
         setCreateLoading(false);
       }
     },

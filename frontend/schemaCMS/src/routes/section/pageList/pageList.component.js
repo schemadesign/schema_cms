@@ -13,7 +13,7 @@ import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { CONTENT } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -104,12 +104,16 @@ export const PageList = ({
     initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH], section),
     enableReinitialize: true,
     validationSchema: () => SECTIONS_SCHEMA,
-    onSubmit: async formData => {
+    onSubmit: async (formData, { setErrors }) => {
       try {
         setUpdateLoading(true);
         await updateSection({ formData, sectionId });
-      } catch (e) {
-        reportError(e);
+      } catch (errors) {
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
+        reportError(errors);
       } finally {
         setUpdateLoading(false);
       }
@@ -170,7 +174,11 @@ export const PageList = ({
       <LoadingWrapper loading={loading} error={error}>
         <Form onSubmit={handleSubmit}>
           <ContextHeader title={title} subtitle={nameInput}>
-            <PlusButton id="createPage" onClick={() => history.push(`/section/${sectionId}/create-page`)} />
+            <PlusButton
+              id="createPage"
+              type="button"
+              onClick={() => history.push(`/section/${sectionId}/create-page`)}
+            />
           </ContextHeader>
           <MobileInputName>
             <TextInput
@@ -231,7 +239,7 @@ export const PageList = ({
             </SwitchContainer>
           </Switches>
           <NavigationContainer fixed>
-            <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}/content`)} />
+            <BackArrowButton id="backBtn" type="button" onClick={() => history.push(`/project/${projectId}/content`)} />
             <NextButton
               id="updateSection"
               type="submit"

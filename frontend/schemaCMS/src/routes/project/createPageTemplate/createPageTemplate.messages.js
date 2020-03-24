@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'project.createPageTemplate.cancel',
     defaultMessage: 'Cancel',
   },
+  namePageTemplateNameUniqueError: {
+    id: 'project.createPageTemplate.namePageTemplateNameUniqueError',
+    defaultMessage: 'A page template with this name already exists in project',
+  },
 });

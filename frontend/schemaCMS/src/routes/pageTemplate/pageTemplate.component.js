@@ -12,7 +12,7 @@ import messages from './pageTemplate.messages';
 import reportError from '../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../project/project.constants';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../shared/utils/helpers';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageTemplateForm } from '../../shared/components/pageTemplateForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
@@ -70,7 +70,7 @@ export const PageTemplate = memo(
       },
       enableReinitialize: true,
       validationSchema: () => PAGE_TEMPLATES_SCHEMA,
-      onSubmit: async formData => {
+      onSubmit: async (formData, { setErrors }) => {
         try {
           setUpdateLoading(true);
           await updatePageTemplate({
@@ -85,8 +85,12 @@ export const PageTemplate = memo(
           });
           setUpdateLoading(false);
           history.push(`/project/${project.id}/page-templates`);
-        } catch (e) {
-          reportError(e);
+        } catch (errors) {
+          reportError(errors);
+          const { formatMessage } = intl;
+          const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+          setErrors(errorMessages);
           setUpdateLoading(false);
         }
       },

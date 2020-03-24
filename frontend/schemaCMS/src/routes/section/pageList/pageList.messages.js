@@ -63,4 +63,8 @@ export default defineMessages({
     id: 'section.pageList.visitPage',
     defaultMessage: 'Blank',
   },
+  nameSectionNameUniqueError: {
+    id: 'section.pageList.nameSectionNameUniqueError',
+    defaultMessage: 'A section with this name already exists in project',
+  },
 });
