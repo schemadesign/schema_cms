@@ -132,6 +132,7 @@ export const BlockTemplateForm = ({
         />
       </MobileInputName>
       <CounterHeader
+        moveToTop
         copy={intl.formatMessage(messages.elements)}
         count={elementsCount}
         right={

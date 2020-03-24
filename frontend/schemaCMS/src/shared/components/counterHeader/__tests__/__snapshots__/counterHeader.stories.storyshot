@@ -29,7 +29,7 @@ exports[`Storyshots CounterHeader Default 1`] = `
 
 @media (min-width:1050px) {
   .c0 {
-    margin-top: -35px;
+    margin-top: 0px;
     margin-bottom: 40px;
   }
 }

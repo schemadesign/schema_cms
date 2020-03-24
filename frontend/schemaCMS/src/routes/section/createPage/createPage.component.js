@@ -17,7 +17,15 @@ import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/pag
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../../project/project.constants';
 
-export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTemplates, fetchSection, project }) => {
+export const CreatePage = ({
+  pageTemplates,
+  userRole,
+  createPage,
+  fetchPageTemplates,
+  fetchSection,
+  project,
+  setTemporaryPageBlocks,
+}) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -63,7 +71,13 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
-          <PageForm title={title} pageTemplates={pageTemplates} isValid={isValid} {...restFormikProps} />
+          <PageForm
+            title={title}
+            pageTemplates={pageTemplates}
+            isValid={isValid}
+            setTemporaryPageBlocks={setTemporaryPageBlocks}
+            {...restFormikProps}
+          />
           <NavigationContainer fixed>
             <BackButton id="cancelBtn" type="button" onClick={() => history.push(`/section/${sectionId}`)}>
               <FormattedMessage {...messages.cancel} />
@@ -89,5 +103,6 @@ CreatePage.propTypes = {
   createPage: PropTypes.func.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
   fetchSection: PropTypes.func.isRequired,
+  setTemporaryPageBlocks: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
 };

@@ -184,6 +184,7 @@ export const PageList = ({
             />
           </MobileInputName>
           <CounterHeader
+            moveToTop
             copy={intl.formatMessage(messages.page)}
             count={pages.length}
             right={

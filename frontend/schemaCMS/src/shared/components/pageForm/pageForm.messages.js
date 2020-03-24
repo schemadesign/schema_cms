@@ -74,4 +74,8 @@ export default defineMessages({
     id: 'shared.components.pageForm.confirmChange',
     defaultMessage: 'Confirm',
   },
+  blocks: {
+    id: 'shared.components.pageForm.blocks',
+    defaultMessage: 'Block',
+  },
 });

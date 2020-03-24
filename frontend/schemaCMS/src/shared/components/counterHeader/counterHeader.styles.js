@@ -12,7 +12,7 @@ export const Container = styled.div`
   align-items: center;
 
   ${media.desktop`
-    margin-top: -35px;
+    margin-top: ${({ moveToTop }) => (moveToTop ? -35 : 0)}px;
     margin-bottom: 40px;
   `}
 `;

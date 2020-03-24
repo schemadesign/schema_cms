@@ -69,6 +69,10 @@ export const MobileInputName = styled.div`
   `}
 `;
 
+export const PlusContainer = styled.div`
+  text-align: right;
+`;
+
 export const MobilePlusContainer = styled.div`
   text-align: right;
   ${media.desktop`

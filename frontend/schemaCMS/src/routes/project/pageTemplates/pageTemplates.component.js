@@ -77,7 +77,7 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole }) =
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!pageTemplates.length}>
         <Fragment>
-          <CounterHeader copy={intl.formatMessage(messages.pageTemplate)} count={pageTemplates.length} />
+          <CounterHeader moveToTop copy={intl.formatMessage(messages.pageTemplate)} count={pageTemplates.length} />
           <ListContainer>
             {pageTemplates.map((page, index) => (
               <PageTemplate key={index} {...page} />

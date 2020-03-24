@@ -356,13 +356,13 @@ exports[`Page: Component should render correctly 1`] = `
       className="sc-ckVGcZ foYhJp"
     >
       <div
-        className="sc-iRbamj vALsX"
+        className="sc-jlyJG fbkhWD"
       >
         <div
-          className="sc-jlyJG bdSVo"
+          className="sc-gipzik eayAWe"
         >
           <h2
-            className="sc-gipzik dBSGMo"
+            className="sc-csuQGl dVHGhO"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -376,7 +376,7 @@ exports[`Page: Component should render correctly 1`] = `
             Edit
           </h2>
           <h1
-            className="sc-csuQGl dVHGhO"
+            className="sc-Rmtcm iGSeUR"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -393,7 +393,7 @@ exports[`Page: Component should render correctly 1`] = `
               className="sc-eHgmQL dpAtYH"
             >
               <div
-                className="sc-jAaTju kVLVck"
+                className="sc-jDwBTQ ibxJSF"
               >
                 <div
                   style={
@@ -491,14 +491,14 @@ exports[`Page: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-Rmtcm gwGgYM"
+          className="sc-bRBYWo ccSRck"
         />
       </div>
       <div
         className="sc-jWBwVP kxqwHw"
       >
         <div
-          className="sc-jAaTju iDxCWa"
+          className="sc-jDwBTQ erYdBQ"
         >
           <div
             style={
@@ -562,7 +562,7 @@ exports[`Page: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-jDwBTQ cTwjft"
+                className="sc-gPEVay fWBLSH"
               >
                 <svg
                   style={
@@ -585,7 +585,7 @@ exports[`Page: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-jAaTju iDxCWa"
+        className="sc-jDwBTQ erYdBQ"
       >
         <div
           style={
@@ -651,7 +651,7 @@ exports[`Page: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-jAaTju iDxCWa"
+        className="sc-jDwBTQ erYdBQ"
       >
         <div
           style={
@@ -735,7 +735,7 @@ exports[`Page: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-jAaTju iDxCWa"
+        className="sc-jDwBTQ erYdBQ"
       >
         <div
           style={
@@ -801,7 +801,7 @@ exports[`Page: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bRBYWo igShYD"
+        className="sc-hzDkRC bqtEqb"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -827,7 +827,7 @@ exports[`Page: Component should render correctly 1`] = `
           value="template"
         />
         <div
-          className="sc-hzDkRC ixGhoK"
+          className="sc-jhAzac EScZB"
         >
           <svg
             style={
@@ -970,6 +970,303 @@ exports[`Page: Component should render correctly 1`] = `
         </div>
       </div>
       <div
+        className="sc-caSCKo eIfFzW"
+      >
+        <div
+          className="sc-gisBJw lgyCsa"
+        />
+        1 Block
+        <div
+          className="sc-gisBJw lgyCsa"
+        >
+          <div
+            className="sc-brqgnP cfJHAO"
+          >
+            <div
+              className="sc-kgoBCf ifKHSM"
+            >
+              <button
+                disabled={false}
+                id="addBlock"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#000",
+                    "cursor": "pointer",
+                    "display": "inline-block",
+                    "fill": "#FFF",
+                    "fontSize": "18px",
+                    "height": 40,
+                    "margin": "0",
+                    "minHeight": 40,
+                    "outline": "none",
+                    "padding": "0",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                    "width": 40,
+                  }
+                }
+                type="button"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#000",
+                      "height": 40,
+                      "minHeight": 40,
+                      "shapeRendering": "crispEdges",
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "justifyContent": "space-between",
+              "opacity": 1,
+              "position": "relative",
+              "transform": "translate3d(0, 0, 0)",
+              "width": "100%",
+              "zIndex": 1,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderTop": "2px solid #FFF",
+                "overflow": "hidden",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#000",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "minHeight": 60,
+                  "paddingRight": 40,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                className="sc-fBuWsC hMHZqI"
+              >
+                <div
+                  className="sc-fMiknA anWfE"
+                >
+                  <div>
+                    <div
+                      className="sc-fAjcbJ blLjkd"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "60px",
+                            "marginRight": 20,
+                            "width": 10,
+                          }
+                        }
+                        viewBox="0 0 10 60"
+                      >
+                        <path
+                          d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="sc-jDwBTQ ibxJSF"
+                >
+                  <div
+                    style={
+                      Object {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "maxWidth": "100%",
+                        "paddingBottom": 0,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <input
+                      id="blocks.0.name"
+                      name="blocks.0.name"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="Name"
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "border": "none",
+                          "color": "#FFF",
+                          "fontFamily": "inherit",
+                          "fontSize": "18px",
+                          "fontWeight": "inherit",
+                          "letterSpacing": "normal",
+                          "lineHeight": "24px",
+                          "maxWidth": "100%",
+                          "minWidth": 60,
+                          "outline": "none",
+                          "padding": 0,
+                          "width": 80,
+                        }
+                      }
+                      type="text"
+                      value="name"
+                    />
+                    <div
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "border": "none",
+                          "color": "#FFF",
+                          "fontFamily": "inherit",
+                          "fontSize": "18px",
+                          "fontWeight": "inherit",
+                          "letterSpacing": "normal",
+                          "lineHeight": "24px",
+                          "maxWidth": "100%",
+                          "minWidth": 60,
+                          "opacity": 0,
+                          "outline": "none",
+                          "padding": 0,
+                          "position": "fixed",
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      name
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 2,
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+                <div
+                  className="sc-fMiknA anWfE"
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    id="removeBlock-0"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fill": "#FFF",
+                        "height": 30,
+                        "shapeRendering": "crispEdges",
+                        "width": 30,
+                      }
+                    }
+                    viewBox="0 0 60 60"
+                  >
+                    <path
+                      d="M15 28h30v4H15z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="sc-dVhcbM krcLy"
+              >
+                type
+              </div>
+              <div
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "fontSize": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 9,
+                    "transform": "rotate(0deg)",
+                    "transformOrigin": "center center",
+                    "transition": "transform 200ms ease-in-out",
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "userSelect": "none",
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M15.117 18L9 12h12z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#000",
+                  "height": 0,
+                  "transition": "height 200ms linear, overflow 0s linear 200ms",
+                }
+              }
+            >
+              <div>
+                elements
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+      <div
         className="sc-jKJlTe ewxNTP"
       >
         <div
@@ -1041,7 +1338,7 @@ exports[`Page: Component should render correctly 1`] = `
               >
                 This Page is currently Private
                 <span
-                  className="sc-cMljjf NEibj"
+                  className="sc-jAaTju iCYkkQ"
                 />
                 Visit Page: 
                 <a
