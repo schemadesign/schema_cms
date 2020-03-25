@@ -27,11 +27,16 @@ class BlockInline(admin.TabularInline):
 
 @admin.register(models.PageTemplate)
 class PageTemplateAdmin(SoftDeleteObjectAdmin):
-    list_display = ("name", "project", "deleted_at")
+    list_display = ("name", "project", "deleted_at", "is_template")
     fields = ("project", "name", "deleted_at")
     list_filter = ("project", "deleted_at")
     readonly_on_update_fields = ("project",)
     inlines = (BlockInline,)
+
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="PageTemplate", parent="project"
+        )
 
 
 @admin.register(models.Section)
@@ -44,7 +49,7 @@ class SectionAdmin(SoftDeleteObjectAdmin):
 
 @admin.register(models.Page)
 class PageAdmin(SoftDeleteObjectAdmin):
-    list_display = ("name", "section", "project", "deleted_at")
+    list_display = ("name", "section", "project", "deleted_at", "is_template")
     fields = (
         "project",
         "section",
@@ -59,8 +64,14 @@ class PageAdmin(SoftDeleteObjectAdmin):
     list_filter = ("project", "section", "deleted_at")
     readonly_on_update_fields = ("project",)
 
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="Page", parent="section"
+        )
+
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
-        form.base_fields["template"].queryset = models.PageTemplate.objects.filter(project=obj.project)
-        form.base_fields["section"].queryset = models.Section.objects.filter(project=obj.project)
+        if obj:
+            form.base_fields["template"].queryset = models.PageTemplate.objects.filter(project=obj.project)
+            form.base_fields["section"].queryset = models.Section.objects.filter(project=obj.project)
         return form
