@@ -71,6 +71,7 @@ class Page(Content):
     objects = managers.PageManager()
 
     class Meta:
+        ordering = ("-created",)
         constraints = [
             models.UniqueConstraint(
                 fields=["project", "name", "is_template"],

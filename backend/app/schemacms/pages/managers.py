@@ -4,14 +4,20 @@ from django.db import models
 from ..utils.managers import generate_soft_delete_manager
 
 
-class PageTemplateManager(models.Manager):
+class PageTemplateManager(softdelete.models.SoftDeleteManager):
     def get_queryset(self):
         return super().get_queryset().filter(is_template=True)
 
+    def all_with_deleted(self, prt=False):
+        return super().all_with_deleted(prt).filter(is_template=True)
 
-class PageManager(models.Manager):
+
+class PageManager(softdelete.models.SoftDeleteManager):
     def get_queryset(self):
         return super().get_queryset().filter(is_template=False)
+
+    def all_with_deleted(self, prt=False):
+        return super().all_with_deleted(prt).filter(is_template=False)
 
 
 class SectionQuerySet(softdelete.models.SoftDeleteQuerySet):
