@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.db import transaction
+from softdelete.admin import SoftDeleteObjectInline
 
 from . import models
 from ..utils.admin import SoftDeleteObjectAdmin
@@ -19,7 +21,7 @@ class BlockAdmin(SoftDeleteObjectAdmin):
     inlines = (ElementInline,)
 
 
-class BlockInline(admin.TabularInline):
+class BlockInline(SoftDeleteObjectInline):
     model = models.Page.blocks.through
     exclude = ("deleted_at",)
     extra = 0
@@ -37,6 +39,14 @@ class PageTemplateAdmin(SoftDeleteObjectAdmin):
         self.handle_unique_conflicts_on_undelete(
             request, queryset, field="name", model_name="PageTemplate", parent="project"
         )
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(is_template=True)
+
+    @transaction.atomic()
+    def save_model(self, request, obj, form, change):
+        obj.is_template = True
+        super().save_model(request, obj, form, change)
 
 
 @admin.register(models.Section)
@@ -68,6 +78,14 @@ class PageAdmin(SoftDeleteObjectAdmin):
         self.handle_unique_conflicts_on_undelete(
             request, queryset, field="name", model_name="Page", parent="section"
         )
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(is_template=False)
+
+    @transaction.atomic()
+    def save_model(self, request, obj, form, change):
+        obj.is_template = False
+        super().save_model(request, obj, form, change)
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
