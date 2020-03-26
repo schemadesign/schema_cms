@@ -58,6 +58,7 @@ services:
     env_file: local.env
     environment:
       DOCKER_LAMBDA_STAY_OPEN: 1
+      DOCKER_LAMBDA_WATCH: 1
       AWS_STORAGE_BUCKET_NAME: schemacms
       IMAGE_SCRAPING_FETCH_TIMEOUT: "15"
       AWS_IMAGE_STORAGE_BUCKET_NAME: schemacms-images
