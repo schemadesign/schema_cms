@@ -5,25 +5,8 @@ from . import models
 from ..utils.admin import SoftDeleteObjectAdmin
 
 
-class ElementInline(admin.TabularInline):
-    model = models.BlockElement
-    exclude = ("deleted_at",)
-    extra = 0
-
-
-@admin.register(models.Block)
-class BlockAdmin(SoftDeleteObjectAdmin):
-    list_display = ("name", "project", "is_template", "deleted_at")
-    fields = ("project", "name", "is_template", "deleted_at")
-    list_filter = ("project", "is_template", "deleted_at")
-    readonly_on_update_fields = ("project",)
-    inlines = (ElementInline,)
-
-
-class BlockInline(admin.TabularInline):
-    model = models.Page.blocks.through
-    exclude = ("deleted_at",)
-    extra = 0
+class CustomTabularInline(admin.TabularInline):
+    readonly_fields = ("deleted_at",)
 
     def get_max_num(self, request, obj=None, **kwargs):
         if obj and obj.deleted:
@@ -38,6 +21,25 @@ class BlockInline(admin.TabularInline):
         return qs
 
     queryset = get_queryset
+
+
+class ElementInline(CustomTabularInline):
+    model = models.BlockElement
+    extra = 0
+
+
+@admin.register(models.Block)
+class BlockAdmin(SoftDeleteObjectAdmin):
+    list_display = ("name", "project", "is_template", "deleted_at")
+    fields = ("project", "name", "is_template", "deleted_at")
+    list_filter = ("project", "is_template", "deleted_at")
+    readonly_on_update_fields = ("project",)
+    inlines = (ElementInline,)
+
+
+class BlockInline(CustomTabularInline):
+    model = models.Page.blocks.through
+    extra = 0
 
 
 @admin.register(models.PageTemplate)
