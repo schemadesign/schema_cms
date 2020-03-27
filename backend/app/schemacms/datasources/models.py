@@ -207,7 +207,7 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
                 "updated": self.modified.isoformat(),
                 "creator": None if not self.created_by else self.created_by.get_full_name(),
             },
-            "file": self.file.name,
+            "file": self.file.name if self.file else None,
             "shape": None,
             "result": None,
             "fields": {},
