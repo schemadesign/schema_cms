@@ -267,6 +267,8 @@ class PageSerializer(CustomModelSerializer):
     @staticmethod
     def create_or_update_elements(instance, elements):
         for element in elements:
+            type_ = element.get("type")
+            element[type_] = element.pop("value")
             models.PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(block=instance, **element)
             )
