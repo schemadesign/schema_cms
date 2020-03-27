@@ -308,6 +308,50 @@ class TestListCreatePage:
         assert page.is_template is False
         assert section.project == page_template.project == page.project
 
+    def test_create_page_with_blocks(self, api_client, admin, project, section_factory, block_template):
+        section = section_factory(project=project)
+
+        payload = {
+            "name": "Test",
+            "section": section.id,
+            "display_name": "Display Name",
+            "description": "description",
+            "keywords": "word;word1",
+            "is_public": True,
+            "blocks": [
+                {
+                    "block": block_template.id,
+                    "name": "Test Block",
+                    "type": "test",
+                    "order": 1,
+                    "elements": [
+                        {
+                            "name": "Test Element",
+                            "type": "code",
+                            "order": 0,
+                            "value": "<h1>Test Element</h2>",
+                            "params": {},
+                        },
+                        {
+                            "name": "Test Element #2",
+                            "type": "rich_text",
+                            "order": 1,
+                            "value": "Test Rich Text Element",
+                            "params": {},
+                        },
+                    ],
+                },
+            ],
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(section.id), data=payload, format="json")
+        page = pages_models.Page.objects.get(id=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == page_serializer.PageSerializer(page).data
+        assert page.is_template is False
+
 
 class TestUpdateDeletePageView:
     @staticmethod

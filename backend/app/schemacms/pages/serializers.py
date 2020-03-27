@@ -1,19 +1,45 @@
 from django.db import transaction
 from rest_framework import serializers
 
-
 from . import models
 from ..utils.serializers import CustomModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
-class BlockElementSerializer(serializers.ModelSerializer):
+class ElementValueField(serializers.Field):
+    def get_value(self, dictionary):
+        return super().get_value(dictionary)
+
+    def get_attribute(self, instance):
+        return getattr(instance, instance.type)
+
+    def to_internal_value(self, data):
+        return data
+
+    def to_representation(self, value):
+        return value
+
+
+class BaseElementSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
 
     class Meta:
+        fields = ("id", "name", "type", "order", "params")
+
+
+class BlockElementSerializer(BaseElementSerializer):
+    class Meta:
         model = models.BlockElement
-        fields = ("id", "template", "name", "type", "order", "params")
+        fields = BaseElementSerializer.Meta.fields + ("template",)
         extra_kwargs = {"template": {"required": False}}
+
+
+class PageBlockElementSerializer(BaseElementSerializer):
+    value = ElementValueField(read_only=False)
+
+    class Meta:
+        model = models.PageBlockElement
+        fields = BaseElementSerializer.Meta.fields + ("value",)
 
 
 class BlockTemplateSerializer(CustomModelSerializer):
@@ -126,8 +152,7 @@ class PageTemplateSerializer(CustomModelSerializer):
         template.save()
 
         if blocks:
-            blocks_data = self.validate_block_data(blocks)
-            template.create_or_update_blocks(blocks_data)
+            self.create_or_update_blocks(template, blocks)
 
         return template
 
@@ -142,10 +167,14 @@ class PageTemplateSerializer(CustomModelSerializer):
         instance = super().update(instance, validated_data)
 
         if blocks:
-            blocks_data = self.validate_block_data(blocks)
-            instance.create_or_update_blocks(blocks_data)
+            self.create_or_update_blocks(instance, blocks)
 
         return instance
+
+    def create_or_update_blocks(self, template, blocks):
+        blocks_data = self.validate_block_data(blocks)
+        for block in blocks_data:
+            template.create_or_update_block(block)
 
     @staticmethod
     def validate_block_data(blocks: dict):
@@ -159,7 +188,22 @@ class PageTemplateSerializer(CustomModelSerializer):
         return PageTemplateBlockSerializer(blocks, many=True).data
 
 
+class PageBlockSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(required=False)
+    type = serializers.SerializerMethodField()
+    elements = PageBlockElementSerializer(many=True)
+
+    class Meta:
+        model = models.PageBlock
+        fields = ("id", "block", "name", "type", "order", "elements")
+
+    def get_type(self, obj):
+        return obj.block.name
+
+
 class PageSerializer(CustomModelSerializer):
+    blocks = serializers.SerializerMethodField()
+
     class Meta:
         model = models.Page
         fields = (
@@ -188,10 +232,48 @@ class PageSerializer(CustomModelSerializer):
     @transaction.atomic()
     def create(self, validated_data):
         project = validated_data.get("section").project
+        blocks = self.initial_data.get("blocks", [])
         page = self.Meta.model(project=project, **validated_data)
         page.save()
 
+        if blocks:
+            self.create_or_update_blocks(page, blocks)
+
         return page
+
+    def create_or_update_blocks(self, page, blocks):
+        blocks_data = self.validate_block_data(blocks)
+        for block in blocks_data:
+            elements = block.pop("elements", [])
+            block, _ = page.create_or_update_block(block)
+            self.create_block_elements(elements, block)
+
+    def create_block_elements(self, elements, instance):
+        if elements:
+            models.PageBlockElement.objects.bulk_create(self.create_elements(elements, instance))
+
+    @staticmethod
+    def create_elements(elements, block):
+        for element in elements:
+            element_instance = models.PageBlockElement()
+            element_instance.block = block
+            setattr(element_instance, element["type"], element.pop("value"))
+
+            for key, value in element.items():
+                setattr(element_instance, key, value)
+
+            yield element_instance
+
+    @staticmethod
+    def validate_block_data(blocks: dict):
+        serializer = PageBlockSerializer(data=blocks, many=True, partial=True)
+        serializer.is_valid(raise_exception=True)
+        return serializer.validated_data
+
+    @staticmethod
+    def get_blocks(obj):
+        blocks = obj.pageblock_set.all()
+        return PageBlockSerializer(blocks, many=True).data
 
 
 class SectionListCreateSerializer(CustomModelSerializer):
