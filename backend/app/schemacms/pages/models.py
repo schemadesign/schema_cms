@@ -1,3 +1,5 @@
+import os
+
 from django.conf import settings
 from django.contrib.postgres import fields as pg_fields
 from django.db import models
@@ -6,6 +8,7 @@ from django_extensions.db.models import AutoSlugField, TimeStampedModel
 from softdelete.models import SoftDeleteObject
 
 from . import constants, managers
+from ..utils.models import file_upload_path
 
 
 class Element(SoftDeleteObject, models.Model):
@@ -58,54 +61,6 @@ class BlockElement(Element):
     template = models.ForeignKey(Block, on_delete=models.CASCADE, related_name="elements")
 
 
-class Page(Content):
-    section = models.ForeignKey("Section", on_delete=models.CASCADE, null=True, related_name="pages")
-    template = models.ForeignKey("PageTemplate", on_delete=models.SET_NULL, null=True)
-    display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
-    description = models.TextField(blank=True, default="")
-    keywords = models.TextField(blank=True, default="")
-    slug = AutoSlugField(populate_from="name", allow_duplicates=True)
-    is_public = models.BooleanField(default=False)
-    blocks = models.ManyToManyField(Block, through="PageBlock")
-
-    objects = managers.PageManager()
-
-    class Meta:
-        ordering = ("-created",)
-        constraints = [
-            models.UniqueConstraint(
-                fields=["project", "name", "is_template"],
-                name="unique_page_name",
-                condition=models.Q(deleted_at=None),
-            )
-        ]
-
-    def create_or_update_blocks(self, page_blocks: list):
-        for block in page_blocks:
-
-            self.pageblock_set.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
-
-    def delete_blocks(self, blocks: list):
-        self.pageblock_set.filter(id__in=blocks).delete()
-
-
-class PageTemplate(Page):
-    objects = managers.PageTemplateManager()
-
-    class Meta:
-        proxy = True
-
-
-class PageBlock(SoftDeleteObject):
-    block = models.ForeignKey("Block", on_delete=models.CASCADE)
-    page = models.ForeignKey("Page", on_delete=models.CASCADE)
-    name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
-    order = models.PositiveIntegerField(default=0)
-
-    def __str__(self):
-        return f"{self.name}"
-
-
 class Section(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="sections")
     name = models.CharField(max_length=constants.SECTION_NAME_MAX_LENGTH)
@@ -132,3 +87,66 @@ class Section(SoftDeleteObject, TimeStampedModel):
                 fields=["project", "name"], name="unique_section_name", condition=models.Q(deleted_at=None),
             )
         ]
+
+
+class Page(Content):
+    section = models.ForeignKey("Section", on_delete=models.CASCADE, null=True, related_name="pages")
+    template = models.ForeignKey("PageTemplate", on_delete=models.SET_NULL, null=True)
+    display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
+    description = models.TextField(blank=True, default="")
+    keywords = models.TextField(blank=True, default="")
+    slug = AutoSlugField(populate_from="name", allow_duplicates=True)
+    is_public = models.BooleanField(default=False)
+    blocks = models.ManyToManyField(Block, through="PageBlock")
+
+    objects = managers.PageManager()
+
+    class Meta:
+        ordering = ("-created",)
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name", "is_template"],
+                name="unique_page_name",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
+
+    def create_or_update_block(self, block):
+        return self.pageblock_set.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
+
+    def delete_blocks(self, blocks: list):
+        self.pageblock_set.filter(id__in=blocks).delete()
+
+
+class PageTemplate(Page):
+    objects = managers.PageTemplateManager()
+
+    class Meta:
+        proxy = True
+
+
+class PageBlock(SoftDeleteObject):
+    block = models.ForeignKey("Block", on_delete=models.CASCADE)
+    page = models.ForeignKey("Page", on_delete=models.CASCADE)
+    name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
+    order = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.name}"
+
+
+class PageBlockElement(Element):
+    block = models.ForeignKey(PageBlock, on_delete=models.CASCADE, related_name="elements")
+    rich_text = models.URLField(blank=True, default="")
+    connection = models.TextField(blank=True, default="")
+    plain_text = models.TextField(blank=True, default="")
+    code = models.TextField(blank=True, default="")
+    image = models.ImageField(null=True, upload_to=file_upload_path)
+
+    def relative_path_to_save(self, filename):
+        base_path = self.image.storage.location
+
+        if not self.page_id:
+            raise ValueError("Page is not set")
+
+        return os.path.join(base_path, f"pages/{self.page_id}/{filename}")

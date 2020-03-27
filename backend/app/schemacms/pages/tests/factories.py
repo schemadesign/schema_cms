@@ -42,6 +42,15 @@ class PageBlockFactory(factory.django.DjangoModelFactory):
     name = factory.Faker("text", max_nb_chars=constants.TEMPLATE_NAME_MAX_LENGTH)
 
 
+class PageBlockElementFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "pages.PageBlockElement"
+
+    block = factory.SubFactory(PageBlockFactory)
+    name = factory.Faker("text", max_nb_chars=constants.ELEMENT_NAME_MAX_LENGTH)
+    type = constants.ElementType.CODE
+
+
 class SectionFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "pages.Section"
