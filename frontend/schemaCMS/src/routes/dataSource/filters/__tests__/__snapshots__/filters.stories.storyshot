@@ -288,6 +288,14 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:1050px) {
   .c24 {
     display: -webkit-box;
@@ -295,6 +303,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -314,6 +326,18 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -330,6 +354,30 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
     margin: 60px 0 40px 0;
     min-height: 63px;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
 }
 
 @media (min-width:1050px) {
@@ -377,6 +425,26 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   .c15 {
     display: block;
   }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 <div
@@ -1847,6 +1915,14 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:1050px) {
   .c23 {
     display: -webkit-box;
@@ -1854,6 +1930,10 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -1873,6 +1953,18 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1889,6 +1981,30 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
     margin: 60px 0 40px 0;
     min-height: 63px;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
 }
 
 @media (min-width:1050px) {
@@ -1936,6 +2052,26 @@ exports[`Storyshots Data Source|Filters No Data 1`] = `
   .c15 {
     display: block;
   }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 <div

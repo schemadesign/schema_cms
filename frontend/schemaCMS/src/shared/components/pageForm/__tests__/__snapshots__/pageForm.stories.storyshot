@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots PageForm Default 1`] = `
-.c20 {
+.c26 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c21 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,17 +23,17 @@ exports[`Storyshots PageForm Default 1`] = `
   position: relative;
 }
 
-.c24 {
+.c30 {
   padding-right: 10px;
 }
 
-.c23 {
+.c29 {
   padding-left: 10px;
   padding-right: 40px;
   max-width: 100%;
 }
 
-.c22 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,19 +49,19 @@ exports[`Storyshots PageForm Default 1`] = `
   max-width: 100%;
 }
 
-.c27 {
+.c33 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c25 {
+.c31 {
   color: #71737e;
   min-width: 100%;
 }
 
-.c25 a {
+.c31 a {
   color: #FFF;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -82,15 +82,15 @@ exports[`Storyshots PageForm Default 1`] = `
   position: relative;
 }
 
-.c14 {
+.c15 {
   text-align: right;
 }
 
-.c26 {
+.c32 {
   padding: 0 10px;
 }
 
-.c26:before {
+.c32:before {
   content: '|';
   display: inline;
 }
@@ -137,7 +137,7 @@ exports[`Storyshots PageForm Default 1`] = `
   margin-top: 0;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -150,17 +150,17 @@ exports[`Storyshots PageForm Default 1`] = `
   font-size: 18px;
 }
 
-.c10 label {
+.c11 label {
   margin-bottom: 2px;
 }
 
-.c11 {
+.c12 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c12 {
+.c13 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -182,11 +182,20 @@ exports[`Storyshots PageForm Default 1`] = `
   align-items: center;
 }
 
-.c13 {
+.c14 {
   width: 33%;
 }
 
-.c16 {
+.c25 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  z-index: 999;
+}
+
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -197,7 +206,47 @@ exports[`Storyshots PageForm Default 1`] = `
   max-width: calc(100% - 90px);
 }
 
-.c17 {
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c20 {
+  color: #71737e;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c24 {
+  position: relative;
+}
+
+.c22 {
+  width: 0;
+  overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,15 +258,6 @@ exports[`Storyshots PageForm Default 1`] = `
 }
 
 .c19 {
-  color: #71737e;
-  max-width: 100px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: none;
-}
-
-.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -227,15 +267,79 @@ exports[`Storyshots PageForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c16 {
     display: block;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
   .c7 {
     display: none;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -264,22 +368,206 @@ exports[`Storyshots PageForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c12 {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c13 {
     margin-top: 0px;
     margin-bottom: 40px;
   }
 }
 
+@media (min-width:768px) {
+
+}
+
 @media (min-width:1050px) {
-  .c16 {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c17 {
     max-width: calc(100% - 210px);
   }
 }
 
 @media (min-width:1050px) {
-  .c19 {
+  .c20 {
     display: block;
   }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    padding-left: 50px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    width: 50px;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 <div
@@ -743,187 +1031,191 @@ exports[`Storyshots PageForm Default 1`] = `
     <div
       className="c10"
     >
-      <label
-        id="fieldProjectStatusLabel"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Page Template
-      </label>
-      <input
-        id="template"
-        name="template"
-        type="hidden"
-        value="template"
-      />
       <div
         className="c11"
       >
-        <svg
+        <label
+          id="fieldProjectStatusLabel"
           style={
             Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
             }
           }
-          viewBox="0 0 30 30"
         >
-          <path
-            d="M15.117 18L9 12h12z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </div>
-      <div
-        style={
-          Object {
-            "color": "#FFF",
-            "display": "flex",
-            "width": "100%",
-          }
-        }
-      >
+          Page Template
+        </label>
+        <input
+          id="template"
+          name="template"
+          type="hidden"
+          value="template"
+        />
         <div
-          id="pageTemplateSelect"
+          className="c12"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
           style={
             Object {
-              "cursor": "pointer",
+              "color": "#FFF",
               "display": "flex",
-              "position": "relative",
               "width": "100%",
             }
           }
         >
           <div
-            onClick={[Function]}
+            id="pageTemplateSelect"
             style={
               Object {
                 "cursor": "pointer",
                 "display": "flex",
+                "position": "relative",
                 "width": "100%",
               }
             }
           >
             <div
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "overflow": "hidden",
-                  "textOverflow": "ellipsis",
-                  "whiteSpace": "nowrap",
-                }
-              }
-            >
-              Select Page Template
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "WebkitOverflowScrolling": "touch",
-                "backgroundColor": "#1d1d20",
-                "display": "none",
-                "flexDirection": "column",
-                "left": "0",
-                "maxHeight": "184px",
-                "overflowY": "hidden",
-                "position": "absolute",
-                "top": "calc(100% + 5px)",
-                "width": "100%",
-                "zIndex": 2,
-              }
-            }
-          >
-            <div
-              id="select-item-0"
               onClick={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
               style={
                 Object {
-                  "border": "1px solid  #2F2F36",
-                  "borderTop": "1px solid  #2F2F36",
-                  "color": "#71737e",
                   "cursor": "pointer",
-                  "overflow": "hidden",
-                  "padding": "20px 10px",
-                  "textOverflow": "ellipsis",
-                  "whiteSpace": "nowrap",
+                  "display": "flex",
+                  "width": "100%",
                 }
               }
             >
-              Blank
+              <div
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Select Page Template
+              </div>
             </div>
             <div
-              id="select-item-1"
-              onClick={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
               style={
                 Object {
-                  "border": "1px solid  #2F2F36",
-                  "borderTop": "none",
-                  "color": "#71737e",
-                  "cursor": "pointer",
-                  "overflow": "hidden",
-                  "padding": "20px 10px",
-                  "textOverflow": "ellipsis",
-                  "whiteSpace": "nowrap",
+                  "WebkitOverflowScrolling": "touch",
+                  "backgroundColor": "#1d1d20",
+                  "display": "none",
+                  "flexDirection": "column",
+                  "left": "0",
+                  "maxHeight": "184px",
+                  "overflowY": "hidden",
+                  "position": "absolute",
+                  "top": "calc(100% + 5px)",
+                  "width": "100%",
+                  "zIndex": 2,
                 }
               }
             >
-              Page template
-            </div>
-            <div
-              id="select-item-2"
-              onClick={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              style={
-                Object {
-                  "border": "1px solid  #2F2F36",
-                  "borderTop": "none",
-                  "color": "#71737e",
-                  "cursor": "pointer",
-                  "overflow": "hidden",
-                  "padding": "20px 10px",
-                  "textOverflow": "ellipsis",
-                  "whiteSpace": "nowrap",
+              <div
+                id="select-item-0"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "1px solid  #2F2F36",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
                 }
-              }
-            >
-              Page template 2
+              >
+                Blank
+              </div>
+              <div
+                id="select-item-1"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Page template
+              </div>
+              <div
+                id="select-item-2"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Page template 2
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      className="c12"
+      className="c13"
     >
       <div
-        className="c13"
+        className="c14"
       />
       1 Block
       <div
-        className="c13"
+        className="c14"
       >
         <div
-          className="c14"
+          className="c15"
         >
           <div
-            className="c15"
+            className="c16"
           >
             <button
               disabled={false}
@@ -1011,14 +1303,14 @@ exports[`Storyshots PageForm Default 1`] = `
             }
           >
             <div
-              className="c16"
+              className="c17"
             >
               <div
-                className="c17"
+                className="c18"
               >
                 <div>
                   <div
-                    className="c18"
+                    className="c19"
                   >
                     <svg
                       style={
@@ -1114,7 +1406,7 @@ exports[`Storyshots PageForm Default 1`] = `
                 </div>
               </div>
               <div
-                className="c17"
+                className="c18"
               >
                 <svg
                   style={
@@ -1152,7 +1444,7 @@ exports[`Storyshots PageForm Default 1`] = `
               </div>
             </div>
             <div
-              className="c19"
+              className="c20"
             >
               type
             </div>
@@ -1199,20 +1491,565 @@ exports[`Storyshots PageForm Default 1`] = `
             }
           >
             <div>
-              elements
+              <div
+                style={
+                  Object {
+                    "borderTop": "2px solid #FFF",
+                    "overflow": "hidden",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#000",
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                      "minHeight": 60,
+                      "paddingRight": 40,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    className="c21"
+                  >
+                    <div
+                      className="c22"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": 30,
+                            "shapeRendering": "crispEdges",
+                            "width": 30,
+                          }
+                        }
+                        viewBox="0 0 60 60"
+                      >
+                        <path
+                          d="M15 28h30v4H15z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className=""
+                    >
+                      name
+                    </div>
+                  </div>
+                  <div
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fontSize": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 9,
+                        "transform": "rotate(0deg)",
+                        "transformOrigin": "center center",
+                        "transition": "transform 200ms ease-in-out",
+                      }
+                    }
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#71737e",
+                          "height": 30,
+                          "margin": "5px",
+                          "userSelect": "none",
+                          "width": 30,
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        d="M15.117 18L9 12h12z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "#000",
+                      "height": 0,
+                      "transition": "height 200ms linear, overflow 0s linear 200ms",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      className="c23"
+                    >
+                      <div
+                        className="c24"
+                      >
+                        <div
+                          className="c8"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "maxWidth": "100%",
+                                "paddingBottom": "30px",
+                                "position": "relative",
+                              }
+                            }
+                          >
+                            <textarea
+                              id="blocks.0.elements.0.value"
+                              onChange={[Function]}
+                              style={
+                                Object {
+                                  "background": "#000",
+                                  "backgroundColor": "#71737e",
+                                  "border": "none",
+                                  "color": "#FFF",
+                                  "fontSize": "18px",
+                                  "height": 0,
+                                  "lineHeight": "24px",
+                                  "outline": "none",
+                                  "padding": "10px 30px 10px 20px",
+                                  "resize": "none",
+                                }
+                              }
+                              value=""
+                            />
+                            <textarea
+                              aria-hidden={true}
+                              readOnly={true}
+                              style={
+                                Object {
+                                  "background": "#000",
+                                  "backgroundColor": "#71737e",
+                                  "border": "none",
+                                  "color": "#FFF",
+                                  "fontSize": "18px",
+                                  "height": 0,
+                                  "left": 0,
+                                  "lineHeight": "24px",
+                                  "outline": "none",
+                                  "overflow": "hidden",
+                                  "padding": "10px 30px 10px 20px",
+                                  "position": "absolute",
+                                  "resize": "none",
+                                  "top": 0,
+                                  "visibility": "hidden",
+                                }
+                              }
+                              tabIndex={-1}
+                            />
+                            <div
+                              style={
+                                Object {
+                                  "position": "absolute",
+                                  "right": -30,
+                                  "top": -40,
+                                }
+                              }
+                            />
+                          </div>
+                        </div>
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "position": "absolute",
+                              "right": 5,
+                              "top": 5,
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "borderTop": "2px solid #FFF",
+                    "overflow": "hidden",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#000",
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                      "minHeight": 60,
+                      "paddingRight": 40,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    className="c21"
+                  >
+                    <div
+                      className="c22"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": 30,
+                            "shapeRendering": "crispEdges",
+                            "width": 30,
+                          }
+                        }
+                        viewBox="0 0 60 60"
+                      >
+                        <path
+                          d="M15 28h30v4H15z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className=""
+                    >
+                      name
+                    </div>
+                  </div>
+                  <div
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fontSize": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 9,
+                        "transform": "rotate(0deg)",
+                        "transformOrigin": "center center",
+                        "transition": "transform 200ms ease-in-out",
+                      }
+                    }
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#71737e",
+                          "height": 30,
+                          "margin": "5px",
+                          "userSelect": "none",
+                          "width": 30,
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        d="M15.117 18L9 12h12z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "#000",
+                      "height": 0,
+                      "transition": "height 200ms linear, overflow 0s linear 200ms",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      className="c23"
+                    >
+                      <div
+                        className="c25"
+                      >
+                        <div
+                          style={
+                            Object {
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <label
+                            style={
+                              Object {
+                                "border": "none",
+                                "borderTop": "2px solid #2F2F36",
+                                "color": "#71737e",
+                                "display": "block",
+                                "fontSize": "14px",
+                                "outline": "none",
+                                "paddingTop": "8px",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            Image
+                          </label>
+                          <label
+                            htmlFor="blocks.0.elements.1.value"
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "block",
+                                "fontSize": 18,
+                                "lineHeight": "24px",
+                                "opacity": 1,
+                                "paddingBottom": 30,
+                                "width": "calc(100% - 70px)",
+                              }
+                            }
+                          >
+                            fileName
+                          </label>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          >
+                            <label
+                              htmlFor="blocks.0.elements.1.value"
+                              style={
+                                Object {
+                                  "position": "relative",
+                                  "top": 10,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#1d1d20",
+                                    "border": "none",
+                                    "borderRadius": "48px",
+                                    "color": "#FFF",
+                                    "cursor": "pointer",
+                                    "display": "inline-block",
+                                    "fill": "#FFF",
+                                    "fontSize": 0,
+                                    "margin": "0",
+                                    "minHeight": "48px",
+                                    "opacity": 1,
+                                    "outline": "none",
+                                    "padding": "0",
+                                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                                  }
+                                }
+                              >
+                                <svg
+                                  style={
+                                    Object {
+                                      "fill": "#FFF",
+                                      "height": "60px",
+                                      "width": "60px",
+                                    }
+                                  }
+                                  viewBox="0 0 60 60"
+                                >
+                                  <path
+                                    d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                                  />
+                                </svg>
+                              </div>
+                            </label>
+                          </div>
+                          <input
+                            accept=".png, .jpg, .jpeg, .gif"
+                            aria-hidden={true}
+                            disabled={false}
+                            id="blocks.0.elements.1.value"
+                            name="blocks.0.elements.1.value"
+                            onChange={[Function]}
+                            style={
+                              Object {
+                                "height": 0,
+                                "left": 0,
+                                "overflow": "hidden",
+                                "position": "absolute",
+                                "top": 0,
+                                "visibility": "hidden",
+                              }
+                            }
+                            type="file"
+                          />
+                        </div>
+                        <label
+                          htmlFor="blocks.0.elements.1.value"
+                          id="dropZone-schema-ui"
+                          onDrop={[Function]}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "background": "#000",
+                              "border": "2px dashed #2F2F36",
+                              "borderRadius": 10,
+                              "cursor": "copy",
+                              "display": "flex",
+                              "height": "calc(100% - 10px)",
+                              "justifyContent": "center",
+                              "left": 0,
+                              "lineHeight": "50px",
+                              "opacity": 0,
+                              "position": "absolute",
+                              "textAlign": "center",
+                              "top": 5,
+                              "transition": "opacity 200ms ease-in-out",
+                              "visibility": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          Drop here
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "borderTop": "2px solid #FFF",
+                    "overflow": "hidden",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#000",
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                      "minHeight": 60,
+                      "paddingRight": 40,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    className="c21"
+                  >
+                    <div
+                      className="c22"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": 30,
+                            "shapeRendering": "crispEdges",
+                            "width": 30,
+                          }
+                        }
+                        viewBox="0 0 60 60"
+                      >
+                        <path
+                          d="M15 28h30v4H15z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className=""
+                    >
+                      name
+                    </div>
+                  </div>
+                  <div
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fontSize": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 9,
+                        "transform": "rotate(0deg)",
+                        "transformOrigin": "center center",
+                        "transition": "transform 200ms ease-in-out",
+                      }
+                    }
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#71737e",
+                          "height": 30,
+                          "margin": "5px",
+                          "userSelect": "none",
+                          "width": 30,
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        d="M15.117 18L9 12h12z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "#000",
+                      "height": 0,
+                      "transition": "height 200ms linear, overflow 0s linear 200ms",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      className="c23"
+                    >
+                      stack
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </span>
     <div
-      className="c20"
+      className="c26"
     >
       <div
-        className="c21"
+        className="c27"
       >
         <div
-          className="c22"
+          className="c28"
         >
           <div>
             <input
@@ -1264,20 +2101,20 @@ exports[`Storyshots PageForm Default 1`] = `
             </label>
           </div>
           <div
-            className="c23"
+            className="c29"
           >
             <label
-              className="c24"
+              className="c30"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="c25"
+              className="c31"
             >
               This Page is currently Private
               <span
-                className="c26"
+                className="c32"
               />
               Visit Page: 
               <a
@@ -1289,7 +2126,7 @@ exports[`Storyshots PageForm Default 1`] = `
           </div>
         </div>
         <div
-          className="c27"
+          className="c33"
           id="removePage"
           onClick={[Function]}
         >

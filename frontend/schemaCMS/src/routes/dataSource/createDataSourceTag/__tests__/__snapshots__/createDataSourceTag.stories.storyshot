@@ -173,6 +173,10 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
 @media (min-width:1050px) {
   .c19 {
     display: -webkit-box;
@@ -199,6 +203,18 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -221,6 +237,22 @@ exports[`Storyshots Data Source|CreateDataSourceTag Default 1`] = `
   .c13 {
     margin-top: 0;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 <div

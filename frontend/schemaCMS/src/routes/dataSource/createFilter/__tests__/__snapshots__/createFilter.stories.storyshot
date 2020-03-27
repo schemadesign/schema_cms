@@ -178,6 +178,10 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
 @media (min-width:1050px) {
   .c20 {
     display: -webkit-box;
@@ -204,6 +208,18 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -226,6 +242,22 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
   .c14 {
     margin-top: 0;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:768px) {

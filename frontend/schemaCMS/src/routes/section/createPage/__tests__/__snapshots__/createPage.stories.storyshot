@@ -70,11 +70,11 @@ exports[`Storyshots CreatePage Default 1`] = `
   word-break: break-word;
 }
 
-.c30 {
+.c31 {
   height: 155px;
 }
 
-.c32 {
+.c33 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots CreatePage Default 1`] = `
   width: 100%;
 }
 
-.c31 {
+.c32 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots CreatePage Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c33 {
+.c34 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c24 {
+.c25 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c25 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,17 +130,17 @@ exports[`Storyshots CreatePage Default 1`] = `
   position: relative;
 }
 
-.c28 {
+.c29 {
   padding-right: 10px;
 }
 
-.c27 {
+.c28 {
   padding-left: 10px;
   padding-right: 40px;
   max-width: 100%;
 }
 
-.c26 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -156,12 +156,12 @@ exports[`Storyshots CreatePage Default 1`] = `
   max-width: 100%;
 }
 
-.c29 {
+.c30 {
   color: #71737e;
   min-width: 100%;
 }
 
-.c29 a {
+.c30 a {
   color: #FFF;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -182,7 +182,7 @@ exports[`Storyshots CreatePage Default 1`] = `
   position: relative;
 }
 
-.c22 {
+.c23 {
   text-align: right;
 }
 
@@ -228,7 +228,7 @@ exports[`Storyshots CreatePage Default 1`] = `
   margin-top: 0;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -241,17 +241,17 @@ exports[`Storyshots CreatePage Default 1`] = `
   font-size: 18px;
 }
 
-.c18 label {
+.c19 label {
   margin-bottom: 2px;
 }
 
-.c19 {
+.c20 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c20 {
+.c21 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -273,8 +273,13 @@ exports[`Storyshots CreatePage Default 1`] = `
   align-items: center;
 }
 
-.c21 {
+.c22 {
   width: 33%;
+}
+
+.c18 {
+  position: relative;
+  z-index: 999;
 }
 
 @media (min-width:1050px) {
@@ -290,8 +295,16 @@ exports[`Storyshots CreatePage Default 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
 @media (min-width:1050px) {
-  .c32 {
+  .c33 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -300,7 +313,23 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c31 {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c32 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -310,21 +339,37 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c33 {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c34 {
     width: 240px;
   }
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c24 {
     display: block;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
   .c15 {
     display: none;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -353,10 +398,186 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c20 {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c21 {
     margin-top: 0px;
     margin-bottom: 40px;
   }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 <div
@@ -1176,187 +1397,191 @@ exports[`Storyshots CreatePage Default 1`] = `
         <div
           className="c18"
         >
-          <label
-            id="fieldProjectStatusLabel"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Page Template
-          </label>
-          <input
-            id="template"
-            name="template"
-            type="hidden"
-            value=""
-          />
           <div
             className="c19"
           >
-            <svg
+            <label
+              id="fieldProjectStatusLabel"
               style={
                 Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
+                  "border": "none",
+                  "borderTop": "2px solid #2F2F36",
+                  "color": "#71737e",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
                 }
               }
-              viewBox="0 0 30 30"
             >
-              <path
-                d="M15.117 18L9 12h12z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-          <div
-            style={
-              Object {
-                "color": "#FFF",
-                "display": "flex",
-                "width": "100%",
-              }
-            }
-          >
+              Page Template
+            </label>
+            <input
+              id="template"
+              name="template"
+              type="hidden"
+              value=""
+            />
             <div
-              id="pageTemplateSelect"
+              className="c20"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M15.117 18L9 12h12z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div
               style={
                 Object {
-                  "cursor": "pointer",
+                  "color": "#FFF",
                   "display": "flex",
-                  "position": "relative",
                   "width": "100%",
                 }
               }
             >
               <div
-                onClick={[Function]}
+                id="pageTemplateSelect"
                 style={
                   Object {
                     "cursor": "pointer",
                     "display": "flex",
+                    "position": "relative",
                     "width": "100%",
                   }
                 }
               >
                 <div
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Select Page Template
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "WebkitOverflowScrolling": "touch",
-                    "backgroundColor": "#1d1d20",
-                    "display": "none",
-                    "flexDirection": "column",
-                    "left": "0",
-                    "maxHeight": "184px",
-                    "overflowY": "hidden",
-                    "position": "absolute",
-                    "top": "calc(100% + 5px)",
-                    "width": "100%",
-                    "zIndex": 2,
-                  }
-                }
-              >
-                <div
-                  id="select-item-0"
                   onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
                   style={
                     Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "1px solid  #2F2F36",
-                      "color": "#71737e",
                       "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                      "display": "flex",
+                      "width": "100%",
                     }
                   }
                 >
-                  Blank
+                  <div
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Select Page Template
+                  </div>
                 </div>
                 <div
-                  id="select-item-1"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
                   style={
                     Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                      "WebkitOverflowScrolling": "touch",
+                      "backgroundColor": "#1d1d20",
+                      "display": "none",
+                      "flexDirection": "column",
+                      "left": "0",
+                      "maxHeight": "184px",
+                      "overflowY": "hidden",
+                      "position": "absolute",
+                      "top": "calc(100% + 5px)",
+                      "width": "100%",
+                      "zIndex": 2,
                     }
                   }
                 >
-                  Page template
-                </div>
-                <div
-                  id="select-item-2"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  <div
+                    id="select-item-0"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "1px solid  #2F2F36",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  Page template 2
+                  >
+                    Blank
+                  </div>
+                  <div
+                    id="select-item-1"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Page template
+                  </div>
+                  <div
+                    id="select-item-2"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Page template 2
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div
-          className="c20"
+          className="c21"
         >
           <div
-            className="c21"
+            className="c22"
           />
           0 Blocks
           <div
-            className="c21"
+            className="c22"
           >
             <div
-              className="c22"
+              className="c23"
             >
               <div
-                className="c23"
+                className="c24"
               >
                 <button
                   disabled={false}
@@ -1406,13 +1631,13 @@ exports[`Storyshots CreatePage Default 1`] = `
         </div>
         <span />
         <div
-          className="c24"
+          className="c25"
         >
           <div
-            className="c25"
+            className="c26"
           >
             <div
-              className="c26"
+              className="c27"
             >
               <div>
                 <input
@@ -1464,16 +1689,16 @@ exports[`Storyshots CreatePage Default 1`] = `
                 </label>
               </div>
               <div
-                className="c27"
+                className="c28"
               >
                 <label
-                  className="c28"
+                  className="c29"
                   htmlFor="isPublic"
                 >
                   Make it Public
                 </label>
                 <span
-                  className="c29"
+                  className="c30"
                 >
                   This Page is currently Private
                 </span>
@@ -1483,16 +1708,16 @@ exports[`Storyshots CreatePage Default 1`] = `
         </div>
       </div>
       <div
-        className="c30"
+        className="c31"
       >
         <div
-          className="c31"
+          className="c32"
         >
           <div
-            className="c32"
+            className="c33"
           >
             <button
-              className="c33"
+              className="c34"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1518,7 +1743,7 @@ exports[`Storyshots CreatePage Default 1`] = `
               Cancel
             </button>
             <button
-              className="c33"
+              className="c34"
               disabled={true}
               id="createPage"
               style={

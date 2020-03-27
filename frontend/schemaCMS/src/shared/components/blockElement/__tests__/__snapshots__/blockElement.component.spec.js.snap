@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlockElement: Component should render correctly 1`] = `
+exports[`BlockElement: Component should render correctly image element 1`] = `
 <div
   style={
     Object {
@@ -25,7 +25,34 @@ exports[`BlockElement: Component should render correctly 1`] = `
       }
     }
   >
-    name
+    <div
+      className="sc-AxirZ jigHkS"
+    >
+      <div
+        className="sc-AxhUy kCEnsr"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 30,
+              "shapeRendering": "crispEdges",
+              "width": 30,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 28h30v4H15z"
+          />
+        </svg>
+      </div>
+      <div
+        className="sc-AxiKw bOTXee"
+      >
+        name
+      </div>
+    </div>
     <div
       onClick={[Function]}
       style={
@@ -53,51 +80,420 @@ exports[`BlockElement: Component should render correctly 1`] = `
   >
     <div>
       <div
-        className="sc-AxirZ CvgNc"
+        className="sc-AxjAm gcayeW"
       >
         <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "320px",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
+          className="sc-AxmLO kmtPrp"
         >
-          <input
-            id="undefined.elements.undefined.value"
-            name="undefined.elements.undefined.value"
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-            value=""
-          />
           <div
             style={
               Object {
-                "position": "absolute",
-                "right": -30,
-                "top": -40,
+                "position": "relative",
               }
             }
+          >
+            <label
+              style={
+                Object {
+                  "border": "none",
+                  "borderTop": "2px solid #2F2F36",
+                  "color": "#71737e",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
+                }
+              }
+            >
+              Image
+            </label>
+            <label
+              htmlFor="blockPath.elements.index.value"
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "block",
+                  "fontSize": 18,
+                  "lineHeight": "24px",
+                  "opacity": 1,
+                  "paddingBottom": 30,
+                  "width": "calc(100% - 70px)",
+                }
+              }
+            >
+              fileName
+            </label>
+            <div
+              style={
+                Object {
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <label
+                htmlFor="blockPath.elements.index.value"
+                style={
+                  Object {
+                    "position": "relative",
+                    "top": 10,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "#1d1d20",
+                      "border": "none",
+                      "borderRadius": "48px",
+                      "color": "#FFF",
+                      "cursor": "pointer",
+                      "display": "inline-block",
+                      "fill": "#FFF",
+                      "fontSize": 0,
+                      "margin": "0",
+                      "minHeight": "48px",
+                      "opacity": 1,
+                      "outline": "none",
+                      "padding": "0",
+                      "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                    }
+                  }
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "60px",
+                        "width": "60px",
+                      }
+                    }
+                    viewBox="0 0 60 60"
+                  >
+                    <path
+                      d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                    />
+                  </svg>
+                </div>
+              </label>
+            </div>
+            <input
+              accept=".png, .jpg, .jpeg, .gif"
+              aria-hidden={true}
+              disabled={false}
+              id="blockPath.elements.index.value"
+              name="blockPath.elements.index.value"
+              onChange={[Function]}
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                }
+              }
+              type="file"
+            />
+          </div>
+          <label
+            htmlFor="blockPath.elements.index.value"
+            id="dropZone-schema-ui"
+            onDrop={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "background": "#000",
+                "border": "2px dashed #2F2F36",
+                "borderRadius": 10,
+                "cursor": "copy",
+                "display": "flex",
+                "height": "calc(100% - 10px)",
+                "justifyContent": "center",
+                "left": 0,
+                "lineHeight": "50px",
+                "opacity": 0,
+                "position": "absolute",
+                "textAlign": "center",
+                "top": 5,
+                "transition": "opacity 200ms ease-in-out",
+                "visibility": "hidden",
+                "width": "100%",
+              }
+            }
+          >
+            Drop here
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BlockElement: Component should render correctly stack element 1`] = `
+<div
+  style={
+    Object {
+      "borderTop": "2px solid #FFF",
+      "overflow": "hidden",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#000",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "minHeight": 60,
+        "paddingRight": 40,
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="sc-AxirZ jigHkS"
+    >
+      <div
+        className="sc-AxhUy kCEnsr"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 30,
+              "shapeRendering": "crispEdges",
+              "width": 30,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 28h30v4H15z"
           />
+        </svg>
+      </div>
+      <div
+        className="sc-AxiKw bOTXee"
+      >
+        name
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "fontSize": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 9,
+          "transform": "rotate(0deg)",
+          "transformOrigin": "center center",
+          "transition": "transform 200ms ease-in-out",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#000",
+        "height": 0,
+        "transition": "height 200ms linear, overflow 0s linear 200ms",
+      }
+    }
+  >
+    <div>
+      <div
+        className="sc-AxjAm gcayeW"
+      >
+        stack
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BlockElement: Component should render correctly text element 1`] = `
+<div
+  style={
+    Object {
+      "borderTop": "2px solid #FFF",
+      "overflow": "hidden",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#000",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "minHeight": 60,
+        "paddingRight": 40,
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="sc-AxirZ jigHkS"
+    >
+      <div
+        className="sc-AxhUy kCEnsr"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 30,
+              "shapeRendering": "crispEdges",
+              "width": 30,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 28h30v4H15z"
+          />
+        </svg>
+      </div>
+      <div
+        className="sc-AxiKw bOTXee"
+      >
+        name
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "fontSize": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 9,
+          "transform": "rotate(0deg)",
+          "transformOrigin": "center center",
+          "transition": "transform 200ms ease-in-out",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#000",
+        "height": 0,
+        "transition": "height 200ms linear, overflow 0s linear 200ms",
+      }
+    }
+  >
+    <div>
+      <div
+        className="sc-AxjAm gcayeW"
+      >
+        <div
+          className="sc-AxhCb jZxptO"
+        >
+          <div
+            className="sc-AxgMl iPeGRn"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <textarea
+                id="blockPath.elements.index.value"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "background": "#000",
+                    "backgroundColor": "#71737e",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontSize": "18px",
+                    "height": 0,
+                    "lineHeight": "24px",
+                    "outline": "none",
+                    "padding": "10px 30px 10px 20px",
+                    "resize": "none",
+                  }
+                }
+                value=""
+              />
+              <textarea
+                aria-hidden={true}
+                readOnly={true}
+                style={
+                  Object {
+                    "background": "#000",
+                    "backgroundColor": "#71737e",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontSize": "18px",
+                    "height": 0,
+                    "left": 0,
+                    "lineHeight": "24px",
+                    "outline": "none",
+                    "overflow": "hidden",
+                    "padding": "10px 30px 10px 20px",
+                    "position": "absolute",
+                    "resize": "none",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                tabIndex={-1}
+              />
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": -30,
+                    "top": -40,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "position": "absolute",
+                "right": 5,
+                "top": 5,
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
         </div>
       </div>
     </div>

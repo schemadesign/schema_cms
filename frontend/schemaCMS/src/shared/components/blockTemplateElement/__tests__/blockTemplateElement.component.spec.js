@@ -4,7 +4,7 @@ import { BlockTemplateElement } from '../blockTemplateElement.component';
 import { defaultProps } from '../blockTemplateElement.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 
-describe('BlockElementTemplate: Component', () => {
+describe('BlockTemplateElement: Component', () => {
   const render = props => makeContextRenderer(<BlockTemplateElement {...defaultProps} {...props} />);
 
   it('should render correctly', async () => {

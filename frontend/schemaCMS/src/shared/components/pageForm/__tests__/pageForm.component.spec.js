@@ -69,7 +69,17 @@ describe('PageForm: Component', () => {
     });
 
     expect(defaultProps.setTemporaryPageBlocks).toHaveBeenCalledWith([
-      { elements: [{ id: 1, name: 'name', type: 'plain_text', value: '' }], id: 1, key: 1, name: 'name', type: 'type' },
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: '' },
+          { id: 1, name: 'name', type: 'image', value: { fileName: 'fileName' } },
+          { id: 1, name: 'name', type: 'stack', value: [] },
+        ],
+        id: 1,
+        key: 1,
+        name: 'name',
+        type: 'type',
+      },
     ]);
     expect(mockPushHistory).toHaveBeenCalledWith('url/add-block');
   });

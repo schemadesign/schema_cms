@@ -28,14 +28,15 @@ const elementPropTypes = {
   blockPath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
+  setFieldValue: PropTypes.func.isRequired,
 };
 
-export const ImageElement = ({ blockPath, index, element, ...restFormikProps }) => {
+export const ImageElement = ({ blockPath, index, element, setFieldValue, ...restFormikProps }) => {
   const name = `${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`;
   const intl = useIntl();
   const handleUploadChange = data => {
-    const { setFieldValue } = restFormikProps;
     const uploadFile = getEventFiles(data);
+
     if (!uploadFile.length) {
       return;
     }

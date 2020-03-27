@@ -334,6 +334,10 @@ exports[`Storyshots BlockTemplate Default 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
 @media (min-width:1050px) {
   .c37 {
     display: -webkit-box;
