@@ -252,10 +252,34 @@ exports[`Storyshots Project|UserList List 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:1050px) {
   .c26 {
     display: none;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -269,9 +293,33 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c17 {
     display: block;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -294,6 +342,82 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
   .c9 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -305,6 +429,42 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c18 {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
@@ -312,6 +472,22 @@ exports[`Storyshots Project|UserList List 1`] = `
     justify-content: flex-start;
     margin: 0 -10px;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -1335,10 +1511,34 @@ exports[`Storyshots Project|UserList No data 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:1050px) {
   .c21 {
     display: none;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -1352,9 +1552,33 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c17 {
     display: block;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -1377,6 +1601,82 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
   .c9 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1385,6 +1685,62 @@ exports[`Storyshots Project|UserList No data 1`] = `
     margin: 29px 0 20px 0;
     font-size: 15px;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 <div

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Icons, Form, Accordion } from 'schemaUI';
 import { useRouteMatch, useHistory } from 'react-router';
-import { map, prepend, pipe, isEmpty, append, remove, propEq, find, propOr } from 'ramda';
+import { map, prepend, pipe, isEmpty, append, remove, propEq, find, propOr, omit } from 'ramda';
 import { asMutable } from 'seamless-immutable';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 
-import { Container } from './pageForm.styles';
+import { Container, SelectContainer } from './pageForm.styles';
 import {
   AvailableCopy,
   BinIconContainer,
@@ -41,11 +41,12 @@ import {
   PAGE_BLOCKS,
   PAGE_DELETE_BLOCKS,
   BLOCK_KEY,
+  BLOCK_ID,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { BackButton, NextButton, PlusButton } from '../navigation';
-import { BlockPage } from '../blockPage';
+import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { IconWrapper, menuIconStyles } from '../pageTemplateForm/pageTemplateForm.styles';
 import { CounterHeader } from '../counterHeader';
@@ -75,13 +76,15 @@ export const PageForm = ({
     map(({ name, id }) => ({ value: id, label: name })),
     prepend({ value: 0, label: intl.formatMessage(messages.blankTemplate) })
   )(pageTemplates);
+
   const setBlocks = value => {
     const templateBlocks = pipe(
       find(propEq('id', value)),
-      propOr([], [PAGE_BLOCKS])
+      propOr([], [PAGE_BLOCKS]),
+      map(({ id, elements, ...block }) => ({ ...block, key: id, elements: map(omit(['id', 'template']), elements) }))
     )(pageTemplates);
 
-    setFieldValue(PAGE_BLOCKS, templateBlocks.map(block => ({ ...block, key: block.id })));
+    setFieldValue(PAGE_BLOCKS, templateBlocks);
   };
   const handleSelectPageTemplate = ({ value }) => {
     const oldValue = values[PAGE_TEMPLATE];
@@ -198,16 +201,18 @@ export const PageForm = ({
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
         {...restFormikProps}
       />
-      <Select
-        label={intl.formatMessage(messages[PAGE_TEMPLATE])}
-        name={PAGE_TEMPLATE}
-        value={values[PAGE_TEMPLATE]}
-        id="pageTemplateSelect"
-        options={pageTemplatesOptions}
-        onSelect={handleSelectPageTemplate}
-        placeholder={intl.formatMessage(messages[`${PAGE_TEMPLATE}Placeholder`])}
-        {...restFormikProps}
-      />
+      <SelectContainer>
+        <Select
+          label={intl.formatMessage(messages[PAGE_TEMPLATE])}
+          name={PAGE_TEMPLATE}
+          value={values[PAGE_TEMPLATE]}
+          id="pageTemplateSelect"
+          options={pageTemplatesOptions}
+          onSelect={handleSelectPageTemplate}
+          placeholder={intl.formatMessage(messages[`${PAGE_TEMPLATE}Placeholder`])}
+          {...restFormikProps}
+        />
+      </SelectContainer>
       <CounterHeader
         copy={intl.formatMessage(messages.blocks)}
         count={blocksCount}
@@ -227,10 +232,10 @@ export const PageForm = ({
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
           {values[PAGE_BLOCKS].map((block, index) => (
             <Draggable
-              key={block[BLOCK_KEY]}
+              key={block[BLOCK_KEY] || block[BLOCK_ID]}
               accept="box"
               onMove={handleMove}
-              id={block[BLOCK_KEY]}
+              id={block[BLOCK_KEY] || block[BLOCK_ID]}
               index={index}
               count={blocksCount}
             >
@@ -244,7 +249,7 @@ export const PageForm = ({
                 );
 
                 return (
-                  <BlockPage
+                  <PageBlock
                     index={index}
                     block={block}
                     draggableIcon={draggableIcon}

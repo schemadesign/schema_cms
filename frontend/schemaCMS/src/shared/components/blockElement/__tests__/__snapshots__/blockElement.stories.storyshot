@@ -1,0 +1,490 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots BlockElement Default 1`] = `
+.c4 {
+  position: relative;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  position: relative;
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c2 {
+    padding-left: 50px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    width: 50px;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    style={
+      Object {
+        "borderTop": "2px solid #FFF",
+        "overflow": "hidden",
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#000",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 60,
+          "paddingRight": 40,
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "shapeRendering": "crispEdges",
+                "width": 30,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M15 28h30v4H15z"
+            />
+          </svg>
+        </div>
+        <div
+          className=""
+        >
+          name
+        </div>
+      </div>
+      <div
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fontSize": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 9,
+            "transform": "rotate(0deg)",
+            "transformOrigin": "center center",
+            "transition": "transform 200ms ease-in-out",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "height": 0,
+          "transition": "height 200ms linear, overflow 0s linear 200ms",
+        }
+      }
+    >
+      <div>
+        <div
+          className="c2"
+        >
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": "30px",
+                    "position": "relative",
+                  }
+                }
+              >
+                <textarea
+                  id="blockPath.elements.index.value"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "padding": "10px 30px 10px 20px",
+                      "resize": "none",
+                    }
+                  }
+                  value=""
+                />
+                <textarea
+                  aria-hidden={true}
+                  readOnly={true}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "left": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "overflow": "hidden",
+                      "padding": "10px 30px 10px 20px",
+                      "position": "absolute",
+                      "resize": "none",
+                      "top": 0,
+                      "visibility": "hidden",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": -30,
+                      "top": -40,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "position": "absolute",
+                  "right": 5,
+                  "top": 5,
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

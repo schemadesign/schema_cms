@@ -42,7 +42,7 @@ import {
 import { CounterHeader } from '../counterHeader';
 import { BLOCK_TEMPLATES_NAME } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Draggable } from '../draggable';
-import { BlockPageTemplate } from '../blockPageTemplate';
+import { PageTemplateBlock } from '../pageTemplateBlock';
 
 const { EditIcon, MinusIcon, MenuIcon } = Icons;
 const { Switch } = Form;
@@ -167,7 +167,7 @@ export const PageTemplateForm = ({
                 );
 
                 return (
-                  <BlockPageTemplate
+                  <PageTemplateBlock
                     index={index}
                     block={block}
                     handleChange={handleChange}

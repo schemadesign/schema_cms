@@ -207,6 +207,14 @@ exports[`Storyshots PageTemplates Default 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
 @media (min-width:1050px) {
   .c22 {
     display: -webkit-box;
@@ -214,6 +222,22 @@ exports[`Storyshots PageTemplates Default 1`] = `
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -227,6 +251,18 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c12 {
     display: block;
   }
@@ -236,6 +272,14 @@ exports[`Storyshots PageTemplates Default 1`] = `
   .c23 {
     display: none;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -258,10 +302,118 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c13 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {

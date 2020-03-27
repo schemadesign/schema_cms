@@ -2,10 +2,10 @@
 
 exports[`PageTemplates: Component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-ifAKCX dqutvF"
+    className="sc-AxhUy bGjTfb"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-EHOje jvzENE"
+          className="sc-AxgMl fFPQpl"
         >
           <h2
-            className="sc-gqjmRU dhtYVO"
+            className="sc-fzplWN eQxyjC"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Page Templates
           </h2>
           <h1
-            className="sc-VigVT bFXUHX"
+            className="sc-fznyAO dFXsby"
             id="headerSubtitle"
             style={
               Object {
@@ -120,13 +120,13 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className="sc-AxheI fniENP"
       >
         <div
-          className="sc-EHOje jvzENE"
+          className="sc-AxgMl fFPQpl"
         >
           <h2
-            className="sc-gqjmRU dhtYVO"
+            className="sc-fzplWN eQxyjC"
             id="headerTitle"
             style={
               Object {
@@ -140,7 +140,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Page Templates
           </h2>
           <h1
-            className="sc-VigVT bFXUHX"
+            className="sc-fznyAO dFXsby"
             id="headerSubtitle"
             style={
               Object {
@@ -158,13 +158,13 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-gzVnrw gwFZoi"
+        className="sc-Axmtr dYGMMf"
       >
         <div
-          className="sc-htoDjs kTuTcN"
+          className="sc-AxmLO cZlyyh"
         >
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/project/projectId/state"
@@ -219,7 +219,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/project/projectId/user"
@@ -230,7 +230,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/project/projectId/content"
@@ -241,7 +241,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/project/projectId/templates"
@@ -253,10 +253,10 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-htoDjs kTuTcN"
+          className="sc-AxmLO cZlyyh"
         >
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dnqmqq bkzxAx"
+            className="sc-fzozJi boaeex"
           >
             <div
               onClick={[Function]}
@@ -277,10 +277,10 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iwsKbI kAZruH"
+          className="sc-fzoLsD hiCoJg"
         >
           <a
-            className="sc-gZMcBi gHuYbz"
+            className="sc-fzpans TNlMA"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -288,7 +288,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-gZMcBi gHuYbz"
+            className="sc-fzpans TNlMA"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -296,7 +296,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-gZMcBi gHuYbz"
+            className="sc-fzpans TNlMA"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -350,13 +350,13 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-ckVGcZ kavnbm"
+    className="sc-fznJRM fWcXoV"
   >
     <div
-      className="sc-jKJlTe bbYNJN"
+      className="sc-fznWqX izhnMz"
     >
       <h2
-        className="sc-eNQAEJ jraORh"
+        className="sc-fzoiQi kWApJK"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -370,7 +370,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         Page Templates
       </h2>
       <h1
-        className="sc-hMqMXs NSfhp"
+        className="sc-fzqARJ euGmLc"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -387,10 +387,10 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-kEYyzF gfWKdx"
+      className="sc-fzqNqU hFpwJZ"
     >
       <div
-        className="sc-dxgOiQ dhqWEZ"
+        className="sc-fznxsB ikVhPc"
       >
         <button
           disabled={false}
@@ -436,21 +436,21 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-cMljjf jHGoTO"
+    className="sc-fzolEj eCJLaI"
   >
     <div
-      className="sc-jAaTju gwAGIe"
+      className="sc-fzqBkg iunxDM"
     />
     2 Page Templates
     <div
-      className="sc-jAaTju gwAGIe"
+      className="sc-fzqBkg iunxDM"
     />
   </div>
   <section
-    className="sc-cvbbAY TbnuK"
+    className="sc-fznxKY cinfQm"
   >
     <div
-      className="sc-kkGfuU eaxeWf"
+      className="sc-fzoyTs dGguFW"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -483,16 +483,16 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         >
           <ul
-            className="sc-jWBwVP cSaJfV"
+            className="sc-fznMAR dwokPX"
           >
             <li
-              className="sc-brqgnP cwhHeq"
+              className="sc-fznWOq frgEXS"
               id="headerItem-0"
             >
               in 3 months
             </li>
             <li
-              className="sc-brqgnP cwhHeq"
+              className="sc-fznWOq frgEXS"
               id="headerItem-1"
             >
               owner
@@ -500,7 +500,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           </ul>
         </div>
         <h1
-          className="sc-iAyFgw ONwVO"
+          className="sc-fzoNJl iNXeca"
           id="pageTemplateTitle-1"
           onClick={[Function]}
           style={
@@ -530,7 +530,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-kkGfuU eaxeWf"
+      className="sc-fzoyTs dGguFW"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -563,16 +563,16 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         >
           <ul
-            className="sc-jWBwVP cSaJfV"
+            className="sc-fznMAR dwokPX"
           >
             <li
-              className="sc-brqgnP cwhHeq"
+              className="sc-fznWOq frgEXS"
               id="headerItem-0"
             >
               in 3 months
             </li>
             <li
-              className="sc-brqgnP cwhHeq"
+              className="sc-fznWOq frgEXS"
               id="headerItem-1"
             >
               owner 2
@@ -580,7 +580,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           </ul>
         </div>
         <h1
-          className="sc-iAyFgw ONwVO"
+          className="sc-fzoNJl iNXeca"
           id="pageTemplateTitle-2"
           onClick={[Function]}
           style={
@@ -611,13 +611,13 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </section>
   <div
-    className="sc-kAzzGY jkKOaD"
+    className="sc-fzqNJr grgGEC"
   >
     <div
-      className="sc-kgoBCf bUXYRn"
+      className="sc-fzoLag iwWzOE"
     >
       <div
-        className="sc-chPdSV drfzAf"
+        className="sc-fzoyAV huHdwS"
       >
         <button
           disabled={false}
@@ -659,7 +659,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           </svg>
         </button>
         <div
-          className="sc-dxgOiQ dwMPSu"
+          className="sc-fznxsB guWwxz"
         >
           <button
             disabled={false}

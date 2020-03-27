@@ -2,10 +2,10 @@
 
 exports[`CreatePage: Component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-jlyJG bbgqzh"
+    className="sc-fzoydu iViQnV"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-gipzik iyhjGb"
+          className="sc-fzoJMP gAzsmC"
         >
           <h2
-            className="sc-fMiknA hsSyrh"
+            className="sc-fzqAui gOtIbL"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Create
           </h2>
           <h1
-            className="sc-dVhcbM KbKuI"
+            className="sc-fzqMdD ivhnRD"
             id="headerSubtitle"
             style={
               Object {
@@ -120,13 +120,13 @@ exports[`CreatePage: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-csuQGl CQhxV"
+        className="sc-fzoYHE jFJDaF"
       >
         <div
-          className="sc-gipzik iyhjGb"
+          className="sc-fzoJMP gAzsmC"
         >
           <h2
-            className="sc-fMiknA hsSyrh"
+            className="sc-fzqAui gOtIbL"
             id="headerTitle"
             style={
               Object {
@@ -140,7 +140,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Create
           </h2>
           <h1
-            className="sc-dVhcbM KbKuI"
+            className="sc-fzqMdD ivhnRD"
             id="headerSubtitle"
             style={
               Object {
@@ -158,13 +158,13 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-Rmtcm hetIZT"
+        className="sc-fzpkqZ hgWptx"
       >
         <div
-          className="sc-bRBYWo lcJtrG"
+          className="sc-fznAgC zQkbZ"
         >
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/project/projectId/state"
@@ -219,7 +219,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/project/projectId/user"
@@ -230,7 +230,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/project/projectId/content"
@@ -241,7 +241,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/project/projectId/templates"
@@ -253,10 +253,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-bRBYWo lcJtrG"
+          className="sc-fznAgC zQkbZ"
         >
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-hzDkRC gEllpy"
+            className="sc-fznLPX WRFGR"
           >
             <div
               onClick={[Function]}
@@ -277,10 +277,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jhAzac dpgkQG"
+          className="sc-fzoaKM diHxDk"
         >
           <a
-            className="sc-fBuWsC haYKAD"
+            className="sc-fzomuh kPIAAj"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -288,7 +288,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fBuWsC haYKAD"
+            className="sc-fzomuh kPIAAj"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -296,7 +296,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fBuWsC haYKAD"
+            className="sc-fzomuh kPIAAj"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -353,16 +353,16 @@ exports[`CreatePage: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-bwzfXH uTxCW"
+      className="sc-AxirZ ktnnZK"
     >
       <div
-        className="sc-kAzzGY jEphOw"
+        className="sc-fzoyAV kkjbNX"
       >
         <div
-          className="sc-chPdSV eQvxLD"
+          className="sc-fzoLag eiSCDq"
         >
           <h2
-            className="sc-kgoBCf esFMBq"
+            className="sc-fzoXzr dnImLT"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -376,7 +376,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Create
           </h2>
           <h1
-            className="sc-kGXeez bNVjbg"
+            className="sc-fzpjYC drOAtY"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -390,10 +390,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-dnqmqq hHLyWY"
+              className="sc-fzoLsD egJkZq"
             >
               <div
-                className="sc-fjdhpX bIwpxK"
+                className="sc-fzokOt ihUAFl"
               >
                 <div
                   style={
@@ -469,7 +469,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iwsKbI ifgozk"
+                className="sc-fzpans jaqrPy"
               >
                 <svg
                   style={
@@ -491,14 +491,14 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-kpOJdX kAzjOl"
+          className="sc-fznxsB fvMaWZ"
         />
       </div>
       <div
-        className="sc-gZMcBi fGqrZo"
+        className="sc-fzplWN iPfnUx"
       >
         <div
-          className="sc-fjdhpX bSwHLV"
+          className="sc-fzokOt hhpuAT"
         >
           <div
             style={
@@ -562,7 +562,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-jzJRlG dNvLxZ"
+                className="sc-fzqBZW ihWcsL"
               >
                 <svg
                   style={
@@ -585,7 +585,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fjdhpX bSwHLV"
+        className="sc-fzokOt hhpuAT"
       >
         <div
           style={
@@ -651,7 +651,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fjdhpX bSwHLV"
+        className="sc-fzokOt hhpuAT"
       >
         <div
           style={
@@ -735,7 +735,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fjdhpX bSwHLV"
+        className="sc-fzokOt hhpuAT"
       >
         <div
           style={
@@ -801,189 +801,193 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-dxgOiQ dWiTaF"
+        className="sc-AxiKw dFgtuZ"
       >
-        <label
-          id="fieldProjectStatusLabel"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Page Template
-        </label>
-        <input
-          id="template"
-          name="template"
-          type="hidden"
-          value=""
-        />
         <div
-          className="sc-ckVGcZ bmUhXx"
+          className="sc-fznJRM htAbOk"
         >
-          <svg
+          <label
+            id="fieldProjectStatusLabel"
             style={
               Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
               }
             }
-            viewBox="0 0 30 30"
           >
-            <path
-              d="M15.117 18L9 12h12z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
-        <div
-          style={
-            Object {
-              "color": "#FFF",
-              "display": "flex",
-              "width": "100%",
-            }
-          }
-        >
+            Page Template
+          </label>
+          <input
+            id="template"
+            name="template"
+            type="hidden"
+            value=""
+          />
           <div
-            id="pageTemplateSelect"
+            className="sc-fznWqX jfqZHP"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15.117 18L9 12h12z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
             style={
               Object {
-                "cursor": "pointer",
+                "color": "#FFF",
                 "display": "flex",
-                "position": "relative",
                 "width": "100%",
               }
             }
           >
             <div
-              onClick={[Function]}
+              id="pageTemplateSelect"
               style={
                 Object {
                   "cursor": "pointer",
                   "display": "flex",
+                  "position": "relative",
                   "width": "100%",
                 }
               }
             >
               <div
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "overflow": "hidden",
-                    "textOverflow": "ellipsis",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Select Page Template
-              </div>
-            </div>
-            <div
-              style={
-                Object {
-                  "WebkitOverflowScrolling": "touch",
-                  "backgroundColor": "#1d1d20",
-                  "display": "none",
-                  "flexDirection": "column",
-                  "left": "0",
-                  "maxHeight": "184px",
-                  "overflowY": "hidden",
-                  "position": "absolute",
-                  "top": "calc(100% + 5px)",
-                  "width": "100%",
-                  "zIndex": 2,
-                }
-              }
-            >
-              <div
-                id="select-item-0"
                 onClick={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
                 style={
                   Object {
-                    "border": "1px solid  #2F2F36",
-                    "borderTop": "1px solid  #2F2F36",
-                    "color": "#71737e",
                     "cursor": "pointer",
-                    "overflow": "hidden",
-                    "padding": "20px 10px",
-                    "textOverflow": "ellipsis",
-                    "whiteSpace": "nowrap",
+                    "display": "flex",
+                    "width": "100%",
                   }
                 }
               >
-                Blank
+                <div
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  Select Page Template
+                </div>
               </div>
               <div
-                id="select-item-1"
-                onClick={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
                 style={
                   Object {
-                    "border": "1px solid  #2F2F36",
-                    "borderTop": "none",
-                    "color": "#71737e",
-                    "cursor": "pointer",
-                    "overflow": "hidden",
-                    "padding": "20px 10px",
-                    "textOverflow": "ellipsis",
-                    "whiteSpace": "nowrap",
+                    "WebkitOverflowScrolling": "touch",
+                    "backgroundColor": "#1d1d20",
+                    "display": "none",
+                    "flexDirection": "column",
+                    "left": "0",
+                    "maxHeight": "184px",
+                    "overflowY": "hidden",
+                    "position": "absolute",
+                    "top": "calc(100% + 5px)",
+                    "width": "100%",
+                    "zIndex": 2,
                   }
                 }
               >
-                Page template
-              </div>
-              <div
-                id="select-item-2"
-                onClick={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                style={
-                  Object {
-                    "border": "1px solid  #2F2F36",
-                    "borderTop": "none",
-                    "color": "#71737e",
-                    "cursor": "pointer",
-                    "overflow": "hidden",
-                    "padding": "20px 10px",
-                    "textOverflow": "ellipsis",
-                    "whiteSpace": "nowrap",
+                <div
+                  id="select-item-0"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "1px solid  #2F2F36",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
                   }
-                }
-              >
-                Page template 2
+                >
+                  Blank
+                </div>
+                <div
+                  id="select-item-1"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  Page template
+                </div>
+                <div
+                  id="select-item-2"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  Page template 2
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        className="sc-gPEVay eTYgjg"
+        className="sc-fzqAbL kUuPnh"
       >
         <div
-          className="sc-iRbamj ireTYt"
+          className="sc-fzqMAW jcClHB"
         />
         0 Blocks
         <div
-          className="sc-iRbamj ireTYt"
+          className="sc-fzqMAW jcClHB"
         >
           <div
-            className="sc-gqjmRU hIaaGX"
+            className="sc-fznyAO fsHBrn"
           >
             <div
-              className="sc-cvbbAY cygTwN"
+              className="sc-fznMAR gVQcIj"
             >
               <button
                 disabled={false}
@@ -1033,13 +1037,13 @@ exports[`CreatePage: Component should render correctly 1`] = `
       </div>
       <span />
       <div
-        className="sc-htpNat iIQxmA"
+        className="sc-AxhCb gZXrdn"
       >
         <div
-          className="sc-bxivhb gBSzyX"
+          className="sc-AxhUy jxyGzF"
         >
           <div
-            className="sc-bZQynM juHlRC"
+            className="sc-Axmtr kgeLJP"
           >
             <div>
               <input
@@ -1091,16 +1095,16 @@ exports[`CreatePage: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-EHOje bpPDHV"
+              className="sc-AxheI czthDU"
             >
               <label
-                className="sc-ifAKCX hlHGUd"
+                className="sc-AxgMl bGaNud"
                 htmlFor="isPublic"
               >
                 Make it Public
               </label>
               <span
-                className="sc-htoDjs haBwGb"
+                className="sc-fzozJi ggtLQI"
               >
                 This Page is currently Private
               </span>
@@ -1110,16 +1114,16 @@ exports[`CreatePage: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-kEYyzF jgwRnZ"
+      className="sc-fzoyTs hgwfkQ"
     >
       <div
-        className="sc-iAyFgw iLBPlu"
+        className="sc-fzoXWK izjQLC"
       >
         <div
-          className="sc-kkGfuU dEzzrE"
+          className="sc-fzoNJl inqTCY"
         >
           <button
-            className="sc-hSdWYo ioFJPH"
+            className="sc-fzpmMD iKuIqV"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -1145,7 +1149,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Cancel
           </button>
           <button
-            className="sc-hSdWYo ioFJPH"
+            className="sc-fzpmMD iKuIqV"
             disabled={true}
             id="createPage"
             style={

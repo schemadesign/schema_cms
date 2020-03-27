@@ -39,7 +39,7 @@ import {
   ELEMENT_KEY,
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
-import { ElementBlockTemplate } from '../elementBlockTemplate';
+import { BlockTemplateElement } from '../blockTemplateElement';
 import { CounterHeader } from '../counterHeader';
 import { Draggable } from '../draggable';
 
@@ -168,7 +168,7 @@ export const BlockTemplateForm = ({
                 );
 
                 return (
-                  <ElementBlockTemplate
+                  <BlockTemplateElement
                     index={index}
                     element={element}
                     handleChange={handleChange}

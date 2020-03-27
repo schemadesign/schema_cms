@@ -10,6 +10,7 @@ export class AccordionComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
     arrowIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    customIconStyles: PropTypes.object,
     customPanelStyles: PropTypes.object,
     customHeaderStyles: PropTypes.object,
     customDetailsStyles: PropTypes.object,
@@ -22,9 +23,9 @@ export class AccordionComponent extends PureComponent {
   };
 
   render() {
-    const { children, arrowIcon = null, customStyles, ...rest } = this.props;
+    const { children, arrowIcon = null, customStyles, customIconStyles, ...rest } = this.props;
     const { iconStyles } = getStyles();
-    const icon = arrowIcon || <CaretIcon customStyles={iconStyles} />;
+    const icon = arrowIcon || <CaretIcon customStyles={{ ...iconStyles, ...customIconStyles }} />;
     const context = { icon, ...rest };
 
     return <AccordionContext.Provider value={context}>{children}</AccordionContext.Provider>;

@@ -328,7 +328,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
         >
           <Component />
         </FormattedMessage>
-        <GlobalStyleComponent />
+        <Memo(GlobalStyleComponent) />
         <DesktopHeader
           userRole="editor"
         />
@@ -680,7 +680,7 @@ exports[`App: Component should render App when language is set 1`] = `
         >
           <Component />
         </FormattedMessage>
-        <GlobalStyleComponent />
+        <Memo(GlobalStyleComponent) />
         <DesktopHeader
           userRole="editor"
         />

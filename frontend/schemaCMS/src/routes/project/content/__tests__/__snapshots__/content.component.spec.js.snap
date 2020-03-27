@@ -2,10 +2,10 @@
 
 exports[`Content: Component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-bwzfXH jguWiy"
+    className="sc-AxirZ eyDruq"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`Content: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-AxiKw bOTXee"
         >
           <h2
-            className="sc-dnqmqq bPutyk"
+            className="sc-fzozJi iZfRyZ"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`Content: Component should render correctly 1`] = `
             Content
           </h2>
           <h1
-            className="sc-iwsKbI bxRSJa"
+            className="sc-fzoLsD irsToz"
             id="headerSubtitle"
             style={
               Object {
@@ -120,13 +120,13 @@ exports[`Content: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-AxhCb ccMvAG"
       >
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-AxiKw bOTXee"
         >
           <h2
-            className="sc-dnqmqq bPutyk"
+            className="sc-fzozJi iZfRyZ"
             id="headerTitle"
             style={
               Object {
@@ -140,7 +140,7 @@ exports[`Content: Component should render correctly 1`] = `
             Content
           </h2>
           <h1
-            className="sc-iwsKbI bxRSJa"
+            className="sc-fzoLsD irsToz"
             id="headerSubtitle"
             style={
               Object {
@@ -158,13 +158,13 @@ exports[`Content: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-ifAKCX YtKgc"
+        className="sc-AxhUy hIBhsA"
       >
         <div
-          className="sc-EHOje jndxID"
+          className="sc-AxgMl gYaYIN"
         >
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/project/projectId/state"
@@ -219,7 +219,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/project/projectId/user"
@@ -230,7 +230,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM eUjpas"
+            className="sc-AxheI dqLsGJ"
           >
             <a
               href="/project/projectId/content"
@@ -241,7 +241,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/project/projectId/templates"
@@ -253,10 +253,10 @@ exports[`Content: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-EHOje jndxID"
+          className="sc-AxgMl gYaYIN"
         >
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-bZQynM dHaYym"
+            className="sc-AxheI dEHljS"
           >
             <div
               onClick={[Function]}
@@ -277,10 +277,10 @@ exports[`Content: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-gzVnrw jHfMTZ"
+          className="sc-Axmtr gogzca"
         >
           <a
-            className="sc-htoDjs dmeaZZ"
+            className="sc-AxmLO jAEDbH"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -288,7 +288,7 @@ exports[`Content: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-htoDjs dmeaZZ"
+            className="sc-AxmLO jAEDbH"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -296,7 +296,7 @@ exports[`Content: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-htoDjs dmeaZZ"
+            className="sc-AxmLO jAEDbH"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -350,17 +350,17 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-ckVGcZ foYhJp"
+    className="sc-fznJRM fzFSIN"
     id="tabsContainer"
   >
     <div
-      className="sc-kGXeez jsuzcI"
+      className="sc-fzoXzr jJgHsg"
     >
       <div
-        className="sc-kpOJdX hrTQXn"
+        className="sc-fzpjYC bzVAtS"
       >
         <a
-          className="sc-dxgOiQ SCeTs"
+          className="sc-fznxsB byrGmN"
           href="/project/projectId"
           id="settingsTab"
           onClick={[Function]}
@@ -369,10 +369,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-kpOJdX hrTQXn"
+        className="sc-fzpjYC bzVAtS"
       >
         <a
-          className="sc-dxgOiQ SCeTs"
+          className="sc-fznxsB byrGmN"
           href="/project/projectId/datasource"
           id="sourcesTab"
           onClick={[Function]}
@@ -381,10 +381,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-kpOJdX hrTQXn"
+        className="sc-fzpjYC bzVAtS"
       >
         <a
-          className="sc-dxgOiQ SCeTs"
+          className="sc-fznxsB byrGmN"
           href="/project/projectId/state"
           id="stateTab"
           onClick={[Function]}
@@ -393,10 +393,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-kpOJdX knvxlc"
+        className="sc-fzpjYC PWaSB"
       >
         <a
-          className="sc-dxgOiQ SCeTs"
+          className="sc-fznxsB byrGmN"
           href="/project/projectId/content"
           id="contentTab"
           onClick={[Function]}
@@ -405,10 +405,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-kpOJdX hrTQXn"
+        className="sc-fzpjYC bzVAtS"
       >
         <a
-          className="sc-dxgOiQ SCeTs"
+          className="sc-fznxsB byrGmN"
           href="/project/projectId/templates"
           id="templatesTab"
           onClick={[Function]}
@@ -417,10 +417,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-kpOJdX hrTQXn"
+        className="sc-fzpjYC bzVAtS"
       >
         <a
-          className="sc-dxgOiQ SCeTs"
+          className="sc-fznxsB byrGmN"
           href="/project/projectId/user"
           id="usersTab"
           onClick={[Function]}
@@ -431,13 +431,13 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jKJlTe gEQAlP"
+    className="sc-fznWqX VKSem"
   >
     <div
-      className="sc-eNQAEJ dWMsXQ"
+      className="sc-fzoiQi kVjVJJ"
     >
       <h2
-        className="sc-hMqMXs NSfhp"
+        className="sc-fzqARJ euGmLc"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -451,7 +451,7 @@ exports[`Content: Component should render correctly 1`] = `
         Content
       </h2>
       <h1
-        className="sc-kEYyzF duTgan"
+        className="sc-fzqNqU cSnCDr"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -468,10 +468,10 @@ exports[`Content: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-kkGfuU gqJIVH"
+      className="sc-fzoyTs crHzLr"
     >
       <div
-        className="sc-kgoBCf ifKHSM"
+        className="sc-fzoLag gEa-DMC"
       >
         <button
           disabled={false}
@@ -517,21 +517,21 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iRbamj iRHJtk"
+    className="sc-fzoKki ejIlnK"
   >
     <div
-      className="sc-jlyJG cYnNgG"
+      className="sc-fzoYkl bMoycm"
     />
     2 sections
     <div
-      className="sc-jlyJG cYnNgG"
+      className="sc-fzoYkl bMoycm"
     />
   </div>
   <section
-    className="sc-gPEVay fmixME"
+    className="sc-fzoxKX YTTNi"
   >
     <div
-      className="sc-brqgnP ftMDaR"
+      className="sc-fznWOq hnwMwY"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -564,16 +564,16 @@ exports[`Content: Component should render correctly 1`] = `
           }
         >
           <ul
-            className="sc-cvbbAY iblJED"
+            className="sc-fznxKY jxHxCX"
           >
             <li
-              className="sc-jWBwVP lViKn"
+              className="sc-fznMAR TxlEV"
               id="headerItem-0"
             >
               in 3 months
             </li>
             <li
-              className="sc-jWBwVP lViKn"
+              className="sc-fznMAR TxlEV"
               id="headerItem-1"
             >
               owner
@@ -581,7 +581,7 @@ exports[`Content: Component should render correctly 1`] = `
           </ul>
         </div>
         <h1
-          className="sc-cMljjf kDTYmx"
+          className="sc-fzolEj fqmDSd"
           id="section-1"
           onClick={[Function]}
           style={
@@ -611,7 +611,7 @@ exports[`Content: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-brqgnP ftMDaR"
+      className="sc-fznWOq hnwMwY"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -644,16 +644,16 @@ exports[`Content: Component should render correctly 1`] = `
           }
         >
           <ul
-            className="sc-cvbbAY iblJED"
+            className="sc-fznxKY jxHxCX"
           >
             <li
-              className="sc-jWBwVP lViKn"
+              className="sc-fznMAR TxlEV"
               id="headerItem-0"
             >
               in 3 months
             </li>
             <li
-              className="sc-jWBwVP lViKn"
+              className="sc-fznMAR TxlEV"
               id="headerItem-1"
             >
               owner 2
@@ -661,7 +661,7 @@ exports[`Content: Component should render correctly 1`] = `
           </ul>
         </div>
         <h1
-          className="sc-cMljjf kDTYmx"
+          className="sc-fzolEj fqmDSd"
           id="section-2"
           onClick={[Function]}
           style={
@@ -692,13 +692,13 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </section>
   <div
-    className="sc-fjdhpX jevcr"
+    className="sc-fznZeY frlFUt"
   >
     <div
-      className="sc-cSHVUG cqBrSp"
+      className="sc-fzqBZW zuZz"
     >
       <div
-        className="sc-jzJRlG dfKXm"
+        className="sc-fzokOt dkFbmQ"
       >
         <button
           disabled={false}
@@ -740,7 +740,7 @@ exports[`Content: Component should render correctly 1`] = `
           </svg>
         </button>
         <div
-          className="sc-kgoBCf eXdgEj"
+          className="sc-fzoLag yuWdR"
         >
           <button
             disabled={false}

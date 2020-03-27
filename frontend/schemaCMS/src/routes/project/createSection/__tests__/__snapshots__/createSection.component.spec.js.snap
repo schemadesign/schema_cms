@@ -2,10 +2,10 @@
 
 exports[`CreateSection: Component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-htpNat kIbrav"
+    className="sc-AxiKw hckbFO"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-bxivhb bUZGRr"
+          className="sc-AxhCb ccMvAG"
         >
           <h2
-            className="sc-iwsKbI bxRSJa"
+            className="sc-fzoLsD irsToz"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </h2>
           <h1
-            className="sc-gZMcBi gsbUrm"
+            className="sc-fzpans kyzoMb"
             id="headerSubtitle"
             style={
               Object {
@@ -120,13 +120,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-AxhUy kMyssT"
       >
         <div
-          className="sc-bxivhb bUZGRr"
+          className="sc-AxhCb ccMvAG"
         >
           <h2
-            className="sc-iwsKbI bxRSJa"
+            className="sc-fzoLsD irsToz"
             id="headerTitle"
             style={
               Object {
@@ -140,7 +140,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </h2>
           <h1
-            className="sc-gZMcBi gsbUrm"
+            className="sc-fzpans kyzoMb"
             id="headerSubtitle"
             style={
               Object {
@@ -158,13 +158,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-EHOje fuILKl"
+        className="sc-AxgMl hNaPXS"
       >
         <div
-          className="sc-bZQynM Zsplr"
+          className="sc-AxheI WYDNX"
         >
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/project/projectId/state"
@@ -219,7 +219,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/project/projectId/user"
@@ -230,7 +230,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw bYlbvX"
+            className="sc-Axmtr eQomEu"
           >
             <a
               href="/project/projectId/content"
@@ -241,7 +241,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/project/projectId/templates"
@@ -253,10 +253,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-bZQynM Zsplr"
+          className="sc-AxheI WYDNX"
         >
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gzVnrw kOgPda"
+            className="sc-Axmtr fZHAUN"
           >
             <div
               onClick={[Function]}
@@ -277,10 +277,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-htoDjs hCprtn"
+          className="sc-AxmLO kHkOwf"
         >
           <a
-            className="sc-dnqmqq fyVCxN"
+            className="sc-fzozJi iSBTWi"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -288,7 +288,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-dnqmqq fyVCxN"
+            className="sc-fzozJi iSBTWi"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -296,7 +296,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-dnqmqq fyVCxN"
+            className="sc-fzozJi iSBTWi"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -350,17 +350,17 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jKJlTe loXQau"
+    className="sc-fznWqX clGFVO"
     id="tabsContainer"
   >
     <div
-      className="sc-kpOJdX WbMYH"
+      className="sc-fzpjYC hUVQHn"
     >
       <div
-        className="sc-dxgOiQ ijHDlD"
+        className="sc-fznxsB gwcqhJ"
       >
         <a
-          className="sc-ckVGcZ duIGor"
+          className="sc-fznJRM iifkLh"
           href="/project/projectId"
           id="settingsTab"
           onClick={[Function]}
@@ -369,10 +369,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dxgOiQ ijHDlD"
+        className="sc-fznxsB gwcqhJ"
       >
         <a
-          className="sc-ckVGcZ duIGor"
+          className="sc-fznJRM iifkLh"
           href="/project/projectId/datasource"
           id="sourcesTab"
           onClick={[Function]}
@@ -381,10 +381,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dxgOiQ ijHDlD"
+        className="sc-fznxsB gwcqhJ"
       >
         <a
-          className="sc-ckVGcZ duIGor"
+          className="sc-fznJRM iifkLh"
           href="/project/projectId/state"
           id="stateTab"
           onClick={[Function]}
@@ -393,10 +393,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dxgOiQ liQHdc"
+        className="sc-fznxsB cRgWyS"
       >
         <a
-          className="sc-ckVGcZ duIGor"
+          className="sc-fznJRM iifkLh"
           href="/project/projectId/content"
           id="contentTab"
           onClick={[Function]}
@@ -405,10 +405,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dxgOiQ ijHDlD"
+        className="sc-fznxsB gwcqhJ"
       >
         <a
-          className="sc-ckVGcZ duIGor"
+          className="sc-fznJRM iifkLh"
           href="/project/projectId/templates"
           id="templatesTab"
           onClick={[Function]}
@@ -417,10 +417,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dxgOiQ ijHDlD"
+        className="sc-fznxsB gwcqhJ"
       >
         <a
-          className="sc-ckVGcZ duIGor"
+          className="sc-fznJRM iifkLh"
           href="/project/projectId/user"
           id="usersTab"
           onClick={[Function]}
@@ -431,13 +431,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-eNQAEJ cdjLbz"
+    className="sc-fzoiQi kzhWbE"
   >
     <div
-      className="sc-hMqMXs iyMKdh"
+      className="sc-fzqARJ fGrnyP"
     >
       <h2
-        className="sc-kEYyzF duTgan"
+        className="sc-fzqNqU cSnCDr"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -451,7 +451,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         Section
       </h2>
       <h1
-        className="sc-kkGfuU diXTcM"
+        className="sc-fzoyTs ieHSUN"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -468,15 +468,15 @@ exports[`CreateSection: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-iAyFgw gPlgsX"
+      className="sc-fzoNJl kUMlmZ"
     />
   </div>
   <form
-    className="sc-bwzfXH uTxCW"
+    className="sc-AxirZ ktnnZK"
     onSubmit={[Function]}
   >
     <div
-      className="sc-hSdWYo gNzsPT"
+      className="sc-fzoXWK fQayrT"
     >
       <div
         style={
@@ -542,16 +542,16 @@ exports[`CreateSection: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-jzJRlG cqxriJ"
+      className="sc-fzokOt dRXrKm"
     >
       <div
-        className="sc-kAzzGY emLsXg"
+        className="sc-fzqNJr hOKUNa"
       >
         <div
-          className="sc-cSHVUG fJmVyH"
+          className="sc-fzqBZW bSVecd"
         >
           <button
-            className="sc-chPdSV eAUijZ"
+            className="sc-fzoyAV zReVo"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -577,7 +577,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Cancel
           </button>
           <button
-            className="sc-chPdSV eAUijZ"
+            className="sc-fzoyAV zReVo"
             disabled={true}
             id="createSection"
             style={

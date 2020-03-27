@@ -19,29 +19,34 @@ export class AccordionPanelComponent extends PureComponent {
 
   state = {
     open: this.props.autoOpen,
+    autoHeight: this.props.autoOpen ? null : 'auto',
     overflow: this.props.autoOpen ? 'inherit' : 'hidden',
   };
 
   togglePanel = () => {
     const open = !this.state.open;
-    this.setState({ open, overflow: 'hidden' });
+    this.setState({ autoHeight: null });
+    setTimeout(() => {
+      this.setState({ open, overflow: 'hidden' });
+    });
     if (open) {
       this.delayOverflow();
     }
   };
 
-  delayOverflow = () => setTimeout(() => this.setState({ overflow: 'inherit' }), ANIMATION_DURATION);
+  delayOverflow = () =>
+    setTimeout(() => this.setState({ overflow: 'inherit', autoHeight: 'auto' }), ANIMATION_DURATION);
 
   render() {
     const { children } = this.props;
-    const { open, overflow } = this.state;
+    const { open, overflow, autoHeight } = this.state;
     const { containerStyles } = getStyles();
 
     return (
       <AccordionContext.Consumer>
         {({ customPanelStyles, ...rest }) => {
           return (
-            <AccordionPanelContext.Provider value={{ ...rest, open, togglePanel: this.togglePanel }}>
+            <AccordionPanelContext.Provider value={{ ...rest, open, autoHeight, togglePanel: this.togglePanel }}>
               <div style={{ ...containerStyles, ...customPanelStyles, overflow }}>{children}</div>
             </AccordionPanelContext.Provider>
           );

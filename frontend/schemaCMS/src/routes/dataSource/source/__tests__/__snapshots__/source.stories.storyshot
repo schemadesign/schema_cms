@@ -298,6 +298,14 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:1050px) {
   .c24 {
     display: -webkit-box;
@@ -305,6 +313,10 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -321,6 +333,18 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   .c25 {
     width: 240px;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {
@@ -346,6 +370,26 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   .c18 {
     margin-top: 0;
   }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
 }
 
 @media (min-width:1050px) {
@@ -393,6 +437,30 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   .c15 {
     display: block;
   }
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
 }
 
 <div
@@ -1384,7 +1452,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       className="c20"
     >
       <span
-        className="c21"
+        className="sc-fzqzlV c21"
         onClick={[Function]}
         style={
           Object {
@@ -1396,7 +1464,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         View Past Versions
       </span>
       <span
-        className="c21"
+        className="sc-fzqzlV c21"
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}
         style={
