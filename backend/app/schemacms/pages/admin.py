@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.db import transaction
-from softdelete.admin import SoftDeleteObjectInline
 
 from . import models
 from ..utils.admin import SoftDeleteObjectAdmin
@@ -21,10 +20,24 @@ class BlockAdmin(SoftDeleteObjectAdmin):
     inlines = (ElementInline,)
 
 
-class BlockInline(SoftDeleteObjectInline):
+class BlockInline(admin.TabularInline):
     model = models.Page.blocks.through
     exclude = ("deleted_at",)
     extra = 0
+
+    def get_max_num(self, request, obj=None, **kwargs):
+        if obj and obj.deleted:
+            return 0
+        return self.min_num
+
+    def get_queryset(self, request):
+        qs = self.model._default_manager.all_with_deleted()
+        ordering = self.get_ordering(request) or ()
+        if ordering:
+            qs = qs.order_by(*ordering)
+        return qs
+
+    queryset = get_queryset
 
 
 @admin.register(models.PageTemplate)
