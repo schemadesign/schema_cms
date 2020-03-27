@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
+import { media } from '../../../theme/media';
+
 const ICON_CONTAINER_WIDTH = 50;
 
 export const DetailsContainer = styled.div`
-  padding-left: ${ICON_CONTAINER_WIDTH}px;
+  ${media.desktop`
+    padding-left: ${ICON_CONTAINER_WIDTH}px;
+  `}
 `;
 
 export const Header = styled.div`
@@ -19,9 +23,14 @@ export const InputContainer = styled.div`
 `;
 
 export const IconContainer = styled.div`
-  width: ${ICON_CONTAINER_WIDTH}px;
+  width: 0;
+  overflow: hidden;
   display: flex;
   align-items: center;
+
+  ${media.desktop`
+    width: ${ICON_CONTAINER_WIDTH}px;
+  `}
 `;
 
 export const getCustomInputStyles = theme => ({
