@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   namePlaceholder: {
-    id: 'shared.components.blockPage.namePlaceholder',
+    id: 'shared.components.pageBlock.namePlaceholder',
     defaultMessage: 'Name',
   },
 });

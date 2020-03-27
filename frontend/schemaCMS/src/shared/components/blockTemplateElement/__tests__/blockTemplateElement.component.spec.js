@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { ElementBlockTemplate } from '../elementBlockTemplate.component';
-import { defaultProps } from '../elementBlockTemplate.stories';
+import { BlockTemplateElement } from '../blockTemplateElement.component';
+import { defaultProps } from '../blockTemplateElement.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 
 describe('BlockElementTemplate: Component', () => {
-  const render = props => makeContextRenderer(<ElementBlockTemplate {...defaultProps} {...props} />);
+  const render = props => makeContextRenderer(<BlockTemplateElement {...defaultProps} {...props} />);
 
   it('should render correctly', async () => {
     const wrapper = await render();

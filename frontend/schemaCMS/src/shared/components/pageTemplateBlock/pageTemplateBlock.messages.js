@@ -4,23 +4,23 @@ import { BLOCK_TYPE } from '../../../modules/pageTemplates/pageTemplates.constan
 
 export default defineMessages({
   typePlaceholder: {
-    id: 'shared.components.blockPageTemplate.typePlaceholder',
+    id: 'shared.components.pageTemplateBlock.typePlaceholder',
     defaultMessage: 'Select Element Type',
   },
   namePlaceholder: {
-    id: 'shared.components.blockPageTemplate.namePlaceholder',
+    id: 'shared.components.pageTemplateBlock.namePlaceholder',
     defaultMessage: 'Name',
   },
   [BLOCK_TYPE]: {
-    id: `shared.components.blockPageTemplate.${BLOCK_TYPE}`,
+    id: `shared.components.pageTemplateBlock.${BLOCK_TYPE}`,
     defaultMessage: 'Block Type',
   },
   blockPlaceholder: {
-    id: 'shared.components.blockPageTemplate.typePlaceholder',
+    id: 'shared.components.pageTemplateBlock.typePlaceholder',
     defaultMessage: 'Select Block Type',
   },
   noBlocksPlaceholder: {
-    id: 'shared.components.blockPageTemplate.noBlocksPlaceholder',
+    id: 'shared.components.pageTemplateBlock.noBlocksPlaceholder',
     defaultMessage: 'No blocks available',
   },
 });

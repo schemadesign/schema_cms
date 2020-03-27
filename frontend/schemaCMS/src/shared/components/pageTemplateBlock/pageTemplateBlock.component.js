@@ -11,8 +11,8 @@ import {
   iconStyles,
   InputContainer,
   Type,
-} from './blockPageTemplate.styles';
-import messages from './blockPageTemplate.messages';
+} from './pageTemplateBlock.styles';
+import messages from './pageTemplateBlock.messages';
 import { TextInput } from '../form/inputs/textInput';
 import { Select } from '../form/select';
 import {
@@ -24,7 +24,7 @@ import {
 
 const { EditIcon, MinusIcon } = Icons;
 
-export const BlockPageTemplate = ({
+export const PageTemplateBlock = ({
   block,
   handleChange,
   index,
@@ -84,7 +84,7 @@ export const BlockPageTemplate = ({
   );
 };
 
-BlockPageTemplate.propTypes = {
+PageTemplateBlock.propTypes = {
   block: PropTypes.object.isRequired,
   blocksOptions: PropTypes.array.isRequired,
   index: PropTypes.number.isRequired,

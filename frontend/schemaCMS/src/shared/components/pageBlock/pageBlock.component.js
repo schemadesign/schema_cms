@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 
-import { Header, IconsContainer, iconStyles, Type } from './blockPage.styles';
+import { Header, IconsContainer, iconStyles, Type } from './pageBlock.styles';
 import { TextInput } from '../form/inputs/textInput';
-import messages from './blockPage.messages';
-import { PAGE_BLOCKS, BLOCK_NAME, BLOCK_TYPE } from '../../../modules/page/page.constants';
+import messages from './pageBlock.messages';
+import { BlockElement } from '../blockElement';
+import { PAGE_BLOCKS, BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
 
 const { EditIcon, MinusIcon } = Icons;
 
-export const BlockPage = ({ index, block, draggableIcon, handleChange, removeBlock, ...restFormikProps }) => {
+export const PageBlock = ({ index, block, draggableIcon, handleChange, removeBlock, ...restFormikProps }) => {
   const intl = useIntl();
   const elementPath = `${PAGE_BLOCKS}.${index}`;
 
@@ -35,12 +36,16 @@ export const BlockPage = ({ index, block, draggableIcon, handleChange, removeBlo
         </Header>
         <Type>{block[BLOCK_TYPE]}</Type>
       </AccordionHeader>
-      <AccordionDetails>elements</AccordionDetails>
+      <AccordionDetails>
+        {block[BLOCK_ELEMENTS].map((element, index) => (
+          <BlockElement key={index} element={element} />
+        ))}
+      </AccordionDetails>
     </AccordionPanel>
   );
 };
 
-BlockPage.propTypes = {
+PageBlock.propTypes = {
   index: PropTypes.number.isRequired,
   block: PropTypes.object.isRequired,
   draggableIcon: PropTypes.element.isRequired,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots BlockPage Default 1`] = `
+exports[`Storyshots PageBlock Default 1`] = `
 .c2 {
   position: relative;
   max-width: 100%;
@@ -69,7 +69,7 @@ exports[`Storyshots BlockPage Default 1`] = `
   }
 >
   <style>
-    
+
   body {
     color: #FFF;
     background-color: #000;

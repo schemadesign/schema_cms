@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BlockPage } from './blockPage.component';
+import { PageBlock } from './pageBlock.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { block } from '../../../modules/page/page.mocks';
 
@@ -13,6 +13,6 @@ export const defaultProps = {
   handleChange: Function.prototype,
 };
 
-storiesOf('BlockPage', module)
+storiesOf('PageBlock', module)
   .addDecorator(withTheme())
-  .add('Default', () => <BlockPage {...defaultProps} />);
+  .add('Default', () => <PageBlock {...defaultProps} />);

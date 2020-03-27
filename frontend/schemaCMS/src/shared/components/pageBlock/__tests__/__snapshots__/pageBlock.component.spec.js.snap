@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlockPage: Component should render correctly 1`] = `
+exports[`PageBlock: Component should render correctly 1`] = `
 <div
   style={
     Object {

@@ -45,7 +45,7 @@ import {
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { BackButton, NextButton, PlusButton } from '../navigation';
-import { BlockPage } from '../blockPage';
+import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { IconWrapper, menuIconStyles } from '../pageTemplateForm/pageTemplateForm.styles';
 import { CounterHeader } from '../counterHeader';
@@ -244,7 +244,7 @@ export const PageForm = ({
                 );
 
                 return (
-                  <BlockPage
+                  <PageBlock
                     index={index}
                     block={block}
                     draggableIcon={draggableIcon}

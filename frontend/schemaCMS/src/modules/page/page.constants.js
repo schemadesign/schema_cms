@@ -11,6 +11,7 @@ export const PAGE_DELETE_BLOCKS = 'deleteBlocks';
 
 export const BLOCK_NAME = 'name';
 export const BLOCK_TYPE = 'type';
+export const BLOCK_ELEMENTS = 'elements';
 export const BLOCK_KEY = 'key';
 export const BLOCK_ID = 'id';
 

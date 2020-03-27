@@ -11,8 +11,8 @@ import {
   iconStyles,
   InputContainer,
   ElementIcon,
-} from './elementBlockTemplate.styles';
-import messages from './elementBlockTemplate.messages';
+} from './blockTemplateElement.styles';
+import messages from './blockTemplateElement.messages';
 import { TextInput } from '../form/inputs/textInput';
 import {
   BLOCK_TEMPLATES_ELEMENTS,
@@ -29,7 +29,7 @@ import { renderWhenTrue } from '../../utils/rendering';
 
 const { EditIcon, MinusIcon } = Icons;
 
-export const ElementBlockTemplate = ({
+export const BlockTemplateElement = ({
   element,
   handleChange,
   index,
@@ -108,7 +108,7 @@ export const ElementBlockTemplate = ({
   );
 };
 
-ElementBlockTemplate.propTypes = {
+BlockTemplateElement.propTypes = {
   element: PropTypes.object.isRequired,
   blocksOptions: PropTypes.array.isRequired,
   index: PropTypes.number.isRequired,

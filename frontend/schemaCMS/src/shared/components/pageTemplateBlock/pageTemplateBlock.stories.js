@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BlockPageTemplate } from './blockPageTemplate.component';
+import { PageTemplateBlock } from './pageTemplateBlock.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { pageTemplate } from '../../../modules/pageTemplates/pageTemplates.mocks';
 import { PAGE_TEMPLATES_BLOCKS } from '../../../modules/pageTemplates/pageTemplates.constants';
@@ -19,4 +19,4 @@ export const defaultProps = {
 
 storiesOf('PageBlockTemplate', module)
   .addDecorator(withTheme())
-  .add('Default', () => <BlockPageTemplate {...defaultProps} />);
+  .add('Default', () => <PageTemplateBlock {...defaultProps} />);
