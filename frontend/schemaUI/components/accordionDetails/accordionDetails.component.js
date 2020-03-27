@@ -10,23 +10,6 @@ export class AccordionDetailsComponent extends PureComponent {
     children: PropTypes.node.isRequired,
   };
 
-  state = {
-    height: 0,
-  };
-
-  componentDidMount() {
-    if (this.innerRef.current) {
-      this.setState({ height: this.innerRef.current.offsetHeight });
-    }
-  }
-
-  componentDidUpdate() {
-    if (this.innerRef.current && this.innerRef.current.offsetHeight !== this.state.height) {
-      this.setState({ height: this.innerRef.current.offsetHeight });
-    }
-  }
-
-  containerRef = createRef();
   innerRef = createRef();
 
   render() {
@@ -35,11 +18,12 @@ export class AccordionDetailsComponent extends PureComponent {
 
     return (
       <AccordionPanelContext.Consumer style={containerStyles}>
-        {({ open, customDetailsStyles }) => {
-          const height = open ? this.state.height : 0;
+        {({ open, autoHeight, customDetailsStyles }) => {
+          const innerHeight = this.innerRef.current ? this.innerRef.current.offsetHeight : 0;
+          const height = open ? autoHeight || innerHeight : 0;
 
           return (
-            <div ref={this.containerRef} style={{ ...containerStyles, ...customDetailsStyles, height }}>
+            <div style={{ ...containerStyles, ...customDetailsStyles, height }}>
               <div ref={this.innerRef}>{children}</div>
             </div>
           );
