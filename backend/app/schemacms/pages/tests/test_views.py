@@ -376,6 +376,39 @@ class TestUpdateDeletePageView:
         assert response.status_code == status.HTTP_200_OK
         assert page.name == new_name
 
+    def test_update_page_block(self, api_client, admin, page, block_template, page_block_factory):
+        page_block = page_block_factory(block=block_template, page=page)
+        new_block_name = "New Block Name"
+        payload = {"blocks": [{"id": page_block.id, "name": new_block_name}]}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(page.id), data=payload, format="json")
+        page.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert page.pageblock_set.count() == 1
+        assert page.pageblock_set.get(pk=page_block.id).name == new_block_name
+
+    def test_update_page_block_element(
+        self, api_client, admin, page, block_template, page_block_factory, page_block_element_factory
+    ):
+        page_block = page_block_factory(block=block_template, page=page)
+        page_block_element = page_block_element_factory(block=page_block)
+        new_element_name = "New Elemebt Name"
+        payload = {
+            "blocks": [
+                {"id": page_block.id, "elements": [{"id": page_block_element.id, "name": new_element_name}]}
+            ]
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(page.id), data=payload, format="json")
+        element = page.pageblock_set.get(pk=page_block.id).elements.get(pk=page_block_element.id)
+
+        assert response.status_code == status.HTTP_200_OK
+        assert page.pageblock_set.count() == 1
+        assert element.name == new_element_name
+
     def test_delete_page(self, api_client, admin, page):
         page_id = page.id
         api_client.force_authenticate(admin)
@@ -383,3 +416,15 @@ class TestUpdateDeletePageView:
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert not pages_models.Page.objects.filter(pk=page_id, deleted_at__isnull=True).exists()
+
+    def test_delete_page_block(self, api_client, admin, page, block_template, page_block_factory):
+        page_block = page_block_factory(block=block_template, page=page)
+
+        payload = {"delete_blocks": [page_block.id]}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(page.id), data=payload, format="json")
+        page.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert page.pageblock_set.count() == 0

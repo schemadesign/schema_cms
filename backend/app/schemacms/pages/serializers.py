@@ -7,9 +7,6 @@ from ..utils.validators import CustomUniqueTogetherValidator
 
 
 class ElementValueField(serializers.Field):
-    def get_value(self, dictionary):
-        return super().get_value(dictionary)
-
     def get_attribute(self, instance):
         return getattr(instance, instance.type)
 
@@ -241,12 +238,38 @@ class PageSerializer(CustomModelSerializer):
 
         return page
 
-    def create_or_update_blocks(self, page, blocks):
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        blocks = self.initial_data.pop("blocks", [])
+        blocks_to_delete = self.initial_data.pop("delete_blocks", [])
+
+        if blocks_to_delete:
+            instance.delete_blocks(blocks_to_delete)
+
+        instance = super().update(instance, validated_data)
+
+        if blocks:
+            self.create_or_update_blocks(instance, blocks, is_update=True)
+
+        return instance
+
+    def create_or_update_blocks(self, page, blocks, is_update=False):
         blocks_data = self.validate_block_data(blocks)
         for block in blocks_data:
             elements = block.pop("elements", [])
             block, _ = page.create_or_update_block(block)
-            self.create_block_elements(elements, block)
+
+            if is_update:
+                self.create_or_update_elements(block, elements)
+            else:
+                self.create_block_elements(elements, block)
+
+    @staticmethod
+    def create_or_update_elements(instance, elements):
+        for element in elements:
+            models.PageBlockElement.objects.update_or_create(
+                id=element.pop("id", None), defaults=dict(block=instance, **element)
+            )
 
     def create_block_elements(self, elements, instance):
         if elements:
