@@ -26,17 +26,17 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-bwzfXH hWKYut"
+      className="sc-AxirZ ggXYv"
     >
       <div
-        className="sc-htpNat iTScjb"
+        className="sc-AxiKw dPWazA"
       >
         <span>
           icon
         </span>
       </div>
       <div
-        className="sc-EHOje eJorti"
+        className="sc-AxgMl YZOfh"
       >
         <div
           style={
@@ -110,7 +110,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-htpNat iTScjb"
+        className="sc-AxiKw dPWazA"
       >
         <svg
           style={
@@ -148,7 +148,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-ifAKCX ftXYKK"
+      className="sc-AxhUy gAHmxs"
     >
       block name
     </div>
@@ -179,10 +179,10 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
   >
     <div>
       <div
-        className="sc-bxivhb eqWwbl"
+        className="sc-AxhCb czPhVR"
       >
         <div
-          className="sc-htoDjs eyjKUW"
+          className="sc-AxmLO jiDPFU"
         >
           <label
             id="fieldProjectStatusLabel"
@@ -208,7 +208,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
             value={1}
           />
           <div
-            className="sc-dnqmqq jrrDDY"
+            className="sc-fzozJi cFildF"
           >
             <svg
               style={

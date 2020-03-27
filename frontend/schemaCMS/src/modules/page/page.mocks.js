@@ -10,13 +10,29 @@ import {
   BLOCK_NAME,
   BLOCK_KEY,
   BLOCK_ID,
+  BLOCK_ELEMENTS,
 } from './page.constants';
+import {
+  ELEMENT_NAME,
+  ELEMENT_TYPE,
+  PLAIN_TEXT_TYPE,
+  ELEMENT_ID,
+  ELEMENT_VALUE,
+} from '../blockTemplates/blockTemplates.constants';
+
+export const element = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_TYPE]: PLAIN_TEXT_TYPE,
+  [ELEMENT_VALUE]: '',
+  [ELEMENT_ID]: 1,
+};
 
 export const block = {
   [BLOCK_NAME]: 'name',
   [BLOCK_TYPE]: 'type',
   [BLOCK_KEY]: 1,
   [BLOCK_ID]: 1,
+  [BLOCK_ELEMENTS]: [element],
 };
 
 export const page = {

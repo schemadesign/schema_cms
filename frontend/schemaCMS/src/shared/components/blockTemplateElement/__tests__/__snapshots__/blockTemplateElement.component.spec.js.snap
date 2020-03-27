@@ -26,16 +26,16 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-bwzfXH hIfASN"
+      className="sc-AxirZ kjdPdC"
     >
       <div
-        className="sc-htpNat iTScjb"
+        className="sc-AxiKw dPWazA"
       >
         <span>
           icon
         </span>
         <div
-          className="sc-ifAKCX fkQgZK"
+          className="sc-AxhUy kmRqjL"
         >
           <svg
             style={
@@ -55,7 +55,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-EHOje eJorti"
+        className="sc-AxgMl YZOfh"
       >
         <div
           style={
@@ -129,7 +129,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-htpNat iTScjb"
+        className="sc-AxiKw dPWazA"
       >
         <svg
           style={
@@ -193,10 +193,10 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
   >
     <div>
       <div
-        className="sc-bxivhb eqWwbl"
+        className="sc-AxhCb czPhVR"
       >
         <div
-          className="sc-htoDjs eyjKUW"
+          className="sc-AxmLO jiDPFU"
         >
           <label
             id="fieldProjectStatusLabel"
@@ -222,7 +222,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
             value="stack"
           />
           <div
-            className="sc-dnqmqq jrrDDY"
+            className="sc-fzozJi cFildF"
           >
             <svg
               style={
@@ -427,10 +427,10 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bxivhb eqWwbl"
+        className="sc-AxhCb czPhVR"
       >
         <div
-          className="sc-htoDjs eyjKUW"
+          className="sc-AxmLO jiDPFU"
         >
           <label
             id="fieldProjectStatusLabel"
@@ -456,7 +456,7 @@ exports[`BlockElementTemplate: Component should render correctly 1`] = `
             value="block name 2"
           />
           <div
-            className="sc-dnqmqq jrrDDY"
+            className="sc-fzozJi cFildF"
           >
             <svg
               style={

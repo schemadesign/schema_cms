@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
-import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
+import { useTheme } from 'styled-components';
+import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 
-import { Header, IconsContainer, iconStyles, Type } from './pageBlock.styles';
+import { Header, IconsContainer, iconStyles, Type, getCustomIconStyles } from './pageBlock.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageBlock.messages';
 import { BlockElement } from '../blockElement';
@@ -13,7 +14,9 @@ const { EditIcon, MinusIcon } = Icons;
 
 export const PageBlock = ({ index, block, draggableIcon, handleChange, removeBlock, ...restFormikProps }) => {
   const intl = useIntl();
-  const elementPath = `${PAGE_BLOCKS}.${index}`;
+  const theme = useTheme();
+  const blockPath = `${PAGE_BLOCKS}.${index}`;
+  const blockName = `${blockPath}.${BLOCK_NAME}`;
 
   return (
     <AccordionPanel>
@@ -21,7 +24,7 @@ export const PageBlock = ({ index, block, draggableIcon, handleChange, removeBlo
         <Header>
           <IconsContainer>{draggableIcon}</IconsContainer>
           <TextInput
-            name={`${elementPath}.${BLOCK_NAME}`}
+            name={blockName}
             placeholder={intl.formatMessage(messages.namePlaceholder)}
             onChange={handleChange}
             autoWidth
@@ -37,9 +40,18 @@ export const PageBlock = ({ index, block, draggableIcon, handleChange, removeBlo
         <Type>{block[BLOCK_TYPE]}</Type>
       </AccordionHeader>
       <AccordionDetails>
-        {block[BLOCK_ELEMENTS].map((element, index) => (
-          <BlockElement key={index} element={element} />
-        ))}
+        <Accordion customIconStyles={getCustomIconStyles(theme)}>
+          {block[BLOCK_ELEMENTS].map((element, index) => (
+            <BlockElement
+              key={index}
+              index={index}
+              blockPath={blockPath}
+              element={element}
+              handleChange={handleChange}
+              {...restFormikProps}
+            />
+          ))}
+        </Accordion>
       </AccordionDetails>
     </AccordionPanel>
   );

@@ -68,7 +68,9 @@ describe('PageForm: Component', () => {
       wrapper.root.findByProps({ id: 'addBlock' }).props.onClick();
     });
 
-    expect(defaultProps.setTemporaryPageBlocks).toHaveBeenCalledWith([{ id: 1, key: 1, name: 'name', type: 'type' }]);
+    expect(defaultProps.setTemporaryPageBlocks).toHaveBeenCalledWith([
+      { elements: [{ id: 1, name: 'name', type: 'plain_text', value: '' }], id: 1, key: 1, name: 'name', type: 'type' },
+    ]);
     expect(mockPushHistory).toHaveBeenCalledWith('url/add-block');
   });
 });

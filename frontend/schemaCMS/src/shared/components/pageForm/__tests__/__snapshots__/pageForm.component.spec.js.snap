@@ -2,16 +2,16 @@
 
 exports[`PageForm: Component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-cSHVUG koYINE"
+    className="sc-fzqBZW iCPiQQ"
   >
     <div
-      className="sc-kAzzGY fWonDE"
+      className="sc-fzqNJr dxKHGM"
     >
       <h2
-        className="sc-chPdSV kgWIQe"
+        className="sc-fzoyAV jreAyV"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -25,7 +25,7 @@ exports[`PageForm: Component should render correctly 1`] = `
         title
       </h2>
       <h1
-        className="sc-kgoBCf esFMBq"
+        className="sc-fzoLag jxGmYJ"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -39,10 +39,10 @@ exports[`PageForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-htoDjs fHktW"
+          className="sc-AxmLO kmtPrp"
         >
           <div
-            className="sc-jTzLTM jpLwQR"
+            className="sc-fznKkj cWknMe"
           >
             <div
               style={
@@ -117,7 +117,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-dnqmqq klJvpP"
+            className="sc-fzozJi jbzuQE"
           >
             <svg
               style={
@@ -139,14 +139,14 @@ exports[`PageForm: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-kGXeez eIIwaK"
+      className="sc-fzoXzr bvUUDN"
     />
   </div>
   <div
-    className="sc-iwsKbI hwjYqO"
+    className="sc-fzoLsD hRviEw"
   >
     <div
-      className="sc-jTzLTM dIZNvj"
+      className="sc-fznKkj iFeYds"
     >
       <div
         style={
@@ -209,7 +209,7 @@ exports[`PageForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fjdhpX dBFMNk"
+            className="sc-fznZeY idIuQt"
           >
             <svg
               style={
@@ -232,7 +232,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jTzLTM dIZNvj"
+    className="sc-fznKkj iFeYds"
   >
     <div
       style={
@@ -297,7 +297,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jTzLTM dIZNvj"
+    className="sc-fznKkj iFeYds"
   >
     <div
       style={
@@ -380,7 +380,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jTzLTM dIZNvj"
+    className="sc-fznKkj iFeYds"
   >
     <div
       style={
@@ -445,7 +445,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-kpOJdX fCdnbP"
+    className="sc-fzpjYC jUoPub"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -471,7 +471,7 @@ exports[`PageForm: Component should render correctly 1`] = `
       value="template"
     />
     <div
-      className="sc-dxgOiQ hqDAJR"
+      className="sc-fznxsB bOJaJE"
     >
       <svg
         style={
@@ -614,20 +614,20 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jDwBTQ nAMvm"
+    className="sc-fzoxKX iXSUEj"
   >
     <div
-      className="sc-gPEVay jIrDGg"
+      className="sc-fzoKki jXYIlx"
     />
     1 Block
     <div
-      className="sc-gPEVay jIrDGg"
+      className="sc-fzoKki jXYIlx"
     >
       <div
-        className="sc-gZMcBi jHBccF"
+        className="sc-fzpans kuAYae"
       >
         <div
-          className="sc-eHgmQL iJuuDo"
+          className="sc-fzpmMD PQZfb"
         >
           <button
             disabled={false}
@@ -715,14 +715,14 @@ exports[`PageForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-cvbbAY enNuhX"
+            className="sc-fznxKY iKpJZH"
           >
             <div
-              className="sc-jWBwVP jZcPPp"
+              className="sc-fznMAR guOnZI"
             >
               <div>
                 <div
-                  className="sc-jAaTju cMAVfo"
+                  className="sc-fzqPZZ izHplY"
                 >
                   <svg
                     style={
@@ -744,7 +744,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jTzLTM jpLwQR"
+              className="sc-fznKkj cWknMe"
             >
               <div
                 style={
@@ -818,7 +818,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jWBwVP jZcPPp"
+              className="sc-fznMAR guOnZI"
             >
               <svg
                 style={
@@ -856,7 +856,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-brqgnP iYIzJp"
+            className="sc-fznWOq gDfPmy"
           >
             type
           </div>
@@ -903,20 +903,139 @@ exports[`PageForm: Component should render correctly 1`] = `
           }
         >
           <div>
-            elements
+            <div
+              style={
+                Object {
+                  "borderTop": "2px solid #FFF",
+                  "overflow": "hidden",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#000",
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "minHeight": 60,
+                    "paddingRight": 40,
+                    "position": "relative",
+                  }
+                }
+              >
+                name
+                <div
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "fontSize": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 9,
+                      "transform": "rotate(0deg)",
+                      "transformOrigin": "center center",
+                      "transition": "transform 200ms ease-in-out",
+                    }
+                  }
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#71737e",
+                        "height": 30,
+                        "margin": "5px",
+                        "userSelect": "none",
+                        "width": 30,
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M15.117 18L9 12h12z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#000",
+                    "height": 0,
+                    "transition": "height 200ms linear, overflow 0s linear 200ms",
+                  }
+                }
+              >
+                <div>
+                  <div
+                    className="sc-fznKkj iFeYds"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "320px",
+                          "paddingBottom": "30px",
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <input
+                        id="blocks.0.elements.0.value"
+                        name="blocks.0.elements.0.value"
+                        onChange={[Function]}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "border": "none",
+                            "color": "#FFF",
+                            "fontFamily": "inherit",
+                            "fontSize": "18px",
+                            "fontWeight": "inherit",
+                            "letterSpacing": "normal",
+                            "lineHeight": "24px",
+                            "maxWidth": "100%",
+                            "minWidth": 60,
+                            "outline": "none",
+                            "padding": 0,
+                          }
+                        }
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": -30,
+                            "top": -40,
+                          }
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </span>
   <div
-    className="sc-bwzfXH fAcqPw"
+    className="sc-AxirZ fMzNUj"
   >
     <div
-      className="sc-htpNat kPhDHx"
+      className="sc-AxiKw gqUxvU"
     >
       <div
-        className="sc-EHOje izwGqY"
+        className="sc-AxgMl bUVYnu"
       >
         <div>
           <input
@@ -968,20 +1087,20 @@ exports[`PageForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-ifAKCX gOSXkE"
+          className="sc-AxhUy eNEHis"
         >
           <label
-            className="sc-bxivhb kjXQwy"
+            className="sc-AxhCb bSWpgK"
             htmlFor="isPublic"
           >
             Make it Public
           </label>
           <span
-            className="sc-gzVnrw lkwYaP"
+            className="sc-Axmtr djsqSs"
           >
             This Page is currently Private
             <span
-              className="sc-VigVT fsuiqa"
+              className="sc-fznyAO kNeVgd"
             />
             Visit Page: 
             <a
@@ -993,7 +1112,7 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM fhxaLw"
+        className="sc-AxheI bsUIEZ"
         id="removePage"
         onClick={[Function]}
       >

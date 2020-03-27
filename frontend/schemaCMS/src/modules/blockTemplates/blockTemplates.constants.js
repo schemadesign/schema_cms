@@ -13,6 +13,7 @@ export const ELEMENT_ID = 'id';
 export const ELEMENT_PARAMS = 'params';
 export const ELEMENT_AUTO_OPEN = 'autoOpen';
 export const ELEMENT_KEY = 'key';
+export const ELEMENT_VALUE = 'value';
 
 export const PARAMS_BLOCK = 'block';
 

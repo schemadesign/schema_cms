@@ -26,17 +26,17 @@ exports[`PageBlock: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-bdVaJa kVLYwU"
+      className="sc-AxjAm bVRHRE"
     >
       <div
-        className="sc-bwzfXH fNOhzS"
+        className="sc-AxirZ bnSjNE"
       >
         <div>
           icon
         </div>
       </div>
       <div
-        className="sc-bxivhb fEwSom"
+        className="sc-AxhCb OYUmu"
       >
         <div
           style={
@@ -110,7 +110,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bwzfXH fNOhzS"
+        className="sc-AxirZ bnSjNE"
       >
         <svg
           style={
@@ -148,7 +148,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-htpNat SjQVs"
+      className="sc-AxiKw bJsLtd"
     >
       type
     </div>
@@ -178,7 +178,126 @@ exports[`PageBlock: Component should render correctly 1`] = `
     }
   >
     <div>
-      elements
+      <div
+        style={
+          Object {
+            "borderTop": "2px solid #FFF",
+            "overflow": "hidden",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#000",
+              "display": "flex",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "minHeight": 60,
+              "paddingRight": 40,
+              "position": "relative",
+            }
+          }
+        >
+          name
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fontSize": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 9,
+                "transform": "rotate(0deg)",
+                "transformOrigin": "center center",
+                "transition": "transform 200ms ease-in-out",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#71737e",
+                  "height": 30,
+                  "margin": "5px",
+                  "userSelect": "none",
+                  "width": 30,
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15.117 18L9 12h12z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "height": 0,
+              "transition": "height 200ms linear, overflow 0s linear 200ms",
+            }
+          }
+        >
+          <div>
+            <div
+              className="sc-AxhCb qEpns"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "320px",
+                    "paddingBottom": "30px",
+                    "position": "relative",
+                  }
+                }
+              >
+                <input
+                  id="blocks.0.elements.0.value"
+                  name="blocks.0.elements.0.value"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": "18px",
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 60,
+                      "outline": "none",
+                      "padding": 0,
+                    }
+                  }
+                  type="text"
+                  value=""
+                />
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": -30,
+                      "top": -40,
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
