@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent, createRef } from 'react';
+import React, { createRef, Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { debounce } from 'throttle-debounce';
 
@@ -20,6 +20,9 @@ class InputComponent extends PureComponent {
     stateValue: this.props.value,
     autoFocus: false,
   };
+  spanRef = createRef();
+  inputRef = createRef();
+  handleThrottle = debounce(200, this.props.onChange);
 
   componentDidMount() {
     if (this.props.autoWidth) {
@@ -34,11 +37,6 @@ class InputComponent extends PureComponent {
       this.inputRef.current.focus();
     }
   }
-
-  spanRef = createRef();
-  inputRef = createRef();
-
-  handleThrottle = debounce(200, this.props.onChange);
 
   handleChange = e => {
     if (this.props.autoWidth) {

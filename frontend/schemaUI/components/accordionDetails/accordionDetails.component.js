@@ -1,4 +1,4 @@
-import React, { PureComponent, createRef } from 'react';
+import React, { createRef, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { getStyles } from './accordionDetails.styles';

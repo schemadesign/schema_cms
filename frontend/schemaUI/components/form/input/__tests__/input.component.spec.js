@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { Input } from '../input.component';
-import { defaultProps, withCustomStyles, withAutoWidth } from '../input.stories';
+import { defaultProps, withAutoWidth, withCustomStyles } from '../input.stories';
 
 describe('Input: Component', () => {
   const component = props => <Input {...defaultProps} {...props} />;

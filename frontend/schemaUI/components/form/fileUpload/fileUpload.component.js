@@ -2,12 +2,12 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  getButtonStyles,
-  iconContainerStyles,
-  getLabelStyles,
-  inputStyles,
-  getValueStyles,
   containerStyles,
+  getButtonStyles,
+  getLabelStyles,
+  getValueStyles,
+  iconContainerStyles,
+  inputStyles,
 } from './fileUpload.styles';
 import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
@@ -117,7 +117,15 @@ export class FileUploadComponent extends PureComponent {
           placeholder,
           disabled,
         })}
-        <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" disabled={disabled} {...filteredProps} />
+        <input
+          style={inputStyles}
+          aria-hidden
+          id={id}
+          multiple={multiple}
+          type="file"
+          disabled={disabled}
+          {...filteredProps}
+        />
       </div>
     );
   }

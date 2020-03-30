@@ -13,6 +13,16 @@ export class TextAreaComponent extends PureComponent {
   static defaultProps = {
     customStyles: {},
   };
+  state = {
+    height: 0,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.textAreaRef = createRef();
+    this.shadowRef = createRef();
+  }
 
   componentDidMount() {
     this.syncHeight();
@@ -23,17 +33,6 @@ export class TextAreaComponent extends PureComponent {
       this.syncHeight();
     }
   }
-
-  constructor(props) {
-    super(props);
-
-    this.textAreaRef = createRef();
-    this.shadowRef = createRef();
-  }
-
-  state = {
-    height: 0,
-  };
 
   handleChange = event => {
     this.syncHeight();

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { CheckboxComponent } from '../checkbox.component';
-import { defaultProps, checkedProps, context } from '../checkbox.stories';
+import { checkedProps, context, defaultProps } from '../checkbox.stories';
 import CheckboxGroupContext from '../../checkboxGroup/checkboxGroup.context';
 
 describe('RadioButton: Component', () => {
