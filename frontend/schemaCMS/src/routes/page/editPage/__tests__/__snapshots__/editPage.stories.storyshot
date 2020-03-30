@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Page Default 1`] = `
+exports[`Storyshots EditPage Default 1`] = `
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -583,7 +583,7 @@ exports[`Storyshots Page Default 1`] = `
   }
 >
   <style>
-    
+
   body {
     color: #FFF;
     background-color: #000;
@@ -641,7 +641,7 @@ exports[`Storyshots Page Default 1`] = `
                 }
               }
             >
-              Page
+              EditPage
             </h1>
           </div>
         </div>
@@ -742,7 +742,7 @@ exports[`Storyshots Page Default 1`] = `
                 }
               }
             >
-              Page
+              EditPage
             </h1>
           </div>
         </div>
@@ -1268,7 +1268,7 @@ exports[`Storyshots Page Default 1`] = `
                 }
               }
             >
-              SEO Page Description
+              SEO EditPage Description
             </label>
             <textarea
               id="description"
@@ -1410,7 +1410,7 @@ exports[`Storyshots Page Default 1`] = `
                 }
               }
             >
-              Page Template
+              EditPage Template
             </label>
             <input
               id="template"
@@ -1477,7 +1477,7 @@ exports[`Storyshots Page Default 1`] = `
                       }
                     }
                   >
-                    Select Page Template
+                    Select EditPage Template
                   </div>
                 </div>
                 <div
@@ -1535,7 +1535,7 @@ exports[`Storyshots Page Default 1`] = `
                       }
                     }
                   >
-                    Page template
+                    EditPage template
                   </div>
                   <div
                     id="select-item-2"
@@ -1555,7 +1555,7 @@ exports[`Storyshots Page Default 1`] = `
                       }
                     }
                   >
-                    Page template 2
+                    EditPage template 2
                   </div>
                 </div>
               </div>
@@ -2475,11 +2475,11 @@ exports[`Storyshots Page Default 1`] = `
                 <span
                   className="c39"
                 >
-                  This Page is currently Private
+                  This EditPage is currently Private
                   <span
                     className="c40"
                   />
-                  Visit Page: 
+                  Visit EditPage:
                   <a
                     href="https://schemacms.com/page-name"
                   >

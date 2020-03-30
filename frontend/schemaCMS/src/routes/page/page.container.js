@@ -6,26 +6,14 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { Page } from './page.component';
-import { selectUserRole } from '../../modules/userProfile';
-import { PageRoutines, selectPage } from '../../modules/page';
-import { selectProject } from '../../modules/project';
-import { PageTemplatesRoutines, selectPageTemplates } from '../../modules/pageTemplates';
+import { PageRoutines } from '../../modules/page';
 
-const mapStateToProps = createStructuredSelector({
-  userRole: selectUserRole,
-  page: selectPage,
-  project: selectProject,
-  pageTemplates: selectPageTemplates,
-});
+const mapStateToProps = createStructuredSelector({});
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      updatePage: promisifyRoutine(PageRoutines.updatePage),
       fetchPage: promisifyRoutine(PageRoutines.fetchPage),
-      removePage: promisifyRoutine(PageRoutines.removePage),
-      setTemporaryPageBlocks: promisifyRoutine(PageRoutines.setTemporaryPageBlocks),
-      fetchPageTemplates: promisifyRoutine(PageTemplatesRoutines.fetchPageTemplates),
     },
     dispatch
   ),

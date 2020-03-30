@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Page: Component should render correctly 1`] = `
+exports[`EditPage: Component should render correctly 1`] = `
 <div
   className="sc-AxjAm StDqN"
 >
@@ -52,7 +52,7 @@ exports[`Page: Component should render correctly 1`] = `
               }
             }
           >
-            Page
+            EditPage
           </h1>
         </div>
       </div>
@@ -153,7 +153,7 @@ exports[`Page: Component should render correctly 1`] = `
               }
             }
           >
-            Page
+            EditPage
           </h1>
         </div>
       </div>
@@ -679,7 +679,7 @@ exports[`Page: Component should render correctly 1`] = `
               }
             }
           >
-            SEO Page Description
+            SEO EditPage Description
           </label>
           <textarea
             id="description"
@@ -821,7 +821,7 @@ exports[`Page: Component should render correctly 1`] = `
               }
             }
           >
-            Page Template
+            EditPage Template
           </label>
           <input
             id="template"
@@ -888,7 +888,7 @@ exports[`Page: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  Select Page Template
+                  Select EditPage Template
                 </div>
               </div>
               <div
@@ -946,7 +946,7 @@ exports[`Page: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  Page template
+                  EditPage template
                 </div>
                 <div
                   id="select-item-2"
@@ -966,7 +966,7 @@ exports[`Page: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  Page template 2
+                  EditPage template 2
                 </div>
               </div>
             </div>
@@ -1886,11 +1886,11 @@ exports[`Page: Component should render correctly 1`] = `
               <span
                 className="sc-fzpmMD iArGi"
               >
-                This Page is currently Private
+                This EditPage is currently Private
                 <span
                   className="sc-fzqPZZ hUYPXp"
                 />
-                Visit Page: 
+                Visit EditPage:
                 <a
                   href="https://schemacms.com/page-name"
                 >

@@ -1,9 +1,9 @@
 import React from 'react';
 import { act } from 'react-test-renderer';
 
-import { Page } from '../page.component';
-import { defaultProps } from '../page.stories';
-import { makeContextRenderer } from '../../../shared/utils/testUtils';
+import { EditPage } from '../editPage.component';
+import { defaultProps } from '../../page.stories';
+import { makeContextRenderer } from '../../../../shared/utils/testUtils';
 
 const mockPushHistory = jest.fn();
 
@@ -17,8 +17,8 @@ jest.mock('react-router', () => ({
   }),
 }));
 
-describe('Page: Component', () => {
-  const render = props => makeContextRenderer(<Page {...defaultProps} {...props} />);
+describe('EditPage: Component', () => {
+  const render = props => makeContextRenderer(<EditPage {...defaultProps} {...props} />);
 
   it('should render correctly', async () => {
     const wrapper = await render();

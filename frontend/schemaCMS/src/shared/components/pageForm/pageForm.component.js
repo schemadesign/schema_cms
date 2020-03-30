@@ -136,7 +136,7 @@ export const PageForm = ({
   );
   const addBlock = () => {
     setTemporaryPageBlocks(values[PAGE_BLOCKS]);
-    history.push(`${url}/add-block`);
+    history.push(`${url}/add-block`, { emptyBlocks: isEmpty(values[PAGE_BLOCKS]) });
   };
   const removeBlock = index => {
     const removedElement = values[PAGE_BLOCKS][index];
