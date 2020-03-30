@@ -5,9 +5,9 @@ import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useLocation } from 'react-router';
 import { Icons } from 'schemaUI';
-import { propEq, find } from 'ramda';
+import { propEq, find, map } from 'ramda';
 
-import { SelectContainer } from './addBlockForm.styles';
+import { NoBlocksCopyContainer, SelectContainer } from './addBlockForm.styles';
 import { LoadingWrapper } from '../loadingWrapper';
 import reportError from '../../utils/reportError';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
@@ -44,7 +44,7 @@ export const AddBlockForm = ({
   const history = useHistory();
   const intl = useIntl();
   const { state = {} } = useLocation();
-  const blocksOptions = blockTemplates.map(({ name, id }) => ({ label: name, value: id }));
+  const blocksOptions = map(({ name, id }) => ({ label: name, value: id }), blockTemplates);
   const { handleSubmit, handleChange, values, isValid, dirty, setFieldValue, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES_ADD_BLOCK,
     enableReinitialize: true,
@@ -86,7 +86,7 @@ export const AddBlockForm = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchBlockTemplates({ projectId });
+        await fetchBlockTemplates({ projectId, content: true });
       } catch (e) {
         reportError(e);
         setError(e);
@@ -111,16 +111,22 @@ export const AddBlockForm = ({
           />
         </MobileInputName>
         <SelectContainer>
-          <Select
-            label={intl.formatMessage(messages[BLOCK_TYPE])}
-            name={BLOCK_TYPE}
-            value={values[BLOCK_TYPE]}
-            id="blockTypeSelect"
-            options={blocksOptions}
-            onSelect={handleSelectType}
-            placeholder={intl.formatMessage(messages[`${BLOCK_TYPE}Placeholder`])}
-            {...restFormikProps}
-          />
+          {blocksOptions.length ? (
+            <Select
+              label={intl.formatMessage(messages[BLOCK_TYPE])}
+              name={BLOCK_TYPE}
+              value={values[BLOCK_TYPE]}
+              id="blockTypeSelect"
+              options={blocksOptions}
+              onSelect={handleSelectType}
+              placeholder={intl.formatMessage(messages[`${BLOCK_TYPE}Placeholder`])}
+              {...restFormikProps}
+            />
+          ) : (
+            <NoBlocksCopyContainer>
+              <FormattedMessage {...messages.noBlocks} />
+            </NoBlocksCopyContainer>
+          )}
         </SelectContainer>
         <NavigationContainer fixed>
           <BackButton id="backBtn" type="button" onClick={() => history.push(backUrl, { fromAddBlock: true })}>
