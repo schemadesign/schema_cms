@@ -45,7 +45,10 @@ describe('DataWranglingScripts: redux', () => {
       ];
       const dataSource = {
         activeJob: {
-          scripts: [{ id: 3, execOrder: 0 }, { id: 1, execOrder: 1 }],
+          scripts: [
+            { id: 3, execOrder: 0 },
+            { id: 1, execOrder: 1 },
+          ],
         },
       };
 
@@ -68,7 +71,10 @@ describe('DataWranglingScripts: redux', () => {
     });
 
     it('should add only uploaded script', () => {
-      const scripts = [{ id: 1, isPredefined: false }, { id: 2, specs: ['1'], isPredefined: true }];
+      const scripts = [
+        { id: 1, isPredefined: false },
+        { id: 2, specs: ['1'], isPredefined: true },
+      ];
       const state = defaultState.set('scripts', scripts);
       const uploadedScript = { id: 3, specs: [], isPredefined: true };
       const data = [...scripts, uploadedScript];

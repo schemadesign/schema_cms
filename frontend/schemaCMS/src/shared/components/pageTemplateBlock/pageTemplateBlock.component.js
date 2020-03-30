@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
-import { propEq, propOr, find, pipe } from 'ramda';
+import { find, pipe, propEq, propOr } from 'ramda';
 
 import {
   customLabelStyles,
@@ -17,8 +17,8 @@ import { TextInput } from '../form/inputs/textInput';
 import { Select } from '../form/select';
 import {
   BLOCK_AUTO_OPEN,
-  BLOCK_TYPE,
   BLOCK_NAME,
+  BLOCK_TYPE,
   PAGE_TEMPLATES_BLOCKS,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 
@@ -38,10 +38,7 @@ export const PageTemplateBlock = ({
   const intl = useIntl();
   const elementPath = `${PAGE_TEMPLATES_BLOCKS}.${index}`;
   const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${BLOCK_TYPE}`, value);
-  const type = pipe(
-    find(propEq('value', block[BLOCK_TYPE])),
-    propOr('', 'label')
-  )(blocksOptions);
+  const type = pipe(find(propEq('value', block[BLOCK_TYPE])), propOr('', 'label'))(blocksOptions);
 
   return (
     <AccordionPanel autoOpen={block[BLOCK_AUTO_OPEN]}>

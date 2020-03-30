@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as blockTemplatesReducer, BlockTemplatesRoutines } from '../blockTemplates.redux';
+import { BlockTemplatesRoutines, reducer as blockTemplatesReducer } from '../blockTemplates.redux';
 
 describe('BlockTemplates: redux', () => {
   const state = Immutable({

@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, find, cond, equals, pathOr, propEq, T, ifElse, isNil, prop, propOr } from 'ramda';
+import { always, cond, equals, find, ifElse, isNil, pathOr, prop, propEq, propOr, T } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'styled-components';
@@ -10,8 +10,8 @@ import {
   customLabelStyles,
   customRadioButtonStyles,
   customRadioGroupStyles,
-  WarningWrapper,
   ErrorWrapper,
+  WarningWrapper,
 } from './sourceForm.styles';
 import messages from './sourceForm.messages';
 import { TextInput } from '../form/inputs/textInput';

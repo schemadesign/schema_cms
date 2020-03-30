@@ -8,8 +8,8 @@ import {
   put,
   select,
   take,
-  takeLatest,
   takeEvery,
+  takeLatest,
 } from 'redux-saga/effects';
 import {
   all as ramdaAll,
@@ -17,14 +17,14 @@ import {
   both,
   either,
   includes,
+  is,
   isEmpty,
   omit,
+  path,
   pathOr,
   pipe,
   propEq,
-  path,
   when,
-  is,
 } from 'ramda';
 import { eventChannel } from 'redux-saga';
 
@@ -161,13 +161,9 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
         ({ id }) => !any(propEq('id', id))(uploadingDataSources),
         either(
           both(
-            pipe(
-              pathOr('', ['metaData', 'status']),
-              status => includes(status, [META_FAILED, META_SUCCESS])
-            ),
-            pipe(
-              path(['jobsState', 'lastJobStatus']),
-              status => includes(status, [JOB_STATE_FAILURE, JOB_STATE_SUCCESS, null])
+            pipe(pathOr('', ['metaData', 'status']), status => includes(status, [META_FAILED, META_SUCCESS])),
+            pipe(path(['jobsState', 'lastJobStatus']), status =>
+              includes(status, [JOB_STATE_FAILURE, JOB_STATE_SUCCESS, null])
             )
           ),
           propEq('fileName', null)

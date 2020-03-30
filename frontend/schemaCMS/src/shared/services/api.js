@@ -22,8 +22,8 @@ import {
   pathOr,
   pipe,
   propIs,
-  T,
   startsWith,
+  T,
   toLower,
   when,
 } from 'ramda';
@@ -35,13 +35,7 @@ const api = axios.create({
   camelize: true,
 });
 
-const camelizeErrorCode = fieldName =>
-  pipe(
-    toLower,
-    pascalize,
-    concat(fieldName),
-    concat(__, 'ServerError')
-  );
+const camelizeErrorCode = fieldName => pipe(toLower, pascalize, concat(fieldName), concat(__, 'ServerError'));
 
 const extractObjectErrors = pipe(
   camelizeKeys,
@@ -63,24 +57,14 @@ api.interceptors.request.use(
 
       return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
     }),
-    data: when(
-      pipe(
-        is(FormData),
-        not
-      ),
-      decamelizeKeys
-    ),
+    data: when(pipe(is(FormData), not), decamelizeKeys),
   }),
   error => Promise.reject(error)
 );
 
 const getData = path(['response', 'data']);
 
-const getCode = name =>
-  pipe(
-    getData,
-    ifElse(propIs(Array, name), path([name, 0, 'code']), path([name, 'code']))
-  );
+const getCode = name => pipe(getData, ifElse(propIs(Array, name), path([name, 0, 'code']), path([name, 'code'])));
 
 const convertResponseErrors = error =>
   pipe(

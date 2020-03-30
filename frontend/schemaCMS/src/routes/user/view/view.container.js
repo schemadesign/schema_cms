@@ -3,7 +3,7 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
-import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { View } from './view.component';
 import { selectUser, UserRoutines } from '../../../modules/user';
@@ -26,11 +26,4 @@ export const mapDispatchToProps = dispatch => ({
   ),
 });
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  withRouter
-)(View);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), withRouter)(View);

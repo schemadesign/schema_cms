@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Button } from 'schemaUI';
 

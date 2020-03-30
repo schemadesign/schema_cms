@@ -17,10 +17,7 @@ export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl,
   withRouter
 )(NotAuthorized);

@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { split, last, pipe, equals, path, propEq, pathEq, complement, both, either } from 'ramda';
+import { both, complement, either, equals, last, path, pathEq, pipe, propEq, split } from 'ramda';
 
-import { Container, Button, ButtonContainer, PageTitle } from './dataSourceNavigation.styles';
+import { Button, ButtonContainer, Container, PageTitle } from './dataSourceNavigation.styles';
 import messages from './dataSourceNavigation.messages';
 import {
   FILTERS_PAGE,
@@ -42,18 +42,12 @@ export class DataSourceNavigation extends PureComponent {
     hideOnDesktop: false,
   };
 
-  getIsActive = page =>
-    pipe(
-      path(['match', 'url']),
-      split('/'),
-      last,
-      equals(page)
-    )(this.props);
-
   getIsDisabled = either(
     both(pathEq(['dataSource', 'activeJob'], null), complement(propEq('page', SOURCE_PAGE))),
     both(pathEq(['dataSource', 'activeJob', 'scripts'], []), propEq('page', RESULT_PAGE))
   );
+
+  getIsActive = page => pipe(path(['match', 'url']), split('/'), last, equals(page))(this.props);
 
   goToPage = page => () => this.props.history.push(`/datasource/${this.props.dataSource.id}/${page}`);
 

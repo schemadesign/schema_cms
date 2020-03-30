@@ -29,10 +29,7 @@ export const mapDispatchToProps = dispatch => ({
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl,
   withRouter
 )(DataSourceTags);

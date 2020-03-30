@@ -9,8 +9,8 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import {
   DataWranglingScriptsRoutines,
   selectDataWranglingScript,
-  selectImageScrapingFields,
   selectDataWranglingScripts,
+  selectImageScrapingFields,
 } from '../../modules/dataWranglingScripts';
 import { DataWranglingScript } from './dataWranglingScript.component';
 import { selectIsAdmin } from '../../modules/userProfile';
@@ -38,10 +38,7 @@ export const mapDispatchToProps = dispatch => ({
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl,
   withRouter
 )(DataWranglingScript);

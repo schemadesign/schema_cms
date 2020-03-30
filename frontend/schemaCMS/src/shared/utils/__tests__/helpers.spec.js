@@ -13,7 +13,10 @@ describe('Helpers', () => {
 
   describe('errorMessageParser', () => {
     it('should parse error messages', () => {
-      const errors = [{ code: 'unique', name: 'name' }, { code: 'unique', name: 'data' }];
+      const errors = [
+        { code: 'unique', name: 'name' },
+        { code: 'unique', name: 'data' },
+      ];
       const message = 'DataSource with this name already exist in project.';
       const messages = { nameUniqueError: { message } };
       const formatMessage = ({ message }) => message;

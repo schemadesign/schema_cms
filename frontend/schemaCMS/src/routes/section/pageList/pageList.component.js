@@ -34,6 +34,7 @@ import {
   AvailableCopy,
   BinIconContainer,
   binStyles,
+  CopySeparator,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -46,7 +47,6 @@ import {
   SwitchCopy,
   Switches,
   SwitchLabel,
-  CopySeparator,
 } from '../../../shared/components/form/frequentComponents.styles';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';

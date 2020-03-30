@@ -112,7 +112,10 @@ describe('DataSource: redux', () => {
 
     describe('when UPDATE_UPLOADING_DATA_SOURCE_STATUS/TRIGGER action is received', () => {
       it('should set uploadingDataSources and dataSources', () => {
-        const data = [{ id: 'id', name: 'name 1' }, { id: 'id 2', name: 'name 2' }];
+        const data = [
+          { id: 'id', name: 'name 1' },
+          { id: 'id 2', name: 'name 2' },
+        ];
         const updatedElement = { id: 'id', name: 'updated name' };
         const state = Immutable({
           uploadingDataSources: data,
@@ -128,7 +131,10 @@ describe('DataSource: redux', () => {
       });
 
       it('should set error on uploadingDataSources', () => {
-        const data = [{ id: 'id', name: 'name 1' }, { id: 'id 2', name: 'name 2' }];
+        const data = [
+          { id: 'id', name: 'name 1' },
+          { id: 'id 2', name: 'name 2' },
+        ];
         const updatedElement = { id: 'id', name: 'updated name' };
         const state = Immutable({
           uploadingDataSources: data,

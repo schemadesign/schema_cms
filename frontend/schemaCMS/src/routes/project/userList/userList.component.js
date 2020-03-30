@@ -12,7 +12,7 @@ import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, PROJECT_USERS_ID } from '../project.constants';

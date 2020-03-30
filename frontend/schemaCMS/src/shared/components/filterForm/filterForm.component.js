@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { always, equals, ifElse, map, find, propEq, toString } from 'ramda';
+import { always, equals, find, ifElse, map, propEq, toString } from 'ramda';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './filterForm.messages';
@@ -19,7 +19,7 @@ import {
 import { Select } from '../form/select';
 import { Form, Row } from './filterForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
-import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { FILTERS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { renderWhenTrue } from '../../utils/rendering';

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Typography } from 'schemaUI';
 
 import SchemaLogoSVG from '../../../images/icons/schemaLogo.svg';
-import { media, contentSizes } from '../../../theme/media';
+import { contentSizes, media } from '../../../theme/media';
 import { styleWhenTrue } from '../../utils/rendering';
 
 const ANIMATION_TIME = '0.4s';

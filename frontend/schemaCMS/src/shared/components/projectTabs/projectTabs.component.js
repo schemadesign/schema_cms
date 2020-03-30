@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Tabs } from '../tabs';
 import { Container } from './projectTabs.styles';
-import { CONTENT, SETTINGS, SOURCES, USERS, STATES, TEMPLATES } from './projectTabs.constants';
+import { CONTENT, SETTINGS, SOURCES, STATES, TEMPLATES, USERS } from './projectTabs.constants';
 import messages from './projectTabs.messages';
 
 export class ProjectTabs extends PureComponent {

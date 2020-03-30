@@ -3,7 +3,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { compose, propEq, pipe, find, defaultTo, pathOr, pick, reject } from 'ramda';
+import { compose, defaultTo, find, pathOr, pick, pipe, propEq, reject } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
@@ -69,10 +69,7 @@ const getInitialValues = props => {
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl,
   withRouter,
   withFormik({

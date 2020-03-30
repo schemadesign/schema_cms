@@ -20,7 +20,10 @@ export const propsWithTags = {
     id: 2,
     datasource: { id: 1 },
     name: 'name',
-    tags: [{ id: 1, value: 'value' }, { id: 'create_2', value: 'value' }],
+    tags: [
+      { id: 1, value: 'value' },
+      { id: 'create_2', value: 'value' },
+    ],
     deleteTags: [],
   },
 };

@@ -7,7 +7,7 @@ import { compose } from 'ramda';
 
 import { App } from './app.component';
 import { StartupActions } from '../modules/startup';
-import { selectUserRole, selectUserId } from '../modules/userProfile';
+import { selectUserId, selectUserRole } from '../modules/userProfile';
 import { selectProjectTitle } from '../modules/project';
 
 const mapStateToProps = createStructuredSelector({
@@ -24,11 +24,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  withRouter
-)(App);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), withRouter)(App);

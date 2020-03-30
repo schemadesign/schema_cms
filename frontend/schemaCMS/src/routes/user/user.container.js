@@ -7,7 +7,7 @@ import { compose } from 'ramda';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { User } from './user.component';
-import { UserRoutines, selectUser } from '../../modules/user';
+import { selectUser, UserRoutines } from '../../modules/user';
 import { ProjectRoutines, selectProject } from '../../modules/project';
 import { selectIsAdmin, selectUserRole } from '../../modules/userProfile';
 
@@ -32,12 +32,4 @@ export const mapDispatchToProps = dispatch => ({
   ),
 });
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  injectIntl,
-  withRouter
-)(User);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), injectIntl, withRouter)(User);

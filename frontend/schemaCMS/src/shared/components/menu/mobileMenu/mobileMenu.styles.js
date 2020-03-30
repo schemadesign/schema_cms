@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Typography } from 'schemaUI';
 import { Link } from 'react-router-dom';
-import { ifElse, equals } from 'ramda';
+import { equals, ifElse } from 'ramda';
 
 import { media } from '../../../../theme/media';
 

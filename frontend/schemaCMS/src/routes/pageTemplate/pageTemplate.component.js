@@ -19,14 +19,14 @@ import { BackButton, NavigationContainer, NextButton } from '../../shared/compon
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import {
   BLOCK_ID,
-  BLOCK_TYPE,
-  BLOCK_NAME,
-  PAGE_TEMPLATES_BLOCKS,
-  PAGE_TEMPLATES_SCHEMA,
   BLOCK_KEY,
-  PAGE_TEMPLATES_NAME,
+  BLOCK_NAME,
+  BLOCK_TYPE,
   PAGE_TEMPLATES_ALLOW_ADD,
+  PAGE_TEMPLATES_BLOCKS,
   PAGE_TEMPLATES_IS_AVAILABLE,
+  PAGE_TEMPLATES_NAME,
+  PAGE_TEMPLATES_SCHEMA,
 } from '../../modules/pageTemplates/pageTemplates.constants';
 
 export const PageTemplate = memo(

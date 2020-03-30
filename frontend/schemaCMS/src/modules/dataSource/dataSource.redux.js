@@ -1,7 +1,7 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
-import { always, propEq, reject, when, map, identity, ifElse } from 'ramda';
+import { always, identity, ifElse, map, propEq, reject, when } from 'ramda';
 
 const prefix = 'DATA_SOURCE/';
 

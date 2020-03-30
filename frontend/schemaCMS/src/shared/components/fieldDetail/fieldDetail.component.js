@@ -5,8 +5,8 @@ import { defaultTo, innerJoin, isNil, pipe } from 'ramda';
 import { roundNumber } from '../../utils/numberFormating';
 import { renderWhenTrue } from '../../utils/rendering';
 import messages from './fieldDetail.messages';
-import { EDITABLE_FIELDS, EMPTY, DEFAULT_STRUCTURE, INFORMATION_FIELDS } from './fieldDetail.constants';
-import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon } from './fieldDetail.styles';
+import { DEFAULT_STRUCTURE, EDITABLE_FIELDS, EMPTY, INFORMATION_FIELDS } from './fieldDetail.constants';
+import { Container, EditIcon, FieldInformation, FieldSummary, Label, List, Value } from './fieldDetail.styles';
 
 export class FieldDetail extends PureComponent {
   static propTypes = {
@@ -18,10 +18,7 @@ export class FieldDetail extends PureComponent {
 
   getTextValue = defaultTo('');
 
-  getRoundedValue = pipe(
-    roundNumber,
-    this.getTextValue
-  );
+  getRoundedValue = pipe(roundNumber, this.getTextValue);
 
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 

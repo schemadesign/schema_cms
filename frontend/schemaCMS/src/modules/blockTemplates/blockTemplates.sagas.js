@@ -23,6 +23,7 @@ function* fetchBlockTemplates({ payload: { projectId, raw } }) {
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.fulfill());
   }
 }
+
 function* fetchBlockTemplate({ payload: { blockTemplateId } }) {
   try {
     yield put(BlockTemplatesRoutines.fetchBlockTemplate.request());

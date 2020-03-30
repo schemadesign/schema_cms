@@ -22,12 +22,4 @@ export const mapDispatchToProps = dispatch => ({
   ),
 });
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  injectIntl,
-  withRouter
-)(DataSource);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), injectIntl, withRouter)(DataSource);

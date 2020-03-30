@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
-import { always, ifElse, isEmpty, pipe, is, path, complement } from 'ramda';
+import { always, complement, ifElse, is, isEmpty, path, pipe } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
@@ -10,7 +10,7 @@ import { DATA_SOURCE_RUN_LAST_JOB } from '../../../modules/dataSource/dataSource
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import browserHistory from '../../../shared/utils/history';
-import { ModalActions, Modal, ModalTitle, modalStyles } from '../../../shared/components/modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { SourceForm } from '../../../shared/components/sourceForm';
@@ -69,6 +69,17 @@ export class Source extends PureComponent {
     }
   };
 
+  handleRunLastJob = runLastJob => () => {
+    this.handleCloseModal('confirmationRunJobModalOpen');
+    this.props.setFieldValue(DATA_SOURCE_RUN_LAST_JOB, runLastJob);
+
+    setTimeout(() => {
+      this.props.handleSubmit();
+    });
+  };
+
+  handlePastVersionsClick = () => browserHistory.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/job`);
+
   handleShowRunModal = () => e => {
     const isFakeJob = pipe(
       path(['dataSource', 'activeJob', 'scripts']),
@@ -80,17 +91,6 @@ export class Source extends PureComponent {
       this.handleOpenModal('confirmationRunJobModalOpen');
     }
   };
-
-  handleRunLastJob = runLastJob => () => {
-    this.handleCloseModal('confirmationRunJobModalOpen');
-    this.props.setFieldValue(DATA_SOURCE_RUN_LAST_JOB, runLastJob);
-
-    setTimeout(() => {
-      this.props.handleSubmit();
-    });
-  };
-
-  handlePastVersionsClick = () => browserHistory.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/job`);
 
   renderLinks = renderWhenTrue(
     always(

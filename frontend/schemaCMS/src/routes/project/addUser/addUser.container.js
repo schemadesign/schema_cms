@@ -28,12 +28,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  injectIntl,
-  withRouter
-)(AddUser);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), injectIntl, withRouter)(AddUser);

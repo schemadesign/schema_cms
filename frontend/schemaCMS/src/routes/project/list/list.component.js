@@ -5,14 +5,14 @@ import { always, isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { generateApiUrl, filterMenuOptions } from '../../../shared/utils/helpers';
+import { filterMenuOptions, generateApiUrl } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './list.messages';
-import { Container, Description, HeaderItem, HeaderList, Footer, descriptionStyles, titleStyles } from './list.styles';
+import { Container, Description, descriptionStyles, Footer, HeaderItem, HeaderList, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { ListItem, ListContainer } from '../../../shared/components/listComponents';
+import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { PROJECT_LIST_MENU_OPTIONS, PROJECTS_ID } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import reportError from '../../../shared/utils/reportError';

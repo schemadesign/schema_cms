@@ -4,11 +4,11 @@ import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
 import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 
-import { Header, IconsContainer, iconStyles, Type, getCustomIconStyles } from './pageBlock.styles';
+import { getCustomIconStyles, Header, IconsContainer, iconStyles, Type } from './pageBlock.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageBlock.messages';
 import { BlockElement } from '../blockElement';
-import { PAGE_BLOCKS, BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
+import { BLOCK_ELEMENTS, BLOCK_NAME, BLOCK_TYPE, PAGE_BLOCKS } from '../../../modules/page/page.constants';
 
 const { EditIcon, MinusIcon } = Icons;
 

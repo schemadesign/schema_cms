@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { Min, Max, Container, Slider, SelectedSlider } from './rangeSlider.styles';
+import { Container, Max, Min, SelectedSlider, Slider } from './rangeSlider.styles';
 
 export class RangeSlider extends PureComponent {
   static propTypes = {

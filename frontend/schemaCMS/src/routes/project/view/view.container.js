@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -35,10 +35,7 @@ export const mapDispatchToProps = dispatch =>
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl,
   withRouter,
   withFormik({

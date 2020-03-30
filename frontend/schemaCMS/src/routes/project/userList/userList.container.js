@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
-import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { UserList } from './userList.component';
 import { ProjectRoutines, selectEditors } from '../../../modules/project';
@@ -25,12 +25,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  injectIntl,
-  withRouter
-)(UserList);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), injectIntl, withRouter)(UserList);

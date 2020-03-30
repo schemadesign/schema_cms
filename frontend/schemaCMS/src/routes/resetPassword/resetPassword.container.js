@@ -21,11 +21,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  withRouter
-)(ResetPassword);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), withRouter)(ResetPassword);

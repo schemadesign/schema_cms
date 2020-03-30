@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always, cond, propEq, T, prop } from 'ramda';
+import { always, cond, prop, propEq, T } from 'ramda';
 
 import {
   ButtonContainer,

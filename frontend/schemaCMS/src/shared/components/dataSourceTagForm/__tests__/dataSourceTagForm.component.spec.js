@@ -55,7 +55,11 @@ describe('DataSourceTagForm: Component', () => {
         id: 2,
         datasource: { id: 1 },
         name: 'name',
-        tags: [{ id: 1, value: 'value' }, { id: 'create_2', value: 'value' }, { id: 3, value: 'value' }],
+        tags: [
+          { id: 1, value: 'value' },
+          { id: 'create_2', value: 'value' },
+          { id: 3, value: 'value' },
+        ],
         deleteTags: [],
       },
     };
@@ -83,7 +87,10 @@ describe('DataSourceTagForm: Component', () => {
         id: 2,
         datasource: { id: 1 },
         name: 'name',
-        tags: [{ id: 1, value: '' }, { id: 'create_2', value: 'value' }],
+        tags: [
+          { id: 1, value: '' },
+          { id: 'create_2', value: 'value' },
+        ],
         deleteTags: [],
       },
     };

@@ -7,10 +7,10 @@ import { Container } from './userDetails.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { UserProfile } from '../../../shared/components/userProfile/userProfile.component';
 import messages from './userDetails.messages';
-import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -69,8 +69,6 @@ export class UserDetails extends PureComponent {
 
   handleBack = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
 
-  renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
-
   renderRemoveUserButton = renderWhenTrue(
     always(
       <LinkContainer>
@@ -80,6 +78,8 @@ export class UserDetails extends PureComponent {
       </LinkContainer>
     )
   );
+
+  renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
   render() {
     const { userData, isAdmin, userRole } = this.props;

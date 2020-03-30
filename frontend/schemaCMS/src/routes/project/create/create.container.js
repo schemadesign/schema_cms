@@ -9,7 +9,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { Create } from './create.component';
 import messages from './create.messages';
-import { INITIAL_VALUES, PROJECT_SCHEMA, CREATE_PROJECT_FORM } from '../../../modules/project/project.constants';
+import { CREATE_PROJECT_FORM, INITIAL_VALUES, PROJECT_SCHEMA } from '../../../modules/project/project.constants';
 import { ProjectRoutines } from '../../../modules/project/project.redux';
 import { selectIsAdmin, selectUserData, selectUserRole } from '../../../modules/userProfile';
 import { errorMessageParser } from '../../../shared/utils/helpers';
@@ -30,10 +30,7 @@ export const mapDispatchToProps = dispatch =>
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   withRouter,
   injectIntl,
   withFormik({

@@ -7,7 +7,7 @@ import { Form as FormUI, Icons } from 'schemaUI';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './dataSourceTagForm.messages';
 import { TAG_NAME, TAG_REMOVE_TAGS, TAG_TAGS } from '../../../modules/dataSourceTag/dataSourceTag.constants';
-import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './dataSourceTagForm.styles';
+import { ButtonContainer, PlusButton, removeIconStyles, Tag, TagsContainer } from './dataSourceTagForm.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { Label } = FormUI;

@@ -23,7 +23,10 @@ describe('User List: Component', () => {
 
   it('should render correctly with users data', async () => {
     const fetchUsers = jest.fn().mockReturnValue(Promise.resolve());
-    const users = [{ firstName: 'John', lastName: 'Doe' }, { firstName: 'Alan', lastName: 'Watts' }];
+    const users = [
+      { firstName: 'John', lastName: 'Doe' },
+      { firstName: 'Alan', lastName: 'Watts' },
+    ];
     const wrapper = await render({ users, fetchUsers });
 
     expect(wrapper).toMatchSnapshot();

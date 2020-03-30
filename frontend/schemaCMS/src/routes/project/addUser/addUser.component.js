@@ -18,7 +18,7 @@ import {
 import messages from './addUser.messages';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../project.constants';

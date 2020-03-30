@@ -11,11 +11,4 @@ const mapStateToProps = createStructuredSelector({});
 
 export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  withRouter
-)(Project);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), withRouter)(Project);

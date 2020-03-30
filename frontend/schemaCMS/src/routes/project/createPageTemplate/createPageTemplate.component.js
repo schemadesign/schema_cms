@@ -16,14 +16,14 @@ import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/hel
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import {
-  PAGE_TEMPLATES_SCHEMA,
-  INITIAL_VALUES,
-  PAGE_TEMPLATES_NAME,
-  PAGE_TEMPLATES_BLOCKS,
+  BLOCK_ID,
   BLOCK_NAME,
   BLOCK_TYPE,
-  BLOCK_ID,
   getDefaultPageBlock,
+  INITIAL_VALUES,
+  PAGE_TEMPLATES_BLOCKS,
+  PAGE_TEMPLATES_NAME,
+  PAGE_TEMPLATES_SCHEMA,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 import { PageTemplateForm } from '../../../shared/components/pageTemplateForm';
 

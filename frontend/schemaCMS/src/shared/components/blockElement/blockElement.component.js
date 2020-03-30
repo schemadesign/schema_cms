@@ -7,12 +7,12 @@ import { useIntl } from 'react-intl';
 
 import {
   DetailsContainer,
-  Header,
-  Name,
-  IconContainer,
-  getCustomInputStyles,
   editIconStyles,
+  getCustomInputStyles,
+  Header,
+  IconContainer,
   InputContainer,
+  Name,
 } from './blockElement.styles';
 import messages from './blockElement.messages';
 import { ELEMENT_VALUE, IMAGE_TYPE, STACK_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';

@@ -9,11 +9,11 @@ import {
   customRadioGroupStyles,
   Dot,
   Eye,
+  JobInformation,
   JobItem,
   JobItemWrapper,
   ListWrapper,
   RadioLabel,
-  JobInformation,
 } from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';

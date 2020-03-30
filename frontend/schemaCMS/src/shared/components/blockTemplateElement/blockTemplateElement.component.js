@@ -6,11 +6,11 @@ import { equals } from 'ramda';
 
 import {
   customLabelStyles,
+  ElementIcon,
   Header,
   IconsContainer,
   iconStyles,
   InputContainer,
-  ElementIcon,
 } from './blockTemplateElement.styles';
 import messages from './blockTemplateElement.messages';
 import { TextInput } from '../form/inputs/textInput';

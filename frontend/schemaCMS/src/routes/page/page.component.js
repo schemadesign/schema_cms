@@ -16,7 +16,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageForm } from '../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project/project.constants';
-import { PAGE_SCHEMA, FORM_VALUES, PAGE_TEMPLATE } from '../../modules/page/page.constants';
+import { FORM_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 
 export const Page = ({

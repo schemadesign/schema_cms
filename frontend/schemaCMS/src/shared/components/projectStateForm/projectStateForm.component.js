@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, pipe, propEq, prop, path, find } from 'ramda';
+import { always, find, path, pipe, prop, propEq } from 'ramda';
 import { Form } from 'schemaUI';
 import dayjs from 'dayjs';
 
@@ -9,13 +9,13 @@ import { TextInput } from '../form/inputs/textInput';
 import messages from './projectStateForm.messages';
 import { Select } from '../form/select';
 import {
-  PROJECT_STATE_DATA_SOURCE,
-  PROJECT_STATE_DESCRIPTION,
-  PROJECT_STATE_NAME,
-  PROJECT_STATE_SOURCE_URL,
   PROJECT_STATE_AUTHOR,
   PROJECT_STATE_CREATED,
+  PROJECT_STATE_DATA_SOURCE,
+  PROJECT_STATE_DESCRIPTION,
   PROJECT_STATE_IS_PUBLIC,
+  PROJECT_STATE_NAME,
+  PROJECT_STATE_SOURCE_URL,
 } from '../../../modules/projectState/projectState.constants';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 
@@ -64,11 +64,7 @@ export class ProjectStateForm extends PureComponent {
     renderWhenTrueOtherwise(
       always(
         <TextInput
-          value={pipe(
-            path(['props', 'dataSources']),
-            find(propEq('id', value)),
-            prop('name')
-          )(this)}
+          value={pipe(path(['props', 'dataSources']), find(propEq('id', value)), prop('name'))(this)}
           onChange={this.props.handleChange}
           name={name}
           label={this.props.intl.formatMessage(messages[name])}

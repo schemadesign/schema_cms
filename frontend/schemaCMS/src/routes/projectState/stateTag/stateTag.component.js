@@ -2,8 +2,8 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import { append, ifElse, equals, always, reject, map } from 'ramda';
-import { Stepper, Form as FormUI } from 'schemaUI';
+import { always, append, equals, ifElse, map, reject } from 'ramda';
+import { Form as FormUI, Stepper } from 'schemaUI';
 
 import { TagList } from './stateTag.styles';
 import messages from './stateTag.messages';

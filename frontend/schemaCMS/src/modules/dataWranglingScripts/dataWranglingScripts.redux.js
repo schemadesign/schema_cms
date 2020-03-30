@@ -85,10 +85,7 @@ const updateDataWranglingScripts = (
     return state.set('scripts', data).update('checkedScripts', list => list.concat(scripts));
   }
 
-  const dataSourceScripts = pipe(
-    pathOr([], ['activeJob', 'scripts']),
-    map(prop('id'))
-  )(dataSource);
+  const dataSourceScripts = pipe(pathOr([], ['activeJob', 'scripts']), map(prop('id')))(dataSource);
 
   const { unchecked = [], checked = [] } = pipe(
     map(addScriptType),

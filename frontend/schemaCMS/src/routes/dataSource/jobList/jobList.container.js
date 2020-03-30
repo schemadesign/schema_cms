@@ -26,12 +26,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  withRouter,
-  withTheme
-)(JobList);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), withRouter, withTheme)(JobList);

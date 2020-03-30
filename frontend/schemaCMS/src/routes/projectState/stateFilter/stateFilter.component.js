@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import { always, append, cond, equals, ifElse, pathOr, propEq, reject, T, map, identity } from 'ramda';
+import { always, append, cond, equals, identity, ifElse, map, pathOr, propEq, reject, T } from 'ramda';
 import { Form as FormUI } from 'schemaUI';
 
 import { Form, RangeInput, RangeValues } from './stateFilter.styles';

@@ -2,28 +2,28 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Header, Menu } from 'schemaUI';
-import { always, ifElse, cond, propEq, T, isEmpty } from 'ramda';
+import { always, cond, ifElse, isEmpty, propEq, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import {
   closeButtonStyles,
   Container,
   Content,
-  HeaderWrapper,
-  MenuHeader,
-  menuStyles,
-  Item,
-  Subtitle,
-  Title,
-  List,
+  customButtonStyles,
   Divider,
+  HeaderWrapper,
   HelperLink,
   HelperList,
-  customButtonStyles,
+  Item,
+  List,
+  MenuHeader,
+  menuStyles,
+  Subtitle,
+  Title,
 } from './mobileMenu.styles';
 import messages from './mobileMenu.messages';
 import { LogoutModal } from '../../logoutModal';
-import { DIVIDER, LINK_ITEM, HELPER_LINK, SETTINGS_ID } from './mobileMenu.constants';
+import { DIVIDER, HELPER_LINK, LINK_ITEM, SETTINGS_ID } from './mobileMenu.constants';
 import { handleToggleMenu } from '../../../utils/helpers';
 
 const HELPER_LINKS = [

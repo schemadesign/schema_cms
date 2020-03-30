@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Icons, Form, Accordion } from 'schemaUI';
-import { useRouteMatch, useHistory } from 'react-router';
-import { map, prepend, pipe, isEmpty, append, remove, propEq, find, propOr, omit } from 'ramda';
+import { Accordion, Form, Icons } from 'schemaUI';
+import { useHistory, useRouteMatch } from 'react-router';
+import { append, find, isEmpty, map, omit, pipe, prepend, propEq, propOr, remove } from 'ramda';
 import { asMutable } from 'seamless-immutable';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
@@ -14,34 +14,34 @@ import {
   AvailableCopy,
   BinIconContainer,
   binStyles,
+  CopySeparator,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
   MobileInputName,
+  mobilePlusStyles,
+  PlusContainer,
   Subtitle,
   SwitchContainer,
   SwitchContent,
   SwitchCopy,
   Switches,
   SwitchLabel,
-  CopySeparator,
-  mobilePlusStyles,
-  PlusContainer,
 } from '../form/frequentComponents.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageForm.messages';
 import { ContextHeader } from '../contextHeader';
 import {
-  PAGE_NAME,
-  PAGE_DESCRIPTION,
-  PAGE_DISPLAY_NAME,
-  PAGE_KEYWORDS,
-  PAGE_TEMPLATE,
-  PAGE_IS_PUBLIC,
+  BLOCK_ID,
+  BLOCK_KEY,
   PAGE_BLOCKS,
   PAGE_DELETE_BLOCKS,
-  BLOCK_KEY,
-  BLOCK_ID,
+  PAGE_DESCRIPTION,
+  PAGE_DISPLAY_NAME,
+  PAGE_IS_PUBLIC,
+  PAGE_KEYWORDS,
+  PAGE_NAME,
+  PAGE_TEMPLATE,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';

@@ -7,7 +7,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { compose } from 'ramda';
 
 import { CreateFilter } from './createFilter.component';
-import { DataSourceRoutines, selectFieldsInfo, selectDataSource } from '../../../modules/dataSource';
+import { DataSourceRoutines, selectDataSource, selectFieldsInfo } from '../../../modules/dataSource';
 import { FilterRoutines } from '../../../modules/filter';
 import { selectUserRole } from '../../../modules/userProfile';
 
@@ -27,12 +27,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  injectIntl,
-  withRouter
-)(CreateFilter);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), injectIntl, withRouter)(CreateFilter);

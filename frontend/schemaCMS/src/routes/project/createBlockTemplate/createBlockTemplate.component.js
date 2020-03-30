@@ -10,7 +10,7 @@ import { Container } from './createBlockTemplate.styles';
 import messages from './createBlockTemplate.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
-import { NavigationContainer, NextButton, BackButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project.constants';
 import {
   BLOCK_TEMPLATES_ELEMENTS,

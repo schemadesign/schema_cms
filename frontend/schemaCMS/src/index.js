@@ -2,10 +2,8 @@ import 'core-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-
 // Needed for redux-saga es6 generator support
 import '@babel/polyfill';
-
 // Import all the third party stuff
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';

@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Stepper } from 'schemaUI';
 
-import { Form, NavigationButtons, contentStyles } from './createProjectState.styles';
+import { contentStyles, Form, NavigationButtons } from './createProjectState.styles';
 import messages from './createProjectState.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';

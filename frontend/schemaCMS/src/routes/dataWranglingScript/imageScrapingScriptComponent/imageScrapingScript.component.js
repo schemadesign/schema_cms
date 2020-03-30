@@ -99,7 +99,10 @@ export class ImageScrapingScript extends PureComponent {
 
   handleChange = ({ target: { value, checked } }) => {
     const values = this.state.selectedFields;
-    const selectedFields = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)))(
+    const selectedFields = ifElse(
+      equals(true),
+      always(append(value, values)),
+      always(reject(equals(value), values)),
       checked
     );
 

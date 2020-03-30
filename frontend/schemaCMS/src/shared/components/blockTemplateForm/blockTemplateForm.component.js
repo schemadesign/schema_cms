@@ -9,6 +9,9 @@ import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
 
 import {
+  AvailableCopy,
+  BinIconContainer,
+  binStyles,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -16,14 +19,11 @@ import {
   MobilePlusContainer,
   mobilePlusStyles,
   Subtitle,
-  Switches,
   SwitchContainer,
-  SwitchLabel,
-  AvailableCopy,
   SwitchContent,
   SwitchCopy,
-  binStyles,
-  BinIconContainer,
+  Switches,
+  SwitchLabel,
 } from '../form/frequentComponents.styles';
 import { Container, IconWrapper, menuIconStyles } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';

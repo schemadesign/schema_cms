@@ -9,7 +9,7 @@ import { injectIntl } from 'react-intl';
 
 import { JobDetail } from './jobDetail.component';
 import { JobRoutines, selectJob } from '../../modules/job';
-import { JOB_DETAIL_FORM, INITIAL_VALUES, JOB_DETAIL_SCHEMA } from '../../modules/job/job.constants';
+import { INITIAL_VALUES, JOB_DETAIL_FORM, JOB_DETAIL_SCHEMA } from '../../modules/job/job.constants';
 
 const mapStateToProps = createStructuredSelector({
   job: selectJob,
@@ -26,10 +26,7 @@ export const mapDispatchToProps = dispatch =>
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   withRouter,
   injectIntl,
   withFormik({

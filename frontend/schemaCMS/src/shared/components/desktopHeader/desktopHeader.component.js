@@ -47,13 +47,7 @@ export class DesktopHeader extends PureComponent {
     logoutModalOpen: false,
   };
 
-  getIsActive = page =>
-    pipe(
-      path(['location', 'pathname']),
-      split('/'),
-      last,
-      equals(page)
-    )(window);
+  getIsActive = page => pipe(path(['location', 'pathname']), split('/'), last, equals(page))(window);
 
   handleLogout = () => {
     this.setState({
@@ -95,12 +89,6 @@ export class DesktopHeader extends PureComponent {
     </HeaderWrapper>
   );
 
-  renderLogo = (
-    <LogoLink to="/">
-      <Logo id="desktopTopHeaderSchemaLogo" />
-    </LogoLink>
-  );
-
   renderHeader = ({ buttonProps, userId }) =>
     renderWhenTrueOtherwise(
       always(
@@ -117,6 +105,12 @@ export class DesktopHeader extends PureComponent {
         {label}
       </Link>
     </Item>
+  );
+
+  renderLogo = (
+    <LogoLink to="/">
+      <Logo id="desktopTopHeaderSchemaLogo" />
+    </LogoLink>
   );
 
   render() {

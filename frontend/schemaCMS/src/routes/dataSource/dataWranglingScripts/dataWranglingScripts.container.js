@@ -8,10 +8,10 @@ import { injectIntl } from 'react-intl';
 
 import {
   DataWranglingScriptsRoutines,
-  selectDataWranglingScripts,
-  selectCustomScripts,
-  selectImageScrapingFields,
   selectCheckedScripts,
+  selectCustomScripts,
+  selectDataWranglingScripts,
+  selectImageScrapingFields,
   selectUncheckedScripts,
 } from '../../../modules/dataWranglingScripts';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
@@ -44,10 +44,7 @@ export const mapDispatchToProps = dispatch => ({
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl,
   withRouter
 )(DataWranglingScripts);

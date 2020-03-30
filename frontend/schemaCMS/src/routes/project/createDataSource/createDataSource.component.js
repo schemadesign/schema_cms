@@ -8,7 +8,7 @@ import { SourceForm } from '../../../shared/components/sourceForm';
 import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
-import { errorMessageParser, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../project.constants';

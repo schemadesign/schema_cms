@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { identity, ifElse, equals, always } from 'ramda';
+import { always, equals, identity, ifElse } from 'ramda';
 
 import { styleWhenTrue } from '../../../../utils/rendering';
 import { media } from '../../../../../theme/media';

@@ -174,6 +174,26 @@ export class DataWranglingScripts extends PureComponent {
     return this.props.setCheckedScripts(tempScripts);
   };
 
+  renderUploadButton = renderWhenTrue(
+    always(
+      <FileUpload
+        type="file"
+        id="fileUpload"
+        onChange={this.handleUploadScript}
+        accept=".py"
+        disabled={this.state.uploading}
+      />
+    )
+  );
+
+  renderProcessingWarning = renderWhenTrue(
+    always(
+      <Warning>
+        <FormattedMessage {...messages.ongoingProcess} />
+      </Warning>
+    )
+  );
+
   renderCheckbox = ({ id, name, type = SCRIPT_TYPES.CUSTOM, draggableIcon = null, idPrefix = '' }, index) => (
     <Checkbox id={`${idPrefix}checkbox-${index}`} value={id.toString()}>
       <CheckboxContent>
@@ -233,6 +253,13 @@ export class DataWranglingScripts extends PureComponent {
       )
     )(!!checkedScripts.length);
 
+  renderUploadingError = errorMessage =>
+    renderWhenTrue(() => (
+      <Error>
+        <FormattedMessage {...messages[errorMessage]} />
+      </Error>
+    ))(!!errorMessage.length);
+
   renderUnselectedContent = uncheckedScripts =>
     renderWhenTrue(
       always(
@@ -266,46 +293,10 @@ export class DataWranglingScripts extends PureComponent {
       )
     )(!!this.props.dataWranglingScripts.length);
 
-  renderUploadingError = errorMessage =>
-    renderWhenTrue(() => (
-      <Error>
-        <FormattedMessage {...messages[errorMessage]} />
-      </Error>
-    ))(!!errorMessage.length);
-
-  renderProcessingWarning = renderWhenTrue(
-    always(
-      <Warning>
-        <FormattedMessage {...messages.ongoingProcess} />
-      </Warning>
-    )
-  );
-
-  renderUploadButton = renderWhenTrue(
-    always(
-      <FileUpload
-        type="file"
-        id="fileUpload"
-        onChange={this.handleUploadScript}
-        accept=".py"
-        disabled={this.state.uploading}
-      />
-    )
-  );
-
   render() {
     const { dataSource, isAdmin, dataWranglingScripts, checkedScripts } = this.props;
     const { errorMessage, loading, error, isSubmitting } = this.state;
-    const steps = pipe(
-      map(
-        pipe(
-          prop('id'),
-          toString
-        )
-      ),
-      flatten,
-      uniq
-    )(checkedScripts);
+    const steps = pipe(map(pipe(prop('id'), toString)), flatten, uniq)(checkedScripts);
     const { jobsState, metaData, name, userRole } = dataSource;
     const { isProcessing } = isProcessingData({ jobsState, metaData });
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;

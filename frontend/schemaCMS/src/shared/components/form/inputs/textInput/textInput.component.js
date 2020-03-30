@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Icons } from 'schemaUI';
-import { always, split, pathOr, path } from 'ramda';
+import { always, path, pathOr, split } from 'ramda';
 
-import { Container, ErrorWrapper, IconWrapper, getIconStyles } from './textInput.styles';
+import { Container, ErrorWrapper, getIconStyles, IconWrapper } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
 
 const { TextField } = Form;

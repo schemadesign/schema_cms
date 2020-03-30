@@ -30,11 +30,4 @@ export const mapDispatchToProps = dispatch => ({
   ),
 });
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  withRouter
-)(PageTemplate);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), withRouter)(PageTemplate);

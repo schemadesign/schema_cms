@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { injectIntl, FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 
 import messages from './notRegistered.messages';

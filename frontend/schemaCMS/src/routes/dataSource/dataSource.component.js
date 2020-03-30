@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { always, pathEq, pathOr } from 'ramda';

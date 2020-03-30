@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import Immutable from 'seamless-immutable';
 import createSagaMiddleware from 'redux-saga';
-import { persistStore, persistCombineReducers } from 'redux-persist';
+import { persistCombineReducers, persistStore } from 'redux-persist';
 
 import createReducer from './reducers';
 import rootSaga from './sagas';
@@ -36,10 +36,7 @@ export default function configureStore(initialState = {}) {
   const store = createStore(
     persistedReducer,
     Immutable(initialState),
-    compose(
-      applyMiddleware(...middlewares),
-      ...enhancers
-    )
+    compose(applyMiddleware(...middlewares), ...enhancers)
   );
 
   const persistor = persistStore(store);

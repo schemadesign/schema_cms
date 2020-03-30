@@ -16,8 +16,8 @@ import messages from './source.messages';
 import {
   DATA_SOURCE_FIELDS,
   DATA_SOURCE_FORM,
-  DATA_SOURCE_SCHEMA,
   DATA_SOURCE_RUN_LAST_JOB,
+  DATA_SOURCE_SCHEMA,
 } from '../../../modules/dataSource/dataSource.constants';
 
 const mapStateToProps = createStructuredSelector({
@@ -39,10 +39,7 @@ export const mapDispatchToProps = dispatch => ({
 
 export default compose(
   hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl,
   withRouter,
   withTheme,

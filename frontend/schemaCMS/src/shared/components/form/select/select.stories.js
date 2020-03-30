@@ -7,7 +7,11 @@ import { withTheme } from '../../../../.storybook/decorators';
 export const defaultProps = {
   label: 'Selector',
   name: 'selectField',
-  options: [{ value: 'one', label: 'One' }, { value: 'two', label: 'Two' }, { value: 'three', label: 'Three' }],
+  options: [
+    { value: 'one', label: 'One' },
+    { value: 'two', label: 'Two' },
+    { value: 'three', label: 'Three' },
+  ],
 };
 
 class TestComponent extends PureComponent {

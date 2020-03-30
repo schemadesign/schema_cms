@@ -63,10 +63,7 @@ export const formatFormData = data => {
 
 export const getEventFiles = data => pathOr(data, ['currentTarget', 'files'])(data);
 
-export const getQueryParams = pipe(
-  pathOr('', ['location', 'search']),
-  queryString.parse
-);
+export const getQueryParams = pipe(pathOr('', ['location', 'search']), queryString.parse);
 
 const byRole = userRole => item => includes(userRole, item.allowedRoles);
 

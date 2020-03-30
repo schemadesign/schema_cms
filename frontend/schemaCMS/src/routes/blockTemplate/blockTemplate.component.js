@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';

@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icons } from 'schemaUI';
 import { ifElse, is } from 'ramda';
@@ -6,13 +6,13 @@ import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../utils/rendering';
 import {
-  UserDetails,
-  UserFullName,
   buttonIconStyles,
   cardStyles,
   ListItem,
   ListItemContent,
   Role,
+  UserDetails,
+  UserFullName,
 } from './userList.styles';
 import messages from './userList.messages';
 
@@ -27,7 +27,11 @@ export class UserList extends PureComponent {
     projectId: PropTypes.string,
   };
 
-  getUrl = ifElse(is(String), projectId => `/project/${projectId}/user/`, () => '/user/');
+  getUrl = ifElse(
+    is(String),
+    projectId => `/project/${projectId}/user/`,
+    () => '/user/'
+  );
 
   renderEdit = renderWhenTrue(() => (
     <Button customStyles={buttonIconStyles}>

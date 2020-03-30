@@ -6,7 +6,7 @@ import { Formik } from 'formik';
 import { always, append, equals, ifElse, reject } from 'ramda';
 import Helmet from 'react-helmet';
 
-import { ButtonContainer, TagCounter, Header, Link, PlusButton } from './dataSourceTags.styles';
+import { ButtonContainer, Header, Link, PlusButton, TagCounter } from './dataSourceTags.styles';
 import messages from './dataSourceTags.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';

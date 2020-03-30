@@ -15,16 +15,16 @@ import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.con
 import messages from './view.messages';
 import {
   Container,
+  containerInputStyles,
   DetailItem,
   DetailLabel,
   Details,
   DetailValue,
   DetailWrapper,
-  ProjectView,
-  inputStyles,
-  containerInputStyles,
-  selectContainerStyles,
   InputContainer,
+  inputStyles,
+  ProjectView,
+  selectContainerStyles,
 } from './view.styles';
 import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
@@ -151,6 +151,16 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
+  renderRemoveProjectButton = renderWhenTrue(
+    always(
+      <LinkContainer>
+        <Link id="deleteProjectDesktopBtn" onClick={this.handleDeleteClick}>
+          <FormattedMessage {...messages.deleteProject} />
+        </Link>
+      </LinkContainer>
+    )
+  );
+
   renderProject = ({ id: projectId, owner, slug, created, meta, status } = {}) => {
     const statistics = [
       {
@@ -231,16 +241,6 @@ export class View extends PureComponent {
       </ProjectView>
     );
   };
-
-  renderRemoveProjectButton = renderWhenTrue(
-    always(
-      <LinkContainer>
-        <Link id="deleteProjectDesktopBtn" onClick={this.handleDeleteClick}>
-          <FormattedMessage {...messages.deleteProject} />
-        </Link>
-      </LinkContainer>
-    )
-  );
 
   renderContent = loading =>
     renderWhenTrue(() => (

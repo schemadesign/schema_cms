@@ -22,11 +22,4 @@ export const mapDispatchToProps = dispatch => ({
   ),
 });
 
-export default compose(
-  hot(module),
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
-  withRouter
-)(CreateSection);
+export default compose(hot(module), connect(mapStateToProps, mapDispatchToProps), withRouter)(CreateSection);

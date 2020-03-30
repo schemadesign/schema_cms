@@ -32,7 +32,10 @@ describe('DataWranglingScripts: sagas', () => {
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .provide([[select(selectDataSource), dataSource], [select(selectDataWranglingScripts), scripts]])
+        .provide([
+          [select(selectDataSource), dataSource],
+          [select(selectDataWranglingScripts), scripts],
+        ])
         .put(DataWranglingScriptsRoutines.fetchList.success(successPayload))
         .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
         .silentRun();
