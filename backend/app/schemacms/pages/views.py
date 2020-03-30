@@ -5,11 +5,10 @@ from . import models, serializers
 from ..projects.models import Project
 from ..utils.views import DetailViewSet
 from ..utils.serializers import IDNameSerializer
-from ..utils.permissions import IsSchemaAdmin
+from ..utils.permissions import IsAdmin, IsAdminOrIsEditor, IsAdminOrReadOnly
 
 
 class TemplateListCreateView(generics.ListCreateAPIView):
-    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
     project_info = {}
 
     def get_parent(self):
@@ -44,6 +43,7 @@ class BlockTemplateListCreteView(TemplateListCreateView):
         .select_related("project", "created_by")
         .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.all().order_by("order")))
     )
+    permission_classes = (permissions.IsAuthenticated, IsAdmin)
 
     def list(self, request, *args, **kwargs):
         if "raw_list" in request.query_params:
@@ -64,7 +64,7 @@ class BlockTemplateViewSet(DetailViewSet):
         .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.order_by("order")))
     )
     serializer_class = serializers.BlockTemplateSerializer
-    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
+    permission_classes = (permissions.IsAuthenticated, IsAdmin)
 
 
 class PageTemplateListCreteView(TemplateListCreateView):
@@ -80,6 +80,7 @@ class PageTemplateListCreteView(TemplateListCreateView):
             ),
         )
     )
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly)
 
 
 class PageTemplateViewSet(DetailViewSet):
@@ -94,7 +95,7 @@ class PageTemplateViewSet(DetailViewSet):
         )
     )
     serializer_class = serializers.PageTemplateSerializer
-    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
+    permission_classes = (permissions.IsAuthenticated, IsAdmin)
 
 
 class SectionListCreateView(TemplateListCreateView):
@@ -103,9 +104,10 @@ class SectionListCreateView(TemplateListCreateView):
         .annotate_pages_count()
         .select_related("project", "created_by")
         .prefetch_related("pages")
+        .order_by("-created")
     )
     serializer_class = serializers.SectionListCreateSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
     project_info = {}
 
     def perform_create(self, serializer):
@@ -120,11 +122,11 @@ class SectionViewSet(DetailViewSet):
         .prefetch_related("pages")
     )
     serializer_class = serializers.SectionDetailSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
 
 
 class PageListCreateView(generics.ListCreateAPIView):
-    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
     project_info = {}
     serializer_class = serializers.PageSerializer
     queryset = (
@@ -172,4 +174,4 @@ class PageViewSet(DetailViewSet):
         )
     )
     serializer_class = serializers.PageSerializer
-    permission_classes = (permissions.IsAuthenticated, IsSchemaAdmin)
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
