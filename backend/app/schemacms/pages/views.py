@@ -131,7 +131,9 @@ class PageListCreateView(generics.ListCreateAPIView):
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
-            Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
+            Prefetch(
+                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
+            )
         )
         .order_by("-created")
     )
@@ -167,7 +169,12 @@ class PageViewSet(DetailViewSet):
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             Prefetch(
-                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
+                "pageblock_set",
+                queryset=models.PageBlock.objects.select_related("block")
+                .order_by("order")
+                .prefetch_related(
+                    Prefetch("elements", queryset=models.PageBlockElement.objects.all().order_by("order"))
+                ),
             )
         )
     )
