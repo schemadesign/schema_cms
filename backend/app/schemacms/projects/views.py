@@ -7,6 +7,7 @@ from ..datasources import serializers as ds_serializers
 from ..states import serializers as st_serializers
 from ..users import permissions as user_permissions
 from ..utils import serializers as utils_serializers
+from ..utils.permissions import IsAdmin
 
 
 class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
@@ -29,6 +30,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             queryset.annotate_data_source_count()
             .annotate_states_count()
             .annotate_templates_count()
+            .annotate_pages_count()
             .select_related("owner")
             .prefetch_related("editors", "states", "block_set", "page_set")
             .order_by("-created")
@@ -130,7 +132,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             request, related_objects_name="states", parent_object_name="project"
         )
 
-    @decorators.action(detail=True, url_path="templates", methods=["get"])
+    @decorators.action(detail=True, url_path="templates", methods=["get"], permission_classes=[IsAdmin])
     def templates(self, request, **kwargs):
         project = self.get_object()
 

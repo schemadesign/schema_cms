@@ -57,7 +57,7 @@ class Project(
 
     @functional.cached_property
     def pages_count(self):
-        return 0
+        return self.page_set.filter(is_template=False).count()
 
     @functional.cached_property
     def users_count(self):

@@ -49,6 +49,10 @@ class User(AbstractUser):
     def is_admin(self):
         return self.role == constants.UserRole.ADMIN
 
+    @property
+    def is_editor(self):
+        return self.role == constants.UserRole.EDITOR
+
     def __str__(self):
         return self.get_full_name()
 
