@@ -20,7 +20,7 @@ class TemplateListCreateView(generics.ListCreateAPIView):
         return self.queryset.filter(project=self.get_parent())
 
     def list(self, request, *args, **kwargs):
-        if request.user.is_editor:
+        if self.serializer_class != serializers.SectionListCreateSerializer and request.user.is_editor:
             queryset = self.get_queryset().filter(is_available=True)
         else:
             queryset = self.get_queryset()
