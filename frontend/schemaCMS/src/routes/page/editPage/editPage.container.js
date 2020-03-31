@@ -7,7 +7,7 @@ import { compose } from 'ramda';
 
 import { EditPage } from './editPage.component';
 import { selectUserRole } from '../../../modules/userProfile';
-import { PageRoutines, selectPage, selectTemporaryPageBlocks } from '../../../modules/page';
+import { PageRoutines, selectPage } from '../../../modules/page';
 import { selectProject } from '../../../modules/project';
 import { PageTemplatesRoutines, selectPageTemplates } from '../../../modules/pageTemplates';
 
@@ -16,7 +16,6 @@ const mapStateToProps = createStructuredSelector({
   page: selectPage,
   project: selectProject,
   pageTemplates: selectPageTemplates,
-  temporaryPageBlocks: selectTemporaryPageBlocks,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -24,7 +23,6 @@ export const mapDispatchToProps = dispatch => ({
     {
       updatePage: promisifyRoutine(PageRoutines.updatePage),
       removePage: promisifyRoutine(PageRoutines.removePage),
-      setTemporaryPageBlocks: promisifyRoutine(PageRoutines.setTemporaryPageBlocks),
       fetchPageTemplates: promisifyRoutine(PageTemplatesRoutines.fetchPageTemplates),
     },
     dispatch

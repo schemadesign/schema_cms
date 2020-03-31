@@ -60,27 +60,13 @@ describe('PageForm: Component', () => {
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('template', 'value');
   });
 
-  it('should setTemporaryPageBlocks and redirect to add block page', async () => {
-    jest.spyOn(defaultProps, 'setTemporaryPageBlocks');
+  it('should redirect to add block page', async () => {
     const wrapper = await render();
 
     act(() => {
       wrapper.root.findByProps({ id: 'addBlock' }).props.onClick();
     });
 
-    expect(defaultProps.setTemporaryPageBlocks).toHaveBeenCalledWith([
-      {
-        elements: [
-          { id: 1, name: 'name', type: 'plain_text', value: '' },
-          { id: 1, name: 'name', type: 'image', value: { fileName: 'fileName' } },
-          { id: 1, name: 'name', type: 'stack', value: [] },
-        ],
-        id: 1,
-        key: 1,
-        name: 'name',
-        type: 'type',
-      },
-    ]);
     expect(mockPushHistory).toHaveBeenCalledWith('url/add-block');
   });
 });

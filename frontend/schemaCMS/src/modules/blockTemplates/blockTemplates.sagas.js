@@ -7,11 +7,11 @@ import { BlockTemplatesRoutines } from './blockTemplates.redux';
 import { ProjectRoutines } from '../project';
 import { BLOCK_TEMPLATES_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 
-function* fetchBlockTemplates({ payload: { projectId, raw, content } }) {
+function* fetchBlockTemplates({ payload: { projectId, raw } }) {
   try {
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.request());
 
-    const query = stringify({ raw, content });
+    const query = stringify({ raw });
     const queryPath = query.length ? `?${query}` : '';
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}${queryPath}`);

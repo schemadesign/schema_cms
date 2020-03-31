@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
-import { useEffectOnce } from 'react-use';
 import { useFormik } from 'formik';
 import { pick } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
@@ -24,7 +23,6 @@ import {
   NextButton,
   PlusButton,
 } from '../../../shared/components/navigation';
-import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -79,20 +77,11 @@ Page.propTypes = {
   templateName: PropTypes.string,
 };
 
-export const PageList = ({
-  section,
-  project: { id: projectId },
-  fetchSection,
-  removeSection,
-  updateSection,
-  userRole,
-}) => {
+export const PageList = ({ section, project: { id: projectId }, removeSection, updateSection, userRole }) => {
   const { pages = [], slug = '' } = section;
-  const [loading, setLoading] = useState(true);
   const [updateLoading, setUpdateLoading] = useState(false);
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
-  const [error, setError] = useState(null);
   const { sectionId } = useParams();
   const history = useHistory();
   const intl = useIntl();
@@ -148,19 +137,6 @@ export const PageList = ({
     </Subtitle>
   );
 
-  useEffectOnce(() => {
-    (async () => {
-      try {
-        await fetchSection({ sectionId });
-      } catch (e) {
-        reportError(e);
-        setError(e);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  });
-
   return (
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
@@ -171,86 +147,80 @@ export const PageList = ({
         active={PROJECT_CONTENT_ID}
       />
       <ProjectTabs active={CONTENT} url={`/project/${projectId}`} />
-      <LoadingWrapper loading={loading} error={error}>
-        <Form onSubmit={handleSubmit}>
-          <ContextHeader title={title} subtitle={nameInput}>
-            <PlusButton
-              id="createPage"
-              type="button"
-              onClick={() => history.push(`/section/${sectionId}/create-page`)}
-            />
-          </ContextHeader>
-          <MobileInputName>
-            <TextInput
-              onChange={handleChange}
-              name={SECTIONS_NAME}
-              value={values[SECTIONS_NAME]}
-              label={<FormattedMessage {...messages[SECTIONS_NAME]} />}
-              fullWidth
-              isEdit
-              {...restFormikProps}
-            />
-          </MobileInputName>
-          <CounterHeader
-            moveToTop
-            copy={intl.formatMessage(messages.page)}
-            count={pages.length}
-            right={
-              <MobilePlusContainer>
-                <PlusButton
-                  customStyles={mobilePlusStyles}
-                  id="createPageMobile"
-                  onClick={() => history.push(`/section/${sectionId}/create-page`)}
-                  type="button"
-                />
-              </MobilePlusContainer>
-            }
+      <Form onSubmit={handleSubmit}>
+        <ContextHeader title={title} subtitle={nameInput}>
+          <PlusButton id="createPage" type="button" onClick={() => history.push(`/section/${sectionId}/create-page`)} />
+        </ContextHeader>
+        <MobileInputName>
+          <TextInput
+            onChange={handleChange}
+            name={SECTIONS_NAME}
+            value={values[SECTIONS_NAME]}
+            label={<FormattedMessage {...messages[SECTIONS_NAME]} />}
+            fullWidth
+            isEdit
+            {...restFormikProps}
           />
-          <ListContainer>
-            {pages.map((page, index) => (
-              <Page key={index} {...page} />
-            ))}
-          </ListContainer>
-          <Switches>
-            <SwitchContainer>
-              <SwitchContent>
-                <Switch value={values[SECTIONS_PUBLISH]} id={SECTIONS_PUBLISH} onChange={handleChange} />
-                <SwitchCopy isLink>
-                  <SwitchLabel htmlFor={SECTIONS_PUBLISH}>
-                    <FormattedMessage {...messages[SECTIONS_PUBLISH]} />
-                  </SwitchLabel>
-                  <AvailableCopy>
-                    <FormattedMessage
-                      {...messages.sectionAvailability}
-                      values={{
-                        availability: intl.formatMessage(
-                          messages[values[SECTIONS_PUBLISH] ? 'publicCopy' : 'privateCopy']
-                        ),
-                      }}
-                    />
-                    <CopySeparator />
-                    <FormattedMessage {...messages.visitPage} values={{ page: <a href={visitPage}>{visitPage}</a> }} />
-                  </AvailableCopy>
-                </SwitchCopy>
-              </SwitchContent>
-              <BinIconContainer id="removeSection" onClick={() => setRemoveModalOpen(true)}>
-                <MinusIcon customStyles={binStyles} />
-              </BinIconContainer>
-            </SwitchContainer>
-          </Switches>
-          <NavigationContainer fixed>
-            <BackArrowButton id="backBtn" type="button" onClick={() => history.push(`/project/${projectId}/content`)} />
-            <NextButton
-              id="updateSection"
-              type="submit"
-              loading={updateLoading}
-              disabled={!isValid || !dirty || updateLoading}
-            >
-              <FormattedMessage {...messages.save} />
-            </NextButton>
-          </NavigationContainer>
-        </Form>
-      </LoadingWrapper>
+        </MobileInputName>
+        <CounterHeader
+          moveToTop
+          copy={intl.formatMessage(messages.page)}
+          count={pages.length}
+          right={
+            <MobilePlusContainer>
+              <PlusButton
+                customStyles={mobilePlusStyles}
+                id="createPageMobile"
+                onClick={() => history.push(`/section/${sectionId}/create-page`)}
+                type="button"
+              />
+            </MobilePlusContainer>
+          }
+        />
+        <ListContainer>
+          {pages.map((page, index) => (
+            <Page key={index} {...page} />
+          ))}
+        </ListContainer>
+        <Switches>
+          <SwitchContainer>
+            <SwitchContent>
+              <Switch value={values[SECTIONS_PUBLISH]} id={SECTIONS_PUBLISH} onChange={handleChange} />
+              <SwitchCopy isLink>
+                <SwitchLabel htmlFor={SECTIONS_PUBLISH}>
+                  <FormattedMessage {...messages[SECTIONS_PUBLISH]} />
+                </SwitchLabel>
+                <AvailableCopy>
+                  <FormattedMessage
+                    {...messages.sectionAvailability}
+                    values={{
+                      availability: intl.formatMessage(
+                        messages[values[SECTIONS_PUBLISH] ? 'publicCopy' : 'privateCopy']
+                      ),
+                    }}
+                  />
+                  <CopySeparator />
+                  <FormattedMessage {...messages.visitPage} values={{ page: <a href={visitPage}>{visitPage}</a> }} />
+                </AvailableCopy>
+              </SwitchCopy>
+            </SwitchContent>
+            <BinIconContainer id="removeSection" onClick={() => setRemoveModalOpen(true)}>
+              <MinusIcon customStyles={binStyles} />
+            </BinIconContainer>
+          </SwitchContainer>
+        </Switches>
+        <NavigationContainer fixed>
+          <BackArrowButton id="backBtn" type="button" onClick={() => history.push(`/project/${projectId}/content`)} />
+          <NextButton
+            id="updateSection"
+            type="submit"
+            loading={updateLoading}
+            disabled={!isValid || !dirty || updateLoading}
+          >
+            <FormattedMessage {...messages.save} />
+          </NextButton>
+        </NavigationContainer>
+      </Form>
       <Modal ariaHideApp={false} isOpen={removeModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
         <ModalTitle>
           <FormattedMessage {...messages.removeTitle} />
@@ -275,7 +245,6 @@ export const PageList = ({
 
 PageList.propTypes = {
   userRole: PropTypes.string.isRequired,
-  fetchSection: PropTypes.func.isRequired,
   updateSection: PropTypes.func.isRequired,
   removeSection: PropTypes.func.isRequired,
   section: PropTypes.object.isRequired,

@@ -16,20 +16,10 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { PageForm } from '../../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
-import { PAGE_SCHEMA, FORM_VALUES, PAGE_TEMPLATE, PAGE_BLOCKS } from '../../../modules/page/page.constants';
+import { PAGE_SCHEMA, FORM_VALUES, PAGE_TEMPLATE, PAGE_BLOCKS, PAGE_NAME } from '../../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 
-export const EditPage = ({
-  project,
-  updatePage,
-  page,
-  fetchPageTemplates,
-  pageTemplates,
-  userRole,
-  removePage,
-  setTemporaryPageBlocks,
-  temporaryPageBlocks,
-}) => {
+export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTemplates, userRole, removePage }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,7 +34,7 @@ export const EditPage = ({
   const menuOptions = getProjectMenuOptions(project.id);
   const initialValues = { ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
 
-  const { handleSubmit, isValid, dirty, values, setFieldValue, ...restFormikProps } = useFormik({
+  const { handleSubmit, isValid, dirty, values, setValues, setFieldValue, ...restFormikProps } = useFormik({
     initialValues,
     enableReinitialize: true,
     validationSchema: () => PAGE_SCHEMA,
@@ -83,15 +73,15 @@ export const EditPage = ({
     (async () => {
       try {
         await fetchPageTemplates({ projectId: project.id });
-        const { fromAddBlock, emptyBlocks } = state;
+        const { page = {} } = state;
 
-        if (fromAddBlock && !isEmpty(temporaryPageBlocks)) {
-          const blocks =
-            emptyBlocks || temporaryPageBlocks.length > 1
-              ? temporaryPageBlocks
-              : values[PAGE_BLOCKS].concat(temporaryPageBlocks);
-          setFieldValue(PAGE_BLOCKS, blocks);
-          setTemporaryPageBlocks([]);
+        if (!isEmpty(page)) {
+          if (page[PAGE_NAME]) {
+            setValues(page);
+          } else {
+            setFieldValue(PAGE_BLOCKS, values[PAGE_BLOCKS].concat(page[PAGE_BLOCKS]));
+          }
+          history.replace({ state: {} });
         }
       } catch (e) {
         reportError(e);
@@ -114,8 +104,8 @@ export const EditPage = ({
             pageTemplates={pageTemplates}
             isValid={isValid}
             setRemoveModalOpen={setRemoveModalOpen}
-            setTemporaryPageBlocks={setTemporaryPageBlocks}
             values={values}
+            setValues={setValues}
             setFieldValue={setFieldValue}
             {...restFormikProps}
           />
@@ -162,8 +152,6 @@ EditPage.propTypes = {
   updatePage: PropTypes.func.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
-  setTemporaryPageBlocks: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
-  temporaryPageBlocks: PropTypes.array.isRequired,
   page: PropTypes.object.isRequired,
 };

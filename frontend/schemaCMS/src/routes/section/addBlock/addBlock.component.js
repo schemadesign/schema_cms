@@ -13,7 +13,7 @@ import { AddBlockForm } from '../../../shared/components/addBlockForm';
 
 export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplates }) => {
   const intl = useIntl();
-  const { pageId } = useParams();
+  const { sectionId } = useParams();
   const projectId = project.id;
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
@@ -27,7 +27,7 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
         fetchBlockTemplates={fetchBlockTemplates}
         projectId={projectId}
         blockTemplates={blockTemplates}
-        backUrl={`/page/${pageId}`}
+        backUrl={`/section/${sectionId}/create-page`}
         title={title}
       />
     </Container>

@@ -12,7 +12,6 @@ export const defaultProps = {
   pageTemplates,
   updatePage: Function.prototype,
   fetchPageTemplates: Function.prototype,
-  setTemporaryPageBlocks: Function.prototype,
   fetchPage: jest.fn().mockReturnValue(Promise.resolve({ projectId: 'projectId' })),
   removePage: Function.prototype,
   project: { id: 'projectId' },

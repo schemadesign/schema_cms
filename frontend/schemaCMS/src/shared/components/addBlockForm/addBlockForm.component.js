@@ -26,19 +26,13 @@ import {
   BLOCK_NAME,
   BLOCK_TYPE,
   INITIAL_VALUES_ADD_BLOCK,
+  PAGE_BLOCKS,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 
 const { EditIcon } = Icons;
 
-export const AddBlockForm = ({
-  fetchBlockTemplates,
-  updateTemporaryPageBlocks,
-  projectId,
-  backUrl,
-  title,
-  blockTemplates,
-}) => {
+export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, blockTemplates }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const history = useHistory();
@@ -53,9 +47,14 @@ export const AddBlockForm = ({
       try {
         const blockTemplate = find(propEq('id', type), blockTemplates);
         const { name: blockName, id, ...rest } = blockTemplate;
+        const page = state.page || {};
+        const blocks = page[PAGE_BLOCKS] || [];
 
-        updateTemporaryPageBlocks({ ...rest, name, key: Date.now(), type: blockName, block: id });
-        history.push(backUrl, { fromAddBlock: true, emptyBlocks: state.emptyBlocks });
+        const updatedPage = {
+          ...page,
+          [PAGE_BLOCKS]: [...blocks, { ...rest, name, key: Date.now(), type: blockName, block: id }],
+        };
+        history.push(backUrl, { page: updatedPage });
       } catch (errors) {
         reportError(errors);
       }
@@ -86,7 +85,7 @@ export const AddBlockForm = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchBlockTemplates({ projectId, content: true });
+        await fetchBlockTemplates({ projectId });
       } catch (e) {
         reportError(e);
         setError(e);
@@ -129,7 +128,7 @@ export const AddBlockForm = ({
           )}
         </SelectContainer>
         <NavigationContainer fixed>
-          <BackButton id="backBtn" type="button" onClick={() => history.push(backUrl, { fromAddBlock: true })}>
+          <BackButton id="backBtn" type="button" onClick={() => history.push(backUrl, { page: state.page })}>
             <FormattedMessage {...messages.back} />
           </BackButton>
           <NextButton id="addBlock" type="submit" disabled={!isValid || !dirty}>
@@ -143,7 +142,6 @@ export const AddBlockForm = ({
 
 AddBlockForm.propTypes = {
   fetchBlockTemplates: PropTypes.func.isRequired,
-  updateTemporaryPageBlocks: PropTypes.func.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   projectId: PropTypes.number.isRequired,
   backUrl: PropTypes.string.isRequired,

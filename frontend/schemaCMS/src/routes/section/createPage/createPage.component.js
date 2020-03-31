@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
 import { useEffectOnce } from 'react-use';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import { useFormik } from 'formik';
+import { is } from 'ramda';
 
 import { Container } from './createPage.styles';
 import messages from './createPage.messages';
@@ -17,25 +18,18 @@ import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/pag
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../../project/project.constants';
 
-export const CreatePage = ({
-  pageTemplates,
-  userRole,
-  createPage,
-  fetchPageTemplates,
-  fetchSection,
-  project,
-  setTemporaryPageBlocks,
-}) => {
+export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTemplates, project }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [createLoading, setCreateLoading] = useState(false);
   const history = useHistory();
+  const { state = {} } = useLocation();
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(project.id);
-  const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
+  const { handleSubmit, isValid, dirty, setFieldValue, setValues, values, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => PAGE_SCHEMA,
     onSubmit: async (data, { setErrors }) => {
@@ -58,8 +52,13 @@ export const CreatePage = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        const { project } = await fetchSection({ sectionId });
-        await fetchPageTemplates({ projectId: project });
+        await fetchPageTemplates({ projectId: project.id });
+        const { page = {} } = state;
+
+        if (is(Number, page[PAGE_TEMPLATE])) {
+          setValues(page);
+        }
+        history.replace({ state: {} });
       } catch (e) {
         reportError(e);
         setError(e);
@@ -79,7 +78,9 @@ export const CreatePage = ({
             title={title}
             pageTemplates={pageTemplates}
             isValid={isValid}
-            setTemporaryPageBlocks={setTemporaryPageBlocks}
+            setFieldValue={setFieldValue}
+            setValues={setValues}
+            values={values}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -106,7 +107,5 @@ CreatePage.propTypes = {
   userRole: PropTypes.string.isRequired,
   createPage: PropTypes.func.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
-  fetchSection: PropTypes.func.isRequired,
-  setTemporaryPageBlocks: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
 };

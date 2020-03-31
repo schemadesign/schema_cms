@@ -17,8 +17,6 @@ export const PageRoutines = {
   fetchPage: createRoutine(`${PREFIX}FETCH_PAGE`),
   updatePage: createRoutine(`${PREFIX}UPDATE_PAGE`),
   removePage: createRoutine(`${PREFIX}REMOVE_PAGE`),
-  setTemporaryPageBlocks: createRoutine(`${PREFIX}SET_TEMPORARY_PAGE_BLOCKS`),
-  updateTemporaryPageBlocks: createRoutine(`${PREFIX}UPDATE_TEMPORARY_PAGE_BLOCKS`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -30,17 +28,11 @@ export const INITIAL_STATE = new Immutable({
     [PAGE_KEYWORDS]: '',
     [PAGE_IS_PUBLIC]: false,
   },
-  temporaryPageBlocks: [],
 });
 
 const setPage = (state = INITIAL_STATE, { payload }) => state.set('page', payload);
-const setTemporaryPageBlocks = (state = INITIAL_STATE, { payload }) => state.set('temporaryPageBlocks', payload);
-const updateTemporaryPageBlocks = (state = INITIAL_STATE, { payload }) =>
-  state.update('temporaryPageBlocks', temporaryPageBlocks => temporaryPageBlocks.concat(payload));
 
 export const reducer = createReducer(INITIAL_STATE, {
   [PageRoutines.updatePage.success]: setPage,
   [PageRoutines.fetchPage.success]: setPage,
-  [PageRoutines.setTemporaryPageBlocks.trigger]: setTemporaryPageBlocks,
-  [PageRoutines.updateTemporaryPageBlocks.trigger]: updateTemporaryPageBlocks,
 });

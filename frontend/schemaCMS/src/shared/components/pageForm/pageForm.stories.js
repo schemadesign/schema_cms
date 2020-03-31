@@ -11,7 +11,6 @@ export const defaultProps = {
   setValues: Function.prototype,
   setFieldValue: Function.prototype,
   setRemoveModalOpen: Function.prototype,
-  setTemporaryPageBlocks: Function.prototype,
   values: page,
   pageTemplates,
   isValid: true,
