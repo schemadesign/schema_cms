@@ -250,6 +250,13 @@ class TestListCreateSectionView:
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["results"]) == 1
 
+    def test_list_section_as_editor(self, api_client, editor, section):
+        api_client.force_authenticate(editor)
+        response = api_client.get(self.get_url(section.project_id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["results"]) == 1
+
     def test_create_section(self, api_client, admin, project):
         payload = {"name": "Test Name"}
 
