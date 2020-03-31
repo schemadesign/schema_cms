@@ -20,7 +20,10 @@ class TemplateListCreateView(generics.ListCreateAPIView):
         return self.queryset.filter(project=self.get_parent())
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
+        if request.user.is_editor:
+            queryset = self.get_queryset().filter(is_available=True)
+        else:
+            queryset = self.get_queryset()
 
         serializer = self.get_serializer(queryset, many=True)
         data = {"project": self.project_info, "results": serializer.data}
@@ -43,7 +46,7 @@ class BlockTemplateListCreteView(TemplateListCreateView):
         .select_related("project", "created_by")
         .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.all().order_by("order")))
     )
-    permission_classes = (permissions.IsAuthenticated, IsAdmin)
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly)
 
     def list(self, request, *args, **kwargs):
         if "raw_list" in request.query_params:

@@ -26,6 +26,16 @@ class TestListBlockTemplatesView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.BlockTemplateSerializer(queryset, many=True).data
 
+    def test_available_for_editor(self, api_client, editor, project, block_template_factory):
+        block_template_factory.create_batch(1, project=project, is_available=False)
+        block_template_factory.create_batch(2, project=project, is_available=True)
+
+        api_client.force_authenticate(editor)
+        response = api_client.get(self.get_url(project.pk))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["results"]) == 2
+
 
 class TestCreateBlockTemplatesView:
     @staticmethod
@@ -202,6 +212,16 @@ class TestListPageTemplatesView:
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.PageTemplateSerializer(queryset, many=True).data
+
+    def test_available_for_editor(self, api_client, editor, project, page_template_factory):
+        page_template_factory.create_batch(1, project=project, is_available=False)
+        page_template_factory.create_batch(2, project=project, is_available=True)
+
+        api_client.force_authenticate(editor)
+        response = api_client.get(self.get_url(project.pk))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["results"]) == 2
 
 
 class TestDeletePageTemplatesView:
