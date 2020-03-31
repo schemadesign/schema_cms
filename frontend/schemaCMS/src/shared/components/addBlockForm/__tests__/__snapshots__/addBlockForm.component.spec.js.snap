@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddBlockForm: Component should render correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="sc-fzpans dmKhvS"
+  >
+    <div
+      className="sc-fzplWN izglPW"
+    >
+      <h2
+        className="sc-fznyAO hCNAkV"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        title
+      </h2>
+      <h1
+        className="sc-fznKkj gTlJjg"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <div
+          className="sc-fznxsB cskFqV"
+        >
+          <div
+            className="sc-fzoyTs eNtMFT"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "paddingRight": 40,
+                  "position": "static",
+                }
+              }
+            >
+              <input
+                id="name"
+                name="name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Name"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": 24,
+                    "fontWeight": 600,
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                    "width": 80,
+                  }
+                }
+                type="text"
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": 24,
+                    "fontWeight": 600,
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "opacity": 0,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "fixed",
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 2,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-fznJRM eiGOyR"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </h1>
+    </div>
+    <div
+      className="sc-fznZeY fLrtke"
+    />
+  </div>
+  <div
+    className="sc-fznWqX emhegs"
+  >
+    <div
+      className="sc-fzoyTs FXPlp"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Block Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value=""
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzoNJl fwCLEm"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxjAm ttlEb"
+  >
+    <div
+      className="sc-fzpmMD grxiKL"
+    >
+      <label
+        id="fieldProjectStatusLabel"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Type
+      </label>
+      <input
+        id="type"
+        name="type"
+        type="hidden"
+        value=""
+      />
+      <div
+        className="sc-fznxKY fFnHGj"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M15.117 18L9 12h12z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#FFF",
+            "display": "flex",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          id="blockTypeSelect"
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              Please select a type
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "WebkitOverflowScrolling": "touch",
+                "backgroundColor": "#1d1d20",
+                "display": "none",
+                "flexDirection": "column",
+                "left": "0",
+                "maxHeight": "184px",
+                "overflowY": "hidden",
+                "position": "absolute",
+                "top": "calc(100% + 5px)",
+                "width": "100%",
+                "zIndex": 2,
+              }
+            }
+          >
+            <div
+              id="select-item-0"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "1px solid  #2F2F36",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name
+            </div>
+            <div
+              id="select-item-1"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "none",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxgMl kdGnnC"
+  >
+    <div
+      className="sc-Axmtr kmHbtz"
+    >
+      <div
+        className="sc-AxheI kHegme"
+      >
+        <button
+          className="sc-AxmLO kfXYAO"
+          disabled={false}
+          id="backBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          className="sc-AxmLO kfXYAO"
+          disabled={true}
+          id="addBlock"
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+`;

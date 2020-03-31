@@ -2,7 +2,7 @@ import React from 'react';
 import { act } from 'react-test-renderer';
 
 import { EditPage } from '../editPage.component';
-import { defaultProps } from '../../page.stories';
+import { defaultProps } from '../editPage.stories';
 import { makeContextRenderer } from '../../../../shared/utils/testUtils';
 
 const mockPushHistory = jest.fn();
@@ -25,11 +25,9 @@ describe('EditPage: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should fetch section', async () => {
-    jest.spyOn(defaultProps, 'fetchPage');
+  it('should fetch page templates', async () => {
     jest.spyOn(defaultProps, 'fetchPageTemplates');
     await render();
-    expect(defaultProps.fetchPage).toHaveBeenCalledWith({ pageId: 'pageId' });
     expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
   });
 

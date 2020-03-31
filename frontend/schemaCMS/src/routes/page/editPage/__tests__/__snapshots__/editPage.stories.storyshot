@@ -583,7 +583,7 @@ exports[`Storyshots EditPage Default 1`] = `
   }
 >
   <style>
-
+    
   body {
     color: #FFF;
     background-color: #000;
@@ -625,7 +625,7 @@ exports[`Storyshots EditPage Default 1`] = `
                 }
               }
             >
-              Edit
+              Page
             </h2>
             <h1
               className="c2"
@@ -641,7 +641,7 @@ exports[`Storyshots EditPage Default 1`] = `
                 }
               }
             >
-              EditPage
+              Edit
             </h1>
           </div>
         </div>
@@ -726,7 +726,7 @@ exports[`Storyshots EditPage Default 1`] = `
                 }
               }
             >
-              Edit
+              Page
             </h2>
             <h1
               className="c2"
@@ -742,7 +742,7 @@ exports[`Storyshots EditPage Default 1`] = `
                 }
               }
             >
-              EditPage
+              Edit
             </h1>
           </div>
         </div>
@@ -962,7 +962,7 @@ exports[`Storyshots EditPage Default 1`] = `
                 }
               }
             >
-              Edit
+              Page
             </h2>
             <h1
               className="c11"
@@ -1268,7 +1268,7 @@ exports[`Storyshots EditPage Default 1`] = `
                 }
               }
             >
-              SEO EditPage Description
+              SEO Page Description
             </label>
             <textarea
               id="description"
@@ -1410,13 +1410,13 @@ exports[`Storyshots EditPage Default 1`] = `
                 }
               }
             >
-              EditPage Template
+              Page Template
             </label>
             <input
               id="template"
               name="template"
               type="hidden"
-              value="template"
+              value={1}
             />
             <div
               className="c20"
@@ -1477,7 +1477,7 @@ exports[`Storyshots EditPage Default 1`] = `
                       }
                     }
                   >
-                    Select EditPage Template
+                    Page template
                   </div>
                 </div>
                 <div
@@ -1524,9 +1524,10 @@ exports[`Storyshots EditPage Default 1`] = `
                     onMouseOver={[Function]}
                     style={
                       Object {
+                        "backgroundColor": "#FFF",
                         "border": "1px solid  #2F2F36",
                         "borderTop": "none",
-                        "color": "#71737e",
+                        "color": "#000",
                         "cursor": "pointer",
                         "overflow": "hidden",
                         "padding": "20px 10px",
@@ -1535,7 +1536,7 @@ exports[`Storyshots EditPage Default 1`] = `
                       }
                     }
                   >
-                    EditPage template
+                    Page template
                   </div>
                   <div
                     id="select-item-2"
@@ -1555,7 +1556,7 @@ exports[`Storyshots EditPage Default 1`] = `
                       }
                     }
                   >
-                    EditPage template 2
+                    Page template 2
                   </div>
                 </div>
               </div>
@@ -2475,11 +2476,11 @@ exports[`Storyshots EditPage Default 1`] = `
                 <span
                   className="c39"
                 >
-                  This EditPage is currently Private
+                  This Page is currently Private
                   <span
                     className="c40"
                   />
-                  Visit EditPage:
+                  Visit Page: 
                   <a
                     href="https://schemacms.com/page-name"
                   >

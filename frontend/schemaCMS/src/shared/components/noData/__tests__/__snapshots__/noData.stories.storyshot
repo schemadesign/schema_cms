@@ -113,6 +113,10 @@ exports[`Storyshots Shared Components|NoData custom 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -326,6 +330,10 @@ exports[`Storyshots Shared Components|NoData default 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 

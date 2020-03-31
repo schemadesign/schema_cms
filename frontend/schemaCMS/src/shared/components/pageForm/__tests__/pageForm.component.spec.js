@@ -67,6 +67,29 @@ describe('PageForm: Component', () => {
       wrapper.root.findByProps({ id: 'addBlock' }).props.onClick();
     });
 
-    expect(mockPushHistory).toHaveBeenCalledWith('url/add-block');
+    expect(mockPushHistory).toHaveBeenCalledWith('url/add-block', {
+      page: {
+        blocks: [
+          {
+            elements: [
+              { id: 1, name: 'name', type: 'plain_text', value: '' },
+              { id: 1, name: 'name', type: 'image', value: { fileName: 'fileName' } },
+              { id: 1, name: 'name', type: 'stack', value: [] },
+            ],
+            id: 1,
+            key: 1,
+            name: 'name',
+            type: 'type',
+          },
+        ],
+        description: 'description',
+        displayName: 'page-name',
+        isPublic: false,
+        keywords: 'keyword;',
+        name: 'page name',
+        section: 'sectionId',
+        template: 1,
+      },
+    });
   });
 });

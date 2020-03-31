@@ -87,6 +87,10 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -379,6 +383,10 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 
@@ -772,6 +780,10 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 

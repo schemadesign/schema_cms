@@ -15,13 +15,13 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
   const intl = useIntl();
   const { sectionId } = useParams();
   const projectId = project.id;
-  const title = <FormattedMessage {...messages.title} />;
+  const title = intl.formatMessage(messages.title);
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
 
   return (
     <Container>
-      <Helmet title={intl.formatMessage(messages.title)} />
+      <Helmet title={title} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <AddBlockForm
         fetchBlockTemplates={fetchBlockTemplates}

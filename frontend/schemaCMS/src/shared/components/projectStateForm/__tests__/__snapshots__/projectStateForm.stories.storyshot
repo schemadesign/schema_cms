@@ -109,6 +109,10 @@ exports[`Storyshots ProjectStateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c3 {
     margin-top: 0;
   }

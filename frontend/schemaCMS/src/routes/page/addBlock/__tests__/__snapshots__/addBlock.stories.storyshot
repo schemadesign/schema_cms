@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
+exports[`Storyshots Page|AddBlock Default 1`] = `
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -70,11 +70,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   word-break: break-word;
 }
 
-.c14 {
+.c21 {
   height: 155px;
 }
 
-.c16 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   width: 100%;
 }
 
-.c15 {
+.c22 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,9 +103,23 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c17 {
+.c24 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c12 {
+  position: relative;
+}
+
+.c14 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c15 {
+  position: relative;
 }
 
 .c8 {
@@ -127,10 +141,54 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 
 .c13 {
   position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
 }
 
-.c12 {
-  width: 100%;
+.c16 {
+  position: relative;
+}
+
+.c17 {
+  margin-top: 0;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+  font-size: 18px;
+}
+
+.c19 label {
+  margin-bottom: 2px;
+}
+
+.c20 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c18 {
+  margin-top: -20px;
 }
 
 @media (min-width:1050px) {
@@ -155,7 +213,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c23 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -168,19 +226,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-  .c15 {
+  .c22 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -198,15 +244,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-  .c17 {
+  .c24 {
     width: 240px;
   }
 }
@@ -216,11 +254,9 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
+  .c15 {
+    display: none;
+  }
 }
 
 @media (min-width:1050px) {
@@ -247,11 +283,9 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
+  .c17 {
+    margin-top: 0;
+  }
 }
 
 @media (min-width:1050px) {
@@ -275,10 +309,6 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:768px) {
-
-}
-
-@media (min-width:1050px) {
 
 }
 
@@ -310,10 +340,6 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 
 }
 
-@media (min-width:480px) {
-
-}
-
 @media (min-width:768px) {
 
 }
@@ -327,114 +353,6 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 }
 
 @media (min-width:768px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
-
-}
-
-@media (min-width:1050px) {
 
 }
 
@@ -492,7 +410,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              Users
+              Block
             </h2>
             <h1
               className="c2"
@@ -508,7 +426,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              You are adding  to 
+              Add
             </h1>
           </div>
         </div>
@@ -593,7 +511,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              Users
+              Block
             </h2>
             <h1
               className="c2"
@@ -609,7 +527,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                 }
               }
             >
-              You are adding  to 
+              Add
             </h1>
           </div>
         </div>
@@ -635,10 +553,76 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             >
               <a
                 href="/user/"
-                id="userNavBtn"
+                id="usersPageNavBtn"
                 onClick={[Function]}
               >
                 Users
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1"
+                id="projectDetailsNavBtn"
+                onClick={[Function]}
+              >
+                Project details
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/datasource"
+                id="dataSourceNavBtn"
+                onClick={[Function]}
+              >
+                Data Sources
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/state"
+                id="stateNavBtn"
+                onClick={[Function]}
+              >
+                States
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/user"
+                id="usersNavBtn"
+                onClick={[Function]}
+              >
+                Project Users
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/content"
+                id="contentNavBtn"
+                onClick={[Function]}
+              >
+                Content
+              </a>
+            </div>
+            <div
+              className="c5"
+            >
+              <a
+                href="/project/1/templates"
+                id="templatesNavBtn"
+                onClick={[Function]}
+              >
+                Templates
               </a>
             </div>
           </div>
@@ -739,67 +723,246 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </button>
       </div>
     </div>
-    <div
-      className="c8"
-    >
-      <div
-        className="c9"
-      >
-        <h2
-          className="c10"
-          id="desktopHeaderTitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
-          Users
-        </h2>
-        <h1
-          className="c11"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          You are adding  to 
-        </h1>
-      </div>
-      <div
-        className=""
-      />
-    </div>
     <form
-      className="c12"
       onSubmit={[Function]}
     >
       <div
-        className="c13"
+        className="c8"
       >
         <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
+          className="c9"
+        >
+          <h2
+            className="c10"
+            id="desktopHeaderTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
             }
-          }
+          >
+            Block
+          </h2>
+          <h1
+            className="c11"
+            id="desktopHeaderSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                <div
+                  style={
+                    Object {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "maxWidth": "100%",
+                      "paddingBottom": 0,
+                      "paddingRight": 40,
+                      "position": "static",
+                    }
+                  }
+                >
+                  <input
+                    id="name"
+                    name="name"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="Name"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "color": "#FFF",
+                        "fontFamily": "inherit",
+                        "fontSize": 24,
+                        "fontWeight": 600,
+                        "letterSpacing": "normal",
+                        "lineHeight": "24px",
+                        "maxWidth": "100%",
+                        "minWidth": 60,
+                        "outline": "none",
+                        "padding": 0,
+                        "width": 80,
+                      }
+                    }
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "color": "#FFF",
+                        "fontFamily": "inherit",
+                        "fontSize": 24,
+                        "fontWeight": 600,
+                        "letterSpacing": "normal",
+                        "lineHeight": "24px",
+                        "maxWidth": "100%",
+                        "minWidth": 60,
+                        "opacity": 0,
+                        "outline": "none",
+                        "padding": 0,
+                        "position": "fixed",
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 2,
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="c14"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </h1>
+        </div>
+        <div
+          className=""
+        />
+      </div>
+      <div
+        className="c15"
+      >
+        <div
+          className="c16"
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "maxWidth": "100%",
+                "paddingBottom": "30px",
+                "position": "relative",
+              }
+            }
+          >
+            <label
+              htmlFor="name"
+              style={
+                Object {
+                  "border": "none",
+                  "borderTop": "2px solid #2F2F36",
+                  "color": "#71737e",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
+                }
+              }
+            >
+              Block Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "border": "none",
+                  "color": "#FFF",
+                  "fontFamily": "inherit",
+                  "fontSize": "18px",
+                  "fontWeight": "inherit",
+                  "letterSpacing": "normal",
+                  "lineHeight": "24px",
+                  "maxWidth": "100%",
+                  "minWidth": 60,
+                  "outline": "none",
+                  "padding": 0,
+                }
+              }
+              type="text"
+              value=""
+            />
+            <div
+              style={
+                Object {
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 2,
+                }
+              }
+            >
+              <div
+                className="c17"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c18"
+      >
+        <div
+          className="c19"
         >
           <label
-            htmlFor="firstName"
+            id="fieldProjectStatusLabel"
             style={
               Object {
                 "border": "none",
@@ -813,251 +976,151 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               }
             }
           >
-            Name
+            Block Type
           </label>
           <input
-            disabled={true}
-            id="firstName"
-            name="firstName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
+            id="type"
+            name="type"
+            type="hidden"
+            value=""
           />
+          <div
+            className="c20"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15.117 18L9 12h12z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
           <div
             style={
               Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="c13"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="lastName"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
+                "color": "#FFF",
+                "display": "flex",
                 "width": "100%",
               }
             }
           >
-            Last name
-          </label>
-          <input
-            disabled={true}
-            id="lastName"
-            name="lastName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
+            <div
+              id="blockTypeSelect"
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "position": "relative",
+                  "width": "100%",
+                }
               }
-            }
-            type="text"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          />
+            >
+              <div
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "display": "flex",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  Please select a type
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "backgroundColor": "#1d1d20",
+                    "display": "none",
+                    "flexDirection": "column",
+                    "left": "0",
+                    "maxHeight": "184px",
+                    "overflowY": "hidden",
+                    "position": "absolute",
+                    "top": "calc(100% + 5px)",
+                    "width": "100%",
+                    "zIndex": 2,
+                  }
+                }
+              >
+                <div
+                  id="select-item-0"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "1px solid  #2F2F36",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  block name
+                </div>
+                <div
+                  id="select-item-1"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  block name 2
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div
-        className="c13"
+        className="c21"
       >
         <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="email"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Email
-          </label>
-          <input
-            disabled={true}
-            id="email"
-            name="email"
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="c13"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="role"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Role
-          </label>
-          <input
-            disabled={true}
-            id="role"
-            name="role"
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="c14"
-      >
-        <div
-          className="c15"
+          className="c22"
         >
           <div
-            className="c16"
+            className="c23"
           >
             <button
-              className="c17"
+              className="c24"
               disabled={false}
+              id="backBtn"
               onClick={[Function]}
               style={
                 Object {
@@ -1078,18 +1141,19 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               }
               type="button"
             >
-              Cancel
+              Back
             </button>
             <button
-              className="c17"
-              disabled={false}
+              className="c24"
+              disabled={true}
+              id="addBlock"
               style={
                 Object {
-                  "backgroundColor": "#FFF",
+                  "backgroundColor": "#1d1d20",
                   "border": "none",
                   "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
+                  "color": "#71737e",
+                  "cursor": "default",
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",

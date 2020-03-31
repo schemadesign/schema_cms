@@ -229,6 +229,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c20 {
     width: 240px;
   }

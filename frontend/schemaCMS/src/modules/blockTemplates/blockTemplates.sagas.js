@@ -1,5 +1,4 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { stringify } from 'query-string';
 
 import reportError from '../../shared/utils/reportError';
 import api from '../../shared/services/api';
@@ -11,10 +10,8 @@ function* fetchBlockTemplates({ payload: { projectId, raw } }) {
   try {
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.request());
 
-    const query = stringify({ raw });
-    const queryPath = query.length ? `?${query}` : '';
-
-    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}${queryPath}`);
+    const queryRaw = raw ? '?raw_list=true' : '';
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}${queryRaw}`);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.success(data.results));

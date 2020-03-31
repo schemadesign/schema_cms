@@ -323,6 +323,10 @@ exports[`Storyshots PageForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c16 {
     display: block;
   }
@@ -1055,7 +1059,7 @@ exports[`Storyshots PageForm Default 1`] = `
           id="template"
           name="template"
           type="hidden"
-          value="template"
+          value={1}
         />
         <div
           className="c12"
@@ -1116,7 +1120,7 @@ exports[`Storyshots PageForm Default 1`] = `
                   }
                 }
               >
-                Select Page Template
+                Page template
               </div>
             </div>
             <div
@@ -1163,9 +1167,10 @@ exports[`Storyshots PageForm Default 1`] = `
                 onMouseOver={[Function]}
                 style={
                   Object {
+                    "backgroundColor": "#FFF",
                     "border": "1px solid  #2F2F36",
                     "borderTop": "none",
-                    "color": "#71737e",
+                    "color": "#000",
                     "cursor": "pointer",
                     "overflow": "hidden",
                     "padding": "20px 10px",

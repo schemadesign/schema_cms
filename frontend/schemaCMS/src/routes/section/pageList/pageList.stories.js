@@ -12,7 +12,6 @@ export const defaultProps = {
   },
   section,
   userRole: ROLES.ADMIN,
-  fetchSection: Function.prototype,
   updateSection: Function.prototype,
   removeSection: Function.prototype,
 };

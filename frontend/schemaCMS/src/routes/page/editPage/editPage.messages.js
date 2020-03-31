@@ -3,35 +3,35 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'page.editPagetitle',
-    defaultMessage: 'Edit',
+    id: 'page.editPage.title',
+    defaultMessage: 'Page',
   },
   subtitle: {
-    id: 'page.editPage.title',
-    defaultMessage: 'EditPage',
+    id: 'page.editPage.subtitle',
+    defaultMessage: 'Edit',
   },
   create: {
-    id: 'page.editPagecreate',
+    id: 'page.editPage.create',
     defaultMessage: 'Save',
   },
   back: {
-    id: 'page.editPageback',
+    id: 'page.editPage.back',
     defaultMessage: 'Back',
   },
   cancelRemoval: {
-    id: 'page.editPagecancelRemoval',
+    id: 'page.editPage.cancelRemoval',
     defaultMessage: 'Cancel',
   },
   confirmRemoval: {
-    id: 'page.editPageconfirmRemoval',
+    id: 'page.editPage.confirmRemoval',
     defaultMessage: 'Confirm',
   },
   removeTitle: {
-    id: 'page.editPageremoveTitle',
+    id: 'page.editPage.removeTitle',
     defaultMessage: 'Are you sure you want to remove this page?',
   },
   namePageNameUniqueError: {
-    id: 'page.editPagenamePageNameUniqueError',
+    id: 'page.editPage.namePageNameUniqueError',
     defaultMessage: 'A page with this name already exists in section',
   },
 });

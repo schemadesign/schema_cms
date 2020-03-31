@@ -186,6 +186,10 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -723,6 +727,10 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 
@@ -1366,6 +1374,10 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 

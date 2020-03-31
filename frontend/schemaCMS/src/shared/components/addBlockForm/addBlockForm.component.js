@@ -145,5 +145,5 @@ AddBlockForm.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   projectId: PropTypes.number.isRequired,
   backUrl: PropTypes.string.isRequired,
-  title: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
 };

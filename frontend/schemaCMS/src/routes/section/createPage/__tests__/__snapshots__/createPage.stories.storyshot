@@ -70,11 +70,11 @@ exports[`Storyshots CreatePage Default 1`] = `
   word-break: break-word;
 }
 
-.c31 {
+.c30 {
   height: 155px;
 }
 
-.c33 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots CreatePage Default 1`] = `
   width: 100%;
 }
 
-.c32 {
+.c31 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots CreatePage Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c34 {
+.c33 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c25 {
+.c24 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c26 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,17 +130,17 @@ exports[`Storyshots CreatePage Default 1`] = `
   position: relative;
 }
 
-.c29 {
+.c28 {
   padding-right: 10px;
 }
 
-.c28 {
+.c27 {
   padding-left: 10px;
   padding-right: 40px;
   max-width: 100%;
 }
 
-.c27 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -156,12 +156,12 @@ exports[`Storyshots CreatePage Default 1`] = `
   max-width: 100%;
 }
 
-.c30 {
+.c29 {
   color: #71737e;
   min-width: 100%;
 }
 
-.c30 a {
+.c29 a {
   color: #FFF;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -304,7 +304,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c33 {
+  .c32 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -329,7 +329,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c32 {
+  .c31 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -347,15 +347,13 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c34 {
+  .c33 {
     width: 240px;
   }
 }
 
 @media (min-width:1050px) {
-  .c24 {
-    display: block;
-  }
+
 }
 
 @media (min-width:1050px) {
@@ -1579,65 +1577,18 @@ exports[`Storyshots CreatePage Default 1`] = `
           >
             <div
               className="c23"
-            >
-              <div
-                className="c24"
-              >
-                <button
-                  disabled={false}
-                  id="addBlock"
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#FFF",
-                      "border": "none",
-                      "borderRadius": "48px",
-                      "color": "#000",
-                      "cursor": "pointer",
-                      "display": "inline-block",
-                      "fill": "#FFF",
-                      "fontSize": "18px",
-                      "height": 40,
-                      "margin": "0",
-                      "minHeight": 40,
-                      "outline": "none",
-                      "padding": "0",
-                      "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                      "width": 40,
-                    }
-                  }
-                  type="button"
-                >
-                  <svg
-                    style={
-                      Object {
-                        "fill": "#000",
-                        "height": 40,
-                        "minHeight": 40,
-                        "shapeRendering": "crispEdges",
-                        "width": 40,
-                      }
-                    }
-                    viewBox="0 0 60 60"
-                  >
-                    <path
-                      d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+            />
           </div>
         </div>
         <span />
         <div
-          className="c25"
+          className="c24"
         >
           <div
-            className="c26"
+            className="c25"
           >
             <div
-              className="c27"
+              className="c26"
             >
               <div>
                 <input
@@ -1689,16 +1640,16 @@ exports[`Storyshots CreatePage Default 1`] = `
                 </label>
               </div>
               <div
-                className="c28"
+                className="c27"
               >
                 <label
-                  className="c29"
+                  className="c28"
                   htmlFor="isPublic"
                 >
                   Make it Public
                 </label>
                 <span
-                  className="c30"
+                  className="c29"
                 >
                   This Page is currently Private
                 </span>
@@ -1708,16 +1659,16 @@ exports[`Storyshots CreatePage Default 1`] = `
         </div>
       </div>
       <div
-        className="c31"
+        className="c30"
       >
         <div
-          className="c32"
+          className="c31"
         >
           <div
-            className="c33"
+            className="c32"
           >
             <button
-              className="c34"
+              className="c33"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1743,7 +1694,7 @@ exports[`Storyshots CreatePage Default 1`] = `
               Cancel
             </button>
             <button
-              className="c34"
+              className="c33"
               disabled={true}
               id="createPage"
               style={

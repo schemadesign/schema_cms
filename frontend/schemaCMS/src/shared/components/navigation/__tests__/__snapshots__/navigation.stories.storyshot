@@ -105,6 +105,10 @@ exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -347,6 +351,10 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 
@@ -733,6 +741,10 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c1 {
     position: fixed;
     width: calc(100% - 40px);
@@ -1088,6 +1100,10 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c0 {
     width: 240px;
   }
@@ -1364,6 +1380,10 @@ exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 

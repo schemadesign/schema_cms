@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageList: Component should render correctly 1`] = `
+exports[`AddBlock: Component should render correctly 1`] = `
 <div
   className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-AxiKw hckbFO"
+    className="sc-AxirZ eyDruq"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`PageList: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-AxhCb ccMvAG"
+          className="sc-AxiKw bOTXee"
         >
           <h2
-            className="sc-fzoLsD irsToz"
+            className="sc-fzozJi iZfRyZ"
             id="headerTitle"
             style={
               Object {
@@ -36,10 +36,10 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            Section
+            Block
           </h2>
           <h1
-            className="sc-fzpans kyzoMb"
+            className="sc-fzoLsD irsToz"
             id="headerSubtitle"
             style={
               Object {
@@ -52,7 +52,7 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            Edit
+            Add
           </h1>
         </div>
       </div>
@@ -120,13 +120,13 @@ exports[`PageList: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxhUy kMyssT"
+        className="sc-AxhCb ccMvAG"
       >
         <div
-          className="sc-AxhCb ccMvAG"
+          className="sc-AxiKw bOTXee"
         >
           <h2
-            className="sc-fzoLsD irsToz"
+            className="sc-fzozJi iZfRyZ"
             id="headerTitle"
             style={
               Object {
@@ -137,10 +137,10 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            Section
+            Block
           </h2>
           <h1
-            className="sc-fzpans kyzoMb"
+            className="sc-fzoLsD irsToz"
             id="headerSubtitle"
             style={
               Object {
@@ -153,18 +153,18 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            Edit
+            Add
           </h1>
         </div>
       </div>
       <div
-        className="sc-AxgMl hNaPXS"
+        className="sc-AxhUy hIBhsA"
       >
         <div
-          className="sc-AxheI WYDNX"
+          className="sc-AxgMl gYaYIN"
         >
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/user/"
@@ -186,10 +186,10 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
-              href="/project/projectId"
+              href="/project/1"
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
@@ -197,10 +197,10 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
-              href="/project/projectId/datasource"
+              href="/project/1/datasource"
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
@@ -208,10 +208,10 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
-              href="/project/projectId/state"
+              href="/project/1/state"
               id="stateNavBtn"
               onClick={[Function]}
             >
@@ -219,10 +219,10 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
-              href="/project/projectId/user"
+              href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}
             >
@@ -230,10 +230,10 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr eQomEu"
+            className="sc-AxheI dEHljS"
           >
             <a
-              href="/project/projectId/content"
+              href="/project/1/content"
               id="contentNavBtn"
               onClick={[Function]}
             >
@@ -241,10 +241,10 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
-              href="/project/projectId/templates"
+              href="/project/1/templates"
               id="templatesNavBtn"
               onClick={[Function]}
             >
@@ -253,10 +253,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxheI WYDNX"
+          className="sc-AxgMl gYaYIN"
         >
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-Axmtr fZHAUN"
+            className="sc-AxheI dEHljS"
           >
             <div
               onClick={[Function]}
@@ -277,10 +277,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxmLO kHkOwf"
+          className="sc-Axmtr gogzca"
         >
           <a
-            className="sc-fzozJi iSBTWi"
+            className="sc-AxmLO jAEDbH"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -288,7 +288,7 @@ exports[`PageList: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fzozJi iSBTWi"
+            className="sc-AxmLO jAEDbH"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -296,7 +296,7 @@ exports[`PageList: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fzozJi iSBTWi"
+            className="sc-AxmLO jAEDbH"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -349,89 +349,7 @@ exports[`PageList: Component should render correctly 1`] = `
       </button>
     </div>
   </div>
-  <div
-    className="sc-fznWqX clGFVO"
-    id="tabsContainer"
-  >
-    <div
-      className="sc-fzpjYC hUVQHn"
-    >
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId"
-          id="settingsTab"
-          onClick={[Function]}
-        >
-          Settings
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/datasource"
-          id="sourcesTab"
-          onClick={[Function]}
-        >
-          Sources
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/state"
-          id="stateTab"
-          onClick={[Function]}
-        >
-          States
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB cRgWyS"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/content"
-          id="contentTab"
-          onClick={[Function]}
-        >
-          Content
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/templates"
-          id="templatesTab"
-          onClick={[Function]}
-        >
-          Templates
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/user"
-          id="usersTab"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-    </div>
-  </div>
   <form
-    className="sc-AxirZ ktnnZK"
     onSubmit={[Function]}
   >
     <div
@@ -452,7 +370,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           }
         >
-          Section
+          Block
         </h2>
         <h1
           className="sc-fzoyTs ieHSUN"
@@ -469,10 +387,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqAbL jowhOw"
+            className="sc-fzqPZZ fAVjwr"
           >
             <div
-              className="sc-fznAgC fNREqd"
+              className="sc-fznMnq evJfZi"
             >
               <div
                 style={
@@ -510,7 +428,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     }
                   }
                   type="text"
-                  value="Section name"
+                  value=""
                 />
                 <div
                   style={
@@ -534,7 +452,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  Section name
+                  
                 </div>
                 <div
                   style={
@@ -548,7 +466,7 @@ exports[`PageList: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzqMAW dEKFvM"
+              className="sc-fzoxKX ezLPQC"
             >
               <svg
                 style={
@@ -571,59 +489,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
       <div
         className="sc-fzoNJl kUMlmZ"
-      >
-        <div
-          className="sc-fzoXzr kOFMDA"
-        >
-          <button
-            disabled={false}
-            id="createPage"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-            type="button"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": "60px",
-                  "shapeRendering": "crispEdges",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
+      />
     </div>
     <div
-      className="sc-fzoydu kVlKwf"
+      className="sc-fzoKki cixUKS"
     >
       <div
-        className="sc-fznAgC lpuPHD"
+        className="sc-fznMnq hkvZxA"
       >
         <div
           style={
@@ -651,7 +523,7 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            Name
+            Block Name
           </label>
           <input
             id="name"
@@ -675,7 +547,7 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
             type="text"
-            value="Section name"
+            value=""
           />
           <div
             style={
@@ -687,7 +559,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fznLPX iKVBKz"
+              className="sc-fzoant bcDcyh"
             >
               <svg
                 style={
@@ -710,346 +582,169 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoXWK cuvMPH"
+      className="sc-fzoXzr nZuIT"
     >
       <div
-        className="sc-fzpmMD dhryqH"
-      />
-      2 pages
-      <div
-        className="sc-fzpmMD dhryqH"
+        className="sc-fzqAbL hnGjch"
       >
-        <div
-          className="sc-fzoYHE fqvfWR"
-        >
-          <div
-            className="sc-fzoXzr kOFMDA"
-          >
-            <button
-              disabled={false}
-              id="createPageMobile"
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#FFF",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 40,
-                  "margin": "0",
-                  "minHeight": 40,
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 40,
-                }
-              }
-              type="button"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#000",
-                    "height": 40,
-                    "minHeight": 40,
-                    "shapeRendering": "crispEdges",
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <section
-      className="sc-fzqBkg jpEqiF"
-    >
-      <div
-        className="sc-fznxKY Rwgdn"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
+        <label
+          id="fieldProjectStatusLabel"
           style={
             Object {
-              "height": "100%",
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
               "width": "100%",
             }
           }
         >
-          <div
-            style={
-              Object {
-                "color": "#71737e",
-                "marginBottom": 14,
-              }
-            }
-          >
-            <ul
-              className="sc-fzqPZZ cRrxjq"
-            >
-              <li
-                className="sc-fzoxKX jBtseZ"
-                id="headerItem-0"
-              >
-                in 3 months
-              </li>
-              <li
-                className="sc-fzoxKX jBtseZ"
-                id="headerItem-1"
-              >
-                owner
-              </li>
-            </ul>
-          </div>
-          <h1
-            className="sc-fznMAR GXRsN"
-            id="page-1"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            page name
-          </h1>
-        </div>
+          Block Type
+        </label>
+        <input
+          id="type"
+          name="type"
+          type="hidden"
+          value=""
+        />
         <div
-          style={
-            Object {
-              "color": "#71737e",
-              "marginBottom": 4,
-              "marginTop": 10,
-            }
-          }
-        >
-          templateName
-        </div>
-      </div>
-      <div
-        className="sc-fznxKY Rwgdn"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": "#71737e",
-                "marginBottom": 14,
-              }
-            }
-          >
-            <ul
-              className="sc-fzqPZZ cRrxjq"
-            >
-              <li
-                className="sc-fzoxKX jBtseZ"
-                id="headerItem-0"
-              >
-                in 3 months
-              </li>
-              <li
-                className="sc-fzoxKX jBtseZ"
-                id="headerItem-1"
-              >
-                owner
-              </li>
-            </ul>
-          </div>
-          <h1
-            className="sc-fznMAR GXRsN"
-            id="page-2"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            page name 2
-          </h1>
-        </div>
-        <div
-          style={
-            Object {
-              "color": "#71737e",
-              "marginBottom": 4,
-              "marginTop": 10,
-            }
-          }
-        >
-          Blank
-        </div>
-      </div>
-    </section>
-    <div
-      className="sc-fzoKki derPXV"
-    >
-      <div
-        className="sc-fzoYkl cIaRKd"
-      >
-        <div
-          className="sc-fznMnq jQhSEV"
-        >
-          <div>
-            <input
-              id="isPublic"
-              onChange={[Function]}
-              style={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "overflow": "hidden",
-                  "position": "absolute",
-                  "top": 0,
-                  "visibility": "hidden",
-                }
-              }
-              type="checkbox"
-            />
-            <label
-              htmlFor="isPublic"
-            >
-              <div
-                style={
-                  Object {
-                    "background": "#2F2F36",
-                    "borderRadius": 20,
-                    "boxSizing": "border-box",
-                    "cursor": "pointer",
-                    "height": 24,
-                    "padding": 2,
-                    "transition": "background 200ms ease-in-out",
-                    "width": 44,
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "background": "#FFF",
-                      "borderRadius": "50%",
-                      "height": 20,
-                      "transform": "translateX(0)",
-                      "transition": "transform 200ms ease-in-out",
-                      "width": 20,
-                    }
-                  }
-                />
-              </div>
-            </label>
-          </div>
-          <div
-            className="sc-fznzOf fOqpKE"
-          >
-            <label
-              className="sc-fzpkJw fVmGWg"
-              htmlFor="isPublic"
-            >
-              Make it Public
-            </label>
-            <span
-              className="sc-fzomME fGRHjc"
-            >
-              This Section is currently Private
-              <span
-                className="sc-fzpkqZ blGzFM"
-              />
-              Visit Page: 
-              <a
-                href="https://schemacms.com/section-name"
-              >
-                https://schemacms.com/section-name
-              </a>
-            </span>
-          </div>
-        </div>
-        <div
-          className="sc-fzoant bSMjLQ"
-          id="removeSection"
-          onClick={[Function]}
+          className="sc-fzqMAW fVdWjd"
         >
           <svg
             style={
               Object {
                 "fill": "#FFF",
-                "height": 30,
-                "shapeRendering": "crispEdges",
-                "width": 30,
+                "height": "30px",
+                "width": "30px",
               }
             }
-            viewBox="0 0 60 60"
+            viewBox="0 0 30 30"
           >
             <path
-              d="M15 28h30v4H15z"
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
             />
           </svg>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#FFF",
+              "display": "flex",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            id="blockTypeSelect"
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Please select a type
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "WebkitOverflowScrolling": "touch",
+                  "backgroundColor": "#1d1d20",
+                  "display": "none",
+                  "flexDirection": "column",
+                  "left": "0",
+                  "maxHeight": "184px",
+                  "overflowY": "hidden",
+                  "position": "absolute",
+                  "top": "calc(100% + 5px)",
+                  "width": "100%",
+                  "zIndex": 2,
+                }
+              }
+            >
+              <div
+                id="select-item-0"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "1px solid  #2F2F36",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                block name
+              </div>
+              <div
+                id="select-item-1"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                block name 2
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div
-      className="sc-fzokOt dRXrKm"
+      className="sc-fznZeY frlFUt"
     >
       <div
-        className="sc-fzqNJr hOKUNa"
+        className="sc-fzqBZW zuZz"
       >
         <div
-          className="sc-fzqBZW bSVecd"
+          className="sc-fzokOt dkFbmQ"
         >
           <button
+            className="sc-fzqNJr ggxWJG"
             disabled={false}
             id="backBtn"
             onClick={[Function]}
@@ -1063,36 +758,21 @@ exports[`PageList: Component should render correctly 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "height": "60px",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
                 "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
               }
             }
             type="button"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "60px",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-              />
-            </svg>
+            Back
           </button>
           <button
-            className="sc-fzoyAV zReVo"
+            className="sc-fzqNJr ggxWJG"
             disabled={true}
-            id="updateSection"
+            id="addBlock"
             style={
               Object {
                 "backgroundColor": "#1d1d20",
@@ -1112,7 +792,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
             type="submit"
           >
-            Save
+            Add
           </button>
         </div>
       </div>

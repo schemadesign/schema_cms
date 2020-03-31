@@ -58,7 +58,7 @@ export const page = {
   [PAGE_DISPLAY_NAME]: 'page-name',
   [PAGE_KEYWORDS]: 'keyword;',
   [PAGE_DESCRIPTION]: 'description',
-  [PAGE_TEMPLATE]: 'template',
+  [PAGE_TEMPLATE]: 1,
   [PAGE_IS_PUBLIC]: false,
   [PAGE_BLOCKS]: [block],
   section: 'sectionId',

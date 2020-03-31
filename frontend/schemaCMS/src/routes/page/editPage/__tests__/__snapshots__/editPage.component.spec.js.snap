@@ -36,7 +36,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            Edit
+            Page
           </h2>
           <h1
             className="sc-fzoLsD irsToz"
@@ -52,7 +52,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            EditPage
+            Edit
           </h1>
         </div>
       </div>
@@ -137,7 +137,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            Edit
+            Page
           </h2>
           <h1
             className="sc-fzoLsD irsToz"
@@ -153,7 +153,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            EditPage
+            Edit
           </h1>
         </div>
       </div>
@@ -373,7 +373,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            Edit
+            Page
           </h2>
           <h1
             className="sc-fzoant fbpREY"
@@ -679,7 +679,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            SEO EditPage Description
+            SEO Page Description
           </label>
           <textarea
             id="description"
@@ -821,13 +821,13 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            EditPage Template
+            Page Template
           </label>
           <input
             id="template"
             name="template"
             type="hidden"
-            value="template"
+            value={1}
           />
           <div
             className="sc-fzqMAW fVdWjd"
@@ -888,7 +888,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  Select EditPage Template
+                  Page template
                 </div>
               </div>
               <div
@@ -935,9 +935,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                   onMouseOver={[Function]}
                   style={
                     Object {
+                      "backgroundColor": "#FFF",
                       "border": "1px solid  #2F2F36",
                       "borderTop": "none",
-                      "color": "#71737e",
+                      "color": "#000",
                       "cursor": "pointer",
                       "overflow": "hidden",
                       "padding": "20px 10px",
@@ -946,7 +947,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  EditPage template
+                  Page template
                 </div>
                 <div
                   id="select-item-2"
@@ -966,7 +967,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  EditPage template 2
+                  Page template 2
                 </div>
               </div>
             </div>
@@ -1886,11 +1887,11 @@ exports[`EditPage: Component should render correctly 1`] = `
               <span
                 className="sc-fzpmMD iArGi"
               >
-                This EditPage is currently Private
+                This Page is currently Private
                 <span
                   className="sc-fzqPZZ hUYPXp"
                 />
-                Visit EditPage:
+                Visit Page: 
                 <a
                   href="https://schemacms.com/page-name"
                 >
