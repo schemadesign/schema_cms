@@ -1,74 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProjectTabs: Component should render correctly 1`] = `
-<styled.div
+<div
+  className="sc-AxhCb ccMvAG"
   id="tabsContainer"
 >
-  <Tabs
-    tabs={
-      Array [
-        Object {
-          "active": true,
-          "content": <FormattedMessage
-            defaultMessage="Settings"
-            id="shared.components.projectTabs.settings"
-            values={Object {}}
-          />,
-          "id": "settings",
-          "to": "/project/1",
-        },
-        Object {
-          "active": false,
-          "content": <FormattedMessage
-            defaultMessage="Sources"
-            id="shared.components.projectTabs.sources"
-            values={Object {}}
-          />,
-          "id": "sources",
-          "to": "/project/1/datasource",
-        },
-        Object {
-          "active": false,
-          "content": <FormattedMessage
-            defaultMessage="States"
-            id="shared.components.projectTabs.state"
-            values={Object {}}
-          />,
-          "id": "state",
-          "to": "/project/1/state",
-        },
-        Object {
-          "active": false,
-          "content": <FormattedMessage
-            defaultMessage="Content"
-            id="shared.components.projectTabs.content"
-            values={Object {}}
-          />,
-          "id": "content",
-          "to": "/project/1/content",
-        },
-        Object {
-          "active": false,
-          "content": <FormattedMessage
-            defaultMessage="Templates"
-            id="shared.components.projectTabs.templates"
-            values={Object {}}
-          />,
-          "id": "templates",
-          "to": "/project/1/templates",
-        },
-        Object {
-          "active": false,
-          "content": <FormattedMessage
-            defaultMessage="Users"
-            id="shared.components.projectTabs.users"
-            values={Object {}}
-          />,
-          "id": "users",
-          "to": "/project/1/user",
-        },
-      ]
-    }
-  />
-</styled.div>
+  <div
+    className="sc-AxjAm eSjBJw"
+  >
+    <div
+      className="sc-AxirZ jwwwmF"
+    >
+      <a
+        className="sc-AxiKw caTYgO"
+        href="/project/1"
+        id="settingsTab"
+        onClick={[Function]}
+      >
+        Settings
+      </a>
+    </div>
+    <div
+      className="sc-AxirZ eteeke"
+    >
+      <a
+        className="sc-AxiKw caTYgO"
+        href="/project/1/datasource"
+        id="sourcesTab"
+        onClick={[Function]}
+      >
+        Sources
+      </a>
+    </div>
+    <div
+      className="sc-AxirZ eteeke"
+    >
+      <a
+        className="sc-AxiKw caTYgO"
+        href="/project/1/state"
+        id="stateTab"
+        onClick={[Function]}
+      >
+        States
+      </a>
+    </div>
+    <div
+      className="sc-AxirZ eteeke"
+    >
+      <a
+        className="sc-AxiKw caTYgO"
+        href="/project/1/content"
+        id="contentTab"
+        onClick={[Function]}
+      >
+        Content
+      </a>
+    </div>
+    <div
+      className="sc-AxirZ eteeke"
+    >
+      <a
+        className="sc-AxiKw caTYgO"
+        href="/project/1/templates"
+        id="templatesTab"
+        onClick={[Function]}
+      >
+        Templates
+      </a>
+    </div>
+    <div
+      className="sc-AxirZ eteeke"
+    >
+      <a
+        className="sc-AxiKw caTYgO"
+        href="/project/1/user"
+        id="usersTab"
+        onClick={[Function]}
+      >
+        Users
+      </a>
+    </div>
+  </div>
+</div>
 `;

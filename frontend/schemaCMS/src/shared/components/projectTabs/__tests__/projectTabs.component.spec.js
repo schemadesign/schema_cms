@@ -1,16 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import { ProjectTabs } from '../projectTabs.component';
 import { defaultProps } from '../projectTabs.stories';
+import { UserContext } from '../../../utils/userProvider';
+import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
+import { makeContextRenderer } from '../../../utils/testUtils';
 
 describe('ProjectTabs: Component', () => {
-  const component = props => <ProjectTabs {...defaultProps} {...props} />;
+  const render = props =>
+    makeContextRenderer(
+      <UserContext.Provider value={{ role: ROLES.ADMIN }}>
+        <ProjectTabs {...defaultProps} {...props} />
+      </UserContext.Provider>
+    );
 
-  const render = (props = {}) => shallow(component(props));
-
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render correctly', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

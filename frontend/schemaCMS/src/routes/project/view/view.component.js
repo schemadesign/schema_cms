@@ -168,7 +168,7 @@ export class View extends PureComponent {
       {
         header: messages.pages,
         value: meta.pages,
-        to: `/project/${projectId}/folder`,
+        to: `/project/${projectId}/content`,
         id: 'projectPages',
       },
       {
