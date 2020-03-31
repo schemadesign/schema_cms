@@ -11,157 +11,10 @@ exports[`App: Component should not render App when language is not set 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <ThemeProvider
-    theme={
+  <ContextProvider
+    value={
       Object {
-        "background": "#FFF",
-        "border": "#f0efef",
-        "button": Object {
-          "background": "#f0efef",
-          "text": "#000",
-        },
-        "buttonDisabled": Object {
-          "background": "#f0efef",
-          "text": "#a6a7aa",
-        },
-        "card": Object {
-          "background": "#f0efef",
-          "border": "#000",
-          "label": "#a6a7aa",
-          "text": "#000",
-        },
-        "checkbox": Object {
-          "border": "#2F2F36",
-          "text": "#000",
-        },
-        "colors": Object {
-          "black": "#000",
-          "coolGray": "#a6a7aa",
-          "darkGrey": "#1d1d20",
-          "lightGrey": "#71737e",
-          "mediumGray": "#2F2F36",
-          "red": "#f21e29",
-          "veryLightPink": "#f0efef",
-          "white": "#FFF",
-          "yellow": "#be8f00",
-        },
-        "dataGrid": Object {
-          "background": "#f0efef",
-          "text": "#a6a7aa",
-        },
-        "error": "#f21e29",
-        "header": Object {
-          "border": "#f0efef",
-          "text": "#1d1d20",
-        },
-        "hiddenBackground": "rgba(255, 255, 255, 0)",
-        "icon": Object {
-          "background": "#f0efef",
-          "fill": "#1d1d20",
-          "fillInverse": "#FFF",
-        },
-        "input": Object {
-          "text": "#000",
-        },
-        "inverseButton": Object {
-          "background": "#000",
-          "text": "#FFF",
-        },
-        "label": Object {
-          "border": "#f0efef",
-          "text": "#a6a7aa",
-        },
-        "menu": Object {
-          "background": "#FFF",
-          "text": "#000",
-        },
-        "providerContainer": Object {
-          "minHeight": "100vh",
-        },
-        "radioButton": Object {
-          "active": Object {
-            "background": "#1d1d20",
-            "fill": "#FFF",
-          },
-          "border": "#1d1d20",
-          "text": "#1d1d20",
-          "unActive": Object {
-            "background": "#f0efef",
-            "fill": "#FFF",
-          },
-        },
-        "secondaryText": "#a6a7aa",
-        "select": Object {
-          "background": "#f0efef",
-          "border": "#FFF",
-        },
-        "stepper": Object {
-          "active": "#1d1d20",
-          "background": "#f0efef",
-        },
-        "switch": Object {
-          "background": "#f0efef",
-          "backgroundActive": "#a6a7aa",
-          "circle": "#000",
-        },
-        "tab": Object {
-          "active": "#000",
-          "hover": "#000",
-          "normal": "#f0efef",
-        },
-        "table": Object {
-          "background": Object {
-            "body": "#FFF",
-            "header": "#f0efef",
-          },
-          "border": Object {
-            "body": "#f0efef",
-            "header": "#FFF",
-          },
-          "text": Object {
-            "body": "#000",
-            "header": "#a6a7aa",
-          },
-        },
-        "text": "#1d1d20",
-        "textArea": Object {
-          "text": "#000",
-        },
-        "textField": Object {
-          "error": "#f21e29",
-          "label": "#a6a7aa",
-        },
-        "typography": Object {
-          "h1": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 600,
-          },
-          "h2": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-          },
-          "h3": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 600,
-          },
-          "p": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 200,
-          },
-          "pre": Object {
-            "fontFamily": "Hack, monospace",
-            "fontSize": "18px",
-          },
-          "span": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          },
-        },
-        "warning": "#be8f00",
+        "role": "admin",
       }
     }
   >
@@ -319,36 +172,191 @@ exports[`App: Component should not render App when language is not set 1`] = `
         }
       }
     >
-      <styled.div>
-        <ScrollToTop />
-        <FormattedMessage
-          defaultMessage="Schema CMS"
-          id="app.pageTitle"
-          values={Object {}}
-        >
-          <Component />
-        </FormattedMessage>
-        <Memo(GlobalStyleComponent) />
-        <DesktopHeader
-          userRole="editor"
-        />
+      <ThemeProvider
+        theme={
+          Object {
+            "background": "#FFF",
+            "border": "#f0efef",
+            "button": Object {
+              "background": "#f0efef",
+              "text": "#000",
+            },
+            "buttonDisabled": Object {
+              "background": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "card": Object {
+              "background": "#f0efef",
+              "border": "#000",
+              "label": "#a6a7aa",
+              "text": "#000",
+            },
+            "checkbox": Object {
+              "border": "#2F2F36",
+              "text": "#000",
+            },
+            "colors": Object {
+              "black": "#000",
+              "coolGray": "#a6a7aa",
+              "darkGrey": "#1d1d20",
+              "lightGrey": "#71737e",
+              "mediumGray": "#2F2F36",
+              "red": "#f21e29",
+              "veryLightPink": "#f0efef",
+              "white": "#FFF",
+              "yellow": "#be8f00",
+            },
+            "dataGrid": Object {
+              "background": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "error": "#f21e29",
+            "header": Object {
+              "border": "#f0efef",
+              "text": "#1d1d20",
+            },
+            "hiddenBackground": "rgba(255, 255, 255, 0)",
+            "icon": Object {
+              "background": "#f0efef",
+              "fill": "#1d1d20",
+              "fillInverse": "#FFF",
+            },
+            "input": Object {
+              "text": "#000",
+            },
+            "inverseButton": Object {
+              "background": "#000",
+              "text": "#FFF",
+            },
+            "label": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "menu": Object {
+              "background": "#FFF",
+              "text": "#000",
+            },
+            "providerContainer": Object {
+              "minHeight": "100vh",
+            },
+            "radioButton": Object {
+              "active": Object {
+                "background": "#1d1d20",
+                "fill": "#FFF",
+              },
+              "border": "#1d1d20",
+              "text": "#1d1d20",
+              "unActive": Object {
+                "background": "#f0efef",
+                "fill": "#FFF",
+              },
+            },
+            "secondaryText": "#a6a7aa",
+            "select": Object {
+              "background": "#f0efef",
+              "border": "#FFF",
+            },
+            "stepper": Object {
+              "active": "#1d1d20",
+              "background": "#f0efef",
+            },
+            "switch": Object {
+              "background": "#f0efef",
+              "backgroundActive": "#a6a7aa",
+              "circle": "#000",
+            },
+            "tab": Object {
+              "active": "#000",
+              "hover": "#000",
+              "normal": "#f0efef",
+            },
+            "table": Object {
+              "background": Object {
+                "body": "#FFF",
+                "header": "#f0efef",
+              },
+              "border": Object {
+                "body": "#f0efef",
+                "header": "#FFF",
+              },
+              "text": Object {
+                "body": "#000",
+                "header": "#a6a7aa",
+              },
+            },
+            "text": "#1d1d20",
+            "textArea": Object {
+              "text": "#000",
+            },
+            "textField": Object {
+              "error": "#f21e29",
+              "label": "#a6a7aa",
+            },
+            "typography": Object {
+              "h1": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+              },
+              "h2": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+              },
+              "h3": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+              },
+              "p": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 200,
+              },
+              "pre": Object {
+                "fontFamily": "Hack, monospace",
+                "fontSize": "18px",
+              },
+              "span": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              },
+            },
+            "warning": "#be8f00",
+          }
+        }
+      >
         <styled.div>
-          <LoadingWrapper
-            error={null}
-            loading={true}
-            noData={false}
-            noDataContent={null}
+          <ScrollToTop />
+          <FormattedMessage
+            defaultMessage="Schema CMS"
+            id="app.pageTitle"
+            values={Object {}}
           >
-            <div
-              className="app__children"
+            <Component />
+          </FormattedMessage>
+          <Memo(GlobalStyleComponent) />
+          <DesktopHeader
+            userRole="editor"
+          />
+          <styled.div>
+            <LoadingWrapper
+              error={null}
+              loading={true}
+              noData={false}
+              noDataContent={null}
             >
-              Children
-            </div>
-          </LoadingWrapper>
+              <div
+                className="app__children"
+              >
+                Children
+              </div>
+            </LoadingWrapper>
+          </styled.div>
         </styled.div>
-      </styled.div>
+      </ThemeProvider>
     </ThemeProvider>
-  </ThemeProvider>
+  </ContextProvider>
 </IntlProvider>
 `;
 
@@ -363,157 +371,10 @@ exports[`App: Component should render App when language is set 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <ThemeProvider
-    theme={
+  <ContextProvider
+    value={
       Object {
-        "background": "#FFF",
-        "border": "#f0efef",
-        "button": Object {
-          "background": "#f0efef",
-          "text": "#000",
-        },
-        "buttonDisabled": Object {
-          "background": "#f0efef",
-          "text": "#a6a7aa",
-        },
-        "card": Object {
-          "background": "#f0efef",
-          "border": "#000",
-          "label": "#a6a7aa",
-          "text": "#000",
-        },
-        "checkbox": Object {
-          "border": "#2F2F36",
-          "text": "#000",
-        },
-        "colors": Object {
-          "black": "#000",
-          "coolGray": "#a6a7aa",
-          "darkGrey": "#1d1d20",
-          "lightGrey": "#71737e",
-          "mediumGray": "#2F2F36",
-          "red": "#f21e29",
-          "veryLightPink": "#f0efef",
-          "white": "#FFF",
-          "yellow": "#be8f00",
-        },
-        "dataGrid": Object {
-          "background": "#f0efef",
-          "text": "#a6a7aa",
-        },
-        "error": "#f21e29",
-        "header": Object {
-          "border": "#f0efef",
-          "text": "#1d1d20",
-        },
-        "hiddenBackground": "rgba(255, 255, 255, 0)",
-        "icon": Object {
-          "background": "#f0efef",
-          "fill": "#1d1d20",
-          "fillInverse": "#FFF",
-        },
-        "input": Object {
-          "text": "#000",
-        },
-        "inverseButton": Object {
-          "background": "#000",
-          "text": "#FFF",
-        },
-        "label": Object {
-          "border": "#f0efef",
-          "text": "#a6a7aa",
-        },
-        "menu": Object {
-          "background": "#FFF",
-          "text": "#000",
-        },
-        "providerContainer": Object {
-          "minHeight": "100vh",
-        },
-        "radioButton": Object {
-          "active": Object {
-            "background": "#1d1d20",
-            "fill": "#FFF",
-          },
-          "border": "#1d1d20",
-          "text": "#1d1d20",
-          "unActive": Object {
-            "background": "#f0efef",
-            "fill": "#FFF",
-          },
-        },
-        "secondaryText": "#a6a7aa",
-        "select": Object {
-          "background": "#f0efef",
-          "border": "#FFF",
-        },
-        "stepper": Object {
-          "active": "#1d1d20",
-          "background": "#f0efef",
-        },
-        "switch": Object {
-          "background": "#f0efef",
-          "backgroundActive": "#a6a7aa",
-          "circle": "#000",
-        },
-        "tab": Object {
-          "active": "#000",
-          "hover": "#000",
-          "normal": "#f0efef",
-        },
-        "table": Object {
-          "background": Object {
-            "body": "#FFF",
-            "header": "#f0efef",
-          },
-          "border": Object {
-            "body": "#f0efef",
-            "header": "#FFF",
-          },
-          "text": Object {
-            "body": "#000",
-            "header": "#a6a7aa",
-          },
-        },
-        "text": "#1d1d20",
-        "textArea": Object {
-          "text": "#000",
-        },
-        "textField": Object {
-          "error": "#f21e29",
-          "label": "#a6a7aa",
-        },
-        "typography": Object {
-          "h1": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 600,
-          },
-          "h2": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-          },
-          "h3": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 600,
-          },
-          "p": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 200,
-          },
-          "pre": Object {
-            "fontFamily": "Hack, monospace",
-            "fontSize": "18px",
-          },
-          "span": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          },
-        },
-        "warning": "#be8f00",
+        "role": "admin",
       }
     }
   >
@@ -671,35 +532,190 @@ exports[`App: Component should render App when language is set 1`] = `
         }
       }
     >
-      <styled.div>
-        <ScrollToTop />
-        <FormattedMessage
-          defaultMessage="Schema CMS"
-          id="app.pageTitle"
-          values={Object {}}
-        >
-          <Component />
-        </FormattedMessage>
-        <Memo(GlobalStyleComponent) />
-        <DesktopHeader
-          userRole="editor"
-        />
+      <ThemeProvider
+        theme={
+          Object {
+            "background": "#FFF",
+            "border": "#f0efef",
+            "button": Object {
+              "background": "#f0efef",
+              "text": "#000",
+            },
+            "buttonDisabled": Object {
+              "background": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "card": Object {
+              "background": "#f0efef",
+              "border": "#000",
+              "label": "#a6a7aa",
+              "text": "#000",
+            },
+            "checkbox": Object {
+              "border": "#2F2F36",
+              "text": "#000",
+            },
+            "colors": Object {
+              "black": "#000",
+              "coolGray": "#a6a7aa",
+              "darkGrey": "#1d1d20",
+              "lightGrey": "#71737e",
+              "mediumGray": "#2F2F36",
+              "red": "#f21e29",
+              "veryLightPink": "#f0efef",
+              "white": "#FFF",
+              "yellow": "#be8f00",
+            },
+            "dataGrid": Object {
+              "background": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "error": "#f21e29",
+            "header": Object {
+              "border": "#f0efef",
+              "text": "#1d1d20",
+            },
+            "hiddenBackground": "rgba(255, 255, 255, 0)",
+            "icon": Object {
+              "background": "#f0efef",
+              "fill": "#1d1d20",
+              "fillInverse": "#FFF",
+            },
+            "input": Object {
+              "text": "#000",
+            },
+            "inverseButton": Object {
+              "background": "#000",
+              "text": "#FFF",
+            },
+            "label": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "menu": Object {
+              "background": "#FFF",
+              "text": "#000",
+            },
+            "providerContainer": Object {
+              "minHeight": "100vh",
+            },
+            "radioButton": Object {
+              "active": Object {
+                "background": "#1d1d20",
+                "fill": "#FFF",
+              },
+              "border": "#1d1d20",
+              "text": "#1d1d20",
+              "unActive": Object {
+                "background": "#f0efef",
+                "fill": "#FFF",
+              },
+            },
+            "secondaryText": "#a6a7aa",
+            "select": Object {
+              "background": "#f0efef",
+              "border": "#FFF",
+            },
+            "stepper": Object {
+              "active": "#1d1d20",
+              "background": "#f0efef",
+            },
+            "switch": Object {
+              "background": "#f0efef",
+              "backgroundActive": "#a6a7aa",
+              "circle": "#000",
+            },
+            "tab": Object {
+              "active": "#000",
+              "hover": "#000",
+              "normal": "#f0efef",
+            },
+            "table": Object {
+              "background": Object {
+                "body": "#FFF",
+                "header": "#f0efef",
+              },
+              "border": Object {
+                "body": "#f0efef",
+                "header": "#FFF",
+              },
+              "text": Object {
+                "body": "#000",
+                "header": "#a6a7aa",
+              },
+            },
+            "text": "#1d1d20",
+            "textArea": Object {
+              "text": "#000",
+            },
+            "textField": Object {
+              "error": "#f21e29",
+              "label": "#a6a7aa",
+            },
+            "typography": Object {
+              "h1": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+              },
+              "h2": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+              },
+              "h3": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+              },
+              "p": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 200,
+              },
+              "pre": Object {
+                "fontFamily": "Hack, monospace",
+                "fontSize": "18px",
+              },
+              "span": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              },
+            },
+            "warning": "#be8f00",
+          }
+        }
+      >
         <styled.div>
-          <LoadingWrapper
-            error={null}
-            loading={true}
-            noData={false}
-            noDataContent={null}
+          <ScrollToTop />
+          <FormattedMessage
+            defaultMessage="Schema CMS"
+            id="app.pageTitle"
+            values={Object {}}
           >
-            <div
-              className="app__children"
+            <Component />
+          </FormattedMessage>
+          <Memo(GlobalStyleComponent) />
+          <DesktopHeader
+            userRole="editor"
+          />
+          <styled.div>
+            <LoadingWrapper
+              error={null}
+              loading={true}
+              noData={false}
+              noDataContent={null}
             >
-              Children
-            </div>
-          </LoadingWrapper>
+              <div
+                className="app__children"
+              >
+                Children
+              </div>
+            </LoadingWrapper>
+          </styled.div>
         </styled.div>
-      </styled.div>
+      </ThemeProvider>
     </ThemeProvider>
-  </ThemeProvider>
+  </ContextProvider>
 </IntlProvider>
 `;

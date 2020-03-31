@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 
 import { DEFAULT_LOCALE, LOCALES } from '../../i18n';
 import { App } from '../app.component';
+import { ROLES } from '../../modules/userProfile/userProfile.constants';
 
 describe('App: Component', () => {
   const children = <div className="app__children">Children</div>;
@@ -10,6 +11,7 @@ describe('App: Component', () => {
     startup: () => {},
     language: DEFAULT_LOCALE,
     match: { params: { lang: LOCALES.POLISH } },
+    user: { role: ROLES.ADMIN },
   };
 
   const component = props => (

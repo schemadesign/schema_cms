@@ -20,6 +20,6 @@ export default defineMessages({
   },
   namePageNameUniqueError: {
     id: 'section.createPage.namePageNameUniqueError',
-    defaultMessage: 'A page with this name already exists in section in project',
+    defaultMessage: 'A page with this name already exists in section',
   },
 });
