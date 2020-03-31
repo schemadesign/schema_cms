@@ -471,7 +471,7 @@ exports[`PageForm: Component should render correctly 1`] = `
         id="template"
         name="template"
         type="hidden"
-        value="template"
+        value={1}
       />
       <div
         className="sc-fznJRM gCguXs"
@@ -532,7 +532,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               }
             >
-              Select Page Template
+              Page template
             </div>
           </div>
           <div
@@ -579,9 +579,10 @@ exports[`PageForm: Component should render correctly 1`] = `
               onMouseOver={[Function]}
               style={
                 Object {
+                  "backgroundColor": "#FFF",
                   "border": "1px solid  #2F2F36",
                   "borderTop": "none",
-                  "color": "#71737e",
+                  "color": "#000",
                   "cursor": "pointer",
                   "overflow": "hidden",
                   "padding": "20px 10px",

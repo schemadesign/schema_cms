@@ -109,6 +109,10 @@ exports[`Storyshots Shared Components|Loading Default 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }

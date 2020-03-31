@@ -36,6 +36,11 @@ export const INITIAL_VALUES = {
   [PAGE_IS_PUBLIC]: false,
 };
 
+export const INITIAL_VALUES_ADD_BLOCK = {
+  [BLOCK_NAME]: '',
+  [BLOCK_TYPE]: '',
+};
+
 export const PAGE_SCHEMA = Yup.object().shape({
   [PAGE_NAME]: Yup.string()
     .trim()
@@ -52,6 +57,18 @@ export const PAGE_SCHEMA = Yup.object().shape({
     .trim()
     .max(1000, 'Page Keywords should have maximum 1000 characters'),
   [PAGE_TEMPLATE]: Yup.string()
+    .min(1, 'Required')
+    .required('Required'),
+});
+
+export const ADD_BLOCK_SCHEMA = Yup.object().shape({
+  [BLOCK_NAME]: Yup.string()
+    .trim()
+    .min(1, 'Block Name should have at least 1 characters')
+    .max(25, 'Block Name should have maximum 25 characters')
+    .required('Required'),
+  [BLOCK_TYPE]: Yup.string()
+    .trim()
     .min(1, 'Required')
     .required('Required'),
 });

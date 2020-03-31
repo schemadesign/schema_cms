@@ -10,6 +10,16 @@ jest.mock('react-router', () => ({
   ...jest.requireActual('react-router'),
   useHistory: () => ({
     push: mockPushHistory,
+    replace: Function.prototype,
+  }),
+  useLocation: () => ({
+    state: {
+      page: {
+        name: '',
+        blocks: [],
+        template: 0,
+      },
+    },
   }),
   useParams: () => ({
     sectionId: 'sectionId',
@@ -25,10 +35,8 @@ describe('CreatePage: Component', () => {
   });
 
   it('should fetch page templates and section', async () => {
-    jest.spyOn(defaultProps, 'fetchSection');
     jest.spyOn(defaultProps, 'fetchPageTemplates');
     await render();
-    expect(defaultProps.fetchSection).toHaveBeenCalledWith({ sectionId: 'sectionId' });
     expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
   });
 

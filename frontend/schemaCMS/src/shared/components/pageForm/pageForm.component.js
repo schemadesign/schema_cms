@@ -64,7 +64,6 @@ export const PageForm = ({
   setFieldValue,
   pageTemplates,
   setRemoveModalOpen,
-  setTemporaryPageBlocks,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -134,10 +133,18 @@ export const PageForm = ({
       </IconsContainer>
     </Subtitle>
   );
-  const addBlock = () => {
-    setTemporaryPageBlocks(values[PAGE_BLOCKS]);
-    history.push(`${url}/add-block`);
-  };
+  const allowAdd = pipe(
+    find(propEq('id', values[PAGE_TEMPLATE])),
+    propOr(values[PAGE_TEMPLATE] === 0, 'allowAdd')
+  )(pageTemplates);
+  const plusButton = allowAdd ? (
+    <PlusButton
+      customStyles={mobilePlusStyles}
+      id="addBlock"
+      onClick={() => history.push(`${url}/add-block`, { page: values })}
+      type="button"
+    />
+  ) : null;
   const removeBlock = index => {
     const removedElement = values[PAGE_BLOCKS][index];
     const newValues = { ...values };
@@ -216,17 +223,7 @@ export const PageForm = ({
       <CounterHeader
         copy={intl.formatMessage(messages.blocks)}
         count={blocksCount}
-        right={
-          <PlusContainer>
-            <PlusButton
-              customStyles={mobilePlusStyles}
-              id="addBlock"
-              onClick={addBlock}
-              type="button"
-              disabled={!restFormikProps.isValid && !!blocksCount}
-            />
-          </PlusContainer>
-        }
+        right={<PlusContainer>{plusButton}</PlusContainer>}
       />
       <Accordion>
         <DndProvider backend={MultiBackend} options={HTML5toTouch}>
@@ -307,7 +304,6 @@ PageForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
-  setTemporaryPageBlocks: PropTypes.func.isRequired,
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
   pageTemplates: PropTypes.array.isRequired,

@@ -109,6 +109,10 @@ exports[`Storyshots Shared Components|LoadingWrapper custom no data 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -314,6 +318,10 @@ exports[`Storyshots Shared Components|LoadingWrapper loaded 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 
@@ -713,6 +721,10 @@ exports[`Storyshots Shared Components|LoadingWrapper loading 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -1013,6 +1025,10 @@ exports[`Storyshots Shared Components|LoadingWrapper no data 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -1226,6 +1242,10 @@ exports[`Storyshots Shared Components|LoadingWrapper with error 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 

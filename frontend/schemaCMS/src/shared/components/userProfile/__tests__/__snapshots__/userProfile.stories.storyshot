@@ -109,6 +109,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -581,6 +585,10 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 

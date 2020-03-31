@@ -637,7 +637,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
               }
             }
             type="text"
-            value=""
           />
           <div
             style={
@@ -698,7 +697,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
                 "resize": "none",
               }
             }
-            value=""
           />
           <textarea
             aria-hidden={true}
@@ -787,7 +785,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
               }
             }
             type="text"
-            value=""
           />
           <div
             style={
@@ -827,7 +824,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             id="template"
             name="template"
             type="hidden"
-            value=""
+            value={0}
           />
           <div
             className="sc-fznWqX jfqZHP"
@@ -888,7 +885,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  Select Page Template
+                  Blank
                 </div>
               </div>
               <div
@@ -915,9 +912,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
                   onMouseOver={[Function]}
                   style={
                     Object {
+                      "backgroundColor": "#FFF",
                       "border": "1px solid  #2F2F36",
                       "borderTop": "1px solid  #2F2F36",
-                      "color": "#71737e",
+                      "color": "#000",
                       "cursor": "pointer",
                       "overflow": "hidden",
                       "padding": "20px 10px",
@@ -1047,7 +1045,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
           >
             <div>
               <input
-                checked={false}
                 id="isPublic"
                 onChange={[Function]}
                 style={

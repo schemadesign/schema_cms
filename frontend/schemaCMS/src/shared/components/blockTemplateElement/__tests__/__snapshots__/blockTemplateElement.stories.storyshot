@@ -154,6 +154,10 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c0 {
     max-width: calc(100% - 170px);
   }

@@ -118,6 +118,10 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -383,6 +387,10 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 
@@ -1044,6 +1052,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 

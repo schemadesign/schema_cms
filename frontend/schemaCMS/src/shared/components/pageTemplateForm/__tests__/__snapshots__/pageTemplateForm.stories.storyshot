@@ -279,6 +279,10 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c7 {
     display: block;
   }
@@ -1279,6 +1283,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
         >
           <div>
             <input
+              checked={true}
               id="isAvailable"
               onChange={[Function]}
               style={
@@ -1299,7 +1304,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
               <div
                 style={
                   Object {
-                    "background": "#2F2F36",
+                    "background": "#71737e",
                     "borderRadius": 20,
                     "boxSizing": "border-box",
                     "cursor": "pointer",
@@ -1316,7 +1321,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
                       "background": "#FFF",
                       "borderRadius": "50%",
                       "height": 20,
-                      "transform": "translateX(0)",
+                      "transform": "translateX(20px)",
                       "transition": "transform 200ms ease-in-out",
                       "width": 20,
                     }
@@ -1337,7 +1342,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
             <span
               className="c26"
             >
-              This Template is currently unavailable for Editors
+              This Template is currently available for Editors
             </span>
           </div>
         </div>
@@ -1368,6 +1373,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
       >
         <div>
           <input
+            checked={true}
             id="allowAdd"
             onChange={[Function]}
             style={
@@ -1388,7 +1394,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
             <div
               style={
                 Object {
-                  "background": "#2F2F36",
+                  "background": "#71737e",
                   "borderRadius": 20,
                   "boxSizing": "border-box",
                   "cursor": "pointer",
@@ -1405,7 +1411,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
                     "background": "#FFF",
                     "borderRadius": "50%",
                     "height": 20,
-                    "transform": "translateX(0)",
+                    "transform": "translateX(20px)",
                     "transition": "transform 200ms ease-in-out",
                     "width": 20,
                   }

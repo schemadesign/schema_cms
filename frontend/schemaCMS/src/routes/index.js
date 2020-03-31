@@ -71,7 +71,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={`${ROUTES.PAGE_TEMPLATE}/:pageTemplateId`} component={PageTemplate} />
 
-            <AuthRoute path={ROUTES.SECTION} component={Section} />
+            <AuthRoute path={`${ROUTES.SECTION}/:sectionId`} component={Section} />
 
             <AuthRoute path={`${ROUTES.PAGE}/:pageId`} component={Page} />
 

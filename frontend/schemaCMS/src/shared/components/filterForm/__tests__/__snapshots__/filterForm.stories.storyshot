@@ -139,6 +139,10 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c9 {
     width: 240px;
   }
@@ -1089,6 +1093,10 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
+}
+
+@media (min-width:1050px) {
+
 }
 
 @media (min-width:1050px) {

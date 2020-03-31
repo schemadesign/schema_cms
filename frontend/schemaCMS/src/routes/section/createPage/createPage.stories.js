@@ -11,8 +11,6 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   createPage: Function.prototype,
   fetchPageTemplates: Function.prototype,
-  setTemporaryPageBlocks: Function.prototype,
-  fetchSection: jest.fn().mockReturnValue(Promise.resolve({ project: 'projectId' })),
   project: { id: 'projectId' },
 };
 

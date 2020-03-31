@@ -267,6 +267,10 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
 }
 
 @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
   .c7 {
     display: block;
   }

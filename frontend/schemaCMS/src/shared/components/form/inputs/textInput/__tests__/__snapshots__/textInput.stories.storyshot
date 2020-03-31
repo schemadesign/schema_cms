@@ -105,6 +105,10 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 
 }
 
+@media (min-width:1050px) {
+
+}
+
 @media (min-width:768px) {
 
 }
@@ -378,6 +382,10 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 
@@ -769,6 +777,10 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
 }
 
 @media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
 
 }
 
