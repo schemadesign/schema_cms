@@ -118,6 +118,7 @@ class Common(Configuration):
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     )
     STORAGE_DIR = os.getenv("DJANGO_STORAGE_DIR", "/storage")
+    IMAGE_ALLOWED_EXT = [".png", ".jpg", ".jpeg", ".gif"]
 
     DEFAULT_FILE_STORAGE = os.getenv(
         "DJANGO_DEFAULT_FILE_STORAGE", "storages.backends.s3boto3.S3Boto3Storage"
