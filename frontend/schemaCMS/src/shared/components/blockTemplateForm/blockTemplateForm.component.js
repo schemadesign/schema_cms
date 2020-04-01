@@ -58,7 +58,7 @@ export const BlockTemplateForm = ({
   ...restFormikProps
 }) => {
   const intl = useIntl();
-  const blocksOptions = blockTemplates.map(({ name }) => ({ label: name, value: name }));
+  const blocksOptions = blockTemplates.map(({ name, id }) => ({ label: name, value: id }));
 
   const nameInput = (
     <Subtitle>
