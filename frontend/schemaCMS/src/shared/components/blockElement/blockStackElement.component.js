@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Accordion, Icons } from 'schemaUI';
 import { DndProvider } from 'react-dnd';
@@ -6,17 +6,15 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { asMutable } from 'seamless-immutable';
 import { useIntl } from 'react-intl';
-import { propEq, find } from 'ramda';
+import { propEq, find, append, remove } from 'ramda';
 
 import { Draggable } from '../draggable';
-import { IconWrapper, menuIconStyles } from '../pageTemplateForm/pageTemplateForm.styles';
 import { PageBlock } from '../pageBlock';
 import { CounterHeader } from '../counterHeader';
 import messages from './blockElement.messages';
-import { mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
-import { Container } from '../pageForm/pageForm.styles';
+import { IconWrapper, menuIconStyles, mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
 import { PlusButton } from '../navigation';
-import { BLOCK_ELEMENTS, BLOCK_ID, BLOCK_KEY } from '../../../modules/page/page.constants';
+import { BLOCK_ELEMENTS, BLOCK_ID, BLOCK_KEY, PAGE_DELETE_BLOCKS } from '../../../modules/page/page.constants';
 import { ELEMENT_VALUE } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 const { MenuIcon } = Icons;
@@ -44,7 +42,16 @@ export const BlockStackElement = ({
 
     setFieldValue(valuePath, mutableValues);
   };
-  const removeBlock = () => {};
+
+  const removeBlock = index => {
+    const removedElement = value[index];
+
+    if (removedElement.id) {
+      setFieldValue(`${valuePath}.${PAGE_DELETE_BLOCKS}`, append(removedElement.id, value[PAGE_DELETE_BLOCKS] || []));
+    }
+
+    setFieldValue(valuePath, remove(index, 1, value));
+  };
   const addBlock = () => {
     const { name, id, ...rest } = find(propEq('id', block), blockTemplates);
     const emptyBlock = { ...rest, name: '', key: Date.now(), type: name, block: id };
@@ -53,13 +60,13 @@ export const BlockStackElement = ({
   const blocksCount = value.length;
 
   return (
-    <Container>
+    <Fragment>
       <CounterHeader
         copy={intl.formatMessage(messages.blocks)}
         count={blocksCount}
         right={
           <PlusContainer>
-            <PlusButton customStyles={mobilePlusStyles} id="addBlock" onClick={addBlock} type="button" />
+            <PlusButton customStyles={mobilePlusStyles} id="addBlockStack" onClick={addBlock} type="button" />
           </PlusContainer>
         }
       />
@@ -101,7 +108,7 @@ export const BlockStackElement = ({
           ))}
         </DndProvider>
       </Accordion>
-    </Container>
+    </Fragment>
   );
 };
 

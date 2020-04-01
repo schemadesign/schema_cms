@@ -24,8 +24,10 @@ import {
   SwitchCopy,
   binStyles,
   BinIconContainer,
+  menuIconStyles,
+  IconWrapper,
 } from '../form/frequentComponents.styles';
-import { Container, IconWrapper, menuIconStyles } from './blockTemplateForm.styles';
+import { Container } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
 import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';

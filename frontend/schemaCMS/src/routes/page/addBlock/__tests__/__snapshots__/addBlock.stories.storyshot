@@ -1103,6 +1103,26 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
                 >
                   block name 2
                 </div>
+                <div
+                  id="select-item-2"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  block name 3
+                </div>
               </div>
             </div>
           </div>

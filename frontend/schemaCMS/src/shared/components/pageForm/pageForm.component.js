@@ -27,6 +27,8 @@ import {
   CopySeparator,
   mobilePlusStyles,
   PlusContainer,
+  IconWrapper,
+  menuIconStyles,
 } from '../form/frequentComponents.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageForm.messages';
@@ -48,7 +50,6 @@ import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.sty
 import { BackButton, NextButton, PlusButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
-import { IconWrapper, menuIconStyles } from '../pageTemplateForm/pageTemplateForm.styles';
 import { CounterHeader } from '../counterHeader';
 
 const { EditIcon, MinusIcon, MenuIcon } = Icons;

@@ -441,7 +441,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     <div
       className="sc-fzqBkg iunxDM"
     />
-    2 Block Templates
+    3 Block Templates
     <div
       className="sc-fzqBkg iunxDM"
     />
@@ -607,6 +607,86 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         0 Elements
+      </div>
+    </div>
+    <div
+      className="sc-fzoyTs dGguFW"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <ul
+            className="sc-fznMAR dwokPX"
+          >
+            <li
+              className="sc-fznWOq frgEXS"
+              id="headerItem-0"
+            >
+              in 3 months
+            </li>
+            <li
+              className="sc-fznWOq frgEXS"
+              id="headerItem-1"
+            >
+              owner 3
+            </li>
+          </ul>
+        </div>
+        <h1
+          className="sc-fzoNJl iNXeca"
+          id="blockTemplateTitle-3"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          block name 3
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        1 Element
       </div>
     </div>
   </section>

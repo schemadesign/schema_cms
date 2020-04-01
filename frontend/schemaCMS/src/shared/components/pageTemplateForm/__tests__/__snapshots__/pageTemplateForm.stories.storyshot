@@ -86,6 +86,15 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
   text-align: right;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
 .c0 {
   display: none;
 }
@@ -175,15 +184,6 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
 
 .c12 {
   width: 33%;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: move;
-  touch-action: none;
 }
 
 .c14 {
@@ -1261,6 +1261,26 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
                           }
                         >
                           block name 2
+                        </div>
+                        <div
+                          id="select-item-2"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          style={
+                            Object {
+                              "border": "1px solid  #2F2F36",
+                              "borderTop": "none",
+                              "color": "#71737e",
+                              "cursor": "pointer",
+                              "overflow": "hidden",
+                              "padding": "20px 10px",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                        >
+                          block name 3
                         </div>
                       </div>
                     </div>

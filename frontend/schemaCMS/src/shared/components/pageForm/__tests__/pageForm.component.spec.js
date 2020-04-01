@@ -74,7 +74,24 @@ describe('PageForm: Component', () => {
             elements: [
               { id: 1, name: 'name', type: 'plain_text', value: '' },
               { id: 1, name: 'name', type: 'image', value: { fileName: 'fileName' } },
-              { id: 1, name: 'name', type: 'stack', value: [] },
+              {
+                id: 1,
+                name: 'name',
+                params: { block: 3 },
+                type: 'stack',
+                value: [
+                  {
+                    elements: [
+                      { id: 1, name: 'name', type: 'plain_text', value: '' },
+                      { id: 1, name: 'name', type: 'image', value: expect.any(Object) },
+                    ],
+                    id: 1,
+                    key: 1,
+                    name: 'name',
+                    type: 'type',
+                  },
+                ],
+              },
             ],
             id: 1,
             key: 1,

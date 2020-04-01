@@ -2,7 +2,7 @@
 
 exports[`BlockTemplateForm: Component should render correctly 1`] = `
 <div
-  className="sc-fznyAO hdDwJr"
+  className="sc-fznKkj lbPMLS"
 >
   <div
     className="sc-fznZeY hQWuGe"
@@ -368,7 +368,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
             >
               <div>
                 <div
-                  className="sc-fznKkj kXftHx"
+                  className="sc-fznyAO bsMZNk"
                 >
                   <svg
                     style={
@@ -885,7 +885,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                           }
                         }
                       >
-                        block name 2
+                        Select Block Type
                       </div>
                     </div>
                     <div
@@ -932,10 +932,9 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                         onMouseOver={[Function]}
                         style={
                           Object {
-                            "backgroundColor": "#FFF",
                             "border": "1px solid  #2F2F36",
                             "borderTop": "none",
-                            "color": "#000",
+                            "color": "#71737e",
                             "cursor": "pointer",
                             "overflow": "hidden",
                             "padding": "20px 10px",
@@ -945,6 +944,26 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                         }
                       >
                         block name 2
+                      </div>
+                      <div
+                        id="select-item-2"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "border": "1px solid  #2F2F36",
+                            "borderTop": "none",
+                            "color": "#71737e",
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "padding": "20px 10px",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
+                        block name 3
                       </div>
                     </div>
                   </div>

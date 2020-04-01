@@ -390,7 +390,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             className="sc-fzqPZZ fAVjwr"
           >
             <div
-              className="sc-fznMnq evJfZi"
+              className="sc-fzoant inBwfy"
             >
               <div
                 style={
@@ -495,7 +495,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
       className="sc-fzoKki cixUKS"
     >
       <div
-        className="sc-fznMnq hkvZxA"
+        className="sc-fzoant jVHttY"
       >
         <div
           style={
@@ -559,7 +559,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoant bcDcyh"
+              className="sc-fzomME hvRnYb"
             >
               <svg
                 style={
@@ -585,7 +585,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
       className="sc-fzoXzr nZuIT"
     >
       <div
-        className="sc-fzqAbL hnGjch"
+        className="sc-fzqMAW raLGB"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -611,7 +611,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
           value=""
         />
         <div
-          className="sc-fzqMAW fVdWjd"
+          className="sc-fzoydu dTcOXM"
         >
           <svg
             style={
@@ -728,6 +728,26 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 }
               >
                 block name 2
+              </div>
+              <div
+                id="select-item-2"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                block name 3
               </div>
             </div>
           </div>

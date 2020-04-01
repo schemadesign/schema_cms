@@ -42,7 +42,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           className="sc-fznxsB cskFqV"
         >
           <div
-            className="sc-fzoyTs eNtMFT"
+            className="sc-fzoNJl cSFNZJ"
           >
             <div
               style={
@@ -147,7 +147,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     className="sc-fznWqX emhegs"
   >
     <div
-      className="sc-fzoyTs FXPlp"
+      className="sc-fzoNJl bXHBiD"
     >
       <div
         style={
@@ -211,7 +211,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoNJl fwCLEm"
+            className="sc-fzoXWK ZbvgW"
           >
             <svg
               style={
@@ -237,7 +237,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     className="sc-AxjAm ttlEb"
   >
     <div
-      className="sc-fzpmMD grxiKL"
+      className="sc-fznxKY ibgIGf"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -263,7 +263,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         value=""
       />
       <div
-        className="sc-fznxKY fFnHGj"
+        className="sc-fznMAR cSgHlH"
       >
         <svg
           style={
@@ -380,6 +380,26 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
               }
             >
               block name 2
+            </div>
+            <div
+              id="select-item-2"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "none",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name 3
             </div>
           </div>
         </div>

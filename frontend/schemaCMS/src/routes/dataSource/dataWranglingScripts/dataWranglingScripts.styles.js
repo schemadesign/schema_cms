@@ -95,7 +95,5 @@ export const checkBoxContainerStyles = {
   borderTop: 'none',
 };
 
-export const menuIconStyles = { width: 10, marginRight: 20 };
-
 export const selectedLabelStyles = { marginBottom: 20 };
 export const labelStyles = { margin: '40px 0 20px 0' };

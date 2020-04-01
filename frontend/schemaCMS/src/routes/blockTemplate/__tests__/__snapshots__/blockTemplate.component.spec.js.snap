@@ -353,7 +353,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fznMAR DQQGK"
+      className="sc-fznWOq iMvrRh"
     >
       <div
         className="sc-fzolEj eUdtaq"
@@ -719,7 +719,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 >
                   <div>
                     <div
-                      className="sc-fznWOq bBLgKi"
+                      className="sc-fznMAR fbmdwh"
                     >
                       <svg
                         style={
@@ -1237,7 +1237,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                               }
                             }
                           >
-                            block name 2
+                            Select Block Type
                           </div>
                         </div>
                         <div
@@ -1284,10 +1284,9 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                             onMouseOver={[Function]}
                             style={
                               Object {
-                                "backgroundColor": "#FFF",
                                 "border": "1px solid  #2F2F36",
                                 "borderTop": "none",
-                                "color": "#000",
+                                "color": "#71737e",
                                 "cursor": "pointer",
                                 "overflow": "hidden",
                                 "padding": "20px 10px",
@@ -1297,6 +1296,26 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                             }
                           >
                             block name 2
+                          </div>
+                          <div
+                            id="select-item-2"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            block name 3
                           </div>
                         </div>
                       </div>

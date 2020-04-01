@@ -353,7 +353,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fznMAR DQQGK"
+      className="sc-fznWOq iMvrRh"
     >
       <div
         className="sc-fzolEj eUdtaq"
@@ -719,7 +719,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 >
                   <div>
                     <div
-                      className="sc-fznWOq bBLgKi"
+                      className="sc-fznMAR fbmdwh"
                     >
                       <svg
                         style={
