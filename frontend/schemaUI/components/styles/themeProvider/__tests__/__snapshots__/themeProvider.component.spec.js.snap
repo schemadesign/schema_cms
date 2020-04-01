@@ -7,6 +7,10 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
       "theme": Object {
         "background": "#FFF",
         "border": "#f0efef",
+        "breadcrumbs": Object {
+          "link": "#1d1d20",
+          "separator": "#1d1d20",
+        },
         "button": Object {
           "background": "#f0efef",
           "text": "#000",
