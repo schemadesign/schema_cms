@@ -146,7 +146,7 @@ class PageBlockElement(Element):
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
 
-        if not self.page_id:
+        if not self.block_id:
             raise ValueError("Page is not set")
 
-        return os.path.join(base_path, f"pages/{self.page_id}/{filename}")
+        return os.path.join(base_path, f"blocks/{self.block_id}/{filename}")

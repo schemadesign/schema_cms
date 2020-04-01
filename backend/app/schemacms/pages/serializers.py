@@ -1,20 +1,87 @@
+import base64
+import mimetypes
+
 from django.db import transaction
+from django.db.models.fields.files import ImageFieldFile
+from django.core.files.base import ContentFile
+from django.core.validators import URLValidator
+from django.conf import settings
 from rest_framework import serializers
 
-from . import models
+from . import models, constants
 from ..utils.serializers import CustomModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
 class ElementValueField(serializers.Field):
+    type = None
+    text_type = [
+        constants.ElementType.PLAIN_TEXT,
+        constants.ElementType.RICH_TEXT,
+        constants.ElementType.CODE,
+    ]
+
+    default_error_messages = {
+        "incorrect_type": "Incorrect type. Expected a string, but go {input_type}",
+        "file_upload_fail": "File decoding problem",
+        "invalid_file": "Invalid file. Expected a .png, .jpg , but go {input_type}",
+    }
+
+    def to_representation(self, value):
+        if isinstance(value, ImageFieldFile):
+            return {"file": value.url, "file_name": self.get_file_name(value.name)}
+        return value
+
+    def get_value(self, dictionary):
+        self.type = dictionary.get("type")
+        return super().get_value(dictionary)
+
     def get_attribute(self, instance):
         return getattr(instance, instance.type)
 
     def to_internal_value(self, data):
+        if self.type == constants.ElementType.IMAGE:
+            data = self.validate_image_type(data)
+
+        if self.type in self.text_type:
+            self.validate_text_types(data)
+
+        if self.type == constants.ElementType.CONNECTION:
+            self.validate_url_type(data)
+
         return data
 
-    def to_representation(self, value):
-        return value
+    @staticmethod
+    def validate_url_type(data):
+        validator = URLValidator()
+        validator(str(data))
+
+    def validate_text_types(self, data):
+        if not isinstance(data, str):
+            self.fail("incorrect_type", input_type=type(data).__name__)
+
+    def validate_image_type(self, data):
+        file = data["file"]
+        file_name = data["file_name"]
+        if "data:" in file and ";base64," in file:
+            header, file = file.split(";base64,")
+
+        try:
+            decoded_file = base64.b64decode(file)
+        except TypeError:
+            self.fail("file_upload_fail")
+
+        mime_type = mimetypes.MimeTypes().guess_type(file_name)[0]
+        ext = mimetypes.guess_extension(mime_type)
+
+        if ext not in settings.IMAGE_ALLOWED_EXT:
+            self.fail("invalid_file", input_type=ext)
+
+        return ContentFile(decoded_file, name=f"{file_name}")
+
+    @staticmethod
+    def get_file_name(file):
+        return file.split("/")[-1]
 
 
 class BaseElementSerializer(serializers.ModelSerializer):
