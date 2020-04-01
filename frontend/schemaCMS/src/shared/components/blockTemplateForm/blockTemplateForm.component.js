@@ -33,7 +33,6 @@ import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
-  BLOCK_TEMPLATES_ALLOW_ADD,
   BLOCK_TEMPLATES_DELETE_ELEMENTS,
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
@@ -208,14 +207,6 @@ export const BlockTemplateForm = ({
             </SwitchCopy>
           </SwitchContent>
           {binIcon}
-        </SwitchContainer>
-        <SwitchContainer>
-          <Switch value={values[BLOCK_TEMPLATES_ALLOW_ADD]} id={BLOCK_TEMPLATES_ALLOW_ADD} onChange={handleChange} />
-          <SwitchCopy>
-            <SwitchLabel htmlFor={BLOCK_TEMPLATES_ALLOW_ADD}>
-              <FormattedMessage {...messages[BLOCK_TEMPLATES_ALLOW_ADD]} />
-            </SwitchLabel>
-          </SwitchCopy>
         </SwitchContainer>
       </Switches>
     </Container>
