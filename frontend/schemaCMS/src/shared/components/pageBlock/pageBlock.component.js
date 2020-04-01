@@ -8,14 +8,23 @@ import { Header, IconsContainer, iconStyles, Type, getCustomIconStyles } from '.
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageBlock.messages';
 import { BlockElement } from '../blockElement';
-import { PAGE_BLOCKS, BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
+import { BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
 
 const { EditIcon, MinusIcon } = Icons;
 
-export const PageBlock = ({ index, block, draggableIcon, handleChange, removeBlock, ...restFormikProps }) => {
+export const PageBlock = ({
+  index,
+  block,
+  valuePath,
+  draggableIcon,
+  handleChange,
+  removeBlock,
+  blockTemplates,
+  ...restFormikProps
+}) => {
   const intl = useIntl();
   const theme = useTheme();
-  const blockPath = `${PAGE_BLOCKS}.${index}`;
+  const blockPath = `${valuePath}.${index}`;
   const blockName = `${blockPath}.${BLOCK_NAME}`;
 
   return (
@@ -47,6 +56,7 @@ export const PageBlock = ({ index, block, draggableIcon, handleChange, removeBlo
               index={index}
               blockPath={blockPath}
               element={element}
+              blockTemplates={blockTemplates}
               handleChange={handleChange}
               {...restFormikProps}
             />
@@ -63,4 +73,6 @@ PageBlock.propTypes = {
   draggableIcon: PropTypes.element.isRequired,
   removeBlock: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
+  blockTemplates: PropTypes.array.isRequired,
+  valuePath: PropTypes.string.isRequired,
 };

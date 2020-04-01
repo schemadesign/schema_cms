@@ -1,8 +1,15 @@
 import {
+  addIndex,
+  always,
+  assoc,
   complement,
   either,
+  equals,
+  evolve,
   filter,
   forEach,
+  identity,
+  ifElse,
   includes,
   is,
   isEmpty,
@@ -21,8 +28,13 @@ import debounce from 'lodash.debounce';
 import { sizes } from '../../theme/media';
 import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
+import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TEMPLATE } from '../../modules/page/page.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
+export const addOrder = (item, index) => assoc('order', index, item);
+export const mapIndexed = addIndex(map);
+export const mapAndAddOrder = mapIndexed(addOrder);
+export const ifArray = (fn, otherwise) => ifElse(is(Array), fn, otherwise);
 
 export const errorMessageParser = ({ errors, messages = {}, formatMessage = () => {} }) => {
   if (is(Array, errors)) {
@@ -103,3 +115,10 @@ export const isProcessingData = ({ metaData, jobsState }) => {
 
   return { isProcessing: metaProcessing || jobProcessing, metaProcessing, jobProcessing };
 };
+
+export const preparePageData = evolve({
+  [PAGE_TEMPLATE]: ifElse(equals(0), always(null), identity),
+  [PAGE_BLOCKS]: mapIndexed((block, index) =>
+    evolve({ order: index, [BLOCK_ELEMENTS]: map(evolve({ value: ifArray(mapAndAddOrder, identity) })) })(block)
+  ),
+});

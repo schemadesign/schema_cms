@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'shared.components.blockElement.imagePlaceholder',
     defaultMessage: 'Select image or Drag and Drop it here',
   },
+  blocks: {
+    id: 'shared.components.blockElement.blocks',
+    defaultMessage: 'Block',
+  },
 });

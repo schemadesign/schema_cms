@@ -63,6 +63,7 @@ export const PageForm = ({
   setValues,
   setFieldValue,
   pageTemplates,
+  blockTemplates,
   setRemoveModalOpen,
   ...restFormikProps
 }) => {
@@ -249,10 +250,12 @@ export const PageForm = ({
                   <PageBlock
                     index={index}
                     block={block}
+                    valuePath={PAGE_BLOCKS}
                     draggableIcon={draggableIcon}
                     removeBlock={removeBlock}
                     handleChange={handleChange}
                     setFieldValue={setFieldValue}
+                    blockTemplates={blockTemplates}
                     {...restFormikProps}
                   />
                 );
@@ -307,6 +310,7 @@ PageForm.propTypes = {
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
   pageTemplates: PropTypes.array.isRequired,
+  blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,
   displayName: PropTypes.string,
 };
