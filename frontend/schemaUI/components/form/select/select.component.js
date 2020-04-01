@@ -12,11 +12,15 @@ export class SelectComponent extends PureComponent {
     options: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
+    open: PropTypes.bool,
+    setOpen: PropTypes.func,
   };
 
   static defaultProps = {
     native: false,
     placeholder: '',
+    setOpen: null,
+    open: null,
   };
 
   state = {
@@ -24,27 +28,35 @@ export class SelectComponent extends PureComponent {
     hoverIndex: null,
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props.setOpen && this.props.open && prevProps.open !== this.props.open) {
+      document.addEventListener('click', this.onClickDocument);
+    }
+  }
+
+  setOpenFunction = isMenuOpen => (this.props.setOpen ? this.props.setOpen(isMenuOpen) : this.setState({ isMenuOpen }));
+
   handleOptionClick = ({ target: { value } }) => {
     const selectedOption = this.props.options.find(option => option.value === value);
     this.props.onSelect(selectedOption);
 
-    this.setState({
-      isMenuOpen: false,
-    });
+    this.setOpenFunction(false);
   };
 
   onClickDocument = () => {
-    this.setState({ isMenuOpen: false });
+    this.setOpenFunction(false);
+
     document.removeEventListener('click', this.onClickDocument);
   };
 
   toggleMenu = () => {
     const isMenuOpen = !this.state.isMenuOpen;
+
     if (isMenuOpen) {
       document.addEventListener('click', this.onClickDocument);
     }
 
-    this.setState({ isMenuOpen });
+    this.setOpenFunction(isMenuOpen);
   };
 
   renderSelectedOption = ({ selectedOptionStyles }, label) => <div style={selectedOptionStyles}>{label}</div>;
@@ -55,6 +67,7 @@ export class SelectComponent extends PureComponent {
         value: value,
       },
     };
+
     const actionStyles = selected || index === this.state.hoverIndex ? hoverStyles : {};
 
     return (
@@ -90,19 +103,20 @@ export class SelectComponent extends PureComponent {
   };
 
   renderCustomSelect = ({ selectWrapperStyles, selectedOptionsStyles, optionListStyles, ...restStyles }, props) => {
-    const { id } = props;
+    const { id, setOpen } = props;
     const label = pipe(
       prop('options'),
       find(({ selected }) => selected),
       propOr(this.props.placeholder, 'label')
     )(this.props);
+    const isMenuOpen = setOpen ? this.props.open : !this.state.isMenuOpen;
 
     return (
       <div id={id} style={selectWrapperStyles}>
-        <div style={selectedOptionsStyles} onClick={this.toggleMenu}>
+        <div style={selectedOptionsStyles} onClick={setOpen ? () => {} : this.toggleMenu}>
           {this.renderSelectedOption(restStyles, label)}
         </div>
-        <div style={optionListStyles(this.state.isMenuOpen)}>
+        <div style={optionListStyles(isMenuOpen)}>
           {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles))}
         </div>
       </div>
