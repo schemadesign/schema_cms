@@ -16,6 +16,7 @@ import reportError from '../shared/utils/reportError';
 import { LoadingWrapper } from '../shared/components/loadingWrapper';
 import { ScrollToTop } from '../shared/components/scrollToTop';
 import { ROLES } from '../modules/userProfile/userProfile.constants';
+import { UserContext } from '../shared/utils/userProvider';
 
 Modal.setAppElement('#app');
 
@@ -23,6 +24,7 @@ export class App extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     match: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired,
     startup: PropTypes.func.isRequired,
     userRole: PropTypes.string,
     userId: PropTypes.string,
@@ -53,28 +55,30 @@ export class App extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { userRole, userId, projectTitle } = this.props;
+    const { userRole, user, userId, projectTitle } = this.props;
     const theme = userRole === ROLES.ADMIN ? Theme.dark : Theme.light;
 
     return (
       <IntlProvider key={DEFAULT_LOCALE} locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
-        <ThemeUIProvider theme={theme}>
-          <ThemeProvider theme={theme}>
-            <Container>
-              <ScrollToTop />
-              <FormattedMessage {...messages.pageTitle}>
-                {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
-              </FormattedMessage>
-              <GlobalStyle />
-              <DesktopHeader userRole={userRole} userId={userId} title={projectTitle} />
-              <Content>
-                <LoadingWrapper loading={loading} error={error}>
-                  {this.renderContent()}
-                </LoadingWrapper>
-              </Content>
-            </Container>
-          </ThemeProvider>
-        </ThemeUIProvider>
+        <UserContext.Provider value={user}>
+          <ThemeUIProvider theme={theme}>
+            <ThemeProvider theme={theme}>
+              <Container>
+                <ScrollToTop />
+                <FormattedMessage {...messages.pageTitle}>
+                  {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
+                </FormattedMessage>
+                <GlobalStyle />
+                <DesktopHeader userRole={userRole} userId={userId} title={projectTitle} />
+                <Content>
+                  <LoadingWrapper loading={loading} error={error}>
+                    {this.renderContent()}
+                  </LoadingWrapper>
+                </Content>
+              </Container>
+            </ThemeProvider>
+          </ThemeUIProvider>
+        </UserContext.Provider>
       </IntlProvider>
     );
   }

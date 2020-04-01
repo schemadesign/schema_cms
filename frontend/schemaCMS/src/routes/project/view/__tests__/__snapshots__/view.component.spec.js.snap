@@ -36,7 +36,7 @@ exports[`View: Component should render content correctly 1`] = `
               "id": "project.view.pages",
             },
             "id": "projectPages",
-            "to": "/project/100/folder",
+            "to": "/project/100/content",
             "value": 1,
           },
           Object {
@@ -594,7 +594,7 @@ exports[`View: Component should render correctly 1`] = `
                   "id": "project.view.pages",
                 },
                 "id": "projectPages",
-                "to": "/project/100/folder",
+                "to": "/project/100/content",
                 "value": 1,
               },
               Object {

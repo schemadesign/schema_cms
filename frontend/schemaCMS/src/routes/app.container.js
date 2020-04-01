@@ -7,11 +7,12 @@ import { compose } from 'ramda';
 
 import { App } from './app.component';
 import { StartupActions } from '../modules/startup';
-import { selectUserRole, selectUserId } from '../modules/userProfile';
+import { selectUserData, selectUserId, selectUserRole } from '../modules/userProfile';
 import { selectProjectTitle } from '../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
+  user: selectUserData,
   userId: selectUserId,
   projectTitle: selectProjectTitle,
 });
