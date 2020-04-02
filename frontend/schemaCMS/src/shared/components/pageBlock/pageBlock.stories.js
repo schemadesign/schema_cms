@@ -13,7 +13,7 @@ export const defaultProps = {
   removeBlock: Function.prototype,
   handleChange: Function.prototype,
   blockTemplates,
-  valuePath: 'valuePath',
+  formikFieldPath: 'formikFieldPath',
 };
 
 storiesOf('PageBlock', module)

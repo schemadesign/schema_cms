@@ -5,13 +5,10 @@ import { pathOr } from 'ramda';
 import { useIntl } from 'react-intl';
 
 import messages from './blockElement.messages';
-import { ELEMENT_VALUE } from '../../../modules/blockTemplates/blockTemplates.constants';
-import { BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
 import { Uploader } from '../form/uploader';
 import { getEventFiles } from '../../utils/helpers';
 
-export const ImageElement = ({ blockPath, index, element, setFieldValue, ...restFormikProps }) => {
-  const name = `${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`;
+export const ImageElement = ({ formikFieldPath: name, element, setFieldValue, ...restFormikProps }) => {
   const intl = useIntl();
   const handleUploadChange = data => {
     const uploadFile = getEventFiles(data);
@@ -48,8 +45,7 @@ export const ImageElement = ({ blockPath, index, element, setFieldValue, ...rest
 };
 ImageElement.propTypes = {
   element: PropTypes.object.isRequired,
-  blockPath: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
+  formikFieldPath: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
 };

@@ -14,8 +14,7 @@ import { CounterHeader } from '../counterHeader';
 import messages from './blockElement.messages';
 import { IconWrapper, menuIconStyles, mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
 import { PlusButton } from '../navigation';
-import { BLOCK_ELEMENTS, BLOCK_ID, BLOCK_KEY, PAGE_DELETE_BLOCKS } from '../../../modules/page/page.constants';
-import { ELEMENT_VALUE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { BLOCK_ID, BLOCK_KEY, PAGE_DELETE_BLOCKS } from '../../../modules/page/page.constants';
 
 const { MenuIcon } = Icons;
 
@@ -27,12 +26,10 @@ export const BlockStackElement = ({
   blockTemplates,
   setFieldValue,
   handleChange,
-  blockPath,
-  index,
+  formikFieldPath,
   ...restFormikProps
 }) => {
   const intl = useIntl();
-  const valuePath = `${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`;
   const handleMove = (dragIndex, hoverIndex) => {
     const dragCard = value[dragIndex];
     const mutableValues = asMutable(value);
@@ -40,22 +37,25 @@ export const BlockStackElement = ({
     mutableValues.splice(dragIndex, 1);
     mutableValues.splice(hoverIndex, 0, dragCard);
 
-    setFieldValue(valuePath, mutableValues);
+    setFieldValue(formikFieldPath, mutableValues);
   };
 
   const removeBlock = index => {
     const removedElement = value[index];
 
     if (removedElement.id) {
-      setFieldValue(`${valuePath}.${PAGE_DELETE_BLOCKS}`, append(removedElement.id, value[PAGE_DELETE_BLOCKS] || []));
+      setFieldValue(
+        `${formikFieldPath}.${PAGE_DELETE_BLOCKS}`,
+        append(removedElement.id, value[PAGE_DELETE_BLOCKS] || [])
+      );
     }
 
-    setFieldValue(valuePath, remove(index, 1, value));
+    setFieldValue(formikFieldPath, remove(index, 1, value));
   };
   const addBlock = () => {
     const { name, id, ...rest } = find(propEq('id', block), blockTemplates);
     const emptyBlock = { ...rest, name: '', key: Date.now(), type: name, block: id };
-    setFieldValue(valuePath, value.concat(emptyBlock));
+    setFieldValue(formikFieldPath, value.concat(emptyBlock));
   };
   const blocksCount = value.length;
 
@@ -94,7 +94,7 @@ export const BlockStackElement = ({
                   <PageBlock
                     index={index}
                     block={block}
-                    valuePath={valuePath}
+                    formikFieldPath={formikFieldPath}
                     draggableIcon={draggableIcon}
                     removeBlock={removeBlock}
                     handleChange={handleChange}
@@ -117,6 +117,5 @@ BlockStackElement.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
-  blockPath: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
+  formikFieldPath: PropTypes.string.isRequired,
 };

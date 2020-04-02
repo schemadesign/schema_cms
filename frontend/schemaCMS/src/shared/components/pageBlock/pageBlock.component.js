@@ -15,7 +15,7 @@ const { EditIcon, MinusIcon } = Icons;
 export const PageBlock = ({
   index,
   block,
-  valuePath,
+  formikFieldPath,
   draggableIcon,
   handleChange,
   removeBlock,
@@ -24,7 +24,7 @@ export const PageBlock = ({
 }) => {
   const intl = useIntl();
   const theme = useTheme();
-  const blockPath = `${valuePath}.${index}`;
+  const blockPath = `${formikFieldPath}.${index}`;
   const blockName = `${blockPath}.${BLOCK_NAME}`;
 
   return (
@@ -74,5 +74,5 @@ PageBlock.propTypes = {
   removeBlock: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   blockTemplates: PropTypes.array.isRequired,
-  valuePath: PropTypes.string.isRequired,
+  formikFieldPath: PropTypes.string.isRequired,
 };

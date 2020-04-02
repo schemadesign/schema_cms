@@ -15,7 +15,7 @@ describe('PageBlock: Component', () => {
   it('should remove block', async () => {
     jest.spyOn(defaultProps, 'removeBlock');
     const wrapper = await render();
-    wrapper.root.findByProps({ id: 'valuePath.0' }).props.onClick();
+    wrapper.root.findByProps({ id: 'formikFieldPath.0' }).props.onClick();
 
     expect(defaultProps.removeBlock).toHaveBeenCalledWith(0);
   });

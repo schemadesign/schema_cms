@@ -251,7 +251,7 @@ export const PageForm = ({
                   <PageBlock
                     index={index}
                     block={block}
-                    valuePath={PAGE_BLOCKS}
+                    formikFieldPath={PAGE_BLOCKS}
                     draggableIcon={draggableIcon}
                     removeBlock={removeBlock}
                     handleChange={handleChange}

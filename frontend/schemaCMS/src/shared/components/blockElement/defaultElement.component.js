@@ -4,16 +4,14 @@ import { Icons } from 'schemaUI';
 import { useTheme } from 'styled-components';
 
 import { getCustomInputStyles, editIconStyles, InputContainer } from './blockElement.styles';
-import { ELEMENT_VALUE } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { TextInput } from '../form/inputs/textInput';
-import { BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
 
 const { EditIcon } = Icons;
 
-export const DefaultElement = ({ element, blockPath, index, handleChange, ...restFormikProps }) => (
+export const DefaultElement = ({ element, formikFieldPath, handleChange, ...restFormikProps }) => (
   <InputContainer>
     <TextInput
-      name={`${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`}
+      name={formikFieldPath}
       value={element.value || ''}
       fullWidth
       customInputStyles={getCustomInputStyles(useTheme())}
@@ -26,8 +24,7 @@ export const DefaultElement = ({ element, blockPath, index, handleChange, ...res
 );
 DefaultElement.propTypes = {
   element: PropTypes.object.isRequired,
-  blockPath: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
+  formikFieldPath: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
 };

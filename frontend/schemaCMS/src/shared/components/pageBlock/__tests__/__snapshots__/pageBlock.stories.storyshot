@@ -424,7 +424,7 @@ exports[`Storyshots PageBlock Default 1`] = `
   }
 >
   <style>
-    
+
   body {
     color: #FFF;
     background-color: #000;
@@ -480,8 +480,8 @@ exports[`Storyshots PageBlock Default 1`] = `
             }
           >
             <input
-              id="valuePath.0.name"
-              name="valuePath.0.name"
+              id="formikFieldPath.0.name"
+              name="formikFieldPath.0.name"
               onChange={[Function]}
               placeholder="Name"
               style={
@@ -558,7 +558,7 @@ exports[`Storyshots PageBlock Default 1`] = `
             />
           </svg>
           <svg
-            id="valuePath.0"
+            id="formikFieldPath.0"
             onClick={[Function]}
             style={
               Object {
@@ -725,7 +725,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                       }
                     >
                       <textarea
-                        id="valuePath.0.elements.0.value"
+                        id="formikFieldPath.0.elements.0.value"
                         onChange={[Function]}
                         style={
                           Object {
@@ -927,7 +927,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                       Image
                     </label>
                     <label
-                      htmlFor="valuePath.0.elements.1.value"
+                      htmlFor="formikFieldPath.0.elements.1.value"
                       style={
                         Object {
                           "cursor": "pointer",
@@ -952,7 +952,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                       }
                     >
                       <label
-                        htmlFor="valuePath.0.elements.1.value"
+                        htmlFor="formikFieldPath.0.elements.1.value"
                         style={
                           Object {
                             "position": "relative",
@@ -1001,8 +1001,8 @@ exports[`Storyshots PageBlock Default 1`] = `
                       accept=".png, .jpg, .jpeg, .gif"
                       aria-hidden={true}
                       disabled={false}
-                      id="valuePath.0.elements.1.value"
-                      name="valuePath.0.elements.1.value"
+                      id="formikFieldPath.0.elements.1.value"
+                      name="formikFieldPath.0.elements.1.value"
                       onChange={[Function]}
                       style={
                         Object {
@@ -1018,7 +1018,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                     />
                   </div>
                   <label
-                    htmlFor="valuePath.0.elements.1.value"
+                    htmlFor="formikFieldPath.0.elements.1.value"
                     id="dropZone-schema-ui"
                     onDrop={[Function]}
                     style={
@@ -1294,8 +1294,8 @@ exports[`Storyshots PageBlock Default 1`] = `
                               }
                             >
                               <input
-                                id="valuePath.0.elements.2.value.0.name"
-                                name="valuePath.0.elements.2.value.0.name"
+                                id="formikFieldPath.0.elements.2.value.0.name"
+                                name="formikFieldPath.0.elements.2.value.0.name"
                                 onChange={[Function]}
                                 placeholder="Name"
                                 style={
@@ -1372,7 +1372,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                               />
                             </svg>
                             <svg
-                              id="valuePath.0.elements.2.value.0"
+                              id="formikFieldPath.0.elements.2.value.0"
                               onClick={[Function]}
                               style={
                                 Object {
@@ -1556,7 +1556,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                                         }
                                       >
                                         <textarea
-                                          id="valuePath.0.elements.2.value.0.elements.0.value"
+                                          id="formikFieldPath.0.elements.2.value.0.elements.0.value"
                                           onChange={[Function]}
                                           style={
                                             Object {
@@ -1758,7 +1758,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                                         Image
                                       </label>
                                       <label
-                                        htmlFor="valuePath.0.elements.2.value.0.elements.1.value"
+                                        htmlFor="formikFieldPath.0.elements.2.value.0.elements.1.value"
                                         style={
                                           Object {
                                             "cursor": "pointer",
@@ -1783,7 +1783,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                                         }
                                       >
                                         <label
-                                          htmlFor="valuePath.0.elements.2.value.0.elements.1.value"
+                                          htmlFor="formikFieldPath.0.elements.2.value.0.elements.1.value"
                                           style={
                                             Object {
                                               "position": "relative",
@@ -1832,8 +1832,8 @@ exports[`Storyshots PageBlock Default 1`] = `
                                         accept=".png, .jpg, .jpeg, .gif"
                                         aria-hidden={true}
                                         disabled={false}
-                                        id="valuePath.0.elements.2.value.0.elements.1.value"
-                                        name="valuePath.0.elements.2.value.0.elements.1.value"
+                                        id="formikFieldPath.0.elements.2.value.0.elements.1.value"
+                                        name="formikFieldPath.0.elements.2.value.0.elements.1.value"
                                         onChange={[Function]}
                                         style={
                                           Object {
@@ -1849,7 +1849,7 @@ exports[`Storyshots PageBlock Default 1`] = `
                                       />
                                     </div>
                                     <label
-                                      htmlFor="valuePath.0.elements.2.value.0.elements.1.value"
+                                      htmlFor="formikFieldPath.0.elements.2.value.0.elements.1.value"
                                       id="dropZone-schema-ui"
                                       onDrop={[Function]}
                                       style={
