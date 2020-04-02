@@ -2541,8 +2541,8 @@ exports[`Storyshots EditPage Default 1`] = `
                                         }
                                       >
                                         <input
-                                          id="blocks.0.elements.2.value.0.name"
-                                          name="blocks.0.elements.2.value.0.name"
+                                          id="blocks.0.elements.2.value.2.name"
+                                          name="blocks.0.elements.2.value.2.name"
                                           onBlur={[Function]}
                                           onChange={[Function]}
                                           placeholder="Name"
@@ -2620,7 +2620,7 @@ exports[`Storyshots EditPage Default 1`] = `
                                         />
                                       </svg>
                                       <svg
-                                        id="blocks.0.elements.2.value.0"
+                                        id="blocks.0.elements.2.value.2"
                                         onClick={[Function]}
                                         style={
                                           Object {
@@ -2804,7 +2804,7 @@ exports[`Storyshots EditPage Default 1`] = `
                                                   }
                                                 >
                                                   <textarea
-                                                    id="blocks.0.elements.2.value.0.elements.0.value"
+                                                    id="blocks.0.elements.0.value"
                                                     onBlur={[Function]}
                                                     onChange={[Function]}
                                                     style={
@@ -3007,7 +3007,7 @@ exports[`Storyshots EditPage Default 1`] = `
                                                   Image
                                                 </label>
                                                 <label
-                                                  htmlFor="blocks.0.elements.2.value.0.elements.1.value"
+                                                  htmlFor="blocks.0.elements.1.value"
                                                   style={
                                                     Object {
                                                       "cursor": "pointer",
@@ -3032,7 +3032,7 @@ exports[`Storyshots EditPage Default 1`] = `
                                                   }
                                                 >
                                                   <label
-                                                    htmlFor="blocks.0.elements.2.value.0.elements.1.value"
+                                                    htmlFor="blocks.0.elements.1.value"
                                                     style={
                                                       Object {
                                                         "position": "relative",
@@ -3081,8 +3081,8 @@ exports[`Storyshots EditPage Default 1`] = `
                                                   accept=".png, .jpg, .jpeg, .gif"
                                                   aria-hidden={true}
                                                   disabled={false}
-                                                  id="blocks.0.elements.2.value.0.elements.1.value"
-                                                  name="blocks.0.elements.2.value.0.elements.1.value"
+                                                  id="blocks.0.elements.1.value"
+                                                  name="blocks.0.elements.1.value"
                                                   onChange={[Function]}
                                                   style={
                                                     Object {
@@ -3098,7 +3098,7 @@ exports[`Storyshots EditPage Default 1`] = `
                                                 />
                                               </div>
                                               <label
-                                                htmlFor="blocks.0.elements.2.value.0.elements.1.value"
+                                                htmlFor="blocks.0.elements.1.value"
                                                 id="dropZone-schema-ui"
                                                 onDrop={[Function]}
                                                 style={

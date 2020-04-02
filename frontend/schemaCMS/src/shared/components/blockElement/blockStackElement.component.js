@@ -6,7 +6,7 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { asMutable } from 'seamless-immutable';
 import { useIntl } from 'react-intl';
-import { propEq, find, append, remove } from 'ramda';
+import { propEq, find, remove } from 'ramda';
 
 import { Draggable } from '../draggable';
 import { PageBlock } from '../pageBlock';
@@ -14,7 +14,7 @@ import { CounterHeader } from '../counterHeader';
 import messages from './blockElement.messages';
 import { IconWrapper, menuIconStyles, mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
 import { PlusButton } from '../navigation';
-import { BLOCK_ID, BLOCK_KEY, PAGE_DELETE_BLOCKS } from '../../../modules/page/page.constants';
+import { BLOCK_ID, BLOCK_KEY } from '../../../modules/page/page.constants';
 
 const { MenuIcon } = Icons;
 
@@ -39,19 +39,7 @@ export const BlockStackElement = ({
 
     setFieldValue(formikFieldPath, mutableValues);
   };
-
-  const removeBlock = index => {
-    const removedElement = value[index];
-
-    if (removedElement.id) {
-      setFieldValue(
-        `${formikFieldPath}.${PAGE_DELETE_BLOCKS}`,
-        append(removedElement.id, value[PAGE_DELETE_BLOCKS] || [])
-      );
-    }
-
-    setFieldValue(formikFieldPath, remove(index, 1, value));
-  };
+  const removeBlock = index => setFieldValue(formikFieldPath, remove(index, 1, value));
   const addBlock = () => {
     const { name, id, ...rest } = find(propEq('id', block), blockTemplates);
     const emptyBlock = { ...rest, name: '', key: Date.now(), type: name, block: id };

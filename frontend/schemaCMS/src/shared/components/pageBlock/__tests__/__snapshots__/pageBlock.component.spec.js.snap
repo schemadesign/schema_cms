@@ -864,8 +864,8 @@ exports[`PageBlock: Component should render correctly 1`] = `
                             }
                           >
                             <input
-                              id="formikFieldPath.0.elements.2.value.0.name"
-                              name="formikFieldPath.0.elements.2.value.0.name"
+                              id="formikFieldPath.0.elements.2.value.2.name"
+                              name="formikFieldPath.0.elements.2.value.2.name"
                               onChange={[Function]}
                               placeholder="Name"
                               style={
@@ -942,7 +942,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                             />
                           </svg>
                           <svg
-                            id="formikFieldPath.0.elements.2.value.0"
+                            id="formikFieldPath.0.elements.2.value.2"
                             onClick={[Function]}
                             style={
                               Object {
@@ -1126,7 +1126,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                       }
                                     >
                                       <textarea
-                                        id="formikFieldPath.0.elements.2.value.0.elements.0.value"
+                                        id="formikFieldPath.0.elements.0.value"
                                         onChange={[Function]}
                                         style={
                                           Object {
@@ -1328,7 +1328,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                       Image
                                     </label>
                                     <label
-                                      htmlFor="formikFieldPath.0.elements.2.value.0.elements.1.value"
+                                      htmlFor="formikFieldPath.0.elements.1.value"
                                       style={
                                         Object {
                                           "cursor": "pointer",
@@ -1353,7 +1353,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                       }
                                     >
                                       <label
-                                        htmlFor="formikFieldPath.0.elements.2.value.0.elements.1.value"
+                                        htmlFor="formikFieldPath.0.elements.1.value"
                                         style={
                                           Object {
                                             "position": "relative",
@@ -1402,8 +1402,8 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                       accept=".png, .jpg, .jpeg, .gif"
                                       aria-hidden={true}
                                       disabled={false}
-                                      id="formikFieldPath.0.elements.2.value.0.elements.1.value"
-                                      name="formikFieldPath.0.elements.2.value.0.elements.1.value"
+                                      id="formikFieldPath.0.elements.1.value"
+                                      name="formikFieldPath.0.elements.1.value"
                                       onChange={[Function]}
                                       style={
                                         Object {
@@ -1419,7 +1419,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                     />
                                   </div>
                                   <label
-                                    htmlFor="formikFieldPath.0.elements.2.value.0.elements.1.value"
+                                    htmlFor="formikFieldPath.0.elements.1.value"
                                     id="dropZone-schema-ui"
                                     onDrop={[Function]}
                                     style={

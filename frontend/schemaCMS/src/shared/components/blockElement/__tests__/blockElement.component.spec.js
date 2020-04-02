@@ -33,8 +33,8 @@ describe('BlockElement: Component', () => {
       .findByProps({ id: `${defaultProps.blockPath}.elements.${defaultProps.index}.value` })
       .props.onChange({ currentTarget: { files: [{ name: 'name' }] } });
 
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.index.value.file', 'result');
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.index.value.fileName', 'name');
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value.file', 'result');
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value.fileName', 'name');
   });
 
   it('should render correctly stack element', async () => {
@@ -45,10 +45,9 @@ describe('BlockElement: Component', () => {
   it('should remove block from stack element', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
     const wrapper = await render({ element: stackElement, blockTemplates });
-    wrapper.root.findByProps({ id: 'blockPath.elements.index.value.0' }).props.onClick();
+    wrapper.root.findByProps({ id: 'blockPath.elements.0.value.0' }).props.onClick();
 
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.index.value', []);
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.index.value.deleteBlocks', [1]);
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', []);
   });
 
   it('should add block to stack element', async () => {
@@ -56,7 +55,7 @@ describe('BlockElement: Component', () => {
     const wrapper = await render({ element: stackElement, blockTemplates });
     wrapper.root.findByProps({ id: 'addBlockStack' }).props.onClick();
 
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.index.value', [
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', [
       {
         elements: [
           { id: 1, name: 'name', type: 'plain_text', value: '' },

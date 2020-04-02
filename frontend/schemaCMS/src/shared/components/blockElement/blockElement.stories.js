@@ -8,7 +8,7 @@ import { withTheme } from '../../../.storybook/decorators';
 export const defaultProps = {
   element: textElement,
   blockPath: 'blockPath',
-  index: 'index',
+  index: 0,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
 };
