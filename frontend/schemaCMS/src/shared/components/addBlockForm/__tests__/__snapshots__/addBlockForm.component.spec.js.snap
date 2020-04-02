@@ -238,6 +238,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
   >
     <div
       className="sc-fznxKY ibgIGf"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"

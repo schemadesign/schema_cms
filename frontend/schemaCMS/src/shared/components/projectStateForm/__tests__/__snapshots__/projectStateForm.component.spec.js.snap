@@ -2,9 +2,7 @@
 
 exports[`ProjectStateForm: Component should render correctly 1`] = `
 <styled.div>
-  <Select
-    customLabelStyles={Object {}}
-    customStyles={null}
+  <Memo()
     label="Dataset"
     name="datasource"
     onSelect={[Function]}

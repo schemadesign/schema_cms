@@ -909,6 +909,7 @@ exports[`Storyshots ProjectState/Edit Default 1`] = `
   >
     <div
       className="c13"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"

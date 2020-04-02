@@ -83,8 +83,7 @@ exports[`View: Component should render content correctly 1`] = `
           >
             Status
           </styled.span>
-          <Select
-            customLabelStyles={Object {}}
+          <Memo()
             customStyles={
               Array [
                 "
@@ -95,7 +94,6 @@ exports[`View: Component should render content correctly 1`] = `
 ",
               ]
             }
-            label={null}
             name="status"
             onSelect={[Function]}
             options={
@@ -641,8 +639,7 @@ exports[`View: Component should render correctly 1`] = `
               >
                 Status
               </styled.span>
-              <Select
-                customLabelStyles={Object {}}
+              <Memo()
                 customStyles={
                   Array [
                     "
@@ -653,7 +650,6 @@ exports[`View: Component should render correctly 1`] = `
 ",
                   ]
                 }
-                label={null}
                 name="status"
                 onSelect={[Function]}
                 options={

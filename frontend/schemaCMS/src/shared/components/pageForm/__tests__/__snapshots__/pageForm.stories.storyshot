@@ -1037,6 +1037,7 @@ exports[`Storyshots PageForm Default 1`] = `
     >
       <div
         className="c11"
+        onClick={[Function]}
       >
         <label
           id="fieldProjectStatusLabel"

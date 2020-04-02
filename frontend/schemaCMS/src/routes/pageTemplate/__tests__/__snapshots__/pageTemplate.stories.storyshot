@@ -1483,6 +1483,7 @@ exports[`Storyshots PageTemplate Default 1`] = `
                   >
                     <div
                       className="c27"
+                      onClick={[Function]}
                     >
                       <label
                         id="fieldProjectStatusLabel"

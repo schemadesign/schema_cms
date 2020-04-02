@@ -183,6 +183,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
       >
         <div
           className="sc-AxmLO jiDPFU"
+          onClick={[Function]}
         >
           <label
             id="fieldProjectStatusLabel"

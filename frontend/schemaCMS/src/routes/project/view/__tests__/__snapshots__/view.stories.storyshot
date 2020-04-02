@@ -1479,6 +1479,7 @@ exports[`Storyshots Project|View Default 1`] = `
               </span>
               <div
                 className="c25"
+                onClick={[Function]}
               >
                 <input
                   id="status"

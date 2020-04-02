@@ -1394,6 +1394,7 @@ exports[`Storyshots EditPage Default 1`] = `
         >
           <div
             className="c19"
+            onClick={[Function]}
           >
             <label
               id="fieldProjectStatusLabel"

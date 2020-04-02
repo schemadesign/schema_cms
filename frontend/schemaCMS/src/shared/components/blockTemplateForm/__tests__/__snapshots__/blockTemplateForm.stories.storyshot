@@ -1086,6 +1086,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
               >
                 <div
                   className="c18"
+                  onClick={[Function]}
                 >
                   <label
                     id="fieldProjectStatusLabel"
@@ -1320,6 +1321,7 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
               >
                 <div
                   className="c18"
+                  onClick={[Function]}
                 >
                   <label
                     id="fieldProjectStatusLabel"
@@ -1441,30 +1443,10 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
                             }
                           }
                         >
-                          block name
-                        </div>
-                        <div
-                          id="select-item-1"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "border": "1px solid  #2F2F36",
-                              "borderTop": "none",
-                              "color": "#71737e",
-                              "cursor": "pointer",
-                              "overflow": "hidden",
-                              "padding": "20px 10px",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
-                            }
-                          }
-                        >
                           block name 2
                         </div>
                         <div
-                          id="select-item-2"
+                          id="select-item-1"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
@@ -1587,69 +1569,6 @@ exports[`Storyshots BlockTemplateForm Default 1`] = `
               d="M15 28h30v4H15z"
             />
           </svg>
-        </div>
-      </div>
-      <div
-        className="c21"
-      >
-        <div>
-          <input
-            checked={false}
-            id="allowAdd"
-            onChange={[Function]}
-            style={
-              Object {
-                "height": 0,
-                "left": 0,
-                "overflow": "hidden",
-                "position": "absolute",
-                "top": 0,
-                "visibility": "hidden",
-              }
-            }
-            type="checkbox"
-          />
-          <label
-            htmlFor="allowAdd"
-          >
-            <div
-              style={
-                Object {
-                  "background": "#2F2F36",
-                  "borderRadius": 20,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "height": 24,
-                  "padding": 2,
-                  "transition": "background 200ms ease-in-out",
-                  "width": 44,
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "background": "#FFF",
-                    "borderRadius": "50%",
-                    "height": 20,
-                    "transform": "translateX(0)",
-                    "transition": "transform 200ms ease-in-out",
-                    "width": 20,
-                  }
-                }
-              />
-            </div>
-          </label>
-        </div>
-        <div
-          className="c23"
-        >
-          <label
-            className="c24"
-            htmlFor="allowAdd"
-          >
-            Allow new Elements to be added to this Block Template
-          </label>
         </div>
       </div>
     </div>

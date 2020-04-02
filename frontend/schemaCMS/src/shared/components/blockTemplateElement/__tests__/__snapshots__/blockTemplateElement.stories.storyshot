@@ -550,6 +550,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
         >
           <div
             className="c5"
+            onClick={[Function]}
           >
             <label
               id="fieldProjectStatusLabel"
@@ -784,6 +785,7 @@ exports[`Storyshots BlockElementTemplate Default 1`] = `
         >
           <div
             className="c5"
+            onClick={[Function]}
           >
             <label
               id="fieldProjectStatusLabel"

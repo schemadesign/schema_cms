@@ -556,6 +556,7 @@ exports[`Storyshots PageBlockTemplate Default 1`] = `
         >
           <div
             className="c5"
+            onClick={[Function]}
           >
             <label
               id="fieldProjectStatusLabel"

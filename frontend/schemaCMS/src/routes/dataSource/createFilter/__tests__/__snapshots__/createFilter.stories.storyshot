@@ -765,6 +765,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
       </div>
       <div
         className="c15"
+        onClick={[Function]}
       >
         <label
           id="fieldProjectStatusLabel"
@@ -894,6 +895,7 @@ exports[`Storyshots Data Source|CreateFilter Default 1`] = `
       </div>
       <div
         className="c15"
+        onClick={[Function]}
       >
         <label
           id="fieldProjectStatusLabel"

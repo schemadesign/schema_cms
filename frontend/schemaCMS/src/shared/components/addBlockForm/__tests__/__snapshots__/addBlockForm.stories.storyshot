@@ -643,6 +643,7 @@ exports[`Storyshots AddBlockForm Default 1`] = `
   >
     <div
       className="c9"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"

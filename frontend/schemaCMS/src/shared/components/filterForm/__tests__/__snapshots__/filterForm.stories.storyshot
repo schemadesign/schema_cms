@@ -478,6 +478,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
     </div>
     <div
       className="c3"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"
@@ -607,6 +608,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
     </div>
     <div
       className="c3"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"
@@ -1443,6 +1445,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     </div>
     <div
       className="c3"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"
@@ -1572,6 +1575,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     </div>
     <div
       className="c3"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"

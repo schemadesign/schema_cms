@@ -67,7 +67,6 @@ describe('BlockElement: Component', () => {
         type: 'type',
       },
       {
-        allowAdd: false,
         block: 3,
         created: '2020-02-21T08:34:24+0000',
         createdBy: 'owner 3',
