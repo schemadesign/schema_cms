@@ -88,9 +88,7 @@ export const PageForm = ({
     setFieldValue(PAGE_BLOCKS, templateBlocks);
   };
   const handleSelectPageTemplate = ({ value }) => {
-    const oldValue = values[PAGE_TEMPLATE];
-
-    if (!!oldValue && !isEmpty(values[PAGE_BLOCKS]) && oldValue !== value) {
+    if (!isEmpty(values[PAGE_BLOCKS])) {
       setTemporaryPageTemplate(value);
       return setChangeTemplateModalOpen(true);
     }
