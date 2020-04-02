@@ -7,8 +7,8 @@ import { Link } from '../link';
 
 export class LinkItem extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
-    Component: PropTypes.node,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.element]),
+    Component: PropTypes.oneOfType([PropTypes.node, PropTypes.element, PropTypes.elementType]),
     theme: PropTypes.object,
   };
 

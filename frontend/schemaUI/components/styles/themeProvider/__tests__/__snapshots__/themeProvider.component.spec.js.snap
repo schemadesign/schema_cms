@@ -66,6 +66,14 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "border": "#f0efef",
           "text": "#a6a7aa",
         },
+        "link": Object {
+          "hover": "#000",
+          "text": "#1d1d20",
+        },
+        "linkItem": Object {
+          "hover": "#000",
+          "link": "#1d1d20",
+        },
         "menu": Object {
           "background": "#FFF",
           "text": "#000",

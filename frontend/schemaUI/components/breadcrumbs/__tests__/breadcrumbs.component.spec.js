@@ -1,7 +1,7 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 
-import {Breadcrumbs} from '../breadcrumbs.component';
+import { Breadcrumbs } from '../breadcrumbs.component';
 import { defaultProps, withSymbol } from '../breadcrumbs.stories';
 import { LinkItem } from '../../linkItem';
 import { Span } from '../../typography/span';
