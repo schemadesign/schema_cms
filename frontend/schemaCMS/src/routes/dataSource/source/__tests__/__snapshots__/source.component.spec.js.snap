@@ -175,6 +175,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         Object {
           "background": "#000",
           "border": "#2F2F36",
+          "breadcrumbs": Object {
+            "link": "#a6a7aa",
+            "separator": "#a6a7aa",
+          },
           "button": Object {
             "background": "#1d1d20",
             "text": "#FFF",
@@ -373,6 +377,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         Object {
           "background": "#000",
           "border": "#2F2F36",
+          "breadcrumbs": Object {
+            "link": "#a6a7aa",
+            "separator": "#a6a7aa",
+          },
           "button": Object {
             "background": "#1d1d20",
             "text": "#FFF",
@@ -612,6 +620,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       Object {
         "background": "#000",
         "border": "#2F2F36",
+        "breadcrumbs": Object {
+          "link": "#a6a7aa",
+          "separator": "#a6a7aa",
+        },
         "button": Object {
           "background": "#1d1d20",
           "text": "#FFF",
@@ -1084,6 +1096,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         Object {
           "background": "#000",
           "border": "#2F2F36",
+          "breadcrumbs": Object {
+            "link": "#a6a7aa",
+            "separator": "#a6a7aa",
+          },
           "button": Object {
             "background": "#1d1d20",
             "text": "#FFF",
@@ -1279,6 +1295,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         Object {
           "background": "#000",
           "border": "#2F2F36",
+          "breadcrumbs": Object {
+            "link": "#a6a7aa",
+            "separator": "#a6a7aa",
+          },
           "button": Object {
             "background": "#1d1d20",
             "text": "#FFF",
@@ -1494,6 +1514,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       Object {
         "background": "#000",
         "border": "#2F2F36",
+        "breadcrumbs": Object {
+          "link": "#a6a7aa",
+          "separator": "#a6a7aa",
+        },
         "button": Object {
           "background": "#1d1d20",
           "text": "#FFF",

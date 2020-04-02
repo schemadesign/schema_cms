@@ -23,6 +23,10 @@ exports[`App: Component should not render App when language is not set 1`] = `
         Object {
           "background": "#FFF",
           "border": "#f0efef",
+          "breadcrumbs": Object {
+            "link": "#1d1d20",
+            "separator": "#1d1d20",
+          },
           "button": Object {
             "background": "#f0efef",
             "text": "#000",
@@ -177,6 +181,10 @@ exports[`App: Component should not render App when language is not set 1`] = `
           Object {
             "background": "#FFF",
             "border": "#f0efef",
+            "breadcrumbs": Object {
+              "link": "#1d1d20",
+              "separator": "#1d1d20",
+            },
             "button": Object {
               "background": "#f0efef",
               "text": "#000",
@@ -383,6 +391,10 @@ exports[`App: Component should render App when language is set 1`] = `
         Object {
           "background": "#FFF",
           "border": "#f0efef",
+          "breadcrumbs": Object {
+            "link": "#1d1d20",
+            "separator": "#1d1d20",
+          },
           "button": Object {
             "background": "#f0efef",
             "text": "#000",
@@ -537,6 +549,10 @@ exports[`App: Component should render App when language is set 1`] = `
           Object {
             "background": "#FFF",
             "border": "#f0efef",
+            "breadcrumbs": Object {
+              "link": "#1d1d20",
+              "separator": "#1d1d20",
+            },
             "button": Object {
               "background": "#f0efef",
               "text": "#000",
