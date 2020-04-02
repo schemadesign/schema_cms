@@ -34,7 +34,7 @@ export const BlockTemplate = memo(
     fetchBlockTemplates,
     removeBlockTemplate,
     userRole,
-    blockTemplate: { name, elements, isAvailable, allowAdd },
+    blockTemplate: { name, elements, isAvailable, allowEdit },
     blockTemplates,
     project,
   }) => {
@@ -63,7 +63,7 @@ export const BlockTemplate = memo(
         ...INITIAL_VALUES,
         name,
         isAvailable,
-        allowAdd,
+        allowEdit,
         elements: elements.map(element => ({
           ...pick([ELEMENT_NAME, ELEMENT_TYPE, ELEMENT_ID, ELEMENT_PARAMS], element),
           key: element.id,

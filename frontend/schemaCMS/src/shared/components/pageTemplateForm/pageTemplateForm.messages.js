@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 import {
   PAGE_TEMPLATES_NAME,
   PAGE_TEMPLATES_IS_AVAILABLE,
-  PAGE_TEMPLATES_ALLOW_ADD,
+  PAGE_TEMPLATES_ALLOW_EDIT,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 
 export default defineMessages({
@@ -23,9 +23,9 @@ export default defineMessages({
     id: `shared.components.pageTemplateForm.${PAGE_TEMPLATES_IS_AVAILABLE}`,
     defaultMessage: 'Make it Available',
   },
-  [PAGE_TEMPLATES_ALLOW_ADD]: {
-    id: `shared.components.pageTemplateForm.${PAGE_TEMPLATES_ALLOW_ADD}`,
-    defaultMessage: 'Allow new Blocks to be added to this Page Template',
+  [PAGE_TEMPLATES_ALLOW_EDIT]: {
+    id: `shared.components.pageTemplateForm.${PAGE_TEMPLATES_ALLOW_EDIT}`,
+    defaultMessage: 'Allow editing the Page Template',
   },
   availableForEditors: {
     id: 'shared.components.pageTemplateForm.availableForEditors',

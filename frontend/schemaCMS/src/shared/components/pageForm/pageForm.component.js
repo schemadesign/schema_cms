@@ -135,11 +135,11 @@ export const PageForm = ({
       </IconsContainer>
     </Subtitle>
   );
-  const allowAdd = pipe(
+  const allowEdit = pipe(
     find(propEq('id', values[PAGE_TEMPLATE])),
-    propOr(values[PAGE_TEMPLATE] === 0, 'allowAdd')
+    propOr(values[PAGE_TEMPLATE] === 0, 'allowEdit')
   )(pageTemplates);
-  const plusButton = allowAdd ? (
+  const plusButton = allowEdit ? (
     <PlusButton
       customStyles={mobilePlusStyles}
       id="addBlock"

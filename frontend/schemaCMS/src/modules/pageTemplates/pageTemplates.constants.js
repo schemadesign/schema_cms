@@ -6,7 +6,7 @@ export const PAGE_TEMPLATES_NAME = 'name';
 export const PAGE_TEMPLATES_BLOCKS = 'blocks';
 export const PAGE_TEMPLATES_DELETE_BLOCKS = 'deleteBlocks';
 export const PAGE_TEMPLATES_IS_AVAILABLE = 'isAvailable';
-export const PAGE_TEMPLATES_ALLOW_ADD = 'allowAdd';
+export const PAGE_TEMPLATES_ALLOW_EDIT = 'allowEdit';
 
 export const BLOCK_NAME = 'name';
 export const BLOCK_TYPE = 'block';
@@ -30,7 +30,7 @@ export const INITIAL_VALUES = {
   [PAGE_TEMPLATES_BLOCKS]: [],
   [PAGE_TEMPLATES_DELETE_BLOCKS]: [],
   [PAGE_TEMPLATES_IS_AVAILABLE]: false,
-  [PAGE_TEMPLATES_ALLOW_ADD]: false,
+  [PAGE_TEMPLATES_ALLOW_EDIT]: false,
 };
 
 export const PAGE_TEMPLATES_SCHEMA = Yup.object().shape({

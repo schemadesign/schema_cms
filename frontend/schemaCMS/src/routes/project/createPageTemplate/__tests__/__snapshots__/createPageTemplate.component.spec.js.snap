@@ -1181,7 +1181,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           <div>
             <input
               checked={false}
-              id="allowAdd"
+              id="allowEdit"
               onChange={[Function]}
               style={
                 Object {
@@ -1196,7 +1196,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               type="checkbox"
             />
             <label
-              htmlFor="allowAdd"
+              htmlFor="allowEdit"
             >
               <div
                 style={
@@ -1232,9 +1232,9 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           >
             <label
               className="sc-fzpmMD fprNti"
-              htmlFor="allowAdd"
+              htmlFor="allowEdit"
             >
-              Allow new Blocks to be added to this Page Template
+              Allow editing the Page Template
             </label>
           </div>
         </div>

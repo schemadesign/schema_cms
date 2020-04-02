@@ -25,7 +25,7 @@ import {
   PAGE_TEMPLATES_SCHEMA,
   BLOCK_KEY,
   PAGE_TEMPLATES_NAME,
-  PAGE_TEMPLATES_ALLOW_ADD,
+  PAGE_TEMPLATES_ALLOW_EDIT,
   PAGE_TEMPLATES_IS_AVAILABLE,
 } from '../../modules/pageTemplates/pageTemplates.constants';
 
@@ -62,7 +62,7 @@ export const PageTemplate = memo(
     const menuOptions = getProjectMenuOptions();
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
       initialValues: {
-        ...pick([PAGE_TEMPLATES_NAME, PAGE_TEMPLATES_ALLOW_ADD, PAGE_TEMPLATES_IS_AVAILABLE], pageTemplate),
+        ...pick([PAGE_TEMPLATES_NAME, PAGE_TEMPLATES_ALLOW_EDIT, PAGE_TEMPLATES_IS_AVAILABLE], pageTemplate),
         blocks: pageTemplate[PAGE_TEMPLATES_BLOCKS].map(block => ({
           ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID], block),
           [BLOCK_KEY]: block[BLOCK_ID],
