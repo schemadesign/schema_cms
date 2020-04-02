@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { Breadcrumbs } from './breadcrumbs.component';
 import { withTheme } from '../../.storybook/decorators';
+import { LinkItem } from '../linkItem';
+import { H3, Span } from '../typography';
 
 const SYMBOL = '/';
 const COMPONENT_SYMBOL = <div>/</div>;
@@ -18,24 +20,49 @@ storiesOf('Breadcrumbs', module)
   .addDecorator(withTheme())
   .add('Default', () => (
     <Breadcrumbs {...defaultProps}>
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is a page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is an inner page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is another inner page</H3>
+      </LinkItem>
     </Breadcrumbs>
   ))
   .add('With custom symbol', () => (
     <Breadcrumbs {...withSymbol(SYMBOL)}>
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is a page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is an inner page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is another inner page</H3>
+      </LinkItem>
     </Breadcrumbs>
-  )).add('With custom symbol as a component', () => (
+  ))
+  .add('With custom symbol as a component', () => (
     <Breadcrumbs {...withSymbol(COMPONENT_SYMBOL)}>
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is a page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is an inner page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is another inner page</H3>
+      </LinkItem>
     </Breadcrumbs>
   ));

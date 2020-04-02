@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, getStyles } from './breadcrumbs.styles';
+import { getStyles } from './breadcrumbs.styles';
 
 const SEPARATOR_SYMBOL = '>';
 
@@ -13,7 +13,6 @@ export class Breadcrumbs extends PureComponent {
   };
 
   static defaultProps = {
-    ...getStyles(),
     separatorSymbol: SEPARATOR_SYMBOL,
   };
 
@@ -21,18 +20,24 @@ export class Breadcrumbs extends PureComponent {
 
   parseStringOr = node => (typeof node === 'string' ? `${node}` : node);
 
-  renderSeparator = () => (
-    <div style={this.props.separatorStyles}>{this.parseStringOr(this.props.separatorSymbol)}</div>
-  );
+  renderSeparator = () => {
+    const { separatorStyles } = getStyles(this.props.theme);
+    return <div style={separatorStyles}>{this.parseStringOr(this.props.separatorSymbol)}</div>;
+  };
 
-  renderItem = (item, index) => (
-    <div style={this.props.itemStyles} key={index}>
-      {item}
-      {this.shouldRenderSeparator(index + 1, this.props.children.length) ? this.renderSeparator() : null}
-    </div>
-  );
+  renderItem = (item, index) => {
+    const { itemStyles } = getStyles(this.props.theme);
+
+    return (
+      <div style={itemStyles} key={index}>
+        {item}
+        {this.shouldRenderSeparator(index + 1, this.props.children.length) ? this.renderSeparator() : null}
+      </div>
+    );
+  };
 
   render() {
+    const { containerStyles } = getStyles(this.props.theme);
     return <div style={containerStyles}>{this.props.children.map(this.renderItem)}</div>;
   }
 }
