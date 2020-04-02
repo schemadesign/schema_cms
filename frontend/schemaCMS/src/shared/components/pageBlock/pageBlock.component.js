@@ -43,7 +43,9 @@ export const PageBlock = ({
           />
           <IconsContainer>
             <EditIcon />
-            <MinusIcon id={blockPath} customStyles={iconStyles} onClick={() => removeBlock(index)} />
+            {removeBlock ? (
+              <MinusIcon id={blockPath} customStyles={iconStyles} onClick={() => removeBlock(index)} />
+            ) : null}
           </IconsContainer>
         </Header>
         <Type>{block[BLOCK_TYPE]}</Type>
