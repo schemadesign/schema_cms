@@ -1,16 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import { Select } from '../select.component';
 import { defaultProps } from '../select.stories';
+import { makeContextRenderer } from '../../../../utils/testUtils';
 
 describe('Select: Component', () => {
-  const component = props => <Select {...defaultProps} {...props} />;
+  const render = props => makeContextRenderer(<Select {...defaultProps} {...props} />);
 
-  const render = (props = {}) => shallow(component(props));
-
-  it('should render correctly', () => {
-    const wrapper = render({
+  it('should render correctly', async () => {
+    const wrapper = await render({
       value: 'one',
       onSelect: Function.prototype,
     });

@@ -58,7 +58,7 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockT
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchBlockTemplates({ projectId, raw: true });
+        await fetchBlockTemplates({ projectId });
       } catch (e) {
         setError(e);
       } finally {

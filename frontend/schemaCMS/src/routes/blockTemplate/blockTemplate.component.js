@@ -95,7 +95,7 @@ export const BlockTemplate = memo(
         try {
           const { project } = await fetchBlockTemplate({ blockTemplateId });
 
-          await fetchBlockTemplates({ projectId: project, raw: true });
+          await fetchBlockTemplates({ projectId: project });
         } catch (e) {
           reportError(e);
           setError(e);
@@ -106,7 +106,6 @@ export const BlockTemplate = memo(
     });
     const title = <FormattedMessage {...messages.title} />;
     const subtitle = <FormattedMessage {...messages.subtitle} />;
-    const filteredBlockTemplates = blockTemplates.filter(({ id }) => id.toString() !== blockTemplateId);
 
     return (
       <Container>
@@ -116,7 +115,7 @@ export const BlockTemplate = memo(
           <form onSubmit={handleSubmit}>
             <BlockTemplateForm
               title={title}
-              blockTemplates={filteredBlockTemplates}
+              blockTemplates={blockTemplates}
               setRemoveModalOpen={setRemoveModalOpen}
               isValid={isValid}
               {...restFormikProps}

@@ -756,6 +756,7 @@ exports[`Storyshots Filter Default 1`] = `
       </div>
       <div
         className="c15"
+        onClick={[Function]}
       >
         <label
           id="fieldProjectStatusLabel"
@@ -885,6 +886,7 @@ exports[`Storyshots Filter Default 1`] = `
       </div>
       <div
         className="c15"
+        onClick={[Function]}
       >
         <label
           id="fieldProjectStatusLabel"

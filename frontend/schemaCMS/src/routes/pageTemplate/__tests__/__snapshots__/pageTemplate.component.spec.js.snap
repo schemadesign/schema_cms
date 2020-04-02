@@ -926,6 +926,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 >
                   <div
                     className="sc-fznLPX kVifBF"
+                    onClick={[Function]}
                   >
                     <label
                       id="fieldProjectStatusLabel"

@@ -266,9 +266,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       validateOnMount={false}
       value=""
     />
-    <Select
-      customLabelStyles={Object {}}
-      customStyles={null}
+    <Memo()
       label={
         <FormattedMessage
           defaultMessage="Field"
@@ -288,9 +286,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       }
       value="field"
     />
-    <Select
-      customLabelStyles={Object {}}
-      customStyles={null}
+    <Memo()
       label={
         <FormattedMessage
           defaultMessage="Filter Type"
@@ -579,9 +575,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       validateOnMount={false}
       value="name"
     />
-    <Select
-      customLabelStyles={Object {}}
-      customStyles={null}
+    <Memo()
       label={
         <FormattedMessage
           defaultMessage="Field"
@@ -601,9 +595,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       }
       value="field"
     />
-    <Select
-      customLabelStyles={Object {}}
-      customStyles={null}
+    <Memo()
       label={
         <FormattedMessage
           defaultMessage="Filter Type"

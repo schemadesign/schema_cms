@@ -2,11 +2,12 @@ import React from 'react';
 import { Accordion, Form, Icons } from 'schemaUI';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { append, prepend, remove } from 'ramda';
+import { append, both, complement, any, prepend, propEq, remove, pipe, map, prop, filter } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
+import { useParams } from 'react-router';
 
 import {
   IconsContainer,
@@ -33,13 +34,13 @@ import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
-  BLOCK_TEMPLATES_ALLOW_ADD,
   BLOCK_TEMPLATES_DELETE_ELEMENTS,
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
   ELEMENT_KEY,
   getDefaultBlockElement,
+  STACK_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateElement } from '../blockTemplateElement';
 import { CounterHeader } from '../counterHeader';
@@ -60,7 +61,21 @@ export const BlockTemplateForm = ({
   ...restFormikProps
 }) => {
   const intl = useIntl();
-  const blocksOptions = blockTemplates.map(({ name, id }) => ({ label: name, value: id }));
+  const { blockTemplateId } = useParams();
+  const blocksOptions = pipe(
+    filter(
+      both(
+        complement(propEq('id', parseInt(blockTemplateId, 10))),
+        complement(
+          pipe(
+            prop('elements'),
+            any(propEq('type', STACK_TYPE))
+          )
+        )
+      )
+    ),
+    map(({ name, id }) => ({ label: name, value: id }))
+  )(blockTemplates);
 
   const nameInput = (
     <Subtitle>
@@ -208,14 +223,6 @@ export const BlockTemplateForm = ({
             </SwitchCopy>
           </SwitchContent>
           {binIcon}
-        </SwitchContainer>
-        <SwitchContainer>
-          <Switch value={values[BLOCK_TEMPLATES_ALLOW_ADD]} id={BLOCK_TEMPLATES_ALLOW_ADD} onChange={handleChange} />
-          <SwitchCopy>
-            <SwitchLabel htmlFor={BLOCK_TEMPLATES_ALLOW_ADD}>
-              <FormattedMessage {...messages[BLOCK_TEMPLATES_ALLOW_ADD]} />
-            </SwitchLabel>
-          </SwitchCopy>
         </SwitchContainer>
       </Switches>
     </Container>

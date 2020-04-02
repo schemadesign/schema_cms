@@ -35,7 +35,6 @@ describe('BlockTemplateForm: Component', () => {
       elements: [],
       id: 1,
       name: 'block name',
-      allowAdd: false,
       isAvailable: true,
     });
   });

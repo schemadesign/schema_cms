@@ -1,46 +1,174 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select: Component should render correctly 1`] = `
-<styled.div
-  customStyles={null}
+<div
+  className="sc-AxjAm jReOiI"
+  onClick={[Function]}
 >
-  <Component
-    customStyles={Object {}}
+  <label
     id="fieldProjectStatusLabel"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
   >
     Selector
-  </Component>
+  </label>
   <input
     id="selectField"
     name="selectField"
     type="hidden"
     value="one"
   />
-  <styled.div>
-    <Component />
-  </styled.div>
-  <Component
-    customLabelStyles={Object {}}
-    onSelect={[Function]}
-    options={
-      Array [
+  <div
+    className="sc-AxirZ hJhIUb"
+  >
+    <svg
+      style={
         Object {
-          "label": "One",
-          "selected": true,
-          "value": "one",
-        },
-        Object {
-          "label": "Two",
-          "selected": false,
-          "value": "two",
-        },
-        Object {
-          "label": "Three",
-          "selected": false,
-          "value": "three",
-        },
-      ]
+          "fill": "#FFF",
+          "height": "30px",
+          "width": "30px",
+        }
+      }
+      viewBox="0 0 30 30"
+    >
+      <path
+        d="M15.117 18L9 12h12z"
+        fillRule="evenodd"
+      />
+    </svg>
+  </div>
+  <div
+    style={
+      Object {
+        "color": "#FFF",
+        "display": "flex",
+        "width": "100%",
+      }
     }
-  />
-</styled.div>
+  >
+    <div
+      style={
+        Object {
+          "cursor": "pointer",
+          "display": "flex",
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          One
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "backgroundColor": "#1d1d20",
+            "display": "none",
+            "flexDirection": "column",
+            "left": "0",
+            "maxHeight": "184px",
+            "overflowY": "hidden",
+            "position": "absolute",
+            "top": "calc(100% + 5px)",
+            "width": "100%",
+            "zIndex": 2,
+          }
+        }
+      >
+        <div
+          id="select-item-0"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "1px solid  #2F2F36",
+              "borderTop": "1px solid  #2F2F36",
+              "color": "#000",
+              "cursor": "pointer",
+              "overflow": "hidden",
+              "padding": "20px 10px",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          One
+        </div>
+        <div
+          id="select-item-1"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "border": "1px solid  #2F2F36",
+              "borderTop": "none",
+              "color": "#71737e",
+              "cursor": "pointer",
+              "overflow": "hidden",
+              "padding": "20px 10px",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          Two
+        </div>
+        <div
+          id="select-item-2"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "border": "1px solid  #2F2F36",
+              "borderTop": "none",
+              "color": "#71737e",
+              "cursor": "pointer",
+              "overflow": "hidden",
+              "padding": "20px 10px",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          Three
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;

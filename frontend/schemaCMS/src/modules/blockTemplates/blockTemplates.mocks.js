@@ -1,5 +1,4 @@
 import {
-  BLOCK_TEMPLATES_ALLOW_ADD,
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
@@ -24,7 +23,6 @@ export const blockTemplate = {
     },
   ],
   [BLOCK_TEMPLATES_IS_AVAILABLE]: true,
-  [BLOCK_TEMPLATES_ALLOW_ADD]: false,
 };
 
 export const emptyBlockTemplate = {
@@ -34,7 +32,6 @@ export const emptyBlockTemplate = {
   created: '2020-02-21T08:34:24+0000',
   [BLOCK_TEMPLATES_ELEMENTS]: [],
   [BLOCK_TEMPLATES_IS_AVAILABLE]: false,
-  [BLOCK_TEMPLATES_ALLOW_ADD]: false,
 };
 
 export const defaultBlockTemplate = {
@@ -51,7 +48,6 @@ export const defaultBlockTemplate = {
     },
   ],
   [BLOCK_TEMPLATES_IS_AVAILABLE]: false,
-  [BLOCK_TEMPLATES_ALLOW_ADD]: false,
 };
 
 export const blockTemplates = [blockTemplate, emptyBlockTemplate, defaultBlockTemplate];

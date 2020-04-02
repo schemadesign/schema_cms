@@ -30,7 +30,7 @@ describe('BlockTemplate: Component', () => {
     jest.spyOn(defaultProps, 'fetchBlockTemplates');
     await render();
     expect(defaultProps.fetchBlockTemplate).toHaveBeenCalledWith({ blockTemplateId: 'blockTemplateId' });
-    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId', raw: true });
+    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
   });
 
   it('should redirect to block templates', async () => {

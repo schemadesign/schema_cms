@@ -1476,6 +1476,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                   >
                     <div
                       className="c26"
+                      onClick={[Function]}
                     >
                       <label
                         id="fieldProjectStatusLabel"
@@ -1782,69 +1783,6 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                   This Template is currently unavailable for Editors
                 </span>
               </div>
-            </div>
-          </div>
-          <div
-            className="c29"
-          >
-            <div>
-              <input
-                checked={false}
-                id="allowAdd"
-                onChange={[Function]}
-                style={
-                  Object {
-                    "height": 0,
-                    "left": 0,
-                    "overflow": "hidden",
-                    "position": "absolute",
-                    "top": 0,
-                    "visibility": "hidden",
-                  }
-                }
-                type="checkbox"
-              />
-              <label
-                htmlFor="allowAdd"
-              >
-                <div
-                  style={
-                    Object {
-                      "background": "#2F2F36",
-                      "borderRadius": 20,
-                      "boxSizing": "border-box",
-                      "cursor": "pointer",
-                      "height": 24,
-                      "padding": 2,
-                      "transition": "background 200ms ease-in-out",
-                      "width": 44,
-                    }
-                  }
-                >
-                  <div
-                    style={
-                      Object {
-                        "background": "#FFF",
-                        "borderRadius": "50%",
-                        "height": 20,
-                        "transform": "translateX(0)",
-                        "transition": "transform 200ms ease-in-out",
-                        "width": 20,
-                      }
-                    }
-                  />
-                </div>
-              </label>
-            </div>
-            <div
-              className="c31"
-            >
-              <label
-                className="c32"
-                htmlFor="allowAdd"
-              >
-                Allow new Elements to be added to this Block Template
-              </label>
             </div>
           </div>
         </div>

@@ -586,6 +586,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
     >
       <div
         className="sc-fzqMAW raLGB"
+        onClick={[Function]}
       >
         <label
           id="fieldProjectStatusLabel"

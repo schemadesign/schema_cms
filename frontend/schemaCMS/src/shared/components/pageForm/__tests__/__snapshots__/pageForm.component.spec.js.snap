@@ -449,6 +449,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   >
     <div
       className="sc-fznJRM htAbOk"
+      onClick={[Function]}
     >
       <label
         id="fieldProjectStatusLabel"
