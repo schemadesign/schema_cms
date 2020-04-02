@@ -7,7 +7,12 @@ const SEPARATOR_SYMBOL = '>';
 
 export class Breadcrumbs extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node,
+      PropTypes.element,
+      PropTypes.elementType,
+    ]).isRequired,
     theme: PropTypes.object,
     separatorSymbol: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   };

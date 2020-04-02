@@ -6,7 +6,7 @@ import { getStyles } from './link.styles';
 export class Link extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.element]),
   };
 
   render() {

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link: Component should render correctly 1`] = `
+<a
+  href="#"
+  style={
+    Object {
+      "color": "#a6a7aa",
+      "textDecoration": "none",
+    }
+  }
+  target="_blank"
+>
+  This is a link
+</a>
+`;

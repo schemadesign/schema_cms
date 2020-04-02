@@ -5,7 +5,11 @@ import { Link } from '../link.component';
 import { defaultProps } from '../link.stories';
 
 describe('Link: Component', () => {
-  const component = props => <Link {...defaultProps} {...props} />;
+  const component = props => (
+    <Link {...defaultProps} {...props}>
+      This is a link
+    </Link>
+  );
 
   const render = (props = {}) => shallow(component(props));
 
