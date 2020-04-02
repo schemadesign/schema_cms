@@ -11,7 +11,7 @@ import { Container } from './createPage.styles';
 import messages from './createPage.messages';
 import { PageForm } from '../../../shared/components/pageForm';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions, preparePageData } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, prepareForPostingPageData } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/page/page.constants';
@@ -45,7 +45,7 @@ export const CreatePage = ({
       try {
         setCreateLoading(true);
 
-        const formData = preparePageData(data);
+        const formData = prepareForPostingPageData(data);
         const { id } = await createPage({ formData, sectionId });
         history.push(`/page/${id}`);
       } catch (errors) {

@@ -11,7 +11,7 @@ import { Container } from './editPage.styles';
 import messages from './editPage.messages';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions, preparePageData } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, prepareForPostingPageData } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { PageForm } from '../../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -53,7 +53,7 @@ export const EditPage = ({
       try {
         setUpdateLoading(true);
 
-        const formData = preparePageData(data);
+        const formData = prepareForPostingPageData(data);
 
         await updatePage({ formData, pageId });
       } catch (errors) {

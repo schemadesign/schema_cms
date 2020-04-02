@@ -34,7 +34,7 @@ export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/ap
 export const addOrder = (item, index) => assoc('order', index, item);
 export const mapIndexed = addIndex(map);
 export const mapAndAddOrder = mapIndexed(addOrder);
-export const ifArray = (fn, otherwise) => ifElse(is(Array), fn, otherwise);
+export const callIfArray = (fn, otherwise) => ifElse(is(Array), fn, otherwise);
 
 export const errorMessageParser = ({ errors, messages = {}, formatMessage = () => {} }) => {
   if (is(Array, errors)) {
@@ -116,9 +116,9 @@ export const isProcessingData = ({ metaData, jobsState }) => {
   return { isProcessing: metaProcessing || jobProcessing, metaProcessing, jobProcessing };
 };
 
-export const preparePageData = evolve({
+export const prepareForPostingPageData = evolve({
   [PAGE_TEMPLATE]: ifElse(equals(0), always(null), identity),
   [PAGE_BLOCKS]: mapIndexed((block, index) =>
-    evolve({ order: index, [BLOCK_ELEMENTS]: map(evolve({ value: ifArray(mapAndAddOrder, identity) })) })(block)
+    evolve({ order: index, [BLOCK_ELEMENTS]: map(evolve({ value: callIfArray(mapAndAddOrder, identity) })) })(block)
   ),
 });
