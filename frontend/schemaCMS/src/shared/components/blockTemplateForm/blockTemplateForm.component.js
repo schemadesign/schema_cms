@@ -24,8 +24,10 @@ import {
   SwitchCopy,
   binStyles,
   BinIconContainer,
+  menuIconStyles,
+  IconWrapper,
 } from '../form/frequentComponents.styles';
-import { Container, IconWrapper, menuIconStyles } from './blockTemplateForm.styles';
+import { Container } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
 import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
@@ -58,7 +60,7 @@ export const BlockTemplateForm = ({
   ...restFormikProps
 }) => {
   const intl = useIntl();
-  const blocksOptions = blockTemplates.map(({ name }) => ({ label: name, value: name }));
+  const blocksOptions = blockTemplates.map(({ name, id }) => ({ label: name, value: id }));
 
   const nameInput = (
     <Subtitle>

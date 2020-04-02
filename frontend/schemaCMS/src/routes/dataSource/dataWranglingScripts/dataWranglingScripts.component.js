@@ -20,7 +20,6 @@ import {
   IconWrapper,
   labelStyles,
   Link,
-  menuIconStyles,
   selectedLabelStyles,
   StepCounter,
   StepName,
@@ -44,6 +43,7 @@ import reportError from '../../../shared/utils/reportError';
 import { Draggable } from '../../../shared/components/draggable';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../../project/project.constants';
+import { menuIconStyles } from '../../../shared/components/form/frequentComponents.styles';
 
 const { CheckboxGroup, Checkbox, FileUpload, Label } = Form;
 const { MenuIcon } = Icons;

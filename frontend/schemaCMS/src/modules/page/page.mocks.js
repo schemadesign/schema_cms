@@ -20,6 +20,7 @@ import {
   STACK_TYPE,
   ELEMENT_ID,
   ELEMENT_VALUE,
+  ELEMENT_PARAMS,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const textElement = {
@@ -41,8 +42,19 @@ export const imageElement = {
 export const stackElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_TYPE]: STACK_TYPE,
-  [ELEMENT_VALUE]: [],
+  [ELEMENT_VALUE]: [
+    {
+      [BLOCK_NAME]: 'name',
+      [BLOCK_TYPE]: 'type',
+      [BLOCK_KEY]: 1,
+      [BLOCK_ID]: 1,
+      [BLOCK_ELEMENTS]: [textElement, imageElement],
+    },
+  ],
   [ELEMENT_ID]: 1,
+  [ELEMENT_PARAMS]: {
+    block: 3,
+  },
 };
 
 export const block = {

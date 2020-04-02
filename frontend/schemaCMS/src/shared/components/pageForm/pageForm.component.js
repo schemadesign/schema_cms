@@ -27,6 +27,8 @@ import {
   CopySeparator,
   mobilePlusStyles,
   PlusContainer,
+  IconWrapper,
+  menuIconStyles,
 } from '../form/frequentComponents.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageForm.messages';
@@ -48,7 +50,6 @@ import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.sty
 import { BackButton, NextButton, PlusButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
-import { IconWrapper, menuIconStyles } from '../pageTemplateForm/pageTemplateForm.styles';
 import { CounterHeader } from '../counterHeader';
 
 const { EditIcon, MinusIcon, MenuIcon } = Icons;
@@ -63,6 +64,7 @@ export const PageForm = ({
   setValues,
   setFieldValue,
   pageTemplates,
+  blockTemplates,
   setRemoveModalOpen,
   ...restFormikProps
 }) => {
@@ -249,10 +251,12 @@ export const PageForm = ({
                   <PageBlock
                     index={index}
                     block={block}
+                    formikFieldPath={PAGE_BLOCKS}
                     draggableIcon={draggableIcon}
                     removeBlock={removeBlock}
                     handleChange={handleChange}
                     setFieldValue={setFieldValue}
+                    blockTemplates={blockTemplates}
                     {...restFormikProps}
                   />
                 );
@@ -307,6 +311,7 @@ PageForm.propTypes = {
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
   pageTemplates: PropTypes.array.isRequired,
+  blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,
   displayName: PropTypes.string,
 };

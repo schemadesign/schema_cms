@@ -414,7 +414,7 @@ exports[`Storyshots BlockElement Default 1`] = `
                 }
               >
                 <textarea
-                  id="blockPath.elements.index.value"
+                  id="blockPath.elements.0.value"
                   onChange={[Function]}
                   style={
                     Object {

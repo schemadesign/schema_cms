@@ -10,12 +10,14 @@ import { selectUserRole } from '../../../modules/userProfile';
 import { PageRoutines, selectPage } from '../../../modules/page';
 import { selectProject } from '../../../modules/project';
 import { PageTemplatesRoutines, selectPageTemplates } from '../../../modules/pageTemplates';
+import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   page: selectPage,
   project: selectProject,
   pageTemplates: selectPageTemplates,
+  blockTemplates: selectBlockTemplates,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -24,6 +26,7 @@ export const mapDispatchToProps = dispatch => ({
       updatePage: promisifyRoutine(PageRoutines.updatePage),
       removePage: promisifyRoutine(PageRoutines.removePage),
       fetchPageTemplates: promisifyRoutine(PageTemplatesRoutines.fetchPageTemplates),
+      fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
     },
     dispatch
   ),

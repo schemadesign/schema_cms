@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { PageBlock } from './pageBlock.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { block } from '../../../modules/page/page.mocks';
+import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
 
 export const defaultProps = {
   block,
@@ -11,6 +12,8 @@ export const defaultProps = {
   draggableIcon: <div>icon</div>,
   removeBlock: Function.prototype,
   handleChange: Function.prototype,
+  blockTemplates,
+  formikFieldPath: 'formikFieldPath',
 };
 
 storiesOf('PageBlock', module)

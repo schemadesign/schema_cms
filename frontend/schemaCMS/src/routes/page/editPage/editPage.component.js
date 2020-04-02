@@ -11,7 +11,7 @@ import { Container } from './editPage.styles';
 import messages from './editPage.messages';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, prepareForPostingPageData } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { PageForm } from '../../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -19,7 +19,17 @@ import { getProjectMenuOptions } from '../../project/project.constants';
 import { PAGE_SCHEMA, FORM_VALUES, PAGE_TEMPLATE, PAGE_BLOCKS, PAGE_NAME } from '../../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 
-export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTemplates, userRole, removePage }) => {
+export const EditPage = ({
+  project,
+  updatePage,
+  page,
+  fetchPageTemplates,
+  fetchBlockTemplates,
+  pageTemplates,
+  userRole,
+  removePage,
+  blockTemplates,
+}) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -31,7 +41,8 @@ export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTe
   const { state = {} } = useLocation();
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
-  const menuOptions = getProjectMenuOptions(project.id);
+  const projectId = project.id;
+  const menuOptions = getProjectMenuOptions(projectId);
   const initialValues = { ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
 
   const { handleSubmit, isValid, dirty, values, setValues, setFieldValue, ...restFormikProps } = useFormik({
@@ -41,11 +52,9 @@ export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTe
     onSubmit: async (data, { setErrors }) => {
       try {
         setUpdateLoading(true);
-        const formData = {
-          ...data,
-          [PAGE_BLOCKS]: data[PAGE_BLOCKS].map((block, index) => ({ ...block, order: index })),
-          [PAGE_TEMPLATE]: data[PAGE_TEMPLATE] || null,
-        };
+
+        const formData = prepareForPostingPageData(data);
+
         await updatePage({ formData, pageId });
       } catch (errors) {
         const { formatMessage } = intl;
@@ -72,7 +81,8 @@ export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTe
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchPageTemplates({ projectId: project.id });
+        await fetchPageTemplates({ projectId });
+        await fetchBlockTemplates({ projectId });
         const { page = {} } = state;
 
         if (!isEmpty(page)) {
@@ -107,6 +117,7 @@ export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTe
             values={values}
             setValues={setValues}
             setFieldValue={setFieldValue}
+            blockTemplates={blockTemplates}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -148,9 +159,11 @@ export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTe
 
 EditPage.propTypes = {
   pageTemplates: PropTypes.array.isRequired,
+  blockTemplates: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
   updatePage: PropTypes.func.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
+  fetchBlockTemplates: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,

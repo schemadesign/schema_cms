@@ -472,7 +472,7 @@ exports[`PageList: Component should render correctly 1`] = `
             className="sc-fzqAbL jowhOw"
           >
             <div
-              className="sc-fznAgC fNREqd"
+              className="sc-fznLPX eppHyY"
             >
               <div
                 style={
@@ -623,7 +623,7 @@ exports[`PageList: Component should render correctly 1`] = `
       className="sc-fzoydu kVlKwf"
     >
       <div
-        className="sc-fznAgC lpuPHD"
+        className="sc-fznLPX gLqlma"
       >
         <div
           style={
@@ -687,7 +687,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fznLPX iKVBKz"
+              className="sc-fzoaKM jwkshV"
             >
               <svg
                 style={

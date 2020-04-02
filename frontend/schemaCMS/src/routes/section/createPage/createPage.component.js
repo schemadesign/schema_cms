@@ -11,14 +11,22 @@ import { Container } from './createPage.styles';
 import messages from './createPage.messages';
 import { PageForm } from '../../../shared/components/pageForm';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, prepareForPostingPageData } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/page/page.constants';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../../project/project.constants';
 
-export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTemplates, project }) => {
+export const CreatePage = ({
+  pageTemplates,
+  userRole,
+  createPage,
+  fetchPageTemplates,
+  blockTemplates,
+  fetchBlockTemplates,
+  project,
+}) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -28,14 +36,16 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
   const { state = {} } = useLocation();
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
-  const menuOptions = getProjectMenuOptions(project.id);
+  const projectId = project.id;
+  const menuOptions = getProjectMenuOptions(projectId);
   const { handleSubmit, isValid, dirty, setFieldValue, setValues, values, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => PAGE_SCHEMA,
     onSubmit: async (data, { setErrors }) => {
       try {
         setCreateLoading(true);
-        const formData = { ...data, [PAGE_TEMPLATE]: data[PAGE_TEMPLATE] || null };
+
+        const formData = prepareForPostingPageData(data);
         const { id } = await createPage({ formData, sectionId });
         history.push(`/page/${id}`);
       } catch (errors) {
@@ -52,7 +62,8 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchPageTemplates({ projectId: project.id });
+        await fetchPageTemplates({ projectId });
+        await fetchBlockTemplates({ projectId });
         const { page = {} } = state;
 
         if (is(Number, page[PAGE_TEMPLATE])) {
@@ -81,6 +92,7 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
             setFieldValue={setFieldValue}
             setValues={setValues}
             values={values}
+            blockTemplates={blockTemplates}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -106,6 +118,8 @@ CreatePage.propTypes = {
   pageTemplates: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
   createPage: PropTypes.func.isRequired,
-  fetchPageTemplates: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
+  blockTemplates: PropTypes.array.isRequired,
+  fetchPageTemplates: PropTypes.func.isRequired,
+  fetchBlockTemplates: PropTypes.func.isRequired,
 };
