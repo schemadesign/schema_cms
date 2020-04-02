@@ -1,16 +1,27 @@
-import React, { Fragment } from 'react';
-import { shallow } from 'enzyme';
+import React from 'react';
+import {shallow} from 'enzyme';
 
-import { Breadcrumbs } from '../breadcrumbs.component';
+import {Breadcrumbs} from '../breadcrumbs.component';
 import { defaultProps, withSymbol } from '../breadcrumbs.stories';
+import { LinkItem } from '../../linkItem';
+import { Span } from '../../typography/span';
+import { H3 } from '../../typography/h3';
 
 describe('Breadcrumbs: Component', () => {
   const component = props => (
     <Breadcrumbs {...defaultProps} {...props}>
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is a page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is an inner page</H3>
+      </LinkItem>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is another inner page</H3>
+      </LinkItem>
     </Breadcrumbs>
   );
 
