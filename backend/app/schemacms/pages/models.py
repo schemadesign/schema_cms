@@ -30,7 +30,6 @@ class Content(SoftDeleteObject, TimeStampedModel):
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     is_template = models.BooleanField(default=True)
     is_available = models.BooleanField(default=False)
-    allow_add = models.BooleanField(default=False)
 
     class Meta:
         abstract = True
@@ -97,6 +96,7 @@ class Page(Content):
     keywords = models.TextField(blank=True, default="")
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     is_public = models.BooleanField(default=False)
+    allow_edit = models.BooleanField(default=False)
     blocks = models.ManyToManyField(Block, through="PageBlock")
 
     objects = managers.PageManager()
