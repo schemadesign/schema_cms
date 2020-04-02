@@ -14,3 +14,4 @@ export Form from './form';
 export { Stepper } from './stepper';
 export { Table } from './table';
 export { ThemeProvider } from './styles/themeProvider';
+export { Breadcrumbs } from './breadcrumbs';

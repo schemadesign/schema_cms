@@ -54,6 +54,10 @@ const light = {
     text: colors.coolGray,
     border: colors.veryLightPink,
   },
+  breadcrumbs: {
+    link: colors.darkGrey,
+    separator: colors.darkGrey,
+  },
   textArea: {
     text: colors.black,
   },
@@ -160,6 +164,10 @@ const dark = {
   },
   input: {
     text: colors.white,
+  },
+  breadcrumbs: {
+    link: colors.coolGray,
+    separator: colors.coolGray,
   },
   label: {
     text: colors.lightGrey,
