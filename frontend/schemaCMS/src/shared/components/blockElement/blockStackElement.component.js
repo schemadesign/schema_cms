@@ -15,6 +15,7 @@ import messages from './blockElement.messages';
 import { IconWrapper, menuIconStyles, mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
 import { PlusButton } from '../navigation';
 import { BLOCK_ID, BLOCK_KEY } from '../../../modules/page/page.constants';
+import { getValuePath } from '../../utils/helpers';
 
 const { MenuIcon } = Icons;
 
@@ -26,10 +27,12 @@ export const BlockStackElement = ({
   blockTemplates,
   setFieldValue,
   handleChange,
-  formikFieldPath,
+  blockPath,
+  index,
   ...restFormikProps
 }) => {
   const intl = useIntl();
+  const formikFieldPath = getValuePath({ blockPath, index });
   const handleMove = (dragIndex, hoverIndex) => {
     const dragCard = value[dragIndex];
     const mutableValues = asMutable(value);
@@ -105,5 +108,6 @@ BlockStackElement.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
-  formikFieldPath: PropTypes.string.isRequired,
+  blockPath: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };

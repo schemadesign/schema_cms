@@ -72,8 +72,8 @@ export const PageBlock = ({
 PageBlock.propTypes = {
   index: PropTypes.number.isRequired,
   block: PropTypes.object.isRequired,
-  draggableIcon: PropTypes.element.isRequired,
-  removeBlock: PropTypes.func.isRequired,
+  draggableIcon: PropTypes.element,
+  removeBlock: PropTypes.func,
   handleChange: PropTypes.func.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   formikFieldPath: PropTypes.string.isRequired,

@@ -6,10 +6,11 @@ import { useIntl } from 'react-intl';
 
 import messages from './blockElement.messages';
 import { Uploader } from '../form/uploader';
-import { getEventFiles } from '../../utils/helpers';
+import { getEventFiles, getValuePath } from '../../utils/helpers';
 
-export const ImageElement = ({ formikFieldPath: name, element, setFieldValue, ...restFormikProps }) => {
+export const ImageElement = ({ blockPath, element, setFieldValue, index, ...restFormikProps }) => {
   const intl = useIntl();
+  const name = getValuePath({ blockPath, index });
   const handleUploadChange = data => {
     const uploadFile = getEventFiles(data);
 
@@ -45,7 +46,8 @@ export const ImageElement = ({ formikFieldPath: name, element, setFieldValue, ..
 };
 ImageElement.propTypes = {
   element: PropTypes.object.isRequired,
-  formikFieldPath: PropTypes.string.isRequired,
+  blockPath: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
 };

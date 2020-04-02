@@ -1595,8 +1595,8 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 >
                                   <input
-                                    id="blocks.0.elements.2.value.2.name"
-                                    name="blocks.0.elements.2.value.2.name"
+                                    id="blocks.0.elements.2.value.0.name"
+                                    name="blocks.0.elements.2.value.0.name"
                                     onChange={[Function]}
                                     placeholder="Name"
                                     style={
@@ -1673,7 +1673,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   />
                                 </svg>
                                 <svg
-                                  id="blocks.0.elements.2.value.2"
+                                  id="blocks.0.elements.2.value.0"
                                   onClick={[Function]}
                                   style={
                                     Object {
@@ -1857,7 +1857,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.0.value"
+                                              id="blocks.0.elements.2.value.0.elements.0.value"
                                               onChange={[Function]}
                                               style={
                                                 Object {
@@ -2059,7 +2059,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                             Image
                                           </label>
                                           <label
-                                            htmlFor="blocks.0.elements.1.value"
+                                            htmlFor="blocks.0.elements.2.value.0.elements.1.value"
                                             style={
                                               Object {
                                                 "cursor": "pointer",
@@ -2084,7 +2084,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                             }
                                           >
                                             <label
-                                              htmlFor="blocks.0.elements.1.value"
+                                              htmlFor="blocks.0.elements.2.value.0.elements.1.value"
                                               style={
                                                 Object {
                                                   "position": "relative",
@@ -2133,8 +2133,8 @@ exports[`PageForm: Component should render correctly 1`] = `
                                             accept=".png, .jpg, .jpeg, .gif"
                                             aria-hidden={true}
                                             disabled={false}
-                                            id="blocks.0.elements.1.value"
-                                            name="blocks.0.elements.1.value"
+                                            id="blocks.0.elements.2.value.0.elements.1.value"
+                                            name="blocks.0.elements.2.value.0.elements.1.value"
                                             onChange={[Function]}
                                             style={
                                               Object {
@@ -2150,7 +2150,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                           />
                                         </div>
                                         <label
-                                          htmlFor="blocks.0.elements.1.value"
+                                          htmlFor="blocks.0.elements.2.value.0.elements.1.value"
                                           id="dropZone-schema-ui"
                                           onDrop={[Function]}
                                           style={
@@ -3900,8 +3900,8 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                   }
                                 >
                                   <input
-                                    id="blocks.0.elements.2.value.2.name"
-                                    name="blocks.0.elements.2.value.2.name"
+                                    id="blocks.0.elements.2.value.0.name"
+                                    name="blocks.0.elements.2.value.0.name"
                                     onChange={[Function]}
                                     placeholder="Name"
                                     style={
@@ -3978,7 +3978,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                   />
                                 </svg>
                                 <svg
-                                  id="blocks.0.elements.2.value.2"
+                                  id="blocks.0.elements.2.value.0"
                                   onClick={[Function]}
                                   style={
                                     Object {
@@ -4162,7 +4162,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.0.value"
+                                              id="blocks.0.elements.2.value.0.elements.0.value"
                                               onChange={[Function]}
                                               style={
                                                 Object {
@@ -4364,7 +4364,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                             Image
                                           </label>
                                           <label
-                                            htmlFor="blocks.0.elements.1.value"
+                                            htmlFor="blocks.0.elements.2.value.0.elements.1.value"
                                             style={
                                               Object {
                                                 "cursor": "pointer",
@@ -4389,7 +4389,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                             }
                                           >
                                             <label
-                                              htmlFor="blocks.0.elements.1.value"
+                                              htmlFor="blocks.0.elements.2.value.0.elements.1.value"
                                               style={
                                                 Object {
                                                   "position": "relative",
@@ -4438,8 +4438,8 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                             accept=".png, .jpg, .jpeg, .gif"
                                             aria-hidden={true}
                                             disabled={false}
-                                            id="blocks.0.elements.1.value"
-                                            name="blocks.0.elements.1.value"
+                                            id="blocks.0.elements.2.value.0.elements.1.value"
+                                            name="blocks.0.elements.2.value.0.elements.1.value"
                                             onChange={[Function]}
                                             style={
                                               Object {
@@ -4455,7 +4455,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                           />
                                         </div>
                                         <label
-                                          htmlFor="blocks.0.elements.1.value"
+                                          htmlFor="blocks.0.elements.2.value.0.elements.1.value"
                                           id="dropZone-schema-ui"
                                           onDrop={[Function]}
                                           style={

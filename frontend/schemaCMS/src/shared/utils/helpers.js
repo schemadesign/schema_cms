@@ -29,6 +29,7 @@ import { sizes } from '../../theme/media';
 import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TEMPLATE } from '../../modules/page/page.constants';
+import { ELEMENT_VALUE } from '../../modules/blockTemplates/blockTemplates.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
@@ -122,3 +123,5 @@ export const prepareForPostingPageData = evolve({
     evolve({ order: index, [BLOCK_ELEMENTS]: map(evolve({ value: callIfArray(mapAndAddOrder, identity) })) })(block)
   ),
 });
+
+export const getValuePath = ({ blockPath, index }) => `${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`;
