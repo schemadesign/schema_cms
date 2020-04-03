@@ -43,7 +43,9 @@ export const PageBlock = ({
           />
           <IconsContainer>
             <EditIcon />
-            <MinusIcon id={blockPath} customStyles={iconStyles} onClick={() => removeBlock(index)} />
+            {removeBlock ? (
+              <MinusIcon id={blockPath} customStyles={iconStyles} onClick={() => removeBlock(index)} />
+            ) : null}
           </IconsContainer>
         </Header>
         <Type>{block[BLOCK_TYPE]}</Type>
@@ -70,8 +72,8 @@ export const PageBlock = ({
 PageBlock.propTypes = {
   index: PropTypes.number.isRequired,
   block: PropTypes.object.isRequired,
-  draggableIcon: PropTypes.element.isRequired,
-  removeBlock: PropTypes.func.isRequired,
+  draggableIcon: PropTypes.element,
+  removeBlock: PropTypes.func,
   handleChange: PropTypes.func.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   formikFieldPath: PropTypes.string.isRequired,

@@ -35,7 +35,7 @@ import messages from './pageTemplateForm.messages';
 import {
   BLOCK_KEY,
   getDefaultPageBlock,
-  PAGE_TEMPLATES_ALLOW_ADD,
+  PAGE_TEMPLATES_ALLOW_EDIT,
   PAGE_TEMPLATES_BLOCKS,
   PAGE_TEMPLATES_DELETE_BLOCKS,
   PAGE_TEMPLATES_IS_AVAILABLE,
@@ -209,10 +209,10 @@ export const PageTemplateForm = ({
           {binIcon}
         </SwitchContainer>
         <SwitchContainer>
-          <Switch value={values[PAGE_TEMPLATES_ALLOW_ADD]} id={PAGE_TEMPLATES_ALLOW_ADD} onChange={handleChange} />
+          <Switch value={values[PAGE_TEMPLATES_ALLOW_EDIT]} id={PAGE_TEMPLATES_ALLOW_EDIT} onChange={handleChange} />
           <SwitchCopy>
-            <SwitchLabel htmlFor={PAGE_TEMPLATES_ALLOW_ADD}>
-              <FormattedMessage {...messages[PAGE_TEMPLATES_ALLOW_ADD]} />
+            <SwitchLabel htmlFor={PAGE_TEMPLATES_ALLOW_EDIT}>
+              <FormattedMessage {...messages[PAGE_TEMPLATES_ALLOW_EDIT]} />
             </SwitchLabel>
           </SwitchCopy>
         </SwitchContainer>

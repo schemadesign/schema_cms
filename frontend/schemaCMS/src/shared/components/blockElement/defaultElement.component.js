@@ -5,13 +5,14 @@ import { useTheme } from 'styled-components';
 
 import { getCustomInputStyles, editIconStyles, InputContainer } from './blockElement.styles';
 import { TextInput } from '../form/inputs/textInput';
+import { getValuePath } from '../../utils/helpers';
 
 const { EditIcon } = Icons;
 
-export const DefaultElement = ({ element, formikFieldPath, handleChange, ...restFormikProps }) => (
+export const DefaultElement = ({ element, blockPath, handleChange, index, ...restFormikProps }) => (
   <InputContainer>
     <TextInput
-      name={formikFieldPath}
+      name={getValuePath({ blockPath, index })}
       value={element.value || ''}
       fullWidth
       customInputStyles={getCustomInputStyles(useTheme())}
@@ -24,7 +25,8 @@ export const DefaultElement = ({ element, formikFieldPath, handleChange, ...rest
 );
 DefaultElement.propTypes = {
   element: PropTypes.object.isRequired,
-  formikFieldPath: PropTypes.string.isRequired,
+  blockPath: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
 };

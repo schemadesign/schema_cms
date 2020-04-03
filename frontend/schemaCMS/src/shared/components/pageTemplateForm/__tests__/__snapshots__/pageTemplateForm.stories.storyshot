@@ -1395,7 +1395,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
         <div>
           <input
             checked={true}
-            id="allowAdd"
+            id="allowEdit"
             onChange={[Function]}
             style={
               Object {
@@ -1410,7 +1410,7 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
             type="checkbox"
           />
           <label
-            htmlFor="allowAdd"
+            htmlFor="allowEdit"
           >
             <div
               style={
@@ -1446,9 +1446,9 @@ exports[`Storyshots PageTemplateForm Default 1`] = `
         >
           <label
             className="c25"
-            htmlFor="allowAdd"
+            htmlFor="allowEdit"
           >
-            Allow new Blocks to be added to this Page Template
+            Allow editing the Page Template
           </label>
         </div>
       </div>

@@ -111,7 +111,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
     class Meta:
         model = models.Block
-        fields = ("id", "project", "name", "created_by", "elements", "created", "is_available", "allow_add")
+        fields = ("id", "project", "name", "created_by", "elements", "created", "is_available")
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Block.objects.all(),
@@ -197,7 +197,7 @@ class PageTemplateSerializer(CustomModelSerializer):
             "created",
             "blocks",
             "is_available",
-            "allow_add",
+            "allow_edit",
         )
         validators = [
             CustomUniqueTogetherValidator(

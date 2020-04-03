@@ -723,7 +723,7 @@ exports[`BlockElement: Component should render correctly stack element 1`] = `
                                 }
                               >
                                 <textarea
-                                  id="blockPath.elements.0.value"
+                                  id="blockPath.elements.0.value.0.elements.0.value"
                                   onChange={[Function]}
                                   style={
                                     Object {
@@ -925,7 +925,7 @@ exports[`BlockElement: Component should render correctly stack element 1`] = `
                                 Image
                               </label>
                               <label
-                                htmlFor="blockPath.elements.1.value"
+                                htmlFor="blockPath.elements.0.value.0.elements.1.value"
                                 style={
                                   Object {
                                     "cursor": "pointer",
@@ -950,7 +950,7 @@ exports[`BlockElement: Component should render correctly stack element 1`] = `
                                 }
                               >
                                 <label
-                                  htmlFor="blockPath.elements.1.value"
+                                  htmlFor="blockPath.elements.0.value.0.elements.1.value"
                                   style={
                                     Object {
                                       "position": "relative",
@@ -999,8 +999,8 @@ exports[`BlockElement: Component should render correctly stack element 1`] = `
                                 accept=".png, .jpg, .jpeg, .gif"
                                 aria-hidden={true}
                                 disabled={false}
-                                id="blockPath.elements.1.value"
-                                name="blockPath.elements.1.value"
+                                id="blockPath.elements.0.value.0.elements.1.value"
+                                name="blockPath.elements.0.value.0.elements.1.value"
                                 onChange={[Function]}
                                 style={
                                   Object {
@@ -1016,7 +1016,7 @@ exports[`BlockElement: Component should render correctly stack element 1`] = `
                               />
                             </div>
                             <label
-                              htmlFor="blockPath.elements.1.value"
+                              htmlFor="blockPath.elements.0.value.0.elements.1.value"
                               id="dropZone-schema-ui"
                               onDrop={[Function]}
                               style={

@@ -6,6 +6,7 @@ import { defaultProps } from '../pageForm.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 import { PAGE_TEMPLATES_BLOCKS } from '../../../../modules/pageTemplates/pageTemplates.constants';
 import { page } from '../../../../modules/page/page.mocks';
+import { PAGE_TEMPLATE } from '../../../../modules/page/page.constants';
 
 const mockPushHistory = jest.fn();
 
@@ -24,6 +25,11 @@ describe('PageForm: Component', () => {
 
   it('should render correctly', async () => {
     const wrapper = await render();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render with blocked template', async () => {
+    const wrapper = await render({ page: { ...page, [PAGE_TEMPLATE]: 2 } });
     expect(wrapper).toMatchSnapshot();
   });
 
