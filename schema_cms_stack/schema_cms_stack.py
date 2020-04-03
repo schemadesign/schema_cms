@@ -322,6 +322,7 @@ class PublicAPI(core.Stack):
 
         self.function_code = aws_lambda.Code.from_cfn_parameters()
         handler = "wsgi_handler.handler"
+        db_connection_arn = self.node.try_get_context("db_connection_arn")
         self.public_api_lambda = aws_lambda.Function(
             self,
             "public-api-lambda",
@@ -334,7 +335,7 @@ class PublicAPI(core.Stack):
                 "BACKEND_URL": BACKEND_URL.format(
                     domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
                 ),
-                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
+                "DB_CONNECTION": aws_secretsmanager.Secret.from_secret_arn(self, "db_conn", db_connection_arn).secret_value.to_string()
             },
             memory_size=512,
             timeout=core.Duration.seconds(60),
