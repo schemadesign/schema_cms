@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
-import { Breadcrumbs } from 'schemaUI';
 
 import { Container } from './blockTemplates.styles';
 import messages from './blockTemplates.messages';
@@ -70,10 +69,6 @@ export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole }
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
-      <Breadcrumbs>
-        <div>Option1</div>
-        <div>Option2</div>
-      </Breadcrumbs>
       <ContextHeader title={title} subtitle={subtitle}>
         <PlusButton
           id="createBlockTemplate"
