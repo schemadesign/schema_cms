@@ -244,17 +244,17 @@ export const PageForm = ({
                     </IconWrapper>
                   </div>
                 );
+                const blockAdditionalProps = allowEdit ? { removeBlock, draggableIcon } : {};
 
                 return (
                   <PageBlock
                     index={index}
                     block={block}
                     formikFieldPath={PAGE_BLOCKS}
-                    removeBlock={allowEdit ? removeBlock : null}
-                    draggableIcon={allowEdit ? draggableIcon : null}
                     handleChange={handleChange}
                     setFieldValue={setFieldValue}
                     blockTemplates={blockTemplates}
+                    {...blockAdditionalProps}
                     {...restFormikProps}
                   />
                 );
