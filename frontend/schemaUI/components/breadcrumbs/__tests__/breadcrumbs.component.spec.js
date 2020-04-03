@@ -25,6 +25,15 @@ describe('Breadcrumbs: Component', () => {
     </Breadcrumbs>
   );
 
+  const withSingleChild = props => (
+    <Breadcrumbs {...defaultProps} {...props}>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is a page</H3>
+      </LinkItem>
+    </Breadcrumbs>
+  );
+
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
@@ -34,6 +43,11 @@ describe('Breadcrumbs: Component', () => {
 
   it('should render correctly with a custom symbol', () => {
     const wrapper = render(withSymbol('/'));
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly with a single child', () => {
+    const wrapper = shallow(withSingleChild());
     global.expect(wrapper).toMatchSnapshot();
   });
 });
