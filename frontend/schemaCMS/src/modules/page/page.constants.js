@@ -1,4 +1,15 @@
 import * as Yup from 'yup';
+import { complement, isEmpty } from 'ramda';
+import {
+  CODE_TYPE,
+  CONNECTION_TYPE,
+  ELEMENT_TYPE,
+  ELEMENT_VALUE,
+  IMAGE_TYPE,
+  PLAIN_TEXT_TYPE,
+  RICH_TEXT_TYPE,
+  STACK_TYPE,
+} from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
 export const PAGE_DISPLAY_NAME = 'displayName';
@@ -59,6 +70,71 @@ export const PAGE_SCHEMA = Yup.object().shape({
   [PAGE_TEMPLATE]: Yup.string()
     .min(1, 'Required')
     .required('Required'),
+  [PAGE_BLOCKS]: Yup.array()
+    .test(PAGE_BLOCKS, 'Required', complement(isEmpty))
+    .of(
+      Yup.object().shape({
+        [BLOCK_NAME]: Yup.string()
+          .trim()
+          .min(1, 'Block Name should have at least 1 character')
+          .max(25, 'Block Name should have maximum 25 characters')
+          .required('Required'),
+        [BLOCK_ELEMENTS]: Yup.array().of(
+          Yup.object().shape({
+            [ELEMENT_VALUE]: Yup.mixed()
+              .when(ELEMENT_TYPE, {
+                is: type => [PLAIN_TEXT_TYPE, RICH_TEXT_TYPE, CONNECTION_TYPE, CODE_TYPE].includes(type),
+                then: Yup.string()
+                  .min(1, 'Required')
+                  .max(1000, 'Element Value should have maximum 1000 characters')
+                  .required('Required'),
+              })
+              .when(ELEMENT_TYPE, {
+                is: IMAGE_TYPE,
+                then: Yup.object().shape({
+                  fileName: Yup.string()
+                    .min(1, 'Required')
+                    .required('Required'),
+                }),
+              })
+              .when(ELEMENT_TYPE, {
+                is: STACK_TYPE,
+                then: Yup.array()
+                  .test(ELEMENT_VALUE, 'Required', complement(isEmpty))
+                  .of(
+                    Yup.object().shape({
+                      [BLOCK_NAME]: Yup.string()
+                        .trim()
+                        .min(1, 'Block Stack Name should have at least 1 character')
+                        .max(25, 'Block Stack Name should have maximum 25 characters')
+                        .required('Required'),
+                      [BLOCK_ELEMENTS]: Yup.array().of(
+                        Yup.object().shape({
+                          [ELEMENT_VALUE]: Yup.mixed()
+                            .when(ELEMENT_TYPE, {
+                              is: type => [PLAIN_TEXT_TYPE, RICH_TEXT_TYPE, CONNECTION_TYPE, CODE_TYPE].includes(type),
+                              then: Yup.string()
+                                .min(1, 'Required')
+                                .max(1000, 'Element Value should have maximum 1000 characters')
+                                .required('Required'),
+                            })
+                            .when(ELEMENT_TYPE, {
+                              is: IMAGE_TYPE,
+                              then: Yup.object().shape({
+                                fileName: Yup.string()
+                                  .min(1, 'Required')
+                                  .required('Required'),
+                              }),
+                            }),
+                        })
+                      ),
+                    })
+                  ),
+              }),
+          })
+        ),
+      })
+    ),
 });
 
 export const ADD_BLOCK_SCHEMA = Yup.object().shape({

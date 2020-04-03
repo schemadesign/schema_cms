@@ -3,6 +3,7 @@ import {
   always,
   assoc,
   complement,
+  cond,
   either,
   equals,
   evolve,
@@ -21,6 +22,8 @@ import {
   pickBy,
   pipe,
   propOr,
+  T,
+  mergeRight,
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
@@ -29,7 +32,7 @@ import { sizes } from '../../theme/media';
 import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TEMPLATE } from '../../modules/page/page.constants';
-import { ELEMENT_VALUE } from '../../modules/blockTemplates/blockTemplates.constants';
+import { ELEMENT_VALUE, IMAGE_TYPE, STACK_TYPE } from '../../modules/blockTemplates/blockTemplates.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
@@ -125,3 +128,7 @@ export const prepareForPostingPageData = evolve({
 });
 
 export const getValuePath = ({ blockPath, index }) => `${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`;
+
+const getDefaultValue = cond([[equals(STACK_TYPE), always([])], [equals(IMAGE_TYPE), always({})], [T, always('')]]);
+
+export const setDefaultValue = element => mergeRight(element, { value: getDefaultValue(element.type) });

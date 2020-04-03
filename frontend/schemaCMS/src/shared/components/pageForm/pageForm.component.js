@@ -51,6 +51,7 @@ import { BackButton, NextButton, PlusButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
+import { setDefaultValue } from '../../utils/helpers';
 
 const { EditIcon, MinusIcon, MenuIcon } = Icons;
 const { Switch } = Form;
@@ -82,7 +83,17 @@ export const PageForm = ({
     const templateBlocks = pipe(
       find(propEq('id', value)),
       propOr([], [PAGE_BLOCKS]),
-      map(({ id, elements, ...block }) => ({ ...block, key: id, elements: map(omit(['id', 'template']), elements) }))
+      map(({ id, elements, ...block }) => ({
+        ...block,
+        key: id,
+        elements: map(
+          pipe(
+            omit(['id', 'template']),
+            setDefaultValue
+          ),
+          elements
+        ),
+      }))
     )(pageTemplates);
 
     setFieldValue(PAGE_BLOCKS, templateBlocks);
