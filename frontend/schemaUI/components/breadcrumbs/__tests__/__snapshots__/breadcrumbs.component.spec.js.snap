@@ -199,3 +199,28 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
   </div>
 </div>
 `;
+
+exports[`Breadcrumbs: Component should render correctly with a single child 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "color": "#a6a7aa",
+      "display": "flex",
+      "marginRight": "14px",
+    }
+  }
+>
+  <LinkItem
+    Component={[Function]}
+    href="#"
+  >
+    <Span>
+      Details
+    </Span>
+    <H3>
+      This is a page
+    </H3>
+  </LinkItem>
+</div>
+`;
