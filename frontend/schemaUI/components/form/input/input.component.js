@@ -38,7 +38,7 @@ class InputComponent extends PureComponent {
   spanRef = createRef();
   inputRef = createRef();
 
-  handleThrottle = debounce(200, this.props.onChange);
+  handleDebounce = debounce(200, this.props.onChange);
 
   handleChange = e => {
     if (this.props.autoWidth) {
@@ -47,7 +47,7 @@ class InputComponent extends PureComponent {
 
       return setTimeout(() => {
         this.setState({ inputWidth: this.spanRef.current.offsetWidth });
-        this.handleThrottle({ target: { value, name, id } });
+        this.handleDebounce({ target: { value, name, id } });
       });
     }
 
