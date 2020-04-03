@@ -1,4 +1,3 @@
-from dataclasses import asdict
 import json
 import logging
 
@@ -11,13 +10,14 @@ from flask_cors import CORS
 from pyarrow import BufferReader
 import pyarrow.parquet as pq
 
-from common import services, settings, types, utils
+from common import db, services, settings, types, utils
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 
 app = Flask(__name__)
+db.initialize()
 CORS(app)
 
 
@@ -52,7 +52,10 @@ def split_string_to_list(column_names_string):
 @app.route("/projects", methods=["GET"])
 def get_projects():
     try:
-        projects = types.Project.get_all_items()
+        projects = [
+            project.as_dict() for project in db.Project.select().order_by(db.Project.id)
+        ]
+
     except Exception as e:
         logging.info(f"Unable to get projects - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -63,30 +66,41 @@ def get_projects():
 @app.route("/projects/<int:project_id>", methods=["GET"])
 def get_project(project_id):
     try:
-        project = types.Project.get_by_id(id=project_id)
+        project = db.Project.select().where(db.Project.id == project_id).get().as_dict()
     except Exception as e:
         logging.info(f"Unable to get project - {e}")
         return create_response({"error": f"{e}"}), 404
 
-    return create_response(asdict(project)), 200
+    return create_response(project), 200
 
 
 # Pages endpoints
+
+
+@app.route("/sections/<int:section_id>", methods=["GET"])
+def get_section(section_id):
+    try:
+        project = db.Section.select().where(db.Section.id == section_id).get().as_dict()
+    except Exception as e:
+        logging.info(f"Unable to get project - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(project), 200
 
 
 @app.route("/pages/<int:page_id>", methods=["GET"])
 def get_page(page_id):
     try:
         format_ = request.args.get("format", None)
-        page = types.Page.get_by_id(id=page_id)
+        page = db.Page.select().where(db.Page.id == page_id).get().as_dict_detail()
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
 
     if format_ != "html":
-        return create_response(asdict(page)), 200
+        return create_response(page), 200
 
-    page.blocks = generate_html_from_markdown_blocks(page)
+    # page.blocks = generate_html_from_markdown_blocks(page)
 
     return render_template("page_template.html", page=page)
 
@@ -109,16 +123,16 @@ def generate_html_from_markdown_blocks(page):
 @app.route("/datasources/<int:data_source_id>", methods=["GET"])
 def get_data_source(data_source_id):
     try:
-        data_source = types.DataSource.get_by_id(id=data_source_id)
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
         records = read_parquet_from_s3(data_source)
 
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
 
-    data = dict(**asdict(data_source))
-    data.pop("file")
-    data.pop("result")
+    data = data_source.as_dict()
     data["records"] = records
 
     return create_response(data), 200
@@ -127,8 +141,10 @@ def get_data_source(data_source_id):
 @app.route("/datasources/<int:data_source_id>/meta", methods=["GET"])
 def get_data_source_meta(data_source_id):
     try:
-        data_source = types.DataSource.get_by_id(id=data_source_id)
-        meta = data_source.meta
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
+        meta = data_source.as_dict()["meta"]
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -139,8 +155,10 @@ def get_data_source_meta(data_source_id):
 @app.route("/datasources/<int:data_source_id>/fields", methods=["GET"])
 def get_data_source_fields(data_source_id):
     try:
-        data_source = types.DataSource.get_by_id(id=data_source_id)
-        fields = data_source.fields
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
+        fields = data_source.get_fields()
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -153,8 +171,10 @@ def get_data_source_fields(data_source_id):
 )
 def get_data_source_selected_field(data_source_id, field_id):
     try:
-        data_source = types.DataSource.get_by_id(id=data_source_id)
-        field = data_source.fields[field_id]
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
+        field = data_source.get_fields()[field_id]
         records = read_parquet_from_s3(
             data_source, columns=[field["name"]], slice_=False
         )
@@ -178,8 +198,10 @@ def get_data_source_selected_field(data_source_id, field_id):
 @app.route("/datasources/<int:data_source_id>/filters", methods=["GET"])
 def get_data_source_filters(data_source_id):
     try:
-        data_source = types.DataSource.get_by_id(id=data_source_id)
-        filters = data_source.filters
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
+        filters = data_source.get_filters()
     except Exception as e:
         logging.info(f"Unable to get filters - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -195,8 +217,10 @@ def get_data_source_records(data_source_id):
     columns = split_string_to_list(columns_list_as_string)
 
     try:
-        data_source = types.DataSource.get_by_id(id=data_source_id)
-        items = data_source.shape[0]
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
+        items = data_source.result_shape[0]
 
         result_file = services.get_s3_object(data_source.result_parquet)
         file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
