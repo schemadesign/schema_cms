@@ -6,7 +6,7 @@ import { defaultProps } from '../pageForm.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 import { PAGE_TEMPLATES_BLOCKS } from '../../../../modules/pageTemplates/pageTemplates.constants';
 import { page } from '../../../../modules/page/page.mocks';
-import { PAGE_TEMPLATE } from '../../../../modules/page/page.constants';
+import { PAGE_DISPLAY_NAME, PAGE_TEMPLATE } from '../../../../modules/page/page.constants';
 
 const mockPushHistory = jest.fn();
 
@@ -50,6 +50,19 @@ describe('PageForm: Component', () => {
     });
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('template', 'value');
+  });
+
+  it('should lower case a display name on blur', async () => {
+    jest.spyOn(defaultProps, 'setFieldValue');
+    jest.spyOn(defaultProps, 'handleBlur');
+    const wrapper = await render({ values: { ...page, [PAGE_DISPLAY_NAME]: 'VALUE' } });
+
+    act(() => {
+      wrapper.root.findByProps({ id: 'displayName' }).props.onBlur({ target: 'target' });
+    });
+
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('displayName', 'value');
+    expect(defaultProps.handleBlur).toHaveBeenCalledWith({ target: 'target' });
   });
 
   it('should show change template modal and change on confirm', async () => {

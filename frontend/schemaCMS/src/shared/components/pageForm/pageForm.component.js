@@ -178,7 +178,10 @@ export const PageForm = ({
     setFieldValue(PAGE_BLOCKS, mutableValues);
   };
   const blocksCount = values[PAGE_BLOCKS].length;
-
+  const handleDisplayNameBlur = e => {
+    setFieldValue(PAGE_DISPLAY_NAME, values[PAGE_DISPLAY_NAME].toLowerCase());
+    restFormikProps.handleBlur(e);
+  };
   return (
     <Container>
       <ContextHeader title={title} subtitle={nameInput} />
@@ -196,6 +199,7 @@ export const PageForm = ({
       </MobileInputName>
       <TextInput
         onChange={handleChange}
+        onBlur={handleDisplayNameBlur}
         name={PAGE_DISPLAY_NAME}
         value={values[PAGE_DISPLAY_NAME]}
         fullWidth
