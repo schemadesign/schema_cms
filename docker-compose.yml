@@ -81,7 +81,7 @@ services:
       - ./backend/functions/public_api:/functions/public_api
     ports:
       - "8002:8002"
-    restart: on-failure
+    restart: always
 
   mailcatcher:
     image: schickling/mailcatcher

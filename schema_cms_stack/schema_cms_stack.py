@@ -328,11 +328,13 @@ class PublicAPI(core.Stack):
             code=self.function_code,
             handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_8,
+            vpc=scope.base.vpc,
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "BACKEND_URL": BACKEND_URL.format(
                     domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
                 ),
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
             },
             memory_size=512,
             timeout=core.Duration.seconds(60),
@@ -340,16 +342,11 @@ class PublicAPI(core.Stack):
         )
 
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
-
+        self.public_api_lambda.connections.allow_to(
+            scope.base.db.connections, aws_ec2.Port.tcp(5432)
+        )
         self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(
             self, "rest-api", handler=self.public_api_lambda
-        )
-
-        self.public_api_lambda.add_to_role_policy(
-            aws_iam.PolicyStatement(
-                actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:Scan"],
-                resources=["*"],
-            )
         )
 
 

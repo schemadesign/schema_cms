@@ -1,16 +1,13 @@
+import json
 import os
 
 
 LOCAL_AWS_SERVICES_HOST = os.getenv("LOCALSTACK_HOSTNAME", None)
 
 AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL")
-SECRET_MANAGER_ENDPOINT_URL = os.getenv("SECRET_MANAGER_ENDPOINT_URL")
-DYNAMODB_ENDPOINT_URL = os.getenv("DYNAMODB_ENDPOINT_URL")
 
 if LOCAL_AWS_SERVICES_HOST:
     AWS_S3_ENDPOINT_URL = f"http://{LOCAL_AWS_SERVICES_HOST}:4572"
-    SECRET_MANAGER_ENDPOINT_URL = f"http://{LOCAL_AWS_SERVICES_HOST}:4584"
-    DYNAMODB_ENDPOINT_URL = f"http://{LOCAL_AWS_SERVICES_HOST}:4569"
 
 
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
@@ -27,3 +24,16 @@ LAMBDA_AUTH_TOKEN = os.getenv("LAMBDA_AUTH_TOKEN", "")
 BACKEND_URL = os.getenv("BACKEND_URL", "")
 
 SENTRY_DNS = os.getenv("SENTRY_DNS", None)
+
+
+def get_local_db():
+    return {
+        "password": os.getenv("POSTGRES_PASSWORD"),
+        "dbname": os.getenv("POSTGRES_DB"),
+        "port": os.getenv("POSTGRES_PORT"),
+        "host": os.getenv("POSTGRES_HOST"),
+        "username": os.getenv("POSTGRES_USER"),
+    }
+
+
+DB_CONNECTION = os.getenv("DB_CONNECTION", json.dumps(get_local_db()))
