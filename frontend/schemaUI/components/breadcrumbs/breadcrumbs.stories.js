@@ -34,6 +34,14 @@ storiesOf('Breadcrumbs', module)
       </LinkItem>
     </Breadcrumbs>
   ))
+  .add('single item', () => (
+    <Breadcrumbs {...defaultProps}>
+      <LinkItem href="#">
+        <Span>Details</Span>
+        <H3>This is a page</H3>
+      </LinkItem>
+    </Breadcrumbs>
+  ))
   .add('With custom symbol', () => (
     <Breadcrumbs {...withSymbol(SYMBOL)}>
       <LinkItem href="#">

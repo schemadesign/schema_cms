@@ -42,7 +42,13 @@ export class Breadcrumbs extends PureComponent {
   };
 
   render() {
+    const { children } = this.props;
     const { containerStyles } = getStyles(this.props.theme);
-    return <div style={containerStyles}>{this.props.children.map(this.renderItem)}</div>;
+
+    return children.length > 1 ? (
+      <div style={containerStyles}>{children.map(this.renderItem)}</div>
+    ) : (
+      this.renderItem(children)
+    );
   }
 }
