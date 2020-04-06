@@ -45,6 +45,7 @@ class BlockTemplateListCreteView(TemplateListCreateView):
         models.Block.objects.filter(is_template=True)
         .select_related("project", "created_by")
         .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.all().order_by("order")))
+        .order_by("-created")
     )
     permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly)
 

@@ -9,12 +9,35 @@
 </head>
 
 <body>
-    {% for block in page["blocks"] %}
-	{% for element in block["elements"] %}
-	<div id='{{ element["id"] }}' class='{{ element["name"] }}'>
-			<p>{{ element["value"]|safe }}</p>
-	</div>
-	{% endfor %}
+    {% for block in page['blocks'] %}
+		{% for element in block['elements'] %}
+
+			{% if element["type"] == "plain_text" %}
+				<div id='{{ element["id"] }}' class='element text'>{{ element["value"] }}</div>
+			{% endif %}
+
+			{% if element["type"] == "rich_text" %}
+				<div id='{{ element["id"] }}' class='element markdown'>{{ element["value"]|safe }}</div>
+			{% endif %}
+
+			{% if element["type"] == "connection" %}
+				<div id='{{ element["id"] }}' class='element connection'>
+					<a href='{{ element["value"] }}' target='_blank|_self|_parent|_top'>{{ element['value']|safe }}</a>
+				</div>
+			{% endif %}
+
+			{% if element["type"] == "image" %}
+				<div id='{{ element["id"] }}' class='element image'>
+
+					<figure>
+						<img src="{{ element['value']['image'] }}" alt="{{ element['value']['file_name'] }}">
+					</figure>
+
+				</div>
+			{% endif %}
+
+		{% endfor %}
     {% endfor %}
 </body>
 </html>
+

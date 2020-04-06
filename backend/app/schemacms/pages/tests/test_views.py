@@ -21,7 +21,11 @@ class TestListBlockTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(project.pk))
-        queryset = projects_models.Project.objects.get(id=project.pk).block_set.filter(is_template=True)
+        queryset = (
+            projects_models.Project.objects.get(id=project.pk)
+            .block_set.filter(is_template=True)
+            .order_by("-created")
+        )
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.BlockTemplateSerializer(queryset, many=True).data

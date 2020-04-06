@@ -45,16 +45,10 @@ class Project(BaseModel):
         }
 
     def get_data_sources(self):
-        return [
-            {"id": ds.id, "type": ds.type, "name": ds.name}
-            for ds in self.data_sources.select()
-        ]
+        return [{"id": ds.id, "type": ds.type, "name": ds.name} for ds in self.data_sources.select()]
 
     def get_sections(self):
-        return [
-            section.as_dict()
-            for section in self.sections.select().where(Section.is_public == True)
-        ]
+        return [section.as_dict() for section in self.sections.select().where(Section.is_public == True)]
 
 
 class ActiveJob(BaseModel):
@@ -111,24 +105,19 @@ class DataSource(BaseModel):
                 "created": self.created.strftime("%Y-%m-%d"),
             },
             "shape": self.result_shape,
+            "fields": self.get_fields(),
             "filters": [],
         }
 
     def get_filters(self):
-        return [
-            filter.as_dict()
-            for filter in self.filters.select().where(Filter.is_active == True)
-        ]
+        return [filter.as_dict() for filter in self.filters.select().where(Filter.is_active == True)]
 
     def get_fields(self):
-        preview = services.get_s3_object(self.active_job.meta_data.get().preview)[
-            "Body"
-        ]
+        preview = services.get_s3_object(self.active_job.meta_data.get().preview)["Body"]
 
         fields = json.loads(preview.read())["fields"]
         data = {
-            str(num): {"name": key, "type": value["dtype"]}
-            for num, (key, value) in enumerate(fields.items())
+            str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
 
         return data
@@ -166,9 +155,7 @@ class Section(BaseModel):
     def as_dict(self):
         pages = [
             page.as_dict()
-            for page in self.pages.select().where(
-                Page.is_public == True, Page.is_template == False
-            )
+            for page in self.pages.select().where(Page.is_public == True, Page.is_template == False)
         ]
         return {"id": self.id, "name": self.name, "pages": pages}
 
@@ -207,6 +194,7 @@ class Block(BaseModel):
     page = ForeignKeyField(Page, backref="blocks")
     name = CharField()
     order = SmallIntegerField()
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "pages_pageblock"
@@ -233,6 +221,7 @@ class Element(BaseModel):
     code = TextField()
     image = CharField()
     order = SmallIntegerField()
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "pages_pageblockelement"
@@ -249,7 +238,12 @@ class Element(BaseModel):
     def get_element_value(self):
         value = getattr(self, self.type)
         if self.type == "image":
-            value = {"file_name": self.get_image_data(self.value)}
+            value = {
+                "file_name": self.get_image_data(self.image),
+                "image": "{}/{}/{}".format(
+                    services.s3.meta.endpoint_url, settings.AWS_STORAGE_BUCKET_NAME, self.image
+                ),
+            }
 
         return value
 
