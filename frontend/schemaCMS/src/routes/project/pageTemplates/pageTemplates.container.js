@@ -8,10 +8,12 @@ import { compose } from 'ramda';
 import { PageTemplates } from './pageTemplates.component';
 import { PageTemplatesRoutines, selectPageTemplates } from '../../../modules/pageTemplates';
 import { selectUserRole } from '../../../modules/userProfile';
+import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   pageTemplates: selectPageTemplates,
   userRole: selectUserRole,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({

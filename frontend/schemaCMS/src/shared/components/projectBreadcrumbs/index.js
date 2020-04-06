@@ -7,4 +7,7 @@ export {
   tabMessage,
   templateMessage,
   templatesMessage,
+  pageTemplatesMessage,
+  filterTemplatesMessage,
+  stateTemplatesMessage,
 } from './projectBreadcrumbs.component';

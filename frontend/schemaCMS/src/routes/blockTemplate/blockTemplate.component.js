@@ -34,7 +34,7 @@ import {
   tabMessage,
   templateMessage,
   templatesMessage,
-} from '../project/projectBreadcrumbs';
+} from '../../shared/components/projectBreadcrumbs';
 
 const getBreadcrumbsItems = (project, { id, name }) => [
   {

@@ -8,6 +8,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         "background": "#FFF",
         "border": "#f0efef",
         "breadcrumbs": Object {
+          "border": "#1d1d20",
           "link": "#1d1d20",
           "separator": "#1d1d20",
         },

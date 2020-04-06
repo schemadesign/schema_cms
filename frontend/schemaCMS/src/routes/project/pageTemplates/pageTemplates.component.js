@@ -17,6 +17,35 @@ import { ListContainer, ListItem, ListItemTitle } from '../../../shared/componen
 import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { CounterHeader } from '../../../shared/components/counterHeader';
+import {
+  pageTemplatesMessage,
+  libraryMessage,
+  projectMessage,
+  tabMessage,
+  templatesMessage,
+  ProjectBreadcrumbs,
+} from '../../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = project => [
+  {
+    path: `/project/${project.id}/`,
+    active: false,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/templates`,
+    active: false,
+    span: tabMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/page-templates`,
+    active: true,
+    span: libraryMessage,
+    h3: pageTemplatesMessage,
+  },
+];
 
 const PageTemplate = ({ created, createdBy, name, id, blocks }) => {
   const history = useHistory();
@@ -42,7 +71,7 @@ PageTemplate.propTypes = {
   blocks: PropTypes.array.isRequired,
 };
 
-export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole }) => {
+export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, project }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
@@ -69,6 +98,7 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole }) =
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <ContextHeader title={title} subtitle={subtitle}>
         <PlusButton
           id="createPageTemplate"
@@ -101,4 +131,5 @@ PageTemplates.propTypes = {
   userRole: PropTypes.string.isRequired,
   pageTemplates: PropTypes.array.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
+  project: PropTypes.object.isRequired,
 };

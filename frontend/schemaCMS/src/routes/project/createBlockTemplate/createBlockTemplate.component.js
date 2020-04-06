@@ -31,7 +31,7 @@ import {
   projectMessage,
   libraryMessage,
   templateMessage,
-} from '../projectBreadcrumbs';
+} from '../../../shared/components/projectBreadcrumbs';
 
 const getBreadcrumbsItems = project => [
   {

@@ -29,6 +29,43 @@ import {
   PAGE_TEMPLATES_IS_AVAILABLE,
 } from '../../modules/pageTemplates/pageTemplates.constants';
 
+import {
+  blockTemplatesMessage,
+  libraryMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  tabMessage,
+  templateMessage,
+  templatesMessage,
+} from '../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = (project, { id = '', name = '' }) => [
+  {
+    path: `/project/${project.id}/`,
+    active: false,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/templates`,
+    active: false,
+    span: tabMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/block-templates`,
+    active: false,
+    span: libraryMessage,
+    h3: blockTemplatesMessage,
+  },
+  {
+    path: `/page-template/${id}`,
+    active: true,
+    span: templateMessage,
+    h3: name,
+  },
+];
+
 export const PageTemplate = memo(
   ({
     updatePageTemplate,
@@ -117,6 +154,7 @@ export const PageTemplate = memo(
       <Container>
         <Helmet title={intl.formatMessage(messages.title)} />
         <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+        <ProjectBreadcrumbs items={getBreadcrumbsItems(project, pageTemplate)} />
         <LoadingWrapper loading={loading} error={error}>
           <form onSubmit={handleSubmit}>
             <PageTemplateForm

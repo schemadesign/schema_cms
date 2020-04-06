@@ -30,4 +30,16 @@ export default defineMessages({
     id: 'projectBreadcrumbs.createMessage',
     defaultMessage: 'Create',
   },
+  pageTemplates: {
+    id: 'projectBreadcrumbs.pageTemplates',
+    defaultMessage: 'Page Templates',
+  },
+  filterTemplates: {
+    id: 'projectBreadcrumbs.filterTemplates',
+    defaultMessage: 'Filter Templates',
+  },
+  stateTemplates: {
+    id: 'projectBreadcrumbs.stateTemplates',
+    defaultMessage: 'State Templates',
+  },
 });

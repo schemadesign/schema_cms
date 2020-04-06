@@ -57,6 +57,7 @@ const light = {
   breadcrumbs: {
     link: colors.darkGrey,
     separator: colors.darkGrey,
+    border: colors.darkGrey,
   },
   linkItem: {
     link: colors.darkGrey,
@@ -176,6 +177,7 @@ const dark = {
   breadcrumbs: {
     link: colors.coolGray,
     separator: colors.coolGray,
+    border: colors.coolGray,
   },
   linkItem: {
     link: colors.coolGray,

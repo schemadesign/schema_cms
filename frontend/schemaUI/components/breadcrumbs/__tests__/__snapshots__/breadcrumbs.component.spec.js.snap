@@ -4,7 +4,9 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
 <div
   style={
     Object {
+      "borderBottom": "1px solid #a6a7aa",
       "display": "flex",
+      "padding": "20px 0",
     }
   }
 >
@@ -104,7 +106,9 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
 <div
   style={
     Object {
+      "borderBottom": "1px solid #a6a7aa",
       "display": "flex",
+      "padding": "20px 0",
     }
   }
 >
