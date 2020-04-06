@@ -26,6 +26,42 @@ import { getProjectMenuOptions } from '../project/project.constants';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import reportError from '../../shared/utils/reportError';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
+import {
+  blockTemplatesMessage,
+  libraryMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  tabMessage,
+  templateMessage,
+  templatesMessage,
+} from '../project/projectBreadcrumbs';
+
+const getBreadcrumbsItems = (project, { id, name }) => [
+  {
+    path: `/project/${project.id}/`,
+    active: false,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/templates`,
+    active: false,
+    span: tabMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/block-templates`,
+    active: false,
+    span: libraryMessage,
+    h3: blockTemplatesMessage,
+  },
+  {
+    path: `/block-template/${id}`,
+    active: true,
+    span: templateMessage,
+    h3: name,
+  },
+];
 
 export const BlockTemplate = memo(
   ({
@@ -111,6 +147,7 @@ export const BlockTemplate = memo(
       <Container>
         <Helmet title={intl.formatMessage(messages.title)} />
         <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+        <ProjectBreadcrumbs items={getBreadcrumbsItems(project, { id: blockTemplateId, name })} />
         <LoadingWrapper loading={loading} error={error}>
           <form onSubmit={handleSubmit}>
             <BlockTemplateForm

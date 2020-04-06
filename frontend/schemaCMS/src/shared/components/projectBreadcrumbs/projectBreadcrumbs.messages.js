@@ -10,9 +10,13 @@ export default defineMessages({
     id: 'projectBreadcrumbs.tab',
     defaultMessage: 'Tab',
   },
+  templates: {
+    id: 'projectBreadcrumbs.templates',
+    defaultMessage: 'Templates',
+  },
   template: {
     id: 'projectBreadcrumbs.template',
-    defaultMessage: 'Templates',
+    defaultMessage: 'Template',
   },
   blockTemplates: {
     id: 'projectBreadcrumbs.blockTemplates',
@@ -21,5 +25,9 @@ export default defineMessages({
   libraryMessage: {
     id: 'projectBreadcrumbs.libraryMessage',
     defaultMessage: 'Library',
+  },
+  createMessage: {
+    id: 'projectBreadcrumbs.createMessage',
+    defaultMessage: 'Create',
   },
 });

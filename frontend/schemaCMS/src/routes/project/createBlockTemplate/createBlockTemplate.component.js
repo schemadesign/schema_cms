@@ -22,8 +22,51 @@ import {
 import { BlockTemplateForm } from '../../../shared/components/blockTemplateForm';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
+import {
+  ProjectBreadcrumbs,
+  templatesMessage,
+  tabMessage,
+  blockTemplatesMessage,
+  createMessage,
+  projectMessage,
+  libraryMessage,
+  templateMessage,
+} from '../projectBreadcrumbs';
 
-export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockTemplates, blockTemplates }) => {
+const getBreadcrumbsItems = project => [
+  {
+    path: `/project/${project.id}/`,
+    active: false,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/templates`,
+    active: false,
+    span: tabMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/block-templates`,
+    active: false,
+    span: libraryMessage,
+    h3: blockTemplatesMessage,
+  },
+  {
+    path: `/project/${project.id}/block-templates/create`,
+    active: true,
+    span: templateMessage,
+    h3: createMessage,
+  },
+];
+
+export const CreateBlockTemplate = ({
+  userRole,
+  createBlockTemplate,
+  fetchBlockTemplates,
+  blockTemplates,
+  project,
+}) => {
   const intl = useIntl();
   const { projectId } = useParams();
   const history = useHistory();
@@ -71,6 +114,7 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, fetchBlockT
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
           <BlockTemplateForm title={title} blockTemplates={blockTemplates} isValid={isValid} {...restFormikProps} />
@@ -102,4 +146,5 @@ CreateBlockTemplate.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   createBlockTemplate: PropTypes.func.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,
+  project: PropTypes.object.isRequired,
 };
