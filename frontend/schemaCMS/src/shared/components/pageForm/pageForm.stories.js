@@ -12,6 +12,7 @@ export const defaultProps = {
   setValues: Function.prototype,
   setFieldValue: Function.prototype,
   setRemoveModalOpen: Function.prototype,
+  handleBlur: Function.prototype,
   values: page,
   pageTemplates,
   blockTemplates,

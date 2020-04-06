@@ -647,6 +647,7 @@ exports[`Storyshots PageForm Default 1`] = `
                 <input
                   id="name"
                   name="name"
+                  onBlur={[Function]}
                   onChange={[Function]}
                   placeholder="Name"
                   style={
@@ -767,6 +768,7 @@ exports[`Storyshots PageForm Default 1`] = `
           <input
             id="name"
             name="name"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -853,6 +855,7 @@ exports[`Storyshots PageForm Default 1`] = `
         <input
           id="displayName"
           name="displayName"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {
@@ -917,6 +920,7 @@ exports[`Storyshots PageForm Default 1`] = `
         </label>
         <textarea
           id="description"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {
@@ -1001,6 +1005,7 @@ exports[`Storyshots PageForm Default 1`] = `
         <input
           id="keywords"
           name="keywords"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {
@@ -1354,6 +1359,7 @@ exports[`Storyshots PageForm Default 1`] = `
                   <input
                     id="blocks.0.name"
                     name="blocks.0.name"
+                    onBlur={[Function]}
                     onChange={[Function]}
                     placeholder="Name"
                     style={
@@ -1615,6 +1621,7 @@ exports[`Storyshots PageForm Default 1`] = `
                           >
                             <textarea
                               id="blocks.0.elements.0.value"
+                              onBlur={[Function]}
                               onChange={[Function]}
                               style={
                                 Object {
@@ -2185,6 +2192,7 @@ exports[`Storyshots PageForm Default 1`] = `
                                     <input
                                       id="blocks.0.elements.2.value.0.name"
                                       name="blocks.0.elements.2.value.0.name"
+                                      onBlur={[Function]}
                                       onChange={[Function]}
                                       placeholder="Name"
                                       style={
@@ -2446,6 +2454,7 @@ exports[`Storyshots PageForm Default 1`] = `
                                             >
                                               <textarea
                                                 id="blocks.0.elements.2.value.0.elements.0.value"
+                                                onBlur={[Function]}
                                                 onChange={[Function]}
                                                 style={
                                                   Object {
