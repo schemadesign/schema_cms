@@ -163,6 +163,7 @@ class Section(BaseModel):
 class Page(BaseModel):
     section = ForeignKeyField(Section, backref="pages")
     name = CharField()
+    slug = CharField()
     description = TextField()
     keywords = TextField()
     created_by = ForeignKeyField(User, backref="pages")
@@ -176,6 +177,7 @@ class Page(BaseModel):
         return {
             "id": self.id,
             "name": self.name,
+            "slug": self.slug,
             "description": self.description,
             "keywords": self.keywords,
             "created_by": f"{self.created_by.first_name} {self.created_by.last_name}",
