@@ -176,6 +176,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
+            "border": "#a6a7aa",
             "link": "#a6a7aa",
             "separator": "#a6a7aa",
           },
@@ -386,6 +387,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
+            "border": "#a6a7aa",
             "link": "#a6a7aa",
             "separator": "#a6a7aa",
           },
@@ -637,6 +639,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
+          "border": "#a6a7aa",
           "link": "#a6a7aa",
           "separator": "#a6a7aa",
         },
@@ -1121,6 +1124,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
+            "border": "#a6a7aa",
             "link": "#a6a7aa",
             "separator": "#a6a7aa",
           },
@@ -1328,6 +1332,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
+            "border": "#a6a7aa",
             "link": "#a6a7aa",
             "separator": "#a6a7aa",
           },
@@ -1555,6 +1560,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
+          "border": "#a6a7aa",
           "link": "#a6a7aa",
           "separator": "#a6a7aa",
         },

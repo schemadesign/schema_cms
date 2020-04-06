@@ -9,6 +9,9 @@ import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mock
 export const defaultProps = {
   userRole: ROLES.ADMIN,
   pageTemplates,
+  project: {
+    id: 1,
+  },
   fetchPageTemplates: Function.prototype,
 };
 

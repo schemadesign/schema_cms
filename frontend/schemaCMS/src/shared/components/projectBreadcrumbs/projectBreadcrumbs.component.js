@@ -39,8 +39,8 @@ ProjectBreadcrumbs.propTypes = {
     PropTypes.shape({
       path: PropTypes.string,
       active: PropTypes.bool,
-      span: PropTypes.element,
-      h3: PropTypes.element,
+      span: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+      h3: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     })
   ),
 };
