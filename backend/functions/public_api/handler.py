@@ -22,19 +22,14 @@ CORS(app)
 
 
 def create_response(data):
-    return Response(
-        json.dumps(data, ensure_ascii=True),
-        content_type="application/json; charset=utf-8",
-    )
+    return Response(json.dumps(data, ensure_ascii=True), content_type="application/json; charset=utf-8",)
 
 
 def read_parquet_from_s3(data_source, columns=None, orient="index", slice_=True):
     result_file = services.get_s3_object(data_source.result_parquet)
     file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
     if slice_:
-        return json.loads(
-            file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso")
-        )
+        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso"))
     else:
         return json.loads(file.to_pandas().to_json(orient=orient, date_format="iso"))
 
@@ -52,9 +47,7 @@ def split_string_to_list(column_names_string):
 @app.route("/projects", methods=["GET"])
 def get_projects():
     try:
-        projects = [
-            project.as_dict() for project in db.Project.select().order_by(db.Project.id)
-        ]
+        projects = [project.as_dict() for project in db.Project.select().order_by(db.Project.id)]
 
     except Exception as e:
         logging.info(f"Unable to get projects - {e}")
@@ -100,21 +93,18 @@ def get_page(page_id):
     if format_ != "html":
         return create_response(page), 200
 
-    # page.blocks = generate_html_from_markdown_blocks(page)
+    page = generate_html_from_markdown_blocks(page)
 
     return render_template("page_template.html", page=page)
 
 
 def generate_html_from_markdown_blocks(page):
-    new_blocks = []
-    for block in page.blocks:
-        if block["type"] == "markdown":
-            block["content"] = markdown2.markdown(block["content"])
-            new_blocks.append(block)
-        else:
-            new_blocks.append(block)
+    for block in page["blocks"]:
+        for element in block["elements"]:
+            if element["type"] == "rich_text":
+                element["value"] = markdown2.markdown(element["value"])
 
-    return new_blocks
+    return page
 
 
 # Data Sources endpoints
@@ -123,9 +113,7 @@ def generate_html_from_markdown_blocks(page):
 @app.route("/datasources/<int:data_source_id>", methods=["GET"])
 def get_data_source(data_source_id):
     try:
-        data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
-        )
+        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
         records = read_parquet_from_s3(data_source)
 
     except Exception as e:
@@ -141,9 +129,7 @@ def get_data_source(data_source_id):
 @app.route("/datasources/<int:data_source_id>/meta", methods=["GET"])
 def get_data_source_meta(data_source_id):
     try:
-        data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
-        )
+        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
         meta = data_source.as_dict()["meta"]
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
@@ -155,9 +141,7 @@ def get_data_source_meta(data_source_id):
 @app.route("/datasources/<int:data_source_id>/fields", methods=["GET"])
 def get_data_source_fields(data_source_id):
     try:
-        data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
-        )
+        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
         fields = data_source.get_fields()
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
@@ -166,31 +150,18 @@ def get_data_source_fields(data_source_id):
     return create_response(fields), 200
 
 
-@app.route(
-    "/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"]
-)
+@app.route("/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"])
 def get_data_source_selected_field(data_source_id, field_id):
     try:
-        data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
-        )
+        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
         field = data_source.get_fields()[field_id]
-        records = read_parquet_from_s3(
-            data_source, columns=[field["name"]], slice_=False
-        )
+        records = read_parquet_from_s3(data_source, columns=[field["name"]], slice_=False)
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
         return create_response({"error": f"{e}"}), 404
 
     return (
-        create_response(
-            {
-                "id": field_id,
-                "name": field["name"],
-                "type": field["type"],
-                "records": records,
-            }
-        ),
+        create_response({"id": field_id, "name": field["name"], "type": field["type"], "records": records,}),
         200,
     )
 
@@ -198,9 +169,7 @@ def get_data_source_selected_field(data_source_id, field_id):
 @app.route("/datasources/<int:data_source_id>/filters", methods=["GET"])
 def get_data_source_filters(data_source_id):
     try:
-        data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
-        )
+        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
         filters = data_source.get_filters()
     except Exception as e:
         logging.info(f"Unable to get filters - {e}")
@@ -217,9 +186,7 @@ def get_data_source_records(data_source_id):
     columns = split_string_to_list(columns_list_as_string)
 
     try:
-        data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
-        )
+        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
         items = data_source.result_shape[0]
 
         result_file = services.get_s3_object(data_source.result_parquet)
