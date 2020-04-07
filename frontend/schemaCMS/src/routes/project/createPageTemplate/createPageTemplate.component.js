@@ -40,19 +40,16 @@ import {
 const getBreadcrumbsItems = project => [
   {
     path: `/project/${project.id}/`,
-    active: false,
     span: projectMessage,
     h3: project.title,
   },
   {
     path: `/project/${project.id}/templates`,
-    active: false,
     span: tabMessage,
     h3: templatesMessage,
   },
   {
     path: `/project/${project.id}/block-templates`,
-    active: false,
     span: libraryMessage,
     h3: blockTemplatesMessage,
   },
