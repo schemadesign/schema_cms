@@ -5,6 +5,10 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
   value={
     Object {
       "theme": Object {
+        "accordion": Object {
+          "background": "#FFF",
+          "border": "#000",
+        },
         "background": "#FFF",
         "border": "#f0efef",
         "breadcrumbs": Object {

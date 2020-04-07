@@ -9,7 +9,7 @@ export const getStyles = ({ open, theme = defaultTheme }) => ({
     minHeight: 60,
     position: 'relative',
     paddingRight: 40,
-    backgroundColor: theme.background,
+    backgroundColor: theme.accordion.background,
   },
   iconContainerStyles: {
     cursor: 'pointer',
