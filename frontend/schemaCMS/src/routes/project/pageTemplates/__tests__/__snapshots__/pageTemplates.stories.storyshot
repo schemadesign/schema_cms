@@ -70,11 +70,11 @@ exports[`Storyshots PageTemplates Default 1`] = `
   word-break: break-word;
 }
 
-.c20 {
+.c22 {
   height: 155px;
 }
 
-.c22 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
   width: 100%;
 }
 
-.c21 {
+.c23 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,24 +103,24 @@ exports[`Storyshots PageTemplates Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c8 {
+.c10 {
   display: none;
 }
 
-.c9 {
+.c11 {
   margin-right: 20px;
   overflow: hidden;
 }
 
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
+.c12 {
   color: #FFF;
 }
 
 .c13 {
+  color: #FFF;
+}
+
+.c15 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -142,11 +142,33 @@ exports[`Storyshots PageTemplates Default 1`] = `
   align-items: center;
 }
 
-.c14 {
+.c16 {
   width: 0%;
 }
 
-.c16 {
+.c8 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c8:hover {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c9:hover {
+  color: #FFF;
+}
+
+.c18 {
   margin-bottom: 20px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -155,12 +177,12 @@ exports[`Storyshots PageTemplates Default 1`] = `
   min-height: 150px;
 }
 
-.c19 {
+.c21 {
   word-break: break-word;
   cursor: pointer;
 }
 
-.c15 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -173,21 +195,21 @@ exports[`Storyshots PageTemplates Default 1`] = `
   flex-wrap: wrap;
 }
 
-.c17 {
+.c19 {
   list-style: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-.c18 {
+.c20 {
   display: inline-block;
   line-height: 1.25;
   margin-right: 1.5em;
   color: #71737e;
 }
 
-.c18::before {
+.c20::before {
   content: '•';
   margin-left: -1.5em;
   display: inline-block;
@@ -216,7 +238,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c24 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -241,7 +263,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c23 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -263,13 +285,13 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c12 {
+  .c14 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c25 {
     display: none;
   }
 }
@@ -283,7 +305,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c8 {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -322,7 +344,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c13 {
+  .c15 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -417,7 +439,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c18 {
     width: calc(100%/3 - 20px);
     max-width: 320px;
     min-height: 192px;
@@ -426,7 +448,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c17 {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
@@ -799,13 +821,319 @@ exports[`Storyshots PageTemplates Default 1`] = `
       </div>
     </div>
     <div
-      className="c8"
+      style={
+        Object {
+          "borderBottom": "1px solid #a6a7aa",
+          "display": "flex",
+          "padding": "20px 0",
+        }
+      }
     >
       <div
-        className="c9"
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          Component={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "baseHash": 1627757960,
+                "componentId": "sc-fzqAui",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                  [Function],
+                  ";
+  }
+",
+                ],
+                "staticRulesId": "",
+              },
+              "displayName": "Styled(Link)",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-fzqAui",
+              "target": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          active={false}
+          className="c8"
+          href="/project/1/"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Project
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          Component={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "baseHash": 1627757960,
+                "componentId": "sc-fzqAui",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                  [Function],
+                  ";
+  }
+",
+                ],
+                "staticRulesId": "",
+              },
+              "displayName": "Styled(Link)",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-fzqAui",
+              "target": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          active={false}
+          className="c8"
+          href="/project/1/templates"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Tab
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Templates
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          Component={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "baseHash": 1627757960,
+                "componentId": "sc-fzqAui",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                  [Function],
+                  ";
+  }
+",
+                ],
+                "staticRulesId": "",
+              },
+              "displayName": "Styled(Link)",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-fzqAui",
+              "target": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          active={true}
+          className="c9"
+          href="/project/1/page-templates"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Library
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Page Templates
+          </h3>
+        </a>
+      </div>
+    </div>
+    <div
+      className="c10"
+    >
+      <div
+        className="c11"
       >
         <h2
-          className="c10"
+          className="c12"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -819,7 +1147,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
           Page Templates
         </h2>
         <h1
-          className="c11"
+          className="c13"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -839,7 +1167,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
         className=""
       >
         <div
-          className="c12"
+          className="c14"
         >
           <button
             disabled={false}
@@ -885,21 +1213,21 @@ exports[`Storyshots PageTemplates Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
-    >
-      <div
-        className="c14"
-      />
-      2 Page Templates
-      <div
-        className="c14"
-      />
-    </div>
-    <section
       className="c15"
     >
       <div
         className="c16"
+      />
+      2 Page Templates
+      <div
+        className="c16"
+      />
+    </div>
+    <section
+      className="c17"
+    >
+      <div
+        className="c18"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -932,16 +1260,16 @@ exports[`Storyshots PageTemplates Default 1`] = `
             }
           >
             <ul
-              className="c17"
+              className="c19"
             >
               <li
-                className="c18"
+                className="c20"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="c18"
+                className="c20"
                 id="headerItem-1"
               >
                 owner
@@ -949,7 +1277,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
             </ul>
           </div>
           <h1
-            className="c19"
+            className="c21"
             id="pageTemplateTitle-1"
             onClick={[Function]}
             style={
@@ -979,7 +1307,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
         </div>
       </div>
       <div
-        className="c16"
+        className="c18"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1012,16 +1340,16 @@ exports[`Storyshots PageTemplates Default 1`] = `
             }
           >
             <ul
-              className="c17"
+              className="c19"
             >
               <li
-                className="c18"
+                className="c20"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="c18"
+                className="c20"
                 id="headerItem-1"
               >
                 owner 2
@@ -1029,7 +1357,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
             </ul>
           </div>
           <h1
-            className="c19"
+            className="c21"
             id="pageTemplateTitle-2"
             onClick={[Function]}
             style={
@@ -1060,13 +1388,13 @@ exports[`Storyshots PageTemplates Default 1`] = `
       </div>
     </section>
     <div
-      className="c20"
+      className="c22"
     >
       <div
-        className="c21"
+        className="c23"
       >
         <div
-          className="c22"
+          className="c24"
         >
           <button
             disabled={false}
@@ -1108,7 +1436,7 @@ exports[`Storyshots PageTemplates Default 1`] = `
             </svg>
           </button>
           <div
-            className="c23"
+            className="c25"
           >
             <button
               disabled={false}

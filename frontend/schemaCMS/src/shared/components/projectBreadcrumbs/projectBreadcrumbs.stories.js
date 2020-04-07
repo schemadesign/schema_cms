@@ -2,14 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
-  blockTemplatesMessage, createMessage,
+  blockTemplatesMessage,
+  createMessage,
   libraryMessage,
   ProjectBreadcrumbs,
   projectMessage,
   tabMessage,
   templateMessage,
-  templatesMessage
+  templatesMessage,
 } from './projectBreadcrumbs.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 const getBreadcrumbsItems = project => [
   {
@@ -42,4 +44,6 @@ export const defaultProps = {
   items: getBreadcrumbsItems({ id: 1 }),
 };
 
-storiesOf('ProjectBreadcrumbs', module).add('Default', () => <ProjectBreadcrumbs {...defaultProps} />);
+storiesOf('ProjectBreadcrumbs', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <ProjectBreadcrumbs {...defaultProps} />);
