@@ -11,6 +11,7 @@ import {
   BLOCK_KEY,
   BLOCK_ID,
   BLOCK_ELEMENTS,
+  PAGE_DELETE_BLOCKS,
 } from './page.constants';
 import {
   ELEMENT_NAME,
@@ -73,6 +74,7 @@ export const page = {
   [PAGE_TEMPLATE]: 1,
   [PAGE_IS_PUBLIC]: false,
   [PAGE_BLOCKS]: [block],
+  [PAGE_DELETE_BLOCKS]: [],
   section: {
     id: 'sectionId',
     title: 'Section',

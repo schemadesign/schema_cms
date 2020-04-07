@@ -3,7 +3,22 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Icons, Form, Accordion } from 'schemaUI';
 import { useRouteMatch, useHistory } from 'react-router';
-import { map, prepend, pipe, isEmpty, append, remove, propEq, find, propOr, omit } from 'ramda';
+import {
+  map,
+  prepend,
+  pipe,
+  isEmpty,
+  append,
+  remove,
+  propEq,
+  find,
+  propOr,
+  omit,
+  isNil,
+  prop,
+  filter,
+  complement,
+} from 'ramda';
 import { asMutable } from 'seamless-immutable';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
@@ -95,8 +110,15 @@ export const PageForm = ({
         ),
       }))
     )(pageTemplates);
+    const currentBlocks = pipe(
+      prop(PAGE_BLOCKS),
+      map(prop('id')),
+      filter(complement(isNil))
+    )(values);
 
     setFieldValue(PAGE_BLOCKS, templateBlocks);
+    setFieldValue(PAGE_DELETE_BLOCKS, values[PAGE_DELETE_BLOCKS].concat(currentBlocks));
+    setTimeout(() => restFormikProps.validateForm());
   };
   const handleSelectPageTemplate = ({ value }) => {
     if (!isEmpty(values[PAGE_BLOCKS])) {
