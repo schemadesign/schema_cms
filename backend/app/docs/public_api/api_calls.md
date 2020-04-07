@@ -25,11 +25,24 @@ Content-Type: application/json
          {"name": "TestDS2", "type": "file", "id": 2},
          {"name": "TestDS1", "type": "file", "id": 1}
       ], 
-      "pages": [
-          {"description": "html format page example", "id": 1, "folder": "TestFolder", "title": "ExamplePage"}
-      ]
-    },
-    ...
+      "content": {
+         "sections": [
+          {
+            "id": 1,
+            "name": "Section Name",
+            "pages": [
+              {
+                "id": 1,
+                "name": "Page Name",
+                "slug": "page-name",
+                "description": "New page test.",
+                "keywords": "new;page",
+                "created_by": "Jan Kowalsky"
+              },
+            ]
+          },
+        ]
+      }, ...
 ]
 ```
 
@@ -57,8 +70,50 @@ Content-Type: application/json
      {"name": "TestDS2", "type": "file", "id": 2},
      {"name": "TestDS1", "type": "file", "id": 1}
   ], 
+  "content": {
+     "sections": [
+      {
+        "id": 1,
+        "name": "Section Name",
+        "pages": [
+          {
+            "id": 1,
+            "name": "Page Name",
+            "slug": "page-name",
+            "description": "New page test.",
+            "keywords": "new;page",
+            "created_by": "Jan Kowalsky"
+          },
+        ]
+      },
+    ]
+  }
+}
+```
+
+## Get Section
+**Request**:
+
+`GET` `/api/v1/sections/<id>`
+
+**Response**:
+
+```json
+Content-Type: application/json
+200 OK
+{
+  "id": 1,
+  "name": "Section Name",
   "pages": [
-      {"description": "html format page example", "id": 1, "folder": "TestFolder", "title": "ExamplePage"}
+    {
+      "id": 1,
+      "name": "Page Name",
+      "slug": "page-name",
+      "description": "New page test.",
+      "keywords": "new;page",
+      "created_by": "Jan Kowalsky",
+      "updated": "2020-04-07",
+    }
   ]
 }
 ```
@@ -74,58 +129,78 @@ Content-Type: application/json
 Content-Type: application/json
 200 OK
 {
-   "id":1,
-   "title":"ExamplePage",
-   "description":"html format page example",
-   "keywords":"keyword;1",
-   "folder":"TestFolder",
-   "updated":"2020-01-28 13:54:00.418050+00:00",
-   "creator":"Jan Kowalsky",
-   "blocks":[
-      {
-         "name": "markdownBlock",
-         "images": [],
-         "id": 1,
-         "type": "markdown",
-         "content": "# SupeExample\r\n\r\n## Some markdown code\r\n\r\n**Request**:\r\n\r\n`GET` `/api/v1/filters/:id`",
-         "exec_order": 0
-      },
-      {
-         "name": "imageBlock",
-         "id": 1,
-         "type": "image",
-         "content": null,
-         "exec_order": 1,
-         "images": [
+    "id":1,
+    "name":"Page Name",
+    "slug": "page-name",
+    "description":"html format page example",
+    "keywords":"keyword;1",
+    "created_by":"Jan Kowalsky",
+    "updated": "2020-04-07",
+    "blocks": [
+        {
+          "id": 1,
+          "name": "New Block",
+          "order": 1,
+          "elements": [
             {
-               "name": "download.jpeg",
-               "url": "https://base-schemacms9bb02a51-186v5uihbpga8.s3.amazonaws.com/pages/63/download.jpeg",
-               "order": 1         
-            },
-            {
-               "name": "916ecd6cd846ccd9b4bbc8bbe1ea.jpeg",
-               "url": "https://base-schemacms9bb02a51-186v5uihbpga8.s3.amazonaws.com/pages/63/916ecd6cd846ccd9b4bbc8bbe1ea.jpeg",
-               "order":0   
+              "id": 1,
+              "name": "Plain Text element",
+              "type": "plain_text",
+              "order": 0,
+              "value": "test value",
+              "html": "<div id='7' class='element text'><p>test value</p></div>"
             }
-         ]
-      },
-      {
-         "name": "codeStyleBlock",
-         "images": [],
-         "id": 2,
-         "type": "code",
-         "content": "<style>\r\nbody {\r\n    background-color: #d24dff;\r\n}\r\n</style>",
-         "exec_order": 2
-      },
-      {
-         "name": "embedBlock",
-         "images": [],
-         "id": 3,
-         "type": "embed",
-         "content": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_T8LGqJtuGc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-         "exec_order": 3
-      }
-   ]
+          ]
+        },
+        {
+          "id": 2,
+          "name": "New Block 2",
+          "order": 2,
+          "elements": [
+            {
+              "id": 2,
+              "name": "Connection element",
+              "type": "connection",
+              "order": 0,
+              "value": "https://wp.pl",
+              "html": "<div id='8' class='element connection'><a href='https://wp.pl' target='_blank|_self|_parent|_top'>https://wp.pl</a></div>"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "New Block 3",
+          "order": 3,
+          "elements": [
+            {
+              "id": 9,
+              "name": "Rich Text element",
+              "type": "rich_text",
+              "order": 0,
+              "value": "# Header",
+              "html": "<h1>Header</h1>\n"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "New Block 3",
+          "order": 0,
+          "elements": [
+            {
+              "id": 10,
+              "name": "Image element",
+              "type": "image",
+              "order": 0,
+              "value": {
+                "file_name": "Screenshot_from_2020-04-06_14-20-47.png",
+                "image": "http://url.com/schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png"
+              },
+              "html": "<div id='10' class='element image'><figure><img src='http://url.com//schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png' alt='Screenshot_from_2020-04-06_14-20-47.png'></figure></div>"
+            }
+          ]
+        }
+      ]
 }
 ```
 **Request**:
@@ -142,37 +217,20 @@ Content-Type: application/json
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content='html format page example'>
-	<meta name="keywords" content="keyword;1">
-	<meta name="author" content="Jan Kowalsky">
-	<title>ExamplePage</title>
+	<meta name="description" content="sadasd">
+	<meta name="keywords" content="asdasdsa">
+	<meta name="author" content="">
+	<title></title>
 </head>
 
 <body>
-    <div id='1' class='markdown'><h1>SupeExample</h1>
-        <h2>Some markdown code</h2>
-        <p><strong>Request</strong>:</p>
-        <p><code>GET</code> <code>/api/v1/filters/:id</code></p>
-    </div>
-		
-    <div id='2' class='image'>
-        <ul>
-            <li><img src="https://base-schemacms9bb02a51-186v5uihbpga8.s3.amazonaws.com/pages/63/download.jpeg" alt="download.jpeg" id="1"></li>
-            <li><img src="https://base-schemacms9bb02a51-186v5uihbpga8.s3.amazonaws.com/pages/63/916ecd6cd846ccd9b4bbc8bbe1ea.jpeg" alt="916ecd6cd846ccd9b4bbc8bbe1ea.jpeg" id="0"></li>  
-        </ul>
-    </div>
-
-    <style>
-        body {
-            background-color: #d24dff;
-        }
-    </style>
-
-    <div id='3' class='embed'>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/_T8LGqJtuGc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    <div id='1' class='element text'><p>test value</p></div>
+    <div id='2' class='element connection'><a href='https://wp.pl' target='_blank|_self|_parent|_top'>https://wp.pl</a></div>
+    <div id='3' class='element rich text'><h1>Header</h1></div>
+    <div id='4' class='element image'><figure><img src='http://localstack:4572/schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png' alt='Screenshot_from_2020-04-06_14-20-47.png'></figure></div>
 </body>
 </html>
+
 ```
 
 ## Get Data Source preview
