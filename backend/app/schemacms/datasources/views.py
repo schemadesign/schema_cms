@@ -58,11 +58,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         else:
             serializer.save()
 
-    @transaction.atomic()
-    def perform_destroy(self, instance):
-        instance.delete_dynamo_item()
-        instance.delete()
-
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
@@ -184,8 +179,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="set-filters", methods=["post"])
     def set_filters(self, request, pk=None, **kwargs):
         data_source = self.set_is_active_fields(request, related_objects_name="filters")
-
-        data_source.create_dynamo_item()
 
         serializer = self.get_serializer(instance=data_source.filters, many=True)
 

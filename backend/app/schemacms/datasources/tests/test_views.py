@@ -816,7 +816,6 @@ class TestRevertJobView:
         )
         payload = dict(id=jobs[1].id)
         old_active_job = data_source.active_job
-        create_meta_file_mock = mocker.patch("schemacms.datasources.models.DataSource.create_dynamo_item")
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload)
@@ -825,7 +824,6 @@ class TestRevertJobView:
         assert response.status_code == status.HTTP_200_OK
         assert data_source.active_job != old_active_job
         assert data_source.active_job == jobs[1]
-        create_meta_file_mock.assert_called_with()
 
     @staticmethod
     def get_url(pk):
@@ -839,7 +837,6 @@ class TestSetFiltersView:
         filter1_old_status = filter1.is_active
         filter2_old_status = filter2.is_active
         payload = {"active": [filter1.id], "inactive": [filter2.id]}
-        create_meta_file_mock = mocker.patch("schemacms.datasources.models.DataSource.create_dynamo_item")
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
@@ -849,7 +846,6 @@ class TestSetFiltersView:
         assert response.status_code == status.HTTP_200_OK
         assert filter1_old_status != filter1.is_active
         assert filter2_old_status != filter2.is_active
-        create_meta_file_mock.assert_called_with()
 
     @staticmethod
     def get_url(pk):

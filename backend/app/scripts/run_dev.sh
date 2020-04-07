@@ -4,7 +4,7 @@ set -e
 
 . $(dirname "$0")/install_localstack_fixtures.sh
 
-# wait untill secretsmanager become ready
+# wait untill s4 become ready
 wait_for_s3
 echo "S3 manager is up"
 
@@ -38,5 +38,4 @@ python wait_for_postgres.py &&
                ./manage.py migrate &&
                ./manage.py initialuser
                ./manage.py loadscripts &&
-               ./manage.py create_dynamo_tables &&
                ./manage.py runserver 0.0.0.0:8000
