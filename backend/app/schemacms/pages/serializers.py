@@ -300,6 +300,10 @@ class PageSerializer(CustomModelSerializer):
         page = self.Meta.model(project=project, **validated_data)
         page.save()
 
+        if not validated_data.get("display_name"):
+            page.display_name = page.slug
+            page.save()
+
         if blocks:
             self.create_or_update_blocks(page, blocks)
 
@@ -314,6 +318,10 @@ class PageSerializer(CustomModelSerializer):
             instance.delete_blocks(blocks_to_delete)
 
         instance = super().update(instance, validated_data)
+
+        if not instance.display_name:
+            instance.display_name = instance.slug
+            instance.save()
 
         if blocks:
             self.create_or_update_blocks(instance, blocks, is_update=True)
