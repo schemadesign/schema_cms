@@ -42,4 +42,20 @@ export default defineMessages({
     id: 'shared.components.projectBreadcrumbs.stateTemplates',
     defaultMessage: 'State Templates',
   },
+  section: {
+    id: 'shared.components.projectBreadcrumbs.section',
+    defaultMessage: 'Section',
+  },
+  page: {
+    id: 'shared.components.projectBreadcrumbs.page',
+    defaultMessage: 'Page',
+  },
+  content: {
+    id: 'shared.components.projectBreadcrumbs.content',
+    defaultMessage: 'Content',
+  },
+  pageBlock: {
+    id: 'shared.components.projectBreadcrumbs.pageBlock',
+    defaultMessage: 'Block',
+  },
 });

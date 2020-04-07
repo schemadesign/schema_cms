@@ -18,6 +18,38 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import { getProjectMenuOptions } from '../../project/project.constants';
 import { PAGE_SCHEMA, FORM_VALUES, PAGE_TEMPLATE, PAGE_BLOCKS, PAGE_NAME } from '../../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import {
+  contentMessage,
+  pageMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  sectionMessage,
+  tabMessage,
+} from '../../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = (project, section, page) => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/content`,
+    span: tabMessage,
+    h3: contentMessage,
+  },
+  {
+    path: `/section/${section.id}`,
+    span: sectionMessage,
+    h3: section.name,
+  },
+  {
+    path: `/page/${page.id}`,
+    active: true,
+    span: pageMessage,
+    h3: page.name,
+  },
+];
 
 export const EditPage = ({
   project,
@@ -106,6 +138,7 @@ export const EditPage = ({
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project, page.section, page)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
           <PageForm

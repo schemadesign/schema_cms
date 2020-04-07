@@ -11,6 +11,14 @@ export const defaultProps = {
   fetchBlockTemplates: Function.prototype,
   blockTemplates,
   project,
+  page: {
+    id: 1,
+    name: 'Test',
+    section: {
+      id: 1,
+      title: 'Section',
+    },
+  },
   userRole: ROLES.ADMIN,
 };
 

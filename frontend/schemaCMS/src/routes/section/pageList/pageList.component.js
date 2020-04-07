@@ -13,8 +13,6 @@ import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
-import { ProjectTabs } from '../../../shared/components/projectTabs';
-import { CONTENT } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
   BackArrowButton,
@@ -48,6 +46,13 @@ import {
 } from '../../../shared/components/form/frequentComponents.styles';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import {
+  ProjectBreadcrumbs,
+  projectMessage,
+  tabMessage,
+  contentMessage,
+  sectionMessage,
+} from '../../../shared/components/projectBreadcrumbs';
 
 const { EditIcon, MinusIcon } = Icons;
 const { Switch } = FormUI;
@@ -69,6 +74,25 @@ const Page = ({ created, createdBy, name, id, templateName }) => {
   );
 };
 
+const getBreadcrumbsItems = (project, { id, name }) => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/content`,
+    span: tabMessage,
+    h3: contentMessage,
+  },
+  {
+    path: `/section/${id}`,
+    span: sectionMessage,
+    active: true,
+    h3: name,
+  },
+];
+
 Page.propTypes = {
   created: PropTypes.string.isRequired,
   createdBy: PropTypes.string.isRequired,
@@ -77,7 +101,13 @@ Page.propTypes = {
   templateName: PropTypes.string,
 };
 
-export const PageList = ({ section, project: { id: projectId }, removeSection, updateSection, userRole }) => {
+export const PageList = ({
+  section,
+  project: { id: projectId, title: projectTitle },
+  removeSection,
+  updateSection,
+  userRole,
+}) => {
   const { pages = [], slug = '' } = section;
   const [updateLoading, setUpdateLoading] = useState(false);
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
@@ -146,7 +176,7 @@ export const PageList = ({ section, project: { id: projectId }, removeSection, u
         options={filterMenuOptions(menuOptions, userRole)}
         active={PROJECT_CONTENT_ID}
       />
-      <ProjectTabs active={CONTENT} url={`/project/${projectId}`} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems({ id: projectId, title: projectTitle }, section)} />
       <Form onSubmit={handleSubmit}>
         <ContextHeader title={title} subtitle={nameInput}>
           <PlusButton id="createPage" type="button" onClick={() => history.push(`/section/${sectionId}/create-page`)} />

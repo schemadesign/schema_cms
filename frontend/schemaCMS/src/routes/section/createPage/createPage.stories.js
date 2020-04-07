@@ -15,6 +15,10 @@ export const defaultProps = {
   fetchPageTemplates: Function.prototype,
   fetchBlockTemplates: Function.prototype,
   project: { id: 'projectId' },
+  section: {
+    id: 1,
+    name: 'Section',
+  },
 };
 
 storiesOf('CreatePage', module)

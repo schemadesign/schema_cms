@@ -10,4 +10,8 @@ export {
   pageTemplatesMessage,
   filterTemplatesMessage,
   stateTemplatesMessage,
+  sectionMessage,
+  pageMessage,
+  contentMessage,
+  pageBlockMessage,
 } from './projectBreadcrumbs.component';

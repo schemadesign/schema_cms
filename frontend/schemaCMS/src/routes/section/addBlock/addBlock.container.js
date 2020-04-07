@@ -9,10 +9,12 @@ import { AddBlock } from './addBlock.component';
 import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
 import { selectProject } from '../../../modules/project';
 import { selectUserRole } from '../../../modules/userProfile';
+import { selectSection } from '../../../modules/sections';
 
 const mapStateToProps = createStructuredSelector({
   blockTemplates: selectBlockTemplates,
   project: selectProject,
+  section: selectSection,
   userRole: selectUserRole,
 });
 

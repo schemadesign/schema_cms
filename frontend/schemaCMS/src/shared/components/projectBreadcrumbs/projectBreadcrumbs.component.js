@@ -18,6 +18,10 @@ export const createMessage = <FormattedMessage {...messages.createMessage} />;
 export const pageTemplatesMessage = <FormattedMessage {...messages.pageTemplates} />;
 export const filterTemplatesMessage = <FormattedMessage {...messages.filterTemplates} />;
 export const stateTemplatesMessage = <FormattedMessage {...messages.stateTemplates} />;
+export const sectionMessage = <FormattedMessage {...messages.section} />;
+export const pageMessage = <FormattedMessage {...messages.page} />;
+export const contentMessage = <FormattedMessage {...messages.content} />;
+export const pageBlockMessage = <FormattedMessage {...messages.pageBlock} />;
 
 export const ProjectBreadcrumbs = ({ items }) => {
   const getBreadcrumbsItem = (item, index) => {
