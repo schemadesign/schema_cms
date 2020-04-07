@@ -2,7 +2,6 @@ import json
 import logging
 
 import math
-import markdown2
 
 from flask import Flask, request, Response, render_template
 from flask_cors import CORS
@@ -47,7 +46,10 @@ def split_string_to_list(column_names_string):
 @app.route("/projects", methods=["GET"])
 def get_projects():
     try:
-        projects = [project.as_dict() for project in db.Project.select().order_by(db.Project.id)]
+        projects = [
+            project.as_dict()
+            for project in db.Project.select().where(db.Project.deleted_at == None).order_by(db.Project.id)
+        ]
 
     except Exception as e:
         logging.info(f"Unable to get projects - {e}")
@@ -93,18 +95,7 @@ def get_page(page_id):
     if format_ != "html":
         return create_response(page), 200
 
-    page = generate_html_from_markdown_blocks(page)
-
     return render_template("page_template.html", page=page)
-
-
-def generate_html_from_markdown_blocks(page):
-    for block in page["blocks"]:
-        for element in block["elements"]:
-            if element["type"] == "rich_text":
-                element["value"] = markdown2.markdown(element["value"])
-
-    return page
 
 
 # Data Sources endpoints

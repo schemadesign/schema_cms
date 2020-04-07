@@ -110,10 +110,6 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
         except DataSourceJob.DoesNotExist:
             return None
 
-    @property
-    def dynamo_table_name(self):
-        return "datasources"
-
     @functional.cached_property
     def filters_count(self):
         return self.filters.count()
@@ -180,7 +176,6 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
     def set_active_job(self, job):
         self.active_job = job
         self.save(update_fields=["active_job"])
-        self.create_dynamo_item()
 
     def result_fields_info(self):
         try:

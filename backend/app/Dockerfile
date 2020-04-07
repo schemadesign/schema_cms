@@ -25,6 +25,5 @@ EXPOSE 8000
 
 CMD ./manage.py migrate && \
     ./manage.py initialuser && \
-    ./manage.py create_dynamo_tables && \
     ./manage.py loadscripts && \
     gunicorn --bind 0.0.0.0:8000 --access-logfile - schemacms.wsgi:application

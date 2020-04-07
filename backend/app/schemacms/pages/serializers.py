@@ -9,7 +9,7 @@ from django.conf import settings
 from rest_framework import serializers
 
 from . import models, constants
-from ..utils.serializers import CustomModelSerializer
+from ..utils.serializers import CustomModelSerializer, NestedRelatedModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
@@ -63,8 +63,11 @@ class ElementValueField(serializers.Field):
     def validate_image_type(self, data):
         file = data["file"]
         file_name = data["file_name"]
+
         if "data:" in file and ";base64," in file:
             header, file = file.split(";base64,")
+        else:
+            pass
 
         try:
             decoded_file = base64.b64decode(file)
@@ -265,8 +268,17 @@ class PageBlockSerializer(serializers.ModelSerializer):
         return obj.block.name
 
 
+class PageSectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Section
+        fields = ("id", "name")
+
+
 class PageSerializer(CustomModelSerializer):
     blocks = serializers.SerializerMethodField()
+    section = NestedRelatedModelSerializer(
+        serializer=PageSectionSerializer(), queryset=models.Section.objects.all()
+    )
 
     class Meta:
         model = models.Page
