@@ -300,7 +300,6 @@ class Common(Configuration):
     SQS_WORKER_QUEUE_URL = os.getenv("SQS_WORKER_QUEUE_URL")
     SQS_WORKER_EXT_QUEUE_URL = os.getenv("SQS_WORKER_EXT_QUEUE_URL")
     SQS_WORKER_MAX_QUEUE_URL = os.getenv("SQS_WORKER_MAX_QUEUE_URL")
-    DYNAMODB_ENDPOINT_URL = os.getenv("DYNAMODB_ENDPOINT_URL")
 
     # Allow lambda function to call API endpoint
     LAMBDA_AUTH_TOKEN = os.getenv("LAMBDA_AUTH_TOKEN")

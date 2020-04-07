@@ -75,10 +75,6 @@ class Project(
     def project_info(self):
         return {"id": self.id, "title": self.title}
 
-    @property
-    def dynamo_table_name(self):
-        return "projects"
-
     def meta_file_serialization(self):
         data = {
             "id": self.id,

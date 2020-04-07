@@ -25,13 +25,3 @@ def s3(mocker):
 @pytest.fixture()
 def sqs(mocker):
     return mocker.patch("schemacms.utils.services.sqs")
-
-
-@pytest.fixture(autouse=True)
-def create_dynamo_item(mocker):
-    mocker.patch("schemacms.utils.models.MetaGeneratorMixin.create_dynamo_item")
-
-
-@pytest.fixture(autouse=True)
-def delete_dynamo_item(mocker):
-    mocker.patch("schemacms.utils.models.MetaGeneratorMixin.delete_dynamo_item")

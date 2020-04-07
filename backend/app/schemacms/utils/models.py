@@ -1,6 +1,3 @@
-from .services import dynamo
-
-
 def file_upload_path(instance, filename):
     return instance.relative_path_to_save(filename)
 
@@ -10,11 +7,3 @@ class MetaGeneratorMixin:
 
     def meta_file_serialization(self):
         raise NotImplementedError
-
-    def create_dynamo_item(self):
-        table = dynamo.Table(self.dynamo_table_name)
-        table.put_item(Item=self.meta_file_serialization())
-
-    def delete_dynamo_item(self):
-        table = dynamo.Table(self.dynamo_table_name)
-        table.delete_item(Key={"id": self.id})

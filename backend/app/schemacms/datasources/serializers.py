@@ -363,12 +363,6 @@ class FilterSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def create(self, validated_data):
-        filter_ = super().create(validated_data)
-        filter_.datasource.create_dynamo_item()
-
-        return filter_
-
 
 class FilterDetailsSerializer(FilterSerializer):
     datasource = NestedRelatedModelSerializer(serializer=DataSourceNestedFieldSerializer(), read_only=True)

@@ -5,11 +5,6 @@ from ..utils import admin as utils_admin
 from . import models
 
 
-def update_meta_file(modeladmin, request, queryset):
-    for obj in queryset.iterator():
-        obj.create_dynamo_item()
-
-
 def update_meta(modeladmin, request, queryset):
     for obj in queryset.iterator():
         obj.schedule_update_meta(copy_steps=False)
@@ -40,7 +35,7 @@ class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
 
 @admin.register(models.DataSource)
 class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
-    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta_file, update_meta]
+    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta]
     list_display = ("name", "project", "deleted_at")
     fields = ("project", "name", "created_by", "type", "file", "active_job", "deleted_at")
     list_filter = ("project", "type", "deleted_at")
