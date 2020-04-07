@@ -1096,7 +1096,7 @@ exports[`Storyshots EditPage Default 1`] = `
         <a
           active={0}
           className="c8"
-          href="/section/undefined"
+          href="/section/sectionId"
           onClick={[Function]}
           style={
             Object {
