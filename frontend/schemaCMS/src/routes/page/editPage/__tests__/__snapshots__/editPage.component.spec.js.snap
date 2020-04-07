@@ -485,7 +485,7 @@ exports[`EditPage: Component should render correctly 1`] = `
       <a
         active={0}
         className="sc-fznyYp ghTwFj"
-        href="/section/undefined"
+        href="/section/sectionId"
         onClick={[Function]}
         style={
           Object {

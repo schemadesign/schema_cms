@@ -103,7 +103,7 @@ export const EditPage = ({
     try {
       setRemoveLoading(true);
       await removePage({ pageId });
-      history.push(`/section/${page.section}`);
+      history.push(`/section/${page.section.id}`);
     } catch (e) {
       reportError(e);
       setRemoveLoading(false);
@@ -154,7 +154,7 @@ export const EditPage = ({
             {...restFormikProps}
           />
           <NavigationContainer fixed>
-            <BackButton id="backBtn" type="button" onClick={() => history.push(`/section/${page.section}`)}>
+            <BackButton id="backBtn" type="button" onClick={() => history.push(`/section/${page.section.id}`)}>
               <FormattedMessage {...messages.back} />
             </BackButton>
             <NextButton

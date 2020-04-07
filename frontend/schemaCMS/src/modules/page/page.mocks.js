@@ -73,5 +73,8 @@ export const page = {
   [PAGE_TEMPLATE]: 1,
   [PAGE_IS_PUBLIC]: false,
   [PAGE_BLOCKS]: [block],
-  section: 'sectionId',
+  section: {
+    id: 'sectionId',
+    title: 'Section',
+  },
 };

@@ -87,11 +87,11 @@ exports[`Storyshots PageList Default 1`] = `
   word-break: break-word;
 }
 
-.c40 {
+.c38 {
   height: 155px;
 }
 
-.c42 {
+.c40 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`Storyshots PageList Default 1`] = `
   width: 100%;
 }
 
-.c41 {
+.c39 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -120,18 +120,18 @@ exports[`Storyshots PageList Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c43 {
+.c41 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c32 {
+.c30 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c33 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -147,17 +147,17 @@ exports[`Storyshots PageList Default 1`] = `
   position: relative;
 }
 
-.c36 {
+.c34 {
   padding-right: 10px;
 }
 
-.c35 {
+.c33 {
   padding-left: 10px;
   padding-right: 40px;
   max-width: 100%;
 }
 
-.c34 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -173,70 +173,70 @@ exports[`Storyshots PageList Default 1`] = `
   max-width: 100%;
 }
 
-.c39 {
+.c37 {
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c37 {
+.c35 {
   color: #71737e;
   min-width: 100%;
 }
 
-.c37 a {
+.c35 a {
   color: #FFF;
   -webkit-text-decoration: none;
   text-decoration: none;
   word-wrap: break-word;
 }
 
-.c17 {
+.c15 {
   position: relative;
 }
 
-.c19 {
+.c17 {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c21 {
+.c19 {
   position: relative;
 }
 
-.c26 {
+.c24 {
   text-align: right;
 }
 
-.c38 {
+.c36 {
   padding: 0 10px;
 }
 
-.c38:before {
+.c36:before {
   content: '|';
   display: inline;
 }
 
-.c13 {
+.c11 {
   display: none;
 }
 
-.c14 {
+.c12 {
   margin-right: 20px;
   overflow: hidden;
 }
 
-.c15 {
+.c13 {
+  color: #FFF;
+}
+
+.c14 {
   color: #FFF;
 }
 
 .c16 {
-  color: #FFF;
-}
-
-.c18 {
   position: relative;
   max-width: 100%;
   display: -webkit-box;
@@ -253,15 +253,15 @@ exports[`Storyshots PageList Default 1`] = `
   position: relative;
 }
 
-.c22 {
+.c20 {
   position: relative;
 }
 
-.c23 {
+.c21 {
   margin-top: 0;
 }
 
-.c24 {
+.c22 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -283,57 +283,33 @@ exports[`Storyshots PageList Default 1`] = `
   align-items: center;
 }
 
-.c25 {
+.c23 {
   width: 33%;
 }
 
 .c9 {
-  display: none;
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c9:hover {
+  color: #FFF;
 }
 
 .c10 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #2F2F36;
-  cursor: pointer;
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
 }
 
 .c10:hover {
-  border-bottom-color: #FFF;
-}
-
-.c12 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #FFF;
-  cursor: pointer;
-}
-
-.c12:hover {
-  border-bottom-color: #FFF;
-}
-
-.c11 {
   color: #FFF;
-  display: block;
-  padding: 16px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
-.c28 {
+.c26 {
   margin-bottom: 20px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -342,12 +318,12 @@ exports[`Storyshots PageList Default 1`] = `
   min-height: 150px;
 }
 
-.c31 {
+.c29 {
   word-break: break-word;
   cursor: pointer;
 }
 
-.c27 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -360,21 +336,21 @@ exports[`Storyshots PageList Default 1`] = `
   flex-wrap: wrap;
 }
 
-.c29 {
+.c27 {
   list-style: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-.c30 {
+.c28 {
   display: inline-block;
   line-height: 1.25;
   margin-right: 1.5em;
   color: #71737e;
 }
 
-.c30::before {
+.c28::before {
   content: '•';
   margin-left: -1.5em;
   display: inline-block;
@@ -403,7 +379,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c42 {
+  .c40 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -428,7 +404,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c41 {
+  .c39 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -446,13 +422,13 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c43 {
+  .c41 {
     width: 240px;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c18 {
     display: block;
   }
 }
@@ -462,19 +438,19 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c26 {
+  .c24 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c13 {
+  .c11 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -493,7 +469,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c21 {
     margin-top: 0;
   }
 }
@@ -515,7 +491,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c24 {
+  .c22 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -574,14 +550,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c9 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 29px 0 20px 0;
-    font-size: 15px;
-  }
+
 }
 
 @media (min-width:1050px) {
@@ -617,7 +586,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c26 {
     width: calc(100%/3 - 20px);
     max-width: 320px;
     min-height: 192px;
@@ -626,7 +595,7 @@ exports[`Storyshots PageList Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c27 {
+  .c25 {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
@@ -1063,84 +1032,174 @@ exports[`Storyshots PageList Default 1`] = `
       </div>
     </div>
     <div
-      className=""
-      id="tabsContainer"
+      style={
+        Object {
+          "borderBottom": "1px solid #a6a7aa",
+          "display": "flex",
+          "padding": "20px 0",
+        }
+      }
     >
       <div
-        className="c9"
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
       >
-        <div
-          className="c10"
+        <a
+          active={0}
+          className="c9"
+          href="/project/projectId/"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
         >
-          <a
-            className="c11"
-            href="/project/projectId"
-            id="settingsTab"
-            onClick={[Function]}
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
           >
-            Settings
-          </a>
-        </div>
-        <div
-          className="c10"
-        >
-          <a
-            className="c11"
-            href="/project/projectId/datasource"
-            id="sourcesTab"
-            onClick={[Function]}
+            Project
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
           >
-            Sources
-          </a>
-        </div>
+            
+          </h3>
+        </a>
         <div
-          className="c10"
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
         >
-          <a
-            className="c11"
-            href="/project/projectId/state"
-            id="stateTab"
-            onClick={[Function]}
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c9"
+          href="/project/projectId/content"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
           >
-            States
-          </a>
-        </div>
-        <div
-          className="c12"
-        >
-          <a
-            className="c11"
-            href="/project/projectId/content"
-            id="contentTab"
-            onClick={[Function]}
+            Tab
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
           >
             Content
-          </a>
-        </div>
+          </h3>
+        </a>
         <div
-          className="c10"
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
         >
-          <a
-            className="c11"
-            href="/project/projectId/templates"
-            id="templatesTab"
-            onClick={[Function]}
-          >
-            Templates
-          </a>
+          &gt;
         </div>
-        <div
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={1}
           className="c10"
+          href="/section/1"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
         >
-          <a
-            className="c11"
-            href="/project/projectId/user"
-            id="usersTab"
-            onClick={[Function]}
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
           >
-            Users
-          </a>
-        </div>
+            Section
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Section name
+          </h3>
+        </a>
       </div>
     </div>
     <form
@@ -1148,13 +1207,13 @@ exports[`Storyshots PageList Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className="c13"
+        className="c11"
       >
         <div
-          className="c14"
+          className="c12"
         >
           <h2
-            className="c15"
+            className="c13"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -1168,7 +1227,7 @@ exports[`Storyshots PageList Default 1`] = `
             Section
           </h2>
           <h1
-            className="c16"
+            className="c14"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -1182,10 +1241,10 @@ exports[`Storyshots PageList Default 1`] = `
             }
           >
             <div
-              className="c17"
+              className="c15"
             >
               <div
-                className="c18"
+                className="c16"
               >
                 <div
                   style={
@@ -1261,7 +1320,7 @@ exports[`Storyshots PageList Default 1`] = `
                 </div>
               </div>
               <div
-                className="c19"
+                className="c17"
               >
                 <svg
                   style={
@@ -1286,7 +1345,7 @@ exports[`Storyshots PageList Default 1`] = `
           className=""
         >
           <div
-            className="c20"
+            className="c18"
           >
             <button
               disabled={false}
@@ -1333,10 +1392,10 @@ exports[`Storyshots PageList Default 1`] = `
         </div>
       </div>
       <div
-        className="c21"
+        className="c19"
       >
         <div
-          className="c22"
+          className="c20"
         >
           <div
             style={
@@ -1400,7 +1459,7 @@ exports[`Storyshots PageList Default 1`] = `
               }
             >
               <div
-                className="c23"
+                className="c21"
               >
                 <svg
                   style={
@@ -1423,20 +1482,20 @@ exports[`Storyshots PageList Default 1`] = `
         </div>
       </div>
       <div
-        className="c24"
+        className="c22"
       >
         <div
-          className="c25"
+          className="c23"
         />
         2 pages
         <div
-          className="c25"
+          className="c23"
         >
           <div
-            className="c26"
+            className="c24"
           >
             <div
-              className="c20"
+              className="c18"
             >
               <button
                 disabled={false}
@@ -1485,10 +1544,10 @@ exports[`Storyshots PageList Default 1`] = `
         </div>
       </div>
       <section
-        className="c27"
+        className="c25"
       >
         <div
-          className="c28"
+          className="c26"
           style={
             Object {
               "backgroundColor": "#1d1d20",
@@ -1521,16 +1580,16 @@ exports[`Storyshots PageList Default 1`] = `
               }
             >
               <ul
-                className="c29"
+                className="c27"
               >
                 <li
-                  className="c30"
+                  className="c28"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="c30"
+                  className="c28"
                   id="headerItem-1"
                 >
                   owner
@@ -1538,7 +1597,7 @@ exports[`Storyshots PageList Default 1`] = `
               </ul>
             </div>
             <h1
-              className="c31"
+              className="c29"
               id="page-1"
               onClick={[Function]}
               style={
@@ -1568,7 +1627,7 @@ exports[`Storyshots PageList Default 1`] = `
           </div>
         </div>
         <div
-          className="c28"
+          className="c26"
           style={
             Object {
               "backgroundColor": "#1d1d20",
@@ -1601,16 +1660,16 @@ exports[`Storyshots PageList Default 1`] = `
               }
             >
               <ul
-                className="c29"
+                className="c27"
               >
                 <li
-                  className="c30"
+                  className="c28"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="c30"
+                  className="c28"
                   id="headerItem-1"
                 >
                   owner
@@ -1618,7 +1677,7 @@ exports[`Storyshots PageList Default 1`] = `
               </ul>
             </div>
             <h1
-              className="c31"
+              className="c29"
               id="page-2"
               onClick={[Function]}
               style={
@@ -1649,13 +1708,13 @@ exports[`Storyshots PageList Default 1`] = `
         </div>
       </section>
       <div
-        className="c32"
+        className="c30"
       >
         <div
-          className="c33"
+          className="c31"
         >
           <div
-            className="c34"
+            className="c32"
           >
             <div>
               <input
@@ -1706,20 +1765,20 @@ exports[`Storyshots PageList Default 1`] = `
               </label>
             </div>
             <div
-              className="c35"
+              className="c33"
             >
               <label
-                className="c36"
+                className="c34"
                 htmlFor="isPublic"
               >
                 Make it Public
               </label>
               <span
-                className="c37"
+                className="c35"
               >
                 This Section is currently Private
                 <span
-                  className="c38"
+                  className="c36"
                 />
                 Visit Page: 
                 <a
@@ -1731,7 +1790,7 @@ exports[`Storyshots PageList Default 1`] = `
             </div>
           </div>
           <div
-            className="c39"
+            className="c37"
             id="removeSection"
             onClick={[Function]}
           >
@@ -1754,13 +1813,13 @@ exports[`Storyshots PageList Default 1`] = `
         </div>
       </div>
       <div
-        className="c40"
+        className="c38"
       >
         <div
-          className="c41"
+          className="c39"
         >
           <div
-            className="c42"
+            className="c40"
           >
             <button
               disabled={false}
@@ -1803,7 +1862,7 @@ exports[`Storyshots PageList Default 1`] = `
               </svg>
             </button>
             <button
-              className="c43"
+              className="c41"
               disabled={true}
               id="updateSection"
               style={
