@@ -15,3 +15,5 @@ export { Stepper } from './stepper';
 export { Table } from './table';
 export { ThemeProvider } from './styles/themeProvider';
 export { Breadcrumbs } from './breadcrumbs';
+export { Link } from './link';
+export { LinkItem } from './linkItem';

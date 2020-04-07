@@ -350,6 +350,312 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
+    style={
+      Object {
+        "borderBottom": "1px solid #a6a7aa",
+        "display": "flex",
+        "padding": "20px 0",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        Component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": 884719008,
+              "componentId": "sc-fzoxKX",
+              "isStatic": false,
+              "rules": Array [
+                "
+  color: ",
+                [Function],
+                ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                [Function],
+                ";
+  }
+",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "Styled(Link)",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-fzoxKX",
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "Link",
+              "propTypes": Object {
+                "innerRef": [Function],
+                "onClick": [Function],
+                "replace": [Function],
+                "target": [Function],
+                "to": [Function],
+              },
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        active={false}
+        className="sc-fzoxKX igXWeF"
+        href="/project/1/"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Project
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          
+        </h3>
+      </a>
+      <div
+        style={
+          Object {
+            "color": "#a6a7aa",
+            "marginLeft": "14px",
+          }
+        }
+      >
+        &gt;
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        Component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": 884719008,
+              "componentId": "sc-fzoxKX",
+              "isStatic": false,
+              "rules": Array [
+                "
+  color: ",
+                [Function],
+                ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                [Function],
+                ";
+  }
+",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "Styled(Link)",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-fzoxKX",
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "Link",
+              "propTypes": Object {
+                "innerRef": [Function],
+                "onClick": [Function],
+                "replace": [Function],
+                "target": [Function],
+                "to": [Function],
+              },
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        active={false}
+        className="sc-fzoxKX igXWeF"
+        href="/project/1/templates"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Tab
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Templates
+        </h3>
+      </a>
+      <div
+        style={
+          Object {
+            "color": "#a6a7aa",
+            "marginLeft": "14px",
+          }
+        }
+      >
+        &gt;
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        Component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": 884719008,
+              "componentId": "sc-fzoxKX",
+              "isStatic": false,
+              "rules": Array [
+                "
+  color: ",
+                [Function],
+                ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                [Function],
+                ";
+  }
+",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "Styled(Link)",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-fzoxKX",
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "Link",
+              "propTypes": Object {
+                "innerRef": [Function],
+                "onClick": [Function],
+                "replace": [Function],
+                "target": [Function],
+                "to": [Function],
+              },
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        active={true}
+        className="sc-fzoxKX kwQeJS"
+        href="/project/1/page-templates"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Library
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Page Templates
+        </h3>
+      </a>
+    </div>
+  </div>
+  <div
     className="sc-fznJRM fWcXoV"
   >
     <div

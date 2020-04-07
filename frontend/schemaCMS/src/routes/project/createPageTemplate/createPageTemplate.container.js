@@ -9,10 +9,12 @@ import { CreatePageTemplate } from './createPageTemplate.component';
 import { selectUserRole } from '../../../modules/userProfile';
 import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
 import { PageTemplatesRoutines } from '../../../modules/pageTemplates';
+import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   blockTemplates: selectBlockTemplates,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({

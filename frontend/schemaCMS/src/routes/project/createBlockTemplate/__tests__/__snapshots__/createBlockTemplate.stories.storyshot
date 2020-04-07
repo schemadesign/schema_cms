@@ -70,11 +70,11 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   word-break: break-word;
 }
 
-.c34 {
+.c36 {
   height: 155px;
 }
 
-.c36 {
+.c38 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   width: 100%;
 }
 
-.c35 {
+.c37 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c37 {
+.c39 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c28 {
+.c30 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c29 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,17 +130,17 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   position: relative;
 }
 
-.c32 {
+.c34 {
   padding-right: 10px;
 }
 
-.c31 {
+.c33 {
   padding-left: 10px;
   padding-right: 0px;
   max-width: 100%;
 }
 
-.c30 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -156,37 +156,37 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   max-width: 100%;
 }
 
-.c33 {
+.c35 {
   color: #71737e;
   min-width: 100%;
 }
 
-.c33 a {
+.c35 a {
   color: #FFF;
   -webkit-text-decoration: none;
   text-decoration: none;
   word-wrap: break-word;
 }
 
-.c12 {
+.c14 {
   position: relative;
 }
 
-.c14 {
+.c16 {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c16 {
+.c18 {
   position: relative;
 }
 
-.c20 {
+.c22 {
   text-align: right;
 }
 
-.c23 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -195,24 +195,24 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   touch-action: none;
 }
 
-.c8 {
+.c10 {
   display: none;
 }
 
-.c9 {
+.c11 {
   margin-right: 20px;
   overflow: hidden;
 }
 
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
+.c12 {
   color: #FFF;
 }
 
 .c13 {
+  color: #FFF;
+}
+
+.c15 {
   position: relative;
   max-width: 100%;
   display: -webkit-box;
@@ -229,11 +229,11 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   position: relative;
 }
 
-.c17 {
+.c19 {
   position: relative;
 }
 
-.c21 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -244,7 +244,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   max-width: calc(100% - 90px);
 }
 
-.c22 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -255,17 +255,17 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   align-items: center;
 }
 
-.c25 {
+.c27 {
   border-top: 1px solid #2F2F36;
   padding-left: 0;
 }
 
-.c24 {
+.c26 {
   margin: 0 25px 0 5px;
   display: none;
 }
 
-.c26 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -278,17 +278,17 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   font-size: 18px;
 }
 
-.c26 label {
+.c28 label {
   margin-bottom: 2px;
 }
 
-.c27 {
+.c29 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c18 {
+.c20 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -310,8 +310,30 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
   align-items: center;
 }
 
-.c19 {
+.c21 {
   width: 33%;
+}
+
+.c8 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c8:hover {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c9:hover {
+  color: #FFF;
 }
 
 @media (min-width:1050px) {
@@ -336,7 +358,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c36 {
+  .c38 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -349,7 +371,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c35 {
+  .c37 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -367,13 +389,13 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c37 {
+  .c39 {
     width: 240px;
   }
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c17 {
     display: block;
   }
 }
@@ -383,19 +405,19 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c16 {
+  .c18 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c22 {
     display: none;
   }
 }
 
 @media (min-width:1050px) {
-  .c8 {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -422,25 +444,25 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c23 {
     max-width: calc(100% - 170px);
   }
 }
 
 @media (min-width:1050px) {
-  .c25 {
+  .c27 {
     padding-left: 30px;
   }
 }
 
 @media (min-width:1050px) {
-  .c24 {
+  .c26 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c18 {
+  .c20 {
     margin-top: -35px;
     margin-bottom: 40px;
   }
@@ -905,6 +927,414 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
         </button>
       </div>
     </div>
+    <div
+      style={
+        Object {
+          "borderBottom": "1px solid #a6a7aa",
+          "display": "flex",
+          "padding": "20px 0",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          Component={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "baseHash": 1627757960,
+                "componentId": "sc-fzqAui",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                  [Function],
+                  ";
+  }
+",
+                ],
+                "staticRulesId": "",
+              },
+              "displayName": "Styled(Link)",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-fzqAui",
+              "target": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          active={false}
+          className="c8"
+          href="/project/1/"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Project
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          Component={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "baseHash": 1627757960,
+                "componentId": "sc-fzqAui",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                  [Function],
+                  ";
+  }
+",
+                ],
+                "staticRulesId": "",
+              },
+              "displayName": "Styled(Link)",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-fzqAui",
+              "target": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          active={false}
+          className="c8"
+          href="/project/1/templates"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Tab
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Templates
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          Component={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "baseHash": 1627757960,
+                "componentId": "sc-fzqAui",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                  [Function],
+                  ";
+  }
+",
+                ],
+                "staticRulesId": "",
+              },
+              "displayName": "Styled(Link)",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-fzqAui",
+              "target": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          active={false}
+          className="c8"
+          href="/project/1/block-templates"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Library
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Block Templates
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          Component={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "baseHash": 1627757960,
+                "componentId": "sc-fzqAui",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    color: ",
+                  [Function],
+                  ";
+  }
+",
+                ],
+                "staticRulesId": "",
+              },
+              "displayName": "Styled(Link)",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-fzqAui",
+              "target": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          active={true}
+          className="c9"
+          href="/project/1/block-templates/create"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Template
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Create
+          </h3>
+        </a>
+      </div>
+    </div>
     <form
       onSubmit={[Function]}
     >
@@ -912,13 +1342,13 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
         className=""
       >
         <div
-          className="c8"
+          className="c10"
         >
           <div
-            className="c9"
+            className="c11"
           >
             <h2
-              className="c10"
+              className="c12"
               id="desktopHeaderTitle"
               style={
                 Object {
@@ -932,7 +1362,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               Block Template
             </h2>
             <h1
-              className="c11"
+              className="c13"
               id="desktopHeaderSubtitle"
               style={
                 Object {
@@ -946,10 +1376,10 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               }
             >
               <div
-                className="c12"
+                className="c14"
               >
                 <div
-                  className="c13"
+                  className="c15"
                 >
                   <div
                     style={
@@ -1025,7 +1455,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c14"
+                  className="c16"
                 >
                   <svg
                     style={
@@ -1050,7 +1480,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
             className=""
           >
             <div
-              className="c15"
+              className="c17"
             >
               <button
                 disabled={true}
@@ -1097,10 +1527,10 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c16"
+          className="c18"
         >
           <div
-            className="c17"
+            className="c19"
           >
             <div
               style={
@@ -1167,20 +1597,20 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
           </div>
         </div>
         <div
-          className="c18"
+          className="c20"
         >
           <div
-            className="c19"
+            className="c21"
           />
           1 Element
           <div
-            className="c19"
+            className="c21"
           >
             <div
-              className="c20"
+              className="c22"
             >
               <div
-                className="c15"
+                className="c17"
               >
                 <button
                   disabled={true}
@@ -1268,14 +1698,14 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                 }
               >
                 <div
-                  className="c21"
+                  className="c23"
                 >
                   <div
-                    className="c22"
+                    className="c24"
                   >
                     <div>
                       <div
-                        className="c23"
+                        className="c25"
                       >
                         <svg
                           style={
@@ -1296,7 +1726,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                       </div>
                     </div>
                     <div
-                      className="c24"
+                      className="c26"
                     >
                       <svg
                         style={
@@ -1316,7 +1746,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                     </div>
                   </div>
                   <div
-                    className="c13"
+                    className="c15"
                   >
                     <div
                       style={
@@ -1391,7 +1821,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                     </div>
                   </div>
                   <div
-                    className="c22"
+                    className="c24"
                   >
                     <svg
                       style={
@@ -1472,10 +1902,10 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               >
                 <div>
                   <div
-                    className="c25"
+                    className="c27"
                   >
                     <div
-                      className="c26"
+                      className="c28"
                       onClick={[Function]}
                     >
                       <label
@@ -1502,7 +1932,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                         value=""
                       />
                       <div
-                        className="c27"
+                        className="c29"
                       >
                         <svg
                           style={
@@ -1711,13 +2141,13 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
           </div>
         </span>
         <div
-          className="c28"
+          className="c30"
         >
           <div
-            className="c29"
+            className="c31"
           >
             <div
-              className="c30"
+              className="c32"
             >
               <div>
                 <input
@@ -1769,16 +2199,16 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
                 </label>
               </div>
               <div
-                className="c31"
+                className="c33"
               >
                 <label
-                  className="c32"
+                  className="c34"
                   htmlFor="isAvailable"
                 >
                   Make it Available
                 </label>
                 <span
-                  className="c33"
+                  className="c35"
                 >
                   This Template is currently unavailable for Editors
                 </span>
@@ -1788,16 +2218,16 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
         </div>
       </div>
       <div
-        className="c34"
+        className="c36"
       >
         <div
-          className="c35"
+          className="c37"
         >
           <div
-            className="c36"
+            className="c38"
           >
             <button
-              className="c37"
+              className="c39"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1823,7 +2253,7 @@ exports[`Storyshots CreateBlockTemplate Default 1`] = `
               Cancel
             </button>
             <button
-              className="c37"
+              className="c39"
               disabled={true}
               id="createTemplateBlock"
               style={

@@ -1,17 +1,19 @@
 import { defaultTheme } from '../../utils/theme';
 
-export const containerStyles = {
-  display: 'flex',
-};
-
 export const getStyles = (theme = defaultTheme) => ({
+  containerStyles: {
+    display: 'flex',
+    padding: '20px 0',
+    borderBottom: `1px solid ${theme.breadcrumbs.border}`,
+  },
   separatorStyles: {
     color: theme.breadcrumbs.separator,
-    marginLeft: '10px',
+    marginLeft: '14px',
   },
   itemStyles: {
     color: theme.breadcrumbs.link,
     display: 'flex',
-    marginRight: '10px',
+    marginRight: '14px',
+    alignItems: 'flex-end',
   },
 });

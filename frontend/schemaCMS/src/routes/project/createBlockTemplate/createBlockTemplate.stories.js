@@ -11,6 +11,9 @@ export const defaultProps = {
   blockTemplates,
   createBlockTemplate: Function.prototype,
   fetchBlockTemplates: Function.prototype,
+  project: {
+    id: 1,
+  },
 };
 
 storiesOf('CreateBlockTemplate', module)

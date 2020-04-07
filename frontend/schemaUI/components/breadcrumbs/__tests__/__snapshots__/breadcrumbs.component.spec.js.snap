@@ -4,7 +4,9 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
 <div
   style={
     Object {
+      "borderBottom": "1px solid #a6a7aa",
       "display": "flex",
+      "padding": "20px 0",
     }
   }
 >
@@ -12,20 +14,29 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
     key="0"
     style={
       Object {
+        "alignItems": "flex-end",
         "color": "#a6a7aa",
         "display": "flex",
-        "marginRight": "10px",
+        "marginRight": "14px",
       }
     }
   >
-    <div>
-      Item 1
-    </div>
+    <LinkItem
+      Component={[Function]}
+      href="#"
+    >
+      <Span>
+        Details
+      </Span>
+      <H3>
+        This is a page
+      </H3>
+    </LinkItem>
     <div
       style={
         Object {
           "color": "#a6a7aa",
-          "marginLeft": "10px",
+          "marginLeft": "14px",
         }
       }
     >
@@ -36,20 +47,29 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
     key="1"
     style={
       Object {
+        "alignItems": "flex-end",
         "color": "#a6a7aa",
         "display": "flex",
-        "marginRight": "10px",
+        "marginRight": "14px",
       }
     }
   >
-    <div>
-      Item 2
-    </div>
+    <LinkItem
+      Component={[Function]}
+      href="#"
+    >
+      <Span>
+        Details
+      </Span>
+      <H3>
+        This is an inner page
+      </H3>
+    </LinkItem>
     <div
       style={
         Object {
           "color": "#a6a7aa",
-          "marginLeft": "10px",
+          "marginLeft": "14px",
         }
       }
     >
@@ -60,39 +80,24 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
     key="2"
     style={
       Object {
+        "alignItems": "flex-end",
         "color": "#a6a7aa",
         "display": "flex",
-        "marginRight": "10px",
+        "marginRight": "14px",
       }
     }
   >
-    <div>
-      Item 3
-    </div>
-    <div
-      style={
-        Object {
-          "color": "#a6a7aa",
-          "marginLeft": "10px",
-        }
-      }
+    <LinkItem
+      Component={[Function]}
+      href="#"
     >
-      &gt;
-    </div>
-  </div>
-  <div
-    key="3"
-    style={
-      Object {
-        "color": "#a6a7aa",
-        "display": "flex",
-        "marginRight": "10px",
-      }
-    }
-  >
-    <div>
-      Item 4
-    </div>
+      <Span>
+        Details
+      </Span>
+      <H3>
+        This is another inner page
+      </H3>
+    </LinkItem>
   </div>
 </div>
 `;
@@ -101,7 +106,9 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
 <div
   style={
     Object {
+      "borderBottom": "1px solid #a6a7aa",
       "display": "flex",
+      "padding": "20px 0",
     }
   }
 >
@@ -109,20 +116,29 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
     key="0"
     style={
       Object {
+        "alignItems": "flex-end",
         "color": "#a6a7aa",
         "display": "flex",
-        "marginRight": "10px",
+        "marginRight": "14px",
       }
     }
   >
-    <div>
-      Item 1
-    </div>
+    <LinkItem
+      Component={[Function]}
+      href="#"
+    >
+      <Span>
+        Details
+      </Span>
+      <H3>
+        This is a page
+      </H3>
+    </LinkItem>
     <div
       style={
         Object {
           "color": "#a6a7aa",
-          "marginLeft": "10px",
+          "marginLeft": "14px",
         }
       }
     >
@@ -133,20 +149,29 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
     key="1"
     style={
       Object {
+        "alignItems": "flex-end",
         "color": "#a6a7aa",
         "display": "flex",
-        "marginRight": "10px",
+        "marginRight": "14px",
       }
     }
   >
-    <div>
-      Item 2
-    </div>
+    <LinkItem
+      Component={[Function]}
+      href="#"
+    >
+      <Span>
+        Details
+      </Span>
+      <H3>
+        This is an inner page
+      </H3>
+    </LinkItem>
     <div
       style={
         Object {
           "color": "#a6a7aa",
-          "marginLeft": "10px",
+          "marginLeft": "14px",
         }
       }
     >
@@ -157,39 +182,49 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
     key="2"
     style={
       Object {
+        "alignItems": "flex-end",
         "color": "#a6a7aa",
         "display": "flex",
-        "marginRight": "10px",
+        "marginRight": "14px",
       }
     }
   >
-    <div>
-      Item 3
-    </div>
-    <div
-      style={
-        Object {
-          "color": "#a6a7aa",
-          "marginLeft": "10px",
-        }
-      }
+    <LinkItem
+      Component={[Function]}
+      href="#"
     >
-      /
-    </div>
+      <Span>
+        Details
+      </Span>
+      <H3>
+        This is another inner page
+      </H3>
+    </LinkItem>
   </div>
-  <div
-    key="3"
-    style={
-      Object {
-        "color": "#a6a7aa",
-        "display": "flex",
-        "marginRight": "10px",
-      }
+</div>
+`;
+
+exports[`Breadcrumbs: Component should render correctly with a single child 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "color": "#a6a7aa",
+      "display": "flex",
+      "marginRight": "14px",
     }
+  }
+>
+  <LinkItem
+    Component={[Function]}
+    href="#"
   >
-    <div>
-      Item 4
-    </div>
-  </div>
+    <Span>
+      Details
+    </Span>
+    <H3>
+      This is a page
+    </H3>
+  </LinkItem>
 </div>
 `;

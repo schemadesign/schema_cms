@@ -26,8 +26,42 @@ import {
   getDefaultPageBlock,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 import { PageTemplateForm } from '../../../shared/components/pageTemplateForm';
+import {
+  ProjectBreadcrumbs,
+  templatesMessage,
+  tabMessage,
+  blockTemplatesMessage,
+  createMessage,
+  projectMessage,
+  libraryMessage,
+  templateMessage,
+} from '../../../shared/components/projectBreadcrumbs';
 
-export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTemplates, blockTemplates }) => {
+const getBreadcrumbsItems = project => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/templates`,
+    span: tabMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/block-templates`,
+    span: libraryMessage,
+    h3: blockTemplatesMessage,
+  },
+  {
+    path: `/project/${project.id}/page-templates/create`,
+    active: true,
+    span: templateMessage,
+    h3: createMessage,
+  },
+];
+
+export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTemplates, blockTemplates, project }) => {
   const intl = useIntl();
   const { projectId } = useParams();
   const history = useHistory();
@@ -82,6 +116,7 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
           <PageTemplateForm title={title} blockTemplates={blockTemplates} isValid={isValid} {...restFormikProps} />
@@ -113,4 +148,5 @@ CreatePageTemplate.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   createPageTemplate: PropTypes.func.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,
+  project: PropTypes.object.isRequired,
 };

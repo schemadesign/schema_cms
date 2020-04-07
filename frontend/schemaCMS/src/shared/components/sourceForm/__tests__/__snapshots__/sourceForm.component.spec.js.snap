@@ -26,6 +26,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
+          "border": "#a6a7aa",
           "link": "#a6a7aa",
           "separator": "#a6a7aa",
         },
@@ -83,6 +84,14 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "label": Object {
           "border": "#2F2F36",
           "text": "#71737e",
+        },
+        "link": Object {
+          "hover": "#FFF",
+          "text": "#a6a7aa",
+        },
+        "linkItem": Object {
+          "hover": "#FFF",
+          "link": "#a6a7aa",
         },
         "menu": Object {
           "background": "#000",
@@ -268,6 +277,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
+          "border": "#a6a7aa",
           "link": "#a6a7aa",
           "separator": "#a6a7aa",
         },
@@ -325,6 +335,14 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "label": Object {
           "border": "#2F2F36",
           "text": "#71737e",
+        },
+        "link": Object {
+          "hover": "#FFF",
+          "text": "#a6a7aa",
+        },
+        "linkItem": Object {
+          "hover": "#FFF",
+          "link": "#a6a7aa",
         },
         "menu": Object {
           "background": "#000",
@@ -463,6 +481,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
+          "border": "#a6a7aa",
           "link": "#a6a7aa",
           "separator": "#a6a7aa",
         },
@@ -520,6 +539,14 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "label": Object {
           "border": "#2F2F36",
           "text": "#71737e",
+        },
+        "link": Object {
+          "hover": "#FFF",
+          "text": "#a6a7aa",
+        },
+        "linkItem": Object {
+          "hover": "#FFF",
+          "link": "#a6a7aa",
         },
         "menu": Object {
           "background": "#000",
@@ -705,6 +732,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
+          "border": "#a6a7aa",
           "link": "#a6a7aa",
           "separator": "#a6a7aa",
         },
@@ -762,6 +790,14 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "label": Object {
           "border": "#2F2F36",
           "text": "#71737e",
+        },
+        "link": Object {
+          "hover": "#FFF",
+          "text": "#a6a7aa",
+        },
+        "linkItem": Object {
+          "hover": "#FFF",
+          "link": "#a6a7aa",
         },
         "menu": Object {
           "background": "#000",

@@ -10,6 +10,9 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   blockTemplates,
   fetchBlockTemplates: Function.prototype,
+  project: {
+    id: 1,
+  },
 };
 
 storiesOf('BlockTemplates', module)

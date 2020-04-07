@@ -503,7 +503,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
             className="c2"
           >
             <a
-              className="sc-oUnPI c3"
+              className="sc-plgXW c3"
               href="/"
               onClick={[Function]}
             >
@@ -561,7 +561,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </svg>
               </button>
               <a
-                className="sc-oUnPI c6"
+                className="sc-plgXW c6"
                 href="/settings"
                 onClick={[Function]}
               >
@@ -709,7 +709,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               className="c10"
             >
               <div
-                className="sc-oUAoT c11"
+                className="sc-pkvvt c11"
               >
                 <a
                   href="/project"
@@ -724,7 +724,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               className="c10"
             >
               <div
-                className="sc-oUAoT c12"
+                className="sc-pkvvt c12"
               >
                 <a
                   href="/"
@@ -735,7 +735,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c12"
+                className="sc-pkvvt c12"
               >
                 <a
                   href="/"
@@ -746,7 +746,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c12"
+                className="sc-pkvvt c12"
               >
                 <a
                   href="/"
@@ -1249,7 +1249,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
       className="c1"
     >
       <a
-        className="sc-oUnPI c2"
+        className="sc-plgXW c2"
         href="/"
         onClick={[Function]}
       >
@@ -1320,7 +1320,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
               className="c7"
             >
               <div
-                className="sc-oUAoT c8"
+                className="sc-pkvvt c8"
               >
                 <a
                   href="/project"
@@ -1331,7 +1331,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c8"
+                className="sc-pkvvt c8"
               >
                 <a
                   href="/user"
@@ -1346,7 +1346,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
               className="c7"
             >
               <div
-                className="sc-oUAoT c9"
+                className="sc-pkvvt c9"
               >
                 <a
                   href="/"
@@ -1357,7 +1357,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c9"
+                className="sc-pkvvt c9"
               >
                 <a
                   href="/"
@@ -1368,7 +1368,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c9"
+                className="sc-pkvvt c9"
               >
                 <a
                   href="/"
@@ -1958,7 +1958,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
             className="c2"
           >
             <a
-              className="sc-oUnPI c3"
+              className="sc-plgXW c3"
               href="/"
               onClick={[Function]}
             >
@@ -2045,7 +2045,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </svg>
               </button>
               <a
-                className="sc-oUnPI c8"
+                className="sc-plgXW c8"
                 href="/settings"
                 onClick={[Function]}
               >
@@ -2193,7 +2193,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               className="c12"
             >
               <div
-                className="sc-oUAoT c13"
+                className="sc-pkvvt c13"
               >
                 <a
                   href="/project"
@@ -2208,7 +2208,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               className="c12"
             >
               <div
-                className="sc-oUAoT c14"
+                className="sc-pkvvt c14"
               >
                 <a
                   href="/"
@@ -2219,7 +2219,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </a>
               </div>
               <div
-                className="sc-oUAoT c14"
+                className="sc-pkvvt c14"
               >
                 <a
                   href="/"
@@ -2230,7 +2230,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </a>
               </div>
               <div
-                className="sc-oUAoT c14"
+                className="sc-pkvvt c14"
               >
                 <a
                   href="/"
@@ -2820,7 +2820,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             className="c2"
           >
             <a
-              className="sc-oUnPI c3"
+              className="sc-plgXW c3"
               href="/"
               onClick={[Function]}
             >
@@ -2899,7 +2899,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </svg>
               </button>
               <a
-                className="sc-oUnPI c8"
+                className="sc-plgXW c8"
                 href="/settings"
                 onClick={[Function]}
               >
@@ -3047,7 +3047,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               className="c12"
             >
               <div
-                className="sc-oUAoT c13"
+                className="sc-pkvvt c13"
               >
                 <a
                   href="/project"
@@ -3058,7 +3058,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c13"
+                className="sc-pkvvt c13"
               >
                 <a
                   href="/user"
@@ -3073,7 +3073,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               className="c12"
             >
               <div
-                className="sc-oUAoT c14"
+                className="sc-pkvvt c14"
               >
                 <a
                   href="/"
@@ -3084,7 +3084,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c14"
+                className="sc-pkvvt c14"
               >
                 <a
                   href="/"
@@ -3095,7 +3095,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </a>
               </div>
               <div
-                className="sc-oUAoT c14"
+                className="sc-pkvvt c14"
               >
                 <a
                   href="/"

@@ -17,6 +17,33 @@ import { ListContainer, ListItem, ListItemTitle } from '../../../shared/componen
 import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { CounterHeader } from '../../../shared/components/counterHeader';
+import {
+  blockTemplatesMessage,
+  libraryMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  tabMessage,
+  templatesMessage,
+} from '../../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = project => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/templates`,
+    span: tabMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/block-templates`,
+    active: true,
+    span: libraryMessage,
+    h3: blockTemplatesMessage,
+  },
+];
 
 const BlockTemplate = ({ created, createdBy, name, id, elements }) => {
   const history = useHistory();
@@ -42,7 +69,7 @@ BlockTemplate.propTypes = {
   elements: PropTypes.array.isRequired,
 };
 
-export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole }) => {
+export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole, project }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
@@ -69,6 +96,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole }
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <ContextHeader title={title} subtitle={subtitle}>
         <PlusButton
           id="createBlockTemplate"
@@ -103,4 +131,5 @@ BlockTemplates.propTypes = {
   userRole: PropTypes.string.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,
+  project: PropTypes.object.isRequired,
 };

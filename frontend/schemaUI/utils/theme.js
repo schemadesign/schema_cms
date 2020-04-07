@@ -57,6 +57,15 @@ const light = {
   breadcrumbs: {
     link: colors.darkGrey,
     separator: colors.darkGrey,
+    border: colors.darkGrey,
+  },
+  linkItem: {
+    link: colors.darkGrey,
+    hover: colors.black,
+  },
+  link: {
+    text: colors.darkGrey,
+    hover: colors.black,
   },
   textArea: {
     text: colors.black,
@@ -168,6 +177,15 @@ const dark = {
   breadcrumbs: {
     link: colors.coolGray,
     separator: colors.coolGray,
+    border: colors.coolGray,
+  },
+  linkItem: {
+    link: colors.coolGray,
+    hover: colors.white,
+  },
+  link: {
+    text: colors.coolGray,
+    hover: colors.white,
   },
   label: {
     text: colors.lightGrey,
