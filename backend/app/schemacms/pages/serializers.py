@@ -63,8 +63,11 @@ class ElementValueField(serializers.Field):
     def validate_image_type(self, data):
         file = data["file"]
         file_name = data["file_name"]
+
         if "data:" in file and ";base64," in file:
             header, file = file.split(";base64,")
+        else:
+            pass
 
         try:
             decoded_file = base64.b64decode(file)

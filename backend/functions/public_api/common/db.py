@@ -1,6 +1,7 @@
 import json
 
 from peewee import *
+import markdown2
 
 from . import settings, services
 
@@ -26,6 +27,7 @@ class Project(BaseModel):
     description = TextField()
     modified = DateTimeField()
     created = DateTimeField()
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "projects_project"
@@ -45,10 +47,16 @@ class Project(BaseModel):
         }
 
     def get_data_sources(self):
-        return [{"id": ds.id, "type": ds.type, "name": ds.name} for ds in self.data_sources.select()]
+        return [
+            {"id": ds.id, "type": ds.type, "name": ds.name}
+            for ds in self.data_sources.select().where(DataSource.deleted_at == None)
+        ]
 
     def get_sections(self):
-        return [section.as_dict() for section in self.sections.select().where(Section.is_public == True)]
+        return [
+            section.as_dict()
+            for section in self.sections.select().where(Section.is_public == True, Section.deleted_at == None)
+        ]
 
 
 class ActiveJob(BaseModel):
@@ -83,6 +91,7 @@ class DataSource(BaseModel):
     type = CharField()
     file = CharField()
     active_job = ForeignKeyField(ActiveJob)
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "datasources_datasource"
@@ -110,7 +119,10 @@ class DataSource(BaseModel):
         }
 
     def get_filters(self):
-        return [filter.as_dict() for filter in self.filters.select().where(Filter.is_active == True)]
+        return [
+            filter.as_dict()
+            for filter in self.filters.select().where(Filter.is_active == True, Filter.deleted_at == None)
+        ]
 
     def get_fields(self):
         preview = services.get_s3_object(self.active_job.meta_data.get().preview)["Body"]
@@ -131,6 +143,7 @@ class Filter(BaseModel):
     field_type = CharField()
     unique_items = IntegerField()
     is_active = BooleanField()
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "datasources_filter"
@@ -148,6 +161,7 @@ class Section(BaseModel):
     name = CharField()
     project = ForeignKeyField(Project, backref="sections")
     is_public = BooleanField()
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "pages_section"
@@ -155,7 +169,9 @@ class Section(BaseModel):
     def as_dict(self):
         pages = [
             page.as_dict()
-            for page in self.pages.select().where(Page.is_public == True, Page.is_template == False)
+            for page in self.pages.select().where(
+                Page.is_public == True, Page.is_template == False, Page.deleted_at == None
+            )
         ]
         return {"id": self.id, "name": self.name, "pages": pages}
 
@@ -169,6 +185,7 @@ class Page(BaseModel):
     created_by = ForeignKeyField(User, backref="pages")
     is_public = BooleanField()
     is_template = BooleanField()
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "pages_page"
@@ -189,7 +206,7 @@ class Page(BaseModel):
         return data
 
     def get_blocks(self):
-        return [block.as_dict() for block in self.blocks.select()]
+        return [block.as_dict() for block in self.blocks.select().where(Block.deleted_at == None)]
 
 
 class Block(BaseModel):
@@ -210,7 +227,7 @@ class Block(BaseModel):
         }
 
     def get_elements(self):
-        return [element.as_dict() for element in self.elements.select()]
+        return [element.as_dict() for element in self.elements.select().where(Element.deleted_at == None)]
 
 
 class Element(BaseModel):
@@ -235,6 +252,7 @@ class Element(BaseModel):
             "type": self.type,
             "order": self.order,
             "value": self.get_element_value(),
+            "html": self.get_value_in_html(),
         }
 
     def get_element_value(self):
@@ -253,6 +271,36 @@ class Element(BaseModel):
     def get_image_data(image):
         name = image.split("/")[-1]
         return name
+
+    def get_value_in_html(self):
+        if self.type == "connection":
+            html_value = (
+                f"<div id='{self.id}' class='element connection'>"
+                f"<a href='{self.connection}' target='_blank|_self|_parent|_top'>{self.connection}</a>"
+                f"</div>"
+            )
+            return html_value
+
+        if self.type == "image":
+            value = self.get_element_value()
+            html_value = (
+                f"<div id='{self.id}' class='element image'>"
+                f"<figure>"
+                f"<img src='{value['image']}' alt='{value['file_name']}'>"
+                f"</figure>"
+                f"</div>"
+            )
+
+            return html_value
+
+        if self.type == "plain_text":
+            html_value = f"<div id='{self.id}' class='element text'><p>{self.plain_text}</p></div>"
+
+            return html_value
+
+        if self.type == "rich_text":
+            html_value = markdown2.markdown(self.rich_text)
+            return html_value
 
 
 def get_db_settings():

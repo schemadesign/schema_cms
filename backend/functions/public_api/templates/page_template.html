@@ -13,27 +13,19 @@
 		{% for element in block['elements'] %}
 
 			{% if element["type"] == "plain_text" %}
-				<div id='{{ element["id"] }}' class='element text'>{{ element["value"] }}</div>
+				{{ element["html"]|safe }}
 			{% endif %}
 
 			{% if element["type"] == "rich_text" %}
-				<div id='{{ element["id"] }}' class='element markdown'>{{ element["value"]|safe }}</div>
+				{{ element["html"]|safe }}
 			{% endif %}
 
 			{% if element["type"] == "connection" %}
-				<div id='{{ element["id"] }}' class='element connection'>
-					<a href='{{ element["value"] }}' target='_blank|_self|_parent|_top'>{{ element['value']|safe }}</a>
-				</div>
+				{{ element["html"]|safe }}
 			{% endif %}
 
 			{% if element["type"] == "image" %}
-				<div id='{{ element["id"] }}' class='element image'>
-
-					<figure>
-						<img src="{{ element['value']['image'] }}" alt="{{ element['value']['file_name'] }}">
-					</figure>
-
-				</div>
+				{{ element["html"]|safe }}
 			{% endif %}
 
 		{% endfor %}
