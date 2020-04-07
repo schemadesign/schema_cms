@@ -73,4 +73,24 @@ storiesOf('Breadcrumbs', module)
         <H3>This is another inner page</H3>
       </LinkItem>
     </Breadcrumbs>
+  ))
+  .add('With custom link item', () => (
+    <Breadcrumbs {...withSymbol(COMPONENT_SYMBOL)}>
+      <LinkItem
+        render={styles => (
+          <div style={styles}>
+            <Span>Details</Span>
+            <H3>This is a page</H3>
+          </div>
+        )}
+      />
+      <LinkItem
+        render={styles => (
+          <div style={styles}>
+            <Span>Details</Span>
+            <H3>This is an inner page</H3>
+          </div>
+        )}
+      />
+    </Breadcrumbs>
   ));

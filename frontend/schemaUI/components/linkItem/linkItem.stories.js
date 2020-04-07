@@ -12,8 +12,19 @@ export const defaultProps = {
 storiesOf('LinkItem', module)
   .addDecorator(withTheme())
   .add('Default', () => (
-    <LinkItem {...defaultProps}>
-      <Span>test</Span>
-      <H3>Item Title</H3>
+    <LinkItem href="#">
+      <Span>Details</Span>
+      <H3>This is a page</H3>
     </LinkItem>
+  ))
+  .add('With render function', () => (
+    <LinkItem
+      {...defaultProps}
+      render={styles => (
+        <div style={styles}>
+          <Span>test</Span>
+          <H3>Item Title</H3>
+        </div>
+      )}
+    />
   ));

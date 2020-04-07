@@ -350,84 +350,174 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznWqX clGFVO"
-    id="tabsContainer"
+    style={
+      Object {
+        "borderBottom": "1px solid #a6a7aa",
+        "display": "flex",
+        "padding": "20px 0",
+      }
+    }
   >
     <div
-      className="sc-fzpjYC hUVQHn"
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
     >
-      <div
-        className="sc-fznxsB gwcqhJ"
+      <a
+        active={0}
+        className="sc-fznLPX gzsYqH"
+        href="/project/projectId/"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
       >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId"
-          id="settingsTab"
-          onClick={[Function]}
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
         >
-          Settings
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/datasource"
-          id="sourcesTab"
-          onClick={[Function]}
+          Project
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
         >
-          Sources
-        </a>
-      </div>
+          
+        </h3>
+      </a>
       <div
-        className="sc-fznxsB gwcqhJ"
+        style={
+          Object {
+            "color": "#a6a7aa",
+            "marginLeft": "14px",
+          }
+        }
       >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/state"
-          id="stateTab"
-          onClick={[Function]}
+        &gt;
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        active={0}
+        className="sc-fznLPX gzsYqH"
+        href="/project/projectId/content"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
         >
-          States
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB cRgWyS"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/content"
-          id="contentTab"
-          onClick={[Function]}
+          Tab
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
         >
           Content
-        </a>
-      </div>
+        </h3>
+      </a>
       <div
-        className="sc-fznxsB gwcqhJ"
+        style={
+          Object {
+            "color": "#a6a7aa",
+            "marginLeft": "14px",
+          }
+        }
       >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/templates"
-          id="templatesTab"
-          onClick={[Function]}
-        >
-          Templates
-        </a>
+        &gt;
       </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        active={1}
+        className="sc-fznLPX ibgzDY"
+        href="/section/1"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
       >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/user"
-          id="usersTab"
-          onClick={[Function]}
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
         >
-          Users
-        </a>
-      </div>
+          Section
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Section name
+        </h3>
+      </a>
     </div>
   </div>
   <form
@@ -435,13 +525,13 @@ exports[`PageList: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fzoiQi kzhWbE"
+      className="sc-fzpjYC gMeLi"
     >
       <div
-        className="sc-fzqARJ fGrnyP"
+        className="sc-fznxsB ckGoLY"
       >
         <h2
-          className="sc-fzqNqU cSnCDr"
+          className="sc-fznJRM eSKnjX"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -455,7 +545,7 @@ exports[`PageList: Component should render correctly 1`] = `
           Section
         </h2>
         <h1
-          className="sc-fzoyTs ieHSUN"
+          className="sc-fznWqX bKYpVc"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -469,10 +559,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqAbL jowhOw"
+            className="sc-fznzOf hHLtGv"
           >
             <div
-              className="sc-fznLPX eppHyY"
+              className="sc-fzoJMP fHvuaW"
             >
               <div
                 style={
@@ -548,7 +638,7 @@ exports[`PageList: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzqMAW dEKFvM"
+              className="sc-fznMnq ndpwK"
             >
               <svg
                 style={
@@ -570,7 +660,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </h1>
       </div>
       <div
-        className="sc-fzoNJl kUMlmZ"
+        className="sc-fzoiQi jkvegY"
       >
         <div
           className="sc-fzoXzr kOFMDA"
@@ -620,10 +710,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoydu kVlKwf"
+      className="sc-fzoant eATJhY"
     >
       <div
-        className="sc-fznLPX gLqlma"
+        className="sc-fzoJMP jfUuVM"
       >
         <div
           style={
@@ -687,7 +777,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoaKM jwkshV"
+              className="sc-fzoYHE eyRgUq"
             >
               <svg
                 style={
@@ -710,17 +800,17 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoXWK cuvMPH"
+      className="sc-fzqARJ dpqryM"
     >
       <div
-        className="sc-fzpmMD dhryqH"
+        className="sc-fzqNqU ixLxBI"
       />
       2 pages
       <div
-        className="sc-fzpmMD dhryqH"
+        className="sc-fzqNqU ixLxBI"
       >
         <div
-          className="sc-fzoYHE fqvfWR"
+          className="sc-fzqAbL gpfNls"
         >
           <div
             className="sc-fzoXzr kOFMDA"
@@ -772,10 +862,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <section
-      className="sc-fzqBkg jpEqiF"
+      className="sc-fznxKY cinfQm"
     >
       <div
-        className="sc-fznxKY Rwgdn"
+        className="sc-fzoyTs dGguFW"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -808,16 +898,16 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <ul
-              className="sc-fzqPZZ cRrxjq"
+              className="sc-fznMAR dwokPX"
             >
               <li
-                className="sc-fzoxKX jBtseZ"
+                className="sc-fznWOq frgEXS"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-fzoxKX jBtseZ"
+                className="sc-fznWOq frgEXS"
                 id="headerItem-1"
               >
                 owner
@@ -825,7 +915,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </ul>
           </div>
           <h1
-            className="sc-fznMAR GXRsN"
+            className="sc-fzoNJl iNXeca"
             id="page-1"
             onClick={[Function]}
             style={
@@ -855,7 +945,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fznxKY Rwgdn"
+        className="sc-fzoyTs dGguFW"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -888,16 +978,16 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <ul
-              className="sc-fzqPZZ cRrxjq"
+              className="sc-fznMAR dwokPX"
             >
               <li
-                className="sc-fzoxKX jBtseZ"
+                className="sc-fznWOq frgEXS"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-fzoxKX jBtseZ"
+                className="sc-fznWOq frgEXS"
                 id="headerItem-1"
               >
                 owner
@@ -905,7 +995,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </ul>
           </div>
           <h1
-            className="sc-fznMAR GXRsN"
+            className="sc-fzoNJl iNXeca"
             id="page-2"
             onClick={[Function]}
             style={
@@ -936,13 +1026,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </section>
     <div
-      className="sc-fzoKki derPXV"
+      className="sc-fzolEj dlYndn"
     >
       <div
-        className="sc-fzoYkl cIaRKd"
+        className="sc-fzqBkg ihOeGn"
       >
         <div
-          className="sc-fznMnq jQhSEV"
+          className="sc-fzoKki itZfIL"
         >
           <div>
             <input
@@ -993,20 +1083,20 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fznzOf fOqpKE"
+            className="sc-fzoxKX jKuYkF"
           >
             <label
-              className="sc-fzpkJw fVmGWg"
+              className="sc-fzqPZZ gXaiqb"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-fzomME fGRHjc"
+              className="sc-fzpkJw eoVTgc"
             >
               This Section is currently Private
               <span
-                className="sc-fzpkqZ blGzFM"
+                className="sc-fzqMAW buCTvK"
               />
               Visit Page: 
               <a
@@ -1018,7 +1108,7 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzoant bSMjLQ"
+          className="sc-fzoYkl bpeDsJ"
           id="removeSection"
           onClick={[Function]}
         >

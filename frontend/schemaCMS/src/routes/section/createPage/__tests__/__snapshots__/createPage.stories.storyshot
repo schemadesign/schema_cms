@@ -70,11 +70,11 @@ exports[`Storyshots CreatePage Default 1`] = `
   word-break: break-word;
 }
 
-.c30 {
+.c32 {
   height: 155px;
 }
 
-.c32 {
+.c34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots CreatePage Default 1`] = `
   width: 100%;
 }
 
-.c31 {
+.c33 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,18 +103,18 @@ exports[`Storyshots CreatePage Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c33 {
+.c35 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c24 {
+.c26 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c25 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,17 +130,17 @@ exports[`Storyshots CreatePage Default 1`] = `
   position: relative;
 }
 
-.c28 {
+.c30 {
   padding-right: 10px;
 }
 
-.c27 {
+.c29 {
   padding-left: 10px;
   padding-right: 40px;
   max-width: 100%;
 }
 
-.c26 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -156,54 +156,54 @@ exports[`Storyshots CreatePage Default 1`] = `
   max-width: 100%;
 }
 
-.c29 {
+.c31 {
   color: #71737e;
   min-width: 100%;
 }
 
-.c29 a {
+.c31 a {
   color: #FFF;
   -webkit-text-decoration: none;
   text-decoration: none;
   word-wrap: break-word;
 }
 
-.c12 {
+.c14 {
   position: relative;
 }
 
-.c14 {
+.c16 {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c15 {
+.c17 {
   position: relative;
 }
 
-.c23 {
+.c25 {
   text-align: right;
 }
 
-.c8 {
+.c10 {
   display: none;
 }
 
-.c9 {
+.c11 {
   margin-right: 20px;
   overflow: hidden;
 }
 
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
+.c12 {
   color: #FFF;
 }
 
 .c13 {
+  color: #FFF;
+}
+
+.c15 {
   position: relative;
   max-width: 100%;
   display: -webkit-box;
@@ -220,15 +220,15 @@ exports[`Storyshots CreatePage Default 1`] = `
   position: relative;
 }
 
-.c16 {
+.c18 {
   position: relative;
 }
 
-.c17 {
+.c19 {
   margin-top: 0;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -241,17 +241,17 @@ exports[`Storyshots CreatePage Default 1`] = `
   font-size: 18px;
 }
 
-.c19 label {
+.c21 label {
   margin-bottom: 2px;
 }
 
-.c20 {
+.c22 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c21 {
+.c23 {
   color: #71737e;
   text-align: center;
   margin-bottom: 20px;
@@ -273,11 +273,33 @@ exports[`Storyshots CreatePage Default 1`] = `
   align-items: center;
 }
 
-.c22 {
+.c24 {
   width: 33%;
 }
 
-.c18 {
+.c8 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c8:hover {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c9:hover {
+  color: #FFF;
+}
+
+.c20 {
   position: relative;
   z-index: 999;
 }
@@ -304,7 +326,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c32 {
+  .c34 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -329,7 +351,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c31 {
+  .c33 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -347,7 +369,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c33 {
+  .c35 {
     width: 240px;
   }
 }
@@ -361,7 +383,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c17 {
     display: none;
   }
 }
@@ -371,7 +393,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c8 {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -390,7 +412,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c19 {
     margin-top: 0;
   }
 }
@@ -416,7 +438,7 @@ exports[`Storyshots CreatePage Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c21 {
+  .c23 {
     margin-top: 0px;
     margin-bottom: 40px;
   }
@@ -941,6 +963,234 @@ exports[`Storyshots CreatePage Default 1`] = `
         </button>
       </div>
     </div>
+    <div
+      style={
+        Object {
+          "borderBottom": "1px solid #a6a7aa",
+          "display": "flex",
+          "padding": "20px 0",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c8"
+          href="/project/projectId/"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Project
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c8"
+          href="/project/projectId/content"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Tab
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Content
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c8"
+          href="/section/1"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Section
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Section
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={1}
+          className="c9"
+          href="/section/1/create-page"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Page
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Create
+          </h3>
+        </a>
+      </div>
+    </div>
     <form
       onSubmit={[Function]}
     >
@@ -948,13 +1198,13 @@ exports[`Storyshots CreatePage Default 1`] = `
         className=""
       >
         <div
-          className="c8"
+          className="c10"
         >
           <div
-            className="c9"
+            className="c11"
           >
             <h2
-              className="c10"
+              className="c12"
               id="desktopHeaderTitle"
               style={
                 Object {
@@ -968,7 +1218,7 @@ exports[`Storyshots CreatePage Default 1`] = `
               Create
             </h2>
             <h1
-              className="c11"
+              className="c13"
               id="desktopHeaderSubtitle"
               style={
                 Object {
@@ -982,10 +1232,10 @@ exports[`Storyshots CreatePage Default 1`] = `
               }
             >
               <div
-                className="c12"
+                className="c14"
               >
                 <div
-                  className="c13"
+                  className="c15"
                 >
                   <div
                     style={
@@ -1061,7 +1311,7 @@ exports[`Storyshots CreatePage Default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c14"
+                  className="c16"
                 >
                   <svg
                     style={
@@ -1087,10 +1337,10 @@ exports[`Storyshots CreatePage Default 1`] = `
           />
         </div>
         <div
-          className="c15"
+          className="c17"
         >
           <div
-            className="c16"
+            className="c18"
           >
             <div
               style={
@@ -1154,7 +1404,7 @@ exports[`Storyshots CreatePage Default 1`] = `
                 }
               >
                 <div
-                  className="c17"
+                  className="c19"
                 >
                   <svg
                     style={
@@ -1177,7 +1427,7 @@ exports[`Storyshots CreatePage Default 1`] = `
           </div>
         </div>
         <div
-          className="c16"
+          className="c18"
         >
           <div
             style={
@@ -1243,7 +1493,7 @@ exports[`Storyshots CreatePage Default 1`] = `
           </div>
         </div>
         <div
-          className="c16"
+          className="c18"
         >
           <div
             style={
@@ -1327,7 +1577,7 @@ exports[`Storyshots CreatePage Default 1`] = `
           </div>
         </div>
         <div
-          className="c16"
+          className="c18"
         >
           <div
             style={
@@ -1393,10 +1643,10 @@ exports[`Storyshots CreatePage Default 1`] = `
           </div>
         </div>
         <div
-          className="c18"
+          className="c20"
         >
           <div
-            className="c19"
+            className="c21"
             onClick={[Function]}
           >
             <label
@@ -1423,7 +1673,7 @@ exports[`Storyshots CreatePage Default 1`] = `
               value=""
             />
             <div
-              className="c20"
+              className="c22"
             >
               <svg
                 style={
@@ -1567,29 +1817,29 @@ exports[`Storyshots CreatePage Default 1`] = `
           </div>
         </div>
         <div
-          className="c21"
+          className="c23"
         >
           <div
-            className="c22"
+            className="c24"
           />
           0 Blocks
           <div
-            className="c22"
+            className="c24"
           >
             <div
-              className="c23"
+              className="c25"
             />
           </div>
         </div>
         <span />
         <div
-          className="c24"
+          className="c26"
         >
           <div
-            className="c25"
+            className="c27"
           >
             <div
-              className="c26"
+              className="c28"
             >
               <div>
                 <input
@@ -1641,16 +1891,16 @@ exports[`Storyshots CreatePage Default 1`] = `
                 </label>
               </div>
               <div
-                className="c27"
+                className="c29"
               >
                 <label
-                  className="c28"
+                  className="c30"
                   htmlFor="isPublic"
                 >
                   Make it Public
                 </label>
                 <span
-                  className="c29"
+                  className="c31"
                 >
                   This Page is currently Private
                 </span>
@@ -1660,16 +1910,16 @@ exports[`Storyshots CreatePage Default 1`] = `
         </div>
       </div>
       <div
-        className="c30"
+        className="c32"
       >
         <div
-          className="c31"
+          className="c33"
         >
           <div
-            className="c32"
+            className="c34"
           >
             <button
-              className="c33"
+              className="c35"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -1695,7 +1945,7 @@ exports[`Storyshots CreatePage Default 1`] = `
               Cancel
             </button>
             <button
-              className="c33"
+              className="c35"
               disabled={true}
               id="createPage"
               style={

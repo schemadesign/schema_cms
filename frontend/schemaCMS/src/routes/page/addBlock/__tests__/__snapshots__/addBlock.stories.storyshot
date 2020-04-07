@@ -70,11 +70,11 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
   word-break: break-word;
 }
 
-.c21 {
+.c23 {
   height: 155px;
 }
 
-.c23 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
   width: 100%;
 }
 
-.c22 {
+.c24 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -103,43 +103,43 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c24 {
+.c26 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c12 {
+.c14 {
   position: relative;
 }
 
-.c14 {
+.c16 {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.c15 {
+.c17 {
   position: relative;
 }
 
-.c8 {
+.c10 {
   display: none;
 }
 
-.c9 {
+.c11 {
   margin-right: 20px;
   overflow: hidden;
 }
 
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
+.c12 {
   color: #FFF;
 }
 
 .c13 {
+  color: #FFF;
+}
+
+.c15 {
   position: relative;
   max-width: 100%;
   display: -webkit-box;
@@ -156,15 +156,15 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
   position: relative;
 }
 
-.c16 {
+.c18 {
   position: relative;
 }
 
-.c17 {
+.c19 {
   margin-top: 0;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -177,17 +177,39 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
   font-size: 18px;
 }
 
-.c19 label {
+.c21 label {
   margin-bottom: 2px;
 }
 
-.c20 {
+.c22 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c18 {
+.c8 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c8:hover {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c9:hover {
+  color: #FFF;
+}
+
+.c20 {
   margin-top: -20px;
 }
 
@@ -213,7 +235,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c25 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -226,7 +248,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c24 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 9999;
@@ -244,7 +266,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c24 {
+  .c26 {
     width: 240px;
   }
 }
@@ -254,7 +276,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c17 {
     display: none;
   }
 }
@@ -264,7 +286,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c8 {
+  .c10 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -283,7 +305,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c17 {
+  .c19 {
     margin-top: 0;
   }
 }
@@ -723,17 +745,302 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
         </button>
       </div>
     </div>
+    <div
+      style={
+        Object {
+          "borderBottom": "1px solid #a6a7aa",
+          "display": "flex",
+          "padding": "20px 0",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c8"
+          href="/project/1/"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Project
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            project title
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c8"
+          href="/project/1/content"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Tab
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Content
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c8"
+          href="/section/1"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Section
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={0}
+          className="c8"
+          href="/page/1"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Page
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            nodejs
+          </h3>
+        </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
+      >
+        <a
+          active={1}
+          className="c9"
+          href="/page/1/add-block"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Block
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Create
+          </h3>
+        </a>
+      </div>
+    </div>
     <form
       onSubmit={[Function]}
     >
       <div
-        className="c8"
+        className="c10"
       >
         <div
-          className="c9"
+          className="c11"
         >
           <h2
-            className="c10"
+            className="c12"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -747,7 +1054,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
             Block
           </h2>
           <h1
-            className="c11"
+            className="c13"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -761,10 +1068,10 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
             }
           >
             <div
-              className="c12"
+              className="c14"
             >
               <div
-                className="c13"
+                className="c15"
               >
                 <div
                   style={
@@ -840,7 +1147,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
                 </div>
               </div>
               <div
-                className="c14"
+                className="c16"
               >
                 <svg
                   style={
@@ -866,10 +1173,10 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
         />
       </div>
       <div
-        className="c15"
+        className="c17"
       >
         <div
-          className="c16"
+          className="c18"
         >
           <div
             style={
@@ -933,7 +1240,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
               }
             >
               <div
-                className="c17"
+                className="c19"
               >
                 <svg
                   style={
@@ -956,10 +1263,10 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c18"
+        className="c20"
       >
         <div
-          className="c19"
+          className="c21"
           onClick={[Function]}
         >
           <label
@@ -986,7 +1293,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
             value=""
           />
           <div
-            className="c20"
+            className="c22"
           >
             <svg
               style={
@@ -1130,16 +1437,16 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c21"
+        className="c23"
       >
         <div
-          className="c22"
+          className="c24"
         >
           <div
-            className="c23"
+            className="c25"
           >
             <button
-              className="c24"
+              className="c26"
               disabled={false}
               id="backBtn"
               onClick={[Function]}
@@ -1165,7 +1472,7 @@ exports[`Storyshots Page|AddBlock Default 1`] = `
               Back
             </button>
             <button
-              className="c24"
+              className="c26"
               disabled={true}
               id="addBlock"
               style={

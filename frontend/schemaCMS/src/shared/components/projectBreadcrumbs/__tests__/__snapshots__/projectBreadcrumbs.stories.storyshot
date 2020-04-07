@@ -334,52 +334,7 @@ exports[`Storyshots ProjectBreadcrumbs Default 1`] = `
       }
     >
       <a
-        Component={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 1627757960,
-              "componentId": "sc-fzqAui",
-              "isStatic": false,
-              "rules": Array [
-                "
-  color: ",
-                [Function],
-                ";
-  text-decoration: none;
-  width: 100%;
-  &:hover {
-    color: ",
-                [Function],
-                ";
-  }
-",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "Styled(Link)",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzqAui",
-            "target": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        active={false}
+        active={0}
         className="c0"
         href="/project/1/"
         onClick={[Function]}
@@ -436,52 +391,7 @@ exports[`Storyshots ProjectBreadcrumbs Default 1`] = `
       }
     >
       <a
-        Component={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 1627757960,
-              "componentId": "sc-fzqAui",
-              "isStatic": false,
-              "rules": Array [
-                "
-  color: ",
-                [Function],
-                ";
-  text-decoration: none;
-  width: 100%;
-  &:hover {
-    color: ",
-                [Function],
-                ";
-  }
-",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "Styled(Link)",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzqAui",
-            "target": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        active={false}
+        active={0}
         className="c0"
         href="/project/1/templates"
         onClick={[Function]}
@@ -538,52 +448,7 @@ exports[`Storyshots ProjectBreadcrumbs Default 1`] = `
       }
     >
       <a
-        Component={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 1627757960,
-              "componentId": "sc-fzqAui",
-              "isStatic": false,
-              "rules": Array [
-                "
-  color: ",
-                [Function],
-                ";
-  text-decoration: none;
-  width: 100%;
-  &:hover {
-    color: ",
-                [Function],
-                ";
-  }
-",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "Styled(Link)",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzqAui",
-            "target": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        active={false}
+        active={0}
         className="c0"
         href="/project/1/block-templates"
         onClick={[Function]}
@@ -640,52 +505,7 @@ exports[`Storyshots ProjectBreadcrumbs Default 1`] = `
       }
     >
       <a
-        Component={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 1627757960,
-              "componentId": "sc-fzqAui",
-              "isStatic": false,
-              "rules": Array [
-                "
-  color: ",
-                [Function],
-                ";
-  text-decoration: none;
-  width: 100%;
-  &:hover {
-    color: ",
-                [Function],
-                ";
-  }
-",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "Styled(Link)",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzqAui",
-            "target": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        active={true}
+        active={1}
         className="c1"
         href="/project/1/page-templates/create"
         onClick={[Function]}

@@ -2,7 +2,26 @@
 
 exports[`LinkItem: Component should render correctly 1`] = `
 <Link
-  Component={[Function]}
+  href="#"
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "display": "flex",
+      "flexDirection": "column",
+    }
+  }
+>
+  <Span>
+    test
+  </Span>
+  <H3>
+    Item Title
+  </H3>
+</Link>
+`;
+
+exports[`LinkItem: Component should render correctly with render function 1`] = `
+<Link
   href="#"
   style={
     Object {

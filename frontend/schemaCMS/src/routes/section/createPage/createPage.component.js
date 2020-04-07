@@ -17,6 +17,39 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/page/page.constants';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../../project/project.constants';
+import {
+  ProjectBreadcrumbs,
+  projectMessage,
+  sectionMessage,
+  tabMessage,
+  contentMessage,
+  createMessage,
+  pageMessage,
+} from '../../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = (project, { id, name }) => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/content`,
+    span: tabMessage,
+    h3: contentMessage,
+  },
+  {
+    path: `/section/${id}`,
+    span: sectionMessage,
+    h3: name,
+  },
+  {
+    path: `/section/${id}/create-page`,
+    active: true,
+    span: pageMessage,
+    h3: createMessage,
+  },
+];
 
 export const CreatePage = ({
   pageTemplates,
@@ -26,6 +59,7 @@ export const CreatePage = ({
   blockTemplates,
   fetchBlockTemplates,
   project,
+  section,
 }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
@@ -83,6 +117,7 @@ export const CreatePage = ({
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project, section)} />
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
           <PageForm
@@ -119,6 +154,7 @@ CreatePage.propTypes = {
   userRole: PropTypes.string.isRequired,
   createPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
+  section: PropTypes.object.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,

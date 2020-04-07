@@ -18,16 +18,25 @@ export const createMessage = <FormattedMessage {...messages.createMessage} />;
 export const pageTemplatesMessage = <FormattedMessage {...messages.pageTemplates} />;
 export const filterTemplatesMessage = <FormattedMessage {...messages.filterTemplates} />;
 export const stateTemplatesMessage = <FormattedMessage {...messages.stateTemplates} />;
+export const sectionMessage = <FormattedMessage {...messages.section} />;
+export const pageMessage = <FormattedMessage {...messages.page} />;
+export const contentMessage = <FormattedMessage {...messages.content} />;
+export const pageBlockMessage = <FormattedMessage {...messages.pageBlock} />;
 
 export const ProjectBreadcrumbs = ({ items }) => {
   const getBreadcrumbsItem = (item, index) => {
     const { path = '', active = false, span = '', h3 = '' } = item;
 
     return (
-      <LinkItem key={index} Component={Link} to={path} active={active}>
-        <Span>{span}</Span>
-        <H3>{h3}</H3>
-      </LinkItem>
+      <LinkItem
+        key={index}
+        render={styles => (
+          <Link style={styles} to={path} active={active ? 1 : 0}>
+            <Span>{span}</Span>
+            <H3>{h3}</H3>
+          </Link>
+        )}
+      />
     );
   };
 

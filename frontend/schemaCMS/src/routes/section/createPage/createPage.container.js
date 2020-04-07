@@ -11,12 +11,14 @@ import { PageTemplatesRoutines, selectPageTemplates } from '../../../modules/pag
 import { PageRoutines } from '../../../modules/page';
 import { selectProject } from '../../../modules/project';
 import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
+import { selectSection } from '../../../modules/sections';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   project: selectProject,
   pageTemplates: selectPageTemplates,
   blockTemplates: selectBlockTemplates,
+  section: selectSection,
 });
 
 export const mapDispatchToProps = dispatch => ({

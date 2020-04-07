@@ -10,8 +10,47 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { getProjectMenuOptions } from '../../project/project.constants';
 import { AddBlockForm } from '../../../shared/components/addBlockForm';
+import {
+  createMessage,
+  pageMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  sectionMessage,
+  tabMessage,
+  contentMessage,
+  pageBlockMessage,
+} from '../../../shared/components/projectBreadcrumbs';
 
-export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplates }) => {
+const getBreadcrumbsItems = (project, section, page) => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/content`,
+    span: tabMessage,
+    h3: contentMessage,
+  },
+  {
+    path: `/section/${section.id}`,
+    span: sectionMessage,
+    h3: section.name,
+  },
+  {
+    path: `/page/${page.id}`,
+    span: pageMessage,
+    h3: name,
+  },
+  {
+    path: `/page/${page.id}/add-block`,
+    active: true,
+    span: pageBlockMessage,
+    h3: createMessage,
+  },
+];
+
+export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplates, page }) => {
   const intl = useIntl();
   const { pageId } = useParams();
   const projectId = project.id;
@@ -23,6 +62,7 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
     <Container>
       <Helmet title={title} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project, page.section, page)} />
       <AddBlockForm
         fetchBlockTemplates={fetchBlockTemplates}
         projectId={projectId}
@@ -38,5 +78,6 @@ AddBlock.propTypes = {
   fetchBlockTemplates: PropTypes.func.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   project: PropTypes.object.isRequired,
+  page: PropTypes.object.isRequired,
   userRole: PropTypes.string.isRequired,
 };

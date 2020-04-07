@@ -349,6 +349,234 @@ exports[`EditPage: Component should render correctly 1`] = `
       </button>
     </div>
   </div>
+  <div
+    style={
+      Object {
+        "borderBottom": "1px solid #a6a7aa",
+        "display": "flex",
+        "padding": "20px 0",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        active={0}
+        className="sc-fznyYp ghTwFj"
+        href="/project/projectId/"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Project
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          
+        </h3>
+      </a>
+      <div
+        style={
+          Object {
+            "color": "#a6a7aa",
+            "marginLeft": "14px",
+          }
+        }
+      >
+        &gt;
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        active={0}
+        className="sc-fznyYp ghTwFj"
+        href="/project/projectId/content"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Tab
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Content
+        </h3>
+      </a>
+      <div
+        style={
+          Object {
+            "color": "#a6a7aa",
+            "marginLeft": "14px",
+          }
+        }
+      >
+        &gt;
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        active={0}
+        className="sc-fznyYp ghTwFj"
+        href="/section/sectionId"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Section
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          
+        </h3>
+      </a>
+      <div
+        style={
+          Object {
+            "color": "#a6a7aa",
+            "marginLeft": "14px",
+          }
+        }
+      >
+        &gt;
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "color": "#a6a7aa",
+          "display": "flex",
+          "marginRight": "14px",
+        }
+      }
+    >
+      <a
+        active={1}
+        className="sc-fznyYp cVnUhg"
+        href="/page/undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          Page
+        </span>
+        <h3
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "18px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          page name
+        </h3>
+      </a>
+    </div>
+  </div>
   <form
     onSubmit={[Function]}
   >

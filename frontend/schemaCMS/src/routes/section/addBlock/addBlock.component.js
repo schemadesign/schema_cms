@@ -10,8 +10,46 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { getProjectMenuOptions } from '../../project/project.constants';
 import { AddBlockForm } from '../../../shared/components/addBlockForm';
+import {
+  createMessage,
+  pageMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  sectionMessage,
+  tabMessage,
+  contentMessage,
+} from '../../../shared/components/projectBreadcrumbs';
 
-export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplates }) => {
+const getBreadcrumbsItems = (project, { id, name }) => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/content`,
+    span: tabMessage,
+    h3: contentMessage,
+  },
+  {
+    path: `/section/${id}`,
+    span: sectionMessage,
+    h3: name,
+  },
+  {
+    path: `/section/${id}/create-page`,
+    span: pageMessage,
+    h3: createMessage,
+  },
+  {
+    path: `/section/${id}/create-page/add-block`,
+    active: true,
+    span: pageMessage,
+    h3: createMessage,
+  },
+];
+
+export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplates, section }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const projectId = project.id;
@@ -23,6 +61,7 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
     <Container>
       <Helmet title={title} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project, section)} />
       <AddBlockForm
         fetchBlockTemplates={fetchBlockTemplates}
         projectId={projectId}
@@ -38,5 +77,6 @@ AddBlock.propTypes = {
   fetchBlockTemplates: PropTypes.func.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   project: PropTypes.object.isRequired,
+  section: PropTypes.object.isRequired,
   userRole: PropTypes.string.isRequired,
 };

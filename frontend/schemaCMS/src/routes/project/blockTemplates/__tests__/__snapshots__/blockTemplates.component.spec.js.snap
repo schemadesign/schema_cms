@@ -369,52 +369,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       }
     >
       <a
-        Component={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 884719008,
-              "componentId": "sc-fzoxKX",
-              "isStatic": false,
-              "rules": Array [
-                "
-  color: ",
-                [Function],
-                ";
-  text-decoration: none;
-  width: 100%;
-  &:hover {
-    color: ",
-                [Function],
-                ";
-  }
-",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "Styled(Link)",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzoxKX",
-            "target": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        active={false}
+        active={0}
         className="sc-fzoxKX igXWeF"
         href="/project/1/"
         onClick={[Function]}
@@ -471,52 +426,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       }
     >
       <a
-        Component={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 884719008,
-              "componentId": "sc-fzoxKX",
-              "isStatic": false,
-              "rules": Array [
-                "
-  color: ",
-                [Function],
-                ";
-  text-decoration: none;
-  width: 100%;
-  &:hover {
-    color: ",
-                [Function],
-                ";
-  }
-",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "Styled(Link)",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzoxKX",
-            "target": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        active={false}
+        active={0}
         className="sc-fzoxKX igXWeF"
         href="/project/1/templates"
         onClick={[Function]}
@@ -573,52 +483,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       }
     >
       <a
-        Component={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 884719008,
-              "componentId": "sc-fzoxKX",
-              "isStatic": false,
-              "rules": Array [
-                "
-  color: ",
-                [Function],
-                ";
-  text-decoration: none;
-  width: 100%;
-  &:hover {
-    color: ",
-                [Function],
-                ";
-  }
-",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "Styled(Link)",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzoxKX",
-            "target": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        active={true}
+        active={1}
         className="sc-fzoxKX kwQeJS"
         href="/project/1/block-templates"
         onClick={[Function]}

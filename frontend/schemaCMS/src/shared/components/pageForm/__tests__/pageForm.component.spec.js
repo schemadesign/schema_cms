@@ -123,7 +123,10 @@ describe('PageForm: Component', () => {
         isPublic: false,
         keywords: 'keyword;',
         name: 'page name',
-        section: 'sectionId',
+        section: {
+          id: 'sectionId',
+          title: 'Section',
+        },
         template: 1,
       },
     });

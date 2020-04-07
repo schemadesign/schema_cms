@@ -22,7 +22,6 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
     }
   >
     <LinkItem
-      Component={[Function]}
       href="#"
     >
       <Span>
@@ -55,7 +54,6 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
     }
   >
     <LinkItem
-      Component={[Function]}
       href="#"
     >
       <Span>
@@ -88,7 +86,6 @@ exports[`Breadcrumbs: Component should render correctly 1`] = `
     }
   >
     <LinkItem
-      Component={[Function]}
       href="#"
     >
       <Span>
@@ -124,7 +121,6 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
     }
   >
     <LinkItem
-      Component={[Function]}
       href="#"
     >
       <Span>
@@ -157,7 +153,6 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
     }
   >
     <LinkItem
-      Component={[Function]}
       href="#"
     >
       <Span>
@@ -190,7 +185,6 @@ exports[`Breadcrumbs: Component should render correctly with a custom symbol 1`]
     }
   >
     <LinkItem
-      Component={[Function]}
       href="#"
     >
       <Span>
@@ -216,7 +210,6 @@ exports[`Breadcrumbs: Component should render correctly with a single child 1`] 
   }
 >
   <LinkItem
-    Component={[Function]}
     href="#"
   >
     <Span>
