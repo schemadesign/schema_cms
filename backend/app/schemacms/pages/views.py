@@ -80,7 +80,9 @@ class PageTemplateListCreteView(TemplateListCreateView):
         .prefetch_related(
             Prefetch(
                 "pageblock_set",
-                queryset=models.PageBlock.objects.prefetch_related("block__elements").select_related("block"),
+                queryset=models.PageBlock.objects.prefetch_related("block__elements")
+                .select_related("block")
+                .order_by("order"),
             ),
         )
     )
@@ -94,7 +96,9 @@ class PageTemplateViewSet(DetailViewSet):
         .prefetch_related(
             Prefetch(
                 "pageblock_set",
-                queryset=models.PageBlock.objects.prefetch_related("block__elements").select_related("block"),
+                queryset=models.PageBlock.objects.prefetch_related("block__elements")
+                .select_related("block")
+                .order_by("order"),
             ),
         )
     )
