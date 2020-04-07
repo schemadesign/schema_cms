@@ -1,5 +1,3 @@
-from django.db import transaction
-
 from rest_framework import decorators, permissions, response, status, viewsets
 
 from . import models, serializers
