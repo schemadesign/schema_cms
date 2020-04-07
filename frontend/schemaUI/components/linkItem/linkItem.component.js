@@ -8,21 +8,22 @@ import { Link } from '../link';
 export class LinkItem extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.element]),
-    Component: PropTypes.oneOfType([PropTypes.node, PropTypes.element, PropTypes.elementType]),
     theme: PropTypes.object,
-  };
-
-  static defaultProps = {
-    Component: Link,
+    render: PropTypes.func,
   };
 
   render() {
-    const { Component, children, theme } = this.props;
+    const { children, theme, render } = this.props;
     const { containerStyles } = getStyles(theme);
+
+    if (render) {
+      return render(containerStyles);
+    }
+
     return (
-      <Component style={containerStyles} {...this.props}>
+      <Link style={containerStyles} {...this.props}>
         {children}
-      </Component>
+      </Link>
     );
   }
 }

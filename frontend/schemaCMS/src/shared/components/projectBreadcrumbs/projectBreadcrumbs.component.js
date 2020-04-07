@@ -24,10 +24,15 @@ export const ProjectBreadcrumbs = ({ items }) => {
     const { path = '', active = false, span = '', h3 = '' } = item;
 
     return (
-      <LinkItem key={index} Component={Link} to={path} active={active}>
-        <Span>{span}</Span>
-        <H3>{h3}</H3>
-      </LinkItem>
+      <LinkItem
+        key={index}
+        render={styles => (
+          <Link style={styles} to={path} active={active ? 1 : 0}>
+            <Span>{span}</Span>
+            <H3>{h3}</H3>
+          </Link>
+        )}
+      />
     );
   };
 
