@@ -164,7 +164,7 @@ exports[`EditPage: Component should render correctly 1`] = `
           className="sc-AxgMl gYaYIN"
         >
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/project/projectId/state"
@@ -219,7 +219,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/project/projectId/user"
@@ -230,7 +230,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/project/projectId/content"
@@ -241,7 +241,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/project/projectId/templates"
@@ -256,7 +256,7 @@ exports[`EditPage: Component should render correctly 1`] = `
           className="sc-AxgMl gYaYIN"
         >
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-AxheI dEHljS"
+            className="sc-AxheI jTLCNQ"
           >
             <div
               onClick={[Function]}
