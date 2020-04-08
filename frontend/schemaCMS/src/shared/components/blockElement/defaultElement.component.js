@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icons } from 'schemaUI';
 import { useTheme } from 'styled-components';
 
-import { getCustomInputStyles, editIconStyles, InputContainer } from './blockElement.styles';
+import { getCustomInputStyles, customStyles, editIconStyles, InputContainer } from './blockElement.styles';
 import { TextInput } from '../form/inputs/textInput';
 import { getValuePath } from '../../utils/helpers';
 
@@ -16,6 +16,7 @@ export const DefaultElement = ({ element, blockPath, handleChange, index, ...res
       value={element.value || ''}
       fullWidth
       customInputStyles={getCustomInputStyles(useTheme())}
+      customStyles={customStyles}
       onChange={handleChange}
       multiline
       {...restFormikProps}

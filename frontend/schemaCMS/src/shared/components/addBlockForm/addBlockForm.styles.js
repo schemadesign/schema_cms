@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
+import { media } from '../../../theme/media';
+
 export const SelectContainer = styled.div`
-  margin-top: -20px;
+  ${media.desktop`
+    margin-top: -20px;
+  `};
 `;
 
 export const NoBlocksCopyContainer = styled.div`

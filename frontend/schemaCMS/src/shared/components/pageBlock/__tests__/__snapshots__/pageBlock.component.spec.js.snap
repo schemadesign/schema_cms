@@ -278,7 +278,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzozJi kOJVlI"
+                className="sc-fzozJi fkbqFr"
               >
                 <div
                   className="sc-AxhCb qEpns"
@@ -289,7 +289,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         "display": "flex",
                         "flexDirection": "column",
                         "maxWidth": "100%",
-                        "paddingBottom": "30px",
+                        "paddingBottom": 2,
                         "position": "relative",
                       }
                     }
@@ -1109,7 +1109,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                 className="sc-AxheI bfpwAA"
                               >
                                 <div
-                                  className="sc-fzozJi kOJVlI"
+                                  className="sc-fzozJi fkbqFr"
                                 >
                                   <div
                                     className="sc-AxhCb qEpns"
@@ -1120,7 +1120,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                           "display": "flex",
                                           "flexDirection": "column",
                                           "maxWidth": "100%",
-                                          "paddingBottom": "30px",
+                                          "paddingBottom": 2,
                                           "position": "relative",
                                         }
                                       }

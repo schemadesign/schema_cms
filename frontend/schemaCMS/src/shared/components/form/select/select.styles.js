@@ -6,6 +6,7 @@ export const Container = styled.div`
   padding-bottom: 30px;
   position: relative;
   font-size: 18px;
+  cursor: pointer;
 
   label {
     margin-bottom: 2px;
