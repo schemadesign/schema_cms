@@ -28,7 +28,7 @@ export const PageBlock = ({
   const blockName = `${blockPath}.${BLOCK_NAME}`;
 
   return (
-    <AccordionPanel>
+    <AccordionPanel autoOpen>
       <AccordionHeader>
         <Header>
           <IconsContainer>{draggableIcon}</IconsContainer>
