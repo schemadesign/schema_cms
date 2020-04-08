@@ -11,6 +11,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   setValues: Function.prototype,
   setFieldValue: Function.prototype,
+  validateForm: Function.prototype,
   setRemoveModalOpen: Function.prototype,
   handleBlur: Function.prototype,
   values: page,

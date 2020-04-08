@@ -38,9 +38,9 @@ export class AccordionPanelComponent extends PureComponent {
     setTimeout(() => this.setState({ overflow: 'inherit', autoHeight: 'auto' }), ANIMATION_DURATION);
 
   render() {
-    const { children } = this.props;
+    const { children, theme } = this.props;
     const { open, overflow, autoHeight } = this.state;
-    const { containerStyles } = getStyles();
+    const { containerStyles } = getStyles(theme);
 
     return (
       <AccordionContext.Consumer>

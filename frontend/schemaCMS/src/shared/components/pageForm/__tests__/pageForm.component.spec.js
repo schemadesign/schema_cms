@@ -67,6 +67,9 @@ describe('PageForm: Component', () => {
 
   it('should show change template modal and change on confirm', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
+    jest.spyOn(defaultProps, 'validateForm');
+    jest.useFakeTimers();
+
     const wrapper = await render();
 
     act(() => {
@@ -77,6 +80,10 @@ describe('PageForm: Component', () => {
     });
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('template', 'value');
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blocks', []);
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('deleteBlocks', [1]);
+    jest.runAllTimers();
+    expect(defaultProps.validateForm).toHaveBeenCalled();
   });
 
   it('should redirect to add block page', async () => {
@@ -120,6 +127,7 @@ describe('PageForm: Component', () => {
         ],
         description: 'description',
         displayName: 'page-name',
+        deleteBlocks: [],
         isPublic: false,
         keywords: 'keyword;',
         name: 'page name',

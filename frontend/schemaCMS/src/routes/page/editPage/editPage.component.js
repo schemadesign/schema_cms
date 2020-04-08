@@ -16,7 +16,14 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { PageForm } from '../../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
-import { PAGE_SCHEMA, FORM_VALUES, PAGE_TEMPLATE, PAGE_BLOCKS, PAGE_NAME } from '../../../modules/page/page.constants';
+import {
+  PAGE_SCHEMA,
+  FORM_VALUES,
+  PAGE_TEMPLATE,
+  PAGE_BLOCKS,
+  PAGE_NAME,
+  INITIAL_VALUES,
+} from '../../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import {
   contentMessage,
@@ -75,7 +82,7 @@ export const EditPage = ({
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const projectId = project.id;
   const menuOptions = getProjectMenuOptions(projectId);
-  const initialValues = { ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
+  const initialValues = { ...INITIAL_VALUES, ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
 
   const { handleSubmit, isValid, dirty, values, setValues, setFieldValue, ...restFormikProps } = useFormik({
     initialValues,

@@ -13,8 +13,8 @@ export class AccordionDetailsComponent extends PureComponent {
   innerRef = createRef();
 
   render() {
-    const { children } = this.props;
-    const { containerStyles } = getStyles();
+    const { children, theme } = this.props;
+    const { containerStyles } = getStyles(theme);
 
     return (
       <AccordionPanelContext.Consumer style={containerStyles}>

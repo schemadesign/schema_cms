@@ -126,6 +126,10 @@ const light = {
     background: colors.veryLightPink,
     border: colors.white,
   },
+  accordion: {
+    background: colors.white,
+    border: colors.black,
+  },
   background: colors.white,
   hiddenBackground: 'rgba(255, 255, 255, 0)',
   border: colors.veryLightPink,
@@ -251,6 +255,10 @@ const dark = {
   select: {
     background: colors.darkGrey,
     border: colors.mediumGray,
+  },
+  accordion: {
+    background: colors.black,
+    border: colors.white,
   },
   background: colors.black,
   hiddenBackground: 'rgba(0, 0, 0, 0)',
