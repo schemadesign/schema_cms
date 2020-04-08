@@ -1080,7 +1080,7 @@ exports[`Storyshots Section|AddBlock Default 1`] = `
               }
             }
           >
-            Page
+            Block
           </span>
           <h3
             style={

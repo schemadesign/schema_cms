@@ -40,7 +40,7 @@ const getBreadcrumbsItems = (project, section, page) => [
   {
     path: `/page/${page.id}`,
     span: pageMessage,
-    h3: name,
+    h3: page.name,
   },
   {
     path: `/page/${page.id}/add-block`,

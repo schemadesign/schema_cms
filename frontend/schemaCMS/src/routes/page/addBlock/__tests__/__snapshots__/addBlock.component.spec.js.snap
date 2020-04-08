@@ -572,7 +572,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             }
           }
         >
-          nodejs
+          Test
         </h3>
       </a>
       <div

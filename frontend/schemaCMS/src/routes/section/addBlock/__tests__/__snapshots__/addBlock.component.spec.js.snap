@@ -560,7 +560,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             }
           }
         >
-          Page
+          Block
         </span>
         <h3
           style={
