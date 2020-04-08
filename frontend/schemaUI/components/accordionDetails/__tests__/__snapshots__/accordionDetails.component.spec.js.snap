@@ -1,21 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AccordionDetails: Component should render correctly 1`] = `
-<Component>
-  <AccordionDetailsComponent>
-    <div
-      style={
-        Object {
-          "backgroundColor": "#000",
-          "height": 0,
-          "transition": "height 200ms linear, overflow 0s linear 200ms",
-        }
-      }
+<AccordionDetails>
+  <Component
+    open={true}
+  >
+    <AccordionDetailsContentComponent
+      autoHeight={0}
+      customDetailsStyles={Object {}}
+      open={true}
     >
-      <div>
-        AccordionDetails
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "height": 0,
+            "transition": "height 200ms linear, overflow 0s linear 200ms",
+          }
+        }
+      >
+        <div>
+          AccordionDetails
+        </div>
       </div>
-    </div>
-  </AccordionDetailsComponent>
-</Component>
+    </AccordionDetailsContentComponent>
+  </Component>
+</AccordionDetails>
 `;

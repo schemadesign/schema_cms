@@ -19,7 +19,7 @@ export class AccordionPanelComponent extends PureComponent {
 
   state = {
     open: this.props.autoOpen,
-    autoHeight: this.props.autoOpen ? null : 'auto',
+    autoHeight: 'auto',
     overflow: this.props.autoOpen ? 'inherit' : 'hidden',
   };
 

@@ -9,46 +9,22 @@ export class AccordionDetailsContentComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
     open: PropTypes.bool.isRequired,
-    autoHeight: PropTypes.string,
-    customDetailsStyles: PropTypes.object.isRequired,
+    autoHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    customDetailsStyles: PropTypes.object,
   };
 
   static defaultProps = {
     autoHeight: 0,
+    customDetailsStyles: {},
   };
-
-  state = {
-    height: 0,
-    enableTransition: false,
-  };
-
-  componentDidMount() {
-    const { open } = this.props;
-    if (open) {
-      this.setHeight();
-    }
-
-    setTimeout(() => {
-      this.setState({ enableTransition: true });
-    });
-  }
-
-  componentDidUpdate() {
-    this.setHeight(open);
-  }
-
-  setHeight() {
-    const { open, autoHeight } = this.props;
-    const height = open ? autoHeight || this.innerRef.current.offsetHeight : 0;
-    this.setState({ height });
-  }
 
   innerRef = createRef();
 
   render() {
-    const { children, customDetailsStyles, theme } = this.props;
-    const { height, enableTransition } = this.state;
-    const { containerStyles } = getStyles(theme, enableTransition);
+    const { children, customDetailsStyles, theme, open, autoHeight } = this.props;
+    const { containerStyles } = getStyles(theme);
+    const offsetHeight = (this.innerRef.current && this.innerRef.current.offsetHeight) || 0;
+    const height = open ? autoHeight || offsetHeight : 0;
 
     return (
       <div style={{ ...containerStyles, ...customDetailsStyles, height }}>
