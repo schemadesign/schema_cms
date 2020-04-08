@@ -18,6 +18,7 @@ import {
   sectionMessage,
   tabMessage,
   contentMessage,
+  pageBlockMessage,
 } from '../../../shared/components/projectBreadcrumbs';
 
 const getBreadcrumbsItems = (project, { id, name }) => [
@@ -38,7 +39,7 @@ const getBreadcrumbsItems = (project, { id, name }) => [
   },
   {
     path: `/section/${id}/create-page`,
-    span: pageMessage,
+    span: pageBlockMessage,
     h3: createMessage,
   },
   {
