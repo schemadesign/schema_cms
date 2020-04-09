@@ -103,13 +103,6 @@ class Page(Content):
 
     class Meta:
         ordering = ("-created",)
-        constraints = [
-            models.UniqueConstraint(
-                fields=["project", "name", "is_template"],
-                name="unique_page_name",
-                condition=models.Q(deleted_at=None),
-            )
-        ]
 
     def create_or_update_block(self, block):
         return self.pageblock_set.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
