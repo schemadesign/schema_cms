@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Breadcrumbs, LinkItem, Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { Link, ActiveItem } from './projectBreadcrumbs.styles';
+import { Link, ActiveItem, Container } from './projectBreadcrumbs.styles';
 import messages from './projectBreadcrumbs.messages';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
@@ -53,7 +53,11 @@ BreadcrumbItem.propTypes = {
 };
 
 export const ProjectBreadcrumbs = ({ items }) => {
-  return <Breadcrumbs>{items.map(BreadcrumbItem)}</Breadcrumbs>;
+  return (
+    <Container>
+      <Breadcrumbs>{items.map(BreadcrumbItem)}</Breadcrumbs>
+    </Container>
+  );
 };
 
 ProjectBreadcrumbs.propTypes = {
