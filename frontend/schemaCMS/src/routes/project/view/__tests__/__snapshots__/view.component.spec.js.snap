@@ -54,93 +54,6 @@ exports[`View: Component should render content correctly 1`] = `
     <styled.ul>
       <styled.li
         key="0"
-        order={1}
-      >
-        <styled.div
-          id="fieldLastUpdated"
-        >
-          <styled.span
-            id="fieldLastUpdatedLabel"
-          >
-            Last Update
-          </styled.span>
-          <styled.span
-            id="fieldLastUpdatedValue"
-          >
-            3 months ago
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="1"
-        order={3}
-      >
-        <styled.div
-          id="fieldStatus"
-        >
-          <styled.span
-            id="fieldStatusLabel"
-          >
-            Status
-          </styled.span>
-          <Memo()
-            customStyles={
-              Array [
-                "
-  font-size: inherit;
-  width: 100%;
-  padding-bottom: 0;
-  position: static;
-",
-              ]
-            }
-            name="status"
-            onSelect={[Function]}
-            options={
-              Array [
-                Object {
-                  "label": "In Progress",
-                  "value": "in_progress",
-                },
-                Object {
-                  "label": "Done",
-                  "value": "done",
-                },
-                Object {
-                  "label": "Hold",
-                  "value": "hold",
-                },
-                Object {
-                  "label": "Published",
-                  "value": "published",
-                },
-              ]
-            }
-            value="Status"
-          />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="2"
-        order={5}
-      >
-        <styled.div
-          id="fieldOwner"
-        >
-          <styled.span
-            id="fieldOwnerLabel"
-          >
-            Owner
-          </styled.span>
-          <styled.span
-            id="fieldOwnerValue"
-          >
-            Firstname Lastname
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="3"
         order={2}
       >
         <styled.div
@@ -203,6 +116,7 @@ exports[`View: Component should render content correctly 1`] = `
               isAdmin={true}
               isEdit={true}
               isSubmitting={false}
+              isValid={true}
               match={
                 Object {
                   "params": Object {
@@ -260,8 +174,9 @@ exports[`View: Component should render content correctly 1`] = `
         </styled.div>
       </styled.li>
       <styled.li
-        key="4"
-        order={4}
+        fullWidth={true}
+        key="1"
+        order={7}
       >
         <styled.div
           id="fieldDescription"
@@ -323,6 +238,7 @@ exports[`View: Component should render content correctly 1`] = `
               isAdmin={true}
               isEdit={true}
               isSubmitting={false}
+              isValid={true}
               match={
                 Object {
                   "params": Object {
@@ -381,8 +297,215 @@ exports[`View: Component should render content correctly 1`] = `
         </styled.div>
       </styled.li>
       <styled.li
-        key="5"
+        key="2"
+        order={4}
+      >
+        <styled.div
+          id="fieldStatus"
+        >
+          <styled.span
+            id="fieldStatusLabel"
+          >
+            Status
+          </styled.span>
+          <Memo()
+            customStyles={
+              Array [
+                "
+  font-size: inherit;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+",
+              ]
+            }
+            name="status"
+            onSelect={[Function]}
+            options={
+              Array [
+                Object {
+                  "label": "In Progress",
+                  "value": "in_progress",
+                },
+                Object {
+                  "label": "Done",
+                  "value": "done",
+                },
+                Object {
+                  "label": "Hold",
+                  "value": "hold",
+                },
+                Object {
+                  "label": "Published",
+                  "value": "published",
+                },
+              ]
+            }
+            value="Status"
+          />
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="3"
         order={6}
+      >
+        <styled.div
+          id="fieldDomain"
+        >
+          <styled.span
+            id="fieldDomainLabel"
+          >
+            Domain
+          </styled.span>
+          <styled.div>
+            <TextInput
+              autoWidth={false}
+              checkOnlyErrors={false}
+              customInputStyles={
+                Object {
+                  "fontSize": "inherit",
+                  "lineHeight": "inherit",
+                }
+              }
+              customStyles={
+                Object {
+                  "paddingBottom": 0,
+                  "position": "static",
+                }
+              }
+              dirty={false}
+              errors={Object {}}
+              fetchProject={
+                [MockFunction] {
+                  "calls": Array [
+                    Array [
+                      Object {
+                        "projectId": "100",
+                      },
+                    ],
+                  ],
+                  "results": Array [
+                    Object {
+                      "type": "return",
+                      "value": Promise {},
+                    },
+                  ],
+                }
+              }
+              fullWidth={true}
+              handleChange={[Function]}
+              handleSubmit={[Function]}
+              history={
+                Object {
+                  "goBack": [Function],
+                  "push": [Function],
+                }
+              }
+              intl={
+                Object {
+                  "formatMessage": [Function],
+                }
+              }
+              isAdmin={true}
+              isEdit={true}
+              isSubmitting={false}
+              isValid={true}
+              match={
+                Object {
+                  "params": Object {
+                    "projectId": "100",
+                  },
+                }
+              }
+              name="domain"
+              onChange={[Function]}
+              project={
+                Object {
+                  "created": "2019-08-26T11:05:12+0000",
+                  "description": "Description",
+                  "editors": Array [
+                    "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                    "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                  ],
+                  "id": "100",
+                  "meta": Object {
+                    "charts": 0,
+                    "dataSources": 3,
+                    "pages": 1,
+                    "users": 2,
+                  },
+                  "modified": "2019-08-21T10:12:52.030069Z",
+                  "owner": Object {
+                    "firstName": "Firstname",
+                    "id": "1",
+                    "lastName": "Lastname",
+                  },
+                  "slug": "project_title",
+                  "status": "Status",
+                  "title": "Project Name",
+                }
+              }
+              removeProject={[Function]}
+              setFieldValue={[Function]}
+              touched={Object {}}
+              user={
+                Object {
+                  "role": "admin",
+                }
+              }
+              userRole="admin"
+              values={
+                Object {
+                  "description": "Description",
+                  "status": "Status",
+                  "title": "Project Name",
+                }
+              }
+            />
+          </styled.div>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="4"
+        order={1}
+      >
+        <styled.div
+          id="fieldLastUpdated"
+        >
+          <styled.span
+            id="fieldLastUpdatedLabel"
+          >
+            Last Update
+          </styled.span>
+          <styled.span
+            id="fieldLastUpdatedValue"
+          >
+            3 months ago
+          </styled.span>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="5"
+        order={3}
+      >
+        <styled.div
+          id="fieldOwner"
+        >
+          <styled.span
+            id="fieldOwnerLabel"
+          >
+            Owner
+          </styled.span>
+          <styled.span
+            id="fieldOwnerValue"
+          >
+            Firstname Lastname
+          </styled.span>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="6"
+        order={5}
       >
         <styled.div
           id="fieldSlug"
@@ -610,93 +733,6 @@ exports[`View: Component should render correctly 1`] = `
         <styled.ul>
           <styled.li
             key="0"
-            order={1}
-          >
-            <styled.div
-              id="fieldLastUpdated"
-            >
-              <styled.span
-                id="fieldLastUpdatedLabel"
-              >
-                Last Update
-              </styled.span>
-              <styled.span
-                id="fieldLastUpdatedValue"
-              >
-                3 months ago
-              </styled.span>
-            </styled.div>
-          </styled.li>
-          <styled.li
-            key="1"
-            order={3}
-          >
-            <styled.div
-              id="fieldStatus"
-            >
-              <styled.span
-                id="fieldStatusLabel"
-              >
-                Status
-              </styled.span>
-              <Memo()
-                customStyles={
-                  Array [
-                    "
-  font-size: inherit;
-  width: 100%;
-  padding-bottom: 0;
-  position: static;
-",
-                  ]
-                }
-                name="status"
-                onSelect={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "label": "In Progress",
-                      "value": "in_progress",
-                    },
-                    Object {
-                      "label": "Done",
-                      "value": "done",
-                    },
-                    Object {
-                      "label": "Hold",
-                      "value": "hold",
-                    },
-                    Object {
-                      "label": "Published",
-                      "value": "published",
-                    },
-                  ]
-                }
-                value="Status"
-              />
-            </styled.div>
-          </styled.li>
-          <styled.li
-            key="2"
-            order={5}
-          >
-            <styled.div
-              id="fieldOwner"
-            >
-              <styled.span
-                id="fieldOwnerLabel"
-              >
-                Owner
-              </styled.span>
-              <styled.span
-                id="fieldOwnerValue"
-              >
-                Firstname Lastname
-              </styled.span>
-            </styled.div>
-          </styled.li>
-          <styled.li
-            key="3"
             order={2}
           >
             <styled.div
@@ -759,6 +795,7 @@ exports[`View: Component should render correctly 1`] = `
                   isAdmin={true}
                   isEdit={true}
                   isSubmitting={false}
+                  isValid={true}
                   match={
                     Object {
                       "params": Object {
@@ -816,8 +853,9 @@ exports[`View: Component should render correctly 1`] = `
             </styled.div>
           </styled.li>
           <styled.li
-            key="4"
-            order={4}
+            fullWidth={true}
+            key="1"
+            order={7}
           >
             <styled.div
               id="fieldDescription"
@@ -879,6 +917,7 @@ exports[`View: Component should render correctly 1`] = `
                   isAdmin={true}
                   isEdit={true}
                   isSubmitting={false}
+                  isValid={true}
                   match={
                     Object {
                       "params": Object {
@@ -937,8 +976,215 @@ exports[`View: Component should render correctly 1`] = `
             </styled.div>
           </styled.li>
           <styled.li
-            key="5"
+            key="2"
+            order={4}
+          >
+            <styled.div
+              id="fieldStatus"
+            >
+              <styled.span
+                id="fieldStatusLabel"
+              >
+                Status
+              </styled.span>
+              <Memo()
+                customStyles={
+                  Array [
+                    "
+  font-size: inherit;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+",
+                  ]
+                }
+                name="status"
+                onSelect={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "In Progress",
+                      "value": "in_progress",
+                    },
+                    Object {
+                      "label": "Done",
+                      "value": "done",
+                    },
+                    Object {
+                      "label": "Hold",
+                      "value": "hold",
+                    },
+                    Object {
+                      "label": "Published",
+                      "value": "published",
+                    },
+                  ]
+                }
+                value="Status"
+              />
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="3"
             order={6}
+          >
+            <styled.div
+              id="fieldDomain"
+            >
+              <styled.span
+                id="fieldDomainLabel"
+              >
+                Domain
+              </styled.span>
+              <styled.div>
+                <TextInput
+                  autoWidth={false}
+                  checkOnlyErrors={false}
+                  customInputStyles={
+                    Object {
+                      "fontSize": "inherit",
+                      "lineHeight": "inherit",
+                    }
+                  }
+                  customStyles={
+                    Object {
+                      "paddingBottom": 0,
+                      "position": "static",
+                    }
+                  }
+                  dirty={false}
+                  errors={Object {}}
+                  fetchProject={
+                    [MockFunction] {
+                      "calls": Array [
+                        Array [
+                          Object {
+                            "projectId": "100",
+                          },
+                        ],
+                      ],
+                      "results": Array [
+                        Object {
+                          "type": "return",
+                          "value": Promise {},
+                        },
+                      ],
+                    }
+                  }
+                  fullWidth={true}
+                  handleChange={[Function]}
+                  handleSubmit={[Function]}
+                  history={
+                    Object {
+                      "goBack": [Function],
+                      "push": [Function],
+                    }
+                  }
+                  intl={
+                    Object {
+                      "formatMessage": [Function],
+                    }
+                  }
+                  isAdmin={true}
+                  isEdit={true}
+                  isSubmitting={false}
+                  isValid={true}
+                  match={
+                    Object {
+                      "params": Object {
+                        "projectId": "100",
+                      },
+                    }
+                  }
+                  name="domain"
+                  onChange={[Function]}
+                  project={
+                    Object {
+                      "created": "2019-08-26T11:05:12+0000",
+                      "description": "Description",
+                      "editors": Array [
+                        "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                        "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                      ],
+                      "id": "100",
+                      "meta": Object {
+                        "charts": 0,
+                        "dataSources": 3,
+                        "pages": 1,
+                        "users": 2,
+                      },
+                      "modified": "2019-08-21T10:12:52.030069Z",
+                      "owner": Object {
+                        "firstName": "Firstname",
+                        "id": "1",
+                        "lastName": "Lastname",
+                      },
+                      "slug": "project_title",
+                      "status": "Status",
+                      "title": "Project Name",
+                    }
+                  }
+                  removeProject={[Function]}
+                  setFieldValue={[Function]}
+                  touched={Object {}}
+                  user={
+                    Object {
+                      "role": "admin",
+                    }
+                  }
+                  userRole="admin"
+                  values={
+                    Object {
+                      "description": "Description",
+                      "status": "Status",
+                      "title": "Project Name",
+                    }
+                  }
+                />
+              </styled.div>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="4"
+            order={1}
+          >
+            <styled.div
+              id="fieldLastUpdated"
+            >
+              <styled.span
+                id="fieldLastUpdatedLabel"
+              >
+                Last Update
+              </styled.span>
+              <styled.span
+                id="fieldLastUpdatedValue"
+              >
+                3 months ago
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="5"
+            order={3}
+          >
+            <styled.div
+              id="fieldOwner"
+            >
+              <styled.span
+                id="fieldOwnerLabel"
+              >
+                Owner
+              </styled.span>
+              <styled.span
+                id="fieldOwnerValue"
+              >
+                Firstname Lastname
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="6"
+            order={5}
           >
             <styled.div
               id="fieldSlug"

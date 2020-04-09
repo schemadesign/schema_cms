@@ -38,7 +38,7 @@ export const DetailItem = styled.li`
 
   ${media.desktop`
     border-top-color: ${({ theme: { card } }) => card.background};
-    width: calc(50% - 10px);
+    width: ${({ fullWidth }) => (fullWidth ? '100%' : 'calc(50% - 10px)')};
     flex: 0 0 auto;
     order: ${({ order }) => order};
   `};

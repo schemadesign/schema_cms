@@ -7,6 +7,7 @@ import { Select } from '../../../shared/components/form/select';
 import { Container, Form } from './create.styles';
 import {
   PROJECT_DESCRIPTION,
+  PROJECT_DOMAIN,
   PROJECT_OWNER,
   PROJECT_STATUS,
   PROJECT_STATUSES_LIST,
@@ -90,6 +91,15 @@ export class Create extends PureComponent {
             fullWidth
             isEdit
             multiline
+            {...this.props}
+          />
+          <TextInput
+            value={values[PROJECT_DOMAIN]}
+            onChange={handleChange}
+            name={PROJECT_DOMAIN}
+            label={intl.formatMessage(messages.projectDomainLabel)}
+            fullWidth
+            isEdit
             {...this.props}
           />
           <TextInput
