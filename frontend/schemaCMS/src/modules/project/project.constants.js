@@ -39,6 +39,8 @@ export const PROJECT_SCHEMA = Yup.object().shape({
     .max(150, 'Project Description should have maximum 150 characters')
     .required('Required'),
   [PROJECT_DOMAIN]: Yup.string()
+    .trim()
     .url('Invalid URL')
+    .max(200, 'Project Domain should have maximum 200 characters')
     .notRequired(),
 });
