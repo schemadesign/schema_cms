@@ -151,8 +151,8 @@ export const PageTemplate = memo(
       <Container>
         <Helmet title={intl.formatMessage(messages.title)} />
         <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
-        <ProjectBreadcrumbs items={getBreadcrumbsItems(project, pageTemplate)} />
         <LoadingWrapper loading={loading} error={error}>
+          <ProjectBreadcrumbs items={getBreadcrumbsItems(project, pageTemplate)} />
           <form onSubmit={handleSubmit}>
             <PageTemplateForm
               title={title}
