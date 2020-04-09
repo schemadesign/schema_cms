@@ -428,6 +428,7 @@ class SectionPageListView(CustomModelSerializer):
     def get_template_name(self, page):
         if page.template:
             return page.template.name
+
         return None
 
 

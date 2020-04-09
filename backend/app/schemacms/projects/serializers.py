@@ -24,6 +24,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             "title",
             "slug",
             "description",
+            "domain",
             "status",
             "owner",
             "editors",
