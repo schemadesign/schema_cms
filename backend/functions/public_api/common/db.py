@@ -8,6 +8,14 @@ from . import settings, services
 db = Proxy()
 
 
+class ElementType:
+    CODE = "code"
+    RICH_TEXT = "rich_text"
+    PLAIN_TEXT = "plain_text"
+    CONNECTION = "connection"
+    IMAGE = "image"
+
+
 class BaseModel(Model):
     class Meta:
         database = db
@@ -55,9 +63,7 @@ class Project(BaseModel):
     def get_sections(self):
         return [
             section.as_dict()
-            for section in self.sections.select().where(
-                Section.is_public == True, Section.deleted_at == None
-            )
+            for section in self.sections.select().where(Section.is_public == True, Section.deleted_at == None)
         ]
 
 
@@ -123,20 +129,15 @@ class DataSource(BaseModel):
     def get_filters(self):
         return [
             filter.as_dict()
-            for filter in self.filters.select().where(
-                Filter.is_active == True, Filter.deleted_at == None
-            )
+            for filter in self.filters.select().where(Filter.is_active == True, Filter.deleted_at == None)
         ]
 
     def get_fields(self):
-        preview = services.get_s3_object(self.active_job.meta_data.get().preview)[
-            "Body"
-        ]
+        preview = services.get_s3_object(self.active_job.meta_data.get().preview)["Body"]
 
         fields = json.loads(preview.read())["fields"]
         data = {
-            str(num): {"name": key, "type": value["dtype"]}
-            for num, (key, value) in enumerate(fields.items())
+            str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
 
         return data
@@ -177,9 +178,7 @@ class Section(BaseModel):
         pages = [
             page.as_dict()
             for page in self.pages.select().where(
-                Page.is_public == True,
-                Page.is_template == False,
-                Page.deleted_at == None,
+                Page.is_public == True, Page.is_template == False, Page.deleted_at == None,
             )
         ]
         return {"id": self.id, "name": self.name, "pages": pages}
@@ -217,10 +216,7 @@ class Page(BaseModel):
         return data
 
     def get_blocks(self):
-        return [
-            block.as_dict()
-            for block in self.blocks.select().where(Block.deleted_at == None)
-        ]
+        return [block.as_dict() for block in self.blocks.select().where(Block.deleted_at == None)]
 
 
 class Block(BaseModel):
@@ -241,10 +237,7 @@ class Block(BaseModel):
         }
 
     def get_elements(self):
-        return [
-            element.as_dict()
-            for element in self.elements.select().where(Element.deleted_at == None)
-        ]
+        return [element.as_dict() for element in self.elements.select().where(Element.deleted_at == None)]
 
 
 class Element(BaseModel):
@@ -278,9 +271,7 @@ class Element(BaseModel):
             value = {
                 "file_name": self.get_image_data(self.image),
                 "image": "{}/{}/{}".format(
-                    services.s3.meta.endpoint_url,
-                    settings.AWS_STORAGE_BUCKET_NAME,
-                    self.image,
+                    services.s3.meta.endpoint_url, settings.AWS_STORAGE_BUCKET_NAME, self.image,
                 ),
             }
 
@@ -292,15 +283,16 @@ class Element(BaseModel):
         return name
 
     def get_value_in_html(self):
-        if self.type == "connection":
+        if self.type == ElementType.CONNECTION:
             html_value = (
                 f"<div id='{self.id}' class='element connection'>"
                 f"<a href='{self.connection}' target='_blank|_self|_parent|_top'>{self.connection}</a>"
                 f"</div>"
             )
+
             return html_value
 
-        if self.type == "image":
+        if self.type == ElementType.IMAGE:
             value = self.get_element_value()
             html_value = (
                 f"<div id='{self.id}' class='element image'>"
@@ -312,13 +304,21 @@ class Element(BaseModel):
 
             return html_value
 
-        if self.type == "plain_text":
+        if self.type == ElementType.PLAIN_TEXT:
             html_value = f"<div id='{self.id}' class='element text'><p>{self.plain_text}</p></div>"
 
             return html_value
 
-        if self.type == "rich_text":
-            html_value = f"<div id='{self.id}' class='element rich text'>{markdown2.markdown(self.rich_text)}</div>"
+        if self.type == ElementType.RICH_TEXT:
+            html_value = (
+                f"<div id='{self.id}' class='element rich text'>{markdown2.markdown(self.rich_text)}</div>"
+            )
+
+            return html_value
+
+        if self.type == ElementType.CODE:
+            html_value = f"<div id='{self.id}' class='element code'>{self.code}</div>"
+
             return html_value
 
 

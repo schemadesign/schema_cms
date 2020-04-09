@@ -188,6 +188,7 @@ class PageTemplateBlockSerializer(serializers.ModelSerializer):
 
 class PageTemplateSerializer(CustomModelSerializer):
     blocks = serializers.SerializerMethodField()
+    is_template = serializers.HiddenField(default=True, write_only=True)
 
     class Meta:
         model = models.PageTemplate
@@ -201,11 +202,12 @@ class PageTemplateSerializer(CustomModelSerializer):
             "blocks",
             "is_available",
             "allow_edit",
+            "is_template",
         )
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.PageTemplate.objects.all(),
-                fields=("project", "name"),
+                fields=("project", "name", "is_template"),
                 key_field_name="name",
                 code="pageTemplateNameUnique",
                 message="Page Template with this name already exist in project.",
