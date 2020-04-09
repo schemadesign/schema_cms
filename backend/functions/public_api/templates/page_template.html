@@ -28,7 +28,11 @@
 				{{ element["html"]|safe }}
 			{% endif %}
 
-		{% endfor %}
+			{% if element["type"] == "code" %}
+				{{ element["html"]|safe }}
+			{% endif %}
+
+	{% endfor %}
     {% endfor %}
 </body>
 </html>

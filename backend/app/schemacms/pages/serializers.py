@@ -67,7 +67,7 @@ class ElementValueField(serializers.Field):
         if "data:" in file and ";base64," in file:
             header, file = file.split(";base64,")
         else:
-            pass
+            return False
 
         try:
             decoded_file = base64.b64decode(file)
@@ -358,7 +358,12 @@ class PageSerializer(CustomModelSerializer):
         for element in elements:
             if "value" in element:
                 type_ = element.get("type")
-                element[type_] = element.pop("value")
+                value = element.pop("value")
+                element[type_] = value
+
+                if type_ == constants.ElementType.IMAGE and not value:
+                    element.pop(type_)
+
             models.PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(block=instance, **element)
             )
