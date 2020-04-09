@@ -27,7 +27,7 @@ export const pageBlockMessage = <FormattedMessage {...messages.pageBlock} />;
 const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index) =>
   renderWhenTrueOtherwise(
     () => (
-      <ActiveItem>
+      <ActiveItem key={index}>
         <Span>{span}</Span>
         <H3>{h3}</H3>
       </ActiveItem>
@@ -36,7 +36,7 @@ const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index
       <LinkItem
         key={index}
         render={styles => (
-          <Link style={styles} to={path} active={active ? 1 : 0}>
+          <Link style={styles} to={path}>
             <Span>{span}</Span>
             <H3>{h3}</H3>
           </Link>
