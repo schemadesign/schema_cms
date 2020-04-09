@@ -30,7 +30,7 @@ import {
 } from '../../modules/pageTemplates/pageTemplates.constants';
 
 import {
-  blockTemplatesMessage,
+  pageTemplatesMessage,
   libraryMessage,
   ProjectBreadcrumbs,
   projectMessage,
@@ -51,9 +51,9 @@ const getBreadcrumbsItems = (project, { id = '', name = '' }) => [
     h3: templatesMessage,
   },
   {
-    path: `/project/${project.id}/block-templates`,
+    path: `/project/${project.id}/page-templates`,
     span: libraryMessage,
-    h3: blockTemplatesMessage,
+    h3: pageTemplatesMessage,
   },
   {
     path: `/page-template/${id}`,
