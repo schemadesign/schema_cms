@@ -229,6 +229,42 @@ exports[`Create: Component should render correctly 1`] = `
     <TextInput
       autoWidth={false}
       checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAdmin={true}
+      isEdit={true}
+      isSubmitting={false}
+      isValid={true}
+      label="Domain"
+      name="domain"
+      onChange={[Function]}
+      setFieldValue={[Function]}
+      touched={Object {}}
+      userRole="admin"
+      values={
+        Object {
+          "status": "in_progress",
+          "title": "title",
+        }
+      }
+    />
+    <TextInput
+      autoWidth={false}
+      checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
       fullWidth={true}

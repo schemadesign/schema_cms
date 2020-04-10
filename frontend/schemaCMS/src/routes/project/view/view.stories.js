@@ -14,6 +14,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   isSubmitting: false,
   dirty: false,
+  isValid: true,
   userRole: ROLES.ADMIN,
   user: {
     role: ROLES.ADMIN,

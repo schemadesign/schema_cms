@@ -33,7 +33,14 @@ import { Link, LinkContainer } from '../../../theme/typography';
 import { getProjectMenuOptions, PROJECT_DETAILS_ID } from '../project.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Select } from '../../../shared/components/form/select';
-import { PROJECT_STATUS, PROJECT_STATUSES_LIST } from '../../../modules/project/project.constants';
+import {
+  PROJECT_DESCRIPTION,
+  PROJECT_DOMAIN,
+  PROJECT_OWNER,
+  PROJECT_STATUS,
+  PROJECT_STATUSES_LIST,
+  PROJECT_TITLE,
+} from '../../../modules/project/project.constants';
 import { StatisticCards } from '../../../shared/components/statisticCards';
 
 export class View extends PureComponent {
@@ -43,6 +50,7 @@ export class View extends PureComponent {
     values: PropTypes.object.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     dirty: PropTypes.bool.isRequired,
+    isValid: PropTypes.bool.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
@@ -142,8 +150,8 @@ export class View extends PureComponent {
     [T, this.renderValue],
   ]);
 
-  renderDetail = ({ id, label, order, ...rest }, index) => (
-    <DetailItem order={order} key={index}>
+  renderDetail = ({ id, label, order, fullWidth, ...rest }, index) => (
+    <DetailItem order={order} key={index} fullWidth={fullWidth}>
       <DetailWrapper id={id}>
         <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
         {this.renderDetailValue({ id, ...rest })}
@@ -184,43 +192,65 @@ export class View extends PureComponent {
     const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
     const data = [
       {
+        label: this.formatMessage(messages.titleField),
+        field: PROJECT_TITLE,
+        id: 'fieldTitle',
+        order: 2,
+        mobileOrder: 1,
+        editable: true,
+      },
+      {
+        label: this.formatMessage(messages.description),
+        field: PROJECT_DESCRIPTION,
+        id: 'fieldDescription',
+        order: 7,
+        mobileOrder: 2,
+        editable: true,
+        multiline: true,
+        fullWidth: true,
+      },
+      {
+        label: this.formatMessage(messages.status),
+        field: PROJECT_STATUS,
+        value: statusValue,
+        id: 'fieldStatus',
+        order: 4,
+        mobileOrder: 3,
+        editable: true,
+        select: true,
+      },
+      {
+        label: this.formatMessage(messages.domainField),
+        field: PROJECT_DOMAIN,
+        id: 'fieldDomain',
+        order: 6,
+        mobileOrder: 4,
+        editable: true,
+      },
+      {
         label: this.formatMessage(messages.lastUpdate),
         field: 'created',
         value: extendedDayjs(created, BASE_DATE_FORMAT).fromNow(),
         id: 'fieldLastUpdated',
         order: 1,
-      },
-      {
-        label: this.formatMessage(messages.status),
-        field: 'status',
-        value: statusValue,
-        id: 'fieldStatus',
-        order: 3,
-        editable: true,
-        select: true,
+        mobileOrder: 5,
       },
       {
         label: this.formatMessage(messages.owner),
-        field: 'owner',
+        field: PROJECT_OWNER,
         value: `${firstName} ${lastName}`,
         id: 'fieldOwner',
-        order: 5,
+        order: 3,
+        mobileOrder: 6,
       },
-      { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle', order: 2, editable: true },
-      {
-        label: this.formatMessage(messages.description),
-        field: 'description',
-        id: 'fieldDescription',
-        order: 4,
-        editable: true,
-        multiline: true,
-      },
+
       {
         label: this.formatMessage(messages.api),
         field: 'slug',
         value: generateApiUrl(slug),
         id: 'fieldSlug',
-        order: 6,
+        order: 5,
+        mobileOrder: 7,
       },
     ];
 
@@ -251,7 +281,7 @@ export class View extends PureComponent {
     ))(!loading);
 
   render() {
-    const { project, userRole, handleSubmit, dirty, isSubmitting } = this.props;
+    const { project, userRole, handleSubmit, dirty, isValid, isSubmitting } = this.props;
     const { confirmationModalOpen, error, loading, removeLoading } = this.state;
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
@@ -275,7 +305,12 @@ export class View extends PureComponent {
         </div>
         <NavigationContainer fixed>
           <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
-          <NextButton onClick={handleSubmit} loading={isSubmitting} disabled={!dirty || isSubmitting} type="button">
+          <NextButton
+            onClick={handleSubmit}
+            loading={isSubmitting}
+            disabled={!dirty || isSubmitting || !isValid}
+            type="button"
+          >
             <FormattedMessage {...messages.save} />
           </NextButton>
         </NavigationContainer>

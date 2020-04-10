@@ -37,6 +37,10 @@ export default defineMessages({
     id: 'project.create.projectOwnerLabel',
     defaultMessage: 'Owner',
   },
+  projectDomainLabel: {
+    id: 'project.create.projectDomainLabel',
+    defaultMessage: 'Domain',
+  },
   statusLabel: {
     id: 'project.create.statusLabel',
     defaultMessage: 'Status',

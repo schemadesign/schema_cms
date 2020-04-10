@@ -24,6 +24,7 @@ class Project(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="projects", null=True
     )
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects", blank=True)
+    domain = models.URLField(blank=True, default="")
 
     objects = managers.ProjectManager()
 
@@ -73,7 +74,7 @@ class Project(
 
     @functional.cached_property
     def project_info(self):
-        return {"id": self.id, "title": self.title}
+        return {"id": self.id, "title": self.title, "domain": self.domain}
 
     def meta_file_serialization(self):
         data = {

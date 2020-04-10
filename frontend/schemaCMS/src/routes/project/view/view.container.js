@@ -11,7 +11,14 @@ import { View } from './view.component';
 import { ProjectRoutines } from '../../../modules/project';
 import { selectProject } from '../../../modules/project/project.selectors';
 import { selectIsAdmin, selectUserRole } from '../../../modules/userProfile/userProfile.selectors';
-import { INITIAL_VALUES, PROJECT_SCHEMA } from '../../../modules/project/project.constants';
+import {
+  INITIAL_VALUES,
+  PROJECT_DESCRIPTION,
+  PROJECT_DOMAIN,
+  PROJECT_SCHEMA,
+  PROJECT_STATUS,
+  PROJECT_TITLE,
+} from '../../../modules/project/project.constants';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from '../create/create.messages';
 import reportError from '../../../shared/utils/reportError';
@@ -45,7 +52,7 @@ export default compose(
     enableReinitialize: true,
     mapPropsToValues: ({ project }) => ({
       ...INITIAL_VALUES,
-      ...pick(['title', 'description', 'status'], project),
+      ...pick([PROJECT_TITLE, PROJECT_DESCRIPTION, PROJECT_STATUS, PROJECT_DOMAIN], project),
     }),
     validationSchema: () => PROJECT_SCHEMA,
     handleSubmit: async (formData, { props, setSubmitting, setErrors }) => {

@@ -5,6 +5,7 @@ export const PROJECT_TITLE = 'title';
 export const PROJECT_DESCRIPTION = 'description';
 export const PROJECT_OWNER = 'owner';
 export const PROJECT_STATUS = 'status';
+export const PROJECT_DOMAIN = 'domain';
 
 export const PROJECT_STATUSES = {
   IN_PROGRESS: 'in_progress',
@@ -23,6 +24,7 @@ export const PROJECT_STATUSES_LIST = [
 export const INITIAL_VALUES = {
   [PROJECT_TITLE]: '',
   [PROJECT_DESCRIPTION]: '',
+  [PROJECT_DOMAIN]: '',
   [PROJECT_STATUS]: PROJECT_STATUSES.IN_PROGRESS,
 };
 
@@ -36,7 +38,9 @@ export const PROJECT_SCHEMA = Yup.object().shape({
     .trim()
     .max(150, 'Project Description should have maximum 150 characters')
     .required('Required'),
-  email: Yup.string()
-    .email('Invalid email')
+  [PROJECT_DOMAIN]: Yup.string()
+    .trim()
+    .url('Invalid URL')
+    .max(200, 'Project Domain should have maximum 200 characters')
     .notRequired(),
 });

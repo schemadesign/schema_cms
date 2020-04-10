@@ -49,6 +49,10 @@ export default defineMessages({
     id: 'project.view.titleField',
     defaultMessage: 'Title',
   },
+  domainField: {
+    id: 'project.view.domainField',
+    defaultMessage: 'Domain',
+  },
   description: {
     id: 'project.view.description',
     defaultMessage: 'Description',
