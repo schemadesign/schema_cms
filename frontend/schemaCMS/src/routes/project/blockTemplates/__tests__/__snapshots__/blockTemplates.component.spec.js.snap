@@ -164,7 +164,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           className="sc-AxmLO cZlyyh"
         >
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/project/projectId/state"
@@ -219,7 +219,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/project/projectId/user"
@@ -230,7 +230,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/project/projectId/content"
@@ -241,7 +241,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/project/projectId/templates"
@@ -256,7 +256,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           className="sc-AxmLO cZlyyh"
         >
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <a
               href="/settings"
@@ -267,7 +267,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi boaeex"
+            className="sc-fzozJi bEoyPT"
           >
             <div
               onClick={[Function]}

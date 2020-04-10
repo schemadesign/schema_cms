@@ -12,7 +12,7 @@ const getItemTextColor = ({ active, theme }) =>
       color: ${theme.text};
     `,
     () => css`
-      color: rgba(255, 255, 255, 0.75);
+      color: ${theme.secondaryText};
     `
   )(active);
 
