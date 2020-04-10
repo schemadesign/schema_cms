@@ -706,7 +706,7 @@ exports[`BlockElement: Component should render correctly stack element 1`] = `
                           className="sc-AxjAm gcayeW"
                         >
                           <div
-                            className="sc-AxhCb jZxptO"
+                            className="sc-AxhCb iyMsiN"
                           >
                             <div
                               className="sc-Axmtr fjEPwC"
@@ -717,7 +717,7 @@ exports[`BlockElement: Component should render correctly stack element 1`] = `
                                     "display": "flex",
                                     "flexDirection": "column",
                                     "maxWidth": "100%",
-                                    "paddingBottom": "30px",
+                                    "paddingBottom": 2,
                                     "position": "relative",
                                   }
                                 }
@@ -1142,7 +1142,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxhCb jZxptO"
+          className="sc-AxhCb iyMsiN"
         >
           <div
             className="sc-Axmtr fjEPwC"
@@ -1153,7 +1153,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
                   "display": "flex",
                   "flexDirection": "column",
                   "maxWidth": "100%",
-                  "paddingBottom": "30px",
+                  "paddingBottom": 2,
                   "position": "relative",
                 }
               }

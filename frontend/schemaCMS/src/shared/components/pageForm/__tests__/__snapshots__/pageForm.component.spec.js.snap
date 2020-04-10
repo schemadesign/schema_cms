@@ -453,7 +453,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     className="sc-AxirZ ccgdVl"
   >
     <div
-      className="sc-fznJRM htAbOk"
+      className="sc-fznJRM dGOQde"
       onClick={[Function]}
     >
       <label
@@ -1015,7 +1015,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl euWRjL"
+                      className="sc-fzoYkl cWDXUs"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -1026,7 +1026,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               "display": "flex",
                               "flexDirection": "column",
                               "maxWidth": "100%",
-                              "paddingBottom": "30px",
+                              "paddingBottom": 2,
                               "position": "relative",
                             }
                           }
@@ -1848,7 +1848,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                       className="sc-fzqPZZ WAKDE"
                                     >
                                       <div
-                                        className="sc-fzoYkl euWRjL"
+                                        className="sc-fzoYkl cWDXUs"
                                       >
                                         <div
                                           className="sc-fzokOt hhpuAT"
@@ -1859,7 +1859,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                                 "display": "flex",
                                                 "flexDirection": "column",
                                                 "maxWidth": "100%",
-                                                "paddingBottom": "30px",
+                                                "paddingBottom": 2,
                                                 "position": "relative",
                                               }
                                             }
@@ -2767,7 +2767,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
     className="sc-AxirZ ccgdVl"
   >
     <div
-      className="sc-fznJRM htAbOk"
+      className="sc-fznJRM dGOQde"
       onClick={[Function]}
     >
       <label
@@ -3329,7 +3329,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl euWRjL"
+                      className="sc-fzoYkl cWDXUs"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -3340,7 +3340,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               "display": "flex",
                               "flexDirection": "column",
                               "maxWidth": "100%",
-                              "paddingBottom": "30px",
+                              "paddingBottom": 2,
                               "position": "relative",
                             }
                           }
@@ -4162,7 +4162,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                       className="sc-fzqPZZ WAKDE"
                                     >
                                       <div
-                                        className="sc-fzoYkl euWRjL"
+                                        className="sc-fzoYkl cWDXUs"
                                       >
                                         <div
                                           className="sc-fzokOt hhpuAT"
@@ -4173,7 +4173,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                                 "display": "flex",
                                                 "flexDirection": "column",
                                                 "maxWidth": "100%",
-                                                "paddingBottom": "30px",
+                                                "paddingBottom": 2,
                                                 "position": "relative",
                                               }
                                             }

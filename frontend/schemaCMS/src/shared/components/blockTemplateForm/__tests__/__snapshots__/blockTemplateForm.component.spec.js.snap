@@ -567,7 +567,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               className="sc-fzpmMD kNluEN"
             >
               <div
-                className="sc-fznMAR CRvqb"
+                className="sc-fznMAR jlMHNp"
                 onClick={[Function]}
               >
                 <label
@@ -802,7 +802,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               className="sc-fzpmMD kNluEN"
             >
               <div
-                className="sc-fznMAR CRvqb"
+                className="sc-fznMAR jlMHNp"
                 onClick={[Function]}
               >
                 <label

@@ -1032,7 +1032,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         className="sc-fznWqX hpKwwB"
       >
         <div
-          className="sc-fzqMAW raLGB"
+          className="sc-fzqMAW cIPleX"
           onClick={[Function]}
         >
           <label
@@ -1594,7 +1594,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzomuh lldmwp"
+                          className="sc-fzomuh fFkvZO"
                         >
                           <div
                             className="sc-fzoKki xmNdG"
@@ -1605,7 +1605,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   "display": "flex",
                                   "flexDirection": "column",
                                   "maxWidth": "100%",
-                                  "paddingBottom": "30px",
+                                  "paddingBottom": 2,
                                   "position": "relative",
                                 }
                               }
@@ -2427,7 +2427,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                           className="sc-fznAgC dlXska"
                                         >
                                           <div
-                                            className="sc-fzomuh lldmwp"
+                                            className="sc-fzomuh fFkvZO"
                                           >
                                             <div
                                               className="sc-fzoKki xmNdG"
@@ -2438,7 +2438,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                                     "display": "flex",
                                                     "flexDirection": "column",
                                                     "maxWidth": "100%",
-                                                    "paddingBottom": "30px",
+                                                    "paddingBottom": 2,
                                                     "position": "relative",
                                                   }
                                                 }

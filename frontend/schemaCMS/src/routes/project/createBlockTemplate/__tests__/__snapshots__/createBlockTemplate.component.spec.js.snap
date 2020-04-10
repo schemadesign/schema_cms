@@ -1147,7 +1147,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                   className="sc-fzqAbL iGmQSL"
                 >
                   <div
-                    className="sc-fzoydu fMJYcE"
+                    className="sc-fzoydu jbNcsu"
                     onClick={[Function]}
                   >
                     <label

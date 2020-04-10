@@ -20,6 +20,7 @@ export const Name = styled.div``;
 
 export const InputContainer = styled.div`
   position: relative;
+  padding-bottom: 30px;
 `;
 
 export const IconContainer = styled.div`
@@ -37,6 +38,10 @@ export const getCustomInputStyles = theme => ({
   backgroundColor: theme.secondaryText,
   padding: '10px 30px 10px 20px',
 });
+
+export const customStyles = {
+  paddingBottom: 2,
+};
 
 export const editIconStyles = {
   position: 'absolute',
