@@ -19,7 +19,7 @@ describe('BlockTemplateForm: Component', () => {
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements', [
       { key: expect.any(Number), name: '', params: {}, type: '', autoOpen: true },
-      { id: 1, key: 1, name: 'element name', params: { block: 'block name 2' }, type: 'stack' },
+      { id: 1, key: 1, name: 'element name', params: { block: 'block name 2' }, type: 'plain_text' },
     ]);
   });
 

@@ -4,7 +4,6 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
 import { useFormik } from 'formik';
 import { useHistory, useParams } from 'react-router';
-import { useEffectOnce } from 'react-use';
 
 import { Container } from './createBlockTemplate.styles';
 import messages from './createBlockTemplate.messages';
@@ -20,7 +19,6 @@ import {
   INITIAL_VALUES,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../../shared/components/blockTemplateForm';
-import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 import {
   ProjectBreadcrumbs,
@@ -57,18 +55,10 @@ const getBreadcrumbsItems = project => [
   },
 ];
 
-export const CreateBlockTemplate = ({
-  userRole,
-  createBlockTemplate,
-  fetchBlockTemplates,
-  blockTemplates,
-  project,
-}) => {
+export const CreateBlockTemplate = ({ userRole, createBlockTemplate, project }) => {
   const intl = useIntl();
   const { projectId } = useParams();
   const history = useHistory();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [createLoading, setCreateLoading] = useState(false);
   const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: { ...INITIAL_VALUES, [BLOCK_TEMPLATES_ELEMENTS]: [getDefaultBlockElement()] },
@@ -95,53 +85,37 @@ export const CreateBlockTemplate = ({
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
 
-  useEffectOnce(() => {
-    (async () => {
-      try {
-        await fetchBlockTemplates({ projectId });
-      } catch (e) {
-        setError(e);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  });
-
   return (
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
-      <LoadingWrapper loading={loading} error={error}>
-        <form onSubmit={handleSubmit}>
-          <BlockTemplateForm title={title} blockTemplates={blockTemplates} isValid={isValid} {...restFormikProps} />
-          <NavigationContainer fixed>
-            <BackButton
-              id="cancelBtn"
-              type="button"
-              onClick={() => history.push(`/project/${projectId}/block-templates`)}
-            >
-              <FormattedMessage {...messages.cancel} />
-            </BackButton>
-            <NextButton
-              id="createTemplateBlock"
-              type="submit"
-              loading={createLoading}
-              disabled={!isValid || !dirty || createLoading}
-            >
-              <FormattedMessage {...messages.save} />
-            </NextButton>
-          </NavigationContainer>
-        </form>
-      </LoadingWrapper>
+      <form onSubmit={handleSubmit}>
+        <BlockTemplateForm title={title} isValid={isValid} {...restFormikProps} />
+        <NavigationContainer fixed>
+          <BackButton
+            id="cancelBtn"
+            type="button"
+            onClick={() => history.push(`/project/${projectId}/block-templates`)}
+          >
+            <FormattedMessage {...messages.cancel} />
+          </BackButton>
+          <NextButton
+            id="createTemplateBlock"
+            type="submit"
+            loading={createLoading}
+            disabled={!isValid || !dirty || createLoading}
+          >
+            <FormattedMessage {...messages.save} />
+          </NextButton>
+        </NavigationContainer>
+      </form>
     </Container>
   );
 };
 
 CreateBlockTemplate.propTypes = {
   userRole: PropTypes.string.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   createBlockTemplate: PropTypes.func.isRequired,
-  fetchBlockTemplates: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
 };

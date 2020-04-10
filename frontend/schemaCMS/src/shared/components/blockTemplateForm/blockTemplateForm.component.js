@@ -2,12 +2,11 @@ import React from 'react';
 import { Accordion, Form, Icons } from 'schemaUI';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { append, both, complement, any, prepend, propEq, remove, pipe, map, prop, filter } from 'ramda';
+import { append, prepend, remove } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
-import { useParams } from 'react-router';
 
 import {
   IconsContainer,
@@ -40,7 +39,6 @@ import {
   BLOCK_TEMPLATES_NAME,
   ELEMENT_KEY,
   getDefaultBlockElement,
-  STACK_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateElement } from '../blockTemplateElement';
 import { CounterHeader } from '../counterHeader';
@@ -56,26 +54,10 @@ export const BlockTemplateForm = ({
   setFieldValue,
   values,
   isValid,
-  blockTemplates,
   setRemoveModalOpen = null,
   ...restFormikProps
 }) => {
   const intl = useIntl();
-  const { blockTemplateId } = useParams();
-  const blocksOptions = pipe(
-    filter(
-      both(
-        complement(propEq('id', parseInt(blockTemplateId, 10))),
-        complement(
-          pipe(
-            prop('elements'),
-            any(propEq('type', STACK_TYPE))
-          )
-        )
-      )
-    ),
-    map(({ name, id }) => ({ label: name, value: id }))
-  )(blockTemplates);
 
   const nameInput = (
     <Subtitle>
@@ -190,7 +172,6 @@ export const BlockTemplateForm = ({
                     element={element}
                     handleChange={handleChange}
                     setFieldValue={setFieldValue}
-                    blocksOptions={blocksOptions}
                     draggableIcon={draggableIcon}
                     removeElement={removeElement}
                     autoFocus={!!values[BLOCK_TEMPLATES_NAME].length}
@@ -236,6 +217,5 @@ BlockTemplateForm.propTypes = {
   setFieldValue: PropTypes.func.isRequired,
   isValid: PropTypes.bool.isRequired,
   values: PropTypes.object.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,
 };

@@ -32,13 +32,12 @@ import { sizes } from '../../theme/media';
 import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TEMPLATE } from '../../modules/page/page.constants';
-import { ELEMENT_VALUE, IMAGE_TYPE, STACK_TYPE } from '../../modules/blockTemplates/blockTemplates.constants';
+import { ELEMENT_VALUE, IMAGE_TYPE } from '../../modules/blockTemplates/blockTemplates.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
 export const mapIndexed = addIndex(map);
 export const mapAndAddOrder = mapIndexed(addOrder);
-export const callIfArray = (fn, otherwise) => ifElse(is(Array), fn, otherwise);
 
 export const errorMessageParser = ({ errors, messages = {}, formatMessage = () => {} }) => {
   if (is(Array, errors)) {
@@ -122,13 +121,11 @@ export const isProcessingData = ({ metaData, jobsState }) => {
 
 export const prepareForPostingPageData = evolve({
   [PAGE_TEMPLATE]: ifElse(equals(0), always(null), identity),
-  [PAGE_BLOCKS]: mapIndexed((block, index) =>
-    evolve({ order: index, [BLOCK_ELEMENTS]: map(evolve({ value: callIfArray(mapAndAddOrder, identity) })) })(block)
-  ),
+  [PAGE_BLOCKS]: mapAndAddOrder,
 });
 
 export const getValuePath = ({ blockPath, index }) => `${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`;
 
-const getDefaultValue = cond([[equals(STACK_TYPE), always([])], [equals(IMAGE_TYPE), always({})], [T, always('')]]);
+const getDefaultValue = cond([[equals(IMAGE_TYPE), always({})], [T, always('')]]);
 
 export const setDefaultValue = element => mergeRight(element, { value: getDefaultValue(element.type) });

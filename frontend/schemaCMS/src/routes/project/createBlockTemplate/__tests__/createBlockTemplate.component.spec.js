@@ -24,12 +24,6 @@ describe('CreateBlockTemplate: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should fetch blocks', async () => {
-    jest.spyOn(defaultProps, 'fetchBlockTemplates');
-    await render();
-    expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
-  });
-
   it('should redirect to block templates', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();

@@ -8,7 +8,6 @@ import {
   IMAGE_TYPE,
   PLAIN_TEXT_TYPE,
   RICH_TEXT_TYPE,
-  STACK_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -101,40 +100,6 @@ export const PAGE_SCHEMA = Yup.object().shape({
                     .min(1, 'Required')
                     .required('Required'),
                 }),
-              })
-              .when(ELEMENT_TYPE, {
-                is: STACK_TYPE,
-                then: Yup.array()
-                  .test(ELEMENT_VALUE, 'Required', complement(isEmpty))
-                  .of(
-                    Yup.object().shape({
-                      [BLOCK_NAME]: Yup.string()
-                        .trim()
-                        .min(1, 'Block Stack Name should have at least 1 character')
-                        .max(25, 'Block Stack Name should have maximum 25 characters')
-                        .required('Required'),
-                      [BLOCK_ELEMENTS]: Yup.array().of(
-                        Yup.object().shape({
-                          [ELEMENT_VALUE]: Yup.mixed()
-                            .when(ELEMENT_TYPE, {
-                              is: type => [PLAIN_TEXT_TYPE, RICH_TEXT_TYPE, CONNECTION_TYPE, CODE_TYPE].includes(type),
-                              then: Yup.string()
-                                .min(1, 'Required')
-                                .max(1000, 'Element Value should have maximum 1000 characters')
-                                .required('Required'),
-                            })
-                            .when(ELEMENT_TYPE, {
-                              is: IMAGE_TYPE,
-                              then: Yup.object().shape({
-                                fileName: Yup.string()
-                                  .min(1, 'Required')
-                                  .required('Required'),
-                              }),
-                            }),
-                        })
-                      ),
-                    })
-                  ),
               }),
           })
         ),

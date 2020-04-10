@@ -2,8 +2,8 @@ import {
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
+  PLAIN_TEXT_TYPE,
   RICH_TEXT_TYPE,
-  STACK_TYPE,
 } from './blockTemplates.constants';
 
 export const blockTemplate = {
@@ -16,7 +16,7 @@ export const blockTemplate = {
       name: 'element name',
       id: 1,
       key: 1,
-      type: STACK_TYPE,
+      type: PLAIN_TEXT_TYPE,
       params: {
         block: 'block name 2',
       },

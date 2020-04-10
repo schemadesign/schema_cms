@@ -47,7 +47,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
       Object {
         "maxWidth": null,
         "position": "absolute",
-        "zIndex": 9999,
+        "zIndex": 99999,
       }
     }
     onClose={[Function]}

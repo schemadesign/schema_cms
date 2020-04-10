@@ -7,12 +7,11 @@ import { compose } from 'ramda';
 
 import { CreateBlockTemplate } from './createBlockTemplate.component';
 import { selectUserRole } from '../../../modules/userProfile';
-import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
+import { BlockTemplatesRoutines } from '../../../modules/blockTemplates';
 import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
-  blockTemplates: selectBlockTemplates,
   project: selectProject,
 });
 
@@ -20,7 +19,6 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       createBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.createBlockTemplate),
-      fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
     },
     dispatch
   ),

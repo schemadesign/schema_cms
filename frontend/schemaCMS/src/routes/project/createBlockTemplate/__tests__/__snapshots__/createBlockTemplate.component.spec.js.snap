@@ -115,7 +115,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
           "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
           "visibility": 0,
           "width": "100%",
-          "zIndex": 9999,
+          "zIndex": 99999,
         }
       }
     >
@@ -350,7 +350,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzomuh jgoMCq"
+    className="sc-fznAgC cBHJpy"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzoaKM koKAGd"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzoaKM koKAGd"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzoaKM koKAGd"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzqAui UFkpp"
+          className="sc-fznLPX dCkfEv"
         >
           <span
             style={
@@ -1342,26 +1342,6 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                             }
                           >
                             Connection
-                          </div>
-                          <div
-                            id="select-item-5"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            style={
-                              Object {
-                                "border": "1px solid  #2F2F36",
-                                "borderTop": "none",
-                                "color": "#71737e",
-                                "cursor": "pointer",
-                                "overflow": "hidden",
-                                "padding": "20px 10px",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Block Stack
                           </div>
                         </div>
                       </div>
