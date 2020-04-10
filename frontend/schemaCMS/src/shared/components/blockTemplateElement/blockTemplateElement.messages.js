@@ -8,7 +8,6 @@ import {
   PARAMS_BLOCK,
   PLAIN_TEXT_TYPE,
   RICH_TEXT_TYPE,
-  STACK_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -43,10 +42,6 @@ export default defineMessages({
   [CONNECTION_TYPE]: {
     id: `shared.components.blockTemplateElement.${CONNECTION_TYPE}`,
     defaultMessage: 'Connection',
-  },
-  [STACK_TYPE]: {
-    id: `shared.components.blockTemplateElement.${STACK_TYPE}`,
-    defaultMessage: 'Block Stack',
   },
   [PARAMS_BLOCK]: {
     id: `shared.components.blockTemplateElement.${PARAMS_BLOCK}`,

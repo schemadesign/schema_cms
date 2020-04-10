@@ -64,11 +64,9 @@ export const BlockTemplate = memo(
   ({
     updateBlockTemplate,
     fetchBlockTemplate,
-    fetchBlockTemplates,
     removeBlockTemplate,
     userRole,
     blockTemplate: { name, elements, isAvailable, allowEdit },
-    blockTemplates,
     project,
   }) => {
     const { blockTemplateId } = useParams();
@@ -126,9 +124,7 @@ export const BlockTemplate = memo(
     useEffectOnce(() => {
       (async () => {
         try {
-          const { project } = await fetchBlockTemplate({ blockTemplateId });
-
-          await fetchBlockTemplates({ projectId: project });
+          await fetchBlockTemplate({ blockTemplateId });
         } catch (e) {
           reportError(e);
           setError(e);
@@ -149,7 +145,6 @@ export const BlockTemplate = memo(
           <form onSubmit={handleSubmit}>
             <BlockTemplateForm
               title={title}
-              blockTemplates={blockTemplates}
               setRemoveModalOpen={setRemoveModalOpen}
               isValid={isValid}
               {...restFormikProps}
@@ -198,11 +193,9 @@ export const BlockTemplate = memo(
 
 BlockTemplate.propTypes = {
   blockTemplate: PropTypes.object.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   project: PropTypes.object.isRequired,
   userRole: PropTypes.string.isRequired,
   fetchBlockTemplate: PropTypes.func.isRequired,
   updateBlockTemplate: PropTypes.func.isRequired,
-  fetchBlockTemplates: PropTypes.func.isRequired,
   removeBlockTemplate: PropTypes.func.isRequired,
 };

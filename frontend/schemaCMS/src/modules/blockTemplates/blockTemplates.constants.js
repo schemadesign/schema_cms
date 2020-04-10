@@ -21,9 +21,8 @@ export const PLAIN_TEXT_TYPE = 'plain_text';
 export const IMAGE_TYPE = 'image';
 export const CODE_TYPE = 'code';
 export const CONNECTION_TYPE = 'connection';
-export const STACK_TYPE = 'stack';
 
-export const ELEMENTS_TYPES = [RICH_TEXT_TYPE, PLAIN_TEXT_TYPE, IMAGE_TYPE, CODE_TYPE, CONNECTION_TYPE, STACK_TYPE];
+export const ELEMENTS_TYPES = [RICH_TEXT_TYPE, PLAIN_TEXT_TYPE, IMAGE_TYPE, CODE_TYPE, CONNECTION_TYPE];
 
 export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
   [ELEMENT_TYPE]: '',
@@ -59,14 +58,6 @@ export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({
         [ELEMENT_TYPE]: Yup.string()
           .min(1, 'Required')
           .required('Required'),
-        [ELEMENT_PARAMS]: Yup.object().when(ELEMENT_TYPE, {
-          is: STACK_TYPE,
-          then: Yup.object().shape({
-            [PARAMS_BLOCK]: Yup.string()
-              .min(1, 'Required')
-              .required('Required'),
-          }),
-        }),
       })
     ),
 });

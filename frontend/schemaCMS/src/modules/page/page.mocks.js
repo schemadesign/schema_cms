@@ -18,16 +18,14 @@ import {
   ELEMENT_TYPE,
   PLAIN_TEXT_TYPE,
   IMAGE_TYPE,
-  STACK_TYPE,
   ELEMENT_ID,
   ELEMENT_VALUE,
-  ELEMENT_PARAMS,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const textElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_TYPE]: PLAIN_TEXT_TYPE,
-  [ELEMENT_VALUE]: '',
+  [ELEMENT_VALUE]: 'plain text value',
   [ELEMENT_ID]: 1,
 };
 
@@ -40,30 +38,12 @@ export const imageElement = {
   [ELEMENT_ID]: 1,
 };
 
-export const stackElement = {
-  [ELEMENT_NAME]: 'name',
-  [ELEMENT_TYPE]: STACK_TYPE,
-  [ELEMENT_VALUE]: [
-    {
-      [BLOCK_NAME]: 'name',
-      [BLOCK_TYPE]: 'type',
-      [BLOCK_KEY]: 1,
-      [BLOCK_ID]: 1,
-      [BLOCK_ELEMENTS]: [textElement, imageElement],
-    },
-  ],
-  [ELEMENT_ID]: 1,
-  [ELEMENT_PARAMS]: {
-    block: 3,
-  },
-};
-
 export const block = {
   [BLOCK_NAME]: 'name',
   [BLOCK_TYPE]: 'type',
   [BLOCK_KEY]: 1,
   [BLOCK_ID]: 1,
-  [BLOCK_ELEMENTS]: [textElement, imageElement, stackElement],
+  [BLOCK_ELEMENTS]: [textElement, imageElement],
 };
 
 export const page = {
