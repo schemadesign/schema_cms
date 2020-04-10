@@ -20,7 +20,7 @@ export const BlockElement = props => {
   ])(props);
 
   return (
-    <AccordionPanel>
+    <AccordionPanel autoOpen>
       <AccordionHeader>
         <Header>
           <IconContainer>

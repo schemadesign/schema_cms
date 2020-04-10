@@ -5,7 +5,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
   style={
     Object {
       "borderTop": "2px solid #FFF",
-      "overflow": "hidden",
+      "overflow": "inherit",
       "position": "relative",
       "width": "100%",
     }
@@ -161,7 +161,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
           "position": "absolute",
           "right": 0,
           "top": 9,
-          "transform": "rotate(0deg)",
+          "transform": "rotate(180deg)",
           "transformOrigin": "center center",
           "transition": "transform 200ms ease-in-out",
         }
@@ -172,7 +172,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
     style={
       Object {
         "backgroundColor": "#000",
-        "height": 0,
+        "height": "auto",
         "transition": "height 200ms linear, overflow 0s linear 200ms",
       }
     }
@@ -182,7 +182,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         style={
           Object {
             "borderTop": "2px solid #FFF",
-            "overflow": "hidden",
+            "overflow": "inherit",
             "position": "relative",
             "width": "100%",
           }
@@ -239,7 +239,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 "position": "absolute",
                 "right": 0,
                 "top": 9,
-                "transform": "rotate(0deg)",
+                "transform": "rotate(180deg)",
                 "transformOrigin": "center center",
                 "transition": "transform 200ms ease-in-out",
               }
@@ -268,7 +268,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#000",
-              "height": 0,
+              "height": "auto",
               "transition": "height 200ms linear, overflow 0s linear 200ms",
             }
           }
@@ -375,7 +375,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         style={
           Object {
             "borderTop": "2px solid #FFF",
-            "overflow": "hidden",
+            "overflow": "inherit",
             "position": "relative",
             "width": "100%",
           }
@@ -432,7 +432,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 "position": "absolute",
                 "right": 0,
                 "top": 9,
-                "transform": "rotate(0deg)",
+                "transform": "rotate(180deg)",
                 "transformOrigin": "center center",
                 "transition": "transform 200ms ease-in-out",
               }
@@ -461,7 +461,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#000",
-              "height": 0,
+              "height": "auto",
               "transition": "height 200ms linear, overflow 0s linear 200ms",
             }
           }
@@ -624,7 +624,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         style={
           Object {
             "borderTop": "2px solid #FFF",
-            "overflow": "hidden",
+            "overflow": "inherit",
             "position": "relative",
             "width": "100%",
           }
@@ -681,7 +681,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 "position": "absolute",
                 "right": 0,
                 "top": 9,
-                "transform": "rotate(0deg)",
+                "transform": "rotate(180deg)",
                 "transformOrigin": "center center",
                 "transition": "transform 200ms ease-in-out",
               }
@@ -710,7 +710,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#000",
-              "height": 0,
+              "height": "auto",
               "transition": "height 200ms linear, overflow 0s linear 200ms",
             }
           }
@@ -800,7 +800,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                     style={
                       Object {
                         "borderTop": "2px solid #FFF",
-                        "overflow": "hidden",
+                        "overflow": "inherit",
                         "position": "relative",
                         "width": "100%",
                       }
@@ -975,7 +975,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                             "position": "absolute",
                             "right": 0,
                             "top": 9,
-                            "transform": "rotate(0deg)",
+                            "transform": "rotate(180deg)",
                             "transformOrigin": "center center",
                             "transition": "transform 200ms ease-in-out",
                           }
@@ -1003,7 +1003,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       style={
                         Object {
                           "backgroundColor": "#000",
-                          "height": 0,
+                          "height": "auto",
                           "transition": "height 200ms linear, overflow 0s linear 200ms",
                         }
                       }
@@ -1013,7 +1013,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           style={
                             Object {
                               "borderTop": "2px solid #FFF",
-                              "overflow": "hidden",
+                              "overflow": "inherit",
                               "position": "relative",
                               "width": "100%",
                             }
@@ -1070,7 +1070,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   "position": "absolute",
                                   "right": 0,
                                   "top": 9,
-                                  "transform": "rotate(0deg)",
+                                  "transform": "rotate(180deg)",
                                   "transformOrigin": "center center",
                                   "transition": "transform 200ms ease-in-out",
                                 }
@@ -1099,7 +1099,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                             style={
                               Object {
                                 "backgroundColor": "#000",
-                                "height": 0,
+                                "height": "auto",
                                 "transition": "height 200ms linear, overflow 0s linear 200ms",
                               }
                             }
@@ -1206,7 +1206,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           style={
                             Object {
                               "borderTop": "2px solid #FFF",
-                              "overflow": "hidden",
+                              "overflow": "inherit",
                               "position": "relative",
                               "width": "100%",
                             }
@@ -1263,7 +1263,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   "position": "absolute",
                                   "right": 0,
                                   "top": 9,
-                                  "transform": "rotate(0deg)",
+                                  "transform": "rotate(180deg)",
                                   "transformOrigin": "center center",
                                   "transition": "transform 200ms ease-in-out",
                                 }
@@ -1292,7 +1292,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                             style={
                               Object {
                                 "backgroundColor": "#000",
-                                "height": 0,
+                                "height": "auto",
                                 "transition": "height 200ms linear, overflow 0s linear 200ms",
                               }
                             }

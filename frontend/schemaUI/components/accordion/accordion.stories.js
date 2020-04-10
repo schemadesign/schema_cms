@@ -13,7 +13,7 @@ class TestComponent extends PureComponent {
   render() {
     return (
       <Accordion {...defaultProps}>
-        <AccordionPanel>
+        <AccordionPanel autoOpen>
           <AccordionHeader>First Panel</AccordionHeader>
           <AccordionDetails>First Details</AccordionDetails>
         </AccordionPanel>
