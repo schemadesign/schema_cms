@@ -189,7 +189,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/projectId"
+              href="/project/1"
               id="projectDetailsNavBtn"
               onClick={[Function]}
             >
@@ -200,7 +200,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/projectId/datasource"
+              href="/project/1/datasource"
               id="dataSourceNavBtn"
               onClick={[Function]}
             >
@@ -211,7 +211,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/projectId/state"
+              href="/project/1/state"
               id="stateNavBtn"
               onClick={[Function]}
             >
@@ -222,7 +222,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/projectId/user"
+              href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}
             >
@@ -233,7 +233,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/projectId/content"
+              href="/project/1/content"
               id="contentNavBtn"
               onClick={[Function]}
             >
@@ -244,7 +244,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/projectId/templates"
+              href="/project/1/templates"
               id="templatesNavBtn"
               onClick={[Function]}
             >
@@ -373,7 +373,7 @@ exports[`EditPage: Component should render correctly 1`] = `
       >
         <a
           className="sc-fznLxA hnLwQO"
-          href="/project/projectId/"
+          href="/project/1/"
           onClick={[Function]}
           style={
             Object {
@@ -403,7 +403,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            
+            project title
           </h3>
         </a>
         <div
@@ -429,7 +429,7 @@ exports[`EditPage: Component should render correctly 1`] = `
       >
         <a
           className="sc-fznLxA hnLwQO"
-          href="/project/projectId/content"
+          href="/project/1/content"
           onClick={[Function]}
           style={
             Object {
@@ -2851,9 +2851,9 @@ exports[`EditPage: Component should render correctly 1`] = `
                 />
                 Visit Page: 
                 <a
-                  href="https://schemacms.com/page-name"
+                  href="http://project.domain/page/page-name"
                 >
-                  https://schemacms.com/page-name
+                  http://project.domain/page/page-name
                 </a>
               </span>
             </div>

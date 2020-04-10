@@ -56,7 +56,6 @@ import {
 
 const { EditIcon, MinusIcon } = Icons;
 const { Switch } = FormUI;
-const TEMPORARY_PAGE_URL = 'https://schemacms.com';
 
 const Page = ({ created, createdBy, name, id, templateName }) => {
   const history = useHistory();
@@ -103,7 +102,7 @@ Page.propTypes = {
 
 export const PageList = ({
   section,
-  project: { id: projectId, title: projectTitle },
+  project: { id: projectId, title: projectTitle, domain },
   removeSection,
   updateSection,
   userRole,
@@ -118,7 +117,7 @@ export const PageList = ({
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
-  const visitPage = `${TEMPORARY_PAGE_URL}/${slug}`;
+  const visitPage = `${domain}/section/${slug}`;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH], section),
     enableReinitialize: true,

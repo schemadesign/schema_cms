@@ -5,11 +5,10 @@ import { PageList } from './pageList.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { section } from '../../../modules/sections/sections.mocks';
+import { project } from '../../../modules/project/project.mocks';
 
 export const defaultProps = {
-  project: {
-    id: 'projectId',
-  },
+  project,
   section,
   userRole: ROLES.ADMIN,
   updateSection: Function.prototype,

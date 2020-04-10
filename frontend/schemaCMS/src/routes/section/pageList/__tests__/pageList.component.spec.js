@@ -29,7 +29,7 @@ describe('PageList: Component', () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
 
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/content');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/content');
   });
 
   it('should redirect to create page', async () => {
@@ -66,6 +66,6 @@ describe('PageList: Component', () => {
 
     await Promise.resolve();
     expect(defaultProps.removeSection).toHaveBeenCalledWith({ sectionId: 'sectionId' });
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/content');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/content');
   });
 });

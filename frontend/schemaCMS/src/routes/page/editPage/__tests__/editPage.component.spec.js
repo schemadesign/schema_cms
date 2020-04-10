@@ -28,7 +28,7 @@ describe('EditPage: Component', () => {
   it('should fetch page templates', async () => {
     jest.spyOn(defaultProps, 'fetchPageTemplates');
     await render();
-    expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
+    expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 1 });
   });
 
   it('should go back to section', async () => {

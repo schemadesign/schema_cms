@@ -6,6 +6,7 @@ import { withTheme } from '../../../.storybook/decorators';
 import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mocks';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
+import { project } from '../../../modules/project/project.mocks';
 
 export const defaultProps = {
   pageTemplates,
@@ -14,7 +15,7 @@ export const defaultProps = {
   createPage: Function.prototype,
   fetchPageTemplates: Function.prototype,
   fetchBlockTemplates: Function.prototype,
-  project: { id: 'projectId' },
+  project,
   section: {
     id: 1,
     name: 'Section',

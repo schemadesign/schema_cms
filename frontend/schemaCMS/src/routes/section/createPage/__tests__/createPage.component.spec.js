@@ -37,7 +37,7 @@ describe('CreatePage: Component', () => {
   it('should fetch page templates and section', async () => {
     jest.spyOn(defaultProps, 'fetchPageTemplates');
     await render();
-    expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
+    expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 1 });
   });
 
   it('should go back to section', async () => {

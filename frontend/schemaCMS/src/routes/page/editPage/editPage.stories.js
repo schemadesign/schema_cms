@@ -7,6 +7,7 @@ import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { page } from '../../../modules/page/page.mocks';
 import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mocks';
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
+import { project } from '../../../modules/project/project.mocks';
 
 export const defaultProps = {
   userRole: ROLES.ADMIN,
@@ -16,7 +17,7 @@ export const defaultProps = {
   fetchPageTemplates: Function.prototype,
   fetchBlockTemplates: Function.prototype,
   removePage: Function.prototype,
-  project: { id: 'projectId' },
+  project,
   page,
 };
 

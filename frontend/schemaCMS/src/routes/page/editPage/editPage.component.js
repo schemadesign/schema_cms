@@ -151,6 +151,7 @@ export const EditPage = ({
           <PageForm
             displayName={page.displayName}
             title={title}
+            project={project}
             pageTemplates={pageTemplates}
             isValid={isValid}
             setRemoveModalOpen={setRemoveModalOpen}
