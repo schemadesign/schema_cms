@@ -1016,7 +1016,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-AxhCb jgjSel"
+          className="sc-AxhCb jHBQax"
         >
           <label
             className="sc-AxiKw mAtde"
@@ -1025,7 +1025,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-AxheI idMNrP"
+            className="sc-AxheI ccWTUb"
           >
             This Template is currently available for Editors
           </span>

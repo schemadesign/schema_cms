@@ -1378,7 +1378,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-fznxKY kckQDp"
+              className="sc-fznxKY jwQvqV"
             >
               <label
                 className="sc-fzpmMD fprNti"
@@ -1387,7 +1387,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-fzolEj cOPbqW"
+                className="sc-fzolEj iFzULa"
               >
                 This Template is currently unavailable for Editors
               </span>
@@ -1447,7 +1447,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fznxKY kckQDp"
+            className="sc-fznxKY jwQvqV"
           >
             <label
               className="sc-fzpmMD fprNti"

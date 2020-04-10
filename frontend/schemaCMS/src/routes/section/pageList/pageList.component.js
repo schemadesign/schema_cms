@@ -215,7 +215,7 @@ export const PageList = ({
           <SwitchContainer>
             <SwitchContent>
               <Switch value={values[SECTIONS_PUBLISH]} id={SECTIONS_PUBLISH} onChange={handleChange} />
-              <SwitchCopy isLink>
+              <SwitchCopy>
                 <SwitchLabel htmlFor={SECTIONS_PUBLISH}>
                   <FormattedMessage {...messages[SECTIONS_PUBLISH]} />
                 </SwitchLabel>

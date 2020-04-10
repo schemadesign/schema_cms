@@ -304,7 +304,7 @@ export const PageForm = ({
         <SwitchContainer>
           <SwitchContent>
             <Switch value={values[PAGE_IS_PUBLIC]} id={PAGE_IS_PUBLIC} onChange={handleChange} />
-            <SwitchCopy isLink>
+            <SwitchCopy>
               <SwitchLabel htmlFor={PAGE_IS_PUBLIC}>
                 <FormattedMessage {...messages[PAGE_IS_PUBLIC]} />
               </SwitchLabel>

@@ -21,7 +21,6 @@ export const SwitchLabel = styled.label`
 
 export const SwitchCopy = styled.div`
   padding-left: 10px;
-  padding-right: ${({ isLink }) => (isLink ? 40 : 0)}px;
   max-width: 100%;
 `;
 
@@ -47,7 +46,7 @@ export const AvailableCopy = styled.span`
   a {
     color: ${({ theme }) => theme.text};
     text-decoration: none;
-    word-wrap: break-word;
+    word-break: break-all;
   }
 `;
 

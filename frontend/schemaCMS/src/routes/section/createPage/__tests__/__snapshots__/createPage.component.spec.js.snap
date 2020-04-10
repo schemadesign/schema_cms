@@ -1312,7 +1312,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-AxheI czthDU"
+              className="sc-AxheI lnZcUc"
             >
               <label
                 className="sc-AxgMl bGaNud"
@@ -1321,7 +1321,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
                 Make it Public
               </label>
               <span
-                className="sc-fzozJi ggtLQI"
+                className="sc-fzozJi kqnREw"
               >
                 This Page is currently Private
               </span>

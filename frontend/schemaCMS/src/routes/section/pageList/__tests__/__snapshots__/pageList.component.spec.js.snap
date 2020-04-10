@@ -1075,7 +1075,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fzoxKX jKuYkF"
+            className="sc-fzoxKX cNtqKp"
           >
             <label
               className="sc-fzqPZZ gXaiqb"
@@ -1084,7 +1084,7 @@ exports[`PageList: Component should render correctly 1`] = `
               Make it Public
             </label>
             <span
-              className="sc-fzpkJw eoVTgc"
+              className="sc-fzpkJw hNiUxI"
             >
               This Section is currently Private
               <span
