@@ -87,7 +87,7 @@ export const Subtitle = styled(Typography.H1)`
 `;
 
 export const menuStyles = {
-  zIndex: 9999,
+  zIndex: 99999,
   maxWidth: null,
   position: 'absolute',
 };
