@@ -144,8 +144,8 @@ export const BlockTemplate = memo(
       <Container>
         <Helmet title={intl.formatMessage(messages.title)} />
         <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
-        <ProjectBreadcrumbs items={getBreadcrumbsItems(project, { id: blockTemplateId, name })} />
         <LoadingWrapper loading={loading} error={error}>
+          <ProjectBreadcrumbs items={getBreadcrumbsItems(project, { id: blockTemplateId, name })} />
           <form onSubmit={handleSubmit}>
             <BlockTemplateForm
               title={title}

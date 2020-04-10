@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { Breadcrumbs, LinkItem, Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { Link } from './projectBreadcrumbs.styles';
+import { Link, ActiveItem, Container } from './projectBreadcrumbs.styles';
 import messages from './projectBreadcrumbs.messages';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { H3, Span } = Typography;
 
@@ -23,33 +24,42 @@ export const pageMessage = <FormattedMessage {...messages.page} />;
 export const contentMessage = <FormattedMessage {...messages.content} />;
 export const pageBlockMessage = <FormattedMessage {...messages.pageBlock} />;
 
-export const ProjectBreadcrumbs = ({ items }) => {
-  const getBreadcrumbsItem = (item, index) => {
-    const { path = '', active = false, span = '', h3 = '' } = item;
-
-    return (
+const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index) =>
+  renderWhenTrueOtherwise(
+    () => (
+      <ActiveItem key={index}>
+        <Span>{span}</Span>
+        <H3>{h3}</H3>
+      </ActiveItem>
+    ),
+    () => (
       <LinkItem
         key={index}
         render={styles => (
-          <Link style={styles} to={path} active={active ? 1 : 0}>
+          <Link style={styles} to={path}>
             <Span>{span}</Span>
             <H3>{h3}</H3>
           </Link>
         )}
       />
-    );
-  };
+    )
+  )(active);
 
-  return <Breadcrumbs>{items.map(getBreadcrumbsItem)}</Breadcrumbs>;
+BreadcrumbItem.propTypes = {
+  path: PropTypes.string,
+  active: PropTypes.bool,
+  span: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  h3: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+};
+
+export const ProjectBreadcrumbs = ({ items }) => {
+  return (
+    <Container>
+      <Breadcrumbs>{items.map(BreadcrumbItem)}</Breadcrumbs>
+    </Container>
+  );
 };
 
 ProjectBreadcrumbs.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      path: PropTypes.string,
-      active: PropTypes.bool,
-      span: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-      h3: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    })
-  ),
+  items: PropTypes.array.isRequired,
 };
