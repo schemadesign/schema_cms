@@ -2281,9 +2281,9 @@ exports[`PageForm: Component should render correctly 1`] = `
             />
             Visit Page: 
             <a
-              href="https://schemacms.com/displayName"
+              href="http://project.domain/page/displayName"
             >
-              https://schemacms.com/displayName
+              http://project.domain/page/displayName
             </a>
           </span>
         </div>
@@ -4595,9 +4595,9 @@ exports[`PageForm: Component should render with blocked template 1`] = `
             />
             Visit Page: 
             <a
-              href="https://schemacms.com/displayName"
+              href="http://project.domain/page/displayName"
             >
-              https://schemacms.com/displayName
+              http://project.domain/page/displayName
             </a>
           </span>
         </div>

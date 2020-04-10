@@ -167,6 +167,7 @@ class Filter(BaseModel):
 
 class Section(BaseModel):
     name = CharField()
+    slug = CharField()
     project = ForeignKeyField(Project, backref="sections")
     is_public = BooleanField()
     deleted_at = DateTimeField()
@@ -181,7 +182,7 @@ class Section(BaseModel):
                 Page.is_public == True, Page.is_template == False, Page.deleted_at == None,
             )
         ]
-        return {"id": self.id, "name": self.name, "pages": pages}
+        return {"id": self.id, "name": self.name, "slug": self.slug, "pages": pages}
 
 
 class Page(BaseModel):

@@ -6,6 +6,7 @@ import { withTheme } from '../../../.storybook/decorators';
 import { page } from '../../../modules/page/page.mocks';
 import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mocks';
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
+import { project } from '../../../modules/project/project.mocks';
 
 export const defaultProps = {
   handleChange: Function.prototype,
@@ -20,6 +21,7 @@ export const defaultProps = {
   isValid: true,
   title: 'title',
   displayName: 'displayName',
+  project,
 };
 
 storiesOf('PageForm', module)

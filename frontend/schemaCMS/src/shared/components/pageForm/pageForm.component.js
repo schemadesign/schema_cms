@@ -70,7 +70,6 @@ import { setDefaultValue } from '../../utils/helpers';
 
 const { EditIcon, MinusIcon, MenuIcon } = Icons;
 const { Switch } = Form;
-const TEMPORARY_PAGE_URL = 'https://schemacms.com';
 
 export const PageForm = ({
   title,
@@ -82,6 +81,7 @@ export const PageForm = ({
   pageTemplates,
   blockTemplates,
   setRemoveModalOpen,
+  project: { domain },
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -140,7 +140,7 @@ export const PageForm = ({
       <MinusIcon customStyles={binStyles} />
     </BinIconContainer>
   ) : null;
-  const pageUrl = `${TEMPORARY_PAGE_URL}/${displayName}`;
+  const pageUrl = `${domain}/page/${displayName}`;
   const visitPage = displayName ? (
     <Fragment>
       <CopySeparator />
@@ -345,6 +345,9 @@ PageForm.propTypes = {
   setValues: PropTypes.func.isRequired,
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
+  project: PropTypes.shape({
+    domain: PropTypes.string.isRequired,
+  }),
   pageTemplates: PropTypes.array.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,
