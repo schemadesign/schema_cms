@@ -2834,7 +2834,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-fzoyTs bGGEtw"
+              className="sc-fzoyTs fKSkws"
             >
               <label
                 className="sc-fzqNqU fjnSB"
@@ -2843,7 +2843,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 Make it Public
               </label>
               <span
-                className="sc-fzpmMD iArGi"
+                className="sc-fzpmMD bZzUta"
               >
                 This Page is currently Private
                 <span

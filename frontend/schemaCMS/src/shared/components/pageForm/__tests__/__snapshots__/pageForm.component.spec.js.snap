@@ -2264,7 +2264,7 @@ exports[`PageForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-AxgMl gAKFVe"
+          className="sc-AxgMl gjqDFC"
         >
           <label
             className="sc-AxhUy hApVxL"
@@ -2273,7 +2273,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             Make it Public
           </label>
           <span
-            className="sc-AxmLO btBWvd"
+            className="sc-AxmLO cVNblx"
           >
             This Page is currently Private
             <span
@@ -4578,7 +4578,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
           </label>
         </div>
         <div
-          className="sc-AxgMl gAKFVe"
+          className="sc-AxgMl gjqDFC"
         >
           <label
             className="sc-AxhUy hApVxL"
@@ -4587,7 +4587,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
             Make it Public
           </label>
           <span
-            className="sc-AxmLO btBWvd"
+            className="sc-AxmLO cVNblx"
           >
             This Page is currently Private
             <span

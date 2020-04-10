@@ -808,7 +808,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-fznZeY dguMzR"
+          className="sc-fznZeY ieqDRN"
         >
           <label
             className="sc-fznKkj cjYMZO"
@@ -817,7 +817,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-fzqNJr lgaNnx"
+            className="sc-fzqNJr eoXktt"
           >
             This Template is currently available for Editors
           </span>
@@ -898,7 +898,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         </label>
       </div>
       <div
-        className="sc-fznZeY dguMzR"
+        className="sc-fznZeY ieqDRN"
       >
         <label
           className="sc-fznKkj cjYMZO"

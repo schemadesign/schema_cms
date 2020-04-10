@@ -1432,7 +1432,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-fznJRM gwFAqm"
+              className="sc-fznJRM kbaGUO"
             >
               <label
                 className="sc-fznxsB gMLjuN"
@@ -1441,7 +1441,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-fzqARJ kopmlO"
+                className="sc-fzqARJ hmjesy"
               >
                 This Template is currently unavailable for Editors
               </span>
