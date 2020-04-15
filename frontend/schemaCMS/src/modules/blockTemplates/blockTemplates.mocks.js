@@ -3,7 +3,7 @@ import {
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
   PLAIN_TEXT_TYPE,
-  RICH_TEXT_TYPE,
+  MARKDOWN_TYPE,
 } from './blockTemplates.constants';
 
 export const blockTemplate = {
@@ -44,7 +44,7 @@ export const defaultBlockTemplate = {
       name: 'element name',
       id: 1,
       key: 1,
-      type: RICH_TEXT_TYPE,
+      type: MARKDOWN_TYPE,
     },
   ],
   [BLOCK_TEMPLATES_IS_AVAILABLE]: false,

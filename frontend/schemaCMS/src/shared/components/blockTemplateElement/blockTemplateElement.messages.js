@@ -7,7 +7,7 @@ import {
   IMAGE_TYPE,
   PARAMS_BLOCK,
   PLAIN_TEXT_TYPE,
-  RICH_TEXT_TYPE,
+  MARKDOWN_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -23,9 +23,9 @@ export default defineMessages({
     id: `shared.components.blockTemplateElement.${ELEMENT_TYPE}`,
     defaultMessage: 'Element Type',
   },
-  [RICH_TEXT_TYPE]: {
-    id: `shared.components.blockTemplateElement.${RICH_TEXT_TYPE}`,
-    defaultMessage: 'Rich text',
+  [MARKDOWN_TYPE]: {
+    id: `shared.components.blockTemplateElement.${MARKDOWN_TYPE}`,
+    defaultMessage: 'Markdown',
   },
   [PLAIN_TEXT_TYPE]: {
     id: `shared.components.blockTemplateElement.${PLAIN_TEXT_TYPE}`,

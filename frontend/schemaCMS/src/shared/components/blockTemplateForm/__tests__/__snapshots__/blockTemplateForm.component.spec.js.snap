@@ -690,7 +690,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                           }
                         }
                       >
-                        Rich text
+                        Markdown
                       </div>
                       <div
                         id="select-item-1"
