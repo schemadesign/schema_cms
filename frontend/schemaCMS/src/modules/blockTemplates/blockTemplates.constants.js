@@ -16,13 +16,13 @@ export const ELEMENT_VALUE = 'value';
 
 export const PARAMS_BLOCK = 'block';
 
-export const RICH_TEXT_TYPE = 'rich_text';
+export const MARKDOWN_TYPE = 'markdown';
 export const PLAIN_TEXT_TYPE = 'plain_text';
 export const IMAGE_TYPE = 'image';
 export const CODE_TYPE = 'code';
 export const CONNECTION_TYPE = 'connection';
 
-export const ELEMENTS_TYPES = [RICH_TEXT_TYPE, PLAIN_TEXT_TYPE, IMAGE_TYPE, CODE_TYPE, CONNECTION_TYPE];
+export const ELEMENTS_TYPES = [MARKDOWN_TYPE, PLAIN_TEXT_TYPE, IMAGE_TYPE, CODE_TYPE, CONNECTION_TYPE];
 
 export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
   [ELEMENT_TYPE]: '',

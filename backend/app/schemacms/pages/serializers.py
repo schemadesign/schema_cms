@@ -17,7 +17,7 @@ class ElementValueField(serializers.Field):
     type = None
     text_type = [
         constants.ElementType.PLAIN_TEXT,
-        constants.ElementType.RICH_TEXT,
+        constants.ElementType.MARKDOWN,
         constants.ElementType.CODE,
     ]
 

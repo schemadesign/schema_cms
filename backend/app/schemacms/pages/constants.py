@@ -5,7 +5,7 @@ PAGE_DISPLAY_NAME_MAX_LENGTH = 25
 
 
 class ElementType:
-    RICH_TEXT = "rich_text"
+    MARKDOWN = "markdown"
     PLAIN_TEXT = "plain_text"
     IMAGE = "image"
     CODE = "code"
@@ -14,7 +14,7 @@ class ElementType:
 
 
 ELEMENT_TYPE_CHOICES = (
-    (ElementType.RICH_TEXT, "Rich Text"),
+    (ElementType.MARKDOWN, "Markdown"),
     (ElementType.PLAIN_TEXT, "Plain Text"),
     (ElementType.IMAGE, "Image"),
     (ElementType.CODE, "Code"),

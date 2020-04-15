@@ -365,9 +365,9 @@ class TestListCreatePage:
                         },
                         {
                             "name": "Test Element #2",
-                            "type": "rich_text",
+                            "type": "markdown",
                             "order": 1,
-                            "value": "Test Rich Text Element",
+                            "value": "Test Markdown Element",
                             "params": {},
                         },
                     ],
