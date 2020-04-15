@@ -130,8 +130,8 @@ class PageBlock(SoftDeleteObject):
 
 class PageBlockElement(Element):
     block = models.ForeignKey(PageBlock, on_delete=models.CASCADE, related_name="elements")
-    rich_text = models.URLField(blank=True, default="", max_length=1000)
-    connection = models.TextField(blank=True, default="")
+    markdown = models.TextField(blank=True, default="")
+    connection = models.URLField(blank=True, default="", max_length=1000)
     plain_text = models.TextField(blank=True, default="", max_length=1000)
     code = models.TextField(blank=True, default="", max_length=1000)
     image = models.ImageField(null=True, upload_to=file_upload_path)

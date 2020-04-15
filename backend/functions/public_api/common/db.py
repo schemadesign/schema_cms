@@ -10,7 +10,7 @@ db = Proxy()
 
 class ElementType:
     CODE = "code"
-    RICH_TEXT = "rich_text"
+    MARKDOWN = "markdown"
     PLAIN_TEXT = "plain_text"
     CONNECTION = "connection"
     IMAGE = "image"
@@ -57,7 +57,9 @@ class Project(BaseModel):
     def get_data_sources(self):
         return [
             {"id": ds.id, "type": ds.type, "name": ds.name}
-            for ds in self.data_sources.select().where(DataSource.deleted_at == None)
+            for ds in self.data_sources.select().where(
+                DataSource.deleted_at == None, DataSource.active_job != None
+            )
         ]
 
     def get_sections(self):
@@ -245,7 +247,7 @@ class Element(BaseModel):
     block = ForeignKeyField(Block, backref="elements")
     name = CharField()
     type = CharField()
-    rich_text = TextField()
+    markdown = TextField()
     connection = CharField()
     plain_text = TextField()
     code = TextField()
@@ -310,9 +312,9 @@ class Element(BaseModel):
 
             return html_value
 
-        if self.type == ElementType.RICH_TEXT:
+        if self.type == ElementType.MARKDOWN:
             html_value = (
-                f"<div id='{self.id}' class='element rich text'>{markdown2.markdown(self.rich_text)}</div>"
+                f"<div id='{self.id}' class='element markdown'>{markdown2.markdown(self.markdown)}</div>"
             )
 
             return html_value
