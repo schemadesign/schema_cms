@@ -1,4 +1,4 @@
-from django.db.models import Prefetch
+from django.db import models as d_models
 from rest_framework import generics, permissions, response
 
 from . import models, serializers
@@ -44,7 +44,9 @@ class BlockTemplateListCreteView(TemplateListCreateView):
     queryset = (
         models.Block.objects.filter(is_template=True)
         .select_related("project", "created_by")
-        .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.all().order_by("order")))
+        .prefetch_related(
+            d_models.Prefetch("elements", queryset=models.BlockElement.objects.all().order_by("order"))
+        )
         .order_by("-created")
     )
     permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly)
@@ -65,7 +67,9 @@ class BlockTemplateViewSet(DetailViewSet):
     queryset = (
         models.Block.objects.filter(is_template=True)
         .select_related("project", "created_by")
-        .prefetch_related(Prefetch("elements", queryset=models.BlockElement.objects.order_by("order")))
+        .prefetch_related(
+            d_models.Prefetch("elements", queryset=models.BlockElement.objects.order_by("order"))
+        )
     )
     serializer_class = serializers.BlockTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
@@ -78,7 +82,7 @@ class PageTemplateListCreteView(TemplateListCreateView):
         .order_by("-created")
         .select_related("project", "created_by")
         .prefetch_related(
-            Prefetch(
+            d_models.Prefetch(
                 "pageblock_set",
                 queryset=models.PageBlock.objects.prefetch_related("block__elements")
                 .select_related("block")
@@ -94,7 +98,7 @@ class PageTemplateViewSet(DetailViewSet):
         models.PageTemplate.objects.all()
         .select_related("project", "created_by")
         .prefetch_related(
-            Prefetch(
+            d_models.Prefetch(
                 "pageblock_set",
                 queryset=models.PageBlock.objects.prefetch_related("block__elements")
                 .select_related("block")
@@ -141,7 +145,7 @@ class PageListCreateView(generics.ListCreateAPIView):
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
-            Prefetch(
+            d_models.Prefetch(
                 "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
             )
         )
@@ -178,12 +182,14 @@ class PageViewSet(DetailViewSet):
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
-            Prefetch(
+            d_models.Prefetch(
                 "pageblock_set",
                 queryset=models.PageBlock.objects.select_related("block")
                 .order_by("order")
                 .prefetch_related(
-                    Prefetch("elements", queryset=models.PageBlockElement.objects.all().order_by("order"))
+                    d_models.Prefetch(
+                        "elements", queryset=models.PageBlockElement.objects.all().order_by("order")
+                    )
                 ),
             )
         )
