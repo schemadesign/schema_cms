@@ -47,6 +47,7 @@ functions:
       - http: 'ANY {proxy+}'
     environment:
       AWS_STORAGE_BUCKET_NAME: schemacms
+      AWS_STORAGE_PAGES_BUCKET_NAME: schemacms-pages
       AWS_ACCESS_KEY_ID: foo
       AWS_SECRET_ACCESS_KEY: bar
       AWS_DEFAULT_REGION: us-east-1
