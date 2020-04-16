@@ -274,7 +274,7 @@ class Element(BaseModel):
             value = {
                 "file_name": self.get_image_data(self.image),
                 "image": "{}/{}/{}".format(
-                    services.s3.meta.endpoint_url, settings.AWS_STORAGE_BUCKET_NAME, self.image,
+                    services.s3.meta.endpoint_url, settings.AWS_STORAGE_PAGES_BUCKET_NAME, self.image,
                 ),
             }
 

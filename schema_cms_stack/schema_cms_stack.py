@@ -304,6 +304,7 @@ class PublicAPI(core.Stack):
             vpc=scope.base.vpc,
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "AWS_STORAGE_PAGES_BUCKET_NAME": scope.api.pages_bucket.bucket_name,
                 "BACKEND_URL": BACKEND_URL.format(domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)),
                 "DB_CONNECTION": aws_secretsmanager.Secret.from_secret_arn(
                     self, "db_conn", db_connection_arn
