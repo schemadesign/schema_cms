@@ -607,22 +607,22 @@ class CIPipeline(core.Stack):
                     run_order=3,
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_public_api_changes",
-                    stack_name=scope.public_api.stack_name,
-                    change_set_name="publicAPIStagedChangeSet",
-                    run_order=3,
-                ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_api_changes",
                     stack_name=scope.api.stack_name,
                     change_set_name="APIStagedChangeSet",
                     run_order=4,
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name="execute_public_api_changes",
+                    stack_name=scope.public_api.stack_name,
+                    change_set_name="publicAPIStagedChangeSet",
+                    run_order=5,
+                ),
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_lambda_worker_changes",
                     stack_name=scope.lambda_worker.stack_name,
                     change_set_name="lambdaWorkerStagedChangeSet",
-                    run_order=5,
+                    run_order=6,
                 ),
             ],
         )
