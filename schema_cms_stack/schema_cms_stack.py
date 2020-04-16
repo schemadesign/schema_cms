@@ -25,6 +25,7 @@ from aws_cdk import (
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
 IMAGE_S3_BUCKET_NAME = "schemacms-images"
+PAGES_S3_BUCKET_NAME = "schemacms-pages"
 LAMBDA_AUTH_TOKEN_ENV_NAME = "LAMBDA_AUTH_TOKEN"
 JOB_PROCESSING_MAX_RETRIES = 3
 JOB_PROCESSING_MEMORY_SIZES = [512, 1280, 3008]
@@ -120,6 +121,9 @@ class API(core.Stack):
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         api_image = aws_ecs.ContainerImage.from_asset("backend/app")
         nginx_image = aws_ecs.ContainerImage.from_asset("nginx")
+
+        self.pages_bucket = aws_s3.Bucket(self, PAGES_S3_BUCKET_NAME, public_read_access=True)
+
         if installation_mode == INSTALLATION_MODE_FULL:
             tag_from_context = self.node.try_get_context("app_image_tag")
             tag = tag_from_context if tag_from_context is not "undefined" else None
@@ -191,6 +195,7 @@ class API(core.Stack):
             environment={
                 "POSTGRES_DB": DB_NAME,
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "AWS_STORAGE_PAGES_BUCKET_NAME": self.pages_bucket.bucket_name,
                 "SQS_WORKER_QUEUE_URL": self.job_processing_queues[0].queue_url,
                 "SQS_WORKER_EXT_QUEUE_URL": self.job_processing_queues[1].queue_url,
                 "SQS_WORKER_MAX_QUEUE_URL": self.job_processing_queues[2].queue_url,
@@ -204,6 +209,7 @@ class API(core.Stack):
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
 
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
+        self.pages_bucket.grant_read_write(self.api.service.task_definition.task_role)
 
         scope.image_resize_lambda.image_bucket.grant_read(self.api.service.task_definition.task_role)
 
@@ -309,6 +315,7 @@ class PublicAPI(core.Stack):
         )
 
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
+        scope.api.pages_bucket.grant_read(self.public_api_lambda.role)
         self.public_api_lambda.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
         self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(
             self, "rest-api", handler=self.public_api_lambda
