@@ -6,6 +6,7 @@ from django.db import models
 from django.utils import functional
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
 from softdelete.models import SoftDeleteObject
+from storages.backends.s3boto3 import S3Boto3Storage
 
 from . import constants, managers
 from ..utils.models import file_upload_path
@@ -134,7 +135,11 @@ class PageBlockElement(Element):
     connection = models.URLField(blank=True, default="", max_length=1000)
     plain_text = models.TextField(blank=True, default="", max_length=1000)
     code = models.TextField(blank=True, default="", max_length=1000)
-    image = models.ImageField(null=True, upload_to=file_upload_path)
+    image = models.ImageField(
+        null=True,
+        storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
+        upload_to=file_upload_path,
+    )
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -142,4 +147,4 @@ class PageBlockElement(Element):
         if not self.block_id:
             raise ValueError("Page is not set")
 
-        return os.path.join(base_path, f"blocks/{self.block_id}/{filename}")
+        return os.path.join(base_path, f"{self.block.page_id}/blocks/{self.block_id}/{filename}")

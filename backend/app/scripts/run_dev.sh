@@ -26,6 +26,13 @@ echo "S3 manager is up"
 }
 
 {
+    create_s3_bucket "schemacms-pages" &&
+    echo "Scripts S3 bucket created"
+} || {
+    echo "Scripts S3 bucket NOT created"
+}
+
+{
     put_bucket_versioning "schemacms" &&
     echo "Scripts S3 put bucket versioning done"
 } || {
