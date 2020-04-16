@@ -316,6 +316,8 @@ class PublicAPI(core.Stack):
         )
 
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
+        scope.api.pages_bucket.grant_read(self.public_api_lambda.role)
+
         self.public_api_lambda.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
         self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(
             self, "rest-api", handler=self.public_api_lambda

@@ -442,7 +442,7 @@ class SectionDetailSerializer(CustomModelSerializer):
 
     class Meta:
         model = models.Section
-        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages")
+        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages", "main_page")
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Section.objects.all(),
@@ -452,3 +452,9 @@ class SectionDetailSerializer(CustomModelSerializer):
                 message="Section with this name already exist in project.",
             )
         ]
+
+    def validate_main_page(self, value):
+        if not value or self.instance.pages.filter(id=value.id).exists():
+            return value
+        else:
+            raise serializers.ValidationError("Page does not exist in section")

@@ -301,6 +301,32 @@ class TestUpdateDeleteSectionView:
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert not pages_models.Section.objects.filter(pk=section_id, deleted_at__isnull=True).exists()
 
+    def test_main_page_update(self, api_client, admin, section, page_factory):
+        page_1, page_2 = page_factory.create_batch(2, section=section)
+
+        payload = {"main_page": page_1.id}
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(section.id), data=payload, format="json")
+        section.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert section.main_page == page_1
+
+    def test_main_page_validation(self, api_client, admin, section_factory, page_factory):
+        section_1, section_2 = section_factory.create_batch(2)
+        page_factory.create_batch(2, section=section_1)
+        bad_page = page_factory(section=section_2)
+
+        payload = {"main_page": bad_page.id}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(section_1.id), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {
+            "main_page": [{"message": "Page does not exist in section", "code": "invalid"}]
+        }
+
 
 class TestListCreatePage:
     @staticmethod
