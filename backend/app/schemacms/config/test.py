@@ -28,3 +28,4 @@ class Test(Common):
     USER_MGMT_AUTH0_DOMAIN = "http://localhost"
 
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME", "schemacms")
+    AWS_STORAGE_PAGES_BUCKET_NAME = os.getenv("AWS_STORAGE_PAGES_BUCKET_NAME", "schemacms-pages")
