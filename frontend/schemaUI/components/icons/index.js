@@ -19,6 +19,7 @@ import { FilterIcon } from './filterIcon';
 import { FieldIcon } from './fieldIcon';
 import { TagIcon } from './tagIcon';
 import { CaretIcon } from './caretIcon';
+import { HomeIcon } from './homeIcon';
 
 const Icons = {
   ResultIcon,
@@ -42,6 +43,7 @@ const Icons = {
   EyeIcon,
   TagIcon,
   CaretIcon,
+  HomeIcon,
 };
 
 export {
@@ -62,6 +64,7 @@ export {
   EyeIcon,
   TagIcon,
   CaretIcon,
+  HomeIcon,
 };
 
 export default Icons;
