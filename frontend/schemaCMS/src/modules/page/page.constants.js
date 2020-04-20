@@ -99,7 +99,7 @@ export const PAGE_SCHEMA = Yup.object().shape({
                 then: Yup.string()
                   .trim()
                   .min(1, 'Required')
-                  .url('Invalid URL')``
+                  .url('Invalid URL')
                   .max(1000, 'Element Value should have maximum 1000 characters')
                   .required('Required'),
               })

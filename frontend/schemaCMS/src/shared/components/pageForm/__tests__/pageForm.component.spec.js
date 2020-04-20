@@ -116,6 +116,7 @@ describe('PageForm: Component', () => {
         section: {
           id: 'sectionId',
           title: 'Section',
+          slug: 'section-slug',
         },
         template: 1,
       },

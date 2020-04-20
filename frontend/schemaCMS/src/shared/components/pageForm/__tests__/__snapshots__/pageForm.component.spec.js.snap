@@ -1439,9 +1439,9 @@ exports[`PageForm: Component should render correctly 1`] = `
             />
             Visit Page: 
             <a
-              href="http://project.domain/page/displayName"
+              href="pageUrl"
             >
-              http://project.domain/page/displayName
+              pageUrl
             </a>
           </span>
         </div>
@@ -2911,9 +2911,9 @@ exports[`PageForm: Component should render with blocked template 1`] = `
             />
             Visit Page: 
             <a
-              href="http://project.domain/page/displayName"
+              href="pageUrl"
             >
-              http://project.domain/page/displayName
+              pageUrl
             </a>
           </span>
         </div>

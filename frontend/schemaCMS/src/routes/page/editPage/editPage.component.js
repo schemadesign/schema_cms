@@ -83,6 +83,7 @@ export const EditPage = ({
   const projectId = project.id;
   const menuOptions = getProjectMenuOptions(projectId);
   const initialValues = { ...INITIAL_VALUES, ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
+  const pageUrl = project.domain ? `${project.domain}/${page.section.slug}/${page.displayName}` : null;
 
   const { handleSubmit, isValid, dirty, values, setValues, setFieldValue, ...restFormikProps } = useFormik({
     initialValues,
@@ -149,9 +150,8 @@ export const EditPage = ({
       <LoadingWrapper loading={loading} error={error}>
         <form onSubmit={handleSubmit}>
           <PageForm
-            displayName={page.displayName}
+            pageUrl={pageUrl}
             title={title}
-            project={project}
             pageTemplates={pageTemplates}
             isValid={isValid}
             setRemoveModalOpen={setRemoveModalOpen}

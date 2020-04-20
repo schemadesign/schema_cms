@@ -58,5 +58,6 @@ export const page = {
   section: {
     id: 'sectionId',
     title: 'Section',
+    slug: 'section-slug',
   },
 };
