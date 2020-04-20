@@ -2009,9 +2009,9 @@ exports[`EditPage: Component should render correctly 1`] = `
                 />
                 Visit Page: 
                 <a
-                  href="http://project.domain/section-slug/page-name"
+                  href="http://project.domain/page-name-2/page-name"
                 >
-                  http://project.domain/section-slug/page-name
+                  http://project.domain/page-name-2/page-name
                 </a>
               </span>
             </div>

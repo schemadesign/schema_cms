@@ -21,6 +21,7 @@ import {
   ELEMENT_ID,
   ELEMENT_VALUE,
 } from '../blockTemplates/blockTemplates.constants';
+import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
 export const textElement = {
   [ELEMENT_NAME]: 'name',
@@ -47,6 +48,7 @@ export const block = {
 };
 
 export const page = {
+  id: 1,
   [PAGE_NAME]: 'page name',
   [PAGE_DISPLAY_NAME]: 'page-name',
   [PAGE_KEYWORDS]: 'keyword;',
@@ -58,6 +60,9 @@ export const page = {
   section: {
     id: 'sectionId',
     title: 'Section',
-    slug: 'section-slug',
+    [SECTIONS_MAIN_PAGE]: {
+      id: 2,
+      [PAGE_DISPLAY_NAME]: 'page-name-2',
+    },
   },
 };

@@ -1145,9 +1145,9 @@ exports[`PageList: Component should render correctly 1`] = `
               />
               Visit Page: 
               <a
-                href="http://project.domain/section-name"
+                href="http://project.domain/page-name"
               >
-                http://project.domain/section-name
+                http://project.domain/page-name
               </a>
             </span>
           </div>

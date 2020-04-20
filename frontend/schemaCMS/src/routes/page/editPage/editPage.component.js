@@ -5,7 +5,7 @@ import { useEffectOnce } from 'react-use';
 import { useHistory, useParams, useLocation } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
-import { isEmpty, pick } from 'ramda';
+import { isEmpty, pick, pathOr } from 'ramda';
 
 import { Container } from './editPage.styles';
 import messages from './editPage.messages';
@@ -23,6 +23,7 @@ import {
   PAGE_BLOCKS,
   PAGE_NAME,
   INITIAL_VALUES,
+  PAGE_DISPLAY_NAME,
 } from '../../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import {
@@ -83,7 +84,13 @@ export const EditPage = ({
   const projectId = project.id;
   const menuOptions = getProjectMenuOptions(projectId);
   const initialValues = { ...INITIAL_VALUES, ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
-  const pageUrl = project.domain ? `${project.domain}/${page.section.slug}/${page.displayName}` : null;
+  const mainPage = pathOr({}, ['section', 'mainPage'], page);
+  const pathName =
+    mainPage[PAGE_DISPLAY_NAME] && mainPage.id !== page.id
+      ? `/${mainPage[PAGE_DISPLAY_NAME]}/${page[PAGE_DISPLAY_NAME]}`
+      : `/${page[PAGE_DISPLAY_NAME]}`;
+  const { domain } = project;
+  const pageUrl = domain ? `${domain}${pathName}` : null;
 
   const { handleSubmit, isValid, dirty, values, setValues, setFieldValue, ...restFormikProps } = useFormik({
     initialValues,

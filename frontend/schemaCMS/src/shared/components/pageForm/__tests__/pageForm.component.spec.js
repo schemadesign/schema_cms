@@ -110,13 +110,17 @@ describe('PageForm: Component', () => {
         description: 'description',
         displayName: 'page-name',
         deleteBlocks: [],
+        id: 1,
         isPublic: false,
         keywords: 'keyword;',
         name: 'page name',
         section: {
           id: 'sectionId',
           title: 'Section',
-          slug: 'section-slug',
+          mainPage: {
+            displayName: 'page-name-2',
+            id: 2,
+          },
         },
         template: 1,
       },

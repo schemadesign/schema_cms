@@ -1,4 +1,5 @@
 import { SECTIONS_MAIN_PAGE, SECTIONS_NAME, SECTIONS_PUBLISH } from './sections.constants';
+import { PAGE_DISPLAY_NAME } from '../page/page.constants';
 
 export const section = {
   id: 1,
@@ -12,6 +13,7 @@ export const section = {
       name: 'page name',
       id: 1,
       templateName: 'templateName',
+      [PAGE_DISPLAY_NAME]: 'page-name',
     },
     {
       createdBy: 'owner',
