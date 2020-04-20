@@ -68,16 +68,13 @@ export const Page = ({ created, createdBy, name, id, templateName, mainPage, set
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
   const active = mainPage === id;
+  const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
 
   const header = (
     <CardHeader
       list={list}
       icon={
-        <HomeIcon
-          id={`homeIcon-${index}`}
-          customStyles={getCustomHomeIconStyles({ active })}
-          onClick={() => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id)}
-        />
+        <HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />
       }
     />
   );

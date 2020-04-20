@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { always, not, isNil } from 'ramda';
 
 import { HeaderItem, HeaderList, Header, HeaderIcon } from './cardHeader.styles';
+import { renderWhenTrue } from '../../utils/rendering';
 
 export const CardHeader = ({ list, icon }) => {
+  const renderIcon = renderWhenTrue(always(<HeaderIcon>{icon}</HeaderIcon>));
+
   return (
     <Header>
       <HeaderList>
@@ -13,7 +17,7 @@ export const CardHeader = ({ list, icon }) => {
           </HeaderItem>
         ))}
       </HeaderList>
-      {icon ? <HeaderIcon>{icon}</HeaderIcon> : null}
+      {renderIcon(not(isNil(icon)))}
     </Header>
   );
 };
