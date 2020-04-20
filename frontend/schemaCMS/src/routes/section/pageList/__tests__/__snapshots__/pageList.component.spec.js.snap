@@ -919,7 +919,7 @@ exports[`PageList: Component should render correctly 1`] = `
                       "cursor": "pointer",
                       "fill": "#FFF",
                       "height": "20px",
-                      "opacity": 0.3,
+                      "opacity": 1,
                       "width": "20px",
                     }
                   }
@@ -1080,6 +1080,7 @@ exports[`PageList: Component should render correctly 1`] = `
         >
           <div>
             <input
+              checked={true}
               id="isPublic"
               onChange={[Function]}
               style={
@@ -1100,7 +1101,7 @@ exports[`PageList: Component should render correctly 1`] = `
               <div
                 style={
                   Object {
-                    "background": "#2F2F36",
+                    "background": "#71737e",
                     "borderRadius": 20,
                     "boxSizing": "border-box",
                     "cursor": "pointer",
@@ -1117,7 +1118,7 @@ exports[`PageList: Component should render correctly 1`] = `
                       "background": "#FFF",
                       "borderRadius": "50%",
                       "height": 20,
-                      "transform": "translateX(0)",
+                      "transform": "translateX(20px)",
                       "transition": "transform 200ms ease-in-out",
                       "width": 20,
                     }
@@ -1138,7 +1139,7 @@ exports[`PageList: Component should render correctly 1`] = `
             <span
               className="sc-fznMnq hcbuzG"
             >
-              This Section is currently Private
+              This Section is currently Public
               <span
                 className="sc-fzoJMP eCCpIs"
               />
