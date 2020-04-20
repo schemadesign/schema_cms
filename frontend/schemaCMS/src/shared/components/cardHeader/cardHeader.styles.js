@@ -20,3 +20,12 @@ export const HeaderItem = styled.li`
     padding: 0 7px;
   }
 `;
+
+export const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const HeaderIcon = styled.div``;
