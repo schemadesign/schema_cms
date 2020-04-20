@@ -19,53 +19,141 @@ exports[`DataSource: Component should render correctly 1`] = `
         to="path/source"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "WithTheme(WithFormik(Source))",
+              "render": [Function],
+            },
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(WithTheme(WithFormik(Source)))))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/source"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "WithTheme(JobList)",
+              "render": [Function],
+            },
+            "compare": null,
+            "displayName": "Connect(withRouter(WithTheme(JobList)))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/job"
       />
       <Switch>
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(Fields)))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/preview"
         />
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(DataWranglingScripts)))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/steps"
         />
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(CreateFilter)))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/filters/add"
         />
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(Filters)))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/filters"
         />
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(DataWranglingResult)))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/result"
         />
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(DataSourceTags)))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/tag"
         />
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(WithFormik(CreateDataSourceTag))))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/tag/add"
         />
         <Route
-          component={[Function]}
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(injectIntl(withRouter(NotFound)))",
+              "type": [Function],
+            }
+          }
           exact={true}
           path="path/*"
         />
@@ -94,12 +182,36 @@ exports[`DataSource: Component should render without rest steps 1`] = `
         to="path/source"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "WithTheme(WithFormik(Source))",
+              "render": [Function],
+            },
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(WithTheme(WithFormik(Source)))))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/source"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "WithTheme(JobList)",
+              "render": [Function],
+            },
+            "compare": null,
+            "displayName": "Connect(withRouter(WithTheme(JobList)))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/job"
       />
@@ -131,12 +243,36 @@ exports[`DataSource: Component should render without routing 1`] = `
         to="path/source"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "WithTheme(WithFormik(Source))",
+              "render": [Function],
+            },
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(WithTheme(WithFormik(Source)))))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/source"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "WithTheme(JobList)",
+              "render": [Function],
+            },
+            "compare": null,
+            "displayName": "Connect(withRouter(WithTheme(JobList)))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/job"
       />

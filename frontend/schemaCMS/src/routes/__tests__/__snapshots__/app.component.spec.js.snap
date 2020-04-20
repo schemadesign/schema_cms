@@ -21,10 +21,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
     <ThemeProvider
       theme={
         Object {
-          "accordion": Object {
-            "background": "#FFF",
-            "border": "#000",
-          },
           "background": "#FFF",
           "border": "#f0efef",
           "breadcrumbs": Object {
@@ -192,10 +188,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
       <ThemeProvider
         theme={
           Object {
-            "accordion": Object {
-              "background": "#FFF",
-              "border": "#000",
-            },
             "background": "#FFF",
             "border": "#f0efef",
             "breadcrumbs": Object {
@@ -415,10 +407,6 @@ exports[`App: Component should render App when language is set 1`] = `
     <ThemeProvider
       theme={
         Object {
-          "accordion": Object {
-            "background": "#FFF",
-            "border": "#000",
-          },
           "background": "#FFF",
           "border": "#f0efef",
           "breadcrumbs": Object {
@@ -586,10 +574,6 @@ exports[`App: Component should render App when language is set 1`] = `
       <ThemeProvider
         theme={
           Object {
-            "accordion": Object {
-              "background": "#FFF",
-              "border": "#000",
-            },
             "background": "#FFF",
             "border": "#f0efef",
             "breadcrumbs": Object {

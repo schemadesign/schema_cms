@@ -3,7 +3,15 @@
 exports[`User: Component should render correctly 1`] = `
 <Switch>
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(List))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/user"
   />
@@ -23,7 +31,15 @@ exports[`User: Component should render correctly 1`] = `
     to="/settings"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(View))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/user/:userId"
   />
@@ -33,7 +49,15 @@ exports[`User: Component should render correctly 1`] = `
 exports[`User: Component should render correctly with project id 1`] = `
 <Switch>
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(List))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/user/1/add"
   />
@@ -53,7 +77,15 @@ exports[`User: Component should render correctly with project id 1`] = `
     to="/settings"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(View))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/user/1/add/:userId"
   />

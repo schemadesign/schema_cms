@@ -19,27 +19,67 @@ exports[`ProjectState: Component should render correctly 1`] = `
         to="path/edit"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(WithFormik(Edit))))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/edit"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(WithFormik(StateTag))))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/tags"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(WithFormik(StateFilterList))))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/filters"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(WithFormik(StateFilter))))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/filter/:filterId"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(injectIntl(withRouter(NotFound)))",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="path/*"
       />

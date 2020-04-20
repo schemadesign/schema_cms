@@ -3,92 +3,240 @@
 exports[`Project: Component should render correctly 1`] = `
 <Switch>
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(CreateDataSource)))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/datasource/add"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(injectIntl(WithFormik(Create))))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/create/"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(List)))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "WithTheme(DataSourceList)",
+          "render": [Function],
+        },
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(WithTheme(DataSourceList))))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/datasource"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(WithFormik(View))))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(UserList)))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/user"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(AddUser)))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/user/add"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(UserDetails))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/user/:userId"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(Content))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/content"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(ProjectStateList)))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/state"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(WithFormik(CreateProjectState))))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/state/create"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(Templates)))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/templates"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(BlockTemplates))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/block-templates"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(CreateBlockTemplate))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/block-templates/create"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(PageTemplates))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/page-templates"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(CreatePageTemplate))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/page-templates/create"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(withRouter(CreateSection))",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/project/:projectId/section/create"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(injectIntl(withRouter(NotFound)))",
+        "type": [Function],
+      }
+    }
     path="*"
   />
 </Switch>

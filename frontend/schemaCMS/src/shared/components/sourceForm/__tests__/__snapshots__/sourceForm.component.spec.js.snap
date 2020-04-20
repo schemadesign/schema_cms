@@ -23,10 +23,6 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     onChange={[Function]}
     theme={
       Object {
-        "accordion": Object {
-          "background": "#000",
-          "border": "#FFF",
-        },
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
@@ -278,10 +274,6 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     placeholder="Select file or Drag and Drop it here"
     theme={
       Object {
-        "accordion": Object {
-          "background": "#000",
-          "border": "#FFF",
-        },
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
@@ -486,10 +478,6 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     onChange={[Function]}
     theme={
       Object {
-        "accordion": Object {
-          "background": "#000",
-          "border": "#FFF",
-        },
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
@@ -741,10 +729,6 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     placeholder="Select file or Drag and Drop it here"
     theme={
       Object {
-        "accordion": Object {
-          "background": "#000",
-          "border": "#FFF",
-        },
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
