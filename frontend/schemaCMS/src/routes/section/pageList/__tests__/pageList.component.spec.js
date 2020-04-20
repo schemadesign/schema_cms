@@ -1,9 +1,10 @@
 import React from 'react';
 import { act } from 'react-test-renderer';
 
-import { PageList } from '../pageList.component';
+import { PageList, Page } from '../pageList.component';
 import { defaultProps } from '../pageList.stories';
 import { makeContextRenderer } from '../../../../shared/utils/testUtils';
+import { section } from '../../../../modules/sections/sections.mocks';
 
 const mockPushHistory = jest.fn();
 
@@ -51,6 +52,36 @@ describe('PageList: Component', () => {
     wrapper.root.findByProps({ id: 'page-1' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/page/1');
+  });
+
+  it('should set main page', async () => {
+    const props = {
+      ...section.pages[0],
+      setFieldValue: Function.prototype,
+      mainPage: null,
+      index: 1,
+    };
+
+    jest.spyOn(props, 'setFieldValue');
+    const wrapper = await makeContextRenderer(<Page {...props} />);
+    wrapper.root.findByProps({ id: 'homeIcon-1' }).props.onClick();
+
+    expect(props.setFieldValue).toHaveBeenCalledWith('mainPage', 1);
+  });
+
+  it('should unset main page', async () => {
+    const props = {
+      ...section.pages[0],
+      setFieldValue: Function.prototype,
+      mainPage: 1,
+      index: 1,
+    };
+
+    jest.spyOn(props, 'setFieldValue');
+    const wrapper = await makeContextRenderer(<Page {...props} />);
+    wrapper.root.findByProps({ id: 'homeIcon-1' }).props.onClick();
+
+    expect(props.setFieldValue).toHaveBeenCalledWith('mainPage', null);
   });
 
   it('should remove page and redirect to content', async () => {

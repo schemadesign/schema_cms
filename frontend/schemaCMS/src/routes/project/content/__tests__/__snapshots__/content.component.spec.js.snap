@@ -517,21 +517,21 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoKki ejIlnK"
+    className="sc-fzpkJw kLVpQa"
   >
     <div
-      className="sc-fzoYkl bMoycm"
+      className="sc-fznzOf iwqDEW"
     />
     2 sections
     <div
-      className="sc-fzoYkl bMoycm"
+      className="sc-fznzOf iwqDEW"
     />
   </div>
   <section
-    className="sc-fzoxKX YTTNi"
+    className="sc-fzoYkl gNiAub"
   >
     <div
-      className="sc-fznWOq hnwMwY"
+      className="sc-fzqBkg chLNes"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -563,25 +563,29 @@ exports[`Content: Component should render correctly 1`] = `
             }
           }
         >
-          <ul
-            className="sc-fznxKY jxHxCX"
+          <div
+            className="sc-fznWOq cjpfKL"
           >
-            <li
-              className="sc-fznMAR TxlEV"
-              id="headerItem-0"
+            <ul
+              className="sc-fznxKY jxHxCX"
             >
-              in 3 months
-            </li>
-            <li
-              className="sc-fznMAR TxlEV"
-              id="headerItem-1"
-            >
-              owner
-            </li>
-          </ul>
+              <li
+                className="sc-fznMAR TxlEV"
+                id="headerItem-0"
+              >
+                in 3 months
+              </li>
+              <li
+                className="sc-fznMAR TxlEV"
+                id="headerItem-1"
+              >
+                owner
+              </li>
+            </ul>
+          </div>
         </div>
         <h1
-          className="sc-fzolEj fqmDSd"
+          className="sc-fzqPZZ gKhhY"
           id="section-1"
           onClick={[Function]}
           style={
@@ -611,7 +615,7 @@ exports[`Content: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fznWOq hnwMwY"
+      className="sc-fzqBkg chLNes"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -643,25 +647,29 @@ exports[`Content: Component should render correctly 1`] = `
             }
           }
         >
-          <ul
-            className="sc-fznxKY jxHxCX"
+          <div
+            className="sc-fznWOq cjpfKL"
           >
-            <li
-              className="sc-fznMAR TxlEV"
-              id="headerItem-0"
+            <ul
+              className="sc-fznxKY jxHxCX"
             >
-              in 3 months
-            </li>
-            <li
-              className="sc-fznMAR TxlEV"
-              id="headerItem-1"
-            >
-              owner 2
-            </li>
-          </ul>
+              <li
+                className="sc-fznMAR TxlEV"
+                id="headerItem-0"
+              >
+                in 3 months
+              </li>
+              <li
+                className="sc-fznMAR TxlEV"
+                id="headerItem-1"
+              >
+                owner 2
+              </li>
+            </ul>
+          </div>
         </div>
         <h1
-          className="sc-fzolEj fqmDSd"
+          className="sc-fzqPZZ gKhhY"
           id="section-2"
           onClick={[Function]}
           style={

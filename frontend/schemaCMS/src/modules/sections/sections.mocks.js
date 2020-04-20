@@ -1,6 +1,8 @@
+import { SECTIONS_MAIN_PAGE, SECTIONS_NAME, SECTIONS_PUBLISH } from './sections.constants';
+
 export const section = {
   id: 1,
-  name: 'Section name',
+  [SECTIONS_NAME]: 'Section name',
   slug: 'section-name',
   createdBy: 'owner',
   pages: [
@@ -20,7 +22,8 @@ export const section = {
     },
   ],
   pagesCount: 1,
-  isPublish: true,
+  [SECTIONS_PUBLISH]: true,
+  [SECTIONS_MAIN_PAGE]: 1,
   created: '2020-03-09T10:41:17+0000',
 };
 
@@ -28,12 +31,13 @@ export const sections = [
   section,
   {
     id: 2,
-    name: 'Section name 2',
+    [SECTIONS_NAME]: 'Section name 2',
     slug: 'section-name-2',
     createdBy: 'owner 2',
     pages: [],
     pagesCount: 0,
-    isPublish: false,
+    [SECTIONS_PUBLISH]: false,
+    [SECTIONS_MAIN_PAGE]: null,
     created: '2020-03-09T10:41:17+0000',
   },
 ];

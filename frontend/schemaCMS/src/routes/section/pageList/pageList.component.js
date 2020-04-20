@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import { pick } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
-import { Container, Form } from './pageList.styles';
+import { Container, Form, getCustomHomeIconStyles } from './pageList.styles';
 import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
@@ -25,7 +25,12 @@ import { CounterHeader } from '../../../shared/components/counterHeader';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { CardHeader } from '../../../shared/components/cardHeader';
-import { SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_SCHEMA } from '../../../modules/sections/sections.constants';
+import {
+  SECTIONS_MAIN_PAGE,
+  SECTIONS_NAME,
+  SECTIONS_PUBLISH,
+  SECTIONS_SCHEMA,
+} from '../../../modules/sections/sections.constants';
 import {
   AvailableCopy,
   BinIconContainer,
@@ -54,15 +59,25 @@ import {
   sectionMessage,
 } from '../../../shared/components/projectBreadcrumbs';
 
-const { EditIcon, MinusIcon } = Icons;
+const { EditIcon, MinusIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
 
-const Page = ({ created, createdBy, name, id, templateName }) => {
+export const Page = ({ created, createdBy, name, id, templateName, mainPage, setFieldValue, index }) => {
   const history = useHistory();
   const intl = useIntl();
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
-  const header = <CardHeader list={list} />;
+  const active = mainPage === id;
+  const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
+
+  const header = (
+    <CardHeader
+      list={list}
+      icon={
+        <HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />
+      }
+    />
+  );
 
   return (
     <ListItem headerComponent={header} footerComponent={templateName || intl.formatMessage(messages.blankTemplate)}>
@@ -71,6 +86,17 @@ const Page = ({ created, createdBy, name, id, templateName }) => {
       </ListItemTitle>
     </ListItem>
   );
+};
+
+Page.propTypes = {
+  created: PropTypes.string.isRequired,
+  createdBy: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  templateName: PropTypes.string,
+  setFieldValue: PropTypes.func.isRequired,
+  mainPage: PropTypes.number,
+  index: PropTypes.number.isRequired,
 };
 
 const getBreadcrumbsItems = (project, { id, name }) => [
@@ -92,14 +118,6 @@ const getBreadcrumbsItems = (project, { id, name }) => [
   },
 ];
 
-Page.propTypes = {
-  created: PropTypes.string.isRequired,
-  createdBy: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  templateName: PropTypes.string,
-};
-
 export const PageList = ({
   section,
   project: { id: projectId, title: projectTitle, domain },
@@ -119,7 +137,7 @@ export const PageList = ({
   const menuOptions = getProjectMenuOptions(projectId);
   const visitPage = `${domain}/section/${slug}`;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH], section),
+    initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_MAIN_PAGE], section),
     enableReinitialize: true,
     validationSchema: () => SECTIONS_SCHEMA,
     onSubmit: async (formData, { setErrors }) => {
@@ -208,7 +226,13 @@ export const PageList = ({
         />
         <ListContainer>
           {pages.map((page, index) => (
-            <Page key={index} {...page} />
+            <Page
+              key={index}
+              index={index}
+              mainPage={values[SECTIONS_MAIN_PAGE]}
+              setFieldValue={restFormikProps.setFieldValue}
+              {...page}
+            />
           ))}
         </ListContainer>
         <Switches>

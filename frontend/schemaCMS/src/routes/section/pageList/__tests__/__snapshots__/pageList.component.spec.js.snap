@@ -350,7 +350,7 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznAgC cBHJpy"
+    className="sc-fzoaKM feXNyN"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzqAui ftZhkp"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzqAui ftZhkp"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznLPX dCkfEv"
+          className="sc-fzomuh guXnuO"
         >
           <span
             style={
@@ -551,10 +551,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fznzOf hHLtGv"
+            className="sc-fzoant dTEWou"
           >
             <div
-              className="sc-fzoJMP fHvuaW"
+              className="sc-fzpkqZ hAOKze"
             >
               <div
                 style={
@@ -630,7 +630,7 @@ exports[`PageList: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fznMnq ndpwK"
+              className="sc-fzomME BFkAs"
             >
               <svg
                 style={
@@ -702,10 +702,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoant eATJhY"
+      className="sc-fzqAbL bfNtLq"
     >
       <div
-        className="sc-fzoJMP jfUuVM"
+        className="sc-fzpkqZ iKrrxE"
       >
         <div
           style={
@@ -769,7 +769,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoYHE eyRgUq"
+              className="sc-fznAgC cmiBai"
             >
               <svg
                 style={
@@ -802,7 +802,7 @@ exports[`PageList: Component should render correctly 1`] = `
         className="sc-fzqNqU ixLxBI"
       >
         <div
-          className="sc-fzqAbL gpfNls"
+          className="sc-fzoydu jsupuh"
         >
           <div
             className="sc-fzoXzr kOFMDA"
@@ -889,22 +889,48 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            <ul
-              className="sc-fznMAR dwokPX"
+            <div
+              className="sc-fzolEj grkndc"
             >
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-0"
+              <ul
+                className="sc-fznMAR dwokPX"
               >
-                in 3 months
-              </li>
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-1"
+                <li
+                  className="sc-fznWOq frgEXS"
+                  id="headerItem-0"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="sc-fznWOq frgEXS"
+                  id="headerItem-1"
+                >
+                  owner
+                </li>
+              </ul>
+              <div
+                className="sc-fzqBkg cifTAZ"
               >
-                owner
-              </li>
-            </ul>
+                <svg
+                  id="homeIcon-0"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "fill": "#FFF",
+                      "height": "20px",
+                      "opacity": 1,
+                      "width": "20px",
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
           <h1
             className="sc-fzoNJl iNXeca"
@@ -969,22 +995,48 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            <ul
-              className="sc-fznMAR dwokPX"
+            <div
+              className="sc-fzolEj grkndc"
             >
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-0"
+              <ul
+                className="sc-fznMAR dwokPX"
               >
-                in 3 months
-              </li>
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-1"
+                <li
+                  className="sc-fznWOq frgEXS"
+                  id="headerItem-0"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="sc-fznWOq frgEXS"
+                  id="headerItem-1"
+                >
+                  owner
+                </li>
+              </ul>
+              <div
+                className="sc-fzqBkg cifTAZ"
               >
-                owner
-              </li>
-            </ul>
+                <svg
+                  id="homeIcon-1"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "fill": "#FFF",
+                      "height": "20px",
+                      "opacity": 0.3,
+                      "width": "20px",
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
           <h1
             className="sc-fzoNJl iNXeca"
@@ -1018,16 +1070,17 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </section>
     <div
-      className="sc-fzolEj dlYndn"
+      className="sc-fzqPZZ eYLLnG"
     >
       <div
-        className="sc-fzqBkg ihOeGn"
+        className="sc-fzoxKX emUUPI"
       >
         <div
-          className="sc-fzoKki itZfIL"
+          className="sc-fzpkJw fkIOqD"
         >
           <div>
             <input
+              checked={true}
               id="isPublic"
               onChange={[Function]}
               style={
@@ -1048,7 +1101,7 @@ exports[`PageList: Component should render correctly 1`] = `
               <div
                 style={
                   Object {
-                    "background": "#2F2F36",
+                    "background": "#71737e",
                     "borderRadius": 20,
                     "boxSizing": "border-box",
                     "cursor": "pointer",
@@ -1065,7 +1118,7 @@ exports[`PageList: Component should render correctly 1`] = `
                       "background": "#FFF",
                       "borderRadius": "50%",
                       "height": 20,
-                      "transform": "translateX(0)",
+                      "transform": "translateX(20px)",
                       "transition": "transform 200ms ease-in-out",
                       "width": 20,
                     }
@@ -1075,20 +1128,20 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fzoxKX cNtqKp"
+            className="sc-fzoYkl fyQALM"
           >
             <label
-              className="sc-fzqPZZ gXaiqb"
+              className="sc-fzoKki jA-DpxQ"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-fzpkJw hNiUxI"
+              className="sc-fznMnq hcbuzG"
             >
-              This Section is currently Private
+              This Section is currently Public
               <span
-                className="sc-fzqMAW buCTvK"
+                className="sc-fzoJMP eCCpIs"
               />
               Visit Page: 
               <a
@@ -1100,7 +1153,7 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzoYkl bpeDsJ"
+          className="sc-fznzOf eCsiAV"
           id="removeSection"
           onClick={[Function]}
         >

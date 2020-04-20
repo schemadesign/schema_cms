@@ -350,7 +350,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqPZZ kPklAg"
+    className="sc-fzoKki fIgmuj"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoKki jROJHP"
+          className="sc-fzpkJw eApjBb"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoKki jROJHP"
+          className="sc-fzpkJw eApjBb"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoxKX kppKrF"
+          className="sc-fzoYkl hIOqjs"
         >
           <span
             style={
@@ -599,14 +599,14 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzolEj eCJLaI"
+    className="sc-fzqPZZ dYZeMh"
   >
     <div
-      className="sc-fzqBkg iunxDM"
+      className="sc-fzoxKX iTjTnT"
     />
     3 Block Templates
     <div
-      className="sc-fzqBkg iunxDM"
+      className="sc-fzoxKX iTjTnT"
     />
   </div>
   <section
@@ -645,22 +645,26 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             }
           }
         >
-          <ul
-            className="sc-fznMAR dwokPX"
+          <div
+            className="sc-fzolEj grkndc"
           >
-            <li
-              className="sc-fznWOq frgEXS"
-              id="headerItem-0"
+            <ul
+              className="sc-fznMAR dwokPX"
             >
-              in 3 months
-            </li>
-            <li
-              className="sc-fznWOq frgEXS"
-              id="headerItem-1"
-            >
-              owner
-            </li>
-          </ul>
+              <li
+                className="sc-fznWOq frgEXS"
+                id="headerItem-0"
+              >
+                in 3 months
+              </li>
+              <li
+                className="sc-fznWOq frgEXS"
+                id="headerItem-1"
+              >
+                owner
+              </li>
+            </ul>
+          </div>
         </div>
         <h1
           className="sc-fzoNJl iNXeca"
@@ -725,22 +729,26 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             }
           }
         >
-          <ul
-            className="sc-fznMAR dwokPX"
+          <div
+            className="sc-fzolEj grkndc"
           >
-            <li
-              className="sc-fznWOq frgEXS"
-              id="headerItem-0"
+            <ul
+              className="sc-fznMAR dwokPX"
             >
-              in 3 months
-            </li>
-            <li
-              className="sc-fznWOq frgEXS"
-              id="headerItem-1"
-            >
-              owner 2
-            </li>
-          </ul>
+              <li
+                className="sc-fznWOq frgEXS"
+                id="headerItem-0"
+              >
+                in 3 months
+              </li>
+              <li
+                className="sc-fznWOq frgEXS"
+                id="headerItem-1"
+              >
+                owner 2
+              </li>
+            </ul>
+          </div>
         </div>
         <h1
           className="sc-fzoNJl iNXeca"
@@ -805,22 +813,26 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             }
           }
         >
-          <ul
-            className="sc-fznMAR dwokPX"
+          <div
+            className="sc-fzolEj grkndc"
           >
-            <li
-              className="sc-fznWOq frgEXS"
-              id="headerItem-0"
+            <ul
+              className="sc-fznMAR dwokPX"
             >
-              in 3 months
-            </li>
-            <li
-              className="sc-fznWOq frgEXS"
-              id="headerItem-1"
-            >
-              owner 3
-            </li>
-          </ul>
+              <li
+                className="sc-fznWOq frgEXS"
+                id="headerItem-0"
+              >
+                in 3 months
+              </li>
+              <li
+                className="sc-fznWOq frgEXS"
+                id="headerItem-1"
+              >
+                owner 3
+              </li>
+            </ul>
+          </div>
         </div>
         <h1
           className="sc-fzoNJl iNXeca"
