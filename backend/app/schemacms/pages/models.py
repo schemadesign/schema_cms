@@ -136,6 +136,7 @@ class PageBlockElement(Element):
     block = models.ForeignKey(PageBlock, on_delete=models.CASCADE, related_name="elements")
     markdown = models.TextField(blank=True, default="")
     connection = models.URLField(blank=True, default="", max_length=1000)
+    internal_connection = models.URLField(blank=True, default="", max_length=1000)
     plain_text = models.TextField(blank=True, default="", max_length=1000)
     code = models.TextField(blank=True, default="", max_length=1000)
     image = models.ImageField(

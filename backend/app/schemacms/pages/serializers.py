@@ -49,6 +49,9 @@ class ElementValueField(serializers.Field):
         if self.type == constants.ElementType.CONNECTION:
             self.validate_url_type(data)
 
+        if self.type == constants.ElementType.INTERNAL_CONNECTION:
+            self.validate_url_type(data)
+
         return data
 
     @staticmethod
