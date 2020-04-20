@@ -13,6 +13,7 @@ import { reducer as projectStateReducer } from './projectState/projectState.redu
 import { reducer as blockTemplatesReducer } from './blockTemplates/blockTemplates.redux';
 import { reducer as pageTemplatesReducer } from './pageTemplates/pageTemplates.redux';
 import { reducer as sectionsReducer } from './sections/sections.redux';
+import { reducer as previewLinkReducer } from './previewLink/previewLink.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -32,6 +33,7 @@ export default function createReducer() {
     blockTemplates: blockTemplatesReducer,
     pageTemplates: pageTemplatesReducer,
     sections: sectionsReducer,
+    previewLink: previewLinkReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

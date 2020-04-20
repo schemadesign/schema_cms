@@ -13,8 +13,8 @@ export const defaultProps = {
   },
   userRole: ROLES.ADMIN,
   updateBlockTemplate: Function.prototype,
-  fetchBlockTemplate: jest.fn().mockReturnValue(Promise.resolve({ project: 'projectId' })),
-  removeBlockTemplate: jest.fn().mockReturnValue(Promise.resolve({})),
+  fetchBlockTemplate: () => Promise.resolve({ project: 'projectId' }),
+  removeBlockTemplate: () => Promise.resolve({}),
 };
 
 storiesOf('BlockTemplate', module)

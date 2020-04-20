@@ -15,9 +15,9 @@ export const defaultProps = {
   },
   userRole: ROLES.ADMIN,
   updatePageTemplate: Function.prototype,
-  fetchPageTemplate: jest.fn().mockReturnValue(Promise.resolve({ project: 'projectId' })),
+  fetchPageTemplate: () => Promise.resolve({ project: 'projectId' }),
   fetchBlockTemplates: Function.prototype,
-  removePageTemplate: jest.fn().mockReturnValue(Promise.resolve({})),
+  removePageTemplate: () => Promise.resolve({}),
 };
 
 storiesOf('PageTemplate', module)

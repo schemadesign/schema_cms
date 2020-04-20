@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkPreview: Component should render correctly 1`] = `
+<div
+  className="sc-AxjAm StDqN"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "maxWidth": "320px",
+        "paddingBottom": "30px",
+        "position": "relative",
+      }
+    }
+  >
+    <input
+      id="LINK-PREVIEW"
+      name="LINK-PREVIEW"
+      onChange={[Function]}
+      placeholder="Add your link here"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "color": "#FFF",
+          "fontFamily": "inherit",
+          "fontSize": "18px",
+          "fontWeight": "inherit",
+          "letterSpacing": "normal",
+          "lineHeight": "24px",
+          "maxWidth": "100%",
+          "minWidth": 60,
+          "outline": "none",
+          "padding": 0,
+        }
+      }
+      type="text"
+    />
+    <div
+      style={
+        Object {
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
