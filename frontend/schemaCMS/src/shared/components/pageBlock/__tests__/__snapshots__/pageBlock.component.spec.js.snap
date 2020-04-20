@@ -172,7 +172,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
     style={
       Object {
         "backgroundColor": "#000",
-        "height": 0,
+        "height": "auto",
         "transition": "height 200ms linear, overflow 0s linear 200ms",
       }
     }
@@ -268,7 +268,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#000",
-              "height": 0,
+              "height": "auto",
               "transition": "height 200ms linear, overflow 0s linear 200ms",
             }
           }
@@ -461,7 +461,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#000",
-              "height": 0,
+              "height": "auto",
               "transition": "height 200ms linear, overflow 0s linear 200ms",
             }
           }

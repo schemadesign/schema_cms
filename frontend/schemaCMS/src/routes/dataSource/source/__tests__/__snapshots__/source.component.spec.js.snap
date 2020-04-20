@@ -173,6 +173,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       setFieldValue={[Function]}
       theme={
         Object {
+          "accordion": Object {
+            "background": "#000",
+            "border": "#FFF",
+          },
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
@@ -384,6 +388,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       setFieldValue={[Function]}
       theme={
         Object {
+          "accordion": Object {
+            "background": "#000",
+            "border": "#FFF",
+          },
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
@@ -636,6 +644,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     setFieldValue={[Function]}
     theme={
       Object {
+        "accordion": Object {
+          "background": "#000",
+          "border": "#FFF",
+        },
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {
@@ -1121,6 +1133,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       setFieldValue={[Function]}
       theme={
         Object {
+          "accordion": Object {
+            "background": "#000",
+            "border": "#FFF",
+          },
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
@@ -1329,6 +1345,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       setFieldValue={[Function]}
       theme={
         Object {
+          "accordion": Object {
+            "background": "#000",
+            "border": "#FFF",
+          },
           "background": "#000",
           "border": "#2F2F36",
           "breadcrumbs": Object {
@@ -1557,6 +1577,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     setFieldValue={[Function]}
     theme={
       Object {
+        "accordion": Object {
+          "background": "#000",
+          "border": "#FFF",
+        },
         "background": "#000",
         "border": "#2F2F36",
         "breadcrumbs": Object {

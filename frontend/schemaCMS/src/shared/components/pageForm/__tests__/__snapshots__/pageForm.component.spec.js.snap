@@ -909,7 +909,7 @@ exports[`PageForm: Component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#000",
-              "height": 0,
+              "height": "auto",
               "transition": "height 200ms linear, overflow 0s linear 200ms",
             }
           }
@@ -1005,7 +1005,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#000",
-                    "height": 0,
+                    "height": "auto",
                     "transition": "height 200ms linear, overflow 0s linear 200ms",
                   }
                 }
@@ -1199,7 +1199,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#000",
-                    "height": 0,
+                    "height": "auto",
                     "transition": "height 200ms linear, overflow 0s linear 200ms",
                   }
                 }
@@ -2381,7 +2381,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
           style={
             Object {
               "backgroundColor": "#000",
-              "height": 0,
+              "height": "auto",
               "transition": "height 200ms linear, overflow 0s linear 200ms",
             }
           }
@@ -2477,7 +2477,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#000",
-                    "height": 0,
+                    "height": "auto",
                     "transition": "height 200ms linear, overflow 0s linear 200ms",
                   }
                 }
@@ -2671,7 +2671,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                 style={
                   Object {
                     "backgroundColor": "#000",
-                    "height": 0,
+                    "height": "auto",
                     "transition": "height 200ms linear, overflow 0s linear 200ms",
                   }
                 }
