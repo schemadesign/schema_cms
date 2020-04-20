@@ -438,8 +438,17 @@ class SectionPageListView(CustomModelSerializer):
         return None
 
 
+class MainPageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Page
+        fields = ("id", "name", "display_name")
+
+
 class SectionDetailSerializer(CustomModelSerializer):
     pages = SectionPageListView(read_only=True, many=True)
+    main_page = NestedRelatedModelSerializer(
+        serializer=MainPageSerializer(), queryset=models.Page.objects.all()
+    )
 
     class Meta:
         model = models.Section
