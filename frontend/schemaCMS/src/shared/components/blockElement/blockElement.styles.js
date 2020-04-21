@@ -48,3 +48,8 @@ export const editIconStyles = {
   right: 5,
   top: 5,
 };
+
+export const getCustomSelectedWrapperStyles = theme => ({
+  backgroundColor: theme.secondaryText,
+  padding: '20px 10px',
+});

@@ -14,6 +14,7 @@ export class SelectComponent extends PureComponent {
     placeholder: PropTypes.string,
     open: PropTypes.bool,
     setOpen: PropTypes.func,
+    customSelectedWrapperStyles: PropTypes.object,
   };
 
   static defaultProps = {
@@ -103,7 +104,7 @@ export class SelectComponent extends PureComponent {
   };
 
   renderCustomSelect = ({ selectWrapperStyles, selectedOptionsStyles, optionListStyles, ...restStyles }, props) => {
-    const { id, setOpen } = props;
+    const { id, setOpen, customSelectedWrapperStyles } = props;
     const label = pipe(
       prop('options'),
       find(({ selected }) => selected),
@@ -113,7 +114,10 @@ export class SelectComponent extends PureComponent {
 
     return (
       <div id={id} style={selectWrapperStyles}>
-        <div style={selectedOptionsStyles} onClick={setOpen ? () => {} : this.toggleMenu}>
+        <div
+          style={{ ...selectedOptionsStyles, ...customSelectedWrapperStyles }}
+          onClick={setOpen ? () => {} : this.toggleMenu}
+        >
           {this.renderSelectedOption(restStyles, label)}
         </div>
         <div style={optionListStyles(isMenuOpen)}>

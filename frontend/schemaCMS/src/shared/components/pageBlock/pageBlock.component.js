@@ -19,7 +19,6 @@ export const PageBlock = ({
   draggableIcon,
   handleChange,
   removeBlock,
-  blockTemplates,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -58,7 +57,6 @@ export const PageBlock = ({
               index={index}
               blockPath={blockPath}
               element={element}
-              blockTemplates={blockTemplates}
               handleChange={handleChange}
               {...restFormikProps}
             />
@@ -75,6 +73,5 @@ PageBlock.propTypes = {
   draggableIcon: PropTypes.element,
   removeBlock: PropTypes.func,
   handleChange: PropTypes.func.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   formikFieldPath: PropTypes.string.isRequired,
 };

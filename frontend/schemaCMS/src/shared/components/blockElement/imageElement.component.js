@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { pathOr } from 'ramda';
-
 import { useIntl } from 'react-intl';
 
 import messages from './blockElement.messages';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, getValuePath } from '../../utils/helpers';
+import { IMAGE_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export const ImageElement = ({ blockPath, element, setFieldValue, index, ...restFormikProps }) => {
   const intl = useIntl();
@@ -38,12 +38,13 @@ export const ImageElement = ({ blockPath, element, setFieldValue, index, ...rest
       fileNames={pathOr('', ['value', 'fileName'], element)}
       onChange={handleUploadChange}
       accept=".png, .jpg, .jpeg, .gif"
-      label={intl.formatMessage(messages.image)}
-      placeholder={intl.formatMessage(messages.imagePlaceholder)}
+      label={intl.formatMessage(messages[IMAGE_TYPE])}
+      placeholder={intl.formatMessage(messages[`${IMAGE_TYPE}Placeholder`])}
       {...restFormikProps}
     />
   );
 };
+
 ImageElement.propTypes = {
   element: PropTypes.object.isRequired,
   blockPath: PropTypes.string.isRequired,
