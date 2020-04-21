@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 import { useFormik } from 'formik';
-import { pick } from 'ramda';
+import { pick, propEq, propOr, pipe, find } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
 import { Container, Form, getCustomHomeIconStyles } from './pageList.styles';
@@ -58,6 +58,7 @@ import {
   contentMessage,
   sectionMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import { PAGE_DISPLAY_NAME } from '../../../modules/page/page.constants';
 
 const { EditIcon, MinusIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
@@ -125,7 +126,7 @@ export const PageList = ({
   updateSection,
   userRole,
 }) => {
-  const { pages = [], slug = '' } = section;
+  const { pages = [], mainPage } = section;
   const [updateLoading, setUpdateLoading] = useState(false);
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
@@ -135,7 +136,17 @@ export const PageList = ({
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
-  const visitPage = `${domain}/section/${slug}`;
+  const displayName = pipe(
+    find(propEq('id', mainPage)),
+    propOr('', PAGE_DISPLAY_NAME)
+  )(pages);
+  const pageUrl = `${domain}${displayName ? `/${displayName}` : ''}`;
+  const visitPage = domain ? (
+    <Fragment>
+      <CopySeparator />
+      <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
+    </Fragment>
+  ) : null;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
     initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_MAIN_PAGE], section),
     enableReinitialize: true,
@@ -252,8 +263,7 @@ export const PageList = ({
                       ),
                     }}
                   />
-                  <CopySeparator />
-                  <FormattedMessage {...messages.visitPage} values={{ page: <a href={visitPage}>{visitPage}</a> }} />
+                  {visitPage}
                 </AvailableCopy>
               </SwitchCopy>
             </SwitchContent>

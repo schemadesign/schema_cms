@@ -270,10 +270,20 @@ class PageBlockSerializer(serializers.ModelSerializer):
         return obj.block.name
 
 
+class MainPageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Page
+        fields = ("id", "name", "display_name")
+
+
 class PageSectionSerializer(serializers.ModelSerializer):
+    main_page = NestedRelatedModelSerializer(
+        serializer=MainPageSerializer(), queryset=models.Page.objects.all()
+    )
+
     class Meta:
         model = models.Section
-        fields = ("id", "name")
+        fields = ("id", "name", "main_page")
 
 
 class PageSerializer(CustomModelSerializer):
@@ -428,6 +438,7 @@ class SectionPageListView(CustomModelSerializer):
             "name",
             "created_by",
             "created",
+            "display_name",
         )
 
     def get_template_name(self, page):

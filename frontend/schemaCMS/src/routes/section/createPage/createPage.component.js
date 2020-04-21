@@ -122,7 +122,6 @@ export const CreatePage = ({
         <form onSubmit={handleSubmit}>
           <PageForm
             title={title}
-            project={project}
             pageTemplates={pageTemplates}
             isValid={isValid}
             setFieldValue={setFieldValue}

@@ -20,7 +20,7 @@ export const defaultProps = {
   blockTemplates,
   isValid: true,
   title: 'title',
-  displayName: 'displayName',
+  pageUrl: 'pageUrl',
   project,
 };
 

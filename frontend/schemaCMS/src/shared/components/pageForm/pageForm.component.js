@@ -73,7 +73,7 @@ const { Switch } = Form;
 
 export const PageForm = ({
   title,
-  displayName,
+  pageUrl,
   values,
   handleChange,
   setValues,
@@ -81,7 +81,6 @@ export const PageForm = ({
   pageTemplates,
   blockTemplates,
   setRemoveModalOpen,
-  project: { domain },
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -140,8 +139,7 @@ export const PageForm = ({
       <MinusIcon customStyles={binStyles} />
     </BinIconContainer>
   ) : null;
-  const pageUrl = `${domain}/page/${displayName}`;
-  const visitPage = displayName ? (
+  const visitPage = pageUrl ? (
     <Fragment>
       <CopySeparator />
       <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
@@ -345,11 +343,8 @@ PageForm.propTypes = {
   setValues: PropTypes.func.isRequired,
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
-  project: PropTypes.shape({
-    domain: PropTypes.string.isRequired,
-  }),
   pageTemplates: PropTypes.array.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,
-  displayName: PropTypes.string,
+  pageUrl: PropTypes.string,
 };
