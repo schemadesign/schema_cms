@@ -51,16 +51,7 @@ const getBreadcrumbsItems = (project, { id, name }) => [
   },
 ];
 
-export const CreatePage = ({
-  pageTemplates,
-  userRole,
-  createPage,
-  fetchPageTemplates,
-  blockTemplates,
-  fetchBlockTemplates,
-  project,
-  section,
-}) => {
+export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTemplates, project, section }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -97,7 +88,6 @@ export const CreatePage = ({
     (async () => {
       try {
         await fetchPageTemplates({ projectId });
-        await fetchBlockTemplates({ projectId });
         const { page = {} } = state;
 
         if (is(Number, page[PAGE_TEMPLATE])) {
@@ -127,7 +117,6 @@ export const CreatePage = ({
             setFieldValue={setFieldValue}
             setValues={setValues}
             values={values}
-            blockTemplates={blockTemplates}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -155,7 +144,5 @@ CreatePage.propTypes = {
   createPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   section: PropTypes.object.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
-  fetchBlockTemplates: PropTypes.func.isRequired,
 };

@@ -59,17 +59,7 @@ const getBreadcrumbsItems = (project, section, page) => [
   },
 ];
 
-export const EditPage = ({
-  project,
-  updatePage,
-  page,
-  fetchPageTemplates,
-  fetchBlockTemplates,
-  pageTemplates,
-  userRole,
-  removePage,
-  blockTemplates,
-}) => {
+export const EditPage = ({ project, updatePage, page, fetchPageTemplates, pageTemplates, userRole, removePage }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -129,7 +119,6 @@ export const EditPage = ({
     (async () => {
       try {
         await fetchPageTemplates({ projectId });
-        await fetchBlockTemplates({ projectId });
         const { page = {} } = state;
 
         if (!isEmpty(page)) {
@@ -165,7 +154,6 @@ export const EditPage = ({
             values={values}
             setValues={setValues}
             setFieldValue={setFieldValue}
-            blockTemplates={blockTemplates}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -207,11 +195,9 @@ export const EditPage = ({
 
 EditPage.propTypes = {
   pageTemplates: PropTypes.array.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
   updatePage: PropTypes.func.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
-  fetchBlockTemplates: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
