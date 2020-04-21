@@ -22,6 +22,7 @@ export class SelectComponent extends PureComponent {
     placeholder: '',
     setOpen: null,
     open: null,
+    customSelectedWrapperStyles: {},
   };
 
   state = {

@@ -209,25 +209,6 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
             value={1}
           />
           <div
-            className="sc-fzozJi cFildF"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M15.117 18L9 12h12z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-          <div
             style={
               Object {
                 "color": "#FFF",
@@ -310,6 +291,25 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            className="sc-fzozJi cMTsAG"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15.117 18L9 12h12z"
+                fillRule="evenodd"
+              />
+            </svg>
           </div>
         </div>
       </div>

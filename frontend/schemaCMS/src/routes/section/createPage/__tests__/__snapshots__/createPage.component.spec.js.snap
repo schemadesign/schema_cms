@@ -1047,25 +1047,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
             value={0}
           />
           <div
-            className="sc-fzoiQi iA-dVWt"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M15.117 18L9 12h12z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-          <div
             style={
               Object {
                 "color": "#FFF",
@@ -1188,6 +1169,25 @@ exports[`CreatePage: Component should render correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            className="sc-fzoiQi dwYCde"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15.117 18L9 12h12z"
+                fillRule="evenodd"
+              />
+            </svg>
           </div>
         </div>
       </div>
