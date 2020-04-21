@@ -15,7 +15,7 @@ import { UserContext } from './userProvider';
 
 const { store } = configureStore({});
 
-const ProvidersWrapper = ({ children }) => (
+export const ProvidersWrapper = ({ children }) => (
   <Provider store={store}>
     <Router history={browserHistory}>
       <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
