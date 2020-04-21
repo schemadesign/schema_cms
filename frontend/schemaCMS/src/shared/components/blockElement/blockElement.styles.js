@@ -18,6 +18,10 @@ export const Header = styled.div`
 
 export const Name = styled.div``;
 
+export const SelectLabel = styled.div`
+  white-space: pre;
+`;
+
 export const InputContainer = styled.div`
   position: relative;
   padding-bottom: 30px;

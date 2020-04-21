@@ -15,6 +15,7 @@ const { EditIcon, MinusIcon } = Icons;
 export const PageBlock = ({
   index,
   block,
+  pagerUrlOptions,
   formikFieldPath,
   draggableIcon,
   handleChange,
@@ -58,6 +59,7 @@ export const PageBlock = ({
               blockPath={blockPath}
               element={element}
               handleChange={handleChange}
+              pagerUrlOptions={pagerUrlOptions}
               {...restFormikProps}
             />
           ))}
@@ -70,6 +72,7 @@ export const PageBlock = ({
 PageBlock.propTypes = {
   index: PropTypes.number.isRequired,
   block: PropTypes.object.isRequired,
+  pagerUrlOptions: PropTypes.array.isRequired,
   draggableIcon: PropTypes.element,
   removeBlock: PropTypes.func,
   handleChange: PropTypes.func.isRequired,

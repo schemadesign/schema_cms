@@ -8,6 +8,11 @@ export const selectSections = createSelector(
   prop('sections')
 );
 
+export const selectInternalConnections = createSelector(
+  selectSectionsDomain,
+  prop('internalConnections')
+);
+
 export const selectSection = createSelector(
   selectSectionsDomain,
   prop('section')

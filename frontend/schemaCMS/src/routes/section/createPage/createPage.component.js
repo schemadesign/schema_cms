@@ -51,7 +51,16 @@ const getBreadcrumbsItems = (project, { id, name }) => [
   },
 ];
 
-export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTemplates, project, section }) => {
+export const CreatePage = ({
+  pageTemplates,
+  userRole,
+  createPage,
+  fetchPageTemplates,
+  project,
+  section,
+  fetchInternalConnections,
+  internalConnections,
+}) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -87,7 +96,10 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchPageTemplates({ projectId });
+        const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
+        const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
+        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise]);
+
         const { page = {} } = state;
 
         if (is(Number, page[PAGE_TEMPLATE])) {
@@ -112,11 +124,13 @@ export const CreatePage = ({ pageTemplates, userRole, createPage, fetchPageTempl
         <form onSubmit={handleSubmit}>
           <PageForm
             title={title}
+            domain={project.domain}
             pageTemplates={pageTemplates}
             isValid={isValid}
             setFieldValue={setFieldValue}
             setValues={setValues}
             values={values}
+            internalConnections={internalConnections}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -145,4 +159,6 @@ CreatePage.propTypes = {
   project: PropTypes.object.isRequired,
   section: PropTypes.object.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
+  fetchInternalConnections: PropTypes.func.isRequired,
+  internalConnections: PropTypes.array.isRequired,
 };

@@ -66,7 +66,7 @@ import { BackButton, NextButton, PlusButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
-import { setDefaultValue } from '../../utils/helpers';
+import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
 
 const { EditIcon, MinusIcon, MenuIcon } = Icons;
 const { Switch } = Form;
@@ -75,11 +75,14 @@ export const PageForm = ({
   title,
   pageUrl,
   values,
+  domain = '',
+  pageId = null,
   handleChange,
   setValues,
   setFieldValue,
   pageTemplates,
   setRemoveModalOpen,
+  internalConnections,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -201,6 +204,8 @@ export const PageForm = ({
     setFieldValue(PAGE_DISPLAY_NAME, values[PAGE_DISPLAY_NAME].toLowerCase());
     restFormikProps.handleBlur(e);
   };
+  const pagerUrlOptions = getPageUrlOptions({ internalConnections, domain, pageId });
+
   return (
     <Container>
       <ContextHeader title={title} subtitle={nameInput} />
@@ -287,6 +292,7 @@ export const PageForm = ({
                     formikFieldPath={PAGE_BLOCKS}
                     handleChange={handleChange}
                     setFieldValue={setFieldValue}
+                    pagerUrlOptions={pagerUrlOptions}
                     {...blockAdditionalProps}
                     {...restFormikProps}
                   />
@@ -341,7 +347,10 @@ PageForm.propTypes = {
   setValues: PropTypes.func.isRequired,
   setRemoveModalOpen: PropTypes.func,
   values: PropTypes.object.isRequired,
+  internalConnections: PropTypes.array.isRequired,
   pageTemplates: PropTypes.array.isRequired,
   title: PropTypes.node.isRequired,
   pageUrl: PropTypes.string,
+  domain: PropTypes.string,
+  pageId: PropTypes.number,
 };

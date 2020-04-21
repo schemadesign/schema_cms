@@ -50,7 +50,7 @@ class ElementValueField(serializers.Field):
             self.validate_url_type(data)
 
         if self.type == constants.ElementType.INTERNAL_CONNECTION:
-            self.validate_url_type(data)
+            self.validate_text_types(data)
 
         return data
 
@@ -435,6 +435,7 @@ class PageDisplayNameSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "display_name",
+            "name"
         )
 
 
