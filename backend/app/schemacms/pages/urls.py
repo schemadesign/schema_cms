@@ -27,6 +27,11 @@ urlpatterns = [
     path(
         "projects/<project_pk>/sections", views.SectionListCreateView.as_view(), name="section_list_create",
     ),
+    path(
+        "projects/<project_pk>/sections/internal-connections",
+        views.SectionInternalConnectionView.as_view(),
+        name="section_internal_connections",
+    ),
     path("sections/<section_pk>/pages", views.PageListCreateView.as_view(), name="page_list_create",),
     path("", include(router.urls)),
 ]

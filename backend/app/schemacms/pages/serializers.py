@@ -429,6 +429,24 @@ class SectionListCreateSerializer(CustomModelSerializer):
         return section.pages_count
 
 
+class PageDisplayNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Page
+        fields = (
+            "id",
+            "display_name",
+        )
+
+
+class SectionInternalConnectionSerializer(serializers.ModelSerializer):
+    main_page = MainPageSerializer(read_only=True)
+    pages = PageDisplayNameSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = models.Section
+        fields = ("id", "project", "name", "main_page", "pages")
+
+
 class SectionPageListView(CustomModelSerializer):
     template_name = serializers.SerializerMethodField(read_only=True)
 

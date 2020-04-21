@@ -126,6 +126,40 @@ class SectionListCreateView(TemplateListCreateView):
         serializer.save(created_by=self.request.user)
 
 
+class SectionInternalConnectionView(generics.ListAPIView):
+    queryset = (
+        models.Section.objects.all()
+        .select_related("project", "created_by", "main_page")
+        .prefetch_related("pages")
+        .order_by("-created")
+    )
+    serializer_class = serializers.SectionInternalConnectionSerializer
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
+    project_info = {}
+
+    def get_parent(self):
+        project = generics.get_object_or_404(Project.objects.all(), pk=self.kwargs["project_pk"])
+        self.project_info = project.project_info
+        return project
+
+    def get_queryset(self):
+        return self.queryset.filter(project=self.get_parent())
+
+    def list(self, request, *args, **kwargs):
+        if (
+            self.serializer_class != serializers.SectionInternalConnectionSerializer
+            and request.user.is_editor
+        ):
+            queryset = self.get_queryset().filter(is_available=True)
+        else:
+            queryset = self.get_queryset()
+
+        serializer = self.get_serializer(queryset, many=True)
+        data = {"project": self.project_info, "results": serializer.data}
+
+        return response.Response(data)
+
+
 class SectionViewSet(DetailViewSet):
     queryset = (
         models.Section.objects.all()
