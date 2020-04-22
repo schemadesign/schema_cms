@@ -145,6 +145,7 @@ export class View extends PureComponent {
   );
 
   renderDetailValue = cond([
+    [propEq('isAdmin', false), this.renderValue],
     [propEq('select', true), this.renderSelect],
     [propEq('editable', true), this.renderInput],
     [T, this.renderValue],
@@ -154,7 +155,7 @@ export class View extends PureComponent {
     <DetailItem order={order} key={index} fullWidth={fullWidth}>
       <DetailWrapper id={id}>
         <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
-        {this.renderDetailValue({ id, ...rest })}
+        {this.renderDetailValue({ id, ...rest, isAdmin: this.props.isAdmin })}
       </DetailWrapper>
     </DetailItem>
   );
@@ -272,6 +273,20 @@ export class View extends PureComponent {
     )
   );
 
+  renderSaveButton = isAdmin =>
+    renderWhenTrue(
+      always(
+        <NextButton
+          onClick={this.props.handleSubmit}
+          loading={this.props.isSubmitting}
+          disabled={!this.props.dirty || this.props.isSubmitting || !this.props.isValid}
+          type="button"
+        >
+          <FormattedMessage {...messages.save} />
+        </NextButton>
+      )
+    )(isAdmin);
+
   renderContent = loading =>
     renderWhenTrue(() => (
       <Fragment>
@@ -281,7 +296,7 @@ export class View extends PureComponent {
     ))(!loading);
 
   render() {
-    const { project, userRole, handleSubmit, dirty, isValid, isSubmitting } = this.props;
+    const { project, userRole, isAdmin } = this.props;
     const { confirmationModalOpen, error, loading, removeLoading } = this.state;
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
@@ -305,14 +320,7 @@ export class View extends PureComponent {
         </div>
         <NavigationContainer fixed>
           <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
-          <NextButton
-            onClick={handleSubmit}
-            loading={isSubmitting}
-            disabled={!dirty || isSubmitting || !isValid}
-            type="button"
-          >
-            <FormattedMessage {...messages.save} />
-          </NextButton>
+          {this.renderSaveButton(isAdmin)}
         </NavigationContainer>
         <Modal
           id="projectConfirmationRemovalModal"

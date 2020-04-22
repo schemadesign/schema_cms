@@ -27,6 +27,14 @@ describe('View: Component', () => {
     expect(content).toMatchSnapshot();
   });
 
+  it('should render content correctly for editor', async () => {
+    defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = await render({ isAdmin: false });
+
+    const content = wrapper.find(LoadingWrapper).dive();
+    expect(content).toMatchSnapshot();
+  });
+
   it('should set error correctly', async () => {
     const errorResponse = 'fetchProject should return error';
     const wrapper = await render({
