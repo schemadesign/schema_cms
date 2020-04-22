@@ -32,16 +32,13 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
     <styled.div
       key="0"
     >
-      <TextInput
-        autoWidth={false}
-        checkOnlyErrors={false}
+      <Component
         customStyles={
           Object {
             "paddingBottom": 0,
             "width": "100%",
           }
         }
-        errors={Object {}}
         fullWidth={true}
         handleChange={[Function]}
         inputRef={[Function]}
@@ -52,7 +49,6 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         setFieldValue={[Function]}
-        touched={Object {}}
         value="value"
         values={
           Object {
@@ -91,16 +87,13 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
     <styled.div
       key="1"
     >
-      <TextInput
-        autoWidth={false}
-        checkOnlyErrors={false}
+      <Component
         customStyles={
           Object {
             "paddingBottom": 0,
             "width": "100%",
           }
         }
-        errors={Object {}}
         fullWidth={true}
         handleChange={[Function]}
         inputRef={[Function]}
@@ -111,7 +104,6 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         setFieldValue={[Function]}
-        touched={Object {}}
         value="value"
         values={
           Object {
