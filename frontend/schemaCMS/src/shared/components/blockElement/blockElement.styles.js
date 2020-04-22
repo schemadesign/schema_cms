@@ -23,6 +23,55 @@ export const SelectLabel = styled.div`
   padding: 0 10px;
 `;
 
+export const MarkdownContainer = styled.div`
+  .mde-header {
+    background-color: ${({ theme }) => theme.background};
+  }
+
+  .mde-header path {
+    fill: ${({ theme }) => theme.icon.fill};
+  }
+
+  .mde-header button {
+    color: ${({ theme }) => theme.secondaryText};
+  }
+
+  .mde-header button:focus {
+    outline: none;
+  }
+
+  .mde-header .mde-tabs button.selected {
+    color: ${({ theme }) => theme.text};
+    border: none;
+  }
+
+  .mde-textarea-wrapper textarea {
+    color: ${({ theme }) => theme.text};
+    background-color: ${({ theme }) => theme.background};
+  }
+
+  .react-mde .grip {
+    background-color: ${({ theme }) => theme.background};
+    height: auto;
+  }
+
+  .react-mde .grip path {
+    fill: ${({ theme }) => theme.icon.fill};
+  }
+
+  .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown {
+    background-color: ${({ theme }) => theme.background};
+  }
+
+  .mde-header ul.mde-header-group li.mde-header-item button {
+    color: ${({ theme }) => theme.text};
+  }
+
+  .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p:hover {
+    color: ${({ theme }) => theme.secondaryText};
+  }
+`;
+
 export const InputContainer = styled.div`
   position: relative;
   padding-bottom: 30px;
