@@ -10,7 +10,7 @@ import { TAG_NAME, TAG_REMOVE_TAGS, TAG_TAGS } from '../../../modules/dataSource
 import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './dataSourceTagForm.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
-const { Label } = FormUI;
+const { Label, TextField } = FormUI;
 const { CloseIcon, PlusIcon } = Icons;
 
 export class DataSourceTagForm extends PureComponent {
@@ -82,7 +82,7 @@ export class DataSourceTagForm extends PureComponent {
 
   renderTag = ({ value, id }, index) => (
     <Tag key={index}>
-      <TextInput
+      <TextField
         value={value}
         onChange={e => this.handleChange({ e, id, index })}
         name={`${[TAG_TAGS]}.${index}`}
