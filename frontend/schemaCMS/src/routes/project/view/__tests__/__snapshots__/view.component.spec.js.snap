@@ -539,6 +539,195 @@ exports[`View: Component should render content correctly 1`] = `
 </Fragment>
 `;
 
+exports[`View: Component should render content correctly for editor 1`] = `
+<Fragment>
+  <styled.div>
+    <StatisticCards
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      statistics={
+        Array [
+          Object {
+            "header": Object {
+              "defaultMessage": "Data Sources",
+              "id": "project.view.dataSources",
+            },
+            "id": "projectDataSources",
+            "to": "/project/100/datasource",
+            "value": 3,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "States",
+              "id": "project.view.states",
+            },
+            "id": "projectStates",
+            "to": "/project/100/state",
+            "value": undefined,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "Pages",
+              "id": "project.view.pages",
+            },
+            "id": "projectPages",
+            "to": "/project/100/content",
+            "value": 1,
+          },
+          Object {
+            "header": Object {
+              "defaultMessage": "Users",
+              "id": "project.view.users",
+            },
+            "id": "projectUsers",
+            "to": "/project/100/user",
+            "value": 2,
+          },
+        ]
+      }
+    />
+    <styled.ul>
+      <styled.li
+        key="0"
+        order={2}
+      >
+        <styled.div
+          id="fieldTitle"
+        >
+          <styled.span
+            id="fieldTitleLabel"
+          >
+            Title
+          </styled.span>
+          <styled.span
+            id="fieldTitleValue"
+          >
+            Project Name
+          </styled.span>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        fullWidth={true}
+        key="1"
+        order={7}
+      >
+        <styled.div
+          id="fieldDescription"
+        >
+          <styled.span
+            id="fieldDescriptionLabel"
+          >
+            Description
+          </styled.span>
+          <styled.span
+            id="fieldDescriptionValue"
+          >
+            Description
+          </styled.span>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="2"
+        order={4}
+      >
+        <styled.div
+          id="fieldStatus"
+        >
+          <styled.span
+            id="fieldStatusLabel"
+          >
+            Status
+          </styled.span>
+          <styled.span
+            id="fieldStatusValue"
+          >
+            Status
+          </styled.span>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="3"
+        order={6}
+      >
+        <styled.div
+          id="fieldDomain"
+        >
+          <styled.span
+            id="fieldDomainLabel"
+          >
+            Domain
+          </styled.span>
+          <styled.span
+            id="fieldDomainValue"
+          />
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="4"
+        order={1}
+      >
+        <styled.div
+          id="fieldLastUpdated"
+        >
+          <styled.span
+            id="fieldLastUpdatedLabel"
+          >
+            Last Update
+          </styled.span>
+          <styled.span
+            id="fieldLastUpdatedValue"
+          >
+            3 months ago
+          </styled.span>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="5"
+        order={3}
+      >
+        <styled.div
+          id="fieldOwner"
+        >
+          <styled.span
+            id="fieldOwnerLabel"
+          >
+            Owner
+          </styled.span>
+          <styled.span
+            id="fieldOwnerValue"
+          >
+            Firstname Lastname
+          </styled.span>
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="6"
+        order={5}
+      >
+        <styled.div
+          id="fieldSlug"
+        >
+          <styled.span
+            id="fieldSlugLabel"
+          >
+            API
+          </styled.span>
+          <styled.span
+            id="fieldSlugValue"
+          >
+            schemacms/api/project_title
+          </styled.span>
+        </styled.div>
+      </styled.li>
+    </styled.ul>
+  </styled.div>
+</Fragment>
+`;
+
 exports[`View: Component should render correctly 1`] = `
 <styled.div>
   <div>
