@@ -9,7 +9,11 @@ import { styleWhenTrue } from '../../utils/rendering';
 const BUTTON_MARGIN = 5;
 
 export const Container = styled.div`
-  height: 155px;
+  height: 120px;
+
+  ${media.desktop`
+    height: 100px;
+  `};
 `;
 
 export const NavigationContent = styled.div`
@@ -28,7 +32,7 @@ export const NavigationContent = styled.div`
 const fixedStyles = css`
   position: fixed;
   width: calc(100% - 40px);
-  z-index: 9999;
+  z-index: 999;
   background-image: linear-gradient(
     to top,
     ${({ theme: { background } }) => `${background}, ${background} 30%`},
@@ -41,12 +45,13 @@ const fixedNavigationStyles = styleWhenTrue(identity, fixedStyles);
 export const Navigation = styled.div`
   bottom: 0;
   width: 100%;
-  padding: ${({ padding }) => padding || '40px 0 36px'};
+  padding: ${({ padding }) => padding || '10px 0 36px'};
 
   ${({ fixed }) => fixedNavigationStyles(fixed)};
 
   ${media.desktop`
     ${fixedStyles};
+    padding: 10px 0 36px;
     width: ${contentSizes.desktop}px;
   `};
 `;

@@ -334,7 +334,7 @@ export class DataWranglingScripts extends PureComponent {
           </Header>
           <Fragment>
             {this.renderCheckboxGroup(steps)}
-            <NavigationContainer right fixed padding="40px 0 70px">
+            <NavigationContainer right fixed padding="10px 0 70px">
               <NextButton
                 onClick={this.handleSubmit}
                 disabled={isSubmitting || isProcessing || !steps.length}

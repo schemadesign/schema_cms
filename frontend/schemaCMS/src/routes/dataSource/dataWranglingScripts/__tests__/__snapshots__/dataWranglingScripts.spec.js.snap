@@ -308,7 +308,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
-      padding="40px 0 70px"
+      padding="10px 0 70px"
       right={true}
     >
       <NextButton
@@ -652,7 +652,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
       contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
-      padding="40px 0 70px"
+      padding="10px 0 70px"
       right={true}
     >
       <NextButton
@@ -906,7 +906,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
       contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
-      padding="40px 0 70px"
+      padding="10px 0 70px"
       right={true}
     >
       <NextButton
@@ -1211,7 +1211,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
       contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
-      padding="40px 0 70px"
+      padding="10px 0 70px"
       right={true}
     >
       <NextButton

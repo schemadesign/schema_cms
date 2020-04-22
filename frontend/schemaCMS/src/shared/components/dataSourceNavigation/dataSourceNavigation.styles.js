@@ -13,6 +13,7 @@ export const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 0 20px;
+  z-index: 1000;
   background-color: ${({ theme: { stepper } }) => stepper.background};
 
   svg {
