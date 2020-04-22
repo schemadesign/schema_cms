@@ -21,6 +21,7 @@ import {
   ELEMENT_ID,
   ELEMENT_VALUE,
   INTERNAL_CONNECTION_TYPE,
+  MARKDOWN_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
@@ -47,12 +48,19 @@ export const internalConnectionElement = {
   [ELEMENT_ID]: 1,
 };
 
+export const markdownElement = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_TYPE]: MARKDOWN_TYPE,
+  [ELEMENT_VALUE]: '**Hello world!!!**',
+  [ELEMENT_ID]: 1,
+};
+
 export const block = {
   [BLOCK_NAME]: 'name',
   [BLOCK_TYPE]: 'type',
   [BLOCK_KEY]: 1,
   [BLOCK_ID]: 1,
-  [BLOCK_ELEMENTS]: [textElement, imageElement, internalConnectionElement],
+  [BLOCK_ELEMENTS]: [textElement, imageElement, internalConnectionElement, markdownElement],
 };
 
 export const page = {
