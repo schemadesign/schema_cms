@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'schemaUI';
-import { useDispatch, useSelector } from 'react-redux';
 import { useDebounce } from 'react-use';
 
-import { PreviewLinkRoutines, selectMetaTags } from '../../../modules/previewLink';
-
 import { Container } from './linkPreview.styles';
+import { useLinkPreview } from '../../hooks/useLinkPreview.hook';
 
 const { TextField } = Form;
 
 export const LinkPreview = ({ onChange, placeholder, name = 'LINK-PREVIEW' }) => {
   const [value, setValue] = useState('');
-
-  const dispatch = useDispatch();
-  const fetchLink = () => dispatch(PreviewLinkRoutines.fetchLink(value));
-  const metaTags = useSelector(selectMetaTags);
+  const [metaTags, fetchLink] = useLinkPreview();
 
   useDebounce(
     () => {
@@ -23,7 +18,7 @@ export const LinkPreview = ({ onChange, placeholder, name = 'LINK-PREVIEW' }) =>
         return onChange(value);
       }
 
-      return fetchLink();
+      return fetchLink(value);
     },
     250,
     [value]
