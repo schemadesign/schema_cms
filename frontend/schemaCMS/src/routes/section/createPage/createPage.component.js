@@ -56,10 +56,10 @@ export const CreatePage = ({
   userRole,
   createPage,
   fetchPageTemplates,
-  blockTemplates,
-  fetchBlockTemplates,
   project,
   section,
+  fetchInternalConnections,
+  internalConnections,
 }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
@@ -96,8 +96,10 @@ export const CreatePage = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchPageTemplates({ projectId });
-        await fetchBlockTemplates({ projectId });
+        const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
+        const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
+        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise]);
+
         const { page = {} } = state;
 
         if (is(Number, page[PAGE_TEMPLATE])) {
@@ -122,12 +124,13 @@ export const CreatePage = ({
         <form onSubmit={handleSubmit}>
           <PageForm
             title={title}
+            domain={project.domain}
             pageTemplates={pageTemplates}
             isValid={isValid}
             setFieldValue={setFieldValue}
             setValues={setValues}
             values={values}
-            blockTemplates={blockTemplates}
+            internalConnections={internalConnections}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -155,7 +158,7 @@ CreatePage.propTypes = {
   createPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   section: PropTypes.object.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
-  fetchBlockTemplates: PropTypes.func.isRequired,
+  fetchInternalConnections: PropTypes.func.isRequired,
+  internalConnections: PropTypes.array.isRequired,
 };

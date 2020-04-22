@@ -49,6 +49,9 @@ class ElementValueField(serializers.Field):
         if self.type == constants.ElementType.CONNECTION:
             self.validate_url_type(data)
 
+        if self.type == constants.ElementType.INTERNAL_CONNECTION:
+            self.validate_text_types(data)
+
         return data
 
     @staticmethod
@@ -424,6 +427,21 @@ class SectionListCreateSerializer(CustomModelSerializer):
 
     def get_pages_count(self, section):
         return section.pages_count
+
+
+class PageDisplayNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Page
+        fields = ("id", "display_name", "name")
+
+
+class SectionInternalConnectionSerializer(serializers.ModelSerializer):
+    main_page = MainPageSerializer(read_only=True)
+    pages = PageDisplayNameSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = models.Section
+        fields = ("id", "project", "name", "main_page", "pages")
 
 
 class SectionPageListView(CustomModelSerializer):

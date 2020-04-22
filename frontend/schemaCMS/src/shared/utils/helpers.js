@@ -24,6 +24,11 @@ import {
   propOr,
   T,
   mergeRight,
+  flatten,
+  concat,
+  propEq,
+  both,
+  prop,
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
@@ -129,3 +134,32 @@ export const getValuePath = ({ blockPath, index }) => `${blockPath}.${BLOCK_ELEM
 const getDefaultValue = cond([[equals(IMAGE_TYPE), always({})], [T, always('')]]);
 
 export const setDefaultValue = element => mergeRight(element, { value: getDefaultValue(element.type) });
+
+const ifMainPage = (then, otherwise) => ({ mainPage, id }) =>
+  ifElse(both(complement(isNil), complement(propEq('id', id))), then, otherwise)(mainPage);
+
+const getMainPageDisplayName = ({ mainPage, id }) =>
+  ifMainPage(
+    pipe(
+      prop('displayName'),
+      concat('/')
+    ),
+    always('')
+  )({ mainPage, id });
+
+export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) =>
+  pipe(
+    map(
+      pipe(
+        evolve({
+          pages: filter(complement(propEq('id', pageId))),
+        }),
+        ({ mainPage, pages }) =>
+          map(({ displayName, name, id }) => ({
+            value: `${domain + getMainPageDisplayName({ mainPage, id })}/${displayName}`,
+            label: ifMainPage(() => `${mainPage.name}   >   ${name}`, always(name))({ mainPage, id }),
+          }))(pages)
+      )
+    ),
+    flatten
+  )(internalConnections);

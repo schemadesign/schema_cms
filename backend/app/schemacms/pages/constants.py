@@ -10,7 +10,7 @@ class ElementType:
     IMAGE = "image"
     CODE = "code"
     CONNECTION = "connection"
-    STACK = "stack"
+    INTERNAL_CONNECTION = "internal_connection"
 
 
 ELEMENT_TYPE_CHOICES = (
@@ -19,5 +19,5 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.IMAGE, "Image"),
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
-    (ElementType.STACK, "Stack"),
+    (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
 )

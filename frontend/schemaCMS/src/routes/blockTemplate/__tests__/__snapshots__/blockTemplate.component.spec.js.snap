@@ -1165,25 +1165,6 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                       value="plain_text"
                     />
                     <div
-                      className="sc-fzoJMP kyupjb"
-                    >
-                      <svg
-                        style={
-                          Object {
-                            "fill": "#FFF",
-                            "height": "30px",
-                            "width": "30px",
-                          }
-                        }
-                        viewBox="0 0 30 30"
-                      >
-                        <path
-                          d="M15.117 18L9 12h12z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div
                       style={
                         Object {
                           "color": "#FFF",
@@ -1344,8 +1325,47 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                           >
                             Connection
                           </div>
+                          <div
+                            id="select-item-5"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Internal Connection
+                          </div>
                         </div>
                       </div>
+                    </div>
+                    <div
+                      className="sc-fzoJMP cdAIGg"
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "30px",
+                            "width": "30px",
+                          }
+                        }
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M15.117 18L9 12h12z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
                     </div>
                   </div>
                 </div>

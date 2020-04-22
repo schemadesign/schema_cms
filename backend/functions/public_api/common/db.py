@@ -13,6 +13,7 @@ class ElementType:
     MARKDOWN = "markdown"
     PLAIN_TEXT = "plain_text"
     CONNECTION = "connection"
+    INTERNAL_CONNECTION = "internal_connection"
     IMAGE = "image"
 
 
@@ -289,6 +290,15 @@ class Element(BaseModel):
         if self.type == ElementType.CONNECTION:
             html_value = (
                 f"<div id='{self.id}' class='element connection'>"
+                f"<a href='{self.connection}' target='_blank|_self|_parent|_top'>{self.connection}</a>"
+                f"</div>"
+            )
+
+            return html_value
+
+        if self.type == ElementType.INTERNAL_CONNECTION:
+            html_value = (
+                f"<div id='{self.id}' class='element internal-connection'>"
                 f"<a href='{self.connection}' target='_blank|_self|_parent|_top'>{self.connection}</a>"
                 f"</div>"
             )

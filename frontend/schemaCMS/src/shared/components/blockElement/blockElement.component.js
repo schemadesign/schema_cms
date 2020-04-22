@@ -4,15 +4,20 @@ import { cond, pathEq, T } from 'ramda';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 
 import { DetailsContainer, Header, Name, IconContainer } from './blockElement.styles';
-import { IMAGE_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { IMAGE_TYPE, INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { ImageElement } from './imageElement.component';
+import { InternalConnectionElement } from './internalConnectionElement.component';
 import { DefaultElement } from './defaultElement.component';
 
 const { MinusIcon } = Icons;
 
 export const BlockElement = props => {
   const { element } = props;
-  const elementComponent = cond([[pathEq(['element', 'type'], IMAGE_TYPE), ImageElement], [T, DefaultElement]])(props);
+  const elementComponent = cond([
+    [pathEq(['element', 'type'], IMAGE_TYPE), ImageElement],
+    [pathEq(['element', 'type'], INTERNAL_CONNECTION_TYPE), InternalConnectionElement],
+    [T, DefaultElement],
+  ])(props);
 
   return (
     <AccordionPanel autoOpen>

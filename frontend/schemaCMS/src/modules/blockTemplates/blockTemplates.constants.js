@@ -21,8 +21,16 @@ export const PLAIN_TEXT_TYPE = 'plain_text';
 export const IMAGE_TYPE = 'image';
 export const CODE_TYPE = 'code';
 export const CONNECTION_TYPE = 'connection';
+export const INTERNAL_CONNECTION_TYPE = 'internal_connection';
 
-export const ELEMENTS_TYPES = [MARKDOWN_TYPE, PLAIN_TEXT_TYPE, IMAGE_TYPE, CODE_TYPE, CONNECTION_TYPE];
+export const ELEMENTS_TYPES = [
+  MARKDOWN_TYPE,
+  PLAIN_TEXT_TYPE,
+  IMAGE_TYPE,
+  CODE_TYPE,
+  CONNECTION_TYPE,
+  INTERNAL_CONNECTION_TYPE,
+];
 
 export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
   [ELEMENT_TYPE]: '',

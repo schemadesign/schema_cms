@@ -64,11 +64,11 @@ export const EditPage = ({
   updatePage,
   page,
   fetchPageTemplates,
-  fetchBlockTemplates,
+  fetchInternalConnections,
+  internalConnections,
   pageTemplates,
   userRole,
   removePage,
-  blockTemplates,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
@@ -128,8 +128,10 @@ export const EditPage = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchPageTemplates({ projectId });
-        await fetchBlockTemplates({ projectId });
+        const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
+        const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
+        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise]);
+
         const { page = {} } = state;
 
         if (!isEmpty(page)) {
@@ -158,14 +160,16 @@ export const EditPage = ({
         <form onSubmit={handleSubmit}>
           <PageForm
             pageUrl={pageUrl}
+            domain={project.domain}
+            pageId={page.id}
             title={title}
             pageTemplates={pageTemplates}
             isValid={isValid}
             setRemoveModalOpen={setRemoveModalOpen}
             values={values}
             setValues={setValues}
+            internalConnections={internalConnections}
             setFieldValue={setFieldValue}
-            blockTemplates={blockTemplates}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -207,12 +211,12 @@ export const EditPage = ({
 
 EditPage.propTypes = {
   pageTemplates: PropTypes.array.isRequired,
-  blockTemplates: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
   updatePage: PropTypes.func.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
-  fetchBlockTemplates: PropTypes.func.isRequired,
+  fetchInternalConnections: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
+  internalConnections: PropTypes.array.isRequired,
 };

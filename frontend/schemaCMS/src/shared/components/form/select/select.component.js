@@ -18,6 +18,7 @@ export const Select = memo(
     value,
     placeholder,
     options,
+    centerIcon = false,
     onSelect,
     ...restProps
   }) => {
@@ -35,9 +36,6 @@ export const Select = memo(
       <Container customStyles={customStyles} onClick={() => setOpen(!open)}>
         {labelComponent}
         <input type="hidden" id={name} name={name} value={value} />
-        <IconContainer>
-          <CaretIcon />
-        </IconContainer>
         <SelectElement
           placeholder={placeholder}
           options={updatedOptions}
@@ -46,6 +44,9 @@ export const Select = memo(
           setOpen={setOpen}
           {...restProps}
         />
+        <IconContainer centerIcon={centerIcon}>
+          <CaretIcon />
+        </IconContainer>
       </Container>
     );
   }
@@ -59,5 +60,6 @@ Select.propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   placeholder: PropTypes.string,
   options: PropTypes.array.isRequired,
+  centerIcon: PropTypes.bool,
   onSelect: PropTypes.func.isRequired,
 };

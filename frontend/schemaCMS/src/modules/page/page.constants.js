@@ -8,6 +8,7 @@ import {
   IMAGE_TYPE,
   PLAIN_TEXT_TYPE,
   MARKDOWN_TYPE,
+  INTERNAL_CONNECTION_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -87,7 +88,7 @@ export const PAGE_SCHEMA = Yup.object().shape({
           Yup.object().shape({
             [ELEMENT_VALUE]: Yup.mixed()
               .when(ELEMENT_TYPE, {
-                is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, CODE_TYPE].includes(type),
+                is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, INTERNAL_CONNECTION_TYPE, CODE_TYPE].includes(type),
                 then: Yup.string()
                   .trim()
                   .min(1, 'Required')

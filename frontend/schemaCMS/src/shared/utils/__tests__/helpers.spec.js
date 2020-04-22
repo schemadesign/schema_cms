@@ -1,4 +1,5 @@
-import { errorMessageParser, generateApiUrl, handleToggleMenu } from '../helpers';
+import { errorMessageParser, generateApiUrl, getPageUrlOptions, handleToggleMenu } from '../helpers';
+import { internalConnections } from '../../../modules/sections/sections.mocks';
 
 describe('Helpers', () => {
   describe('generateApiUrl', () => {
@@ -49,5 +50,20 @@ describe('Helpers', () => {
     handleToggleMenu(that);
     expect(window.removeEventListener).toBeCalledWith('resize', expect.any(Function));
     expect(that.setState).toBeCalledWith({ isMenuOpen: false });
+  });
+
+  it('should return page url options', () => {
+    const data = {
+      internalConnections,
+      domain: 'http://domain.com',
+      pageId: 4,
+    };
+    const pageUrlOptions = getPageUrlOptions(data);
+
+    expect(pageUrlOptions).toEqual([
+      { label: 'Blog', value: 'http://domain.com/blog' },
+      { label: 'news   >   Article 2', value: 'http://domain.com/News/article-2' },
+      { label: 'News', value: 'http://domain.com/news' },
+    ]);
   });
 });

@@ -18,6 +18,11 @@ export const Header = styled.div`
 
 export const Name = styled.div``;
 
+export const SelectLabel = styled.div`
+  white-space: pre;
+  padding: 0 10px;
+`;
+
 export const InputContainer = styled.div`
   position: relative;
   padding-bottom: 30px;
@@ -48,3 +53,8 @@ export const editIconStyles = {
   right: 5,
   top: 5,
 };
+
+export const getCustomSelectedWrapperStyles = theme => ({
+  backgroundColor: theme.secondaryText,
+  padding: '20px 10px',
+});

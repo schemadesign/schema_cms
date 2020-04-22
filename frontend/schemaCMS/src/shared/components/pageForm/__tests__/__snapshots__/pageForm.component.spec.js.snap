@@ -480,25 +480,6 @@ exports[`PageForm: Component should render correctly 1`] = `
         value={1}
       />
       <div
-        className="sc-fznWqX jfqZHP"
-      >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
-        >
-          <path
-            d="M15.117 18L9 12h12z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </div>
-      <div
         style={
           Object {
             "color": "#FFF",
@@ -622,17 +603,36 @@ exports[`PageForm: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fznWqX enRIQg"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M15.117 18L9 12h12z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
     </div>
   </div>
   <div
-    className="sc-fzoant cQWypL"
+    className="sc-fzomME ebTidZ"
   >
     <div
-      className="sc-fzomME brMdOp"
+      className="sc-fzqAbL dXmprh"
     />
     1 Block
     <div
-      className="sc-fzomME brMdOp"
+      className="sc-fzqAbL dXmprh"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -943,7 +943,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzpkJw eNJlkw"
+                    className="sc-fznzOf jgufTH"
                   >
                     <svg
                       style={
@@ -1015,7 +1015,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl cWDXUs"
+                      className="sc-fzpkJw fepBHj"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -1137,7 +1137,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzpkJw eNJlkw"
+                    className="sc-fznzOf jgufTH"
                   >
                     <svg
                       style={
@@ -1209,7 +1209,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznzOf hHLtGv"
+                      className="sc-fznMnq ZVDpi"
                     >
                       <div
                         style={
@@ -1353,6 +1353,299 @@ exports[`PageForm: Component should render correctly 1`] = `
                       >
                         Drop here
                       </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "borderTop": "2px solid #FFF",
+                  "overflow": "inherit",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#000",
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "minHeight": 60,
+                    "paddingRight": 40,
+                    "position": "relative",
+                  }
+                }
+              >
+                <div
+                  className="sc-fzoxKX bsUeIC"
+                >
+                  <div
+                    className="sc-fznzOf jgufTH"
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": 30,
+                          "shapeRendering": "crispEdges",
+                          "width": 30,
+                        }
+                      }
+                      viewBox="0 0 60 60"
+                    >
+                      <path
+                        d="M15 28h30v4H15z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="sc-fzoKki fatNHo"
+                  >
+                    name
+                  </div>
+                </div>
+                <div
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "fontSize": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 9,
+                      "transform": "rotate(180deg)",
+                      "transformOrigin": "center center",
+                      "transition": "transform 200ms ease-in-out",
+                    }
+                  }
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#71737e",
+                        "height": 30,
+                        "margin": "5px",
+                        "userSelect": "none",
+                        "width": 30,
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M15.117 18L9 12h12z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#000",
+                    "height": "auto",
+                    "transition": "height 200ms linear, overflow 0s linear 200ms",
+                  }
+                }
+              >
+                <div>
+                  <div
+                    className="sc-fzqPZZ WAKDE"
+                  >
+                    <div
+                      className="sc-fznJRM dGOQde"
+                      onClick={[Function]}
+                    >
+                      <input
+                        id="blocks.0.elements.2.value"
+                        name="blocks.0.elements.2.value"
+                        type="hidden"
+                        value="http://domain.com/blog"
+                      />
+                      <div
+                        style={
+                          Object {
+                            "color": "#FFF",
+                            "display": "flex",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "position": "relative",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#71737e",
+                                "cursor": "pointer",
+                                "display": "flex",
+                                "padding": "20px 10px",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Select a page
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitOverflowScrolling": "touch",
+                                "backgroundColor": "#1d1d20",
+                                "display": "none",
+                                "flexDirection": "column",
+                                "left": "0",
+                                "maxHeight": "184px",
+                                "overflowY": "hidden",
+                                "position": "absolute",
+                                "top": "calc(100% + 5px)",
+                                "width": "100%",
+                                "zIndex": 2,
+                              }
+                            }
+                          >
+                            <div
+                              id="select-item-0"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "1px solid  #2F2F36",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                Blog
+                              </div>
+                            </div>
+                            <div
+                              id="select-item-1"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                news   &gt;   Article 2
+                              </div>
+                            </div>
+                            <div
+                              id="select-item-2"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                News
+                              </div>
+                            </div>
+                            <div
+                              id="select-item-3"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                news   &gt;   Article 1
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fznWqX jgatHo"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M15.117 18L9 12h12z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1952,25 +2245,6 @@ exports[`PageForm: Component should render with blocked template 1`] = `
         value={1}
       />
       <div
-        className="sc-fznWqX jfqZHP"
-      >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
-        >
-          <path
-            d="M15.117 18L9 12h12z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </div>
-      <div
         style={
           Object {
             "color": "#FFF",
@@ -2094,17 +2368,36 @@ exports[`PageForm: Component should render with blocked template 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fznWqX enRIQg"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M15.117 18L9 12h12z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
     </div>
   </div>
   <div
-    className="sc-fzoant cQWypL"
+    className="sc-fzomME ebTidZ"
   >
     <div
-      className="sc-fzomME brMdOp"
+      className="sc-fzqAbL dXmprh"
     />
     1 Block
     <div
-      className="sc-fzomME brMdOp"
+      className="sc-fzqAbL dXmprh"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -2415,7 +2708,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzpkJw eNJlkw"
+                    className="sc-fznzOf jgufTH"
                   >
                     <svg
                       style={
@@ -2487,7 +2780,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl cWDXUs"
+                      className="sc-fzpkJw fepBHj"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -2609,7 +2902,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzpkJw eNJlkw"
+                    className="sc-fznzOf jgufTH"
                   >
                     <svg
                       style={
@@ -2681,7 +2974,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznzOf hHLtGv"
+                      className="sc-fznMnq ZVDpi"
                     >
                       <div
                         style={
@@ -2825,6 +3118,299 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                       >
                         Drop here
                       </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "borderTop": "2px solid #FFF",
+                  "overflow": "inherit",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#000",
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "minHeight": 60,
+                    "paddingRight": 40,
+                    "position": "relative",
+                  }
+                }
+              >
+                <div
+                  className="sc-fzoxKX bsUeIC"
+                >
+                  <div
+                    className="sc-fznzOf jgufTH"
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": 30,
+                          "shapeRendering": "crispEdges",
+                          "width": 30,
+                        }
+                      }
+                      viewBox="0 0 60 60"
+                    >
+                      <path
+                        d="M15 28h30v4H15z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="sc-fzoKki fatNHo"
+                  >
+                    name
+                  </div>
+                </div>
+                <div
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "fontSize": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 9,
+                      "transform": "rotate(180deg)",
+                      "transformOrigin": "center center",
+                      "transition": "transform 200ms ease-in-out",
+                    }
+                  }
+                >
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#71737e",
+                        "height": 30,
+                        "margin": "5px",
+                        "userSelect": "none",
+                        "width": 30,
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M15.117 18L9 12h12z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#000",
+                    "height": "auto",
+                    "transition": "height 200ms linear, overflow 0s linear 200ms",
+                  }
+                }
+              >
+                <div>
+                  <div
+                    className="sc-fzqPZZ WAKDE"
+                  >
+                    <div
+                      className="sc-fznJRM dGOQde"
+                      onClick={[Function]}
+                    >
+                      <input
+                        id="blocks.0.elements.2.value"
+                        name="blocks.0.elements.2.value"
+                        type="hidden"
+                        value="http://domain.com/blog"
+                      />
+                      <div
+                        style={
+                          Object {
+                            "color": "#FFF",
+                            "display": "flex",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "position": "relative",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#71737e",
+                                "cursor": "pointer",
+                                "display": "flex",
+                                "padding": "20px 10px",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Select a page
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitOverflowScrolling": "touch",
+                                "backgroundColor": "#1d1d20",
+                                "display": "none",
+                                "flexDirection": "column",
+                                "left": "0",
+                                "maxHeight": "184px",
+                                "overflowY": "hidden",
+                                "position": "absolute",
+                                "top": "calc(100% + 5px)",
+                                "width": "100%",
+                                "zIndex": 2,
+                              }
+                            }
+                          >
+                            <div
+                              id="select-item-0"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "1px solid  #2F2F36",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                Blog
+                              </div>
+                            </div>
+                            <div
+                              id="select-item-1"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                news   &gt;   Article 2
+                              </div>
+                            </div>
+                            <div
+                              id="select-item-2"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                News
+                              </div>
+                            </div>
+                            <div
+                              id="select-item-3"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              <div
+                                className="sc-fzoYkl fSArCo"
+                              >
+                                news   &gt;   Article 1
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fznWqX jgatHo"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M15.117 18L9 12h12z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -22,6 +22,21 @@ function* fetchSections({ payload: { projectId } }) {
   }
 }
 
+function* fetchInternalConnections({ payload: { projectId } }) {
+  try {
+    yield put(SectionsRoutines.fetchInternalConnections.request());
+
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${SECTIONS_PATH}/internal-connections`);
+
+    yield put(SectionsRoutines.fetchInternalConnections.success(data.results));
+  } catch (error) {
+    reportError(error);
+    yield put(SectionsRoutines.fetchInternalConnections.failure(error));
+  } finally {
+    yield put(SectionsRoutines.fetchInternalConnections.fulfill());
+  }
+}
+
 function* fetchSection({ payload: { sectionId } }) {
   try {
     yield put(SectionsRoutines.fetchSection.request());
@@ -86,6 +101,7 @@ function* removeSection({ payload: { sectionId } }) {
 export function* watchSections() {
   yield all([
     takeLatest(SectionsRoutines.fetchSections.TRIGGER, fetchSections),
+    takeLatest(SectionsRoutines.fetchInternalConnections.TRIGGER, fetchInternalConnections),
     takeLatest(SectionsRoutines.fetchSection.TRIGGER, fetchSection),
     takeLatest(SectionsRoutines.createSection.TRIGGER, createSection),
     takeLatest(SectionsRoutines.updateSection.TRIGGER, updateSection),
