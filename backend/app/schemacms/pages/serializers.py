@@ -432,11 +432,7 @@ class SectionListCreateSerializer(CustomModelSerializer):
 class PageDisplayNameSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Page
-        fields = (
-            "id",
-            "display_name",
-            "name"
-        )
+        fields = ("id", "display_name", "name")
 
 
 class SectionInternalConnectionSerializer(serializers.ModelSerializer):

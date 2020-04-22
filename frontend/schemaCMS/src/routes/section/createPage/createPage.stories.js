@@ -7,6 +7,7 @@ import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mock
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
 import { project } from '../../../modules/project/project.mocks';
+import { internalConnections } from '../../../modules/sections/sections.mocks';
 
 export const defaultProps = {
   pageTemplates,
@@ -20,6 +21,8 @@ export const defaultProps = {
     id: 1,
     name: 'Section',
   },
+  fetchInternalConnections: Function.prototype,
+  internalConnections,
 };
 
 storiesOf('CreatePage', module)

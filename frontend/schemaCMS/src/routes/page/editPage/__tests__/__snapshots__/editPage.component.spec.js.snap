@@ -350,7 +350,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpisO iSYFQc"
+    className="sc-fznyYp TtziX"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznLxA hnLwQO"
+          className="sc-fznXWL bysQqM"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznLxA hnLwQO"
+          className="sc-fznXWL bysQqM"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznLxA hnLwQO"
+          className="sc-fznXWL bysQqM"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznyYp cEeSWj"
+          className="sc-fznLxA fDFfFW"
         >
           <span
             style={
@@ -1195,14 +1195,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoJus jzvkkE"
+        className="sc-fzoVTD eDxUvi"
       >
         <div
-          className="sc-fzoVTD kOoivy"
+          className="sc-fzpisO BifeW"
         />
         1 Block
         <div
-          className="sc-fzoVTD kOoivy"
+          className="sc-fzpisO BifeW"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -1513,7 +1513,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzqAui llqMOe"
+                        className="sc-fzqMdD daygFO"
                       >
                         <svg
                           style={
@@ -1585,7 +1585,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzomuh fFkvZO"
+                          className="sc-fzqAui iOzCFB"
                         >
                           <div
                             className="sc-fzoKki xmNdG"
@@ -1707,7 +1707,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzqAui llqMOe"
+                        className="sc-fzqMdD daygFO"
                       >
                         <svg
                           style={
@@ -1779,7 +1779,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqMdD efgLrG"
+                          className="sc-fzowVh BZRlY"
                         >
                           <div
                             style={
@@ -1923,6 +1923,275 @@ exports[`EditPage: Component should render correctly 1`] = `
                           >
                             Drop here
                           </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderTop": "2px solid #FFF",
+                      "overflow": "inherit",
+                      "position": "relative",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#000",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "minHeight": 60,
+                        "paddingRight": 40,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <div
+                      className="sc-fznLPX jTcEWk"
+                    >
+                      <div
+                        className="sc-fzqMdD daygFO"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": 30,
+                              "shapeRendering": "crispEdges",
+                              "width": 30,
+                            }
+                          }
+                          viewBox="0 0 60 60"
+                        >
+                          <path
+                            d="M15 28h30v4H15z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="sc-fzoaKM hyXHRq"
+                      >
+                        name
+                      </div>
+                    </div>
+                    <div
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                          "fontSize": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 9,
+                          "transform": "rotate(180deg)",
+                          "transformOrigin": "center center",
+                          "transition": "transform 200ms ease-in-out",
+                        }
+                      }
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#71737e",
+                            "height": 30,
+                            "margin": "5px",
+                            "userSelect": "none",
+                            "width": 30,
+                          }
+                        }
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M15.117 18L9 12h12z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "#000",
+                        "height": "auto",
+                        "transition": "height 200ms linear, overflow 0s linear 200ms",
+                      }
+                    }
+                  >
+                    <div>
+                      <div
+                        className="sc-fznAgC dlXska"
+                      >
+                        <div
+                          className="sc-fzqMAW cIPleX"
+                          onClick={[Function]}
+                        >
+                          <input
+                            id="blocks.0.elements.2.value"
+                            name="blocks.0.elements.2.value"
+                            type="hidden"
+                            value="http://domain.com/blog"
+                          />
+                          <div
+                            style={
+                              Object {
+                                "color": "#FFF",
+                                "display": "flex",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "display": "flex",
+                                  "position": "relative",
+                                  "width": "100%",
+                                }
+                              }
+                            >
+                              <div
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "backgroundColor": "#71737e",
+                                    "cursor": "pointer",
+                                    "display": "flex",
+                                    "padding": "20px 10px",
+                                    "width": "100%",
+                                  }
+                                }
+                              >
+                                <div
+                                  style={
+                                    Object {
+                                      "cursor": "pointer",
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                >
+                                  Select a page
+                                </div>
+                              </div>
+                              <div
+                                style={
+                                  Object {
+                                    "WebkitOverflowScrolling": "touch",
+                                    "backgroundColor": "#1d1d20",
+                                    "display": "none",
+                                    "flexDirection": "column",
+                                    "left": "0",
+                                    "maxHeight": "184px",
+                                    "overflowY": "hidden",
+                                    "position": "absolute",
+                                    "top": "calc(100% + 5px)",
+                                    "width": "100%",
+                                    "zIndex": 2,
+                                  }
+                                }
+                              >
+                                <div
+                                  id="select-item-0"
+                                  onClick={[Function]}
+                                  onMouseOut={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "border": "1px solid  #2F2F36",
+                                      "borderTop": "1px solid  #2F2F36",
+                                      "color": "#71737e",
+                                      "cursor": "pointer",
+                                      "overflow": "hidden",
+                                      "padding": "20px 10px",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="sc-fzomuh euYcYy"
+                                  >
+                                    news   &gt;   Article 2
+                                  </div>
+                                </div>
+                                <div
+                                  id="select-item-1"
+                                  onClick={[Function]}
+                                  onMouseOut={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "border": "1px solid  #2F2F36",
+                                      "borderTop": "none",
+                                      "color": "#71737e",
+                                      "cursor": "pointer",
+                                      "overflow": "hidden",
+                                      "padding": "20px 10px",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="sc-fzomuh euYcYy"
+                                  >
+                                    News
+                                  </div>
+                                </div>
+                                <div
+                                  id="select-item-2"
+                                  onClick={[Function]}
+                                  onMouseOut={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "border": "1px solid  #2F2F36",
+                                      "borderTop": "none",
+                                      "color": "#71737e",
+                                      "cursor": "pointer",
+                                      "overflow": "hidden",
+                                      "padding": "20px 10px",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="sc-fzomuh euYcYy"
+                                  >
+                                    news   &gt;   Article 1
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="sc-fzoydu iLTxgD"
+                          >
+                            <svg
+                              style={
+                                Object {
+                                  "fill": "#FFF",
+                                  "height": "30px",
+                                  "width": "30px",
+                                }
+                              }
+                              viewBox="0 0 30 30"
+                            >
+                              <path
+                                d="M15.117 18L9 12h12z"
+                                fillRule="evenodd"
+                              />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>

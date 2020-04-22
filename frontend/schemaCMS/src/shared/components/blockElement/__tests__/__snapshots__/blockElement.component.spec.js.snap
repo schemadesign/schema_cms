@@ -29,7 +29,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-AxhUy kCEnsr"
+        className="sc-AxgMl femdgJ"
       >
         <svg
           style={
@@ -83,7 +83,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxgMl ecWowd"
+          className="sc-AxheI cDQGzf"
         >
           <div
             style={
@@ -234,7 +234,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
 </div>
 `;
 
-exports[`BlockElement: Component should render correctly text element 1`] = `
+exports[`BlockElement: Component should render correctly internal connection element 1`] = `
 <div
   style={
     Object {
@@ -263,7 +263,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-AxhUy kCEnsr"
+        className="sc-AxgMl femdgJ"
       >
         <svg
           style={
@@ -317,10 +317,269 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxhCb iyMsiN"
+          className="sc-AxmLO gzCCOq"
+          onClick={[Function]}
+        >
+          <input
+            id="blockPath.elements.0.value"
+            name="blockPath.elements.0.value"
+            type="hidden"
+            value="http://domain.com/blog"
+          />
+          <div
+            style={
+              Object {
+                "color": "#FFF",
+                "display": "flex",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#71737e",
+                    "cursor": "pointer",
+                    "display": "flex",
+                    "padding": "20px 10px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  <div
+                    className="sc-AxhCb grbuyt"
+                  >
+                    Blog
+                  </div>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "backgroundColor": "#1d1d20",
+                    "display": "none",
+                    "flexDirection": "column",
+                    "left": "0",
+                    "maxHeight": "184px",
+                    "overflowY": "hidden",
+                    "position": "absolute",
+                    "top": "calc(100% + 5px)",
+                    "width": "100%",
+                    "zIndex": 2,
+                  }
+                }
+              >
+                <div
+                  id="select-item-0"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#FFF",
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "1px solid  #2F2F36",
+                      "color": "#000",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  <div
+                    className="sc-AxhCb grbuyt"
+                  >
+                    Blog
+                  </div>
+                </div>
+                <div
+                  id="select-item-1"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  <div
+                    className="sc-AxhCb grbuyt"
+                  >
+                    news   &gt;   Article 2
+                  </div>
+                </div>
+                <div
+                  id="select-item-2"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  <div
+                    className="sc-AxhCb grbuyt"
+                  >
+                    News
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-fzozJi iBMCDW"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15.117 18L9 12h12z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BlockElement: Component should render correctly text element 1`] = `
+<div
+  style={
+    Object {
+      "borderTop": "2px solid #FFF",
+      "overflow": "inherit",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#000",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "minHeight": 60,
+        "paddingRight": 40,
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="sc-AxirZ jigHkS"
+    >
+      <div
+        className="sc-AxgMl femdgJ"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 30,
+              "shapeRendering": "crispEdges",
+              "width": 30,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 28h30v4H15z"
+          />
+        </svg>
+      </div>
+      <div
+        className="sc-AxiKw bOTXee"
+      >
+        name
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "fontSize": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 9,
+          "transform": "rotate(180deg)",
+          "transformOrigin": "center center",
+          "transition": "transform 200ms ease-in-out",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#000",
+        "height": "auto",
+        "transition": "height 200ms linear, overflow 0s linear 200ms",
+      }
+    }
+  >
+    <div>
+      <div
+        className="sc-AxjAm gcayeW"
+      >
+        <div
+          className="sc-AxhUy kYXQlU"
         >
           <div
-            className="sc-fzozJi ikbrBq"
+            className="sc-fzoLsD bpcDOU"
           >
             <div
               style={

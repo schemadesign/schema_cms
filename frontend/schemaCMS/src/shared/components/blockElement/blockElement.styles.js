@@ -20,6 +20,7 @@ export const Name = styled.div``;
 
 export const SelectLabel = styled.div`
   white-space: pre;
+  padding: 0 10px;
 `;
 
 export const InputContainer = styled.div`

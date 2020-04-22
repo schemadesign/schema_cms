@@ -43,3 +43,30 @@ export const sections = [
     created: '2020-03-09T10:41:17+0000',
   },
 ];
+
+export const internalConnections = [
+  {
+    id: 5,
+    project: 2,
+    name: 'Section 1',
+    mainPage: null,
+    pages: [{ id: 1, displayName: 'blog', name: 'Blog' }],
+  },
+  {
+    id: 4,
+    project: 2,
+    name: 'Section 2',
+    mainPage: { id: 3, name: 'news', displayName: 'News' },
+    pages: [
+      { id: 2, displayName: 'article-2', name: 'Article 2' },
+      { id: 3, displayName: 'news', name: 'News' },
+      { id: 4, displayName: 'article-1', name: 'Article 1' },
+    ],
+  },
+];
+
+export const pagerUrlOptions = [
+  { label: 'Blog', value: 'http://domain.com/blog' },
+  { label: 'news   >   Article 2', value: 'http://domain.com/News/article-2' },
+  { label: 'News', value: 'http://domain.com/news' },
+];

@@ -5,6 +5,7 @@ import { PageBlock } from './pageBlock.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { block } from '../../../modules/page/page.mocks';
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
+import { pagerUrlOptions } from '../../../modules/sections/sections.mocks';
 
 export const defaultProps = {
   block,
@@ -14,6 +15,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   blockTemplates,
   formikFieldPath: 'formikFieldPath',
+  pagerUrlOptions,
 };
 
 storiesOf('PageBlock', module)

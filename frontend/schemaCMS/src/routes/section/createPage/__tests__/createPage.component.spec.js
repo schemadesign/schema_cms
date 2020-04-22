@@ -36,8 +36,10 @@ describe('CreatePage: Component', () => {
 
   it('should fetch page templates and section', async () => {
     jest.spyOn(defaultProps, 'fetchPageTemplates');
+    jest.spyOn(defaultProps, 'fetchInternalConnections');
     await render();
     expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 1 });
+    expect(defaultProps.fetchInternalConnections).toHaveBeenCalledWith({ projectId: 1 });
   });
 
   it('should go back to section', async () => {

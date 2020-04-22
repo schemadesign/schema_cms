@@ -31,6 +31,25 @@ describe('Sections: sagas', () => {
     });
   });
 
+  describe('when /FETCH_INTERNAL_CONNECTIONS action is fired', () => {
+    it('should put fetchInternalConnections action', async () => {
+      const projectId = 'projectId';
+      const response = {
+        id: 1,
+        results: [],
+        project: {},
+      };
+
+      mockApi.get(`${PROJECTS_PATH}/${projectId}${SECTIONS_PATH}/internal-connections`).reply(OK, response);
+
+      await expectSaga(watchSections)
+        .withState(defaultState)
+        .put(SectionsRoutines.fetchInternalConnections.success(response.results))
+        .dispatch(SectionsRoutines.fetchInternalConnections({ projectId }))
+        .silentRun();
+    });
+  });
+
   describe('when /FETCH_PAGE_TEMPLATE action is fired', () => {
     it('should put fetchSection action', async () => {
       const sectionId = 'sectionId';
