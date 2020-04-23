@@ -6,9 +6,15 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
+import { remove } from 'ramda';
 
 import { Draggable } from '../draggable';
-import { ElementContainer, ElementsContainer, customElementSelectStyles } from './blockTemplateElement.styles';
+import {
+  ElementContainer,
+  ElementsContainer,
+  customElementSelectStyles,
+  RemoveIcon,
+} from './blockTemplateElement.styles';
 import messages from './blockTemplateElement.messages';
 import { CUSTOM_ELEMENTS_TYPES } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Select } from '../form/select';
@@ -17,7 +23,7 @@ import { CounterHeader } from '../counterHeader';
 import { PlusButton } from '../navigation';
 import { mapAndAddOrder } from '../../utils/helpers';
 
-const { MenuIcon } = Icons;
+const { MenuIcon, MinusIcon } = Icons;
 
 export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikProps }) => {
   const orderedValues = mapAndAddOrder(values);
@@ -27,7 +33,8 @@ export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikP
     value: type,
   }));
   const addElement = () =>
-    setFieldValue(valuePath, values.concat({ type: '', key: Date.now(), order: orderedValues.length }));
+    setFieldValue(valuePath, orderedValues.concat({ type: '', key: Date.now(), order: orderedValues.length }));
+  const removeElement = index => setFieldValue(valuePath, remove(index, 1, orderedValues));
   const handleElementSelect = (value, index) => setFieldValue(`${valuePath}.${index}.type`, value);
   const handleMove = (dragIndex, hoverIndex) => {
     const dragCard = orderedValues[dragIndex];
@@ -43,22 +50,22 @@ export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikP
     <ElementsContainer>
       <CounterHeader
         copy={intl.formatMessage(messages.elements)}
-        count={values.length}
+        count={orderedValues.length}
         right={
           <PlusContainer>
-            <PlusButton customStyles={mobilePlusStyles} id="addBlock" onClick={addElement} type="button" />
+            <PlusButton customStyles={mobilePlusStyles} id={`add-${valuePath}`} onClick={addElement} type="button" />
           </PlusContainer>
         }
       />
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        {values.map((element, index) => (
+        {orderedValues.map((element, index) => (
           <Draggable
             key={element.key || element.id}
             accept="box"
             onMove={handleMove}
             id={element.key || element.id}
             index={index}
-            count={values.length}
+            count={orderedValues.length}
           >
             {drag => {
               const draggableIcon = drag(
@@ -74,14 +81,18 @@ export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikP
                   {draggableIcon}
                   <Select
                     name={`${valuePath}.${index}`}
-                    value={values[index].type}
+                    value={element.type}
                     options={elementOptions}
+                    id={`${valuePath}.${index}`}
                     onSelect={({ value }) => handleElementSelect(value, index)}
                     placeholder={intl.formatMessage(messages.typePlaceholder)}
                     centerIcon
                     customStyles={customElementSelectStyles}
                     {...restFormikProps}
                   />
+                  <RemoveIcon onClick={() => removeElement(index)} id={`remove-${valuePath}.${index}`}>
+                    <MinusIcon />
+                  </RemoveIcon>
                 </ElementContainer>
               );
             }}

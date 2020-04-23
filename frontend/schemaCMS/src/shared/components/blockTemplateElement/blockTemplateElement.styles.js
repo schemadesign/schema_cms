@@ -30,6 +30,10 @@ export const InputContainer = styled.div`
   `};
 `;
 
+export const RemoveIcon = styled.div`
+  cursor: pointer;
+`;
+
 export const ElementContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -39,6 +43,8 @@ export const ElementContainer = styled.div`
 `;
 
 export const ElementsContainer = styled.div`
+  padding-bottom: 20px;
+
   ${media.desktop`
     padding-left: 30px;
   `};

@@ -18,8 +18,15 @@ describe('BlockTemplateForm: Component', () => {
     wrapper.root.findAllByProps({ id: 'createElement' })[0].props.onClick();
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements', [
-      { key: expect.any(Number), name: '', params: {}, type: '', autoOpen: true },
-      { id: 1, key: 1, name: 'element name', params: { block: 'block name 2' }, type: 'plain_text' },
+      { autoOpen: true, key: expect.any(Number), name: '', params: {}, type: '' },
+      { id: 1, key: 1, name: 'element name', type: 'plain_text' },
+      {
+        id: 2,
+        key: 2,
+        name: 'element name',
+        params: { elements: [{ id: 3, type: 'plain_text' }] },
+        type: 'custom_element',
+      },
     ]);
   });
 
@@ -32,10 +39,18 @@ describe('BlockTemplateForm: Component', () => {
       created: '2020-02-21T08:34:24+0000',
       createdBy: 'owner',
       deleteElements: [1],
-      elements: [],
+      elements: [
+        {
+          id: 2,
+          key: 2,
+          name: 'element name',
+          params: { elements: [{ id: 3, type: 'plain_text' }] },
+          type: 'custom_element',
+        },
+      ],
       id: 1,
-      name: 'block name',
       isAvailable: true,
+      name: 'block name',
     });
   });
 
