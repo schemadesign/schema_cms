@@ -134,7 +134,7 @@ export class DataSourceTags extends PureComponent {
             return (
               <Fragment>
                 {this.renderCheckboxGroup(tags, values, setValues)}
-                <NavigationContainer right fixed padding="40px 0 70px">
+                <NavigationContainer right fixed padding="10px 0 70px">
                   <NextButton onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                     <FormattedMessage {...messages.save} />
                   </NextButton>

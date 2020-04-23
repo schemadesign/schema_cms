@@ -127,7 +127,7 @@ export class Source extends PureComponent {
           <Fragment>
             <SourceForm intl={intl} dataSource={dataSource} values={values} {...restProps} />
             {this.renderLinks(!!dataSource.id)}
-            <NavigationContainer right fixed padding="40px 0 70px">
+            <NavigationContainer right fixed padding="10px 0 70px">
               <NextButton
                 type="submit"
                 onClick={this.handleShowRunModal()}

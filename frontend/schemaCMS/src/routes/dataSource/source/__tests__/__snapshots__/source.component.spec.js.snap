@@ -592,7 +592,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
-      padding="40px 0 70px"
+      padding="10px 0 70px"
       right={true}
     >
       <NextButton
@@ -1528,7 +1528,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       contentStyles={null}
       fixed={true}
       hideOnDesktop={false}
-      padding="40px 0 70px"
+      padding="10px 0 70px"
       right={true}
     >
       <NextButton
