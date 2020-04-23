@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { media } from '../../../theme/media';
 
@@ -28,6 +28,31 @@ export const InputContainer = styled.div`
   ${media.desktop`
     padding-left: 30px;
   `};
+`;
+
+export const RemoveIcon = styled.div`
+  cursor: pointer;
+`;
+
+export const ElementContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid ${({ theme }) => theme.border};
+`;
+
+export const ElementsContainer = styled.div`
+  padding-bottom: 20px;
+
+  ${media.desktop`
+    padding-left: 30px;
+  `};
+`;
+
+export const customElementSelectStyles = css`
+  width: 100%;
+  padding: 10px 0;
 `;
 
 export const ElementIcon = styled.div`

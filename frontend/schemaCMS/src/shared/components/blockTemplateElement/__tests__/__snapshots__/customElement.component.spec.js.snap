@@ -1,224 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlockTemplateElement: Component should render correctly 1`] = `
+exports[`CustomElement: Component should render correctly 1`] = `
 <div
-  style={
-    Object {
-      "borderTop": "2px solid #FFF",
-      "overflow": "hidden",
-      "position": "relative",
-      "width": "100%",
-    }
-  }
+  className="sc-AxheI hCJNlC"
 >
   <div
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#000",
-        "display": "flex",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "minHeight": 60,
-        "paddingRight": 40,
-        "position": "relative",
-      }
-    }
+    className="sc-fznJRM dOdAYw"
   >
     <div
-      className="sc-AxirZ kjdPdC"
+      className="sc-fznWqX ieLPDX"
+    />
+    1 Element
+    <div
+      className="sc-fznWqX ieLPDX"
     >
       <div
-        className="sc-AxiKw dPWazA"
+        className="sc-fzoLag edhcrz"
       >
-        <span>
-          icon
-        </span>
         <div
-          className="sc-Axmtr eUjGBA"
+          className="sc-fzoXWK kza-dYs"
         >
-          <svg
+          <button
+            disabled={false}
+            id="add-valuePath"
+            onClick={[Function]}
             style={
               Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": 30,
-                "shapeRendering": "crispEdges",
-                "width": 30,
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M15 28h30v4H15z"
-            />
-          </svg>
-        </div>
-      </div>
-      <div
-        className="sc-AxmLO eRTYCZ"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": 0,
-              "position": "relative",
-            }
-          }
-        >
-          <input
-            id="elements.0.name"
-            name="elements.0.name"
-            onChange={[Function]}
-            placeholder="Name"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
                 "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
                 "outline": "none",
-                "padding": 0,
-                "width": 80,
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
               }
             }
-            type="text"
-            value="element name"
-          />
-          <div
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "opacity": 0,
-                "outline": "none",
-                "padding": 0,
-                "position": "fixed",
-                "visibility": "hidden",
-                "whiteSpace": "pre",
-              }
-            }
+            type="button"
           >
-            element name
-          </div>
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
               }
-            }
-          />
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
         </div>
-      </div>
-      <div
-        className="sc-AxiKw dPWazA"
-      >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
-        >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
-        <svg
-          id="removeElement-0"
-          onClick={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
-              "fill": "#FFF",
-              "height": 30,
-              "shapeRendering": "crispEdges",
-              "width": 30,
-            }
-          }
-          viewBox="0 0 60 60"
-        >
-          <path
-            d="M15 28h30v4H15z"
-          />
-        </svg>
       </div>
     </div>
+  </div>
+  <span>
     <div
-      onClick={[Function]}
       style={
         Object {
-          "cursor": "pointer",
-          "fontSize": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 9,
-          "transform": "rotate(0deg)",
-          "transformOrigin": "center center",
-          "transition": "transform 200ms ease-in-out",
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "space-between",
+          "opacity": 1,
+          "position": "relative",
+          "transform": "translate3d(0, 0, 0)",
+          "width": "100%",
+          "zIndex": 1,
         }
       }
-    />
-  </div>
-  <div
-    style={
-      Object {
-        "backgroundColor": "#000",
-        "height": 0,
-        "transition": "height 200ms linear, overflow 0s linear 200ms",
-      }
-    }
-  >
-    <div>
+    >
       <div
-        className="sc-AxhCb czPhVR"
+        className="sc-AxgMl jOjccY"
       >
+        <div>
+          <div
+            className="sc-fznxsB fXkFDe"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "marginRight": 20,
+                  "width": 10,
+                }
+              }
+              viewBox="0 0 10 60"
+            >
+              <path
+                d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
         <div
-          className="sc-fzpans bkupDd"
+          className="sc-AxmLO jqOulK"
           onClick={[Function]}
         >
-          <label
-            id="fieldProjectStatusLabel"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "none",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Element Type
-          </label>
           <input
-            id="elements.0.type"
-            name="elements.0.type"
+            id="valuePath.0"
+            name="valuePath.0"
             type="hidden"
             value="plain_text"
           />
@@ -232,7 +126,7 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
             }
           >
             <div
-              id="elementTypeSelect"
+              id="valuePath.0"
               style={
                 Object {
                   "cursor": "pointer",
@@ -403,31 +297,11 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
                 >
                   Internal Connection
                 </div>
-                <div
-                  id="select-item-6"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Custom Element
-                </div>
               </div>
             </div>
           </div>
           <div
-            className="sc-fzplWN eObYBF"
+            className="sc-fzozJi eodxki"
           >
             <svg
               style={
@@ -446,8 +320,29 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          className="sc-AxhUy ifPyXr"
+          id="remove-valuePath.0"
+          onClick={[Function]}
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "shapeRendering": "crispEdges",
+                "width": 30,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M15 28h30v4H15z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
+  </span>
 </div>
 `;

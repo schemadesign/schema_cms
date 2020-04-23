@@ -693,7 +693,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         }
       >
-        1 Element
+        2 Elements
       </div>
     </div>
     <div

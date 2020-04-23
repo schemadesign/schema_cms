@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
+import { always, pathOr } from 'ramda';
 
 import {
   customLabelStyles,
@@ -15,12 +16,15 @@ import messages from './blockTemplateElement.messages';
 import { TextInput } from '../form/inputs/textInput';
 import {
   BLOCK_TEMPLATES_ELEMENTS,
+  CUSTOM_ELEMENT_TYPE,
   ELEMENT_AUTO_OPEN,
   ELEMENT_NAME,
   ELEMENT_TYPE,
   ELEMENTS_TYPES,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Select } from '../form/select';
+import { renderWhenTrue } from '../../utils/rendering';
+import { CustomElement } from './customElement.component';
 
 const { EditIcon, MinusIcon } = Icons;
 
@@ -38,6 +42,16 @@ export const BlockTemplateElement = ({
   const elementPath = `${BLOCK_TEMPLATES_ELEMENTS}.${index}`;
   const typesOptions = ELEMENTS_TYPES.map(item => ({ label: intl.formatMessage(messages[item]), value: item }));
   const handleSelectType = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
+  const renderElements = renderWhenTrue(
+    always(
+      <CustomElement
+        values={pathOr([], ['params', 'elements'], element)}
+        valuePath={`${elementPath}.params.elements`}
+        {...restFormikProps}
+        setFieldValue={setFieldValue}
+      />
+    )
+  );
 
   return (
     <AccordionPanel autoOpen={element[ELEMENT_AUTO_OPEN]}>
@@ -79,6 +93,7 @@ export const BlockTemplateElement = ({
             {...restFormikProps}
           />
         </InputContainer>
+        {renderElements(element[ELEMENT_TYPE] === CUSTOM_ELEMENT_TYPE)}
       </AccordionDetails>
     </AccordionPanel>
   );

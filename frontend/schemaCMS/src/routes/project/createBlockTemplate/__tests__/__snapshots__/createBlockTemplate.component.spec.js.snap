@@ -350,7 +350,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznAgC cBHJpy"
+    className="sc-fzomuh jgoMCq"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzqMdD kYfsQV"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzqMdD kYfsQV"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzqMdD kYfsQV"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznLPX dCkfEv"
+          className="sc-fzqAui UFkpp"
         >
           <span
             style={
@@ -830,14 +830,14 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoYHE eDqSqL"
+        className="sc-fznLPX hruDdi"
       >
         <div
-          className="sc-fzpkqZ enddwD"
+          className="sc-fzoaKM dkrGen"
         />
         1 Element
         <div
-          className="sc-fzpkqZ enddwD"
+          className="sc-fzoaKM dkrGen"
         >
           <div
             className="sc-fzpmMD cHkwza"
@@ -959,7 +959,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzqMAW lbYdaI"
+                    className="sc-fzoYHE jElmXV"
                   >
                     <svg
                       style={
@@ -1138,7 +1138,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                   className="sc-fzqAbL iGmQSL"
                 >
                   <div
-                    className="sc-fzoydu jbNcsu"
+                    className="sc-fzpkqZ dqfQZp"
                     onClick={[Function]}
                   >
                     <label
@@ -1344,11 +1344,31 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                           >
                             Internal Connection
                           </div>
+                          <div
+                            id="select-item-6"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Custom Element
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div
-                      className="sc-fzoJMP cdAIGg"
+                      className="sc-fznAgC jTCqAT"
                     >
                       <svg
                         style={
