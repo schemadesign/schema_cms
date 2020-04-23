@@ -9,6 +9,7 @@ import {
   PLAIN_TEXT_TYPE,
   MARKDOWN_TYPE,
   INTERNAL_CONNECTION_TYPE,
+  CUSTOM_ELEMENT_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -48,6 +49,10 @@ export default defineMessages({
     id: `shared.components.blockTemplateElement.${INTERNAL_CONNECTION_TYPE}`,
     defaultMessage: 'Internal Connection',
   },
+  [CUSTOM_ELEMENT_TYPE]: {
+    id: `shared.components.blockTemplateElement.${CUSTOM_ELEMENT_TYPE}`,
+    defaultMessage: 'Custom Element',
+  },
   [PARAMS_BLOCK]: {
     id: `shared.components.blockTemplateElement.${PARAMS_BLOCK}`,
     defaultMessage: 'Block',
@@ -59,5 +64,9 @@ export default defineMessages({
   noBlocksPlaceholder: {
     id: 'shared.components.blockTemplateElement.noBlocksPlaceholder',
     defaultMessage: 'No blocks available',
+  },
+  elements: {
+    id: 'shared.components.blockTemplateElement.elements',
+    defaultMessage: 'Element',
   },
 });
