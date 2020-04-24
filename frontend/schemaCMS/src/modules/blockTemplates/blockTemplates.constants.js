@@ -69,6 +69,20 @@ export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({
         [ELEMENT_TYPE]: Yup.string()
           .min(1, 'Required')
           .required('Required'),
+        [ELEMENT_PARAMS]: Yup.object().when(ELEMENT_TYPE, {
+          is: CUSTOM_ELEMENT_TYPE,
+          then: Yup.object().shape({
+            [BLOCK_TEMPLATES_ELEMENTS]: Yup.array()
+              .of(
+                Yup.object().shape({
+                  [ELEMENT_TYPE]: Yup.string()
+                    .trim()
+                    .required('Required'),
+                })
+              )
+              .required('Required'),
+          }),
+        }),
       })
     ),
 });
