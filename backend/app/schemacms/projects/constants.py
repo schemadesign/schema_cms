@@ -103,6 +103,7 @@ class BlockTypes:
     MARKDOWN = "markdown"
     TEXT = "text"
     IMAGE = "image"
+    OBSERVABLE_HQ = "observable_hq"
 
 
 BLOCK_TYPE_CHOICES = (
@@ -111,4 +112,5 @@ BLOCK_TYPE_CHOICES = (
     (BlockTypes.MARKDOWN, "Markdown"),
     (BlockTypes.TEXT, "Text"),
     (BlockTypes.IMAGE, "Image Upload"),
+    (BlockTypes.OBSERVABLE_HQ, "ObservableHQ"),
 )

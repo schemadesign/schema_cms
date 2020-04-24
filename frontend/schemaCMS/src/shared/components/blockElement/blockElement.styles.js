@@ -77,6 +77,11 @@ export const InputContainer = styled.div`
   padding-bottom: 30px;
 `;
 
+export const ObservableHQContainer = styled.div`
+  position: relative;
+  padding-bottom: 30px;
+`;
+
 export const IconContainer = styled.div`
   width: 0;
   overflow: hidden;

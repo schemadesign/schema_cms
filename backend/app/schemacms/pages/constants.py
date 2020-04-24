@@ -12,6 +12,11 @@ class ElementType:
     CONNECTION = "connection"
     INTERNAL_CONNECTION = "internal_connection"
 
+class ObservableFieldType:
+    OBSERVABLE_USER = "observable_user"
+    OBSERVABLE_NOTEBOOK = "observable_notebook"
+    OBSERVABLE_CELL = "observable_cell"
+
 
 ELEMENT_TYPE_CHOICES = (
     (ElementType.MARKDOWN, "Markdown"),
@@ -20,4 +25,10 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
     (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
+)
+
+OBSERVABLE_FIELD_TYPE_CHOICES = (
+    (ObservableFieldType.OBSERVABLE_USER, "ObservableHQ User")
+    (ObservableFieldType.OBSERVABLE_NOTEBOOK, "ObservableHQ Notebook")
+    (ObservableFieldType.OBSERVABLE_CELL, "ObservableHQ Cell")
 )
