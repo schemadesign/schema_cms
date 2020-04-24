@@ -21,14 +21,19 @@ CORS(app)
 
 
 def create_response(data):
-    return Response(json.dumps(data, ensure_ascii=True), content_type="application/json; charset=utf-8",)
+    return Response(
+        json.dumps(data, ensure_ascii=True),
+        content_type="application/json; charset=utf-8",
+    )
 
 
 def read_parquet_from_s3(data_source, columns=None, orient="index", slice_=True):
     result_file = services.get_s3_object(data_source.result_parquet)
     file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
     if slice_:
-        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso"))
+        return json.loads(
+            file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso")
+        )
     else:
         return json.loads(file.to_pandas().to_json(orient=orient, date_format="iso"))
 
@@ -48,7 +53,9 @@ def get_projects():
     try:
         projects = [
             project.as_dict()
-            for project in db.Project.select().where(db.Project.deleted_at == None).order_by(db.Project.id)
+            for project in db.Project.select()
+            .where(db.Project.deleted_at == None)
+            .order_by(db.Project.id)
         ]
 
     except Exception as e:
@@ -62,11 +69,32 @@ def get_projects():
 def get_project(project_id):
     try:
         project = db.Project.select().where(db.Project.id == project_id).get().as_dict()
+
+    except db.Project.DoesNotExist:
+        return create_response({"error": "Project does not exist"})
+
     except Exception as e:
         logging.info(f"Unable to get project - {e}")
         return create_response({"error": f"{e}"}), 404
 
     return create_response(project), 200
+
+
+@app.route("/projects/<int:project_id>/datasources", methods=["GET"])
+def get_project_data_sources(project_id):
+    try:
+        data_sources = [
+            data_source.as_dict()
+            for data_source in db.DataSource.select().where(
+                db.DataSource.project_id == project_id
+            )
+        ]
+
+    except Exception as e:
+        logging.info(f"Unable to get project - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(data_sources), 200
 
 
 # Pages endpoints
@@ -76,6 +104,10 @@ def get_project(project_id):
 def get_section(section_id):
     try:
         project = db.Section.select().where(db.Section.id == section_id).get().as_dict()
+
+    except db.Section.DoesNotExist:
+        return create_response({"error": "Section does not exist"})
+
     except Exception as e:
         logging.info(f"Unable to get project - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -88,6 +120,10 @@ def get_page(page_id):
     try:
         format_ = request.args.get("format", None)
         page = db.Page.select().where(db.Page.id == page_id).get().as_dict_detail()
+
+    except db.Page.DoesNotExist:
+        return create_response({"error": "Page does not exist"})
+
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -101,11 +137,33 @@ def get_page(page_id):
 # Data Sources endpoints
 
 
+@app.route("/datasources", methods=["GET"])
+def get_data_sources():
+    try:
+        data_sources = [
+            data_source.as_dict()
+            for data_source in db.DataSource.select()
+            .where(db.DataSource.deleted_at == None)
+            .order_by(db.DataSource.id)
+        ]
+
+    except Exception as e:
+        logging.info(f"Unable to get data source - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(data_sources), 200
+
+
 @app.route("/datasources/<int:data_source_id>", methods=["GET"])
 def get_data_source(data_source_id):
     try:
-        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
         records = read_parquet_from_s3(data_source)
+
+    except db.DataSource.DoesNotExist:
+        return create_response({"error": "Data Source does not exist"})
 
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
@@ -120,8 +178,14 @@ def get_data_source(data_source_id):
 @app.route("/datasources/<int:data_source_id>/meta", methods=["GET"])
 def get_data_source_meta(data_source_id):
     try:
-        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
         meta = data_source.as_dict()["meta"]
+
+    except db.DataSource.DoesNotExist:
+        return create_response({"error": "Data Source does not exists"})
+
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -132,8 +196,14 @@ def get_data_source_meta(data_source_id):
 @app.route("/datasources/<int:data_source_id>/fields", methods=["GET"])
 def get_data_source_fields(data_source_id):
     try:
-        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
         fields = data_source.get_fields()
+
+    except db.DataSource.DoesNotExist:
+        return create_response({"error": "Data Source does not exist"})
+
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -141,18 +211,35 @@ def get_data_source_fields(data_source_id):
     return create_response(fields), 200
 
 
-@app.route("/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"])
+@app.route(
+    "/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"]
+)
 def get_data_source_selected_field(data_source_id, field_id):
     try:
-        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
         field = data_source.get_fields()[field_id]
-        records = read_parquet_from_s3(data_source, columns=[field["name"]], slice_=False)
+        records = read_parquet_from_s3(
+            data_source, columns=[field["name"]], slice_=False
+        )
+
+    except db.DataSource.DoesNotExist:
+        return create_response({"error": "Data Source does not exist"})
+
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
         return create_response({"error": f"{e}"}), 404
 
     return (
-        create_response({"id": field_id, "name": field["name"], "type": field["type"], "records": records,}),
+        create_response(
+            {
+                "id": field_id,
+                "name": field["name"],
+                "type": field["type"],
+                "records": records,
+            }
+        ),
         200,
     )
 
@@ -160,8 +247,14 @@ def get_data_source_selected_field(data_source_id, field_id):
 @app.route("/datasources/<int:data_source_id>/filters", methods=["GET"])
 def get_data_source_filters(data_source_id):
     try:
-        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
         filters = data_source.get_filters()
+
+    except db.DataSource.DoesNotExist:
+        return create_response({"error": "Data Source does not exist"})
+
     except Exception as e:
         logging.info(f"Unable to get filters - {e}")
         return create_response({"error": f"{e}"}), 404
@@ -177,7 +270,9 @@ def get_data_source_records(data_source_id):
     columns = split_string_to_list(columns_list_as_string)
 
     try:
-        data_source = db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        data_source = (
+            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+        )
         items = data_source.result_shape[0]
 
         result_file = services.get_s3_object(data_source.result_parquet)
@@ -195,6 +290,9 @@ def get_data_source_records(data_source_id):
             ),
             200,
         )
+
+    except db.DataSource.DoesNotExist:
+        return create_response({"error": "Data Source does not exist"})
 
     except Exception as e:
         logging.critical(f"Unable to get job results - {e}")

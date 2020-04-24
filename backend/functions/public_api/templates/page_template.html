@@ -24,6 +24,10 @@
 				{{ element["html"]|safe }}
 			{% endif %}
 
+			{% if element["type"] == "internal_connection" %}
+				{{ element["html"]|safe }}
+			{% endif %}
+
 			{% if element["type"] == "image" %}
 				{{ element["html"]|safe }}
 			{% endif %}
