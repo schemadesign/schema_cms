@@ -23,6 +23,11 @@ export const CODE_TYPE = 'code';
 export const CONNECTION_TYPE = 'connection';
 export const INTERNAL_CONNECTION_TYPE = 'internal_connection';
 export const CUSTOM_ELEMENT_TYPE = 'custom_element';
+export const OBSERVABLEHQ_TYPE = 'observablehq_type';
+
+export const OBSERVABLE_USER = 'observable_user';
+export const OBSERVABLE_NOTEBOOK = 'observable_notebook';
+export const OBSERVABLE_CELL = 'observable_cell';
 
 export const CUSTOM_ELEMENTS_TYPES = [
   MARKDOWN_TYPE,
@@ -31,6 +36,7 @@ export const CUSTOM_ELEMENTS_TYPES = [
   CODE_TYPE,
   CONNECTION_TYPE,
   INTERNAL_CONNECTION_TYPE,
+  OBSERVABLEHQ_TYPE,
 ];
 
 export const ELEMENTS_TYPES = [...CUSTOM_ELEMENTS_TYPES, CUSTOM_ELEMENT_TYPE];

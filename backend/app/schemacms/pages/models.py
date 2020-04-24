@@ -25,6 +25,14 @@ class Element(SoftDeleteObject, models.Model):
         return f"{self.name}"
 
 
+class ObservableElement(SoftDeleteObject, models.Model):
+        class Meta:
+            abstract = True
+
+        def __str__(self):
+            return f"{self.name}"
+
+
 class Content(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
@@ -167,3 +175,9 @@ class PageBlockElement(Element):
             element, _ = PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(block=self.block, custom_element=self, **element),
             )
+
+class PageBlockObservableElement(ObservableElement):
+    element = models.ForeignKey(PageBlockElement, on_delete=models.CASCADE, related_name="blockElement")
+    observableUser = models.TextField(blank=True, default="")
+    observableNotebook = models.TextField(blank=True, default="")
+    observableCell = models.TextField(blank=True, default="")
