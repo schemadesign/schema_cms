@@ -222,7 +222,10 @@ class PageViewSet(DetailViewSet):
                 .order_by("order")
                 .prefetch_related(
                     d_models.Prefetch(
-                        "elements", queryset=models.PageBlockElement.objects.all().order_by("order")
+                        "elements",
+                        queryset=models.PageBlockElement.objects.all()
+                        .order_by("order")
+                        .exclude(custom_element__isnull=False),
                     )
                 ),
             )

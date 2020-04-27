@@ -132,6 +132,10 @@ class PageBlock(SoftDeleteObject):
         return f"{self.name}"
 
 
+class PageCustomElement(SoftDeleteObject):
+    element = models.ForeignKey("PageBlockElement", on_delete=models.CASCADE, related_name="custom_elements")
+
+
 class PageBlockElement(Element):
     block = models.ForeignKey(PageBlock, on_delete=models.CASCADE, related_name="elements")
     markdown = models.TextField(blank=True, default="")
@@ -144,6 +148,9 @@ class PageBlockElement(Element):
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
         upload_to=file_upload_path,
     )
+    custom_element = models.ForeignKey(
+        PageCustomElement, on_delete=models.CASCADE, related_name="elements", null=True
+    )
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -152,3 +159,16 @@ class PageBlockElement(Element):
             raise ValueError("Page is not set")
 
         return os.path.join(base_path, f"{self.block.page_id}/blocks/{self.block_id}/{filename}")
+
+    def update_or_create_custom_elements(self, elements):
+        for element in elements:
+            custom_element, _ = PageCustomElement.objects.update_or_create(
+                element=self, defaults=dict(element=self)
+            )
+            type_ = element.get("type")
+            element[type_] = element.pop("value")
+            element.pop("key")
+            element, _ = PageBlockElement.objects.update_or_create(
+                id=element.pop("id", None),
+                defaults=dict(block=self.block, custom_element=custom_element, **element),
+            )

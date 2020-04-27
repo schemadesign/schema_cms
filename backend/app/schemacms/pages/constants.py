@@ -11,6 +11,7 @@ class ElementType:
     CODE = "code"
     CONNECTION = "connection"
     INTERNAL_CONNECTION = "internal_connection"
+    CUSTOM_ELEMENT = "custom_element"
 
 
 ELEMENT_TYPE_CHOICES = (
@@ -20,4 +21,5 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
     (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
+    (ElementType.CUSTOM_ELEMENT, "Custom Element"),
 )
