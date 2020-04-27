@@ -132,10 +132,6 @@ class PageBlock(SoftDeleteObject):
         return f"{self.name}"
 
 
-class PageCustomElement(SoftDeleteObject):
-    element = models.ForeignKey("PageBlockElement", on_delete=models.CASCADE, related_name="custom_elements")
-
-
 class PageBlockElement(Element):
     block = models.ForeignKey(PageBlock, on_delete=models.CASCADE, related_name="elements")
     markdown = models.TextField(blank=True, default="")
@@ -149,7 +145,7 @@ class PageBlockElement(Element):
         upload_to=file_upload_path,
     )
     custom_element = models.ForeignKey(
-        PageCustomElement, on_delete=models.CASCADE, related_name="elements", null=True
+        "PageBlockElement", on_delete=models.CASCADE, related_name="elements", null=True
     )
 
     def relative_path_to_save(self, filename):
@@ -162,13 +158,9 @@ class PageBlockElement(Element):
 
     def update_or_create_custom_elements(self, elements):
         for element in elements:
-            custom_element, _ = PageCustomElement.objects.update_or_create(
-                element=self, defaults=dict(element=self)
-            )
             type_ = element.get("type")
             element[type_] = element.pop("value")
             element.pop("key")
             element, _ = PageBlockElement.objects.update_or_create(
-                id=element.pop("id", None),
-                defaults=dict(block=self.block, custom_element=custom_element, **element),
+                id=element.pop("id", None), defaults=dict(block=self.block, custom_element=self, **element),
             )

@@ -180,7 +180,10 @@ class PageListCreateView(generics.ListCreateAPIView):
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             d_models.Prefetch(
-                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
+                "elements",
+                queryset=models.PageBlockElement.objects.all()
+                .order_by("order")
+                .exclude(custom_element__isnull=False),
             )
         )
         .order_by("-created")

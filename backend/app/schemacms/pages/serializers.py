@@ -39,7 +39,7 @@ class ElementValueField(serializers.Field):
 
     def get_attribute(self, instance):
         if instance.type == constants.ElementType.CUSTOM_ELEMENT:
-            elements = models.PageCustomElement.objects.get(element=instance).elements.all()
+            elements = instance.elements.all()
             elements = PageBlockElementSerializer(elements, many=True).data
 
             return {"elements": elements}
@@ -411,7 +411,6 @@ class PageSerializer(CustomModelSerializer):
             )
 
             if type_ == constants.ElementType.CUSTOM_ELEMENT:
-                breakpoint()
                 obj.update_or_create_custom_elements(element_set["elements"])
 
     def create_block_elements(self, elements, instance):
