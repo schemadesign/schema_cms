@@ -266,6 +266,7 @@ class Element(BaseModel):
     markdown = TextField()
     connection = CharField()
     plain_text = TextField()
+    internal_connection = TextField()
     code = TextField()
     image = CharField()
     order = SmallIntegerField()

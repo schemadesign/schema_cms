@@ -1,7 +1,7 @@
 import base64
 import mimetypes
 
-from django.db import transaction
+from django.db import transaction, models as django_models
 from django.db.models.fields.files import ImageFieldFile
 from django.core.files.base import ContentFile
 from django.core.validators import URLValidator
@@ -34,9 +34,16 @@ class ElementValueField(serializers.Field):
 
     def get_value(self, dictionary):
         self.type = dictionary.get("type")
+
         return super().get_value(dictionary)
 
     def get_attribute(self, instance):
+        if instance.type == constants.ElementType.CUSTOM_ELEMENT:
+            elements = instance.elements.all()
+            elements = PageBlockElementSerializer(elements, many=True).data
+
+            return {"elements": elements}
+
         return getattr(instance, instance.type)
 
     def to_internal_value(self, data):
@@ -97,6 +104,12 @@ class BaseElementSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "type", "order", "params")
 
 
+class CustomElementContentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.BlockElement
+        fields = ("type", "order")
+
+
 class BlockElementSerializer(BaseElementSerializer):
     class Meta:
         model = models.BlockElement
@@ -153,23 +166,40 @@ class BlockTemplateSerializer(CustomModelSerializer):
 
         return instance
 
-    @staticmethod
-    def create_or_update_elements(instance, elements):
+    def create_or_update_elements(self, instance, elements):
         for element in elements:
+            if element["type"] == constants.ElementType.CUSTOM_ELEMENT:
+                self.validate_custom_element(element)
             models.BlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(template=instance, **element)
             )
 
-    @staticmethod
-    def create_elements(elements, template):
+    def create_elements(self, elements, template):
         for element in elements:
+
+            if element["type"] == constants.ElementType.CUSTOM_ELEMENT:
+                self.validate_custom_element(element)
+
             element_instance = models.BlockElement()
             element_instance.name = element["name"]
             element_instance.template = template
             element_instance.type = element["type"]
             element_instance.order = element["order"]
             element_instance.params = element["params"]
+
             yield element_instance
+
+    @staticmethod
+    def validate_custom_element(element):
+        if element.get("params"):
+            custom_elements = element.get("params").get("elements", None)
+
+        if not custom_elements:
+            message = "Custom Element have to contain at least one of standard elements"
+            raise serializers.ValidationError(message)
+
+        serializer = CustomElementContentSerializer(data=custom_elements, many=True)
+        serializer.is_valid(raise_exception=True)
 
 
 class PageTemplateBlockSerializer(serializers.ModelSerializer):
@@ -322,10 +352,10 @@ class PageSerializer(CustomModelSerializer):
 
     @transaction.atomic()
     def create(self, validated_data):
-        project = validated_data.get("section").project
+        validated_data["project"] = validated_data.get("section").project
         blocks = self.initial_data.get("blocks", [])
-        page = self.Meta.model(project=project, **validated_data)
-        page.save()
+
+        page = super().create(validated_data)
 
         if not validated_data.get("display_name"):
             page.display_name = page.slug
@@ -351,39 +381,40 @@ class PageSerializer(CustomModelSerializer):
             instance.save()
 
         if blocks:
-            self.create_or_update_blocks(instance, blocks, is_update=True)
+            self.create_or_update_blocks(instance, blocks)
 
         return instance
 
-    def create_or_update_blocks(self, page, blocks, is_update=False):
+    def create_or_update_blocks(self, page, blocks):
         blocks_data = self.validate_block_data(blocks)
         for block in blocks_data:
             elements = block.pop("elements", [])
             block, _ = page.create_or_update_block(block)
 
-            if is_update:
-                self.create_or_update_elements(block, elements)
-            else:
-                self.create_block_elements(elements, block)
+            self.create_or_update_elements(block, elements)
 
     @staticmethod
     def create_or_update_elements(instance, elements):
         for element in elements:
+            type_ = element.get("type")
+
             if "value" in element:
-                type_ = element.get("type")
                 value = element.pop("value")
+
                 element[type_] = value
 
                 if type_ == constants.ElementType.IMAGE and not value:
                     element.pop(type_)
 
-            models.PageBlockElement.objects.update_or_create(
+                if type_ == constants.ElementType.CUSTOM_ELEMENT:
+                    element_set = element.pop(type_)
+
+            obj, _ = models.PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(block=instance, **element)
             )
 
-    def create_block_elements(self, elements, instance):
-        if elements:
-            models.PageBlockElement.objects.bulk_create(self.create_elements(elements, instance))
+            if type_ == constants.ElementType.CUSTOM_ELEMENT:
+                obj.update_or_create_custom_elements(element_set["elements"])
 
     @staticmethod
     def create_elements(elements, block):
@@ -405,7 +436,14 @@ class PageSerializer(CustomModelSerializer):
 
     @staticmethod
     def get_blocks(obj):
-        blocks = obj.pageblock_set.all()
+        blocks = obj.pageblock_set.all().prefetch_related(
+            django_models.Prefetch(
+                "elements",
+                queryset=models.PageBlockElement.objects.all()
+                .order_by("order")
+                .exclude(custom_element__isnull=False),
+            )
+        )
         return PageBlockSerializer(blocks, many=True).data
 
 
