@@ -23,7 +23,7 @@ export const CODE_TYPE = 'code';
 export const CONNECTION_TYPE = 'connection';
 export const INTERNAL_CONNECTION_TYPE = 'internal_connection';
 export const CUSTOM_ELEMENT_TYPE = 'custom_element';
-export const OBSERVABLEHQ_TYPE = 'observablehq_type';
+export const OBSERVABLEHQ_TYPE = 'observable_hq';
 
 export const OBSERVABLE_USER = 'observable_user';
 export const OBSERVABLE_NOTEBOOK = 'observable_notebook';
