@@ -12,6 +12,7 @@ class ElementType:
     CONNECTION = "connection"
     INTERNAL_CONNECTION = "internal_connection"
     CUSTOM_ELEMENT = "custom_element"
+    OBSERVABLE_HQ = "observable_hq"
 
 class ObservableFieldType:
     OBSERVABLE_USER = "observable_user"
@@ -30,7 +31,7 @@ ELEMENT_TYPE_CHOICES = (
 )
 
 OBSERVABLE_FIELD_TYPE_CHOICES = (
-    (ObservableFieldType.OBSERVABLE_USER, "ObservableHQ User")
-    (ObservableFieldType.OBSERVABLE_NOTEBOOK, "ObservableHQ Notebook")
-    (ObservableFieldType.OBSERVABLE_CELL, "ObservableHQ Cell")
+    (ObservableFieldType.OBSERVABLE_USER, "ObservableHQ User"),
+    (ObservableFieldType.OBSERVABLE_NOTEBOOK, "ObservableHQ Notebook"),
+    (ObservableFieldType.OBSERVABLE_CELL, "ObservableHQ Cell"),
 )
