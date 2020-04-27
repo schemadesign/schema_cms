@@ -160,7 +160,10 @@ class PageBlockElement(Element):
         for element in elements:
             type_ = element.get("type")
             element[type_] = element.pop("value")
-            element.pop("key")
+
+            if "key" in element:
+                element.pop("key")
+
             element, _ = PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(block=self.block, custom_element=self, **element),
             )

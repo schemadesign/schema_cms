@@ -103,7 +103,7 @@ class TestUpdateDeleteBlockTemplatesView:
 
         payload = {
             "elements": [
-                {"id": elements[0].id, "name": new_element_name, "order": 1},
+                {"id": elements[0].id, "type": ElementType.PLAIN_TEXT, "name": new_element_name, "order": 1},
                 {"name": "NewElement", "type": ElementType.PLAIN_TEXT, "order": 2, "params": {}},
             ]
         }
@@ -451,7 +451,7 @@ class TestUpdateDeletePageView:
     ):
         page_block = page_block_factory(block=block_template, page=page)
         page_block_element = page_block_element_factory(block=page_block)
-        new_element_name = "New Elemebt Name"
+        new_element_name = "New Element Name"
         payload = {
             "blocks": [
                 {"id": page_block.id, "elements": [{"id": page_block_element.id, "name": new_element_name}]}

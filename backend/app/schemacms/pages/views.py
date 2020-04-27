@@ -180,10 +180,7 @@ class PageListCreateView(generics.ListCreateAPIView):
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             d_models.Prefetch(
-                "elements",
-                queryset=models.PageBlockElement.objects.all()
-                .order_by("order")
-                .exclude(custom_element__isnull=False),
+                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
             )
         )
         .order_by("-created")
@@ -220,19 +217,10 @@ class PageViewSet(DetailViewSet):
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             d_models.Prefetch(
-                "pageblock_set",
-                queryset=models.PageBlock.objects.select_related("block")
-                .order_by("order")
-                .prefetch_related(
-                    d_models.Prefetch(
-                        "elements",
-                        queryset=models.PageBlockElement.objects.all()
-                        .order_by("order")
-                        .exclude(custom_element__isnull=False),
-                    )
-                ),
+                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
             )
         )
     )
+
     serializer_class = serializers.PageSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
