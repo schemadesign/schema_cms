@@ -27,6 +27,7 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
     (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
+    (ElementType.OBSERVABLE_HQ, "ObservableHQ"),
     (ElementType.CUSTOM_ELEMENT, "Custom Element"),
 )
 
