@@ -15,6 +15,8 @@ class ElementType:
     CONNECTION = "connection"
     INTERNAL_CONNECTION = "internal_connection"
     IMAGE = "image"
+    CUSTOM_ELEMENT = "custom_element"
+    OBSERVABLE_HQ = "observable_hq"
 
 
 class BaseModel(Model):
@@ -255,8 +257,26 @@ class Block(BaseModel):
     def get_elements(self):
         return [
             element.as_dict()
-            for element in self.elements.select().where(Element.deleted_at == None)
+            for element in self.elements.select().where(
+                Element.deleted_at == None, Element.custom_element == None
+            )
         ]
+
+
+class ObservableElement(BaseModel):
+    observable_user = TextField()
+    observable_notebook = TextField()
+    observable_cell = TextField()
+
+    class Meta:
+        table_name = "pages_pageblockobservableelement"
+
+    def as_dict(self):
+        return {
+            "observable_user": self.observable_user,
+            "observable_notebook": self.observable_notebook,
+            "observable_cell": self.observable_cell,
+        }
 
 
 class Element(BaseModel):
@@ -267,6 +287,8 @@ class Element(BaseModel):
     connection = CharField()
     plain_text = TextField()
     internal_connection = TextField()
+    custom_element = ForeignKeyField("self", backref="elements")
+    observable_hq = ForeignKeyField(ObservableElement, backref="block_element")
     code = TextField()
     image = CharField()
     order = SmallIntegerField()
@@ -286,9 +308,8 @@ class Element(BaseModel):
         }
 
     def get_element_value(self):
-        value = getattr(self, self.type)
-        if self.type == "image":
-            value = {
+        if self.type == ElementType.IMAGE:
+            return {
                 "file_name": self.get_image_data(self.image),
                 "image": "{}/{}/{}".format(
                     services.s3.meta.endpoint_url,
@@ -297,12 +318,35 @@ class Element(BaseModel):
                 ),
             }
 
-        return value
+        if self.type == ElementType.OBSERVABLE_HQ:
+            return self.observable_hq.as_dict()
+
+        if self.type == ElementType.CUSTOM_ELEMENT:
+            return self.get_custom_element_data(self)
+
+        return getattr(self, self.type)
 
     @staticmethod
     def get_image_data(image):
         name = image.split("/")[-1]
         return name
+
+    @staticmethod
+    def get_custom_element_data(custom_element):
+        elements = []
+
+        for element in custom_element.elements:
+            data = {
+                "elements": {
+                    "id": element.id,
+                    "name": element.name,
+                    "type": element.type,
+                    "value": getattr(element, element.type),
+                }
+            }
+            elements.append(data)
+
+        return elements
 
     def get_value_in_html(self):
         if self.type == ElementType.CONNECTION:
@@ -318,6 +362,24 @@ class Element(BaseModel):
             html_value = (
                 f"<div id='{self.id}' class='element internal-connection'>"
                 f"<a href='{self.connection}' target='_self'>{self.connection}</a>"
+                f"</div>"
+            )
+
+            return html_value
+
+        if self.type == ElementType.OBSERVABLE_HQ:
+            html_value = (
+                f"<div id='{self.id}' class='element observable'>"
+                f"<p>Observable</p>"
+                f"</div>"
+            )
+
+            return html_value
+
+        if self.type == ElementType.CUSTOM_ELEMENT:
+            html_value = (
+                f"<div id='{self.id}' class='element custom-element'>"
+                f"<p>Custom Element</p>"
                 f"</div>"
             )
 

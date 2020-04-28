@@ -28,6 +28,14 @@
 				{{ element["html"]|safe }}
 			{% endif %}
 
+			{% if element["type"] == "custom_element" %}
+				{{ element["html"]|safe }}
+			{% endif %}
+
+			{% if element["type"] == "observable_hq" %}
+				{{ element["html"]|safe }}
+			{% endif %}
+
 			{% if element["type"] == "image" %}
 				{{ element["html"]|safe }}
 			{% endif %}

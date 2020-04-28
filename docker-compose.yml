@@ -82,6 +82,8 @@ services:
     ports:
       - "8002:8002"
     restart: always
+    stdin_open: true
+    tty: true
 
   mailcatcher:
     image: schickling/mailcatcher
