@@ -3,7 +3,12 @@ import React from 'react';
 import { BlockElement } from '../blockElement.component';
 import { defaultProps } from '../blockElement.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
-import { imageElement, internalConnectionElement, markdownElement } from '../../../../modules/page/page.mocks';
+import {
+  imageElement,
+  internalConnectionElement,
+  markdownElement,
+  observableHQElement,
+} from '../../../../modules/page/page.mocks';
 
 describe('BlockElement: Component', () => {
   const render = props => makeContextRenderer(<BlockElement {...defaultProps} {...props} />);
@@ -25,6 +30,11 @@ describe('BlockElement: Component', () => {
 
   it('should render correctly markdown element', async () => {
     const wrapper = await render({ element: markdownElement });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly observable element', async () => {
+    const wrapper = await render({ element: observableHQElement });
     expect(wrapper).toMatchSnapshot();
   });
 

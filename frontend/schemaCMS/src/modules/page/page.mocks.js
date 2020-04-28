@@ -22,6 +22,10 @@ import {
   ELEMENT_VALUE,
   INTERNAL_CONNECTION_TYPE,
   MARKDOWN_TYPE,
+  OBSERVABLEHQ_TYPE,
+  OBSERVABLE_CELL,
+  OBSERVABLE_NOTEBOOK,
+  OBSERVABLE_USER,
 } from '../blockTemplates/blockTemplates.constants';
 import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
@@ -52,6 +56,17 @@ export const markdownElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_TYPE]: MARKDOWN_TYPE,
   [ELEMENT_VALUE]: '**Hello world!!!**',
+  [ELEMENT_ID]: 1,
+};
+
+export const observableHQElement = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_TYPE]: OBSERVABLEHQ_TYPE,
+  [ELEMENT_VALUE]: {
+    [`blockPath.elements.0.${OBSERVABLE_USER}.value`]: '@user',
+    [`blockPath.elements.0.${OBSERVABLE_NOTEBOOK}.value`]: 'my-notebook',
+    [`blockPath.elements.0.${OBSERVABLE_CELL}.value`]: 'notebook-cell',
+  },
   [ELEMENT_ID]: 1,
 };
 

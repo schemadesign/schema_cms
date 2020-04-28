@@ -970,6 +970,245 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
 </div>
 `;
 
+exports[`BlockElement: Component should render correctly observable element 1`] = `
+<div
+  style={
+    Object {
+      "borderTop": "2px solid #FFF",
+      "overflow": "inherit",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#000",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "minHeight": 60,
+        "paddingRight": 40,
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="sc-AxirZ jigHkS"
+    >
+      <div
+        className="sc-Axmtr eiJTdA"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 30,
+              "shapeRendering": "crispEdges",
+              "width": 30,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 28h30v4H15z"
+          />
+        </svg>
+      </div>
+      <div
+        className="sc-AxiKw bOTXee"
+      >
+        name
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "fontSize": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 9,
+          "transform": "rotate(180deg)",
+          "transformOrigin": "center center",
+          "transition": "transform 200ms ease-in-out",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#000",
+        "height": "auto",
+        "transition": "height 200ms linear, overflow 0s linear 200ms",
+      }
+    }
+  >
+    <div>
+      <div
+        className="sc-AxjAm gcayeW"
+      >
+        <div
+          className="sc-AxheI eIpVXM"
+        >
+          <div
+            className="sc-fzplWN hbOsvl"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "320px",
+                  "paddingBottom": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <input
+                id="blockPath.elements.0.observable_user.value"
+                name="blockPath.elements.0.observable_user.value"
+                onChange={[Function]}
+                placeholder="ObservableHQ User"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                  }
+                }
+                type="text"
+                value="@user"
+              />
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": -30,
+                    "top": -40,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-fzplWN hbOsvl"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "320px",
+                  "paddingBottom": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <input
+                id="blockPath.elements.0.observable_notebook.value"
+                name="blockPath.elements.0.observable_notebook.value"
+                onChange={[Function]}
+                placeholder="ObservableHQ Notebook"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                  }
+                }
+                type="text"
+                value="my-notebook"
+              />
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": -30,
+                    "top": -40,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-fzplWN hbOsvl"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "320px",
+                  "paddingBottom": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <input
+                id="blockPath.elements.0.observable_cell.value"
+                name="blockPath.elements.0.observable_cell.value"
+                onChange={[Function]}
+                placeholder="ObservableHQ Cell"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                  }
+                }
+                type="text"
+                value="notebook-cell"
+              />
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": -30,
+                    "top": -40,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`BlockElement: Component should render correctly text element 1`] = `
 <div
   style={
