@@ -148,7 +148,7 @@ class PageBlockElement(Element):
         "PageBlockElement", on_delete=models.CASCADE, related_name="elements", null=True
     )
     observable_hq = models.OneToOneField(
-        PageBlockObservableElement, on_delete=models.SET_NULL, null=True, related_name="block_element"
+        "PageBlockObservableElement", on_delete=models.SET_NULL, null=True, related_name="block_element"
     )
 
     def relative_path_to_save(self, filename):
