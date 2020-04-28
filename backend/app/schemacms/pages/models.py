@@ -25,14 +25,6 @@ class Element(SoftDeleteObject, models.Model):
         return f"{self.name}"
 
 
-class ObservableElement(SoftDeleteObject, models.Model):
-        class Meta:
-            abstract = True
-
-        def __str__(self):
-            return f"{self.name}"
-
-
 class Content(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
@@ -136,8 +128,7 @@ class PageBlock(SoftDeleteObject):
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
     order = models.PositiveIntegerField(default=0)
 
-    def __str__(self):
-        return f"{self.name}"
+
 
 
 class PageBlockElement(Element):
@@ -152,6 +143,9 @@ class PageBlockElement(Element):
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
         upload_to=file_upload_path,
     )
+    observable_hq = models.OneToOneField(
+        PageBlockObservableElement, on_delete=models.SET_NULL, null=True, related_name="block_element"
+    )
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -161,8 +155,10 @@ class PageBlockElement(Element):
 
         return os.path.join(base_path, f"{self.block.page_id}/blocks/{self.block_id}/{filename}")
 
-class PageBlockObservableElement(ObservableElement):
-    element = models.ForeignKey(PageBlockElement, on_delete=models.CASCADE, related_name="blockElement")
+class PageBlockObservableElement(SoftDeleteObject):
     observableUser = models.TextField(blank=True, default="")
     observableNotebook = models.TextField(blank=True, default="")
     observableCell = models.TextField(blank=True, default="")
+
+    def __str__(self):
+        return f"{self.name}"
