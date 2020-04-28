@@ -95,22 +95,3 @@ FIELD_TYPE_CHOICES = (
     (FieldType.BOOLEAN, "Boolean"),
     (FieldType.NUMBER, "Number"),
 )
-
-
-class BlockTypes:
-    EMBED = "embed"
-    CODE = "code"
-    MARKDOWN = "markdown"
-    TEXT = "text"
-    IMAGE = "image"
-    OBSERVABLE_HQ = "observable_hq"
-
-
-BLOCK_TYPE_CHOICES = (
-    (BlockTypes.EMBED, "Embed"),
-    (BlockTypes.CODE, "Code"),
-    (BlockTypes.MARKDOWN, "Markdown"),
-    (BlockTypes.TEXT, "Text"),
-    (BlockTypes.IMAGE, "Image Upload"),
-    (BlockTypes.OBSERVABLE_HQ, "ObservableHQ"),
-)

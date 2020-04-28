@@ -2,53 +2,49 @@
 
 from django.db import migrations, models, transaction
 
-from ..constants import BlockTypes
-
 
 def old_type_to_new(apps, schema_editor):
-    Block = apps.get_model('projects', 'Block')
+    Block = apps.get_model("projects", "Block")
 
     db_alias = schema_editor.connection.alias
 
     with transaction.atomic():
-        Block.objects.using(db_alias).filter(type="youtube_embed").update(type=BlockTypes.EMBED)
-        Block.objects.using(db_alias).filter(type="code_snippet").update(type=BlockTypes.CODE)
-        Block.objects.using(db_alias).filter(type="markdown_text").update(type=BlockTypes.MARKDOWN)
-        Block.objects.using(db_alias).filter(type="image_uploaded").update(type=BlockTypes.IMAGE)
+        Block.objects.using(db_alias).filter(type="youtube_embed").update(type="embed")
+        Block.objects.using(db_alias).filter(type="code_snippet").update(type="code")
+        Block.objects.using(db_alias).filter(type="markdown_text").update(type="markdown")
+        Block.objects.using(db_alias).filter(type="image_uploaded").update(type="image")
 
 
 def reverse_func(apps, schema_editor):
-    Block = apps.get_model('projects', 'Block')
+    Block = apps.get_model("projects", "Block")
 
     db_alias = schema_editor.connection.alias
 
     with transaction.atomic():
-        Block.objects.using(db_alias).filter(type=BlockTypes.EMBED).update(type="youtube_embed")
-        Block.objects.using(db_alias).filter(type=BlockTypes.CODE).update(type="code_snippet")
-        Block.objects.using(db_alias).filter(type__in=[BlockTypes.MARKDOWN, BlockTypes.TEXT]).update(
-            type="markdown_text"
-        )
-        Block.objects.using(db_alias).filter(type=BlockTypes.IMAGE).update(type="image_uploaded")
+        Block.objects.using(db_alias).filter(type="embed").update(type="youtube_embed")
+        Block.objects.using(db_alias).filter(type="code").update(type="code_snippet")
+        Block.objects.using(db_alias).filter(type__in=["markdown", "text"]).update(type="markdown_text")
+        Block.objects.using(db_alias).filter(type="image").update(type="image_uploaded")
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0055_auto_20200128_0759'),
+        ("projects", "0055_auto_20200128_0759"),
     ]
 
     operations = [
         migrations.RunPython(old_type_to_new, reverse_func),
         migrations.AlterField(
-            model_name='block',
-            name='type',
+            model_name="block",
+            name="type",
             field=models.CharField(
                 choices=[
-                    ('embed', 'Embed'),
-                    ('code', 'Code'),
-                    ('markdown', 'Markdown'),
-                    ('text', 'Text'),
-                    ('image', 'Image Upload'),
+                    ("embed", "Embed"),
+                    ("code", "Code"),
+                    ("markdown", "Markdown"),
+                    ("text", "Text"),
+                    ("image", "Image Upload"),
                 ],
                 max_length=25,
             ),

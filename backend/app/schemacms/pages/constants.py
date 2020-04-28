@@ -14,6 +14,7 @@ class ElementType:
     CUSTOM_ELEMENT = "custom_element"
     OBSERVABLE_HQ = "observable_hq"
 
+
 class ObservableFieldType:
     OBSERVABLE_USER = "observable_user"
     OBSERVABLE_NOTEBOOK = "observable_notebook"
