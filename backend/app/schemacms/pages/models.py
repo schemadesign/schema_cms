@@ -144,7 +144,7 @@ class PageBlockElement(Element):
         upload_to=file_upload_path,
     )
     observable_hq = models.OneToOneField(
-        PageBlockObservableElement, on_delete=models.SET_NULL, null=True, related_name="block_element"
+        "PageBlockObservableElement", on_delete=models.SET_NULL, null=True, related_name="block_element"
     )
 
     def relative_path_to_save(self, filename):
