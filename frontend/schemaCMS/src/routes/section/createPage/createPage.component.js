@@ -80,6 +80,7 @@ export const CreatePage = ({
         setCreateLoading(true);
 
         const formData = prepareForPostingPageData(data);
+        debugger;
         const { id } = await createPage({ formData, sectionId });
         history.push(`/page/${id}`);
       } catch (errors) {

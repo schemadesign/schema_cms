@@ -25,14 +25,6 @@ class Element(SoftDeleteObject, models.Model):
         return f"{self.name}"
 
 
-class ObservableElement(SoftDeleteObject, models.Model):
-        class Meta:
-            abstract = True
-
-        def __str__(self):
-            return f"{self.name}"
-
-
 class Content(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
@@ -155,6 +147,9 @@ class PageBlockElement(Element):
     custom_element = models.ForeignKey(
         "PageBlockElement", on_delete=models.CASCADE, related_name="elements", null=True
     )
+    observable_hq = models.OneToOneField(
+        PageBlockObservableElement, on_delete=models.SET_NULL, null=True, related_name="block_element"
+    )
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -176,8 +171,11 @@ class PageBlockElement(Element):
                 id=element.pop("id", None), defaults=dict(block=self.block, custom_element=self, **element),
             )
 
-class PageBlockObservableElement(ObservableElement):
-    element = models.ForeignKey(PageBlockElement, on_delete=models.CASCADE, related_name="blockElement")
+
+class PageBlockObservableElement(SoftDeleteObject):
     observableUser = models.TextField(blank=True, default="")
     observableNotebook = models.TextField(blank=True, default="")
     observableCell = models.TextField(blank=True, default="")
+
+    def __str__(self):
+        return f"{self.name}"
