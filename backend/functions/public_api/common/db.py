@@ -133,6 +133,15 @@ class DataSource(BaseModel):
             "filters": [],
         }
 
+    def as_dict_list(self):
+        return {
+            "id": self.name,
+            "name": self.name,
+            "created_by": f"{self.created_by.first_name} {self.created_by.last_name}",
+            "updated": self.modified.strftime("%Y-%m-%d"),
+            "created": self.created.strftime("%Y-%m-%d"),
+        }
+
     def get_filters(self):
         return [
             filter.as_dict()
@@ -199,8 +208,17 @@ class Section(BaseModel):
         return {"id": self.id, "name": self.name, "slug": self.slug, "pages": pages}
 
 
+class PageTemplate(BaseModel):
+    name = CharField()
+
+    class Meta:
+        table_name = "pages_page"
+
+
 class Page(BaseModel):
     section = ForeignKeyField(Section, backref="pages")
+    project = ForeignKeyField(Project, backref="pages")
+    template = ForeignKeyField(PageTemplate, backref="pages")
     name = CharField()
     slug = CharField()
     description = TextField()
@@ -218,6 +236,7 @@ class Page(BaseModel):
         return {
             "id": self.id,
             "name": self.name,
+            "template": self.template.name,
             "slug": self.slug,
             "description": self.description,
             "keywords": self.keywords,
@@ -228,6 +247,7 @@ class Page(BaseModel):
     def as_dict_detail(self):
         data = self.as_dict()
         data["blocks"] = self.get_blocks()
+
         return data
 
     def get_blocks(self):
