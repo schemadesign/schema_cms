@@ -29,7 +29,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-AxheI OJSaj"
+        className="sc-Axmtr eiJTdA"
       >
         <svg
           style={
@@ -83,7 +83,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-Axmtr dXgRrs"
+          className="sc-AxmLO kmtPrp"
         >
           <div
             style={
@@ -263,7 +263,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-AxheI OJSaj"
+        className="sc-Axmtr eiJTdA"
       >
         <svg
           style={
@@ -317,7 +317,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fzozJi kyFDpX"
+          className="sc-fzoLsD ewvFBJ"
           onClick={[Function]}
         >
           <input
@@ -468,7 +468,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
             </div>
           </div>
           <div
-            className="sc-fzoLsD eMjNCI"
+            className="sc-fzpans bhLtYc"
           >
             <svg
               style={
@@ -522,7 +522,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-AxheI OJSaj"
+        className="sc-Axmtr eiJTdA"
       >
         <svg
           style={
@@ -1286,7 +1286,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-AxheI OJSaj"
+        className="sc-Axmtr eiJTdA"
       >
         <svg
           style={
@@ -1343,7 +1343,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
           className="sc-AxgMl ibCwzu"
         >
           <div
-            className="sc-fzpans tFPYo"
+            className="sc-fzplWN hbOsvl"
           >
             <div
               style={

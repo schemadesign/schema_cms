@@ -206,7 +206,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
             className="sc-Axmtr iTjOUw"
           >
             <div
-              className="sc-fzplWN kcVxJH"
+              className="sc-fznyAO bpUOyr"
             >
               <svg
                 style={
@@ -399,7 +399,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
             className="sc-Axmtr iTjOUw"
           >
             <div
-              className="sc-fzplWN kcVxJH"
+              className="sc-fznyAO bpUOyr"
             >
               <svg
                 style={
@@ -471,7 +471,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fznyAO cDDUoP"
+                className="sc-fznKkj dpatIe"
               >
                 <div
                   style={
@@ -648,7 +648,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
             className="sc-Axmtr iTjOUw"
           >
             <div
-              className="sc-fzplWN kcVxJH"
+              className="sc-fznyAO bpUOyr"
             >
               <svg
                 style={
@@ -720,7 +720,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fznZeY jMWGUB"
+                className="sc-fzokOt krIcrW"
                 onClick={[Function]}
               >
                 <input
@@ -871,7 +871,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzokOt dOYAwr"
+                  className="sc-fzqBZW kmHjxm"
                 >
                   <svg
                     style={
@@ -922,7 +922,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
             className="sc-Axmtr iTjOUw"
           >
             <div
-              className="sc-fzplWN kcVxJH"
+              className="sc-fznyAO bpUOyr"
             >
               <svg
                 style={

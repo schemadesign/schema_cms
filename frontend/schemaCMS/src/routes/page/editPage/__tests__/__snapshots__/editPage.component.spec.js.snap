@@ -350,7 +350,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznLxA jlJFLW"
+    className="sc-fznXWL iVrWEA"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzokvW fVFZrQ"
+          className="sc-fzqzlV fFuNGQ"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzokvW fVFZrQ"
+          className="sc-fzqzlV fFuNGQ"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzokvW fVFZrQ"
+          className="sc-fzqzlV fFuNGQ"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznXWL clGRlU"
+          className="sc-fzokvW kpUxLE"
         >
           <span
             style={
@@ -1195,14 +1195,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzpisO hjdaky"
+        className="sc-fznyYp eIZnlp"
       >
         <div
-          className="sc-fznyYp fGgrIt"
+          className="sc-fznLxA imObJI"
         />
         1 Block
         <div
-          className="sc-fznyYp fGgrIt"
+          className="sc-fznLxA imObJI"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -1513,7 +1513,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzowVh eDCuyo"
+                        className="sc-fzoJus fQhREJ"
                       >
                         <svg
                           style={
@@ -1707,7 +1707,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzowVh eDCuyo"
+                        className="sc-fzoJus fQhREJ"
                       >
                         <svg
                           style={
@@ -1779,7 +1779,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzoJus dlccrN"
+                          className="sc-fzoVTD YFRlL"
                         >
                           <div
                             style={
@@ -1956,7 +1956,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzowVh eDCuyo"
+                        className="sc-fzoJus fQhREJ"
                       >
                         <svg
                           style={
@@ -2225,7 +2225,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzowVh eDCuyo"
+                        className="sc-fzoJus fQhREJ"
                       >
                         <svg
                           style={
