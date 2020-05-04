@@ -9,6 +9,11 @@ import {
   PLAIN_TEXT_TYPE,
   MARKDOWN_TYPE,
   INTERNAL_CONNECTION_TYPE,
+  OBSERVABLEHQ_TYPE,
+  OBSERVABLE_USER,
+  OBSERVABLE_NOTEBOOK,
+  OBSERVABLE_CELL,
+  OBSERVABLE_PARAMS,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -110,6 +115,24 @@ export const PAGE_SCHEMA = Yup.object().shape({
                   fileName: Yup.string()
                     .min(1, 'Required')
                     .required('Required'),
+                }),
+              })
+              .when(ELEMENT_TYPE, {
+                is: OBSERVABLEHQ_TYPE,
+                then: Yup.object().shape({
+                  [OBSERVABLE_USER]: Yup.string().max(
+                    1000,
+                    'ObservableHQ User Value should have maximum 1000 characters'
+                  ),
+                  [OBSERVABLE_NOTEBOOK]: Yup.string().max(
+                    1000,
+                    'ObservableHQ Notebook should have maximum 1000 characters'
+                  ),
+                  [OBSERVABLE_CELL]: Yup.string().max(1000, 'ObservableHQ Cell should have maximum 1000 characters'),
+                  [OBSERVABLE_PARAMS]: Yup.string().max(
+                    1000,
+                    'ObservableHQ Params should have maximum 1000 characters'
+                  ),
                 }),
               }),
           })

@@ -15,7 +15,7 @@ import {
   OBSERVABLE_USER,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }) => {
+export const ObservableHQElement = ({ element, blockPath, setFieldValue, index, ...restFormikProps }) => {
   const intl = useIntl();
   const theme = useTheme();
   const observableUserName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_USER });
@@ -36,6 +36,7 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_USER}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
+        {...restFormikProps}
       />
       <TextInput
         name={observableNotebookName}
@@ -43,6 +44,7 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_NOTEBOOK}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
+        {...restFormikProps}
       />
       <TextInput
         name={observableCellName}
@@ -50,6 +52,7 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_CELL}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
+        {...restFormikProps}
       />
 
       <TextInput
@@ -58,6 +61,7 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_PARAMS}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
+        {...restFormikProps}
       />
     </ObservableHQContainer>
   );

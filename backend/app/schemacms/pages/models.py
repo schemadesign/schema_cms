@@ -182,10 +182,10 @@ class PageBlockElement(Element):
 
 
 class PageBlockObservableElement(SoftDeleteObject):
-    observable_user = models.TextField(blank=True, default="")
-    observable_notebook = models.TextField(blank=True, default="")
-    observable_cell = models.TextField(blank=True, default="")
-    observable_params = models.TextField(blank=True, default="")
+    observable_user = models.TextField(blank=True, default="", max_length=1000)
+    observable_notebook = models.TextField(blank=True, default="", max_length=1000)
+    observable_cell = models.TextField(blank=True, default="", max_length=1000)
+    observable_params = models.TextField(blank=True, default="", max_length=1000)
 
     def __str__(self):
         return f"{self.id}"
