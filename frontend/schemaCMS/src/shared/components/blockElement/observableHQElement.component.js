@@ -15,7 +15,7 @@ import {
   OBSERVABLE_USER,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-export const ObservableHQElement = ({ element, blockPath, setFieldValue, index, ...restFormikProps }) => {
+export const ObservableHQElement = ({ element, blockPath, index, ...restFormikProps }) => {
   const intl = useIntl();
   const theme = useTheme();
   const observableUserName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_USER });
@@ -32,7 +32,6 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index, 
       <TextInput
         name={observableUserName}
         value={element.value[OBSERVABLE_USER]}
-        onChange={({ currentTarget: { value } }) => setFieldValue(observableUserName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_USER}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
