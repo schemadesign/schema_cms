@@ -1070,8 +1070,8 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
               }
             >
               <input
-                id="blockPath.elements.0.observable_user.value"
-                name="blockPath.elements.0.observable_user.value"
+                id="blockPath.elements.0.value.observable_user"
+                name="blockPath.elements.0.value.observable_user"
                 onChange={[Function]}
                 placeholder="ObservableHQ User"
                 style={
@@ -1091,7 +1091,6 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                   }
                 }
                 type="text"
-                value="@user"
               />
               <div
                 style={
@@ -1119,8 +1118,8 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
               }
             >
               <input
-                id="blockPath.elements.0.observable_notebook.value"
-                name="blockPath.elements.0.observable_notebook.value"
+                id="blockPath.elements.0.value.observable_notebook"
+                name="blockPath.elements.0.value.observable_notebook"
                 onChange={[Function]}
                 placeholder="ObservableHQ Notebook"
                 style={
@@ -1140,7 +1139,6 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                   }
                 }
                 type="text"
-                value="my-notebook"
               />
               <div
                 style={
@@ -1168,8 +1166,8 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
               }
             >
               <input
-                id="blockPath.elements.0.observable_cell.value"
-                name="blockPath.elements.0.observable_cell.value"
+                id="blockPath.elements.0.value.observable_cell"
+                name="blockPath.elements.0.value.observable_cell"
                 onChange={[Function]}
                 placeholder="ObservableHQ Cell"
                 style={
@@ -1189,7 +1187,6 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                   }
                 }
                 type="text"
-                value="notebook-cell"
               />
               <div
                 style={

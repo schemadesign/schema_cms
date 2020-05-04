@@ -129,7 +129,8 @@ export const prepareForPostingPageData = evolve({
   [PAGE_BLOCKS]: mapAndAddOrder,
 });
 
-export const getValuePath = ({ blockPath, index }) => `${blockPath}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_VALUE}`;
+export const getValuePath = ({ blockPath, index, elementValue = ELEMENT_VALUE }) =>
+  `${blockPath}.${BLOCK_ELEMENTS}.${index}.${elementValue}`;
 
 const getDefaultValue = cond([[equals(IMAGE_TYPE), always({})], [T, always('')]]);
 

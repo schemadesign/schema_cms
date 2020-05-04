@@ -63,9 +63,9 @@ export const observableHQElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_TYPE]: OBSERVABLEHQ_TYPE,
   [ELEMENT_VALUE]: {
-    [`blockPath.elements.0.${OBSERVABLE_USER}.value`]: '@user',
-    [`blockPath.elements.0.${OBSERVABLE_NOTEBOOK}.value`]: 'my-notebook',
-    [`blockPath.elements.0.${OBSERVABLE_CELL}.value`]: 'notebook-cell',
+    [OBSERVABLE_USER]: '@user',
+    [OBSERVABLE_NOTEBOOK]: 'my-notebook',
+    [OBSERVABLE_CELL]: 'notebook-cell',
   },
   [ELEMENT_ID]: 1,
 };

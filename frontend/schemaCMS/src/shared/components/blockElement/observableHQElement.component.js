@@ -18,60 +18,36 @@ import {
 export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }) => {
   const intl = useIntl();
   const theme = useTheme();
-  const observableUserName = getValuePath({ blockPath, index: `${index}.${OBSERVABLE_USER}` });
-  const observableNotebookName = getValuePath({ blockPath, index: `${index}.${OBSERVABLE_NOTEBOOK}` });
-  const observableCellName = getValuePath({ blockPath, index: `${index}.${OBSERVABLE_CELL}` });
-
-  const [observableUser, setObservableUser] = useState('');
-  const [observableNotebook, setObservableNotebook] = useState('');
-  const [observableCell, setObservableCell] = useState('');
-
-  useDebounce(
-    () => {
-      setFieldValue(observableUserName, observableUser);
-    },
-    200,
-    [observableUser]
-  );
-
-  useDebounce(
-    () => {
-      setFieldValue(observableNotebookName, observableNotebook);
-    },
-    200,
-    [observableNotebook]
-  );
-
-  useDebounce(
-    () => {
-      setFieldValue(observableCellName, observableCell);
-    },
-    200,
-    [observableCell]
-  );
+  const observableUserName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_USER });
+  const observableNotebookName = getValuePath({
+    blockPath,
+    index: `${index}.value`,
+    elementValue: OBSERVABLE_NOTEBOOK,
+  });
+  const observableCellName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_CELL });
 
   return (
     <ObservableHQContainer>
       <TextInput
         name={observableUserName}
-        value={element.value[observableUserName]}
-        onChange={({ currentTarget: { value } }) => setObservableUser(value)}
+        value={element.value[OBSERVABLE_USER]}
+        onChange={({ currentTarget: { value } }) => setFieldValue(observableUserName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_USER}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
       />
       <TextInput
         name={observableNotebookName}
-        value={element.value[observableNotebookName]}
-        onChange={({ currentTarget: { value } }) => setObservableNotebook(value)}
+        value={element.value[OBSERVABLE_NOTEBOOK]}
+        onChange={({ currentTarget: { value } }) => setFieldValue(observableNotebookName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_NOTEBOOK}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
       />
       <TextInput
         name={observableCellName}
-        value={element.value[observableCellName]}
-        onChange={({ currentTarget: { value } }) => setObservableCell(value)}
+        value={element.value[OBSERVABLE_CELL]}
+        onChange={({ currentTarget: { value } }) => setFieldValue(observableCellName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_CELL}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
