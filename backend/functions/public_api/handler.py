@@ -3,7 +3,7 @@ import logging
 
 import math
 
-from flask import Flask, request, Response, render_template
+from flask import Flask, request, Response, render_template, views
 from flask_cors import CORS
 
 from pyarrow import BufferReader
@@ -83,11 +83,15 @@ def get_project(project_id):
 @app.route("/projects/<int:project_id>/datasources", methods=["GET"])
 def get_project_data_sources(project_id):
     try:
+        page_size = int(request.args.get("page_size", 20))
+        page_number = int(request.args.get("page_number", 1))
+
         data_sources = [
-            data_source.as_dict()
-            for data_source in db.DataSource.select().where(
-                db.DataSource.project_id == project_id
-            )
+            data_source.as_dict_list()
+            for data_source in db.DataSource.select()
+            .where(db.DataSource.project_id == project_id)
+            .order_by(db.DataSource.created)
+            .paginate(page_number, page_size)
         ]
 
     except Exception as e:
@@ -95,6 +99,25 @@ def get_project_data_sources(project_id):
         return create_response({"error": f"{e}"}), 404
 
     return create_response(data_sources), 200
+
+
+@app.route("/projects/<int:project_id>/pages", methods=["GET"])
+def get_project_pages(project_id):
+    try:
+        pages = [
+            page.as_dict()
+            for page in db.Page.select().where(
+                db.Page.project_id == project_id,
+                db.Page.deleted_at == None,
+                db.Page.is_public == True,
+            )
+        ]
+
+    except Exception as e:
+        logging.info(f"Unable to get project - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(pages), 200
 
 
 # Pages endpoints
@@ -119,7 +142,16 @@ def get_section(section_id):
 def get_page(page_id):
     try:
         format_ = request.args.get("format", None)
-        page = db.Page.select().where(db.Page.id == page_id).get().as_dict_detail()
+        page = (
+            db.Page.select()
+            .where(
+                db.Page.id == page_id,
+                db.Page.deleted_at == None,
+                db.Page.is_public == True,
+            )
+            .get()
+            .as_dict_detail()
+        )
 
     except db.Page.DoesNotExist:
         return create_response({"error": "Page does not exist"}, 404)
@@ -140,11 +172,15 @@ def get_page(page_id):
 @app.route("/datasources", methods=["GET"])
 def get_data_sources():
     try:
+        page_size = int(request.args.get("page_size", 20))
+        page_number = int(request.args.get("page_number", 1))
+
         data_sources = [
-            data_source.as_dict()
+            data_source.as_dict_list()
             for data_source in db.DataSource.select()
             .where(db.DataSource.deleted_at == None)
             .order_by(db.DataSource.id)
+            .paginate(page_number, page_size)
         ]
 
     except Exception as e:
