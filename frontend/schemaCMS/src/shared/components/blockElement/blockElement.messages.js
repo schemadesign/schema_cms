@@ -1,6 +1,13 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import { IMAGE_TYPE, INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import {
+  IMAGE_TYPE,
+  INTERNAL_CONNECTION_TYPE,
+  OBSERVABLE_CELL,
+  OBSERVABLE_NOTEBOOK,
+  OBSERVABLE_USER,
+  OBSERVABLE_PARAMS,
+} from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
   [IMAGE_TYPE]: {
@@ -18,6 +25,22 @@ export default defineMessages({
   [`${INTERNAL_CONNECTION_TYPE}Placeholder`]: {
     id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}Placeholder`,
     defaultMessage: 'Select a page',
+  },
+  [`${OBSERVABLE_USER}Placeholder`]: {
+    id: `shared.components.blockElement.${OBSERVABLE_USER}Placeholder`,
+    defaultMessage: 'ObservableHQ User',
+  },
+  [`${OBSERVABLE_NOTEBOOK}Placeholder`]: {
+    id: `shared.components.blockElement.${OBSERVABLE_NOTEBOOK}Placeholder`,
+    defaultMessage: 'ObservableHQ Notebook',
+  },
+  [`${OBSERVABLE_CELL}Placeholder`]: {
+    id: `shared.components.blockElement.${OBSERVABLE_CELL}Placeholder`,
+    defaultMessage: 'ObservableHQ Cell',
+  },
+  [`${OBSERVABLE_PARAMS}Placeholder`]: {
+    id: `shared.components.blockElement.${OBSERVABLE_PARAMS}Placeholder`,
+    defaultMessage: 'ObservableHQ Params',
   },
   blocks: {
     id: 'shared.components.blockElement.blocks',

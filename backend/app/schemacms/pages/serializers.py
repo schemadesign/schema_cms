@@ -38,11 +38,21 @@ class ElementValueField(serializers.Field):
         return super().get_value(dictionary)
 
     def get_attribute(self, instance):
+
         if instance.type == constants.ElementType.CUSTOM_ELEMENT:
             elements = instance.elements.all()
             elements = PageBlockElementSerializer(elements, many=True).data
 
             return {"elements": elements}
+
+        if instance.type == constants.ElementType.OBSERVABLE_HQ:
+            observable_element = getattr(instance, instance.type)
+            return {
+                "observable_user": observable_element.observable_user,
+                "observable_notebook": observable_element.observable_notebook,
+                "observable_cell": observable_element.observable_cell,
+                "observable_params": observable_element.observable_params,
+            }
 
         return getattr(instance, instance.type)
 
@@ -396,25 +406,29 @@ class PageSerializer(CustomModelSerializer):
     @staticmethod
     def create_or_update_elements(instance, elements):
         for element in elements:
-            type_ = element.get("type")
+            element_type = element.get("type")
 
             if "value" in element:
-                value = element.pop("value")
+                element_value = element.pop("value")
 
-                element[type_] = value
+                if element_type == constants.ElementType.IMAGE:
+                    element.pop(element_type)
 
-                if type_ == constants.ElementType.IMAGE and not value:
-                    element.pop(type_)
-
-                if type_ == constants.ElementType.CUSTOM_ELEMENT:
-                    element_set = element.pop(type_)
+                if element_type not in [
+                    constants.ElementType.CUSTOM_ELEMENT,
+                    constants.ElementType.OBSERVABLE_HQ,
+                ]:
+                    element[element_type] = element_value
 
             obj, _ = models.PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(block=instance, **element)
             )
 
-            if type_ == constants.ElementType.CUSTOM_ELEMENT:
-                obj.update_or_create_custom_elements(element_set["elements"])
+            if element_type == constants.ElementType.CUSTOM_ELEMENT:
+                obj.update_or_create_custom_elements(element_value["elements"])
+
+            if element_type == constants.ElementType.OBSERVABLE_HQ:
+                obj.create_update_observable_element(element_value)
 
     @staticmethod
     def create_elements(elements, block):

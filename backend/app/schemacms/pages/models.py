@@ -147,6 +147,9 @@ class PageBlockElement(Element):
     custom_element = models.ForeignKey(
         "PageBlockElement", on_delete=models.CASCADE, related_name="elements", null=True
     )
+    observable_hq = models.OneToOneField(
+        "PageBlockObservableElement", on_delete=models.CASCADE, null=True, related_name="block_element"
+    )
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -167,3 +170,22 @@ class PageBlockElement(Element):
             element, _ = PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(block=self.block, custom_element=self, **element),
             )
+
+    def create_update_observable_element(self, element):
+        hq_element, is_create = PageBlockObservableElement.objects.update_or_create(
+            id=element.pop("id", None), defaults=dict(**element)
+        )
+
+        if is_create:
+            self.observable_hq = hq_element
+            self.save(update_fields=["observable_hq"])
+
+
+class PageBlockObservableElement(SoftDeleteObject):
+    observable_user = models.TextField(blank=True, default="", max_length=1000)
+    observable_notebook = models.TextField(blank=True, default="", max_length=1000)
+    observable_cell = models.TextField(blank=True, default="", max_length=1000)
+    observable_params = models.TextField(blank=True, default="", max_length=1000)
+
+    def __str__(self):
+        return f"{self.id}"

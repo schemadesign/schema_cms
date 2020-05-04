@@ -10,6 +10,7 @@ import {
   MARKDOWN_TYPE,
   INTERNAL_CONNECTION_TYPE,
   CUSTOM_ELEMENT_TYPE,
+  OBSERVABLEHQ_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -48,6 +49,10 @@ export default defineMessages({
   [INTERNAL_CONNECTION_TYPE]: {
     id: `shared.components.blockTemplateElement.${INTERNAL_CONNECTION_TYPE}`,
     defaultMessage: 'Internal Connection',
+  },
+  [OBSERVABLEHQ_TYPE]: {
+    id: `shared.components.blockTemplateElement.${OBSERVABLEHQ_TYPE}`,
+    defaultMessage: 'ObservableHQ',
   },
   [CUSTOM_ELEMENT_TYPE]: {
     id: `shared.components.blockTemplateElement.${CUSTOM_ELEMENT_TYPE}`,
