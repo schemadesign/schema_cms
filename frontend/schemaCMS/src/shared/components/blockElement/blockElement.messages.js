@@ -6,6 +6,7 @@ import {
   OBSERVABLE_CELL,
   OBSERVABLE_NOTEBOOK,
   OBSERVABLE_USER,
+  OBSERVABLE_PARAMS,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -36,6 +37,10 @@ export default defineMessages({
   [`${OBSERVABLE_CELL}Placeholder`]: {
     id: `shared.components.blockElement.${OBSERVABLE_CELL}Placeholder`,
     defaultMessage: 'ObservableHQ Cell',
+  },
+  [`${OBSERVABLE_PARAMS}Placeholder`]: {
+    id: `shared.components.blockElement.${OBSERVABLE_PARAMS}Placeholder`,
+    defaultMessage: 'ObservableHQ Params',
   },
   blocks: {
     id: 'shared.components.blockElement.blocks',

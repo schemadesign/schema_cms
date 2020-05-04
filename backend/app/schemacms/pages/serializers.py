@@ -51,6 +51,7 @@ class ElementValueField(serializers.Field):
                 "observable_user": observable_element.observable_user,
                 "observable_notebook": observable_element.observable_notebook,
                 "observable_cell": observable_element.observable_cell,
+                "observable_params": observable_element.observable_params,
             }
 
         return getattr(instance, instance.type)

@@ -28,6 +28,7 @@ export const OBSERVABLEHQ_TYPE = 'observable_hq';
 export const OBSERVABLE_USER = 'observableUser';
 export const OBSERVABLE_NOTEBOOK = 'observableNotebook';
 export const OBSERVABLE_CELL = 'observableCell';
+export const OBSERVABLE_PARAMS = 'observableParams';
 
 export const CUSTOM_ELEMENTS_TYPES = [
   MARKDOWN_TYPE,

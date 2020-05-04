@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import 'react-mde/lib/styles/css/react-mde-all.css';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
-import { useDebounce } from 'react-use';
 
 import { getValuePath } from '../../utils/helpers';
 import { getCustomSelectedWrapperStyles, ObservableHQContainer } from './blockElement.styles';
@@ -12,6 +11,7 @@ import messages from './blockElement.messages';
 import {
   OBSERVABLE_CELL,
   OBSERVABLE_NOTEBOOK,
+  OBSERVABLE_PARAMS,
   OBSERVABLE_USER,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
@@ -25,6 +25,7 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
     elementValue: OBSERVABLE_NOTEBOOK,
   });
   const observableCellName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_CELL });
+  const observableParamsName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_PARAMS });
 
   return (
     <ObservableHQContainer>
@@ -49,6 +50,15 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
         value={element.value[OBSERVABLE_CELL]}
         onChange={({ currentTarget: { value } }) => setFieldValue(observableCellName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_CELL}Placeholder`])}
+        customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
+        centerIcon
+      />
+
+      <TextInput
+        name={observableParamsName}
+        value={element.value[OBSERVABLE_PARAMS]}
+        onChange={({ currentTarget: { value } }) => setFieldValue(observableParamsName, value)}
+        placeholder={intl.formatMessage(messages[`${OBSERVABLE_PARAMS}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
       />
