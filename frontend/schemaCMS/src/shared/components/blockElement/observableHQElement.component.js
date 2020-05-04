@@ -40,7 +40,6 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
       <TextInput
         name={observableNotebookName}
         value={element.value[OBSERVABLE_NOTEBOOK]}
-        onChange={({ currentTarget: { value } }) => setFieldValue(observableNotebookName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_NOTEBOOK}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
@@ -48,7 +47,6 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
       <TextInput
         name={observableCellName}
         value={element.value[OBSERVABLE_CELL]}
-        onChange={({ currentTarget: { value } }) => setFieldValue(observableCellName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_CELL}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
@@ -57,7 +55,6 @@ export const ObservableHQElement = ({ element, blockPath, setFieldValue, index }
       <TextInput
         name={observableParamsName}
         value={element.value[OBSERVABLE_PARAMS]}
-        onChange={({ currentTarget: { value } }) => setFieldValue(observableParamsName, value)}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_PARAMS}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
