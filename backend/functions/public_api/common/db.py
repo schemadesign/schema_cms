@@ -287,6 +287,7 @@ class ObservableElement(BaseModel):
     observable_user = TextField()
     observable_notebook = TextField()
     observable_cell = TextField()
+    observable_params = TextField()
 
     class Meta:
         table_name = "pages_pageblockobservableelement"
@@ -296,6 +297,7 @@ class ObservableElement(BaseModel):
             "observable_user": self.observable_user,
             "observable_notebook": self.observable_notebook,
             "observable_cell": self.observable_cell,
+            "observable_params": self.observable_params,
         }
 
 
@@ -388,9 +390,17 @@ class Element(BaseModel):
             return html_value
 
         if self.type == ElementType.OBSERVABLE_HQ:
+            observable_user = self.observable_hq.observable_user
+            observable_notebook = self.observable_hq.observable_notebook
+            observable_params = self.observable_hq.observable_params
             html_value = (
                 f"<div id='{self.id}' class='element observable'>"
-                f"<p>Observable</p>"
+                f"<script type='module'>"
+                "import {Runtime, Inspector} from 'https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js';"
+                f"import define from 'https://api.observablehq.com/{observable_user}/{observable_notebook}.js{observable_params}';"
+                f"const inspect = Inspector.into('#{self.id}');"
+                f"(new Runtime).module(define, name => (name === '{self.observable_hq.observable_cell}') && inspect());"
+                f"</script>"
                 f"</div>"
             )
 
