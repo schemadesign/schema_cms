@@ -122,7 +122,7 @@ class DataSource(BaseModel):
     def as_dict(self):
         return {
             "meta": {
-                "id": self.name,
+                "id": self.id,
                 "name": self.name,
                 "created_by": f"{self.created_by.first_name} {self.created_by.last_name}",
                 "updated": self.modified.strftime("%Y-%m-%d"),
@@ -130,13 +130,14 @@ class DataSource(BaseModel):
             },
             "shape": self.result_shape,
             "fields": self.get_fields(),
-            "filters": [],
+            "filters": self.get_filters(),
         }
 
     def as_dict_list(self):
         return {
-            "id": self.name,
+            "id": self.id,
             "name": self.name,
+            "project": self.project.id,
             "created_by": f"{self.created_by.first_name} {self.created_by.last_name}",
             "updated": self.modified.strftime("%Y-%m-%d"),
             "created": self.created.strftime("%Y-%m-%d"),
@@ -373,7 +374,7 @@ class Element(BaseModel):
     def get_value_in_html(self):
         if self.type == ElementType.CONNECTION:
             html_value = (
-                f"<div id='{self.id}' class='element connection'>"
+                f"<div id='connection-{self.id}' class='element connection'>"
                 f"<a href='{self.connection}' target='_blank'>{self.connection}</a>"
                 f"</div>"
             )
@@ -382,7 +383,7 @@ class Element(BaseModel):
 
         if self.type == ElementType.INTERNAL_CONNECTION:
             html_value = (
-                f"<div id='{self.id}' class='element internal-connection'>"
+                f"<div id='internal-connection-{self.id}' class='element internal-connection'>"
                 f"<a href='{self.connection}' target='_self'>{self.connection}</a>"
                 f"</div>"
             )
@@ -394,11 +395,11 @@ class Element(BaseModel):
             observable_notebook = self.observable_hq.observable_notebook
             observable_params = self.observable_hq.observable_params
             html_value = (
-                f"<div id='{self.id}' class='element observable'>"
+                f"<div id='observable-{self.id}' class='element observable'>"
                 f"<script type='module'>"
                 "import {Runtime, Inspector} from 'https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js';"
                 f"import define from 'https://api.observablehq.com/{observable_user}/{observable_notebook}.js{observable_params}';"
-                f"const inspect = Inspector.into('#{self.id}');"
+                f"const inspect = Inspector.into('#observable-{self.id}');"
                 f"(new Runtime).module(define, name => (name === '{self.observable_hq.observable_cell}') && inspect());"
                 f"</script>"
                 f"</div>"
@@ -408,7 +409,7 @@ class Element(BaseModel):
 
         if self.type == ElementType.CUSTOM_ELEMENT:
             html_value = (
-                f"<div id='{self.id}' class='element custom-element'>"
+                f"<div id='custom-{self.id}' class='element custom-element'>"
                 f"<p>Custom Element</p>"
                 f"</div>"
             )
@@ -418,7 +419,7 @@ class Element(BaseModel):
         if self.type == ElementType.IMAGE:
             value = self.get_element_value()
             html_value = (
-                f"<div id='{self.id}' class='element image'>"
+                f"<div id='image-{self.id}' class='element image'>"
                 f"<figure>"
                 f"<img src='{value['image']}' alt='{value['file_name']}'>"
                 f"</figure>"
@@ -428,17 +429,19 @@ class Element(BaseModel):
             return html_value
 
         if self.type == ElementType.PLAIN_TEXT:
-            html_value = f"<div id='{self.id}' class='element text'><p>{self.plain_text}</p></div>"
+            html_value = f"<div id='plain-text-{self.id}' class='element text'><p>{self.plain_text}</p></div>"
 
             return html_value
 
         if self.type == ElementType.MARKDOWN:
-            html_value = f"<div id='{self.id}' class='element markdown'>{markdown2.markdown(self.markdown)}</div>"
+            html_value = f"<div id='markdown-{self.id}' class='element markdown'>{markdown2.markdown(self.markdown)}</div>"
 
             return html_value
 
         if self.type == ElementType.CODE:
-            html_value = f"<div id='{self.id}' class='element code'>{self.code}</div>"
+            html_value = (
+                f"<div id='code-{self.id}' class='element code'>{self.code}</div>"
+            )
 
             return html_value
 

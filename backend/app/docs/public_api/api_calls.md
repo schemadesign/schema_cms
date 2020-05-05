@@ -3,7 +3,7 @@
 ## Get All Project
 **Request**:
 
-`GET` `/api/v1/projects`
+`GET` `/projects`
 
 **Response**:
 
@@ -13,8 +13,8 @@ Content-Type: application/json
 200 OK
 [
     {
-      "id": 1,
       "meta": {
+         "id": 1,
          "owner": "Jan Kowalsky",
          "description": "Test Project",
          "title": "PagesExampleProject",
@@ -30,26 +30,30 @@ Content-Type: application/json
           {
             "id": 1,
             "name": "Section Name",
+            "slug": "section-name",
             "pages": [
               {
                 "id": 1,
                 "name": "Page Name",
                 "slug": "page-name",
+                "template": "New Page Template",
                 "description": "New page test.",
                 "keywords": "new;page",
-                "created_by": "Jan Kowalsky"
+                "created_by": "Jan Kowalsky",
+                "updated": "2020-05-05"
               },
             ]
           },
         ]
-      }, ...
+      }
+    }
 ]
 ```
 
 ## Get Project
 **Request**:
 
-`GET` `/api/v1/projects/<id>`
+`GET` `/projects/<id>`
 
 **Response**:
 
@@ -58,8 +62,8 @@ Content-Type: application/json
 Content-Type: application/json
 200 OK
 {
-  "id": 1,
   "meta": {
+     "id": 1,
      "owner": "Jan Kowalsky",
      "description": "Test Project",
      "title": "PagesExampleProject",
@@ -75,14 +79,17 @@ Content-Type: application/json
       {
         "id": 1,
         "name": "Section Name",
+        "slug": "section-name",
         "pages": [
           {
             "id": 1,
             "name": "Page Name",
             "slug": "page-name",
+            "template": "New Page Template",
             "description": "New page test.",
             "keywords": "new;page",
-            "created_by": "Jan Kowalsky"
+            "created_by": "Jan Kowalsky",
+            "updated": "2020-05-05"
           },
         ]
       },
@@ -91,10 +98,65 @@ Content-Type: application/json
 }
 ```
 
+
+## Get Project Data Sources
+**Request**:
+
+`GET` `/projects/<id>/datasources`
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+[
+  {
+    "id": 1,
+    "name": "TestDS1",
+    "created_by": "Jan Kowalsky",
+    "updated": "2020-04-03",
+    "created": "2020-04-03"
+  },
+  {
+    "id": 2,
+    "name": "TestDS2",
+    "created_by": "Jan Kowalsky",
+    "updated": "2020-04-07",
+    "created": "2020-04-07"
+  }
+]
+```
+
+## Get Project Pages
+**Request**:
+
+`GET` `/projects/<id>/pages`
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+[
+  {
+    "id": 1,
+    "name": "Page Name",
+    "template": "New Page Template",
+    "slug": "page-name",
+    "description": "New page test.",
+    "keywords": "new;page;test",
+    "created_by": "Jan Kowalsky",
+    "updated": "2020-05-05"
+  }
+]
+```
+
 ## Get Section
 **Request**:
 
-`GET` `/api/v1/sections/<id>`
+`GET` `/sections/<id>`
 
 **Response**:
 
@@ -104,15 +166,17 @@ Content-Type: application/json
 {
   "id": 1,
   "name": "Section Name",
+  "slug": "section-name",
   "pages": [
     {
       "id": 1,
       "name": "Page Name",
       "slug": "page-name",
+      "template": "New Page Template",
       "description": "New page test.",
-      "keywords": "new;page",
+      "keywords": "new;page;test",
       "created_by": "Jan Kowalsky",
-      "updated": "2020-04-07",
+      "updated": "2020-05-05",
     }
   ]
 }
@@ -121,7 +185,7 @@ Content-Type: application/json
 ## Get Page
 **Request**:
 
-`GET` `/api/v1/pages/<id>`
+`GET` `/pages/<id>`
 
 **Response**:
 
@@ -129,12 +193,12 @@ Content-Type: application/json
 Content-Type: application/json
 200 OK
 {
-    "id":1,
-    "name":"Page Name",
+    "id": 1,
+    "name": "Page Name",
     "slug": "page-name",
-    "description":"html format page example",
-    "keywords":"keyword;1",
-    "created_by":"Jan Kowalsky",
+    "description": "New page test",
+    "keywords": "new;page;test",
+    "created_by": "Jan Kowalsky",
     "updated": "2020-04-07",
     "blocks": [
         {
@@ -148,7 +212,7 @@ Content-Type: application/json
               "type": "plain_text",
               "order": 0,
               "value": "test value",
-              "html": "<div id='7' class='element text'><p>test value</p></div>"
+              "html": "<div id='plain-text-7' class='element text'><p>test value</p></div>"
             }
           ]
         },
@@ -163,7 +227,7 @@ Content-Type: application/json
               "type": "connection",
               "order": 0,
               "value": "https://wp.pl",
-              "html": "<div id='8' class='element connection'><a href='https://wp.pl' target='_blank|_self|_parent|_top'>https://wp.pl</a></div>"
+              "html": "<div id='connection-8' class='element connection'><a href='https://wp.pl' target='_blank'>https://wp.pl</a></div>"
             }
           ]
         },
@@ -174,11 +238,11 @@ Content-Type: application/json
           "elements": [
             {
               "id": 9,
-              "name": "Rich Text element",
-              "type": "rich_text",
+              "name": "Markdown element",
+              "type": "markdown",
               "order": 0,
               "value": "# Header",
-              "html": "<h1>Header</h1>\n"
+              "html": "<div id='markdown-9' class='element markdown'><h1>Header</h1></div>"
             }
           ]
         },
@@ -196,7 +260,7 @@ Content-Type: application/json
                 "file_name": "Screenshot_from_2020-04-06_14-20-47.png",
                 "image": "http://url.com/schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png"
               },
-              "html": "<div id='10' class='element image'><figure><img src='http://url.com//schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png' alt='Screenshot_from_2020-04-06_14-20-47.png'></figure></div>"
+              "html": "<div id='image-10' class='element image'><figure><img src='http://url.com//schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png' alt='Screenshot_from_2020-04-06_14-20-47.png'></figure></div>"
             }
           ]
         }
@@ -205,7 +269,7 @@ Content-Type: application/json
 ```
 **Request**:
 
-`GET` `/api/v1/pages/<id>?format=html`
+`GET` `/pages/<id>?format=html`
 
 **Response**:
 
@@ -217,26 +281,67 @@ Content-Type: application/json
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="sadasd">
-	<meta name="keywords" content="asdasdsa">
-	<meta name="author" content="">
+	<meta name="description" content="New page test">
+	<meta name="keywords" content="new;page;test">
+	<meta name="author" content="Jan Kowalsky">
 	<title></title>
 </head>
 
 <body>
-    <div id='1' class='element text'><p>test value</p></div>
-    <div id='2' class='element connection'><a href='https://wp.pl' target='_blank|_self|_parent|_top'>https://wp.pl</a></div>
-    <div id='3' class='element rich text'><h1>Header</h1></div>
-    <div id='4' class='element image'><figure><img src='http://localstack:4572/schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png' alt='Screenshot_from_2020-04-06_14-20-47.png'></figure></div>
+    <div id='plain-text-1' class='element text'><p>test value</p></div>
+    <div id='connection-2' class='element connection'><a href='https://wp.pl' target='_blank'>https://wp.pl</a></div>
+    <div id='markdown-3' class='element markdown'><h1>Header</h1></div>
+    <div id='image4' class='element image'><figure><img src='http://localstack:4572/schemacms/blocks/14/Screenshot_from_2020-04-06_14-20-47.png' alt='Screenshot_from_2020-04-06_14-20-47.png'></figure></div>
 </body>
 </html>
 
 ```
 
+
+## Get Data Sources
+**Request**:
+
+`GET` `/datasources`
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+[
+  {
+    "id": 1,
+    "name": "TestDS1",
+    "project": 1,
+    "created_by": "Jan Kowalsky",
+    "updated": "2020-04-03",
+    "created": "2020-04-03"
+  },
+  {
+    "id": 2,
+    "name": "TestDS2",
+    "project": 1,
+    "created_by": "Jan Kowalsky",
+    "updated": "2020-04-03",
+    "created": "2020-04-03"
+  },
+  {
+    "id": 3,
+    "name": "TestDS3",
+    "project": 2,
+    "created_by": "Jan Kowalsky",
+    "updated": "2020-04-07",
+    "created": "2020-04-07"
+  }
+]
+```
+
+
 ## Get Data Source preview
 **Request**:
 
-`GET` `/api/v1/datasources/<id>`
+`GET` `/datasources/<id>`
 
 **Response**:
 
@@ -244,15 +349,12 @@ Content-Type: application/json
 Content-Type: application/json
 200 OK
 {
-   "id": 1,
    "meta": {
-      "source-url": null,
-      "creator": "Jan Kowalsky",
+      "id": 2,
+      "created_by": "Jan Kowalsky",
       "name": "TestDS1",
-      "description": null,
-      "source": null,
-      "updated": "2020-02-19T13:32:13.645863+00:00",
-      "methodology": null
+      "updated": "2020-04-07",
+      "created": "2020-04-07"
    },
    "shape": [1000000, 3],
    "fields": {
@@ -270,55 +372,6 @@ Content-Type: application/json
       },
    },
    "filters": [],
-   "tags": [
-      {
-        "name": "tagList1",
-        "id": 1,
-        "tags": [
-          {
-            "list": "tagList1",
-            "value": "tag1",
-            "id": 1
-          },
-          {
-            "list": "tagList1",
-            "value": "tag2",
-            "id": 2
-          },
-          {
-            "list": "tagList1",
-            "value": "tag3",
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "tagList2",
-        "id": 2,
-        "tags": [
-          {
-            "list": "tagList2",
-            "value": "tag1",
-            "id": 4
-          },
-          {
-            "list": "tagList2",
-            "value": "tag2",
-            "id": 5
-          },
-          {
-            "list": "tagList2",
-            "value": "tag3",
-            "id": 6
-          },
-          {
-            "list": "tagList2",
-            "value": "tag4",
-            "id": 7
-          }
-        ]
-      } 
-   ],
    "records": {
       "0": {
          "Total Revenue": 14862.69,
@@ -377,7 +430,7 @@ Content-Type: application/json
 ## Get Data Source meta
 **Request**:
 
-`GET` `/api/v1/datasources/<id>/meta`
+`GET` `/datasources/<id>/meta`
 
 **Response**:
 
@@ -385,20 +438,18 @@ Content-Type: application/json
 Content-Type: application/json
 200 OK
 {
-  "source-url": null,
-  "creator": "Jan Kowalsky",
-  "name": "TestDS1",
-  "description": null,
-  "source": null,
-  "updated": "2020-02-19T13:32:13.645863+00:00",
-  "methodology": null
+    "id": 2,
+    "created_by": "Jan Kowalsky",
+    "name": "TestDS1",
+    "updated": "2020-04-07",
+    "created": "2020-04-07"
 }
 ```
 
 ## Get Data Source fields
 **Request**:
 
-`GET` `/api/v1/datasources/<id>/fields`
+`GET` `/datasources/<id>/fields`
 
 **Response**:
 
@@ -424,7 +475,7 @@ Content-Type: application/json
 ## Get Data Source filters
 **Request**:
 
-`GET` `/api/v1/datasources/<id>/filters`
+`GET` `/datasources/<id>/filters`
 
 **Response**:
 
@@ -450,7 +501,7 @@ Content-Type: application/json
 ## Get Data Source records
 **Request**:
 
-`GET` `/api/v1/datasources/<id>/records`
+`GET` `/datasources/<id>/records`
 
 **Note**:
 
@@ -464,7 +515,7 @@ Content-Type: application/json
 
 `columns` - list of columns you want to fetch, example:
 
-* `/api/v1/datasources/<id>/records?columns=Total Revenue,Total Cost`
+* `/datasources/<id>/records?columns=Total Revenue,Total Cost`
 
 **Response**:
 

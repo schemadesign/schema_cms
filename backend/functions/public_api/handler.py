@@ -60,7 +60,7 @@ def get_projects():
 
     except Exception as e:
         logging.info(f"Unable to get projects - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(projects), 200
 
@@ -71,11 +71,11 @@ def get_project(project_id):
         project = db.Project.select().where(db.Project.id == project_id).get().as_dict()
 
     except db.Project.DoesNotExist:
-        return create_response({"error": "Project does not exist"})
+        return create_response({"error": "Project does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get project - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(project), 200
 
@@ -96,7 +96,7 @@ def get_project_data_sources(project_id):
 
     except Exception as e:
         logging.info(f"Unable to get project - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(data_sources), 200
 
@@ -115,7 +115,7 @@ def get_project_pages(project_id):
 
     except Exception as e:
         logging.info(f"Unable to get project - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(pages), 200
 
@@ -129,11 +129,11 @@ def get_section(section_id):
         project = db.Section.select().where(db.Section.id == section_id).get().as_dict()
 
     except db.Section.DoesNotExist:
-        return create_response({"error": "Section does not exist"})
+        return create_response({"error": "Section does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get project - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(project), 200
 
@@ -154,11 +154,11 @@ def get_page(page_id):
         )
 
     except db.Page.DoesNotExist:
-        return create_response({"error": "Page does not exist"}, 404)
+        return create_response({"error": "Page does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get page - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     if format_ != "html":
         return create_response(page), 200
@@ -185,7 +185,7 @@ def get_data_sources():
 
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(data_sources), 200
 
@@ -199,11 +199,11 @@ def get_data_source(data_source_id):
         records = read_parquet_from_s3(data_source)
 
     except db.DataSource.DoesNotExist:
-        return create_response({"error": "Data Source does not exist"})
+        return create_response({"error": "Data Source does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     data = data_source.as_dict()
     data["records"] = records
@@ -220,11 +220,11 @@ def get_data_source_meta(data_source_id):
         meta = data_source.as_dict()["meta"]
 
     except db.DataSource.DoesNotExist:
-        return create_response({"error": "Data Source does not exists"})
+        return create_response({"error": "Data Source does not exists"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(meta), 200
 
@@ -238,11 +238,11 @@ def get_data_source_fields(data_source_id):
         fields = data_source.get_fields()
 
     except db.DataSource.DoesNotExist:
-        return create_response({"error": "Data Source does not exist"})
+        return create_response({"error": "Data Source does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(fields), 200
 
@@ -261,11 +261,11 @@ def get_data_source_selected_field(data_source_id, field_id):
         )
 
     except db.DataSource.DoesNotExist:
-        return create_response({"error": "Data Source does not exist"})
+        return create_response({"error": "Data Source does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get fields - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return (
         create_response(
@@ -289,11 +289,11 @@ def get_data_source_filters(data_source_id):
         filters = data_source.get_filters()
 
     except db.DataSource.DoesNotExist:
-        return create_response({"error": "Data Source does not exist"})
+        return create_response({"error": "Data Source does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get filters - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
     return create_response(filters), 200
 
@@ -328,11 +328,11 @@ def get_data_source_records(data_source_id):
         )
 
     except db.DataSource.DoesNotExist:
-        return create_response({"error": "Data Source does not exist"})
+        return create_response({"error": "Data Source does not exist"}), 404
 
     except Exception as e:
         logging.critical(f"Unable to get job results - {e}")
-        return create_response({"error": f"{e}"}), 404
+        return create_response({"error": f"{e}"}), 400
 
 
 def get_data_format(orient):
