@@ -15,7 +15,7 @@ import {
   OBSERVABLE_USER,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-export const ObservableHQElement = ({ element, blockPath, setFieldValue, index, handleChange, ...restFormikProps }) => {
+export const ObservableHQElement = ({ element, blockPath, index, handleChange, ...restFormikProps }) => {
   const intl = useIntl();
   const theme = useTheme();
   const observableUserName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_USER });
@@ -74,6 +74,5 @@ ObservableHQElement.propTypes = {
   element: PropTypes.object.isRequired,
   blockPath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  setFieldValue: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
