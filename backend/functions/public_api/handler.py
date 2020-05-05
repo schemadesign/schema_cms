@@ -154,7 +154,7 @@ def get_page(page_id):
         )
 
     except db.Page.DoesNotExist:
-        return create_response({"error": "Page does not exist"}, 404)
+        return create_response({"error": "Page does not exist"}), 404
 
     except Exception as e:
         logging.info(f"Unable to get page - {e}")
