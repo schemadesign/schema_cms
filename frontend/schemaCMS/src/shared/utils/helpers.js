@@ -37,7 +37,15 @@ import { sizes } from '../../theme/media';
 import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TEMPLATE } from '../../modules/page/page.constants';
-import { ELEMENT_VALUE, IMAGE_TYPE } from '../../modules/blockTemplates/blockTemplates.constants';
+import {
+  ELEMENT_VALUE,
+  IMAGE_TYPE,
+  OBSERVABLE_CELL,
+  OBSERVABLE_NOTEBOOK,
+  OBSERVABLE_PARAMS,
+  OBSERVABLE_USER,
+  OBSERVABLEHQ_TYPE,
+} from '../../modules/blockTemplates/blockTemplates.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
@@ -132,7 +140,19 @@ export const prepareForPostingPageData = evolve({
 export const getValuePath = ({ blockPath, index, elementValue = ELEMENT_VALUE }) =>
   `${blockPath}.${BLOCK_ELEMENTS}.${index}.${elementValue}`;
 
-const getDefaultValue = cond([[equals(IMAGE_TYPE), always({})], [T, always('')]]);
+const getDefaultValue = cond([
+  [equals(IMAGE_TYPE), always({})],
+  [
+    equals(OBSERVABLEHQ_TYPE),
+    always({
+      [OBSERVABLE_USER]: '',
+      [OBSERVABLE_NOTEBOOK]: '',
+      [OBSERVABLE_CELL]: '',
+      [OBSERVABLE_PARAMS]: '',
+    }),
+  ],
+  [T, always('')],
+]);
 
 export const setDefaultValue = element => mergeRight(element, { value: getDefaultValue(element.type) });
 
