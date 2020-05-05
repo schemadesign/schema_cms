@@ -15,7 +15,7 @@ import {
   OBSERVABLE_USER,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-export const ObservableHQElement = ({ element, blockPath, index, ...restFormikProps }) => {
+export const ObservableHQElement = ({ element, blockPath, setFieldValue, index, handleChange, ...restFormikProps }) => {
   const intl = useIntl();
   const theme = useTheme();
   const observableUserName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_USER });
@@ -32,6 +32,7 @@ export const ObservableHQElement = ({ element, blockPath, index, ...restFormikPr
       <TextInput
         name={observableUserName}
         value={element.value[OBSERVABLE_USER]}
+        onChange={handleChange}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_USER}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
@@ -40,6 +41,7 @@ export const ObservableHQElement = ({ element, blockPath, index, ...restFormikPr
       <TextInput
         name={observableNotebookName}
         value={element.value[OBSERVABLE_NOTEBOOK]}
+        onChange={handleChange}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_NOTEBOOK}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
@@ -48,6 +50,7 @@ export const ObservableHQElement = ({ element, blockPath, index, ...restFormikPr
       <TextInput
         name={observableCellName}
         value={element.value[OBSERVABLE_CELL]}
+        onChange={handleChange}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_CELL}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
@@ -57,10 +60,11 @@ export const ObservableHQElement = ({ element, blockPath, index, ...restFormikPr
       <TextInput
         name={observableParamsName}
         value={element.value[OBSERVABLE_PARAMS]}
+        {...restFormikProps}
+        onChange={handleChange}
         placeholder={intl.formatMessage(messages[`${OBSERVABLE_PARAMS}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         centerIcon
-        {...restFormikProps}
       />
     </ObservableHQContainer>
   );
@@ -71,4 +75,5 @@ ObservableHQElement.propTypes = {
   blockPath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
