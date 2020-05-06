@@ -4,6 +4,7 @@ import { BlockElement } from '../blockElement.component';
 import { defaultProps } from '../blockElement.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 import {
+  customElement,
   imageElement,
   internalConnectionElement,
   markdownElement,
@@ -35,6 +36,11 @@ describe('BlockElement: Component', () => {
 
   it('should render correctly observable element', async () => {
     const wrapper = await render({ element: observableHQElement });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly custom element', async () => {
+    const wrapper = await render({ element: customElement });
     expect(wrapper).toMatchSnapshot();
   });
 
