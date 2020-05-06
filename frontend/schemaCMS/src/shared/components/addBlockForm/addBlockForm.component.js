@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useLocation } from 'react-router';
 import { Icons } from 'schemaUI';
-import { propEq, find, map, omit } from 'ramda';
+import { propEq, find, map, omit, pipe } from 'ramda';
 
 import { NoBlocksCopyContainer, SelectContainer } from './addBlockForm.styles';
 import { LoadingWrapper } from '../loadingWrapper';
@@ -29,6 +29,7 @@ import {
   PAGE_BLOCKS,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
+import { setDefaultValue } from '../../utils/helpers';
 
 const { EditIcon } = Icons;
 
@@ -46,16 +47,20 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
     onSubmit: ({ name, type }) => {
       try {
         const blockTemplate = find(propEq('id', type), blockTemplates);
-        const { name: blockName, id, elements, ...rest } = blockTemplate;
+        const { name: blockName, id, elements: templateElements, ...rest } = blockTemplate;
         const page = state.page || {};
         const blocks = page[PAGE_BLOCKS] || [];
 
+        const elements = map(
+          pipe(
+            setDefaultValue,
+            omit(['id'])
+          )
+        )(templateElements);
+
         const updatedPage = {
           ...page,
-          [PAGE_BLOCKS]: [
-            ...blocks,
-            { ...rest, name, key: Date.now(), type: blockName, block: id, elements: map(omit(['id']))(elements) },
-          ],
+          [PAGE_BLOCKS]: [...blocks, { ...rest, name, key: Date.now(), type: blockName, block: id, elements }],
         };
         history.push(backUrl, { page: updatedPage });
       } catch (errors) {
