@@ -21,11 +21,7 @@ class TestListBlockTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(project.pk))
-        queryset = (
-            projects_models.Project.objects.get(id=project.pk)
-            .block_set.filter(is_template=True)
-            .order_by("-created")
-        )
+        queryset = projects_models.Project.objects.get(id=project.pk).blocktemplate_set.order_by("-created")
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.BlockTemplateSerializer(queryset, many=True).data
@@ -57,7 +53,7 @@ class TestCreateBlockTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(project.pk), data=payload, format="json")
-        block = pages_models.Block.objects.get(id=response.data["id"])
+        block = pages_models.BlockTemplate.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.BlockTemplateSerializer(block).data
@@ -82,7 +78,7 @@ class TestCreateBlockTemplatesView:
 class TestUpdateDeleteBlockTemplatesView:
     @staticmethod
     def get_url(pk):
-        return reverse("pages:block-detail", kwargs=dict(pk=pk))
+        return reverse("pages:blocktemplate-detail", kwargs=dict(pk=pk))
 
     def test_response(self, api_client, admin, block_template):
         new_name = "New Block Name"
@@ -91,7 +87,7 @@ class TestUpdateDeleteBlockTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(block_template.pk), data=payload, format="json")
-        block = pages_models.Block.objects.get(id=response.data["id"])
+        block = pages_models.BlockTemplate.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data == page_serializer.BlockTemplateSerializer(block).data
@@ -142,7 +138,7 @@ class TestUpdateDeleteBlockTemplatesView:
         response = api_client.delete(self.get_url(block_template.id))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert not pages_models.Block.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
+        assert not pages_models.BlockTemplate.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
 
 
 class TestUpdatePageTemplatesView:

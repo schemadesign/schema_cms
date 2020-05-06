@@ -125,13 +125,13 @@ class BaseElementSerializer(serializers.ModelSerializer):
 
 class CustomElementContentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.BlockElement
+        model = models.BlockTemplateElement
         fields = ("type", "order")
 
 
 class BlockElementSerializer(BaseElementSerializer):
     class Meta:
-        model = models.BlockElement
+        model = models.BlockTemplateElement
         fields = BaseElementSerializer.Meta.fields + ("template",)
         extra_kwargs = {"template": {"required": False}}
 
@@ -149,11 +149,11 @@ class BlockTemplateSerializer(CustomModelSerializer):
     elements = BlockElementSerializer(many=True)
 
     class Meta:
-        model = models.Block
+        model = models.BlockTemplate
         fields = ("id", "project", "name", "created_by", "elements", "created", "is_available")
         validators = [
             CustomUniqueTogetherValidator(
-                queryset=models.Block.objects.all(),
+                queryset=models.BlockTemplate.objects.all(),
                 fields=("project", "name"),
                 key_field_name="name",
                 code="blockTemplateNameUnique",
@@ -168,7 +168,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
         template = self.Meta.model(created_by=self.context["request"].user, **validated_data)
         template.save()
 
-        models.BlockElement.objects.bulk_create(self.create_elements(elements, template))
+        models.BlockTemplateElement.objects.bulk_create(self.create_elements(elements, template))
 
         return template
 
@@ -190,7 +190,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
         for element in elements:
             if element["type"] == constants.ElementType.CUSTOM_ELEMENT:
                 self.validate_custom_element(element)
-            models.BlockElement.objects.update_or_create(
+            models.BlockTemplateElement.objects.update_or_create(
                 id=element.pop("id", None), defaults=dict(template=instance, **element)
             )
 
@@ -200,7 +200,7 @@ class BlockTemplateSerializer(CustomModelSerializer):
             if element["type"] == constants.ElementType.CUSTOM_ELEMENT:
                 self.validate_custom_element(element)
 
-            element_instance = models.BlockElement()
+            element_instance = models.BlockTemplateElement()
             element_instance.name = element["name"]
             element_instance.template = template
             element_instance.type = element["type"]
