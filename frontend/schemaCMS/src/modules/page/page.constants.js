@@ -14,6 +14,7 @@ import {
   OBSERVABLE_NOTEBOOK,
   OBSERVABLE_CELL,
   OBSERVABLE_PARAMS,
+  CUSTOM_ELEMENT_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -57,6 +58,43 @@ export const INITIAL_VALUES_ADD_BLOCK = {
   [BLOCK_TYPE]: '',
 };
 
+const elementValueValidation = () =>
+  Yup.mixed()
+    .when(ELEMENT_TYPE, {
+      is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, INTERNAL_CONNECTION_TYPE, CODE_TYPE].includes(type),
+      then: Yup.string()
+        .trim()
+        .min(1, 'Required')
+        .max(1000, 'Element Value should have maximum 1000 characters')
+        .required('Required'),
+    })
+    .when(ELEMENT_TYPE, {
+      is: CONNECTION_TYPE,
+      then: Yup.string()
+        .trim()
+        .min(1, 'Required')
+        .url('Invalid URL')
+        .max(1000, 'Element Value should have maximum 1000 characters')
+        .required('Required'),
+    })
+    .when(ELEMENT_TYPE, {
+      is: IMAGE_TYPE,
+      then: Yup.object().shape({
+        fileName: Yup.string()
+          .min(1, 'Required')
+          .required('Required'),
+      }),
+    })
+    .when(ELEMENT_TYPE, {
+      is: OBSERVABLEHQ_TYPE,
+      then: Yup.object().shape({
+        [OBSERVABLE_USER]: Yup.string().max(1000, 'ObservableHQ User Value should have maximum 1000 characters'),
+        [OBSERVABLE_NOTEBOOK]: Yup.string().max(1000, 'ObservableHQ Notebook should have maximum 1000 characters'),
+        [OBSERVABLE_CELL]: Yup.string().max(1000, 'ObservableHQ Cell should have maximum 1000 characters'),
+        [OBSERVABLE_PARAMS]: Yup.string().max(1000, 'ObservableHQ Params should have maximum 1000 characters'),
+      }),
+    });
+
 export const PAGE_SCHEMA = Yup.object().shape({
   [PAGE_NAME]: Yup.string()
     .trim()
@@ -91,50 +129,16 @@ export const PAGE_SCHEMA = Yup.object().shape({
           .required('Required'),
         [BLOCK_ELEMENTS]: Yup.array().of(
           Yup.object().shape({
-            [ELEMENT_VALUE]: Yup.mixed()
-              .when(ELEMENT_TYPE, {
-                is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, INTERNAL_CONNECTION_TYPE, CODE_TYPE].includes(type),
-                then: Yup.string()
-                  .trim()
-                  .min(1, 'Required')
-                  .max(1000, 'Element Value should have maximum 1000 characters')
-                  .required('Required'),
-              })
-              .when(ELEMENT_TYPE, {
-                is: CONNECTION_TYPE,
-                then: Yup.string()
-                  .trim()
-                  .min(1, 'Required')
-                  .url('Invalid URL')
-                  .max(1000, 'Element Value should have maximum 1000 characters')
-                  .required('Required'),
-              })
-              .when(ELEMENT_TYPE, {
-                is: IMAGE_TYPE,
-                then: Yup.object().shape({
-                  fileName: Yup.string()
-                    .min(1, 'Required')
-                    .required('Required'),
-                }),
-              })
-              .when(ELEMENT_TYPE, {
-                is: OBSERVABLEHQ_TYPE,
-                then: Yup.object().shape({
-                  [OBSERVABLE_USER]: Yup.string().max(
-                    1000,
-                    'ObservableHQ User Value should have maximum 1000 characters'
-                  ),
-                  [OBSERVABLE_NOTEBOOK]: Yup.string().max(
-                    1000,
-                    'ObservableHQ Notebook should have maximum 1000 characters'
-                  ),
-                  [OBSERVABLE_CELL]: Yup.string().max(1000, 'ObservableHQ Cell should have maximum 1000 characters'),
-                  [OBSERVABLE_PARAMS]: Yup.string().max(
-                    1000,
-                    'ObservableHQ Params should have maximum 1000 characters'
-                  ),
-                }),
-              }),
+            [ELEMENT_VALUE]: elementValueValidation().when(ELEMENT_TYPE, {
+              is: CUSTOM_ELEMENT_TYPE,
+              then: Yup.array()
+                .of(
+                  Yup.object().shape({
+                    elements: Yup.array().of(Yup.object().shape({ [ELEMENT_VALUE]: elementValueValidation() })),
+                  })
+                )
+                .min(1, 'Required'),
+            }),
           })
         ),
       })
