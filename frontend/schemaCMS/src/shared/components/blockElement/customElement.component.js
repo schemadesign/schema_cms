@@ -110,7 +110,11 @@ export const CustomElement = ({ element, blockPath, handleChange, index, setFiel
                     </SetElementContent>
                   </Accordion>
                   <RemoveContainer>
-                    <CloseIcon customStyles={{ width: 40, height: 40 }} onClick={removeSet(parentIndex)} />
+                    <CloseIcon
+                      customStyles={{ width: 40, height: 40 }}
+                      id={`remove-${valuePath}.${parentIndex}`}
+                      onClick={removeSet(parentIndex)}
+                    />
                   </RemoveContainer>
                 </SetElement>
               );

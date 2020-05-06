@@ -974,6 +974,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 className="sc-fzoLsD fNlvoI"
               >
                 <svg
+                  id="remove-blockPath.elements.0.value.0"
                   onClick={[Function]}
                   style={
                     Object {
@@ -1821,6 +1822,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 className="sc-fzoLsD fNlvoI"
               >
                 <svg
+                  id="remove-blockPath.elements.0.value.1"
                   onClick={[Function]}
                   style={
                     Object {
@@ -2668,6 +2670,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 className="sc-fzoLsD fNlvoI"
               >
                 <svg
+                  id="remove-blockPath.elements.0.value.2"
                   onClick={[Function]}
                   style={
                     Object {

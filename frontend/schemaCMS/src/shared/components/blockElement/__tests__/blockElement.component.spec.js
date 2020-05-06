@@ -44,6 +44,65 @@ describe('BlockElement: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should remove elements set', async () => {
+    jest.spyOn(defaultProps, 'setFieldValue');
+    const wrapper = await render({ element: customElement });
+    wrapper.root.findByProps({ id: 'remove-blockPath.elements.0.value.0' }).props.onClick();
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', [
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 2,
+        order: 0,
+      },
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 3,
+        order: 1,
+      },
+    ]);
+  });
+
+  it('should add elements set', async () => {
+    jest.spyOn(defaultProps, 'setFieldValue');
+    const wrapper = await render({ element: customElement });
+    wrapper.root.findByProps({ id: 'add-blockPath.elements.0.value' }).props.onClick();
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', [
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 1,
+      },
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 2,
+      },
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 3,
+      },
+      { elements: [], key: 1575162000000, order: 3 },
+    ]);
+  });
+
   it('should set file name and file in form', async () => {
     const readAsDataURL = jest.fn();
     const result = { target: { result: 'result' } };

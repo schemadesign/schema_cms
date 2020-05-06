@@ -3739,6 +3739,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 className="sc-fznyYp kElEBK"
                               >
                                 <svg
+                                  id="remove-blocks.0.elements.4.value.0"
                                   onClick={[Function]}
                                   style={
                                     Object {
@@ -4588,6 +4589,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 className="sc-fznyYp kElEBK"
                               >
                                 <svg
+                                  id="remove-blocks.0.elements.4.value.1"
                                   onClick={[Function]}
                                   style={
                                     Object {
@@ -5437,6 +5439,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 className="sc-fznyYp kElEBK"
                               >
                                 <svg
+                                  id="remove-blocks.0.elements.4.value.2"
                                   onClick={[Function]}
                                   style={
                                     Object {
