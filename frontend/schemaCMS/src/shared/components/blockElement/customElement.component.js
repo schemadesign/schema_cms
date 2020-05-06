@@ -23,7 +23,8 @@ const { MenuIcon, CloseIcon } = Icons;
 export const CustomElement = ({ element, blockPath, handleChange, index, setFieldValue, ...restFormikProps }) => {
   const intl = useIntl();
   const valuePath = getValuePath({ blockPath, index });
-  const { value } = element;
+  const removeElementsPath = getValuePath({ blockPath, index, elementValue: 'deleteElementsSets' });
+  const { value, deleteElementsSets = [] } = element;
   const handleMove = (dragIndex, hoverIndex) => {
     const dragCard = value[dragIndex];
     const mutableValues = asMutable(value);
@@ -42,11 +43,16 @@ export const CustomElement = ({ element, blockPath, handleChange, index, setFiel
     setFieldValue(valuePath, [...value, { key: Date.now(), elements, order: value.length }]);
   };
 
-  const removeSet = parentIndex => () => {
+  const removeSet = index => () => {
     const newValue = pipe(
-      remove(parentIndex, 1),
+      remove(index, 1),
       mapAndAddOrder
     )(value);
+    const removedId = value[index].id;
+
+    if (value[index].id) {
+      setFieldValue(removeElementsPath, deleteElementsSets.concat(removedId));
+    }
 
     setFieldValue(valuePath, newValue);
   };
