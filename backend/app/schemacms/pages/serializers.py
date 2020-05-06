@@ -435,8 +435,8 @@ class PageSerializer(CustomModelSerializer):
             )
 
             if element_type == constants.ElementType.CUSTOM_ELEMENT:
-                breakpoint()
                 delete_elements_sets = element.pop("delete_elements_sets", [])
+
                 obj.delete_custom_elements_sets(delete_elements_sets)
                 obj.update_or_create_custom_element_sets(element_value)
 
