@@ -184,6 +184,9 @@ class PageBlockElement(Element):
                 defaults=dict(block=self.block, custom_element_set=custom_element_set, **element),
             )
 
+    def delete_custom_elements_sets(self, ids_to_delete):
+        self.elements_sets.filter(id__in=ids_to_delete).delete()
+
     def create_update_observable_element(self, element):
         hq_element, is_create = PageBlockObservableElement.objects.update_or_create(
             id=element.pop("id", None), defaults=dict(**element)
