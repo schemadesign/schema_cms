@@ -46,8 +46,12 @@ describe('BlockElement: Component', () => {
 
   it('should remove elements set', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
+    jest.spyOn(defaultProps, 'validateForm');
+    jest.useFakeTimers();
     const wrapper = await render({ element: customElement });
     wrapper.root.findByProps({ id: 'remove-blockPath.elements.0.value.0' }).props.onClick();
+
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.deleteElementsSets', [1]);
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', [
       {
         elements: [
@@ -68,6 +72,8 @@ describe('BlockElement: Component', () => {
         order: 1,
       },
     ]);
+    jest.runAllTimers();
+    expect(defaultProps.validateForm).toHaveBeenCalled();
   });
 
   it('should add elements set', async () => {

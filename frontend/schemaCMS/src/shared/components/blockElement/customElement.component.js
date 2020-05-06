@@ -55,6 +55,7 @@ export const CustomElement = ({ element, blockPath, handleChange, index, setFiel
     }
 
     setFieldValue(valuePath, newValue);
+    setTimeout(() => restFormikProps.validateForm());
   };
 
   return (

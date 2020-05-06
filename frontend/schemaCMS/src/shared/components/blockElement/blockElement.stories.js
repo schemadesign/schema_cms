@@ -12,6 +12,7 @@ export const defaultProps = {
   index: 0,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
+  validateForm: Function.prototype,
   pagerUrlOptions,
 };
 
