@@ -40,10 +40,19 @@ class ElementValueField(serializers.Field):
     def get_attribute(self, instance):
 
         if instance.type == constants.ElementType.CUSTOM_ELEMENT:
-            elements = instance.elements.all()
-            elements = PageBlockElementSerializer(elements, many=True).data
+            elements_sets = instance.elements_sets.all().order_by("order")
 
-            return {"elements": elements}
+            res = []
+
+            for elements_set in elements_sets:
+                set_data = {
+                    "id": elements_set.id,
+                    "order": elements_set.order,
+                    "elements": PageBlockElementSerializer(elements_set.elements, many=True).data,
+                }
+                res.append(set_data)
+
+            return res
 
         if instance.type == constants.ElementType.OBSERVABLE_HQ:
             observable_element = getattr(instance, instance.type)
@@ -425,7 +434,7 @@ class PageSerializer(CustomModelSerializer):
             )
 
             if element_type == constants.ElementType.CUSTOM_ELEMENT:
-                obj.update_or_create_custom_elements(element_value["elements"])
+                obj.update_or_create_custom_element_sets(element_value)
 
             if element_type == constants.ElementType.OBSERVABLE_HQ:
                 obj.create_update_observable_element(element_value)
@@ -455,7 +464,7 @@ class PageSerializer(CustomModelSerializer):
                 "elements",
                 queryset=models.PageBlockElement.objects.all()
                 .order_by("order")
-                .exclude(custom_element__isnull=False),
+                .exclude(custom_element_set__isnull=False),
             )
         )
         return PageBlockSerializer(blocks, many=True).data

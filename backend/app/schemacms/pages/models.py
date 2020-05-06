@@ -144,8 +144,8 @@ class PageBlockElement(Element):
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
         upload_to=file_upload_path,
     )
-    custom_element = models.ForeignKey(
-        "PageBlockElement", on_delete=models.CASCADE, related_name="elements", null=True
+    custom_element_set = models.ForeignKey(
+        "CustomElementSet", on_delete=models.CASCADE, related_name="elements", null=True
     )
     observable_hq = models.OneToOneField(
         "PageBlockObservableElement", on_delete=models.CASCADE, null=True, related_name="block_element"
@@ -159,16 +159,29 @@ class PageBlockElement(Element):
 
         return os.path.join(base_path, f"{self.block.page_id}/blocks/{self.block_id}/{filename}")
 
-    def update_or_create_custom_elements(self, elements):
+    def update_or_create_custom_element_sets(self, elements_sets_list):
+        for elements_set in elements_sets_list:
+            element_set_order = elements_set.get("order")
+
+            custom_element_set, _ = CustomElementSet.objects.update_or_create(
+                id=elements_set.pop("id", None), defaults=dict(custom_element=self, order=element_set_order),
+            )
+
+            set_elements = elements_set.get("elements", [])
+
+            self.update_or_create_custom_element_set_elements(set_elements, custom_element_set)
+
+    def update_or_create_custom_element_set_elements(self, elements, custom_element_set):
         for element in elements:
-            type_ = element.get("type")
-            element[type_] = element.pop("value")
+            element_type = element.get("type")
+            element[element_type] = element.pop("value")
 
             if "key" in element:
                 element.pop("key")
 
             element, _ = PageBlockElement.objects.update_or_create(
-                id=element.pop("id", None), defaults=dict(block=self.block, custom_element=self, **element),
+                id=element.pop("id", None),
+                defaults=dict(block=self.block, custom_element_set=custom_element_set, **element),
             )
 
     def create_update_observable_element(self, element):
@@ -179,6 +192,16 @@ class PageBlockElement(Element):
         if is_create:
             self.observable_hq = hq_element
             self.save(update_fields=["observable_hq"])
+
+
+class CustomElementSet(SoftDeleteObject):
+    custom_element = models.ForeignKey(
+        PageBlockElement, on_delete=models.CASCADE, related_name="elements_sets"
+    )
+    order = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.id}"
 
 
 class PageBlockObservableElement(SoftDeleteObject):
