@@ -24,6 +24,8 @@ export const SelectLabel = styled.div`
 `;
 
 export const MarkdownContainer = styled.div`
+  padding-bottom: 30px;
+
   .mde-header {
     background-color: ${({ theme }) => theme.background};
   }
@@ -112,3 +114,31 @@ export const getCustomSelectedWrapperStyles = theme => ({
   backgroundColor: theme.secondaryText,
   padding: '20px 10px',
 });
+
+export const SetElement = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 2px solid ${({ theme }) => theme.border};
+  }
+`;
+
+export const SetElementContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const RemoveContainer = styled.div`
+  cursor: pointer;
+  margin-top: 10px;
+`;

@@ -7,6 +7,10 @@ import {
   OBSERVABLE_NOTEBOOK,
   OBSERVABLE_USER,
   OBSERVABLE_PARAMS,
+  CONNECTION_TYPE,
+  CODE_TYPE,
+  MARKDOWN_TYPE,
+  PLAIN_TEXT_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -45,5 +49,33 @@ export default defineMessages({
   blocks: {
     id: 'shared.components.blockElement.blocks',
     defaultMessage: 'Block',
+  },
+  [MARKDOWN_TYPE]: {
+    id: `shared.components.blockElement.${MARKDOWN_TYPE}`,
+    defaultMessage: 'Markdown',
+  },
+  [PLAIN_TEXT_TYPE]: {
+    id: `shared.components.blockElement.${PLAIN_TEXT_TYPE}`,
+    defaultMessage: 'Plain text',
+  },
+  [IMAGE_TYPE]: {
+    id: `shared.components.blockElement.${IMAGE_TYPE}`,
+    defaultMessage: 'Image',
+  },
+  [CODE_TYPE]: {
+    id: `shared.components.blockElement.${CODE_TYPE}`,
+    defaultMessage: 'Code',
+  },
+  [CONNECTION_TYPE]: {
+    id: `shared.components.blockElement.${CONNECTION_TYPE}`,
+    defaultMessage: 'Connection',
+  },
+  [INTERNAL_CONNECTION_TYPE]: {
+    id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}`,
+    defaultMessage: 'Internal Connection',
+  },
+  set: {
+    id: 'shared.components.blockElement.set',
+    defaultMessage: 'Set',
   },
 });
