@@ -411,12 +411,13 @@ class PageSerializer(CustomModelSerializer):
             if "value" in element:
                 element_value = element.pop("value")
 
-                if element_type == constants.ElementType.IMAGE:
-                    element.pop(element_type)
+                if element_type == constants.ElementType.IMAGE and element_value:
+                    element[element_type] = element_value
 
-                if element_type not in [
-                    constants.ElementType.CUSTOM_ELEMENT,
-                    constants.ElementType.OBSERVABLE_HQ,
+                if element_type in [
+                    constants.ElementType.MARKDOWN,
+                    constants.ElementType.PLAIN_TEXT,
+                    constants.ElementType.CODE,
                 ]:
                     element[element_type] = element_value
 

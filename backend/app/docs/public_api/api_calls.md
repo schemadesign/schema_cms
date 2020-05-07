@@ -205,6 +205,7 @@ Content-Type: application/json
           "id": 1,
           "name": "New Block",
           "order": 1,
+          "template": {"id": 1, "name": "Test Block Template 1"},
           "elements": [
             {
               "id": 1,
@@ -220,6 +221,7 @@ Content-Type: application/json
           "id": 2,
           "name": "New Block 2",
           "order": 2,
+          "template": {"id": 2, "name": "Test Block Template 2"},
           "elements": [
             {
               "id": 2,
@@ -235,6 +237,7 @@ Content-Type: application/json
           "id": 3,
           "name": "New Block 3",
           "order": 3,
+          "template": {"id": 2, "name": "Test Block Template 3"},
           "elements": [
             {
               "id": 9,
@@ -248,8 +251,9 @@ Content-Type: application/json
         },
         {
           "id": 4,
-          "name": "New Block 3",
+          "name": "New Block 4",
           "order": 0,
+          "template": {"id": 2, "name": "Test Block Template 4"},
           "elements": [
             {
               "id": 10,
@@ -297,6 +301,33 @@ Content-Type: application/json
 
 ```
 
+## Get Page Block
+**Request**:
+
+`GET` `/pages/<id>/blocks/<id>`
+
+**Response**:
+
+```json
+Content-Type: application/json
+200 OK
+{
+  "id": 1,
+  "name": "New Block",
+  "order": 1,
+  "template": {"id": 1, "name": "Test Block Template 1"},
+  "elements": [
+    {
+      "id": 1,
+      "name": "Plain Text element",
+      "type": "plain_text",
+      "order": 0,
+      "value": "test value",
+      "html": "<div id='plain-text-7' class='element text'><p>test value</p></div>"
+    }
+  ]
+}
+```
 
 ## Get Data Sources
 **Request**:

@@ -21,19 +21,14 @@ CORS(app)
 
 
 def create_response(data):
-    return Response(
-        json.dumps(data, ensure_ascii=True),
-        content_type="application/json; charset=utf-8",
-    )
+    return Response(json.dumps(data, ensure_ascii=True), content_type="application/json; charset=utf-8",)
 
 
 def read_parquet_from_s3(data_source, columns=None, orient="index", slice_=True):
     result_file = services.get_s3_object(data_source.result_parquet)
     file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
     if slice_:
-        return json.loads(
-            file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso")
-        )
+        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso"))
     else:
         return json.loads(file.to_pandas().to_json(orient=orient, date_format="iso"))
 
@@ -53,9 +48,7 @@ def get_projects():
     try:
         projects = [
             project.as_dict()
-            for project in db.Project.select()
-            .where(db.Project.deleted_at == None)
-            .order_by(db.Project.id)
+            for project in db.Project.select().where(db.Project.deleted_at == None).order_by(db.Project.id)
         ]
 
     except Exception as e:
@@ -68,7 +61,12 @@ def get_projects():
 @app.route("/projects/<int:project_id>", methods=["GET"])
 def get_project(project_id):
     try:
-        project = db.Project.select().where(db.Project.id == project_id).get().as_dict()
+        project = (
+            db.Project.select()
+            .where(db.Project.id == project_id, db.Project.deleted_at == None)
+            .get()
+            .as_dict()
+        )
 
     except db.Project.DoesNotExist:
         return create_response({"error": "Project does not exist"}), 404
@@ -89,7 +87,7 @@ def get_project_data_sources(project_id):
         data_sources = [
             data_source.as_dict_list()
             for data_source in db.DataSource.select()
-            .where(db.DataSource.project_id == project_id)
+            .where(db.DataSource.project_id == project_id, db.DataSource.deleted_at == None)
             .order_by(db.DataSource.created)
             .paginate(page_number, page_size)
         ]
@@ -107,9 +105,7 @@ def get_project_pages(project_id):
         pages = [
             page.as_dict()
             for page in db.Page.select().where(
-                db.Page.project_id == project_id,
-                db.Page.deleted_at == None,
-                db.Page.is_public == True,
+                db.Page.project_id == project_id, db.Page.deleted_at == None, db.Page.is_public == True,
             )
         ]
 
@@ -126,7 +122,12 @@ def get_project_pages(project_id):
 @app.route("/sections/<int:section_id>", methods=["GET"])
 def get_section(section_id):
     try:
-        project = db.Section.select().where(db.Section.id == section_id).get().as_dict()
+        project = (
+            db.Section.select()
+            .where(db.Section.id == section_id, db.Section.deleted_at == None)
+            .get()
+            .as_dict()
+        )
 
     except db.Section.DoesNotExist:
         return create_response({"error": "Section does not exist"}), 404
@@ -144,11 +145,7 @@ def get_page(page_id):
         format_ = request.args.get("format", None)
         page = (
             db.Page.select()
-            .where(
-                db.Page.id == page_id,
-                db.Page.deleted_at == None,
-                db.Page.is_public == True,
-            )
+            .where(db.Page.id == page_id, db.Page.deleted_at == None, db.Page.is_public == True,)
             .get()
             .as_dict_detail()
         )
@@ -164,6 +161,26 @@ def get_page(page_id):
         return create_response(page), 200
 
     return render_template("page_template.html", page=page)
+
+
+@app.route("/pages/<int:page_id>/blocks/<int:block_id>", methods=["GET"])
+def get_page_block(page_id, block_id):
+    try:
+        block = (
+            db.Block.select()
+            .where(db.Block.page == page_id, db.Block.deleted_at == None, db.Block.id == block_id,)
+            .get()
+            .as_dict()
+        )
+
+    except db.Block.DoesNotExist:
+        return create_response({"error": "Block does not exist"}), 404
+
+    except Exception as e:
+        logging.info(f"Unable to get page - {e}")
+        return create_response({"error": f"{e}"}), 400
+
+    return create_response(block), 200
 
 
 # Data Sources endpoints
@@ -194,7 +211,9 @@ def get_data_sources():
 def get_data_source(data_source_id):
     try:
         data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+            db.DataSource.select()
+            .where(db.DataSource.id == data_source_id, db.DataSource.deleted_at == None)
+            .get()
         )
         records = read_parquet_from_s3(data_source)
 
@@ -215,7 +234,9 @@ def get_data_source(data_source_id):
 def get_data_source_meta(data_source_id):
     try:
         data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+            db.DataSource.select()
+            .where(db.DataSource.id == data_source_id, db.DataSource.deleted_at == None)
+            .get()
         )
         meta = data_source.as_dict()["meta"]
 
@@ -233,7 +254,9 @@ def get_data_source_meta(data_source_id):
 def get_data_source_fields(data_source_id):
     try:
         data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+            db.DataSource.select()
+            .where(db.DataSource.id == data_source_id, db.DataSource.deleted_at == None)
+            .get()
         )
         fields = data_source.get_fields()
 
@@ -247,18 +270,16 @@ def get_data_source_fields(data_source_id):
     return create_response(fields), 200
 
 
-@app.route(
-    "/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"]
-)
+@app.route("/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"])
 def get_data_source_selected_field(data_source_id, field_id):
     try:
         data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+            db.DataSource.select()
+            .where(db.DataSource.id == data_source_id, db.DataSource.deleted_at == None)
+            .get()
         )
         field = data_source.get_fields()[field_id]
-        records = read_parquet_from_s3(
-            data_source, columns=[field["name"]], slice_=False
-        )
+        records = read_parquet_from_s3(data_source, columns=[field["name"]], slice_=False)
 
     except db.DataSource.DoesNotExist:
         return create_response({"error": "Data Source does not exist"}), 404
@@ -268,14 +289,7 @@ def get_data_source_selected_field(data_source_id, field_id):
         return create_response({"error": f"{e}"}), 400
 
     return (
-        create_response(
-            {
-                "id": field_id,
-                "name": field["name"],
-                "type": field["type"],
-                "records": records,
-            }
-        ),
+        create_response({"id": field_id, "name": field["name"], "type": field["type"], "records": records,}),
         200,
     )
 
@@ -284,7 +298,9 @@ def get_data_source_selected_field(data_source_id, field_id):
 def get_data_source_filters(data_source_id):
     try:
         data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+            db.DataSource.select()
+            .where(db.DataSource.id == data_source_id, db.DataSource.deleted_at == None)
+            .get()
         )
         filters = data_source.get_filters()
 
@@ -307,7 +323,9 @@ def get_data_source_records(data_source_id):
 
     try:
         data_source = (
-            db.DataSource.select().where(db.DataSource.id == data_source_id).get()
+            db.DataSource.select()
+            .where(db.DataSource.id == data_source_id, db.DataSource.deleted_at == None)
+            .get()
         )
         items = data_source.result_shape[0]
 
