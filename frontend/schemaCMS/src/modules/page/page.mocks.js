@@ -26,6 +26,7 @@ import {
   OBSERVABLE_CELL,
   OBSERVABLE_NOTEBOOK,
   OBSERVABLE_USER,
+  CUSTOM_ELEMENT_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
@@ -70,12 +71,23 @@ export const observableHQElement = {
   [ELEMENT_ID]: 1,
 };
 
+export const customElement = {
+  [ELEMENT_NAME]: 'custom element',
+  [ELEMENT_TYPE]: CUSTOM_ELEMENT_TYPE,
+  [ELEMENT_VALUE]: [
+    { elements: [textElement, textElement, markdownElement], id: 1 },
+    { elements: [textElement, textElement, markdownElement], id: 2 },
+    { elements: [textElement, textElement, markdownElement], id: 3 },
+  ],
+  [ELEMENT_ID]: 1,
+};
+
 export const block = {
   [BLOCK_NAME]: 'name',
   [BLOCK_TYPE]: 'type',
   [BLOCK_KEY]: 1,
   [BLOCK_ID]: 1,
-  [BLOCK_ELEMENTS]: [textElement, imageElement, internalConnectionElement, markdownElement],
+  [BLOCK_ELEMENTS]: [textElement, internalConnectionElement, markdownElement, observableHQElement, customElement],
 };
 
 export const page = {

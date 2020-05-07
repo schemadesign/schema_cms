@@ -4,6 +4,7 @@ import { BlockElement } from '../blockElement.component';
 import { defaultProps } from '../blockElement.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 import {
+  customElement,
   imageElement,
   internalConnectionElement,
   markdownElement,
@@ -36,6 +37,76 @@ describe('BlockElement: Component', () => {
   it('should render correctly observable element', async () => {
     const wrapper = await render({ element: observableHQElement });
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly custom element', async () => {
+    const wrapper = await render({ element: customElement });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should remove elements set', async () => {
+    jest.spyOn(defaultProps, 'setFieldValue');
+    jest.spyOn(defaultProps, 'validateForm');
+    jest.useFakeTimers();
+    const wrapper = await render({ element: customElement });
+    wrapper.root.findByProps({ id: 'remove-blockPath.elements.0.value.0' }).props.onClick();
+
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.deleteElementsSets', [1]);
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', [
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 2,
+        order: 0,
+      },
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 3,
+        order: 1,
+      },
+    ]);
+    jest.runAllTimers();
+    expect(defaultProps.validateForm).toHaveBeenCalled();
+  });
+
+  it('should add elements set', async () => {
+    jest.spyOn(defaultProps, 'setFieldValue');
+    const wrapper = await render({ element: customElement });
+    wrapper.root.findByProps({ id: 'add-blockPath.elements.0.value' }).props.onClick();
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', [
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 1,
+      },
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 2,
+      },
+      {
+        elements: [
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+          { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+        ],
+        id: 3,
+      },
+      { elements: [], key: 1575162000000, order: 3 },
+    ]);
   });
 
   it('should set file name and file in form', async () => {

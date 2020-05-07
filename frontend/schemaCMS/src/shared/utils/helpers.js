@@ -38,6 +38,7 @@ import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSour
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TEMPLATE } from '../../modules/page/page.constants';
 import {
+  CUSTOM_ELEMENT_TYPE,
   ELEMENT_VALUE,
   IMAGE_TYPE,
   OBSERVABLE_CELL,
@@ -142,6 +143,7 @@ export const getValuePath = ({ blockPath, index, elementValue = ELEMENT_VALUE })
 
 const getDefaultValue = cond([
   [equals(IMAGE_TYPE), always({})],
+  [equals(CUSTOM_ELEMENT_TYPE), always([])],
   [
     equals(OBSERVABLEHQ_TYPE),
     always({

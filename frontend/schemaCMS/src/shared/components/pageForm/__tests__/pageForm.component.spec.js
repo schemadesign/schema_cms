@@ -99,9 +99,45 @@ describe('PageForm: Component', () => {
           {
             elements: [
               { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
-              { id: 1, name: 'name', type: 'image', value: { fileName: 'fileName' } },
               { id: 1, name: 'name', type: 'internal_connection', value: 'http://domain.com/blog' },
               { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+              {
+                id: 1,
+                name: 'name',
+                type: 'observable_hq',
+                value: { observableCell: 'notebook-cell', observableNotebook: 'my-notebook', observableUser: '@user' },
+              },
+              {
+                id: 1,
+                name: 'custom element',
+                type: 'custom_element',
+                value: [
+                  {
+                    elements: [
+                      { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+                      { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+                      { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+                    ],
+                    id: 1,
+                  },
+                  {
+                    elements: [
+                      { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+                      { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+                      { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+                    ],
+                    id: 2,
+                  },
+                  {
+                    elements: [
+                      { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+                      { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
+                      { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
+                    ],
+                    id: 3,
+                  },
+                ],
+              },
             ],
             id: 1,
             key: 1,
@@ -109,21 +145,14 @@ describe('PageForm: Component', () => {
             type: 'type',
           },
         ],
+        deleteBlocks: [],
         description: 'description',
         displayName: 'page-name',
-        deleteBlocks: [],
         id: 1,
         isPublic: false,
         keywords: 'keyword;',
         name: 'page name',
-        section: {
-          id: 'sectionId',
-          title: 'Section',
-          mainPage: {
-            displayName: 'page-name-2',
-            id: 2,
-          },
-        },
+        section: { id: 'sectionId', mainPage: { displayName: 'page-name-2', id: 2 }, title: 'Section' },
         template: 1,
       },
     });
