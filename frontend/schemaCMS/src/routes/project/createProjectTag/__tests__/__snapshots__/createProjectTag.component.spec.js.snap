@@ -7,12 +7,18 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Create Tag List"
-        id="dataSource.createDataSourceTag.subTitle"
+        defaultMessage="Create"
+        id="project.createProjectTag.subTitle"
         values={Object {}}
       />
     }
-    headerTitle="dataSourceName"
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag List"
+        id="project.createProjectTag.subTitle"
+        values={Object {}}
+      />
+    }
     options={
       Array [
         Object {
@@ -53,7 +59,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
             id="project.view.projectDetails"
             values={Object {}}
           />,
-          "to": "/project/projectId",
+          "to": "/project/1",
           "type": "link_item",
         },
         Object {
@@ -67,7 +73,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
             id="project.view.projectDataSources"
             values={Object {}}
           />,
-          "to": "/project/projectId/datasource",
+          "to": "/project/1/datasource",
           "type": "link_item",
         },
         Object {
@@ -81,7 +87,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
             id="project.view.states"
             values={Object {}}
           />,
-          "to": "/project/projectId/state",
+          "to": "/project/1/state",
           "type": "link_item",
         },
         Object {
@@ -94,7 +100,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
             id="project.view.projectUsersPage"
             values={Object {}}
           />,
-          "to": "/project/projectId/user",
+          "to": "/project/1/user",
           "type": "link_item",
         },
         Object {
@@ -108,7 +114,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
             id="project.view.content"
             values={Object {}}
           />,
-          "to": "/project/projectId/content",
+          "to": "/project/1/content",
           "type": "link_item",
         },
         Object {
@@ -121,7 +127,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
             id="project.view.templates"
             values={Object {}}
           />,
-          "to": "/project/projectId/templates",
+          "to": "/project/1/templates",
           "type": "link_item",
         },
       ]
@@ -130,23 +136,21 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Create Tag List"
-        id="dataSource.createDataSourceTag.subTitle"
+        defaultMessage="Create"
+        id="project.createProjectTag.subTitle"
         values={Object {}}
       />
     }
-    title="dataSourceName"
-  />
-  <DataSourceTagForm
-    createTag={[Function]}
-    dataSource={
-      Object {
-        "name": "dataSourceName",
-        "project": Object {
-          "id": "projectId",
-        },
-      }
+    title={
+      <FormattedMessage
+        defaultMessage="Tag List"
+        id="project.createProjectTag.subTitle"
+        values={Object {}}
+      />
     }
+  />
+  <ProjectTagForm
+    createTag={[Function]}
     dirty={false}
     handleChange={[Function]}
     handleSubmit={[Function]}
@@ -166,8 +170,18 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     match={
       Object {
         "params": Object {
-          "dataSourceId": "dataSourceId",
+          "projectId": "projectId",
         },
+      }
+    }
+    project={
+      Object {
+        "description": "project description",
+        "domain": "http://project.domain",
+        "id": 1,
+        "owner": "project owner",
+        "status": "project status",
+        "title": "project title",
       }
     }
     setFieldValue={[Function]}
@@ -192,7 +206,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Cancel"
-        id="dataSource.createDataSourceTag.cancel"
+        id="project.createProjectTag.cancel"
         values={Object {}}
       />
     </BackButton>
@@ -203,7 +217,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Save"
-        id="dataSource.createDataSourceTag.saveTag"
+        id="project.createProjectTag.saveTag"
         values={Object {}}
       />
     </NextButton>

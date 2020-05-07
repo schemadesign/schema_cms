@@ -22,6 +22,6 @@ describe('CreateDataSourceTag: Component', () => {
 
     wrapper.find(BackButton).simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/tag');
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/projectId/tags');
   });
 });

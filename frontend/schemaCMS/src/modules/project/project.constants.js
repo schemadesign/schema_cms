@@ -7,7 +7,7 @@ export const PROJECT_OWNER = 'owner';
 export const PROJECT_STATUS = 'status';
 export const PROJECT_DOMAIN = 'domain';
 
-export const TAGS_PAGE = 'tag';
+export const TAGS_PAGE = 'tags';
 
 export const PROJECT_STATUSES = {
   IN_PROGRESS: 'in_progress',

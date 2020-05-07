@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectTagForm: Component should render correctly 1`] = `
+exports[`DataSourceTagForm: Component should render correctly 1`] = `
 <Fragment>
   <TextInput
     autoWidth={false}
@@ -11,7 +11,7 @@ exports[`ProjectTagForm: Component should render correctly 1`] = `
     label={
       <FormattedMessage
         defaultMessage="Name"
-        id="shared.components.dataSourceTagForm.name"
+        id="shared.components.projectTagForm.name"
         values={Object {}}
       />
     }
@@ -24,7 +24,7 @@ exports[`ProjectTagForm: Component should render correctly 1`] = `
   <Component>
     <FormattedMessage
       defaultMessage="Tags"
-      id="shared.components.dataSourceTagForm.tags"
+      id="shared.components.projectTagForm.tags"
       values={Object {}}
     />
   </Component>
@@ -52,12 +52,17 @@ exports[`ProjectTagForm: Component should render correctly 1`] = `
         value="value"
         values={
           Object {
-            "datasource": Object {
-              "id": 1,
-            },
             "deleteTags": Array [],
             "id": 2,
             "name": "name",
+            "project": Object {
+              "description": "project description",
+              "domain": "http://project.domain",
+              "id": 1,
+              "owner": "project owner",
+              "status": "project status",
+              "title": "project title",
+            },
             "tags": Array [
               Object {
                 "id": 1,
@@ -107,12 +112,17 @@ exports[`ProjectTagForm: Component should render correctly 1`] = `
         value="value"
         values={
           Object {
-            "datasource": Object {
-              "id": 1,
-            },
             "deleteTags": Array [],
             "id": 2,
             "name": "name",
+            "project": Object {
+              "description": "project description",
+              "domain": "http://project.domain",
+              "id": 1,
+              "owner": "project owner",
+              "status": "project status",
+              "title": "project title",
+            },
             "tags": Array [
               Object {
                 "id": 1,
@@ -165,7 +175,7 @@ exports[`DataSourceTagForm: Component should render empty 1`] = `
     label={
       <FormattedMessage
         defaultMessage="Name"
-        id="shared.components.dataSourceTagForm.name"
+        id="shared.components.projectTagForm.name"
         values={Object {}}
       />
     }
@@ -178,14 +188,14 @@ exports[`DataSourceTagForm: Component should render empty 1`] = `
   <Component>
     <FormattedMessage
       defaultMessage="Tags"
-      id="shared.components.dataSourceTagForm.tags"
+      id="shared.components.projectTagForm.tags"
       values={Object {}}
     />
   </Component>
   <styled.div>
     <FormattedMessage
       defaultMessage="No Tags"
-      id="shared.components.dataSourceTagForm.noTags"
+      id="shared.components.projectTagForm.noTags"
       values={Object {}}
     />
   </styled.div>

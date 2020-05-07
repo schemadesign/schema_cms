@@ -78,7 +78,7 @@ describe('Tag: sagas', () => {
         .dispatch(ProjectTagRoutines.createTag(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/tag');
+      expect(browserHistory.push).toBeCalledWith('/project/1/tags');
     });
   });
 
@@ -126,7 +126,7 @@ describe('Tag: sagas', () => {
         .dispatch(ProjectTagRoutines.updateTag(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/tag');
+      expect(browserHistory.push).toBeCalledWith('/project/1/tags');
     });
   });
 
@@ -148,7 +148,7 @@ describe('Tag: sagas', () => {
         .dispatch(ProjectTagRoutines.removeTag(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/tag');
+      expect(browserHistory.push).toBeCalledWith('/project/1/tags');
     });
   });
 });
