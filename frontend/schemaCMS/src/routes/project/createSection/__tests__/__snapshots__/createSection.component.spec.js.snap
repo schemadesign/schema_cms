@@ -222,6 +222,17 @@ exports[`CreateSection: Component should render correctly 1`] = `
             className="sc-Axmtr fdTiXf"
           >
             <a
+              href="/project/projectId/tags"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-Axmtr fdTiXf"
+          >
+            <a
               href="/project/projectId/user"
               id="usersNavBtn"
               onClick={[Function]}
@@ -397,7 +408,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
       >
         <a
           className="sc-fznJRM iifkLh"
-          href="/project/projectId/tag"
+          href="/project/projectId/tags"
           id="tagsTab"
           onClick={[Function]}
         >

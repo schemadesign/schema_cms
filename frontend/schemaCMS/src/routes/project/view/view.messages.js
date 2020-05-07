@@ -25,6 +25,10 @@ export default defineMessages({
     id: 'project.view.states',
     defaultMessage: 'States',
   },
+  tags: {
+    id: 'project.view.tags',
+    defaultMessage: 'Tags',
+  },
   pages: {
     id: 'project.view.pages',
     defaultMessage: 'Pages',

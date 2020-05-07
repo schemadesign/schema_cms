@@ -17,7 +17,7 @@ export const ProjectTabs = ({ active, url }) => {
       { id: SETTINGS, to: url, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
       { id: SOURCES, to: `${url}/datasource`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
       { id: STATES, to: `${url}/state`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
-      { id: TAGS, to: `${url}/tag`, allowedRoles: [ROLES.ADMIN] },
+      { id: TAGS, to: `${url}/tags`, allowedRoles: [ROLES.ADMIN] },
       { id: CONTENT, to: `${url}/content`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
       { id: TEMPLATES, to: `${url}/templates`, allowedRoles: [ROLES.ADMIN] },
       { id: USERS, to: `${url}/user`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },

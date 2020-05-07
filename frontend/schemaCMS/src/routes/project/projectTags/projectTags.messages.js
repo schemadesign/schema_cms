@@ -20,6 +20,6 @@ export default defineMessages({
   },
   tags: {
     id: 'project.projectTags.tags',
-    defaultMessage: '{tags, plural,one {# Tag List} other {# Tags List}}',
+    defaultMessage: 'Tags List',
   },
 });

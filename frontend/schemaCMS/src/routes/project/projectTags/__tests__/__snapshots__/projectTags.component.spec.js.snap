@@ -8,6 +8,7 @@ exports[`ProjectTags: Component should render correctly 1`] = `
     title="Tags List"
   />
   <MobileMenu
+    active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="List"
@@ -97,6 +98,19 @@ exports[`ProjectTags: Component should render correctly 1`] = `
           "allowedRoles": Array [
             "admin",
           ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tags",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project Users"
@@ -136,6 +150,10 @@ exports[`ProjectTags: Component should render correctly 1`] = `
       ]
     }
   />
+  <ProjectTabs
+    active="tags"
+    url="/project/1"
+  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -151,33 +169,23 @@ exports[`ProjectTags: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-  />
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <LoadingWrapper
     error={null}
     loading={false}
     noData={false}
     noDataContent={null}
   >
-    <styled.div>
-      <styled.div>
-        <Styled(Component)
-          onClick={[Function]}
-        >
-          <Component />
-        </Styled(Component)>
-      </styled.div>
-      <styled.div>
-        <FormattedMessage
-          defaultMessage="{tags, plural,one {# Tag List} other {# Tags List}}"
-          id="project.projectTags.tags"
-          values={
-            Object {
-              "tags": 2,
-            }
-          }
-        />
-      </styled.div>
-    </styled.div>
+    <CounterHeader
+      copy="Tags List"
+      count={2}
+    />
     <Formik
       enableReinitialize={true}
       initialValues={
@@ -201,6 +209,7 @@ exports[`ProjectTags: Component should render correctly when no tags 1`] = `
     title="Tags List"
   />
   <MobileMenu
+    active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="List"
@@ -290,6 +299,19 @@ exports[`ProjectTags: Component should render correctly when no tags 1`] = `
           "allowedRoles": Array [
             "admin",
           ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tags",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project Users"
@@ -329,6 +351,10 @@ exports[`ProjectTags: Component should render correctly when no tags 1`] = `
       ]
     }
   />
+  <ProjectTabs
+    active="tags"
+    url="/project/1"
+  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -344,33 +370,23 @@ exports[`ProjectTags: Component should render correctly when no tags 1`] = `
         values={Object {}}
       />
     }
-  />
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <LoadingWrapper
     error={null}
     loading={false}
     noData={false}
     noDataContent={null}
   >
-    <styled.div>
-      <styled.div>
-        <Styled(Component)
-          onClick={[Function]}
-        >
-          <Component />
-        </Styled(Component)>
-      </styled.div>
-      <styled.div>
-        <FormattedMessage
-          defaultMessage="{tags, plural,one {# Tag List} other {# Tags List}}"
-          id="project.projectTags.tags"
-          values={
-            Object {
-              "tags": 2,
-            }
-          }
-        />
-      </styled.div>
-    </styled.div>
+    <CounterHeader
+      copy="Tags List"
+      count={2}
+    />
     <Formik
       enableReinitialize={true}
       initialValues={
@@ -394,6 +410,7 @@ exports[`ProjectTags: Component should render correctly with loader 1`] = `
     title="Tags List"
   />
   <MobileMenu
+    active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="List"
@@ -483,6 +500,19 @@ exports[`ProjectTags: Component should render correctly with loader 1`] = `
           "allowedRoles": Array [
             "admin",
           ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tags",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project Users"
@@ -522,6 +552,10 @@ exports[`ProjectTags: Component should render correctly with loader 1`] = `
       ]
     }
   />
+  <ProjectTabs
+    active="tags"
+    url="/project/1"
+  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -537,33 +571,23 @@ exports[`ProjectTags: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
-  />
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <LoadingWrapper
     error={null}
     loading={true}
     noData={false}
     noDataContent={null}
   >
-    <styled.div>
-      <styled.div>
-        <Styled(Component)
-          onClick={[Function]}
-        >
-          <Component />
-        </Styled(Component)>
-      </styled.div>
-      <styled.div>
-        <FormattedMessage
-          defaultMessage="{tags, plural,one {# Tag List} other {# Tags List}}"
-          id="project.projectTags.tags"
-          values={
-            Object {
-              "tags": 2,
-            }
-          }
-        />
-      </styled.div>
-    </styled.div>
+    <CounterHeader
+      copy="Tags List"
+      count={2}
+    />
     <Formik
       enableReinitialize={true}
       initialValues={
