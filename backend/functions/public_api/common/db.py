@@ -219,7 +219,7 @@ class PageTemplate(BaseModel):
 class Page(BaseModel):
     section = ForeignKeyField(Section, backref="pages")
     project = ForeignKeyField(Project, backref="pages")
-    template = ForeignKeyField(PageTemplate, backref="pages")
+    template = ForeignKeyField(PageTemplate, backref="pages", null=True)
     name = CharField()
     slug = CharField()
     description = TextField()
@@ -237,7 +237,7 @@ class Page(BaseModel):
         return {
             "id": self.id,
             "name": self.name,
-            "template": self.template.name,
+            "template": self.template.name if self.template else "",
             "slug": self.slug,
             "description": self.description,
             "keywords": self.keywords,
@@ -258,7 +258,15 @@ class Page(BaseModel):
         ]
 
 
+class BlockTemplate(BaseModel):
+    name = CharField()
+
+    class Meta:
+        table_name = "pages_block"
+
+
 class Block(BaseModel):
+    block = ForeignKeyField(BlockTemplate, backref="blocks", null=True)
     page = ForeignKeyField(Page, backref="blocks")
     name = CharField()
     order = SmallIntegerField()
@@ -272,6 +280,7 @@ class Block(BaseModel):
             "id": self.id,
             "name": self.name,
             "order": self.order,
+            "template": {"id": self.block.id, "name": self.block.name},
             "elements": self.get_elements(),
         }
 
@@ -384,7 +393,7 @@ class Element(BaseModel):
         if self.type == ElementType.INTERNAL_CONNECTION:
             html_value = (
                 f"<div id='internal-connection-{self.id}' class='element internal-connection'>"
-                f"<a href='{self.connection}' target='_self'>{self.connection}</a>"
+                f"<a href='{self.internal_connection}' target='_self'>{self.internal_connection}</a>"
                 f"</div>"
             )
 
