@@ -2,7 +2,7 @@
 
 exports[`PageForm: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-AxjAm eyXBQq"
 >
   <div
     className="sc-fzoyAV kkjbNX"
@@ -5033,7 +5033,7 @@ exports[`PageForm: Component should render correctly 1`] = `
 
 exports[`PageForm: Component should render with blocked template 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-AxjAm eyXBQq"
 >
   <div
     className="sc-fzoyAV kkjbNX"
