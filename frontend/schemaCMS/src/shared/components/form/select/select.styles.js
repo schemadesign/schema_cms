@@ -23,7 +23,7 @@ const getCenterIconStyles = styleWhenTrue(
   css`
     top: 50%;
     right: 5px;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
     font-size: 0;
   `
 );

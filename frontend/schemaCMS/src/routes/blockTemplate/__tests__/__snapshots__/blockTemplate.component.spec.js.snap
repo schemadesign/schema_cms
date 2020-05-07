@@ -2250,7 +2250,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fznAgC eflMa-D"
+                            className="sc-fznAgC fOZeln"
                           >
                             <svg
                               style={
