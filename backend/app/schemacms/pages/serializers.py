@@ -413,8 +413,7 @@ class PageSerializer(CustomModelSerializer):
 
             self.create_or_update_elements(block, elements)
 
-    @staticmethod
-    def create_or_update_elements(instance, elements):
+    def create_or_update_elements(self, instance, elements):
         for element in elements:
             element_type = element.get("type")
 
@@ -428,6 +427,8 @@ class PageSerializer(CustomModelSerializer):
                     constants.ElementType.MARKDOWN,
                     constants.ElementType.PLAIN_TEXT,
                     constants.ElementType.CODE,
+                    constants.ElementType.INTERNAL_CONNECTION,
+                    constants.ElementType.CONNECTION,
                 ]:
                     element[element_type] = element_value
 
@@ -439,7 +440,8 @@ class PageSerializer(CustomModelSerializer):
                 delete_elements_sets = element.pop("delete_elements_sets", [])
 
                 obj.delete_custom_elements_sets(delete_elements_sets)
-                obj.update_or_create_custom_element_sets(element_value)
+                validated_element_value = self.validate_custom_element_sets(element_value)
+                obj.update_or_create_custom_element_sets(validated_element_value)
 
             if element_type == constants.ElementType.OBSERVABLE_HQ:
                 obj.create_update_observable_element(element_value)
@@ -461,6 +463,18 @@ class PageSerializer(CustomModelSerializer):
         serializer = PageBlockSerializer(data=blocks, many=True, partial=True)
         serializer.is_valid(raise_exception=True)
         return serializer.validated_data
+
+    @staticmethod
+    def validate_custom_element_sets(elements_sets_list):
+        validated_elements_sets_list = []
+
+        for elements_set in elements_sets_list:
+            serializer = PageBlockElementSerializer(data=elements_set["elements"], many=True, partial=True)
+            serializer.is_valid(raise_exception=True)
+            elements_set["elements"] = serializer.validated_data
+            validated_elements_sets_list.append(elements_set)
+
+        return validated_elements_sets_list
 
     @staticmethod
     def get_blocks(obj):

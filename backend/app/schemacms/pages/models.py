@@ -13,7 +13,7 @@ from ..utils.models import file_upload_path
 
 
 class Element(SoftDeleteObject):
-    name = models.CharField(max_length=constants.ELEMENT_NAME_MAX_LENGTH)
+    name = models.CharField(max_length=constants.ELEMENT_NAME_MAX_LENGTH, blank=True, default="")
     type = models.CharField(max_length=25, choices=constants.ELEMENT_TYPE_CHOICES)
     order = models.PositiveIntegerField(default=0)
     params = pg_fields.JSONField(default=dict, blank=True)
@@ -174,15 +174,27 @@ class PageBlockElement(Element):
     def update_or_create_custom_element_set_elements(self, elements, custom_element_set):
         for element in elements:
             element_type = element.get("type")
-            element[element_type] = element.pop("value")
+            element_value = element.pop("value")
 
-            if "key" in element:
-                element.pop("key")
+            if element_type == constants.ElementType.IMAGE and element_value:
+                element[element_type] = element_value
+
+            if element_type in [
+                constants.ElementType.MARKDOWN,
+                constants.ElementType.PLAIN_TEXT,
+                constants.ElementType.CODE,
+                constants.ElementType.INTERNAL_CONNECTION,
+                constants.ElementType.CONNECTION,
+            ]:
+                element[element_type] = element_value
 
             element, _ = PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None),
                 defaults=dict(block=self.block, custom_element_set=custom_element_set, **element),
             )
+
+            if element_type == constants.ElementType.OBSERVABLE_HQ:
+                self.create_update_observable_element(element_value)
 
     def delete_custom_elements_sets(self, ids_to_delete):
         self.elements_sets.filter(id__in=ids_to_delete).delete()
