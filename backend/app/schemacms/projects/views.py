@@ -30,7 +30,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .annotate_templates_count()
             .annotate_pages_count()
             .select_related("owner")
-            .prefetch_related("editors", "states", "block_set", "page_set")
+            .prefetch_related("editors", "states", "blocktemplate_set", "page_set")
             .order_by("-created")
         )
 

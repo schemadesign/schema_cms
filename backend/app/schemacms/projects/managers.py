@@ -41,9 +41,7 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_templates_count(self):
         return self.annotate(
             block_templates=models.Count(
-                "block",
-                filter=models.Q(block__deleted_at__isnull=True, block__is_template=True),
-                distinct=True,
+                "blocktemplate", filter=models.Q(blocktemplate__deleted_at__isnull=True), distinct=True,
             ),
             page_templates=models.Count(
                 "page", filter=models.Q(page__deleted_at__isnull=True, page__is_template=True), distinct=True

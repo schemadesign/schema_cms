@@ -21,11 +21,7 @@ class TestListBlockTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(project.pk))
-        queryset = (
-            projects_models.Project.objects.get(id=project.pk)
-            .block_set.filter(is_template=True)
-            .order_by("-created")
-        )
+        queryset = projects_models.Project.objects.get(id=project.pk).blocktemplate_set.order_by("-created")
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.BlockTemplateSerializer(queryset, many=True).data
@@ -57,7 +53,7 @@ class TestCreateBlockTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(project.pk), data=payload, format="json")
-        block = pages_models.Block.objects.get(id=response.data["id"])
+        block = pages_models.BlockTemplate.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.BlockTemplateSerializer(block).data
@@ -82,7 +78,7 @@ class TestCreateBlockTemplatesView:
 class TestUpdateDeleteBlockTemplatesView:
     @staticmethod
     def get_url(pk):
-        return reverse("pages:block-detail", kwargs=dict(pk=pk))
+        return reverse("pages:blocktemplate-detail", kwargs=dict(pk=pk))
 
     def test_response(self, api_client, admin, block_template):
         new_name = "New Block Name"
@@ -91,7 +87,7 @@ class TestUpdateDeleteBlockTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(block_template.pk), data=payload, format="json")
-        block = pages_models.Block.objects.get(id=response.data["id"])
+        block = pages_models.BlockTemplate.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data == page_serializer.BlockTemplateSerializer(block).data
@@ -142,7 +138,7 @@ class TestUpdateDeleteBlockTemplatesView:
         response = api_client.delete(self.get_url(block_template.id))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert not pages_models.Block.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
+        assert not pages_models.BlockTemplate.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
 
 
 class TestUpdatePageTemplatesView:
@@ -365,7 +361,9 @@ class TestListCreatePage:
         assert page.is_template is False
         assert section.project == page_template.project == page.project
 
-    def test_create_page_with_blocks(self, api_client, admin, project, section_factory, block_template):
+    def test_create_page_with_text_elements(
+        self, api_client, admin, project, section_factory, block_template
+    ):
         section = section_factory(project=project)
 
         payload = {
@@ -408,6 +406,126 @@ class TestListCreatePage:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.PageSerializer(page).data
         assert page.is_template is False
+
+    def test_create_page_with_observable_element(
+        self, api_client, admin, project, section_factory, block_template
+    ):
+        section = section_factory(project=project)
+
+        payload = {
+            "name": "Test",
+            "section": section.id,
+            "display_name": "Display Name",
+            "description": "description",
+            "keywords": "word;word1",
+            "is_public": True,
+            "blocks": [
+                {
+                    "block": block_template.id,
+                    "name": "Test Block",
+                    "type": "test",
+                    "order": 1,
+                    "elements": [
+                        {
+                            "name": "Test Name",
+                            "type": "observable_hq",
+                            "order": 0,
+                            "value": {
+                                "observable_user": "user",
+                                "observable_notebook": "notebook",
+                                "observable_cell": "cell",
+                                "observable_params": "params",
+                            },
+                            "params": {},
+                        },
+                    ],
+                },
+            ],
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(section.id), data=payload, format="json")
+        page = pages_models.Page.objects.get(id=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == page_serializer.PageSerializer(page).data
+
+    def test_create_page_with_custom_element(
+        self, api_client, admin, project, section_factory, block_template
+    ):
+        section = section_factory(project=project)
+
+        payload = {
+            "name": "Test",
+            "section": section.id,
+            "display_name": "Display Name",
+            "description": "description",
+            "keywords": "word;word1",
+            "is_public": True,
+            "blocks": [
+                {
+                    "block": block_template.id,
+                    "name": "Test Block",
+                    "type": "test",
+                    "order": 1,
+                    "elements": [
+                        {
+                            "name": "Test Name",
+                            "type": "custom_element",
+                            "order": 0,
+                            "value": [
+                                {
+                                    "order": 0,
+                                    "elements": [
+                                        {
+                                            "name": "Test Element",
+                                            "type": "code",
+                                            "order": 0,
+                                            "value": "<h1>Test Element</h2>",
+                                            "params": {},
+                                        },
+                                        {
+                                            "name": "Test Element #2",
+                                            "type": "markdown",
+                                            "order": 1,
+                                            "value": "Test Markdown Element",
+                                            "params": {},
+                                        },
+                                    ],
+                                },
+                                {
+                                    "order": 1,
+                                    "elements": [
+                                        {
+                                            "name": "Test Element",
+                                            "type": "code",
+                                            "order": 0,
+                                            "value": "<h1>Test Element</h2>",
+                                            "params": {},
+                                        },
+                                        {
+                                            "name": "Test Element #2",
+                                            "type": "markdown",
+                                            "order": 1,
+                                            "value": "Test Markdown Element",
+                                            "params": {},
+                                        },
+                                    ],
+                                },
+                            ],
+                            "params": {},
+                        },
+                    ],
+                },
+            ],
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(section.id), data=payload, format="json")
+        page = pages_models.Page.objects.get(id=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == page_serializer.PageSerializer(page).data
 
 
 class TestUpdateDeletePageView:

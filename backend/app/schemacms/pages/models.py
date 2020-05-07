@@ -12,7 +12,7 @@ from . import constants, managers
 from ..utils.models import file_upload_path
 
 
-class Element(SoftDeleteObject, models.Model):
+class Element(SoftDeleteObject):
     name = models.CharField(max_length=constants.ELEMENT_NAME_MAX_LENGTH)
     type = models.CharField(max_length=25, choices=constants.ELEMENT_TYPE_CHOICES)
     order = models.PositiveIntegerField(default=0)
@@ -29,7 +29,6 @@ class Content(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
-    is_template = models.BooleanField(default=True)
     is_available = models.BooleanField(default=False)
 
     class Meta:
@@ -43,12 +42,12 @@ class Content(SoftDeleteObject, TimeStampedModel):
         return self.project.project_info
 
 
-class Block(Content):
+class BlockTemplate(Content):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["project", "name", "is_template"],
-                name="unique_block_name",
+                fields=["project", "name"],
+                name="unique_block_template_name",
                 condition=models.Q(deleted_at=None),
             )
         ]
@@ -57,8 +56,8 @@ class Block(Content):
         self.elements.filter(id__in=elements).delete()
 
 
-class BlockElement(Element):
-    template = models.ForeignKey(Block, on_delete=models.CASCADE, related_name="elements")
+class BlockTemplateElement(Element):
+    template = models.ForeignKey(BlockTemplate, on_delete=models.CASCADE, related_name="elements")
 
 
 class Section(SoftDeleteObject, TimeStampedModel):
@@ -101,7 +100,8 @@ class Page(Content):
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     is_public = models.BooleanField(default=False)
     allow_edit = models.BooleanField(default=False)
-    blocks = models.ManyToManyField(Block, through="PageBlock")
+    blocks = models.ManyToManyField(BlockTemplate, through="PageBlock")
+    is_template = models.BooleanField(default=True)
 
     objects = managers.PageManager()
 
@@ -123,7 +123,7 @@ class PageTemplate(Page):
 
 
 class PageBlock(SoftDeleteObject):
-    block = models.ForeignKey("Block", on_delete=models.CASCADE)
+    block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE)
     page = models.ForeignKey("Page", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
     order = models.PositiveIntegerField(default=0)

@@ -42,10 +42,11 @@ class TemplateListCreateView(generics.ListCreateAPIView):
 class BlockTemplateListCreteView(TemplateListCreateView):
     serializer_class = serializers.BlockTemplateSerializer
     queryset = (
-        models.Block.objects.filter(is_template=True)
-        .select_related("project", "created_by")
+        models.BlockTemplate.objects.select_related("project", "created_by")
         .prefetch_related(
-            d_models.Prefetch("elements", queryset=models.BlockElement.objects.all().order_by("order"))
+            d_models.Prefetch(
+                "elements", queryset=models.BlockTemplateElement.objects.all().order_by("order")
+            )
         )
         .order_by("-created")
     )
@@ -64,12 +65,8 @@ class BlockTemplateListCreteView(TemplateListCreateView):
 
 
 class BlockTemplateViewSet(DetailViewSet):
-    queryset = (
-        models.Block.objects.filter(is_template=True)
-        .select_related("project", "created_by")
-        .prefetch_related(
-            d_models.Prefetch("elements", queryset=models.BlockElement.objects.order_by("order"))
-        )
+    queryset = models.BlockTemplate.objects.select_related("project", "created_by").prefetch_related(
+        d_models.Prefetch("elements", queryset=models.BlockTemplateElement.objects.order_by("order"))
     )
     serializer_class = serializers.BlockTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
