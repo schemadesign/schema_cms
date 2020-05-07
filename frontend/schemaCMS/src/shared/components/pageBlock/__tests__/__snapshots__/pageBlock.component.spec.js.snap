@@ -522,7 +522,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzozJi RzAaP"
+                          className="sc-fzozJi gMQSSB"
                         >
                           Blog
                         </div>
@@ -565,7 +565,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzozJi RzAaP"
+                          className="sc-fzozJi gMQSSB"
                         >
                           Blog
                         </div>
@@ -589,7 +589,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzozJi RzAaP"
+                          className="sc-fzozJi gMQSSB"
                         >
                           news   &gt;   Article 2
                         </div>
@@ -613,7 +613,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzozJi RzAaP"
+                          className="sc-fzozJi gMQSSB"
                         >
                           News
                         </div>
@@ -622,7 +622,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzoLag jtXHKt"
+                  className="sc-fzoLag bHHPuN"
                 >
                   <svg
                     style={

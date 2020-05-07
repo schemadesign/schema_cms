@@ -3064,7 +3064,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                   }
                 >
                   <div
-                    className="sc-AxhCb grbuyt"
+                    className="sc-AxhCb isNoSH"
                   >
                     Blog
                   </div>
@@ -3107,7 +3107,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                   }
                 >
                   <div
-                    className="sc-AxhCb grbuyt"
+                    className="sc-AxhCb isNoSH"
                   >
                     Blog
                   </div>
@@ -3131,7 +3131,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                   }
                 >
                   <div
-                    className="sc-AxhCb grbuyt"
+                    className="sc-AxhCb isNoSH"
                   >
                     news   &gt;   Article 2
                   </div>
@@ -3155,7 +3155,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                   }
                 >
                   <div
-                    className="sc-AxhCb grbuyt"
+                    className="sc-AxhCb isNoSH"
                   >
                     News
                   </div>
@@ -3164,7 +3164,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
             </div>
           </div>
           <div
-            className="sc-fznKkj hempMQ"
+            className="sc-fznKkj hsQwGM"
           >
             <svg
               style={
