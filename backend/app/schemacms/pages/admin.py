@@ -142,3 +142,17 @@ class PageAdmin(SoftDeleteObjectAdmin):
             form.base_fields["section"].queryset = models.Section.objects.filter(project=obj.project)
 
         return form
+
+
+class PageBlockElementInline(CustomTabularInline):
+    model = models.PageBlockElement
+    extra = 0
+
+
+@admin.register(models.PageBlock)
+class PageBlockAdmin(SoftDeleteObjectAdmin):
+    list_display = ("name", "page", "deleted_at")
+    fields = ("block", "page", "name", "order")
+    list_filter = ("page", "deleted_at")
+    readonly_on_update_fields = ("block", "page")
+    inlines = (PageBlockElementInline,)
