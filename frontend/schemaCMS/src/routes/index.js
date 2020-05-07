@@ -20,7 +20,7 @@ import { Project } from './project';
 import { ResetPassword } from './resetPassword';
 import { Settings } from './settings';
 import { User } from './user';
-import { DataSourceTag } from './dataSourceTag';
+import { ProjectTag } from './projectTag';
 import { ProjectState } from './projectState';
 import { BlockTemplate } from './blockTemplate';
 import { PageTemplate } from './pageTemplate';
@@ -89,7 +89,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={`${ROUTES.FILTER}/:filterId`} component={Filter} />
 
-            <AuthRoute exact path={`${ROUTES.TAG}/:tagId`} component={DataSourceTag} />
+            <AuthRoute exact path={`${ROUTES.TAG}/:tagId`} component={ProjectTag} />
 
             <AuthRoute path={`${ROUTES.STATE}/:stateId`} component={ProjectState} />
 

@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectTagForm: Component should render correctly 1`] = `
+<Fragment>
+  <TextInput
+    autoWidth={false}
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={true}
+    label={
+      <FormattedMessage
+        defaultMessage="Name"
+        id="shared.components.dataSourceTagForm.name"
+        values={Object {}}
+      />
+    }
+    name="name"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="name"
+  />
+  <Component>
+    <FormattedMessage
+      defaultMessage="Tags"
+      id="shared.components.dataSourceTagForm.tags"
+      values={Object {}}
+    />
+  </Component>
+  <styled.div>
+    <styled.div
+      key="0"
+    >
+      <Component
+        customStyles={
+          Object {
+            "paddingBottom": 0,
+            "width": "100%",
+          }
+        }
+        fullWidth={true}
+        handleChange={[Function]}
+        inputRef={[Function]}
+        isEdit={true}
+        name="tags.0"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        setFieldValue={[Function]}
+        value="value"
+        values={
+          Object {
+            "datasource": Object {
+              "id": 1,
+            },
+            "deleteTags": Array [],
+            "id": 2,
+            "name": "name",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+              Object {
+                "id": "create_2",
+                "value": "value",
+              },
+            ],
+          }
+        }
+      />
+      <Component
+        customStyles={
+          Object {
+            "cursor": "pointer",
+            "height": 35,
+            "marginLeft": 5,
+            "minWidth": 35,
+            "width": 35,
+          }
+        }
+        onClick={[Function]}
+      />
+    </styled.div>
+    <styled.div
+      key="1"
+    >
+      <Component
+        customStyles={
+          Object {
+            "paddingBottom": 0,
+            "width": "100%",
+          }
+        }
+        fullWidth={true}
+        handleChange={[Function]}
+        inputRef={[Function]}
+        isEdit={true}
+        name="tags.1"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        setFieldValue={[Function]}
+        value="value"
+        values={
+          Object {
+            "datasource": Object {
+              "id": 1,
+            },
+            "deleteTags": Array [],
+            "id": 2,
+            "name": "name",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+              Object {
+                "id": "create_2",
+                "value": "value",
+              },
+            ],
+          }
+        }
+      />
+      <Component
+        customStyles={
+          Object {
+            "cursor": "pointer",
+            "height": 35,
+            "marginLeft": 5,
+            "minWidth": 35,
+            "width": 35,
+          }
+        }
+        onClick={[Function]}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <Styled(Component)
+      inverse={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <Component
+        inverse={true}
+      />
+    </Styled(Component)>
+  </styled.div>
+</Fragment>
+`;
+
+exports[`DataSourceTagForm: Component should render empty 1`] = `
+<Fragment>
+  <TextInput
+    autoWidth={false}
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={true}
+    label={
+      <FormattedMessage
+        defaultMessage="Name"
+        id="shared.components.dataSourceTagForm.name"
+        values={Object {}}
+      />
+    }
+    name="name"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value=""
+  />
+  <Component>
+    <FormattedMessage
+      defaultMessage="Tags"
+      id="shared.components.dataSourceTagForm.tags"
+      values={Object {}}
+    />
+  </Component>
+  <styled.div>
+    <FormattedMessage
+      defaultMessage="No Tags"
+      id="shared.components.dataSourceTagForm.noTags"
+      values={Object {}}
+    />
+  </styled.div>
+  <styled.div>
+    <Styled(Component)
+      inverse={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <Component
+        inverse={true}
+      />
+    </Styled(Component)>
+  </styled.div>
+</Fragment>
+`;

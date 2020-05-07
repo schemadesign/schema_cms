@@ -12,7 +12,7 @@ import { ProjectStateRoutines, selectState } from '../../../modules/projectState
 import { selectUserRole } from '../../../modules/userProfile';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from '../../project/create/create.messages';
-import { DataSourceTagRoutines, selectTags } from '../../../modules/dataSourceTag';
+import { ProjectTagRoutines, selectTags } from '../../../modules/projectTag';
 
 const mapStateToProps = createStructuredSelector({
   state: selectState,
@@ -23,7 +23,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchTags: promisifyRoutine(DataSourceTagRoutines.fetchList),
+      fetchTags: promisifyRoutine(ProjectTagRoutines.fetchList),
       updateState: promisifyRoutine(ProjectStateRoutines.update),
     },
     dispatch
