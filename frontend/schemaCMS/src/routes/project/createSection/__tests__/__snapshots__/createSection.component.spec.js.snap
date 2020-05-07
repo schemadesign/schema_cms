@@ -393,6 +393,18 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </a>
       </div>
       <div
+        className="sc-fznxsB gwcqhJ"
+      >
+        <a
+          className="sc-fznJRM iifkLh"
+          href="/project/projectId/tag"
+          id="tagsTab"
+          onClick={[Function]}
+        >
+          Tags
+        </a>
+      </div>
+      <div
         className="sc-fznxsB cRgWyS"
       >
         <a

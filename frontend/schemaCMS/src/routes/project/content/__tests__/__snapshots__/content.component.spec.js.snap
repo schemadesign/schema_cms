@@ -393,6 +393,18 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
+        className="sc-fzpjYC bzVAtS"
+      >
+        <a
+          className="sc-fznxsB byrGmN"
+          href="/project/projectId/tag"
+          id="tagsTab"
+          onClick={[Function]}
+        >
+          Tags
+        </a>
+      </div>
+      <div
         className="sc-fzpjYC PWaSB"
       >
         <a
