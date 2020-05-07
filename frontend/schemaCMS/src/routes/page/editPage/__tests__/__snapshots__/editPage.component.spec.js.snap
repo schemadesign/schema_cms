@@ -1868,7 +1868,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   }
                                 >
                                   <div
-                                    className="sc-fzomuh euYcYy"
+                                    className="sc-fzomuh fvjgCs"
                                   >
                                     news   &gt;   Article 2
                                   </div>
@@ -1892,7 +1892,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   }
                                 >
                                   <div
-                                    className="sc-fzomuh euYcYy"
+                                    className="sc-fzomuh fvjgCs"
                                   >
                                     News
                                   </div>
@@ -1916,7 +1916,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   }
                                 >
                                   <div
-                                    className="sc-fzomuh euYcYy"
+                                    className="sc-fzomuh fvjgCs"
                                   >
                                     news   &gt;   Article 1
                                   </div>
