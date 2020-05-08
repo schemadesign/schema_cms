@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'react-mde/lib/styles/css/react-mde-all.css';
-import { useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { useTheme } from 'styled-components';
 
 import { getValuePath } from '../../utils/helpers';
-import { getCustomSelectedWrapperStyles, ObservableHQContainer } from './blockElement.styles';
+import { getCustomInputStyles, ObservableHQContainer, Label } from './blockElement.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './blockElement.messages';
 import {
@@ -16,7 +16,6 @@ import {
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export const ObservableHQElement = ({ element, blockPath, index, handleChange, ...restFormikProps }) => {
-  const intl = useIntl();
   const theme = useTheme();
   const observableUserName = getValuePath({ blockPath, index: `${index}.value`, elementValue: OBSERVABLE_USER });
   const observableNotebookName = getValuePath({
@@ -29,42 +28,53 @@ export const ObservableHQElement = ({ element, blockPath, index, handleChange, .
 
   return (
     <ObservableHQContainer>
+      <Label>
+        <FormattedMessage {...messages[`${OBSERVABLE_USER}Placeholder`]} />
+      </Label>
       <TextInput
         name={observableUserName}
         value={element.value[OBSERVABLE_USER]}
         onChange={handleChange}
-        placeholder={intl.formatMessage(messages[`${OBSERVABLE_USER}Placeholder`])}
-        customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
+        customInputStyles={getCustomInputStyles(theme)}
+        fullWidth
         centerIcon
         {...restFormikProps}
       />
+      <Label>
+        <FormattedMessage {...messages[`${OBSERVABLE_NOTEBOOK}Placeholder`]} />
+      </Label>
       <TextInput
         name={observableNotebookName}
         value={element.value[OBSERVABLE_NOTEBOOK]}
         onChange={handleChange}
-        placeholder={intl.formatMessage(messages[`${OBSERVABLE_NOTEBOOK}Placeholder`])}
-        customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
+        customInputStyles={getCustomInputStyles(theme)}
+        fullWidth
         centerIcon
         {...restFormikProps}
       />
+      <Label>
+        <FormattedMessage {...messages[`${OBSERVABLE_CELL}Placeholder`]} />
+      </Label>
       <TextInput
         name={observableCellName}
         value={element.value[OBSERVABLE_CELL]}
         onChange={handleChange}
-        placeholder={intl.formatMessage(messages[`${OBSERVABLE_CELL}Placeholder`])}
-        customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
+        customInputStyles={getCustomInputStyles(theme)}
+        fullWidth
         centerIcon
         {...restFormikProps}
       />
-
+      <Label>
+        <FormattedMessage {...messages[`${OBSERVABLE_PARAMS}Placeholder`]} />
+      </Label>
       <TextInput
         name={observableParamsName}
         value={element.value[OBSERVABLE_PARAMS]}
-        {...restFormikProps}
         onChange={handleChange}
-        placeholder={intl.formatMessage(messages[`${OBSERVABLE_PARAMS}Placeholder`])}
-        customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
+        customInputStyles={getCustomInputStyles(theme)}
+        fullWidth
         centerIcon
+        {...restFormikProps}
       />
     </ObservableHQContainer>
   );
