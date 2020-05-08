@@ -15,8 +15,8 @@ class TagSerializer(serializers.ModelSerializer):
 
 class TagCategorySerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
+    created_by = serializers.SerializerMethodField(read_only=True)
     delete_tags = serializers.ListField(required=False, write_only=True)
-    created_by = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
         model = models.TagCategory
@@ -40,6 +40,11 @@ class TagCategorySerializer(serializers.ModelSerializer):
                 message="Tag Category with this name already exist in project.",
             )
         ]
+
+    def get_created_by(self, obj):
+        if getattr(obj, "created_by"):
+            return obj.created_by.get_full_name()
+        return None
 
     @transaction.atomic()
     def create(self, validated_data):

@@ -44,6 +44,9 @@ class TagCategoryListCreateViewSet(
 
         return super().create(request, *args, **kwargs)
 
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+
 
 class TagCategoryDetailsViewSet(
     BaseTagCategoryView,
