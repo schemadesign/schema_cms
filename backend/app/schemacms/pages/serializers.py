@@ -56,6 +56,7 @@ class ElementValueField(serializers.Field):
 
         if instance.type == constants.ElementType.OBSERVABLE_HQ:
             observable_element = getattr(instance, instance.type)
+
             return {
                 "observable_user": observable_element.observable_user,
                 "observable_notebook": observable_element.observable_notebook,
