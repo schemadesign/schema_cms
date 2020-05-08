@@ -6,7 +6,6 @@ import nock from 'nock';
 import { watchProjectTag } from '../projectTag.sagas';
 import { ProjectTagRoutines } from '../projectTag.redux';
 import mockApi from '../../../shared/utils/mockApi';
-import { PROJECTS_PATH, TAGS_PATH } from '../../../shared/utils/api.constants';
 import browserHistory from '../../../shared/utils/history';
 import { ProjectRoutines } from '../../project';
 
@@ -27,7 +26,7 @@ describe('Tag: sagas', () => {
         projectId: 1,
       };
 
-      mockApi.get(`/projects/${payload.projectId}/tags-lists`).reply(OK, response);
+      mockApi.get(`/projects/${payload.projectId}/tag-categories`).reply(OK, response);
 
       await expectSaga(watchProjectTag)
         .withState(defaultState)
@@ -50,7 +49,7 @@ describe('Tag: sagas', () => {
         inactive,
       };
 
-      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}/set-tags-lists`, { active, inactive }).reply(OK, response);
+      mockApi.post(`/projects/${payload.projectId}/set-tags-lists`, { active, inactive }).reply(OK, response);
 
       await expectSaga(watchProjectTag)
         .withState(defaultState)
@@ -70,7 +69,7 @@ describe('Tag: sagas', () => {
       const payload = { formData, projectId };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi.post(`${PROJECTS_PATH}/${projectId}/tags-lists`, formData).reply(OK, response);
+      mockApi.post(`/projects/${projectId}/tag-categories`, formData).reply(OK, response);
 
       await expectSaga(watchProjectTag)
         .withState(defaultState)
@@ -96,7 +95,7 @@ describe('Tag: sagas', () => {
         tagId: 1,
       };
 
-      mockApi.get(`${TAGS_PATH}/${payload.tagId}`).reply(OK, response);
+      mockApi.get(`/tag-categories/${payload.tagId}`).reply(OK, response);
 
       await expectSaga(watchProjectTag)
         .withState(defaultState)
@@ -118,7 +117,7 @@ describe('Tag: sagas', () => {
       const payload = { formData, projectId, tagId };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi.patch(`${TAGS_PATH}/${tagId}`, formData).reply(OK, response);
+      mockApi.patch(`/tag-categories/${tagId}`, formData).reply(OK, response);
 
       await expectSaga(watchProjectTag)
         .withState(defaultState)
@@ -140,7 +139,7 @@ describe('Tag: sagas', () => {
       const payload = { projectId, tagId };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi.delete(`${TAGS_PATH}/${tagId}`).reply(OK, response);
+      mockApi.delete(`/tag-categories/${tagId}`).reply(OK, response);
 
       await expectSaga(watchProjectTag)
         .withState(defaultState)

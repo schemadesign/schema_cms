@@ -2,7 +2,7 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { ProjectTagRoutines } from './projectTag.redux';
 import api from '../../shared/services/api';
-import { PROJECTS_PATH, TAGS_PATH } from '../../shared/utils/api.constants';
+import { PROJECTS_PATH, TAG_CATEGORIES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { TAGS_PAGE } from '../project/project.constants';
 import { ROUTES } from '../../routes';
@@ -12,7 +12,7 @@ function* fetchList({ payload: { projectId } }) {
   try {
     yield put(ProjectTagRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}/tags-lists`);
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${TAG_CATEGORIES_PATH}`);
 
     yield put(ProjectTagRoutines.fetchList.success(data.results));
   } catch (e) {
@@ -40,7 +40,7 @@ function* createTag({ payload: { projectId, formData } }) {
   try {
     yield put(ProjectTagRoutines.createTag.request());
 
-    const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}/tags-lists`, formData);
+    const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${TAG_CATEGORIES_PATH}`, formData);
 
     browserHistory.push(`${ROUTES.PROJECT}/${projectId}/${TAGS_PAGE}`);
 
@@ -56,7 +56,7 @@ function* fetchTag({ payload: { tagId } }) {
   try {
     yield put(ProjectTagRoutines.fetchTag.request());
 
-    const { data } = yield api.get(`${TAGS_PATH}/${tagId}`);
+    const { data } = yield api.get(`${TAG_CATEGORIES_PATH}/${tagId}`);
 
     yield put(ProjectRoutines.setProject(data.project));
     yield put(ProjectTagRoutines.fetchTag.success(data.results));
@@ -71,7 +71,7 @@ function* updateTag({ payload: { tagId, projectId, formData } }) {
   try {
     yield put(ProjectTagRoutines.updateTag.request());
 
-    const { data } = yield api.patch(`${TAGS_PATH}/${tagId}`, { ...formData });
+    const { data } = yield api.patch(`${TAG_CATEGORIES_PATH}/${tagId}`, { ...formData });
     browserHistory.push(`${ROUTES.PROJECT}/${projectId}/${TAGS_PAGE}`);
 
     yield put(ProjectTagRoutines.updateTag.success(data));
@@ -86,7 +86,7 @@ function* removeTag({ payload: { tagId, projectId } }) {
   try {
     yield put(ProjectTagRoutines.removeTag.request());
 
-    const { data } = yield api.delete(`${TAGS_PATH}/${tagId}`);
+    const { data } = yield api.delete(`${TAG_CATEGORIES_PATH}/${tagId}`);
     browserHistory.push(`${ROUTES.PROJECT}/${projectId}/${TAGS_PAGE}`);
 
     yield put(ProjectTagRoutines.removeTag.success(data));
