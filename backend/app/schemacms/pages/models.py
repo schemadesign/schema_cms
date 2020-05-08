@@ -194,19 +194,21 @@ class PageBlockElement(Element):
             )
 
             if element_type == constants.ElementType.OBSERVABLE_HQ:
-                self.create_update_observable_element(element_value)
+                self.create_update_observable_element(element_value, element)
 
     def delete_custom_elements_sets(self, ids_to_delete):
         self.elements_sets.filter(id__in=ids_to_delete).delete()
 
-    def create_update_observable_element(self, element):
+    def create_update_observable_element(self, value, element=None):
+        element_instance = element if element else self
+
         hq_element, is_create = PageBlockObservableElement.objects.update_or_create(
-            id=element.pop("id", None), defaults=dict(**element)
+            id=value.pop("id", None), defaults=dict(**value)
         )
 
         if is_create:
-            self.observable_hq = hq_element
-            self.save(update_fields=["observable_hq"])
+            element_instance.observable_hq = hq_element
+            element_instance.save(update_fields=["observable_hq"])
 
 
 class CustomElementSet(SoftDeleteObject):

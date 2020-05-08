@@ -302,6 +302,7 @@ class ObservableElement(BaseModel):
 class CustomElementSet(BaseModel):
     custom_element = DeferredForeignKey("Element", backref="elements_sets")
     order = SmallIntegerField()
+    deleted_at = DateTimeField()
 
     class Meta:
         table_name = "pages_customelementset"
@@ -361,14 +362,13 @@ class Element(BaseModel):
     def get_custom_element_data(custom_element):
         elements = []
 
-        for element in custom_element.elements:
+        for element_set in custom_element.elements_sets.where(CustomElementSet.deleted_at == None):
             data = {
-                "elements": {
-                    "id": element.id,
-                    "name": element.name,
-                    "type": element.type,
-                    "value": getattr(element, element.type),
-                }
+                "id": element_set.id,
+                "order": element_set.order,
+                "elements": [
+                    element.as_dict() for element in element_set.elements.where(Element.deleted_at == None)
+                ],
             }
             elements.append(data)
 
@@ -411,9 +411,19 @@ class Element(BaseModel):
             return html_value
 
         if self.type == ElementType.CUSTOM_ELEMENT:
+            sets_with_elements = []
+
+            for element_set in self.get_custom_element_data(self):
+                sets_with_elements.append(
+                    f"<div id='set-{element_set['id']}' class='element custom-element-set'>"
+                )
+                for element in element_set["elements"]:
+                    sets_with_elements.append(element["html"])
+                sets_with_elements.append("</div>")
+
             html_value = (
                 f"<div id='custom-{self.id}' class='element custom-element'>"
-                f"<p>Custom Element</p>"
+                f"{''.join(sets_with_elements)}"
                 f"</div>"
             )
 
