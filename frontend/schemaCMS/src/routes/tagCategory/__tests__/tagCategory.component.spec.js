@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ProjectTag } from '../projectTag.component';
-import { defaultProps } from '../projectTag.stories';
+import { TagCategory } from '../tagCategory.component';
+import { defaultProps } from '../tagCategory.stories';
 import { Link } from '../../../theme/typography';
 import { BackButton } from '../../../shared/components/navigation';
 
-describe('ProjectTag: Component', () => {
-  const component = props => <ProjectTag {...defaultProps} {...props} />;
+describe('TagCategory: Component', () => {
+  const component = props => <TagCategory {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
@@ -23,18 +23,18 @@ describe('ProjectTag: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call fetchTag on componentDidMount', async () => {
-    jest.spyOn(defaultProps, 'fetchTag');
+  it('should call fetchTagCategory on componentDidMount', async () => {
+    jest.spyOn(defaultProps, 'fetchTagCategory');
 
     await render();
 
-    expect(defaultProps.fetchTag).toHaveBeenCalled();
+    expect(defaultProps.fetchTagCategory).toHaveBeenCalled();
   });
 
   it('should set error correctly', async () => {
-    const errorResponse = 'fetchTag should return error';
+    const errorResponse = 'fetchTagCategory should return error';
     const wrapper = await render({
-      fetchTag: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+      fetchTagCategory: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
     });
 
     const { loading, error } = wrapper.state();
@@ -43,14 +43,14 @@ describe('ProjectTag: Component', () => {
     expect(error).toBe(errorResponse);
   });
 
-  it('should call removeTag on confirm button click', () => {
-    jest.spyOn(defaultProps, 'removeTag');
+  it('should call removeTagCategory on confirm button click', () => {
+    jest.spyOn(defaultProps, 'removeTagCategory');
 
     const wrapper = render();
 
     wrapper.find('#confirmRemovalBtn').simulate('click');
 
-    expect(defaultProps.removeTag).toHaveBeenCalledWith({ projectId: 1, tagId: 2 });
+    expect(defaultProps.removeTagCategory).toHaveBeenCalledWith({ projectId: 1, tagCategoryId: 2 });
   });
 
   it('should show modal on click remove link', () => {
@@ -84,6 +84,6 @@ describe('ProjectTag: Component', () => {
       .at(0)
       .simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/tags');
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/tag-categories');
   });
 });

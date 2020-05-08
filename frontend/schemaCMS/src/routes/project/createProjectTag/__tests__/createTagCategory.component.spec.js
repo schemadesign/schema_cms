@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CreateProjectTag } from '../createProjectTag.component';
-import { defaultProps } from '../createProjectTag.stories';
+import { CreateTagCategory } from '../createTagCategory.component';
+import { defaultProps } from '../createTagCategory.stories';
 import { BackButton } from '../../../../shared/components/navigation';
 
 describe('CreateDataSourceTag: Component', () => {
-  const component = props => <CreateProjectTag {...defaultProps} {...props} />;
+  const component = props => <CreateTagCategory {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
@@ -22,6 +22,6 @@ describe('CreateDataSourceTag: Component', () => {
 
     wrapper.find(BackButton).simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/projectId/tags');
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/projectId/tag-categories');
   });
 });

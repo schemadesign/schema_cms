@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ProjectTag } from './projectTag.component';
+import { TagCategory } from './tagCategory.component';
 import { withTheme } from '../../.storybook/decorators';
 import { history, intl } from '../../.storybook/helpers';
 import { ROLES } from '../../modules/userProfile/userProfile.constants';
@@ -16,9 +16,9 @@ export const defaultProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   updateTag: Function.prototype,
-  fetchTag: () => Promise.resolve({ project }),
-  removeTag: Function.prototype,
-  tag: {
+  fetchTagCategory: () => Promise.resolve({ project }),
+  removeTagCategory: Function.prototype,
+  tagCategory: {
     id: 2,
     project,
     name: 'name',
@@ -30,13 +30,14 @@ export const defaultProps = {
   },
   history,
   intl,
+  project,
   match: {
     params: {
-      tagId: '1',
+      tagCategoryId: '1',
     },
   },
 };
 
-storiesOf('ProjectTag', module)
+storiesOf('TagCategory', module)
   .addDecorator(withTheme())
-  .add('Default', () => <ProjectTag {...defaultProps} />);
+  .add('Default', () => <TagCategory {...defaultProps} />);

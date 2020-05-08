@@ -1,1 +1,1 @@
-export { default as CreateProjectTag } from './createProjectTag.container';
+export { default as CreateTagCategory } from './createTagCategory.container';

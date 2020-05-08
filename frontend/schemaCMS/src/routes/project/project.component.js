@@ -21,7 +21,7 @@ import { PageTemplates } from './pageTemplates';
 import { CreatePageTemplate } from './createPageTemplate';
 import { CreateSection } from './createSection';
 import { TagCategories } from './tagCategories';
-import { CreateProjectTag } from './createProjectTag';
+import { CreateTagCategory } from './createProjectTag';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -73,7 +73,7 @@ export class Project extends PureComponent {
         <Route exact path={createPageTemplatePath} component={CreatePageTemplate} />
         <Route exact path={createSectionPath} component={CreateSection} />
         <Route exact path={tagCategoriesPath} component={TagCategories} />
-        <Route exact path={createTagCategoriesPath} component={CreateProjectTag} />
+        <Route exact path={createTagCategoriesPath} component={CreateTagCategory} />
         <Route path="*" component={NotFound} />
       </Switch>
     );

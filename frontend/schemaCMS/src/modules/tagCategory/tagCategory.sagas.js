@@ -38,11 +38,11 @@ function* createTagCategory({ payload: { projectId, formData } }) {
   }
 }
 
-function* fetchTagCategory({ payload: { tagId } }) {
+function* fetchTagCategory({ payload: { tagCategoryId } }) {
   try {
     yield put(TagCategoryRoutines.fetchTagCategory.request());
 
-    const { data } = yield api.get(`${TAG_CATEGORIES_PATH}/${tagId}`);
+    const { data } = yield api.get(`${TAG_CATEGORIES_PATH}/${tagCategoryId}`);
 
     yield put(ProjectRoutines.setProject(data.project));
     yield put(TagCategoryRoutines.fetchTagCategory.success(data.results));
@@ -53,11 +53,11 @@ function* fetchTagCategory({ payload: { tagId } }) {
   }
 }
 
-function* updateTagCategory({ payload: { tagId, projectId, formData } }) {
+function* updateTagCategory({ payload: { tagCategoryId, projectId, formData } }) {
   try {
     yield put(TagCategoryRoutines.updateTagCategory.request());
 
-    const { data } = yield api.patch(`${TAG_CATEGORIES_PATH}/${tagId}`, { ...formData });
+    const { data } = yield api.patch(`${TAG_CATEGORIES_PATH}/${tagCategoryId}`, { ...formData });
     browserHistory.push(`${ROUTES.PROJECT}/${projectId}/${TAG_CATEGORIES_PAGE}`);
 
     yield put(TagCategoryRoutines.updateTagCategory.success(data));
@@ -68,11 +68,11 @@ function* updateTagCategory({ payload: { tagId, projectId, formData } }) {
   }
 }
 
-function* removeTagCategory({ payload: { tagId, projectId } }) {
+function* removeTagCategory({ payload: { tagCategoryId, projectId } }) {
   try {
     yield put(TagCategoryRoutines.removeTagCategory.request());
 
-    const { data } = yield api.delete(`${TAG_CATEGORIES_PATH}/${tagId}`);
+    const { data } = yield api.delete(`${TAG_CATEGORIES_PATH}/${tagCategoryId}`);
     browserHistory.push(`${ROUTES.PROJECT}/${projectId}/${TAG_CATEGORIES_PAGE}`);
 
     yield put(TagCategoryRoutines.removeTagCategory.success(data));

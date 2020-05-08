@@ -22,8 +22,7 @@ export const defaultProps = {
       isActive: false,
     },
   ],
-  fetchTags: Function.prototype,
-  setTags: Function.prototype,
+  fetchTagCategories: Function.prototype,
   history,
   intl,
   match: {
@@ -39,7 +38,7 @@ export const noTagsProps = {
   filters: [],
 };
 
-storiesOf('Project|ProjectTags', module)
+storiesOf('Project|TagCategories', module)
   .addDecorator(withTheme())
   .add('No Data', () => <TagCategories {...noTagsProps} />)
   .add('Default', () => <TagCategories {...defaultProps} />);

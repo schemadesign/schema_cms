@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ProjectTagForm } from '../projectTagForm.component';
-import { defaultProps, propsWithTags } from '../projectTagForm.stories';
+import { TagCategoryForm } from '../tagCategoryForm.component';
+import { defaultProps, propsWithTags } from '../tagCategoryForm.stories';
 
-describe('DataSourceTagForm: Component', () => {
-  const component = props => <ProjectTagForm {...defaultProps} {...props} />;
+describe('TagCategoryForm: Component', () => {
+  const component = props => <TagCategoryForm {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

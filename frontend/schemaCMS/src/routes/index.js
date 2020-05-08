@@ -20,7 +20,7 @@ import { Project } from './project';
 import { ResetPassword } from './resetPassword';
 import { Settings } from './settings';
 import { User } from './user';
-import { ProjectTag } from './projectTag';
+import { TagCategory } from './tagCategory';
 import { ProjectState } from './projectState';
 import { BlockTemplate } from './blockTemplate';
 import { PageTemplate } from './pageTemplate';
@@ -43,7 +43,7 @@ export const ROUTES = {
   USER: '/user',
   FILTER: '/filter',
   JOB_DETAIL: '/job',
-  TAG: '/tag',
+  TAG_CATEGORY: '/tag-category',
   STATE: '/state',
   BLOCK_TEMPLATE: '/block-template',
   PAGE_TEMPLATE: '/page-template',
@@ -89,7 +89,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={`${ROUTES.FILTER}/:filterId`} component={Filter} />
 
-            <AuthRoute exact path={`${ROUTES.TAG}/:tagId`} component={ProjectTag} />
+            <AuthRoute exact path={`${ROUTES.TAG_CATEGORY}/:tagCategoryId`} component={TagCategory} />
 
             <AuthRoute path={`${ROUTES.STATE}/:stateId`} component={ProjectState} />
 

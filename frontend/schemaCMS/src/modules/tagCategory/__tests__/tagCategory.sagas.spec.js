@@ -69,10 +69,10 @@ describe('Tag Category: sagas', () => {
         },
       };
       const payload = {
-        tagId: 1,
+        tagCategoryId: 1,
       };
 
-      mockApi.get(`/tag-categories/${payload.tagId}`).reply(OK, response);
+      mockApi.get(`/tag-categories/${payload.tagCategoryId}`).reply(OK, response);
 
       await expectSaga(watchTagCategory)
         .withState(defaultState)
@@ -90,11 +90,11 @@ describe('Tag Category: sagas', () => {
       };
       const formData = { data: 'data' };
       const projectId = 1;
-      const tagId = 1;
-      const payload = { formData, projectId, tagId };
+      const tagCategoryId = 1;
+      const payload = { formData, projectId, tagCategoryId };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi.patch(`/tag-categories/${tagId}`, formData).reply(OK, response);
+      mockApi.patch(`/tag-categories/${tagCategoryId}`, formData).reply(OK, response);
 
       await expectSaga(watchTagCategory)
         .withState(defaultState)
@@ -112,11 +112,11 @@ describe('Tag Category: sagas', () => {
         id: 1,
       };
       const projectId = 1;
-      const tagId = 1;
-      const payload = { projectId, tagId };
+      const tagCategoryId = 1;
+      const payload = { projectId, tagCategoryId };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi.delete(`/tag-categories/${tagId}`).reply(OK, response);
+      mockApi.delete(`/tag-categories/${tagCategoryId}`).reply(OK, response);
 
       await expectSaga(watchTagCategory)
         .withState(defaultState)

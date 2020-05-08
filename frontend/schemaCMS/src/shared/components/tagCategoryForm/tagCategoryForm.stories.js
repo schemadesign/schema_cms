@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ProjectTagForm } from './projectTagForm.component';
+import { TagCategoryForm } from './tagCategoryForm.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { project } from '../../../modules/project/project.mocks';
 
@@ -26,7 +26,7 @@ export const propsWithTags = {
   },
 };
 
-storiesOf('Shared Components|DataSourceTagForm', module)
+storiesOf('Shared Components|TagCategoryForm', module)
   .addDecorator(withTheme())
-  .add('Create form', () => <ProjectTagForm {...defaultProps} />)
-  .add('Edit form', () => <ProjectTagForm {...propsWithTags} />);
+  .add('Create form', () => <TagCategoryForm {...defaultProps} />)
+  .add('Edit form', () => <TagCategoryForm {...propsWithTags} />);

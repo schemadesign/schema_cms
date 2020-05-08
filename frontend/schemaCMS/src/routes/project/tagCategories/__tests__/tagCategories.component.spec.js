@@ -1,12 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Formik } from 'formik';
-import { Form } from 'schemaUI';
 
 import { TagCategories } from '../tagCategories.component';
 import { defaultProps, noTagsProps } from '../tagCategories.stories';
 
-describe('ProjectTags: Component', () => {
+describe('TagCategories: Component', () => {
   const component = props => <TagCategories {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -18,61 +16,38 @@ describe('ProjectTags: Component', () => {
   });
 
   it('should render correctly', async () => {
-    const fetchTags = jest.fn().mockReturnValue(Promise.resolve());
+    const fetchTagCategories = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = await render({
-      fetchTags,
+      fetchTagCategories,
     });
 
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly when no tags', async () => {
-    const fetchTags = jest.fn().mockReturnValue(Promise.resolve());
+  it('should render correctly when no categories', async () => {
+    const fetchTagCategories = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = await render({
       ...noTagsProps,
-      fetchTags,
+      fetchTagCategories,
     });
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should call fetchTags on componentDidMount', () => {
-    const fetchTags = jest.spyOn(defaultProps, 'fetchTags');
+    const fetchTagCategories = jest.spyOn(defaultProps, 'fetchTagCategories');
 
     render({
-      fetchTags,
+      fetchTagCategories,
     });
 
-    expect(fetchTags).toHaveBeenCalledTimes(1);
-  });
-
-  it('should call setTags on submit', async () => {
-    const fetchTags = jest.fn().mockReturnValue(Promise.resolve());
-    const setTags = jest.spyOn(defaultProps, 'setTags');
-    const active = [];
-
-    const wrapper = await render({
-      fetchTags,
-      setTags,
-    }).find(Formik);
-
-    wrapper
-      .dive()
-      .find(Form.CheckboxGroup)
-      .simulate('change', { target: { checked: true } });
-
-    wrapper.prop('onSubmit')(active, {
-      setSubmitting: Function.prototype,
-      setErrors: Function.prototype,
-    });
-
-    expect(setTags).toHaveBeenCalledTimes(1);
+    expect(fetchTagCategories).toHaveBeenCalledTimes(1);
   });
 
   it('should set error correctly', async () => {
-    const errorResponse = 'fetchTags should return error';
+    const errorResponse = 'fetchTagCategories should return error';
     const wrapper = await render({
-      fetchTags: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
+      fetchTagCategories: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
     });
 
     const { loading, error } = wrapper.state();

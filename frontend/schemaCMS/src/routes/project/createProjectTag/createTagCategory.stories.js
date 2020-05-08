@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { CreateProjectTag } from './createProjectTag.component';
+import { CreateTagCategory } from './createTagCategory.component';
 import { intl, history } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
@@ -13,7 +13,7 @@ export const defaultProps = {
   dirty: false,
   isValid: true,
   handleSubmit: Function.prototype,
-  createTag: Function.prototype,
+  createTagCategory: Function.prototype,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   values: {
@@ -30,6 +30,6 @@ export const defaultProps = {
   intl,
 };
 
-storiesOf('Project|CreateProjectTag', module)
+storiesOf('Project|CreateTagCategory', module)
   .addDecorator(withTheme())
-  .add('Default', () => <CreateProjectTag {...defaultProps} />);
+  .add('Default', () => <CreateTagCategory {...defaultProps} />);

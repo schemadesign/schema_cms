@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataSourceTagForm: Component should render correctly 1`] = `
+exports[`TagCategoryForm: Component should render correctly 1`] = `
 <Fragment>
   <TextInput
     autoWidth={false}
@@ -11,7 +11,7 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
     label={
       <FormattedMessage
         defaultMessage="Name"
-        id="shared.components.projectTagForm.name"
+        id="shared.components.tagCategoryForm.name"
         values={Object {}}
       />
     }
@@ -24,7 +24,7 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
   <Component>
     <FormattedMessage
       defaultMessage="Tags"
-      id="shared.components.projectTagForm.tags"
+      id="shared.components.tagCategoryForm.tags"
       values={Object {}}
     />
   </Component>
@@ -164,7 +164,7 @@ exports[`DataSourceTagForm: Component should render correctly 1`] = `
 </Fragment>
 `;
 
-exports[`DataSourceTagForm: Component should render empty 1`] = `
+exports[`TagCategoryForm: Component should render empty 1`] = `
 <Fragment>
   <TextInput
     autoWidth={false}
@@ -175,7 +175,7 @@ exports[`DataSourceTagForm: Component should render empty 1`] = `
     label={
       <FormattedMessage
         defaultMessage="Name"
-        id="shared.components.projectTagForm.name"
+        id="shared.components.tagCategoryForm.name"
         values={Object {}}
       />
     }
@@ -188,14 +188,14 @@ exports[`DataSourceTagForm: Component should render empty 1`] = `
   <Component>
     <FormattedMessage
       defaultMessage="Tags"
-      id="shared.components.projectTagForm.tags"
+      id="shared.components.tagCategoryForm.tags"
       values={Object {}}
     />
   </Component>
   <styled.div>
     <FormattedMessage
       defaultMessage="No Tags"
-      id="shared.components.projectTagForm.noTags"
+      id="shared.components.tagCategoryForm.noTags"
       values={Object {}}
     />
   </styled.div>

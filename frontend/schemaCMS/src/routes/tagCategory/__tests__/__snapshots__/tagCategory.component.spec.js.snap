@@ -1,27 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectTag: Component should render correctly 1`] = `
+exports[`TagCategory: Component should render correctly 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag List"
-        id="projectTag.subTitle"
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
         values={Object {}}
       />
     }
-    headerTitle=""
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
     options={Array []}
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag List"
-        id="projectTag.subTitle"
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
         values={Object {}}
       />
     }
-    title=""
+    title={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
   />
   <LoadingWrapper
     error={null}
@@ -32,25 +44,10 @@ exports[`ProjectTag: Component should render correctly 1`] = `
     <styled.form
       onSubmit={[Function]}
     >
-      <ProjectTagForm
+      <TagCategoryForm
         dirty={false}
-        fetchTag={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "tagId": "1",
-                },
-              ],
-            ],
-            "results": Array [
-              Object {
-                "type": "return",
-                "value": Promise {},
-              },
-            ],
-          }
-        }
+        fetchTag={[MockFunction]}
+        fetchTagCategory={[Function]}
         handleChange={[Function]}
         handleSubmit={[Function]}
         history={
@@ -69,13 +66,23 @@ exports[`ProjectTag: Component should render correctly 1`] = `
         match={
           Object {
             "params": Object {
-              "tagId": "1",
+              "tagCategoryId": "1",
             },
           }
         }
-        removeTag={[Function]}
+        project={
+          Object {
+            "description": "project description",
+            "domain": "http://project.domain",
+            "id": 1,
+            "owner": "project owner",
+            "status": "project status",
+            "title": "project title",
+          }
+        }
+        removeTagCategory={[Function]}
         setFieldValue={[Function]}
-        tag={
+        tagCategory={
           Object {
             "id": 2,
             "name": "name",
@@ -114,7 +121,7 @@ exports[`ProjectTag: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Remove list"
-          id="projectTag.subTitle"
+          id="tagCategory.subTitle"
           values={Object {}}
         />
       </Styled(Span)>
@@ -131,7 +138,7 @@ exports[`ProjectTag: Component should render correctly 1`] = `
         >
           <FormattedMessage
             defaultMessage="Back"
-            id="projectTag.back"
+            id="tagCategory.back"
             values={Object {}}
           />
         </BackButton>
@@ -142,7 +149,7 @@ exports[`ProjectTag: Component should render correctly 1`] = `
         >
           <FormattedMessage
             defaultMessage="Save"
-            id="projectTag.saveTag"
+            id="tagCategory.saveTagCategory"
             values={Object {}}
           />
         </NextButton>
@@ -186,8 +193,8 @@ exports[`ProjectTag: Component should render correctly 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove this tag?"
-        id="projectTag.removeTitle"
+        defaultMessage="Are you sure you want to remove this tag category?"
+        id="tagCategory.removeTitle"
         values={Object {}}
       />
     </Styled(H1)>
@@ -198,7 +205,7 @@ exports[`ProjectTag: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="projectTag.cancelRemoval"
+          id="tagCategory.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
@@ -210,7 +217,7 @@ exports[`ProjectTag: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Confirm"
-          id="projectTag.confirmRemoval"
+          id="tagCategory.confirmRemoval"
           values={Object {}}
         />
       </NextButton>
@@ -219,28 +226,40 @@ exports[`ProjectTag: Component should render correctly 1`] = `
 </styled.div>
 `;
 
-exports[`ProjectTag: Component should render correctly with loader 1`] = `
+exports[`TagCategory: Component should render correctly with loader 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag List"
-        id="projectTag.subTitle"
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
         values={Object {}}
       />
     }
-    headerTitle=""
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
     options={Array []}
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Edit Tag List"
-        id="projectTag.subTitle"
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
         values={Object {}}
       />
     }
-    title=""
+    title={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
   />
   <LoadingWrapper
     error={null}
@@ -251,9 +270,9 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
     <styled.form
       onSubmit={[Function]}
     >
-      <ProjectTagForm
+      <TagCategoryForm
         dirty={false}
-        fetchTag={[Function]}
+        fetchTagCategory={[Function]}
         handleChange={[Function]}
         handleSubmit={[Function]}
         history={
@@ -272,13 +291,23 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
         match={
           Object {
             "params": Object {
-              "tagId": "1",
+              "tagCategoryId": "1",
             },
           }
         }
-        removeTag={[Function]}
+        project={
+          Object {
+            "description": "project description",
+            "domain": "http://project.domain",
+            "id": 1,
+            "owner": "project owner",
+            "status": "project status",
+            "title": "project title",
+          }
+        }
+        removeTagCategory={[Function]}
         setFieldValue={[Function]}
-        tag={
+        tagCategory={
           Object {
             "id": 2,
             "name": "name",
@@ -317,7 +346,7 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
       >
         <FormattedMessage
           defaultMessage="Remove list"
-          id="projectTag.subTitle"
+          id="tagCategory.subTitle"
           values={Object {}}
         />
       </Styled(Span)>
@@ -334,7 +363,7 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
         >
           <FormattedMessage
             defaultMessage="Back"
-            id="projectTag.back"
+            id="tagCategory.back"
             values={Object {}}
           />
         </BackButton>
@@ -345,7 +374,7 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
         >
           <FormattedMessage
             defaultMessage="Save"
-            id="projectTag.saveTag"
+            id="tagCategory.saveTagCategory"
             values={Object {}}
           />
         </NextButton>
@@ -389,8 +418,8 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Are you sure you want to remove this tag?"
-        id="projectTag.removeTitle"
+        defaultMessage="Are you sure you want to remove this tag category?"
+        id="tagCategory.removeTitle"
         values={Object {}}
       />
     </Styled(H1)>
@@ -401,7 +430,7 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="projectTag.cancelRemoval"
+          id="tagCategory.cancelRemoval"
           values={Object {}}
         />
       </BackButton>
@@ -413,7 +442,7 @@ exports[`ProjectTag: Component should render correctly with loader 1`] = `
       >
         <FormattedMessage
           defaultMessage="Confirm"
-          id="projectTag.confirmRemoval"
+          id="tagCategory.confirmRemoval"
           values={Object {}}
         />
       </NextButton>

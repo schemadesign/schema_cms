@@ -5,15 +5,19 @@ import { always, insert, is, remove } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
-import messages from './projectTagForm.messages';
-import { TAG_NAME, TAG_REMOVE_TAGS, TAG_TAGS } from '../../../modules/tagCategory/tagCategory.constants';
-import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './projectTagForm.styles';
+import messages from './tagCategoryForm.messages';
+import {
+  TAG_CATEGORY_NAME,
+  TAG_CATEGORY_REMOVE_TAGS,
+  TAG_CATEGORY_TAGS,
+} from '../../../modules/tagCategory/tagCategory.constants';
+import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './tagCategoryForm.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { Label, TextField } = FormUI;
 const { CloseIcon, PlusIcon } = Icons;
 
-export class ProjectTagForm extends PureComponent {
+export class TagCategoryForm extends PureComponent {
   static propTypes = {
     handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
@@ -26,21 +30,21 @@ export class ProjectTagForm extends PureComponent {
 
   handleAddTag = ({ index }) => {
     const { setFieldValue, values } = this.props;
-    const insertIndex = is(Number, index) ? index : values[TAG_TAGS].length;
-    const newValues = insert(insertIndex, { value: '' }, values[TAG_TAGS]);
+    const insertIndex = is(Number, index) ? index : values[TAG_CATEGORY_TAGS].length;
+    const newValues = insert(insertIndex, { value: '' }, values[TAG_CATEGORY_TAGS]);
     this.setState({ focusInputIndex: insertIndex });
-    setFieldValue(TAG_TAGS, newValues);
+    setFieldValue(TAG_CATEGORY_TAGS, newValues);
   };
 
   handleRemoveTag = ({ index, resetIndex }) => {
     const { setFieldValue, values } = this.props;
     this.setState({ focusInputIndex: resetIndex ? null : index - 1 });
-    const newValues = remove(index, 1, values[TAG_TAGS]);
-    setFieldValue(TAG_TAGS, newValues);
-    const removeId = values[TAG_TAGS][index].id;
+    const newValues = remove(index, 1, values[TAG_CATEGORY_TAGS]);
+    setFieldValue(TAG_CATEGORY_TAGS, newValues);
+    const removeId = values[TAG_CATEGORY_TAGS][index].id;
 
     if (is(Number, removeId)) {
-      setFieldValue(TAG_REMOVE_TAGS, values[TAG_REMOVE_TAGS].concat(removeId));
+      setFieldValue(TAG_CATEGORY_REMOVE_TAGS, values[TAG_CATEGORY_REMOVE_TAGS].concat(removeId));
     }
   };
 
@@ -77,7 +81,7 @@ export class ProjectTagForm extends PureComponent {
     const { setFieldValue } = this.props;
     const { value } = e.target;
     const tag = id ? { value, id } : { value };
-    setFieldValue(`${TAG_TAGS}.${index}`, tag);
+    setFieldValue(`${TAG_CATEGORY_TAGS}.${index}`, tag);
   };
 
   renderTag = ({ value, id }, index) => (
@@ -85,7 +89,7 @@ export class ProjectTagForm extends PureComponent {
       <TextField
         value={value}
         onChange={e => this.handleChange({ e, id, index })}
-        name={`${[TAG_TAGS]}.${index}`}
+        name={`${[TAG_CATEGORY_TAGS]}.${index}`}
         fullWidth
         customStyles={{ paddingBottom: 0, width: '100%' }}
         isEdit
@@ -110,16 +114,16 @@ export class ProjectTagForm extends PureComponent {
     return (
       <Fragment>
         <TextInput
-          value={values[TAG_NAME]}
+          value={values[TAG_CATEGORY_NAME]}
           onChange={handleChange}
-          name={TAG_NAME}
+          name={TAG_CATEGORY_NAME}
           fullWidth
           isEdit
-          label={<FormattedMessage {...messages[TAG_NAME]} />}
+          label={<FormattedMessage {...messages[TAG_CATEGORY_NAME]} />}
           {...rest}
         />
-        <Label>{<FormattedMessage {...messages[TAG_TAGS]} />}</Label>
-        <TagsContainer>{this.renderTags(values[TAG_TAGS])}</TagsContainer>
+        <Label>{<FormattedMessage {...messages[TAG_CATEGORY_TAGS]} />}</Label>
+        <TagsContainer>{this.renderTags(values[TAG_CATEGORY_TAGS])}</TagsContainer>
         <ButtonContainer>
           <PlusButton onClick={this.handleAddTag} type="button" inverse>
             <PlusIcon inverse />

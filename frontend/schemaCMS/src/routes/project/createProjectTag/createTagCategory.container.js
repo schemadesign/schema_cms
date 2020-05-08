@@ -7,19 +7,19 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { compose } from 'ramda';
 import { withFormik } from 'formik';
 
-import { CreateProjectTag } from './createProjectTag.component';
+import { CreateTagCategory } from './createTagCategory.component';
 import { TagCategoryRoutines } from '../../../modules/tagCategory';
 import { selectUserRole } from '../../../modules/userProfile';
 import {
   INITIAL_VALUES,
-  TAG_FORM,
-  TAG_NAME,
-  TAG_TAGS,
-  TAGS_SCHEMA,
+  TAG_CATEGORY_FORM,
+  TAG_CATEGORY_NAME,
+  TAG_CATEGORY_TAGS,
+  TAG_CATEGORY_SCHEMA,
 } from '../../../modules/tagCategory/tagCategory.constants';
 import reportError from '../../../shared/utils/reportError';
-import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
-import messages from './createProjectTag.messages';
+import { errorMessageParser, getMatchParam, mapAndAddOrder } from '../../../shared/utils/helpers';
+import messages from './createTagCategory.messages';
 import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
@@ -30,7 +30,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      createTag: promisifyRoutine(TagCategoryRoutines.createTagCategory),
+      createTagCategory: promisifyRoutine(TagCategoryRoutines.createTagCategory),
     },
     dispatch
   );
@@ -44,22 +44,22 @@ export default compose(
   injectIntl,
   withRouter,
   withFormik({
-    displayName: TAG_FORM,
+    displayName: TAG_CATEGORY_FORM,
     enableReinitialize: true,
     mapPropsToValues: () => INITIAL_VALUES,
-    validationSchema: () => TAGS_SCHEMA,
+    validationSchema: () => TAG_CATEGORY_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const { createTag } = props;
+        const { createTagCategory } = props;
         const projectId = getMatchParam(props, 'projectId');
-        const tags = data[TAG_TAGS].map((item, index) => ({ ...item, execOrder: index }));
+        const tags = mapAndAddOrder(data[TAG_CATEGORY_TAGS]);
         const formData = {
           tags,
-          name: data[TAG_NAME],
+          name: data[TAG_CATEGORY_NAME],
         };
 
-        await createTag({ projectId, formData });
+        await createTagCategory({ projectId, formData });
       } catch (errors) {
         reportError(errors);
         const { formatMessage } = props.intl;
@@ -71,4 +71,4 @@ export default compose(
       }
     },
   })
-)(CreateProjectTag);
+)(CreateTagCategory);

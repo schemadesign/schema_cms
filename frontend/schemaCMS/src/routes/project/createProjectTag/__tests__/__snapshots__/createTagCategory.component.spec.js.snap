@@ -162,8 +162,8 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
       />
     }
   />
-  <ProjectTagForm
-    createTag={[Function]}
+  <TagCategoryForm
+    createTagCategory={[Function]}
     dirty={false}
     handleChange={[Function]}
     handleSubmit={[Function]}

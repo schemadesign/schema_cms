@@ -7,24 +7,24 @@ import { hot } from 'react-hot-loader';
 import { compose, difference, pick } from 'ramda';
 import { withFormik } from 'formik';
 
-import { ProjectTag } from './projectTag.component';
+import { TagCategory } from './tagCategory.component';
 import { TagCategoryRoutines, selectTagCategory } from '../../modules/tagCategory';
-import { errorMessageParser } from '../../shared/utils/helpers';
-import messages from './projectTag.messages';
+import { errorMessageParser, mapAndAddOrder } from '../../shared/utils/helpers';
+import messages from './tagCategory.messages';
 import {
   INITIAL_VALUES,
-  TAG_FORM,
-  TAG_NAME,
-  TAG_REMOVE_TAGS,
-  TAG_TAGS,
-  TAGS_SCHEMA,
+  TAG_CATEGORY_FORM,
+  TAG_CATEGORY_NAME,
+  TAG_CATEGORY_REMOVE_TAGS,
+  TAG_CATEGORY_TAGS,
+  TAG_CATEGORY_SCHEMA,
 } from '../../modules/tagCategory/tagCategory.constants';
 import reportError from '../../shared/utils/reportError';
 import { selectUserRole } from '../../modules/userProfile';
 import { selectProject } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
-  tag: selectTagCategory,
+  tagCategory: selectTagCategory,
   userRole: selectUserRole,
   project: selectProject,
 });
@@ -32,9 +32,9 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      fetchTag: promisifyRoutine(TagCategoryRoutines.fetchTagCategory),
-      updateTag: promisifyRoutine(TagCategoryRoutines.updateTagCategory),
-      removeTag: promisifyRoutine(TagCategoryRoutines.removeTagCategory),
+      fetchTagCategory: promisifyRoutine(TagCategoryRoutines.fetchTagCategory),
+      updateTagCategory: promisifyRoutine(TagCategoryRoutines.updateTagCategory),
+      removeTagCategory: promisifyRoutine(TagCategoryRoutines.removeTagCategory),
     },
     dispatch
   );
@@ -48,25 +48,27 @@ export default compose(
   injectIntl,
   withRouter,
   withFormik({
-    displayName: TAG_FORM,
+    displayName: TAG_CATEGORY_FORM,
     enableReinitialize: true,
-    mapPropsToValues: ({ tag }) => ({ ...INITIAL_VALUES, ...pick([TAG_NAME, TAG_TAGS], tag) }),
-    validationSchema: () => TAGS_SCHEMA,
+    mapPropsToValues: ({ tagCategory }) => ({
+      ...INITIAL_VALUES,
+      ...pick([TAG_CATEGORY_NAME, TAG_CATEGORY_TAGS], tagCategory),
+    }),
+    validationSchema: () => TAG_CATEGORY_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const { tag, updateTag } = props;
-        const projectId = tag.project.id;
-        const tags = tag[TAG_TAGS];
-        const dataWithOrder = data[TAG_TAGS].map((item, index) => ({ ...item, execOrder: index }));
-        const tagWithOrder = tags.map((item, index) => ({ ...item, execOrder: index }));
+        const { tagCategory, updateTagCategory, project } = props;
+        const tags = tagCategory[TAG_CATEGORY_TAGS];
+        const dataWithOrder = mapAndAddOrder(data[TAG_CATEGORY_TAGS]);
+        const tagWithOrder = mapAndAddOrder(tags);
         const formData = {
           tags: difference(dataWithOrder, tagWithOrder),
-          name: data[TAG_NAME],
-          deleteTags: data[TAG_REMOVE_TAGS],
+          name: data[TAG_CATEGORY_NAME],
+          deleteTags: data[TAG_CATEGORY_REMOVE_TAGS],
         };
 
-        await updateTag({ projectId, tagId: tag.id, formData });
+        await updateTagCategory({ projectId: project.id, tagCategoryId: tagCategory.id, formData });
       } catch (errors) {
         reportError(errors);
         const { formatMessage } = props.intl;
@@ -78,4 +80,4 @@ export default compose(
       }
     },
   })
-)(ProjectTag);
+)(TagCategory);

@@ -2,9 +2,13 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
+  title: {
+    id: 'tagCategory.title',
+    defaultMessage: 'Tag Category',
+  },
   subTitle: {
     id: 'tagCategory.subTitle',
-    defaultMessage: 'Edit Tag List',
+    defaultMessage: 'Edit',
   },
   projectsListPage: {
     id: 'tagCategory.projectsListPage',
@@ -14,8 +18,8 @@ export default defineMessages({
     id: 'tagCategory.subTitle',
     defaultMessage: 'Remove list',
   },
-  saveTag: {
-    id: 'tagCategory.saveTag',
+  saveTagCategory: {
+    id: 'tagCategory.saveTagCategory',
     defaultMessage: 'Save',
   },
   back: {
@@ -32,10 +36,10 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'tagCategory.removeTitle',
-    defaultMessage: 'Are you sure you want to remove this tag?',
+    defaultMessage: 'Are you sure you want to remove this tag category?',
   },
   nameTagsListNameNotUniqueError: {
     id: 'tagCategory.nameTagsListNameNotUniqueError',
-    defaultMessage: 'A tag with this name already exists in project.',
+    defaultMessage: 'A tag category with this name already exists in project.',
   },
 });

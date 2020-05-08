@@ -2,17 +2,17 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Form } from './createProjectTag.styles';
-import messages from './createProjectTag.messages';
+import { Form } from './createTagCategory.styles';
+import messages from './createTagCategory.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { ProjectTagForm } from '../../../shared/components/projectTagForm';
+import { TagCategoryForm } from '../../../shared/components/tagCategoryForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
 import { getProjectMenuOptions } from '../project.constants';
 
-export class CreateProjectTag extends PureComponent {
+export class CreateTagCategory extends PureComponent {
   static propTypes = {
     userRole: PropTypes.string.isRequired,
     project: PropTypes.object.isRequired,
@@ -48,7 +48,7 @@ export class CreateProjectTag extends PureComponent {
           options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <ProjectTagForm {...this.props} />
+        <TagCategoryForm {...this.props} />
         <NavigationContainer fixed>
           <BackButton onClick={this.handleBack} type="button">
             <FormattedMessage {...messages.cancel} />
