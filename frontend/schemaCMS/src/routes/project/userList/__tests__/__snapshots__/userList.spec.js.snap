@@ -99,7 +99,7 @@ exports[`UserList: Component should render correctly 1`] = `
             id="project.view.tags"
             values={Object {}}
           />,
-          "to": "/project/1/tags",
+          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {

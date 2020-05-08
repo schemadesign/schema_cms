@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectTags: Component should render correctly 1`] = `
+exports[`TagCategories: Component should render correctly 1`] = `
 <Fragment>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Tags List"
+    title="Tag Categories"
   />
   <MobileMenu
     active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="project.projectTags.subTitle"
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="project.projectTags.title"
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
         values={Object {}}
       />
     }
@@ -104,7 +104,7 @@ exports[`ProjectTags: Component should render correctly 1`] = `
             id="project.view.tags"
             values={Object {}}
           />,
-          "to": "/project/1/tags",
+          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {
@@ -151,21 +151,21 @@ exports[`ProjectTags: Component should render correctly 1`] = `
     }
   />
   <ProjectTabs
-    active="tags"
+    active="tag-categories"
     url="/project/1"
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="project.projectTags.subTitle"
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="project.projectTags.title"
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
         values={Object {}}
       />
     }
@@ -183,44 +183,112 @@ exports[`ProjectTags: Component should render correctly 1`] = `
     noDataContent={null}
   >
     <CounterHeader
-      copy="Tags List"
+      copy="Tag Category"
       count={2}
+      customPlural="Tag Categories"
+      moveToTop={true}
     />
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Array [
-          "1",
-        ]
-      }
-      onSubmit={[Function]}
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 0,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "NaN years ago",
+                undefined,
+              ]
+            }
+          />
+        }
+        key="0"
+      >
+        <Styled(H1)
+          id="tag-category-1"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 1,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "NaN years ago",
+                undefined,
+              ]
+            }
+          />
+        }
+        key="1"
+      >
+        <Styled(H1)
+          id="tag-category-2"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+    </styled.section>
+    <NavigationContainer
+      contentStyles={null}
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
     >
-      <Component />
-    </Formik>
+      <BackArrowButton
+        hideOnDesktop={true}
+        id="backBtn"
+        onClick={[Function]}
+      />
+      <PlusButton
+        customStyles={Object {}}
+        hideOnDesktop={true}
+        onClick={[Function]}
+      />
+    </NavigationContainer>
   </LoadingWrapper>
 </Fragment>
 `;
 
-exports[`ProjectTags: Component should render correctly when no tags 1`] = `
+exports[`TagCategories: Component should render correctly when no categories 1`] = `
 <Fragment>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Tags List"
+    title="Tag Categories"
   />
   <MobileMenu
     active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="project.projectTags.subTitle"
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="project.projectTags.title"
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
         values={Object {}}
       />
     }
@@ -305,7 +373,7 @@ exports[`ProjectTags: Component should render correctly when no tags 1`] = `
             id="project.view.tags"
             values={Object {}}
           />,
-          "to": "/project/1/tags",
+          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {
@@ -352,21 +420,21 @@ exports[`ProjectTags: Component should render correctly when no tags 1`] = `
     }
   />
   <ProjectTabs
-    active="tags"
+    active="tag-categories"
     url="/project/1"
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="project.projectTags.subTitle"
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="project.projectTags.title"
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
         values={Object {}}
       />
     }
@@ -384,44 +452,112 @@ exports[`ProjectTags: Component should render correctly when no tags 1`] = `
     noDataContent={null}
   >
     <CounterHeader
-      copy="Tags List"
+      copy="Tag Category"
       count={2}
+      customPlural="Tag Categories"
+      moveToTop={true}
     />
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Array [
-          "1",
-        ]
-      }
-      onSubmit={[Function]}
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 0,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "NaN years ago",
+                undefined,
+              ]
+            }
+          />
+        }
+        key="0"
+      >
+        <Styled(H1)
+          id="tag-category-1"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 1,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "NaN years ago",
+                undefined,
+              ]
+            }
+          />
+        }
+        key="1"
+      >
+        <Styled(H1)
+          id="tag-category-2"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+    </styled.section>
+    <NavigationContainer
+      contentStyles={null}
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
     >
-      <Component />
-    </Formik>
+      <BackArrowButton
+        hideOnDesktop={true}
+        id="backBtn"
+        onClick={[Function]}
+      />
+      <PlusButton
+        customStyles={Object {}}
+        hideOnDesktop={true}
+        onClick={[Function]}
+      />
+    </NavigationContainer>
   </LoadingWrapper>
 </Fragment>
 `;
 
-exports[`ProjectTags: Component should render correctly with loader 1`] = `
+exports[`TagCategories: Component should render correctly with loader 1`] = `
 <Fragment>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Tags List"
+    title="Tag Categories"
   />
   <MobileMenu
     active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="project.projectTags.subTitle"
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="project.projectTags.title"
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
         values={Object {}}
       />
     }
@@ -506,7 +642,7 @@ exports[`ProjectTags: Component should render correctly with loader 1`] = `
             id="project.view.tags"
             values={Object {}}
           />,
-          "to": "/project/1/tags",
+          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {
@@ -553,21 +689,21 @@ exports[`ProjectTags: Component should render correctly with loader 1`] = `
     }
   />
   <ProjectTabs
-    active="tags"
+    active="tag-categories"
     url="/project/1"
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="project.projectTags.subTitle"
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Tags"
-        id="project.projectTags.title"
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
         values={Object {}}
       />
     }
@@ -585,20 +721,88 @@ exports[`ProjectTags: Component should render correctly with loader 1`] = `
     noDataContent={null}
   >
     <CounterHeader
-      copy="Tags List"
+      copy="Tag Category"
       count={2}
+      customPlural="Tag Categories"
+      moveToTop={true}
     />
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Array [
-          "1",
-        ]
-      }
-      onSubmit={[Function]}
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 0,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "NaN years ago",
+                undefined,
+              ]
+            }
+          />
+        }
+        key="0"
+      >
+        <Styled(H1)
+          id="tag-category-1"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 1,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "NaN years ago",
+                undefined,
+              ]
+            }
+          />
+        }
+        key="1"
+      >
+        <Styled(H1)
+          id="tag-category-2"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+    </styled.section>
+    <NavigationContainer
+      contentStyles={null}
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
     >
-      <Component />
-    </Formik>
+      <BackArrowButton
+        hideOnDesktop={true}
+        id="backBtn"
+        onClick={[Function]}
+      />
+      <PlusButton
+        customStyles={Object {}}
+        hideOnDesktop={true}
+        onClick={[Function]}
+      />
+    </NavigationContainer>
   </LoadingWrapper>
 </Fragment>
 `;

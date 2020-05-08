@@ -222,7 +222,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/1/tags"
+              href="/project/1/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}
             >

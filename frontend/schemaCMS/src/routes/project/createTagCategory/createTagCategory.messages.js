@@ -3,23 +3,23 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'project.createProjectTag.subTitle',
+    id: 'project.createTagCategory.subTitle',
     defaultMessage: 'Tag List',
   },
   subTitle: {
-    id: 'project.createProjectTag.subTitle',
+    id: 'project.createTagCategory.subTitle',
     defaultMessage: 'Create',
   },
   saveTag: {
-    id: 'project.createProjectTag.saveTag',
+    id: 'project.createTagCategory.saveTag',
     defaultMessage: 'Save',
   },
   cancel: {
-    id: 'project.createProjectTag.cancel',
+    id: 'project.createTagCategory.cancel',
     defaultMessage: 'Cancel',
   },
   nameTagsListNameNotUniqueError: {
-    id: 'project.createProjectTag.nameTagsListNameNotUniqueError',
+    id: 'project.createTagCategory.nameTagsListNameNotUniqueError',
     defaultMessage: 'A tag with this name already exists in project.',
   },
 });

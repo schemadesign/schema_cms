@@ -222,7 +222,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/undefined/tags"
+              href="/project/undefined/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}
             >

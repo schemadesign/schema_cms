@@ -58,7 +58,7 @@ export const getProjectMenuOptions = projectId => [
   },
   {
     label: <FormattedMessage {...messages.tags} />,
-    to: `/project/${projectId}/tags`,
+    to: `/project/${projectId}/tag-categories`,
     id: PROJECT_TAG_CATEGORIES_ID,
     type: LINK_ITEM,
     allowedRoles: [ROLES.ADMIN],

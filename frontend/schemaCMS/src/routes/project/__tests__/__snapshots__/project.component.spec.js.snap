@@ -90,12 +90,12 @@ exports[`Project: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/tags"
+    path="/project/:projectId/tag-categories"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/tags/create"
+    path="/project/:projectId/tag-categories/create"
   />
   <Route
     component={[Function]}

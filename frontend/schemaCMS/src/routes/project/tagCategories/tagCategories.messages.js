@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'project.tagCategories.tags',
     defaultMessage: 'Tag Categories',
   },
+  tagsCounter: {
+    id: 'project.tagCategories.tagsCounter',
+    defaultMessage: '{count, plural,one {# Tag} other {# Tags}}',
+  },
 });

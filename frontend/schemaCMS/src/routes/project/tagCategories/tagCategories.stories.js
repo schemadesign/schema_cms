@@ -10,16 +10,16 @@ import { project } from '../../../modules/project/project.mocks';
 export const defaultProps = {
   userRole: ROLES.ADMIN,
   project,
-  tags: [
+  tagCategories: [
     {
       key: 'key 1',
       id: 1,
-      isActive: true,
+      tags: [],
     },
     {
       key: 'key 2',
       id: 2,
-      isActive: false,
+      tags: [{}],
     },
   ],
   fetchTagCategories: Function.prototype,

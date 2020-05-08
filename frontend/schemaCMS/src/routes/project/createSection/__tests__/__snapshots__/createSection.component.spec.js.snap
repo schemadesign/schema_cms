@@ -222,7 +222,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             className="sc-Axmtr fdTiXf"
           >
             <a
-              href="/project/projectId/tags"
+              href="/project/projectId/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}
             >
@@ -408,8 +408,8 @@ exports[`CreateSection: Component should render correctly 1`] = `
       >
         <a
           className="sc-fznJRM iifkLh"
-          href="/project/projectId/tags"
-          id="tagsTab"
+          href="/project/projectId/tag-categories"
+          id="tag-categoriesTab"
           onClick={[Function]}
         >
           Tags

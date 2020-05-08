@@ -21,7 +21,7 @@ import { PageTemplates } from './pageTemplates';
 import { CreatePageTemplate } from './createPageTemplate';
 import { CreateSection } from './createSection';
 import { TagCategories } from './tagCategories';
-import { CreateTagCategory } from './createProjectTag';
+import { CreateTagCategory } from './createTagCategory';
 
 export class Project extends PureComponent {
   static propTypes = {

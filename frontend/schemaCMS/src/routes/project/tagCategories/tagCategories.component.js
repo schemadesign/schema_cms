@@ -15,6 +15,9 @@ import { getProjectMenuOptions, PROJECT_TAG_CATEGORIES_ID } from '../project.con
 import { TAG_CATEGORIES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { CounterHeader } from '../../../shared/components/counterHeader';
+import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
+import { CardHeader } from '../../../shared/components/cardHeader';
+import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 
 export class TagCategories extends PureComponent {
   static propTypes = {
@@ -58,6 +61,22 @@ export class TagCategories extends PureComponent {
 
   handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
 
+  renderTagCategory = ({ created, createdBy, name, id, tags }, index) => {
+    const { history } = this.props;
+    const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
+    const list = [whenCreated, createdBy];
+    const header = <CardHeader list={list} />;
+    const footer = <FormattedMessage {...messages.tagsCounter} values={{ count: tags.length }} />;
+
+    return (
+      <ListItem headerComponent={header} footerComponent={footer} key={index}>
+        <ListItemTitle id={`tag-category-${id}`} onClick={() => history.push(`/tag-category/${id}`)}>
+          {name}
+        </ListItemTitle>
+      </ListItem>
+    );
+  };
+
   renderContent = () => {
     const { tagCategories = [], intl } = this.props;
 
@@ -69,14 +88,11 @@ export class TagCategories extends PureComponent {
           customPlural={intl.formatMessage(messages.tagCategories)}
           count={tagCategories.length}
         />
-        <Fragment>
-          {tagCategories.map(({ name }, index) => (
-            <div key={index}>{name}</div>
-          ))}
-          <NavigationContainer fixed>
-            <BackArrowButton id="backBtn" hideOnDesktop onClick={this.handleShowProject} />
-          </NavigationContainer>
-        </Fragment>
+        <ListContainer>{tagCategories.map(this.renderTagCategory)}</ListContainer>
+        <NavigationContainer fixed>
+          <BackArrowButton id="backBtn" hideOnDesktop onClick={this.handleShowProject} />
+          <PlusButton hideOnDesktop onClick={this.handleCreateTag} />
+        </NavigationContainer>
       </Fragment>
     );
   };
