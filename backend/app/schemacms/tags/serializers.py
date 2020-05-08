@@ -16,10 +16,21 @@ class TagSerializer(serializers.ModelSerializer):
 class TagCategorySerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
     delete_tags = serializers.ListField(required=False, write_only=True)
+    created_by = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
         model = models.TagCategory
-        fields = ("id", "name", "project", "is_single_select", "is_public", "tags", "delete_tags")
+        fields = (
+            "id",
+            "name",
+            "project",
+            "is_single_select",
+            "is_public",
+            "tags",
+            "delete_tags",
+            "created",
+            "created_by",
+        )
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.TagCategory.objects.all(),
