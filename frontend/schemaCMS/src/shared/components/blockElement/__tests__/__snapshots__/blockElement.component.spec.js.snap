@@ -29,7 +29,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-Axmtr eiJTdA"
+        className="sc-AxmLO bRGLzF"
       >
         <svg
           style={
@@ -83,20 +83,20 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fzpmMD eWYFWb"
+          className="sc-fznxKY foXqWH"
         >
           <div
-            className="sc-fznxKY jNRtuX"
+            className="sc-fznMAR eEwlzb"
           />
           3 Sets
           <div
-            className="sc-fznxKY jNRtuX"
+            className="sc-fznMAR eEwlzb"
           >
             <div
-              className="sc-fzqNqU jCuWt"
+              className="sc-fzoyTs kGwCob"
             >
               <div
-                className="sc-fzoxKX lfOmID"
+                className="sc-fzoKki iIJzVl"
               >
                 <button
                   disabled={false}
@@ -160,11 +160,11 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             }
           >
             <div
-              className="sc-AxmLO ZcELy"
+              className="sc-fzozJi fLuvkP"
             >
               <div>
                 <div
-                  className="sc-fzoXWK dxAFgm"
+                  className="sc-fzpmMD hlPBKl"
                 >
                   <svg
                     style={
@@ -185,7 +185,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzozJi QgIZz"
+                className="sc-fzoLsD iTliBB"
               >
                 <div
                   style={
@@ -256,10 +256,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl ibCwzu"
+                        className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fznZeY koqfBw"
+                          className="sc-fzokOt hhpuAT"
                         >
                           <div
                             style={
@@ -417,10 +417,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl ibCwzu"
+                        className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fznZeY koqfBw"
+                          className="sc-fzokOt hhpuAT"
                         >
                           <div
                             style={
@@ -578,7 +578,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxhUy jjZZih"
+                        className="sc-AxgMl dQBWvr"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -971,7 +971,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzoLsD fNlvoI"
+                className="sc-fzpans jgrUZw"
               >
                 <svg
                   id="remove-blockPath.elements.0.value.0"
@@ -1008,11 +1008,11 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             }
           >
             <div
-              className="sc-AxmLO ZcELy"
+              className="sc-fzozJi fLuvkP"
             >
               <div>
                 <div
-                  className="sc-fzoXWK dxAFgm"
+                  className="sc-fzpmMD hlPBKl"
                 >
                   <svg
                     style={
@@ -1033,7 +1033,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzozJi QgIZz"
+                className="sc-fzoLsD iTliBB"
               >
                 <div
                   style={
@@ -1104,10 +1104,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl ibCwzu"
+                        className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fznZeY koqfBw"
+                          className="sc-fzokOt hhpuAT"
                         >
                           <div
                             style={
@@ -1265,10 +1265,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl ibCwzu"
+                        className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fznZeY koqfBw"
+                          className="sc-fzokOt hhpuAT"
                         >
                           <div
                             style={
@@ -1426,7 +1426,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxhUy jjZZih"
+                        className="sc-AxgMl dQBWvr"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -1819,7 +1819,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzoLsD fNlvoI"
+                className="sc-fzpans jgrUZw"
               >
                 <svg
                   id="remove-blockPath.elements.0.value.1"
@@ -1856,11 +1856,11 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             }
           >
             <div
-              className="sc-AxmLO ZcELy"
+              className="sc-fzozJi fLuvkP"
             >
               <div>
                 <div
-                  className="sc-fzoXWK dxAFgm"
+                  className="sc-fzpmMD hlPBKl"
                 >
                   <svg
                     style={
@@ -1881,7 +1881,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzozJi QgIZz"
+                className="sc-fzoLsD iTliBB"
               >
                 <div
                   style={
@@ -1952,10 +1952,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl ibCwzu"
+                        className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fznZeY koqfBw"
+                          className="sc-fzokOt hhpuAT"
                         >
                           <div
                             style={
@@ -2113,10 +2113,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl ibCwzu"
+                        className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fznZeY koqfBw"
+                          className="sc-fzokOt hhpuAT"
                         >
                           <div
                             style={
@@ -2274,7 +2274,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxhUy jjZZih"
+                        className="sc-AxgMl dQBWvr"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -2667,7 +2667,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzoLsD fNlvoI"
+                className="sc-fzpans jgrUZw"
               >
                 <svg
                   id="remove-blockPath.elements.0.value.2"
@@ -2725,7 +2725,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-Axmtr eiJTdA"
+        className="sc-AxmLO bRGLzF"
       >
         <svg
           style={
@@ -2779,7 +2779,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fzpans jRCOFi"
+          className="sc-fzplWN dcwDRX"
         >
           <div
             style={
@@ -2959,7 +2959,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-Axmtr eiJTdA"
+        className="sc-AxmLO bRGLzF"
       >
         <svg
           style={
@@ -3013,174 +3013,178 @@ exports[`BlockElement: Component should render correctly internal connection ele
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fznyAO juvUes"
-          onClick={[Function]}
+          className="sc-AxhUy jiqPcu"
         >
-          <input
-            id="blockPath.elements.0.value"
-            name="blockPath.elements.0.value"
-            type="hidden"
-            value="http://domain.com/blog"
-          />
           <div
-            style={
-              Object {
-                "color": "#FFF",
-                "display": "flex",
-                "width": "100%",
-              }
-            }
+            className="sc-fznKkj fviEzj"
+            onClick={[Function]}
           >
+            <input
+              id="blockPath.elements.0.value"
+              name="blockPath.elements.0.value"
+              type="hidden"
+              value="http://domain.com/blog"
+            />
             <div
               style={
                 Object {
-                  "cursor": "pointer",
+                  "color": "#FFF",
                   "display": "flex",
-                  "position": "relative",
                   "width": "100%",
                 }
               }
             >
               <div
-                onClick={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "#71737e",
                     "cursor": "pointer",
                     "display": "flex",
-                    "padding": "20px 10px",
+                    "position": "relative",
                     "width": "100%",
                   }
                 }
               >
                 <div
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  <div
-                    className="sc-AxhCb isNoSH"
-                  >
-                    Blog
-                  </div>
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "WebkitOverflowScrolling": "touch",
-                    "backgroundColor": "#1d1d20",
-                    "display": "none",
-                    "flexDirection": "column",
-                    "left": "0",
-                    "maxHeight": "184px",
-                    "overflowY": "hidden",
-                    "position": "absolute",
-                    "top": "calc(100% + 5px)",
-                    "width": "100%",
-                    "zIndex": 2,
-                  }
-                }
-              >
-                <div
-                  id="select-item-0"
                   onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFF",
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "1px solid  #2F2F36",
-                      "color": "#000",
+                      "backgroundColor": "#71737e",
                       "cursor": "pointer",
-                      "overflow": "hidden",
+                      "display": "flex",
                       "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                      "width": "100%",
                     }
                   }
                 >
                   <div
-                    className="sc-AxhCb isNoSH"
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
                   >
-                    Blog
+                    <div
+                      className="sc-AxhCb isNoSH"
+                    >
+                      Blog
+                    </div>
                   </div>
                 </div>
                 <div
-                  id="select-item-1"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
                   style={
                     Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                      "WebkitOverflowScrolling": "touch",
+                      "backgroundColor": "#1d1d20",
+                      "display": "none",
+                      "flexDirection": "column",
+                      "left": "0",
+                      "maxHeight": "184px",
+                      "overflowY": "hidden",
+                      "position": "absolute",
+                      "top": "calc(100% + 5px)",
+                      "width": "100%",
+                      "zIndex": 2,
                     }
                   }
                 >
                   <div
-                    className="sc-AxhCb isNoSH"
+                    id="select-item-0"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFF",
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "1px solid  #2F2F36",
+                        "color": "#000",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
                   >
-                    news   &gt;   Article 2
+                    <div
+                      className="sc-AxhCb isNoSH"
+                    >
+                      Blog
+                    </div>
                   </div>
-                </div>
-                <div
-                  id="select-item-2"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
                   <div
-                    className="sc-AxhCb isNoSH"
+                    id="select-item-1"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
                   >
-                    News
+                    <div
+                      className="sc-AxhCb isNoSH"
+                    >
+                      news   &gt;   Article 2
+                    </div>
+                  </div>
+                  <div
+                    id="select-item-2"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    <div
+                      className="sc-AxhCb isNoSH"
+                    >
+                      News
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className="sc-fznKkj hsQwGM"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
+            <div
+              className="sc-fznZeY iGpDkM"
             >
-              <path
-                d="M15.117 18L9 12h12z"
-                fillRule="evenodd"
-              />
-            </svg>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M15.117 18L9 12h12z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -3218,7 +3222,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-Axmtr eiJTdA"
+        className="sc-AxmLO bRGLzF"
       >
         <svg
           style={
@@ -3272,7 +3276,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxhUy jjZZih"
+          className="sc-AxgMl dQBWvr"
         >
           <div
             className="react-mde react-mde-tabbed-layout"
@@ -3695,7 +3699,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-Axmtr eiJTdA"
+        className="sc-AxmLO bRGLzF"
       >
         <svg
           style={
@@ -3749,10 +3753,10 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxheI eIpVXM"
+          className="sc-Axmtr fMVWVz"
         >
           <div
-            className="sc-fznZeY koqfBw"
+            className="sc-fzokOt hhpuAT"
           >
             <div
               style={
@@ -3801,7 +3805,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
             </div>
           </div>
           <div
-            className="sc-fznZeY koqfBw"
+            className="sc-fzokOt hhpuAT"
           >
             <div
               style={
@@ -3850,7 +3854,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
             </div>
           </div>
           <div
-            className="sc-fznZeY koqfBw"
+            className="sc-fzokOt hhpuAT"
           >
             <div
               style={
@@ -3899,7 +3903,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
             </div>
           </div>
           <div
-            className="sc-fznZeY koqfBw"
+            className="sc-fzokOt hhpuAT"
           >
             <div
               style={
@@ -3982,7 +3986,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
       className="sc-AxirZ jigHkS"
     >
       <div
-        className="sc-Axmtr eiJTdA"
+        className="sc-AxmLO bRGLzF"
       >
         <svg
           style={
@@ -4036,10 +4040,10 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxgMl ibCwzu"
+          className="sc-AxheI eIpVXM"
         >
           <div
-            className="sc-fznZeY koqfBw"
+            className="sc-fzokOt hhpuAT"
           >
             <div
               style={

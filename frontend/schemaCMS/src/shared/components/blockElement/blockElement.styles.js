@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { media } from '../../../theme/media';
 
@@ -21,6 +21,14 @@ export const Name = styled.div``;
 export const SelectLabel = styled.div`
   white-space: pre-wrap;
   padding: 0 30px 0 10px;
+`;
+
+export const InternalConnectionWrapper = styled.div`
+  padding-bottom: 30px;
+`;
+
+export const customSelectStyles = css`
+  padding-bottom: 0;
 `;
 
 export const MarkdownContainer = styled.div`

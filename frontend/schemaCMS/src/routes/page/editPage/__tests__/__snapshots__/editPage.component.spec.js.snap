@@ -350,7 +350,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqLLg gvaUkH"
+    className="sc-fzoxnE hxbAoR"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoMdx djJIQn"
+          className="sc-fzoWqW ieOBiL"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoMdx djJIQn"
+          className="sc-fzoWqW ieOBiL"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoMdx djJIQn"
+          className="sc-fzoWqW ieOBiL"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoxnE hwhprN"
+          className="sc-fzoMdx iBjEez"
         >
           <span
             style={
@@ -1195,14 +1195,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzokvW lHjki"
+        className="sc-fzqzlV QRJZO"
       >
         <div
-          className="sc-fzqzlV dfeAQC"
+          className="sc-fzqLLg ciHWvF"
         />
         1 Block
         <div
-          className="sc-fzqzlV dfeAQC"
+          className="sc-fzqLLg ciHWvF"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -1513,7 +1513,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzoJus fQhREJ"
+                        className="sc-fzoVTD gQedNL"
                       >
                         <svg
                           style={
@@ -1585,7 +1585,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqMdD gUlgVl"
+                          className="sc-fzowVh iURINb"
                         >
                           <div
                             className="sc-fzoKki xmNdG"
@@ -1707,7 +1707,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzoJus fQhREJ"
+                        className="sc-fzoVTD gQedNL"
                       >
                         <svg
                           style={
@@ -1779,169 +1779,173 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqMAW cIPleX"
-                          onClick={[Function]}
+                          className="sc-fzqAui dIvBCb"
                         >
-                          <input
-                            id="blocks.0.elements.1.value"
-                            name="blocks.0.elements.1.value"
-                            type="hidden"
-                            value="http://domain.com/blog"
-                          />
                           <div
-                            style={
-                              Object {
-                                "color": "#FFF",
-                                "display": "flex",
-                                "width": "100%",
-                              }
-                            }
+                            className="sc-fzqMAW jFSpyd"
+                            onClick={[Function]}
                           >
+                            <input
+                              id="blocks.0.elements.1.value"
+                              name="blocks.0.elements.1.value"
+                              type="hidden"
+                              value="http://domain.com/blog"
+                            />
                             <div
                               style={
                                 Object {
-                                  "cursor": "pointer",
+                                  "color": "#FFF",
                                   "display": "flex",
-                                  "position": "relative",
                                   "width": "100%",
                                 }
                               }
                             >
                               <div
-                                onClick={[Function]}
                                 style={
                                   Object {
-                                    "backgroundColor": "#71737e",
                                     "cursor": "pointer",
                                     "display": "flex",
-                                    "padding": "20px 10px",
+                                    "position": "relative",
                                     "width": "100%",
                                   }
                                 }
                               >
                                 <div
-                                  style={
-                                    Object {
-                                      "cursor": "pointer",
-                                      "overflow": "hidden",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
-                                    }
-                                  }
-                                >
-                                  Select a page
-                                </div>
-                              </div>
-                              <div
-                                style={
-                                  Object {
-                                    "WebkitOverflowScrolling": "touch",
-                                    "backgroundColor": "#1d1d20",
-                                    "display": "none",
-                                    "flexDirection": "column",
-                                    "left": "0",
-                                    "maxHeight": "184px",
-                                    "overflowY": "hidden",
-                                    "position": "absolute",
-                                    "top": "calc(100% + 5px)",
-                                    "width": "100%",
-                                    "zIndex": 2,
-                                  }
-                                }
-                              >
-                                <div
-                                  id="select-item-0"
                                   onClick={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
                                   style={
                                     Object {
-                                      "border": "1px solid  #2F2F36",
-                                      "borderTop": "1px solid  #2F2F36",
-                                      "color": "#71737e",
+                                      "backgroundColor": "#71737e",
                                       "cursor": "pointer",
-                                      "overflow": "hidden",
+                                      "display": "flex",
                                       "padding": "20px 10px",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
+                                      "width": "100%",
                                     }
                                   }
                                 >
                                   <div
-                                    className="sc-fzomuh fvjgCs"
+                                    style={
+                                      Object {
+                                        "cursor": "pointer",
+                                        "overflow": "hidden",
+                                        "textOverflow": "ellipsis",
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
                                   >
-                                    news   &gt;   Article 2
+                                    Select a page
                                   </div>
                                 </div>
                                 <div
-                                  id="select-item-1"
-                                  onClick={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
                                   style={
                                     Object {
-                                      "border": "1px solid  #2F2F36",
-                                      "borderTop": "none",
-                                      "color": "#71737e",
-                                      "cursor": "pointer",
-                                      "overflow": "hidden",
-                                      "padding": "20px 10px",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
+                                      "WebkitOverflowScrolling": "touch",
+                                      "backgroundColor": "#1d1d20",
+                                      "display": "none",
+                                      "flexDirection": "column",
+                                      "left": "0",
+                                      "maxHeight": "184px",
+                                      "overflowY": "hidden",
+                                      "position": "absolute",
+                                      "top": "calc(100% + 5px)",
+                                      "width": "100%",
+                                      "zIndex": 2,
                                     }
                                   }
                                 >
                                   <div
-                                    className="sc-fzomuh fvjgCs"
+                                    id="select-item-0"
+                                    onClick={[Function]}
+                                    onMouseOut={[Function]}
+                                    onMouseOver={[Function]}
+                                    style={
+                                      Object {
+                                        "border": "1px solid  #2F2F36",
+                                        "borderTop": "1px solid  #2F2F36",
+                                        "color": "#71737e",
+                                        "cursor": "pointer",
+                                        "overflow": "hidden",
+                                        "padding": "20px 10px",
+                                        "textOverflow": "ellipsis",
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
                                   >
-                                    News
+                                    <div
+                                      className="sc-fzomuh fvjgCs"
+                                    >
+                                      news   &gt;   Article 2
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  id="select-item-2"
-                                  onClick={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                  style={
-                                    Object {
-                                      "border": "1px solid  #2F2F36",
-                                      "borderTop": "none",
-                                      "color": "#71737e",
-                                      "cursor": "pointer",
-                                      "overflow": "hidden",
-                                      "padding": "20px 10px",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
-                                    }
-                                  }
-                                >
                                   <div
-                                    className="sc-fzomuh fvjgCs"
+                                    id="select-item-1"
+                                    onClick={[Function]}
+                                    onMouseOut={[Function]}
+                                    onMouseOver={[Function]}
+                                    style={
+                                      Object {
+                                        "border": "1px solid  #2F2F36",
+                                        "borderTop": "none",
+                                        "color": "#71737e",
+                                        "cursor": "pointer",
+                                        "overflow": "hidden",
+                                        "padding": "20px 10px",
+                                        "textOverflow": "ellipsis",
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
                                   >
-                                    news   &gt;   Article 1
+                                    <div
+                                      className="sc-fzomuh fvjgCs"
+                                    >
+                                      News
+                                    </div>
+                                  </div>
+                                  <div
+                                    id="select-item-2"
+                                    onClick={[Function]}
+                                    onMouseOut={[Function]}
+                                    onMouseOver={[Function]}
+                                    style={
+                                      Object {
+                                        "border": "1px solid  #2F2F36",
+                                        "borderTop": "none",
+                                        "color": "#71737e",
+                                        "cursor": "pointer",
+                                        "overflow": "hidden",
+                                        "padding": "20px 10px",
+                                        "textOverflow": "ellipsis",
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="sc-fzomuh fvjgCs"
+                                    >
+                                      news   &gt;   Article 1
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div
-                            className="sc-fzoydu iLTxgD"
-                          >
-                            <svg
-                              style={
-                                Object {
-                                  "fill": "#FFF",
-                                  "height": "30px",
-                                  "width": "30px",
-                                }
-                              }
-                              viewBox="0 0 30 30"
+                            <div
+                              className="sc-fzoydu BTftf"
                             >
-                              <path
-                                d="M15.117 18L9 12h12z"
-                                fillRule="evenodd"
-                              />
-                            </svg>
+                              <svg
+                                style={
+                                  Object {
+                                    "fill": "#FFF",
+                                    "height": "30px",
+                                    "width": "30px",
+                                  }
+                                }
+                                viewBox="0 0 30 30"
+                              >
+                                <path
+                                  d="M15.117 18L9 12h12z"
+                                  fillRule="evenodd"
+                                />
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1976,7 +1980,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzoJus fQhREJ"
+                        className="sc-fzoVTD gQedNL"
                       >
                         <svg
                           style={
@@ -2048,7 +2052,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqAui eqjECk"
+                          className="sc-fzqMdD jyIARU"
                         >
                           <div
                             className="react-mde react-mde-tabbed-layout"
@@ -2468,7 +2472,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzoJus fQhREJ"
+                        className="sc-fzoVTD gQedNL"
                       >
                         <svg
                           style={
@@ -2540,7 +2544,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzowVh iURINb"
+                          className="sc-fzoJus eRyPze"
                         >
                           <div
                             className="sc-fzoKki xmNdG"
@@ -2774,7 +2778,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       className="sc-fznLPX jTcEWk"
                     >
                       <div
-                        className="sc-fzoJus fQhREJ"
+                        className="sc-fzoVTD gQedNL"
                       >
                         <svg
                           style={
@@ -2846,14 +2850,14 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzokvW lHjki"
+                          className="sc-fzqzlV QRJZO"
                         >
                           <div
-                            className="sc-fzqzlV dfeAQC"
+                            className="sc-fzqLLg ciHWvF"
                           />
                           3 Sets
                           <div
-                            className="sc-fzqzlV dfeAQC"
+                            className="sc-fzqLLg ciHWvF"
                           >
                             <div
                               className="sc-fzolEj bBhqcC"
@@ -2923,7 +2927,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzoVTD iTRLBY"
+                              className="sc-fzpisO lNqhg"
                             >
                               <div>
                                 <div
@@ -2948,7 +2952,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fzpisO iwDars"
+                                className="sc-fznyYp jeeHWn"
                               >
                                 <div
                                   style={
@@ -3019,7 +3023,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD gUlgVl"
+                                        className="sc-fzowVh iURINb"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -3181,7 +3185,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD gUlgVl"
+                                        className="sc-fzowVh iURINb"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -3343,7 +3347,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqAui eqjECk"
+                                        className="sc-fzqMdD jyIARU"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -3736,7 +3740,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznyYp kElEBK"
+                                className="sc-fznLxA fuLtKL"
                               >
                                 <svg
                                   id="remove-blocks.0.elements.4.value.0"
@@ -3773,7 +3777,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzoVTD iTRLBY"
+                              className="sc-fzpisO lNqhg"
                             >
                               <div>
                                 <div
@@ -3798,7 +3802,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fzpisO iwDars"
+                                className="sc-fznyYp jeeHWn"
                               >
                                 <div
                                   style={
@@ -3869,7 +3873,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD gUlgVl"
+                                        className="sc-fzowVh iURINb"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -4031,7 +4035,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD gUlgVl"
+                                        className="sc-fzowVh iURINb"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -4193,7 +4197,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqAui eqjECk"
+                                        className="sc-fzqMdD jyIARU"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -4586,7 +4590,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznyYp kElEBK"
+                                className="sc-fznLxA fuLtKL"
                               >
                                 <svg
                                   id="remove-blocks.0.elements.4.value.1"
@@ -4623,7 +4627,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzoVTD iTRLBY"
+                              className="sc-fzpisO lNqhg"
                             >
                               <div>
                                 <div
@@ -4648,7 +4652,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fzpisO iwDars"
+                                className="sc-fznyYp jeeHWn"
                               >
                                 <div
                                   style={
@@ -4719,7 +4723,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD gUlgVl"
+                                        className="sc-fzowVh iURINb"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -4881,7 +4885,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD gUlgVl"
+                                        className="sc-fzowVh iURINb"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -5043,7 +5047,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqAui eqjECk"
+                                        className="sc-fzqMdD jyIARU"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -5436,7 +5440,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznyYp kElEBK"
+                                className="sc-fznLxA fuLtKL"
                               >
                                 <svg
                                   id="remove-blocks.0.elements.4.value.2"

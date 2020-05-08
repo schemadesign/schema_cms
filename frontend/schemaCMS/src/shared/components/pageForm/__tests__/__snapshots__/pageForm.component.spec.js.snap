@@ -625,14 +625,14 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoYHE aJutI"
+    className="sc-fzpkqZ caykUD"
   >
     <div
-      className="sc-fzpkqZ enddwD"
+      className="sc-fznAgC LTwmU"
     />
     1 Block
     <div
-      className="sc-fzpkqZ enddwD"
+      className="sc-fznAgC LTwmU"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -943,7 +943,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -1015,7 +1015,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznzOf kpsyvs"
+                      className="sc-fznMnq kqJPrZ"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -1137,7 +1137,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -1209,193 +1209,197 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznJRM dGOQde"
-                      onClick={[Function]}
+                      className="sc-fzpkJw cBLWQJ"
                     >
-                      <input
-                        id="blocks.0.elements.1.value"
-                        name="blocks.0.elements.1.value"
-                        type="hidden"
-                        value="http://domain.com/blog"
-                      />
                       <div
-                        style={
-                          Object {
-                            "color": "#FFF",
-                            "display": "flex",
-                            "width": "100%",
-                          }
-                        }
+                        className="sc-fznJRM lfNtYk"
+                        onClick={[Function]}
                       >
+                        <input
+                          id="blocks.0.elements.1.value"
+                          name="blocks.0.elements.1.value"
+                          type="hidden"
+                          value="http://domain.com/blog"
+                        />
                         <div
                           style={
                             Object {
-                              "cursor": "pointer",
+                              "color": "#FFF",
                               "display": "flex",
-                              "position": "relative",
                               "width": "100%",
                             }
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
-                                "backgroundColor": "#71737e",
                                 "cursor": "pointer",
                                 "display": "flex",
-                                "padding": "20px 10px",
+                                "position": "relative",
                                 "width": "100%",
                               }
                             }
                           >
                             <div
-                              style={
-                                Object {
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              Select a page
-                            </div>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "WebkitOverflowScrolling": "touch",
-                                "backgroundColor": "#1d1d20",
-                                "display": "none",
-                                "flexDirection": "column",
-                                "left": "0",
-                                "maxHeight": "184px",
-                                "overflowY": "hidden",
-                                "position": "absolute",
-                                "top": "calc(100% + 5px)",
-                                "width": "100%",
-                                "zIndex": 2,
-                              }
-                            }
-                          >
-                            <div
-                              id="select-item-0"
                               onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
                               style={
                                 Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "1px solid  #2F2F36",
-                                  "color": "#71737e",
+                                  "backgroundColor": "#71737e",
                                   "cursor": "pointer",
-                                  "overflow": "hidden",
+                                  "display": "flex",
                                   "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
+                                  "width": "100%",
                                 }
                               }
                             >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                Blog
+                                Select a page
                               </div>
                             </div>
                             <div
-                              id="select-item-1"
-                              onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
                               style={
                                 Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "none",
-                                  "color": "#71737e",
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
+                                  "WebkitOverflowScrolling": "touch",
+                                  "backgroundColor": "#1d1d20",
+                                  "display": "none",
+                                  "flexDirection": "column",
+                                  "left": "0",
+                                  "maxHeight": "184px",
+                                  "overflowY": "hidden",
+                                  "position": "absolute",
+                                  "top": "calc(100% + 5px)",
+                                  "width": "100%",
+                                  "zIndex": 2,
                                 }
                               }
                             >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                id="select-item-0"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "1px solid  #2F2F36",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                news   &gt;   Article 2
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  Blog
+                                </div>
                               </div>
-                            </div>
-                            <div
-                              id="select-item-2"
-                              onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
-                              style={
-                                Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "none",
-                                  "color": "#71737e",
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                id="select-item-1"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "none",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                News
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  news   &gt;   Article 2
+                                </div>
                               </div>
-                            </div>
-                            <div
-                              id="select-item-3"
-                              onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
-                              style={
-                                Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "none",
-                                  "color": "#71737e",
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                id="select-item-2"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "none",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                news   &gt;   Article 1
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  News
+                                </div>
+                              </div>
+                              <div
+                                id="select-item-3"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "none",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  news   &gt;   Article 1
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        className="sc-fznWqX jgatHo"
-                      >
-                        <svg
-                          style={
-                            Object {
-                              "fill": "#FFF",
-                              "height": "30px",
-                              "width": "30px",
-                            }
-                          }
-                          viewBox="0 0 30 30"
+                        <div
+                          className="sc-fznWqX PPUiM"
                         >
-                          <path
-                            d="M15.117 18L9 12h12z"
-                            fillRule="evenodd"
-                          />
-                        </svg>
+                          <svg
+                            style={
+                              Object {
+                                "fill": "#FFF",
+                                "height": "30px",
+                                "width": "30px",
+                              }
+                            }
+                            viewBox="0 0 30 30"
+                          >
+                            <path
+                              d="M15.117 18L9 12h12z"
+                              fillRule="evenodd"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1430,7 +1434,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -1502,7 +1506,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkJw xfjUO"
+                      className="sc-fznzOf dnnQwZ"
                     >
                       <div
                         className="react-mde react-mde-tabbed-layout"
@@ -1922,7 +1926,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -1994,7 +1998,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznMnq kqJPrZ"
+                      className="sc-fzoant ceMild"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -2228,7 +2232,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -2300,14 +2304,14 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYHE aJutI"
+                      className="sc-fzpkqZ caykUD"
                     >
                       <div
-                        className="sc-fzpkqZ enddwD"
+                        className="sc-fznAgC LTwmU"
                       />
                       3 Sets
                       <div
-                        className="sc-fzpkqZ enddwD"
+                        className="sc-fznAgC LTwmU"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
@@ -2377,7 +2381,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -2402,7 +2406,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqMAW dGusDL"
                           >
                             <div
                               style={
@@ -2473,7 +2477,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -2635,7 +2639,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -2797,7 +2801,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fznzOf dnnQwZ"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -3190,7 +3194,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.4.value.0"
@@ -3227,7 +3231,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -3252,7 +3256,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqMAW dGusDL"
                           >
                             <div
                               style={
@@ -3323,7 +3327,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -3485,7 +3489,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -3647,7 +3651,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fznzOf dnnQwZ"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -4040,7 +4044,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.4.value.1"
@@ -4077,7 +4081,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -4102,7 +4106,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqMAW dGusDL"
                           >
                             <div
                               style={
@@ -4173,7 +4177,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -4335,7 +4339,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -4497,7 +4501,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fznzOf dnnQwZ"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -4890,7 +4894,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.4.value.2"
@@ -5656,14 +5660,14 @@ exports[`PageForm: Component should render with blocked template 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoYHE aJutI"
+    className="sc-fzpkqZ caykUD"
   >
     <div
-      className="sc-fzpkqZ enddwD"
+      className="sc-fznAgC LTwmU"
     />
     1 Block
     <div
-      className="sc-fzpkqZ enddwD"
+      className="sc-fznAgC LTwmU"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -5974,7 +5978,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -6046,7 +6050,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznzOf kpsyvs"
+                      className="sc-fznMnq kqJPrZ"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -6168,7 +6172,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -6240,193 +6244,197 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznJRM dGOQde"
-                      onClick={[Function]}
+                      className="sc-fzpkJw cBLWQJ"
                     >
-                      <input
-                        id="blocks.0.elements.1.value"
-                        name="blocks.0.elements.1.value"
-                        type="hidden"
-                        value="http://domain.com/blog"
-                      />
                       <div
-                        style={
-                          Object {
-                            "color": "#FFF",
-                            "display": "flex",
-                            "width": "100%",
-                          }
-                        }
+                        className="sc-fznJRM lfNtYk"
+                        onClick={[Function]}
                       >
+                        <input
+                          id="blocks.0.elements.1.value"
+                          name="blocks.0.elements.1.value"
+                          type="hidden"
+                          value="http://domain.com/blog"
+                        />
                         <div
                           style={
                             Object {
-                              "cursor": "pointer",
+                              "color": "#FFF",
                               "display": "flex",
-                              "position": "relative",
                               "width": "100%",
                             }
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
-                                "backgroundColor": "#71737e",
                                 "cursor": "pointer",
                                 "display": "flex",
-                                "padding": "20px 10px",
+                                "position": "relative",
                                 "width": "100%",
                               }
                             }
                           >
                             <div
-                              style={
-                                Object {
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              Select a page
-                            </div>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "WebkitOverflowScrolling": "touch",
-                                "backgroundColor": "#1d1d20",
-                                "display": "none",
-                                "flexDirection": "column",
-                                "left": "0",
-                                "maxHeight": "184px",
-                                "overflowY": "hidden",
-                                "position": "absolute",
-                                "top": "calc(100% + 5px)",
-                                "width": "100%",
-                                "zIndex": 2,
-                              }
-                            }
-                          >
-                            <div
-                              id="select-item-0"
                               onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
                               style={
                                 Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "1px solid  #2F2F36",
-                                  "color": "#71737e",
+                                  "backgroundColor": "#71737e",
                                   "cursor": "pointer",
-                                  "overflow": "hidden",
+                                  "display": "flex",
                                   "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
+                                  "width": "100%",
                                 }
                               }
                             >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                Blog
+                                Select a page
                               </div>
                             </div>
                             <div
-                              id="select-item-1"
-                              onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
                               style={
                                 Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "none",
-                                  "color": "#71737e",
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
+                                  "WebkitOverflowScrolling": "touch",
+                                  "backgroundColor": "#1d1d20",
+                                  "display": "none",
+                                  "flexDirection": "column",
+                                  "left": "0",
+                                  "maxHeight": "184px",
+                                  "overflowY": "hidden",
+                                  "position": "absolute",
+                                  "top": "calc(100% + 5px)",
+                                  "width": "100%",
+                                  "zIndex": 2,
                                 }
                               }
                             >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                id="select-item-0"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "1px solid  #2F2F36",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                news   &gt;   Article 2
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  Blog
+                                </div>
                               </div>
-                            </div>
-                            <div
-                              id="select-item-2"
-                              onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
-                              style={
-                                Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "none",
-                                  "color": "#71737e",
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                id="select-item-1"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "none",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                News
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  news   &gt;   Article 2
+                                </div>
                               </div>
-                            </div>
-                            <div
-                              id="select-item-3"
-                              onClick={[Function]}
-                              onMouseOut={[Function]}
-                              onMouseOver={[Function]}
-                              style={
-                                Object {
-                                  "border": "1px solid  #2F2F36",
-                                  "borderTop": "none",
-                                  "color": "#71737e",
-                                  "cursor": "pointer",
-                                  "overflow": "hidden",
-                                  "padding": "20px 10px",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
                               <div
-                                className="sc-fzoYkl nxNzi"
+                                id="select-item-2"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "none",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
                               >
-                                news   &gt;   Article 1
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  News
+                                </div>
+                              </div>
+                              <div
+                                id="select-item-3"
+                                onClick={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                style={
+                                  Object {
+                                    "border": "1px solid  #2F2F36",
+                                    "borderTop": "none",
+                                    "color": "#71737e",
+                                    "cursor": "pointer",
+                                    "overflow": "hidden",
+                                    "padding": "20px 10px",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                <div
+                                  className="sc-fzoYkl nxNzi"
+                                >
+                                  news   &gt;   Article 1
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        className="sc-fznWqX jgatHo"
-                      >
-                        <svg
-                          style={
-                            Object {
-                              "fill": "#FFF",
-                              "height": "30px",
-                              "width": "30px",
-                            }
-                          }
-                          viewBox="0 0 30 30"
+                        <div
+                          className="sc-fznWqX PPUiM"
                         >
-                          <path
-                            d="M15.117 18L9 12h12z"
-                            fillRule="evenodd"
-                          />
-                        </svg>
+                          <svg
+                            style={
+                              Object {
+                                "fill": "#FFF",
+                                "height": "30px",
+                                "width": "30px",
+                              }
+                            }
+                            viewBox="0 0 30 30"
+                          >
+                            <path
+                              d="M15.117 18L9 12h12z"
+                              fillRule="evenodd"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -6461,7 +6469,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -6533,7 +6541,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkJw xfjUO"
+                      className="sc-fznzOf dnnQwZ"
                     >
                       <div
                         className="react-mde react-mde-tabbed-layout"
@@ -6953,7 +6961,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -7025,7 +7033,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznMnq kqJPrZ"
+                      className="sc-fzoant ceMild"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -7259,7 +7267,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                   className="sc-fzoxKX bsUeIC"
                 >
                   <div
-                    className="sc-fzoant fVmoZG"
+                    className="sc-fzomME fSZpVM"
                   >
                     <svg
                       style={
@@ -7331,14 +7339,14 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYHE aJutI"
+                      className="sc-fzpkqZ caykUD"
                     >
                       <div
-                        className="sc-fzpkqZ enddwD"
+                        className="sc-fznAgC LTwmU"
                       />
                       3 Sets
                       <div
-                        className="sc-fzpkqZ enddwD"
+                        className="sc-fznAgC LTwmU"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
@@ -7408,7 +7416,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -7433,7 +7441,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqMAW dGusDL"
                           >
                             <div
                               style={
@@ -7504,7 +7512,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -7666,7 +7674,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -7828,7 +7836,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fznzOf dnnQwZ"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -8221,7 +8229,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.4.value.0"
@@ -8258,7 +8266,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -8283,7 +8291,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqMAW dGusDL"
                           >
                             <div
                               style={
@@ -8354,7 +8362,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -8516,7 +8524,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -8678,7 +8686,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fznzOf dnnQwZ"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -9071,7 +9079,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.4.value.1"
@@ -9108,7 +9116,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -9133,7 +9141,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqMAW dGusDL"
                           >
                             <div
                               style={
@@ -9204,7 +9212,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -9366,7 +9374,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fznzOf kpsyvs"
+                                    className="sc-fznMnq kqJPrZ"
                                   >
                                     <div
                                       className="sc-fzokOt hhpuAT"
@@ -9528,7 +9536,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fznzOf dnnQwZ"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -9921,7 +9929,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.4.value.2"
