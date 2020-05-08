@@ -3,11 +3,11 @@ import { shallow } from 'enzyme';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 
-import { ProjectTags } from '../projectTags.component';
-import { defaultProps, noTagsProps } from '../projectTags.stories';
+import { TagCategories } from '../tagCategories.component';
+import { defaultProps, noTagsProps } from '../tagCategories.stories';
 
 describe('ProjectTags: Component', () => {
-  const component = props => <ProjectTags {...defaultProps} {...props} />;
+  const component = props => <TagCategories {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

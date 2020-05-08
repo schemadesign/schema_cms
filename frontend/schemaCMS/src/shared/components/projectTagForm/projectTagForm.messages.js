@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import { TAG_NAME, TAG_TAGS } from '../../../modules/projectTag/projectTag.constants';
+import { TAG_NAME, TAG_TAGS } from '../../../modules/tagCategory/tagCategory.constants';
 
 export default defineMessages({
   [TAG_NAME]: {

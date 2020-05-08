@@ -6,7 +6,7 @@ import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './projectTagForm.messages';
-import { TAG_NAME, TAG_REMOVE_TAGS, TAG_TAGS } from '../../../modules/projectTag/projectTag.constants';
+import { TAG_NAME, TAG_REMOVE_TAGS, TAG_TAGS } from '../../../modules/tagCategory/tagCategory.constants';
 import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './projectTagForm.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 

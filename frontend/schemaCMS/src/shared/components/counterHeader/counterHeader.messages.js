@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'shared.components.counterHeader.counter',
     defaultMessage: '{count, plural,one {# {copy}} other {# {copy}s}}',
   },
+  customCounter: {
+    id: 'shared.components.counterHeader.customCounter',
+    defaultMessage: '{count, plural,one {# {copy}} other {# {customPlural}}}',
+  },
 });

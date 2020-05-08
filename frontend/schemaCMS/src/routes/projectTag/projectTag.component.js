@@ -13,7 +13,7 @@ import reportError from '../../shared/utils/reportError';
 import { ProjectTagForm } from '../../shared/components/projectTagForm';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
-import { TAGS_PAGE } from '../../modules/project/project.constants';
+import { TAG_CATEGORIES_PAGE } from '../../modules/project/project.constants';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 import { Link } from '../../theme/typography';
 
@@ -27,6 +27,7 @@ export class ProjectTag extends PureComponent {
     fetchTag: PropTypes.func.isRequired,
     removeTag: PropTypes.func.isRequired,
     tag: PropTypes.object.isRequired,
+    project: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         tagId: PropTypes.string.isRequired,
@@ -63,7 +64,7 @@ export class ProjectTag extends PureComponent {
   });
 
   handleBack = () =>
-    this.props.history.push(`/project/${pathOr('', ['tag', 'project', 'id'], this.props)}/${TAGS_PAGE}`);
+    this.props.history.push(`/project/${pathOr('', ['tag', 'project', 'id'], this.props)}/${TAG_CATEGORIES_PAGE}`);
 
   handleRemoveList = () => this.setState({ confirmationModalOpen: true });
 

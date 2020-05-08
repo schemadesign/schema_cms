@@ -8,7 +8,7 @@ import { compose, difference, pick } from 'ramda';
 import { withFormik } from 'formik';
 
 import { ProjectTag } from './projectTag.component';
-import { ProjectTagRoutines, selectTag } from '../../modules/projectTag';
+import { TagCategoryRoutines, selectTagCategory } from '../../modules/tagCategory';
 import { errorMessageParser } from '../../shared/utils/helpers';
 import messages from './projectTag.messages';
 import {
@@ -18,21 +18,23 @@ import {
   TAG_REMOVE_TAGS,
   TAG_TAGS,
   TAGS_SCHEMA,
-} from '../../modules/projectTag/projectTag.constants';
+} from '../../modules/tagCategory/tagCategory.constants';
 import reportError from '../../shared/utils/reportError';
 import { selectUserRole } from '../../modules/userProfile';
+import { selectProject } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
-  tag: selectTag,
+  tag: selectTagCategory,
   userRole: selectUserRole,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      fetchTag: promisifyRoutine(ProjectTagRoutines.fetchTag),
-      updateTag: promisifyRoutine(ProjectTagRoutines.updateTag),
-      removeTag: promisifyRoutine(ProjectTagRoutines.removeTag),
+      fetchTag: promisifyRoutine(TagCategoryRoutines.fetchTagCategory),
+      updateTag: promisifyRoutine(TagCategoryRoutines.updateTagCategory),
+      removeTag: promisifyRoutine(TagCategoryRoutines.removeTagCategory),
     },
     dispatch
   );

@@ -9,7 +9,7 @@ import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers'
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { ProjectTagForm } from '../../../shared/components/projectTagForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { TAGS_PAGE } from '../../../modules/project/project.constants';
+import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
 import { getProjectMenuOptions } from '../project.constants';
 
 export class CreateProjectTag extends PureComponent {
@@ -32,7 +32,8 @@ export class CreateProjectTag extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  handleBack = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/${TAGS_PAGE}`);
+  handleBack = () =>
+    this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/${TAG_CATEGORIES_PAGE}`);
 
   render() {
     const { project, userRole, isSubmitting, isValid, dirty, handleSubmit } = this.props;

@@ -8,7 +8,7 @@ import { compose } from 'ramda';
 import { withFormik } from 'formik';
 
 import { CreateProjectTag } from './createProjectTag.component';
-import { ProjectTagRoutines } from '../../../modules/projectTag';
+import { TagCategoryRoutines } from '../../../modules/tagCategory';
 import { selectUserRole } from '../../../modules/userProfile';
 import {
   INITIAL_VALUES,
@@ -16,7 +16,7 @@ import {
   TAG_NAME,
   TAG_TAGS,
   TAGS_SCHEMA,
-} from '../../../modules/projectTag/projectTag.constants';
+} from '../../../modules/tagCategory/tagCategory.constants';
 import reportError from '../../../shared/utils/reportError';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from './createProjectTag.messages';
@@ -30,7 +30,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      createTag: promisifyRoutine(ProjectTagRoutines.createTag),
+      createTag: promisifyRoutine(TagCategoryRoutines.createTagCategory),
     },
     dispatch
   );

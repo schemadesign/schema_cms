@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ProjectTags } from './projectTags.component';
+import { TagCategories } from './tagCategories.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
@@ -41,5 +41,5 @@ export const noTagsProps = {
 
 storiesOf('Project|ProjectTags', module)
   .addDecorator(withTheme())
-  .add('No Data', () => <ProjectTags {...noTagsProps} />)
-  .add('Default', () => <ProjectTags {...defaultProps} />);
+  .add('No Data', () => <TagCategories {...noTagsProps} />)
+  .add('Default', () => <TagCategories {...defaultProps} />);

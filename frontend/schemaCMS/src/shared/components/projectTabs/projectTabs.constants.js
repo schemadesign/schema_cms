@@ -10,4 +10,4 @@ export const STATES = 'state';
 
 export const TEMPLATES = 'templates';
 
-export const TAGS = 'tags';
+export const TAG_CATEGORIES = 'tag-categories';

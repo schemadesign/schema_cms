@@ -6,22 +6,21 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
-import { ProjectTags } from './projectTags.component';
+import { TagCategories } from './tagCategories.component';
 import { selectUserRole } from '../../../modules/userProfile';
-import { ProjectTagRoutines, selectTags } from '../../../modules/projectTag';
+import { TagCategoryRoutines, selectTagCategories } from '../../../modules/tagCategory';
 import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   project: selectProject,
-  tags: selectTags,
+  tagCategories: selectTagCategories,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchTags: promisifyRoutine(ProjectTagRoutines.fetchList),
-      setTags: promisifyRoutine(ProjectTagRoutines.setTags),
+      fetchTagCategories: promisifyRoutine(TagCategoryRoutines.fetchTagCategories),
     },
     dispatch
   ),
@@ -35,4 +34,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(ProjectTags);
+)(TagCategories);

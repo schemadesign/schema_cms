@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Tabs } from '../tabs';
 import { Container } from './projectTabs.styles';
-import { CONTENT, SETTINGS, SOURCES, USERS, STATES, TEMPLATES, TAGS } from './projectTabs.constants';
+import { CONTENT, SETTINGS, SOURCES, USERS, STATES, TEMPLATES, TAG_CATEGORIES } from './projectTabs.constants';
 import messages from './projectTabs.messages';
 import { UserContext } from '../../utils/userProvider';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
@@ -17,7 +17,7 @@ export const ProjectTabs = ({ active, url }) => {
       { id: SETTINGS, to: url, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
       { id: SOURCES, to: `${url}/datasource`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
       { id: STATES, to: `${url}/state`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
-      { id: TAGS, to: `${url}/tags`, allowedRoles: [ROLES.ADMIN] },
+      { id: TAG_CATEGORIES, to: `${url}/tag-categories`, allowedRoles: [ROLES.ADMIN] },
       { id: CONTENT, to: `${url}/content`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
       { id: TEMPLATES, to: `${url}/templates`, allowedRoles: [ROLES.ADMIN] },
       { id: USERS, to: `${url}/user`, allowedRoles: [ROLES.ADMIN, ROLES.EDITOR] },
