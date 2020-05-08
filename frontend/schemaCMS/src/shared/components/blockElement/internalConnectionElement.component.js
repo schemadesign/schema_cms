@@ -4,7 +4,12 @@ import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
 
 import messages from './blockElement.messages';
-import { getCustomSelectedWrapperStyles, SelectLabel } from './blockElement.styles';
+import {
+  getCustomSelectedWrapperStyles,
+  SelectLabel,
+  InternalConnectionWrapper,
+  customSelectStyles,
+} from './blockElement.styles';
 import { getValuePath } from '../../utils/helpers';
 import { Select } from '../form/select';
 import { INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
@@ -17,15 +22,18 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
   const options = pagerUrlOptions.map(({ value, label }) => ({ value, label: <SelectLabel>{label}</SelectLabel> }));
 
   return (
-    <Select
-      name={name}
-      value={element.value}
-      options={options}
-      onSelect={handleSelectPageUrl}
-      placeholder={intl.formatMessage(messages[`${INTERNAL_CONNECTION_TYPE}Placeholder`])}
-      customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
-      centerIcon
-    />
+    <InternalConnectionWrapper>
+      <Select
+        name={name}
+        value={element.value}
+        options={options}
+        onSelect={handleSelectPageUrl}
+        placeholder={intl.formatMessage(messages[`${INTERNAL_CONNECTION_TYPE}Placeholder`])}
+        customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
+        customStyles={customSelectStyles}
+        centerIcon
+      />
+    </InternalConnectionWrapper>
   );
 };
 
