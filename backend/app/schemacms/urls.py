@@ -17,6 +17,7 @@ urlpatterns = [
                 urls.path("", urls.include("schemacms.states.urls")),
                 urls.path("", urls.include("schemacms.users.urls")),
                 urls.path("", urls.include("schemacms.pages.urls")),
+                urls.path("", urls.include("schemacms.tags.urls")),
                 urls.path("", urls.include("rest_framework.urls", namespace="rest_framework")),
             ]
         ),

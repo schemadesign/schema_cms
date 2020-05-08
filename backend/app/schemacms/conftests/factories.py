@@ -5,6 +5,7 @@ from schemacms.datasources.tests import factories as ds_factories
 from schemacms.states.tests import factories as st_factories
 from schemacms.users.tests import factories as u_factories
 from schemacms.pages.tests import factories as pages_factories
+from schemacms.tags.tests import factories as tags_factories
 
 
 pytest_factoryboy.register(u_factories.UserFactory)
@@ -26,3 +27,5 @@ pytest_factoryboy.register(pages_factories.PageBlockFactory, "page_block")
 pytest_factoryboy.register(pages_factories.PageBlockElementFactory, "page_block_element")
 pytest_factoryboy.register(pages_factories.SectionFactory, "section")
 pytest_factoryboy.register(pages_factories.PageFactory, "page")
+pytest_factoryboy.register(tags_factories.TagFactory, "tag_v2")
+pytest_factoryboy.register(tags_factories.TagCategoryFactory, "tag_category")
