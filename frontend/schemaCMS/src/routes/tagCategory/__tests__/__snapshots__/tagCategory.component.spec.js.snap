@@ -120,7 +120,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
         onClick={[Function]}
       >
         <FormattedMessage
-          defaultMessage="Remove list"
+          defaultMessage="Remove Tag Category"
           id="tagCategory.subTitle"
           values={Object {}}
         />
@@ -345,7 +345,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
         onClick={[Function]}
       >
         <FormattedMessage
-          defaultMessage="Remove list"
+          defaultMessage="Remove Tag Category"
           id="tagCategory.subTitle"
           values={Object {}}
         />

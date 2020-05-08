@@ -14,11 +14,15 @@ export const defaultProps = {
     {
       key: 'key 1',
       id: 1,
+      createdBy: 'createdBy',
+      created: '2020-02-21T08:34:24+0000',
       tags: [],
     },
     {
       key: 'key 2',
       id: 2,
+      createdBy: 'createdBy',
+      created: '2020-02-21T08:34:24+0000',
       tags: [{}],
     },
   ],

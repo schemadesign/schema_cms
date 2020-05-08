@@ -16,7 +16,7 @@ export default defineMessages({
   },
   deleteList: {
     id: 'tagCategory.subTitle',
-    defaultMessage: 'Remove list',
+    defaultMessage: 'Remove Tag Category',
   },
   saveTagCategory: {
     id: 'tagCategory.saveTagCategory',

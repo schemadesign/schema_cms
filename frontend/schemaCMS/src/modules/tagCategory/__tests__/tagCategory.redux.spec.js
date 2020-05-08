@@ -19,7 +19,7 @@ describe('Tag Category: redux', () => {
     });
   });
 
-  describe('when TAG/FETCH_LIST action is received', () => {
+  describe('when TAG_CATEGORY/FETCH_TAG_CATEGORIES action is received', () => {
     it('should set tags', () => {
       const tagCategories = [{ data: 'data' }];
 
@@ -28,7 +28,7 @@ describe('Tag Category: redux', () => {
     });
   });
 
-  describe('when TAG/FETCH_TAG action is received', () => {
+  describe('when TAG_CATEGORY/FETCH_TAG_CATEGORY action is received', () => {
     it('should set tags', () => {
       const tagCategory = { data: 'data' };
 

@@ -21,6 +21,6 @@ export default defineMessages({
   },
   keyTagKeyNotUniqueError: {
     id: 'shared.components.tagCategoryForm.keyTagKeyNotUniqueError',
-    defaultMessage: 'A tag with this name already exists in project.',
+    defaultMessage: 'A tag category with this name already exists in project.',
   },
 });

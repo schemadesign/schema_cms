@@ -205,8 +205,8 @@ exports[`TagCategories: Component should render correctly 1`] = `
           <CardHeader
             list={
               Array [
-                "NaN years ago",
-                undefined,
+                "in 3 months",
+                "createdBy",
               ]
             }
           />
@@ -234,8 +234,8 @@ exports[`TagCategories: Component should render correctly 1`] = `
           <CardHeader
             list={
               Array [
-                "NaN years ago",
-                undefined,
+                "in 3 months",
+                "createdBy",
               ]
             }
           />
@@ -474,8 +474,8 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
           <CardHeader
             list={
               Array [
-                "NaN years ago",
-                undefined,
+                "in 3 months",
+                "createdBy",
               ]
             }
           />
@@ -503,8 +503,8 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
           <CardHeader
             list={
               Array [
-                "NaN years ago",
-                undefined,
+                "in 3 months",
+                "createdBy",
               ]
             }
           />
@@ -743,8 +743,8 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
           <CardHeader
             list={
               Array [
-                "NaN years ago",
-                undefined,
+                "in 3 months",
+                "createdBy",
               ]
             }
           />
@@ -772,8 +772,8 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
           <CardHeader
             list={
               Array [
-                "NaN years ago",
-                undefined,
+                "in 3 months",
+                "createdBy",
               ]
             }
           />

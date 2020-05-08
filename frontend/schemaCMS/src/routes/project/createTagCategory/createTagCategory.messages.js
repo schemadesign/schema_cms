@@ -20,6 +20,6 @@ export default defineMessages({
   },
   nameTagsListNameNotUniqueError: {
     id: 'project.createTagCategory.nameTagsListNameNotUniqueError',
-    defaultMessage: 'A tag with this name already exists in project.',
+    defaultMessage: 'A tag category with this name already exists in project.',
   },
 });
