@@ -162,6 +162,48 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
       />
     }
   />
+  <ProjectBreadcrumbs
+    items={
+      Array [
+        Object {
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "h3": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+          "path": "/project/1/tag-categories",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": <FormattedMessage
+            defaultMessage="Create"
+            id="shared.components.projectBreadcrumbs.createMessage"
+            values={Object {}}
+          />,
+          "path": "/project/1/tag-categories/create",
+          "span": <FormattedMessage
+            defaultMessage="Template"
+            id="shared.components.projectBreadcrumbs.template"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+  />
   <TagCategoryForm
     createTagCategory={[Function]}
     dirty={false}

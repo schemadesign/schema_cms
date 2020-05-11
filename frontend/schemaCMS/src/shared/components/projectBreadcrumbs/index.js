@@ -14,4 +14,5 @@ export {
   pageMessage,
   contentMessage,
   pageBlockMessage,
+  tagsMessage,
 } from './projectBreadcrumbs.component';

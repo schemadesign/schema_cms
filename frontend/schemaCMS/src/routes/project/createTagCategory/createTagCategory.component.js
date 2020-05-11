@@ -11,6 +11,33 @@ import { TagCategoryForm } from '../../../shared/components/tagCategoryForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
 import { getProjectMenuOptions } from '../project.constants';
+import {
+  createMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  tabMessage,
+  tagsMessage,
+  templateMessage,
+} from '../../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = project => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/tag-categories`,
+    span: tabMessage,
+    h3: tagsMessage,
+  },
+  {
+    path: `/project/${project.id}/tag-categories/create`,
+    active: true,
+    span: templateMessage,
+    h3: createMessage,
+  },
+];
 
 export class CreateTagCategory extends PureComponent {
   static propTypes = {
@@ -48,6 +75,7 @@ export class CreateTagCategory extends PureComponent {
           options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
+        <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
         <TagCategoryForm {...this.props} />
         <NavigationContainer fixed>
           <BackButton onClick={this.handleBack} type="button">

@@ -35,6 +35,44 @@ exports[`TagCategory: Component should render correctly 1`] = `
       />
     }
   />
+  <ProjectBreadcrumbs
+    items={
+      Array [
+        Object {
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "h3": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+          "path": "/project/1/tag-categories",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": "name",
+          "path": "/tag-category/2",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+  />
   <LoadingWrapper
     error={null}
     loading={false}
@@ -259,6 +297,44 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
         id="tagCategory.title"
         values={Object {}}
       />
+    }
+  />
+  <ProjectBreadcrumbs
+    items={
+      Array [
+        Object {
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "h3": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+          "path": "/project/1/tag-categories",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": "name",
+          "path": "/tag-category/2",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+        },
+      ]
     }
   />
   <LoadingWrapper
