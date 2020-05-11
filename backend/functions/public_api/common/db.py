@@ -487,7 +487,7 @@ def get_db_settings():
         password=db_conn["password"],
         host=rds_proxy if rds_proxy else db_conn["host"],
         port=db_conn["port"],
-        connect_timeout=db_conn.get("connect_timeout", 5),
+        connect_timeout=db_conn.get("connect_timeout", 30),
     )
 
 
