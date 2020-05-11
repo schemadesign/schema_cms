@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 import 'react-mde/lib/styles/css/react-mde-all.css';
 import { FormattedMessage } from 'react-intl';
 import { useTheme } from 'styled-components';
+import { Icons } from 'schemaUI';
 
 import { getValuePath } from '../../utils/helpers';
-import { getCustomInputStyles, ObservableHQContainer, Label } from './blockElement.styles';
+import {
+  getCustomInputStyles,
+  ObservableHQContainer,
+  Label,
+  editIconStyles,
+  InputContainer,
+} from './blockElement.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './blockElement.messages';
 import {
@@ -14,6 +21,8 @@ import {
   OBSERVABLE_PARAMS,
   OBSERVABLE_USER,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
+
+const { EditIcon } = Icons;
 
 export const ObservableHQElement = ({ element, blockPath, index, handleChange, ...restFormikProps }) => {
   const theme = useTheme();
@@ -31,51 +40,63 @@ export const ObservableHQElement = ({ element, blockPath, index, handleChange, .
       <Label>
         <FormattedMessage {...messages[`${OBSERVABLE_USER}Placeholder`]} />
       </Label>
-      <TextInput
-        name={observableUserName}
-        value={element.value[OBSERVABLE_USER]}
-        onChange={handleChange}
-        customInputStyles={getCustomInputStyles(theme)}
-        fullWidth
-        centerIcon
-        {...restFormikProps}
-      />
+      <InputContainer>
+        <TextInput
+          name={observableUserName}
+          value={element.value[OBSERVABLE_USER]}
+          onChange={handleChange}
+          customInputStyles={getCustomInputStyles(theme)}
+          fullWidth
+          centerIcon
+          {...restFormikProps}
+        />
+        <EditIcon customStyles={editIconStyles} />
+      </InputContainer>
       <Label>
         <FormattedMessage {...messages[`${OBSERVABLE_NOTEBOOK}Placeholder`]} />
       </Label>
-      <TextInput
-        name={observableNotebookName}
-        value={element.value[OBSERVABLE_NOTEBOOK]}
-        onChange={handleChange}
-        customInputStyles={getCustomInputStyles(theme)}
-        fullWidth
-        centerIcon
-        {...restFormikProps}
-      />
+      <InputContainer>
+        <TextInput
+          name={observableNotebookName}
+          value={element.value[OBSERVABLE_NOTEBOOK]}
+          onChange={handleChange}
+          customInputStyles={getCustomInputStyles(theme)}
+          fullWidth
+          centerIcon
+          {...restFormikProps}
+        />
+        <EditIcon customStyles={editIconStyles} />
+      </InputContainer>
       <Label>
         <FormattedMessage {...messages[`${OBSERVABLE_CELL}Placeholder`]} />
       </Label>
-      <TextInput
-        name={observableCellName}
-        value={element.value[OBSERVABLE_CELL]}
-        onChange={handleChange}
-        customInputStyles={getCustomInputStyles(theme)}
-        fullWidth
-        centerIcon
-        {...restFormikProps}
-      />
+      <InputContainer>
+        <TextInput
+          name={observableCellName}
+          value={element.value[OBSERVABLE_CELL]}
+          onChange={handleChange}
+          customInputStyles={getCustomInputStyles(theme)}
+          fullWidth
+          centerIcon
+          {...restFormikProps}
+        />
+        <EditIcon customStyles={editIconStyles} />
+      </InputContainer>
       <Label>
         <FormattedMessage {...messages[`${OBSERVABLE_PARAMS}Placeholder`]} />
       </Label>
-      <TextInput
-        name={observableParamsName}
-        value={element.value[OBSERVABLE_PARAMS]}
-        onChange={handleChange}
-        customInputStyles={getCustomInputStyles(theme)}
-        fullWidth
-        centerIcon
-        {...restFormikProps}
-      />
+      <InputContainer>
+        <TextInput
+          name={observableParamsName}
+          value={element.value[OBSERVABLE_PARAMS]}
+          onChange={handleChange}
+          customInputStyles={getCustomInputStyles(theme)}
+          fullWidth
+          centerIcon
+          {...restFormikProps}
+        />
+        <EditIcon customStyles={editIconStyles} />
+      </InputContainer>
     </ObservableHQContainer>
   );
 };
