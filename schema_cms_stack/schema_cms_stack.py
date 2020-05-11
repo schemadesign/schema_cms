@@ -336,6 +336,7 @@ class PublicAPI(core.Stack):
             code=self.function_code,
             handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_8,
+            vpc=scope.base.vpc,
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "AWS_STORAGE_PAGES_BUCKET_NAME": scope.api.pages_bucket.bucket_name,
@@ -350,7 +351,7 @@ class PublicAPI(core.Stack):
                 ).secret_value.to_string(),
             },
             memory_size=512,
-            timeout=core.Duration.seconds(60),
+            timeout=core.Duration.seconds(180),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 
