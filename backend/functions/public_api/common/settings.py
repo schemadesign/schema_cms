@@ -37,4 +37,5 @@ def get_local_db():
     }
 
 
+RDS_PROXY_URL = os.getenv("RDS_PROXY_URL", None)
 DB_CONNECTION = os.getenv("DB_CONNECTION", json.dumps(get_local_db()))

@@ -18,6 +18,7 @@
         "django_host_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_HOST-DDD8rn",
         "lambda_auth_token": "arn:aws:secretsmanager:us-west-2:022528540894:secret:LAMBDA_AUTH_TOKEN-32yZOF",
         "django_root_password_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SECRET_PASSWORD-DMD9yK",
-        "db_connection_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:dbSecret8003E3A7-UAt4NS6lM69D-fk0Uoa"
+        "db_connection_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:dbSecret8003E3A7-UAt4NS6lM69D-fk0Uoa",
+        "rds_proxy_url_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:PUBLIC_API_RDS_PROXY_URL-rNcc2H"
     }
 }

@@ -68,7 +68,9 @@ class Project(BaseModel):
     def get_sections(self):
         return [
             section.as_dict()
-            for section in self.sections.select().where(Section.is_public == True, Section.deleted_at == None)
+            for section in self.sections.select().where(
+                Section.is_public == True, Section.deleted_at == None
+            )
         ]
 
 
@@ -144,15 +146,20 @@ class DataSource(BaseModel):
     def get_filters(self):
         return [
             filter.as_dict()
-            for filter in self.filters.select().where(Filter.is_active == True, Filter.deleted_at == None)
+            for filter in self.filters.select().where(
+                Filter.is_active == True, Filter.deleted_at == None
+            )
         ]
 
     def get_fields(self):
-        preview = services.get_s3_object(self.active_job.meta_data.get().preview)["Body"]
+        preview = services.get_s3_object(self.active_job.meta_data.get().preview)[
+            "Body"
+        ]
 
         fields = json.loads(preview.read())["fields"]
         data = {
-            str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
+            str(num): {"name": key, "type": value["dtype"]}
+            for num, (key, value) in enumerate(fields.items())
         }
 
         return data
@@ -194,7 +201,9 @@ class Section(BaseModel):
         pages = [
             page.as_dict()
             for page in self.pages.select().where(
-                Page.is_public == True, Page.is_template == False, Page.deleted_at == None,
+                Page.is_public == True,
+                Page.is_template == False,
+                Page.deleted_at == None,
             )
         ]
         return {"id": self.id, "name": self.name, "slug": self.slug, "pages": pages}
@@ -243,7 +252,10 @@ class Page(BaseModel):
         return data
 
     def get_blocks(self):
-        return [block.as_dict() for block in self.blocks.select().where(Block.deleted_at == None)]
+        return [
+            block.as_dict()
+            for block in self.blocks.select().where(Block.deleted_at == None)
+        ]
 
 
 class BlockTemplate(BaseModel):
@@ -341,7 +353,9 @@ class Element(BaseModel):
             return {
                 "file_name": self.get_image_data(self.image),
                 "image": "{}/{}/{}".format(
-                    services.s3.meta.endpoint_url, settings.AWS_STORAGE_PAGES_BUCKET_NAME, self.image,
+                    services.s3.meta.endpoint_url,
+                    settings.AWS_STORAGE_PAGES_BUCKET_NAME,
+                    self.image,
                 ),
             }
 
@@ -362,17 +376,17 @@ class Element(BaseModel):
     def get_custom_element_data(custom_element):
         elements = []
 
-        for element_set in custom_element.elements_sets.where(CustomElementSet.deleted_at == None).order_by(
-            CustomElementSet.order
-        ):
+        for element_set in custom_element.elements_sets.where(
+            CustomElementSet.deleted_at == None
+        ).order_by(CustomElementSet.order):
             data = {
                 "id": element_set.id,
                 "order": element_set.order,
                 "elements": [
                     element.as_dict()
-                    for element in element_set.elements.where(Element.deleted_at == None).order_by(
-                        Element.order
-                    )
+                    for element in element_set.elements.where(
+                        Element.deleted_at == None
+                    ).order_by(Element.order)
                 ],
             }
             elements.append(data)
@@ -457,19 +471,21 @@ class Element(BaseModel):
             return html_value
 
         if self.type == ElementType.CODE:
-            html_value = f"<div id='code-{self.id}' class='element code'>{self.code}</div>"
+            html_value = (
+                f"<div id='code-{self.id}' class='element code'>{self.code}</div>"
+            )
 
             return html_value
 
 
 def get_db_settings():
     db_conn = json.loads(settings.DB_CONNECTION)
-
+    rds_proxy = settings.RDS_PROXY_URL
     return dict(
         database=db_conn["dbname"],
         user=db_conn["username"],
         password=db_conn["password"],
-        host=db_conn["host"],
+        host=rds_proxy if rds_proxy else db_conn["host"],
         port=db_conn["port"],
         connect_timeout=db_conn.get("connect_timeout", 5),
     )
