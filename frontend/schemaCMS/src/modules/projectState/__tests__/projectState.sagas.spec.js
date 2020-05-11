@@ -6,6 +6,7 @@ import mockApi from '../../../shared/utils/mockApi';
 import { ProjectStateRoutines } from '../projectState.redux';
 import { watchProjectState } from '../projectState.sagas';
 import browserHistory from '../../../shared/utils/history';
+import { ProjectRoutines } from '../../project';
 
 describe('ProjectState: sagas', () => {
   const defaultState = Immutable({});
@@ -30,6 +31,7 @@ describe('ProjectState: sagas', () => {
   it('should put fetchOne.success action', async () => {
     const response = {
       results: {},
+      project: {},
     };
     const payload = {
       stateId: 1,
@@ -39,6 +41,7 @@ describe('ProjectState: sagas', () => {
 
     await expectSaga(watchProjectState)
       .withState(defaultState)
+      .put(ProjectRoutines.setProject.trigger(response.project))
       .put(ProjectStateRoutines.fetchOne.success(response.results))
       .dispatch(ProjectStateRoutines.fetchOne(payload))
       .silentRun();
