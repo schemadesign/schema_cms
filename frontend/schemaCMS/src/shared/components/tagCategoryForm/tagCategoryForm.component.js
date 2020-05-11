@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { insert, is, remove } from 'ramda';
+import { always, insert, is, remove, path } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
@@ -13,7 +13,15 @@ import {
   TAG_CATEGORY_REMOVE_TAGS,
   TAG_CATEGORY_TAGS,
 } from '../../../modules/tagCategory/tagCategory.constants';
-import { removeIconStyles, Tag, TagsContainer, AddNewTagContainer, Switches } from './tagCategoryForm.styles';
+import {
+  removeIconStyles,
+  Tag,
+  TagsContainer,
+  AddNewTagContainer,
+  Switches,
+  Error,
+  TagContainer,
+} from './tagCategoryForm.styles';
 import {
   AvailableCopy,
   mobilePlusStyles,
@@ -24,6 +32,7 @@ import {
 } from '../form/frequentComponents.styles';
 import { CounterHeader } from '../counterHeader';
 import { PlusButton } from '../navigation';
+import { renderWhenTrue } from '../../utils/rendering';
 
 const { TextField, Switch } = FormUI;
 const { CloseIcon } = Icons;
@@ -54,6 +63,8 @@ export const TagComponent = ({
       const removeTags = values[TAG_CATEGORY_REMOVE_TAGS] || [];
       setFieldValue(TAG_CATEGORY_REMOVE_TAGS, removeTags.concat(removeId));
     }
+
+    setTimeout(() => restFormikProps.validateForm());
   };
   const handleBlur = index => e => {
     const { value } = e.target;
@@ -81,24 +92,29 @@ export const TagComponent = ({
       }
     }
   };
+  const error = path(['errors', TAG_CATEGORY_TAGS, index, 'value'], restFormikProps);
+  const renderError = error => renderWhenTrue(always(<Error>{error}</Error>))(!!error);
 
   return (
-    <Tag>
-      <TextField
-        value={value}
-        onChange={e => handleTagChange({ e, id, index })}
-        name={`${[TAG_CATEGORY_TAGS]}.${index}`}
-        fullWidth
-        customStyles={{ paddingBottom: 0, width: '100%' }}
-        isEdit
-        inputRef={input => input && focusInputIndex === index && input.focus()}
-        onFocus={() => setFocusInputIndex(index)}
-        onBlur={handleBlur(index)}
-        onKeyDown={handleKeyDown(index)}
-        {...restFormikProps}
-      />
-      <CloseIcon customStyles={removeIconStyles} onClick={() => handleRemoveTag({ index, resetIndex: true })} />
-    </Tag>
+    <TagContainer>
+      <Tag>
+        <TextField
+          value={value}
+          onChange={e => handleTagChange({ e, id, index })}
+          name={`${[TAG_CATEGORY_TAGS]}.${index}`}
+          fullWidth
+          customStyles={{ paddingBottom: 0, width: '100%' }}
+          isEdit
+          inputRef={input => input && focusInputIndex === index && input.focus()}
+          onFocus={() => setFocusInputIndex(index)}
+          onBlur={handleBlur(index)}
+          onKeyDown={handleKeyDown(index)}
+          {...restFormikProps}
+        />
+        <CloseIcon customStyles={removeIconStyles} onClick={() => handleRemoveTag({ index, resetIndex: true })} />
+      </Tag>
+      {renderError(error)}
+    </TagContainer>
   );
 };
 
@@ -196,6 +212,7 @@ export const TagCategoryForm = ({ setFieldValue, values, handleChange, ...restFo
             index={index}
             key={index}
             {...item}
+            {...restFormikProps}
           />
         ))}
       </TagsContainer>

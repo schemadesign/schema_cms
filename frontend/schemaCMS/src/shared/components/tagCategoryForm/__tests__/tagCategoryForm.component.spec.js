@@ -49,7 +49,6 @@ describe('TagCategoryForm: Component', () => {
 
   it('should remove tag on backspace', async () => {
     const props = {
-      setFieldValue: Function.prototype,
       values: {
         id: 2,
         name: 'name',
@@ -58,7 +57,9 @@ describe('TagCategoryForm: Component', () => {
       },
     };
 
-    jest.spyOn(props, 'setFieldValue');
+    jest.spyOn(defaultProps, 'setFieldValue');
+    jest.spyOn(defaultProps, 'validateForm');
+    jest.useFakeTimers();
 
     const wrapper = await render(props);
 
@@ -68,13 +69,14 @@ describe('TagCategoryForm: Component', () => {
         .props.onKeyDown({ target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
     });
 
-    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [{ id: 1, value: 'value' }, { value: 'value' }]);
-    expect(props.setFieldValue).toHaveBeenCalledWith('deleteTags', [3]);
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('tags', [{ id: 1, value: 'value' }, { value: 'value' }]);
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('deleteTags', [3]);
+    jest.runAllTimers();
+    expect(defaultProps.validateForm).toHaveBeenCalled();
   });
 
   it('should remove tag on blur', async () => {
     const props = {
-      setFieldValue: Function.prototype,
       values: {
         id: 2,
         name: 'name',
@@ -83,7 +85,7 @@ describe('TagCategoryForm: Component', () => {
       },
     };
 
-    jest.spyOn(props, 'setFieldValue');
+    jest.spyOn(defaultProps, 'setFieldValue');
 
     const wrapper = await render(props);
 
@@ -93,7 +95,7 @@ describe('TagCategoryForm: Component', () => {
         .props.onBlur({ target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
     });
 
-    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [{ value: 'value' }]);
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('tags', [{ value: 'value' }]);
   });
 
   it('should set focus index', async () => {

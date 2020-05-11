@@ -88,10 +88,10 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-Axmtr ipReFo"
+    className="sc-fzozJi eLMJeI"
   >
     <div
-      className="sc-fzozJi kjImrq"
+      className="sc-fzpans iOMZI"
     >
       <div>
         <input
@@ -142,23 +142,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fzpans btSGIV"
+        className="sc-fznyAO hLqtXE"
       >
         <label
-          className="sc-fzoLsD gYHLQC"
+          className="sc-fzplWN dkkGRP"
           htmlFor="isPublic"
         >
           Make it Public
         </label>
         <span
-          className="sc-fznKkj iQRMfO"
+          className="sc-fzokOt fvlngp"
         >
           This Tag Category is currently Private
         </span>
       </div>
     </div>
     <div
-      className="sc-fzozJi kjImrq"
+      className="sc-fzpans iOMZI"
     >
       <div>
         <input
@@ -209,16 +209,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fzpans btSGIV"
+        className="sc-fznyAO hLqtXE"
       >
         <label
-          className="sc-fzoLsD gYHLQC"
+          className="sc-fzplWN dkkGRP"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fznKkj iQRMfO"
+          className="sc-fzokOt fvlngp"
         >
           This Tag Category is currently Multi Choice
         </span>
@@ -226,20 +226,20 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fzpjYC iscmDb"
+    className="sc-fznJRM dOdAYw"
   >
     <div
-      className="sc-fznxsB gWBaQk"
+      className="sc-fznWqX ieLPDX"
     />
     2 Tags
     <div
-      className="sc-fznxsB gWBaQk"
+      className="sc-fznWqX ieLPDX"
     >
       <div
-        className="sc-fzqNJr ibBNyF"
+        className="sc-fzoLag edhcrz"
       >
         <div
-          className="sc-fzoyTs hgdjmq"
+          className="sc-fzoXWK kza-dYs"
         >
           <button
             disabled={false}
@@ -287,153 +287,161 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-AxhUy bStVzZ"
+    className="sc-AxgMl WJDfg"
   >
     <div
-      className="sc-AxhCb geUocG"
+      className="sc-AxhCb iUfLEo"
     >
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": 0,
-            "position": "relative",
-            "width": "100%",
-          }
-        }
+        className="sc-AxhUy jrfdSh"
       >
-        <input
-          id="tags.0"
-          name="tags.0"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontFamily": "inherit",
-              "fontSize": "18px",
-              "fontWeight": "inherit",
-              "letterSpacing": "normal",
-              "lineHeight": "24px",
-              "maxWidth": "100%",
-              "minWidth": 60,
-              "outline": "none",
-              "padding": 0,
-            }
-          }
-          type="text"
-          value="value"
-        />
         <div
           style={
             Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+              "width": "100%",
             }
           }
-        />
-      </div>
-      <svg
-        onClick={[Function]}
-        style={
-          Object {
-            "cursor": "pointer",
-            "fill": "#FFF",
-            "height": 35,
-            "marginLeft": 5,
-            "minWidth": 35,
-            "width": 35,
+        >
+          <input
+            id="tags.0"
+            name="tags.0"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 60,
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="value"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </div>
+        <svg
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fill": "#FFF",
+              "height": 35,
+              "marginLeft": 5,
+              "minWidth": 35,
+              "width": 35,
+            }
           }
-        }
-        viewBox="0 0 60 60"
-      >
-        <path
-          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-          fillRule="evenodd"
-        />
-      </svg>
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
     </div>
     <div
-      className="sc-AxhCb geUocG"
+      className="sc-AxhCb iUfLEo"
     >
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": 0,
-            "position": "relative",
-            "width": "100%",
-          }
-        }
+        className="sc-AxhUy jrfdSh"
       >
-        <input
-          id="tags.1"
-          name="tags.1"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontFamily": "inherit",
-              "fontSize": "18px",
-              "fontWeight": "inherit",
-              "letterSpacing": "normal",
-              "lineHeight": "24px",
-              "maxWidth": "100%",
-              "minWidth": 60,
-              "outline": "none",
-              "padding": 0,
-            }
-          }
-          type="text"
-          value="value"
-        />
         <div
           style={
             Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+              "width": "100%",
             }
           }
-        />
-      </div>
-      <svg
-        onClick={[Function]}
-        style={
-          Object {
-            "cursor": "pointer",
-            "fill": "#FFF",
-            "height": 35,
-            "marginLeft": 5,
-            "minWidth": 35,
-            "width": 35,
+        >
+          <input
+            id="tags.1"
+            name="tags.1"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 60,
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="value"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </div>
+        <svg
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fill": "#FFF",
+              "height": 35,
+              "marginLeft": 5,
+              "minWidth": 35,
+              "width": 35,
+            }
           }
-        }
-        viewBox="0 0 60 60"
-      >
-        <path
-          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-          fillRule="evenodd"
-        />
-      </svg>
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
     </div>
   </div>,
   <div
-    className="sc-AxheI dJKTKs"
+    className="sc-AxmLO dpNtS"
     onClick={[Function]}
   >
     Tap or click to add new Tag
@@ -529,10 +537,10 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-Axmtr ipReFo"
+    className="sc-fzozJi eLMJeI"
   >
     <div
-      className="sc-fzozJi kjImrq"
+      className="sc-fzpans iOMZI"
     >
       <div>
         <input
@@ -583,23 +591,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fzpans btSGIV"
+        className="sc-fznyAO hLqtXE"
       >
         <label
-          className="sc-fzoLsD gYHLQC"
+          className="sc-fzplWN dkkGRP"
           htmlFor="isPublic"
         >
           Make it Public
         </label>
         <span
-          className="sc-fznKkj iQRMfO"
+          className="sc-fzokOt fvlngp"
         >
           This Tag Category is currently Private
         </span>
       </div>
     </div>
     <div
-      className="sc-fzozJi kjImrq"
+      className="sc-fzpans iOMZI"
     >
       <div>
         <input
@@ -650,16 +658,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fzpans btSGIV"
+        className="sc-fznyAO hLqtXE"
       >
         <label
-          className="sc-fzoLsD gYHLQC"
+          className="sc-fzplWN dkkGRP"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fznKkj iQRMfO"
+          className="sc-fzokOt fvlngp"
         >
           This Tag Category is currently Multi Choice
         </span>
@@ -667,20 +675,20 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fzpjYC iscmDb"
+    className="sc-fznJRM dOdAYw"
   >
     <div
-      className="sc-fznxsB gWBaQk"
+      className="sc-fznWqX ieLPDX"
     />
     0 Tags
     <div
-      className="sc-fznxsB gWBaQk"
+      className="sc-fznWqX ieLPDX"
     >
       <div
-        className="sc-fzqNJr ibBNyF"
+        className="sc-fzoLag edhcrz"
       >
         <div
-          className="sc-fzoyTs hgdjmq"
+          className="sc-fzoXWK kza-dYs"
         >
           <button
             disabled={false}
@@ -728,10 +736,10 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-AxhUy bStVzZ"
+    className="sc-AxgMl WJDfg"
   />,
   <div
-    className="sc-AxheI dJKTKs"
+    className="sc-AxmLO dpNtS"
     onClick={[Function]}
   >
     Tap or click to add new Tag

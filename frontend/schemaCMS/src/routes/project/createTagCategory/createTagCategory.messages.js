@@ -18,8 +18,8 @@ export default defineMessages({
     id: 'project.createTagCategory.cancel',
     defaultMessage: 'Cancel',
   },
-  nameTagsListNameNotUniqueError: {
-    id: 'project.createTagCategory.nameTagsListNameNotUniqueError',
+  nameTagCategoryNameNotUniqueError: {
+    id: 'project.createTagCategory.nameTagCategoryNameNotUniqueError',
     defaultMessage: 'A tag category with this name already exists in project.',
   },
 });

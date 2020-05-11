@@ -38,8 +38,8 @@ export default defineMessages({
     id: 'tagCategory.removeTitle',
     defaultMessage: 'Are you sure you want to remove this tag category?',
   },
-  nameTagsListNameNotUniqueError: {
-    id: 'tagCategory.nameTagsListNameNotUniqueError',
+  nameTagCategoryNameNotUniqueError: {
+    id: 'tagCategory.nameTagCategoryNameNotUniqueError',
     defaultMessage: 'A tag category with this name already exists in project.',
   },
 });

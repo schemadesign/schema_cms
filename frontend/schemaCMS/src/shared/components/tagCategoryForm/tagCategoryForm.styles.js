@@ -1,24 +1,32 @@
 import styled from 'styled-components';
 import { Form as FormikForm } from 'formik';
 
-export const Tag = styled.div`
+export const TagContainer = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.border};
   padding: 10px 0;
+`;
+
+export const Tag = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 `;
 
 export const TagsContainer = styled.div`
   display: flex;
-  text-align: center;
   flex-direction: column;
-  padding-bottom: 20px;
   border-top: 2px solid ${({ theme }) => theme.border};
 `;
 
 export const Form = styled(FormikForm)`
   padding-top: 24px;
+`;
+
+export const Error = styled.div`
+  color: ${({ theme: { textField } }) => textField.error};
+  font-size: 14px;
+  font-weight: normal;
 `;
 
 export const AddNewTagContainer = styled.div`

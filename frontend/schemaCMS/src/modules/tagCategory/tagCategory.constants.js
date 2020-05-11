@@ -1,5 +1,4 @@
 import * as Yup from 'yup';
-import { any, complement, propEq } from 'ramda';
 
 export const TAG_CATEGORY_FORM = 'tag_category_form';
 export const TAG_CATEGORY_NAME = 'name';
@@ -22,6 +21,13 @@ export const TAG_CATEGORY_SCHEMA = Yup.object().shape({
     .max(25, 'Tag Category name should have maximum 25 characters')
     .required('Required'),
   [TAG_CATEGORY_TAGS]: Yup.array()
-    .test('emptyElement', 'Item can`t be empty', complement(any(propEq('value', ''))))
-    .required('Required'),
+    .of(
+      Yup.object().shape({
+        value: Yup.string()
+          .trim()
+          .min(1, 'Tag should have at least 1 character')
+          .max(150, 'Tag should have maximum 150 characters'),
+      })
+    )
+    .min(1, 'Required'),
 });
