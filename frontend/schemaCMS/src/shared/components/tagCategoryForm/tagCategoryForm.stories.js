@@ -8,6 +8,7 @@ import { project } from '../../../modules/project/project.mocks';
 export const defaultProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
+  validateForm: Function.prototype,
   values: {
     name: '',
     tags: [],

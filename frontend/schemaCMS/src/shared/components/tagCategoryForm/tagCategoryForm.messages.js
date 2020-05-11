@@ -56,8 +56,4 @@ export default defineMessages({
     id: 'shared.components.tagCategoryForm.addNewTag',
     defaultMessage: 'Tap or click to add new Tag',
   },
-  keyTagKeyNotUniqueError: {
-    id: 'shared.components.tagCategoryForm.keyTagKeyNotUniqueError',
-    defaultMessage: 'A tag category with this name already exists in project.',
-  },
 });

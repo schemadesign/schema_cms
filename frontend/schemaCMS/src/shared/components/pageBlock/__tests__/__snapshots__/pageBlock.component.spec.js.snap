@@ -1249,52 +1249,74 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   ObservableHQ User
                 </span>
                 <div
-                  className="sc-AxhCb qEpns"
+                  className="sc-fzplWN hHHhhs"
                 >
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "maxWidth": "100%",
-                        "paddingBottom": "30px",
-                        "position": "relative",
-                      }
-                    }
+                    className="sc-AxhCb qEpns"
                   >
-                    <input
-                      id="formikFieldPath.0.elements.3.value.observableUser"
-                      name="formikFieldPath.0.elements.3.value.observableUser"
-                      onChange={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "#71737e",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "outline": "none",
-                          "padding": "10px 30px 10px 20px",
-                        }
-                      }
-                      type="text"
-                      value="@user"
-                    />
                     <div
                       style={
                         Object {
-                          "position": "absolute",
-                          "right": -30,
-                          "top": -40,
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "100%",
+                          "paddingBottom": "30px",
+                          "position": "relative",
                         }
                       }
-                    />
+                    >
+                      <input
+                        id="formikFieldPath.0.elements.3.value.observableUser"
+                        name="formikFieldPath.0.elements.3.value.observableUser"
+                        onChange={[Function]}
+                        style={
+                          Object {
+                            "backgroundColor": "#71737e",
+                            "border": "none",
+                            "color": "#FFF",
+                            "fontFamily": "inherit",
+                            "fontSize": "18px",
+                            "fontWeight": "inherit",
+                            "letterSpacing": "normal",
+                            "lineHeight": "24px",
+                            "maxWidth": "100%",
+                            "minWidth": 60,
+                            "outline": "none",
+                            "padding": "10px 30px 10px 20px",
+                          }
+                        }
+                        type="text"
+                        value="@user"
+                      />
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": -30,
+                            "top": -40,
+                          }
+                        }
+                      />
+                    </div>
                   </div>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "position": "absolute",
+                        "right": 5,
+                        "top": 5,
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
                 </div>
                 <span
                   className="sc-fzqNJr hqNmrx"
@@ -1302,52 +1324,74 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   ObservableHQ Notebook
                 </span>
                 <div
-                  className="sc-AxhCb qEpns"
+                  className="sc-fzplWN hHHhhs"
                 >
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "maxWidth": "100%",
-                        "paddingBottom": "30px",
-                        "position": "relative",
-                      }
-                    }
+                    className="sc-AxhCb qEpns"
                   >
-                    <input
-                      id="formikFieldPath.0.elements.3.value.observableNotebook"
-                      name="formikFieldPath.0.elements.3.value.observableNotebook"
-                      onChange={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "#71737e",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "outline": "none",
-                          "padding": "10px 30px 10px 20px",
-                        }
-                      }
-                      type="text"
-                      value="my-notebook"
-                    />
                     <div
                       style={
                         Object {
-                          "position": "absolute",
-                          "right": -30,
-                          "top": -40,
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "100%",
+                          "paddingBottom": "30px",
+                          "position": "relative",
                         }
                       }
-                    />
+                    >
+                      <input
+                        id="formikFieldPath.0.elements.3.value.observableNotebook"
+                        name="formikFieldPath.0.elements.3.value.observableNotebook"
+                        onChange={[Function]}
+                        style={
+                          Object {
+                            "backgroundColor": "#71737e",
+                            "border": "none",
+                            "color": "#FFF",
+                            "fontFamily": "inherit",
+                            "fontSize": "18px",
+                            "fontWeight": "inherit",
+                            "letterSpacing": "normal",
+                            "lineHeight": "24px",
+                            "maxWidth": "100%",
+                            "minWidth": 60,
+                            "outline": "none",
+                            "padding": "10px 30px 10px 20px",
+                          }
+                        }
+                        type="text"
+                        value="my-notebook"
+                      />
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": -30,
+                            "top": -40,
+                          }
+                        }
+                      />
+                    </div>
                   </div>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "position": "absolute",
+                        "right": 5,
+                        "top": 5,
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
                 </div>
                 <span
                   className="sc-fzqNJr hqNmrx"
@@ -1355,52 +1399,74 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   ObservableHQ Cell
                 </span>
                 <div
-                  className="sc-AxhCb qEpns"
+                  className="sc-fzplWN hHHhhs"
                 >
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "maxWidth": "100%",
-                        "paddingBottom": "30px",
-                        "position": "relative",
-                      }
-                    }
+                    className="sc-AxhCb qEpns"
                   >
-                    <input
-                      id="formikFieldPath.0.elements.3.value.observableCell"
-                      name="formikFieldPath.0.elements.3.value.observableCell"
-                      onChange={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "#71737e",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "outline": "none",
-                          "padding": "10px 30px 10px 20px",
-                        }
-                      }
-                      type="text"
-                      value="notebook-cell"
-                    />
                     <div
                       style={
                         Object {
-                          "position": "absolute",
-                          "right": -30,
-                          "top": -40,
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "100%",
+                          "paddingBottom": "30px",
+                          "position": "relative",
                         }
                       }
-                    />
+                    >
+                      <input
+                        id="formikFieldPath.0.elements.3.value.observableCell"
+                        name="formikFieldPath.0.elements.3.value.observableCell"
+                        onChange={[Function]}
+                        style={
+                          Object {
+                            "backgroundColor": "#71737e",
+                            "border": "none",
+                            "color": "#FFF",
+                            "fontFamily": "inherit",
+                            "fontSize": "18px",
+                            "fontWeight": "inherit",
+                            "letterSpacing": "normal",
+                            "lineHeight": "24px",
+                            "maxWidth": "100%",
+                            "minWidth": 60,
+                            "outline": "none",
+                            "padding": "10px 30px 10px 20px",
+                          }
+                        }
+                        type="text"
+                        value="notebook-cell"
+                      />
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": -30,
+                            "top": -40,
+                          }
+                        }
+                      />
+                    </div>
                   </div>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "position": "absolute",
+                        "right": 5,
+                        "top": 5,
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
                 </div>
                 <span
                   className="sc-fzqNJr hqNmrx"
@@ -1408,51 +1474,73 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   ObservableHQ Params
                 </span>
                 <div
-                  className="sc-AxhCb qEpns"
+                  className="sc-fzplWN hHHhhs"
                 >
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "maxWidth": "100%",
-                        "paddingBottom": "30px",
-                        "position": "relative",
-                      }
-                    }
+                    className="sc-AxhCb qEpns"
                   >
-                    <input
-                      id="formikFieldPath.0.elements.3.value.observableParams"
-                      name="formikFieldPath.0.elements.3.value.observableParams"
-                      onChange={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "#71737e",
-                          "border": "none",
-                          "color": "#FFF",
-                          "fontFamily": "inherit",
-                          "fontSize": "18px",
-                          "fontWeight": "inherit",
-                          "letterSpacing": "normal",
-                          "lineHeight": "24px",
-                          "maxWidth": "100%",
-                          "minWidth": 60,
-                          "outline": "none",
-                          "padding": "10px 30px 10px 20px",
-                        }
-                      }
-                      type="text"
-                    />
                     <div
                       style={
                         Object {
-                          "position": "absolute",
-                          "right": -30,
-                          "top": -40,
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "100%",
+                          "paddingBottom": "30px",
+                          "position": "relative",
                         }
                       }
-                    />
+                    >
+                      <input
+                        id="formikFieldPath.0.elements.3.value.observableParams"
+                        name="formikFieldPath.0.elements.3.value.observableParams"
+                        onChange={[Function]}
+                        style={
+                          Object {
+                            "backgroundColor": "#71737e",
+                            "border": "none",
+                            "color": "#FFF",
+                            "fontFamily": "inherit",
+                            "fontSize": "18px",
+                            "fontWeight": "inherit",
+                            "letterSpacing": "normal",
+                            "lineHeight": "24px",
+                            "maxWidth": "100%",
+                            "minWidth": 60,
+                            "outline": "none",
+                            "padding": "10px 30px 10px 20px",
+                          }
+                        }
+                        type="text"
+                      />
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": -30,
+                            "top": -40,
+                          }
+                        }
+                      />
+                    </div>
                   </div>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "position": "absolute",
+                        "right": 5,
+                        "top": 5,
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
