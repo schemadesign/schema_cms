@@ -13,17 +13,19 @@ import { selectUserRole } from '../../../modules/userProfile';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from '../../project/create/create.messages';
 import { TagCategoryRoutines, selectTagCategories } from '../../../modules/tagCategory';
+import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   state: selectState,
   userRole: selectUserRole,
   tags: selectTagCategories,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchTags: promisifyRoutine(TagCategoryRoutines.fetchTagCategories),
+      fetchTagCategories: promisifyRoutine(TagCategoryRoutines.fetchTagCategories),
       updateState: promisifyRoutine(ProjectStateRoutines.update),
     },
     dispatch

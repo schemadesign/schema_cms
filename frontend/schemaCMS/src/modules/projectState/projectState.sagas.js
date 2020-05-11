@@ -5,6 +5,7 @@ import { ProjectStateRoutines } from './projectState.redux';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH, STATES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
+import { ProjectRoutines } from '../project';
 
 function* fetchList({ payload: { projectId } }) {
   try {
@@ -27,6 +28,7 @@ function* fetchOne({ payload: { stateId } }) {
 
     const { data } = yield api.get(`${STATES_PATH}/${stateId}`);
 
+    yield put(ProjectRoutines.setProject(data.project));
     yield put(ProjectStateRoutines.fetchOne.success(data.results));
   } catch (e) {
     reportError(e);

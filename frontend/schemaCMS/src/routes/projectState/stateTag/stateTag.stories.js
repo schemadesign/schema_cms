@@ -6,6 +6,7 @@ import { state } from '../../../modules/projectState/projectState.mock';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
+import { project } from '../../../modules/project/project.mocks';
 
 export const defaultProps = {
   handleSubmit: Function.prototype,
@@ -16,9 +17,10 @@ export const defaultProps = {
   tags: [{ name: 'name', id: 1, tags: [{ id: 1, value: 'value' }, { id: 2, value: 'value 2' }] }],
   userRole: ROLES.ADMIN,
   state,
-  fetchTags: Function.prototype,
+  fetchTagCategories: Function.prototype,
   intl,
   history,
+  project,
 };
 
 storiesOf('StateTag', module)

@@ -28,7 +28,8 @@ export class StateTag extends PureComponent {
     dirty: PropTypes.bool.isRequired,
     tags: PropTypes.array.isRequired,
     values: PropTypes.array.isRequired,
-    fetchTags: PropTypes.func.isRequired,
+    project: PropTypes.object.isRequired,
+    fetchTagCategories: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
@@ -42,9 +43,9 @@ export class StateTag extends PureComponent {
 
   async componentDidMount() {
     try {
-      const dataSourceId = this.props.state.datasource;
+      const projectId = this.props.project.id;
 
-      await this.props.fetchTags({ dataSourceId });
+      await this.props.fetchTagCategories({ projectId });
       this.setState({ loading: false });
     } catch (error) {
       reportError(error);
