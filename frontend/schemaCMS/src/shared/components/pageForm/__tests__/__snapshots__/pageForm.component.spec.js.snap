@@ -625,14 +625,14 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpkqZ caykUD"
+    className="sc-fznAgC gAffmo"
   >
     <div
-      className="sc-fznAgC LTwmU"
+      className="sc-fznLPX fzcCiF"
     />
     1 Block
     <div
-      className="sc-fznAgC LTwmU"
+      className="sc-fznLPX fzcCiF"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -2000,6 +2000,11 @@ exports[`PageForm: Component should render correctly 1`] = `
                     <div
                       className="sc-fzoant ceMild"
                     >
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ User
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -2008,7 +2013,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -2019,10 +2024,9 @@ exports[`PageForm: Component should render correctly 1`] = `
                             name="blocks.0.elements.3.value.observableUser"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ User"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -2033,7 +2037,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -2050,6 +2054,11 @@ exports[`PageForm: Component should render correctly 1`] = `
                           />
                         </div>
                       </div>
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ Notebook
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -2058,7 +2067,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -2069,10 +2078,9 @@ exports[`PageForm: Component should render correctly 1`] = `
                             name="blocks.0.elements.3.value.observableNotebook"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ Notebook"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -2083,7 +2091,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -2100,6 +2108,11 @@ exports[`PageForm: Component should render correctly 1`] = `
                           />
                         </div>
                       </div>
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ Cell
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -2108,7 +2121,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -2119,10 +2132,9 @@ exports[`PageForm: Component should render correctly 1`] = `
                             name="blocks.0.elements.3.value.observableCell"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ Cell"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -2133,7 +2145,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -2150,6 +2162,11 @@ exports[`PageForm: Component should render correctly 1`] = `
                           />
                         </div>
                       </div>
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ Params
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -2158,7 +2175,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -2169,10 +2186,9 @@ exports[`PageForm: Component should render correctly 1`] = `
                             name="blocks.0.elements.3.value.observableParams"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ Params"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -2183,7 +2199,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -2304,14 +2320,14 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkqZ caykUD"
+                      className="sc-fznAgC gAffmo"
                     >
                       <div
-                        className="sc-fznAgC LTwmU"
+                        className="sc-fznLPX fzcCiF"
                       />
                       3 Sets
                       <div
-                        className="sc-fznAgC LTwmU"
+                        className="sc-fznLPX fzcCiF"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
@@ -5660,14 +5676,14 @@ exports[`PageForm: Component should render with blocked template 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpkqZ caykUD"
+    className="sc-fznAgC gAffmo"
   >
     <div
-      className="sc-fznAgC LTwmU"
+      className="sc-fznLPX fzcCiF"
     />
     1 Block
     <div
-      className="sc-fznAgC LTwmU"
+      className="sc-fznLPX fzcCiF"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -7035,6 +7051,11 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     <div
                       className="sc-fzoant ceMild"
                     >
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ User
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -7043,7 +7064,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -7054,10 +7075,9 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             name="blocks.0.elements.3.value.observableUser"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ User"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -7068,7 +7088,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -7085,6 +7105,11 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                           />
                         </div>
                       </div>
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ Notebook
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -7093,7 +7118,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -7104,10 +7129,9 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             name="blocks.0.elements.3.value.observableNotebook"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ Notebook"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -7118,7 +7142,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -7135,6 +7159,11 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                           />
                         </div>
                       </div>
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ Cell
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -7143,7 +7172,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -7154,10 +7183,9 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             name="blocks.0.elements.3.value.observableCell"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ Cell"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -7168,7 +7196,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -7185,6 +7213,11 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                           />
                         </div>
                       </div>
+                      <span
+                        className="sc-fzoJMP dJkZyK"
+                      >
+                        ObservableHQ Params
+                      </span>
                       <div
                         className="sc-fzokOt hhpuAT"
                       >
@@ -7193,7 +7226,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             Object {
                               "display": "flex",
                               "flexDirection": "column",
-                              "maxWidth": "320px",
+                              "maxWidth": "100%",
                               "paddingBottom": "30px",
                               "position": "relative",
                             }
@@ -7204,10 +7237,9 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                             name="blocks.0.elements.3.value.observableParams"
                             onBlur={[Function]}
                             onChange={[Function]}
-                            placeholder="ObservableHQ Params"
                             style={
                               Object {
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#71737e",
                                 "border": "none",
                                 "color": "#FFF",
                                 "fontFamily": "inherit",
@@ -7218,7 +7250,7 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                                 "maxWidth": "100%",
                                 "minWidth": 60,
                                 "outline": "none",
-                                "padding": 0,
+                                "padding": "10px 30px 10px 20px",
                               }
                             }
                             type="text"
@@ -7339,14 +7371,14 @@ exports[`PageForm: Component should render with blocked template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkqZ caykUD"
+                      className="sc-fznAgC gAffmo"
                     >
                       <div
-                        className="sc-fznAgC LTwmU"
+                        className="sc-fznLPX fzcCiF"
                       />
                       3 Sets
                       <div
-                        className="sc-fznAgC LTwmU"
+                        className="sc-fznLPX fzcCiF"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"

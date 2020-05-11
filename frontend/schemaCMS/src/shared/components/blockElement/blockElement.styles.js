@@ -150,3 +150,11 @@ export const RemoveContainer = styled.div`
   cursor: pointer;
   margin-top: 10px;
 `;
+
+export const Label = styled.span`
+  color: ${({ theme }) => theme.secondaryText};
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  flex: 0 0 auto;
+`;

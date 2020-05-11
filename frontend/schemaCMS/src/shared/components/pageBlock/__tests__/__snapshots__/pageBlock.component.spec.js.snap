@@ -474,7 +474,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 className="sc-fzoLsD gWdCPf"
               >
                 <div
-                  className="sc-fzoLag cjPgqC"
+                  className="sc-fzoXzr lkZFXI"
                   onClick={[Function]}
                 >
                   <input
@@ -625,7 +625,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoXzr jpNtjf"
+                    className="sc-fzpjYC fumLew"
                   >
                     <svg
                       style={
@@ -1243,6 +1243,11 @@ exports[`PageBlock: Component should render correctly 1`] = `
               <div
                 className="sc-fznyAO gOYLtg"
               >
+                <span
+                  className="sc-fzqNJr hqNmrx"
+                >
+                  ObservableHQ User
+                </span>
                 <div
                   className="sc-AxhCb qEpns"
                 >
@@ -1251,7 +1256,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       Object {
                         "display": "flex",
                         "flexDirection": "column",
-                        "maxWidth": "320px",
+                        "maxWidth": "100%",
                         "paddingBottom": "30px",
                         "position": "relative",
                       }
@@ -1261,10 +1266,9 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       id="formikFieldPath.0.elements.3.value.observableUser"
                       name="formikFieldPath.0.elements.3.value.observableUser"
                       onChange={[Function]}
-                      placeholder="ObservableHQ User"
                       style={
                         Object {
-                          "backgroundColor": "transparent",
+                          "backgroundColor": "#71737e",
                           "border": "none",
                           "color": "#FFF",
                           "fontFamily": "inherit",
@@ -1275,7 +1279,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           "maxWidth": "100%",
                           "minWidth": 60,
                           "outline": "none",
-                          "padding": 0,
+                          "padding": "10px 30px 10px 20px",
                         }
                       }
                       type="text"
@@ -1292,6 +1296,11 @@ exports[`PageBlock: Component should render correctly 1`] = `
                     />
                   </div>
                 </div>
+                <span
+                  className="sc-fzqNJr hqNmrx"
+                >
+                  ObservableHQ Notebook
+                </span>
                 <div
                   className="sc-AxhCb qEpns"
                 >
@@ -1300,7 +1309,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       Object {
                         "display": "flex",
                         "flexDirection": "column",
-                        "maxWidth": "320px",
+                        "maxWidth": "100%",
                         "paddingBottom": "30px",
                         "position": "relative",
                       }
@@ -1310,10 +1319,9 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       id="formikFieldPath.0.elements.3.value.observableNotebook"
                       name="formikFieldPath.0.elements.3.value.observableNotebook"
                       onChange={[Function]}
-                      placeholder="ObservableHQ Notebook"
                       style={
                         Object {
-                          "backgroundColor": "transparent",
+                          "backgroundColor": "#71737e",
                           "border": "none",
                           "color": "#FFF",
                           "fontFamily": "inherit",
@@ -1324,7 +1332,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           "maxWidth": "100%",
                           "minWidth": 60,
                           "outline": "none",
-                          "padding": 0,
+                          "padding": "10px 30px 10px 20px",
                         }
                       }
                       type="text"
@@ -1341,6 +1349,11 @@ exports[`PageBlock: Component should render correctly 1`] = `
                     />
                   </div>
                 </div>
+                <span
+                  className="sc-fzqNJr hqNmrx"
+                >
+                  ObservableHQ Cell
+                </span>
                 <div
                   className="sc-AxhCb qEpns"
                 >
@@ -1349,7 +1362,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       Object {
                         "display": "flex",
                         "flexDirection": "column",
-                        "maxWidth": "320px",
+                        "maxWidth": "100%",
                         "paddingBottom": "30px",
                         "position": "relative",
                       }
@@ -1359,10 +1372,9 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       id="formikFieldPath.0.elements.3.value.observableCell"
                       name="formikFieldPath.0.elements.3.value.observableCell"
                       onChange={[Function]}
-                      placeholder="ObservableHQ Cell"
                       style={
                         Object {
-                          "backgroundColor": "transparent",
+                          "backgroundColor": "#71737e",
                           "border": "none",
                           "color": "#FFF",
                           "fontFamily": "inherit",
@@ -1373,7 +1385,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           "maxWidth": "100%",
                           "minWidth": 60,
                           "outline": "none",
-                          "padding": 0,
+                          "padding": "10px 30px 10px 20px",
                         }
                       }
                       type="text"
@@ -1390,6 +1402,11 @@ exports[`PageBlock: Component should render correctly 1`] = `
                     />
                   </div>
                 </div>
+                <span
+                  className="sc-fzqNJr hqNmrx"
+                >
+                  ObservableHQ Params
+                </span>
                 <div
                   className="sc-AxhCb qEpns"
                 >
@@ -1398,7 +1415,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       Object {
                         "display": "flex",
                         "flexDirection": "column",
-                        "maxWidth": "320px",
+                        "maxWidth": "100%",
                         "paddingBottom": "30px",
                         "position": "relative",
                       }
@@ -1408,10 +1425,9 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       id="formikFieldPath.0.elements.3.value.observableParams"
                       name="formikFieldPath.0.elements.3.value.observableParams"
                       onChange={[Function]}
-                      placeholder="ObservableHQ Params"
                       style={
                         Object {
-                          "backgroundColor": "transparent",
+                          "backgroundColor": "#71737e",
                           "border": "none",
                           "color": "#FFF",
                           "fontFamily": "inherit",
@@ -1422,7 +1438,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           "maxWidth": "100%",
                           "minWidth": 60,
                           "outline": "none",
-                          "padding": 0,
+                          "padding": "10px 30px 10px 20px",
                         }
                       }
                       type="text"
@@ -1543,20 +1559,20 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzolEj cQPeIb"
+                className="sc-fzqBkg gAWJZo"
               >
                 <div
-                  className="sc-fzqBkg gmgHfw"
+                  className="sc-fzqPZZ etcPdO"
                 />
                 3 Sets
                 <div
-                  className="sc-fzqBkg gmgHfw"
+                  className="sc-fzqPZZ etcPdO"
                 >
                   <div
-                    className="sc-fzpmMD kmLmQu"
+                    className="sc-fznxKY dXIKby"
                   >
                     <div
-                      className="sc-fznzOf jZukxq"
+                      className="sc-fznMnq jJaEfz"
                     >
                       <button
                         disabled={false}
@@ -1624,7 +1640,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznWOq bBLgKi"
+                        className="sc-fzolEj jifrCt"
                       >
                         <svg
                           style={
@@ -2472,7 +2488,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznWOq bBLgKi"
+                        className="sc-fzolEj jifrCt"
                       >
                         <svg
                           style={
@@ -3320,7 +3336,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznWOq bBLgKi"
+                        className="sc-fzolEj jifrCt"
                       >
                         <svg
                           style={

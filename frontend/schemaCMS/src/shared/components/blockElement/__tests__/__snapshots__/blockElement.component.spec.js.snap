@@ -83,20 +83,20 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fznxKY foXqWH"
+          className="sc-fznMAR loJJRP"
         >
           <div
-            className="sc-fznMAR eEwlzb"
+            className="sc-fznWOq dyPNPU"
           />
           3 Sets
           <div
-            className="sc-fznMAR eEwlzb"
+            className="sc-fznWOq dyPNPU"
           >
             <div
-              className="sc-fzoyTs kGwCob"
+              className="sc-fzoNJl layush"
             >
               <div
-                className="sc-fzoKki iIJzVl"
+                className="sc-fzoYkl enxuaW"
               >
                 <button
                   disabled={false}
@@ -164,7 +164,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             >
               <div>
                 <div
-                  className="sc-fzpmMD hlPBKl"
+                  className="sc-fznxKY kFsJkJ"
                 >
                   <svg
                     style={
@@ -259,7 +259,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                         className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fzokOt hhpuAT"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -420,7 +420,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                         className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fzokOt hhpuAT"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -1012,7 +1012,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             >
               <div>
                 <div
-                  className="sc-fzpmMD hlPBKl"
+                  className="sc-fznxKY kFsJkJ"
                 >
                   <svg
                     style={
@@ -1107,7 +1107,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                         className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fzokOt hhpuAT"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -1268,7 +1268,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                         className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fzokOt hhpuAT"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -1860,7 +1860,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             >
               <div>
                 <div
-                  className="sc-fzpmMD hlPBKl"
+                  className="sc-fznxKY kFsJkJ"
                 >
                   <svg
                     style={
@@ -1955,7 +1955,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                         className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fzokOt hhpuAT"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -2116,7 +2116,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                         className="sc-AxheI eIpVXM"
                       >
                         <div
-                          className="sc-fzokOt hhpuAT"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -2779,7 +2779,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fzplWN dcwDRX"
+          className="sc-fznyAO cDDUoP"
         >
           <div
             style={
@@ -3016,7 +3016,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
           className="sc-AxhUy jiqPcu"
         >
           <div
-            className="sc-fznKkj fviEzj"
+            className="sc-fznZeY gLmmub"
             onClick={[Function]}
           >
             <input
@@ -3167,7 +3167,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
               </div>
             </div>
             <div
-              className="sc-fznZeY iGpDkM"
+              className="sc-fzokOt dOYAwr"
             >
               <svg
                 style={
@@ -3755,15 +3755,20 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
         <div
           className="sc-Axmtr fMVWVz"
         >
+          <span
+            className="sc-fzplWN emmkij"
+          >
+            ObservableHQ User
+          </span>
           <div
-            className="sc-fzokOt hhpuAT"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={
                 Object {
                   "display": "flex",
                   "flexDirection": "column",
-                  "maxWidth": "320px",
+                  "maxWidth": "100%",
                   "paddingBottom": "30px",
                   "position": "relative",
                 }
@@ -3773,10 +3778,9 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                 id="blockPath.elements.0.value.observableUser"
                 name="blockPath.elements.0.value.observableUser"
                 onChange={[Function]}
-                placeholder="ObservableHQ User"
                 style={
                   Object {
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#71737e",
                     "border": "none",
                     "color": "#FFF",
                     "fontFamily": "inherit",
@@ -3787,7 +3791,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                     "maxWidth": "100%",
                     "minWidth": 60,
                     "outline": "none",
-                    "padding": 0,
+                    "padding": "10px 30px 10px 20px",
                   }
                 }
                 type="text"
@@ -3804,15 +3808,20 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
               />
             </div>
           </div>
+          <span
+            className="sc-fzplWN emmkij"
+          >
+            ObservableHQ Notebook
+          </span>
           <div
-            className="sc-fzokOt hhpuAT"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={
                 Object {
                   "display": "flex",
                   "flexDirection": "column",
-                  "maxWidth": "320px",
+                  "maxWidth": "100%",
                   "paddingBottom": "30px",
                   "position": "relative",
                 }
@@ -3822,10 +3831,9 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                 id="blockPath.elements.0.value.observableNotebook"
                 name="blockPath.elements.0.value.observableNotebook"
                 onChange={[Function]}
-                placeholder="ObservableHQ Notebook"
                 style={
                   Object {
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#71737e",
                     "border": "none",
                     "color": "#FFF",
                     "fontFamily": "inherit",
@@ -3836,7 +3844,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                     "maxWidth": "100%",
                     "minWidth": 60,
                     "outline": "none",
-                    "padding": 0,
+                    "padding": "10px 30px 10px 20px",
                   }
                 }
                 type="text"
@@ -3853,15 +3861,20 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
               />
             </div>
           </div>
+          <span
+            className="sc-fzplWN emmkij"
+          >
+            ObservableHQ Cell
+          </span>
           <div
-            className="sc-fzokOt hhpuAT"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={
                 Object {
                   "display": "flex",
                   "flexDirection": "column",
-                  "maxWidth": "320px",
+                  "maxWidth": "100%",
                   "paddingBottom": "30px",
                   "position": "relative",
                 }
@@ -3871,10 +3884,9 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                 id="blockPath.elements.0.value.observableCell"
                 name="blockPath.elements.0.value.observableCell"
                 onChange={[Function]}
-                placeholder="ObservableHQ Cell"
                 style={
                   Object {
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#71737e",
                     "border": "none",
                     "color": "#FFF",
                     "fontFamily": "inherit",
@@ -3885,7 +3897,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                     "maxWidth": "100%",
                     "minWidth": 60,
                     "outline": "none",
-                    "padding": 0,
+                    "padding": "10px 30px 10px 20px",
                   }
                 }
                 type="text"
@@ -3902,15 +3914,20 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
               />
             </div>
           </div>
+          <span
+            className="sc-fzplWN emmkij"
+          >
+            ObservableHQ Params
+          </span>
           <div
-            className="sc-fzokOt hhpuAT"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={
                 Object {
                   "display": "flex",
                   "flexDirection": "column",
-                  "maxWidth": "320px",
+                  "maxWidth": "100%",
                   "paddingBottom": "30px",
                   "position": "relative",
                 }
@@ -3920,10 +3937,9 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                 id="blockPath.elements.0.value.observableParams"
                 name="blockPath.elements.0.value.observableParams"
                 onChange={[Function]}
-                placeholder="ObservableHQ Params"
                 style={
                   Object {
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#71737e",
                     "border": "none",
                     "color": "#FFF",
                     "fontFamily": "inherit",
@@ -3934,7 +3950,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                     "maxWidth": "100%",
                     "minWidth": 60,
                     "outline": "none",
-                    "padding": 0,
+                    "padding": "10px 30px 10px 20px",
                   }
                 }
                 type="text"
@@ -4043,7 +4059,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
           className="sc-AxheI eIpVXM"
         >
           <div
-            className="sc-fzokOt hhpuAT"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={

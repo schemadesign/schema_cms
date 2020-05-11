@@ -361,7 +361,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoxnE hxbAoR"
+    className="sc-fzoMdx jQPuwP"
   >
     <div
       style={
@@ -383,7 +383,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoWqW ieOBiL"
+          className="sc-fzplgP leYSqa"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -439,7 +439,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoWqW ieOBiL"
+          className="sc-fzplgP leYSqa"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -495,7 +495,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoWqW ieOBiL"
+          className="sc-fzplgP leYSqa"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -551,7 +551,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoMdx iBjEez"
+          className="sc-fzoWqW cmATQX"
         >
           <span
             style={
@@ -1206,14 +1206,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqzlV QRJZO"
+        className="sc-fzqLLg kjCvJh"
       >
         <div
-          className="sc-fzqLLg ciHWvF"
+          className="sc-fzoxnE haffHf"
         />
         1 Block
         <div
-          className="sc-fzqLLg ciHWvF"
+          className="sc-fzoxnE haffHf"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -2557,6 +2557,11 @@ exports[`EditPage: Component should render correctly 1`] = `
                         <div
                           className="sc-fzoJus eRyPze"
                         >
+                          <span
+                            className="sc-fznXWL ieDLar"
+                          >
+                            ObservableHQ User
+                          </span>
                           <div
                             className="sc-fzoKki xmNdG"
                           >
@@ -2565,7 +2570,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 Object {
                                   "display": "flex",
                                   "flexDirection": "column",
-                                  "maxWidth": "320px",
+                                  "maxWidth": "100%",
                                   "paddingBottom": "30px",
                                   "position": "relative",
                                 }
@@ -2576,10 +2581,9 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 name="blocks.0.elements.3.value.observableUser"
                                 onBlur={[Function]}
                                 onChange={[Function]}
-                                placeholder="ObservableHQ User"
                                 style={
                                   Object {
-                                    "backgroundColor": "transparent",
+                                    "backgroundColor": "#71737e",
                                     "border": "none",
                                     "color": "#FFF",
                                     "fontFamily": "inherit",
@@ -2590,7 +2594,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     "maxWidth": "100%",
                                     "minWidth": 60,
                                     "outline": "none",
-                                    "padding": 0,
+                                    "padding": "10px 30px 10px 20px",
                                   }
                                 }
                                 type="text"
@@ -2607,6 +2611,11 @@ exports[`EditPage: Component should render correctly 1`] = `
                               />
                             </div>
                           </div>
+                          <span
+                            className="sc-fznXWL ieDLar"
+                          >
+                            ObservableHQ Notebook
+                          </span>
                           <div
                             className="sc-fzoKki xmNdG"
                           >
@@ -2615,7 +2624,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 Object {
                                   "display": "flex",
                                   "flexDirection": "column",
-                                  "maxWidth": "320px",
+                                  "maxWidth": "100%",
                                   "paddingBottom": "30px",
                                   "position": "relative",
                                 }
@@ -2626,10 +2635,9 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 name="blocks.0.elements.3.value.observableNotebook"
                                 onBlur={[Function]}
                                 onChange={[Function]}
-                                placeholder="ObservableHQ Notebook"
                                 style={
                                   Object {
-                                    "backgroundColor": "transparent",
+                                    "backgroundColor": "#71737e",
                                     "border": "none",
                                     "color": "#FFF",
                                     "fontFamily": "inherit",
@@ -2640,7 +2648,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     "maxWidth": "100%",
                                     "minWidth": 60,
                                     "outline": "none",
-                                    "padding": 0,
+                                    "padding": "10px 30px 10px 20px",
                                   }
                                 }
                                 type="text"
@@ -2657,6 +2665,11 @@ exports[`EditPage: Component should render correctly 1`] = `
                               />
                             </div>
                           </div>
+                          <span
+                            className="sc-fznXWL ieDLar"
+                          >
+                            ObservableHQ Cell
+                          </span>
                           <div
                             className="sc-fzoKki xmNdG"
                           >
@@ -2665,7 +2678,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 Object {
                                   "display": "flex",
                                   "flexDirection": "column",
-                                  "maxWidth": "320px",
+                                  "maxWidth": "100%",
                                   "paddingBottom": "30px",
                                   "position": "relative",
                                 }
@@ -2676,10 +2689,9 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 name="blocks.0.elements.3.value.observableCell"
                                 onBlur={[Function]}
                                 onChange={[Function]}
-                                placeholder="ObservableHQ Cell"
                                 style={
                                   Object {
-                                    "backgroundColor": "transparent",
+                                    "backgroundColor": "#71737e",
                                     "border": "none",
                                     "color": "#FFF",
                                     "fontFamily": "inherit",
@@ -2690,7 +2702,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     "maxWidth": "100%",
                                     "minWidth": 60,
                                     "outline": "none",
-                                    "padding": 0,
+                                    "padding": "10px 30px 10px 20px",
                                   }
                                 }
                                 type="text"
@@ -2707,6 +2719,11 @@ exports[`EditPage: Component should render correctly 1`] = `
                               />
                             </div>
                           </div>
+                          <span
+                            className="sc-fznXWL ieDLar"
+                          >
+                            ObservableHQ Params
+                          </span>
                           <div
                             className="sc-fzoKki xmNdG"
                           >
@@ -2715,7 +2732,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 Object {
                                   "display": "flex",
                                   "flexDirection": "column",
-                                  "maxWidth": "320px",
+                                  "maxWidth": "100%",
                                   "paddingBottom": "30px",
                                   "position": "relative",
                                 }
@@ -2726,10 +2743,9 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 name="blocks.0.elements.3.value.observableParams"
                                 onBlur={[Function]}
                                 onChange={[Function]}
-                                placeholder="ObservableHQ Params"
                                 style={
                                   Object {
-                                    "backgroundColor": "transparent",
+                                    "backgroundColor": "#71737e",
                                     "border": "none",
                                     "color": "#FFF",
                                     "fontFamily": "inherit",
@@ -2740,7 +2756,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     "maxWidth": "100%",
                                     "minWidth": 60,
                                     "outline": "none",
-                                    "padding": 0,
+                                    "padding": "10px 30px 10px 20px",
                                   }
                                 }
                                 type="text"
@@ -2861,14 +2877,14 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqzlV QRJZO"
+                          className="sc-fzqLLg kjCvJh"
                         >
                           <div
-                            className="sc-fzqLLg ciHWvF"
+                            className="sc-fzoxnE haffHf"
                           />
                           3 Sets
                           <div
-                            className="sc-fzqLLg ciHWvF"
+                            className="sc-fzoxnE haffHf"
                           >
                             <div
                               className="sc-fzolEj bBhqcC"
