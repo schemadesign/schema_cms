@@ -1,135 +1,213 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
-import { always, insert, is, remove } from 'ramda';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { insert, is, remove } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './tagCategoryForm.messages';
 import {
+  TAG_CATEGORY_IS_PUBLIC,
+  TAG_CATEGORY_IS_SINGLE_SELECT,
   TAG_CATEGORY_NAME,
   TAG_CATEGORY_REMOVE_TAGS,
   TAG_CATEGORY_TAGS,
 } from '../../../modules/tagCategory/tagCategory.constants';
-import { removeIconStyles, Tag, TagsContainer, ButtonContainer, PlusButton } from './tagCategoryForm.styles';
-import { renderWhenTrueOtherwise } from '../../utils/rendering';
+import { removeIconStyles, Tag, TagsContainer, AddNewTagContainer, Switches } from './tagCategoryForm.styles';
+import {
+  AvailableCopy,
+  mobilePlusStyles,
+  PlusContainer,
+  SwitchContainer,
+  SwitchCopy,
+  SwitchLabel,
+} from '../form/frequentComponents.styles';
+import { CounterHeader } from '../counterHeader';
+import { PlusButton } from '../navigation';
 
-const { Label, TextField } = FormUI;
-const { CloseIcon, PlusIcon } = Icons;
+const { TextField, Switch } = FormUI;
+const { CloseIcon } = Icons;
 
-export class TagCategoryForm extends PureComponent {
-  static propTypes = {
-    handleChange: PropTypes.func.isRequired,
-    setFieldValue: PropTypes.func.isRequired,
-    values: PropTypes.object.isRequired,
+export const TagComponent = ({
+  value,
+  values,
+  id,
+  index,
+  setFieldValue,
+  handleAddTag,
+  focusInputIndex,
+  setFocusInputIndex,
+  ...restFormikProps
+}) => {
+  const handleTagChange = ({ e, id = null, index }) => {
+    const { value } = e.target;
+    const tag = id ? { value, id } : { value };
+    setFieldValue(`${TAG_CATEGORY_TAGS}.${index}`, tag);
   };
-
-  state = {
-    focusInputIndex: null,
-  };
-
-  handleAddTag = ({ index }) => {
-    const { setFieldValue, values } = this.props;
-    const insertIndex = is(Number, index) ? index : values[TAG_CATEGORY_TAGS].length;
-    const newValues = insert(insertIndex, { value: '' }, values[TAG_CATEGORY_TAGS]);
-    this.setState({ focusInputIndex: insertIndex });
-    setFieldValue(TAG_CATEGORY_TAGS, newValues);
-  };
-
-  handleRemoveTag = ({ index, resetIndex }) => {
-    const { setFieldValue, values } = this.props;
-    this.setState({ focusInputIndex: resetIndex ? null : index - 1 });
+  const handleRemoveTag = ({ index, resetIndex }) => {
+    setFocusInputIndex(resetIndex ? null : index - 1);
     const newValues = remove(index, 1, values[TAG_CATEGORY_TAGS]);
     setFieldValue(TAG_CATEGORY_TAGS, newValues);
     const removeId = values[TAG_CATEGORY_TAGS][index].id;
 
     if (is(Number, removeId)) {
-      setFieldValue(TAG_CATEGORY_REMOVE_TAGS, values[TAG_CATEGORY_REMOVE_TAGS].concat(removeId));
+      const removeTags = values[TAG_CATEGORY_REMOVE_TAGS] || [];
+      setFieldValue(TAG_CATEGORY_REMOVE_TAGS, removeTags.concat(removeId));
     }
   };
-
-  handleBlur = index => e => {
+  const handleBlur = index => e => {
     const { value } = e.target;
 
     if (!value.length) {
-      return this.handleRemoveTag({ index, resetIndex: true });
+      return handleRemoveTag({ index, resetIndex: true });
     }
 
-    return this.setState({ focusInputIndex: null });
+    return setFocusInputIndex(null);
   };
-
-  handleKeyDown = index => e => {
-    const { setFieldValue, values } = this.props;
+  const handleKeyDown = index => e => {
     const { value } = e.target;
 
     if (e.keyCode === 13) {
       e.preventDefault();
       if (value.length) {
-        this.handleAddTag({ index: index + 1 });
+        handleAddTag({ index: index + 1 });
       }
     }
 
     if (!value.length) {
       if (e.keyCode === 8) {
         e.preventDefault();
-        this.handleRemoveTag({ setFieldValue, values, index });
+        handleRemoveTag({ setFieldValue, values, index });
       }
     }
   };
 
-  handleChange = ({ e, id = null, index }) => {
-    const { setFieldValue } = this.props;
-    const { value } = e.target;
-    const tag = id ? { value, id } : { value };
-    setFieldValue(`${TAG_CATEGORY_TAGS}.${index}`, tag);
-  };
-
-  renderTag = ({ value, id }, index) => (
-    <Tag key={index}>
+  return (
+    <Tag>
       <TextField
         value={value}
-        onChange={e => this.handleChange({ e, id, index })}
+        onChange={e => handleTagChange({ e, id, index })}
         name={`${[TAG_CATEGORY_TAGS]}.${index}`}
         fullWidth
         customStyles={{ paddingBottom: 0, width: '100%' }}
         isEdit
-        inputRef={input => input && this.state.focusInputIndex === index && input.focus()}
-        onFocus={() => this.setState({ focusInputIndex: index })}
-        onBlur={this.handleBlur(index)}
-        onKeyDown={this.handleKeyDown(index)}
-        {...this.props}
+        inputRef={input => input && focusInputIndex === index && input.focus()}
+        onFocus={() => setFocusInputIndex(index)}
+        onBlur={handleBlur(index)}
+        onKeyDown={handleKeyDown(index)}
+        {...restFormikProps}
       />
-      <CloseIcon customStyles={removeIconStyles} onClick={() => this.handleRemoveTag({ index, resetIndex: true })} />
+      <CloseIcon customStyles={removeIconStyles} onClick={() => handleRemoveTag({ index, resetIndex: true })} />
     </Tag>
   );
+};
 
-  renderTags = tags =>
-    renderWhenTrueOtherwise(always(<FormattedMessage {...messages.noTags} />), () => tags.map(this.renderTag))(
-      !tags.length
-    );
+TagComponent.propTypes = {
+  setFieldValue: PropTypes.func.isRequired,
+  handleAddTag: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  values: PropTypes.object.isRequired,
+  id: PropTypes.number,
+  index: PropTypes.number.isRequired,
+  focusInputIndex: PropTypes.number,
+  setFocusInputIndex: PropTypes.func.isRequired,
+};
 
-  render() {
-    const { handleChange, values, ...rest } = this.props;
+export const TagCategoryForm = ({ setFieldValue, values, handleChange, ...restFormikProps }) => {
+  const [focusInputIndex, setFocusInputIndex] = useState(null);
+  const intl = useIntl();
+  const handleAddTag = ({ index }) => {
+    const insertIndex = is(Number, index) ? index : values[TAG_CATEGORY_TAGS].length;
+    const newValues = insert(insertIndex, { value: '' }, values[TAG_CATEGORY_TAGS]);
+    setFocusInputIndex(insertIndex);
+    setFieldValue(TAG_CATEGORY_TAGS, newValues);
+  };
 
-    return (
-      <Fragment>
-        <TextInput
-          value={values[TAG_CATEGORY_NAME]}
-          onChange={handleChange}
-          name={TAG_CATEGORY_NAME}
-          fullWidth
-          isEdit
-          label={<FormattedMessage {...messages[TAG_CATEGORY_NAME]} />}
-          {...rest}
-        />
-        <Label>{<FormattedMessage {...messages[TAG_CATEGORY_TAGS]} />}</Label>
-        <TagsContainer>{this.renderTags(values[TAG_CATEGORY_TAGS])}</TagsContainer>
-        <ButtonContainer>
-          <PlusButton onClick={this.handleAddTag} type="button" inverse>
-            <PlusIcon inverse />
-          </PlusButton>
-        </ButtonContainer>
-      </Fragment>
-    );
-  }
-}
+  return (
+    <Fragment>
+      <TextInput
+        value={values[TAG_CATEGORY_NAME]}
+        onChange={handleChange}
+        name={TAG_CATEGORY_NAME}
+        fullWidth
+        isEdit
+        label={<FormattedMessage {...messages[TAG_CATEGORY_NAME]} />}
+        {...restFormikProps}
+      />
+      <Switches>
+        <SwitchContainer>
+          <Switch value={values[TAG_CATEGORY_IS_PUBLIC]} id={TAG_CATEGORY_IS_PUBLIC} onChange={handleChange} />
+          <SwitchCopy>
+            <SwitchLabel htmlFor={TAG_CATEGORY_IS_PUBLIC}>
+              <FormattedMessage {...messages[TAG_CATEGORY_IS_PUBLIC]} />
+            </SwitchLabel>
+            <AvailableCopy>
+              <FormattedMessage
+                {...messages.tagCategoryAvailability}
+                values={{
+                  availability: intl.formatMessage(
+                    messages[values[TAG_CATEGORY_IS_PUBLIC] ? 'publicCopy' : 'privateCopy']
+                  ),
+                }}
+              />
+            </AvailableCopy>
+          </SwitchCopy>
+        </SwitchContainer>
+        <SwitchContainer>
+          <Switch
+            value={values[TAG_CATEGORY_IS_SINGLE_SELECT]}
+            id={TAG_CATEGORY_IS_SINGLE_SELECT}
+            onChange={handleChange}
+          />
+          <SwitchCopy>
+            <SwitchLabel htmlFor={TAG_CATEGORY_IS_SINGLE_SELECT}>
+              <FormattedMessage {...messages[TAG_CATEGORY_IS_SINGLE_SELECT]} />
+            </SwitchLabel>
+            <AvailableCopy>
+              <FormattedMessage
+                {...messages.tagCategorySingleChoice}
+                values={{
+                  type: intl.formatMessage(
+                    messages[values[TAG_CATEGORY_IS_SINGLE_SELECT] ? 'singleChoice' : 'multiChoice']
+                  ),
+                }}
+              />
+            </AvailableCopy>
+          </SwitchCopy>
+        </SwitchContainer>
+      </Switches>
+      <CounterHeader
+        copy={intl.formatMessage(messages[TAG_CATEGORY_TAGS])}
+        count={values[TAG_CATEGORY_TAGS].length}
+        right={
+          <PlusContainer>
+            <PlusButton customStyles={mobilePlusStyles} onClick={handleAddTag} type="button" />
+          </PlusContainer>
+        }
+      />
+      <TagsContainer>
+        {values[TAG_CATEGORY_TAGS].map((item, index) => (
+          <TagComponent
+            setFieldValue={setFieldValue}
+            handleAddTag={handleAddTag}
+            values={values}
+            focusInputIndex={focusInputIndex}
+            setFocusInputIndex={setFocusInputIndex}
+            index={index}
+            key={index}
+            {...item}
+          />
+        ))}
+      </TagsContainer>
+      <AddNewTagContainer onClick={handleAddTag}>
+        <FormattedMessage {...messages.addNewTag} />
+      </AddNewTagContainer>
+    </Fragment>
+  );
+};
+
+TagCategoryForm.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  setFieldValue: PropTypes.func.isRequired,
+  values: PropTypes.object.isRequired,
+};

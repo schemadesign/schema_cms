@@ -21,7 +21,7 @@ export const propsWithTags = {
     id: 2,
     project,
     name: 'name',
-    tags: [{ id: 1, value: 'value' }, { id: 'create_2', value: 'value' }],
+    tags: [{ id: 1, value: 'value' }, { value: 'value' }],
     deleteTags: [],
   },
 };

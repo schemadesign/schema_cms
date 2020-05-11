@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'project.createTagCategory.subTitle',
-    defaultMessage: 'Tag List',
+    defaultMessage: 'Tag Category',
   },
   subTitle: {
     id: 'project.createTagCategory.subTitle',
