@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Form as FormikForm } from 'formik';
-import { Button } from 'schemaUI';
 
 export const Tag = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.border};
@@ -15,19 +14,23 @@ export const TagsContainer = styled.div`
   text-align: center;
   flex-direction: column;
   padding-bottom: 20px;
-`;
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-export const PlusButton = styled(Button)`
-  height: 60px;
+  border-top: 2px solid ${({ theme }) => theme.border};
 `;
 
 export const Form = styled(FormikForm)`
   padding-top: 24px;
+`;
+
+export const AddNewTagContainer = styled.div`
+  text-align: center;
+  padding: 20px 0 40px;
+  cursor: pointer;
+  color: ${({ theme }) => theme.secondaryText};
+`;
+
+export const Switches = styled.div`
+  border-top: 2px solid ${({ theme }) => theme.border};
+  padding: 10px 0 20px;
 `;
 
 export const removeIconStyles = {

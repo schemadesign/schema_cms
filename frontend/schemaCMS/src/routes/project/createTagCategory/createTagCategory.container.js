@@ -13,7 +13,6 @@ import { selectUserRole } from '../../../modules/userProfile';
 import {
   INITIAL_VALUES,
   TAG_CATEGORY_FORM,
-  TAG_CATEGORY_NAME,
   TAG_CATEGORY_TAGS,
   TAG_CATEGORY_SCHEMA,
 } from '../../../modules/tagCategory/tagCategory.constants';
@@ -55,8 +54,8 @@ export default compose(
         const projectId = getMatchParam(props, 'projectId');
         const tags = mapAndAddOrder(data[TAG_CATEGORY_TAGS]);
         const formData = {
+          ...data,
           tags,
-          name: data[TAG_CATEGORY_NAME],
         };
 
         await createTagCategory({ projectId, formData });

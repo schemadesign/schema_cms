@@ -15,9 +15,10 @@ import {
   INITIAL_VALUES,
   TAG_CATEGORY_FORM,
   TAG_CATEGORY_NAME,
-  TAG_CATEGORY_REMOVE_TAGS,
   TAG_CATEGORY_TAGS,
   TAG_CATEGORY_SCHEMA,
+  TAG_CATEGORY_IS_PUBLIC,
+  TAG_CATEGORY_IS_SINGLE_SELECT,
 } from '../../modules/tagCategory/tagCategory.constants';
 import reportError from '../../shared/utils/reportError';
 import { selectUserRole } from '../../modules/userProfile';
@@ -52,7 +53,10 @@ export default compose(
     enableReinitialize: true,
     mapPropsToValues: ({ tagCategory }) => ({
       ...INITIAL_VALUES,
-      ...pick([TAG_CATEGORY_NAME, TAG_CATEGORY_TAGS], tagCategory),
+      ...pick(
+        [TAG_CATEGORY_NAME, TAG_CATEGORY_TAGS, TAG_CATEGORY_IS_PUBLIC, TAG_CATEGORY_IS_SINGLE_SELECT],
+        tagCategory
+      ),
     }),
     validationSchema: () => TAG_CATEGORY_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
@@ -63,9 +67,8 @@ export default compose(
         const dataWithOrder = mapAndAddOrder(data[TAG_CATEGORY_TAGS]);
         const tagWithOrder = mapAndAddOrder(tags);
         const formData = {
+          ...data,
           tags: difference(dataWithOrder, tagWithOrder),
-          name: data[TAG_CATEGORY_NAME],
-          deleteTags: data[TAG_CATEGORY_REMOVE_TAGS],
         };
 
         await updateTagCategory({ projectId: project.id, tagCategoryId: tagCategory.id, formData });

@@ -156,7 +156,7 @@ exports[`StateTag: Component should render correctly 1`] = `
   />
   <LoadingWrapper
     error={null}
-    loading={false}
+    loading={true}
     noData={false}
     noDataContent={
       <FormattedMessage
@@ -218,12 +218,12 @@ exports[`StateTag: Component should render correctly 1`] = `
   >
     <styled.div>
       <BackButton
-        disabled={false}
+        disabled={true}
         onClick={[Function]}
         type="button"
       />
       <NextButton
-        disabled={false}
+        disabled={true}
         loading={false}
         onClick={[Function]}
         type="submit"
