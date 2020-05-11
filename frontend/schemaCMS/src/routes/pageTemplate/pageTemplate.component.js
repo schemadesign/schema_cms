@@ -93,7 +93,7 @@ export const PageTemplate = memo(
       }
     };
 
-    const menuOptions = getProjectMenuOptions();
+    const menuOptions = getProjectMenuOptions(project.id);
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
       initialValues: {
         ...pick([PAGE_TEMPLATES_NAME, PAGE_TEMPLATES_ALLOW_EDIT, PAGE_TEMPLATES_IS_AVAILABLE], pageTemplate),

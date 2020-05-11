@@ -1,0 +1,808 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagCategories: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Tag Categories"
+  />
+  <MobileMenu
+    active="tagsNavBtn"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ProjectTabs
+    active="tag-categories"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <CounterHeader
+      copy="Tag Category"
+      count={2}
+      customPlural="Tag Categories"
+      moveToTop={true}
+    />
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 0,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "in 3 months",
+                "createdBy",
+              ]
+            }
+          />
+        }
+        key="0"
+      >
+        <Styled(H1)
+          id="tag-category-1"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 1,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "in 3 months",
+                "createdBy",
+              ]
+            }
+          />
+        }
+        key="1"
+      >
+        <Styled(H1)
+          id="tag-category-2"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+    </styled.section>
+    <NavigationContainer
+      contentStyles={null}
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackArrowButton
+        hideOnDesktop={true}
+        id="backBtn"
+        onClick={[Function]}
+      />
+      <PlusButton
+        customStyles={Object {}}
+        hideOnDesktop={true}
+        onClick={[Function]}
+      />
+    </NavigationContainer>
+  </LoadingWrapper>
+</Fragment>
+`;
+
+exports[`TagCategories: Component should render correctly when no categories 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Tag Categories"
+  />
+  <MobileMenu
+    active="tagsNavBtn"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ProjectTabs
+    active="tag-categories"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <CounterHeader
+      copy="Tag Category"
+      count={2}
+      customPlural="Tag Categories"
+      moveToTop={true}
+    />
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 0,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "in 3 months",
+                "createdBy",
+              ]
+            }
+          />
+        }
+        key="0"
+      >
+        <Styled(H1)
+          id="tag-category-1"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 1,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "in 3 months",
+                "createdBy",
+              ]
+            }
+          />
+        }
+        key="1"
+      >
+        <Styled(H1)
+          id="tag-category-2"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+    </styled.section>
+    <NavigationContainer
+      contentStyles={null}
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackArrowButton
+        hideOnDesktop={true}
+        id="backBtn"
+        onClick={[Function]}
+      />
+      <PlusButton
+        customStyles={Object {}}
+        hideOnDesktop={true}
+        onClick={[Function]}
+      />
+    </NavigationContainer>
+  </LoadingWrapper>
+</Fragment>
+`;
+
+exports[`TagCategories: Component should render correctly with loader 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Tag Categories"
+  />
+  <MobileMenu
+    active="tagsNavBtn"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ProjectTabs
+    active="tag-categories"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Categories"
+        id="project.tagCategories.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Tag"
+        id="project.tagCategories.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <CounterHeader
+      copy="Tag Category"
+      count={2}
+      customPlural="Tag Categories"
+      moveToTop={true}
+    />
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 0,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "in 3 months",
+                "createdBy",
+              ]
+            }
+          />
+        }
+        key="0"
+      >
+        <Styled(H1)
+          id="tag-category-1"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <FormattedMessage
+            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            id="project.tagCategories.tagsCounter"
+            values={
+              Object {
+                "count": 1,
+              }
+            }
+          />
+        }
+        headerComponent={
+          <CardHeader
+            list={
+              Array [
+                "in 3 months",
+                "createdBy",
+              ]
+            }
+          />
+        }
+        key="1"
+      >
+        <Styled(H1)
+          id="tag-category-2"
+          onClick={[Function]}
+        />
+      </Styled(Component)>
+    </styled.section>
+    <NavigationContainer
+      contentStyles={null}
+      fixed={true}
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackArrowButton
+        hideOnDesktop={true}
+        id="backBtn"
+        onClick={[Function]}
+      />
+      <PlusButton
+        customStyles={Object {}}
+        hideOnDesktop={true}
+        onClick={[Function]}
+      />
+    </NavigationContainer>
+  </LoadingWrapper>
+</Fragment>
+`;

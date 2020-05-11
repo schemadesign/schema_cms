@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateDataSourceTag: Component should render correctly 1`] = `
+<styled.form
+  onSubmit={[Function]}
+>
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="project.createTagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag List"
+        id="project.createTagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="project.createTagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Tag List"
+        id="project.createTagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <TagCategoryForm
+    createTagCategory={[Function]}
+    dirty={false}
+    handleChange={[Function]}
+    handleSubmit={[Function]}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isSubmitting={false}
+    isValid={true}
+    match={
+      Object {
+        "params": Object {
+          "projectId": "projectId",
+        },
+      }
+    }
+    project={
+      Object {
+        "description": "project description",
+        "domain": "http://project.domain",
+        "id": 1,
+        "owner": "project owner",
+        "status": "project status",
+        "title": "project title",
+      }
+    }
+    setFieldValue={[Function]}
+    userRole="admin"
+    values={
+      Object {
+        "name": "",
+        "tags": Array [],
+      }
+    }
+  />
+  <NavigationContainer
+    contentStyles={null}
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="project.createTagCategory.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      loading={false}
+      type="submit"
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="project.createTagCategory.saveTag"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.form>
+`;

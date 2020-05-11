@@ -15,11 +15,22 @@ class TagSerializer(serializers.ModelSerializer):
 
 class TagCategorySerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
+    created_by = serializers.SerializerMethodField(read_only=True)
     delete_tags = serializers.ListField(required=False, write_only=True)
 
     class Meta:
         model = models.TagCategory
-        fields = ("id", "name", "project", "is_single_select", "is_public", "tags", "delete_tags")
+        fields = (
+            "id",
+            "name",
+            "project",
+            "is_single_select",
+            "is_public",
+            "tags",
+            "delete_tags",
+            "created",
+            "created_by",
+        )
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.TagCategory.objects.all(),
@@ -29,6 +40,11 @@ class TagCategorySerializer(serializers.ModelSerializer):
                 message="Tag Category with this name already exist in project.",
             )
         ]
+
+    def get_created_by(self, obj):
+        if getattr(obj, "created_by"):
+            return obj.created_by.get_full_name()
+        return None
 
     @transaction.atomic()
     def create(self, validated_data):

@@ -222,6 +222,17 @@ exports[`Content: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
+              href="/project/projectId/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-AxheI jTLCNQ"
+          >
+            <a
               href="/project/projectId/user"
               id="usersNavBtn"
               onClick={[Function]}
@@ -397,8 +408,8 @@ exports[`Content: Component should render correctly 1`] = `
       >
         <a
           className="sc-fznxsB byrGmN"
-          href="/project/projectId/tag"
-          id="tagsTab"
+          href="/project/projectId/tag-categories"
+          id="tag-categoriesTab"
           onClick={[Function]}
         >
           Tags

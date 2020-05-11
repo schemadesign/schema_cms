@@ -20,6 +20,8 @@ import { CreateBlockTemplate } from './createBlockTemplate';
 import { PageTemplates } from './pageTemplates';
 import { CreatePageTemplate } from './createPageTemplate';
 import { CreateSection } from './createSection';
+import { TagCategories } from './tagCategories';
+import { CreateTagCategory } from './createTagCategory';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -48,6 +50,8 @@ export class Project extends PureComponent {
     const pageTemplatesPath = `${viewPath}/page-templates`;
     const createPageTemplatePath = `${viewPath}/page-templates/create`;
     const createSectionPath = `${viewPath}/section/create`;
+    const tagCategoriesPath = `${viewPath}/tag-categories`;
+    const createTagCategoriesPath = `${tagCategoriesPath}/create`;
 
     return (
       <Switch>
@@ -68,6 +72,8 @@ export class Project extends PureComponent {
         <Route exact path={pageTemplatesPath} component={PageTemplates} />
         <Route exact path={createPageTemplatePath} component={CreatePageTemplate} />
         <Route exact path={createSectionPath} component={CreateSection} />
+        <Route exact path={tagCategoriesPath} component={TagCategories} />
+        <Route exact path={createTagCategoriesPath} component={CreateTagCategory} />
         <Route path="*" component={NotFound} />
       </Switch>
     );

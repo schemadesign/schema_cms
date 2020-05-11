@@ -37,7 +37,7 @@ describe('PageTemplate: Component', () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
 
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/page-templates');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/page-templates');
   });
 
   it('should remove page and redirect to list', async () => {
@@ -53,6 +53,6 @@ describe('PageTemplate: Component', () => {
 
     await Promise.resolve();
     expect(defaultProps.removePageTemplate).toHaveBeenCalledWith({ pageTemplateId: 'pageTemplateId' });
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/page-templates');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/page-templates');
   });
 });

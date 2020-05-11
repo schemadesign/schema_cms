@@ -108,6 +108,19 @@ exports[`UserDetails: Component should render correctly 1`] = `
           "allowedRoles": Array [
             "admin",
           ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project Users"
@@ -361,6 +374,19 @@ exports[`UserDetails: Component should render correctly with loading 1`] = `
             values={Object {}}
           />,
           "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {

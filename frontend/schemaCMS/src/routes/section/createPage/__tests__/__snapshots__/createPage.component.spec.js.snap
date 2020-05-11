@@ -222,6 +222,17 @@ exports[`CreatePage: Component should render correctly 1`] = `
             className="sc-fzoJus dPKBDG"
           >
             <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fzoJus dPKBDG"
+          >
+            <a
               href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}

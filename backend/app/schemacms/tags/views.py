@@ -39,6 +39,14 @@ class TagCategoryListCreateViewSet(
 
         return response.Response(data)
 
+    def create(self, request, *args, **kwargs):
+        request.data["project"] = self.project_obj.id
+
+        return super().create(request, *args, **kwargs)
+
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+
 
 class TagCategoryDetailsViewSet(
     BaseTagCategoryView,

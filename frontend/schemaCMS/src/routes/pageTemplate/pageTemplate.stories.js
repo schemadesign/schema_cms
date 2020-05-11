@@ -6,13 +6,12 @@ import { blockTemplates } from '../../modules/blockTemplates/blockTemplates.mock
 import { ROLES } from '../../modules/userProfile/userProfile.constants';
 import { pageTemplate } from '../../modules/pageTemplates/pageTemplates.mocks';
 import { withTheme } from '../../.storybook/decorators';
+import { project } from '../../modules/project/project.mocks';
 
 export const defaultProps = {
   pageTemplate,
   blockTemplates,
-  project: {
-    id: 'projectId',
-  },
+  project,
   userRole: ROLES.ADMIN,
   updatePageTemplate: Function.prototype,
   fetchPageTemplate: jest.fn().mockReturnValue(Promise.resolve({ project: 'projectId' })),

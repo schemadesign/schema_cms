@@ -24,6 +24,11 @@ export const defaultProps = {
   isSubmitting: false,
   history,
   intl,
+  match: {
+    params: {
+      projectId: 'projectId',
+    },
+  },
 };
 
 storiesOf('Project|Create', module)

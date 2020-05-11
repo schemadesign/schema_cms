@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
 
-import { CONTENT, SETTINGS, SOURCES, STATES, TAGS, TEMPLATES, USERS } from './projectTabs.constants';
+import { CONTENT, SETTINGS, SOURCES, STATES, TAG_CATEGORIES, TEMPLATES, USERS } from './projectTabs.constants';
 
 export default defineMessages({
   [SETTINGS]: {
@@ -28,8 +28,8 @@ export default defineMessages({
     id: `shared.components.projectTabs.${TEMPLATES}`,
     defaultMessage: 'Templates',
   },
-  [TAGS]: {
-    id: `shared.components.projectTabs.${TAGS}`,
+  [TAG_CATEGORIES]: {
+    id: `shared.components.projectTabs.${TAG_CATEGORIES}`,
     defaultMessage: 'Tags',
   },
 });

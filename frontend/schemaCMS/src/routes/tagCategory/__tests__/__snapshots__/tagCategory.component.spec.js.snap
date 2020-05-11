@@ -1,0 +1,452 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagCategory: Component should render correctly 1`] = `
+<styled.div>
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
+    options={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <TagCategoryForm
+        dirty={false}
+        fetchTag={[MockFunction]}
+        fetchTagCategory={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "goBack": [Function],
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        match={
+          Object {
+            "params": Object {
+              "tagCategoryId": "1",
+            },
+          }
+        }
+        project={
+          Object {
+            "description": "project description",
+            "domain": "http://project.domain",
+            "id": 1,
+            "owner": "project owner",
+            "status": "project status",
+            "title": "project title",
+          }
+        }
+        removeTagCategory={[Function]}
+        setFieldValue={[Function]}
+        tagCategory={
+          Object {
+            "id": 2,
+            "name": "name",
+            "project": Object {
+              "description": "project description",
+              "domain": "http://project.domain",
+              "id": 1,
+              "owner": "project owner",
+              "status": "project status",
+              "title": "project title",
+            },
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
+        }
+        updateTag={[Function]}
+        userRole="admin"
+        values={
+          Object {
+            "name": "name",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
+        }
+      />
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove Tag Category"
+          id="tagCategory.subTitle"
+          values={Object {}}
+        />
+      </Styled(Span)>
+      <NavigationContainer
+        contentStyles={null}
+        fixed={true}
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackButton
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <FormattedMessage
+            defaultMessage="Back"
+            id="tagCategory.back"
+            values={Object {}}
+          />
+        </BackButton>
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="tagCategory.saveTagCategory"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
+  </LoadingWrapper>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove this tag category?"
+        id="tagCategory.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="tagCategory.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="tagCategory.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</styled.div>
+`;
+
+exports[`TagCategory: Component should render correctly with loader 1`] = `
+<styled.div>
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
+    options={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="tagCategory.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Tag Category"
+        id="tagCategory.title"
+        values={Object {}}
+      />
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <TagCategoryForm
+        dirty={false}
+        fetchTagCategory={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "goBack": [Function],
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        match={
+          Object {
+            "params": Object {
+              "tagCategoryId": "1",
+            },
+          }
+        }
+        project={
+          Object {
+            "description": "project description",
+            "domain": "http://project.domain",
+            "id": 1,
+            "owner": "project owner",
+            "status": "project status",
+            "title": "project title",
+          }
+        }
+        removeTagCategory={[Function]}
+        setFieldValue={[Function]}
+        tagCategory={
+          Object {
+            "id": 2,
+            "name": "name",
+            "project": Object {
+              "description": "project description",
+              "domain": "http://project.domain",
+              "id": 1,
+              "owner": "project owner",
+              "status": "project status",
+              "title": "project title",
+            },
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
+        }
+        updateTag={[Function]}
+        userRole="admin"
+        values={
+          Object {
+            "name": "name",
+            "tags": Array [
+              Object {
+                "id": 1,
+                "value": "value",
+              },
+            ],
+          }
+        }
+      />
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove Tag Category"
+          id="tagCategory.subTitle"
+          values={Object {}}
+        />
+      </Styled(Span)>
+      <NavigationContainer
+        contentStyles={null}
+        fixed={true}
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackButton
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <FormattedMessage
+            defaultMessage="Back"
+            id="tagCategory.back"
+            values={Object {}}
+          />
+        </BackButton>
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="tagCategory.saveTagCategory"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
+  </LoadingWrapper>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove this tag category?"
+        id="tagCategory.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="tagCategory.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="tagCategory.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</styled.div>
+`;

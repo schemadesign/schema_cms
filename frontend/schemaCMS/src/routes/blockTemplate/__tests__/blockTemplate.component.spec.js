@@ -35,7 +35,7 @@ describe('BlockTemplate: Component', () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
 
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/block-templates');
   });
 
   it('should remove block and redirect to list', async () => {
@@ -51,6 +51,6 @@ describe('BlockTemplate: Component', () => {
 
     await Promise.resolve();
     expect(defaultProps.removeBlockTemplate).toHaveBeenCalledWith({ blockTemplateId: 'blockTemplateId' });
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/block-templates');
   });
 });
