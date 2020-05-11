@@ -7,7 +7,6 @@ from rest_framework import decorators, mixins, permissions, response, status, vi
 
 from . import constants, models, serializers
 from ..authorization import authentication
-from ..states import serializers as st_serializers
 from ..utils import serializers as utils_serializers
 
 
@@ -20,9 +19,9 @@ def copy_steps_from_active_job(steps, job):
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.prefetch_related(
-        "filters", "list_of_tags", "active_job__steps"
-    ).select_related("project", "meta_data", "created_by", "active_job")
+    queryset = models.DataSource.objects.prefetch_related("filters", "active_job__steps").select_related(
+        "project", "meta_data", "created_by", "active_job"
+    )
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "retrieve": serializers.DataSourceDetailSerializer,
@@ -34,8 +33,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
         "set_filters": serializers.FilterSerializer,
-        "tags_lists": st_serializers.TagsListSerializer,
-        "set_tags_lists": st_serializers.TagsListSerializer,
         "update_meta": serializers.PublicApiUpdateMetaSerializer,
     }
 
@@ -44,7 +41,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             super()
             .get_queryset()
             .annotate_filters_count()
-            .annotate_tags_count()
             .jobs_in_process()
             .available_for_user(user=self.request.user)
         )
@@ -181,20 +177,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data_source = self.set_is_active_fields(request, related_objects_name="filters")
 
         serializer = self.get_serializer(instance=data_source.filters, many=True)
-
-        return response.Response(serializer.data, status=status.HTTP_200_OK)
-
-    @decorators.action(detail=True, url_path="tags-lists", methods=["get", "post"])
-    def tags_lists(self, request, pk=None, **kwargs):
-        return self.generate_action_post_get_response(
-            request, related_objects_name="list_of_tags", parent_object_name="datasource"
-        )
-
-    @decorators.action(detail=True, url_path="set-tags-lists", methods=["post"])
-    def set_tags_lists(self, request, pk=None, **kwargs):
-        data_source = self.set_is_active_fields(request, related_objects_name="list_of_tags")
-
-        serializer = self.get_serializer(instance=data_source.list_of_tags, many=True)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 

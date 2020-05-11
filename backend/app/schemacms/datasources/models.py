@@ -115,10 +115,6 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
         return self.filters.count()
 
     @functional.cached_property
-    def tags_count(self):
-        return self.list_of_tags.count()
-
-    @functional.cached_property
     def project_info(self):
         return dict(id=self.project.id, title=self.project.title)
 
@@ -225,10 +221,6 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
         if self.filters:
             filters = [f.meta_file_serialization() for f in self.filters.filter(is_active=True)]
             data.update({"filters": filters})
-
-        if self.list_of_tags:
-            tags = [t.meta_file_serialization() for t in self.list_of_tags.filter(is_active=True)]
-            data.update({"tags": tags})
 
         return data
 

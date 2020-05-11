@@ -1,57 +1,11 @@
-import softdelete.models
+from softdelete.models import SoftDeleteObject
 from django.conf import settings
 from django.contrib.postgres import fields as pg_fields
 from django.db import models
-from django_extensions.db import models as ext_models
-
-from ..utils.models import MetaGeneratorMixin
+from django_extensions.db.models import TimeStampedModel
 
 
-class TagsList(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
-    datasource = models.ForeignKey(
-        "datasources.DataSource", on_delete=models.CASCADE, related_name="list_of_tags"
-    )
-    name = models.CharField(max_length=25)
-    is_active = models.BooleanField(default=True)
-
-    def __str__(self):
-        return self.name or str(self.pk)
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(
-                fields=["datasource", "name"],
-                name="unique_tags_list_name",
-                condition=models.Q(deleted_at=None),
-            )
-        ]
-        ordering = ("created",)
-
-    def meta_file_serialization(self):
-        data = dict(
-            id=self.id, name=self.name, tags=[tag.meta_file_serialization() for tag in self.tags.all()]
-        )
-        return data
-
-
-class Tag(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
-    tags_list: TagsList = models.ForeignKey(TagsList, on_delete=models.CASCADE, related_name="tags")
-    value = models.CharField(max_length=150)
-    exec_order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
-
-    def __str__(self):
-        return self.value or str(self.pk)
-
-    class Meta:
-        ordering = ("created",)
-
-    def meta_file_serialization(self):
-        data = {"id": self.id, "list": self.tags_list.name, "value": self.value}
-        return data
-
-
-class State(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class State(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="states")
     name = models.CharField(max_length=50)
     datasource = models.ForeignKey(
@@ -78,7 +32,7 @@ class State(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.T
         ordering = ("created",)
 
 
-class InStateFilter(MetaGeneratorMixin, softdelete.models.SoftDeleteObject):
+class InStateFilter(SoftDeleteObject):
     filter = models.ForeignKey("datasources.Filter", on_delete=models.CASCADE)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     filter_type = models.CharField(max_length=25)
