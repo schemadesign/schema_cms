@@ -1,110 +1,121 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { act } from 'react-test-renderer';
 
-import { TagCategoryForm } from '../tagCategoryForm.component';
+import { TagCategoryForm, TagComponent } from '../tagCategoryForm.component';
 import { defaultProps, propsWithTags } from '../tagCategoryForm.stories';
+import { makeContextRenderer } from '../../../utils/testUtils';
 
 describe('TagCategoryForm: Component', () => {
-  const component = props => <TagCategoryForm {...defaultProps} {...props} />;
+  const render = props => makeContextRenderer(<TagCategoryForm {...defaultProps} {...props} />);
 
-  const render = (props = {}) => shallow(component(props));
-
-  it('should render empty', () => {
-    const wrapper = render();
+  it('should render empty', async () => {
+    const wrapper = await render();
 
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly', () => {
-    const form = render(propsWithTags);
+  it('should render correctly', async () => {
+    const form = await render(propsWithTags);
 
     expect(form).toMatchSnapshot();
   });
 
-  it('should call setFieldValue on input change', () => {
+  it('should call setFieldValue on input change', async () => {
     jest.spyOn(propsWithTags, 'setFieldValue');
 
-    render(propsWithTags)
-      .find('[name="tags.0"]')
-      .simulate('change', { target: { value: 'new value' } });
+    const wrapper = await render(propsWithTags);
+    wrapper.root.findByProps({ name: 'tags.0' }).props.onChange({ target: { value: 'new value' } });
 
     expect(propsWithTags.setFieldValue).toHaveBeenCalledWith('tags.0', { id: 1, value: 'new value' });
   });
 
-  it('should add new tag on enter', () => {
+  it('should add new tag on enter', async () => {
     jest.spyOn(propsWithTags, 'setFieldValue');
 
-    const wrapper = render(propsWithTags);
+    const wrapper = await render(propsWithTags);
 
-    wrapper
-      .find('[name="tags.0"]')
-      .simulate('keydown', { target: { value: 'new value' }, keyCode: 13, preventDefault: Function.prototype });
+    act(() => {
+      wrapper.root
+        .findByProps({ name: 'tags.0' })
+        .props.onKeyDown({ target: { value: 'new value' }, keyCode: 13, preventDefault: Function.prototype });
+    });
 
     expect(propsWithTags.setFieldValue).toHaveBeenCalledWith('tags', [
       { id: 1, value: 'value' },
       { value: '' },
-      { id: 'create_2', value: 'value' },
+      { value: 'value' },
     ]);
-    expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
   });
 
-  it('should remove tag on backspace', () => {
+  it('should remove tag on backspace', async () => {
     const props = {
       setFieldValue: Function.prototype,
       values: {
         id: 2,
-        datasource: { id: 1 },
         name: 'name',
-        tags: [{ id: 1, value: 'value' }, { id: 'create_2', value: 'value' }, { id: 3, value: 'value' }],
+        tags: [{ id: 1, value: 'value' }, { value: 'value' }, { id: 3, value: 'value' }],
         deleteTags: [],
       },
     };
 
     jest.spyOn(props, 'setFieldValue');
 
-    const wrapper = render(props);
+    const wrapper = await render(props);
 
-    wrapper
-      .find('[name="tags.2"]')
-      .simulate('keydown', { target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
+    act(() => {
+      wrapper.root
+        .findByProps({ name: 'tags.2' })
+        .props.onKeyDown({ target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
+    });
 
-    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [
-      { id: 1, value: 'value' },
-      { id: 'create_2', value: 'value' },
-    ]);
+    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [{ id: 1, value: 'value' }, { value: 'value' }]);
     expect(props.setFieldValue).toHaveBeenCalledWith('deleteTags', [3]);
-    expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
   });
 
-  it('should remove tag on blur', () => {
+  it('should remove tag on blur', async () => {
     const props = {
       setFieldValue: Function.prototype,
       values: {
         id: 2,
-        datasource: { id: 1 },
         name: 'name',
-        tags: [{ id: 1, value: '' }, { id: 'create_2', value: 'value' }],
+        tags: [{ id: 1, value: '' }, { value: 'value' }],
         deleteTags: [],
       },
     };
 
     jest.spyOn(props, 'setFieldValue');
 
-    const wrapper = render(props);
+    const wrapper = await render(props);
 
-    wrapper
-      .find('[name="tags.0"]')
-      .simulate('blur', { target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
+    act(() => {
+      wrapper.root
+        .findByProps({ name: 'tags.0' })
+        .props.onBlur({ target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
+    });
 
-    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [{ id: 'create_2', value: 'value' }]);
-    expect(wrapper.state()).toEqual({ focusInputIndex: null });
+    expect(props.setFieldValue).toHaveBeenCalledWith('tags', [{ value: 'value' }]);
   });
 
-  it('should set focus index', () => {
-    jest.spyOn(propsWithTags, 'setFieldValue');
-    const wrapper = render(propsWithTags);
-    wrapper.find('[name="tags.1"]').simulate('focus');
+  it('should set focus index', async () => {
+    const { values } = propsWithTags;
+    const tagProps = {
+      setFieldValue: Function.prototype,
+      handleAddTag: Function.prototype,
+      value: values.tags[0].value,
+      values: propsWithTags.values,
+      id: values.tags[0].id,
+      index: 0,
+      focusInputIndex: 1,
+      setFocusInputIndex: Function.prototype,
+    };
+    jest.spyOn(tagProps, 'setFocusInputIndex');
 
-    expect(wrapper.state()).toEqual({ focusInputIndex: 1 });
+    const wrapper = await makeContextRenderer(<TagComponent {...tagProps} />);
+
+    act(() => {
+      wrapper.root.findByProps({ name: 'tags.0' }).props.onFocus();
+    });
+
+    expect(tagProps.setFocusInputIndex).toBeCalledWith(0);
   });
 });

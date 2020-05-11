@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { always, insert, is, remove } from 'ramda';
+import { insert, is, remove } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
 import { TextInput } from '../form/inputs/textInput';
@@ -14,7 +14,6 @@ import {
   TAG_CATEGORY_TAGS,
 } from '../../../modules/tagCategory/tagCategory.constants';
 import { removeIconStyles, Tag, TagsContainer, AddNewTagContainer, Switches } from './tagCategoryForm.styles';
-import { renderWhenTrueOtherwise } from '../../utils/rendering';
 import {
   AvailableCopy,
   mobilePlusStyles,
@@ -29,7 +28,7 @@ import { PlusButton } from '../navigation';
 const { TextField, Switch } = FormUI;
 const { CloseIcon } = Icons;
 
-const TagComponent = ({
+export const TagComponent = ({
   value,
   values,
   id,
@@ -107,8 +106,8 @@ TagComponent.propTypes = {
   setFieldValue: PropTypes.func.isRequired,
   handleAddTag: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
-  values: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  values: PropTypes.object.isRequired,
+  id: PropTypes.number,
   index: PropTypes.number.isRequired,
   focusInputIndex: PropTypes.number,
   setFocusInputIndex: PropTypes.func.isRequired,
@@ -123,22 +122,6 @@ export const TagCategoryForm = ({ setFieldValue, values, handleChange, ...restFo
     setFocusInputIndex(insertIndex);
     setFieldValue(TAG_CATEGORY_TAGS, newValues);
   };
-
-  const renderTags = tags =>
-    renderWhenTrueOtherwise(always(<FormattedMessage {...messages.noTags} />), () =>
-      tags.map((item, index) => (
-        <TagComponent
-          setFieldValue={setFieldValue}
-          handleAddTag={handleAddTag}
-          values={values}
-          focusInputIndex={focusInputIndex}
-          setFocusInputIndex={setFocusInputIndex}
-          index={index}
-          key={index}
-          {...item}
-        />
-      ))
-    )(!tags.length);
 
   return (
     <Fragment>
@@ -202,7 +185,20 @@ export const TagCategoryForm = ({ setFieldValue, values, handleChange, ...restFo
           </PlusContainer>
         }
       />
-      <TagsContainer>{renderTags(values[TAG_CATEGORY_TAGS])}</TagsContainer>
+      <TagsContainer>
+        {values[TAG_CATEGORY_TAGS].map((item, index) => (
+          <TagComponent
+            setFieldValue={setFieldValue}
+            handleAddTag={handleAddTag}
+            values={values}
+            focusInputIndex={focusInputIndex}
+            setFocusInputIndex={setFocusInputIndex}
+            index={index}
+            key={index}
+            {...item}
+          />
+        ))}
+      </TagsContainer>
       <AddNewTagContainer onClick={handleAddTag}>
         <FormattedMessage {...messages.addNewTag} />
       </AddNewTagContainer>
@@ -213,12 +209,5 @@ export const TagCategoryForm = ({ setFieldValue, values, handleChange, ...restFo
 TagCategoryForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
-  values: PropTypes.shape({
-    [TAG_CATEGORY_TAGS]: PropTypes.arrayOf(
-      PropTypes.shape({
-        value: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
+  values: PropTypes.object.isRequired,
 };

@@ -1,214 +1,740 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TagCategoryForm: Component should render correctly 1`] = `
-<Fragment>
-  <TextInput
-    autoWidth={false}
-    checkOnlyErrors={false}
-    errors={Object {}}
-    fullWidth={true}
-    isEdit={true}
-    label={
-      <FormattedMessage
-        defaultMessage="Name"
-        id="shared.components.tagCategoryForm.name"
-        values={Object {}}
+Array [
+  <div
+    className="sc-AxjAm bPMEtn"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="name"
       />
-    }
-    name="name"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    touched={Object {}}
-    value="name"
-  />
-  <Component>
-    <FormattedMessage
-      defaultMessage="Tags"
-      id="shared.components.tagCategoryForm.tags"
-      values={Object {}}
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="sc-AxirZ wBsWx"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-Axmtr ipReFo"
+  >
+    <div
+      className="sc-fzozJi kjImrq"
+    >
+      <div>
+        <input
+          id="isPublic"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isPublic"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fzpans btSGIV"
+      >
+        <label
+          className="sc-fzoLsD gYHLQC"
+          htmlFor="isPublic"
+        >
+          Make it Public
+        </label>
+        <span
+          className="sc-fznKkj iQRMfO"
+        >
+          This Tag Category is currently Private
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-fzozJi kjImrq"
+    >
+      <div>
+        <input
+          id="isSingleSelect"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isSingleSelect"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fzpans btSGIV"
+      >
+        <label
+          className="sc-fzoLsD gYHLQC"
+          htmlFor="isSingleSelect"
+        >
+          Make it Single Choice
+        </label>
+        <span
+          className="sc-fznKkj iQRMfO"
+        >
+          This Tag Category is currently Multi Choice
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fzpjYC iscmDb"
+  >
+    <div
+      className="sc-fznxsB gWBaQk"
     />
-  </Component>
-  <styled.div>
-    <styled.div
-      key="0"
+    2 Tags
+    <div
+      className="sc-fznxsB gWBaQk"
     >
-      <Component
-        customStyles={
+      <div
+        className="sc-fzqNJr ibBNyF"
+      >
+        <div
+          className="sc-fzoyTs hgdjmq"
+        >
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-AxhUy bStVzZ"
+  >
+    <div
+      className="sc-AxhCb geUocG"
+    >
+      <div
+        style={
           Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
             "paddingBottom": 0,
+            "position": "relative",
             "width": "100%",
           }
         }
-        fullWidth={true}
-        handleChange={[Function]}
-        inputRef={[Function]}
-        isEdit={true}
-        name="tags.0"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        setFieldValue={[Function]}
-        value="value"
-        values={
-          Object {
-            "deleteTags": Array [],
-            "id": 2,
-            "name": "name",
-            "project": Object {
-              "description": "project description",
-              "domain": "http://project.domain",
-              "id": 1,
-              "owner": "project owner",
-              "status": "project status",
-              "title": "project title",
-            },
-            "tags": Array [
-              Object {
-                "id": 1,
-                "value": "value",
-              },
-              Object {
-                "id": "create_2",
-                "value": "value",
-              },
-            ],
+      >
+        <input
+          id="tags.0"
+          name="tags.0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
           }
-        }
-      />
-      <Component
-        customStyles={
+          type="text"
+          value="value"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+      <svg
+        onClick={[Function]}
+        style={
           Object {
             "cursor": "pointer",
+            "fill": "#FFF",
             "height": 35,
             "marginLeft": 5,
             "minWidth": 35,
             "width": 35,
           }
         }
-        onClick={[Function]}
-      />
-    </styled.div>
-    <styled.div
-      key="1"
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-AxhCb geUocG"
     >
-      <Component
-        customStyles={
+      <div
+        style={
           Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
             "paddingBottom": 0,
+            "position": "relative",
             "width": "100%",
           }
         }
-        fullWidth={true}
-        handleChange={[Function]}
-        inputRef={[Function]}
-        isEdit={true}
-        name="tags.1"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        setFieldValue={[Function]}
-        value="value"
-        values={
-          Object {
-            "deleteTags": Array [],
-            "id": 2,
-            "name": "name",
-            "project": Object {
-              "description": "project description",
-              "domain": "http://project.domain",
-              "id": 1,
-              "owner": "project owner",
-              "status": "project status",
-              "title": "project title",
-            },
-            "tags": Array [
-              Object {
-                "id": 1,
-                "value": "value",
-              },
-              Object {
-                "id": "create_2",
-                "value": "value",
-              },
-            ],
+      >
+        <input
+          id="tags.1"
+          name="tags.1"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
           }
-        }
-      />
-      <Component
-        customStyles={
+          type="text"
+          value="value"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+      <svg
+        onClick={[Function]}
+        style={
           Object {
             "cursor": "pointer",
+            "fill": "#FFF",
             "height": 35,
             "marginLeft": 5,
             "minWidth": 35,
             "width": 35,
           }
         }
-        onClick={[Function]}
-      />
-    </styled.div>
-  </styled.div>
-  <styled.div>
-    <Styled(Component)
-      inverse={true}
-      onClick={[Function]}
-      type="button"
-    >
-      <Component
-        inverse={true}
-      />
-    </Styled(Component)>
-  </styled.div>
-</Fragment>
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>,
+  <div
+    className="sc-AxheI dJKTKs"
+    onClick={[Function]}
+  >
+    Tap or click to add new Tag
+  </div>,
+]
 `;
 
 exports[`TagCategoryForm: Component should render empty 1`] = `
-<Fragment>
-  <TextInput
-    autoWidth={false}
-    checkOnlyErrors={false}
-    errors={Object {}}
-    fullWidth={true}
-    isEdit={true}
-    label={
-      <FormattedMessage
-        defaultMessage="Name"
-        id="shared.components.tagCategoryForm.name"
-        values={Object {}}
-      />
-    }
-    name="name"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    touched={Object {}}
-    value=""
-  />
-  <Component>
-    <FormattedMessage
-      defaultMessage="Tags"
-      id="shared.components.tagCategoryForm.tags"
-      values={Object {}}
-    />
-  </Component>
-  <styled.div>
-    <FormattedMessage
-      defaultMessage="No Tags"
-      id="shared.components.tagCategoryForm.noTags"
-      values={Object {}}
-    />
-  </styled.div>
-  <styled.div>
-    <Styled(Component)
-      inverse={true}
-      onClick={[Function]}
-      type="button"
+Array [
+  <div
+    className="sc-AxjAm bPMEtn"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
     >
-      <Component
-        inverse={true}
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value=""
       />
-    </Styled(Component)>
-  </styled.div>
-</Fragment>
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="sc-AxirZ wBsWx"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-Axmtr ipReFo"
+  >
+    <div
+      className="sc-fzozJi kjImrq"
+    >
+      <div>
+        <input
+          id="isPublic"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isPublic"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fzpans btSGIV"
+      >
+        <label
+          className="sc-fzoLsD gYHLQC"
+          htmlFor="isPublic"
+        >
+          Make it Public
+        </label>
+        <span
+          className="sc-fznKkj iQRMfO"
+        >
+          This Tag Category is currently Private
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-fzozJi kjImrq"
+    >
+      <div>
+        <input
+          id="isSingleSelect"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isSingleSelect"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fzpans btSGIV"
+      >
+        <label
+          className="sc-fzoLsD gYHLQC"
+          htmlFor="isSingleSelect"
+        >
+          Make it Single Choice
+        </label>
+        <span
+          className="sc-fznKkj iQRMfO"
+        >
+          This Tag Category is currently Multi Choice
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fzpjYC iscmDb"
+  >
+    <div
+      className="sc-fznxsB gWBaQk"
+    />
+    0 Tags
+    <div
+      className="sc-fznxsB gWBaQk"
+    >
+      <div
+        className="sc-fzqNJr ibBNyF"
+      >
+        <div
+          className="sc-fzoyTs hgdjmq"
+        >
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-AxhUy bStVzZ"
+  />,
+  <div
+    className="sc-AxheI dJKTKs"
+    onClick={[Function]}
+  >
+    Tap or click to add new Tag
+  </div>,
+]
 `;

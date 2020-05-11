@@ -14,7 +14,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Tag List"
+        defaultMessage="Tag Category"
         id="project.createTagCategory.subTitle"
         values={Object {}}
       />
@@ -156,7 +156,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     }
     title={
       <FormattedMessage
-        defaultMessage="Tag List"
+        defaultMessage="Tag Category"
         id="project.createTagCategory.subTitle"
         values={Object {}}
       />

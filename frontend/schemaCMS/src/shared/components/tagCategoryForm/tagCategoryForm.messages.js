@@ -52,10 +52,6 @@ export default defineMessages({
     id: 'shared.components.tagCategoryForm.addTag',
     defaultMessage: 'Add tag',
   },
-  noTags: {
-    id: 'shared.components.tagCategoryForm.noTags',
-    defaultMessage: 'No Tags',
-  },
   addNewTag: {
     id: 'shared.components.tagCategoryForm.addNewTag',
     defaultMessage: 'Tap or click to add new Tag',
