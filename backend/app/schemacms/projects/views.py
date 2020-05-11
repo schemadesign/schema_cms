@@ -49,7 +49,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .prefetch_related("filters", "active_job__steps")
             .select_related("project", "meta_data", "created_by", "active_job")
             .annotate_filters_count()
-            .annotate_tags_count()
             .available_for_user(user=self.request.user)
         )
 

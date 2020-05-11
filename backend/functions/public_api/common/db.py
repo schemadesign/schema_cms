@@ -362,12 +362,17 @@ class Element(BaseModel):
     def get_custom_element_data(custom_element):
         elements = []
 
-        for element_set in custom_element.elements_sets.where(CustomElementSet.deleted_at == None):
+        for element_set in custom_element.elements_sets.where(CustomElementSet.deleted_at == None).order_by(
+            CustomElementSet.order
+        ):
             data = {
                 "id": element_set.id,
                 "order": element_set.order,
                 "elements": [
-                    element.as_dict() for element in element_set.elements.where(Element.deleted_at == None)
+                    element.as_dict()
+                    for element in element_set.elements.where(Element.deleted_at == None).order_by(
+                        Element.order
+                    )
                 ],
             }
             elements.append(data)

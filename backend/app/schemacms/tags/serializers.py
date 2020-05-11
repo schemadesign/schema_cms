@@ -16,7 +16,6 @@ class TagSerializer(serializers.ModelSerializer):
 class TagCategorySerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
     created_by = serializers.SerializerMethodField(read_only=True)
-    delete_tags = serializers.ListField(required=False, write_only=True)
 
     class Meta:
         model = models.TagCategory
@@ -27,7 +26,6 @@ class TagCategorySerializer(serializers.ModelSerializer):
             "is_single_select",
             "is_public",
             "tags",
-            "delete_tags",
             "created",
             "created_by",
         )
@@ -57,7 +55,7 @@ class TagCategorySerializer(serializers.ModelSerializer):
 
     @transaction.atomic()
     def update(self, instance, validated_data):
-        delete_tags = validated_data.pop("delete_tags", [])
+        delete_tags = self.initial_data.get("delete_tags", [])
         tags = validated_data.pop("tags", [])
 
         category = super().update(instance, validated_data)

@@ -3,79 +3,7 @@ from rest_framework import serializers
 
 from . import models
 from ..datasources import models as ds_models
-from ..utils.serializers import NestedRelatedModelSerializer, IDNameSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
-
-
-class TagSerializer(serializers.Serializer):
-    id = serializers.IntegerField(required=False)
-    value = serializers.CharField(max_length=150, required=True)
-    exec_order = serializers.IntegerField(required=True)
-
-
-class TagsListSerializer(serializers.ModelSerializer):
-    tags = TagSerializer(many=True, required=False)
-
-    class Meta:
-        model = models.TagsList
-        fields = ("id", "datasource", "name", "is_active", "tags")
-        extra_kwargs = {"datasource": {"required": False, "allow_null": True}}
-        validators = [
-            CustomUniqueTogetherValidator(
-                queryset=models.TagsList.objects.all(),
-                fields=("name", "datasource"),
-                key_field_name="name",
-                code="tagsListNameNotUnique",
-                message="TagsList with this name already exist in data source.",
-            )
-        ]
-
-    @transaction.atomic()
-    def create(self, validated_data):
-        tags = validated_data.pop("tags", [])
-        tags_list = models.TagsList.objects.create(**validated_data)
-        if tags:
-            models.Tag.objects.bulk_create(self.create_tags(tags, tags_list))
-
-        return tags_list
-
-    @transaction.atomic()
-    def update(self, instance, validated_data):
-        tags_to_delete = self.initial_data.pop("delete_tags", [])
-        tags = validated_data.pop("tags", [])
-        if tags_to_delete:
-            instance.tags.filter(id__in=tags_to_delete).delete()
-
-        if tags:
-            tags_to_update = [tag for tag in tags if "id" in tag]
-            tags_to_create = [tag for tag in tags if "id" not in tag]
-
-            if tags_to_update:
-                for tag in tags_to_update:
-                    instance.tags.filter(id=tag["id"]).update(
-                        value=tag["value"], exec_order=tag["exec_order"]
-                    )
-
-            if tags_to_create:
-                models.Tag.objects.bulk_create(self.create_tags(tags_to_create, instance))
-
-        return super().update(instance, validated_data)
-
-    @staticmethod
-    def create_tags(tags, list_):
-        for tag in tags:
-            tag_instance = models.Tag()
-            tag_instance.value = tag["value"]
-            tag_instance.tags_list = list_
-            tag_instance.exec_order = tag["exec_order"]
-            yield tag_instance
-
-
-class TagsListDetailSerializer(TagsListSerializer):
-    datasource = NestedRelatedModelSerializer(serializer=IDNameSerializer(), read_only=True)
-
-    class Meta(TagsListSerializer.Meta):
-        fields = TagsListSerializer.Meta.fields + ("datasource",)
 
 
 class InStateFilterSerializer(serializers.ModelSerializer):
