@@ -88,7 +88,7 @@ export const BlockTemplate = memo(
       }
     };
 
-    const menuOptions = getProjectMenuOptions();
+    const menuOptions = getProjectMenuOptions(project.id);
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
       initialValues: {
         ...INITIAL_VALUES,

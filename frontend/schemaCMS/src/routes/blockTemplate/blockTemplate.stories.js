@@ -5,12 +5,11 @@ import { BlockTemplate } from './blockTemplate.component';
 import { blockTemplate } from '../../modules/blockTemplates/blockTemplates.mocks';
 import { ROLES } from '../../modules/userProfile/userProfile.constants';
 import { withTheme } from '../../.storybook/decorators';
+import { project } from '../../modules/project/project.mocks';
 
 export const defaultProps = {
   blockTemplate,
-  project: {
-    id: 'projectId',
-  },
+  project,
   userRole: ROLES.ADMIN,
   updateBlockTemplate: Function.prototype,
   fetchBlockTemplate: jest.fn().mockReturnValue(Promise.resolve({ project: 'projectId' })),
