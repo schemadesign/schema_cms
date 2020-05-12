@@ -17,6 +17,7 @@ import { NotRegistered } from './notRegistered';
 import { RevokedAccess } from './revokedAccess';
 import { Preview as JobPreview } from './jobDetail/preview';
 import { Project } from './project';
+import { List as ProjectList } from './project/list';
 import { ResetPassword } from './resetPassword';
 import { Settings } from './settings';
 import { User } from './user';
@@ -63,7 +64,9 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
 
-            <AuthRoute path={ROUTES.PROJECT} component={Project} />
+            <AuthRoute exact path={ROUTES.PROJECT} component={ProjectList} />
+
+            <AuthRoute path={`${ROUTES.PROJECT}/:projectId`} component={Project} />
 
             <AuthRoute path={`${ROUTES.DATA_SOURCE}/:dataSourceId`} component={DataSource} />
 

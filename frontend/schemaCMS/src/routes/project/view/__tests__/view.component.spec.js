@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
 import { defaultProps } from '../view.stories';
-import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 import { BackButton, NextButton } from '../../../../shared/components/navigation';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
 
@@ -23,36 +22,14 @@ describe('View: Component', () => {
     defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = await render();
 
-    const content = wrapper.find(LoadingWrapper).dive();
-    expect(content).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render content correctly for editor', async () => {
     defaultProps.fetchProject = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = await render({ isAdmin: false });
 
-    const content = wrapper.find(LoadingWrapper).dive();
-    expect(content).toMatchSnapshot();
-  });
-
-  it('should set error correctly', async () => {
-    const errorResponse = 'fetchProject should return error';
-    const wrapper = await render({
-      fetchProject: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
-    });
-
-    const { loading, error } = wrapper.state();
-
-    expect(loading).toBeFalsy();
-    expect(error).toBe(errorResponse);
-  });
-
-  it('should call fetchProject prop on componentDidMount', async () => {
-    jest.spyOn(defaultProps, 'fetchProject');
-
-    await render();
-
-    expect(defaultProps.fetchProject).toHaveBeenCalledWith({ projectId: '100' });
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call removeProject on click delete project', async () => {
@@ -62,8 +39,6 @@ describe('View: Component', () => {
     const wrapper = await render();
 
     wrapper
-      .find(LoadingWrapper)
-      .dive()
       .find('#deleteProjectDesktopBtn')
       .simulate('click');
 
@@ -109,8 +84,6 @@ describe('View: Component', () => {
     const wrapper = await render();
 
     wrapper
-      .find(LoadingWrapper)
-      .dive()
       .find('#deleteProjectDesktopBtn')
       .simulate('click');
 

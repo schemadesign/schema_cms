@@ -361,106 +361,176 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznWqX clGFVO"
-    id="tabsContainer"
+    className="sc-fzoNJl DDBca"
   >
     <div
-      className="sc-fzpjYC hUVQHn"
+      style={
+        Object {
+          "borderBottom": "1px solid #a6a7aa",
+          "display": "flex",
+          "padding": "20px 0",
+        }
+      }
     >
       <div
-        className="sc-fznxsB gwcqhJ"
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
       >
         <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId"
-          id="settingsTab"
+          className="sc-fzpmMD dkkltt"
+          href="/project/1/"
           onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
         >
-          Settings
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Project
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h3>
         </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
       </div>
       <div
-        className="sc-fznxsB gwcqhJ"
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
       >
         <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/datasource"
-          id="sourcesTab"
+          className="sc-fzpmMD dkkltt"
+          href="/project/1/content"
           onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "display": "flex",
+              "flexDirection": "column",
+            }
+          }
         >
-          Sources
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Tab
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Content
+          </h3>
         </a>
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "marginLeft": "14px",
+            }
+          }
+        >
+          &gt;
+        </div>
       </div>
       <div
-        className="sc-fznxsB gwcqhJ"
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "color": "#a6a7aa",
+            "display": "flex",
+            "marginRight": "14px",
+          }
+        }
       >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/state"
-          id="stateTab"
-          onClick={[Function]}
+        <div
+          className="sc-fzoXWK gwsueS"
         >
-          States
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/tag-categories"
-          id="tag-categoriesTab"
-          onClick={[Function]}
-        >
-          Tags
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB cRgWyS"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/content"
-          id="contentTab"
-          onClick={[Function]}
-        >
-          Content
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/templates"
-          id="templatesTab"
-          onClick={[Function]}
-        >
-          Templates
-        </a>
-      </div>
-      <div
-        className="sc-fznxsB gwcqhJ"
-      >
-        <a
-          className="sc-fznJRM iifkLh"
-          href="/project/projectId/user"
-          id="usersTab"
-          onClick={[Function]}
-        >
-          Users
-        </a>
+          <span
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
+              }
+            }
+          >
+            Section
+          </span>
+          <h3
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "margin": 0,
+              }
+            }
+          >
+            Create
+          </h3>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-fzoiQi kzhWbE"
+    className="sc-fzpjYC gMeLi"
   >
     <div
-      className="sc-fzqARJ fGrnyP"
+      className="sc-fznxsB ckGoLY"
     >
       <h2
-        className="sc-fzqNqU cSnCDr"
+        className="sc-fznJRM eSKnjX"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -474,7 +544,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         Section
       </h2>
       <h1
-        className="sc-fzoyTs ieHSUN"
+        className="sc-fznWqX bKYpVc"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -491,7 +561,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fzoNJl kUMlmZ"
+      className="sc-fzoiQi jkvegY"
     />
   </div>
   <form
@@ -499,7 +569,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fzoXWK fQayrT"
+      className="sc-fzqARJ iTuwok"
     >
       <div
         style={
