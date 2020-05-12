@@ -21,14 +21,19 @@ CORS(app)
 
 
 def create_response(data):
-    return Response(json.dumps(data, ensure_ascii=True), content_type="application/json; charset=utf-8",)
+    return Response(
+        json.dumps(data, ensure_ascii=True),
+        content_type="application/json; charset=utf-8",
+    )
 
 
 def read_parquet_from_s3(data_source, columns=None, orient="index", slice_=True):
     result_file = services.get_s3_object(data_source.result_parquet)
     file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)
     if slice_:
-        return json.loads(file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso"))
+        return json.loads(
+            file.slice(0, 10).to_pandas().to_json(orient=orient, date_format="iso")
+        )
     else:
         return json.loads(file.to_pandas().to_json(orient=orient, date_format="iso"))
 
@@ -43,12 +48,21 @@ def split_string_to_list(column_names_string):
 # Projects endpoints
 
 
+@app.route("/settings", methods=["GET"])
+def get_settings():
+    set_ = db.get_db_settings()
+
+    return create_response(set_), 200
+
+
 @app.route("/projects", methods=["GET"])
 def get_projects():
     try:
         projects = [
             project.as_dict()
-            for project in db.Project.select().where(db.Project.deleted_at == None).order_by(db.Project.id)
+            for project in db.Project.select()
+            .where(db.Project.deleted_at == None)
+            .order_by(db.Project.id)
         ]
 
     except Exception as e:
@@ -87,7 +101,9 @@ def get_project_data_sources(project_id):
         data_sources = [
             data_source.as_dict_list()
             for data_source in db.DataSource.select()
-            .where(db.DataSource.project_id == project_id, db.DataSource.deleted_at == None)
+            .where(
+                db.DataSource.project_id == project_id, db.DataSource.deleted_at == None
+            )
             .order_by(db.DataSource.created)
             .paginate(page_number, page_size)
         ]
@@ -105,7 +121,9 @@ def get_project_pages(project_id):
         pages = [
             page.as_dict()
             for page in db.Page.select().where(
-                db.Page.project_id == project_id, db.Page.deleted_at == None, db.Page.is_public == True,
+                db.Page.project_id == project_id,
+                db.Page.deleted_at == None,
+                db.Page.is_public == True,
             )
         ]
 
@@ -145,7 +163,11 @@ def get_page(page_id):
         format_ = request.args.get("format", None)
         page = (
             db.Page.select()
-            .where(db.Page.id == page_id, db.Page.deleted_at == None, db.Page.is_public == True,)
+            .where(
+                db.Page.id == page_id,
+                db.Page.deleted_at == None,
+                db.Page.is_public == True,
+            )
             .get()
             .as_dict_detail()
         )
@@ -168,7 +190,11 @@ def get_page_block(page_id, block_id):
     try:
         block = (
             db.Block.select()
-            .where(db.Block.page == page_id, db.Block.deleted_at == None, db.Block.id == block_id,)
+            .where(
+                db.Block.page == page_id,
+                db.Block.deleted_at == None,
+                db.Block.id == block_id,
+            )
             .get()
             .as_dict()
         )
@@ -270,7 +296,9 @@ def get_data_source_fields(data_source_id):
     return create_response(fields), 200
 
 
-@app.route("/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"])
+@app.route(
+    "/datasources/<int:data_source_id>/fields/<string:field_id>", methods=["GET"]
+)
 def get_data_source_selected_field(data_source_id, field_id):
     try:
         data_source = (
@@ -279,7 +307,9 @@ def get_data_source_selected_field(data_source_id, field_id):
             .get()
         )
         field = data_source.get_fields()[field_id]
-        records = read_parquet_from_s3(data_source, columns=[field["name"]], slice_=False)
+        records = read_parquet_from_s3(
+            data_source, columns=[field["name"]], slice_=False
+        )
 
     except db.DataSource.DoesNotExist:
         return create_response({"error": "Data Source does not exist"}), 404
@@ -289,7 +319,14 @@ def get_data_source_selected_field(data_source_id, field_id):
         return create_response({"error": f"{e}"}), 400
 
     return (
-        create_response({"id": field_id, "name": field["name"], "type": field["type"], "records": records,}),
+        create_response(
+            {
+                "id": field_id,
+                "name": field["name"],
+                "type": field["type"],
+                "records": records,
+            }
+        ),
         200,
     )
 

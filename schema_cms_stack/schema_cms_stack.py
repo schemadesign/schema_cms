@@ -350,7 +350,7 @@ class PublicAPI(core.Stack):
                     self, "db_conn", db_connection_arn
                 ).secret_value.to_string(),
             },
-            memory_size=512,
+            memory_size=1024,
             timeout=core.Duration.seconds(180),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
