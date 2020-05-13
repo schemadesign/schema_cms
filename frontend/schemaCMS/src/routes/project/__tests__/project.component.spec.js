@@ -27,6 +27,11 @@ describe('Project: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render correctly when loading wrapper content is called', () => {
+    const wrapper = render();
+    global.expect(wrapper.dive()).toMatchSnapshot();
+  });
+
   it('should call fetchProject prop on componentDidMount', async () => {
     jest.spyOn(defaultProps, 'fetchProject');
 
