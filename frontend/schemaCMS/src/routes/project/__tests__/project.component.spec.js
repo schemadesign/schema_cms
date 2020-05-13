@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Project } from '../project.component';
-import {defaultProps} from "../view/view.stories";
 
 describe('Project: Component', () => {
   const defaultProps = {
