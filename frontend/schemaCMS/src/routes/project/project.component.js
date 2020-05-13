@@ -43,8 +43,8 @@ export class Project extends PureComponent {
   async componentDidMount() {
     try {
       const { params } = this.props.match;
+      this.setState({ loading: false });
       if (params.projectId) {
-        this.setState({ loading: false });
         await this.props.fetchProject(params);
       }
     } catch (error) {
