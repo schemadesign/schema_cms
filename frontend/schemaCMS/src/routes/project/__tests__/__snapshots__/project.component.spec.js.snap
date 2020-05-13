@@ -3,7 +3,7 @@
 exports[`Project: Component should render correctly 1`] = `
 <LoadingWrapper
   error={null}
-  loading={false}
+  loading={true}
   noData={false}
   noDataContent={null}
 >

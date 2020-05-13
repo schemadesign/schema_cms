@@ -26,8 +26,10 @@ describe('Project: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly when loading wrapper content is called', () => {
-    const wrapper = render();
+  it('should render correctly when loading wrapper content is called', async () => {
+    const wrapper = await render({
+      fetchProject: jest.fn().mockReturnValue(Promise.resolve()),
+    });
     global.expect(wrapper.dive()).toMatchSnapshot();
   });
 
