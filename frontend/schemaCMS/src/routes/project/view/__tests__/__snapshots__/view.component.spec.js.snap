@@ -1,731 +1,1155 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`View: Component should render content correctly 1`] = `
-<Fragment>
-  <styled.div>
-    <StatisticCards
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
+<styled.div>
+  <div>
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+      title="Project"
+    />
+    <MobileMenu
+      active="projectDetailsNavBtn"
+      headerSubtitle="Project Name"
+      headerTitle={
+        <FormattedMessage
+          defaultMessage="Project"
+          id="project.view.title"
+          values={Object {}}
+        />
       }
-      statistics={
+      options={
         Array [
           Object {
-            "header": Object {
-              "defaultMessage": "Data Sources",
-              "id": "project.view.dataSources",
-            },
-            "id": "projectDataSources",
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "projectsNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Projects"
+              id="project.view.projectsListPage"
+              values={Object {}}
+            />,
+            "to": "/project/",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "usersPageNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Users"
+              id="project.view.usersPage"
+              values={Object {}}
+            />,
+            "to": "/user/",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "projectDetailsNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Project details"
+              id="project.view.projectDetails"
+              values={Object {}}
+            />,
+            "to": "/project/100",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "dataSourceNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Data Sources"
+              id="project.view.projectDataSources"
+              values={Object {}}
+            />,
             "to": "/project/100/datasource",
-            "value": 3,
+            "type": "link_item",
           },
           Object {
-            "header": Object {
-              "defaultMessage": "States",
-              "id": "project.view.states",
-            },
-            "id": "projectStates",
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "stateNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="States"
+              id="project.view.states"
+              values={Object {}}
+            />,
             "to": "/project/100/state",
-            "value": undefined,
+            "type": "link_item",
           },
           Object {
-            "header": Object {
-              "defaultMessage": "Pages",
-              "id": "project.view.pages",
-            },
-            "id": "projectPages",
-            "to": "/project/100/content",
-            "value": 1,
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "tagsNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Tags"
+              id="project.view.tags"
+              values={Object {}}
+            />,
+            "to": "/project/100/tag-categories",
+            "type": "link_item",
           },
           Object {
-            "header": Object {
-              "defaultMessage": "Users",
-              "id": "project.view.users",
-            },
-            "id": "projectUsers",
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "usersNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Project Users"
+              id="project.view.projectUsersPage"
+              values={Object {}}
+            />,
             "to": "/project/100/user",
-            "value": 2,
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "contentNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Content"
+              id="project.view.content"
+              values={Object {}}
+            />,
+            "to": "/project/100/content",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "templatesNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Templates"
+              id="project.view.templates"
+              values={Object {}}
+            />,
+            "to": "/project/100/templates",
+            "type": "link_item",
           },
         ]
       }
     />
-    <styled.ul>
-      <styled.li
-        key="0"
-        order={2}
-      >
-        <styled.div
-          id="fieldTitle"
+    <ProjectTabs
+      active="settings"
+      url="/project/100"
+    />
+    <styled.div>
+      <StatisticCards
+        history={
+          Object {
+            "goBack": [Function],
+            "push": [Function],
+          }
+        }
+        statistics={
+          Array [
+            Object {
+              "header": Object {
+                "defaultMessage": "Data Sources",
+                "id": "project.view.dataSources",
+              },
+              "id": "projectDataSources",
+              "to": "/project/100/datasource",
+              "value": 3,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "States",
+                "id": "project.view.states",
+              },
+              "id": "projectStates",
+              "to": "/project/100/state",
+              "value": undefined,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "Pages",
+                "id": "project.view.pages",
+              },
+              "id": "projectPages",
+              "to": "/project/100/content",
+              "value": 1,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "Users",
+                "id": "project.view.users",
+              },
+              "id": "projectUsers",
+              "to": "/project/100/user",
+              "value": 2,
+            },
+          ]
+        }
+      />
+      <styled.ul>
+        <styled.li
+          key="0"
+          order={2}
         >
-          <styled.span
-            id="fieldTitleLabel"
+          <styled.div
+            id="fieldTitle"
           >
-            Title
-          </styled.span>
-          <styled.div>
-            <TextInput
-              autoWidth={false}
-              checkOnlyErrors={false}
-              customInputStyles={
-                Object {
-                  "fontSize": "inherit",
-                  "lineHeight": "inherit",
+            <styled.span
+              id="fieldTitleLabel"
+            >
+              Title
+            </styled.span>
+            <styled.div>
+              <TextInput
+                autoWidth={false}
+                checkOnlyErrors={false}
+                customInputStyles={
+                  Object {
+                    "fontSize": "inherit",
+                    "lineHeight": "inherit",
+                  }
                 }
-              }
-              customStyles={
-                Object {
-                  "paddingBottom": 0,
-                  "position": "static",
+                customStyles={
+                  Object {
+                    "paddingBottom": 0,
+                    "position": "static",
+                  }
                 }
-              }
-              dirty={false}
-              errors={Object {}}
-              fetchProject={
-                [MockFunction] {
-                  "calls": Array [
-                    Array [
-                      Object {
-                        "projectId": "100",
-                      },
-                    ],
-                  ],
-                  "results": Array [
-                    Object {
-                      "type": "return",
-                      "value": Promise {},
+                dirty={false}
+                errors={Object {}}
+                fetchProject={[MockFunction]}
+                fullWidth={true}
+                handleChange={[Function]}
+                handleSubmit={[Function]}
+                history={
+                  Object {
+                    "goBack": [Function],
+                    "push": [Function],
+                  }
+                }
+                intl={
+                  Object {
+                    "formatMessage": [Function],
+                  }
+                }
+                isAdmin={true}
+                isEdit={true}
+                isSubmitting={false}
+                isValid={true}
+                match={
+                  Object {
+                    "params": Object {
+                      "projectId": "100",
                     },
-                  ],
+                  }
                 }
-              }
-              fullWidth={true}
-              handleChange={[Function]}
-              handleSubmit={[Function]}
-              history={
-                Object {
-                  "goBack": [Function],
-                  "push": [Function],
-                }
-              }
-              intl={
-                Object {
-                  "formatMessage": [Function],
-                }
-              }
-              isAdmin={true}
-              isEdit={true}
-              isSubmitting={false}
-              isValid={true}
-              match={
-                Object {
-                  "params": Object {
-                    "projectId": "100",
-                  },
-                }
-              }
-              name="title"
-              onChange={[Function]}
-              project={
-                Object {
-                  "created": "2019-08-26T11:05:12+0000",
-                  "description": "Description",
-                  "editors": Array [
-                    "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
-                    "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
-                  ],
-                  "id": "100",
-                  "meta": Object {
-                    "charts": 0,
-                    "dataSources": 3,
-                    "pages": 1,
-                    "users": 2,
-                  },
-                  "modified": "2019-08-21T10:12:52.030069Z",
-                  "owner": Object {
-                    "firstName": "Firstname",
-                    "id": "1",
-                    "lastName": "Lastname",
-                  },
-                  "slug": "project_title",
-                  "status": "Status",
-                  "title": "Project Name",
-                }
-              }
-              removeProject={[Function]}
-              setFieldValue={[Function]}
-              touched={Object {}}
-              user={
-                Object {
-                  "role": "admin",
-                }
-              }
-              userRole="admin"
-              value="Project Name"
-              values={
-                Object {
-                  "description": "Description",
-                  "status": "Status",
-                  "title": "Project Name",
-                }
-              }
-            />
-          </styled.div>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        fullWidth={true}
-        key="1"
-        order={7}
-      >
-        <styled.div
-          id="fieldDescription"
-        >
-          <styled.span
-            id="fieldDescriptionLabel"
-          >
-            Description
-          </styled.span>
-          <styled.div>
-            <TextInput
-              autoWidth={false}
-              checkOnlyErrors={false}
-              customInputStyles={
-                Object {
-                  "fontSize": "inherit",
-                  "lineHeight": "inherit",
-                }
-              }
-              customStyles={
-                Object {
-                  "paddingBottom": 0,
-                  "position": "static",
-                }
-              }
-              dirty={false}
-              errors={Object {}}
-              fetchProject={
-                [MockFunction] {
-                  "calls": Array [
-                    Array [
-                      Object {
-                        "projectId": "100",
-                      },
+                name="title"
+                onChange={[Function]}
+                project={
+                  Object {
+                    "created": "2019-08-26T11:05:12+0000",
+                    "description": "Description",
+                    "editors": Array [
+                      "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                      "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
                     ],
-                  ],
-                  "results": Array [
-                    Object {
-                      "type": "return",
-                      "value": Promise {},
+                    "id": "100",
+                    "meta": Object {
+                      "charts": 0,
+                      "dataSources": 3,
+                      "pages": 1,
+                      "users": 2,
                     },
-                  ],
+                    "modified": "2019-08-21T10:12:52.030069Z",
+                    "owner": Object {
+                      "firstName": "Firstname",
+                      "id": "1",
+                      "lastName": "Lastname",
+                    },
+                    "slug": "project_title",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
                 }
-              }
-              fullWidth={true}
-              handleChange={[Function]}
-              handleSubmit={[Function]}
-              history={
-                Object {
-                  "goBack": [Function],
-                  "push": [Function],
+                removeProject={[Function]}
+                setFieldValue={[Function]}
+                touched={Object {}}
+                user={
+                  Object {
+                    "role": "admin",
+                  }
                 }
-              }
-              intl={
-                Object {
-                  "formatMessage": [Function],
+                userRole="admin"
+                value="Project Name"
+                values={
+                  Object {
+                    "description": "Description",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
                 }
-              }
-              isAdmin={true}
-              isEdit={true}
-              isSubmitting={false}
-              isValid={true}
-              match={
-                Object {
-                  "params": Object {
-                    "projectId": "100",
-                  },
-                }
-              }
-              multiline={true}
-              name="description"
-              onChange={[Function]}
-              project={
-                Object {
-                  "created": "2019-08-26T11:05:12+0000",
-                  "description": "Description",
-                  "editors": Array [
-                    "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
-                    "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
-                  ],
-                  "id": "100",
-                  "meta": Object {
-                    "charts": 0,
-                    "dataSources": 3,
-                    "pages": 1,
-                    "users": 2,
-                  },
-                  "modified": "2019-08-21T10:12:52.030069Z",
-                  "owner": Object {
-                    "firstName": "Firstname",
-                    "id": "1",
-                    "lastName": "Lastname",
-                  },
-                  "slug": "project_title",
-                  "status": "Status",
-                  "title": "Project Name",
-                }
-              }
-              removeProject={[Function]}
-              setFieldValue={[Function]}
-              touched={Object {}}
-              user={
-                Object {
-                  "role": "admin",
-                }
-              }
-              userRole="admin"
-              value="Description"
-              values={
-                Object {
-                  "description": "Description",
-                  "status": "Status",
-                  "title": "Project Name",
-                }
-              }
-            />
+              />
+            </styled.div>
           </styled.div>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="2"
-        order={4}
-      >
-        <styled.div
-          id="fieldStatus"
+        </styled.li>
+        <styled.li
+          fullWidth={true}
+          key="1"
+          order={7}
         >
-          <styled.span
-            id="fieldStatusLabel"
+          <styled.div
+            id="fieldDescription"
           >
-            Status
-          </styled.span>
-          <Memo()
-            customStyles={
-              Array [
-                "
+            <styled.span
+              id="fieldDescriptionLabel"
+            >
+              Description
+            </styled.span>
+            <styled.div>
+              <TextInput
+                autoWidth={false}
+                checkOnlyErrors={false}
+                customInputStyles={
+                  Object {
+                    "fontSize": "inherit",
+                    "lineHeight": "inherit",
+                  }
+                }
+                customStyles={
+                  Object {
+                    "paddingBottom": 0,
+                    "position": "static",
+                  }
+                }
+                dirty={false}
+                errors={Object {}}
+                fetchProject={[MockFunction]}
+                fullWidth={true}
+                handleChange={[Function]}
+                handleSubmit={[Function]}
+                history={
+                  Object {
+                    "goBack": [Function],
+                    "push": [Function],
+                  }
+                }
+                intl={
+                  Object {
+                    "formatMessage": [Function],
+                  }
+                }
+                isAdmin={true}
+                isEdit={true}
+                isSubmitting={false}
+                isValid={true}
+                match={
+                  Object {
+                    "params": Object {
+                      "projectId": "100",
+                    },
+                  }
+                }
+                multiline={true}
+                name="description"
+                onChange={[Function]}
+                project={
+                  Object {
+                    "created": "2019-08-26T11:05:12+0000",
+                    "description": "Description",
+                    "editors": Array [
+                      "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                      "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                    ],
+                    "id": "100",
+                    "meta": Object {
+                      "charts": 0,
+                      "dataSources": 3,
+                      "pages": 1,
+                      "users": 2,
+                    },
+                    "modified": "2019-08-21T10:12:52.030069Z",
+                    "owner": Object {
+                      "firstName": "Firstname",
+                      "id": "1",
+                      "lastName": "Lastname",
+                    },
+                    "slug": "project_title",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+                removeProject={[Function]}
+                setFieldValue={[Function]}
+                touched={Object {}}
+                user={
+                  Object {
+                    "role": "admin",
+                  }
+                }
+                userRole="admin"
+                value="Description"
+                values={
+                  Object {
+                    "description": "Description",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+              />
+            </styled.div>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="2"
+          order={4}
+        >
+          <styled.div
+            id="fieldStatus"
+          >
+            <styled.span
+              id="fieldStatusLabel"
+            >
+              Status
+            </styled.span>
+            <Memo()
+              customStyles={
+                Array [
+                  "
   font-size: inherit;
   width: 100%;
   padding-bottom: 0;
   position: static;
 ",
-              ]
-            }
-            name="status"
-            onSelect={[Function]}
-            options={
-              Array [
-                Object {
-                  "label": "In Progress",
-                  "value": "in_progress",
-                },
-                Object {
-                  "label": "Done",
-                  "value": "done",
-                },
-                Object {
-                  "label": "Hold",
-                  "value": "hold",
-                },
-                Object {
-                  "label": "Published",
-                  "value": "published",
-                },
-              ]
-            }
-            value="Status"
-          />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="3"
-        order={6}
-      >
-        <styled.div
-          id="fieldDomain"
-        >
-          <styled.span
-            id="fieldDomainLabel"
-          >
-            Domain
-          </styled.span>
-          <styled.div>
-            <TextInput
-              autoWidth={false}
-              checkOnlyErrors={false}
-              customInputStyles={
-                Object {
-                  "fontSize": "inherit",
-                  "lineHeight": "inherit",
-                }
+                ]
               }
-              customStyles={
-                Object {
-                  "paddingBottom": 0,
-                  "position": "static",
-                }
-              }
-              dirty={false}
-              errors={Object {}}
-              fetchProject={
-                [MockFunction] {
-                  "calls": Array [
-                    Array [
-                      Object {
-                        "projectId": "100",
-                      },
-                    ],
-                  ],
-                  "results": Array [
-                    Object {
-                      "type": "return",
-                      "value": Promise {},
-                    },
-                  ],
-                }
-              }
-              fullWidth={true}
-              handleChange={[Function]}
-              handleSubmit={[Function]}
-              history={
-                Object {
-                  "goBack": [Function],
-                  "push": [Function],
-                }
-              }
-              intl={
-                Object {
-                  "formatMessage": [Function],
-                }
-              }
-              isAdmin={true}
-              isEdit={true}
-              isSubmitting={false}
-              isValid={true}
-              match={
-                Object {
-                  "params": Object {
-                    "projectId": "100",
+              name="status"
+              onSelect={[Function]}
+              options={
+                Array [
+                  Object {
+                    "label": "In Progress",
+                    "value": "in_progress",
                   },
-                }
-              }
-              name="domain"
-              onChange={[Function]}
-              project={
-                Object {
-                  "created": "2019-08-26T11:05:12+0000",
-                  "description": "Description",
-                  "editors": Array [
-                    "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
-                    "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
-                  ],
-                  "id": "100",
-                  "meta": Object {
-                    "charts": 0,
-                    "dataSources": 3,
-                    "pages": 1,
-                    "users": 2,
+                  Object {
+                    "label": "Done",
+                    "value": "done",
                   },
-                  "modified": "2019-08-21T10:12:52.030069Z",
-                  "owner": Object {
-                    "firstName": "Firstname",
-                    "id": "1",
-                    "lastName": "Lastname",
+                  Object {
+                    "label": "Hold",
+                    "value": "hold",
                   },
-                  "slug": "project_title",
-                  "status": "Status",
-                  "title": "Project Name",
-                }
+                  Object {
+                    "label": "Published",
+                    "value": "published",
+                  },
+                ]
               }
-              removeProject={[Function]}
-              setFieldValue={[Function]}
-              touched={Object {}}
-              user={
-                Object {
-                  "role": "admin",
-                }
-              }
-              userRole="admin"
-              values={
-                Object {
-                  "description": "Description",
-                  "status": "Status",
-                  "title": "Project Name",
-                }
-              }
+              value="Status"
             />
           </styled.div>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="4"
-        order={1}
-      >
-        <styled.div
-          id="fieldLastUpdated"
+        </styled.li>
+        <styled.li
+          key="3"
+          order={6}
         >
-          <styled.span
-            id="fieldLastUpdatedLabel"
+          <styled.div
+            id="fieldDomain"
           >
-            Last Update
-          </styled.span>
-          <styled.span
-            id="fieldLastUpdatedValue"
-          >
-            3 months ago
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="5"
-        order={3}
-      >
-        <styled.div
-          id="fieldOwner"
+            <styled.span
+              id="fieldDomainLabel"
+            >
+              Domain
+            </styled.span>
+            <styled.div>
+              <TextInput
+                autoWidth={false}
+                checkOnlyErrors={false}
+                customInputStyles={
+                  Object {
+                    "fontSize": "inherit",
+                    "lineHeight": "inherit",
+                  }
+                }
+                customStyles={
+                  Object {
+                    "paddingBottom": 0,
+                    "position": "static",
+                  }
+                }
+                dirty={false}
+                errors={Object {}}
+                fetchProject={[MockFunction]}
+                fullWidth={true}
+                handleChange={[Function]}
+                handleSubmit={[Function]}
+                history={
+                  Object {
+                    "goBack": [Function],
+                    "push": [Function],
+                  }
+                }
+                intl={
+                  Object {
+                    "formatMessage": [Function],
+                  }
+                }
+                isAdmin={true}
+                isEdit={true}
+                isSubmitting={false}
+                isValid={true}
+                match={
+                  Object {
+                    "params": Object {
+                      "projectId": "100",
+                    },
+                  }
+                }
+                name="domain"
+                onChange={[Function]}
+                project={
+                  Object {
+                    "created": "2019-08-26T11:05:12+0000",
+                    "description": "Description",
+                    "editors": Array [
+                      "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                      "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                    ],
+                    "id": "100",
+                    "meta": Object {
+                      "charts": 0,
+                      "dataSources": 3,
+                      "pages": 1,
+                      "users": 2,
+                    },
+                    "modified": "2019-08-21T10:12:52.030069Z",
+                    "owner": Object {
+                      "firstName": "Firstname",
+                      "id": "1",
+                      "lastName": "Lastname",
+                    },
+                    "slug": "project_title",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+                removeProject={[Function]}
+                setFieldValue={[Function]}
+                touched={Object {}}
+                user={
+                  Object {
+                    "role": "admin",
+                  }
+                }
+                userRole="admin"
+                values={
+                  Object {
+                    "description": "Description",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+              />
+            </styled.div>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="4"
+          order={1}
         >
-          <styled.span
-            id="fieldOwnerLabel"
+          <styled.div
+            id="fieldLastUpdated"
           >
-            Owner
-          </styled.span>
-          <styled.span
-            id="fieldOwnerValue"
-          >
-            Firstname Lastname
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="6"
-        order={5}
-      >
-        <styled.div
-          id="fieldSlug"
+            <styled.span
+              id="fieldLastUpdatedLabel"
+            >
+              Last Update
+            </styled.span>
+            <styled.span
+              id="fieldLastUpdatedValue"
+            >
+              3 months ago
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="5"
+          order={3}
         >
-          <styled.span
-            id="fieldSlugLabel"
+          <styled.div
+            id="fieldOwner"
           >
-            API
-          </styled.span>
-          <styled.span
-            id="fieldSlugValue"
+            <styled.span
+              id="fieldOwnerLabel"
+            >
+              Owner
+            </styled.span>
+            <styled.span
+              id="fieldOwnerValue"
+            >
+              Firstname Lastname
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="6"
+          order={5}
+        >
+          <styled.div
+            id="fieldSlug"
           >
-            schemacms/api/project_title
-          </styled.span>
-        </styled.div>
-      </styled.li>
-    </styled.ul>
-  </styled.div>
-  <styled.div>
-    <Styled(Span)
-      id="deleteProjectDesktopBtn"
+            <styled.span
+              id="fieldSlugLabel"
+            >
+              API
+            </styled.span>
+            <styled.span
+              id="fieldSlugValue"
+            >
+              schemacms/api/project_title
+            </styled.span>
+          </styled.div>
+        </styled.li>
+      </styled.ul>
+    </styled.div>
+    <styled.div>
+      <Styled(Span)
+        id="deleteProjectDesktopBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Delete Project"
+          id="project.view.deleteProject"
+          values={Object {}}
+        />
+      </Styled(Span)>
+    </styled.div>
+  </div>
+  <NavigationContainer
+    contentStyles={null}
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackArrowButton
+      id="backProjectBtn"
       onClick={[Function]}
+    />
+    <NextButton
+      disabled={true}
+      loading={false}
+      onClick={[Function]}
+      type="button"
     >
       <FormattedMessage
-        defaultMessage="Delete Project"
-        id="project.view.deleteProject"
+        defaultMessage="Save"
+        id="project.view.save"
         values={Object {}}
       />
-    </Styled(Span)>
-  </styled.div>
-</Fragment>
+    </NextButton>
+  </NavigationContainer>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    id="projectConfirmationRemovalModal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)
+      id="projectConfirmationRemovalModalTitle"
+    >
+      <FormattedMessage
+        defaultMessage="Are you sure you want to delete this project?"
+        id="project.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        id="projectConfirmationRemovalModalCancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.view.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="projectConfirmationRemovalModalConfirmBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.view.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</styled.div>
 `;
 
 exports[`View: Component should render content correctly for editor 1`] = `
-<Fragment>
-  <styled.div>
-    <StatisticCards
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
+<styled.div>
+  <div>
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+      title="Project"
+    />
+    <MobileMenu
+      active="projectDetailsNavBtn"
+      headerSubtitle="Project Name"
+      headerTitle={
+        <FormattedMessage
+          defaultMessage="Project"
+          id="project.view.title"
+          values={Object {}}
+        />
       }
-      statistics={
+      options={
         Array [
           Object {
-            "header": Object {
-              "defaultMessage": "Data Sources",
-              "id": "project.view.dataSources",
-            },
-            "id": "projectDataSources",
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "projectsNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Projects"
+              id="project.view.projectsListPage"
+              values={Object {}}
+            />,
+            "to": "/project/",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "usersPageNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Users"
+              id="project.view.usersPage"
+              values={Object {}}
+            />,
+            "to": "/user/",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "projectDetailsNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Project details"
+              id="project.view.projectDetails"
+              values={Object {}}
+            />,
+            "to": "/project/100",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "dataSourceNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Data Sources"
+              id="project.view.projectDataSources"
+              values={Object {}}
+            />,
             "to": "/project/100/datasource",
-            "value": 3,
+            "type": "link_item",
           },
           Object {
-            "header": Object {
-              "defaultMessage": "States",
-              "id": "project.view.states",
-            },
-            "id": "projectStates",
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "stateNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="States"
+              id="project.view.states"
+              values={Object {}}
+            />,
             "to": "/project/100/state",
-            "value": undefined,
+            "type": "link_item",
           },
           Object {
-            "header": Object {
-              "defaultMessage": "Pages",
-              "id": "project.view.pages",
-            },
-            "id": "projectPages",
-            "to": "/project/100/content",
-            "value": 1,
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "tagsNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Tags"
+              id="project.view.tags"
+              values={Object {}}
+            />,
+            "to": "/project/100/tag-categories",
+            "type": "link_item",
           },
           Object {
-            "header": Object {
-              "defaultMessage": "Users",
-              "id": "project.view.users",
-            },
-            "id": "projectUsers",
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "usersNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Project Users"
+              id="project.view.projectUsersPage"
+              values={Object {}}
+            />,
             "to": "/project/100/user",
-            "value": 2,
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+              "editor",
+            ],
+            "id": "contentNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Content"
+              id="project.view.content"
+              values={Object {}}
+            />,
+            "to": "/project/100/content",
+            "type": "link_item",
+          },
+          Object {
+            "allowedRoles": Array [
+              "admin",
+            ],
+            "id": "templatesNavBtn",
+            "label": <FormattedMessage
+              defaultMessage="Templates"
+              id="project.view.templates"
+              values={Object {}}
+            />,
+            "to": "/project/100/templates",
+            "type": "link_item",
           },
         ]
       }
     />
-    <styled.ul>
-      <styled.li
-        key="0"
-        order={2}
-      >
-        <styled.div
-          id="fieldTitle"
+    <ProjectTabs
+      active="settings"
+      url="/project/100"
+    />
+    <styled.div>
+      <StatisticCards
+        history={
+          Object {
+            "goBack": [Function],
+            "push": [Function],
+          }
+        }
+        statistics={
+          Array [
+            Object {
+              "header": Object {
+                "defaultMessage": "Data Sources",
+                "id": "project.view.dataSources",
+              },
+              "id": "projectDataSources",
+              "to": "/project/100/datasource",
+              "value": 3,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "States",
+                "id": "project.view.states",
+              },
+              "id": "projectStates",
+              "to": "/project/100/state",
+              "value": undefined,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "Pages",
+                "id": "project.view.pages",
+              },
+              "id": "projectPages",
+              "to": "/project/100/content",
+              "value": 1,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "Users",
+                "id": "project.view.users",
+              },
+              "id": "projectUsers",
+              "to": "/project/100/user",
+              "value": 2,
+            },
+          ]
+        }
+      />
+      <styled.ul>
+        <styled.li
+          key="0"
+          order={2}
         >
-          <styled.span
-            id="fieldTitleLabel"
+          <styled.div
+            id="fieldTitle"
           >
-            Title
-          </styled.span>
-          <styled.span
-            id="fieldTitleValue"
-          >
-            Project Name
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        fullWidth={true}
-        key="1"
-        order={7}
-      >
-        <styled.div
-          id="fieldDescription"
+            <styled.span
+              id="fieldTitleLabel"
+            >
+              Title
+            </styled.span>
+            <styled.span
+              id="fieldTitleValue"
+            >
+              Project Name
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          fullWidth={true}
+          key="1"
+          order={7}
         >
-          <styled.span
-            id="fieldDescriptionLabel"
+          <styled.div
+            id="fieldDescription"
           >
-            Description
-          </styled.span>
-          <styled.span
-            id="fieldDescriptionValue"
-          >
-            Description
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="2"
-        order={4}
-      >
-        <styled.div
-          id="fieldStatus"
+            <styled.span
+              id="fieldDescriptionLabel"
+            >
+              Description
+            </styled.span>
+            <styled.span
+              id="fieldDescriptionValue"
+            >
+              Description
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="2"
+          order={4}
         >
-          <styled.span
-            id="fieldStatusLabel"
+          <styled.div
+            id="fieldStatus"
           >
-            Status
-          </styled.span>
-          <styled.span
-            id="fieldStatusValue"
-          >
-            Status
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="3"
-        order={6}
-      >
-        <styled.div
-          id="fieldDomain"
+            <styled.span
+              id="fieldStatusLabel"
+            >
+              Status
+            </styled.span>
+            <styled.span
+              id="fieldStatusValue"
+            >
+              Status
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="3"
+          order={6}
         >
-          <styled.span
-            id="fieldDomainLabel"
+          <styled.div
+            id="fieldDomain"
           >
-            Domain
-          </styled.span>
-          <styled.span
-            id="fieldDomainValue"
-          />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="4"
-        order={1}
-      >
-        <styled.div
-          id="fieldLastUpdated"
+            <styled.span
+              id="fieldDomainLabel"
+            >
+              Domain
+            </styled.span>
+            <styled.span
+              id="fieldDomainValue"
+            />
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="4"
+          order={1}
         >
-          <styled.span
-            id="fieldLastUpdatedLabel"
+          <styled.div
+            id="fieldLastUpdated"
           >
-            Last Update
-          </styled.span>
-          <styled.span
-            id="fieldLastUpdatedValue"
-          >
-            3 months ago
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="5"
-        order={3}
-      >
-        <styled.div
-          id="fieldOwner"
+            <styled.span
+              id="fieldLastUpdatedLabel"
+            >
+              Last Update
+            </styled.span>
+            <styled.span
+              id="fieldLastUpdatedValue"
+            >
+              3 months ago
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="5"
+          order={3}
         >
-          <styled.span
-            id="fieldOwnerLabel"
+          <styled.div
+            id="fieldOwner"
           >
-            Owner
-          </styled.span>
-          <styled.span
-            id="fieldOwnerValue"
-          >
-            Firstname Lastname
-          </styled.span>
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="6"
-        order={5}
-      >
-        <styled.div
-          id="fieldSlug"
+            <styled.span
+              id="fieldOwnerLabel"
+            >
+              Owner
+            </styled.span>
+            <styled.span
+              id="fieldOwnerValue"
+            >
+              Firstname Lastname
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="6"
+          order={5}
         >
-          <styled.span
-            id="fieldSlugLabel"
+          <styled.div
+            id="fieldSlug"
           >
-            API
-          </styled.span>
-          <styled.span
-            id="fieldSlugValue"
-          >
-            schemacms/api/project_title
-          </styled.span>
-        </styled.div>
-      </styled.li>
-    </styled.ul>
-  </styled.div>
-</Fragment>
+            <styled.span
+              id="fieldSlugLabel"
+            >
+              API
+            </styled.span>
+            <styled.span
+              id="fieldSlugValue"
+            >
+              schemacms/api/project_title
+            </styled.span>
+          </styled.div>
+        </styled.li>
+      </styled.ul>
+    </styled.div>
+  </div>
+  <NavigationContainer
+    contentStyles={null}
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackArrowButton
+      id="backProjectBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    id="projectConfirmationRemovalModal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)
+      id="projectConfirmationRemovalModalTitle"
+    >
+      <FormattedMessage
+        defaultMessage="Are you sure you want to delete this project?"
+        id="project.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        id="projectConfirmationRemovalModalCancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.view.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="projectConfirmationRemovalModalConfirmBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.view.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</styled.div>
 `;
 
 exports[`View: Component should render correctly 1`] = `
@@ -877,547 +1301,492 @@ exports[`View: Component should render correctly 1`] = `
       active="settings"
       url="/project/100"
     />
-    <LoadingWrapper
-      error={null}
-      loading={false}
-      noData={false}
-      noDataContent={null}
-    >
-      <styled.div>
-        <StatisticCards
-          history={
+    <styled.div>
+      <StatisticCards
+        history={
+          Object {
+            "goBack": [Function],
+            "push": [Function],
+          }
+        }
+        statistics={
+          Array [
             Object {
-              "goBack": [Function],
-              "push": [Function],
-            }
-          }
-          statistics={
-            Array [
-              Object {
-                "header": Object {
-                  "defaultMessage": "Data Sources",
-                  "id": "project.view.dataSources",
-                },
-                "id": "projectDataSources",
-                "to": "/project/100/datasource",
-                "value": 3,
+              "header": Object {
+                "defaultMessage": "Data Sources",
+                "id": "project.view.dataSources",
               },
-              Object {
-                "header": Object {
-                  "defaultMessage": "States",
-                  "id": "project.view.states",
-                },
-                "id": "projectStates",
-                "to": "/project/100/state",
-                "value": undefined,
+              "id": "projectDataSources",
+              "to": "/project/100/datasource",
+              "value": 3,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "States",
+                "id": "project.view.states",
               },
-              Object {
-                "header": Object {
-                  "defaultMessage": "Pages",
-                  "id": "project.view.pages",
-                },
-                "id": "projectPages",
-                "to": "/project/100/content",
-                "value": 1,
+              "id": "projectStates",
+              "to": "/project/100/state",
+              "value": undefined,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "Pages",
+                "id": "project.view.pages",
               },
-              Object {
-                "header": Object {
-                  "defaultMessage": "Users",
-                  "id": "project.view.users",
-                },
-                "id": "projectUsers",
-                "to": "/project/100/user",
-                "value": 2,
+              "id": "projectPages",
+              "to": "/project/100/content",
+              "value": 1,
+            },
+            Object {
+              "header": Object {
+                "defaultMessage": "Users",
+                "id": "project.view.users",
               },
-            ]
-          }
-        />
-        <styled.ul>
-          <styled.li
-            key="0"
-            order={2}
+              "id": "projectUsers",
+              "to": "/project/100/user",
+              "value": 2,
+            },
+          ]
+        }
+      />
+      <styled.ul>
+        <styled.li
+          key="0"
+          order={2}
+        >
+          <styled.div
+            id="fieldTitle"
           >
-            <styled.div
-              id="fieldTitle"
+            <styled.span
+              id="fieldTitleLabel"
             >
-              <styled.span
-                id="fieldTitleLabel"
-              >
-                Title
-              </styled.span>
-              <styled.div>
-                <TextInput
-                  autoWidth={false}
-                  checkOnlyErrors={false}
-                  customInputStyles={
-                    Object {
-                      "fontSize": "inherit",
-                      "lineHeight": "inherit",
-                    }
+              Title
+            </styled.span>
+            <styled.div>
+              <TextInput
+                autoWidth={false}
+                checkOnlyErrors={false}
+                customInputStyles={
+                  Object {
+                    "fontSize": "inherit",
+                    "lineHeight": "inherit",
                   }
-                  customStyles={
-                    Object {
-                      "paddingBottom": 0,
-                      "position": "static",
-                    }
-                  }
-                  dirty={false}
-                  errors={Object {}}
-                  fetchProject={
-                    [MockFunction] {
-                      "calls": Array [
-                        Array [
-                          Object {
-                            "projectId": "100",
-                          },
-                        ],
-                      ],
-                      "results": Array [
-                        Object {
-                          "type": "return",
-                          "value": Promise {},
-                        },
-                      ],
-                    }
-                  }
-                  fullWidth={true}
-                  handleChange={[Function]}
-                  handleSubmit={[Function]}
-                  history={
-                    Object {
-                      "goBack": [Function],
-                      "push": [Function],
-                    }
-                  }
-                  intl={
-                    Object {
-                      "formatMessage": [Function],
-                    }
-                  }
-                  isAdmin={true}
-                  isEdit={true}
-                  isSubmitting={false}
-                  isValid={true}
-                  match={
-                    Object {
-                      "params": Object {
-                        "projectId": "100",
-                      },
-                    }
-                  }
-                  name="title"
-                  onChange={[Function]}
-                  project={
-                    Object {
-                      "created": "2019-08-26T11:05:12+0000",
-                      "description": "Description",
-                      "editors": Array [
-                        "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
-                        "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
-                      ],
-                      "id": "100",
-                      "meta": Object {
-                        "charts": 0,
-                        "dataSources": 3,
-                        "pages": 1,
-                        "users": 2,
-                      },
-                      "modified": "2019-08-21T10:12:52.030069Z",
-                      "owner": Object {
-                        "firstName": "Firstname",
-                        "id": "1",
-                        "lastName": "Lastname",
-                      },
-                      "slug": "project_title",
-                      "status": "Status",
-                      "title": "Project Name",
-                    }
-                  }
-                  removeProject={[Function]}
-                  setFieldValue={[Function]}
-                  touched={Object {}}
-                  user={
-                    Object {
-                      "role": "admin",
-                    }
-                  }
-                  userRole="admin"
-                  value="Project Name"
-                  values={
-                    Object {
-                      "description": "Description",
-                      "status": "Status",
-                      "title": "Project Name",
-                    }
-                  }
-                />
-              </styled.div>
-            </styled.div>
-          </styled.li>
-          <styled.li
-            fullWidth={true}
-            key="1"
-            order={7}
-          >
-            <styled.div
-              id="fieldDescription"
-            >
-              <styled.span
-                id="fieldDescriptionLabel"
-              >
-                Description
-              </styled.span>
-              <styled.div>
-                <TextInput
-                  autoWidth={false}
-                  checkOnlyErrors={false}
-                  customInputStyles={
-                    Object {
-                      "fontSize": "inherit",
-                      "lineHeight": "inherit",
-                    }
-                  }
-                  customStyles={
-                    Object {
-                      "paddingBottom": 0,
-                      "position": "static",
-                    }
-                  }
-                  dirty={false}
-                  errors={Object {}}
-                  fetchProject={
-                    [MockFunction] {
-                      "calls": Array [
-                        Array [
-                          Object {
-                            "projectId": "100",
-                          },
-                        ],
-                      ],
-                      "results": Array [
-                        Object {
-                          "type": "return",
-                          "value": Promise {},
-                        },
-                      ],
-                    }
-                  }
-                  fullWidth={true}
-                  handleChange={[Function]}
-                  handleSubmit={[Function]}
-                  history={
-                    Object {
-                      "goBack": [Function],
-                      "push": [Function],
-                    }
-                  }
-                  intl={
-                    Object {
-                      "formatMessage": [Function],
-                    }
-                  }
-                  isAdmin={true}
-                  isEdit={true}
-                  isSubmitting={false}
-                  isValid={true}
-                  match={
-                    Object {
-                      "params": Object {
-                        "projectId": "100",
-                      },
-                    }
-                  }
-                  multiline={true}
-                  name="description"
-                  onChange={[Function]}
-                  project={
-                    Object {
-                      "created": "2019-08-26T11:05:12+0000",
-                      "description": "Description",
-                      "editors": Array [
-                        "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
-                        "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
-                      ],
-                      "id": "100",
-                      "meta": Object {
-                        "charts": 0,
-                        "dataSources": 3,
-                        "pages": 1,
-                        "users": 2,
-                      },
-                      "modified": "2019-08-21T10:12:52.030069Z",
-                      "owner": Object {
-                        "firstName": "Firstname",
-                        "id": "1",
-                        "lastName": "Lastname",
-                      },
-                      "slug": "project_title",
-                      "status": "Status",
-                      "title": "Project Name",
-                    }
-                  }
-                  removeProject={[Function]}
-                  setFieldValue={[Function]}
-                  touched={Object {}}
-                  user={
-                    Object {
-                      "role": "admin",
-                    }
-                  }
-                  userRole="admin"
-                  value="Description"
-                  values={
-                    Object {
-                      "description": "Description",
-                      "status": "Status",
-                      "title": "Project Name",
-                    }
-                  }
-                />
-              </styled.div>
-            </styled.div>
-          </styled.li>
-          <styled.li
-            key="2"
-            order={4}
-          >
-            <styled.div
-              id="fieldStatus"
-            >
-              <styled.span
-                id="fieldStatusLabel"
-              >
-                Status
-              </styled.span>
-              <Memo()
+                }
                 customStyles={
-                  Array [
-                    "
+                  Object {
+                    "paddingBottom": 0,
+                    "position": "static",
+                  }
+                }
+                dirty={false}
+                errors={Object {}}
+                fetchProject={[MockFunction]}
+                fullWidth={true}
+                handleChange={[Function]}
+                handleSubmit={[Function]}
+                history={
+                  Object {
+                    "goBack": [Function],
+                    "push": [Function],
+                  }
+                }
+                intl={
+                  Object {
+                    "formatMessage": [Function],
+                  }
+                }
+                isAdmin={true}
+                isEdit={true}
+                isSubmitting={false}
+                isValid={true}
+                match={
+                  Object {
+                    "params": Object {
+                      "projectId": "100",
+                    },
+                  }
+                }
+                name="title"
+                onChange={[Function]}
+                project={
+                  Object {
+                    "created": "2019-08-26T11:05:12+0000",
+                    "description": "Description",
+                    "editors": Array [
+                      "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                      "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                    ],
+                    "id": "100",
+                    "meta": Object {
+                      "charts": 0,
+                      "dataSources": 3,
+                      "pages": 1,
+                      "users": 2,
+                    },
+                    "modified": "2019-08-21T10:12:52.030069Z",
+                    "owner": Object {
+                      "firstName": "Firstname",
+                      "id": "1",
+                      "lastName": "Lastname",
+                    },
+                    "slug": "project_title",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+                removeProject={[Function]}
+                setFieldValue={[Function]}
+                touched={Object {}}
+                user={
+                  Object {
+                    "role": "admin",
+                  }
+                }
+                userRole="admin"
+                value="Project Name"
+                values={
+                  Object {
+                    "description": "Description",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+              />
+            </styled.div>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          fullWidth={true}
+          key="1"
+          order={7}
+        >
+          <styled.div
+            id="fieldDescription"
+          >
+            <styled.span
+              id="fieldDescriptionLabel"
+            >
+              Description
+            </styled.span>
+            <styled.div>
+              <TextInput
+                autoWidth={false}
+                checkOnlyErrors={false}
+                customInputStyles={
+                  Object {
+                    "fontSize": "inherit",
+                    "lineHeight": "inherit",
+                  }
+                }
+                customStyles={
+                  Object {
+                    "paddingBottom": 0,
+                    "position": "static",
+                  }
+                }
+                dirty={false}
+                errors={Object {}}
+                fetchProject={[MockFunction]}
+                fullWidth={true}
+                handleChange={[Function]}
+                handleSubmit={[Function]}
+                history={
+                  Object {
+                    "goBack": [Function],
+                    "push": [Function],
+                  }
+                }
+                intl={
+                  Object {
+                    "formatMessage": [Function],
+                  }
+                }
+                isAdmin={true}
+                isEdit={true}
+                isSubmitting={false}
+                isValid={true}
+                match={
+                  Object {
+                    "params": Object {
+                      "projectId": "100",
+                    },
+                  }
+                }
+                multiline={true}
+                name="description"
+                onChange={[Function]}
+                project={
+                  Object {
+                    "created": "2019-08-26T11:05:12+0000",
+                    "description": "Description",
+                    "editors": Array [
+                      "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                      "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                    ],
+                    "id": "100",
+                    "meta": Object {
+                      "charts": 0,
+                      "dataSources": 3,
+                      "pages": 1,
+                      "users": 2,
+                    },
+                    "modified": "2019-08-21T10:12:52.030069Z",
+                    "owner": Object {
+                      "firstName": "Firstname",
+                      "id": "1",
+                      "lastName": "Lastname",
+                    },
+                    "slug": "project_title",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+                removeProject={[Function]}
+                setFieldValue={[Function]}
+                touched={Object {}}
+                user={
+                  Object {
+                    "role": "admin",
+                  }
+                }
+                userRole="admin"
+                value="Description"
+                values={
+                  Object {
+                    "description": "Description",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+              />
+            </styled.div>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="2"
+          order={4}
+        >
+          <styled.div
+            id="fieldStatus"
+          >
+            <styled.span
+              id="fieldStatusLabel"
+            >
+              Status
+            </styled.span>
+            <Memo()
+              customStyles={
+                Array [
+                  "
   font-size: inherit;
   width: 100%;
   padding-bottom: 0;
   position: static;
 ",
-                  ]
+                ]
+              }
+              name="status"
+              onSelect={[Function]}
+              options={
+                Array [
+                  Object {
+                    "label": "In Progress",
+                    "value": "in_progress",
+                  },
+                  Object {
+                    "label": "Done",
+                    "value": "done",
+                  },
+                  Object {
+                    "label": "Hold",
+                    "value": "hold",
+                  },
+                  Object {
+                    "label": "Published",
+                    "value": "published",
+                  },
+                ]
+              }
+              value="Status"
+            />
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="3"
+          order={6}
+        >
+          <styled.div
+            id="fieldDomain"
+          >
+            <styled.span
+              id="fieldDomainLabel"
+            >
+              Domain
+            </styled.span>
+            <styled.div>
+              <TextInput
+                autoWidth={false}
+                checkOnlyErrors={false}
+                customInputStyles={
+                  Object {
+                    "fontSize": "inherit",
+                    "lineHeight": "inherit",
+                  }
                 }
-                name="status"
-                onSelect={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "label": "In Progress",
-                      "value": "in_progress",
-                    },
-                    Object {
-                      "label": "Done",
-                      "value": "done",
-                    },
-                    Object {
-                      "label": "Hold",
-                      "value": "hold",
-                    },
-                    Object {
-                      "label": "Published",
-                      "value": "published",
-                    },
-                  ]
+                customStyles={
+                  Object {
+                    "paddingBottom": 0,
+                    "position": "static",
+                  }
                 }
-                value="Status"
+                dirty={false}
+                errors={Object {}}
+                fetchProject={[MockFunction]}
+                fullWidth={true}
+                handleChange={[Function]}
+                handleSubmit={[Function]}
+                history={
+                  Object {
+                    "goBack": [Function],
+                    "push": [Function],
+                  }
+                }
+                intl={
+                  Object {
+                    "formatMessage": [Function],
+                  }
+                }
+                isAdmin={true}
+                isEdit={true}
+                isSubmitting={false}
+                isValid={true}
+                match={
+                  Object {
+                    "params": Object {
+                      "projectId": "100",
+                    },
+                  }
+                }
+                name="domain"
+                onChange={[Function]}
+                project={
+                  Object {
+                    "created": "2019-08-26T11:05:12+0000",
+                    "description": "Description",
+                    "editors": Array [
+                      "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+                      "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
+                    ],
+                    "id": "100",
+                    "meta": Object {
+                      "charts": 0,
+                      "dataSources": 3,
+                      "pages": 1,
+                      "users": 2,
+                    },
+                    "modified": "2019-08-21T10:12:52.030069Z",
+                    "owner": Object {
+                      "firstName": "Firstname",
+                      "id": "1",
+                      "lastName": "Lastname",
+                    },
+                    "slug": "project_title",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
+                removeProject={[Function]}
+                setFieldValue={[Function]}
+                touched={Object {}}
+                user={
+                  Object {
+                    "role": "admin",
+                  }
+                }
+                userRole="admin"
+                values={
+                  Object {
+                    "description": "Description",
+                    "status": "Status",
+                    "title": "Project Name",
+                  }
+                }
               />
             </styled.div>
-          </styled.li>
-          <styled.li
-            key="3"
-            order={6}
-          >
-            <styled.div
-              id="fieldDomain"
-            >
-              <styled.span
-                id="fieldDomainLabel"
-              >
-                Domain
-              </styled.span>
-              <styled.div>
-                <TextInput
-                  autoWidth={false}
-                  checkOnlyErrors={false}
-                  customInputStyles={
-                    Object {
-                      "fontSize": "inherit",
-                      "lineHeight": "inherit",
-                    }
-                  }
-                  customStyles={
-                    Object {
-                      "paddingBottom": 0,
-                      "position": "static",
-                    }
-                  }
-                  dirty={false}
-                  errors={Object {}}
-                  fetchProject={
-                    [MockFunction] {
-                      "calls": Array [
-                        Array [
-                          Object {
-                            "projectId": "100",
-                          },
-                        ],
-                      ],
-                      "results": Array [
-                        Object {
-                          "type": "return",
-                          "value": Promise {},
-                        },
-                      ],
-                    }
-                  }
-                  fullWidth={true}
-                  handleChange={[Function]}
-                  handleSubmit={[Function]}
-                  history={
-                    Object {
-                      "goBack": [Function],
-                      "push": [Function],
-                    }
-                  }
-                  intl={
-                    Object {
-                      "formatMessage": [Function],
-                    }
-                  }
-                  isAdmin={true}
-                  isEdit={true}
-                  isSubmitting={false}
-                  isValid={true}
-                  match={
-                    Object {
-                      "params": Object {
-                        "projectId": "100",
-                      },
-                    }
-                  }
-                  name="domain"
-                  onChange={[Function]}
-                  project={
-                    Object {
-                      "created": "2019-08-26T11:05:12+0000",
-                      "description": "Description",
-                      "editors": Array [
-                        "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
-                        "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e",
-                      ],
-                      "id": "100",
-                      "meta": Object {
-                        "charts": 0,
-                        "dataSources": 3,
-                        "pages": 1,
-                        "users": 2,
-                      },
-                      "modified": "2019-08-21T10:12:52.030069Z",
-                      "owner": Object {
-                        "firstName": "Firstname",
-                        "id": "1",
-                        "lastName": "Lastname",
-                      },
-                      "slug": "project_title",
-                      "status": "Status",
-                      "title": "Project Name",
-                    }
-                  }
-                  removeProject={[Function]}
-                  setFieldValue={[Function]}
-                  touched={Object {}}
-                  user={
-                    Object {
-                      "role": "admin",
-                    }
-                  }
-                  userRole="admin"
-                  values={
-                    Object {
-                      "description": "Description",
-                      "status": "Status",
-                      "title": "Project Name",
-                    }
-                  }
-                />
-              </styled.div>
-            </styled.div>
-          </styled.li>
-          <styled.li
-            key="4"
-            order={1}
-          >
-            <styled.div
-              id="fieldLastUpdated"
-            >
-              <styled.span
-                id="fieldLastUpdatedLabel"
-              >
-                Last Update
-              </styled.span>
-              <styled.span
-                id="fieldLastUpdatedValue"
-              >
-                3 months ago
-              </styled.span>
-            </styled.div>
-          </styled.li>
-          <styled.li
-            key="5"
-            order={3}
-          >
-            <styled.div
-              id="fieldOwner"
-            >
-              <styled.span
-                id="fieldOwnerLabel"
-              >
-                Owner
-              </styled.span>
-              <styled.span
-                id="fieldOwnerValue"
-              >
-                Firstname Lastname
-              </styled.span>
-            </styled.div>
-          </styled.li>
-          <styled.li
-            key="6"
-            order={5}
-          >
-            <styled.div
-              id="fieldSlug"
-            >
-              <styled.span
-                id="fieldSlugLabel"
-              >
-                API
-              </styled.span>
-              <styled.span
-                id="fieldSlugValue"
-              >
-                schemacms/api/project_title
-              </styled.span>
-            </styled.div>
-          </styled.li>
-        </styled.ul>
-      </styled.div>
-      <styled.div>
-        <Styled(Span)
-          id="deleteProjectDesktopBtn"
-          onClick={[Function]}
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="4"
+          order={1}
         >
-          <FormattedMessage
-            defaultMessage="Delete Project"
-            id="project.view.deleteProject"
-            values={Object {}}
-          />
-        </Styled(Span)>
-      </styled.div>
-    </LoadingWrapper>
+          <styled.div
+            id="fieldLastUpdated"
+          >
+            <styled.span
+              id="fieldLastUpdatedLabel"
+            >
+              Last Update
+            </styled.span>
+            <styled.span
+              id="fieldLastUpdatedValue"
+            >
+              3 months ago
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="5"
+          order={3}
+        >
+          <styled.div
+            id="fieldOwner"
+          >
+            <styled.span
+              id="fieldOwnerLabel"
+            >
+              Owner
+            </styled.span>
+            <styled.span
+              id="fieldOwnerValue"
+            >
+              Firstname Lastname
+            </styled.span>
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="6"
+          order={5}
+        >
+          <styled.div
+            id="fieldSlug"
+          >
+            <styled.span
+              id="fieldSlugLabel"
+            >
+              API
+            </styled.span>
+            <styled.span
+              id="fieldSlugValue"
+            >
+              schemacms/api/project_title
+            </styled.span>
+          </styled.div>
+        </styled.li>
+      </styled.ul>
+    </styled.div>
+    <styled.div>
+      <Styled(Span)
+        id="deleteProjectDesktopBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Delete Project"
+          id="project.view.deleteProject"
+          values={Object {}}
+        />
+      </Styled(Span)>
+    </styled.div>
   </div>
   <NavigationContainer
     contentStyles={null}

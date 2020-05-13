@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -7,9 +7,19 @@ import { compose } from 'ramda';
 
 import { Project } from './project.component';
 
-const mapStateToProps = createStructuredSelector({});
+import { ProjectRoutines, selectProject } from '../../modules/project';
 
-export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapStateToProps = createStructuredSelector({
+  project: selectProject,
+});
+
+export const mapDispatchToProps = dispatch =>
+  bindPromiseCreators(
+    {
+      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
+    },
+    dispatch
+  );
 
 export default compose(
   hot(module),

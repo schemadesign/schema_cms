@@ -58,4 +58,8 @@ export default defineMessages({
     id: 'shared.components.projectBreadcrumbs.pageBlock',
     defaultMessage: 'Block',
   },
+  tags: {
+    id: 'shared.components.projectBreadcrumbs.tags',
+    defaultMessage: 'Tags',
+  },
 });

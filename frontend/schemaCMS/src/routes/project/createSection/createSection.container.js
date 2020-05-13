@@ -8,9 +8,11 @@ import { compose } from 'ramda';
 import { CreateSection } from './createSection.component';
 import { selectUserRole } from '../../../modules/userProfile';
 import { SectionsRoutines } from '../../../modules/sections';
+import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({

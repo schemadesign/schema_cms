@@ -17,6 +17,32 @@ import { TAG_CATEGORIES_PAGE } from '../../modules/project/project.constants';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 import { Link } from '../../theme/typography';
 
+import {
+  ProjectBreadcrumbs,
+  tabMessage,
+  tagsMessage,
+  projectMessage,
+} from '../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = (project, { name, id }) => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/tag-categories`,
+    span: tabMessage,
+    h3: tagsMessage,
+  },
+  {
+    path: `/tag-category/${id}`,
+    span: tagsMessage,
+    h3: name,
+    active: true,
+  },
+];
+
 export class TagCategory extends PureComponent {
   static propTypes = {
     userRole: PropTypes.string.isRequired,
@@ -92,13 +118,14 @@ export class TagCategory extends PureComponent {
 
   render() {
     const { error, loading, removeLoading, confirmationModalOpen } = this.state;
-    const { tagCategory, isValid, isSubmitting, dirty, handleSubmit } = this.props;
+    const { tagCategory, isValid, isSubmitting, dirty, handleSubmit, project } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
         <MobileMenu {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
+        <ProjectBreadcrumbs items={getBreadcrumbsItems(project, tagCategory)} />
         <LoadingWrapper loading={loading} error={error}>
           <Form onSubmit={handleSubmit}>
             <TagCategoryForm {...this.props} />

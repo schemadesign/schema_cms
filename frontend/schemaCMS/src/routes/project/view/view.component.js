@@ -1,14 +1,13 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, cond, isEmpty, path, propEq, T } from 'ramda';
+import { always, cond, path, propEq, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { filterMenuOptions, generateApiUrl, getMatchParam } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import reportError from '../../../shared/utils/reportError';
-import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -69,21 +68,9 @@ export class View extends PureComponent {
   };
 
   state = {
-    loading: true,
     removeLoading: false,
-    error: null,
     confirmationModalOpen: false,
   };
-
-  async componentDidMount() {
-    try {
-      await this.props.fetchProject(this.props.match.params);
-      this.setState({ loading: false });
-    } catch (error) {
-      reportError(error);
-      this.setState({ loading: false, error });
-    }
-  }
 
   getStatusOptions = intl =>
     PROJECT_STATUSES_LIST.map(status => ({
@@ -287,17 +274,9 @@ export class View extends PureComponent {
       )
     )(isAdmin);
 
-  renderContent = loading =>
-    renderWhenTrue(() => (
-      <Fragment>
-        {this.renderProject(this.props.project)}
-        {this.renderRemoveProjectButton(this.props.isAdmin)}
-      </Fragment>
-    ))(!loading);
-
   render() {
     const { project, userRole, isAdmin } = this.props;
-    const { confirmationModalOpen, error, loading, removeLoading } = this.state;
+    const { confirmationModalOpen, removeLoading } = this.state;
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
     const projectId = getMatchParam(this.props, 'projectId');
@@ -314,9 +293,10 @@ export class View extends PureComponent {
             active={PROJECT_DETAILS_ID}
           />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
-          <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
-            {this.renderContent(loading)}
-          </LoadingWrapper>
+          <Fragment>
+            {this.renderProject(project)}
+            {this.renderRemoveProjectButton(isAdmin)}
+          </Fragment>
         </div>
         <NavigationContainer fixed>
           <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />

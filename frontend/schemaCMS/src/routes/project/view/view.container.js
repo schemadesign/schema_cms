@@ -34,7 +34,6 @@ export const mapDispatchToProps = dispatch =>
     {
       fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
       editProject: promisifyRoutine(ProjectRoutines.editProject),
-      unmountProject: promisifyRoutine(ProjectRoutines.unmountOne),
       removeProject: promisifyRoutine(ProjectRoutines.removeOne),
     },
     dispatch

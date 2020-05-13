@@ -7,6 +7,9 @@ import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   userRole: ROLES.ADMIN,
+  project: {
+    id: 1,
+  },
   createSection: Function.prototype,
 };
 

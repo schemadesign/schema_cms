@@ -1,11 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Project: Component should render correctly 1`] = `
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+>
+  <Component />
+</LoadingWrapper>
+`;
+
+exports[`Project: Component should render correctly when loading wrapper content is called 1`] = `
 <Switch>
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/datasource/add"
+    path="/project/datasource/add"
   />
   <Route
     component={[Function]}
@@ -15,87 +26,82 @@ exports[`Project: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
+    path="/project/datasource"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
     path="/project"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/datasource"
+    path="/project/user"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId"
+    path="/project/user/add"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/user"
+    path="/project/user/:userId"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/user/add"
+    path="/project/content"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/user/:userId"
+    path="/project/state"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/content"
+    path="/project/state/create"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/state"
+    path="/project/templates"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/state/create"
+    path="/project/block-templates"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/templates"
+    path="/project/block-templates/create"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/block-templates"
+    path="/project/page-templates"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/block-templates/create"
+    path="/project/page-templates/create"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/page-templates"
+    path="/project/section/create"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/page-templates/create"
+    path="/project/tag-categories"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/section/create"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/project/:projectId/tag-categories"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/project/:projectId/tag-categories/create"
+    path="/project/tag-categories/create"
   />
   <Route
     component={[Function]}
