@@ -1,6 +1,7 @@
+import json
+
 from django.db.models import Prefetch
 from rest_framework import serializers
-
 
 from ..projects import models as pr_models
 from ..datasources import models as ds_models
@@ -21,10 +22,48 @@ element_to_html_function = {
 }
 
 
-class PADataSourceSerializer(serializers.ModelSerializer):
+class PAFilterSerializer(serializers.ModelSerializer):
+    type = serializers.CharField(source="filter_type")
+
+    class Meta:
+        model = ds_models.Filter
+        fields = ("id", "name", "type", "field")
+
+
+class PADataSourceListSerializer(serializers.ModelSerializer):
     class Meta:
         model = ds_models.DataSource
         fields = ("id", "type", "name")
+
+
+class PADataSourceDetailSerializer(serializers.ModelSerializer):
+    meta = serializers.SerializerMethodField()
+    shape = serializers.SerializerMethodField()
+    fields = serializers.SerializerMethodField(method_name="get_ds_fields")
+    filters = PAFilterSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = ds_models.DataSource
+        fields = ("meta", "shape", "fields", "filters")
+
+    def get_meta(self, obj):
+        return {
+            "id": obj.id,
+            "name": obj.name,
+            "created_by": obj.created_by.get_full_name(),
+            "created": obj.created.strftime("%Y-%m-%d"),
+            "updated": obj.modified.strftime("%Y-%m-%d"),
+        }
+
+    def get_shape(self, obj):
+        return obj.active_job.meta_data.shape
+
+    def get_ds_fields(self, obj):
+        fields = json.loads(obj.active_job.meta_data.preview.read())["fields"]
+        data = {
+            str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
+        }
+        return data
 
 
 class PABlockElementSerializer(serializers.ModelSerializer):
@@ -115,7 +154,7 @@ class PASectionSerializer(serializers.ModelSerializer):
 
 class PAProjectSerializer(serializers.ModelSerializer):
     meta = serializers.SerializerMethodField()
-    data_sources = PADataSourceSerializer(read_only=True, many=True)
+    data_sources = PADataSourceListSerializer(read_only=True, many=True)
     content = serializers.SerializerMethodField()
 
     class Meta:
