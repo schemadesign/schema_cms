@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="{{ page.description }}">
+	<meta name="keywords" content="{{ page.keywords }}">
+	<meta name="author" content="{{ page.created_by }}">
+	<title>{{ page.name }}</title>
+</head>
+
+<body>
+    {% for block in page.blocks %}
+		{% for element in block.elements. %}
+
+			{% if element.type == "plain_text" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+			{% if element.type == "markdown" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+			{% if element.type == "connection" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+			{% if element.type. == "internal_connection" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+			{% if element.type == "custom_element" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+			{% if element.type == "observable_hq" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+			{% if element.type == "image" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+			{% if element.type == "code" %}
+				{{ element.html|safe }}
+			{% endif %}
+
+	{% endfor %}
+    {% endfor %}
+</body>
+</html>
+

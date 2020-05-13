@@ -159,6 +159,12 @@ class PageBlockElement(Element):
 
         return os.path.join(base_path, f"{self.block.page_id}/blocks/{self.block_id}/{filename}")
 
+    def get_original_file_name(self, file_name=None):
+        if not file_name:
+            file_name = self.image.name
+        name, ext = os.path.splitext(os.path.basename(file_name))
+        return name, os.path.basename(file_name)
+
     def update_or_create_custom_element_sets(self, elements_sets_list):
         for elements_set in elements_sets_list:
             element_set_order = elements_set.get("order")
@@ -229,3 +235,11 @@ class PageBlockObservableElement(SoftDeleteObject):
 
     def __str__(self):
         return f"{self.id}"
+
+    def as_dict(self):
+        return {
+            "observable_user": self.observable_user,
+            "observable_notebook": self.observable_notebook,
+            "observable_cell": self.observable_cell,
+            "observable_params": self.observable_params,
+        }
