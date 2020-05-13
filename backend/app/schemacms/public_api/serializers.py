@@ -7,7 +7,7 @@ from ..projects import models as pr_models
 from ..datasources import models as ds_models
 from ..pages import models as pa_models
 from ..pages.constants import ElementType
-from . import utils
+from . import utils, records_reader
 
 
 element_to_html_function = {
@@ -36,7 +36,7 @@ class PADataSourceListSerializer(serializers.ModelSerializer):
         fields = ("id", "type", "name")
 
 
-class PADataSourceDetailSerializer(serializers.ModelSerializer):
+class PADataSourceDetailNoRecordsSerializer(serializers.ModelSerializer):
     meta = serializers.SerializerMethodField()
     shape = serializers.SerializerMethodField()
     fields = serializers.SerializerMethodField(method_name="get_ds_fields")
@@ -64,6 +64,16 @@ class PADataSourceDetailSerializer(serializers.ModelSerializer):
             str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
         return data
+
+
+class PADataSourceDetailRecordsSerializer(PADataSourceDetailNoRecordsSerializer):
+    records = serializers.SerializerMethodField()
+
+    class Meta(PADataSourceDetailNoRecordsSerializer.Meta):
+        fields = PADataSourceDetailNoRecordsSerializer.Meta.fields + ("records",)
+
+    def get_records(self, obj):
+        return records_reader.read_records_preview(obj)
 
 
 class PABlockElementSerializer(serializers.ModelSerializer):

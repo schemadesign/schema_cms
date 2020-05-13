@@ -10,7 +10,7 @@
 
 <body>
     {% for block in page.blocks %}
-		{% for element in block.elements. %}
+		{% for element in block.elements %}
 
 			{% if element.type == "plain_text" %}
 				{{ element.html|safe }}
