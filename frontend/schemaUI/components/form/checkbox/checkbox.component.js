@@ -25,9 +25,12 @@ export class CheckboxComponent extends PureComponent {
 
     return (
       <CheckboxGroupContext.Consumer>
-        {({ onChange, value = [], name, checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
+        {({ onChange, value = [], name, checkedIcon, uncCheckedIcon, customCheckboxStyles, reverse }) => {
           const checked = value.includes(restProps.value);
-          const { containerStyles, inputStyles, iconContainerStyles, labelStyles, elementStyles } = getStyles(theme);
+          const { containerStyles, inputStyles, iconContainerStyles, labelStyles, elementStyles } = getStyles({
+            theme,
+            reverse,
+          });
           const styles = { ...containerStyles, ...customCheckboxStyles };
           const filteredProps = filterAllowedAttributes('label', restProps);
 

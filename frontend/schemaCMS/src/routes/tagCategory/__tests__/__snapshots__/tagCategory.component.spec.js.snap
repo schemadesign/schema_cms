@@ -108,6 +108,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
             },
           }
         }
+        openRemoveCategoryModal={[Function]}
         project={
           Object {
             "description": "project description",
@@ -154,15 +155,6 @@ exports[`TagCategory: Component should render correctly 1`] = `
           }
         }
       />
-      <Styled(Span)
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove Tag Category"
-          id="tagCategory.subTitle"
-          values={Object {}}
-        />
-      </Styled(Span)>
       <NavigationContainer
         contentStyles={null}
         fixed={true}
@@ -371,6 +363,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
             },
           }
         }
+        openRemoveCategoryModal={[Function]}
         project={
           Object {
             "description": "project description",
@@ -417,15 +410,6 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
           }
         }
       />
-      <Styled(Span)
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove Tag Category"
-          id="tagCategory.subTitle"
-          values={Object {}}
-        />
-      </Styled(Span)>
       <NavigationContainer
         contentStyles={null}
         fixed={true}

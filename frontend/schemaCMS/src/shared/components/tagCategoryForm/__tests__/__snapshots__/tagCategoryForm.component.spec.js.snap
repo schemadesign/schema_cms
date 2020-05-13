@@ -87,141 +87,198 @@ Array [
       </div>
     </div>
   </div>,
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Type
+  </label>,
   <div
-    className="sc-fzozJi eLMJeI"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "1px solid #2F2F36",
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
   >
     <div
-      className="sc-fzpans iOMZI"
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
     >
-      <div>
-        <input
-          id="isPublic"
-          onChange={[Function]}
-          style={
-            Object {
-              "height": 0,
-              "left": 0,
-              "overflow": "hidden",
-              "position": "absolute",
-              "top": 0,
-              "visibility": "hidden",
-            }
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="content"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
           }
-          type="checkbox"
-        />
-        <label
-          htmlFor="isPublic"
-        >
-          <div
-            style={
-              Object {
-                "background": "#2F2F36",
-                "borderRadius": 20,
-                "boxSizing": "border-box",
-                "cursor": "pointer",
-                "height": 24,
-                "padding": 2,
-                "transition": "background 200ms ease-in-out",
-                "width": 44,
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "background": "#FFF",
-                  "borderRadius": "50%",
-                  "height": 20,
-                  "transform": "translateX(0)",
-                  "transition": "transform 200ms ease-in-out",
-                  "width": 20,
-                }
-              }
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        className="sc-fznyAO hLqtXE"
+        }
+        type="checkbox"
+        value="content"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
       >
         <label
-          className="sc-fzplWN dkkGRP"
-          htmlFor="isPublic"
+          htmlFor="content"
         >
-          Make it Public
+          Content
         </label>
-        <span
-          className="sc-fzokOt fvlngp"
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="content"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
         >
-          This Tag Category is currently Private
-        </span>
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
-      className="sc-fzpans iOMZI"
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
     >
-      <div>
-        <input
-          id="isSingleSelect"
-          onChange={[Function]}
-          style={
-            Object {
-              "height": 0,
-              "left": 0,
-              "overflow": "hidden",
-              "position": "absolute",
-              "top": 0,
-              "visibility": "hidden",
-            }
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="dataset"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
           }
-          type="checkbox"
-        />
-        <label
-          htmlFor="isSingleSelect"
-        >
-          <div
-            style={
-              Object {
-                "background": "#2F2F36",
-                "borderRadius": 20,
-                "boxSizing": "border-box",
-                "cursor": "pointer",
-                "height": 24,
-                "padding": 2,
-                "transition": "background 200ms ease-in-out",
-                "width": 44,
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "background": "#FFF",
-                  "borderRadius": "50%",
-                  "height": 20,
-                  "transform": "translateX(0)",
-                  "transition": "transform 200ms ease-in-out",
-                  "width": 20,
-                }
-              }
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        className="sc-fznyAO hLqtXE"
+        }
+        type="checkbox"
+        value="dataset"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
       >
         <label
-          className="sc-fzplWN dkkGRP"
-          htmlFor="isSingleSelect"
+          htmlFor="dataset"
         >
-          Make it Single Choice
+          Dataset
         </label>
-        <span
-          className="sc-fzokOt fvlngp"
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="dataset"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
         >
-          This Tag Category is currently Multi Choice
-        </span>
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
       </div>
     </div>
   </div>,
@@ -446,96 +503,6 @@ Array [
   >
     Tap or click to add new Tag
   </div>,
-]
-`;
-
-exports[`TagCategoryForm: Component should render empty 1`] = `
-Array [
-  <div
-    className="sc-AxjAm bPMEtn"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="name"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Name
-      </label>
-      <input
-        id="name"
-        name="name"
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value=""
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <div
-          className="sc-AxirZ wBsWx"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
-            }
-            viewBox="0 0 30 30"
-          >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>,
   <div
     className="sc-fzozJi eLMJeI"
   >
@@ -674,6 +641,291 @@ Array [
       </div>
     </div>
   </div>,
+]
+`;
+
+exports[`TagCategoryForm: Component should render empty 1`] = `
+Array [
+  <div
+    className="sc-AxjAm bPMEtn"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="sc-AxirZ wBsWx"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Type
+  </label>,
+  <div
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "1px solid #2F2F36",
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="content"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value="content"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <label
+          htmlFor="content"
+        >
+          Content
+        </label>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="content"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="dataset"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value="dataset"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <label
+          htmlFor="dataset"
+        >
+          Dataset
+        </label>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="dataset"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+  </div>,
   <div
     className="sc-fznJRM dOdAYw"
   >
@@ -743,6 +995,144 @@ Array [
     onClick={[Function]}
   >
     Tap or click to add new Tag
+  </div>,
+  <div
+    className="sc-fzozJi eLMJeI"
+  >
+    <div
+      className="sc-fzpans iOMZI"
+    >
+      <div>
+        <input
+          id="isPublic"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isPublic"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fznyAO hLqtXE"
+      >
+        <label
+          className="sc-fzplWN dkkGRP"
+          htmlFor="isPublic"
+        >
+          Make it Public
+        </label>
+        <span
+          className="sc-fzokOt fvlngp"
+        >
+          This Tag Category is currently Private
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-fzpans iOMZI"
+    >
+      <div>
+        <input
+          id="isSingleSelect"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isSingleSelect"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fznyAO hLqtXE"
+      >
+        <label
+          className="sc-fzplWN dkkGRP"
+          htmlFor="isSingleSelect"
+        >
+          Make it Single Choice
+        </label>
+        <span
+          className="sc-fzokOt fvlngp"
+        >
+          This Tag Category is currently Multi Choice
+        </span>
+      </div>
+    </div>
   </div>,
 ]
 `;

@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { TagCategory } from '../tagCategory.component';
 import { defaultProps } from '../tagCategory.stories';
-import { Link } from '../../../theme/typography';
 import { BackButton } from '../../../shared/components/navigation';
 
 describe('TagCategory: Component', () => {
@@ -53,18 +52,10 @@ describe('TagCategory: Component', () => {
     expect(defaultProps.removeTagCategory).toHaveBeenCalledWith({ projectId: 1, tagCategoryId: 2 });
   });
 
-  it('should show modal on click remove link', () => {
-    const wrapper = render();
-
-    wrapper.find(Link).simulate('click');
-
-    expect(wrapper.state().confirmationModalOpen).toBeTruthy();
-  });
-
   it('should hide modal on cancel', () => {
     const wrapper = render();
 
-    wrapper.find(Link).simulate('click');
+    wrapper.setState({ confirmationModalOpen: true });
 
     wrapper
       .find(BackButton)

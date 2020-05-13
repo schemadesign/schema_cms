@@ -4,13 +4,14 @@ import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
 import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 
-import { Header, IconsContainer, iconStyles, Type, getCustomIconStyles } from './pageBlock.styles';
+import { Header, IconsContainer, Type, getCustomIconStyles } from './pageBlock.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageBlock.messages';
 import { BlockElement } from '../blockElement';
 import { BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
+import { binStyles } from '../form/frequentComponents.styles';
 
-const { EditIcon, MinusIcon } = Icons;
+const { EditIcon, BinIcon } = Icons;
 
 export const PageBlock = ({
   index,
@@ -44,7 +45,7 @@ export const PageBlock = ({
           <IconsContainer>
             <EditIcon />
             {removeBlock ? (
-              <MinusIcon id={blockPath} customStyles={iconStyles} onClick={() => removeBlock(index)} />
+              <BinIcon id={blockPath} customStyles={binStyles} onClick={() => removeBlock(index)} />
             ) : null}
           </IconsContainer>
         </Header>

@@ -91,8 +91,10 @@ export const inputStyles = {
 };
 
 export const binStyles = {
-  width: 30,
-  height: 30,
+  cursor: 'pointer',
+  width: 16,
+  height: 16,
+  margin: '-3px 0 0 5px',
 };
 
 export const inputContainerStyles = {

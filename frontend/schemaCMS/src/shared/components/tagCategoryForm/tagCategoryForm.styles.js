@@ -48,3 +48,7 @@ export const removeIconStyles = {
   marginLeft: 5,
   cursor: 'pointer',
 };
+
+export const customCheckboxGroupStyles = {
+  border: 'none',
+};
