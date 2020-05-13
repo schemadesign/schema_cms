@@ -24,6 +24,7 @@ import {
   Switches,
   Error,
   TagContainer,
+  CheckboxLabel,
   customCheckboxGroupStyles,
 } from './tagCategoryForm.styles';
 import {
@@ -188,9 +189,9 @@ export const TagCategoryForm = ({
         customStyles={customCheckboxGroupStyles}
       >
         <Checkbox value={OPTION_CONTENT} id={OPTION_CONTENT}>
-          <label htmlFor={OPTION_CONTENT}>
+          <CheckboxLabel htmlFor={OPTION_CONTENT}>
             <FormattedMessage {...messages[OPTION_CONTENT]} />
-          </label>
+          </CheckboxLabel>
         </Checkbox>
         <Checkbox value={OPTION_DATASET} id={OPTION_DATASET}>
           <label htmlFor={OPTION_DATASET}>

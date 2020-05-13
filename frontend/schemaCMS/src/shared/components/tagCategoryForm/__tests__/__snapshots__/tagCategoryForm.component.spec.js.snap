@@ -101,7 +101,7 @@ Array [
       }
     }
   >
-    Type
+    Applicable in
   </label>,
   <div
     style={
@@ -109,7 +109,7 @@ Array [
         "border": "none",
         "borderTop": "1px solid #2F2F36",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": "row",
       }
     }
   >
@@ -155,6 +155,7 @@ Array [
         }
       >
         <label
+          className="sc-fzoLsD enjVMW"
           htmlFor="content"
         >
           Content
@@ -283,20 +284,20 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fznJRM dOdAYw"
+    className="sc-fznWqX jvqfTb"
   >
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     />
     2 Tags
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     >
       <div
-        className="sc-fzoLag edhcrz"
+        className="sc-fzoXzr kozlLJ"
       >
         <div
-          className="sc-fzoXWK kza-dYs"
+          className="sc-fzpmMD PQZfb"
         >
           <button
             disabled={false}
@@ -507,7 +508,7 @@ Array [
     className="sc-fzozJi eLMJeI"
   >
     <div
-      className="sc-fzpans iOMZI"
+      className="sc-fzplWN dXUwnt"
     >
       <div>
         <input
@@ -558,23 +559,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fznyAO hLqtXE"
+        className="sc-fznKkj hDJiXR"
       >
         <label
-          className="sc-fzplWN dkkGRP"
+          className="sc-fznyAO ftBpOP"
           htmlFor="isPublic"
         >
           Make it Public
         </label>
         <span
-          className="sc-fzokOt fvlngp"
+          className="sc-fzqBZW ercQYo"
         >
           This Tag Category is currently Private
         </span>
       </div>
     </div>
     <div
-      className="sc-fzpans iOMZI"
+      className="sc-fzplWN dXUwnt"
     >
       <div>
         <input
@@ -625,16 +626,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fznyAO hLqtXE"
+        className="sc-fznKkj hDJiXR"
       >
         <label
-          className="sc-fzplWN dkkGRP"
+          className="sc-fznyAO ftBpOP"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fzokOt fvlngp"
+          className="sc-fzqBZW ercQYo"
         >
           This Tag Category is currently Multi Choice
         </span>
@@ -745,7 +746,7 @@ Array [
       }
     }
   >
-    Type
+    Applicable in
   </label>,
   <div
     style={
@@ -753,7 +754,7 @@ Array [
         "border": "none",
         "borderTop": "1px solid #2F2F36",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": "row",
       }
     }
   >
@@ -799,6 +800,7 @@ Array [
         }
       >
         <label
+          className="sc-fzoLsD enjVMW"
           htmlFor="content"
         >
           Content
@@ -927,20 +929,20 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fznJRM dOdAYw"
+    className="sc-fznWqX jvqfTb"
   >
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     />
     0 Tags
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     >
       <div
-        className="sc-fzoLag edhcrz"
+        className="sc-fzoXzr kozlLJ"
       >
         <div
-          className="sc-fzoXWK kza-dYs"
+          className="sc-fzpmMD PQZfb"
         >
           <button
             disabled={false}
@@ -1000,7 +1002,7 @@ Array [
     className="sc-fzozJi eLMJeI"
   >
     <div
-      className="sc-fzpans iOMZI"
+      className="sc-fzplWN dXUwnt"
     >
       <div>
         <input
@@ -1051,23 +1053,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fznyAO hLqtXE"
+        className="sc-fznKkj hDJiXR"
       >
         <label
-          className="sc-fzplWN dkkGRP"
+          className="sc-fznyAO ftBpOP"
           htmlFor="isPublic"
         >
           Make it Public
         </label>
         <span
-          className="sc-fzokOt fvlngp"
+          className="sc-fzqBZW ercQYo"
         >
           This Tag Category is currently Private
         </span>
       </div>
     </div>
     <div
-      className="sc-fzpans iOMZI"
+      className="sc-fzplWN dXUwnt"
     >
       <div>
         <input
@@ -1118,16 +1120,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-fznyAO hLqtXE"
+        className="sc-fznKkj hDJiXR"
       >
         <label
-          className="sc-fzplWN dkkGRP"
+          className="sc-fznyAO ftBpOP"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fzokOt fvlngp"
+          className="sc-fzqBZW ercQYo"
         >
           This Tag Category is currently Multi Choice
         </span>

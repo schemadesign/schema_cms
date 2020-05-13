@@ -17,7 +17,7 @@ export default defineMessages({
   },
   [TAG_CATEGORY_TYPE]: {
     id: `shared.components.tagCategoryForm.${TAG_CATEGORY_TYPE}`,
-    defaultMessage: 'Type',
+    defaultMessage: 'Applicable in',
   },
   [OPTION_DATASET]: {
     id: `shared.components.tagCategoryForm.${OPTION_DATASET}`,
