@@ -5,7 +5,7 @@ import { useEffectOnce } from 'react-use';
 import { useHistory, useParams, useLocation } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
-import { isEmpty, pick, pathOr } from 'ramda';
+import { isEmpty, pick, pathOr, groupBy, prop } from 'ramda';
 
 import { Container } from './editPage.styles';
 import messages from './editPage.messages';
@@ -24,6 +24,7 @@ import {
   PAGE_NAME,
   INITIAL_VALUES,
   PAGE_DISPLAY_NAME,
+  PAGE_TAG_CATEGORIES,
 } from '../../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import {
@@ -69,6 +70,8 @@ export const EditPage = ({
   pageTemplates,
   userRole,
   removePage,
+  fetchTagCategories,
+  tagCategories,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
@@ -83,7 +86,12 @@ export const EditPage = ({
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const projectId = project.id;
   const menuOptions = getProjectMenuOptions(projectId);
-  const initialValues = { ...INITIAL_VALUES, ...pick(FORM_VALUES, page), [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0 };
+  const initialValues = {
+    ...INITIAL_VALUES,
+    ...pick(FORM_VALUES, page),
+    [PAGE_TAG_CATEGORIES]: groupBy(prop('category'))(page[PAGE_TAG_CATEGORIES] || []),
+    [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0,
+  };
   const mainPage = pathOr({}, ['section', 'mainPage'], page);
   const pathName =
     mainPage[PAGE_DISPLAY_NAME] && mainPage.id !== page.id
@@ -130,7 +138,8 @@ export const EditPage = ({
       try {
         const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
         const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
-        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise]);
+        const fetchTagCategoriesPromise = fetchTagCategories({ projectId });
+        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise, fetchTagCategoriesPromise]);
 
         const { page = {} } = state;
 
@@ -169,6 +178,7 @@ export const EditPage = ({
             values={values}
             setValues={setValues}
             internalConnections={internalConnections}
+            tagCategories={tagCategories}
             setFieldValue={setFieldValue}
             {...restFormikProps}
           />
@@ -219,4 +229,6 @@ EditPage.propTypes = {
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
   internalConnections: PropTypes.array.isRequired,
+  fetchTagCategories: PropTypes.func.isRequired,
+  tagCategories: PropTypes.array.isRequired,
 };

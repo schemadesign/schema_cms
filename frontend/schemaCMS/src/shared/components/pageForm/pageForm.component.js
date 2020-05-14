@@ -58,6 +58,7 @@ import {
   PAGE_DELETE_BLOCKS,
   BLOCK_KEY,
   BLOCK_ID,
+  PAGE_TAG_CATEGORIES,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
@@ -66,6 +67,7 @@ import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
 import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
+import { TagSearch } from '../tagSearch';
 
 const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch } = Form;
@@ -82,6 +84,7 @@ export const PageForm = ({
   pageTemplates,
   setRemoveModalOpen,
   internalConnections,
+  tagCategories,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -258,6 +261,7 @@ export const PageForm = ({
           {...restFormikProps}
         />
       </SelectContainer>
+      <TagSearch tagCategories={tagCategories} values={values[PAGE_TAG_CATEGORIES]} setFieldValue={setFieldValue} />
       <CounterHeader
         copy={intl.formatMessage(messages.blocks)}
         count={blocksCount}
@@ -352,4 +356,5 @@ PageForm.propTypes = {
   pageUrl: PropTypes.string,
   domain: PropTypes.string,
   pageId: PropTypes.number,
+  tagCategories: PropTypes.array.isRequired,
 };
