@@ -35,6 +35,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
         .put(
           DataSourceRoutines.create.success({
             dataSource: { id: responseData.id, fileName: 'fileName', progress: 0 },
@@ -128,7 +129,6 @@ describe('DataSource: sagas', () => {
       await expectSaga(watchDataSource)
         .withState(defaultState)
         .provide([[effects.select(selectUploadingDataSources), []]])
-        .put(ProjectRoutines.setProject.trigger(responseDoneData.project))
         .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
         .dispatch(DataSourceRoutines.fetchList(payload))
         .silentRun();
@@ -191,6 +191,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
         .put(DataSourceRoutines.removeOne.success())
         .dispatch(DataSourceRoutines.removeOne(payload))
         .silentRun();

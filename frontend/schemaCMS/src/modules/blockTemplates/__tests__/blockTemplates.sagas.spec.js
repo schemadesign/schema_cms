@@ -24,7 +24,6 @@ describe('BlockTemplates: sagas', () => {
 
       await expectSaga(watchBlockTemplates)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(BlockTemplatesRoutines.fetchBlockTemplates.success(response.results))
         .dispatch(BlockTemplatesRoutines.fetchBlockTemplates({ projectId }))
         .silentRun();
@@ -42,7 +41,6 @@ describe('BlockTemplates: sagas', () => {
 
       await expectSaga(watchBlockTemplates)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(BlockTemplatesRoutines.fetchBlockTemplates.success(response.results))
         .dispatch(BlockTemplatesRoutines.fetchBlockTemplates({ projectId, raw: true }))
         .silentRun();
@@ -62,7 +60,6 @@ describe('BlockTemplates: sagas', () => {
 
       await expectSaga(watchBlockTemplates)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(BlockTemplatesRoutines.fetchBlockTemplate.success(response.results))
         .dispatch(BlockTemplatesRoutines.fetchBlockTemplate({ blockTemplateId }))
         .silentRun();
@@ -83,7 +80,7 @@ describe('BlockTemplates: sagas', () => {
 
       await expectSaga(watchBlockTemplates)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(ProjectRoutines.fetchOne.trigger({ projectId }))
         .put(BlockTemplatesRoutines.createBlockTemplate.success(response.results))
         .dispatch(BlockTemplatesRoutines.createBlockTemplate({ projectId, formData }))
         .silentRun();

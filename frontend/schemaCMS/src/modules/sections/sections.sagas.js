@@ -12,7 +12,6 @@ function* fetchSections({ payload: { projectId } }) {
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${SECTIONS_PATH}`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(SectionsRoutines.fetchSections.success(data.results));
   } catch (error) {
     reportError(error);
@@ -43,7 +42,6 @@ function* fetchSection({ payload: { sectionId } }) {
 
     const { data } = yield api.get(`${SECTIONS_PATH}/${sectionId}`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(SectionsRoutines.fetchSection.success(data.results));
   } catch (error) {
     reportError(error);
@@ -58,7 +56,7 @@ function* createSection({ payload: { projectId, formData } }) {
     yield put(SectionsRoutines.createSection.request());
 
     const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${SECTIONS_PATH}`, formData);
-
+    yield put(ProjectRoutines.fetchOne.trigger({ projectId }));
     yield put(SectionsRoutines.createSection.success(data.results));
   } catch (error) {
     reportError(error);

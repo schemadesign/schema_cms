@@ -126,7 +126,6 @@ function* fetchEditors({ payload: { projectId } }) {
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}/users`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(ProjectRoutines.fetchEditors.success(data.results));
   } catch (error) {
     yield put(ProjectRoutines.fetchEditors.failure());
@@ -141,7 +140,6 @@ function* fetchTemplates({ payload: { projectId } }) {
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}/templates`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(ProjectRoutines.fetchTemplates.success(data.results));
   } catch (error) {
     yield put(ProjectRoutines.fetchTemplates.failure());
