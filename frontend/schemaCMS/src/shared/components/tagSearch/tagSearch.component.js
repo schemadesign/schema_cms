@@ -59,7 +59,13 @@ TagCategories.propTypes = {
 export const TagSearch = ({ tagCategories, values, setFieldValue }) => {
   const theme = useTheme();
   const customStyles = getCustomSelectStyles(theme);
-  const renderNoTags = renderWhenTrue(always(<NoTags>No tags available</NoTags>));
+  const renderNoTags = renderWhenTrue(
+    always(
+      <NoTags>
+        <FormattedMessage {...messages.noTags} />
+      </NoTags>
+    )
+  );
 
   return (
     <Container>

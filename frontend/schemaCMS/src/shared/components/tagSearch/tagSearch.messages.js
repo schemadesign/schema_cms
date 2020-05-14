@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'shared.components.tagSearch.tags',
     defaultMessage: 'Tags',
   },
+  noTags: {
+    id: 'shared.components.tagSearch.noTags',
+    defaultMessage: 'No tags available',
+  },
 });
