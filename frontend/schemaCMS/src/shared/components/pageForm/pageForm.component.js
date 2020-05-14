@@ -229,6 +229,7 @@ export const PageForm = ({
         name={PAGE_DISPLAY_NAME}
         value={values[PAGE_DISPLAY_NAME]}
         fullWidth
+        isEdit
         label={<FormattedMessage {...messages[PAGE_DISPLAY_NAME]} />}
         {...restFormikProps}
       />
@@ -238,6 +239,7 @@ export const PageForm = ({
         value={values[PAGE_DESCRIPTION]}
         fullWidth
         multiline
+        isEdit
         label={<FormattedMessage {...messages[PAGE_DESCRIPTION]} />}
         {...restFormikProps}
       />
@@ -246,6 +248,7 @@ export const PageForm = ({
         name={PAGE_KEYWORDS}
         value={values[PAGE_KEYWORDS]}
         fullWidth
+        isEdit
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
         {...restFormikProps}
       />

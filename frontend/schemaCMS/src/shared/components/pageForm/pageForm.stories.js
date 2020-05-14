@@ -8,6 +8,8 @@ import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mock
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
 import { project } from '../../../modules/project/project.mocks';
 import { internalConnections } from '../../../modules/sections/sections.mocks';
+import { tagCategories } from '../../../modules/tagCategory/tagCategory.mocks';
+import { PAGE_TAGS } from '../../../modules/page/page.constants';
 
 export const defaultProps = {
   handleChange: Function.prototype,
@@ -16,7 +18,10 @@ export const defaultProps = {
   validateForm: Function.prototype,
   setRemoveModalOpen: Function.prototype,
   handleBlur: Function.prototype,
-  values: page,
+  values: {
+    ...page,
+    [PAGE_TAGS]: {},
+  },
   pageTemplates,
   blockTemplates,
   isValid: true,
@@ -24,6 +29,7 @@ export const defaultProps = {
   pageUrl: 'pageUrl',
   project,
   internalConnections,
+  tagCategories,
 };
 
 storiesOf('PageForm', module)

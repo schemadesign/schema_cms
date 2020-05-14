@@ -82,6 +82,6 @@ export const TagSearch = ({ tagCategories, values, setFieldValue }) => {
 
 TagSearch.propTypes = {
   tagCategories: PropTypes.array.isRequired,
-  values: PropTypes.array.isRequired,
+  values: PropTypes.object.isRequired,
   setFieldValue: PropTypes.func.isRequired,
 };

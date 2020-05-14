@@ -35,6 +35,7 @@ import {
   sectionMessage,
   tabMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import { OPTION_CONTENT } from '../../../modules/tagCategory/tagCategory.constants';
 
 const getBreadcrumbsItems = (project, section, page) => [
   {
@@ -141,7 +142,7 @@ export const EditPage = ({
       try {
         const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
         const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
-        const fetchTagCategoriesPromise = fetchTagCategories({ projectId });
+        const fetchTagCategoriesPromise = fetchTagCategories({ projectId, type: OPTION_CONTENT });
         await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise, fetchTagCategoriesPromise]);
 
         const { page = {} } = state;

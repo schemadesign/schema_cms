@@ -6,7 +6,7 @@ import { defaultProps } from '../pageForm.stories';
 import { makeContextRenderer } from '../../../utils/testUtils';
 import { PAGE_TEMPLATES_BLOCKS } from '../../../../modules/pageTemplates/pageTemplates.constants';
 import { page } from '../../../../modules/page/page.mocks';
-import { PAGE_DISPLAY_NAME, PAGE_TEMPLATE } from '../../../../modules/page/page.constants';
+import { PAGE_DISPLAY_NAME, PAGE_TAGS, PAGE_TEMPLATE } from '../../../../modules/page/page.constants';
 
 const mockPushHistory = jest.fn();
 
@@ -28,8 +28,8 @@ describe('PageForm: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with blocked template', async () => {
-    const wrapper = await render({ page: { ...page, [PAGE_TEMPLATE]: 2 } });
+  it('should render with page template', async () => {
+    const wrapper = await render({ page: { ...page, [PAGE_TEMPLATE]: 2, [PAGE_TAGS]: {} } });
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -43,7 +43,7 @@ describe('PageForm: Component', () => {
 
   it('should change page template', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
-    const wrapper = await render({ values: { ...page, [PAGE_TEMPLATES_BLOCKS]: [] } });
+    const wrapper = await render({ values: { ...page, [PAGE_TEMPLATES_BLOCKS]: [], [PAGE_TAGS]: {} } });
 
     act(() => {
       wrapper.root.findByProps({ id: 'pageTemplateSelect' }).props.onSelect({ value: 'value' });
@@ -55,7 +55,7 @@ describe('PageForm: Component', () => {
   it('should lower case a display name on blur', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
     jest.spyOn(defaultProps, 'handleBlur');
-    const wrapper = await render({ values: { ...page, [PAGE_DISPLAY_NAME]: 'VALUE' } });
+    const wrapper = await render({ values: { ...page, [PAGE_DISPLAY_NAME]: 'VALUE', [PAGE_TAGS]: {} } });
 
     act(() => {
       wrapper.root.findByProps({ id: 'displayName' }).props.onBlur({ target: 'target' });
@@ -154,6 +154,7 @@ describe('PageForm: Component', () => {
         name: 'page name',
         section: { id: 'sectionId', mainPage: { displayName: 'page-name-2', id: 2 }, title: 'Section' },
         template: 1,
+        tags: {},
       },
     });
   });

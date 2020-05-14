@@ -8,11 +8,12 @@ import { TAG_CATEGORIES_PAGE } from '../project/project.constants';
 import { ROUTES } from '../../routes';
 import { ProjectRoutines } from '../project';
 
-function* fetchTagCategories({ payload: { projectId } }) {
+function* fetchTagCategories({ payload: { projectId, type } }) {
   try {
     yield put(TagCategoryRoutines.fetchTagCategories.request());
+    const query = type ? `?type=${type}` : '';
 
-    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${TAG_CATEGORIES_PATH}`);
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${TAG_CATEGORIES_PATH}${query}`);
 
     yield put(TagCategoryRoutines.fetchTagCategories.success(data.results));
   } catch (e) {
