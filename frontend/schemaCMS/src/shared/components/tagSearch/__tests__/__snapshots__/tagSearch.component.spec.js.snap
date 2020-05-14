@@ -288,3 +288,35 @@ exports[`TagSearch: Component should render correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`TagSearch: Component should render correctly with no tag categories 1`] = `
+<div
+  className="sc-AxjAm brQPEM"
+>
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Tags
+  </label>
+  <div
+    className="sc-AxiKw enLiEa"
+  >
+    <div
+      className="sc-AxhCb kKOsnY"
+    >
+      No tags available
+    </div>
+  </div>
+</div>
+`;

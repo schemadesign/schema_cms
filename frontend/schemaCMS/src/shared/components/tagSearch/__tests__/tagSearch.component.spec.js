@@ -11,4 +11,9 @@ describe('TagSearch: Component', () => {
     const wrapper = await render();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render correctly with no tag categories', async () => {
+    const wrapper = await render({ tagCategories: [] });
+    expect(wrapper).toMatchSnapshot();
+  });
 });
