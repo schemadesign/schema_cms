@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, pathOr } from 'ramda';
+import { pathOr } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container, Form } from './tagCategory.styles';
@@ -14,8 +14,6 @@ import { TagCategoryForm } from '../../shared/components/tagCategoryForm';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TAG_CATEGORIES_PAGE } from '../../modules/project/project.constants';
-import { renderWhenTrue } from '../../shared/utils/rendering';
-import { Link } from '../../theme/typography';
 
 import {
   ProjectBreadcrumbs,
@@ -89,10 +87,10 @@ export class TagCategory extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
+  openRemoveCategoryModal = () => this.setState({ confirmationModalOpen: true });
+
   handleBack = () =>
     this.props.history.push(`/project/${pathOr('', ['project', 'id'], this.props)}/${TAG_CATEGORIES_PAGE}`);
-
-  handleRemoveList = () => this.setState({ confirmationModalOpen: true });
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
@@ -108,14 +106,6 @@ export class TagCategory extends PureComponent {
     }
   };
 
-  renderRemoveTagCategoryLink = renderWhenTrue(
-    always(
-      <Link onClick={this.handleRemoveList}>
-        <FormattedMessage {...messages.deleteList} />
-      </Link>
-    )
-  );
-
   render() {
     const { error, loading, removeLoading, confirmationModalOpen } = this.state;
     const { tagCategory, isValid, isSubmitting, dirty, handleSubmit, project } = this.props;
@@ -128,8 +118,7 @@ export class TagCategory extends PureComponent {
         <ProjectBreadcrumbs items={getBreadcrumbsItems(project, tagCategory)} />
         <LoadingWrapper loading={loading} error={error}>
           <Form onSubmit={handleSubmit}>
-            <TagCategoryForm {...this.props} />
-            {this.renderRemoveTagCategoryLink(!!tagCategory.id)}
+            <TagCategoryForm openRemoveCategoryModal={this.openRemoveCategoryModal} {...this.props} />
             <NavigationContainer fixed>
               <BackButton onClick={this.handleBack} type="button">
                 <FormattedMessage {...messages.back} />

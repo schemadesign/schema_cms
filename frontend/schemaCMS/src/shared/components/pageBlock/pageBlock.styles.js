@@ -32,10 +32,6 @@ export const Type = styled.div`
   `};
 `;
 
-export const iconStyles = {
-  cursor: 'pointer',
-};
-
 export const getCustomIconStyles = theme => ({
   width: 30,
   height: 30,

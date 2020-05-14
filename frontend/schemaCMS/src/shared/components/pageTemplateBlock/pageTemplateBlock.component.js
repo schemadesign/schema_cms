@@ -4,14 +4,7 @@ import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schema
 import { useIntl } from 'react-intl';
 import { propEq, propOr, find, pipe } from 'ramda';
 
-import {
-  customLabelStyles,
-  Header,
-  IconsContainer,
-  iconStyles,
-  InputContainer,
-  Type,
-} from './pageTemplateBlock.styles';
+import { customLabelStyles, Header, IconsContainer, InputContainer, Type } from './pageTemplateBlock.styles';
 import messages from './pageTemplateBlock.messages';
 import { TextInput } from '../form/inputs/textInput';
 import { Select } from '../form/select';
@@ -21,8 +14,9 @@ import {
   BLOCK_NAME,
   PAGE_TEMPLATES_BLOCKS,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
+import { binStyles } from '../form/frequentComponents.styles';
 
-const { EditIcon, MinusIcon } = Icons;
+const { EditIcon, BinIcon } = Icons;
 
 export const PageTemplateBlock = ({
   block,
@@ -60,7 +54,7 @@ export const PageTemplateBlock = ({
           />
           <IconsContainer>
             <EditIcon />
-            <MinusIcon id={`removeBlock-${index}`} customStyles={iconStyles} onClick={() => removeBlock(index)} />
+            <BinIcon id={`removeBlock-${index}`} customStyles={binStyles} onClick={() => removeBlock(index)} />
           </IconsContainer>
         </Header>
         <Type>{type}</Type>

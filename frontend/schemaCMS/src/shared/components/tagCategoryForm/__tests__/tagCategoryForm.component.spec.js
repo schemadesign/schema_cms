@@ -20,6 +20,18 @@ describe('TagCategoryForm: Component', () => {
     expect(form).toMatchSnapshot();
   });
 
+  it('should open remove modal', async () => {
+    const props = {
+      ...propsWithTags,
+      openRemoveCategoryModal: Function.prototype,
+    };
+    jest.spyOn(props, 'openRemoveCategoryModal');
+    const wrapper = await render(props);
+    wrapper.root.findByProps({ id: 'removeTagCategory' }).props.onClick();
+
+    expect(props.openRemoveCategoryModal).toHaveBeenCalled();
+  });
+
   it('should call setFieldValue on input change', async () => {
     jest.spyOn(propsWithTags, 'setFieldValue');
 

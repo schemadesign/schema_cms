@@ -28,7 +28,6 @@ import { Container, SelectContainer } from './pageForm.styles';
 import {
   AvailableCopy,
   BinIconContainer,
-  binStyles,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -68,7 +67,7 @@ import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
 import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
 
-const { EditIcon, MinusIcon, MenuIcon } = Icons;
+const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch } = Form;
 
 export const PageForm = ({
@@ -138,7 +137,7 @@ export const PageForm = ({
   };
   const binIcon = setRemoveModalOpen ? (
     <BinIconContainer id="removePage" onClick={() => setRemoveModalOpen(true)}>
-      <MinusIcon customStyles={binStyles} />
+      <BinIcon />
     </BinIconContainer>
   ) : null;
   const visitPage = pageUrl ? (

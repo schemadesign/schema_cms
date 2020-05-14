@@ -4,12 +4,15 @@ from django.conf import settings
 from django.utils.translation import ugettext as _
 from django_extensions.db.models import TimeStampedModel
 
+from django.contrib.postgres.fields import JSONField
+
 
 class TagCategory(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey(
         "projects.Project", on_delete=models.CASCADE, related_name="tags_categories", null=True
     )
     name = models.CharField(max_length=25)
+    type = JSONField(blank=True, default=dict)
     is_single_select = models.BooleanField(default=False)
     is_public = models.BooleanField(default=True)
     created_by = models.ForeignKey(

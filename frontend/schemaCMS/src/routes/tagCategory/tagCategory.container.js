@@ -19,6 +19,7 @@ import {
   TAG_CATEGORY_SCHEMA,
   TAG_CATEGORY_IS_PUBLIC,
   TAG_CATEGORY_IS_SINGLE_SELECT,
+  TAG_CATEGORY_TYPE,
 } from '../../modules/tagCategory/tagCategory.constants';
 import reportError from '../../shared/utils/reportError';
 import { selectUserRole } from '../../modules/userProfile';
@@ -54,7 +55,13 @@ export default compose(
     mapPropsToValues: ({ tagCategory }) => ({
       ...INITIAL_VALUES,
       ...pick(
-        [TAG_CATEGORY_NAME, TAG_CATEGORY_TAGS, TAG_CATEGORY_IS_PUBLIC, TAG_CATEGORY_IS_SINGLE_SELECT],
+        [
+          TAG_CATEGORY_NAME,
+          TAG_CATEGORY_TAGS,
+          TAG_CATEGORY_IS_PUBLIC,
+          TAG_CATEGORY_IS_SINGLE_SELECT,
+          TAG_CATEGORY_TYPE,
+        ],
         tagCategory
       ),
     }),

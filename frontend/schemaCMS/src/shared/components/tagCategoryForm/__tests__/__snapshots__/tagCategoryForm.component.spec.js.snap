@@ -87,159 +87,217 @@ Array [
       </div>
     </div>
   </div>,
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Applicable in
+  </label>,
   <div
-    className="sc-fzozJi eLMJeI"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "1px solid #2F2F36",
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
   >
     <div
-      className="sc-fzpans iOMZI"
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
     >
-      <div>
-        <input
-          id="isPublic"
-          onChange={[Function]}
-          style={
-            Object {
-              "height": 0,
-              "left": 0,
-              "overflow": "hidden",
-              "position": "absolute",
-              "top": 0,
-              "visibility": "hidden",
-            }
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="content"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
           }
-          type="checkbox"
-        />
-        <label
-          htmlFor="isPublic"
-        >
-          <div
-            style={
-              Object {
-                "background": "#2F2F36",
-                "borderRadius": 20,
-                "boxSizing": "border-box",
-                "cursor": "pointer",
-                "height": 24,
-                "padding": 2,
-                "transition": "background 200ms ease-in-out",
-                "width": 44,
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "background": "#FFF",
-                  "borderRadius": "50%",
-                  "height": 20,
-                  "transform": "translateX(0)",
-                  "transition": "transform 200ms ease-in-out",
-                  "width": 20,
-                }
-              }
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        className="sc-fznyAO hLqtXE"
+        }
+        type="checkbox"
+        value="content"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
       >
         <label
-          className="sc-fzplWN dkkGRP"
-          htmlFor="isPublic"
+          className="sc-fzoLsD enjVMW"
+          htmlFor="content"
         >
-          Make it Public
+          Content
         </label>
-        <span
-          className="sc-fzokOt fvlngp"
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="content"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
         >
-          This Tag Category is currently Private
-        </span>
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
-      className="sc-fzpans iOMZI"
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
     >
-      <div>
-        <input
-          id="isSingleSelect"
-          onChange={[Function]}
-          style={
-            Object {
-              "height": 0,
-              "left": 0,
-              "overflow": "hidden",
-              "position": "absolute",
-              "top": 0,
-              "visibility": "hidden",
-            }
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="dataset"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
           }
-          type="checkbox"
-        />
-        <label
-          htmlFor="isSingleSelect"
-        >
-          <div
-            style={
-              Object {
-                "background": "#2F2F36",
-                "borderRadius": 20,
-                "boxSizing": "border-box",
-                "cursor": "pointer",
-                "height": 24,
-                "padding": 2,
-                "transition": "background 200ms ease-in-out",
-                "width": 44,
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "background": "#FFF",
-                  "borderRadius": "50%",
-                  "height": 20,
-                  "transform": "translateX(0)",
-                  "transition": "transform 200ms ease-in-out",
-                  "width": 20,
-                }
-              }
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        className="sc-fznyAO hLqtXE"
+        }
+        type="checkbox"
+        value="dataset"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
       >
         <label
-          className="sc-fzplWN dkkGRP"
-          htmlFor="isSingleSelect"
+          htmlFor="dataset"
         >
-          Make it Single Choice
+          Dataset
         </label>
-        <span
-          className="sc-fzokOt fvlngp"
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="dataset"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
         >
-          This Tag Category is currently Multi Choice
-        </span>
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
       </div>
     </div>
   </div>,
   <div
-    className="sc-fznJRM dOdAYw"
+    className="sc-fznWqX jvqfTb"
   >
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     />
     2 Tags
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     >
       <div
-        className="sc-fzoLag edhcrz"
+        className="sc-fzoXzr kozlLJ"
       >
         <div
-          className="sc-fzoXWK kza-dYs"
+          className="sc-fzpmMD PQZfb"
         >
           <button
             disabled={false}
@@ -446,6 +504,144 @@ Array [
   >
     Tap or click to add new Tag
   </div>,
+  <div
+    className="sc-fzozJi eLMJeI"
+  >
+    <div
+      className="sc-fzplWN dXUwnt"
+    >
+      <div>
+        <input
+          id="isPublic"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isPublic"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fznKkj hDJiXR"
+      >
+        <label
+          className="sc-fznyAO ftBpOP"
+          htmlFor="isPublic"
+        >
+          Make it Public
+        </label>
+        <span
+          className="sc-fzqBZW ercQYo"
+        >
+          This Tag Category is currently Private
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN dXUwnt"
+    >
+      <div>
+        <input
+          id="isSingleSelect"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isSingleSelect"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fznKkj hDJiXR"
+      >
+        <label
+          className="sc-fznyAO ftBpOP"
+          htmlFor="isSingleSelect"
+        >
+          Make it Single Choice
+        </label>
+        <span
+          className="sc-fzqBZW ercQYo"
+        >
+          This Tag Category is currently Multi Choice
+        </span>
+      </div>
+    </div>
+  </div>,
 ]
 `;
 
@@ -536,159 +732,217 @@ Array [
       </div>
     </div>
   </div>,
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Applicable in
+  </label>,
   <div
-    className="sc-fzozJi eLMJeI"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "1px solid #2F2F36",
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
   >
     <div
-      className="sc-fzpans iOMZI"
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
     >
-      <div>
-        <input
-          id="isPublic"
-          onChange={[Function]}
-          style={
-            Object {
-              "height": 0,
-              "left": 0,
-              "overflow": "hidden",
-              "position": "absolute",
-              "top": 0,
-              "visibility": "hidden",
-            }
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="content"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
           }
-          type="checkbox"
-        />
-        <label
-          htmlFor="isPublic"
-        >
-          <div
-            style={
-              Object {
-                "background": "#2F2F36",
-                "borderRadius": 20,
-                "boxSizing": "border-box",
-                "cursor": "pointer",
-                "height": 24,
-                "padding": 2,
-                "transition": "background 200ms ease-in-out",
-                "width": 44,
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "background": "#FFF",
-                  "borderRadius": "50%",
-                  "height": 20,
-                  "transform": "translateX(0)",
-                  "transition": "transform 200ms ease-in-out",
-                  "width": 20,
-                }
-              }
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        className="sc-fznyAO hLqtXE"
+        }
+        type="checkbox"
+        value="content"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
       >
         <label
-          className="sc-fzplWN dkkGRP"
-          htmlFor="isPublic"
+          className="sc-fzoLsD enjVMW"
+          htmlFor="content"
         >
-          Make it Public
+          Content
         </label>
-        <span
-          className="sc-fzokOt fvlngp"
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="content"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
         >
-          This Tag Category is currently Private
-        </span>
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
-      className="sc-fzpans iOMZI"
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "none",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row-reverse",
+          "height": 48,
+          "justifyContent": "flex-end",
+        }
+      }
     >
-      <div>
-        <input
-          id="isSingleSelect"
-          onChange={[Function]}
-          style={
-            Object {
-              "height": 0,
-              "left": 0,
-              "overflow": "hidden",
-              "position": "absolute",
-              "top": 0,
-              "visibility": "hidden",
-            }
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="dataset"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
           }
-          type="checkbox"
-        />
-        <label
-          htmlFor="isSingleSelect"
-        >
-          <div
-            style={
-              Object {
-                "background": "#2F2F36",
-                "borderRadius": 20,
-                "boxSizing": "border-box",
-                "cursor": "pointer",
-                "height": 24,
-                "padding": 2,
-                "transition": "background 200ms ease-in-out",
-                "width": 44,
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "background": "#FFF",
-                  "borderRadius": "50%",
-                  "height": 20,
-                  "transform": "translateX(0)",
-                  "transition": "transform 200ms ease-in-out",
-                  "width": 20,
-                }
-              }
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        className="sc-fznyAO hLqtXE"
+        }
+        type="checkbox"
+        value="dataset"
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
       >
         <label
-          className="sc-fzplWN dkkGRP"
-          htmlFor="isSingleSelect"
+          htmlFor="dataset"
         >
-          Make it Single Choice
+          Dataset
         </label>
-        <span
-          className="sc-fzokOt fvlngp"
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="dataset"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 10,
+            }
+          }
         >
-          This Tag Category is currently Multi Choice
-        </span>
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
       </div>
     </div>
   </div>,
   <div
-    className="sc-fznJRM dOdAYw"
+    className="sc-fznWqX jvqfTb"
   >
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     />
     0 Tags
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     >
       <div
-        className="sc-fzoLag edhcrz"
+        className="sc-fzoXzr kozlLJ"
       >
         <div
-          className="sc-fzoXWK kza-dYs"
+          className="sc-fzpmMD PQZfb"
         >
           <button
             disabled={false}
@@ -743,6 +997,144 @@ Array [
     onClick={[Function]}
   >
     Tap or click to add new Tag
+  </div>,
+  <div
+    className="sc-fzozJi eLMJeI"
+  >
+    <div
+      className="sc-fzplWN dXUwnt"
+    >
+      <div>
+        <input
+          id="isPublic"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isPublic"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fznKkj hDJiXR"
+      >
+        <label
+          className="sc-fznyAO ftBpOP"
+          htmlFor="isPublic"
+        >
+          Make it Public
+        </label>
+        <span
+          className="sc-fzqBZW ercQYo"
+        >
+          This Tag Category is currently Private
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN dXUwnt"
+    >
+      <div>
+        <input
+          id="isSingleSelect"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="checkbox"
+        />
+        <label
+          htmlFor="isSingleSelect"
+        >
+          <div
+            style={
+              Object {
+                "background": "#2F2F36",
+                "borderRadius": 20,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "height": 24,
+                "padding": 2,
+                "transition": "background 200ms ease-in-out",
+                "width": 44,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#FFF",
+                  "borderRadius": "50%",
+                  "height": 20,
+                  "transform": "translateX(0)",
+                  "transition": "transform 200ms ease-in-out",
+                  "width": 20,
+                }
+              }
+            />
+          </div>
+        </label>
+      </div>
+      <div
+        className="sc-fznKkj hDJiXR"
+      >
+        <label
+          className="sc-fznyAO ftBpOP"
+          htmlFor="isSingleSelect"
+        >
+          Make it Single Choice
+        </label>
+        <span
+          className="sc-fzqBZW ercQYo"
+        >
+          This Tag Category is currently Multi Choice
+        </span>
+      </div>
+    </div>
   </div>,
 ]
 `;

@@ -18,11 +18,13 @@ class CheckboxGroupComponent extends PureComponent {
     name: PropTypes.string.isRequired,
     children: PropTypes.array.isRequired,
     checkedIcon: PropTypes.any,
+    reverse: PropTypes.bool,
   };
 
   static defaultProps = {
     customStyles: {},
     customCheckboxStyles: {},
+    reverse: false,
     checkedIcon: <CheckboxOnIcon />,
     uncCheckedIcon: <CheckboxOffIcon />,
   };
@@ -39,9 +41,10 @@ class CheckboxGroupComponent extends PureComponent {
       uncCheckedIcon,
       customCheckboxStyles,
       theme,
+      reverse,
       ...restProps
     } = this.props;
-    const context = { name, onChange, value, isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles };
+    const context = { name, onChange, value, isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles, reverse };
     const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
     const filteredProps = filterAllowedAttributes('div', restProps);

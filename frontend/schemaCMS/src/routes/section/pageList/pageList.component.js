@@ -34,7 +34,6 @@ import {
 import {
   AvailableCopy,
   BinIconContainer,
-  binStyles,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -60,7 +59,7 @@ import {
 } from '../../../shared/components/projectBreadcrumbs';
 import { PAGE_DISPLAY_NAME } from '../../../modules/page/page.constants';
 
-const { EditIcon, MinusIcon, HomeIcon } = Icons;
+const { EditIcon, BinIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
 
 export const Page = ({ created, createdBy, name, id, templateName, mainPage, setFieldValue, index }) => {
@@ -268,7 +267,7 @@ export const PageList = ({
               </SwitchCopy>
             </SwitchContent>
             <BinIconContainer id="removeSection" onClick={() => setRemoveModalOpen(true)}>
-              <MinusIcon customStyles={binStyles} />
+              <BinIcon />
             </BinIconContainer>
           </SwitchContainer>
         </Switches>

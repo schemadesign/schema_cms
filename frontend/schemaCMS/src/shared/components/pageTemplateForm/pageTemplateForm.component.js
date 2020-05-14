@@ -14,7 +14,6 @@ import { PlusButton } from '../navigation';
 import {
   AvailableCopy,
   BinIconContainer,
-  binStyles,
   IconsContainer,
   IconWrapper,
   inputContainerStyles,
@@ -46,7 +45,7 @@ import { BLOCK_TEMPLATES_NAME } from '../../../modules/blockTemplates/blockTempl
 import { Draggable } from '../draggable';
 import { PageTemplateBlock } from '../pageTemplateBlock';
 
-const { EditIcon, MinusIcon, MenuIcon } = Icons;
+const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch } = Form;
 
 export const PageTemplateForm = ({
@@ -109,7 +108,7 @@ export const PageTemplateForm = ({
   };
   const binIcon = setRemoveModalOpen ? (
     <BinIconContainer id="removePage" onClick={() => setRemoveModalOpen(true)}>
-      <MinusIcon customStyles={binStyles} />
+      <BinIcon />
     </BinIconContainer>
   ) : null;
   const blocksCount = values[PAGE_TEMPLATES_BLOCKS].length;

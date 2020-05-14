@@ -41,10 +41,19 @@ export const Switches = styled.div`
   padding: 10px 0 20px;
 `;
 
+export const CheckboxLabel = styled.label`
+  margin-right: 20px;
+`;
+
 export const removeIconStyles = {
   width: 35,
   height: 35,
   minWidth: 35,
   marginLeft: 5,
   cursor: 'pointer',
+};
+
+export const customCheckboxGroupStyles = {
+  border: 'none',
+  flexDirection: 'row',
 };

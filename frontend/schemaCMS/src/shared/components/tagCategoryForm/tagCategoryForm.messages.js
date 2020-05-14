@@ -5,12 +5,27 @@ import {
   TAG_CATEGORY_IS_SINGLE_SELECT,
   TAG_CATEGORY_NAME,
   TAG_CATEGORY_TAGS,
+  TAG_CATEGORY_TYPE,
+  OPTION_DATASET,
+  OPTION_CONTENT,
 } from '../../../modules/tagCategory/tagCategory.constants';
 
 export default defineMessages({
   [TAG_CATEGORY_NAME]: {
     id: `shared.components.tagCategoryForm.${TAG_CATEGORY_NAME}`,
     defaultMessage: 'Name',
+  },
+  [TAG_CATEGORY_TYPE]: {
+    id: `shared.components.tagCategoryForm.${TAG_CATEGORY_TYPE}`,
+    defaultMessage: 'Applicable in',
+  },
+  [OPTION_DATASET]: {
+    id: `shared.components.tagCategoryForm.${OPTION_DATASET}`,
+    defaultMessage: 'Dataset',
+  },
+  [OPTION_CONTENT]: {
+    id: `shared.components.tagCategoryForm.${OPTION_CONTENT}`,
+    defaultMessage: 'Content',
   },
   [TAG_CATEGORY_TAGS]: {
     id: `shared.components.tagCategoryForm.${TAG_CATEGORY_TAGS}`,

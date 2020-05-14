@@ -67,7 +67,3 @@ export const ElementIcon = styled.div`
 export const customLabelStyles = {
   borderTop: 'none',
 };
-
-export const iconStyles = {
-  cursor: 'pointer',
-};

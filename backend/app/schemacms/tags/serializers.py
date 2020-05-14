@@ -23,6 +23,7 @@ class TagCategorySerializer(serializers.ModelSerializer):
             "id",
             "name",
             "project",
+            "type",
             "is_single_select",
             "is_public",
             "tags",

@@ -22,7 +22,6 @@ import {
   AvailableCopy,
   SwitchContent,
   SwitchCopy,
-  binStyles,
   BinIconContainer,
   menuIconStyles,
   IconWrapper,
@@ -44,7 +43,7 @@ import { BlockTemplateElement } from '../blockTemplateElement';
 import { CounterHeader } from '../counterHeader';
 import { Draggable } from '../draggable';
 
-const { EditIcon, MenuIcon, MinusIcon } = Icons;
+const { EditIcon, MenuIcon, BinIcon } = Icons;
 const { Switch } = Form;
 
 export const BlockTemplateForm = ({
@@ -110,7 +109,7 @@ export const BlockTemplateForm = ({
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
   const binIcon = setRemoveModalOpen ? (
     <BinIconContainer id="removeBlock" onClick={() => setRemoveModalOpen(true)}>
-      <MinusIcon customStyles={binStyles} />
+      <BinIcon />
     </BinIconContainer>
   ) : null;
 
