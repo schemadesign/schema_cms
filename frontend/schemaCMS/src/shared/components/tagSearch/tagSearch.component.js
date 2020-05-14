@@ -23,8 +23,9 @@ const DropdownIndicator = props => {
   );
 };
 
-export const TagCategories = ({ name, selectedTags, tags, setFieldValue, id, customStyles }) => {
-  const handleChange = selectedOption => setFieldValue(`${PAGE_TAGS}.${id}`, selectedOption);
+export const TagCategories = ({ name, isSingleSelect, selectedTags, tags, setFieldValue, id, customStyles }) => {
+  const handleChange = selectedOption =>
+    setFieldValue(`${PAGE_TAGS}.${id}`, isSingleSelect ? [selectedOption] : selectedOption);
   const mutableTags = asMutable(tags);
   const options = mutableTags.map(({ value }) => ({ value, label: value }));
 
@@ -32,13 +33,14 @@ export const TagCategories = ({ name, selectedTags, tags, setFieldValue, id, cus
     <Fragment>
       <Title>{name}</Title>
       <Select
-        closeMenuOnSelect={false}
+        isClearable
+        closeMenuOnSelect={isSingleSelect}
         components={{ DropdownIndicator }}
         styles={customStyles}
-        value={selectedTags}
+        value={isSingleSelect ? selectedTags[0] : selectedTags}
         onChange={handleChange}
         options={options}
-        isMulti
+        isMulti={!isSingleSelect}
       />
     </Fragment>
   );
@@ -50,6 +52,7 @@ TagCategories.propTypes = {
   tags: PropTypes.array.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
+  isSingleSelect: PropTypes.bool.isRequired,
   customStyles: PropTypes.object.isRequired,
 };
 

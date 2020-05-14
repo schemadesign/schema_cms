@@ -7,7 +7,7 @@ export const tagCategories = [
       content: true,
       dataset: true,
     },
-    isSingleSelect: true,
+    isSingleSelect: false,
     isPublic: true,
     tags: [
       {
