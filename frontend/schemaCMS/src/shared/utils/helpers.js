@@ -36,7 +36,7 @@ import debounce from 'lodash.debounce';
 import { sizes } from '../../theme/media';
 import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
-import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TAG_CATEGORIES, PAGE_TEMPLATE } from '../../modules/page/page.constants';
+import { BLOCK_ELEMENTS, PAGE_BLOCKS, PAGE_TAGS, PAGE_TEMPLATE } from '../../modules/page/page.constants';
 import {
   CUSTOM_ELEMENT_TYPE,
   ELEMENT_VALUE,
@@ -136,10 +136,11 @@ export const isProcessingData = ({ metaData, jobsState }) => {
 export const prepareForPostingPageData = evolve({
   [PAGE_TEMPLATE]: ifElse(equals(0), always(null), identity),
   [PAGE_BLOCKS]: mapAndAddOrder,
-  [PAGE_TAG_CATEGORIES]: data =>
+  [PAGE_TAGS]: data =>
     pipe(
       keys,
-      map(key => map(({ value }) => ({ category: parseInt(key, 10), value }))(data[key]))
+      map(key => map(({ value }) => ({ category: parseInt(key, 10), value }))(data[key])),
+      flatten
     )(data),
 });
 

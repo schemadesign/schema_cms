@@ -5,7 +5,7 @@ import { useEffectOnce } from 'react-use';
 import { useHistory, useParams, useLocation } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
-import { isEmpty, pick, pathOr, groupBy, prop } from 'ramda';
+import { isEmpty, pick, pathOr, groupBy, prop, map, pipe } from 'ramda';
 
 import { Container } from './editPage.styles';
 import messages from './editPage.messages';
@@ -24,7 +24,7 @@ import {
   PAGE_NAME,
   INITIAL_VALUES,
   PAGE_DISPLAY_NAME,
-  PAGE_TAG_CATEGORIES,
+  PAGE_TAGS,
 } from '../../../modules/page/page.constants';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import {
@@ -89,7 +89,10 @@ export const EditPage = ({
   const initialValues = {
     ...INITIAL_VALUES,
     ...pick(FORM_VALUES, page),
-    [PAGE_TAG_CATEGORIES]: groupBy(prop('category'))(page[PAGE_TAG_CATEGORIES] || []),
+    [PAGE_TAGS]: pipe(
+      map(item => ({ ...item, label: item.value })),
+      groupBy(prop('category'))
+    )(page[PAGE_TAGS] || []),
     [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0,
   };
   const mainPage = pathOr({}, ['section', 'mainPage'], page);

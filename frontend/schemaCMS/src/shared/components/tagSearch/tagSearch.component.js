@@ -1,25 +1,45 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'schemaUI';
+import { Form, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import Select from 'react-select';
+import Select, { components } from 'react-select';
 import { asMutable } from 'seamless-immutable';
+import { useTheme } from 'styled-components';
+import { always } from 'ramda';
 
-import { Container } from './tagSearch.styles';
+import { Container, Title, TagsContainer, getCustomSelectStyles, NoTags } from './tagSearch.styles';
 import messages from './tagSearch.messages';
-import { PAGE_TAG_CATEGORIES } from '../../../modules/page/page.constants';
+import { PAGE_TAGS } from '../../../modules/page/page.constants';
+import { renderWhenTrue } from '../../utils/rendering';
 
 const { Label } = Form;
+const { CaretIcon } = Icons;
 
-export const TagCategories = ({ name, selectedTags, tags, setFieldValue, id }) => {
-  const handleChange = selectedOption => setFieldValue(`${PAGE_TAG_CATEGORIES}.${id}`, selectedOption);
+const DropdownIndicator = props => {
+  return (
+    <components.DropdownIndicator {...props}>
+      <CaretIcon />
+    </components.DropdownIndicator>
+  );
+};
+
+export const TagCategories = ({ name, selectedTags, tags, setFieldValue, id, customStyles }) => {
+  const handleChange = selectedOption => setFieldValue(`${PAGE_TAGS}.${id}`, selectedOption);
   const mutableTags = asMutable(tags);
   const options = mutableTags.map(({ value }) => ({ value, label: value }));
 
   return (
     <Fragment>
-      <div>{name}</div>
-      <Select value={selectedTags} onChange={handleChange} options={options} isMulti />
+      <Title>{name}</Title>
+      <Select
+        closeMenuOnSelect={false}
+        components={{ DropdownIndicator }}
+        styles={customStyles}
+        value={selectedTags}
+        onChange={handleChange}
+        options={options}
+        isMulti
+      />
     </Fragment>
   );
 };
@@ -30,23 +50,32 @@ TagCategories.propTypes = {
   tags: PropTypes.array.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
+  customStyles: PropTypes.object.isRequired,
 };
 
 export const TagSearch = ({ tagCategories, values, setFieldValue }) => {
+  const theme = useTheme();
+  const customStyles = getCustomSelectStyles(theme);
+  const renderNoTags = renderWhenTrue(always(<NoTags>No tags available</NoTags>));
+
   return (
     <Container>
       <Label>
         <FormattedMessage {...messages.tags} />
       </Label>
-      {tagCategories.map((item, index) => (
-        <TagCategories
-          key={index}
-          values={values}
-          selectedTags={values[item.id] || []}
-          setFieldValue={setFieldValue}
-          {...item}
-        />
-      ))}
+      <TagsContainer>
+        {tagCategories.map((item, index) => (
+          <TagCategories
+            key={index}
+            values={values}
+            customStyles={customStyles}
+            selectedTags={values[item.id] || []}
+            setFieldValue={setFieldValue}
+            {...item}
+          />
+        ))}
+        {renderNoTags(!tagCategories.length)}
+      </TagsContainer>
     </Container>
   );
 };

@@ -58,7 +58,7 @@ import {
   PAGE_DELETE_BLOCKS,
   BLOCK_KEY,
   BLOCK_ID,
-  PAGE_TAG_CATEGORIES,
+  PAGE_TAGS,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
@@ -249,6 +249,7 @@ export const PageForm = ({
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
         {...restFormikProps}
       />
+      <TagSearch tagCategories={tagCategories} values={values[PAGE_TAGS]} setFieldValue={setFieldValue} />
       <SelectContainer>
         <Select
           label={intl.formatMessage(messages[PAGE_TEMPLATE])}
@@ -261,7 +262,6 @@ export const PageForm = ({
           {...restFormikProps}
         />
       </SelectContainer>
-      <TagSearch tagCategories={tagCategories} values={values[PAGE_TAG_CATEGORIES]} setFieldValue={setFieldValue} />
       <CounterHeader
         copy={intl.formatMessage(messages.blocks)}
         count={blocksCount}
