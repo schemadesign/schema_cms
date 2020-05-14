@@ -23,6 +23,7 @@ urlpatterns = [
         ),
     ),
     urls.path("admin/", admin.site.urls),
+    urls.path("public-api/", urls.include("schemacms.public_api.urls")),
     urls.path("", misc_views.HomeView.as_view(), name="home"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

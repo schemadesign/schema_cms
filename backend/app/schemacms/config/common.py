@@ -49,6 +49,7 @@ class Common(Configuration):
         "schemacms.users",
         "schemacms.pages",
         "schemacms.tags",
+        "schemacms.public_api",
     ]
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
