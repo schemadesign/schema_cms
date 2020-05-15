@@ -15,6 +15,7 @@ jest.mock('react-router', () => ({
   useLocation: () => ({
     state: {
       page: {
+        tags: {},
         name: '',
         blocks: [],
         template: 0,
@@ -37,9 +38,11 @@ describe('CreatePage: Component', () => {
   it('should fetch page templates and section', async () => {
     jest.spyOn(defaultProps, 'fetchPageTemplates');
     jest.spyOn(defaultProps, 'fetchInternalConnections');
+    jest.spyOn(defaultProps, 'fetchTagCategories');
     await render();
     expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 1 });
     expect(defaultProps.fetchInternalConnections).toHaveBeenCalledWith({ projectId: 1 });
+    expect(defaultProps.fetchTagCategories).toHaveBeenCalledWith({ projectId: 1, type: 'content' });
   });
 
   it('should go back to section', async () => {

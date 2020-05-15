@@ -58,6 +58,7 @@ import {
   PAGE_DELETE_BLOCKS,
   BLOCK_KEY,
   BLOCK_ID,
+  PAGE_TAGS,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
@@ -66,6 +67,7 @@ import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
 import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
+import { TagSearch } from '../tagSearch';
 
 const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch } = Form;
@@ -82,6 +84,7 @@ export const PageForm = ({
   pageTemplates,
   setRemoveModalOpen,
   internalConnections,
+  tagCategories,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -226,6 +229,7 @@ export const PageForm = ({
         name={PAGE_DISPLAY_NAME}
         value={values[PAGE_DISPLAY_NAME]}
         fullWidth
+        isEdit
         label={<FormattedMessage {...messages[PAGE_DISPLAY_NAME]} />}
         {...restFormikProps}
       />
@@ -235,6 +239,7 @@ export const PageForm = ({
         value={values[PAGE_DESCRIPTION]}
         fullWidth
         multiline
+        isEdit
         label={<FormattedMessage {...messages[PAGE_DESCRIPTION]} />}
         {...restFormikProps}
       />
@@ -243,9 +248,11 @@ export const PageForm = ({
         name={PAGE_KEYWORDS}
         value={values[PAGE_KEYWORDS]}
         fullWidth
+        isEdit
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
         {...restFormikProps}
       />
+      <TagSearch tagCategories={tagCategories} values={values[PAGE_TAGS]} setFieldValue={setFieldValue} />
       <SelectContainer>
         <Select
           label={intl.formatMessage(messages[PAGE_TEMPLATE])}
@@ -352,4 +359,5 @@ PageForm.propTypes = {
   pageUrl: PropTypes.string,
   domain: PropTypes.string,
   pageId: PropTypes.number,
+  tagCategories: PropTypes.array.isRequired,
 };

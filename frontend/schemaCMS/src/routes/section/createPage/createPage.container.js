@@ -11,6 +11,7 @@ import { PageTemplatesRoutines, selectPageTemplates } from '../../../modules/pag
 import { PageRoutines } from '../../../modules/page';
 import { selectProject } from '../../../modules/project';
 import { SectionsRoutines, selectInternalConnections, selectSection } from '../../../modules/sections';
+import { selectTagCategories, TagCategoryRoutines } from '../../../modules/tagCategory';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
@@ -18,6 +19,7 @@ const mapStateToProps = createStructuredSelector({
   pageTemplates: selectPageTemplates,
   section: selectSection,
   internalConnections: selectInternalConnections,
+  tagCategories: selectTagCategories,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -26,6 +28,7 @@ export const mapDispatchToProps = dispatch => ({
       createPage: promisifyRoutine(PageRoutines.createPage),
       fetchPageTemplates: promisifyRoutine(PageTemplatesRoutines.fetchPageTemplates),
       fetchInternalConnections: promisifyRoutine(SectionsRoutines.fetchInternalConnections),
+      fetchTagCategories: promisifyRoutine(TagCategoryRoutines.fetchTagCategories),
     },
     dispatch
   ),

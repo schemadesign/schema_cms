@@ -8,6 +8,7 @@ import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
 import { project } from '../../../modules/project/project.mocks';
 import { internalConnections } from '../../../modules/sections/sections.mocks';
+import { tagCategories } from '../../../modules/tagCategory/tagCategory.mocks';
 
 export const defaultProps = {
   pageTemplates,
@@ -23,6 +24,8 @@ export const defaultProps = {
   },
   fetchInternalConnections: Function.prototype,
   internalConnections,
+  fetchTagCategories: Function.prototype,
+  tagCategories,
 };
 
 storiesOf('CreatePage', module)

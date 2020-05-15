@@ -25,6 +25,7 @@ export const PAGE_TEMPLATE = 'template';
 export const PAGE_IS_PUBLIC = 'isPublic';
 export const PAGE_BLOCKS = 'blocks';
 export const PAGE_DELETE_BLOCKS = 'deleteBlocks';
+export const PAGE_TAGS = 'tags';
 
 export const BLOCK_NAME = 'name';
 export const BLOCK_TYPE = 'type';
@@ -49,6 +50,7 @@ export const INITIAL_VALUES = {
   [PAGE_DESCRIPTION]: '',
   [PAGE_TEMPLATE]: '',
   [PAGE_BLOCKS]: [],
+  [PAGE_TAGS]: {},
   [PAGE_DELETE_BLOCKS]: [],
   [PAGE_IS_PUBLIC]: false,
 };

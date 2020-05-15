@@ -340,8 +340,15 @@ class PageSectionSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "main_page")
 
 
+class PageTagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.PageTag
+        fields = ("category", "value")
+
+
 class PageSerializer(CustomModelSerializer):
     blocks = serializers.SerializerMethodField()
+    tags = PageTagSerializer(read_only=True, many=True)
     section = NestedRelatedModelSerializer(
         serializer=PageSectionSerializer(), queryset=models.Section.objects.all()
     )
@@ -356,6 +363,7 @@ class PageSerializer(CustomModelSerializer):
             "display_name",
             "description",
             "keywords",
+            "tags",
             "created_by",
             "created",
             "blocks",
@@ -375,6 +383,7 @@ class PageSerializer(CustomModelSerializer):
     def create(self, validated_data):
         validated_data["project"] = validated_data.get("section").project
         blocks = self.initial_data.get("blocks", [])
+        tags = self.initial_data.get("tags", [])
 
         page = super().create(validated_data)
 
@@ -385,11 +394,15 @@ class PageSerializer(CustomModelSerializer):
         if blocks:
             self.create_or_update_blocks(page, blocks)
 
+        if tags:
+            page.add_tags(tags)
+
         return page
 
     @transaction.atomic()
     def update(self, instance, validated_data):
         blocks = self.initial_data.pop("blocks", [])
+        tags = self.initial_data.get("tags", [])
         blocks_to_delete = self.initial_data.pop("delete_blocks", [])
 
         if blocks_to_delete:
@@ -403,6 +416,9 @@ class PageSerializer(CustomModelSerializer):
 
         if blocks:
             self.create_or_update_blocks(instance, blocks)
+
+        if tags:
+            instance.add_tags(tags)
 
         return instance
 

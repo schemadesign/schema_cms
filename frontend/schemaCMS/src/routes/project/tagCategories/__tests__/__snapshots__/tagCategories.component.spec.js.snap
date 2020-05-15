@@ -196,7 +196,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
             id="project.tagCategories.tagsCounter"
             values={
               Object {
-                "count": 0,
+                "count": 4,
               }
             }
           />
@@ -205,7 +205,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
           <CardHeader
             list={
               Array [
-                "in 3 months",
+                "in 5 months",
                 "createdBy",
               ]
             }
@@ -216,7 +216,9 @@ exports[`TagCategories: Component should render correctly 1`] = `
         <Styled(H1)
           id="tag-category-1"
           onClick={[Function]}
-        />
+        >
+          Colors
+        </Styled(H1)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -225,7 +227,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
             id="project.tagCategories.tagsCounter"
             values={
               Object {
-                "count": 1,
+                "count": 4,
               }
             }
           />
@@ -234,7 +236,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
           <CardHeader
             list={
               Array [
-                "in 3 months",
+                "in 5 months",
                 "createdBy",
               ]
             }
@@ -245,7 +247,9 @@ exports[`TagCategories: Component should render correctly 1`] = `
         <Styled(H1)
           id="tag-category-2"
           onClick={[Function]}
-        />
+        >
+          Countries
+        </Styled(H1)>
       </Styled(Component)>
     </styled.section>
     <NavigationContainer
@@ -465,7 +469,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
             id="project.tagCategories.tagsCounter"
             values={
               Object {
-                "count": 0,
+                "count": 4,
               }
             }
           />
@@ -474,7 +478,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
           <CardHeader
             list={
               Array [
-                "in 3 months",
+                "in 5 months",
                 "createdBy",
               ]
             }
@@ -485,7 +489,9 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
         <Styled(H1)
           id="tag-category-1"
           onClick={[Function]}
-        />
+        >
+          Colors
+        </Styled(H1)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -494,7 +500,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
             id="project.tagCategories.tagsCounter"
             values={
               Object {
-                "count": 1,
+                "count": 4,
               }
             }
           />
@@ -503,7 +509,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
           <CardHeader
             list={
               Array [
-                "in 3 months",
+                "in 5 months",
                 "createdBy",
               ]
             }
@@ -514,7 +520,9 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
         <Styled(H1)
           id="tag-category-2"
           onClick={[Function]}
-        />
+        >
+          Countries
+        </Styled(H1)>
       </Styled(Component)>
     </styled.section>
     <NavigationContainer
@@ -734,7 +742,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
             id="project.tagCategories.tagsCounter"
             values={
               Object {
-                "count": 0,
+                "count": 4,
               }
             }
           />
@@ -743,7 +751,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
           <CardHeader
             list={
               Array [
-                "in 3 months",
+                "in 5 months",
                 "createdBy",
               ]
             }
@@ -754,7 +762,9 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
         <Styled(H1)
           id="tag-category-1"
           onClick={[Function]}
-        />
+        >
+          Colors
+        </Styled(H1)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -763,7 +773,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
             id="project.tagCategories.tagsCounter"
             values={
               Object {
-                "count": 1,
+                "count": 4,
               }
             }
           />
@@ -772,7 +782,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
           <CardHeader
             list={
               Array [
-                "in 3 months",
+                "in 5 months",
                 "createdBy",
               ]
             }
@@ -783,7 +793,9 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
         <Styled(H1)
           id="tag-category-2"
           onClick={[Function]}
-        />
+        >
+          Countries
+        </Styled(H1)>
       </Styled(Component)>
     </styled.section>
     <NavigationContainer

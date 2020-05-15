@@ -1,5 +1,5 @@
-from django.shortcuts import get_object_or_404
 from django.db.models import Prefetch
+from django.shortcuts import get_object_or_404
 from rest_framework import permissions, viewsets, response, mixins
 
 from . import models, serializers
@@ -10,7 +10,7 @@ class BaseTagCategoryView:
     serializer_class = serializers.TagCategorySerializer
     permission_classes = (permissions.IsAuthenticated,)
     queryset = (
-        models.TagCategory.objects.select_related("project")
+        models.TagCategory.objects.select_related("project", "created_by")
         .prefetch_related(Prefetch("tags", queryset=models.Tag.objects.order_by("order")))
         .all()
         .order_by("name")
@@ -32,7 +32,13 @@ class TagCategoryListCreateViewSet(
         return get_object_or_404(Project, pk=project_pk)
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
+        category_type = request.query_params.get("type", None)
+
+        if category_type:
+            filter_kwargs = {f"type__{category_type}": True}
+            queryset = self.get_queryset().filter(**filter_kwargs)
+        else:
+            queryset = self.get_queryset()
 
         serializer = self.get_serializer(queryset, many=True)
         data = {"project": self.project_obj.project_info, "results": serializer.data}

@@ -26,6 +26,7 @@ import {
   createMessage,
   pageMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import { OPTION_CONTENT } from '../../../modules/tagCategory/tagCategory.constants';
 
 const getBreadcrumbsItems = (project, { id, name }) => [
   {
@@ -60,6 +61,8 @@ export const CreatePage = ({
   section,
   fetchInternalConnections,
   internalConnections,
+  fetchTagCategories,
+  tagCategories,
 }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
@@ -98,7 +101,8 @@ export const CreatePage = ({
       try {
         const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
         const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
-        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise]);
+        const fetchTagCategoriesPromise = fetchTagCategories({ projectId, type: OPTION_CONTENT });
+        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise, fetchTagCategoriesPromise]);
 
         const { page = {} } = state;
 
@@ -131,6 +135,7 @@ export const CreatePage = ({
             setValues={setValues}
             values={values}
             internalConnections={internalConnections}
+            tagCategories={tagCategories}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -161,4 +166,6 @@ CreatePage.propTypes = {
   fetchPageTemplates: PropTypes.func.isRequired,
   fetchInternalConnections: PropTypes.func.isRequired,
   internalConnections: PropTypes.array.isRequired,
+  fetchTagCategories: PropTypes.func.isRequired,
+  tagCategories: PropTypes.array.isRequired,
 };

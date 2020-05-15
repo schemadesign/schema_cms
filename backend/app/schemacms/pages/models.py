@@ -114,6 +114,12 @@ class Page(Content):
     def delete_blocks(self, blocks: list):
         self.pageblock_set.filter(id__in=blocks).delete()
 
+    def add_tags(self, tags_list):
+        self.tags.all().delete()
+
+        for tag in tags_list:
+            PageTag.objects.create(page=self, category_id=tag["category"], value=tag["value"])
+
 
 class PageTemplate(Page):
     objects = managers.PageTemplateManager()
@@ -243,3 +249,12 @@ class PageBlockObservableElement(SoftDeleteObject):
             "observable_cell": self.observable_cell,
             "observable_params": self.observable_params,
         }
+
+
+class PageTag(SoftDeleteObject):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="tags")
+    category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
+    value = models.CharField(max_length=25)
+
+    def __str__(self):
+        return f"{self.id}"

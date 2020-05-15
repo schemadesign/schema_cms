@@ -9,6 +9,7 @@ import { pageTemplates } from '../../../modules/pageTemplates/pageTemplates.mock
 import { blockTemplates } from '../../../modules/blockTemplates/blockTemplates.mocks';
 import { project } from '../../../modules/project/project.mocks';
 import { internalConnections } from '../../../modules/sections/sections.mocks';
+import { tagCategories } from '../../../modules/tagCategory/tagCategory.mocks';
 
 export const defaultProps = {
   userRole: ROLES.ADMIN,
@@ -22,6 +23,8 @@ export const defaultProps = {
   page,
   fetchInternalConnections: Function.prototype,
   internalConnections,
+  fetchTagCategories: Function.prototype,
+  tagCategories,
 };
 
 storiesOf('EditPage', module)

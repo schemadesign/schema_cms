@@ -1,4 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
+import { stringifyUrl } from 'query-string';
 
 import { TagCategoryRoutines } from './tagCategory.redux';
 import api from '../../shared/services/api';
@@ -8,11 +9,12 @@ import { TAG_CATEGORIES_PAGE } from '../project/project.constants';
 import { ROUTES } from '../../routes';
 import { ProjectRoutines } from '../project';
 
-function* fetchTagCategories({ payload: { projectId } }) {
+function* fetchTagCategories({ payload: { projectId, ...query } }) {
   try {
     yield put(TagCategoryRoutines.fetchTagCategories.request());
 
-    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${TAG_CATEGORIES_PATH}`);
+    const url = stringifyUrl({ url: `${PROJECTS_PATH}/${projectId}${TAG_CATEGORIES_PATH}`, query });
+    const { data } = yield api.get(url);
 
     yield put(TagCategoryRoutines.fetchTagCategories.success(data.results));
   } catch (e) {

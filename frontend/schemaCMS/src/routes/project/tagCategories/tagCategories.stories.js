@@ -6,26 +6,12 @@ import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { project } from '../../../modules/project/project.mocks';
+import { tagCategories } from '../../../modules/tagCategory/tagCategory.mocks';
 
 export const defaultProps = {
   userRole: ROLES.ADMIN,
   project,
-  tagCategories: [
-    {
-      key: 'key 1',
-      id: 1,
-      createdBy: 'createdBy',
-      created: '2020-02-21T08:34:24+0000',
-      tags: [],
-    },
-    {
-      key: 'key 2',
-      id: 2,
-      createdBy: 'createdBy',
-      created: '2020-02-21T08:34:24+0000',
-      tags: [{}],
-    },
-  ],
+  tagCategories,
   fetchTagCategories: Function.prototype,
   history,
   intl,
