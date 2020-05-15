@@ -106,7 +106,7 @@ DataSourceTags.propTypes = {
   updateDataSourceTags: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   dataSource: PropTypes.object.isRequired,
-  tagCategories: PropTypes.object.isRequired,
+  tagCategories: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
   tags: PropTypes.array,
 };
