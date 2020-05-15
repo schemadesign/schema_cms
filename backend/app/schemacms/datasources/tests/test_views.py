@@ -857,21 +857,14 @@ class TestAddTagsView:
     def get_url(pk):
         return reverse("datasources:datasource-tags", kwargs=dict(pk=pk))
 
-    def test_add_tags(self,  api_client, admin, data_source, tag_category):
-
+    def test_add_tags(self, api_client, admin, data_source, tag_category):
         payload = [
-            {
-                "category": tag_category.id,
-                "value": "Test Value 1"
-            },
-            {
-                "category": tag_category.id,
-                "value": "Test Value 2"
-            },
+            {"category": tag_category.id, "value": "Test Value 1"},
+            {"category": tag_category.id, "value": "Test Value 2"},
         ]
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+        res = api_client.post(self.get_url(data_source.id), data=payload, format="json")
 
-        assert response.status_code == status.HTTP_200_OK
-        assert response.data["results"] == ds_serializers.DataSourceTagSerializer(data_source.tags, many=True).data
+        assert res.status_code == status.HTTP_200_OK
+        assert res.data["results"] == ds_serializers.DataSourceTagSerializer(data_source.tags, many=True).data
