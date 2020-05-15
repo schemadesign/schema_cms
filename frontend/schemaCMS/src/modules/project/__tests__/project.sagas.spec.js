@@ -240,7 +240,6 @@ describe('Project: sagas', () => {
 
       await expectSaga(watchProject)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(ProjectRoutines.fetchEditors.success(response.results))
         .dispatch(ProjectRoutines.fetchEditors(payload))
         .silentRun();
@@ -259,7 +258,6 @@ describe('Project: sagas', () => {
 
       await expectSaga(watchProject)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(ProjectRoutines.fetchTemplates.success(response.results))
         .dispatch(ProjectRoutines.fetchTemplates({ projectId }))
         .silentRun();

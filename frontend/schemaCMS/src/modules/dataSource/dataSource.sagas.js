@@ -112,6 +112,8 @@ function* create({ payload }) {
         isUpload: true,
       })
     );
+
+    yield put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }));
     browserHistory.push(`/project/${payload.projectId}/datasource`);
 
     const uploadChannel = yield call(createUploaderChannel, { formData, id });
@@ -185,7 +187,6 @@ function* fetchListLoop({ projectId, rawList = false }) {
         `${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}?page_size=${PAGE_SIZE}${rawListQuery}`
       );
 
-      yield put(ProjectRoutines.setProject.trigger(data.project));
       yield put(DataSourceRoutines.fetchList.success(data.results));
       const uploadingDataSources = yield select(selectUploadingDataSources);
       const isDataSourceProcessed = getIfAllDataSourceProcessed({ data: data.results, uploadingDataSources });
@@ -237,6 +238,8 @@ function* updateOne({ payload: { requestData, dataSource } }) {
           isUpload: true,
         })
       );
+
+      yield put(ProjectRoutines.fetchOne.trigger({ projectId: dataSource.project.id }));
       browserHistory.push(`/project/${dataSource.project.id}/datasource`);
       const uploadChannel = yield call(createUploaderChannel, { formData, id: dataSource.id });
       yield fork(uploadProgressWatcher, uploadChannel, dataSource.id);

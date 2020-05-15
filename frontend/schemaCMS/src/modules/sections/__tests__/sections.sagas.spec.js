@@ -24,7 +24,6 @@ describe('Sections: sagas', () => {
 
       await expectSaga(watchSections)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(SectionsRoutines.fetchSections.success(response.results))
         .dispatch(SectionsRoutines.fetchSections({ projectId }))
         .silentRun();
@@ -63,7 +62,6 @@ describe('Sections: sagas', () => {
 
       await expectSaga(watchSections)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(SectionsRoutines.fetchSection.success(response.results))
         .dispatch(SectionsRoutines.fetchSection({ sectionId }))
         .silentRun();
@@ -84,6 +82,7 @@ describe('Sections: sagas', () => {
 
       await expectSaga(watchSections)
         .withState(defaultState)
+        .put(ProjectRoutines.fetchOne.trigger({ projectId }))
         .put(SectionsRoutines.createSection.success(response.results))
         .dispatch(SectionsRoutines.createSection({ projectId, formData }))
         .silentRun();

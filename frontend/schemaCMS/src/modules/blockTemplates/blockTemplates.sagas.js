@@ -13,7 +13,6 @@ function* fetchBlockTemplates({ payload: { projectId, raw } }) {
     const queryRaw = raw ? '?raw_list=true' : '';
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}${queryRaw}`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(BlockTemplatesRoutines.fetchBlockTemplates.success(data.results));
   } catch (error) {
     reportError(error);
@@ -28,7 +27,6 @@ function* fetchBlockTemplate({ payload: { blockTemplateId } }) {
 
     const { data } = yield api.get(`${BLOCK_TEMPLATES_PATH}/${blockTemplateId}`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(BlockTemplatesRoutines.fetchBlockTemplate.success(data.results));
   } catch (error) {
     reportError(error);
@@ -44,7 +42,7 @@ function* createBlockTemplate({ payload: { projectId, formData } }) {
 
     const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}`, formData);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(ProjectRoutines.fetchOne.trigger({ projectId }));
     yield put(BlockTemplatesRoutines.createBlockTemplate.success(data.results));
   } catch (error) {
     reportError(error);
