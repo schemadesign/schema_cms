@@ -5,7 +5,7 @@ import { useEffectOnce } from 'react-use';
 import { useHistory, useParams, useLocation } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
-import { isEmpty, pick, pathOr, groupBy, prop, map, pipe } from 'ramda';
+import { isEmpty, pick, pathOr, groupBy, prop, map, pipe, defaultTo } from 'ramda';
 
 import { Container } from './editPage.styles';
 import messages from './editPage.messages';
@@ -94,7 +94,7 @@ export const EditPage = ({
       map(item => ({ ...item, label: item.value })),
       groupBy(prop('category'))
     )(page[PAGE_TAGS] || []),
-    [PAGE_TEMPLATE]: page[PAGE_TEMPLATE] || 0,
+    [PAGE_TEMPLATE]: defaultTo(0, page[PAGE_TEMPLATE]),
   };
   const mainPage = pathOr({}, ['section', 'mainPage'], page);
   const pathName =

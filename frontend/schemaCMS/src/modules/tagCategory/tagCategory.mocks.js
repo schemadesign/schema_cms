@@ -1,6 +1,6 @@
 export const tagCategories = [
   {
-    id: 4,
+    id: 1,
     name: 'Colors',
     project: 2,
     type: {
@@ -32,10 +32,10 @@ export const tagCategories = [
       },
     ],
     created: '2020-05-11T11:36:05+0000',
-    createdBy: 'a dmin',
+    createdBy: 'createdBy',
   },
   {
-    id: 3,
+    id: 2,
     name: 'Countries',
     project: 2,
     type: {
@@ -66,6 +66,6 @@ export const tagCategories = [
       },
     ],
     created: '2020-05-11T10:06:49+0000',
-    createdBy: 'a dmin',
+    createdBy: 'createdBy',
   },
 ];
