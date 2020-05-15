@@ -6,13 +6,16 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   font-size: 15px;
-  padding: 10px 0 5px;
+  padding: 20px 0 5px;
+`;
+
+export const Category = styled.span`
+  color: ${({ theme }) => theme.secondaryText};
 `;
 
 export const TagsContainer = styled.div`
   margin-top: 10px;
   padding: 0 20px 20px;
-  border: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const NoTags = styled.div`
@@ -40,7 +43,7 @@ export const getCustomSelectStyles = theme => ({
     padding: 0,
     width: '100%',
   }),
-  valueContainer: styles => ({ ...styles, background: 'transparent', border: 'none' }),
+  valueContainer: styles => ({ ...styles, background: 'transparent', border: 'none', paddingLeft: 0 }),
   indicatorSeparator: styles => ({ ...styles, display: 'none' }),
   clearIndicator: styles => ({
     ...styles,
@@ -53,8 +56,6 @@ export const getCustomSelectStyles = theme => ({
   }),
   multiValue: styles => ({ ...styles, background: 'none', border: `1px solid ${theme.text}` }),
   multiValueLabel: styles => ({ ...styles, color: theme.text }),
-  input: styles => ({ ...styles, color: theme.text }),
-  singleValue: styles => ({ ...styles, color: theme.text }),
   multiValueRemove: styles => ({
     ...styles,
     color: theme.secondaryText,
@@ -64,24 +65,27 @@ export const getCustomSelectStyles = theme => ({
       color: theme.text,
     },
   }),
-  option: (styles, { isFocused }) => ({
-    ...styles,
-    height: 62,
-    fontSize: 18,
-    display: 'flex',
-    alignItems: 'center',
-    background: isFocused ? theme.text : theme.select.background,
-    color: isFocused ? theme.background : theme.secondaryText,
-    borderBottom: `1px solid ${theme.select.border}`,
-    width: '100%',
-    ':active': { background: theme.text },
-  }),
+  option: (styles, { isFocused, isDisabled }) => {
+    return {
+      ...styles,
+      height: 62,
+      fontSize: 18,
+      display: 'flex',
+      alignItems: 'center',
+      background: isFocused && !isDisabled ? theme.text : theme.select.background,
+      color: isFocused && !isDisabled ? theme.background : theme.secondaryText,
+      borderBottom: `1px solid ${theme.select.border}`,
+      width: '100%',
+      ':active': { background: theme.text },
+    };
+  },
   control: styles => ({
     ...styles,
     background: 'transparent',
     boxShadow: 'none',
     borderRadius: 0,
-    border: `2px solid ${theme.border}`,
-    ':hover': { border: `2px solid ${theme.secondaryText}` },
+    border: 'none',
+    borderBottom: `2px solid ${theme.border}`,
+    ':hover': { border: 'none', borderBottom: `2px solid ${theme.secondaryText}` },
   }),
 });
