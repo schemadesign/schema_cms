@@ -91,9 +91,10 @@ export const EditPage = ({
     ...INITIAL_VALUES,
     ...pick(FORM_VALUES, page),
     [PAGE_TAGS]: pipe(
+      defaultTo([]),
       map(item => ({ ...item, label: item.value })),
       groupBy(prop('category'))
-    )(page[PAGE_TAGS] || []),
+    )(page[PAGE_TAGS]),
     [PAGE_TEMPLATE]: defaultTo(0, page[PAGE_TEMPLATE]),
   };
   const mainPage = pathOr({}, ['section', 'mainPage'], page);

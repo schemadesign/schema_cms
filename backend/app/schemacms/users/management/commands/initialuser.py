@@ -16,7 +16,7 @@ class Command(BaseCommand):
         password = os.getenv("DJANGO_ROOT_PASSWORD", None)
 
         if not password:
-            self.stdout.write(self.style.ERROR(f"DJANGO_ROOT_PASSWORD environment variable is not set"))
+            self.stdout.write(self.style.ERROR("DJANGO_ROOT_PASSWORD environment variable is not set"))
             raise EnvironmentError("DJANGO_ROOT_PASSWORD environment variable is not set")
 
         if not existing_user:

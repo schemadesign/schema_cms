@@ -19,9 +19,9 @@ def copy_steps_from_active_job(steps, job):
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.prefetch_related("filters", "active_job__steps").select_related(
-        "project", "meta_data", "created_by", "active_job"
-    )
+    queryset = models.DataSource.objects.prefetch_related(
+        "tags", "filters", "active_job__steps"
+    ).select_related("project", "meta_data", "created_by", "active_job")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "retrieve": serializers.DataSourceDetailSerializer,
@@ -32,6 +32,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "job": serializers.CreateJobSerializer,
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
+        "tags": serializers.DataSourceTagSerializer,
         "set_filters": serializers.FilterSerializer,
         "update_meta": serializers.PublicApiUpdateMetaSerializer,
     }
@@ -171,6 +172,20 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         return self.generate_action_post_get_response(
             request, related_objects_name="filters", parent_object_name="datasource"
         )
+
+    @decorators.action(detail=True, url_path="tags", methods=["get", "post", "patch"])
+    def tags(self, request, pk=None, **kwargs):
+        ds = self.get_object()
+        if request.method == "GET":
+            serializer = self.get_serializer(ds.tags, many=True)
+
+        if request.method in ["POST", "PATCH"]:
+            tags = request.data
+            ds.add_tags(tags)
+            ds.refresh_from_db()
+            serializer = self.get_serializer(ds.tags, many=True)
+
+        return response.Response({"project": ds.project.project_info, "results": serializer.data})
 
     @decorators.action(detail=True, url_path="set-filters", methods=["post"])
     def set_filters(self, request, pk=None, **kwargs):

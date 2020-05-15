@@ -8,8 +8,7 @@ import { injectIntl } from 'react-intl';
 
 import { Filters } from './filters.component';
 import { selectDataSource } from '../../../modules/dataSource';
-import { selectFilters } from '../../../modules/filter';
-import { FilterRoutines } from '../../../modules/filter/filter.redux';
+import { selectFilters, FilterRoutines } from '../../../modules/filter';
 import { selectUserRole } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({

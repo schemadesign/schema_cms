@@ -11,4 +11,12 @@ describe('DataSourceTags: Component', () => {
     const wrapper = await render();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should fetch page templates and internal connections', async () => {
+    jest.spyOn(defaultProps, 'fetchDataSourceTags');
+    jest.spyOn(defaultProps, 'fetchTagCategories');
+    await render();
+    expect(defaultProps.fetchDataSourceTags).toHaveBeenCalledWith({ dataSourceId: 1 });
+    expect(defaultProps.fetchTagCategories).toHaveBeenCalledWith({ projectId: 1, type: 'dataset' });
+  });
 });

@@ -509,25 +509,25 @@ exports[`PageForm: Component should render correctly 1`] = `
       </div>
     </div>
   </div>
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Tags
+  </label>
   <div
     className="sc-fzoaKM deCBav"
   >
-    <label
-      style={
-        Object {
-          "border": "none",
-          "borderTop": "2px solid #2F2F36",
-          "color": "#71737e",
-          "display": "block",
-          "fontSize": "14px",
-          "outline": "none",
-          "paddingTop": "8px",
-          "width": "100%",
-        }
-      }
-    >
-      Tags
-    </label>
     <div
       className="sc-fzqAui kPSNHG"
     >
@@ -5959,25 +5959,25 @@ exports[`PageForm: Component should render with page template 1`] = `
       </div>
     </div>
   </div>
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    Tags
+  </label>
   <div
     className="sc-fzoaKM deCBav"
   >
-    <label
-      style={
-        Object {
-          "border": "none",
-          "borderTop": "2px solid #2F2F36",
-          "color": "#71737e",
-          "display": "block",
-          "fontSize": "14px",
-          "outline": "none",
-          "paddingTop": "8px",
-          "width": "100%",
-        }
-      }
-    >
-      Tags
-    </label>
     <div
       className="sc-fzqAui kPSNHG"
     >

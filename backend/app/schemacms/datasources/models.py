@@ -186,6 +186,12 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
 
         return data
 
+    def add_tags(self, tags_list):
+        self.tags.all().delete()
+
+        for tag in tags_list:
+            DataSourceTag.objects.create(datasource=self, category_id=tag["category"], value=tag["value"])
+
     def meta_file_serialization(self):
         data = {
             "id": self.id,
@@ -431,3 +437,12 @@ class Filter(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.
             "field": self.field or None,
         }
         return data
+
+
+class DataSourceTag(softdelete.models.SoftDeleteObject):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="tags")
+    category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
+    value = models.CharField(max_length=25)
+
+    def __str__(self):
+        return f"{self.id}"

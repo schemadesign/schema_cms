@@ -7,6 +7,7 @@ import {
   PAGE_DISPLAY_NAME,
   PAGE_TEMPLATE,
   PAGE_IS_PUBLIC,
+  PAGE_TAGS,
 } from '../../../modules/page/page.constants';
 
 export default defineMessages({
@@ -41,6 +42,10 @@ export default defineMessages({
   [PAGE_IS_PUBLIC]: {
     id: `shared.components.pageForm.${PAGE_IS_PUBLIC}`,
     defaultMessage: 'Make it Public',
+  },
+  [PAGE_TAGS]: {
+    id: `shared.components.pageForm.${PAGE_TAGS}`,
+    defaultMessage: 'Tags',
   },
   pageAvailability: {
     id: 'shared.components.pageForm.pageAvailability',
