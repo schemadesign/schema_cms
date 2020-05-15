@@ -173,11 +173,19 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             request, related_objects_name="filters", parent_object_name="datasource"
         )
 
-    @decorators.action(detail=True, url_path="tags", methods=["get", "post"])
-    def tas(self, request, pk=None, **kwargs):
-        return self.generate_action_post_get_response(
-            request, related_objects_name="tags", parent_object_name="datasource"
-        )
+    @decorators.action(detail=True, url_path="tags", methods=["get", "post", "patch"])
+    def tags(self, request, pk=None, **kwargs):
+        ds = self.get_object()
+        if request.method == "GET":
+            serializer = self.get_serializer(ds.tags, many=True)
+
+        if request.method in ["POST", "PATCH"]:
+            tags = request.data
+            ds.add_tags(tags)
+            ds.refresh_from_db()
+            serializer = self.get_serializer(ds.tags, many=True)
+
+        return response.Response({"project": ds.project.project_info, "results": serializer.data})
 
     @decorators.action(detail=True, url_path="set-filters", methods=["post"])
     def set_filters(self, request, pk=None, **kwargs):

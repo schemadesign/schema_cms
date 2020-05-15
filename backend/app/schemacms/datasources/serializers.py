@@ -69,7 +69,7 @@ class ActiveJobSerializer(serializers.ModelSerializer):
 class DataSourceTagSerializer(serializers.ModelSerializer):
     class Meta:
         model = ds_models.DataSourceTag
-        fields = ("datasource", "category", "value")
+        fields = ("category", "value")
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
