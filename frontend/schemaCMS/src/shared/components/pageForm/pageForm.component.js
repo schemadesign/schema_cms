@@ -70,7 +70,7 @@ import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
 import { TagSearch } from '../tagSearch';
 
 const { EditIcon, BinIcon, MenuIcon } = Icons;
-const { Switch } = Form;
+const { Switch, Label } = Form;
 
 export const PageForm = ({
   title,
@@ -252,7 +252,15 @@ export const PageForm = ({
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
         {...restFormikProps}
       />
-      <TagSearch tagCategories={tagCategories} values={values[PAGE_TAGS]} setFieldValue={setFieldValue} />
+      <Label>
+        <FormattedMessage {...messages[PAGE_TAGS]} />
+      </Label>
+      <TagSearch
+        tagCategories={tagCategories}
+        values={values[PAGE_TAGS]}
+        setFieldValue={setFieldValue}
+        valuePath={PAGE_TAGS}
+      />
       <SelectContainer>
         <Select
           label={intl.formatMessage(messages[PAGE_TEMPLATE])}

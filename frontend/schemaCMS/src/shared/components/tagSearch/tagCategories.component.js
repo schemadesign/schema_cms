@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { Icons } from 'schemaUI';
 import Select, { components } from 'react-select';
 import { asMutable } from 'seamless-immutable';
-import { always, ifElse, equals } from 'ramda';
+import { always, ifElse, equals, isNil, concat, flip } from 'ramda';
 
 import { Title } from './tagSearch.styles';
-import { PAGE_TAGS } from '../../../modules/page/page.constants';
 
 const { CaretIcon } = Icons;
 
@@ -18,11 +17,21 @@ const DropdownIndicator = props => {
   );
 };
 
-export const TagCategories = ({ name, isSingleSelect, selectedTags, tags, setFieldValue, id, customStyles }) => {
+export const TagCategories = ({
+  name,
+  isSingleSelect,
+  selectedTags,
+  tags,
+  setFieldValue,
+  id,
+  customStyles,
+  valuePath,
+}) => {
   const formatSelectedOption = selectedOption =>
     ifElse(equals(true), always([selectedOption]), always(selectedOption))(isSingleSelect);
   const formattedSelectedTags = ifElse(equals(true), always(selectedTags[0]), always(selectedTags))(isSingleSelect);
-  const handleChange = selectedOption => setFieldValue(`${PAGE_TAGS}.${id}`, formatSelectedOption(selectedOption));
+  const getValuePath = id => ifElse(isNil, always(`${id}`), flip(concat)(`.${id}`))(valuePath);
+  const handleChange = selectedOption => setFieldValue(getValuePath(id), formatSelectedOption(selectedOption));
   const mutableTags = asMutable(tags);
   const options = mutableTags.map(({ value }) => ({ value, label: value }));
 
@@ -51,4 +60,5 @@ TagCategories.propTypes = {
   id: PropTypes.number.isRequired,
   isSingleSelect: PropTypes.bool.isRequired,
   customStyles: PropTypes.object.isRequired,
+  valuePath: PropTypes.string,
 };

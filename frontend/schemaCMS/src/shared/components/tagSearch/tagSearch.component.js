@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 import { useTheme } from 'styled-components';
 import { always, defaultTo } from 'ramda';
@@ -10,9 +9,7 @@ import messages from './tagSearch.messages';
 import { renderWhenTrue } from '../../utils/rendering';
 import { TagCategories } from './tagCategories.component';
 
-const { Label } = Form;
-
-export const TagSearch = ({ tagCategories, values, setFieldValue }) => {
+export const TagSearch = ({ tagCategories, values, setFieldValue, valuePath }) => {
   const theme = useTheme();
   const customStyles = getCustomSelectStyles(theme);
   const renderNoTags = renderWhenTrue(
@@ -25,9 +22,6 @@ export const TagSearch = ({ tagCategories, values, setFieldValue }) => {
 
   return (
     <Container>
-      <Label>
-        <FormattedMessage {...messages.tags} />
-      </Label>
       <TagsContainer>
         {tagCategories.map((item, index) => (
           <TagCategories
@@ -36,6 +30,7 @@ export const TagSearch = ({ tagCategories, values, setFieldValue }) => {
             customStyles={customStyles}
             selectedTags={defaultTo([], values[item.id])}
             setFieldValue={setFieldValue}
+            valuePath={valuePath}
             {...item}
           />
         ))}
@@ -49,4 +44,5 @@ TagSearch.propTypes = {
   tagCategories: PropTypes.array.isRequired,
   values: PropTypes.object.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  valuePath: PropTypes.string,
 };

@@ -2,8 +2,12 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  title: {
-    id: 'dataSourceTags.title',
-    defaultMessage: 'DataSourceTags component',
+  subTitle: {
+    id: 'dataSource.dataSourceTags.subTitle',
+    defaultMessage: 'Tags',
+  },
+  save: {
+    id: 'dataSource.dataSourceTags.save',
+    defaultMessage: 'Save',
   },
 });
