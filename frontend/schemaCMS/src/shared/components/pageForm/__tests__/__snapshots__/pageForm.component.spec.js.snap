@@ -529,11 +529,16 @@ exports[`PageForm: Component should render correctly 1`] = `
     className="sc-fzoaKM deCBav"
   >
     <div
-      className="sc-fzqAui kPSNHG"
+      className="sc-fzqMdD fSBssk"
     >
       <div
-        className="sc-fzomuh kFnMoR"
+        className="sc-fzomuh fmktVe"
       >
+        <span
+          className="sc-fzqAui jqeeDW"
+        >
+          Category: 
+        </span>
         Colors
       </div>
       <div
@@ -541,12 +546,12 @@ exports[`PageForm: Component should render correctly 1`] = `
         onKeyDown={[Function]}
       >
         <div
-          className=" css-phuzqs-control"
+          className=" css-17k7d72-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className=" css-14i5q75-ValueContainer"
+            className=" css-193kkzd-ValueContainer"
           >
             <div
               className=" css-1wa3eu0-placeholder"
@@ -554,7 +559,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               Select...
             </div>
             <div
-              className="css-14m14bb-Input"
+              className="css-b8ldur-Input"
             >
               <div
                 className=""
@@ -623,28 +628,21 @@ exports[`PageForm: Component should render correctly 1`] = `
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M15.117 18L9 12h12z"
-                  fillRule="evenodd"
-                />
-              </svg>
+              0
+              /
+              4
             </div>
           </div>
         </div>
       </div>
       <div
-        className="sc-fzomuh kFnMoR"
+        className="sc-fzomuh fmktVe"
       >
+        <span
+          className="sc-fzqAui jqeeDW"
+        >
+          Category: 
+        </span>
         Countries
       </div>
       <div
@@ -652,12 +650,12 @@ exports[`PageForm: Component should render correctly 1`] = `
         onKeyDown={[Function]}
       >
         <div
-          className=" css-phuzqs-control"
+          className=" css-17k7d72-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className=" css-14i5q75-ValueContainer"
+            className=" css-193kkzd-ValueContainer"
           >
             <div
               className=" css-1wa3eu0-placeholder"
@@ -665,7 +663,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               Select...
             </div>
             <div
-              className="css-14m14bb-Input"
+              className="css-b8ldur-Input"
             >
               <div
                 className=""
@@ -734,21 +732,9 @@ exports[`PageForm: Component should render correctly 1`] = `
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M15.117 18L9 12h12z"
-                  fillRule="evenodd"
-                />
-              </svg>
+              0
+              /
+              1
             </div>
           </div>
         </div>
@@ -5979,11 +5965,16 @@ exports[`PageForm: Component should render with page template 1`] = `
     className="sc-fzoaKM deCBav"
   >
     <div
-      className="sc-fzqAui kPSNHG"
+      className="sc-fzqMdD fSBssk"
     >
       <div
-        className="sc-fzomuh kFnMoR"
+        className="sc-fzomuh fmktVe"
       >
+        <span
+          className="sc-fzqAui jqeeDW"
+        >
+          Category: 
+        </span>
         Colors
       </div>
       <div
@@ -5991,12 +5982,12 @@ exports[`PageForm: Component should render with page template 1`] = `
         onKeyDown={[Function]}
       >
         <div
-          className=" css-phuzqs-control"
+          className=" css-17k7d72-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className=" css-14i5q75-ValueContainer"
+            className=" css-193kkzd-ValueContainer"
           >
             <div
               className=" css-1wa3eu0-placeholder"
@@ -6004,7 +5995,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               Select...
             </div>
             <div
-              className="css-14m14bb-Input"
+              className="css-b8ldur-Input"
             >
               <div
                 className=""
@@ -6073,28 +6064,21 @@ exports[`PageForm: Component should render with page template 1`] = `
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M15.117 18L9 12h12z"
-                  fillRule="evenodd"
-                />
-              </svg>
+              0
+              /
+              4
             </div>
           </div>
         </div>
       </div>
       <div
-        className="sc-fzomuh kFnMoR"
+        className="sc-fzomuh fmktVe"
       >
+        <span
+          className="sc-fzqAui jqeeDW"
+        >
+          Category: 
+        </span>
         Countries
       </div>
       <div
@@ -6102,12 +6086,12 @@ exports[`PageForm: Component should render with page template 1`] = `
         onKeyDown={[Function]}
       >
         <div
-          className=" css-phuzqs-control"
+          className=" css-17k7d72-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className=" css-14i5q75-ValueContainer"
+            className=" css-193kkzd-ValueContainer"
           >
             <div
               className=" css-1wa3eu0-placeholder"
@@ -6115,7 +6099,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               Select...
             </div>
             <div
-              className="css-14m14bb-Input"
+              className="css-b8ldur-Input"
             >
               <div
                 className=""
@@ -6184,21 +6168,9 @@ exports[`PageForm: Component should render with page template 1`] = `
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M15.117 18L9 12h12z"
-                  fillRule="evenodd"
-                />
-              </svg>
+              0
+              /
+              1
             </div>
           </div>
         </div>
