@@ -191,7 +191,6 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
         .put(DataSourceRoutines.removeOne.success())
         .dispatch(DataSourceRoutines.removeOne(payload))
         .silentRun();

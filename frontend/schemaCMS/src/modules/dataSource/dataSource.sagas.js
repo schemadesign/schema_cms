@@ -131,7 +131,6 @@ function* removeOne({ payload }) {
     yield put(DataSourceRoutines.removeOne.request());
     yield api.delete(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`);
 
-    yield put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }));
     browserHistory.push(`/project/${payload.projectId}/datasource`);
     yield put(DataSourceRoutines.removeOne.success());
   } catch (error) {
