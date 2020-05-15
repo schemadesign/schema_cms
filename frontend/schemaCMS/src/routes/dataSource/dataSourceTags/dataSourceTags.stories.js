@@ -14,7 +14,7 @@ export const defaultProps = {
   dataSource: { id: 1 },
   tagCategories,
   userRole: ROLES.ADMIN,
-  tags: [],
+  dataSourceTags: [],
 };
 
 storiesOf('DataSourceTags', module).add('Default', () => <DataSourceTags {...defaultProps} />);

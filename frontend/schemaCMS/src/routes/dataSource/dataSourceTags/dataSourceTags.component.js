@@ -27,7 +27,7 @@ export const DataSourceTags = ({
   tagCategories,
   dataSource,
   userRole,
-  tags,
+  dataSourceTags,
 }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -38,7 +38,7 @@ export const DataSourceTags = ({
     defaultTo([]),
     map(item => ({ ...item, label: item.value })),
     groupBy(prop('category'))
-  )(tags);
+  )(dataSourceTags);
   const { values, setFieldValue, handleSubmit, isSubmitting, dirty } = useFormik({
     initialValues,
     onSubmit: async (data, { setSubmitting, setErrors }) => {
@@ -108,5 +108,5 @@ DataSourceTags.propTypes = {
   dataSource: PropTypes.object.isRequired,
   tagCategories: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
-  tags: PropTypes.array,
+  dataSourceTags: PropTypes.array.isRequired,
 };

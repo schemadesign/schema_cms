@@ -10,10 +10,11 @@ import { selectTagCategories, TagCategoryRoutines } from '../../../modules/tagCa
 import { selectProject } from '../../../modules/project';
 import { selectDataSource } from '../../../modules/dataSource';
 import { selectUserRole } from '../../../modules/userProfile';
-import { DataSourceTagsRoutines } from '../../../modules/dataSourceTags';
+import { DataSourceTagsRoutines, selectDataSourceTags } from '../../../modules/dataSourceTags';
 
 const mapStateToProps = createStructuredSelector({
   tagCategories: selectTagCategories,
+  dataSourceTags: selectDataSourceTags,
   project: selectProject,
   dataSource: selectDataSource,
   userRole: selectUserRole,
