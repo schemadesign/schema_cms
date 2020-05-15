@@ -5,7 +5,7 @@ import { reducer as dataSourceTagsReducer, DataSourceTagsRoutines } from '../dat
 
 describe('DataSourceTags: redux', () => {
   const state = Immutable({
-    dataSourceTags: {},
+    dataSourceTags: [],
   });
 
   describe('reducer', () => {

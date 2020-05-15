@@ -41,6 +41,7 @@ export const DataSourceTags = ({
   )(dataSourceTags);
   const { values, setFieldValue, handleSubmit, isSubmitting, dirty } = useFormik({
     initialValues,
+    enableReinitialize: true,
     onSubmit: async (data, { setSubmitting, setErrors }) => {
       try {
         const formData = pipe(
