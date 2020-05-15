@@ -19,9 +19,9 @@ def copy_steps_from_active_job(steps, job):
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.prefetch_related("filters", "active_job__steps").select_related(
-        "project", "meta_data", "created_by", "active_job"
-    )
+    queryset = models.DataSource.objects.prefetch_related(
+        "tags", "filters", "active_job__steps"
+    ).select_related("project", "meta_data", "created_by", "active_job")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "retrieve": serializers.DataSourceDetailSerializer,
@@ -32,6 +32,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "job": serializers.CreateJobSerializer,
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
+        "tags": serializers.DataSourceTagSerializer,
         "set_filters": serializers.FilterSerializer,
         "update_meta": serializers.PublicApiUpdateMetaSerializer,
     }
@@ -170,6 +171,12 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def filters(self, request, pk=None, **kwargs):
         return self.generate_action_post_get_response(
             request, related_objects_name="filters", parent_object_name="datasource"
+        )
+
+    @decorators.action(detail=True, url_path="tags", methods=["get", "post"])
+    def tas(self, request, pk=None, **kwargs):
+        return self.generate_action_post_get_response(
+            request, related_objects_name="tags", parent_object_name="datasource"
         )
 
     @decorators.action(detail=True, url_path="set-filters", methods=["post"])

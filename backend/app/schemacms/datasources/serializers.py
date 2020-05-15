@@ -66,6 +66,12 @@ class ActiveJobSerializer(serializers.ModelSerializer):
         ]
 
 
+class DataSourceTagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ds_models.DataSourceTag
+        fields = ("datasource", "category", "value")
+
+
 class DataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
     file_name = serializers.SerializerMethodField(read_only=True)
@@ -76,6 +82,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     )
     jobs_state = serializers.SerializerMethodField(read_only=True)
     active_job = ActiveJobSerializer(read_only=True)
+    tags = DataSourceTagSerializer(read_only=True, many=True)
 
     class Meta:
         model = ds_models.DataSource
@@ -92,6 +99,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "project",
             "jobs_state",
             "active_job",
+            "tags",
         )
 
         extra_kwargs = {
@@ -147,9 +155,14 @@ class DataSourceSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
+
+        if tags := self.initial_data.get("tags", []):
+            obj.add_tags(tags)
+
         if self.validated_data.get("file", None):
             copy_steps = self.initial_data.get("run_last_job", False)
             obj.schedule_update_meta(copy_steps)
+
         return obj
 
 
