@@ -1,120 +1,33 @@
-import base64
-import mimetypes
-
 from django.db import transaction, models as django_models
-from django.db.models.fields.files import ImageFieldFile
-from django.core.files.base import ContentFile
-from django.core.validators import URLValidator
-from django.conf import settings
 from rest_framework import serializers
 
+from .elements import ELEMENTS_TYPES
 from . import models, constants
 from ..utils.serializers import CustomModelSerializer, NestedRelatedModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
 class ElementValueField(serializers.Field):
-    type = None
-    text_type = [
-        constants.ElementType.PLAIN_TEXT,
-        constants.ElementType.MARKDOWN,
-        constants.ElementType.CODE,
-    ]
-
-    default_error_messages = {
-        "incorrect_type": "Incorrect type. Expected a string, but go {input_type}",
-        "file_upload_fail": "File decoding problem",
-        "invalid_file": "Invalid file. Expected a .png, .jpg , but go {input_type}",
-    }
+    element = None
 
     def to_representation(self, value):
-        if isinstance(value, ImageFieldFile):
-            return {"file": value.url, "file_name": self.get_file_name(value.name)}
-        return value
+        return self.element.to_representation(value)
 
     def get_value(self, dictionary):
-        self.type = dictionary.get("type")
+        element_type = dictionary.get("type")
+
+        if element_type:
+            self.element = ELEMENTS_TYPES.get(element_type)(element_type)
 
         return super().get_value(dictionary)
 
     def get_attribute(self, instance):
+        self.element = ELEMENTS_TYPES.get(instance.type)(instance.type)
 
-        if instance.type == constants.ElementType.CUSTOM_ELEMENT:
-            elements_sets = instance.elements_sets.all().order_by("order")
-
-            res = []
-
-            for elements_set in elements_sets:
-                set_data = {
-                    "id": elements_set.id,
-                    "order": elements_set.order,
-                    "elements": PageBlockElementSerializer(elements_set.elements, many=True).data,
-                }
-                res.append(set_data)
-
-            return res
-
-        if instance.type == constants.ElementType.OBSERVABLE_HQ:
-            observable_element = getattr(instance, instance.type)
-
-            return {
-                "observable_user": observable_element.observable_user,
-                "observable_notebook": observable_element.observable_notebook,
-                "observable_cell": observable_element.observable_cell,
-                "observable_params": observable_element.observable_params,
-            }
-
-        return getattr(instance, instance.type)
+        return self.element.get_attribute(instance)
 
     def to_internal_value(self, data):
-        if self.type == constants.ElementType.IMAGE:
-            data = self.validate_image_type(data)
-
-        if self.type in self.text_type:
-            self.validate_text_types(data)
-
-        if self.type == constants.ElementType.CONNECTION:
-            self.validate_url_type(data)
-
-        if self.type == constants.ElementType.INTERNAL_CONNECTION:
-            self.validate_text_types(data)
-
-        return data
-
-    @staticmethod
-    def validate_url_type(data):
-        validator = URLValidator()
-        validator(str(data))
-
-    def validate_text_types(self, data):
-        if not isinstance(data, str):
-            self.fail("incorrect_type", input_type=type(data).__name__)
-
-    def validate_image_type(self, data):
-        file = data["file"]
-        file_name = data["file_name"]
-
-        if "data:" in file and ";base64," in file:
-            header, file = file.split(";base64,")
-        else:
-            return False
-
-        try:
-            decoded_file = base64.b64decode(file)
-        except TypeError:
-            self.fail("file_upload_fail")
-
-        mime_type = mimetypes.MimeTypes().guess_type(file_name)[0]
-        ext = mimetypes.guess_extension(mime_type)
-
-        if ext not in settings.IMAGE_ALLOWED_EXT:
-            self.fail("invalid_file", input_type=ext)
-
-        return ContentFile(decoded_file, name=f"{file_name}")
-
-    @staticmethod
-    def get_file_name(file):
-        return file.split("/")[-1]
+        return self.element.to_internal_value(data)
 
 
 class BaseElementSerializer(serializers.ModelSerializer):

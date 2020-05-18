@@ -41,10 +41,11 @@ class PADataSourceDetailNoRecordsSerializer(serializers.ModelSerializer):
     shape = serializers.SerializerMethodField()
     fields = serializers.SerializerMethodField(method_name="get_ds_fields")
     filters = PAFilterSerializer(read_only=True, many=True)
+    tags = serializers.SerializerMethodField()
 
     class Meta:
         model = ds_models.DataSource
-        fields = ("meta", "shape", "fields", "filters")
+        fields = ("meta", "shape", "fields", "filters", "tags")
 
     def get_meta(self, obj):
         return {
@@ -64,6 +65,9 @@ class PADataSourceDetailNoRecordsSerializer(serializers.ModelSerializer):
             str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
         return data
+
+    def get_tags(self, obj):
+        return [tag.value for tag in obj.tags.all()]
 
 
 class PADataSourceDetailRecordsSerializer(PADataSourceDetailNoRecordsSerializer):
@@ -127,13 +131,27 @@ class PAPageBlockSerializer(serializers.ModelSerializer):
 class PAPageSerializer(serializers.ModelSerializer):
     created_by = serializers.SerializerMethodField()
     updated = serializers.DateTimeField(read_only=True, source="modified", format="%Y-%m-%d")
+    tags = serializers.SerializerMethodField()
 
     class Meta:
         model = pa_models.Page
-        fields = ("id", "name", "template", "slug", "description", "keywords", "created_by", "updated")
+        fields = (
+            "id",
+            "name",
+            "template",
+            "slug",
+            "description",
+            "keywords",
+            "created_by",
+            "updated",
+            "tags",
+        )
 
     def get_created_by(self, obj):
         return obj.created_by.get_full_name()
+
+    def get_tags(self, obj):
+        return [tag.value for tag in obj.tags.all()]
 
 
 class PAPageDetailSerializer(PAPageSerializer):

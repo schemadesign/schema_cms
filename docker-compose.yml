@@ -71,20 +71,6 @@ services:
       - "9001:9001"
     restart: on-failure
 
-
-  publicapi:
-    image: schema_cms_publicapi
-    build:
-      context: backend/functions/public_api
-    env_file: local.env
-    volumes:
-      - ./backend/functions/public_api:/functions/public_api
-    ports:
-      - "8002:8002"
-    restart: always
-    stdin_open: true
-    tty: true
-
   mailcatcher:
     image: schickling/mailcatcher
     ports:
