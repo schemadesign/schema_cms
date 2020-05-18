@@ -2,6 +2,7 @@ import json
 
 from django.db.models import Prefetch
 from rest_framework import decorators, viewsets, response, mixins, renderers
+import django_filters.rest_framework
 from django.shortcuts import render, get_object_or_404
 
 from . import serializers, records_reader
@@ -80,11 +81,18 @@ class PABlocksView(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.Ge
         return super().get_queryset().filter(page=self.page_obj)
 
 
-class PAPageView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     serializer_class = serializers.PAPageDetailSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
-    queryset = Page.objects.filter(is_public=True).select_related("created_by").order_by("created")
+    queryset = (
+        Page.objects.filter(is_public=True)
+        .select_related("created_by")
+        .prefetch_related("tags", "blocks")
+        .order_by("created")
+    )
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_fields = ["tags__value"]
 
     @decorators.action(detail=True, url_path="html", methods=["get"])
     def html(self, request, **kwargs):
@@ -105,13 +113,15 @@ class PADataSourceView(
     permission_classes = ()
     queryset = (
         DataSource.objects.select_related("active_job", "meta_data")
-        .prefetch_related(Prefetch("filters", queryset=Filter.objects.filter(is_active=True)))
+        .prefetch_related(Prefetch("filters", queryset=Filter.objects.filter(is_active=True)), "tags")
         .order_by("created")
     )
     serializer_class_mapping = {
         "list": serializers.PADataSourceListSerializer,
         "retrieve": serializers.PADataSourceDetailRecordsSerializer,
     }
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_fields = ["tags__value"]
 
     @decorators.action(detail=True, url_path="meta", methods=["get"])
     def meta(self, request, **kwargs):
