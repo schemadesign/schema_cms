@@ -98,7 +98,9 @@ export const TagComponent = ({
       }
     }
   };
-  const error = path(['errors', TAG_CATEGORY_TAGS, index, 'value'], restFormikProps);
+  const invalidValueError = path(['errors', TAG_CATEGORY_TAGS, index, 'value'], restFormikProps);
+  const duplicateValueError = path(['errors', TAG_CATEGORY_TAGS, index], restFormikProps);
+
   const renderError = error => renderWhenTrue(always(<Error>{error}</Error>))(!!error);
 
   return (
@@ -119,7 +121,7 @@ export const TagComponent = ({
         />
         <CloseIcon customStyles={removeIconStyles} onClick={() => handleRemoveTag({ index, resetIndex: true })} />
       </Tag>
-      {renderError(error)}
+      {renderError(invalidValueError || duplicateValueError)}
     </TagContainer>
   );
 };

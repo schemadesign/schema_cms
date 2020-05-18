@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import { filter, gte, pipe, length, propEq } from 'ramda';
 
 export const TAG_CATEGORY_FORM = 'tag_category_form';
 export const TAG_CATEGORY_NAME = 'name';
@@ -30,12 +31,22 @@ export const TAG_CATEGORY_SCHEMA = Yup.object().shape({
     .required('Required'),
   [TAG_CATEGORY_TAGS]: Yup.array()
     .of(
-      Yup.object().shape({
-        value: Yup.string()
-          .trim()
-          .min(1, 'Tag should have at least 1 character')
-          .max(150, 'Tag should have maximum 150 characters'),
-      })
+      Yup.object()
+        .shape({
+          value: Yup.string()
+            .trim()
+            .min(1, 'Tag should have at least 1 character')
+            .max(150, 'Tag should have maximum 150 characters'),
+        })
+        .test('unique', 'Tags must be unique', function({ value }) {
+          // eslint-disable-next-line babel/no-invalid-this
+          const { parent } = this;
+          return pipe(
+            filter(propEq('value', value)),
+            length,
+            gte(1)
+          )(parent);
+        })
     )
     .min(1, 'Required'),
 });
