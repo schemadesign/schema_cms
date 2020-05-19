@@ -512,7 +512,7 @@ Array [
     >
       <div>
         <input
-          id="isPublic"
+          id="isAvailable"
           onChange={[Function]}
           style={
             Object {
@@ -527,7 +527,7 @@ Array [
           type="checkbox"
         />
         <label
-          htmlFor="isPublic"
+          htmlFor="isAvailable"
         >
           <div
             style={
@@ -563,14 +563,14 @@ Array [
       >
         <label
           className="sc-fznyAO ftBpOP"
-          htmlFor="isPublic"
+          htmlFor="isAvailable"
         >
-          Make it Public
+          Make it Available
         </label>
         <span
           className="sc-fzqBZW ercQYo"
         >
-          This Tag Category is currently Private
+          This Tag Category is currently unavailable for Editors
         </span>
       </div>
     </div>
@@ -1006,7 +1006,7 @@ Array [
     >
       <div>
         <input
-          id="isPublic"
+          id="isAvailable"
           onChange={[Function]}
           style={
             Object {
@@ -1021,7 +1021,7 @@ Array [
           type="checkbox"
         />
         <label
-          htmlFor="isPublic"
+          htmlFor="isAvailable"
         >
           <div
             style={
@@ -1057,14 +1057,14 @@ Array [
       >
         <label
           className="sc-fznyAO ftBpOP"
-          htmlFor="isPublic"
+          htmlFor="isAvailable"
         >
-          Make it Public
+          Make it Available
         </label>
         <span
           className="sc-fzqBZW ercQYo"
         >
-          This Tag Category is currently Private
+          This Tag Category is currently unavailable for Editors
         </span>
       </div>
     </div>

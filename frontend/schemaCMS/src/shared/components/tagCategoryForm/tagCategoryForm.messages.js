@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
 import {
-  TAG_CATEGORY_IS_PUBLIC,
+  TAG_CATEGORY_IS_AVAILABLE,
   TAG_CATEGORY_IS_SINGLE_SELECT,
   TAG_CATEGORY_NAME,
   TAG_CATEGORY_TAGS,
@@ -31,9 +31,9 @@ export default defineMessages({
     id: `shared.components.tagCategoryForm.${TAG_CATEGORY_TAGS}`,
     defaultMessage: 'Tag',
   },
-  [TAG_CATEGORY_IS_PUBLIC]: {
-    id: `shared.components.tagCategoryForm.${TAG_CATEGORY_IS_PUBLIC}`,
-    defaultMessage: 'Make it Public',
+  [TAG_CATEGORY_IS_AVAILABLE]: {
+    id: `shared.components.tagCategoryForm.${TAG_CATEGORY_IS_AVAILABLE}`,
+    defaultMessage: 'Make it Available',
   },
   [TAG_CATEGORY_IS_SINGLE_SELECT]: {
     id: `shared.components.tagCategoryForm.${TAG_CATEGORY_IS_SINGLE_SELECT}`,
@@ -41,19 +41,11 @@ export default defineMessages({
   },
   tagCategoryAvailability: {
     id: 'shared.components.tagCategoryForm.tagCategoryAvailability',
-    defaultMessage: 'This Tag Category is currently {availability}',
+    defaultMessage: 'This Tag Category is currently {negative}available for Editors',
   },
   tagCategorySingleChoice: {
     id: 'shared.components.tagCategoryForm.tagCategorySingleChoice',
     defaultMessage: 'This Tag Category is currently {type}',
-  },
-  privateCopy: {
-    id: 'shared.components.tagCategoryForm.privateCopy',
-    defaultMessage: 'Private',
-  },
-  publicCopy: {
-    id: 'shared.components.tagCategoryForm.publicCopy',
-    defaultMessage: 'Public',
   },
   singleChoice: {
     id: 'shared.components.tagCategoryForm.singleChoice',

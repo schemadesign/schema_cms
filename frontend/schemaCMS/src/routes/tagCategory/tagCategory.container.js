@@ -17,7 +17,7 @@ import {
   TAG_CATEGORY_NAME,
   TAG_CATEGORY_TAGS,
   TAG_CATEGORY_SCHEMA,
-  TAG_CATEGORY_IS_PUBLIC,
+  TAG_CATEGORY_IS_AVAILABLE,
   TAG_CATEGORY_IS_SINGLE_SELECT,
   TAG_CATEGORY_TYPE,
 } from '../../modules/tagCategory/tagCategory.constants';
@@ -58,7 +58,7 @@ export default compose(
         [
           TAG_CATEGORY_NAME,
           TAG_CATEGORY_TAGS,
-          TAG_CATEGORY_IS_PUBLIC,
+          TAG_CATEGORY_IS_AVAILABLE,
           TAG_CATEGORY_IS_SINGLE_SELECT,
           TAG_CATEGORY_TYPE,
         ],

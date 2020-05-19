@@ -6,7 +6,7 @@ export const TAG_CATEGORY_NAME = 'name';
 export const TAG_CATEGORY_TYPE = 'type';
 export const TAG_CATEGORY_TAGS = 'tags';
 export const TAG_CATEGORY_REMOVE_TAGS = 'deleteTags';
-export const TAG_CATEGORY_IS_PUBLIC = 'isPublic';
+export const TAG_CATEGORY_IS_AVAILABLE = 'isAvailable';
 export const TAG_CATEGORY_IS_SINGLE_SELECT = 'isSingleSelect';
 
 export const OPTION_CONTENT = 'content';
@@ -19,7 +19,7 @@ export const INITIAL_VALUES = {
     [OPTION_DATASET]: false,
   },
   [TAG_CATEGORY_TAGS]: [],
-  [TAG_CATEGORY_IS_PUBLIC]: false,
+  [TAG_CATEGORY_IS_AVAILABLE]: false,
   [TAG_CATEGORY_IS_SINGLE_SELECT]: false,
 };
 

@@ -9,7 +9,7 @@ import messages from './tagCategoryForm.messages';
 import {
   OPTION_CONTENT,
   OPTION_DATASET,
-  TAG_CATEGORY_IS_PUBLIC,
+  TAG_CATEGORY_IS_AVAILABLE,
   TAG_CATEGORY_IS_SINGLE_SELECT,
   TAG_CATEGORY_NAME,
   TAG_CATEGORY_REMOVE_TAGS,
@@ -231,18 +231,16 @@ export const TagCategoryForm = ({
       </AddNewTagContainer>
       <Switches>
         <SwitchContainer>
-          <Switch value={values[TAG_CATEGORY_IS_PUBLIC]} id={TAG_CATEGORY_IS_PUBLIC} onChange={handleChange} />
+          <Switch value={values[TAG_CATEGORY_IS_AVAILABLE]} id={TAG_CATEGORY_IS_AVAILABLE} onChange={handleChange} />
           <SwitchCopy>
-            <SwitchLabel htmlFor={TAG_CATEGORY_IS_PUBLIC}>
-              <FormattedMessage {...messages[TAG_CATEGORY_IS_PUBLIC]} />
+            <SwitchLabel htmlFor={TAG_CATEGORY_IS_AVAILABLE}>
+              <FormattedMessage {...messages[TAG_CATEGORY_IS_AVAILABLE]} />
             </SwitchLabel>
             <AvailableCopy>
               <FormattedMessage
                 {...messages.tagCategoryAvailability}
                 values={{
-                  availability: intl.formatMessage(
-                    messages[values[TAG_CATEGORY_IS_PUBLIC] ? 'publicCopy' : 'privateCopy']
-                  ),
+                  negative: values[TAG_CATEGORY_IS_AVAILABLE] ? '' : 'un',
                 }}
               />
             </AvailableCopy>
