@@ -1,20 +1,25 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Icons } from 'schemaUI';
 import Select, { components } from 'react-select';
 import { asMutable } from 'seamless-immutable';
-import { always, ifElse, equals, isNil, concat, flip } from 'ramda';
+import { FormattedMessage } from 'react-intl';
+import { always, ifElse, isNil, concat, flip } from 'ramda';
 
-import { Title } from './tagSearch.styles';
-
-const { CaretIcon } = Icons;
+import { Title, Category } from './tagSearch.styles';
+import messages from './tagSearch.messages';
 
 const DropdownIndicator = props => {
+  const { selectProps } = props;
+
   return (
     <components.DropdownIndicator {...props}>
-      <CaretIcon />
+      {selectProps.value.length}/{selectProps.limit}
     </components.DropdownIndicator>
   );
+};
+
+DropdownIndicator.propTypes = {
+  selectProps: PropTypes.object.isRequired,
 };
 
 export const TagCategories = ({
@@ -27,26 +32,30 @@ export const TagCategories = ({
   customStyles,
   valuePath,
 }) => {
-  const formatSelectedOption = selectedOption =>
-    ifElse(equals(true), always([selectedOption]), always(selectedOption))(isSingleSelect);
-  const formattedSelectedTags = ifElse(equals(true), always(selectedTags[0]), always(selectedTags))(isSingleSelect);
   const getValuePath = id => ifElse(isNil, always(`${id}`), flip(concat)(`.${id}`))(valuePath);
-  const handleChange = selectedOption => setFieldValue(getValuePath(id), formatSelectedOption(selectedOption));
+  const handleChange = selectedOption => setFieldValue(getValuePath(id), selectedOption);
   const mutableTags = asMutable(tags);
-  const options = mutableTags.map(({ value }) => ({ value, label: value }));
+  const isDisabled = isSingleSelect && selectedTags.length === 1;
+  const options = mutableTags.map(({ value }) => ({ value, label: value, isDisabled }));
+  const limit = isSingleSelect ? 1 : options.length;
 
   return (
     <Fragment>
-      <Title>{name}</Title>
+      <Title>
+        <Category>
+          <FormattedMessage {...messages.category} />
+        </Category>
+        {name}
+      </Title>
       <Select
-        isClearable
-        closeMenuOnSelect={isSingleSelect}
+        closeMenuOnSelect={false}
         components={{ DropdownIndicator }}
         styles={customStyles}
-        value={formattedSelectedTags}
+        value={selectedTags}
         onChange={handleChange}
         options={options}
-        isMulti={!isSingleSelect}
+        isMulti
+        limit={limit}
       />
     </Fragment>
   );
