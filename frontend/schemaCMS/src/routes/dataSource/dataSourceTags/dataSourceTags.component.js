@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 import { useHistory, useRouteMatch } from 'react-router';
 import Helmet from 'react-helmet';
-import { defaultTo, flatten, groupBy, keys, map, pipe, prop } from 'ramda';
+import { defaultTo, groupBy, map, pipe, prop } from 'ramda';
 
 import { Container } from './dataSourceTags.styles';
 import messages from './dataSourceTags.messages';
@@ -13,7 +13,7 @@ import reportError from '../../../shared/utils/reportError';
 import { TagSearch } from '../../../shared/components/tagSearch';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, formatTags } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
@@ -44,14 +44,11 @@ export const DataSourceTags = ({
     enableReinitialize: true,
     onSubmit: async (data, { setSubmitting, setErrors }) => {
       try {
-        const formData = pipe(
-          keys,
-          map(key => map(({ value }) => ({ category: parseInt(key, 10), value }))(data[key])),
-          flatten
-        )(data);
+        const formData = formatTags(data);
         await updateDataSourceTags({ dataSourceId: dataSource.id, formData });
         setSubmitting(false);
       } catch (errors) {
+        reportError(errors);
         const { formatMessage } = intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });
 

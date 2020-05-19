@@ -38,6 +38,7 @@ export const TagCategories = ({
   const isDisabled = isSingleSelect && selectedTags.length === 1;
   const options = mutableTags.map(({ value }) => ({ value, label: value, isDisabled }));
   const limit = isSingleSelect ? 1 : options.length;
+  const isLastOption = options.length - selectedTags.length === 1;
 
   return (
     <Fragment>
@@ -48,7 +49,7 @@ export const TagCategories = ({
         {name}
       </Title>
       <Select
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={isLastOption || isSingleSelect}
         components={{ DropdownIndicator }}
         styles={customStyles}
         value={selectedTags}

@@ -133,15 +133,17 @@ export const isProcessingData = ({ metaData, jobsState }) => {
   return { isProcessing: metaProcessing || jobProcessing, metaProcessing, jobProcessing };
 };
 
+export const formatTags = data =>
+  pipe(
+    keys,
+    map(key => map(({ value }) => ({ category: parseInt(key, 10), value }))(data[key] || [])),
+    flatten
+  )(data);
+
 export const prepareForPostingPageData = evolve({
   [PAGE_TEMPLATE]: ifElse(equals(0), always(null), identity),
   [PAGE_BLOCKS]: mapAndAddOrder,
-  [PAGE_TAGS]: data =>
-    pipe(
-      keys,
-      map(key => map(({ value }) => ({ category: parseInt(key, 10), value }))(data[key])),
-      flatten
-    )(data),
+  [PAGE_TAGS]: formatTags,
 });
 
 export const getValuePath = ({ blockPath, index, elementValue = ELEMENT_VALUE }) =>
