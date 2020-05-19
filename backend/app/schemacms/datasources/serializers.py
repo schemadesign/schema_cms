@@ -156,8 +156,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
 
-        if tags := self.initial_data.get("tags", []):
-            obj.add_tags(tags)
+        obj.add_tags(self.initial_data.get("tags", []))
 
         if self.validated_data.get("file", None):
             copy_steps = self.initial_data.get("run_last_job", False)

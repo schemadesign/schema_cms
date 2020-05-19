@@ -330,8 +330,7 @@ class PageSerializer(CustomModelSerializer):
         if blocks:
             self.create_or_update_blocks(instance, blocks)
 
-        if tags:
-            instance.add_tags(tags)
+        instance.add_tags(tags)
 
         return instance
 

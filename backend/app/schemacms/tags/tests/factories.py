@@ -9,6 +9,7 @@ class TagCategoryFactory(factory.django.DjangoModelFactory):
 
     project = factory.SubFactory(ProjectFactory)
     name = factory.Faker("text", max_nb_chars=25)
+    is_available = False
 
 
 class TagFactory(factory.django.DjangoModelFactory):
