@@ -31,9 +31,14 @@ class PAFilterSerializer(serializers.ModelSerializer):
 
 
 class PADataSourceListSerializer(serializers.ModelSerializer):
+    tags = serializers.SerializerMethodField()
+
     class Meta:
         model = ds_models.DataSource
-        fields = ("id", "type", "name")
+        fields = ("id", "type", "name", "tags")
+
+    def get_tags(self, obj):
+        return [tag.value for tag in obj.tags.all()]
 
 
 class PADataSourceDetailNoRecordsSerializer(serializers.ModelSerializer):
@@ -128,10 +133,24 @@ class PAPageBlockSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "order", "elements")
 
 
+class PASectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = pa_models.Section
+        fields = ("id", "name", "slug")
+
+
+class PATemplateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = pa_models.PageTemplate
+        fields = ("id", "name")
+
+
 class PAPageSerializer(serializers.ModelSerializer):
     created_by = serializers.SerializerMethodField()
     updated = serializers.DateTimeField(read_only=True, source="modified", format="%Y-%m-%d")
     tags = serializers.SerializerMethodField()
+    section = PASectionSerializer(read_only=True)
+    template = PATemplateSerializer(read_only=True)
 
     class Meta:
         model = pa_models.Page
@@ -142,6 +161,7 @@ class PAPageSerializer(serializers.ModelSerializer):
             "slug",
             "description",
             "keywords",
+            "section",
             "created_by",
             "updated",
             "tags",

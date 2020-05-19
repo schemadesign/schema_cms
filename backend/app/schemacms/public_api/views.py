@@ -20,6 +20,7 @@ class PAProjectView(
     permission_classes = ()
     serializer_class_mapping = {
         "datasources": serializers.PADataSourceListSerializer,
+        "pages": serializers.PAPageSerializer,
     }
     queryset = (
         Project.objects.select_related("owner",)
@@ -42,6 +43,18 @@ class PAProjectView(
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(data_sources, many=True)
+        return response.Response(serializer.data)
+
+    @decorators.action(detail=True, url_path="pages", methods=["get"])
+    def pages(self, request, **kwargs):
+        pages = Page.objects.filter(section__project=self.get_object()).order_by("created")
+
+        page = self.paginate_queryset(pages)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(pages, many=True)
         return response.Response(serializer.data)
 
 

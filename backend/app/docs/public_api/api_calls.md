@@ -11,7 +11,11 @@
 ```json
 Content-Type: application/json
 200 OK
-[
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
     {
       "meta": {
          "id": 1,
@@ -47,7 +51,8 @@ Content-Type: application/json
         ]
       }
     }
-]
+  ]
+}
 ```
 
 ## Get Project
@@ -110,22 +115,27 @@ Content-Type: application/json
 ```json
 Content-Type: application/json
 200 OK
-[
-  {
-    "id": 1,
-    "name": "TestDS1",
-    "created_by": "Jan Kowalsky",
-    "updated": "2020-04-03",
-    "created": "2020-04-03"
-  },
-  {
-    "id": 2,
-    "name": "TestDS2",
-    "created_by": "Jan Kowalsky",
-    "updated": "2020-04-07",
-    "created": "2020-04-07"
-  }
-]
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+      {
+        "id": 1,
+        "name": "TestDS1",
+        "created_by": "Jan Kowalsky",
+        "updated": "2020-04-03",
+        "created": "2020-04-03"
+      },
+      {
+        "id": 2,
+        "name": "TestDS2",
+        "created_by": "Jan Kowalsky",
+        "updated": "2020-04-07",
+        "created": "2020-04-07"
+      }
+    ]
+}
 ```
 
 ## Get Project Pages
@@ -139,18 +149,31 @@ Content-Type: application/json
 ```json
 Content-Type: application/json
 200 OK
-[
-  {
-    "id": 1,
-    "name": "Page Name",
-    "template": "New Page Template",
-    "slug": "page-name",
-    "description": "New page test.",
-    "keywords": "new;page;test",
-    "created_by": "Jan Kowalsky",
-    "updated": "2020-05-05"
-  }
-]
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+      {
+        "id": 1,
+        "name": "Page Name",
+        "section": {
+          "id": 1,
+          "name": "Test Section",
+          "slug": "test-section"
+        },   
+        "template": {
+          "id": 1,
+          "name": "New Page Template"
+        },
+        "slug": "page-name",
+        "description": "New page test.",
+        "keywords": "new;page;test",
+        "created_by": "Jan Kowalsky",
+        "updated": "2020-05-05"
+      }
+    ]
+}
 ```
 
 ## Get Section
@@ -196,10 +219,20 @@ Content-Type: application/json
     "id": 1,
     "name": "Page Name",
     "slug": "page-name",
+    "section": {
+      "id": 1,
+      "name": "Test Section",
+      "slug": "test-section"
+    },   
+    "template": {
+      "id": 1,
+      "name": "New Page Template"
+    },
     "description": "New page test",
     "keywords": "new;page;test",
     "created_by": "Jan Kowalsky",
     "updated": "2020-04-07",
+    "tags": ["test", "tag", "value"],
     "blocks": [
         {
           "id": 1,
@@ -273,7 +306,7 @@ Content-Type: application/json
 ```
 **Request**:
 
-`GET` `/pages/<id>?format=html`
+`GET` `/pages/<id>/html`
 
 **Response**:
 
@@ -300,6 +333,43 @@ Content-Type: application/json
 </html>
 
 ```
+
+
+## Get Page Blocks
+**Request**:
+
+`GET` `/pages/<id>/blocks`
+
+**Response**:
+
+```json
+Content-Type: application/json
+200 OK
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 1,
+      "name": "New Block",
+      "order": 1,
+      "template": {"id": 1, "name": "Test Block Template 1"},
+      "elements": [
+        {
+          "id": 1,
+          "name": "Plain Text element",
+          "type": "plain_text",
+          "order": 0,
+          "value": "test value",
+          "html": "<div id='plain-text-7' class='element text'><p>test value</p></div>"
+        }
+      ]
+    },
+  ]
+}
+```
+
 
 ## Get Page Block
 **Request**:
@@ -340,32 +410,40 @@ Content-Type: application/json
 ```json
 Content-Type: application/json
 200 OK
-[
-  {
-    "id": 1,
-    "name": "TestDS1",
-    "project": 1,
-    "created_by": "Jan Kowalsky",
-    "updated": "2020-04-03",
-    "created": "2020-04-03"
-  },
-  {
-    "id": 2,
-    "name": "TestDS2",
-    "project": 1,
-    "created_by": "Jan Kowalsky",
-    "updated": "2020-04-03",
-    "created": "2020-04-03"
-  },
-  {
-    "id": 3,
-    "name": "TestDS3",
-    "project": 2,
-    "created_by": "Jan Kowalsky",
-    "updated": "2020-04-07",
-    "created": "2020-04-07"
-  }
-]
+{
+  "count": 3,
+  "next": null,
+  "previous": null,
+  "results": [
+      {
+        "id": 1,
+        "name": "TestDS1",
+        "project": 1,
+        "tags": ["tag", "value"],
+        "created_by": "Jan Kowalsky",
+        "updated": "2020-04-03",
+        "created": "2020-04-03"
+      },
+      {
+        "id": 2,
+        "name": "TestDS2",
+        "project": 1,
+        "tags": ["tag", "value"],
+        "created_by": "Jan Kowalsky",
+        "updated": "2020-04-03",
+        "created": "2020-04-03"
+      },
+      {
+        "id": 3,
+        "name": "TestDS3",
+        "project": 2,
+        "tags": ["tag", "value"],
+        "created_by": "Jan Kowalsky",
+        "updated": "2020-04-07",
+        "created": "2020-04-07"
+      }
+    ]
+}
 ```
 
 
@@ -403,6 +481,7 @@ Content-Type: application/json
       },
    },
    "filters": [],
+   "tags": ["tag", "value"],
    "records": {
       "0": {
          "Total Revenue": 14862.69,
@@ -556,7 +635,7 @@ Content-Type: application/json
 {
   "count": 1000000,
   "pages": 200,
-  "records": {
+  "results": {
     "0": {
       "Total Revenue": 14862.69,
       "Total Cost": 11023.56,
