@@ -25,7 +25,7 @@ class TagCategorySerializer(serializers.ModelSerializer):
             "project",
             "type",
             "is_single_select",
-            "is_public",
+            "is_available",
             "tags",
             "created",
             "created_by",

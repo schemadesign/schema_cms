@@ -3,12 +3,14 @@ from django.shortcuts import get_object_or_404
 from rest_framework import permissions, viewsets, response, mixins
 
 from . import models, serializers
+from .permissions import TagPermission
+from ..users.constants import UserRole
 from ..projects.models import Project
 
 
 class BaseTagCategoryView:
     serializer_class = serializers.TagCategorySerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, TagPermission)
     queryset = (
         models.TagCategory.objects.select_related("project", "created_by")
         .prefetch_related(Prefetch("tags", queryset=models.Tag.objects.order_by("order")))
@@ -39,6 +41,9 @@ class TagCategoryListCreateViewSet(
             queryset = self.get_queryset().filter(**filter_kwargs)
         else:
             queryset = self.get_queryset()
+
+        if request.user.role == UserRole.EDITOR:
+            queryset = queryset.filter(is_available=True)
 
         serializer = self.get_serializer(queryset, many=True)
         data = {"project": self.project_obj.project_info, "results": serializer.data}

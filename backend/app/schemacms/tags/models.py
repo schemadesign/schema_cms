@@ -14,7 +14,7 @@ class TagCategory(SoftDeleteObject, TimeStampedModel):
     name = models.CharField(max_length=25)
     type = JSONField(blank=True, default=dict)
     is_single_select = models.BooleanField(default=False)
-    is_public = models.BooleanField(default=True)
+    is_available = models.BooleanField(default=True)
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="tags_categories", null=True
     )
