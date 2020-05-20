@@ -56,6 +56,7 @@ export const getCustomSelectStyles = theme => ({
   }),
   multiValue: styles => ({ ...styles, background: 'none', border: `1px solid ${theme.text}` }),
   multiValueLabel: styles => ({ ...styles, color: theme.text }),
+  input: styles => ({ ...styles, color: theme.text }),
   multiValueRemove: styles => ({
     ...styles,
     color: theme.secondaryText,
