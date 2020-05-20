@@ -3,7 +3,6 @@
 SCHEMA_UI_PATH="./frontend/schemaUI"
 SCHEMA_CMS_PATH="./frontend/schemaCMS"
 WORKER_LAMBDA_PATH="./backend/functions/worker"
-PUBLIC_API_LAMBDA_PATH="./backend/functions/public_api"
 
 install:
 	@echo "Installing SchemaUI"
@@ -34,6 +33,3 @@ clean_db_volume:
 	docker volume rm schema_cms_db_data
 	docker volume create --name=schema_cms_db_data
 
-install_lambdas:
-	cd $(PUBLIC_API_LAMBDA_PATH) && npm install
-	cd ./
