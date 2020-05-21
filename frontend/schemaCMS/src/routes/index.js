@@ -18,6 +18,7 @@ import { RevokedAccess } from './revokedAccess';
 import { Preview as JobPreview } from './jobDetail/preview';
 import { Project } from './project';
 import { List as ProjectList } from './project/list';
+import { Create as ProjectCreate } from './project/create';
 import { ResetPassword } from './resetPassword';
 import { Settings } from './settings';
 import { User } from './user';
@@ -34,6 +35,7 @@ export const ROUTES = {
   AUTH: '/auth',
   NOT_AUTHORIZED: '/not-authorized',
   PROJECT: '/project',
+  PROJECT_CREATE: '/project/create',
   RESET_PASSWORD: '/reset-password',
   LOGOUT: '/logout',
   DATA_SOURCE: '/datasource',
@@ -65,6 +67,8 @@ export default class RootContainer extends Component {
             <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
 
             <AuthRoute exact path={ROUTES.PROJECT} component={ProjectList} />
+
+            <AuthRoute exact path={ROUTES.PROJECT_CREATE} component={ProjectCreate} />
 
             <AuthRoute path={`${ROUTES.PROJECT}/:projectId`} component={Project} />
 

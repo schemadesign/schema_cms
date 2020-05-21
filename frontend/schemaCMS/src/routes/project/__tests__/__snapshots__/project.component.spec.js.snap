@@ -21,11 +21,6 @@ exports[`Project: Component should render correctly when loading wrapper content
   <Route
     component={[Function]}
     exact={true}
-    path="/project/create/"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
     path="/project/datasource"
   />
   <Route
