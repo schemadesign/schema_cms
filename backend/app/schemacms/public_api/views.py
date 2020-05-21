@@ -1,8 +1,6 @@
 import json
-from functools import wraps
 
 import django_filters.rest_framework
-from django.conf import settings
 from django.db.models import Prefetch
 from django.shortcuts import render, get_object_or_404
 from rest_framework import decorators, viewsets, response, mixins, renderers
@@ -12,16 +10,6 @@ from ..datasources.models import DataSource, Filter
 from ..pages.models import Section, Page, PageBlock, PageBlockElement
 from ..projects.models import Project
 from ..utils.serializers import ActionSerializerViewSetMixin
-
-
-def xframe_options_allow(view_func):
-    def wrapped_view(*args, **kwargs):
-        resp = view_func(*args, **kwargs)
-        if resp.get("X-Frame-Options") is None:
-            resp["X-Frame-Options"] = settings.X_FRAME_OPTIONS
-        return resp
-
-    return wraps(view_func)(wrapped_view)
 
 
 class PAProjectView(
@@ -119,7 +107,6 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     filterset_fields = ["tags__value"]
 
-    @xframe_options_allow
     @decorators.action(detail=True, url_path="html", methods=["get"])
     def html(self, request, **kwargs):
         page = self.get_object()

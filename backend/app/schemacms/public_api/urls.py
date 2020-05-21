@@ -1,10 +1,12 @@
-from rest_framework import routers
+from rest_framework import routers, permissions
 
 from . import views
 
 app_name = "public_api"
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.APIRootView._ignore_model_permissions = False
+router.APIRootView.permission_classes = (permissions.AllowAny,)
 
 router.register(r"projects", views.PAProjectView, basename="pa-projects")
 router.register(r"sections", views.PASectionView, basename="pa-sections")
