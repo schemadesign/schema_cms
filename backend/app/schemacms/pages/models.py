@@ -109,7 +109,7 @@ class Page(Content):
         ordering = ("-created",)
 
     def create_or_update_block(self, block):
-        return self.pageblock_set.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
+        return PageBlock.objects.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
 
     def delete_blocks(self, blocks: list):
         self.pageblock_set.filter(id__in=blocks).delete()
