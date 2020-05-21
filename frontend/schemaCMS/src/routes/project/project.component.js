@@ -5,7 +5,6 @@ import { isEmpty } from 'ramda';
 
 import { View } from './view';
 import { UserDetails } from './userDetails';
-import { Create } from './create';
 import { DataSourceList } from './dataSourceList';
 import UserList from './userList/userList.container';
 import { AddUser } from './addUser';
@@ -58,7 +57,6 @@ export class Project extends PureComponent {
     const { error, loading } = this.state;
     const { path } = match;
 
-    const createPath = `${path}/create/`;
     const usersPath = `${path}/user`;
     const userPath = `${usersPath}/:userId`;
     const addUserList = `${usersPath}/add`;
@@ -82,7 +80,6 @@ export class Project extends PureComponent {
           project.id ? (
             <Switch>
               <Route exact path={createDataSourcePath} component={CreateDataSource} />
-              <Route exact path={createPath} component={Create} />
               <Route exact path={dataSourceListPath} component={DataSourceList} />
               <Route exact path={path} component={View} />
               <Route exact path={usersPath} component={UserList} />
