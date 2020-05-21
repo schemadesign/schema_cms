@@ -16,6 +16,7 @@ import {
   OBSERVABLE_PARAMS,
   CUSTOM_ELEMENT_TYPE,
   BLOCK_TEMPLATES_ELEMENTS,
+  blockTemplatesElementsValidation,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -159,4 +160,8 @@ export const ADD_BLOCK_SCHEMA = Yup.object().shape({
     .trim()
     .min(1, 'Required')
     .required('Required'),
+  [BLOCK_TEMPLATES_ELEMENTS]: Yup.array().when(BLOCK_TYPE, {
+    is: '0',
+    then: blockTemplatesElementsValidation(),
+  }),
 });

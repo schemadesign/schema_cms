@@ -58,13 +58,8 @@ export const INITIAL_VALUES = {
   [BLOCK_TEMPLATES_IS_AVAILABLE]: false,
 };
 
-export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({
-  [BLOCK_TEMPLATES_NAME]: Yup.string()
-    .trim()
-    .min(1, 'Block Template Name should have at least 1 character')
-    .max(25, 'Block Template Name should have maximum 25 characters')
-    .required('Required'),
-  [BLOCK_TEMPLATES_ELEMENTS]: Yup.array()
+export const blockTemplatesElementsValidation = () =>
+  Yup.array()
     .test(BLOCK_TEMPLATES_ELEMENTS, 'Required', complement(isEmpty))
     .of(
       Yup.object().shape({
@@ -91,5 +86,13 @@ export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({
           }),
         }),
       })
-    ),
+    );
+
+export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({
+  [BLOCK_TEMPLATES_NAME]: Yup.string()
+    .trim()
+    .min(1, 'Block Template Name should have at least 1 character')
+    .max(25, 'Block Template Name should have maximum 25 characters')
+    .required('Required'),
+  [BLOCK_TEMPLATES_ELEMENTS]: blockTemplatesElementsValidation(),
 });

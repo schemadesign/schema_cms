@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useEffectOnce } from 'react-use';
 import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useLocation } from 'react-router';
 import { Icons } from 'schemaUI';
-import { propEq, find, map, omit, pipe, prepend } from 'ramda';
+import { propEq, find, map, omit, pipe, prepend, always } from 'ramda';
 
 import { SelectContainer } from './addBlockForm.styles';
 import { LoadingWrapper } from '../loadingWrapper';
@@ -38,6 +38,7 @@ import {
   BLOCK_TEMPLATES_ELEMENTS,
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { renderWhenTrue } from '../../utils/rendering';
 
 const { EditIcon } = Icons;
 
@@ -129,6 +130,36 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
     })();
   });
 
+  const renderBlockTemplateElements = blockType =>
+    renderWhenTrue(
+      always(
+        <Fragment>
+          <CounterHeader
+            copy={intl.formatMessage(messages.elements)}
+            count={elementsCount}
+            right={
+              <PlusContainer>
+                <PlusButton
+                  customStyles={mobilePlusStyles}
+                  id="createElement"
+                  onClick={addElement}
+                  type="button"
+                  disabled={!isValid && !!elementsCount}
+                />
+              </PlusContainer>
+            }
+          />
+          <BlockTemplateElements
+            handleChange={handleChange}
+            values={values}
+            isValid={isValid}
+            setFieldValue={setFieldValue}
+            {...restFormikProps}
+          />
+        </Fragment>
+      )
+    )(blockType === 0);
+
   return (
     <LoadingWrapper loading={loading} error={error}>
       <form onSubmit={handleSubmit}>
@@ -156,28 +187,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
             {...restFormikProps}
           />
         </SelectContainer>
-        <CounterHeader
-          copy={intl.formatMessage(messages.elements)}
-          count={elementsCount}
-          right={
-            <PlusContainer>
-              <PlusButton
-                customStyles={mobilePlusStyles}
-                id="createElement"
-                onClick={addElement}
-                type="button"
-                disabled={!isValid && !!elementsCount}
-              />
-            </PlusContainer>
-          }
-        />
-        <BlockTemplateElements
-          handleChange={handleChange}
-          values={values}
-          isValid={isValid}
-          setFieldValue={setFieldValue}
-          {...restFormikProps}
-        />
+        {renderBlockTemplateElements(values[BLOCK_TYPE])}
         <NavigationContainer fixed>
           <BackButton id="backBtn" type="button" onClick={() => history.push(backUrl, { page: state.page })}>
             <FormattedMessage {...messages.back} />
