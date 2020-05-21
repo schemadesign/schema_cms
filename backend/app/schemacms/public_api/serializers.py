@@ -22,7 +22,14 @@ element_to_html_function = {
 }
 
 
-class PAFilterSerializer(serializers.ModelSerializer):
+class ReadOnlySerializer(serializers.ModelSerializer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].read_only = True
+
+
+class PAFilterSerializer(ReadOnlySerializer):
     type = serializers.CharField(source="filter_type")
 
     class Meta:
@@ -30,7 +37,7 @@ class PAFilterSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "type", "field")
 
 
-class PADataSourceListSerializer(serializers.ModelSerializer):
+class PADataSourceListSerializer(ReadOnlySerializer):
     tags = serializers.SerializerMethodField()
 
     class Meta:
@@ -41,11 +48,11 @@ class PADataSourceListSerializer(serializers.ModelSerializer):
         return [tag.value for tag in obj.tags.all()]
 
 
-class PADataSourceDetailNoRecordsSerializer(serializers.ModelSerializer):
+class PADataSourceDetailNoRecordsSerializer(ReadOnlySerializer):
     meta = serializers.SerializerMethodField()
     shape = serializers.SerializerMethodField()
     fields = serializers.SerializerMethodField(method_name="get_ds_fields")
-    filters = PAFilterSerializer(read_only=True, many=True)
+    filters = PAFilterSerializer(many=True)
     tags = serializers.SerializerMethodField()
 
     class Meta:
@@ -85,7 +92,7 @@ class PADataSourceDetailRecordsSerializer(PADataSourceDetailNoRecordsSerializer)
         return records_reader.read_records_preview(obj)
 
 
-class PABlockElementSerializer(serializers.ModelSerializer):
+class PABlockElementSerializer(ReadOnlySerializer):
     value = serializers.SerializerMethodField()
     html = serializers.SerializerMethodField()
 
@@ -125,32 +132,39 @@ class PABlockElementSerializer(serializers.ModelSerializer):
         return elements
 
 
-class PAPageBlockSerializer(serializers.ModelSerializer):
-    elements = PABlockElementSerializer(read_only=True, many=True)
+class PABlockTemplateSerializer(ReadOnlySerializer):
+    class Meta:
+        model = pa_models.BlockTemplate
+        fields = ("id", "name")
+
+
+class PAPageBlockSerializer(ReadOnlySerializer):
+    elements = PABlockElementSerializer(many=True)
+    template = PABlockTemplateSerializer(source="block")
 
     class Meta:
         model = pa_models.PageBlock
-        fields = ("id", "name", "order", "elements")
+        fields = ("id", "name", "template", "order", "elements")
 
 
-class PASectionSerializer(serializers.ModelSerializer):
+class PASectionSerializer(ReadOnlySerializer):
     class Meta:
         model = pa_models.Section
         fields = ("id", "name", "slug")
 
 
-class PATemplateSerializer(serializers.ModelSerializer):
+class PATemplateSerializer(ReadOnlySerializer):
     class Meta:
         model = pa_models.PageTemplate
         fields = ("id", "name")
 
 
-class PAPageSerializer(serializers.ModelSerializer):
+class PAPageSerializer(ReadOnlySerializer):
     created_by = serializers.SerializerMethodField()
-    updated = serializers.DateTimeField(read_only=True, source="modified", format="%Y-%m-%d")
+    updated = serializers.DateTimeField(source="modified", format="%Y-%m-%d")
     tags = serializers.SerializerMethodField()
-    section = PASectionSerializer(read_only=True)
-    template = PATemplateSerializer(read_only=True)
+    section = PASectionSerializer()
+    template = PATemplateSerializer()
 
     class Meta:
         model = pa_models.Page
@@ -185,24 +199,24 @@ class PAPageDetailSerializer(PAPageSerializer):
             Prefetch(
                 "elements",
                 queryset=pa_models.PageBlockElement.objects.all()
-                .order_by("-order")
+                .order_by("order")
                 .exclude(custom_element_set__isnull=False),
             ),
         )
         return PAPageBlockSerializer(blocks, many=True).data
 
 
-class PASectionSerializer(serializers.ModelSerializer):
-    pages = PAPageSerializer(read_only=True, many=True)
+class PASectionSerializer(ReadOnlySerializer):
+    pages = PAPageSerializer(many=True)
 
     class Meta:
         model = pa_models.Section
         fields = ("id", "name", "slug", "pages")
 
 
-class PAProjectSerializer(serializers.ModelSerializer):
+class PAProjectSerializer(ReadOnlySerializer):
     meta = serializers.SerializerMethodField()
-    data_sources = PADataSourceListSerializer(read_only=True, many=True)
+    data_sources = PADataSourceListSerializer(many=True)
     content = serializers.SerializerMethodField()
 
     class Meta:
