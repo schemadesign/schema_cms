@@ -1,14 +1,15 @@
 import json
 
-from django.db.models import Prefetch
-from rest_framework import decorators, viewsets, response, mixins, renderers
 import django_filters.rest_framework
+from django.db.models import Prefetch
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.clickjacking import xframe_options_exempt
+from rest_framework import decorators, viewsets, response, mixins, renderers
 
 from . import serializers, records_reader
 from ..datasources.models import DataSource, Filter
-from ..projects.models import Project
 from ..pages.models import Section, Page, PageBlock, PageBlockElement
+from ..projects.models import Project
 from ..utils.serializers import ActionSerializerViewSetMixin
 
 
@@ -107,6 +108,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     filterset_fields = ["tags__value"]
 
+    @xframe_options_exempt
     @decorators.action(detail=True, url_path="html", methods=["get"])
     def html(self, request, **kwargs):
         page = self.get_object()

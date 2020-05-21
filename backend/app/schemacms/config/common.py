@@ -74,6 +74,7 @@ class Common(Configuration):
 
     # CORS
     CORS_ORIGIN_ALLOW_ALL = True
+    X_FRAME_OPTIONS = "ALLOW-FROM *"
 
     # Email
     EMAIL_BACKEND = "anymail.backends.amazon_ses.EmailBackend"

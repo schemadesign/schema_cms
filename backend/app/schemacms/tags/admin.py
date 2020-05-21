@@ -35,5 +35,12 @@ class TagTabularInline(admin.TabularInline):
 class TagCategoryAdmin(SoftDeleteObjectAdmin):
     list_display = ("name", "project", "deleted_at")
     fields = ("project", "name", "is_single_select", "deleted_at")
+    list_select_related = ("project",)
     list_filter = ("project", "deleted_at")
+    readonly_on_update_fields = ("project",)
     inlines = [TagTabularInline]
+
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="name", model_name="TagCategory", parent="project"
+        )
