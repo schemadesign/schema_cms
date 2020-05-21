@@ -670,7 +670,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               Select...
             </div>
             <div
-              className="css-b8ldur-Input"
+              className="css-14m14bb-Input"
             >
               <div
                 className=""
@@ -774,7 +774,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               Select...
             </div>
             <div
-              className="css-b8ldur-Input"
+              className="css-14m14bb-Input"
             >
               <div
                 className=""
