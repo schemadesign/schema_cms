@@ -562,13 +562,13 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzpans dmKhvS"
+    className="sc-fzoLsD jhlXOi"
   >
     <div
-      className="sc-fzplWN izglPW"
+      className="sc-fzpans dhfQNr"
     >
       <h2
-        className="sc-fznyAO hCNAkV"
+        className="sc-fzplWN bVLKoZ"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -582,7 +582,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         title
       </h2>
       <h1
-        className="sc-fznKkj gTlJjg"
+        className="sc-fznyAO hCNAkV"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -596,10 +596,10 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznxsB cskFqV"
+          className="sc-fzpjYC efXjuy"
         >
           <div
-            className="sc-fzoNJl cSFNZJ"
+            className="sc-fzoyTs eNtMFT"
           >
             <div
               style={
@@ -675,7 +675,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fznJRM eiGOyR"
+            className="sc-fznxsB jQpycp"
           >
             <svg
               style={
@@ -697,14 +697,14 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fznZeY fLrtke"
+      className="sc-fznKkj lbPMLS"
     />
   </div>
   <div
-    className="sc-fznWqX emhegs"
+    className="sc-fznJRM fFBVWX"
   >
     <div
-      className="sc-fzoNJl bXHBiD"
+      className="sc-fzoyTs FXPlp"
     >
       <div
         style={
@@ -768,7 +768,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoXWK ZbvgW"
+            className="sc-fzoNJl fwCLEm"
           >
             <svg
               style={
@@ -794,7 +794,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     className="sc-AxjAm evKEwj"
   >
     <div
-      className="sc-fznxKY fgqrAN"
+      className="sc-fzpmMD ibJqnl"
       onClick={[Function]}
     >
       <label
@@ -898,7 +898,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
                 }
               }
             >
-              block name
+              Blank
             </div>
             <div
               id="select-item-1"
@@ -918,10 +918,30 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
                 }
               }
             >
-              block name 2
+              block name
             </div>
             <div
               id="select-item-2"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "none",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name 2
+            </div>
+            <div
+              id="select-item-3"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -944,7 +964,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fznMAR kncgKE"
+        className="sc-fznxKY jfIEHM"
       >
         <svg
           style={
@@ -965,16 +985,16 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxgMl cVgKrP"
+    className="sc-AxhUy htqvZZ"
   >
     <div
-      className="sc-Axmtr iDwQUw"
+      className="sc-AxheI cQyJnn"
     >
       <div
-        className="sc-AxheI kHegme"
+        className="sc-AxgMl kpSYiw"
       >
         <button
-          className="sc-AxmLO kfXYAO"
+          className="sc-Axmtr ippoUD"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
@@ -1000,7 +1020,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           Back
         </button>
         <button
-          className="sc-AxmLO kfXYAO"
+          className="sc-Axmtr ippoUD"
           disabled={true}
           id="addBlock"
           style={

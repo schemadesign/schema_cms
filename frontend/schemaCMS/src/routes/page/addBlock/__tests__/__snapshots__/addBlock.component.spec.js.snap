@@ -361,7 +361,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoJMP eTMbKN"
+    className="sc-fzowVh gBjPlT"
   >
     <div
       style={
@@ -383,7 +383,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkqZ fnxebh"
+          className="sc-fzoVTD hyDqgk"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -439,7 +439,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkqZ fnxebh"
+          className="sc-fzoVTD hyDqgk"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -495,7 +495,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkqZ fnxebh"
+          className="sc-fzoVTD hyDqgk"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -551,7 +551,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkqZ fnxebh"
+          className="sc-fzoVTD hyDqgk"
           href="/page/1"
           onClick={[Function]}
           style={
@@ -607,7 +607,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoYHE knzaNG"
+          className="sc-fzoJus duzQwC"
         >
           <span
             style={
@@ -639,13 +639,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fzoiQi kzhWbE"
+      className="sc-fznWqX VKSem"
     >
       <div
-        className="sc-fzqARJ fGrnyP"
+        className="sc-fzoiQi kVjVJJ"
       >
         <h2
-          className="sc-fzqNqU cSnCDr"
+          className="sc-fzqARJ euGmLc"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -659,7 +659,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
           Block
         </h2>
         <h1
-          className="sc-fzoyTs ieHSUN"
+          className="sc-fzqNqU cSnCDr"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -673,10 +673,10 @@ exports[`AddBlock: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqPZZ fAVjwr"
+            className="sc-fzqBkg cuBQll"
           >
             <div
-              className="sc-fzoant inBwfy"
+              className="sc-fznMnq evJfZi"
             >
               <div
                 style={
@@ -752,7 +752,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzoxKX ezLPQC"
+              className="sc-fzqPZZ kfuhuX"
             >
               <svg
                 style={
@@ -774,14 +774,14 @@ exports[`AddBlock: Component should render correctly 1`] = `
         </h1>
       </div>
       <div
-        className="sc-fzoNJl kUMlmZ"
+        className="sc-fzoyTs crHzLr"
       />
     </div>
     <div
-      className="sc-fzoKki cixUKS"
+      className="sc-fzoxKX khfKcw"
     >
       <div
-        className="sc-fzoant jVHttY"
+        className="sc-fznMnq hkvZxA"
       >
         <div
           style={
@@ -845,7 +845,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzomME hvRnYb"
+              className="sc-fzoant bcDcyh"
             >
               <svg
                 style={
@@ -871,7 +871,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
       className="sc-fzoXzr eXJveD"
     >
       <div
-        className="sc-fzqMAW cIPleX"
+        className="sc-fzqAbL bfInzb"
         onClick={[Function]}
       >
         <label
@@ -975,7 +975,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                   }
                 }
               >
-                block name
+                Blank
               </div>
               <div
                 id="select-item-1"
@@ -995,10 +995,30 @@ exports[`AddBlock: Component should render correctly 1`] = `
                   }
                 }
               >
-                block name 2
+                block name
               </div>
               <div
                 id="select-item-2"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                block name 2
+              </div>
+              <div
+                id="select-item-3"
                 onClick={[Function]}
                 onMouseOut={[Function]}
                 onMouseOver={[Function]}
@@ -1021,7 +1041,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzoydu jZeCeP"
+          className="sc-fzqMAW bBmXa"
         >
           <svg
             style={
