@@ -63,7 +63,9 @@ class CustomElement(BaseElement):
             {
                 "id": elements_set.id,
                 "order": elements_set.order,
-                "elements": PageBlockElementSerializer(elements_set.elements, many=True).data,
+                "elements": PageBlockElementSerializer(
+                    elements_set.elements.order_by("order"), many=True
+                ).data,
             }
             for elements_set in elements_sets
         ]

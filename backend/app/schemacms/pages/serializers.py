@@ -149,7 +149,7 @@ class PageTemplateBlockSerializer(serializers.ModelSerializer):
         return template.block.name
 
     def get_elements(self, template):
-        elements = template.block.elements.all()
+        elements = template.block.elements.all().order_by("order")
         return BlockElementSerializer(elements, many=True).data
 
 
