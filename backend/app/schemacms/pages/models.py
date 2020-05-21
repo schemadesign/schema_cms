@@ -129,7 +129,7 @@ class PageTemplate(Page):
 
 
 class PageBlock(SoftDeleteObject):
-    block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE)
+    block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
     page = models.ForeignKey("Page", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
     order = models.PositiveIntegerField(default=0)

@@ -15,6 +15,7 @@ import {
   OBSERVABLE_CELL,
   OBSERVABLE_PARAMS,
   CUSTOM_ELEMENT_TYPE,
+  BLOCK_TEMPLATES_ELEMENTS,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -58,6 +59,7 @@ export const INITIAL_VALUES = {
 export const INITIAL_VALUES_ADD_BLOCK = {
   [BLOCK_NAME]: '',
   [BLOCK_TYPE]: '',
+  [BLOCK_TEMPLATES_ELEMENTS]: [],
 };
 
 const elementValueValidation = () =>
