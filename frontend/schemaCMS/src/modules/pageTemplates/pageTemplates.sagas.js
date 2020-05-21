@@ -12,7 +12,6 @@ function* fetchPageTemplates({ payload: { projectId } }) {
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${PAGE_TEMPLATES_PATH}`);
 
-    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(PageTemplatesRoutines.fetchPageTemplates.success(data.results));
   } catch (error) {
     reportError(error);

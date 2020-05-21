@@ -24,7 +24,6 @@ describe('PageTemplates: sagas', () => {
 
       await expectSaga(watchPageTemplates)
         .withState(defaultState)
-        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(PageTemplatesRoutines.fetchPageTemplates.success(response.results))
         .dispatch(PageTemplatesRoutines.fetchPageTemplates({ projectId }))
         .silentRun();
