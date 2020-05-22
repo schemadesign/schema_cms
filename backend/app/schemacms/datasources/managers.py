@@ -1,13 +1,12 @@
-import softdelete.models
+from softdelete.models import SoftDeleteQuerySet
 from django.db import models, transaction
-from django.db.models.functions import Coalesce
 
 from .constants import ProcessingState
 from ..authorization.authentication import LambdaUser
 from ..utils.managers import generate_soft_delete_manager
 
 
-class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
+class DataSourceQuerySet(SoftDeleteQuerySet):
     @transaction.atomic()
     def create(self, *args, **kwargs):
         from .models import DataSourceMeta
@@ -23,19 +22,9 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
         return dsource
 
     def annotate_filters_count(self):
-        from .models import Filter
-
-        subquery = (
-            Filter.objects.order_by()
-            .values("datasource")
-            .filter(datasource=models.OuterRef("pk"))
-            .annotate(count=models.Count("pk"))
-            .values("count")
-        )
-
         return self.annotate(
-            filters_count=Coalesce(
-                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
+            filters_count=models.Count(
+                "filters", filter=models.Q(filters__deleted_at__isnull=True), distinct=True,
             )
         )
 
@@ -50,10 +39,9 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
         return self.annotate(jobs_in_process=models.Exists(subquery))
 
     def available_for_user(self, user):
-        """Return Datasouces available for user. If user is admin then return all datasources
-        else returns datasources where user is assigned as project's editor"""
         if isinstance(user, LambdaUser) or user.is_admin:
             return self
+
         return self.filter(project__editors=user)
 
 

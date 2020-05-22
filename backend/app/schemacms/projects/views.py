@@ -1,7 +1,6 @@
 from rest_framework import decorators, permissions, response, status, viewsets
 
 from . import models, serializers
-from ..datasources import serializers as ds_serializers
 from ..users import permissions as user_permissions
 from ..utils import serializers as utils_serializers
 from ..utils.permissions import IsAdmin
@@ -12,7 +11,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     permission_classes = (permissions.IsAuthenticated, user_permissions.ProjectAccessPermission)
     queryset = models.Project.objects.none()
     serializer_class_mapping = {
-        "datasources": ds_serializers.DataSourceSerializer,
         "users": serializers.UserSerializer,
     }
 
@@ -31,35 +29,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .prefetch_related("editors", "blocktemplate_set", "page_set")
             .order_by("-created")
         )
-
-    @decorators.action(detail=True, url_path="datasources", methods=["get"])
-    def datasources(self, request, **kwargs):
-        project = self.get_object()
-
-        if "raw_list" in request.query_params:
-            serializer_ = utils_serializers.IDNameSerializer(project.data_sources, many=True)
-            response_ = dict(project=project.project_info, results=serializer_.data)
-            return response.Response(response_, status=status.HTTP_200_OK)
-
-        queryset = (
-            project.data_sources.all()
-            .jobs_in_process()
-            .prefetch_related("filters", "active_job__steps")
-            .select_related("project", "meta_data", "created_by", "active_job")
-            .annotate_filters_count()
-            .available_for_user(user=self.request.user)
-        )
-
-        page = self.paginate_queryset(queryset)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            response_ = self.get_paginated_response(serializer.data)
-            response_.data["project"] = project.project_info
-            return response_
-
-        serializer = self.get_serializer(queryset, many=True)
-        response_data = dict(project=project.project_info, results=serializer.data)
-        return response.Response(response_data)
 
     @decorators.action(detail=True, url_path="users", methods=["get"])
     def users(self, request, **kwargs):
