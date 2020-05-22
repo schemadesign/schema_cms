@@ -17,4 +17,4 @@ class TagFactory(factory.django.DjangoModelFactory):
         model = "tags.Tag"
 
     category = factory.SubFactory(TagCategoryFactory)
-    value = factory.Faker("text", max_nb_chars=25)
+    value = factory.Faker("text", max_nb_chars=150)

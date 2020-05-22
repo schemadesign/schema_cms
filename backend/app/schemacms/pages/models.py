@@ -254,7 +254,7 @@ class PageBlockObservableElement(SoftDeleteObject):
 class PageTag(SoftDeleteObject):
     page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="tags")
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
-    value = models.CharField(max_length=25)
+    value = models.CharField(max_length=150)
 
     def __str__(self):
         return f"{self.id}"

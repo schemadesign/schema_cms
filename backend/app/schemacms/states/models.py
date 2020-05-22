@@ -48,4 +48,4 @@ class InStateFilter(SoftDeleteObject):
 class StateTag(SoftDeleteObject):
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="tags")
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
-    value = models.CharField(max_length=25)
+    value = models.CharField(max_length=150)
