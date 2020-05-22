@@ -64,7 +64,7 @@ class TestStateDetailView:
         response = api_client.patch(self.get_url(state.id), data=payload, format="json")
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["tags"] == list_of_tags_ids
+        assert response.data["tags"] == StateSerializer(state).data["tags"]
 
     def test_update_state_filters(self, api_client, admin, state, filter_):
         payload = {"filters": [{"filter": filter_.id, "values": [123, 1233]}]}
