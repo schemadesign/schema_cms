@@ -18,3 +18,4 @@ export const BLOCK_TEMPLATES_PATH = '/block-templates';
 export const PAGE_TEMPLATES_PATH = '/page-templates';
 export const SECTIONS_PATH = '/sections';
 export const TAGS_PATH = '/tags';
+export const METADATA_PATH = '/metadata';

@@ -17,6 +17,7 @@ import { watchBlockTemplates } from './blockTemplates/blockTemplates.sagas';
 import { watchPageTemplates } from './pageTemplates/pageTemplates.sagas';
 import { watchSections } from './sections/sections.sagas';
 import { watchDataSourceTags } from './dataSourceTags/dataSourceTags.sagas';
+import { watchMetadata } from './metadata/metadata.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -38,6 +39,7 @@ export default function* rootSaga() {
       fork(watchPageTemplates),
       fork(watchSections),
       fork(watchDataSourceTags),
+      fork(watchMetadata),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {
