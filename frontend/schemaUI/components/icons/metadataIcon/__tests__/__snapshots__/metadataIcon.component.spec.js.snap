@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MetadataIcon: Component should render correctly 1`] = `
+<metadata.svg
+  style={
+    Object {
+      "height": "30px",
+      "stroke": "#FFF",
+      "width": "30px",
+    }
+  }
+/>
+`;
+
+exports[`MetadataIcon: Component should render with custom styles 1`] = `
+<metadata.svg
+  style={
+    Object {
+      "fill": "blue",
+      "height": "30px",
+      "stroke": "#FFF",
+      "width": "30px",
+    }
+  }
+/>
+`;

@@ -17,18 +17,20 @@ import {
   TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
 
-const { FieldIcon, FilterIcon, TagIcon, UploadIcon, ResultIcon } = Icons;
-export const listIcons = [
-  { Icon: UploadIcon, page: SOURCE_PAGE, id: 'sourceBtn' },
-  { Icon: FieldIcon, page: PREVIEW_PAGE, id: 'fieldsBtn' },
-  { Icon: ResultIcon, page: STEPS_PAGE, id: 'stepsBtn' },
-  { Icon: ResultIcon, page: RESULT_PAGE, id: 'resultsBtn' },
-  { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn' },
-  { Icon: TagIcon, page: TAGS_PAGE, id: 'tagsBtn' },
-  { Icon: TagIcon, page: STATES_PAGE, id: 'statesBtn' },
-  { Icon: TagIcon, page: METADATA_PAGE, id: 'metaDataBtn' },
+const { FieldIcon, FilterIcon, TagIcon, UploadIcon, ResultIcon, MetadataIcon } = Icons;
+
+const defaultIconSize = { width: 54, height: 54 };
+
+const listIcons = [
+  { Icon: UploadIcon, page: SOURCE_PAGE, id: 'sourceBtn', iconSize: defaultIconSize },
+  { Icon: FieldIcon, page: PREVIEW_PAGE, id: 'fieldsBtn', iconSize: defaultIconSize },
+  { Icon: ResultIcon, page: STEPS_PAGE, id: 'stepsBtn', iconSize: defaultIconSize },
+  { Icon: ResultIcon, page: RESULT_PAGE, id: 'resultsBtn', iconSize: defaultIconSize },
+  { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn', iconSize: defaultIconSize },
+  { Icon: TagIcon, page: TAGS_PAGE, id: 'tagsBtn', iconSize: defaultIconSize },
+  { Icon: TagIcon, page: STATES_PAGE, id: 'statesBtn', iconSize: defaultIconSize },
+  { Icon: MetadataIcon, page: METADATA_PAGE, id: 'metaDataBtn', iconSize: { width: 30, height: 30 } },
 ];
-const iconSize = { width: 54, height: 54 };
 
 export class DataSourceNavigation extends PureComponent {
   static propTypes = {
@@ -62,7 +64,7 @@ export class DataSourceNavigation extends PureComponent {
   goToPage = page => () => this.props.history.push(`/datasource/${this.props.dataSource.id}/${page}`);
 
   renderButtons = ({ dataSource }) =>
-    listIcons.map(({ Icon, page, id }, index) => (
+    listIcons.map(({ Icon, page, id, iconSize }, index) => (
       <ButtonContainer key={index}>
         <Button
           onClick={this.goToPage(page)}
