@@ -19,22 +19,22 @@ def multisort(xs, specs):
 class TestStateCreateListView:
     @staticmethod
     def get_url(pk):
-        return reverse("projects:project-states", kwargs=dict(pk=pk))
+        return reverse("states:state-list", kwargs=dict(datasource_pk=pk))
 
-    def test_response(self, api_client, admin, project, data_source, state_factory):
-        state_factory.create_batch(2, project=project, datasource=data_source)
+    def test_response(self, api_client, admin, data_source, state_factory):
+        state_factory.create_batch(2, datasource=data_source)
 
         api_client.force_authenticate(admin)
-        response = api_client.get(self.get_url(project.id))
+        response = api_client.get(self.get_url(data_source.id))
 
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["results"]) == 2
 
-    def test_create(self, api_client, admin, project, data_source):
-        payload = {"datasource": data_source.id, "name": "testState", "description": "test state description"}
+    def test_create(self, api_client, admin, data_source):
+        payload = {"name": "testState", "description": "test state description"}
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(project.id), data=payload, format="json")
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
 
         assert response.status_code == status.HTTP_201_CREATED
         assert State.objects.filter(pk=response.data["id"]).exists()
@@ -45,8 +45,8 @@ class TestStateDetailView:
     def get_url(pk):
         return reverse("states:state-detail", kwargs=dict(pk=pk))
 
-    def test_response(self, api_client, admin, project, data_source, state_factory):
-        state = state_factory(project=project, datasource=data_source)
+    def test_response(self, api_client, admin, data_source, state_factory):
+        state = state_factory(datasource=data_source)
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(state.id))
@@ -57,14 +57,14 @@ class TestStateDetailView:
     def test_update_state_tags(self, api_client, admin, project, state, tag_factory, tag_category_factory):
         tag_category = tag_category_factory(project=project)
         tags = tag_factory.create_batch(4, category=tag_category)
-        list_of_tags_ids = [tag.id for tag in tags]
-        payload = {"active_tags": list_of_tags_ids}
+        list_of_tags_ids = [{"category": tag.category.id, "value": tag.value} for tag in tags]
+        payload = {"tags": list_of_tags_ids}
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(state.id), data=payload, format="json")
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["active_tags"] == list_of_tags_ids
+        assert response.data["tags"] == list_of_tags_ids
 
     def test_update_state_filters(self, api_client, admin, state, filter_):
         payload = {"filters": [{"filter": filter_.id, "values": [123, 1233]}]}

@@ -2,7 +2,6 @@ from rest_framework import decorators, permissions, response, status, viewsets
 
 from . import models, serializers
 from ..datasources import serializers as ds_serializers
-from ..states import serializers as st_serializers
 from ..users import permissions as user_permissions
 from ..utils import serializers as utils_serializers
 from ..utils.permissions import IsAdmin
@@ -15,7 +14,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     serializer_class_mapping = {
         "datasources": ds_serializers.DataSourceSerializer,
         "users": serializers.UserSerializer,
-        "states": st_serializers.StateSerializer,
     }
 
     def get_queryset(self):
@@ -30,7 +28,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .annotate_templates_count()
             .annotate_pages_count()
             .select_related("owner")
-            .prefetch_related("editors", "states", "blocktemplate_set", "page_set")
+            .prefetch_related("editors", "blocktemplate_set", "page_set")
             .order_by("-created")
         )
 
@@ -111,12 +109,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             return response.Response(
                 "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
             )
-
-    @decorators.action(detail=True, url_path="states", methods=["get", "post"])
-    def states(self, request, **kwargs):
-        return self.generate_action_post_get_response(
-            request, related_objects_name="states", parent_object_name="project"
-        )
 
     @decorators.action(detail=True, url_path="templates", methods=["get"], permission_classes=[IsAdmin])
     def templates(self, request, **kwargs):

@@ -176,6 +176,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="tags", methods=["get", "post", "patch"])
     def tags(self, request, pk=None, **kwargs):
         ds = self.get_object()
+
         if request.method == "GET":
             serializer = self.get_serializer(ds.tags, many=True)
 
