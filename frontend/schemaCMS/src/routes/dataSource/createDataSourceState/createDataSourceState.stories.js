@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { CreateProjectState } from './createProjectState.component';
+import { CreateDataSourceState } from './createDataSourceState.component';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
@@ -17,15 +17,16 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   fetchDataSources: Function.prototype,
   dataSources: [{ name: 'name', id: 'id' }],
+  project: { name: 'name', id: 'id' },
   intl,
   history,
   match: {
     params: {
-      projectId: 'projectId',
+      dataSourceId: 'dataSourceId',
     },
   },
 };
 
 storiesOf('Project|CreateProjectState', module)
   .addDecorator(withTheme())
-  .add('Default', () => <CreateProjectState {...defaultProps} />);
+  .add('Default', () => <CreateDataSourceState {...defaultProps} />);

@@ -12,8 +12,6 @@ import { AddUser } from './addUser';
 import { CreateDataSource } from './createDataSource';
 import { Content } from './content';
 import { NotFound } from '../notFound';
-import { ProjectStateList } from './projectStateList';
-import { CreateProjectState } from './createProjectState';
 import { Templates } from './templates';
 import { BlockTemplates } from './blockTemplates';
 import { CreateBlockTemplate } from './createBlockTemplate';
@@ -65,8 +63,6 @@ export class Project extends PureComponent {
     const dataSourceListPath = `${path}/datasource`;
     const createDataSourcePath = `${dataSourceListPath}/add`;
     const contentPath = `${path}/content`;
-    const stateListPath = `${path}/state`;
-    const stateCreatePath = `${path}/state/create`;
     const templatesPath = `${path}/templates`;
     const blockTemplatesPath = `${path}/block-templates`;
     const createBlockTemplatePath = `${blockTemplatesPath}/create`;
@@ -89,8 +85,6 @@ export class Project extends PureComponent {
               <Route exact path={addUserList} component={AddUser} />
               <Route exact path={userPath} component={UserDetails} />
               <Route exact path={contentPath} component={Content} />
-              <Route exact path={stateListPath} component={ProjectStateList} />
-              <Route exact path={stateCreatePath} component={CreateProjectState} />
               <Route exact path={templatesPath} component={Templates} />
               <Route exact path={blockTemplatesPath} component={BlockTemplates} />
               <Route exact path={createBlockTemplatePath} component={CreateBlockTemplate} />

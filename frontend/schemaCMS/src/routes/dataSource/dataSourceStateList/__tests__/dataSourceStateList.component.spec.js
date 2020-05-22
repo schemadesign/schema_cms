@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ProjectStateList } from '../projectStateList.component';
-import { defaultProps, noStatesProps } from '../projectStateList.stories';
+import { DataSourceStateList } from '../dataSourceStateList.component';
+import { defaultProps, noStatesProps } from '../dataSourceStateList.stories';
 
 describe('ProjectStateList: Component', () => {
-  const component = props => <ProjectStateList {...defaultProps} {...props} />;
+  const component = props => <DataSourceStateList {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
@@ -34,7 +34,7 @@ describe('ProjectStateList: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call fetchTags on componentDidMount', () => {
+  it('should call fetchDataSources on componentDidMount', () => {
     const fetchStates = jest.spyOn(defaultProps, 'fetchStates');
 
     render({

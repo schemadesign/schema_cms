@@ -11,6 +11,7 @@ import {
   PREVIEW_PAGE,
   RESULT_PAGE,
   SOURCE_PAGE,
+  STATES_PAGE,
   STEPS_PAGE,
   TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
@@ -23,6 +24,7 @@ export const listIcons = [
   { Icon: ResultIcon, page: RESULT_PAGE, id: 'resultsBtn' },
   { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn' },
   { Icon: TagIcon, page: TAGS_PAGE, id: 'tagsBtn' },
+  { Icon: TagIcon, page: STATES_PAGE, id: 'statesBtn' },
 ];
 const iconSize = { width: 54, height: 54 };
 

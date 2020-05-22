@@ -56,16 +56,6 @@ exports[`Project: Component should render correctly when loading wrapper content
   <Route
     component={[Function]}
     exact={true}
-    path="/project/state"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/project/state/create"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
     path="/project/templates"
   />
   <Route

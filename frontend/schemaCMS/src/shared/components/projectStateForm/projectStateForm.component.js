@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, pipe, propEq, prop, path, find } from 'ramda';
+import { always } from 'ramda';
 import { Form } from 'schemaUI';
 import dayjs from 'dayjs';
 
 import { Container } from './projectStateForm.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './projectStateForm.messages';
-import { Select } from '../form/select';
+
 import {
-  PROJECT_STATE_DATA_SOURCE,
   PROJECT_STATE_DESCRIPTION,
   PROJECT_STATE_NAME,
   PROJECT_STATE_SOURCE_URL,
@@ -17,7 +16,7 @@ import {
   PROJECT_STATE_CREATED,
   PROJECT_STATE_IS_PUBLIC,
 } from '../../../modules/projectState/projectState.constants';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
+import { renderWhenTrue } from '../../utils/rendering';
 
 const { Switch } = Form;
 
@@ -35,16 +34,6 @@ export class ProjectStateForm extends PureComponent {
     state: {},
   };
 
-  getStatusOptions = () =>
-    this.props.dataSources.map(({ name, id }) => ({
-      value: id,
-      label: name,
-    }));
-
-  handleSelectStatus = ({ value }) => {
-    this.props.setFieldValue(PROJECT_STATE_DATA_SOURCE, value);
-  };
-
   renderInput = (value, name) =>
     renderWhenTrue(
       always(
@@ -60,45 +49,11 @@ export class ProjectStateForm extends PureComponent {
       )
     )(!!value);
 
-  renderSelect = (value, stateValue, name) =>
-    renderWhenTrueOtherwise(
-      always(
-        <TextInput
-          value={pipe(
-            path(['props', 'dataSources']),
-            find(propEq('id', value)),
-            prop('name')
-          )(this)}
-          onChange={this.props.handleChange}
-          name={name}
-          label={this.props.intl.formatMessage(messages[name])}
-          fullWidth
-          disabled
-          {...this.props}
-        />
-      ),
-      always(
-        <Select
-          label={this.props.intl.formatMessage(messages[name])}
-          name={name}
-          value={value}
-          options={this.getStatusOptions()}
-          onSelect={this.handleSelectStatus}
-          placeholder={this.props.intl.formatMessage(messages.dataSourcePlaceholder)}
-        />
-      )
-    )(!!stateValue);
-
   render() {
     const { handleChange, intl, values, state } = this.props;
 
     return (
       <Container>
-        {this.renderSelect(
-          values[PROJECT_STATE_DATA_SOURCE],
-          state[PROJECT_STATE_DATA_SOURCE],
-          PROJECT_STATE_DATA_SOURCE
-        )}
         <TextInput
           value={values[PROJECT_STATE_NAME]}
           onChange={handleChange}

@@ -7,21 +7,23 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
-import { CreateProjectState } from './createProjectState.component';
+import { CreateDataSourceState } from './createDataSourceState.component';
 import { selectUserRole } from '../../../modules/userProfile';
 import { DataSourceRoutines, selectDataSources } from '../../../modules/dataSource';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
-import messages from './createProjectState.messages';
+import messages from './createDataSourceState.messages';
 import {
   CREATE_PROJECT_STATE_FORM,
   INITIAL_VALUES,
   PROJECT_STATE_SCHEMA,
 } from '../../../modules/projectState/projectState.constants';
 import { ProjectStateRoutines } from '../../../modules/projectState';
+import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   dataSources: selectDataSources,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -63,4 +65,4 @@ export default compose(
       }
     },
   })
-)(CreateProjectState);
+)(CreateDataSourceState);

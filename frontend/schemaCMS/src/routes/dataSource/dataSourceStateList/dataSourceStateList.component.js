@@ -4,35 +4,34 @@ import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Typography } from 'schemaUI';
 
-import { Container } from './projectStateList.styles';
-import messages from './projectStateList.messages';
-import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { Container, PlusButtonWrapper } from './dataSourceStateList.styles';
+import messages from './dataSourceStateList.messages';
+import { getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getProjectMenuOptions, PROJECT_STATE_ID } from '../project.constants';
-import { ProjectTabs } from '../../../shared/components/projectTabs';
-import { STATES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { Description, descriptionStyles, HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
+import { Description, descriptionStyles, HeaderItem, HeaderList, titleStyles } from '../../project/list/list.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
+import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 
 const { P } = Typography;
 
-export class ProjectStateList extends PureComponent {
+export class DataSourceStateList extends PureComponent {
   static propTypes = {
     userRole: PropTypes.string.isRequired,
     states: PropTypes.array.isRequired,
     fetchStates: PropTypes.func.isRequired,
+    project: PropTypes.object.isRequired,
+    dataSource: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }),
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
+        dataSourceId: PropTypes.string.isRequired,
       }),
     }),
   };
@@ -44,7 +43,7 @@ export class ProjectStateList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = getMatchParam(this.props, 'projectId');
+      const projectId = this.props.project.id;
 
       await this.props.fetchStates({ projectId });
 
@@ -55,8 +54,9 @@ export class ProjectStateList extends PureComponent {
     }
   }
 
-  handleCreateState = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/state/create`);
-  handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
+  handleCreateState = () =>
+    this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/state/create`);
+  handleShowState = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}`);
   handleShowState = id => this.props.history.push(`/state/${id}`);
 
   renderHeader = (list = []) => (
@@ -88,27 +88,21 @@ export class ProjectStateList extends PureComponent {
   renderList = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   render() {
-    const { states, userRole, match } = this.props;
+    const { states, dataSource, match, history } = this.props;
     const { loading, error } = this.state;
-    const projectId = getMatchParam(this.props, 'projectId');
-    const menuOptions = getProjectMenuOptions(projectId);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <MobileMenu
-          headerTitle={<FormattedMessage {...messages.title} />}
-          headerSubtitle={<FormattedMessage {...messages.subTitle} />}
-          options={filterMenuOptions(menuOptions, userRole)}
-          active={PROJECT_STATE_ID}
-        />
-        <ProjectTabs active={STATES} url={`/project/${match.params.projectId}`} />
         <ContextHeader
           title={<FormattedMessage {...messages.title} />}
           subtitle={<FormattedMessage {...messages.subTitle} />}
         >
-          <PlusButton id="createStateDesktopBtn" onClick={this.handleCreateState} />
+          <DataSourceNavigation history={history} match={match} dataSource={dataSource} />
         </ContextHeader>
+        <PlusButtonWrapper>
+          <PlusButton id="createStateDesktopBtn" onClick={this.handleCreateState} />
+        </PlusButtonWrapper>
         <LoadingWrapper
           loading={loading}
           error={error}
@@ -118,7 +112,7 @@ export class ProjectStateList extends PureComponent {
           {this.renderList(states)}
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
-          <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
+          <BackArrowButton id="backBtn" onClick={this.handleShowState} />
           <PlusButton id="createStateBtn" onClick={this.handleCreateState} />
         </NavigationContainer>
       </Container>

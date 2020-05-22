@@ -3,15 +3,15 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'project.projectStateList.title',
+    id: 'datasource.dataSourceStateList.title',
     defaultMessage: 'States',
   },
   subTitle: {
-    id: 'project.projectStateList.subTitle',
+    id: 'datasource.dataSourceStateList.subTitle',
     defaultMessage: 'Overview',
   },
   noData: {
-    id: 'project.projectStateList.noData',
+    id: 'datasource.dataSourceStateList.noData',
     defaultMessage: 'No States',
   },
 });

@@ -24,12 +24,16 @@ import {
   RESULT_PAGE,
   STEPS_PAGE,
   TAGS_PAGE,
+  STATES_PAGE,
 } from '../../modules/dataSource/dataSource.constants';
+import { DataSourceStateList } from './dataSourceStateList';
+import { CreateDataSourceState } from './createDataSourceState';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
+    fetchProject: PropTypes.func.isRequired,
     match: PropTypes.shape({
       path: PropTypes.string.isRequired,
       params: PropTypes.shape({
@@ -48,6 +52,7 @@ export default class DataSource extends PureComponent {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
       await this.props.fetchDataSource({ dataSourceId });
+      await this.props.fetchProject({ projectId: this.props.dataSource.project.id });
     } catch (error) {
       reportError(error);
       this.setState({ error });
@@ -67,6 +72,8 @@ export default class DataSource extends PureComponent {
           <Route exact path={`${path}/${FILTERS_PAGE}`} component={Filters} />
           <Route exact path={`${path}/${RESULT_PAGE}`} component={DataWranglingResult} />
           <Route exact path={`${path}/${TAGS_PAGE}`} component={DataSourceTags} />
+          <Route exact path={`${path}/${STATES_PAGE}/create`} component={CreateDataSourceState} />
+          <Route exact path={`${path}/${STATES_PAGE}`} component={DataSourceStateList} />
           <Route exact path={`${path}/*`} component={NotFound} />
         </Switch>
       )

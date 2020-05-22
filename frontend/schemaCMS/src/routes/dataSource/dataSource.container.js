@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 
 import DataSource from './dataSource.component';
 import { DataSourceRoutines, selectDataSource } from '../../modules/dataSource';
+import { ProjectRoutines } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
@@ -17,6 +18,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
+      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
     },
     dispatch
   ),

@@ -6,13 +6,17 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
-import { ProjectStateList } from './projectStateList.component';
+import { DataSourceStateList } from './dataSourceStateList.component';
 import { ProjectStateRoutines, selectStates } from '../../../modules/projectState';
 import { selectUserRole } from '../../../modules/userProfile';
+import { selectProject } from '../../../modules/project';
+import { selectDataSource } from '../../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   states: selectStates,
+  project: selectProject,
+  dataSource: selectDataSource,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -32,4 +36,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(ProjectStateList);
+)(DataSourceStateList);

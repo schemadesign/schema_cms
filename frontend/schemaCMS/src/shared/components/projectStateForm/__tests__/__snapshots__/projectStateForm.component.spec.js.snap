@@ -2,20 +2,6 @@
 
 exports[`ProjectStateForm: Component should render correctly 1`] = `
 <styled.div>
-  <Memo()
-    label="Dataset"
-    name="datasource"
-    onSelect={[Function]}
-    options={
-      Array [
-        Object {
-          "label": "name",
-          "value": "id",
-        },
-      ]
-    }
-    placeholder="Select a dataset"
-  />
   <TextInput
     autoWidth={false}
     checkOnlyErrors={false}

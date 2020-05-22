@@ -6,10 +6,10 @@ import { Stepper } from 'schemaUI';
 
 import { LinkContainer } from './edit.styles';
 import messages from './edit.messages';
+import { contentStyles, NavigationButtons } from '../../../shared/components/navigationStyles';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
-import { contentStyles, NavigationButtons } from '../../project/createProjectState/createProjectState.styles';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';

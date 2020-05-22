@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CreateProjectState } from '../createProjectState.component';
-import { defaultProps } from '../createProjectState.stories';
+import { CreateDataSourceState } from '../createDataSourceState.component';
+import { defaultProps } from '../createDataSourceState.stories';
 
 describe('CreateProjectState: Component', () => {
-  const component = props => <CreateProjectState {...defaultProps} {...props} />;
+  const component = props => <CreateDataSourceState {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

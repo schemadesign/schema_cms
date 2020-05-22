@@ -1,13 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ProjectStateList } from './projectStateList.component';
+import { DataSourceStateList } from './dataSourceStateList.component';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   userRole: ROLES.ADMIN,
+  project: { name: 'name', id: '1' },
+  dataSource: { name: 'name', id: '1' },
   states: [
     {
       name: 'name 1',
@@ -25,8 +27,9 @@ export const defaultProps = {
   history,
   match: {
     params: {
-      projectId: '1',
+      dataSourceId: '1',
     },
+    url: '/',
   },
 };
 
@@ -37,5 +40,5 @@ export const noStatesProps = {
 
 storiesOf('ProjectStateList', module)
   .addDecorator(withTheme())
-  .add('Default', () => <ProjectStateList {...defaultProps} />)
-  .add('No states', () => <ProjectStateList {...noStatesProps} />);
+  .add('Default', () => <DataSourceStateList {...defaultProps} />)
+  .add('No states', () => <DataSourceStateList {...noStatesProps} />);
