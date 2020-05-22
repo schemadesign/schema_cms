@@ -280,7 +280,7 @@ class TestProjectDataSourcesView:
 
     @staticmethod
     def get_url(pk):
-        return reverse("projects:project-datasources", kwargs=dict(pk=pk))
+        return reverse("datasources:datasource-list", kwargs=dict(project_pk=pk))
 
     @staticmethod
     def sort_data_sources(data_sources):

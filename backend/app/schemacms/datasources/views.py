@@ -2,12 +2,15 @@ import json
 import os
 
 from django.db import transaction
+from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
 from . import constants, models, serializers
+from .permissions import DataSourceListPermission
 from ..authorization import authentication
-from ..utils import serializers as utils_serializers
+from ..utils.serializers import ActionSerializerViewSetMixin, IDNameSerializer
+from ..projects.models import Project
 
 
 def copy_steps_from_active_job(steps, job):
@@ -17,12 +20,58 @@ def copy_steps_from_active_job(steps, job):
         step.save()
 
 
-class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
+class BaseDataSourceView:
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.prefetch_related(
-        "tags", "filters", "active_job__steps"
-    ).select_related("project", "meta_data", "created_by", "active_job")
+    queryset = (
+        models.DataSource.objects.prefetch_related(
+            "tags",
+            "filters",
+            Prefetch("active_job__steps", queryset=models.DataSourceJobStep.objects.order_by("exec_order")),
+        )
+        .select_related("project", "meta_data", "created_by", "active_job")
+        .jobs_in_process()
+    )
+
     permission_classes = (permissions.IsAuthenticated,)
+
+
+class DataSourceListView(BaseDataSourceView, mixins.ListModelMixin, viewsets.GenericViewSet):
+    permission_classes = (permissions.IsAuthenticated, DataSourceListPermission)
+
+    def initial(self, request, *args, **kwargs):
+        super().initial(request, *args, **kwargs)
+        self.project_obj = self.get_project_object(kwargs["project_pk"])
+
+    def get_queryset(self):
+        return super().get_queryset().filter(project=self.project_obj)
+
+    @staticmethod
+    def get_project_object(project_pk):
+        return get_object_or_404(Project, pk=project_pk)
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+        if "raw_list" in request.query_params:
+            serializer_ = IDNameSerializer(self.project_obj.data_sources, many=True)
+            response_ = dict(project=self.project_obj.project_info, results=serializer_.data)
+            return response.Response(response_, status=status.HTTP_200_OK)
+
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            response_ = self.get_paginated_response(serializer.data)
+            response_.data["project"] = self.project_obj.project_info
+            return response_
+
+        serializer = self.get_serializer(queryset, many=True)
+        data = {"project": self.project_obj.project_info, "results": serializer.data}
+
+        return response.Response(data)
+
+
+class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class_mapping = {
         "retrieve": serializers.DataSourceDetailSerializer,
         "update": serializers.DataSourceDetailSerializer,
@@ -38,13 +87,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     }
 
     def get_queryset(self):
-        return (
-            super()
-            .get_queryset()
-            .annotate_filters_count()
-            .jobs_in_process()
-            .available_for_user(user=self.request.user)
-        )
+        return super().get_queryset().annotate_filters_count().available_for_user(user=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
@@ -240,10 +283,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
 
 class DataSourceJobDetailViewSet(
-    utils_serializers.ActionSerializerViewSetMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet,
+    ActionSerializerViewSetMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet,
 ):
     queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.JobDetailSerializer

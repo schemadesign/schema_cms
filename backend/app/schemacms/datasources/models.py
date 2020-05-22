@@ -2,13 +2,13 @@ import json
 import os
 
 import django.core.files.base
-import softdelete.models
+from softdelete.models import SoftDeleteObject
 from django.conf import settings
 from django.contrib.postgres import fields as pg_fields
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
 from django.utils import functional
-from django_extensions.db import models as ext_models
+from django_extensions.db.models import TimeStampedModel
 
 from . import constants, managers, fsm
 from ..utils import services
@@ -29,7 +29,9 @@ class MetaDataModel(models.Model):
     def data(self):
         if not self.preview:
             return {}
+
         self.preview.seek(0)
+
         return json.loads(self.preview.read())
 
     @property
@@ -37,7 +39,7 @@ class MetaDataModel(models.Model):
         return [self.items, self.fields]
 
 
-class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="data_sources")
@@ -99,12 +101,7 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
         )
 
     @property
-    def current_job(self):
-        if self.active_job_id:
-            return self.active_job
-
-    @property
-    def get_last_job(self):
+    def last_job(self):
         try:
             return self.jobs.latest("created")
         except DataSourceJob.DoesNotExist:
@@ -175,7 +172,7 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
 
     def result_fields_info(self):
         try:
-            preview = self.current_job.meta_data.preview
+            preview = self.active_job.meta_data.preview
             fields = json.loads(preview.read())["fields"]
         except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError, OSError):
             return []
@@ -213,14 +210,12 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
             "tags": [],
         }
 
-        current_job = self.current_job
-
-        if current_job:
-            job_meta = getattr(current_job, "meta_data", None)
+        if self.active_job:
+            job_meta = getattr(self.active_job, "meta_data", None)
             data.update(
                 {
                     "shape": job_meta.shape if job_meta else [],
-                    "result": current_job.result.name or None,
+                    "result": self.active_job.result.name or None,
                     "fields": self.result_fields_info(),
                 }
             )
@@ -231,7 +226,7 @@ class DataSource(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_mod
         return data
 
 
-class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
+class DataSourceMeta(SoftDeleteObject, MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
     status = models.CharField(
         max_length=25, choices=constants.PROCESSING_STATE_CHOICES, default=constants.ProcessingState.PENDING
@@ -247,7 +242,7 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
 
-class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class WranglingScript(SoftDeleteObject, TimeStampedModel):
     datasource = models.ForeignKey(
         DataSource, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True
     )
@@ -284,9 +279,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         return data
 
 
-class DataSourceJob(
-    MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM
-):
+class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="jobs")
     description = models.TextField(blank=True)
     source_file_path = models.CharField(max_length=255, editable=False)
@@ -367,7 +360,7 @@ class DataSourceJob(
         return MetaDataModel.schedule_update_meta(obj=self)
 
 
-class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
+class DataSourceJobMetaData(SoftDeleteObject, MetaDataModel):
     job: DataSourceJob = models.OneToOneField(
         DataSourceJob, on_delete=models.CASCADE, related_name="meta_data"
     )
@@ -381,7 +374,7 @@ class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
         return os.path.join(base_path, f"{self.job.datasource.id}/previews/{filename}")
 
 
-class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
+class DataSourceJobStep(SoftDeleteObject, models.Model):
     datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name="steps")
     script = models.ForeignKey(WranglingScript, on_delete=models.SET_NULL, related_name="steps", null=True)
     body = models.TextField(blank=True)
@@ -399,7 +392,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
         return data
 
 
-class Filter(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="filters")
     name = models.CharField(max_length=25)
     filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())
@@ -439,7 +432,7 @@ class Filter(MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.
         return data
 
 
-class DataSourceTag(softdelete.models.SoftDeleteObject):
+class DataSourceTag(SoftDeleteObject):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="tags")
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
     value = models.CharField(max_length=150)

@@ -50,7 +50,7 @@ class TestCreateDataSourceView:
             "schemacms.datasources.models.DataSource.schedule_update_meta"
         )
 
-        response = api_client.post(self.get_url(), payload, format="multipart")
+        response = api_client.post(self.get_url(), payload, format="json")
 
         assert response.status_code == status.HTTP_201_CREATED
         schedule_update_meta_mock.assert_not_called()

@@ -62,7 +62,7 @@ class ActiveJobSerializer(serializers.ModelSerializer):
     def get_scripts(self, obj):
         return [
             {"id": step.script_id, "options": step.options, "exec_order": step.exec_order}
-            for step in obj.steps.all().order_by("exec_order")
+            for step in obj.steps.all()
         ]
 
 
@@ -142,7 +142,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             return file_name
 
     def get_jobs_state(self, obj):
-        last_job = obj.get_last_job
+        last_job = obj.last_job
 
         jobs_state = {
             "any_job_in_process": obj.jos_in_process if hasattr(obj, "jos_in_process") else False,
