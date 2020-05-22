@@ -7,7 +7,7 @@ from rest_framework import decorators, viewsets, response, mixins, renderers
 
 from . import serializers, records_reader
 from ..datasources.models import DataSource, Filter
-from ..pages.models import Section, Page, PageBlock, PageBlockElement
+from ..pages.models import Section, Page, PageBlock, PageBlockElement, CustomElementSet
 from ..projects.models import Project
 from ..utils.serializers import ActionSerializerViewSetMixin
 
@@ -101,7 +101,26 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     queryset = (
         Page.objects.filter(is_public=True)
         .select_related("created_by")
-        .prefetch_related("tags", "blocks")
+        .prefetch_related(
+            "tags",
+            Prefetch(
+                "pageblock_set",
+                queryset=PageBlock.objects.prefetch_related(
+                    Prefetch(
+                        "elements",
+                        queryset=PageBlockElement.objects.order_by("order").exclude(
+                            custom_element_set__isnull=False
+                        ),
+                    )
+                ).order_by("order"),
+            ),
+            Prefetch(
+                "pageblock_set__elements__elements_sets",
+                queryset=CustomElementSet.objects.prefetch_related(
+                    Prefetch("elements", queryset=PageBlockElement.objects.order_by("order"))
+                ).order_by("order"),
+            ),
+        )
         .order_by("created")
     )
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
