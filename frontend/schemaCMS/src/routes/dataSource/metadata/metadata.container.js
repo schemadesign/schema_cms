@@ -9,6 +9,7 @@ import { Metadata } from './metadata.component';
 import { selectDataSource } from '../../../modules/dataSource';
 import { selectUserRole } from '../../../modules/userProfile';
 import { selectProject } from '../../../modules/project';
+import { MetadataRoutines } from '../../../modules/metadata';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
@@ -17,7 +18,13 @@ const mapStateToProps = createStructuredSelector({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  ...bindPromiseCreators({}, dispatch),
+  ...bindPromiseCreators(
+    {
+      fetchMetadata: promisifyRoutine(MetadataRoutines.fetchMetadata),
+      updateMetadata: promisifyRoutine(MetadataRoutines.updateMetadata),
+    },
+    dispatch
+  ),
 });
 
 export default compose(
