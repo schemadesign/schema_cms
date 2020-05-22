@@ -8,6 +8,7 @@ import { Container, Button, ButtonContainer, PageTitle } from './dataSourceNavig
 import messages from './dataSourceNavigation.messages';
 import {
   FILTERS_PAGE,
+  METADATA_PAGE,
   PREVIEW_PAGE,
   RESULT_PAGE,
   SOURCE_PAGE,
@@ -25,6 +26,7 @@ export const listIcons = [
   { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn' },
   { Icon: TagIcon, page: TAGS_PAGE, id: 'tagsBtn' },
   { Icon: TagIcon, page: STATES_PAGE, id: 'statesBtn' },
+  { Icon: TagIcon, page: METADATA_PAGE, id: 'metaDataBtn' },
 ];
 const iconSize = { width: 54, height: 54 };
 

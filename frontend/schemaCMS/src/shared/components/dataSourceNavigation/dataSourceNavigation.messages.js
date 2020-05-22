@@ -2,6 +2,7 @@
 import { defineMessages } from 'react-intl';
 import {
   FILTERS_PAGE,
+  METADATA_PAGE,
   PREVIEW_PAGE,
   RESULT_PAGE,
   SOURCE_PAGE,
@@ -34,6 +35,10 @@ export default defineMessages({
   [FILTERS_PAGE]: {
     id: `shared.components.dataSourceNavigation.${FILTERS_PAGE}`,
     defaultMessage: 'Filters',
+  },
+  [METADATA_PAGE]: {
+    id: `shared.components.dataSourceNavigation.${METADATA_PAGE}`,
+    defaultMessage: 'Metadata',
   },
   [STATES_PAGE]: {
     id: `shared.components.dataSourceNavigation.${STATES_PAGE}`,

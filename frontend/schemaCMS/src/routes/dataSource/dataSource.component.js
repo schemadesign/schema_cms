@@ -20,12 +20,14 @@ import reportError from '../../shared/utils/reportError';
 import { NotFound } from '../notFound';
 import {
   FILTERS_PAGE,
+  METADATA_PAGE,
   PREVIEW_PAGE,
   RESULT_PAGE,
   STEPS_PAGE,
   TAGS_PAGE,
   STATES_PAGE,
 } from '../../modules/dataSource/dataSource.constants';
+import { Metadata } from './metadata';
 import { DataSourceStateList } from './dataSourceStateList';
 import { CreateDataSourceState } from './createDataSourceState';
 
@@ -72,6 +74,7 @@ export default class DataSource extends PureComponent {
           <Route exact path={`${path}/${FILTERS_PAGE}`} component={Filters} />
           <Route exact path={`${path}/${RESULT_PAGE}`} component={DataWranglingResult} />
           <Route exact path={`${path}/${TAGS_PAGE}`} component={DataSourceTags} />
+          <Route exact path={`${path}/${METADATA_PAGE}`} component={Metadata} />
           <Route exact path={`${path}/${STATES_PAGE}/create`} component={CreateDataSourceState} />
           <Route exact path={`${path}/${STATES_PAGE}`} component={DataSourceStateList} />
           <Route exact path={`${path}/*`} component={NotFound} />
