@@ -54,7 +54,7 @@ class Project(
 
     @functional.cached_property
     def states_count(self):
-        return self.states.count()
+        return self.data_sources.aggregate(sates_count=models.Count("states"))["sates_count"]
 
     @functional.cached_property
     def pages_count(self):

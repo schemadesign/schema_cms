@@ -17,42 +17,40 @@ class InStateFilterSerializer(serializers.ModelSerializer):
         return filter_.condition["values"]
 
 
+class StateTagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.StateTag
+        fields = ("category", "value")
+
+
 class StateSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField(read_only=True)
-    active_tags = serializers.ListField(required=False, allow_empty=True)
     filters = serializers.SerializerMethodField(read_only=True)
+    tags = StateTagSerializer(read_only=True, many=True)
 
     class Meta:
         model = models.State
         fields = (
             "id",
             "name",
-            "project",
             "datasource",
             "description",
             "source_url",
             "author",
             "is_public",
             "created",
-            "active_tags",
+            "tags",
             "filters",
         )
-        extra_kwargs = {"project": {"required": False, "allow_null": True}}
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.State.objects.all(),
-                fields=("project", "name"),
+                fields=("name", "datasource"),
                 key_field_name="name",
                 code="stateNameNotUnique",
-                message="State with this name already exist in project.",
+                message="State with this name already exist in data source.",
             )
         ]
-
-    def create(self, validated_data):
-        state = models.State(author=self.context["request"].user, **validated_data)
-        state.save()
-
-        return state
 
     def update(self, instance, validated_data):
         with transaction.atomic():
@@ -71,7 +69,15 @@ class StateSerializer(serializers.ModelSerializer):
                             "condition": {"values": filter_["values"]},
                         },
                     )
+
         return instance
+
+    @transaction.atomic()
+    def save(self, *args, **kwargs):
+        obj = super().save(*args, **kwargs)
+        obj.add_tags(self.initial_data.get("tags", []))
+
+        return obj
 
     def get_author(self, state):
         return state.author.get_full_name()

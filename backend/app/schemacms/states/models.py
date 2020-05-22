@@ -6,10 +6,9 @@ from django_extensions.db.models import TimeStampedModel
 
 
 class State(SoftDeleteObject, TimeStampedModel):
-    project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="states")
     name = models.CharField(max_length=50)
     datasource = models.ForeignKey(
-        "datasources.DataSource", on_delete=models.SET_NULL, related_name="states", null=True
+        "datasources.DataSource", on_delete=models.CASCADE, related_name="states", null=True
     )
     description = models.TextField(blank=True, default="")
     source_url = models.TextField(blank=True, default="")
@@ -17,7 +16,6 @@ class State(SoftDeleteObject, TimeStampedModel):
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True
     )
     is_public = models.BooleanField(default=True)
-    active_tags = pg_fields.ArrayField(models.IntegerField(), null=True, default=list)
     filters = models.ManyToManyField("datasources.Filter", through="InStateFilter")
 
     def __str__(self):
@@ -26,10 +24,16 @@ class State(SoftDeleteObject, TimeStampedModel):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["project", "name"], name="unique_state_name", condition=models.Q(deleted_at=None)
+                fields=["name", "datasource"], name="unique_state_name", condition=models.Q(deleted_at=None)
             )
         ]
         ordering = ("created",)
+
+    def add_tags(self, tags_list):
+        self.tags.all().delete()
+
+        for tag in tags_list:
+            StateTag.objects.create(state=self, category_id=tag["category"], value=tag["value"])
 
 
 class InStateFilter(SoftDeleteObject):
@@ -39,3 +43,9 @@ class InStateFilter(SoftDeleteObject):
     field = models.TextField()
     field_type = models.CharField(max_length=25)
     condition = pg_fields.JSONField(blank=True, default=dict)
+
+
+class StateTag(SoftDeleteObject):
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="tags")
+    category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
+    value = models.CharField(max_length=150)

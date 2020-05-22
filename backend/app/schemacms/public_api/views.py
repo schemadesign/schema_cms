@@ -20,7 +20,7 @@ class PAProjectView(
     permission_classes = ()
     serializer_class_mapping = {
         "datasources": serializers.PADataSourceListSerializer,
-        "pages": serializers.PAPageSerializer,
+        "pages": serializers.PAPageDetailSerializer,
     }
     queryset = (
         Project.objects.select_related("owner",)
