@@ -642,6 +642,50 @@ exports[`Metadata: Component should render correctly 1`] = `
             onClick={[Function]}
           >
             <svg
+              id="statesBtn"
+              style={
+                Object {
+                  "height": 54,
+                  "stroke": "#FFF",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+                strokeWidth={1.8}
+                transform="rotate(-45 47.142 -.314)"
+              >
+                <path
+                  d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                />
+                <rect
+                  height={6.3}
+                  rx={3.15}
+                  width={6.3}
+                  x={17.1}
+                  y={5.4}
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            States
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
               id="metaDataBtn"
               style={
                 Object {

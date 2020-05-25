@@ -171,6 +171,32 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
       <Component
         customStyles={
           Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+        id="statesBtn"
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="States"
+        id="shared.components.dataSourceNavigation.state"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="7"
+  >
+    <styled.div
+      active={false}
+      disabled={true}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
             "height": 30,
             "width": 30,
           }
@@ -360,6 +386,32 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
       <Component
         customStyles={
           Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+        id="statesBtn"
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="States"
+        id="shared.components.dataSourceNavigation.state"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="7"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
             "height": 30,
             "width": 30,
           }
@@ -540,6 +592,32 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
   </styled.div>
   <styled.div
     key="6"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+        id="statesBtn"
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="States"
+        id="shared.components.dataSourceNavigation.state"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="7"
   >
     <styled.div
       active={false}
