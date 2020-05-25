@@ -1,0 +1,1652 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Metadata: Component should render correctly 1`] = `
+<div
+  className="sc-AxjAm StDqN"
+>
+  <div
+    className="sc-AxgMl kEUmFl"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-AxheI fniENP"
+        >
+          <h2
+            className="sc-fznyAO dFXsby"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          />
+          <h1
+            className="sc-fznKkj hlIEaX"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Metadata
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-Axmtr TeFyE"
+      >
+        <div
+          className="sc-AxheI fniENP"
+        >
+          <h2
+            className="sc-fznyAO dFXsby"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          />
+          <h1
+            className="sc-fznKkj hlIEaX"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Metadata
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-AxmLO hdWmnu"
+      >
+        <div
+          className="sc-fzozJi cXstQc"
+        >
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              States
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzozJi cXstQc"
+        >
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzoLsD kppjAR"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzpans cCWWfw"
+        >
+          <a
+            className="sc-fzplWN jUkJod"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fzplWN jUkJod"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fzplWN jUkJod"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-fznWqX VKSem"
+  >
+    <div
+      className="sc-fzoiQi kVjVJJ"
+    >
+      <h2
+        className="sc-fzqARJ euGmLc"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      />
+      <h1
+        className="sc-fzqNqU cSnCDr"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Metadata
+      </h1>
+    </div>
+    <div
+      className="sc-fzoyTs crHzLr"
+    >
+      <div
+        className="sc-fzoNJl egvngF"
+      >
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              id="sourceBtn"
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+              />
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            Source
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              id="fieldsBtn"
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            Fields
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              fill="#fff"
+              id="stepsBtn"
+              stroke="#000"
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "stroke": "#1d1d20",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <g
+                fillRule="evenodd"
+              >
+                <path
+                  d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                  stroke="none"
+                />
+                <circle
+                  cx={43}
+                  cy={40}
+                  fill="none"
+                  r={5}
+                  strokeWidth={10}
+                />
+                <path
+                  d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                  stroke="none"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            Steps
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              fill="#fff"
+              id="resultsBtn"
+              stroke="#000"
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 54,
+                  "stroke": "#1d1d20",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <g
+                fillRule="evenodd"
+              >
+                <path
+                  d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                  stroke="none"
+                />
+                <circle
+                  cx={43}
+                  cy={40}
+                  fill="none"
+                  r={5}
+                  strokeWidth={10}
+                />
+                <path
+                  d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                  stroke="none"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            Results
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              id="filtersBtn"
+              stroke="#FFF"
+              style={
+                Object {
+                  "height": 54,
+                  "stroke": "#FFF",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+                fill="none"
+                strokeWidth={2}
+              />
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            Filters
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              id="tagsBtn"
+              style={
+                Object {
+                  "height": 54,
+                  "stroke": "#FFF",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+                strokeWidth={1.8}
+                transform="rotate(-45 47.142 -.314)"
+              >
+                <path
+                  d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                />
+                <rect
+                  height={6.3}
+                  rx={3.15}
+                  width={6.3}
+                  x={17.1}
+                  y={5.4}
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            Tags
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              id="statesBtn"
+              style={
+                Object {
+                  "height": 54,
+                  "stroke": "#FFF",
+                  "width": 54,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <g
+                fill="none"
+                fillRule="evenodd"
+                strokeWidth={1.8}
+                transform="rotate(-45 47.142 -.314)"
+              >
+                <path
+                  d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                />
+                <rect
+                  height={6.3}
+                  rx={3.15}
+                  width={6.3}
+                  x={17.1}
+                  y={5.4}
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            States
+          </div>
+        </div>
+        <div
+          className="sc-fzpmMD cmtuwT"
+        >
+          <div
+            className="sc-fzoXWK eLnYpn"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              id="metaDataBtn"
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+              viewBox="0 0 1000 1000"
+            >
+              <path
+                d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
+              />
+            </svg>
+          </div>
+          <div
+            className="sc-fznxKY cGOlqx"
+          >
+            Metadata
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzqBkg gAWJZo"
+  >
+    <div
+      className="sc-fzqPZZ etcPdO"
+    />
+    3 Metadata
+    <div
+      className="sc-fzqPZZ etcPdO"
+    >
+      <div
+        className="sc-fzoydu kHbxnB"
+      >
+        <div
+          className="sc-fznJRM hUAWpU"
+        >
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form
+    className="sc-AxirZ ktnnZK"
+  >
+    <div
+      style={
+        Object {
+          "borderTop": "2px solid #FFF",
+          "overflow": "inherit",
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#000",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "minHeight": 60,
+            "paddingRight": 40,
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="sc-AxiKw hPkolu"
+        >
+          <div
+            className="sc-fznAgC fNREqd"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "position": "relative",
+                }
+              }
+            >
+              <input
+                id="metadata.0.key"
+                name="metadata.0.key"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Name"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                    "width": 80,
+                  }
+                }
+                type="text"
+                value="name 1"
+              />
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "opacity": 0,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "fixed",
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                name 1
+              </div>
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 2,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-AxhCb rOoA"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+            <svg
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "fill": "#FFF",
+                  "height": 16,
+                  "margin": "-3px 0 0 5px",
+                  "width": 16,
+                }
+              }
+              viewBox="-47 0 512 512"
+            >
+              <path
+                d="M416.875 114.441L405.57 80.555a31.527 31.527 0 00-29.941-21.578h-95.012V28.043C280.617 12.582 268.047 0 252.59 0h-87.008c-15.453 0-28.027 12.582-28.027 28.043v30.934H42.547a31.528 31.528 0 00-29.945 21.578L1.297 114.44a25.426 25.426 0 003.484 22.856 25.427 25.427 0 0020.578 10.539h11.817L63.184 469.44C65.117 493.305 85.367 512 109.293 512h204.863c23.922 0 44.176-18.695 46.106-42.563l26.008-321.601h6.543A25.434 25.434 0 00413.39 137.3a25.434 25.434 0 003.484-22.86zM167.555 30h83.062v28.977h-83.062zm162.804 437.02c-.68 8.402-7.796 14.98-16.203 14.98H109.293c-8.406 0-15.523-6.578-16.203-14.98L67.273 147.836h288.899zM31.793 117.836l9.27-27.79c.21-.64.808-1.07 1.484-1.07h333.082c.676 0 1.27.43 1.484 1.07l9.27 27.79zm0 0"
+              />
+              <path
+                d="M282.516 465.957c.265.016.527.02.793.02 7.925 0 14.55-6.211 14.964-14.22L312.36 181.36c.43-8.273-5.93-15.332-14.199-15.761-8.293-.442-15.328 5.925-15.762 14.199l-14.082 270.398c-.43 8.274 5.926 15.332 14.2 15.762zm0 0M120.566 451.793c.438 7.996 7.055 14.184 14.965 14.184.274 0 .555-.008.832-.024 8.27-.45 14.61-7.52 14.16-15.793L135.77 179.762c-.45-8.274-7.52-14.614-15.793-14.16-8.27.449-14.61 7.52-14.16 15.793zm0 0M209.254 465.977c8.285 0 15-6.715 15-15V180.578c0-8.285-6.715-15-15-15s-15 6.715-15 15v270.399c0 8.285 6.715 15 15 15zm0 0"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fontSize": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 9,
+              "transform": "rotate(180deg)",
+              "transformOrigin": "center center",
+              "transition": "transform 200ms ease-in-out",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "userSelect": "none",
+                "width": 40,
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "height": "auto",
+            "transition": "height 200ms linear, overflow 0s linear 200ms",
+          }
+        }
+      >
+        <div>
+          <div
+            className="sc-AxhUy kYXQlU"
+          >
+            <div
+              className="sc-fznAgC lpuPHD"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": "2px",
+                    "position": "relative",
+                  }
+                }
+              >
+                <textarea
+                  id="metadata.0.value"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "padding": "10px 30px 10px 20px",
+                      "resize": "none",
+                    }
+                  }
+                  value="value 1"
+                />
+                <textarea
+                  aria-hidden={true}
+                  readOnly={true}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "left": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "overflow": "hidden",
+                      "padding": "10px 30px 10px 20px",
+                      "position": "absolute",
+                      "resize": "none",
+                      "top": 0,
+                      "visibility": "hidden",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": -30,
+                      "top": -40,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "position": "absolute",
+                  "right": 5,
+                  "top": 5,
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "borderTop": "2px solid #FFF",
+          "overflow": "inherit",
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#000",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "minHeight": 60,
+            "paddingRight": 40,
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="sc-AxiKw hPkolu"
+        >
+          <div
+            className="sc-fznAgC fNREqd"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "position": "relative",
+                }
+              }
+            >
+              <input
+                id="metadata.1.key"
+                name="metadata.1.key"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Name"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                    "width": 80,
+                  }
+                }
+                type="text"
+                value="name 2"
+              />
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "opacity": 0,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "fixed",
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                name 2
+              </div>
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 2,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-AxhCb rOoA"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+            <svg
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "fill": "#FFF",
+                  "height": 16,
+                  "margin": "-3px 0 0 5px",
+                  "width": 16,
+                }
+              }
+              viewBox="-47 0 512 512"
+            >
+              <path
+                d="M416.875 114.441L405.57 80.555a31.527 31.527 0 00-29.941-21.578h-95.012V28.043C280.617 12.582 268.047 0 252.59 0h-87.008c-15.453 0-28.027 12.582-28.027 28.043v30.934H42.547a31.528 31.528 0 00-29.945 21.578L1.297 114.44a25.426 25.426 0 003.484 22.856 25.427 25.427 0 0020.578 10.539h11.817L63.184 469.44C65.117 493.305 85.367 512 109.293 512h204.863c23.922 0 44.176-18.695 46.106-42.563l26.008-321.601h6.543A25.434 25.434 0 00413.39 137.3a25.434 25.434 0 003.484-22.86zM167.555 30h83.062v28.977h-83.062zm162.804 437.02c-.68 8.402-7.796 14.98-16.203 14.98H109.293c-8.406 0-15.523-6.578-16.203-14.98L67.273 147.836h288.899zM31.793 117.836l9.27-27.79c.21-.64.808-1.07 1.484-1.07h333.082c.676 0 1.27.43 1.484 1.07l9.27 27.79zm0 0"
+              />
+              <path
+                d="M282.516 465.957c.265.016.527.02.793.02 7.925 0 14.55-6.211 14.964-14.22L312.36 181.36c.43-8.273-5.93-15.332-14.199-15.761-8.293-.442-15.328 5.925-15.762 14.199l-14.082 270.398c-.43 8.274 5.926 15.332 14.2 15.762zm0 0M120.566 451.793c.438 7.996 7.055 14.184 14.965 14.184.274 0 .555-.008.832-.024 8.27-.45 14.61-7.52 14.16-15.793L135.77 179.762c-.45-8.274-7.52-14.614-15.793-14.16-8.27.449-14.61 7.52-14.16 15.793zm0 0M209.254 465.977c8.285 0 15-6.715 15-15V180.578c0-8.285-6.715-15-15-15s-15 6.715-15 15v270.399c0 8.285 6.715 15 15 15zm0 0"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fontSize": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 9,
+              "transform": "rotate(180deg)",
+              "transformOrigin": "center center",
+              "transition": "transform 200ms ease-in-out",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "userSelect": "none",
+                "width": 40,
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "height": "auto",
+            "transition": "height 200ms linear, overflow 0s linear 200ms",
+          }
+        }
+      >
+        <div>
+          <div
+            className="sc-AxhUy kYXQlU"
+          >
+            <div
+              className="sc-fznAgC lpuPHD"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": "2px",
+                    "position": "relative",
+                  }
+                }
+              >
+                <textarea
+                  id="metadata.1.value"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "padding": "10px 30px 10px 20px",
+                      "resize": "none",
+                    }
+                  }
+                  value="value 2"
+                />
+                <textarea
+                  aria-hidden={true}
+                  readOnly={true}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "left": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "overflow": "hidden",
+                      "padding": "10px 30px 10px 20px",
+                      "position": "absolute",
+                      "resize": "none",
+                      "top": 0,
+                      "visibility": "hidden",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": -30,
+                      "top": -40,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "position": "absolute",
+                  "right": 5,
+                  "top": 5,
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "borderTop": "2px solid #FFF",
+          "overflow": "inherit",
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#000",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "minHeight": 60,
+            "paddingRight": 40,
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="sc-AxiKw hPkolu"
+        >
+          <div
+            className="sc-fznAgC fNREqd"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "position": "relative",
+                }
+              }
+            >
+              <input
+                id="metadata.2.key"
+                name="metadata.2.key"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Name"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                    "width": 80,
+                  }
+                }
+                type="text"
+                value="name 3"
+              />
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "opacity": 0,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "fixed",
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                name 3
+              </div>
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 2,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-AxhCb rOoA"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+            <svg
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "fill": "#FFF",
+                  "height": 16,
+                  "margin": "-3px 0 0 5px",
+                  "width": 16,
+                }
+              }
+              viewBox="-47 0 512 512"
+            >
+              <path
+                d="M416.875 114.441L405.57 80.555a31.527 31.527 0 00-29.941-21.578h-95.012V28.043C280.617 12.582 268.047 0 252.59 0h-87.008c-15.453 0-28.027 12.582-28.027 28.043v30.934H42.547a31.528 31.528 0 00-29.945 21.578L1.297 114.44a25.426 25.426 0 003.484 22.856 25.427 25.427 0 0020.578 10.539h11.817L63.184 469.44C65.117 493.305 85.367 512 109.293 512h204.863c23.922 0 44.176-18.695 46.106-42.563l26.008-321.601h6.543A25.434 25.434 0 00413.39 137.3a25.434 25.434 0 003.484-22.86zM167.555 30h83.062v28.977h-83.062zm162.804 437.02c-.68 8.402-7.796 14.98-16.203 14.98H109.293c-8.406 0-15.523-6.578-16.203-14.98L67.273 147.836h288.899zM31.793 117.836l9.27-27.79c.21-.64.808-1.07 1.484-1.07h333.082c.676 0 1.27.43 1.484 1.07l9.27 27.79zm0 0"
+              />
+              <path
+                d="M282.516 465.957c.265.016.527.02.793.02 7.925 0 14.55-6.211 14.964-14.22L312.36 181.36c.43-8.273-5.93-15.332-14.199-15.761-8.293-.442-15.328 5.925-15.762 14.199l-14.082 270.398c-.43 8.274 5.926 15.332 14.2 15.762zm0 0M120.566 451.793c.438 7.996 7.055 14.184 14.965 14.184.274 0 .555-.008.832-.024 8.27-.45 14.61-7.52 14.16-15.793L135.77 179.762c-.45-8.274-7.52-14.614-15.793-14.16-8.27.449-14.61 7.52-14.16 15.793zm0 0M209.254 465.977c8.285 0 15-6.715 15-15V180.578c0-8.285-6.715-15-15-15s-15 6.715-15 15v270.399c0 8.285 6.715 15 15 15zm0 0"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fontSize": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 9,
+              "transform": "rotate(180deg)",
+              "transformOrigin": "center center",
+              "transition": "transform 200ms ease-in-out",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "userSelect": "none",
+                "width": 40,
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M15.117 18L9 12h12z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "height": "auto",
+            "transition": "height 200ms linear, overflow 0s linear 200ms",
+          }
+        }
+      >
+        <div>
+          <div
+            className="sc-AxhUy kYXQlU"
+          >
+            <div
+              className="sc-fznAgC lpuPHD"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": "2px",
+                    "position": "relative",
+                  }
+                }
+              >
+                <textarea
+                  id="metadata.2.value"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "padding": "10px 30px 10px 20px",
+                      "resize": "none",
+                    }
+                  }
+                  value="value 3"
+                />
+                <textarea
+                  aria-hidden={true}
+                  readOnly={true}
+                  style={
+                    Object {
+                      "background": "#000",
+                      "backgroundColor": "#71737e",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontSize": "18px",
+                      "height": 0,
+                      "left": 0,
+                      "lineHeight": "24px",
+                      "outline": "none",
+                      "overflow": "hidden",
+                      "padding": "10px 30px 10px 20px",
+                      "position": "absolute",
+                      "resize": "none",
+                      "top": 0,
+                      "visibility": "hidden",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": -30,
+                      "top": -40,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "position": "absolute",
+                  "right": 5,
+                  "top": 5,
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzoyAV jiDcgh"
+    >
+      <div
+        className="sc-fzoXzr iIZPin"
+      >
+        <div
+          className="sc-fzoLag losnNk"
+        >
+          <button
+            className="sc-fzpjYC jlDbJV"
+            disabled={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
