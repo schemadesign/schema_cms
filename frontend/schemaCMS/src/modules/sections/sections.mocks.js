@@ -22,10 +22,17 @@ export const section = {
       id: 2,
       templateName: null,
     },
+    {
+      createdBy: 'owner',
+      created: '2020-03-09T10:41:17+0000',
+      name: 'page name 3',
+      id: 3,
+      templateName: null,
+    },
   ],
   pagesCount: 1,
   [SECTIONS_PUBLISH]: true,
-  [SECTIONS_MAIN_PAGE]: 1,
+  [SECTIONS_MAIN_PAGE]: 3,
   created: '2020-03-09T10:41:17+0000',
 };
 

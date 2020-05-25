@@ -1,6 +1,8 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
+import { evolve, findIndex, identity, ifElse, move, propEq } from 'ramda';
+
 import { SECTIONS_NAME, SECTIONS_PUBLISH } from './sections.constants';
 
 const PREFIX = 'SECTIONS/';
@@ -26,7 +28,15 @@ export const INITIAL_STATE = new Immutable({
 
 const setSections = (state = INITIAL_STATE, { payload }) => state.set('sections', payload);
 const setInternalConnections = (state = INITIAL_STATE, { payload }) => state.set('internalConnections', payload);
-const setSection = (state = INITIAL_STATE, { payload }) => state.set('section', payload);
+const setSection = (state = INITIAL_STATE, { payload }) =>
+  state.set(
+    'section',
+    ifElse(
+      propEq('mainPage', null),
+      identity,
+      evolve({ pages: pages => move(findIndex(propEq('id', payload.mainPage), pages), 0, pages) })
+    )(payload)
+  );
 
 export const reducer = createReducer(INITIAL_STATE, {
   [SectionsRoutines.fetchSections.SUCCESS]: setSections,

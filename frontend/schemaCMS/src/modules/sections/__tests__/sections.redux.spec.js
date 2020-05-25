@@ -2,6 +2,7 @@ import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
 import { reducer as sectionsReducer, SectionsRoutines } from '../sections.redux';
+import { section as sectionMock } from '../sections.mocks';
 
 describe('Sections: redux', () => {
   const state = Immutable({
@@ -56,6 +57,40 @@ describe('Sections: redux', () => {
       const resultState = sectionsReducer(state, SectionsRoutines.updateSection.success(section));
 
       expect(resultState.section).to.deep.equal(section);
+    });
+
+    it('should move main page to beginning of pages', () => {
+      const section = sectionMock;
+      const resultState = sectionsReducer(state, SectionsRoutines.updateSection.success(section));
+
+      expect(resultState.section).to.deep.equal({
+        created: '2020-03-09T10:41:17+0000',
+        createdBy: 'owner',
+        id: 1,
+        isPublic: true,
+        mainPage: 3,
+        name: 'Section name',
+        pages: [
+          {
+            createdBy: 'owner',
+            created: '2020-03-09T10:41:17+0000',
+            name: 'page name 3',
+            id: 3,
+            templateName: null,
+          },
+          {
+            created: '2020-03-09T10:41:17+0000',
+            createdBy: 'owner',
+            displayName: 'page-name',
+            id: 1,
+            name: 'page name',
+            templateName: 'templateName',
+          },
+          { created: '2020-03-09T10:41:17+0000', createdBy: 'owner', id: 2, name: 'page name 2', templateName: null },
+        ],
+        pagesCount: 1,
+        slug: 'section-name',
+      });
     });
   });
 });
