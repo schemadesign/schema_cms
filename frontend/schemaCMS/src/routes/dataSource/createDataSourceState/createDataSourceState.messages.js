@@ -3,27 +3,27 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'datasource.createProjectState.title',
+    id: 'datasource.createDataSourceState.title',
     defaultMessage: 'State',
   },
   subTitle: {
-    id: 'datasource.createProjectState.title',
+    id: 'datasource.createDataSourceState.title',
     defaultMessage: 'Create',
   },
   cancel: {
-    id: 'datasource.createProjectState.cancel',
+    id: 'datasource.createDataSourceState.cancel',
     defaultMessage: 'Cancel',
   },
   confirm: {
-    id: 'datasource.createProjectState.cancel',
+    id: 'datasource.createDataSourceState.cancel',
     defaultMessage: 'Confirm',
   },
   nameStateNameNotUniqueError: {
-    id: 'datasource.createProjectState.nameStateNameNotUniqueError',
+    id: 'datasource.createDataSourceState.nameStateNameNotUniqueError',
     defaultMessage: 'A state with this name already exists in the DataSource.',
   },
   noData: {
-    id: 'datasource.createProjectState.noData',
+    id: 'datasource.createDataSourceState.noData',
     defaultMessage: 'Please create a data source first',
   },
 });

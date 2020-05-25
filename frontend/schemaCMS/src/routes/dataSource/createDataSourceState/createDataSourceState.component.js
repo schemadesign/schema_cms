@@ -10,7 +10,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, ConfirmLink } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
-import { ProjectStateForm } from '../../../shared/components/projectStateForm';
+import { DataSourceStateForm } from '../../../shared/components/dataSourceStateForm';
 
 export class CreateDataSourceState extends PureComponent {
   static propTypes = {
@@ -69,7 +69,7 @@ export class CreateDataSourceState extends PureComponent {
           noData={!dataSources.length}
           noDataContent={<FormattedMessage {...messages.noData} />}
         >
-          <ProjectStateForm {...this.props} />
+          <DataSourceStateForm {...this.props} />
         </LoadingWrapper>
         <NavigationContainer fixed contentStyles={contentStyles}>
           <NavigationButtons>

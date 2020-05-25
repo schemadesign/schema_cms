@@ -12,35 +12,35 @@ import {
 
 export default defineMessages({
   [PROJECT_STATE_DATA_SOURCE]: {
-    id: `shared.components.projectStateForm.${[PROJECT_STATE_DATA_SOURCE]}`,
+    id: `shared.components.dataSourceStateForm.${[PROJECT_STATE_DATA_SOURCE]}`,
     defaultMessage: 'Dataset',
   },
   dataSourcePlaceholder: {
-    id: 'shared.components.projectStateForm.dataSourcePlaceholder',
+    id: 'shared.components.dataSourceStateForm.dataSourcePlaceholder',
     defaultMessage: 'Select a dataset',
   },
   [PROJECT_STATE_NAME]: {
-    id: `shared.components.projectStateForm.${[PROJECT_STATE_NAME]}`,
+    id: `shared.components.dataSourceStateForm.${[PROJECT_STATE_NAME]}`,
     defaultMessage: 'Name',
   },
   [PROJECT_STATE_DESCRIPTION]: {
-    id: `shared.components.projectStateForm.${[PROJECT_STATE_DESCRIPTION]}`,
+    id: `shared.components.dataSourceStateForm.${[PROJECT_STATE_DESCRIPTION]}`,
     defaultMessage: 'Description',
   },
   [PROJECT_STATE_SOURCE_URL]: {
-    id: `shared.components.projectStateForm.${[PROJECT_STATE_SOURCE_URL]}`,
+    id: `shared.components.dataSourceStateForm.${[PROJECT_STATE_SOURCE_URL]}`,
     defaultMessage: 'Source URL',
   },
   [PROJECT_STATE_AUTHOR]: {
-    id: `shared.components.projectStateForm.${[PROJECT_STATE_AUTHOR]}`,
+    id: `shared.components.dataSourceStateForm.${[PROJECT_STATE_AUTHOR]}`,
     defaultMessage: 'Author',
   },
   [PROJECT_STATE_CREATED]: {
-    id: `shared.components.projectStateForm.${[PROJECT_STATE_CREATED]}`,
+    id: `shared.components.dataSourceStateForm.${[PROJECT_STATE_CREATED]}`,
     defaultMessage: 'Created',
   },
   [PROJECT_STATE_IS_PUBLIC]: {
-    id: `shared.components.projectStateForm.${[PROJECT_STATE_IS_PUBLIC]}`,
+    id: `shared.components.dataSourceStateForm.${[PROJECT_STATE_IS_PUBLIC]}`,
     defaultMessage: 'Make Public',
   },
 });

@@ -13,14 +13,14 @@ exports[`CreateProjectState: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="datasource.createProjectState.title"
+        id="datasource.createDataSourceState.title"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="State"
-        id="datasource.createProjectState.title"
+        id="datasource.createDataSourceState.title"
         values={Object {}}
       />
     }
@@ -32,12 +32,12 @@ exports[`CreateProjectState: Component should render correctly 1`] = `
     noDataContent={
       <FormattedMessage
         defaultMessage="Please create a data source first"
-        id="datasource.createProjectState.noData"
+        id="datasource.createDataSourceState.noData"
         values={Object {}}
       />
     }
   >
-    <ProjectStateForm
+    <DataSourceStateForm
       dataSources={
         Array [
           Object {
@@ -111,7 +111,7 @@ exports[`CreateProjectState: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="datasource.createProjectState.cancel"
+          id="datasource.createDataSourceState.cancel"
           values={Object {}}
         />
       </BackButton>
@@ -122,7 +122,7 @@ exports[`CreateProjectState: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Confirm"
-          id="datasource.createProjectState.cancel"
+          id="datasource.createDataSourceState.cancel"
           values={Object {}}
         />
       </ConfirmLink>

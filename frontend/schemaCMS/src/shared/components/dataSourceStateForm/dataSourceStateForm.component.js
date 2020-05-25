@@ -4,9 +4,9 @@ import { always } from 'ramda';
 import { Form } from 'schemaUI';
 import dayjs from 'dayjs';
 
-import { Container } from './projectStateForm.styles';
+import { Container } from './dataSourceStateForm.styles';
 import { TextInput } from '../form/inputs/textInput';
-import messages from './projectStateForm.messages';
+import messages from './dataSourceStateForm.messages';
 
 import {
   PROJECT_STATE_DESCRIPTION,
@@ -20,7 +20,7 @@ import { renderWhenTrue } from '../../utils/rendering';
 
 const { Switch } = Form;
 
-export class ProjectStateForm extends PureComponent {
+export class DataSourceStateForm extends PureComponent {
   static propTypes = {
     intl: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,

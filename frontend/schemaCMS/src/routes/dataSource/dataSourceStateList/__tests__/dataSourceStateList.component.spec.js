@@ -34,7 +34,7 @@ describe('ProjectStateList: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call fetchDataSources on componentDidMount', () => {
+  it('should call fetchStates on componentDidMount', () => {
     const fetchStates = jest.spyOn(defaultProps, 'fetchStates');
 
     render({

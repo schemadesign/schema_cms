@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ProjectStateForm } from './projectStateForm.component';
+import { DataSourceStateForm } from './dataSourceStateForm.component';
 import { intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
 import { state } from '../../../modules/projectState/projectState.mock';
@@ -15,6 +15,6 @@ export const defaultProps = {
   dataSources: [{ name: 'name', id: 'id' }],
 };
 
-storiesOf('ProjectStateForm', module)
+storiesOf('DataSourceStateForm', module)
   .addDecorator(withTheme())
-  .add('Default', () => <ProjectStateForm {...defaultProps} />);
+  .add('Default', () => <DataSourceStateForm {...defaultProps} />);

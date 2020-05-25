@@ -10,7 +10,7 @@ import { getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { Description, descriptionStyles, HeaderItem, HeaderList, titleStyles } from '../../project/list/list.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
@@ -57,7 +57,6 @@ export class DataSourceStateList extends PureComponent {
   handleCreateState = () =>
     this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/state/create`);
   handleShowState = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}`);
-  handleShowState = id => this.props.history.push(`/state/${id}`);
 
   renderHeader = (list = []) => (
     <HeaderList>
@@ -112,7 +111,6 @@ export class DataSourceStateList extends PureComponent {
           {this.renderList(states)}
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
-          <BackArrowButton id="backBtn" onClick={this.handleShowState} />
           <PlusButton id="createStateBtn" onClick={this.handleCreateState} />
         </NavigationContainer>
       </Container>
