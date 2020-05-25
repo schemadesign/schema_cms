@@ -11,6 +11,7 @@ from schemacms.tags.tests import factories as tags_factories
 pytest_factoryboy.register(u_factories.UserFactory)
 pytest_factoryboy.register(p_factories.ProjectFactory, "project")
 pytest_factoryboy.register(ds_factories.DataSourceFactory)
+pytest_factoryboy.register(ds_factories.DescriptionFactory, "ds_description")
 pytest_factoryboy.register(ds_factories.DataSourceMetaFactory)
 pytest_factoryboy.register(ds_factories.ScriptFactory, "script")
 pytest_factoryboy.register(ds_factories.JobFactory, "job")

@@ -82,6 +82,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
         "tags": serializers.DataSourceTagSerializer,
+        "addition_description": serializers.DataSourceDescriptionSerializer,
         "set_filters": serializers.FilterSerializer,
         "update_meta": serializers.PublicApiUpdateMetaSerializer,
     }
@@ -230,6 +231,20 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
             serializer = self.get_serializer(ds.tags, many=True)
 
         return response.Response({"project": ds.project.project_info, "results": serializer.data})
+
+    @decorators.action(detail=True, url_path="description", methods=["get", "post", "patch"])
+    def addition_description(self, request, pk=None, **kwargs):
+        ds = self.get_object()
+
+        if request.method == "GET":
+
+            data = self.get_serializer(ds.description).data if hasattr(ds, "description") else {"data": []}
+
+        if request.method in ["POST", "PATCH"]:
+            description = ds.add_description(request.data)
+            data = self.get_serializer(description).data
+
+        return response.Response({"project": ds.project.project_info, "results": data})
 
     @decorators.action(detail=True, url_path="set-filters", methods=["post"])
     def set_filters(self, request, pk=None, **kwargs):

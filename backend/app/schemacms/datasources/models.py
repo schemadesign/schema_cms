@@ -189,6 +189,10 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         for tag in tags_list:
             DataSourceTag.objects.create(datasource=self, category_id=tag["category"], value=tag["value"])
 
+    def add_description(self, description):
+        obj, _ = DataSourceDescription.objects.update_or_create(datasource=self, defaults=dict(**description))
+        return obj
+
     def meta_file_serialization(self):
         data = {
             "id": self.id,
@@ -224,6 +228,14 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             data.update({"filters": filters})
 
         return data
+
+
+class DataSourceDescription(SoftDeleteObject):
+    datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="description")
+    data = pg_fields.ArrayField(pg_fields.JSONField(), default=list, blank=True)
+
+    def __str__(self):
+        return f"{self.id}"
 
 
 class DataSourceMeta(SoftDeleteObject, MetaDataModel):
