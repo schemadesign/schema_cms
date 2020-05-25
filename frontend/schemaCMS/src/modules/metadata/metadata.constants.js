@@ -4,8 +4,6 @@ export const METADATA = 'metadata';
 export const METADATA_KEY = 'key';
 export const METADATA_VALUE = 'value';
 
-export const INITIAL_VALUES = { [METADATA]: [] };
-
 export const METADATA_SCHEMA = Yup.object({
   [METADATA]: Yup.array(
     Yup.object().shape({

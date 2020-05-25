@@ -171,17 +171,17 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
       <Component
         customStyles={
           Object {
-            "height": 54,
-            "width": 54,
+            "height": 30,
+            "width": 30,
           }
         }
-        id="statesBtn"
+        id="metaDataBtn"
       />
     </styled.div>
     <styled.div>
       <FormattedMessage
-        defaultMessage="States"
-        id="shared.components.dataSourceNavigation.state"
+        defaultMessage="Metadata"
+        id="shared.components.dataSourceNavigation.metadata"
         values={Object {}}
       />
     </styled.div>
@@ -360,17 +360,17 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
       <Component
         customStyles={
           Object {
-            "height": 54,
-            "width": 54,
+            "height": 30,
+            "width": 30,
           }
         }
-        id="statesBtn"
+        id="metaDataBtn"
       />
     </styled.div>
     <styled.div>
       <FormattedMessage
-        defaultMessage="States"
-        id="shared.components.dataSourceNavigation.state"
+        defaultMessage="Metadata"
+        id="shared.components.dataSourceNavigation.metadata"
         values={Object {}}
       />
     </styled.div>
@@ -549,17 +549,17 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
       <Component
         customStyles={
           Object {
-            "height": 54,
-            "width": 54,
+            "height": 30,
+            "width": 30,
           }
         }
-        id="statesBtn"
+        id="metaDataBtn"
       />
     </styled.div>
     <styled.div>
       <FormattedMessage
-        defaultMessage="States"
-        id="shared.components.dataSourceNavigation.state"
+        defaultMessage="Metadata"
+        id="shared.components.dataSourceNavigation.metadata"
         values={Object {}}
       />
     </styled.div>

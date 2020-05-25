@@ -27,13 +27,7 @@ import { DataSourceNavigation } from '../../../shared/components/dataSourceNavig
 import { getProjectMenuOptions } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import {
-  INITIAL_VALUES,
-  METADATA,
-  METADATA_KEY,
-  METADATA_SCHEMA,
-  METADATA_VALUE,
-} from '../../../modules/metadata/metadata.constants';
+import { METADATA, METADATA_KEY, METADATA_SCHEMA, METADATA_VALUE } from '../../../modules/metadata/metadata.constants';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import { binStyles, mobilePlusStyles, PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
 import { NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
@@ -41,7 +35,7 @@ import { TextInput } from '../../../shared/components/form/inputs/textInput';
 
 const { EditIcon, BinIcon } = Icons;
 
-export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateMetadata }) => {
+export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateMetadata, metadata }) => {
   const intl = useIntl();
   const history = useHistory();
   const match = useRouteMatch();
@@ -62,7 +56,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     isValid,
     ...restFormikProps
   } = useFormik({
-    initialValues: INITIAL_VALUES,
+    initialValues: { [METADATA]: metadata },
     enableReinitialize: true,
     validationSchema: () => METADATA_SCHEMA,
     onSubmit: async (data, { setSubmitting, setErrors }) => {
@@ -172,4 +166,5 @@ Metadata.propTypes = {
   userRole: PropTypes.string.isRequired,
   fetchMetadata: PropTypes.func.isRequired,
   updateMetadata: PropTypes.func.isRequired,
+  metadata: PropTypes.array.isRequired,
 };

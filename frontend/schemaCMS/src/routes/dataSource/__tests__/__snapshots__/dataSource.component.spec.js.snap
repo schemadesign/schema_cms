@@ -8,7 +8,7 @@ exports[`DataSource: Component should render correctly 1`] = `
   />
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={false}
     noDataContent={null}
   >
@@ -62,12 +62,7 @@ exports[`DataSource: Component should render correctly 1`] = `
         <Route
           component={[Function]}
           exact={true}
-          path="path/state/create"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="path/state"
+          path="path/metadata"
         />
         <Route
           component={[Function]}
@@ -88,7 +83,7 @@ exports[`DataSource: Component should render without rest steps 1`] = `
   />
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={false}
     noDataContent={null}
   >
