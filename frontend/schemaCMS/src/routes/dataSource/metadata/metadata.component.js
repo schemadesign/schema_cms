@@ -78,7 +78,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchMetadata({ projectId: project.id, type: 'dataset' });
+        await fetchMetadata({ dataSourceId: dataSource.id });
       } catch (e) {
         reportError(e);
         setError(e);

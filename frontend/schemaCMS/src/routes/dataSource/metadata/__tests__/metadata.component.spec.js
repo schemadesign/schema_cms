@@ -11,4 +11,10 @@ describe('Metadata: Component', () => {
     const wrapper = await render();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should fetch metadata', async () => {
+    jest.spyOn(defaultProps, 'fetchMetadata');
+    await render();
+    expect(defaultProps.fetchMetadata).toHaveBeenCalledWith({ dataSourceId: 1 });
+  });
 });

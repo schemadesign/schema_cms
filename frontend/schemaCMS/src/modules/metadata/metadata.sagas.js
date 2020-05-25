@@ -10,7 +10,7 @@ function* fetchMetadata({ payload: { dataSourceId } }) {
     yield put(MetadataRoutines.fetchMetadata.request());
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${METADATA_PATH}`);
 
-    yield put(MetadataRoutines.fetchMetadata.success(data.results));
+    yield put(MetadataRoutines.fetchMetadata.success(data.results.data));
   } catch (error) {
     reportError(error);
     yield put(MetadataRoutines.fetchMetadata.failure(error));
@@ -22,9 +22,9 @@ function* fetchMetadata({ payload: { dataSourceId } }) {
 function* updateMetadata({ payload: { dataSourceId, formData } }) {
   try {
     yield put(MetadataRoutines.updateMetadata.request());
-    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}${METADATA_PATH}`, formData);
+    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}${METADATA_PATH}`, { data: formData });
 
-    yield put(MetadataRoutines.updateMetadata.success(data.results));
+    yield put(MetadataRoutines.updateMetadata.success(data.results.data));
   } catch (error) {
     reportError(error);
     yield put(MetadataRoutines.updateMetadata.failure(error));

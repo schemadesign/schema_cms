@@ -15,14 +15,14 @@ describe('Metadata: sagas', () => {
       const payload = { dataSourceId: '1' };
       const responseData = {
         project: {},
-        results: {},
+        results: { data: 'data' },
       };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${METADATA_PATH}`).reply(OK, responseData);
 
       await expectSaga(watchMetadata)
         .withState(defaultState)
-        .put(MetadataRoutines.fetchMetadata.success(responseData.results))
+        .put(MetadataRoutines.fetchMetadata.success(responseData.results.data))
         .dispatch(MetadataRoutines.fetchMetadata(payload))
         .silentRun();
     });
@@ -34,14 +34,16 @@ describe('Metadata: sagas', () => {
       const payload = { dataSourceId: '1', formData };
       const responseData = {
         project: {},
-        results: {},
+        results: { data: 'data' },
       };
 
-      mockApi.patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${METADATA_PATH}`, formData).reply(OK, responseData);
+      mockApi
+        .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${METADATA_PATH}`, { data: formData })
+        .reply(OK, responseData);
 
       await expectSaga(watchMetadata)
         .withState(defaultState)
-        .put(MetadataRoutines.updateMetadata.success(responseData.results))
+        .put(MetadataRoutines.updateMetadata.success(responseData.results.data))
         .dispatch(MetadataRoutines.updateMetadata(payload))
         .silentRun();
     });
