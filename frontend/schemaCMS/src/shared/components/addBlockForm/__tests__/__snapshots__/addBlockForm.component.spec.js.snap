@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddBlockForm: Component should render correctly 1`] = `
+exports[`AddBlockForm: Component should render a block template with added elements 1`] = `
 <form
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzpans dmKhvS"
+    className="sc-fzoLsD jhlXOi"
   >
     <div
-      className="sc-fzplWN izglPW"
+      className="sc-fzpans dhfQNr"
     >
       <h2
-        className="sc-fznyAO hCNAkV"
+        className="sc-fzplWN bVLKoZ"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -25,7 +25,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         title
       </h2>
       <h1
-        className="sc-fznKkj gTlJjg"
+        className="sc-fznyAO hCNAkV"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -39,10 +39,10 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznxsB cskFqV"
+          className="sc-fzpjYC efXjuy"
         >
           <div
-            className="sc-fzoNJl cSFNZJ"
+            className="sc-fzoyTs eNtMFT"
           >
             <div
               style={
@@ -118,7 +118,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fznJRM eiGOyR"
+            className="sc-fznxsB jQpycp"
           >
             <svg
               style={
@@ -140,14 +140,14 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fznZeY fLrtke"
+      className="sc-fznKkj lbPMLS"
     />
   </div>
   <div
-    className="sc-fznWqX emhegs"
+    className="sc-fznJRM fFBVWX"
   >
     <div
-      className="sc-fzoNJl bXHBiD"
+      className="sc-fzoyTs FXPlp"
     >
       <div
         style={
@@ -211,7 +211,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoXWK ZbvgW"
+            className="sc-fzoNJl fwCLEm"
           >
             <svg
               style={
@@ -237,7 +237,564 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     className="sc-AxjAm evKEwj"
   >
     <div
-      className="sc-fznxKY fgqrAN"
+      className="sc-fzpmMD ibJqnl"
+      onClick={[Function]}
+    >
+      <label
+        id="fieldProjectStatusLabel"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Type
+      </label>
+      <input
+        id="type"
+        name="type"
+        type="hidden"
+        value={0}
+      />
+      <div
+        style={
+          Object {
+            "color": "#FFF",
+            "display": "flex",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          id="blockTypeSelect"
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              Blank
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "WebkitOverflowScrolling": "touch",
+                "backgroundColor": "#1d1d20",
+                "display": "none",
+                "flexDirection": "column",
+                "left": "0",
+                "maxHeight": "184px",
+                "overflowY": "hidden",
+                "position": "absolute",
+                "top": "calc(100% + 5px)",
+                "width": "100%",
+                "zIndex": 2,
+              }
+            }
+          >
+            <div
+              id="select-item-0"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "1px solid  #2F2F36",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              Blank
+            </div>
+            <div
+              id="select-item-1"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "none",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name
+            </div>
+            <div
+              id="select-item-2"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "none",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name 2
+            </div>
+            <div
+              id="select-item-3"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "none",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name 3
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-fznxKY jfIEHM"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M15.117 18L9 12h12z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzpkJw bpnYGd"
+  >
+    <div
+      className="sc-fznzOf gNAUQG"
+    />
+    0 Elements
+    <div
+      className="sc-fznzOf gNAUQG"
+    >
+      <div
+        className="sc-fznWqX hyrJMW"
+      >
+        <div
+          className="sc-fzozJi bjSKTZ"
+        >
+          <button
+            disabled={false}
+            id="createElement"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span />
+  <div
+    className="sc-AxhUy htqvZZ"
+  >
+    <div
+      className="sc-AxheI cQyJnn"
+    >
+      <div
+        className="sc-AxgMl kpSYiw"
+      >
+        <button
+          className="sc-Axmtr ippoUD"
+          disabled={false}
+          id="backBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          className="sc-Axmtr ippoUD"
+          disabled={true}
+          id="addBlock"
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`AddBlockForm: Component should render correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="sc-fzoLsD jhlXOi"
+  >
+    <div
+      className="sc-fzpans dhfQNr"
+    >
+      <h2
+        className="sc-fzplWN bVLKoZ"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        title
+      </h2>
+      <h1
+        className="sc-fznyAO hCNAkV"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <div
+          className="sc-fzpjYC efXjuy"
+        >
+          <div
+            className="sc-fzoyTs eNtMFT"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "paddingRight": 40,
+                  "position": "static",
+                }
+              }
+            >
+              <input
+                id="name"
+                name="name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Name"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": 24,
+                    "fontWeight": 600,
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                    "width": 80,
+                  }
+                }
+                type="text"
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": 24,
+                    "fontWeight": 600,
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "opacity": 0,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "fixed",
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 2,
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="sc-fznxsB jQpycp"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </h1>
+    </div>
+    <div
+      className="sc-fznKkj lbPMLS"
+    />
+  </div>
+  <div
+    className="sc-fznJRM fFBVWX"
+  >
+    <div
+      className="sc-fzoyTs FXPlp"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Block Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value=""
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzoNJl fwCLEm"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxjAm evKEwj"
+  >
+    <div
+      className="sc-fzpmMD ibJqnl"
       onClick={[Function]}
     >
       <label
@@ -341,7 +898,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
                 }
               }
             >
-              block name
+              Blank
             </div>
             <div
               id="select-item-1"
@@ -361,10 +918,30 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
                 }
               }
             >
-              block name 2
+              block name
             </div>
             <div
               id="select-item-2"
+              onClick={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "border": "1px solid  #2F2F36",
+                  "borderTop": "none",
+                  "color": "#71737e",
+                  "cursor": "pointer",
+                  "overflow": "hidden",
+                  "padding": "20px 10px",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              block name 2
+            </div>
+            <div
+              id="select-item-3"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -387,7 +964,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fznMAR kncgKE"
+        className="sc-fznxKY jfIEHM"
       >
         <svg
           style={
@@ -408,16 +985,16 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxgMl cVgKrP"
+    className="sc-AxhUy htqvZZ"
   >
     <div
-      className="sc-Axmtr iDwQUw"
+      className="sc-AxheI cQyJnn"
     >
       <div
-        className="sc-AxheI kHegme"
+        className="sc-AxgMl kpSYiw"
       >
         <button
-          className="sc-AxmLO kfXYAO"
+          className="sc-Axmtr ippoUD"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
@@ -443,7 +1020,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           Back
         </button>
         <button
-          className="sc-AxmLO kfXYAO"
+          className="sc-Axmtr ippoUD"
           disabled={true}
           id="addBlock"
           style={

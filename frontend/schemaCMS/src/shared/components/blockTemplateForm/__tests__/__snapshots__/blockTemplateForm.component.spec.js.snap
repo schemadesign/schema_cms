@@ -260,14 +260,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoxKX eqjPQc"
+    className="sc-fzoyTs bYsZxt"
   >
     <div
-      className="sc-fzoKki jXYIlx"
+      className="sc-fzoNJl hnQQWs"
     />
     2 Elements
     <div
-      className="sc-fzoKki jXYIlx"
+      className="sc-fzoNJl hnQQWs"
     >
       <div
         className="sc-fzpans ipovMe"
@@ -361,10 +361,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoNJl exmRbN"
+            className="sc-fzpmMD hMMZZS"
           >
             <div
-              className="sc-fzoXWK dsKtzX"
+              className="sc-fznxKY NngAs"
             >
               <div>
                 <div
@@ -389,7 +389,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzolEj hyiIsm"
+                className="sc-fzqPZZ lcXtDL"
               >
                 <svg
                   style={
@@ -483,7 +483,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzoXWK dsKtzX"
+              className="sc-fznxKY NngAs"
             >
               <svg
                 style={
@@ -567,10 +567,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         >
           <div>
             <div
-              className="sc-fzpmMD kNluEN"
+              className="sc-fznMAR gaZbdV"
             >
               <div
-                className="sc-fzqBkg hDBSOK"
+                className="sc-fzoxKX bsSaZd"
                 onClick={[Function]}
               >
                 <label
@@ -821,7 +821,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzqPZZ dTdJTl"
+                  className="sc-fzoKki fGLGO"
                 >
                   <svg
                     style={
@@ -884,10 +884,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoNJl exmRbN"
+            className="sc-fzpmMD hMMZZS"
           >
             <div
-              className="sc-fzoXWK dsKtzX"
+              className="sc-fznxKY NngAs"
             >
               <div>
                 <div
@@ -912,7 +912,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzolEj hyiIsm"
+                className="sc-fzqPZZ lcXtDL"
               >
                 <svg
                   style={
@@ -1006,7 +1006,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzoXWK dsKtzX"
+              className="sc-fznxKY NngAs"
             >
               <svg
                 style={
@@ -1090,10 +1090,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         >
           <div>
             <div
-              className="sc-fzpmMD kNluEN"
+              className="sc-fznMAR gaZbdV"
             >
               <div
-                className="sc-fzqBkg hDBSOK"
+                className="sc-fzoxKX bsSaZd"
                 onClick={[Function]}
               >
                 <label
@@ -1344,7 +1344,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzqPZZ dTdJTl"
+                  className="sc-fzoKki fGLGO"
                 >
                   <svg
                     style={
@@ -1365,17 +1365,17 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fznWOq lkwAAg"
+              className="sc-fzqBkg dUpVnI"
             >
               <div
-                className="sc-fzoxKX iXSUEj"
+                className="sc-fzoyTs dYVZCu"
               >
                 <div
-                  className="sc-fzoKki jXYIlx"
+                  className="sc-fzoNJl hnQQWs"
                 />
                 1 Element
                 <div
-                  className="sc-fzoKki jXYIlx"
+                  className="sc-fzoNJl hnQQWs"
                 >
                   <div
                     className="sc-fzoLsD gLZoNW"
@@ -1445,7 +1445,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    className="sc-fznMAR bXRNEb"
+                    className="sc-fzolEj AXUkn"
                   >
                     <div>
                       <div
@@ -1470,7 +1470,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzqBkg ccesra"
+                      className="sc-fzoxKX eVa-dZJ"
                       onClick={[Function]}
                     >
                       <input
@@ -1684,7 +1684,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzqPZZ krogjJ"
+                        className="sc-fzoKki cBgPZe"
                       >
                         <svg
                           style={
@@ -1704,7 +1704,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fznxKY cBqPGW"
+                      className="sc-fznWOq gLazvp"
                       id="remove-elements.1.params.elements.0"
                       onClick={[Function]}
                     >

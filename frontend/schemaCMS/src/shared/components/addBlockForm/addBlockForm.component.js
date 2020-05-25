@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useEffectOnce } from 'react-use';
 import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useLocation } from 'react-router';
 import { Icons } from 'schemaUI';
-import { propEq, find, map, omit, pipe } from 'ramda';
+import { propEq, find, map, omit, pipe, prepend, always, defaultTo } from 'ramda';
 
-import { NoBlocksCopyContainer, SelectContainer } from './addBlockForm.styles';
+import { SelectContainer } from './addBlockForm.styles';
 import { LoadingWrapper } from '../loadingWrapper';
 import reportError from '../../utils/reportError';
-import { BackButton, NavigationContainer, NextButton } from '../navigation';
+import { BackButton, NavigationContainer, NextButton, PlusButton } from '../navigation';
 import messages from './addBlockForm.messages';
 import { ContextHeader } from '../contextHeader';
 import {
@@ -18,6 +18,8 @@ import {
   inputContainerStyles,
   inputStyles,
   MobileInputName,
+  mobilePlusStyles,
+  PlusContainer,
   Subtitle,
 } from '../form/frequentComponents.styles';
 import { TextInput } from '../form/inputs/textInput';
@@ -30,6 +32,13 @@ import {
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { setDefaultValue } from '../../utils/helpers';
+import { BlockTemplateElements } from '../blockTemplateForm/blockTemplateElements.component';
+import { CounterHeader } from '../counterHeader';
+import {
+  BLOCK_TEMPLATES_ELEMENTS,
+  getDefaultBlockElement,
+} from '../../../modules/blockTemplates/blockTemplates.constants';
+import { renderWhenTrue } from '../../utils/rendering';
 
 const { EditIcon } = Icons;
 
@@ -39,14 +48,27 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
   const history = useHistory();
   const intl = useIntl();
   const { state = {} } = useLocation();
-  const blocksOptions = map(({ name, id }) => ({ label: name, value: id }), blockTemplates);
+  const blocksOptions = pipe(
+    map(({ name, id }) => ({
+      label: name,
+      value: id,
+    })),
+    prepend({ label: intl.formatMessage(messages.blank), value: 0 })
+  )(blockTemplates);
+
   const { handleSubmit, handleChange, values, isValid, dirty, setFieldValue, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES_ADD_BLOCK,
     enableReinitialize: true,
     validationSchema: () => ADD_BLOCK_SCHEMA,
-    onSubmit: ({ name, type }) => {
+    onSubmit: ({ name, type, elements: customElements }) => {
       try {
-        const blockTemplate = find(propEq('id', type), blockTemplates);
+        const blockTemplate = pipe(
+          find(propEq('id', type)),
+          defaultTo({
+            elements: customElements,
+            name,
+          })
+        )(blockTemplates);
         const { name: blockName, id, elements: templateElements, ...rest } = blockTemplate;
         const page = state.page || {};
         const blocks = page[PAGE_BLOCKS] || [];
@@ -62,12 +84,20 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
           ...page,
           [PAGE_BLOCKS]: [...blocks, { ...rest, name, key: Date.now(), type: blockName, block: id, elements }],
         };
+
         history.push(backUrl, { page: updatedPage });
       } catch (errors) {
         reportError(errors);
       }
     },
   });
+
+  const elementsCount = 0;
+  const addElement = () => {
+    const elements = prepend(getDefaultBlockElement(), values[BLOCK_TEMPLATES_ELEMENTS]);
+
+    setFieldValue(BLOCK_TEMPLATES_ELEMENTS, elements);
+  };
   const nameInput = (
     <Subtitle>
       <TextInput
@@ -102,6 +132,37 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
       }
     })();
   });
+
+  const renderBlockTemplateElements = blockType =>
+    renderWhenTrue(
+      always(
+        <Fragment>
+          <CounterHeader
+            copy={intl.formatMessage(messages.elements)}
+            count={elementsCount}
+            right={
+              <PlusContainer>
+                <PlusButton
+                  customStyles={mobilePlusStyles}
+                  id="createElement"
+                  onClick={addElement}
+                  type="button"
+                  disabled={!isValid && !!elementsCount}
+                />
+              </PlusContainer>
+            }
+          />
+          <BlockTemplateElements
+            handleChange={handleChange}
+            values={values}
+            isValid={isValid}
+            setFieldValue={setFieldValue}
+            {...restFormikProps}
+          />
+        </Fragment>
+      )
+    )(blockType === 0);
+
   return (
     <LoadingWrapper loading={loading} error={error}>
       <form onSubmit={handleSubmit}>
@@ -118,23 +179,18 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
           />
         </MobileInputName>
         <SelectContainer>
-          {blocksOptions.length ? (
-            <Select
-              label={intl.formatMessage(messages[BLOCK_TYPE])}
-              name={BLOCK_TYPE}
-              value={values[BLOCK_TYPE]}
-              id="blockTypeSelect"
-              options={blocksOptions}
-              onSelect={handleSelectType}
-              placeholder={intl.formatMessage(messages[`${BLOCK_TYPE}Placeholder`])}
-              {...restFormikProps}
-            />
-          ) : (
-            <NoBlocksCopyContainer>
-              <FormattedMessage {...messages.noBlocks} />
-            </NoBlocksCopyContainer>
-          )}
+          <Select
+            label={intl.formatMessage(messages[BLOCK_TYPE])}
+            name={BLOCK_TYPE}
+            value={values[BLOCK_TYPE]}
+            id="blockTypeSelect"
+            options={blocksOptions}
+            onSelect={handleSelectType}
+            placeholder={intl.formatMessage(messages[`${BLOCK_TYPE}Placeholder`])}
+            {...restFormikProps}
+          />
         </SelectContainer>
+        {renderBlockTemplateElements(values[BLOCK_TYPE])}
         <NavigationContainer fixed>
           <BackButton id="backBtn" type="button" onClick={() => history.push(backUrl, { page: state.page })}>
             <FormattedMessage {...messages.back} />

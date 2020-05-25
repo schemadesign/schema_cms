@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { AddBlockForm } from '../addBlockForm.component';
 import { defaultProps } from '../addBlockForm.stories';
@@ -40,5 +41,15 @@ describe('AddBlockForm: Component', () => {
     wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('backUrl', { page: 'data' });
+  });
+
+  it('should render a block template with added elements', async () => {
+    const wrapper = await render();
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'blockTypeSelect' }).props.onSelect({ value: 0 });
+    });
+
+    expect(wrapper).toMatchSnapshot();
   });
 });

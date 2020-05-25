@@ -15,6 +15,8 @@ import {
   OBSERVABLE_CELL,
   OBSERVABLE_PARAMS,
   CUSTOM_ELEMENT_TYPE,
+  BLOCK_TEMPLATES_ELEMENTS,
+  blockTemplatesElementsValidation,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -58,6 +60,7 @@ export const INITIAL_VALUES = {
 export const INITIAL_VALUES_ADD_BLOCK = {
   [BLOCK_NAME]: '',
   [BLOCK_TYPE]: '',
+  [BLOCK_TEMPLATES_ELEMENTS]: [],
 };
 
 const elementValueValidation = () =>
@@ -157,4 +160,8 @@ export const ADD_BLOCK_SCHEMA = Yup.object().shape({
     .trim()
     .min(1, 'Required')
     .required('Required'),
+  [BLOCK_TEMPLATES_ELEMENTS]: Yup.array().when(BLOCK_TYPE, {
+    is: '0',
+    then: blockTemplatesElementsValidation(),
+  }),
 });

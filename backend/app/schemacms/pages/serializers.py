@@ -223,7 +223,7 @@ class PageBlockSerializer(serializers.ModelSerializer):
         fields = ("id", "block", "name", "type", "order", "elements")
 
     def get_type(self, obj):
-        return obj.block.name
+        return obj.block.name if obj.block else None
 
 
 class MainPageSerializer(serializers.ModelSerializer):

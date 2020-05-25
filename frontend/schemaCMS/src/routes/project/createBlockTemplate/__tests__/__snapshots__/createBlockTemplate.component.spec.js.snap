@@ -841,14 +841,14 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fznLPX hruDdi"
+        className="sc-fznMnq ihKrpg"
       >
         <div
-          className="sc-fzoaKM dkrGen"
+          className="sc-fzoant eIIKqH"
         />
         1 Element
         <div
-          className="sc-fzoaKM dkrGen"
+          className="sc-fzoant eIIKqH"
         >
           <div
             className="sc-fzpmMD cHkwza"
@@ -942,10 +942,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-fzoant fnwjkG"
+                className="sc-fzqAbL eHNsOY"
               >
                 <div
-                  className="sc-fzomME hSVEfW"
+                  className="sc-fzqMAW iDewly"
                 >
                   <div>
                     <div
@@ -970,7 +970,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoYHE jElmXV"
+                    className="sc-fznAgC hIwNCZ"
                   >
                     <svg
                       style={
@@ -1065,7 +1065,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzomME hSVEfW"
+                  className="sc-fzqMAW iDewly"
                 >
                   <svg
                     style={
@@ -1149,10 +1149,10 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             >
               <div>
                 <div
-                  className="sc-fzqAbL iGmQSL"
+                  className="sc-fzoydu gVJPIu"
                 >
                   <div
-                    className="sc-fzpkqZ dqfQZp"
+                    className="sc-fznLPX llUwmH"
                     onClick={[Function]}
                   >
                     <label
@@ -1402,7 +1402,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fznAgC jTCqAT"
+                      className="sc-fzoaKM hFPMUE"
                     >
                       <svg
                         style={

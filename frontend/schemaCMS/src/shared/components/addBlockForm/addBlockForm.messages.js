@@ -35,8 +35,12 @@ export default defineMessages({
     id: 'page.addBlock.add',
     defaultMessage: 'Add',
   },
-  noBlocks: {
-    id: 'page.addBlock.noBlocks',
-    defaultMessage: 'No Block Templates available',
+  elements: {
+    id: 'page.addBlock.elements',
+    defaultMessage: 'Element',
+  },
+  blank: {
+    id: 'page.addBlock.blank',
+    defaultMessage: 'Blank',
   },
 });

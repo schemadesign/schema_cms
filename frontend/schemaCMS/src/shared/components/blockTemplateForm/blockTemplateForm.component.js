@@ -1,12 +1,8 @@
 import React from 'react';
-import { Accordion, Form, Icons } from 'schemaUI';
+import { Form, Icons } from 'schemaUI';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { append, prepend, remove } from 'ramda';
-import MultiBackend from 'react-dnd-multi-backend';
-import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
-import { DndProvider } from 'react-dnd';
-import { asMutable } from 'seamless-immutable';
+import { prepend } from 'ramda';
 
 import {
   IconsContainer,
@@ -23,8 +19,6 @@ import {
   SwitchContent,
   SwitchCopy,
   BinIconContainer,
-  menuIconStyles,
-  IconWrapper,
 } from '../form/frequentComponents.styles';
 import { Container } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
@@ -32,18 +26,15 @@ import { ContextHeader } from '../contextHeader';
 import { PlusButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
-  BLOCK_TEMPLATES_DELETE_ELEMENTS,
   BLOCK_TEMPLATES_ELEMENTS,
   BLOCK_TEMPLATES_IS_AVAILABLE,
   BLOCK_TEMPLATES_NAME,
-  ELEMENT_KEY,
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
-import { BlockTemplateElement } from '../blockTemplateElement';
 import { CounterHeader } from '../counterHeader';
-import { Draggable } from '../draggable';
+import { BlockTemplateElements } from './blockTemplateElements.component';
 
-const { EditIcon, MenuIcon, BinIcon } = Icons;
+const { EditIcon, BinIcon } = Icons;
 const { Switch } = Form;
 
 export const BlockTemplateForm = ({
@@ -84,28 +75,6 @@ export const BlockTemplateForm = ({
     setFieldValue(BLOCK_TEMPLATES_ELEMENTS, elements);
   };
 
-  const removeElement = index => {
-    const removedElement = values[BLOCK_TEMPLATES_ELEMENTS][index];
-    const newValues = { ...values };
-
-    if (removedElement.id) {
-      newValues[BLOCK_TEMPLATES_DELETE_ELEMENTS] = append(removedElement.id, values[BLOCK_TEMPLATES_DELETE_ELEMENTS]);
-    }
-
-    newValues[BLOCK_TEMPLATES_ELEMENTS] = remove(index, 1, values[BLOCK_TEMPLATES_ELEMENTS]);
-
-    setValues({ ...newValues });
-  };
-
-  const handleMove = (dragIndex, hoverIndex) => {
-    const dragCard = values[BLOCK_TEMPLATES_ELEMENTS][dragIndex];
-    const mutableValues = asMutable(values[BLOCK_TEMPLATES_ELEMENTS]);
-
-    mutableValues.splice(dragIndex, 1);
-    mutableValues.splice(hoverIndex, 0, dragCard);
-
-    setFieldValue(BLOCK_TEMPLATES_ELEMENTS, mutableValues);
-  };
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
   const binIcon = setRemoveModalOpen ? (
     <BinIconContainer id="removeBlock" onClick={() => setRemoveModalOpen(true)}>
@@ -145,43 +114,14 @@ export const BlockTemplateForm = ({
           </MobilePlusContainer>
         }
       />
-      <Accordion>
-        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-          {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
-            <Draggable
-              key={element[ELEMENT_KEY]}
-              accept="box"
-              onMove={handleMove}
-              id={element[ELEMENT_KEY]}
-              index={index}
-              count={elementsCount}
-            >
-              {drag => {
-                const draggableIcon = drag(
-                  <div>
-                    <IconWrapper>
-                      <MenuIcon customStyles={menuIconStyles} />
-                    </IconWrapper>
-                  </div>
-                );
-
-                return (
-                  <BlockTemplateElement
-                    index={index}
-                    element={element}
-                    handleChange={handleChange}
-                    setFieldValue={setFieldValue}
-                    draggableIcon={draggableIcon}
-                    removeElement={removeElement}
-                    autoFocus={!!values[BLOCK_TEMPLATES_NAME].length}
-                    {...restFormikProps}
-                  />
-                );
-              }}
-            </Draggable>
-          ))}
-        </DndProvider>
-      </Accordion>
+      <BlockTemplateElements
+        handleChange={handleChange}
+        setValues={setValues}
+        setFieldValue={setFieldValue}
+        isValid={isValid}
+        values={values}
+        {...restFormikProps}
+      />
       <Switches>
         <SwitchContainer>
           <SwitchContent>
