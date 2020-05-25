@@ -101,6 +101,29 @@ class TestDataSource:
             "tags": [],
         }
 
+    def test_add_tags(self, data_source, tag_category):
+        tags_data = [
+            {"category": tag_category.id, "value": "Test Tag 1"},
+            {"category": tag_category.id, "value": "Test Tag 2"},
+        ]
+
+        data_source.add_tags(tags_data)
+
+        assert data_source.tags.count() == 2
+
+    def test_add_description(self, data_source):
+        description_data = {
+            "data": [
+                {"key": "Name", "value": "Test Name"},
+                {"key": "Surname", "value": "Test Surname"},
+                {"key": "Age", "value": 30},
+            ]
+        }
+
+        data_source.add_description(description_data)
+
+        assert data_source.description.data == description_data["data"]
+
 
 class TestDataSourceMeta:
     @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions

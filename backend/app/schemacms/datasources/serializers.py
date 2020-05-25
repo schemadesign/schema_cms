@@ -165,6 +165,12 @@ class DataSourceSerializer(serializers.ModelSerializer):
         return obj
 
 
+class DataSourceDescriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ds_models.DataSourceDescription
+        fields = ("datasource", "data")
+
+
 class DataSourceDetailSerializer(DataSourceSerializer):
     project = serializers.SerializerMethodField(read_only=True)
 

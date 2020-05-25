@@ -73,3 +73,11 @@ class FilterFactory(factory.django.DjangoModelFactory):
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
     name = factory.Faker("text", max_nb_chars=25)
+
+
+class DescriptionFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "datasources.DataSourceDescription"
+
+    datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
+    data = [{"key": "Key", "value": "Value"}]

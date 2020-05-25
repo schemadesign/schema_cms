@@ -868,3 +868,62 @@ class TestAddTagsView:
 
         assert res.status_code == status.HTTP_200_OK
         assert res.data["results"] == ds_serializers.DataSourceTagSerializer(data_source.tags, many=True).data
+
+
+class TestDescriptionView:
+    @staticmethod
+    def get_url(pk):
+        return reverse("datasources:datasource-addition-description", kwargs=dict(pk=pk))
+
+    def test_get_description(self, api_client, admin, data_source, ds_description):
+        data_source.description = ds_description
+        data_source.save()
+
+        api_client.force_authenticate(admin)
+        res = api_client.get(self.get_url(data_source.id), format="json")
+
+        assert res.status_code == status.HTTP_200_OK
+        assert (
+            res.data["results"]
+            == ds_serializers.DataSourceDescriptionSerializer(data_source.description).data
+        )
+
+    def test_create_description(self, api_client, admin, data_source):
+        payload = {
+            "data": [
+                {"key": "Test Key 1", "value": "Test Value 1"},
+                {"key": "Test Key 2", "value": "Test Value 2"},
+                {"key": "Test Key 3", "value": "Test Value 3"},
+            ]
+        }
+
+        api_client.force_authenticate(admin)
+        res = api_client.post(self.get_url(data_source.id), data=payload, format="json")
+
+        assert res.status_code == status.HTTP_200_OK
+        assert (
+            res.data["results"]
+            == ds_serializers.DataSourceDescriptionSerializer(data_source.description).data
+        )
+
+    def test_update_description(self, api_client, admin, data_source, ds_description):
+        data_source.description = ds_description
+        data_source.save()
+
+        payload = {
+            "data": [
+                {"key": "Test Key 1", "value": "Test Value 1"},
+                {"key": "Test Key 2", "value": "Test Value 2"},
+            ]
+        }
+
+        api_client.force_authenticate(admin)
+        res = api_client.patch(self.get_url(data_source.id), data=payload, format="json")
+        data_source.refresh_from_db()
+
+        assert res.status_code == status.HTTP_200_OK
+        assert (
+            res.data["results"]
+            == ds_serializers.DataSourceDescriptionSerializer(data_source.description).data
+        )
+        assert len(res.data["results"]["data"]) == 2
