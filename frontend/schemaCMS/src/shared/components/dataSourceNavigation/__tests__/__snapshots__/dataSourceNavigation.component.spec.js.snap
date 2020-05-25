@@ -160,6 +160,32 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
       />
     </styled.div>
   </styled.div>
+  <styled.div
+    key="6"
+  >
+    <styled.div
+      active={false}
+      disabled={true}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+        id="statesBtn"
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="States"
+        id="shared.components.dataSourceNavigation.state"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
 </styled.div>
 `;
 
@@ -323,6 +349,32 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
       />
     </styled.div>
   </styled.div>
+  <styled.div
+    key="6"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+        id="statesBtn"
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="States"
+        id="shared.components.dataSourceNavigation.state"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
 </styled.div>
 `;
 
@@ -482,6 +534,32 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
       <FormattedMessage
         defaultMessage="Tags"
         id="shared.components.dataSourceNavigation.tag"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="6"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+        id="statesBtn"
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="States"
+        id="shared.components.dataSourceNavigation.state"
         values={Object {}}
       />
     </styled.div>

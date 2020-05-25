@@ -1,0 +1,434 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectStateList: Component should render correctly 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="States"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="datasource.dataSourceStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="States"
+        id="datasource.dataSourceStateList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "id": "1",
+          "name": "name",
+        }
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "/",
+        }
+      }
+    />
+  </ContextHeader>
+  <styled.div>
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      id="createStateDesktopBtn"
+      onClick={[Function]}
+    />
+  </styled.div>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No States"
+        id="datasource.dataSourceStateList.noData"
+        values={Object {}}
+      />
+    }
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              NaN years ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              —
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="0"
+      >
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
+            }
+          }
+          id="stateName-0"
+          onClick={[Function]}
+        >
+          name 1
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-0"
+          >
+            description
+          </P>
+        </styled.div>
+      </Styled(Component)>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              NaN years ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              —
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="1"
+      >
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
+            }
+          }
+          id="stateName-1"
+          onClick={[Function]}
+        >
+          name 2
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-1"
+          >
+            description
+          </P>
+        </styled.div>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
+  <NavigationContainer
+    contentStyles={null}
+    fixed={true}
+    hideOnDesktop={true}
+    right={false}
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      id="createStateBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`ProjectStateList: Component should render correctly when no tags 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="States"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="datasource.dataSourceStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="States"
+        id="datasource.dataSourceStateList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "id": "1",
+          "name": "name",
+        }
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "/",
+        }
+      }
+    />
+  </ContextHeader>
+  <styled.div>
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      id="createStateDesktopBtn"
+      onClick={[Function]}
+    />
+  </styled.div>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={true}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No States"
+        id="datasource.dataSourceStateList.noData"
+        values={Object {}}
+      />
+    }
+  >
+    <styled.section />
+  </LoadingWrapper>
+  <NavigationContainer
+    contentStyles={null}
+    fixed={true}
+    hideOnDesktop={true}
+    right={false}
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      id="createStateBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`ProjectStateList: Component should render correctly with loader 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="States"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="datasource.dataSourceStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="States"
+        id="datasource.dataSourceStateList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "id": "1",
+          "name": "name",
+        }
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "/",
+        }
+      }
+    />
+  </ContextHeader>
+  <styled.div>
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      id="createStateDesktopBtn"
+      onClick={[Function]}
+    />
+  </styled.div>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No States"
+        id="datasource.dataSourceStateList.noData"
+        values={Object {}}
+      />
+    }
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              NaN years ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              —
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="0"
+      >
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
+            }
+          }
+          id="stateName-0"
+          onClick={[Function]}
+        >
+          name 1
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-0"
+          >
+            description
+          </P>
+        </styled.div>
+      </Styled(Component)>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              NaN years ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              —
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="1"
+      >
+        <Styled(H1)
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "wordBreak": "break-word",
+            }
+          }
+          id="stateName-1"
+          onClick={[Function]}
+        >
+          name 2
+        </Styled(H1)>
+        <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-1"
+          >
+            description
+          </P>
+        </styled.div>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
+  <NavigationContainer
+    contentStyles={null}
+    fixed={true}
+    hideOnDesktop={true}
+    right={false}
+  >
+    <PlusButton
+      customStyles={Object {}}
+      hideOnDesktop={false}
+      id="createStateBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;

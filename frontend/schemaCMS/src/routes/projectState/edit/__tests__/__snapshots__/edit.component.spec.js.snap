@@ -160,7 +160,7 @@ exports[`Edit: Component should render correctly 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <ProjectStateForm
+    <DataSourceStateForm
       dataSources={
         Array [
           Object {

@@ -5,6 +5,7 @@ import {
   PREVIEW_PAGE,
   RESULT_PAGE,
   SOURCE_PAGE,
+  STATES_PAGE,
   STEPS_PAGE,
   TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
@@ -33,5 +34,9 @@ export default defineMessages({
   [FILTERS_PAGE]: {
     id: `shared.components.dataSourceNavigation.${FILTERS_PAGE}`,
     defaultMessage: 'Filters',
+  },
+  [STATES_PAGE]: {
+    id: `shared.components.dataSourceNavigation.${STATES_PAGE}`,
+    defaultMessage: 'States',
   },
 });

@@ -19,6 +19,7 @@ export const STEPS_PAGE = 'steps';
 export const RESULT_PAGE = 'result';
 export const FILTERS_PAGE = 'filters';
 export const TAGS_PAGE = 'tag';
+export const STATES_PAGE = 'state';
 
 export const META_PENDING = 'pending';
 export const META_PROCESSING = 'processing';

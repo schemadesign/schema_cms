@@ -12,7 +12,7 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { contentStyles, NavigationButtons } from '../../project/createProjectState/createProjectState.styles';
+import { contentStyles, NavigationButtons } from '../../../shared/components/navigationStyles';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 

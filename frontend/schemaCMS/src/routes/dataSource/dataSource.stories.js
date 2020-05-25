@@ -10,6 +10,7 @@ export const defaultProps = {
     activeJob: null,
   },
   fetchDataSource: Function.prototype,
+  fetchProject: Function.prototype,
   unmountDataSource: Function.prototype,
   match: {
     params: {

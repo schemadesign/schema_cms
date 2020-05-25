@@ -13,7 +13,7 @@ import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { contentStyles, NavigationButtons } from '../../project/createProjectState/createProjectState.styles';
+import { contentStyles, NavigationButtons } from '../../../shared/components/navigationStyles';
 import { PROJECT_STATE_FILTERS } from '../../../modules/projectState/projectState.constants';
 import { Link } from './stateFilterList.styles';
 
