@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useLocation } from 'react-router';
 import { Icons } from 'schemaUI';
-import { propEq, find, map, omit, pipe, prepend, always } from 'ramda';
+import { propEq, find, map, omit, pipe, prepend, always, defaultTo } from 'ramda';
 
 import { SelectContainer } from './addBlockForm.styles';
 import { LoadingWrapper } from '../loadingWrapper';
@@ -53,7 +53,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
       label: name,
       value: id,
     })),
-    prepend({ label: 'Blank', value: 0 })
+    prepend({ label: intl.formatMessage(messages.blank), value: 0 })
   )(blockTemplates);
 
   const { handleSubmit, handleChange, values, isValid, dirty, setFieldValue, ...restFormikProps } = useFormik({
@@ -62,11 +62,14 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
     validationSchema: () => ADD_BLOCK_SCHEMA,
     onSubmit: ({ name, type, elements: customElements }) => {
       try {
-        const blockTemplate = find(propEq('id', type), blockTemplates);
-        const { name: blockName, id, elements: templateElements, ...rest } = blockTemplate || {
-          elements: customElements,
-          name,
-        };
+        const blockTemplate = pipe(
+          find(propEq('id', type)),
+          defaultTo({
+            elements: customElements,
+            name,
+          })
+        )(blockTemplates);
+        const { name: blockName, id, elements: templateElements, ...rest } = blockTemplate;
         const page = state.page || {};
         const blocks = page[PAGE_BLOCKS] || [];
 

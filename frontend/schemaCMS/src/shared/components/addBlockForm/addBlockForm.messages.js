@@ -39,4 +39,8 @@ export default defineMessages({
     id: 'page.addBlock.elements',
     defaultMessage: 'Element',
   },
+  blank: {
+    id: 'page.addBlock.blank',
+    defaultMessage: 'Blank',
+  },
 });
