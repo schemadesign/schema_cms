@@ -1,6 +1,5 @@
 import json
 
-from django.db.models import Prefetch
 from rest_framework import serializers
 
 from ..projects import models as pr_models
@@ -121,11 +120,11 @@ class PABlockElementSerializer(ReadOnlySerializer):
     def custom_element_data(custom_element):
         elements = []
 
-        for element_set in custom_element.elements_sets.order_by("order"):
+        for element_set in custom_element.elements_sets.all():
             data = {
                 "id": element_set.id,
                 "order": element_set.order,
-                "elements": PABlockElementSerializer(element_set.elements.order_by("order"), many=True).data,
+                "elements": PABlockElementSerializer(element_set.elements, many=True).data,
             }
             elements.append(data)
 
@@ -195,14 +194,8 @@ class PAPageDetailSerializer(PAPageSerializer):
         fields = PAPageSerializer.Meta.fields + ("blocks",)
 
     def get_blocks(self, obj):
-        blocks = obj.pageblock_set.all().prefetch_related(
-            Prefetch(
-                "elements",
-                queryset=pa_models.PageBlockElement.objects.all()
-                .order_by("order")
-                .exclude(custom_element_set__isnull=False),
-            ),
-        )
+        blocks = obj.pageblock_set.all()
+
         return PAPageBlockSerializer(blocks, many=True).data
 
 
