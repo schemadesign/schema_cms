@@ -28,15 +28,15 @@ export const INITIAL_STATE = new Immutable({
 
 const setSections = (state = INITIAL_STATE, { payload }) => state.set('sections', payload);
 const setInternalConnections = (state = INITIAL_STATE, { payload }) => state.set('internalConnections', payload);
-const setSection = (state = INITIAL_STATE, { payload }) =>
-  state.set(
-    'section',
-    ifElse(
-      propEq('mainPage', null),
-      identity,
-      evolve({ pages: pages => move(findIndex(propEq('id', payload.mainPage), pages), 0, pages) })
-    )(payload)
-  );
+
+const reorderPages = payload =>
+  ifElse(
+    propEq('mainPage', null),
+    identity,
+    evolve({ pages: pages => move(findIndex(propEq('id', payload.mainPage), pages), 0, pages) })
+  )(payload);
+
+const setSection = (state = INITIAL_STATE, { payload }) => state.set('section', reorderPages(payload));
 
 export const reducer = createReducer(INITIAL_STATE, {
   [SectionsRoutines.fetchSections.SUCCESS]: setSections,
