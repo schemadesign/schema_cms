@@ -1,4 +1,6 @@
 from django.db import models as d_models
+from django.shortcuts import get_object_or_404
+
 from rest_framework import generics, permissions, response
 
 from . import models, serializers
@@ -183,13 +185,16 @@ class PageListCreateView(generics.ListCreateAPIView):
         .order_by("-created")
     )
 
-    def get_parent(self):
-        section = generics.get_object_or_404(models.Section.objects.all(), pk=self.kwargs["section_pk"])
-        self.project_info = section.project.project_info
-        return section
+    def initial(self, request, *args, **kwargs):
+        super().initial(request, *args, **kwargs)
+        self.section_obj = self.get_section_object(kwargs["section_pk"])
+
+    @staticmethod
+    def get_section_object(section_pk):
+        return get_object_or_404(models.Section, pk=section_pk)
 
     def get_queryset(self):
-        return self.queryset.filter(section=self.get_parent())
+        return super().get_queryset().filter(section=self.section_obj)
 
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
@@ -200,12 +205,12 @@ class PageListCreateView(generics.ListCreateAPIView):
         return response.Response(data)
 
     def create(self, request, *args, **kwargs):
-        if "sections" not in request.data:
-            request.data["section"] = kwargs["section_pk"]
+        request.data["section"] = kwargs["section_pk"]
+
         return super().create(request, *args, **kwargs)
 
     def perform_create(self, serializer):
-        serializer.save(created_by=self.request.user, is_template=False)
+        serializer.save(created_by=self.request.user, is_template=False, project=self.section_obj.project)
 
 
 class PageViewSet(DetailViewSet):

@@ -182,30 +182,19 @@ class PageTemplateSerializer(CustomModelSerializer):
         ]
 
     @transaction.atomic()
-    def create(self, validated_data):
+    def save(self, *args, **kwargs):
         blocks = self.initial_data.pop("blocks", [])
-        template = self.Meta.model(created_by=self.context["request"].user, **validated_data)
-        template.save()
+        blocks_to_delete = self.initial_data.pop("delete_blocks", [])
+
+        template = super().save(created_by=self.context["request"].user, **kwargs)
+
+        if blocks_to_delete:
+            template.delete_blocks(blocks_to_delete)
 
         if blocks:
             self.create_or_update_blocks(template, blocks)
 
         return template
-
-    @transaction.atomic()
-    def update(self, instance, validated_data):
-        blocks = self.initial_data.pop("blocks", [])
-        blocks_to_delete = self.initial_data.pop("delete_blocks", [])
-
-        if blocks_to_delete:
-            instance.delete_blocks(blocks_to_delete)
-
-        instance = super().update(instance, validated_data)
-
-        if blocks:
-            self.create_or_update_blocks(instance, blocks)
-
-        return instance
 
     def create_or_update_blocks(self, template, blocks):
         blocks_data = self.validate_block_data(blocks)
@@ -293,46 +282,26 @@ class PageSerializer(CustomModelSerializer):
         ]
 
     @transaction.atomic()
-    def create(self, validated_data):
-        validated_data["project"] = validated_data.get("section").project
+    def save(self, *args, **kwargs):
         blocks = self.initial_data.get("blocks", [])
         tags = self.initial_data.get("tags", [])
+        blocks_to_delete = self.initial_data.pop("delete_blocks", [])
 
-        page = super().create(validated_data)
+        page = super().save(**kwargs)
 
-        if not validated_data.get("display_name"):
+        if not page.display_name:
             page.display_name = page.slug
             page.save()
+
+        if blocks_to_delete:
+            page.delete_blocks(blocks_to_delete)
 
         if blocks:
             self.create_or_update_blocks(page, blocks)
 
-        if tags:
-            page.add_tags(tags)
+        page.add_tags(tags)
 
         return page
-
-    @transaction.atomic()
-    def update(self, instance, validated_data):
-        blocks = self.initial_data.pop("blocks", [])
-        tags = self.initial_data.get("tags", [])
-        blocks_to_delete = self.initial_data.pop("delete_blocks", [])
-
-        if blocks_to_delete:
-            instance.delete_blocks(blocks_to_delete)
-
-        instance = super().update(instance, validated_data)
-
-        if not instance.display_name:
-            instance.display_name = instance.slug
-            instance.save()
-
-        if blocks:
-            self.create_or_update_blocks(instance, blocks)
-
-        instance.add_tags(tags)
-
-        return instance
 
     def create_or_update_blocks(self, page, blocks):
         blocks_data = self.validate_block_data(blocks)
