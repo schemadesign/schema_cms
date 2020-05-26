@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
+import { DATA_SOURCE_STATE_TAGS } from '../../modules/dataSourceState/dataSourceState.constants';
 
 export default defineMessages({
   subTitle: {
@@ -33,5 +34,9 @@ export default defineMessages({
   nameStateNameNotUniqueError: {
     id: 'dataSourceState.nameStateNameNotUniqueError',
     defaultMessage: 'A state with this name already exists in data source.',
+  },
+  [DATA_SOURCE_STATE_TAGS]: {
+    id: `dataSourceState.${DATA_SOURCE_STATE_TAGS}`,
+    defaultMessage: 'Tags',
   },
 });

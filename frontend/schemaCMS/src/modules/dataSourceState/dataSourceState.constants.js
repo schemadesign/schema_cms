@@ -14,6 +14,7 @@ export const DATA_SOURCE_STATE_FILTER_TYPE = 'filterType';
 export const DATA_SOURCE_STATE_FILTER_FIELD = 'field';
 export const DATA_SOURCE_STATE_FILTER_VALUES = 'values';
 export const DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES = 'secondaryValues';
+export const DATA_SOURCE_STATE_TAGS = 'tags';
 
 export const INITIAL_VALUES = {
   [DATA_SOURCE_STATE_NAME]: '',

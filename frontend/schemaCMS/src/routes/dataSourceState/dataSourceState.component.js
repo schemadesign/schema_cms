@@ -5,6 +5,8 @@ import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
+import { Form } from 'schemaUI';
+import { groupBy, toPairs, map, prop, pipe } from 'ramda';
 
 import messages from './dataSourceState.messages';
 import { LinkContainer } from './dataSourceState.styles';
@@ -13,7 +15,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import reportError from '../../shared/utils/reportError';
 import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constants';
 import { MobileMenu } from '../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions } from '../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, formatTags, prepareTags } from '../../shared/utils/helpers';
 import { DATA_SOURCE_STATE_ID, getProjectMenuOptions } from '../project/project.constants';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import { DataSourceStateForm } from '../../shared/components/dataSourceStateForm';
@@ -21,23 +23,44 @@ import { Link } from '../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { contentStyles, NavigationButtons } from '../../shared/components/navigationStyles';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
-import { DATA_SOURCE_STATE_SCHEMA } from '../../modules/dataSourceState/dataSourceState.constants';
+import {
+  DATA_SOURCE_STATE_SCHEMA,
+  DATA_SOURCE_STATE_TAGS,
+} from '../../modules/dataSourceState/dataSourceState.constants';
+import { TagSearch } from '../../shared/components/tagSearch';
 
-export const DataSourceState = ({ fetchState, project, removeState, userRole, updateState, state }) => {
+const { Label } = Form;
+
+export const DataSourceState = ({
+  fetchState,
+  project,
+  removeState,
+  userRole,
+  updateState,
+  state,
+  dataSourceTags,
+  fetchDataSourceTags,
+}) => {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
-  const [error, setError] = useState(null);
   const { stateId } = useParams();
   const history = useHistory();
   const intl = useIntl();
   const title = state.name;
   const menuOptions = getProjectMenuOptions(project.id);
+  const tagCategories = pipe(
+    groupBy(prop('categoryName')),
+    toPairs,
+    map(([name, tags]) => ({ name, id: tags[0].category, tags }))
+  )(dataSourceTags);
 
   useEffectOnce(() => {
     (async () => {
       try {
-        await fetchState({ stateId });
+        const { datasource: dataSourceId } = await fetchState({ stateId });
+        await fetchDataSourceTags({ dataSourceId });
       } catch (e) {
         reportError(e);
         setError(e);
@@ -48,12 +71,12 @@ export const DataSourceState = ({ fetchState, project, removeState, userRole, up
   });
 
   const { values, handleSubmit, isSubmitting, ...restFormikProps } = useFormik({
-    initialValues: state,
+    initialValues: { ...state, tags: prepareTags(state.tags) },
     enableReinitialize: true,
     validationSchema: () => DATA_SOURCE_STATE_SCHEMA,
     onSubmit: async (formData, { setSubmitting, setErrors }) => {
       try {
-        await updateState({ stateId: state.id, formData });
+        await updateState({ stateId: state.id, formData: { ...formData, tags: formatTags(formData.tags) } });
         setSubmitting(false);
       } catch (errors) {
         reportError(errors);
@@ -92,6 +115,15 @@ export const DataSourceState = ({ fetchState, project, removeState, userRole, up
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
         <DataSourceStateForm values={values} intl={intl} {...restFormikProps} />
+        <Label>
+          <FormattedMessage {...messages[DATA_SOURCE_STATE_TAGS]} />
+        </Label>
+        <TagSearch
+          tagCategories={tagCategories}
+          values={values.tags}
+          valuePath="tags"
+          setFieldValue={restFormikProps.setFieldValue}
+        />
         <LinkContainer>
           <Link onClick={handleRemoveState}>
             <FormattedMessage {...messages.deleteState} />
@@ -134,7 +166,9 @@ DataSourceState.propTypes = {
   fetchState: PropTypes.func.isRequired,
   removeState: PropTypes.func.isRequired,
   updateState: PropTypes.func.isRequired,
+  fetchDataSourceTags: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
+  dataSourceTags: PropTypes.array.isRequired,
   state: PropTypes.object.isRequired,
   userRole: PropTypes.string.isRequired,
 };
