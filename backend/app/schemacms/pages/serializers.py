@@ -243,9 +243,11 @@ class PageSectionSerializer(serializers.ModelSerializer):
 
 
 class PageTagSerializer(serializers.ModelSerializer):
+    category_name = serializers.CharField(source="category.name", default="", read_only=True)
+
     class Meta:
         model = models.PageTag
-        fields = ("category", "value")
+        fields = ("category", "category_name", "value")
 
 
 class PageSerializer(CustomModelSerializer):
