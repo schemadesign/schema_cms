@@ -1,5 +1,7 @@
 import markdown
-from markdown_checklist.extension import ChecklistExtension
+
+
+MARKDOWN_EXTENSIONS = ["sane_lists", "pymdownx.tasklist", "pymdownx.betterem", "pymdownx.tilde"]
 
 
 def connection_in_html(element):
@@ -82,7 +84,7 @@ def plain_text_in_html(element):
 
 
 def markdown_in_html(element):
-    formatted_element = markdown.markdown(element.markdown, extensions=[ChecklistExtension()])
+    formatted_element = markdown.markdown(element.markdown, extensions=MARKDOWN_EXTENSIONS)
     html_value = f"<div id='markdown-{element.id}' class='element markdown'>{formatted_element}</div>"
 
     return html_value
