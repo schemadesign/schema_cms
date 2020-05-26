@@ -145,6 +145,7 @@ class API(core.Stack):
             "DJANGO_HOST": "django_host_arn",
             "DJANGO_ROOT_PASSWORD": "django_root_password_arn",
             "DB_CONNECTION": "db_connection_arn",
+            "PUBLIC_API_URL": "public_api_url",
         }
 
         self.env = {k: self.map_secret(v) for k, v in env_map.items()}
