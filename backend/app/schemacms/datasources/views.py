@@ -25,6 +25,7 @@ class BaseDataSourceView:
     queryset = (
         models.DataSource.objects.prefetch_related(
             "tags",
+            "tags__category",
             "filters",
             Prefetch("active_job__steps", queryset=models.DataSourceJobStep.objects.order_by("exec_order")),
         )

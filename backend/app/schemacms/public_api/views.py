@@ -6,7 +6,7 @@ from django.conf import settings
 from django.db.models import Prefetch
 from django.shortcuts import render, get_object_or_404
 from django.urls import NoReverseMatch
-from rest_framework import decorators, mixins, reverse, response, renderers, views, viewsets
+from rest_framework import decorators, mixins, permissions, reverse, response, renderers, views, viewsets
 
 from . import serializers, records_reader
 from ..datasources.models import DataSource, Filter
@@ -18,6 +18,8 @@ from ..utils.serializers import ActionSerializerViewSetMixin
 class PARootView(views.APIView):
     api_root_dict = None
     renderer_classes = [renderers.JSONRenderer]
+    _ignore_model_permissions = False
+    permission_classes = (permissions.AllowAny,)
 
     def get(self, request, *args, **kwargs):
         ret = collections.OrderedDict()
