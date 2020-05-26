@@ -37,18 +37,6 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
     >
       <a
         className="sc-AxiKw caTYgO"
-        href="/project/1/state"
-        id="stateTab"
-        onClick={[Function]}
-      >
-        States
-      </a>
-    </div>
-    <div
-      className="sc-AxirZ eteeke"
-    >
-      <a
-        className="sc-AxiKw caTYgO"
         href="/project/1/tag-categories"
         id="tag-categoriesTab"
         onClick={[Function]}

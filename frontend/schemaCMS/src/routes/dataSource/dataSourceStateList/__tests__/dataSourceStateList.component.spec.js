@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { DataSourceStateList } from '../dataSourceStateList.component';
 import { defaultProps, noStatesProps } from '../dataSourceStateList.stories';
 
-describe('ProjectStateList: Component', () => {
+describe('DataSourceStateList: Component', () => {
   const component = props => <DataSourceStateList {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

@@ -7,7 +7,7 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
 import { DataSourceStateList } from './dataSourceStateList.component';
-import { ProjectStateRoutines, selectStates } from '../../../modules/projectState';
+import { DataSourceStateRoutines, selectStates } from '../../../modules/dataSourceState';
 import { selectUserRole } from '../../../modules/userProfile';
 import { selectProject } from '../../../modules/project';
 import { selectDataSource } from '../../../modules/dataSource';
@@ -22,7 +22,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchStates: promisifyRoutine(ProjectStateRoutines.fetchList),
+      fetchStates: promisifyRoutine(DataSourceStateRoutines.fetchList),
     },
     dispatch
   ),

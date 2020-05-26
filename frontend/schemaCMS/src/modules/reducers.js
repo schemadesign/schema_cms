@@ -9,7 +9,7 @@ import { reducer as jobReducer } from './job/job.redux';
 import { reducer as filterReducer } from './filter/filter.redux';
 import { reducer as pageReducer } from './page/page.redux';
 import { reducer as TagCategoryReducer } from './tagCategory/tagCategory.redux';
-import { reducer as projectStateReducer } from './projectState/projectState.redux';
+import { reducer as dataSourceStateReducer } from './dataSourceState/dataSourceState.redux';
 import { reducer as blockTemplatesReducer } from './blockTemplates/blockTemplates.redux';
 import { reducer as pageTemplatesReducer } from './pageTemplates/pageTemplates.redux';
 import { reducer as sectionsReducer } from './sections/sections.redux';
@@ -30,7 +30,7 @@ export default function createReducer() {
     filter: filterReducer,
     page: pageReducer,
     tagCategory: TagCategoryReducer,
-    projectState: projectStateReducer,
+    dataSourceState: dataSourceStateReducer,
     blockTemplates: blockTemplatesReducer,
     pageTemplates: pageTemplatesReducer,
     sections: sectionsReducer,

@@ -5,7 +5,7 @@ import { CreateDataSourceState } from './createDataSourceState.component';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { history, intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
-import { state } from '../../../modules/projectState/projectState.mock';
+import { state } from '../../../modules/dataSourceState/dataSourceState.mock';
 
 export const defaultProps = {
   handleSubmit: Function.prototype,
@@ -27,6 +27,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project|CreateProjectState', module)
+storiesOf('Project|CreateDataSourceState', module)
   .addDecorator(withTheme())
   .add('Default', () => <CreateDataSourceState {...defaultProps} />);

@@ -8,7 +8,7 @@ import {
   PROJECT_STATE_AUTHOR,
   PROJECT_STATE_CREATED,
   PROJECT_STATE_IS_PUBLIC,
-} from '../../../modules/projectState/projectState.constants';
+} from '../../../modules/dataSourceState/dataSourceState.constants';
 
 export default defineMessages({
   [PROJECT_STATE_DATA_SOURCE]: {

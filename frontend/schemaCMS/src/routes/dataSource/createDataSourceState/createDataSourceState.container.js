@@ -16,8 +16,8 @@ import {
   CREATE_PROJECT_STATE_FORM,
   INITIAL_VALUES,
   PROJECT_STATE_SCHEMA,
-} from '../../../modules/projectState/projectState.constants';
-import { ProjectStateRoutines } from '../../../modules/projectState';
+} from '../../../modules/dataSourceState/dataSourceState.constants';
+import { DataSourceStateRoutines } from '../../../modules/dataSourceState';
 import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
@@ -30,7 +30,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchDataSources: promisifyRoutine(DataSourceRoutines.fetchList),
-      createState: promisifyRoutine(ProjectStateRoutines.create),
+      createState: promisifyRoutine(DataSourceStateRoutines.create),
     },
     dispatch
   ),

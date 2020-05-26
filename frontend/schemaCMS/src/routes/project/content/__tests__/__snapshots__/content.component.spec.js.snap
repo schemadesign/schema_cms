@@ -396,18 +396,6 @@ exports[`Content: Component should render correctly 1`] = `
       >
         <a
           className="sc-fznxsB byrGmN"
-          href="/project/projectId/state"
-          id="stateTab"
-          onClick={[Function]}
-        >
-          States
-        </a>
-      </div>
-      <div
-        className="sc-fzpjYC bzVAtS"
-      >
-        <a
-          className="sc-fznxsB byrGmN"
           href="/project/projectId/tag-categories"
           id="tag-categoriesTab"
           onClick={[Function]}

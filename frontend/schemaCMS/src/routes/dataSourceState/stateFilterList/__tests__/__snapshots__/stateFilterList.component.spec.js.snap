@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StateFilterList: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="name"
+  />
+  <MobileMenu
+    active="stateNavBtn"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Select Filters"
+        id="dataSourceState.stateFilterList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="name"
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Select Filters"
+        id="dataSourceState.stateFilterList.subTitle"
+        values={Object {}}
+      />
+    }
+    title="name"
+  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={true}
+    noDataContent={
+      <FormattedMessage
+        defaultMessage="No Filters"
+        id="dataSourceState.stateFilterList.noData"
+        values={Object {}}
+      />
+    }
+  >
+    <Component
+      name="filters"
+      onChange={[Function]}
+      value={Array []}
+    />
+  </LoadingWrapper>
+  <NavigationContainer
+    contentStyles={
+      Array [
+        "
+  display: flex;
+  flex-direction: column;
+",
+      ]
+    }
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <styled.div>
+      <BackButton
+        disabled={true}
+        onClick={[Function]}
+        type="button"
+      />
+      <NextButton
+        disabled={true}
+        loading={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Finish"
+          id="dataSourceState.stateFilterList.finish"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+    <Component
+      activeStep={3}
+      steps={3}
+    />
+  </NavigationContainer>
+</Fragment>
+`;

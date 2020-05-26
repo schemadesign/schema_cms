@@ -12,7 +12,7 @@ import { watchJob } from './job/job.sagas';
 import { watchFilter } from './filter/filter.sagas';
 import { watchPage } from './page/page.sagas';
 import { watchTagCategory } from './tagCategory/tagCategory.sagas';
-import { watchProjectState } from './projectState/projectState.sagas';
+import { watchDataSourceState } from './dataSourceState/dataSourceState.sagas';
 import { watchBlockTemplates } from './blockTemplates/blockTemplates.sagas';
 import { watchPageTemplates } from './pageTemplates/pageTemplates.sagas';
 import { watchSections } from './sections/sections.sagas';
@@ -34,7 +34,7 @@ export default function* rootSaga() {
       fork(watchFilter),
       fork(watchPage),
       fork(watchTagCategory),
-      fork(watchProjectState),
+      fork(watchDataSourceState),
       fork(watchBlockTemplates),
       fork(watchPageTemplates),
       fork(watchSections),

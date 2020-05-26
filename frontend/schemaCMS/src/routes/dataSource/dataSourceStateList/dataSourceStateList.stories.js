@@ -38,7 +38,7 @@ export const noStatesProps = {
   states: [],
 };
 
-storiesOf('ProjectStateList', module)
+storiesOf('DataSourceStateList', module)
   .addDecorator(withTheme())
   .add('Default', () => <DataSourceStateList {...defaultProps} />)
   .add('No states', () => <DataSourceStateList {...noStatesProps} />);

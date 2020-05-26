@@ -23,7 +23,7 @@ import { ResetPassword } from './resetPassword';
 import { Settings } from './settings';
 import { User } from './user';
 import { TagCategory } from './tagCategory';
-import { ProjectState } from './projectState';
+import { DataSourceState } from './dataSourceState';
 import { BlockTemplate } from './blockTemplate';
 import { PageTemplate } from './pageTemplate';
 import { Section } from './section';
@@ -98,7 +98,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={`${ROUTES.TAG_CATEGORY}/:tagCategoryId`} component={TagCategory} />
 
-            <AuthRoute path={`${ROUTES.STATE}/:stateId`} component={ProjectState} />
+            <AuthRoute path={`${ROUTES.STATE}/:stateId`} component={DataSourceState} />
 
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
 

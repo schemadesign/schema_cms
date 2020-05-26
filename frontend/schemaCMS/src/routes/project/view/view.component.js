@@ -159,7 +159,7 @@ export class View extends PureComponent {
         header: messages.states,
         value: meta.states,
         to: `/project/${projectId}/state`,
-        id: 'projectStates',
+        id: 'dataSourceStates',
       },
       {
         header: messages.pages,
