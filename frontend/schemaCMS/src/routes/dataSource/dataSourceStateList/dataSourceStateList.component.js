@@ -43,9 +43,9 @@ export class DataSourceStateList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = this.props.project.id;
+      const dataSourceId = this.props.dataSource.id;
 
-      await this.props.fetchStates({ projectId });
+      await this.props.fetchStates({ dataSourceId });
 
       this.setState({ loading: false });
     } catch (error) {
@@ -56,7 +56,7 @@ export class DataSourceStateList extends PureComponent {
 
   handleCreateState = () =>
     this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/state/create`);
-  handleShowState = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}`);
+  handleShowState = id => this.props.history.push(`/state/${id}`);
 
   renderHeader = (list = []) => (
     <HeaderList>

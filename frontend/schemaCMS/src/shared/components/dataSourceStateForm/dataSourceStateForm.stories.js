@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { DataSourceStateForm } from './dataSourceStateForm.component';
 import { intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
-import { state } from '../../../modules/projectState/projectState.mock';
+import { state } from '../../../modules/dataSourceState/dataSourceState.mock';
 
 export const defaultProps = {
   intl,

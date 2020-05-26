@@ -15,7 +15,7 @@ import {
   PROJECT_STATE_AUTHOR,
   PROJECT_STATE_CREATED,
   PROJECT_STATE_IS_PUBLIC,
-} from '../../../modules/projectState/projectState.constants';
+} from '../../../modules/dataSourceState/dataSourceState.constants';
 import { renderWhenTrue } from '../../utils/rendering';
 
 const { Switch } = Form;
