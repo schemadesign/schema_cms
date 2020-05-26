@@ -13,9 +13,9 @@ import { DataSourceRoutines, selectDataSources } from '../../../modules/dataSour
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import messages from './createDataSourceState.messages';
 import {
-  CREATE_PROJECT_STATE_FORM,
+  CREATE_DATA_SOURCE_STATE_FORM,
   INITIAL_VALUES,
-  PROJECT_STATE_SCHEMA,
+  DATA_SOURCE_STATE_SCHEMA,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { DataSourceStateRoutines } from '../../../modules/dataSourceState';
 import { selectProject } from '../../../modules/project';
@@ -45,10 +45,10 @@ export default compose(
   injectIntl,
   withRouter,
   withFormik({
-    displayName: CREATE_PROJECT_STATE_FORM,
+    displayName: CREATE_DATA_SOURCE_STATE_FORM,
     enableReinitialize: true,
     mapPropsToValues: () => INITIAL_VALUES,
-    validationSchema: () => PROJECT_STATE_SCHEMA,
+    validationSchema: () => DATA_SOURCE_STATE_SCHEMA,
     handleSubmit: async (formData, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);

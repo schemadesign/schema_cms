@@ -11,16 +11,16 @@ import reportError from '../../../shared/utils/reportError';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
+import { getProjectMenuOptions, DATA_SOURCE_STATE_ID } from '../../project/project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import {
-  PROJECT_STATE_FILTER_FIELD,
-  PROJECT_STATE_FILTER_NAME,
-  PROJECT_STATE_FILTER_SECONDARY_VALUES,
-  PROJECT_STATE_FILTER_TYPE,
-  PROJECT_STATE_FILTER_VALUES,
+  DATA_SOURCE_STATE_FILTER_FIELD,
+  DATA_SOURCE_STATE_FILTER_NAME,
+  DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES,
+  DATA_SOURCE_STATE_FILTER_TYPE,
+  DATA_SOURCE_STATE_FILTER_VALUES,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { Select } from '../../../shared/components/form/select';
 import {
@@ -93,7 +93,7 @@ export class StateFilter extends PureComponent {
   handleBack = () => this.props.history.push(`/state/${this.props.state.id}/filters`);
 
   handleSelectStatus = ({ value }) => {
-    this.props.setFieldValue(PROJECT_STATE_FILTER_VALUES, [value]);
+    this.props.setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, [value]);
   };
 
   handleCheckboxChange = e => {
@@ -104,7 +104,7 @@ export class StateFilter extends PureComponent {
     } = this.props;
     const setValues = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)));
 
-    setFieldValue(PROJECT_STATE_FILTER_VALUES, setValues(checked));
+    setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, setValues(checked));
   };
 
   handleRangeChange = e => {
@@ -122,7 +122,7 @@ export class StateFilter extends PureComponent {
       return;
     }
 
-    this.props.setFieldValue(`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.${index}`, intValue);
+    this.props.setFieldValue(`${DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES}.${index}`, intValue);
     this.props.setFieldValue(name, intValue);
   };
 
@@ -136,22 +136,22 @@ export class StateFilter extends PureComponent {
     const [minRounded, maxRounded] = values.range;
 
     if ((isBlur && (intValue < minRounded || intValue > maxRounded)) || (isBlur && isNaN(intValue))) {
-      setFieldValue(name, values[PROJECT_STATE_FILTER_VALUES][intIndex]);
+      setFieldValue(name, values[DATA_SOURCE_STATE_FILTER_VALUES][intIndex]);
       return;
     }
 
     setFieldValue(name, intValue);
     if (intValue >= minRounded && intValue <= maxRounded) {
-      setFieldValue(`${PROJECT_STATE_FILTER_VALUES}.${index}`, intValue);
+      setFieldValue(`${DATA_SOURCE_STATE_FILTER_VALUES}.${index}`, intValue);
     }
   };
 
   renderRange = () => {
     const { values, intl } = this.props;
     const [minRounded, maxRounded] = values.range;
-    const [minValue, maxValue] = values[PROJECT_STATE_FILTER_VALUES];
+    const [minValue, maxValue] = values[DATA_SOURCE_STATE_FILTER_VALUES];
     const [minSecondaryValue, maxSecondaryValue] = map(ifElse(equals(NaN), always(''), identity))(
-      values[PROJECT_STATE_FILTER_SECONDARY_VALUES]
+      values[DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES]
     );
 
     return (
@@ -159,8 +159,8 @@ export class StateFilter extends PureComponent {
         <RangeSlider
           minValue={minValue}
           maxValue={maxValue}
-          idMin={`${PROJECT_STATE_FILTER_VALUES}.0`}
-          idMax={`${PROJECT_STATE_FILTER_VALUES}.1`}
+          idMin={`${DATA_SOURCE_STATE_FILTER_VALUES}.0`}
+          idMax={`${DATA_SOURCE_STATE_FILTER_VALUES}.1`}
           min={minRounded}
           max={maxRounded}
           onChange={this.handleRangeChange}
@@ -175,7 +175,7 @@ export class StateFilter extends PureComponent {
               value={minSecondaryValue}
               onChange={this.handleInputRangeChange}
               onBlur={e => this.handleInputRangeChange(e, true)}
-              name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.0`}
+              name={`${DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES}.0`}
               label={intl.formatMessage(messages.min)}
               type="number"
               step="1"
@@ -189,7 +189,7 @@ export class StateFilter extends PureComponent {
               value={maxSecondaryValue}
               onChange={this.handleInputRangeChange}
               onBlur={e => this.handleInputRangeChange(e, true)}
-              name={`${PROJECT_STATE_FILTER_SECONDARY_VALUES}.1`}
+              name={`${DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES}.1`}
               label={intl.formatMessage(messages.max)}
               type="number"
               step="1"
@@ -205,10 +205,10 @@ export class StateFilter extends PureComponent {
 
   renderInput = () => (
     <TextInput
-      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || ''}
+      value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES][0] || ''}
       onChange={this.props.handleChange}
-      name={`${PROJECT_STATE_FILTER_VALUES}.0`}
-      label={this.props.intl.formatMessage(messages[PROJECT_STATE_FILTER_VALUES])}
+      name={`${DATA_SOURCE_STATE_FILTER_VALUES}.0`}
+      label={this.props.intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
       fullWidth
       isEdit
       {...this.props}
@@ -217,9 +217,9 @@ export class StateFilter extends PureComponent {
 
   renderSelect = () => (
     <Select
-      label={this.props.intl.formatMessage(messages[PROJECT_STATE_FILTER_VALUES])}
-      name={PROJECT_STATE_FILTER_VALUES}
-      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0] || ''}
+      label={this.props.intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
+      name={DATA_SOURCE_STATE_FILTER_VALUES}
+      value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES][0] || ''}
       options={this.getStatusOptions()}
       onSelect={this.handleSelectStatus}
       placeholder={this.props.intl.formatMessage(messages.selectPlaceholder)}
@@ -235,13 +235,13 @@ export class StateFilter extends PureComponent {
   renderCheckboxes = () => (
     <Fragment>
       <Label>
-        <FormattedMessage {...messages[PROJECT_STATE_FILTER_VALUES]} />
+        <FormattedMessage {...messages[DATA_SOURCE_STATE_FILTER_VALUES]} />
       </Label>
       <CheckboxGroup
         onChange={this.handleCheckboxChange}
-        name={PROJECT_STATE_FILTER_VALUES}
+        name={DATA_SOURCE_STATE_FILTER_VALUES}
         customStyles={{ borderTop: 'none' }}
-        value={this.props.values[PROJECT_STATE_FILTER_VALUES]}
+        value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES]}
       >
         {this.getUniqueValues().map(this.renderCheckbox)}
       </CheckboxGroup>
@@ -250,10 +250,10 @@ export class StateFilter extends PureComponent {
 
   renderSwitch = () => (
     <Switch
-      value={this.props.values[PROJECT_STATE_FILTER_VALUES][0]}
-      id={`${PROJECT_STATE_FILTER_VALUES}.0`}
+      value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES][0]}
+      id={`${DATA_SOURCE_STATE_FILTER_VALUES}.0`}
       onChange={this.props.handleChange}
-      label={this.props.intl.formatMessage(messages[PROJECT_STATE_FILTER_VALUES])}
+      label={this.props.intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
     />
   );
 
@@ -273,25 +273,25 @@ export class StateFilter extends PureComponent {
       return (
         <Form onSubmit={handleSubmit}>
           <TextInput
-            value={filter[PROJECT_STATE_FILTER_NAME]}
-            name={PROJECT_STATE_FILTER_NAME}
-            label={intl.formatMessage(messages[PROJECT_STATE_FILTER_NAME])}
+            value={filter[DATA_SOURCE_STATE_FILTER_NAME]}
+            name={DATA_SOURCE_STATE_FILTER_NAME}
+            label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_NAME])}
             fullWidth
             disabled
             {...this.props}
           />
           <TextInput
-            value={filter[PROJECT_STATE_FILTER_TYPE]}
-            name={PROJECT_STATE_FILTER_TYPE}
-            label={intl.formatMessage(messages[PROJECT_STATE_FILTER_TYPE])}
+            value={filter[DATA_SOURCE_STATE_FILTER_TYPE]}
+            name={DATA_SOURCE_STATE_FILTER_TYPE}
+            label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_TYPE])}
             fullWidth
             disabled
             {...this.props}
           />
           <TextInput
-            value={filter[PROJECT_STATE_FILTER_FIELD]}
-            name={PROJECT_STATE_FILTER_FIELD}
-            label={intl.formatMessage(messages[PROJECT_STATE_FILTER_FIELD])}
+            value={filter[DATA_SOURCE_STATE_FILTER_FIELD]}
+            name={DATA_SOURCE_STATE_FILTER_FIELD}
+            label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_FIELD])}
             fullWidth
             disabled
             {...this.props}
@@ -321,7 +321,7 @@ export class StateFilter extends PureComponent {
           headerTitle={title}
           headerSubtitle={<FormattedMessage {...messages.subTitle} />}
           options={filterMenuOptions(menuOptions, userRole)}
-          active={PROJECT_STATE_ID}
+          active={DATA_SOURCE_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
         <LoadingWrapper loading={loading} error={error}>

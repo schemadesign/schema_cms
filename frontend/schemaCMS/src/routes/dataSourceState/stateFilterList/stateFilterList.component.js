@@ -7,14 +7,14 @@ import { always, append, equals, ifElse, reject } from 'ramda';
 
 import messages from './stateFilterList.messages';
 import reportError from '../../../shared/utils/reportError';
-import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
+import { getProjectMenuOptions, DATA_SOURCE_STATE_ID } from '../../project/project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { contentStyles, NavigationButtons } from '../../../shared/components/navigationStyles';
-import { PROJECT_STATE_FILTERS } from '../../../modules/dataSourceState/dataSourceState.constants';
+import { DATA_SOURCE_STATE_FILTERS } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { Link } from './stateFilterList.styles';
 
 const { CheckboxGroup, Checkbox } = FormUI;
@@ -101,7 +101,7 @@ export class StateFilterList extends PureComponent {
           headerTitle={title}
           headerSubtitle={<FormattedMessage {...messages.subTitle} />}
           options={filterMenuOptions(menuOptions, userRole)}
-          active={PROJECT_STATE_ID}
+          active={DATA_SOURCE_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
         <LoadingWrapper
@@ -110,7 +110,7 @@ export class StateFilterList extends PureComponent {
           noData={!filters.length}
           noDataContent={<FormattedMessage {...messages.noData} />}
         >
-          <CheckboxGroup onChange={this.handleChange} name={PROJECT_STATE_FILTERS} value={values}>
+          <CheckboxGroup onChange={this.handleChange} name={DATA_SOURCE_STATE_FILTERS} value={values}>
             {filters.map(this.renderFilters)}
           </CheckboxGroup>
         </LoadingWrapper>

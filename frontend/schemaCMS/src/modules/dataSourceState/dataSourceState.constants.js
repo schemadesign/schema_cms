@@ -1,45 +1,45 @@
 import * as Yup from 'yup';
 
-export const CREATE_PROJECT_STATE_FORM = 'create_project_state_form';
-export const PROJECT_STATE_NAME = 'name';
-export const PROJECT_STATE_DESCRIPTION = 'description';
-export const PROJECT_STATE_DATA_SOURCE = 'datasource';
-export const PROJECT_STATE_SOURCE_URL = 'sourceUrl';
-export const PROJECT_STATE_IS_PUBLIC = 'isPublic';
-export const PROJECT_STATE_AUTHOR = 'author';
-export const PROJECT_STATE_CREATED = 'created';
-export const PROJECT_STATE_FILTERS = 'filters';
-export const PROJECT_STATE_FILTER_NAME = 'name';
-export const PROJECT_STATE_FILTER_TYPE = 'filterType';
-export const PROJECT_STATE_FILTER_FIELD = 'field';
-export const PROJECT_STATE_FILTER_VALUES = 'values';
-export const PROJECT_STATE_FILTER_SECONDARY_VALUES = 'secondaryValues';
+export const CREATE_DATA_SOURCE_STATE_FORM = 'create_project_state_form';
+export const DATA_SOURCE_STATE_NAME = 'name';
+export const DATA_SOURCE_STATE_DESCRIPTION = 'description';
+export const DATA_SOURCE_STATE_DATA_SOURCE = 'datasource';
+export const DATA_SOURCE_STATE_SOURCE_URL = 'sourceUrl';
+export const DATA_SOURCE_STATE_IS_PUBLIC = 'isPublic';
+export const DATA_SOURCE_STATE_AUTHOR = 'author';
+export const DATA_SOURCE_STATE_CREATED = 'created';
+export const DATA_SOURCE_STATE_FILTERS = 'filters';
+export const DATA_SOURCE_STATE_FILTER_NAME = 'name';
+export const DATA_SOURCE_STATE_FILTER_TYPE = 'filterType';
+export const DATA_SOURCE_STATE_FILTER_FIELD = 'field';
+export const DATA_SOURCE_STATE_FILTER_VALUES = 'values';
+export const DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES = 'secondaryValues';
 
 export const INITIAL_VALUES = {
-  [PROJECT_STATE_NAME]: '',
-  [PROJECT_STATE_DESCRIPTION]: '',
-  [PROJECT_STATE_DATA_SOURCE]: '',
-  [PROJECT_STATE_SOURCE_URL]: '',
-  [PROJECT_STATE_IS_PUBLIC]: false,
+  [DATA_SOURCE_STATE_NAME]: '',
+  [DATA_SOURCE_STATE_DESCRIPTION]: '',
+  [DATA_SOURCE_STATE_DATA_SOURCE]: '',
+  [DATA_SOURCE_STATE_SOURCE_URL]: '',
+  [DATA_SOURCE_STATE_IS_PUBLIC]: false,
 };
 
-export const PROJECT_STATE_SCHEMA = Yup.object().shape({
-  [PROJECT_STATE_NAME]: Yup.string()
+export const DATA_SOURCE_STATE_SCHEMA = Yup.object().shape({
+  [DATA_SOURCE_STATE_NAME]: Yup.string()
     .trim()
     .min(1, 'State name should have at least 1 characters')
     .max(25, 'State name should have maximum 25 characters')
     .required('Required'),
-  [PROJECT_STATE_DESCRIPTION]: Yup.string()
+  [DATA_SOURCE_STATE_DESCRIPTION]: Yup.string()
     .trim()
     .max(150, 'State description should have maximum 150 characters'),
-  [PROJECT_STATE_SOURCE_URL]: Yup.string()
+  [DATA_SOURCE_STATE_SOURCE_URL]: Yup.string()
     .trim()
     .max(150, 'State source URL should have maximum 150 characters'),
-  [PROJECT_STATE_DATA_SOURCE]: Yup.string().required('Required'),
+  [DATA_SOURCE_STATE_DATA_SOURCE]: Yup.string().required('Required'),
 });
 
-export const PROJECT_STATE_FILTER_SCHEMA = Yup.object().shape({
-  [PROJECT_STATE_FILTER_VALUES]: Yup.array()
+export const DATA_SOURCE_STATE_FILTER_SCHEMA = Yup.object().shape({
+  [DATA_SOURCE_STATE_FILTER_VALUES]: Yup.array()
     .compact(v => v === '')
     .min(1, 'Required')
     .required('Required'),

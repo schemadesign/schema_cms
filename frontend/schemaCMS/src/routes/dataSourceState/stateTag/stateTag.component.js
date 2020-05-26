@@ -7,7 +7,7 @@ import { Stepper, Form as FormUI } from 'schemaUI';
 
 import { TagList } from './stateTag.styles';
 import messages from './stateTag.messages';
-import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
+import { getProjectMenuOptions, DATA_SOURCE_STATE_ID } from '../../project/project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -112,7 +112,7 @@ export class StateTag extends PureComponent {
           headerTitle={title}
           headerSubtitle={<FormattedMessage {...messages.subTitle} />}
           options={filterMenuOptions(menuOptions, userRole)}
-          active={PROJECT_STATE_ID}
+          active={DATA_SOURCE_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
         <LoadingWrapper loading={loading} error={error} noData={!tags.length} noDataContent={noData}>

@@ -9,12 +9,12 @@ import { TextInput } from '../form/inputs/textInput';
 import messages from './dataSourceStateForm.messages';
 
 import {
-  PROJECT_STATE_DESCRIPTION,
-  PROJECT_STATE_NAME,
-  PROJECT_STATE_SOURCE_URL,
-  PROJECT_STATE_AUTHOR,
-  PROJECT_STATE_CREATED,
-  PROJECT_STATE_IS_PUBLIC,
+  DATA_SOURCE_STATE_DESCRIPTION,
+  DATA_SOURCE_STATE_NAME,
+  DATA_SOURCE_STATE_SOURCE_URL,
+  DATA_SOURCE_STATE_AUTHOR,
+  DATA_SOURCE_STATE_CREATED,
+  DATA_SOURCE_STATE_IS_PUBLIC,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { renderWhenTrue } from '../../utils/rendering';
 
@@ -26,12 +26,6 @@ export class DataSourceStateForm extends PureComponent {
     handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     values: PropTypes.object.isRequired,
-    state: PropTypes.object,
-    dataSources: PropTypes.array.isRequired,
-  };
-
-  static defaultProps = {
-    state: {},
   };
 
   renderInput = (value, name) =>
@@ -50,45 +44,45 @@ export class DataSourceStateForm extends PureComponent {
     )(!!value);
 
   render() {
-    const { handleChange, intl, values, state } = this.props;
+    const { handleChange, intl, values } = this.props;
 
     return (
       <Container>
         <TextInput
-          value={values[PROJECT_STATE_NAME]}
+          value={values[DATA_SOURCE_STATE_NAME]}
           onChange={handleChange}
-          name={PROJECT_STATE_NAME}
-          label={intl.formatMessage(messages[PROJECT_STATE_NAME])}
+          name={DATA_SOURCE_STATE_NAME}
+          label={intl.formatMessage(messages[DATA_SOURCE_STATE_NAME])}
           fullWidth
           isEdit
           {...this.props}
         />
         <TextInput
-          value={values[PROJECT_STATE_DESCRIPTION]}
+          value={values[DATA_SOURCE_STATE_DESCRIPTION]}
           onChange={handleChange}
-          name={PROJECT_STATE_DESCRIPTION}
-          label={intl.formatMessage(messages[PROJECT_STATE_DESCRIPTION])}
+          name={DATA_SOURCE_STATE_DESCRIPTION}
+          label={intl.formatMessage(messages[DATA_SOURCE_STATE_DESCRIPTION])}
           fullWidth
           isEdit
           multiline
           {...this.props}
         />
         <TextInput
-          value={values[PROJECT_STATE_SOURCE_URL]}
+          value={values[DATA_SOURCE_STATE_SOURCE_URL]}
           onChange={handleChange}
-          name={PROJECT_STATE_SOURCE_URL}
-          label={intl.formatMessage(messages[PROJECT_STATE_SOURCE_URL])}
+          name={DATA_SOURCE_STATE_SOURCE_URL}
+          label={intl.formatMessage(messages[DATA_SOURCE_STATE_SOURCE_URL])}
           fullWidth
           isEdit
           {...this.props}
         />
-        {this.renderInput(state[PROJECT_STATE_AUTHOR], PROJECT_STATE_AUTHOR)}
-        {this.renderInput(dayjs(state[PROJECT_STATE_CREATED]).format('DD/MM/YYYY'), PROJECT_STATE_CREATED)}
+        {this.renderInput(values[DATA_SOURCE_STATE_AUTHOR], DATA_SOURCE_STATE_AUTHOR)}
+        {this.renderInput(dayjs(values[DATA_SOURCE_STATE_CREATED]).format('DD/MM/YYYY'), DATA_SOURCE_STATE_CREATED)}
         <Switch
-          value={values[PROJECT_STATE_IS_PUBLIC]}
-          id={PROJECT_STATE_IS_PUBLIC}
+          value={values[DATA_SOURCE_STATE_IS_PUBLIC]}
+          id={DATA_SOURCE_STATE_IS_PUBLIC}
           onChange={handleChange}
-          label={intl.formatMessage(messages[PROJECT_STATE_IS_PUBLIC])}
+          label={intl.formatMessage(messages[DATA_SOURCE_STATE_IS_PUBLIC])}
         />
       </Container>
     );
