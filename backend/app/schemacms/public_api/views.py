@@ -1,15 +1,41 @@
+import collections
 import json
 
 import django_filters.rest_framework
+from django.conf import settings
 from django.db.models import Prefetch
 from django.shortcuts import render, get_object_or_404
-from rest_framework import decorators, viewsets, response, mixins, renderers
+from django.urls import NoReverseMatch
+from rest_framework import decorators, mixins, reverse, response, renderers, views, viewsets
 
 from . import serializers, records_reader
 from ..datasources.models import DataSource, Filter
 from ..pages.models import Section, Page, PageBlock, PageBlockElement, CustomElementSet
 from ..projects.models import Project
 from ..utils.serializers import ActionSerializerViewSetMixin
+
+
+class PARootView(views.APIView):
+    api_root_dict = None
+    renderer_classes = [renderers.JSONRenderer]
+
+    def get(self, request, *args, **kwargs):
+        ret = collections.OrderedDict()
+        namespace = request.resolver_match.namespace
+        for key, url_name in self.api_root_dict.items():
+            if namespace:
+                url_name = namespace + ":" + url_name
+            try:
+                ret[key] = (
+                    settings.PUBLIC_API_URL
+                    + reverse.reverse(
+                        url_name, args=args, kwargs=kwargs, request=request, format=kwargs.get("format", None)
+                    ).split("/")[-1]
+                )
+            except NoReverseMatch:
+                continue
+
+        return response.Response(ret)
 
 
 class PAProjectView(
