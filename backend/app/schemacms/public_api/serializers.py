@@ -38,34 +38,38 @@ class PAFilterSerializer(ReadOnlySerializer):
 
 class PADataSourceListSerializer(ReadOnlySerializer):
     tags = serializers.SerializerMethodField()
+    meta = serializers.SerializerMethodField()
 
     class Meta:
         model = ds_models.DataSource
-        fields = ("id", "type", "name", "tags")
+        fields = ("id", "type", "name", "meta", "tags")
 
     def get_tags(self, obj):
         return [tag.value for tag in obj.tags.all()]
 
-
-class PADataSourceDetailNoRecordsSerializer(ReadOnlySerializer):
-    meta = serializers.SerializerMethodField()
-    shape = serializers.SerializerMethodField()
-    fields = serializers.SerializerMethodField(method_name="get_ds_fields")
-    filters = PAFilterSerializer(many=True)
-    tags = serializers.SerializerMethodField()
-
-    class Meta:
-        model = ds_models.DataSource
-        fields = ("meta", "shape", "fields", "filters", "tags")
-
     def get_meta(self, obj):
+        custom_data = (
+            {d["key"]: d["value"] for d in obj.description.data} if hasattr(obj, "description") else {}
+        )
+
         return {
             "id": obj.id,
             "name": obj.name,
             "created_by": obj.created_by.get_full_name(),
             "created": obj.created.strftime("%Y-%m-%d"),
             "updated": obj.modified.strftime("%Y-%m-%d"),
+            "custom_data": custom_data,
         }
+
+
+class PADataSourceDetailNoRecordsSerializer(PADataSourceListSerializer):
+    shape = serializers.SerializerMethodField()
+    fields = serializers.SerializerMethodField(method_name="get_ds_fields")
+    filters = PAFilterSerializer(many=True)
+
+    class Meta:
+        model = ds_models.DataSource
+        fields = ("meta", "shape", "fields", "filters", "tags")
 
     def get_shape(self, obj):
         return obj.active_job.meta_data.shape
@@ -76,9 +80,6 @@ class PADataSourceDetailNoRecordsSerializer(ReadOnlySerializer):
             str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
         return data
-
-    def get_tags(self, obj):
-        return [tag.value for tag in obj.tags.all()]
 
 
 class PADataSourceDetailRecordsSerializer(PADataSourceDetailNoRecordsSerializer):
