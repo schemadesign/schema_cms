@@ -3,18 +3,21 @@ import { storiesOf } from '@storybook/react';
 
 import { EditState } from './editState.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
+import { project } from '../../../modules/project/project.mocks';
 
 export const defaultProps = {
-  fetchState: Function.prototype,
+  removeState: Function.prototype,
+  updateState: Function.prototype,
+  fetchDataSourceTags: Function.prototype,
+  fetchFilters: Function.prototype,
+  project,
+  dataSourceTags: [],
+  filters: [],
   state: {
-    project: 'projectId',
+    filters: [],
   },
-  match: {
-    path: 'path',
-    params: {
-      stateId: 'stateId',
-    },
-  },
+  userRole: ROLES.ADMIN,
 };
 
 storiesOf('DataSourceState', module)

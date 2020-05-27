@@ -29,7 +29,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     state={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -41,7 +41,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     values={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -77,7 +77,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     state={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -89,7 +89,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     values={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -124,7 +124,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     state={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -135,7 +135,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     values={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -171,7 +171,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     state={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -183,7 +183,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     values={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -219,7 +219,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     state={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
@@ -227,23 +227,17 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       }
     }
     touched={Object {}}
-    value="12/10/2019"
+    value="27/05/2020"
     values={
       Object {
         "author": "author",
-        "created": "10.12.2019",
+        "created": "2020-05-27T12:49:08+0000",
         "description": "description",
         "isPublic": false,
         "name": "name",
         "project": 1,
       }
     }
-  />
-  <Component
-    id="isPublic"
-    label="Make Public"
-    onChange={[Function]}
-    value={false}
   />
 </styled.div>
 `;

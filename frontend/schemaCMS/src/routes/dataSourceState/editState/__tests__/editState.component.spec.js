@@ -1,16 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import { EditState } from '../editState.component';
 import { defaultProps } from '../editState.stories';
+import { makeContextRenderer } from '../../../../shared/utils/testUtils';
 
 describe('EditState: Component', () => {
-  const component = props => <EditState {...defaultProps} {...props} />;
+  const render = props => makeContextRenderer(<EditState {...defaultProps} {...props} />);
 
-  const render = (props = {}) => shallow(component(props));
-
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render correctly', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

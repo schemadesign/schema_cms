@@ -3,22 +3,13 @@ import { storiesOf } from '@storybook/react';
 
 import { StateFilterList } from './stateFilterList.component';
 import { state } from '../../../modules/dataSourceState/dataSourceState.mock';
-import { ROLES } from '../../../modules/userProfile/userProfile.constants';
-import { history, intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
-  handleSubmit: Function.prototype,
-  setValues: Function.prototype,
-  isSubmitting: false,
-  dirty: false,
-  userRole: ROLES.ADMIN,
+  setFieldValue: Function.prototype,
   state,
   filters: [],
   values: [],
-  fetchFilters: Function.prototype,
-  intl,
-  history,
 };
 
 storiesOf('DataSourceState/StateFilterList', module)
