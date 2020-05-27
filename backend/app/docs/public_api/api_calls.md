@@ -166,6 +166,7 @@ Content-Type: application/json
           "id": 1,
           "name": "New Page Template"
         },
+        "display_name": "page-name",
         "slug": "page-name",
         "description": "New page test.",
         "keywords": "new;page;test",
@@ -218,6 +219,7 @@ Content-Type: application/json
 {
     "id": 1,
     "name": "Page Name",
+    "display_name": "page-name",
     "slug": "page-name",
     "section": {
       "id": 1,
