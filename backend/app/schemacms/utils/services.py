@@ -6,7 +6,7 @@ import botocore
 from django.utils import functional
 from django.conf import settings
 
-from schemacms.projects import constants
+from schemacms.datasources import constants
 
 
 def get_s3():

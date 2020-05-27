@@ -6,9 +6,8 @@ from rest_framework import status
 import pytest
 
 from schemacms.users import constants as user_constants
-from schemacms.datasources import serializers as ds_serializers
+from schemacms.datasources import serializers as ds_serializers, constants as ds_constants
 from schemacms.projects import (
-    constants as projects_constants,
     serializers as projects_serializers,
     models as projects_models,
 )
@@ -217,7 +216,7 @@ class TestProjectDataSourcesView:
         for data_source in data_sources:
             step = job_step_factory(
                 datasource_job__datasource=data_source,
-                datasource_job__job_state=projects_constants.ProcessingState.SUCCESS,
+                datasource_job__job_state=ds_constants.ProcessingState.SUCCESS,
                 options={"columns": ["imageurl"]},
             )
             data_source.active_job = step.datasource_job

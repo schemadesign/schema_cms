@@ -12,7 +12,6 @@ from rest_framework import status
 from schemacms.datasources import constants as ds_constants
 from schemacms.datasources import models as ds_models
 from schemacms.datasources import serializers as ds_serializers
-from schemacms.projects import constants as projects_constants
 from schemacms.utils import error
 
 pytestmark = [pytest.mark.django_db]
@@ -258,7 +257,7 @@ class TestDataSourceUpdateMeta:
                 fields_with_urls=[],
                 preview={"preview": "test"},
                 copy_steps=False,
-                status=projects_constants.ProcessingState.SUCCESS,
+                status=ds_constants.ProcessingState.SUCCESS,
             )
         return payload
 
@@ -306,7 +305,7 @@ class TestDataSourceUpdateMeta:
         data_source.meta_data.refresh_from_db()
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert data_source.meta_data.status == projects_constants.ProcessingState.SUCCESS
+        assert data_source.meta_data.status == ds_constants.ProcessingState.SUCCESS
         assert data_source.meta_data.items == payload["items"]
         assert data_source.meta_data.fields == payload["fields"]
         assert data_source.meta_data.fields_names == payload["fields_names"]
@@ -414,7 +413,7 @@ class TestDataSourceJobUpdateState:
         job = job_factory(job_state=ds_constants.ProcessingState.PROCESSING, result=None, error="")
         default_storage.save(name="path/to/result.csv", content=base.ContentFile("test,1,2".encode()))
         payload = dict(
-            job_state=projects_constants.ProcessingState.SUCCESS, result="path/to/result.csv", error="test"
+            job_state=ds_constants.ProcessingState.SUCCESS, result="path/to/result.csv", error="test"
         )
         set_active_job_mock = mocker.patch("schemacms.datasources.models.DataSource.set_active_job")
 
@@ -492,9 +491,9 @@ class TestDataSourceJobUpdateState:
         assert job.error == initial["error"]
 
     def test_job_state_not_authenticated(self, api_client, job_factory):
-        job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
+        job = job_factory(job_state=ds_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
+            job_state=ds_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(self.get_url(job.pk), payload)
@@ -503,9 +502,9 @@ class TestDataSourceJobUpdateState:
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     def test_job_state_not_authenticated_by_jwt_token(self, api_client, job_factory, admin):
-        job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
+        job = job_factory(job_state=ds_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
+            job_state=ds_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(
@@ -776,7 +775,7 @@ class TestFilterDetailView:
 
     def test_update(self, api_client, admin, filter_):
         new_name = "NewFilter"
-        payload = dict(name=new_name, type=projects_constants.FilterType.CHECKBOX)
+        payload = dict(name=new_name, type=ds_constants.FilterType.CHECKBOX)
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(filter_.id), data=payload)
