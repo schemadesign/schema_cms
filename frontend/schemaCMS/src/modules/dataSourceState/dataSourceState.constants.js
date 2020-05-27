@@ -3,7 +3,6 @@ import * as Yup from 'yup';
 export const CREATE_DATA_SOURCE_STATE_FORM = 'create_project_state_form';
 export const DATA_SOURCE_STATE_NAME = 'name';
 export const DATA_SOURCE_STATE_DESCRIPTION = 'description';
-export const DATA_SOURCE_STATE_DATA_SOURCE = 'datasource';
 export const DATA_SOURCE_STATE_SOURCE_URL = 'sourceUrl';
 export const DATA_SOURCE_STATE_IS_PUBLIC = 'isPublic';
 export const DATA_SOURCE_STATE_AUTHOR = 'author';
@@ -19,7 +18,6 @@ export const DATA_SOURCE_STATE_TAGS = 'tags';
 export const INITIAL_VALUES = {
   [DATA_SOURCE_STATE_NAME]: '',
   [DATA_SOURCE_STATE_DESCRIPTION]: '',
-  [DATA_SOURCE_STATE_DATA_SOURCE]: '',
   [DATA_SOURCE_STATE_SOURCE_URL]: '',
   [DATA_SOURCE_STATE_IS_PUBLIC]: false,
 };
@@ -36,7 +34,6 @@ export const DATA_SOURCE_STATE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_STATE_SOURCE_URL]: Yup.string()
     .trim()
     .max(150, 'State source URL should have maximum 150 characters'),
-  [DATA_SOURCE_STATE_DATA_SOURCE]: Yup.string().required('Required'),
 });
 
 export const DATA_SOURCE_STATE_FILTER_SCHEMA = Yup.object().shape({

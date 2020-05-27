@@ -2,7 +2,6 @@
 import { defineMessages } from 'react-intl';
 import {
   DATA_SOURCE_STATE_SOURCE_URL,
-  DATA_SOURCE_STATE_DATA_SOURCE,
   DATA_SOURCE_STATE_DESCRIPTION,
   DATA_SOURCE_STATE_NAME,
   DATA_SOURCE_STATE_AUTHOR,
@@ -10,10 +9,6 @@ import {
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 
 export default defineMessages({
-  [DATA_SOURCE_STATE_DATA_SOURCE]: {
-    id: `shared.components.dataSourceStateForm.${[DATA_SOURCE_STATE_DATA_SOURCE]}`,
-    defaultMessage: 'Dataset',
-  },
   dataSourcePlaceholder: {
     id: 'shared.components.dataSourceStateForm.dataSourcePlaceholder',
     defaultMessage: 'Select a dataset',

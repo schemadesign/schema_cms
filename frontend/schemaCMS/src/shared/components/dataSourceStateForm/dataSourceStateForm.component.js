@@ -25,11 +25,11 @@ export class DataSourceStateForm extends PureComponent {
     values: PropTypes.object.isRequired,
   };
 
-  renderInput = (value, name) =>
+  renderInput = (value, name, formattedValue) =>
     renderWhenTrue(
       always(
         <TextInput
-          value={value}
+          value={formattedValue || value}
           onChange={this.props.handleChange}
           name={name}
           label={this.props.intl.formatMessage(messages[name])}
@@ -75,8 +75,9 @@ export class DataSourceStateForm extends PureComponent {
         />
         {this.renderInput(values[DATA_SOURCE_STATE_AUTHOR], DATA_SOURCE_STATE_AUTHOR)}
         {this.renderInput(
-          dayjs(values[DATA_SOURCE_STATE_CREATED], BASE_DATE_FORMAT).format('DD/MM/YYYY'),
-          DATA_SOURCE_STATE_CREATED
+          values[DATA_SOURCE_STATE_CREATED],
+          DATA_SOURCE_STATE_CREATED,
+          dayjs(values[DATA_SOURCE_STATE_CREATED], BASE_DATE_FORMAT).format('DD/MM/YYYY')
         )}
       </Container>
     );

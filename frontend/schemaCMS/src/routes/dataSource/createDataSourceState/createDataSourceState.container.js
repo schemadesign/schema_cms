@@ -52,9 +52,9 @@ export default compose(
     handleSubmit: async (formData, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const projectId = getMatchParam(props, 'projectId');
+        const dataSourceId = getMatchParam(props, 'dataSourceId');
 
-        await props.createState({ formData, projectId });
+        await props.createState({ formData, dataSourceId });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });
