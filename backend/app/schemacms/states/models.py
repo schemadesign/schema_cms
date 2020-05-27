@@ -6,7 +6,7 @@ from django_extensions.db.models import TimeStampedModel
 
 
 class State(SoftDeleteObject, TimeStampedModel):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     datasource = models.ForeignKey(
         "datasources.DataSource", on_delete=models.CASCADE, related_name="states", null=True
     )
@@ -39,9 +39,9 @@ class State(SoftDeleteObject, TimeStampedModel):
 class InStateFilter(SoftDeleteObject):
     filter = models.ForeignKey("datasources.Filter", on_delete=models.CASCADE)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
-    filter_type = models.CharField(max_length=25)
+    filter_type = models.CharField(max_length=100)
     field = models.TextField()
-    field_type = models.CharField(max_length=25)
+    field_type = models.CharField(max_length=100)
     condition = pg_fields.JSONField(blank=True, default=dict)
 
 

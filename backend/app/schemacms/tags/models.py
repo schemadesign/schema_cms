@@ -11,7 +11,7 @@ class TagCategory(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey(
         "projects.Project", on_delete=models.CASCADE, related_name="tags_categories", null=True
     )
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=100)
     type = JSONField(blank=True, default=dict)
     is_single_select = models.BooleanField(default=False)
     is_available = models.BooleanField(default=True)
