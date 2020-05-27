@@ -6,10 +6,11 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { DataSourceState } from './dataSourceState.component';
-import { DataSourceStateRoutines, selectState } from '../../modules/dataSourceState';
+import { DataSourceStateRoutines } from '../../modules/dataSourceState';
+import { selectProject } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
-  state: selectState,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({

@@ -26,7 +26,6 @@ export const TagSearch = ({ tagCategories, values, setFieldValue, valuePath }) =
         {tagCategories.map((item, index) => (
           <TagCategories
             key={index}
-            values={values}
             customStyles={customStyles}
             selectedTags={defaultTo([], values[item.id])}
             setFieldValue={setFieldValue}

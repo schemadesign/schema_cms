@@ -7,7 +7,7 @@ import { Form, NavigationButtons, contentStyles } from './createDataSourceState.
 import messages from './createDataSourceState.messages';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { BackButton, NavigationContainer, ConfirmLink } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 import { DataSourceStateForm } from '../../../shared/components/dataSourceStateForm';
@@ -17,6 +17,7 @@ export class CreateDataSourceState extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     isValid: PropTypes.bool.isRequired,
+    dirty: PropTypes.bool.isRequired,
     userRole: PropTypes.string.isRequired,
     fetchDataSources: PropTypes.func.isRequired,
     dataSources: PropTypes.array.isRequired,
@@ -53,7 +54,7 @@ export class CreateDataSourceState extends PureComponent {
   handleCancel = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/state`);
 
   render() {
-    const { dataSources, handleSubmit, isSubmitting, isValid } = this.props;
+    const { dataSources, handleSubmit, isSubmitting, isValid, dirty } = this.props;
     const { loading, error } = this.state;
 
     return (
@@ -76,9 +77,9 @@ export class CreateDataSourceState extends PureComponent {
             <BackButton type="button" onClick={this.handleCancel}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <ConfirmLink type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid}>
+            <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid || !dirty}>
               <FormattedMessage {...messages.confirm} />
-            </ConfirmLink>
+            </NextButton>
           </NavigationButtons>
         </NavigationContainer>
       </Form>

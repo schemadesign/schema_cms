@@ -1,1 +1,1 @@
-export { default as StateFilterList } from './stateFilterList.container';
+export { StateFilterList } from './stateFilterList.component';

@@ -29,6 +29,8 @@ import {
   propEq,
   both,
   prop,
+  defaultTo,
+  groupBy,
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
@@ -139,6 +141,12 @@ export const formatTags = data =>
     map(key => map(({ value }) => ({ category: parseInt(key, 10), value }))(data[key] || [])),
     flatten
   )(data);
+
+export const prepareTags = pipe(
+  defaultTo([]),
+  map(item => ({ ...item, label: item.value })),
+  groupBy(prop('category'))
+);
 
 export const prepareForPostingPageData = evolve({
   [PAGE_TEMPLATE]: ifElse(equals(0), always(null), identity),

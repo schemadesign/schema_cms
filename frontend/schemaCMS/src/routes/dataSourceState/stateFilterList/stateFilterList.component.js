@@ -1,134 +1,59 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { Form as FormUI, Stepper } from 'schemaUI';
-import Helmet from 'react-helmet';
+import { Form as FormUI } from 'schemaUI';
 import { always, append, equals, ifElse, reject } from 'ramda';
+import { useHistory } from 'react-router';
 
 import messages from './stateFilterList.messages';
-import reportError from '../../../shared/utils/reportError';
-import { getProjectMenuOptions, PROJECT_STATE_ID } from '../../project/project.constants';
-import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { filterMenuOptions } from '../../../shared/utils/helpers';
-import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { contentStyles, NavigationButtons } from '../../../shared/components/navigationStyles';
-import { PROJECT_STATE_FILTERS } from '../../../modules/dataSourceState/dataSourceState.constants';
-import { Link } from './stateFilterList.styles';
+import { DATA_SOURCE_STATE_FILTERS } from '../../../modules/dataSourceState/dataSourceState.constants';
+import { Link, containerCheckboxGroupStyles } from './stateFilterList.styles';
 
-const { CheckboxGroup, Checkbox } = FormUI;
+const { CheckboxGroup, Checkbox, Label } = FormUI;
 
-export class StateFilterList extends PureComponent {
-  static propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
-    setValues: PropTypes.func.isRequired,
-    isSubmitting: PropTypes.bool.isRequired,
-    dirty: PropTypes.bool.isRequired,
-    userRole: PropTypes.string.isRequired,
-    state: PropTypes.object.isRequired,
-    filters: PropTypes.array.isRequired,
-    values: PropTypes.array.isRequired,
-    fetchFilters: PropTypes.func.isRequired,
-    intl: PropTypes.object.isRequired,
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }),
-  };
-
-  state = {
-    loading: true,
-    error: null,
-  };
-
-  async componentDidMount() {
-    try {
-      const dataSourceId = this.props.state.datasource;
-
-      await this.props.fetchFilters({ dataSourceId });
-      this.setState({ loading: false });
-    } catch (error) {
-      reportError(error);
-      this.setState({ loading: false, error });
-    }
-  }
-
-  handleChange = e => {
+export const StateFilterList = ({ filters, values, state, setFieldValue }) => {
+  const history = useHistory();
+  const handleChange = e => {
     const { value, checked } = e.target;
-    const { setValues, values, state } = this.props;
     const intValue = parseInt(value, 10);
     const isFilled = state.filters.find(({ filter }) => filter === intValue);
 
     if (checked && !isFilled) {
-      return this.props.history.push(`/state/${this.props.state.id}/filter/${value}`);
+      return history.push(`/state/${state.id}/filter/${value}`);
     }
 
-    const setTags = ifElse(equals(true), always(append(intValue, values)), always(reject(equals(intValue), values)));
+    const setFilters = ifElse(equals(true), always(append(intValue, values)), always(reject(equals(intValue), values)));
 
-    return setValues(setTags(checked));
+    return setFieldValue(DATA_SOURCE_STATE_FILTERS, setFilters(checked));
   };
 
-  handleBack = () => this.props.history.push(`/state/${this.props.state.id}/tags`);
-
-  handleSubmit = () => {
-    const { dirty, handleSubmit, history, state } = this.props;
-    const redirectUrl = `/project/${state.project}/state`;
-
-    if (dirty) {
-      return handleSubmit();
-    }
-
-    return history.push(redirectUrl);
-  };
-
-  renderFilters = ({ id, name }, index) => (
-    <Checkbox key={index} id={`checkbox-${index}`} value={id}>
-      <Link to={`/state/${this.props.state.id}/filter/${id}`}>{name}</Link>
-    </Checkbox>
-  );
-
-  render() {
-    const { userRole, isSubmitting, state, filters, values } = this.props;
-    const { loading, error } = this.state;
-    const projectId = state.project;
-    const menuOptions = getProjectMenuOptions(projectId);
-    const title = state.name;
-
-    return (
-      <Fragment>
-        <Helmet title={title} />
-        <MobileMenu
-          headerTitle={title}
-          headerSubtitle={<FormattedMessage {...messages.subTitle} />}
-          options={filterMenuOptions(menuOptions, userRole)}
-          active={PROJECT_STATE_ID}
-        />
-        <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <LoadingWrapper
-          loading={loading}
-          error={error}
-          noData={!filters.length}
-          noDataContent={<FormattedMessage {...messages.noData} />}
+  return (
+    <Fragment>
+      <Label>
+        <FormattedMessage {...messages[DATA_SOURCE_STATE_FILTERS]} />
+      </Label>
+      <LoadingWrapper noData={!filters.length} noDataContent={<FormattedMessage {...messages.noData} />}>
+        <CheckboxGroup
+          onChange={handleChange}
+          name={DATA_SOURCE_STATE_FILTERS}
+          value={values}
+          customStyles={containerCheckboxGroupStyles}
         >
-          <CheckboxGroup onChange={this.handleChange} name={PROJECT_STATE_FILTERS} value={values}>
-            {filters.map(this.renderFilters)}
-          </CheckboxGroup>
-        </LoadingWrapper>
-        <NavigationContainer fixed contentStyles={contentStyles}>
-          <NavigationButtons>
-            <BackButton type="button" onClick={this.handleBack} disabled={loading} />
-            <NextButton
-              type="submit"
-              onClick={this.handleSubmit}
-              loading={isSubmitting}
-              disabled={isSubmitting || loading}
-            >
-              <FormattedMessage {...messages.finish} />
-            </NextButton>
-          </NavigationButtons>
-          <Stepper steps={3} activeStep={3} />
-        </NavigationContainer>
-      </Fragment>
-    );
-  }
-}
+          {filters.map(({ id, name }, index) => (
+            <Checkbox key={index} id={`checkbox-${index}`} value={id}>
+              <Link to={`/state/${state.id}/filter/${id}`}>{name}</Link>
+            </Checkbox>
+          ))}
+        </CheckboxGroup>
+      </LoadingWrapper>
+    </Fragment>
+  );
+};
+
+StateFilterList.propTypes = {
+  state: PropTypes.object.isRequired,
+  values: PropTypes.array.isRequired,
+  filters: PropTypes.array.isRequired,
+  setFieldValue: PropTypes.func.isRequired,
+};

@@ -46,6 +46,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           },
         ]
       }
+      dirty={false}
       fetchDataSources={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
@@ -76,12 +77,11 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         }
       }
       setFieldValue={[Function]}
-      state={Object {}}
       userRole="admin"
       values={
         Object {
           "author": "author",
-          "created": "10.12.2019",
+          "created": "2020-05-27T12:49:08+0000",
           "description": "description",
           "isPublic": false,
           "name": "name",
@@ -115,8 +115,8 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           values={Object {}}
         />
       </BackButton>
-      <ConfirmLink
-        disabled={false}
+      <NextButton
+        disabled={true}
         loading={false}
         type="submit"
       >
@@ -125,7 +125,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           id="datasource.createDataSourceState.cancel"
           values={Object {}}
         />
-      </ConfirmLink>
+      </NextButton>
     </styled.div>
   </NavigationContainer>
 </styled.form>

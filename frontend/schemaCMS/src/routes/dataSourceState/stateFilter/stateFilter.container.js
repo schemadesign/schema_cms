@@ -16,8 +16,8 @@ import { selectUserRole } from '../../../modules/userProfile';
 import reportError from '../../../shared/utils/reportError';
 import { DataSourceRoutines, selectFieldsInfo } from '../../../modules/dataSource';
 import {
-  PROJECT_STATE_FILTER_SCHEMA,
-  PROJECT_STATE_FILTER_SECONDARY_VALUES,
+  DATA_SOURCE_STATE_FILTER_SCHEMA,
+  DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { FILTER_TYPE_BOOL, FILTER_TYPE_RANGE } from '../../../modules/filter/filter.constants';
 
@@ -55,16 +55,16 @@ const getInitialValues = props => {
 
     if (values.length) {
       data.values = values;
-      data[PROJECT_STATE_FILTER_SECONDARY_VALUES] = values;
+      data[DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES] = values;
     } else {
       data.values = data.range;
-      data[PROJECT_STATE_FILTER_SECONDARY_VALUES] = data.range;
+      data[DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES] = data.range;
     }
 
     return data;
   }
 
-  return { values, range: [], [PROJECT_STATE_FILTER_SECONDARY_VALUES]: [] };
+  return { values, range: [], [DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES]: [] };
 };
 
 export default compose(
@@ -78,7 +78,7 @@ export default compose(
   withFormik({
     enableReinitialize: true,
     isInitialValid: ({ filter: { filterType } }) => [FILTER_TYPE_RANGE, FILTER_TYPE_BOOL].includes(filterType),
-    validationSchema: () => PROJECT_STATE_FILTER_SCHEMA,
+    validationSchema: () => DATA_SOURCE_STATE_FILTER_SCHEMA,
     mapPropsToValues: getInitialValues,
     handleSubmit: async ({ values }, { props, setSubmitting, setErrors }) => {
       try {
