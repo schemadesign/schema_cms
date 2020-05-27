@@ -7,7 +7,6 @@ import {
   DATA_SOURCE_STATE_NAME,
   DATA_SOURCE_STATE_AUTHOR,
   DATA_SOURCE_STATE_CREATED,
-  DATA_SOURCE_STATE_IS_PUBLIC,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 
 export default defineMessages({
@@ -38,9 +37,5 @@ export default defineMessages({
   [DATA_SOURCE_STATE_CREATED]: {
     id: `shared.components.dataSourceStateForm.${[DATA_SOURCE_STATE_CREATED]}`,
     defaultMessage: 'Created',
-  },
-  [DATA_SOURCE_STATE_IS_PUBLIC]: {
-    id: `shared.components.dataSourceStateForm.${[DATA_SOURCE_STATE_IS_PUBLIC]}`,
-    defaultMessage: 'Make Public',
   },
 });

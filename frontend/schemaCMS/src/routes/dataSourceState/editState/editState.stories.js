@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { DataSourceState } from './dataSourceState.component';
-import { withTheme } from '../../.storybook/decorators';
+import { EditState } from './editState.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   fetchState: Function.prototype,
@@ -19,4 +19,4 @@ export const defaultProps = {
 
 storiesOf('DataSourceState', module)
   .addDecorator(withTheme())
-  .add('Default', () => <DataSourceState {...defaultProps} />);
+  .add('Default', () => <EditState {...defaultProps} />);

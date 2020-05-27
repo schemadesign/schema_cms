@@ -8,3 +8,8 @@ export const Link = styled(RouterLink)`
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
+
+export const containerCheckboxGroupStyles = {
+  border: 'none',
+  padding: '20px 20px 40px',
+};

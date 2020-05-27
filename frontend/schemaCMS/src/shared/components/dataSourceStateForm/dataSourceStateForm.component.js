@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always } from 'ramda';
-import { Form } from 'schemaUI';
 import dayjs from 'dayjs';
 
 import { Container } from './dataSourceStateForm.styles';
@@ -14,11 +13,9 @@ import {
   DATA_SOURCE_STATE_SOURCE_URL,
   DATA_SOURCE_STATE_AUTHOR,
   DATA_SOURCE_STATE_CREATED,
-  DATA_SOURCE_STATE_IS_PUBLIC,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { renderWhenTrue } from '../../utils/rendering';
-
-const { Switch } = Form;
+import { BASE_DATE_FORMAT } from '../../utils/extendedDayjs';
 
 export class DataSourceStateForm extends PureComponent {
   static propTypes = {
@@ -77,13 +74,10 @@ export class DataSourceStateForm extends PureComponent {
           {...this.props}
         />
         {this.renderInput(values[DATA_SOURCE_STATE_AUTHOR], DATA_SOURCE_STATE_AUTHOR)}
-        {this.renderInput(dayjs(values[DATA_SOURCE_STATE_CREATED]).format('DD/MM/YYYY'), DATA_SOURCE_STATE_CREATED)}
-        <Switch
-          value={values[DATA_SOURCE_STATE_IS_PUBLIC]}
-          id={DATA_SOURCE_STATE_IS_PUBLIC}
-          onChange={handleChange}
-          label={intl.formatMessage(messages[DATA_SOURCE_STATE_IS_PUBLIC])}
-        />
+        {this.renderInput(
+          dayjs(values[DATA_SOURCE_STATE_CREATED], BASE_DATE_FORMAT).format('DD/MM/YYYY'),
+          DATA_SOURCE_STATE_CREATED
+        )}
       </Container>
     );
   }

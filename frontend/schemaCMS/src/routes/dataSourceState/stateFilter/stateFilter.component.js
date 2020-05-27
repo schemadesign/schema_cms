@@ -90,7 +90,7 @@ export class StateFilter extends PureComponent {
       label: name,
     }));
 
-  handleBack = () => this.props.history.push(`/state/${this.props.state.id}/filters`);
+  handleBack = () => this.props.history.push(`/state/${this.props.state.id}`);
 
   handleSelectStatus = ({ value }) => {
     this.props.setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, [value]);
