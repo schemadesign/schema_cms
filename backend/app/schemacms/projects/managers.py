@@ -29,6 +29,9 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
             page_templates=models.Count(
                 "page", filter=models.Q(page__deleted_at__isnull=True, page__is_template=True), distinct=True
             ),
+            tags_count=models.Count(
+                "tags_categories", filter=models.Q(tags_categories__deleted_at__isnull=True), distinct=True
+            ),
         )
 
     def annotate_pages_count(self):
