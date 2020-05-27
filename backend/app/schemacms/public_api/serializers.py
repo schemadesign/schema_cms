@@ -171,6 +171,7 @@ class PAPageSerializer(ReadOnlySerializer):
             "id",
             "name",
             "template",
+            "display_name",
             "slug",
             "description",
             "keywords",
