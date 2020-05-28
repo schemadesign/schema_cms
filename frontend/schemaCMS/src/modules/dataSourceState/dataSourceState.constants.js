@@ -8,6 +8,7 @@ export const DATA_SOURCE_STATE_IS_PUBLIC = 'isPublic';
 export const DATA_SOURCE_STATE_AUTHOR = 'author';
 export const DATA_SOURCE_STATE_CREATED = 'created';
 export const DATA_SOURCE_STATE_FILTERS = 'filters';
+export const DATA_SOURCE_STATE_ACTIVE_FILTERS = 'activeFilters';
 export const DATA_SOURCE_STATE_FILTER_NAME = 'name';
 export const DATA_SOURCE_STATE_FILTER_TYPE = 'filterType';
 export const DATA_SOURCE_STATE_FILTER_FIELD = 'field';
@@ -19,6 +20,8 @@ export const INITIAL_VALUES = {
   [DATA_SOURCE_STATE_NAME]: '',
   [DATA_SOURCE_STATE_DESCRIPTION]: '',
   [DATA_SOURCE_STATE_SOURCE_URL]: '',
+  [DATA_SOURCE_STATE_ACTIVE_FILTERS]: [],
+  [DATA_SOURCE_STATE_FILTERS]: [],
   [DATA_SOURCE_STATE_IS_PUBLIC]: false,
 };
 

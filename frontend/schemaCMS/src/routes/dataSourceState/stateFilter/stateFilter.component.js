@@ -1,14 +1,33 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
-import { always, append, cond, equals, ifElse, pathOr, propEq, reject, T, map, identity } from 'ramda';
+import {
+  always,
+  append,
+  cond,
+  equals,
+  ifElse,
+  propEq,
+  reject,
+  T,
+  map,
+  identity,
+  propOr,
+  update,
+  concat,
+  findIndex,
+  lte,
+} from 'ramda';
 import { Form as FormUI } from 'schemaUI';
+import { useEffectOnce } from 'react-use';
+import { useParams, useLocation, useHistory } from 'react-router';
+import { useFormik } from 'formik';
 
 import { Form, RangeInput, RangeValues } from './stateFilter.styles';
 import messages from './stateFilter.messages';
 import reportError from '../../../shared/utils/reportError';
-import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getInitialStateFilterValue } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions, DATA_SOURCE_STATE_ID } from '../../project/project.constants';
@@ -21,6 +40,7 @@ import {
   DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES,
   DATA_SOURCE_STATE_FILTER_TYPE,
   DATA_SOURCE_STATE_FILTER_VALUES,
+  DATA_SOURCE_STATE_FILTERS,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { Select } from '../../../shared/components/form/select';
 import {
@@ -34,81 +54,71 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { CheckboxGroup, Checkbox, Label, Switch } = FormUI;
 
-export class StateFilter extends PureComponent {
-  static propTypes = {
-    fetchFilter: PropTypes.func.isRequired,
-    fetchFieldsInfo: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    handleChange: PropTypes.func.isRequired,
-    setFieldValue: PropTypes.func.isRequired,
-    isSubmitting: PropTypes.bool.isRequired,
-    isValid: PropTypes.bool.isRequired,
-    state: PropTypes.object.isRequired,
-    values: PropTypes.object.isRequired,
-    filter: PropTypes.object.isRequired,
-    fieldsInfo: PropTypes.array.isRequired,
-    userRole: PropTypes.string.isRequired,
-    match: PropTypes.shape({
-      params: PropTypes.shape({
-        filterId: PropTypes.string.isRequired,
-      }),
-    }),
-    intl: PropTypes.shape({
-      formatMessage: PropTypes.func.isRequired,
-    }),
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }),
-  };
+export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole, project, filter }) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const params = useParams();
+  const filterId = parseInt(params.filterId, 10);
+  const { state: locationState = {} } = useLocation();
+  const state = propOr({ name: '', [DATA_SOURCE_STATE_FILTERS]: [] }, 'state', locationState);
+  const history = useHistory();
+  const intl = useIntl();
+  const projectId = project.id;
+  const menuOptions = getProjectMenuOptions(projectId);
+  const title = state.name;
 
-  state = {
-    loading: true,
-    error: null,
-  };
-
-  async componentDidMount() {
-    try {
-      const filterId = getMatchParam(this.props, 'filterId');
-
-      const { filterType, field, datasource } = await this.props.fetchFilter({ filterId });
-      if ([FILTER_TYPE_SELECT, FILTER_TYPE_CHECKBOX, FILTER_TYPE_RANGE].includes(filterType)) {
-        await this.props.fetchFieldsInfo({ dataSourceId: datasource.id, field });
+  useEffectOnce(() => {
+    (async () => {
+      try {
+        const { filterType, field, datasource } = await fetchFilter({ filterId });
+        if ([FILTER_TYPE_SELECT, FILTER_TYPE_CHECKBOX, FILTER_TYPE_RANGE].includes(filterType)) {
+          await fetchFieldsInfo({ dataSourceId: datasource.id, field });
+        }
+      } catch (e) {
+        reportError(e);
+        setError(e);
+      } finally {
+        setLoading(false);
       }
+    })();
+  });
 
-      this.setState({ loading: false });
-    } catch (error) {
-      reportError(error);
-      this.setState({ loading: false, error });
-    }
-  }
+  const { values, setFieldValue, handleChange, handleSubmit, dirty, ...restFormikProps } = useFormik({
+    initialValues: getInitialStateFilterValue({ state, filter, filterId }),
+    enableReinitialize: true,
+    onSubmit: ({ values }) => {
+      const newState = { ...state };
+      const filterIndex = findIndex(propEq('filter', filterId), state.filters);
+      newState.filters = ifElse(
+        lte(0),
+        () => update(filterIndex, { values, filter: filterId }, state.filters),
+        always(concat(state.filters, [{ values, filter: filterId }]))
+      )(filterIndex);
 
-  getUniqueValues = () => pathOr([], ['props', 'fieldsInfo'], this);
+      history.push(locationState.backUrl, { state: newState });
+    },
+  });
 
-  getStatusOptions = () =>
-    this.getUniqueValues().map(name => ({
+  const getStatusOptions = () =>
+    fieldsInfo.map(name => ({
       value: name,
       label: name,
     }));
 
-  handleBack = () => this.props.history.push(`/state/${this.props.state.id}`);
+  const handleBack = () => history.push(locationState.backUrl, { state });
 
-  handleSelectStatus = ({ value }) => {
-    this.props.setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, [value]);
+  const handleSelectStatus = ({ value }) => {
+    setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, [value]);
   };
 
-  handleCheckboxChange = e => {
+  const handleCheckboxChange = e => {
     const { value, checked } = e.target;
-    const {
-      setFieldValue,
-      values: { values },
-    } = this.props;
     const setValues = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)));
 
     setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, setValues(checked));
   };
 
-  handleRangeChange = e => {
-    const { values } = this.props;
+  const handleRangeChange = e => {
     const { target } = e;
     const { name, value } = target;
     const [key, index] = name.split('.');
@@ -122,17 +132,16 @@ export class StateFilter extends PureComponent {
       return;
     }
 
-    this.props.setFieldValue(`${DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES}.${index}`, intValue);
-    this.props.setFieldValue(name, intValue);
+    setFieldValue(`${DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES}.${index}`, intValue);
+    setFieldValue(name, intValue);
   };
 
-  handleInputRangeChange = (e, isBlur) => {
+  const handleInputRangeChange = (e, isBlur) => {
     const { target } = e;
     const { name, value } = target;
     const [, index] = name.split('.');
     const intIndex = parseInt(index, 10);
     const intValue = parseInt(value, 10);
-    const { values, setFieldValue } = this.props;
     const [minRounded, maxRounded] = values.range;
 
     if ((isBlur && (intValue < minRounded || intValue > maxRounded)) || (isBlur && isNaN(intValue))) {
@@ -146,8 +155,7 @@ export class StateFilter extends PureComponent {
     }
   };
 
-  renderRange = () => {
-    const { values, intl } = this.props;
+  const renderRange = () => {
     const [minRounded, maxRounded] = values.range;
     const [minValue, maxValue] = values[DATA_SOURCE_STATE_FILTER_VALUES];
     const [minSecondaryValue, maxSecondaryValue] = map(ifElse(equals(NaN), always(''), identity))(
@@ -163,7 +171,7 @@ export class StateFilter extends PureComponent {
           idMax={`${DATA_SOURCE_STATE_FILTER_VALUES}.1`}
           min={minRounded}
           max={maxRounded}
-          onChange={this.handleRangeChange}
+          onChange={handleRangeChange}
         />
         <RangeValues>
           <span>{minRounded}</span>
@@ -173,29 +181,29 @@ export class StateFilter extends PureComponent {
           <RangeInput>
             <TextInput
               value={minSecondaryValue}
-              onChange={this.handleInputRangeChange}
-              onBlur={e => this.handleInputRangeChange(e, true)}
+              onChange={handleInputRangeChange}
+              onBlur={e => handleInputRangeChange(e, true)}
               name={`${DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES}.0`}
               label={intl.formatMessage(messages.min)}
               type="number"
               step="1"
               min={minRounded}
               max={maxValue - 1}
-              {...this.props}
+              {...restFormikProps}
             />
           </RangeInput>
           <RangeInput>
             <TextInput
               value={maxSecondaryValue}
-              onChange={this.handleInputRangeChange}
-              onBlur={e => this.handleInputRangeChange(e, true)}
+              onChange={handleInputRangeChange}
+              onBlur={e => handleInputRangeChange(e, true)}
               name={`${DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES}.1`}
               label={intl.formatMessage(messages.max)}
               type="number"
               step="1"
               min={minValue + 1}
               max={maxRounded}
-              {...this.props}
+              {...restFormikProps}
             />
           </RangeInput>
         </RangeValues>
@@ -203,71 +211,70 @@ export class StateFilter extends PureComponent {
     );
   };
 
-  renderInput = () => (
+  const renderInput = () => (
     <TextInput
-      value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES][0] || ''}
-      onChange={this.props.handleChange}
+      value={values[DATA_SOURCE_STATE_FILTER_VALUES][0] || ''}
+      onChange={handleChange}
       name={`${DATA_SOURCE_STATE_FILTER_VALUES}.0`}
-      label={this.props.intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
+      label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
       fullWidth
       isEdit
-      {...this.props}
+      {...restFormikProps}
     />
   );
 
-  renderSelect = () => (
+  const renderSelect = () => (
     <Select
-      label={this.props.intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
+      label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
       name={DATA_SOURCE_STATE_FILTER_VALUES}
-      value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES][0] || ''}
-      options={this.getStatusOptions()}
-      onSelect={this.handleSelectStatus}
-      placeholder={this.props.intl.formatMessage(messages.selectPlaceholder)}
+      value={values[DATA_SOURCE_STATE_FILTER_VALUES][0] || ''}
+      options={getStatusOptions()}
+      onSelect={handleSelectStatus}
+      placeholder={intl.formatMessage(messages.selectPlaceholder)}
     />
   );
 
-  renderCheckbox = (name, index) => (
+  const renderCheckbox = (name, index) => (
     <Checkbox key={index} id={`checkbox-${index}`} value={name}>
       {name}
     </Checkbox>
   );
 
-  renderCheckboxes = () => (
+  const renderCheckboxes = () => (
     <Fragment>
       <Label>
         <FormattedMessage {...messages[DATA_SOURCE_STATE_FILTER_VALUES]} />
       </Label>
       <CheckboxGroup
-        onChange={this.handleCheckboxChange}
+        onChange={handleCheckboxChange}
         name={DATA_SOURCE_STATE_FILTER_VALUES}
         customStyles={{ borderTop: 'none' }}
-        value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES]}
+        value={values[DATA_SOURCE_STATE_FILTER_VALUES]}
       >
-        {this.getUniqueValues().map(this.renderCheckbox)}
+        {fieldsInfo.map(renderCheckbox)}
       </CheckboxGroup>
     </Fragment>
   );
 
-  renderSwitch = () => (
+  const renderSwitch = () => (
     <Switch
-      value={this.props.values[DATA_SOURCE_STATE_FILTER_VALUES][0]}
+      value={values[DATA_SOURCE_STATE_FILTER_VALUES][0]}
       id={`${DATA_SOURCE_STATE_FILTER_VALUES}.0`}
-      onChange={this.props.handleChange}
-      label={this.props.intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
+      onChange={handleChange}
+      label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
     />
   );
 
-  renderValue = cond([
-    [propEq('filterType', FILTER_TYPE_RANGE), this.renderRange],
-    [propEq('filterType', FILTER_TYPE_SELECT), this.renderSelect],
-    [propEq('filterType', FILTER_TYPE_CHECKBOX), this.renderCheckboxes],
-    [propEq('filterType', FILTER_TYPE_BOOL), this.renderSwitch],
-    [T, this.renderInput],
+  const renderValue = cond([
+    [propEq('filterType', FILTER_TYPE_RANGE), renderRange],
+    [propEq('filterType', FILTER_TYPE_SELECT), renderSelect],
+    [propEq('filterType', FILTER_TYPE_CHECKBOX), renderCheckboxes],
+    [propEq('filterType', FILTER_TYPE_BOOL), renderSwitch],
+    [T, renderInput],
   ]);
 
-  renderForm = loading =>
+  const renderForm = loading =>
     renderWhenTrue(() => {
-      const { handleSubmit, isSubmitting, isValid, intl, filter } = this.props;
       const { filterType, fieldType } = filter;
 
       return (
@@ -278,7 +285,7 @@ export class StateFilter extends PureComponent {
             label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_NAME])}
             fullWidth
             disabled
-            {...this.props}
+            {...restFormikProps}
           />
           <TextInput
             value={filter[DATA_SOURCE_STATE_FILTER_TYPE]}
@@ -286,7 +293,7 @@ export class StateFilter extends PureComponent {
             label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_TYPE])}
             fullWidth
             disabled
-            {...this.props}
+            {...restFormikProps}
           />
           <TextInput
             value={filter[DATA_SOURCE_STATE_FILTER_FIELD]}
@@ -294,12 +301,12 @@ export class StateFilter extends PureComponent {
             label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_FIELD])}
             fullWidth
             disabled
-            {...this.props}
+            {...restFormikProps}
           />
-          {this.renderValue({ filterType, fieldType })}
+          {renderValue({ filterType, fieldType })}
           <NavigationContainer fixed>
-            <BackButton type="button" onClick={this.handleBack} />
-            <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid}>
+            <BackButton type="button" onClick={handleBack} />
+            <NextButton type="submit" disabled={!dirty}>
               <FormattedMessage {...messages.save} />
             </NextButton>
           </NavigationContainer>
@@ -307,27 +314,28 @@ export class StateFilter extends PureComponent {
       );
     })(!loading);
 
-  render() {
-    const { loading, error } = this.state;
-    const { userRole, state } = this.props;
-    const projectId = state.project;
-    const menuOptions = getProjectMenuOptions(projectId);
-    const title = state.name;
+  return (
+    <Fragment>
+      <Helmet title={title} />
+      <MobileMenu
+        headerTitle={title}
+        headerSubtitle={<FormattedMessage {...messages.subTitle} />}
+        options={filterMenuOptions(menuOptions, userRole)}
+        active={DATA_SOURCE_STATE_ID}
+      />
+      <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
+      <LoadingWrapper loading={loading} error={error}>
+        {renderForm(loading)}
+      </LoadingWrapper>
+    </Fragment>
+  );
+};
 
-    return (
-      <Fragment>
-        <Helmet title={title} />
-        <MobileMenu
-          headerTitle={title}
-          headerSubtitle={<FormattedMessage {...messages.subTitle} />}
-          options={filterMenuOptions(menuOptions, userRole)}
-          active={DATA_SOURCE_STATE_ID}
-        />
-        <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <LoadingWrapper loading={loading} error={error}>
-          {this.renderForm(loading)}
-        </LoadingWrapper>
-      </Fragment>
-    );
-  }
-}
+StateFilter.propTypes = {
+  fetchFilter: PropTypes.func.isRequired,
+  fetchFieldsInfo: PropTypes.func.isRequired,
+  filter: PropTypes.object.isRequired,
+  fieldsInfo: PropTypes.array.isRequired,
+  userRole: PropTypes.string.isRequired,
+  project: PropTypes.object.isRequired,
+};

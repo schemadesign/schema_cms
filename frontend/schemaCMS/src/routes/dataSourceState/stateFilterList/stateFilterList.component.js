@@ -7,25 +7,33 @@ import { useHistory } from 'react-router';
 
 import messages from './stateFilterList.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { DATA_SOURCE_STATE_FILTERS } from '../../../modules/dataSourceState/dataSourceState.constants';
-import { Link, containerCheckboxGroupStyles } from './stateFilterList.styles';
+import {
+  DATA_SOURCE_STATE_ACTIVE_FILTERS,
+  DATA_SOURCE_STATE_FILTERS,
+} from '../../../modules/dataSourceState/dataSourceState.constants';
+import { FilterName, containerCheckboxGroupStyles } from './stateFilterList.styles';
 
 const { CheckboxGroup, Checkbox, Label } = FormUI;
 
 export const StateFilterList = ({ filters, values, state, setFieldValue }) => {
   const history = useHistory();
+  const handleGoToFilter = id => history.push(`/state/filter/${id}`, { backUrl: `/state/${state.id}`, state: values });
   const handleChange = e => {
     const { value, checked } = e.target;
     const intValue = parseInt(value, 10);
-    const isFilled = state.filters.find(({ filter }) => filter === intValue);
+    const isFilled = values.filters.find(({ filter }) => filter === intValue);
 
     if (checked && !isFilled) {
-      return history.push(`/state/${state.id}/filter/${value}`);
+      return handleGoToFilter(value);
     }
 
-    const setFilters = ifElse(equals(true), always(append(intValue, values)), always(reject(equals(intValue), values)));
+    const setFilters = ifElse(
+      equals(true),
+      always(append(intValue, values[DATA_SOURCE_STATE_ACTIVE_FILTERS])),
+      always(reject(equals(intValue), values[DATA_SOURCE_STATE_ACTIVE_FILTERS]))
+    );
 
-    return setFieldValue(DATA_SOURCE_STATE_FILTERS, setFilters(checked));
+    return setFieldValue(DATA_SOURCE_STATE_ACTIVE_FILTERS, setFilters(checked));
   };
 
   return (
@@ -37,12 +45,12 @@ export const StateFilterList = ({ filters, values, state, setFieldValue }) => {
         <CheckboxGroup
           onChange={handleChange}
           name={DATA_SOURCE_STATE_FILTERS}
-          value={values}
+          value={values[DATA_SOURCE_STATE_ACTIVE_FILTERS]}
           customStyles={containerCheckboxGroupStyles}
         >
           {filters.map(({ id, name }, index) => (
             <Checkbox key={index} id={`checkbox-${index}`} value={id}>
-              <Link to={`/state/${state.id}/filter/${id}`}>{name}</Link>
+              <FilterName onClick={() => handleGoToFilter(id)}>{name}</FilterName>
             </Checkbox>
           ))}
         </CheckboxGroup>
@@ -53,7 +61,7 @@ export const StateFilterList = ({ filters, values, state, setFieldValue }) => {
 
 StateFilterList.propTypes = {
   state: PropTypes.object.isRequired,
-  values: PropTypes.array.isRequired,
+  values: PropTypes.object.isRequired,
   filters: PropTypes.array.isRequired,
   setFieldValue: PropTypes.func.isRequired,
 };

@@ -25,6 +25,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       removeState: promisifyRoutine(DataSourceStateRoutines.removeState),
       updateState: promisifyRoutine(DataSourceStateRoutines.update),
+      fetchState: promisifyRoutine(DataSourceStateRoutines.fetchOne),
       fetchDataSourceTags: promisifyRoutine(DataSourceTagsRoutines.fetchDataSourceTags),
       fetchFilters: promisifyRoutine(FilterRoutines.fetchList),
     },

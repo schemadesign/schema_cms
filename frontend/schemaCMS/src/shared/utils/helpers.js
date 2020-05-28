@@ -31,6 +31,8 @@ import {
   prop,
   defaultTo,
   groupBy,
+  find,
+  pick,
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
@@ -49,6 +51,11 @@ import {
   OBSERVABLE_USER,
   OBSERVABLEHQ_TYPE,
 } from '../../modules/blockTemplates/blockTemplates.constants';
+import {
+  DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES,
+  DATA_SOURCE_STATE_FILTERS,
+} from '../../modules/dataSourceState/dataSourceState.constants';
+import { FILTER_TYPE_RANGE } from '../../modules/filter/filter.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
@@ -202,3 +209,32 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
     ),
     flatten
   )(internalConnections);
+
+export const getInitialStateFilterValue = ({ filter, state, filterId }) => {
+  const { values } = pipe(
+    propOr([], DATA_SOURCE_STATE_FILTERS),
+    find(propEq('filter', filterId)),
+    defaultTo({ values: [] }),
+    pick(['values'])
+  )(state);
+
+  if (FILTER_TYPE_RANGE === filter.filterType) {
+    const data = { range: [] };
+    if (props.fieldsInfo.length) {
+      const [min, max] = props.fieldsInfo;
+      data.range = [parseInt(min, 10), parseInt(max % 1 ? max + 1 : max, 10)];
+    }
+
+    if (values.length) {
+      data.values = values;
+      data[DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES] = values;
+    } else {
+      data.values = data.range;
+      data[DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES] = data.range;
+    }
+
+    return data;
+  }
+
+  return { values, range: [], [DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES]: [] };
+};
