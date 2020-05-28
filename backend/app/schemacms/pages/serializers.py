@@ -329,6 +329,7 @@ class PageSerializer(CustomModelSerializer):
                     constants.ElementType.CODE,
                     constants.ElementType.INTERNAL_CONNECTION,
                     constants.ElementType.CONNECTION,
+                    constants.ElementType.VIDEO,
                 ]:
                     element[element_type] = element_value
 

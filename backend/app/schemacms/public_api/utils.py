@@ -94,3 +94,19 @@ def code_in_html(element):
     html_value = f"<div id='code-{element.id}' class='element code'>{element.code}</div>"
 
     return html_value
+
+
+def video_in_html(element):
+    width = element.params.get("width", 640)
+    height = element.params.get("height", 480)
+
+    html_value = (
+        f"<div id='code-{element.id}' class='element video'>"
+        f"<iframe width='{width}' height='{height}' src='{element.video}'"
+        f"frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'"
+        f"allowfullscreen>"
+        f"</iframe>"
+        f"</div>"
+    )
+
+    return html_value

@@ -41,6 +41,10 @@ class InternalElement(BaseElement):
     pass
 
 
+class VideoElement(BaseElement):
+    pass
+
+
 class ObservableElement(BaseElement):
     def get_attribute(self, instance):
         observable_element = getattr(instance, self.element_type)
@@ -96,12 +100,13 @@ class ImageElement(BaseElement):
 
 
 ELEMENTS_TYPES = {
-    constants.ElementType.PLAIN_TEXT: PlainTextElement,
-    constants.ElementType.MARKDOWN: MarkdownElement,
     constants.ElementType.CODE: CodeElement,
     constants.ElementType.CONNECTION: CodeElement,
-    constants.ElementType.INTERNAL_CONNECTION: InternalElement,
-    constants.ElementType.OBSERVABLE_HQ: ObservableElement,
     constants.ElementType.CUSTOM_ELEMENT: CustomElement,
     constants.ElementType.IMAGE: ImageElement,
+    constants.ElementType.INTERNAL_CONNECTION: InternalElement,
+    constants.ElementType.MARKDOWN: MarkdownElement,
+    constants.ElementType.OBSERVABLE_HQ: ObservableElement,
+    constants.ElementType.PLAIN_TEXT: PlainTextElement,
+    constants.ElementType.VIDEO: VideoElement,
 }

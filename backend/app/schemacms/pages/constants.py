@@ -5,14 +5,15 @@ PAGE_DISPLAY_NAME_MAX_LENGTH = 100
 
 
 class ElementType:
-    MARKDOWN = "markdown"
-    PLAIN_TEXT = "plain_text"
-    IMAGE = "image"
     CODE = "code"
     CONNECTION = "connection"
-    INTERNAL_CONNECTION = "internal_connection"
     CUSTOM_ELEMENT = "custom_element"
+    IMAGE = "image"
+    INTERNAL_CONNECTION = "internal_connection"
+    MARKDOWN = "markdown"
     OBSERVABLE_HQ = "observable_hq"
+    PLAIN_TEXT = "plain_text"
+    VIDEO = "video"
 
 
 class ObservableFieldType:
@@ -23,14 +24,15 @@ class ObservableFieldType:
 
 
 ELEMENT_TYPE_CHOICES = (
-    (ElementType.MARKDOWN, "Markdown"),
-    (ElementType.PLAIN_TEXT, "Plain Text"),
-    (ElementType.IMAGE, "Image"),
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
-    (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
-    (ElementType.OBSERVABLE_HQ, "ObservableHQ"),
     (ElementType.CUSTOM_ELEMENT, "Custom Element"),
+    (ElementType.IMAGE, "Image"),
+    (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
+    (ElementType.MARKDOWN, "Markdown"),
+    (ElementType.OBSERVABLE_HQ, "ObservableHQ"),
+    (ElementType.PLAIN_TEXT, "Plain Text"),
+    (ElementType.VIDEO, "Video"),
 )
 
 OBSERVABLE_FIELD_TYPE_CHOICES = (
