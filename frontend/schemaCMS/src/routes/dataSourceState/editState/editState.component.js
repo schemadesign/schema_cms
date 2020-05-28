@@ -6,14 +6,20 @@ import Helmet from 'react-helmet';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
 import { Form } from 'schemaUI';
-import { groupBy, toPairs, map, prop, pipe, is, either, isNil } from 'ramda';
+import { pick } from 'ramda';
 
 import messages from './editState.messages';
 import { LinkContainer } from './editState.styles';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions, formatTags, prepareTags } from '../../../shared/utils/helpers';
+import {
+  errorMessageParser,
+  filterMenuOptions,
+  formatTags,
+  getStateInitialValues,
+  getTagCategories,
+} from '../../../shared/utils/helpers';
 import { DATA_SOURCE_STATE_ID, getProjectMenuOptions } from '../../project/project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceStateForm } from '../../../shared/components/dataSourceStateForm';
@@ -26,14 +32,12 @@ import {
   DATA_SOURCE_STATE_FILTERS,
   DATA_SOURCE_STATE_IS_PUBLIC,
   DATA_SOURCE_STATE_SCHEMA,
-  DATA_SOURCE_STATE_TAGS,
+  REQUEST_KEYS,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
-import { TagSearch } from '../../../shared/components/tagSearch';
-import { StateFilterList } from '../stateFilterList';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 
-const { Label, Switch } = Form;
+const { Switch } = Form;
 
 export const EditState = ({
   project,
@@ -57,28 +61,18 @@ export const EditState = ({
   const intl = useIntl();
   const title = state.name;
   const menuOptions = getProjectMenuOptions(project.id);
-  const tagCategories = pipe(
-    groupBy(prop('categoryName')),
-    toPairs,
-    map(([name, tags]) => ({ name, id: tags[0].category, tags }))
-  )(dataSourceTags);
-  const getInitialValues = state => ({
-    ...state,
-    [DATA_SOURCE_STATE_TAGS]: either(is(Array), isNil)(state[DATA_SOURCE_STATE_TAGS])
-      ? prepareTags(state[DATA_SOURCE_STATE_TAGS])
-      : state[DATA_SOURCE_STATE_TAGS],
-    [DATA_SOURCE_STATE_ACTIVE_FILTERS]: state[DATA_SOURCE_STATE_FILTERS].map(({ filter }) => filter),
-  });
+  const tagCategories = getTagCategories(dataSourceTags);
 
   const { values, handleSubmit, isSubmitting, dirty, setValues, ...restFormikProps } = useFormik({
-    initialValues: getInitialValues(state),
+    initialValues: getStateInitialValues(state),
     enableReinitialize: true,
     validationSchema: () => DATA_SOURCE_STATE_SCHEMA,
-    onSubmit: async (formData, { setSubmitting, setErrors }) => {
+    onSubmit: async (data, { setSubmitting, setErrors }) => {
       try {
-        const formattedFilters = formData[DATA_SOURCE_STATE_FILTERS].filter(({ filter }) =>
-          values[DATA_SOURCE_STATE_ACTIVE_FILTERS].includes(filter)
+        const formattedFilters = data[DATA_SOURCE_STATE_FILTERS].filter(({ filter }) =>
+          data[DATA_SOURCE_STATE_ACTIVE_FILTERS].includes(filter)
         );
+        const formData = pick(REQUEST_KEYS, data);
 
         await updateState({
           stateId: state.id,
@@ -104,7 +98,7 @@ export const EditState = ({
         await fetchFilters({ dataSourceId });
 
         if (locationState.state) {
-          setValues(getInitialValues(locationState.state));
+          setValues(getStateInitialValues(locationState.state));
           history.replace({ state: {} });
         }
       } catch (e) {
@@ -123,7 +117,7 @@ export const EditState = ({
     try {
       setRemoveLoading(true);
 
-      await removeState({ stateId: state.id, projectId: project.id });
+      await removeState({ stateId: state.id, dataSourceId: state.datasource });
     } catch (e) {
       setRemoveLoading(false);
       reportError(e);
@@ -142,17 +136,14 @@ export const EditState = ({
           active={DATA_SOURCE_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <DataSourceStateForm values={values} intl={intl} {...restFormikProps} />
-        <Label>
-          <FormattedMessage {...messages[DATA_SOURCE_STATE_TAGS]} />
-        </Label>
-        <TagSearch
+        <DataSourceStateForm
+          values={values}
+          intl={intl}
+          filters={filters}
+          state={state}
           tagCategories={tagCategories}
-          values={values[DATA_SOURCE_STATE_TAGS]}
-          valuePath="tags"
-          setFieldValue={restFormikProps.setFieldValue}
+          {...restFormikProps}
         />
-        <StateFilterList filters={filters} state={state} values={values} {...restFormikProps} />
         <Switch
           value={values[DATA_SOURCE_STATE_IS_PUBLIC]}
           id={DATA_SOURCE_STATE_IS_PUBLIC}

@@ -23,7 +23,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      removeState: promisifyRoutine(DataSourceStateRoutines.removeState),
+      removeState: promisifyRoutine(DataSourceStateRoutines.remove),
       updateState: promisifyRoutine(DataSourceStateRoutines.update),
       fetchState: promisifyRoutine(DataSourceStateRoutines.fetchOne),
       fetchDataSourceTags: promisifyRoutine(DataSourceTagsRoutines.fetchDataSourceTags),

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Form as FormUI } from 'schemaUI';
 import { always, append, equals, ifElse, reject } from 'ramda';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 
 import messages from './stateFilterList.messages';
-import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { LoadingWrapper } from '../loadingWrapper';
 import {
   DATA_SOURCE_STATE_ACTIVE_FILTERS,
   DATA_SOURCE_STATE_FILTERS,
@@ -15,9 +15,10 @@ import { FilterName, containerCheckboxGroupStyles } from './stateFilterList.styl
 
 const { CheckboxGroup, Checkbox, Label } = FormUI;
 
-export const StateFilterList = ({ filters, values, state, setFieldValue }) => {
+export const StateFilterList = ({ filters, values, setFieldValue }) => {
   const history = useHistory();
-  const handleGoToFilter = id => history.push(`/state/filter/${id}`, { backUrl: `/state/${state.id}`, state: values });
+  const { pathname } = useLocation();
+  const handleGoToFilter = id => history.push(`/state/filter/${id}`, { backUrl: pathname, state: values });
   const handleChange = e => {
     const { value, checked } = e.target;
     const intValue = parseInt(value, 10);
