@@ -8,14 +8,10 @@ from django_extensions.db import models as ext_models
 
 from . import constants, managers
 from ..users import constants as users_constants
-from ..utils.models import MetaGeneratorMixin
 
 
 class Project(
-    MetaGeneratorMixin,
-    softdelete.models.SoftDeleteObject,
-    ext_models.TitleSlugDescriptionModel,
-    ext_models.TimeStampedModel,
+    softdelete.models.SoftDeleteObject, ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
 ):
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
@@ -80,26 +76,3 @@ class Project(
     @functional.cached_property
     def project_info(self):
         return {"id": self.id, "title": self.title, "domain": self.domain}
-
-    def meta_file_serialization(self):
-        data = {
-            "id": self.id,
-            "meta": {
-                "title": self.title,
-                "description": self.description or None,
-                "owner": None if not self.owner else self.owner.get_full_name(),
-                "created": self.created.isoformat(),
-                "updated": self.modified.isoformat(),
-            },
-            "data_sources": [],
-            "pages": [],
-        }
-
-        if self.data_sources:
-            data_sources = [
-                {"id": data_source.id, "name": data_source.name, "type": data_source.type}
-                for data_source in self.data_sources.all()
-            ]
-            data.update({"data_sources": data_sources})
-
-        return data
