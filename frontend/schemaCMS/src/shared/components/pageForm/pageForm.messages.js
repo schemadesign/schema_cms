@@ -65,7 +65,7 @@ export default defineMessages({
   },
   blankTemplate: {
     id: 'shared.components.pageForm.blankTemplate',
-    defaultMessage: 'Blank',
+    defaultMessage: '(blank)',
   },
   changeTitle: {
     id: 'shared.components.pageForm.changeTitle',

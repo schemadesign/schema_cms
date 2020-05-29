@@ -61,7 +61,7 @@ export default defineMessages({
   },
   blankTemplate: {
     id: 'section.pageList.visitPage',
-    defaultMessage: 'Blank',
+    defaultMessage: '(blank)',
   },
   nameSectionNameUniqueError: {
     id: 'section.pageList.nameSectionNameUniqueError',

@@ -849,7 +849,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               }
             >
-              Blank
+              (blank)
             </div>
             <div
               id="select-item-1"
@@ -6285,7 +6285,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               }
             >
-              Blank
+              (blank)
             </div>
             <div
               id="select-item-1"
