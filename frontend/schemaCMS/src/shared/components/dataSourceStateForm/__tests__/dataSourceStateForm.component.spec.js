@@ -1,16 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import { DataSourceStateForm } from '../dataSourceStateForm.component';
 import { defaultProps } from '../dataSourceStateForm.stories';
+import { makeContextRenderer } from '../../../utils/testUtils';
 
 describe('DataSourceStateForm: Component', () => {
-  const component = props => <DataSourceStateForm {...defaultProps} {...props} />;
+  const render = props => makeContextRenderer(<DataSourceStateForm {...defaultProps} {...props} />);
 
-  const render = (props = {}) => shallow(component(props));
-
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render correctly', async () => {
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

@@ -51,7 +51,9 @@ export const StateFilterList = ({ filters, values, setFieldValue }) => {
         >
           {filters.map(({ id, name }, index) => (
             <Checkbox key={index} id={`checkbox-${index}`} value={id}>
-              <FilterName onClick={() => handleGoToFilter(id)}>{name}</FilterName>
+              <FilterName id={`filterName-${index}`} onClick={() => handleGoToFilter(id)}>
+                {name}
+              </FilterName>
             </Checkbox>
           ))}
         </CheckboxGroup>

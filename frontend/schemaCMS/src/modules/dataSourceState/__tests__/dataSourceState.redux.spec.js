@@ -5,7 +5,9 @@ import { reducer as dataSourceStateReducer, DataSourceStateRoutines } from '../d
 
 describe('DataSourceState: redux', () => {
   const state = Immutable({
-    state: {},
+    state: {
+      filters: [],
+    },
     states: [],
   });
 

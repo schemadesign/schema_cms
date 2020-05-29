@@ -213,7 +213,7 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
     flatten
   )(internalConnections);
 
-export const getInitialStateFilterValue = ({ filter, state, filterId }) => {
+export const getInitialStateFilterValue = ({ filter, state, filterId, fieldsInfo }) => {
   const { values } = pipe(
     propOr([], DATA_SOURCE_STATE_FILTERS),
     find(propEq('filter', filterId)),
@@ -223,8 +223,8 @@ export const getInitialStateFilterValue = ({ filter, state, filterId }) => {
 
   if (FILTER_TYPE_RANGE === filter.filterType) {
     const data = { range: [] };
-    if (props.fieldsInfo.length) {
-      const [min, max] = props.fieldsInfo;
+    if (fieldsInfo.length) {
+      const [min, max] = fieldsInfo;
       data.range = [parseInt(min, 10), parseInt(max % 1 ? max + 1 : max, 10)];
     }
 

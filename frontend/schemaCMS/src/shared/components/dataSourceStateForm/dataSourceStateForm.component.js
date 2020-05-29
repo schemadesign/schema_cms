@@ -27,7 +27,6 @@ const { Label } = Form;
 export const DataSourceStateForm = ({
   tagCategories,
   handleChange,
-  setFieldValue,
   values,
   filters,
   state = {},
@@ -93,7 +92,7 @@ export const DataSourceStateForm = ({
         tagCategories={tagCategories}
         values={values[DATA_SOURCE_STATE_TAGS]}
         valuePath="tags"
-        setFieldValue={setFieldValue}
+        {...restFormikProps}
       />
       <StateFilterList filters={filters} state={state} values={values} {...restFormikProps} />
     </Container>
@@ -101,9 +100,8 @@ export const DataSourceStateForm = ({
 };
 
 DataSourceStateForm.propTypes = {
-  tagCategories: PropTypes.object.isRequired,
+  tagCategories: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
-  setFieldValue: PropTypes.func.isRequired,
   values: PropTypes.object.isRequired,
   filters: PropTypes.array.isRequired,
   state: PropTypes.object,

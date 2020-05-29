@@ -19,9 +19,285 @@ Array [
     Filters
   </label>,
   <div
-    className="sc-AxiKw iJWEeW"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "1px solid #2F2F36",
+        "display": "flex",
+        "flexDirection": "column",
+        "padding": "20px 20px 40px",
+      }
+    }
   >
-    No Filters
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={true}
+        id="checkbox-0"
+        name="filters"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value={1}
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <div
+          className="sc-AxhCb iniznJ"
+          id="filterName-0"
+          onClick={[Function]}
+        >
+          Filter First Name
+        </div>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="checkbox-0"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 0,
+            }
+          }
+        >
+          <svg
+            stroke="#000"
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+            >
+              <path
+                d="M20.455 7.5H7.5v15h15v-6.136"
+                strokeLinecap="square"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M11 12l5 5L26 7"
+                strokeWidth={3}
+              />
+            </g>
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="checkbox-1"
+        name="filters"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value={2}
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <div
+          className="sc-AxhCb iniznJ"
+          id="filterName-1"
+          onClick={[Function]}
+        >
+          Filter Last Name
+        </div>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="checkbox-1"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 0,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="checkbox-2"
+        name="filters"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value={3}
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <div
+          className="sc-AxhCb iniznJ"
+          id="filterName-2"
+          onClick={[Function]}
+        >
+          Filter Birthday
+        </div>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="checkbox-2"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 0,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
   </div>,
 ]
 `;

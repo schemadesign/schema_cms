@@ -84,7 +84,7 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
   });
 
   const { values, setFieldValue, handleChange, handleSubmit, dirty, ...restFormikProps } = useFormik({
-    initialValues: getInitialStateFilterValue({ state, filter, filterId }),
+    initialValues: getInitialStateFilterValue({ state, filter, filterId, fieldsInfo }),
     enableReinitialize: true,
     onSubmit: ({ values }) => {
       const newState = { ...state };

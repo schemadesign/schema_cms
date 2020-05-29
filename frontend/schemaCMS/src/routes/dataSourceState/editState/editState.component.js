@@ -94,8 +94,10 @@ export const EditState = ({
       try {
         const state = await fetchState({ stateId });
         const dataSourceId = state.datasource;
-        await fetchDataSourceTags({ dataSourceId });
-        await fetchFilters({ dataSourceId });
+        const fetchDataSourceTagsPromise = fetchDataSourceTags({ dataSourceId });
+        const fetchFiltersPromise = fetchFilters({ dataSourceId });
+
+        await Promise.all([fetchDataSourceTagsPromise, fetchFiltersPromise]);
 
         if (locationState.state) {
           setValues(getStateInitialValues(locationState.state));

@@ -104,6 +104,6 @@ describe('DataSourceState: sagas', () => {
       .dispatch(DataSourceStateRoutines.remove(payload))
       .silentRun();
 
-    expect(browserHistory.push).toBeCalledWith('/datasources/dataSourceId/state');
+    expect(browserHistory.push).toBeCalledWith('/datasource/dataSourceId/state');
   });
 });
