@@ -1,7 +1,13 @@
 import markdown
 
 
-MARKDOWN_EXTENSIONS = ["sane_lists", "pymdownx.tasklist", "pymdownx.betterem", "pymdownx.tilde"]
+MARKDOWN_EXTENSIONS = [
+    "sane_lists",
+    "pymdownx.extra",
+    "pymdownx.tasklist",
+    "pymdownx.betterem",
+    "pymdownx.tilde",
+]
 
 
 def connection_in_html(element):
