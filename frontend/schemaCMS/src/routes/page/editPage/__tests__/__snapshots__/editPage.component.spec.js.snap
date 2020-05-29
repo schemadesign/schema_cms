@@ -1430,7 +1430,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   }
                 >
-                  Blank
+                  (blank)
                 </div>
                 <div
                   id="select-item-1"
