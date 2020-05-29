@@ -56,7 +56,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     isValid,
     ...restFormikProps
   } = useFormik({
-    initialValues: { [METADATA]: metadata },
+    initialValues: { [METADATA]: metadata.map((item, index) => ({ ...item, id: index })) },
     enableReinitialize: true,
     validationSchema: () => METADATA_SCHEMA,
     onSubmit: async (data, { setSubmitting, setErrors }) => {
@@ -72,7 +72,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
       }
     },
   });
-  const addMetadata = () => setFieldValue(METADATA, [...values[METADATA], { key: '', value: '' }]);
+  const addMetadata = () => setFieldValue(METADATA, [...values[METADATA], { key: '', value: '', id: Date.now() }]);
   const removeMetadata = index => setFieldValue(METADATA, remove(index, 1, values[METADATA]));
 
   useEffectOnce(() => {
@@ -112,8 +112,8 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
         />
         <Form>
           <Accordion>
-            {values[METADATA].map(({ key, value }, index) => (
-              <AccordionPanel key={index} autoOpen>
+            {values[METADATA].map(({ key, value, id }, index) => (
+              <AccordionPanel key={id} autoOpen>
                 <AccordionHeader>
                   <Header>
                     <TextInput
