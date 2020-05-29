@@ -156,6 +156,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           </NavigationContainer>
         </Form>
       </LoadingWrapper>
+      <DataSourceNavigation hideOnDesktop history={history} match={match} dataSource={dataSource} />
     </Container>
   );
 };

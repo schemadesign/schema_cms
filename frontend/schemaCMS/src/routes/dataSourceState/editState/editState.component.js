@@ -5,11 +5,9 @@ import { useHistory, useLocation, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
-import { Form } from 'schemaUI';
 import { pick } from 'ramda';
 
 import messages from './editState.messages';
-import { LinkContainer } from './editState.styles';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -23,21 +21,16 @@ import {
 import { DATA_SOURCE_STATE_ID, getProjectMenuOptions } from '../../project/project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceStateForm } from '../../../shared/components/dataSourceStateForm';
-import { Link } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { contentStyles, NavigationButtons } from '../../../shared/components/navigationStyles';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import {
   DATA_SOURCE_STATE_ACTIVE_FILTERS,
   DATA_SOURCE_STATE_FILTERS,
-  DATA_SOURCE_STATE_IS_PUBLIC,
   DATA_SOURCE_STATE_SCHEMA,
   REQUEST_KEYS,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
-
-const { Switch } = Form;
 
 export const EditState = ({
   project,
@@ -144,28 +137,16 @@ export const EditState = ({
           filters={filters}
           state={state}
           tagCategories={tagCategories}
+          handleRemoveState={handleRemoveState}
           {...restFormikProps}
         />
-        <Switch
-          value={values[DATA_SOURCE_STATE_IS_PUBLIC]}
-          id={DATA_SOURCE_STATE_IS_PUBLIC}
-          onChange={restFormikProps.handleChange}
-          label={intl.formatMessage(messages[DATA_SOURCE_STATE_IS_PUBLIC])}
-        />
-        <LinkContainer>
-          <Link onClick={handleRemoveState}>
-            <FormattedMessage {...messages.deleteState} />
-          </Link>
-        </LinkContainer>
-        <NavigationContainer fixed contentStyles={contentStyles}>
-          <NavigationButtons>
-            <BackButton type="button" onClick={handleCancel}>
-              <FormattedMessage {...messages.back} />
-            </BackButton>
-            <NextButton type="submit" onClick={handleSubmit} loading={isSubmitting} disabled={isSubmitting || !dirty}>
-              <FormattedMessage {...messages.save} />
-            </NextButton>
-          </NavigationButtons>
+        <NavigationContainer fixed>
+          <BackButton type="button" onClick={handleCancel}>
+            <FormattedMessage {...messages.back} />
+          </BackButton>
+          <NextButton type="submit" onClick={handleSubmit} loading={isSubmitting} disabled={isSubmitting || !dirty}>
+            <FormattedMessage {...messages.save} />
+          </NextButton>
         </NavigationContainer>
         <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>

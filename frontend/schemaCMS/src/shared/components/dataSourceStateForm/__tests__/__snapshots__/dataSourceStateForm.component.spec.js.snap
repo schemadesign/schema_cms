@@ -2,7 +2,7 @@
 
 exports[`DataSourceStateForm: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-AxjAm eyXBQq"
 >
   <div
     className="sc-AxirZ CvgNc"
@@ -923,6 +923,82 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
             />
           </svg>
         </label>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fznyAO cGTQdW"
+  >
+    <div
+      className="sc-fznKkj gCFnhA"
+    >
+      <div
+        className="sc-fzqBZW fPxPmL"
+      >
+        <div>
+          <input
+            checked={false}
+            id="isPublic"
+            onChange={[Function]}
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="checkbox"
+          />
+          <label
+            htmlFor="isPublic"
+          >
+            <div
+              style={
+                Object {
+                  "background": "#2F2F36",
+                  "borderRadius": 20,
+                  "boxSizing": "border-box",
+                  "cursor": "pointer",
+                  "height": 24,
+                  "padding": 2,
+                  "transition": "background 200ms ease-in-out",
+                  "width": 44,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#FFF",
+                    "borderRadius": "50%",
+                    "height": 20,
+                    "transform": "translateX(0)",
+                    "transition": "transform 200ms ease-in-out",
+                    "width": 20,
+                  }
+                }
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          className="sc-fzokOt eBZAuu"
+        >
+          <label
+            className="sc-fznZeY fOlpei"
+            htmlFor="isPublic"
+          >
+            Make it Public
+          </label>
+          <span
+            className="sc-fzoyAV dBxnsX"
+          >
+            This State is currently Private
+          </span>
+        </div>
       </div>
     </div>
   </div>

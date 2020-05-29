@@ -324,105 +324,105 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         />
       </NextButton>
     </NavigationContainer>
-    <DataSourceNavigation
-      bindSubmitForm={[Function]}
-      checkedScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-        ]
-      }
-      customScripts={Array []}
-      dataSource={
-        Object {
-          "metaData": Object {},
-          "project": Object {
-            "id": "1",
-          },
-        }
-      }
-      dataWranglingScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-          Object {
-            "id": 2,
-            "isPredefined": true,
-            "name": "name 2",
-            "specs": Object {},
-            "type": 2,
-          },
-          Object {
-            "id": 3,
-            "isPredefined": true,
-            "name": "name 3",
-            "specs": Object {
-              "type": "type",
-            },
-            "type": 1,
-          },
-        ]
-      }
-      fetchDataWranglingScripts={[Function]}
-      hideOnDesktop={true}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
-      }
-      imageScrapingFields={Array []}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      isAdmin={true}
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-            "projectId": "1",
-            "step": "3",
-          },
-          "url": "/datasource/1/steps",
-        }
-      }
-      sendUpdatedDataWranglingScript={[Function]}
-      setCheckedScripts={[Function]}
-      setScriptsList={[Function]}
-      uncheckedScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-          Object {
-            "id": 2,
-            "isPredefined": true,
-            "name": "name 2",
-            "specs": Object {},
-            "type": 2,
-          },
-        ]
-      }
-      uploadScript={[Function]}
-      userRole="admin"
-    />
   </LoadingWrapper>
+  <DataSourceNavigation
+    bindSubmitForm={[Function]}
+    checkedScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+      ]
+    }
+    customScripts={Array []}
+    dataSource={
+      Object {
+        "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    dataWranglingScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+        Object {
+          "id": 2,
+          "isPredefined": true,
+          "name": "name 2",
+          "specs": Object {},
+          "type": 2,
+        },
+        Object {
+          "id": 3,
+          "isPredefined": true,
+          "name": "name 3",
+          "specs": Object {
+            "type": "type",
+          },
+          "type": 1,
+        },
+      ]
+    }
+    fetchDataWranglingScripts={[Function]}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={true}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "3",
+        },
+        "url": "/datasource/1/steps",
+      }
+    }
+    sendUpdatedDataWranglingScript={[Function]}
+    setCheckedScripts={[Function]}
+    setScriptsList={[Function]}
+    uncheckedScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+        Object {
+          "id": 2,
+          "isPredefined": true,
+          "name": "name 2",
+          "specs": Object {},
+          "type": 2,
+        },
+      ]
+    }
+    uploadScript={[Function]}
+    userRole="admin"
+  />
 </DndProvider>
 `;
 
@@ -668,104 +668,104 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
         />
       </NextButton>
     </NavigationContainer>
-    <DataSourceNavigation
-      bindSubmitForm={[Function]}
-      checkedScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-          Object {
-            "id": 2,
-            "isPredefined": true,
-            "name": "name 2",
-            "specs": Object {},
-            "type": 2,
-          },
-          Object {
-            "id": 3,
-            "isPredefined": true,
-            "name": "name 3",
-            "specs": Object {
-              "type": "type",
-            },
-            "type": 1,
-          },
-        ]
-      }
-      customScripts={Array []}
-      dataSource={
-        Object {
-          "metaData": Object {},
-          "project": Object {
-            "id": "1",
-          },
-        }
-      }
-      dataWranglingScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-          Object {
-            "id": 2,
-            "isPredefined": true,
-            "name": "name 2",
-            "specs": Object {},
-            "type": 2,
-          },
-          Object {
-            "id": 3,
-            "isPredefined": true,
-            "name": "name 3",
-            "specs": Object {
-              "type": "type",
-            },
-            "type": 1,
-          },
-        ]
-      }
-      fetchDataWranglingScripts={[Function]}
-      hideOnDesktop={true}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
-      }
-      imageScrapingFields={Array []}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      isAdmin={true}
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-            "projectId": "1",
-            "step": "3",
-          },
-          "url": "/datasource/1/steps",
-        }
-      }
-      sendUpdatedDataWranglingScript={[Function]}
-      setCheckedScripts={[Function]}
-      setScriptsList={[Function]}
-      uncheckedScripts={Array []}
-      uploadScript={[Function]}
-      userRole="admin"
-    />
   </LoadingWrapper>
+  <DataSourceNavigation
+    bindSubmitForm={[Function]}
+    checkedScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+        Object {
+          "id": 2,
+          "isPredefined": true,
+          "name": "name 2",
+          "specs": Object {},
+          "type": 2,
+        },
+        Object {
+          "id": 3,
+          "isPredefined": true,
+          "name": "name 3",
+          "specs": Object {
+            "type": "type",
+          },
+          "type": 1,
+        },
+      ]
+    }
+    customScripts={Array []}
+    dataSource={
+      Object {
+        "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    dataWranglingScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+        Object {
+          "id": 2,
+          "isPredefined": true,
+          "name": "name 2",
+          "specs": Object {},
+          "type": 2,
+        },
+        Object {
+          "id": 3,
+          "isPredefined": true,
+          "name": "name 3",
+          "specs": Object {
+            "type": "type",
+          },
+          "type": 1,
+        },
+      ]
+    }
+    fetchDataWranglingScripts={[Function]}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={true}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "3",
+        },
+        "url": "/datasource/1/steps",
+      }
+    }
+    sendUpdatedDataWranglingScript={[Function]}
+    setCheckedScripts={[Function]}
+    setScriptsList={[Function]}
+    uncheckedScripts={Array []}
+    uploadScript={[Function]}
+    userRole="admin"
+  />
 </DndProvider>
 `;
 
@@ -922,79 +922,79 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
         />
       </NextButton>
     </NavigationContainer>
-    <DataSourceNavigation
-      bindSubmitForm={[Function]}
-      checkedScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-        ]
-      }
-      customScripts={Array []}
-      dataSource={
-        Object {
-          "metaData": Object {},
-          "project": Object {
-            "id": "1",
-          },
-        }
-      }
-      dataWranglingScripts={Array []}
-      fetchDataWranglingScripts={[Function]}
-      hideOnDesktop={true}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
-      }
-      imageScrapingFields={Array []}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      isAdmin={true}
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-            "projectId": "1",
-            "step": "3",
-          },
-          "url": "/datasource/1/steps",
-        }
-      }
-      sendUpdatedDataWranglingScript={[Function]}
-      setCheckedScripts={[Function]}
-      setScriptsList={[Function]}
-      uncheckedScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-          Object {
-            "id": 2,
-            "isPredefined": true,
-            "name": "name 2",
-            "specs": Object {},
-            "type": 2,
-          },
-        ]
-      }
-      uploadScript={[Function]}
-      userRole="admin"
-    />
   </LoadingWrapper>
+  <DataSourceNavigation
+    bindSubmitForm={[Function]}
+    checkedScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+      ]
+    }
+    customScripts={Array []}
+    dataSource={
+      Object {
+        "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    dataWranglingScripts={Array []}
+    fetchDataWranglingScripts={[Function]}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={true}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "3",
+        },
+        "url": "/datasource/1/steps",
+      }
+    }
+    sendUpdatedDataWranglingScript={[Function]}
+    setCheckedScripts={[Function]}
+    setScriptsList={[Function]}
+    uncheckedScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+        Object {
+          "id": 2,
+          "isPredefined": true,
+          "name": "name 2",
+          "specs": Object {},
+          "type": 2,
+        },
+      ]
+    }
+    uploadScript={[Function]}
+    userRole="admin"
+  />
 </DndProvider>
 `;
 
@@ -1227,88 +1227,88 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
         />
       </NextButton>
     </NavigationContainer>
-    <DataSourceNavigation
-      bindSubmitForm={[Function]}
-      checkedScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-        ]
-      }
-      customScripts={Array []}
-      dataSource={
-        Object {
-          "metaData": Object {},
-          "project": Object {
-            "id": "1",
-          },
-        }
-      }
-      dataWranglingScripts={
-        Array [
-          Object {
-            "id": 1,
-            "isPredefined": false,
-            "name": "name 1",
-            "specs": Object {},
-            "type": 0,
-          },
-          Object {
-            "id": 2,
-            "isPredefined": true,
-            "name": "name 2",
-            "specs": Object {},
-            "type": 2,
-          },
-          Object {
-            "id": 3,
-            "isPredefined": true,
-            "name": "name 3",
-            "specs": Object {
-              "type": "type",
-            },
-            "type": 1,
-          },
-        ]
-      }
-      fetchDataWranglingScripts={[Function]}
-      hideOnDesktop={true}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
-      }
-      imageScrapingFields={Array []}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      isAdmin={true}
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-            "projectId": "1",
-            "step": "3",
-          },
-          "url": "/datasource/1/steps",
-        }
-      }
-      sendUpdatedDataWranglingScript={[Function]}
-      setCheckedScripts={[Function]}
-      setScriptsList={[Function]}
-      uncheckedScripts={Array []}
-      uploadScript={[Function]}
-      userRole="admin"
-    />
   </LoadingWrapper>
+  <DataSourceNavigation
+    bindSubmitForm={[Function]}
+    checkedScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+      ]
+    }
+    customScripts={Array []}
+    dataSource={
+      Object {
+        "metaData": Object {},
+        "project": Object {
+          "id": "1",
+        },
+      }
+    }
+    dataWranglingScripts={
+      Array [
+        Object {
+          "id": 1,
+          "isPredefined": false,
+          "name": "name 1",
+          "specs": Object {},
+          "type": 0,
+        },
+        Object {
+          "id": 2,
+          "isPredefined": true,
+          "name": "name 2",
+          "specs": Object {},
+          "type": 2,
+        },
+        Object {
+          "id": 3,
+          "isPredefined": true,
+          "name": "name 3",
+          "specs": Object {
+            "type": "type",
+          },
+          "type": 1,
+        },
+      ]
+    }
+    fetchDataWranglingScripts={[Function]}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={true}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "3",
+        },
+        "url": "/datasource/1/steps",
+      }
+    }
+    sendUpdatedDataWranglingScript={[Function]}
+    setCheckedScripts={[Function]}
+    setScriptsList={[Function]}
+    uncheckedScripts={Array []}
+    uploadScript={[Function]}
+    userRole="admin"
+  />
 </DndProvider>
 `;
 

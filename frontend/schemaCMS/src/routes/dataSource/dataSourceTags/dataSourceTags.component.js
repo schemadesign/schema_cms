@@ -89,6 +89,7 @@ export const DataSourceTags = ({
           </NextButton>
         </NavigationContainer>
       </LoadingWrapper>
+      <DataSourceNavigation hideOnDesktop history={history} match={match} dataSource={dataSource} />
     </Container>
   );
 };

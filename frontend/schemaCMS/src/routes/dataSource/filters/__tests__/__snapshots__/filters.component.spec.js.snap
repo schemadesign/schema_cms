@@ -220,26 +220,26 @@ exports[`Filters: Component should render correctly 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <styled.div>
-      <styled.div>
-        <Styled(Component)
-          onClick={[Function]}
-        >
-          <Component />
-        </Styled(Component)>
-      </styled.div>
-      <styled.div>
-        <FormattedMessage
-          defaultMessage="{filters, plural,one {# Filter} other {# Filters}}"
-          id="dataSource.view.filters.filters"
-          values={
-            Object {
-              "filters": 2,
+    <CounterHeader
+      copy="filter"
+      count={2}
+      right={
+        <ForwardRef(styled.div)>
+          <PlusButton
+            customStyles={
+              Object {
+                "height": 40,
+                "minHeight": 40,
+                "width": 40,
+              }
             }
-          }
-        />
-      </styled.div>
-    </styled.div>
+            hideOnDesktop={false}
+            onClick={[Function]}
+            type="button"
+          />
+        </ForwardRef(styled.div)>
+      }
+    />
     <Formik
       enableReinitialize={true}
       initialValues={
@@ -524,26 +524,26 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <styled.div>
-      <styled.div>
-        <Styled(Component)
-          onClick={[Function]}
-        >
-          <Component />
-        </Styled(Component)>
-      </styled.div>
-      <styled.div>
-        <FormattedMessage
-          defaultMessage="{filters, plural,one {# Filter} other {# Filters}}"
-          id="dataSource.view.filters.filters"
-          values={
-            Object {
-              "filters": 0,
+    <CounterHeader
+      copy="filter"
+      count={0}
+      right={
+        <ForwardRef(styled.div)>
+          <PlusButton
+            customStyles={
+              Object {
+                "height": 40,
+                "minHeight": 40,
+                "width": 40,
+              }
             }
-          }
-        />
-      </styled.div>
-    </styled.div>
+            hideOnDesktop={false}
+            onClick={[Function]}
+            type="button"
+          />
+        </ForwardRef(styled.div)>
+      }
+    />
     <Formik
       enableReinitialize={true}
       initialValues={Array []}
@@ -808,26 +808,26 @@ exports[`Filters: Component should render correctly with loader 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <styled.div>
-      <styled.div>
-        <Styled(Component)
-          onClick={[Function]}
-        >
-          <Component />
-        </Styled(Component)>
-      </styled.div>
-      <styled.div>
-        <FormattedMessage
-          defaultMessage="{filters, plural,one {# Filter} other {# Filters}}"
-          id="dataSource.view.filters.filters"
-          values={
-            Object {
-              "filters": 2,
+    <CounterHeader
+      copy="filter"
+      count={2}
+      right={
+        <ForwardRef(styled.div)>
+          <PlusButton
+            customStyles={
+              Object {
+                "height": 40,
+                "minHeight": 40,
+                "width": 40,
+              }
             }
-          }
-        />
-      </styled.div>
-    </styled.div>
+            hideOnDesktop={false}
+            onClick={[Function]}
+            type="button"
+          />
+        </ForwardRef(styled.div)>
+      }
+    />
     <Formik
       enableReinitialize={true}
       initialValues={

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { always } from 'ramda';
-import { Form } from 'schemaUI';
+import { Form, Icons } from 'schemaUI';
 import dayjs from 'dayjs';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -16,19 +16,31 @@ import {
   DATA_SOURCE_STATE_AUTHOR,
   DATA_SOURCE_STATE_CREATED,
   DATA_SOURCE_STATE_TAGS,
+  DATA_SOURCE_STATE_IS_PUBLIC,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { renderWhenTrue } from '../../utils/rendering';
 import { BASE_DATE_FORMAT } from '../../utils/extendedDayjs';
 import { TagSearch } from '../tagSearch';
 import { StateFilterList } from '../stateFilterList';
+import {
+  AvailableCopy,
+  BinIconContainer,
+  SwitchContainer,
+  SwitchContent,
+  SwitchCopy,
+  Switches,
+  SwitchLabel,
+} from '../form/frequentComponents.styles';
 
-const { Label } = Form;
+const { BinIcon } = Icons;
+const { Switch, Label } = Form;
 
 export const DataSourceStateForm = ({
   tagCategories,
   handleChange,
   values,
   filters,
+  handleRemoveState,
   state = {},
   ...restFormikProps
 }) => {
@@ -48,6 +60,12 @@ export const DataSourceStateForm = ({
         />
       )
     )(!!value);
+
+  const binIcon = handleRemoveState ? (
+    <BinIconContainer id="removeState" onClick={() => handleRemoveState(true)}>
+      <BinIcon />
+    </BinIconContainer>
+  ) : null;
 
   return (
     <Container>
@@ -95,6 +113,33 @@ export const DataSourceStateForm = ({
         {...restFormikProps}
       />
       <StateFilterList filters={filters} state={state} values={values} {...restFormikProps} />
+      <Switches>
+        <SwitchContainer>
+          <SwitchContent>
+            <Switch
+              value={values[DATA_SOURCE_STATE_IS_PUBLIC]}
+              id={DATA_SOURCE_STATE_IS_PUBLIC}
+              onChange={handleChange}
+            />
+            <SwitchCopy>
+              <SwitchLabel htmlFor={DATA_SOURCE_STATE_IS_PUBLIC}>
+                <FormattedMessage {...messages[DATA_SOURCE_STATE_IS_PUBLIC]} />
+              </SwitchLabel>
+              <AvailableCopy>
+                <FormattedMessage
+                  {...messages.pageAvailability}
+                  values={{
+                    availability: intl.formatMessage(
+                      messages[values[DATA_SOURCE_STATE_IS_PUBLIC] ? 'publicCopy' : 'privateCopy']
+                    ),
+                  }}
+                />
+              </AvailableCopy>
+            </SwitchCopy>
+          </SwitchContent>
+          {binIcon}
+        </SwitchContainer>
+      </Switches>
     </Container>
   );
 };
@@ -102,6 +147,7 @@ export const DataSourceStateForm = ({
 DataSourceStateForm.propTypes = {
   tagCategories: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
+  handleRemoveState: PropTypes.func,
   values: PropTypes.object.isRequired,
   filters: PropTypes.array.isRequired,
   state: PropTypes.object,

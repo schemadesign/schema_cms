@@ -47,7 +47,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     />
   </div>
   <div
-    className="sc-fzokOt gcdrkZ"
+    className="sc-fzokOt feUZWe"
   >
     <div
       className="sc-fzqBZW fPjuQm"
@@ -342,17 +342,9 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       Tags
     </label>
     <div
-      className="sc-fzoLag cNXENC"
+      className="sc-fznZeY eizqoG"
     >
-      <div
-        className="sc-fznxsB eHvWvL"
-      >
-        <div
-          className="sc-fznJRM dKKOb"
-        >
-          No tags available
-        </div>
-      </div>
+      No Tags available
     </div>
     <label
       style={
@@ -373,7 +365,83 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     <div
       className="sc-fznZeY eizqoG"
     >
-      No Filters
+      No Filters available
+    </div>
+    <div
+      className="sc-fzoiQi hbbwvh"
+    >
+      <div
+        className="sc-fzqARJ clXtQI"
+      >
+        <div
+          className="sc-fzoNJl cHszPy"
+        >
+          <div>
+            <input
+              checked={false}
+              id="isPublic"
+              onChange={[Function]}
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                }
+              }
+              type="checkbox"
+            />
+            <label
+              htmlFor="isPublic"
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#2F2F36",
+                    "borderRadius": 20,
+                    "boxSizing": "border-box",
+                    "cursor": "pointer",
+                    "height": 24,
+                    "padding": 2,
+                    "transition": "background 200ms ease-in-out",
+                    "width": 44,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#FFF",
+                      "borderRadius": "50%",
+                      "height": 20,
+                      "transform": "translateX(0)",
+                      "transition": "transform 200ms ease-in-out",
+                      "width": 20,
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            className="sc-fzoyTs fKSkws"
+          >
+            <label
+              className="sc-fzqNqU fjnSB"
+              htmlFor="isPublic"
+            >
+              Make it Public
+            </label>
+            <span
+              className="sc-fzpmMD bZzUta"
+            >
+              This State is currently Private
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div

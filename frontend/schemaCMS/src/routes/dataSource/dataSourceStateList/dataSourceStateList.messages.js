@@ -14,4 +14,8 @@ export default defineMessages({
     id: 'datasource.dataSourceStateList.noData',
     defaultMessage: 'No States',
   },
+  state: {
+    id: 'datasource.dataSourceStateList.state',
+    defaultMessage: 'state',
+  },
 });

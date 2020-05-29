@@ -13,7 +13,7 @@ export default defineMessages({
   },
   noData: {
     id: 'dataSourceState.stateFilterList.noData',
-    defaultMessage: 'No Filters',
+    defaultMessage: 'No Filters available',
   },
   [DATA_SOURCE_STATE_FILTERS]: {
     id: `shared.components.dataSourceStateForm.${[DATA_SOURCE_STATE_FILTERS]}`,

@@ -1,24 +1,25 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { Form, Icons } from 'schemaUI';
+import { Form } from 'schemaUI';
 import { Formik } from 'formik';
 import { always, append, equals, ifElse, reject } from 'ramda';
 import Helmet from 'react-helmet';
 
-import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
+import { Link } from './filters.styles';
 import messages from './filters.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { errorMessageParser, filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../../project/project.constants';
+import { CounterHeader } from '../../../shared/components/counterHeader';
+import { mobilePlusStyles, PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
 
-const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
 
 export class Filters extends PureComponent {
@@ -109,21 +110,21 @@ export class Filters extends PureComponent {
     )(!!filters.length);
 
   renderContent = () => {
-    const { filters = [] } = this.props;
+    const { filters = [], intl } = this.props;
     const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
+    const filterCopy = intl.formatMessage(messages.filter);
 
     return (
       <Fragment>
-        <Header>
-          <ButtonContainer>
-            <PlusButton onClick={this.handleCreateFilter}>
-              <PlusIcon />
-            </PlusButton>
-          </ButtonContainer>
-          <FilterCounter>
-            <FormattedMessage values={{ filters: filters.length }} {...messages.filters} />
-          </FilterCounter>
-        </Header>
+        <CounterHeader
+          count={filters.length}
+          copy={filterCopy}
+          right={
+            <PlusContainer>
+              <PlusButton customStyles={mobilePlusStyles} onClick={this.handleCreateFilter} type="button" />
+            </PlusContainer>
+          }
+        />
         <Formik enableReinitialize initialValues={initialValues} onSubmit={this.handleSubmit}>
           {({ values, setValues, submitForm, dirty, isSubmitting }) => {
             if (!dirty) {

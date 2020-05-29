@@ -8,6 +8,7 @@ import { Container, TagsContainer, getCustomSelectStyles, NoTags } from './tagSe
 import messages from './tagSearch.messages';
 import { renderWhenTrue } from '../../utils/rendering';
 import { TagCategories } from './tagCategories.component';
+import { LoadingWrapper } from '../loadingWrapper';
 
 export const TagSearch = ({ tagCategories, values, setFieldValue, valuePath }) => {
   const theme = useTheme();
@@ -21,21 +22,23 @@ export const TagSearch = ({ tagCategories, values, setFieldValue, valuePath }) =
   );
 
   return (
-    <Container>
-      <TagsContainer>
-        {tagCategories.map((item, index) => (
-          <TagCategories
-            key={index}
-            customStyles={customStyles}
-            selectedTags={defaultTo([], values[item.id])}
-            setFieldValue={setFieldValue}
-            valuePath={valuePath}
-            {...item}
-          />
-        ))}
-        {renderNoTags(!tagCategories.length)}
-      </TagsContainer>
-    </Container>
+    <LoadingWrapper noData={!tagCategories.length} noDataContent={<FormattedMessage {...messages.noTags} />}>
+      <Container>
+        <TagsContainer>
+          {tagCategories.map((item, index) => (
+            <TagCategories
+              key={index}
+              customStyles={customStyles}
+              selectedTags={defaultTo([], values[item.id])}
+              setFieldValue={setFieldValue}
+              valuePath={valuePath}
+              {...item}
+            />
+          ))}
+          {renderNoTags(!tagCategories.length)}
+        </TagsContainer>
+      </Container>
+    </LoadingWrapper>
   );
 };
 
