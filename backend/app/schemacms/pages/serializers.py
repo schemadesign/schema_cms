@@ -283,25 +283,25 @@ class PageSerializer(CustomModelSerializer):
             )
         ]
 
-    @transaction.atomic()
     def save(self, *args, **kwargs):
         blocks = self.initial_data.get("blocks", [])
         tags = self.initial_data.get("tags", [])
         blocks_to_delete = self.initial_data.pop("delete_blocks", [])
 
-        page = super().save(**kwargs)
+        with transaction.atomic():
+            page = super().save(**kwargs)
 
-        if not page.display_name:
-            page.display_name = page.slug
-            page.save()
+            if not page.display_name:
+                page.display_name = page.slug
+                page.save()
 
-        if blocks_to_delete:
-            page.delete_blocks(blocks_to_delete)
+            if blocks_to_delete:
+                page.delete_blocks(blocks_to_delete)
 
-        if blocks:
-            self.create_or_update_blocks(page, blocks)
+            if blocks:
+                self.create_or_update_blocks(page, blocks)
 
-        page.add_tags(tags)
+            page.add_tags(tags)
 
         return page
 
@@ -379,14 +379,19 @@ class PageSerializer(CustomModelSerializer):
 
     @staticmethod
     def get_blocks(obj):
-        blocks = obj.pageblock_set.all().prefetch_related(
-            django_models.Prefetch(
-                "elements",
-                queryset=models.PageBlockElement.objects.all()
-                .order_by("order")
-                .exclude(custom_element_set__isnull=False),
+        blocks = (
+            obj.pageblock_set.all()
+            .prefetch_related(
+                django_models.Prefetch(
+                    "elements",
+                    queryset=models.PageBlockElement.objects.all()
+                    .order_by("order")
+                    .exclude(custom_element_set__isnull=False),
+                )
             )
+            .order_by("order")
         )
+
         return PageBlockSerializer(blocks, many=True).data
 
 
