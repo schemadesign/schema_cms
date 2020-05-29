@@ -526,16 +526,16 @@ exports[`PageForm: Component should render correctly 1`] = `
     Tags
   </label>
   <div
-    className="sc-fzoaKM deCBav"
+    className="sc-fzomuh gDFGiY"
   >
     <div
-      className="sc-fzqMdD fSBssk"
+      className="sc-fzowVh dJcpsq"
     >
       <div
-        className="sc-fzomuh fmktVe"
+        className="sc-fzqAui jduGpN"
       >
         <span
-          className="sc-fzqAui jqeeDW"
+          className="sc-fzqMdD bzbiOK"
         >
           Category: 
         </span>
@@ -636,10 +636,10 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzomuh fmktVe"
+        className="sc-fzqAui jduGpN"
       >
         <span
-          className="sc-fzqAui jqeeDW"
+          className="sc-fzqMdD bzbiOK"
         >
           Category: 
         </span>
@@ -917,14 +917,14 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznAgC gAffmo"
+    className="sc-fznLPX foCcXB"
   >
     <div
-      className="sc-fznLPX fzcCiF"
+      className="sc-fzoaKM dkrGen"
     />
     1 Block
     <div
-      className="sc-fznLPX fzcCiF"
+      className="sc-fzoaKM dkrGen"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -2703,14 +2703,14 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznAgC gAffmo"
+                      className="sc-fznLPX foCcXB"
                     >
                       <div
-                        className="sc-fznLPX fzcCiF"
+                        className="sc-fzoaKM dkrGen"
                       />
                       3 Sets
                       <div
-                        className="sc-fznLPX fzcCiF"
+                        className="sc-fzoaKM dkrGen"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
@@ -5962,16 +5962,16 @@ exports[`PageForm: Component should render with page template 1`] = `
     Tags
   </label>
   <div
-    className="sc-fzoaKM deCBav"
+    className="sc-fzomuh gDFGiY"
   >
     <div
-      className="sc-fzqMdD fSBssk"
+      className="sc-fzowVh dJcpsq"
     >
       <div
-        className="sc-fzomuh fmktVe"
+        className="sc-fzqAui jduGpN"
       >
         <span
-          className="sc-fzqAui jqeeDW"
+          className="sc-fzqMdD bzbiOK"
         >
           Category: 
         </span>
@@ -6072,10 +6072,10 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzomuh fmktVe"
+        className="sc-fzqAui jduGpN"
       >
         <span
-          className="sc-fzqAui jqeeDW"
+          className="sc-fzqMdD bzbiOK"
         >
           Category: 
         </span>
@@ -6353,14 +6353,14 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznAgC gAffmo"
+    className="sc-fznLPX foCcXB"
   >
     <div
-      className="sc-fznLPX fzcCiF"
+      className="sc-fzoaKM dkrGen"
     />
     1 Block
     <div
-      className="sc-fznLPX fzcCiF"
+      className="sc-fzoaKM dkrGen"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -8139,14 +8139,14 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznAgC gAffmo"
+                      className="sc-fznLPX foCcXB"
                     >
                       <div
-                        className="sc-fznLPX fzcCiF"
+                        className="sc-fzoaKM dkrGen"
                       />
                       3 Sets
                       <div
-                        className="sc-fznLPX fzcCiF"
+                        className="sc-fzoaKM dkrGen"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
