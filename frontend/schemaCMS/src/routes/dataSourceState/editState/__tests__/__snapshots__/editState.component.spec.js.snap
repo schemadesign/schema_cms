@@ -3,6 +3,87 @@
 exports[`EditState: Component should render correctly 1`] = `
 Array [
   <div
+    className="sc-fzqMAW kpVixs"
+    id="tabsContainer"
+  >
+    <div
+      className="sc-fzoant fuNFZP"
+    >
+      <div
+        className="sc-fzomME jZydYQ"
+      >
+        <a
+          className="sc-fzqAbL ipTZI"
+          href="/project/1"
+          id="settingsTab"
+          onClick={[Function]}
+        >
+          Settings
+        </a>
+      </div>
+      <div
+        className="sc-fzomME wjrXD"
+      >
+        <a
+          className="sc-fzqAbL ipTZI"
+          href="/project/1/datasource"
+          id="sourcesTab"
+          onClick={[Function]}
+        >
+          Sources
+        </a>
+      </div>
+      <div
+        className="sc-fzomME jZydYQ"
+      >
+        <a
+          className="sc-fzqAbL ipTZI"
+          href="/project/1/tag-categories"
+          id="tag-categoriesTab"
+          onClick={[Function]}
+        >
+          Tags
+        </a>
+      </div>
+      <div
+        className="sc-fzomME jZydYQ"
+      >
+        <a
+          className="sc-fzqAbL ipTZI"
+          href="/project/1/content"
+          id="contentTab"
+          onClick={[Function]}
+        >
+          Content
+        </a>
+      </div>
+      <div
+        className="sc-fzomME jZydYQ"
+      >
+        <a
+          className="sc-fzqAbL ipTZI"
+          href="/project/1/templates"
+          id="templatesTab"
+          onClick={[Function]}
+        >
+          Templates
+        </a>
+      </div>
+      <div
+        className="sc-fzomME jZydYQ"
+      >
+        <a
+          className="sc-fzqAbL ipTZI"
+          href="/project/1/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+    </div>
+  </div>,
+  <div
     className="sc-AxgMl kEUmFl"
   >
     <div
@@ -669,56 +750,56 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-  <label
-    style={
-      Object {
-        "border": "none",
-        "borderTop": "2px solid #2F2F36",
-        "color": "#71737e",
-        "display": "block",
-        "fontSize": "14px",
-        "outline": "none",
-        "paddingTop": "8px",
-        "width": "100%",
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
       }
-    }
-  >
-    Tags
-  </label>,
-  <div
-    className="sc-fzoxKX ceYYTf"
-  >
+    >
+      Tags
+    </label>
     <div
-      className="sc-fzpkJw eSvSDK"
+      className="sc-fznMAR dAkPBr"
     >
       <div
-        className="sc-fznzOf bInclR"
+        className="sc-fzqBkg dkVVib"
       >
-        No tags available
+        <div
+          className="sc-fzqPZZ kKcceR"
+        >
+          No tags available
+        </div>
       </div>
     </div>
-  </div>,
-  <label
-    style={
-      Object {
-        "border": "none",
-        "borderTop": "2px solid #2F2F36",
-        "color": "#71737e",
-        "display": "block",
-        "fontSize": "14px",
-        "outline": "none",
-        "paddingTop": "8px",
-        "width": "100%",
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
       }
-    }
-  >
-    Filters
-  </label>,
-  <div
-    className="sc-AxhUy koqETn"
-  >
-    No Filters
+    >
+      Filters
+    </label>
+    <div
+      className="sc-AxhUy koqETn"
+    >
+      No Filters
+    </div>
   </div>,
   <div>
     <input
@@ -789,7 +870,7 @@ Array [
     className="sc-AxirZ ipkbPa"
   >
     <span
-      className="sc-fzolEj da-DViy"
+      className="sc-fzpkJw bYGHpg"
       onClick={[Function]}
       style={
         Object {
@@ -811,7 +892,7 @@ Array [
         className="sc-fzoLag kJyDOU"
       >
         <div
-          className="sc-fzqPZZ opzoD"
+          className="sc-fznMnq ctBgSO"
         >
           <button
             className="sc-fzpjYC jlDbJV"

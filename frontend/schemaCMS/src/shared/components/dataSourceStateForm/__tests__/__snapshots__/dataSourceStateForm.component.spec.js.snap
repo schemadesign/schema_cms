@@ -1,243 +1,930 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSourceStateForm: Component should render correctly 1`] = `
-<styled.div>
-  <TextInput
-    autoWidth={false}
-    checkOnlyErrors={false}
-    dataSources={
-      Array [
+<div
+  className="sc-AxjAm StDqN"
+>
+  <div
+    className="sc-AxirZ CvgNc"
+  >
+    <div
+      style={
         Object {
-          "id": "id",
-          "name": "name",
-        },
-      ]
-    }
-    errors={Object {}}
-    fullWidth={true}
-    handleChange={[Function]}
-    intl={
-      Object {
-        "formatMessage": [Function],
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
       }
-    }
-    isEdit={true}
-    label="Name"
-    name="name"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    state={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-    touched={Object {}}
-    value="name"
-    values={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-  />
-  <TextInput
-    autoWidth={false}
-    checkOnlyErrors={false}
-    dataSources={
-      Array [
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="sc-AxiKw hXTOlh"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxirZ CvgNc"
+  >
+    <div
+      style={
         Object {
-          "id": "id",
-          "name": "name",
-        },
-      ]
-    }
-    errors={Object {}}
-    fullWidth={true}
-    handleChange={[Function]}
-    intl={
-      Object {
-        "formatMessage": [Function],
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
       }
-    }
-    isEdit={true}
-    label="Description"
-    multiline={true}
-    name="description"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    state={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-    touched={Object {}}
-    value="description"
-    values={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-  />
-  <TextInput
-    autoWidth={false}
-    checkOnlyErrors={false}
-    dataSources={
-      Array [
+    >
+      <label
+        htmlFor="description"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Description
+      </label>
+      <textarea
+        id="description"
+        onChange={[Function]}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+        value="description"
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="sc-AxiKw hXTOlh"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxirZ CvgNc"
+  >
+    <div
+      style={
         Object {
-          "id": "id",
-          "name": "name",
-        },
-      ]
-    }
-    errors={Object {}}
-    fullWidth={true}
-    handleChange={[Function]}
-    intl={
-      Object {
-        "formatMessage": [Function],
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
       }
-    }
-    isEdit={true}
-    label="Source URL"
-    name="sourceUrl"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    state={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-    touched={Object {}}
-    values={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-  />
-  <TextInput
-    autoWidth={false}
-    checkOnlyErrors={false}
-    dataSources={
-      Array [
+    >
+      <label
+        htmlFor="sourceUrl"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Source URL
+      </label>
+      <input
+        id="sourceUrl"
+        name="sourceUrl"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      >
+        <div
+          className="sc-AxiKw hXTOlh"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxirZ CvgNc"
+  >
+    <div
+      style={
         Object {
-          "id": "id",
-          "name": "name",
-        },
-      ]
-    }
-    disabled={true}
-    errors={Object {}}
-    fullWidth={true}
-    handleChange={[Function]}
-    intl={
-      Object {
-        "formatMessage": [Function],
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
       }
-    }
-    isEdit={false}
-    label="Author"
-    name="author"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    state={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-    touched={Object {}}
-    value="author"
-    values={
-      Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
-      }
-    }
-  />
-  <TextInput
-    autoWidth={false}
-    checkOnlyErrors={false}
-    dataSources={
-      Array [
+    >
+      <label
+        htmlFor="author"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Author
+      </label>
+      <input
+        disabled={true}
+        id="author"
+        name="author"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="author"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="sc-AxirZ CvgNc"
+  >
+    <div
+      style={
         Object {
-          "id": "id",
-          "name": "name",
-        },
-      ]
-    }
-    disabled={true}
-    errors={Object {}}
-    fullWidth={true}
-    handleChange={[Function]}
-    intl={
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="created"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Created
+      </label>
+      <input
+        disabled={true}
+        id="created"
+        name="created"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontFamily": "inherit",
+            "fontSize": "18px",
+            "fontWeight": "inherit",
+            "letterSpacing": "normal",
+            "lineHeight": "24px",
+            "maxWidth": "100%",
+            "minWidth": 60,
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="27/05/2020"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 2,
+          }
+        }
+      />
+    </div>
+  </div>
+  <label
+    style={
       Object {
-        "formatMessage": [Function],
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
       }
     }
-    isEdit={false}
-    label="Created"
-    name="created"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    state={
+  >
+    Tags
+  </label>
+  <div
+    className="sc-AxhUy jiqPcu"
+  >
+    <div
+      className="sc-Axmtr jCVQya"
+    >
+      <div
+        className="sc-AxgMl cluyNW"
+      >
+        <span
+          className="sc-AxheI foOaNn"
+        >
+          Category: 
+        </span>
+        Colors
+      </div>
+      <div
+        className=" css-2b097c-container"
+        onKeyDown={[Function]}
+      >
+        <div
+          className=" css-17k7d72-control"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className=" css-193kkzd-ValueContainer"
+          >
+            <div
+              className=" css-1wa3eu0-placeholder"
+            >
+              Select...
+            </div>
+            <div
+              className="css-14m14bb-Input"
+            >
+              <div
+                className=""
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+              >
+                <input
+                  aria-autocomplete="list"
+                  autoCapitalize="none"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  disabled={false}
+                  id="react-select-2-input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  spellCheck="false"
+                  style={
+                    Object {
+                      "background": 0,
+                      "border": 0,
+                      "boxSizing": "content-box",
+                      "color": "inherit",
+                      "fontSize": "inherit",
+                      "label": "input",
+                      "opacity": 1,
+                      "outline": 0,
+                      "padding": 0,
+                      "width": "1px",
+                    }
+                  }
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              className=" css-43ykx9-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+              className=" css-tlfecz-indicatorContainer"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+            >
+              0
+              /
+              4
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-AxgMl cluyNW"
+      >
+        <span
+          className="sc-AxheI foOaNn"
+        >
+          Category: 
+        </span>
+        Countries
+      </div>
+      <div
+        className=" css-2b097c-container"
+        onKeyDown={[Function]}
+      >
+        <div
+          className=" css-17k7d72-control"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className=" css-193kkzd-ValueContainer"
+          >
+            <div
+              className=" css-1wa3eu0-placeholder"
+            >
+              Select...
+            </div>
+            <div
+              className="css-14m14bb-Input"
+            >
+              <div
+                className=""
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+              >
+                <input
+                  aria-autocomplete="list"
+                  autoCapitalize="none"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  disabled={false}
+                  id="react-select-3-input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  spellCheck="false"
+                  style={
+                    Object {
+                      "background": 0,
+                      "border": 0,
+                      "boxSizing": "content-box",
+                      "color": "inherit",
+                      "fontSize": "inherit",
+                      "label": "input",
+                      "opacity": 1,
+                      "outline": 0,
+                      "padding": 0,
+                      "width": "1px",
+                    }
+                  }
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              className=" css-43ykx9-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+              className=" css-tlfecz-indicatorContainer"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+            >
+              0
+              /
+              1
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <label
+    style={
       Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
       }
     }
-    touched={Object {}}
-    value="27/05/2020"
-    values={
+  >
+    Filters
+  </label>
+  <div
+    style={
       Object {
-        "author": "author",
-        "created": "2020-05-27T12:49:08+0000",
-        "description": "description",
-        "isPublic": false,
-        "name": "name",
-        "project": 1,
+        "border": "none",
+        "borderTop": "1px solid #2F2F36",
+        "display": "flex",
+        "flexDirection": "column",
+        "padding": "20px 20px 40px",
       }
     }
-  />
-</styled.div>
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="checkbox-0"
+        name="filters"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value={1}
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <div
+          className="sc-fzplWN dSyLlY"
+          id="filterName-0"
+          onClick={[Function]}
+        >
+          Filter First Name
+        </div>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="checkbox-0"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 0,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="checkbox-1"
+        name="filters"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value={2}
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <div
+          className="sc-fzplWN dSyLlY"
+          id="filterName-1"
+          onClick={[Function]}
+        >
+          Filter Last Name
+        </div>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="checkbox-1"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 0,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        checked={false}
+        id="checkbox-2"
+        name="filters"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value={3}
+      />
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        <div
+          className="sc-fzplWN dSyLlY"
+          id="filterName-2"
+          onClick={[Function]}
+        >
+          Filter Birthday
+        </div>
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontSize": 0,
+          }
+        }
+      >
+        <label
+          htmlFor="checkbox-2"
+          style={
+            Object {
+              "cursor": "pointer",
+              "marginRight": 0,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#FFF",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
 `;

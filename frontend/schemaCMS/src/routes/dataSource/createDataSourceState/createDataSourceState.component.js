@@ -1,88 +1,115 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
+import { useEffectOnce } from 'react-use';
+import { useFormik } from 'formik';
+import { useHistory, useLocation, useParams } from 'react-router';
+import { pick } from 'ramda';
 
 import { Form, NavigationButtons, contentStyles } from './createDataSourceState.styles';
 import messages from './createDataSourceState.messages';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { errorMessageParser, formatTags, getStateInitialValues, getTagCategories } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 import { DataSourceStateForm } from '../../../shared/components/dataSourceStateForm';
+import {
+  DATA_SOURCE_STATE_ACTIVE_FILTERS,
+  DATA_SOURCE_STATE_FILTERS,
+  DATA_SOURCE_STATE_SCHEMA,
+  INITIAL_VALUES,
+  REQUEST_KEYS,
+} from '../../../modules/dataSourceState/dataSourceState.constants';
 
-export class CreateDataSourceState extends PureComponent {
-  static propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
-    isSubmitting: PropTypes.bool.isRequired,
-    isValid: PropTypes.bool.isRequired,
-    dirty: PropTypes.bool.isRequired,
-    userRole: PropTypes.string.isRequired,
-    fetchDataSources: PropTypes.func.isRequired,
-    dataSources: PropTypes.array.isRequired,
-    project: PropTypes.object.isRequired,
-    intl: PropTypes.object.isRequired,
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }),
-    match: PropTypes.shape({
-      params: PropTypes.shape({
-        dataSourceId: PropTypes.string.isRequired,
-      }),
-    }),
-  };
+export const CreateDataSourceState = ({ fetchFilters, fetchDataSourceTags, createState, filters, dataSourceTags }) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const history = useHistory();
+  const { state: locationState = {} } = useLocation();
+  const { dataSourceId } = useParams();
+  const intl = useIntl();
+  const tagCategories = getTagCategories(dataSourceTags);
 
-  state = {
-    loading: true,
-    error: null,
-  };
+  const { handleSubmit, isSubmitting, isValid, dirty, setValues, ...restFormikProps } = useFormik({
+    enableReinitialize: true,
+    initialValues: INITIAL_VALUES,
+    validationSchema: () => DATA_SOURCE_STATE_SCHEMA,
+    onSubmit: async (data, { setSubmitting, setErrors }) => {
+      try {
+        setSubmitting(true);
+        const formattedFilters = data[DATA_SOURCE_STATE_FILTERS].filter(({ filter }) =>
+          data[DATA_SOURCE_STATE_ACTIVE_FILTERS].includes(filter)
+        );
+        const formData = pick(REQUEST_KEYS, data);
 
-  async componentDidMount() {
-    try {
-      const projectId = this.props.project.id;
+        await createState({
+          formData: { ...formData, tags: formatTags(formData.tags) },
+          dataSourceId,
+          filters: formattedFilters,
+        });
+      } catch (errors) {
+        reportError(errors);
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
 
-      await this.props.fetchDataSources({ projectId, rawList: true });
+        setErrors(errorMessages);
+      }
+    },
+  });
 
-      this.setState({ loading: false });
-    } catch (error) {
-      reportError(error);
-      this.setState({ loading: false, error });
-    }
-  }
+  useEffectOnce(() => {
+    (async () => {
+      try {
+        const fetchDataSourceTagsPromise = fetchDataSourceTags({ dataSourceId });
+        const fetchFiltersPromise = fetchFilters({ dataSourceId });
 
-  handleCancel = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/state`);
+        await Promise.all([fetchDataSourceTagsPromise, fetchFiltersPromise]);
 
-  render() {
-    const { dataSources, handleSubmit, isSubmitting, isValid, dirty } = this.props;
-    const { loading, error } = this.state;
+        if (locationState.state) {
+          setValues(getStateInitialValues(locationState.state));
+          history.replace({ state: {} });
+        }
+      } catch (e) {
+        reportError(e);
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  });
 
-    return (
-      <Form onSubmit={handleSubmit}>
-        <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <ContextHeader
-          title={<FormattedMessage {...messages.title} />}
-          subtitle={<FormattedMessage {...messages.subTitle} />}
-        />
-        <LoadingWrapper
-          loading={loading}
-          error={error}
-          noData={!dataSources.length}
-          noDataContent={<FormattedMessage {...messages.noData} />}
-        >
-          <DataSourceStateForm {...this.props} />
-        </LoadingWrapper>
-        <NavigationContainer fixed contentStyles={contentStyles}>
-          <NavigationButtons>
-            <BackButton type="button" onClick={this.handleCancel}>
-              <FormattedMessage {...messages.cancel} />
-            </BackButton>
-            <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid || !dirty}>
-              <FormattedMessage {...messages.confirm} />
-            </NextButton>
-          </NavigationButtons>
-        </NavigationContainer>
-      </Form>
-    );
-  }
-}
+  const handleCancel = () => history.push(`/datasource/${dataSourceId}/state`);
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Helmet title={intl.formatMessage(messages.title)} />
+      <ContextHeader
+        title={<FormattedMessage {...messages.title} />}
+        subtitle={<FormattedMessage {...messages.subTitle} />}
+      />
+      <LoadingWrapper loading={loading} error={error} noDataContent={<FormattedMessage {...messages.noData} />}>
+        <DataSourceStateForm tagCategories={tagCategories} filters={filters} {...restFormikProps} />
+      </LoadingWrapper>
+      <NavigationContainer fixed contentStyles={contentStyles}>
+        <NavigationButtons>
+          <BackButton type="button" onClick={handleCancel}>
+            <FormattedMessage {...messages.cancel} />
+          </BackButton>
+          <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid || !dirty}>
+            <FormattedMessage {...messages.create} />
+          </NextButton>
+        </NavigationButtons>
+      </NavigationContainer>
+    </Form>
+  );
+};
+
+CreateDataSourceState.propTypes = {
+  fetchFilters: PropTypes.func.isRequired,
+  fetchDataSourceTags: PropTypes.func.isRequired,
+  createState: PropTypes.func.isRequired,
+  dataSourceTags: PropTypes.array.isRequired,
+  filters: PropTypes.array.isRequired,
+};

@@ -1,164 +1,1633 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StateFilter: Component should render correctly 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="name"
-  />
-  <MobileMenu
-    active="stateNavBtn"
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Set Filter"
-        id="dataSourceState.stateFilter.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle="name"
-    options={
-      Array [
+exports[`StateFilter: Component should render checkbox filter 1`] = `
+Array [
+  <div
+    className="sc-AxheI bbubSv"
+  >
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
-            values={Object {}}
-          />,
-          "to": "/project/",
-          "type": "link_item",
-        },
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-AxmLO bkpqDN"
+      >
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzozJi coTvgD"
+      >
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzpans bekPA"
+          >
+            <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              States
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzplWN fbaMjF"
+        >
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  <div
+    className="sc-fzoiQi kzhWbE"
+  >
+    <div
+      className="sc-fzqARJ fGrnyP"
+    >
+      <h2
+        className="sc-fzqNqU cSnCDr"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        
+      </h2>
+      <h1
+        className="sc-fzoyTs ieHSUN"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Set Filter
+      </h1>
+    </div>
+    <div
+      className="sc-fzoNJl kUMlmZ"
+    />
+  </div>,
+  <div
+    className="sc-AxhCb cqNuEK"
+    type="page"
+  >
+    An Error occured
+  </div>,
+]
+`;
+
+exports[`StateFilter: Component should render input filter 1`] = `
+Array [
+  <div
+    className="sc-AxheI bbubSv"
+  >
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-AxmLO bkpqDN"
+      >
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzozJi coTvgD"
+      >
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzpans bekPA"
+          >
+            <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              States
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzplWN fbaMjF"
+        >
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  <div
+    className="sc-fzoiQi kzhWbE"
+  >
+    <div
+      className="sc-fzqARJ fGrnyP"
+    >
+      <h2
+        className="sc-fzqNqU cSnCDr"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        
+      </h2>
+      <h1
+        className="sc-fzoyTs ieHSUN"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Set Filter
+      </h1>
+    </div>
+    <div
+      className="sc-fzoNJl kUMlmZ"
+    />
+  </div>,
+  <div
+    className="sc-AxhCb cqNuEK"
+    type="page"
+  >
+    An Error occured
+  </div>,
+]
+`;
+
+exports[`StateFilter: Component should render range filter 1`] = `
+Array [
+  <div
+    className="sc-AxheI bbubSv"
+  >
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "stateNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="States"
-            id="project.view.states"
-            values={Object {}}
-          />,
-          "to": "/project/1/state",
-          "type": "link_item",
-        },
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
-          "type": "link_item",
-        },
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-AxmLO bkpqDN"
+      >
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzozJi coTvgD"
+      >
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzpans bekPA"
+          >
+            <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              States
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzplWN fbaMjF"
+        >
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  <div
+    className="sc-fzoiQi kzhWbE"
+  >
+    <div
+      className="sc-fzqARJ fGrnyP"
+    >
+      <h2
+        className="sc-fzqNqU cSnCDr"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        
+      </h2>
+      <h1
+        className="sc-fzoyTs ieHSUN"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Set Filter
+      </h1>
+    </div>
+    <div
+      className="sc-fzoNJl kUMlmZ"
+    />
+  </div>,
+  <div
+    className="sc-AxhCb cqNuEK"
+    type="page"
+  >
+    An Error occured
+  </div>,
+]
+`;
+
+exports[`StateFilter: Component should render select filter 1`] = `
+Array [
+  <div
+    className="sc-AxheI bbubSv"
+  >
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Templates"
-            id="project.view.templates"
-            values={Object {}}
-          />,
-          "to": "/project/1/templates",
-          "type": "link_item",
-        },
-      ]
-    }
-  />
-  <ContextHeader
-    subtitle={
-      <FormattedMessage
-        defaultMessage="Set Filter"
-        id="dataSourceState.stateFilter.subTitle"
-        values={Object {}}
-      />
-    }
-    title="name"
-  />
-  <LoadingWrapper
-    error={null}
-    loading={true}
-    noData={false}
-    noDataContent={null}
-  />
-</Fragment>
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-AxmLO bkpqDN"
+      >
+        <div
+          className="sc-Axmtr hBVTto"
+        >
+          <h2
+            className="sc-fznKkj hlIEaX"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            
+          </h2>
+          <h1
+            className="sc-fznZeY jweDdr"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Set Filter
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzozJi coTvgD"
+      >
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzpans bekPA"
+          >
+            <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              States
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzoLsD eKxhC"
+        >
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzpans crRsct"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzplWN fbaMjF"
+        >
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznyAO gmneLt"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  <div
+    className="sc-fzoiQi kzhWbE"
+  >
+    <div
+      className="sc-fzqARJ fGrnyP"
+    >
+      <h2
+        className="sc-fzqNqU cSnCDr"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        
+      </h2>
+      <h1
+        className="sc-fzoyTs ieHSUN"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Set Filter
+      </h1>
+    </div>
+    <div
+      className="sc-fzoNJl kUMlmZ"
+    />
+  </div>,
+  <div
+    className="sc-AxhCb cqNuEK"
+    type="page"
+  >
+    An Error occured
+  </div>,
+]
 `;

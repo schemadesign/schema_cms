@@ -11,6 +11,7 @@ export const defaultProps = {
   updateState: Function.prototype,
   fetchDataSourceTags: Function.prototype,
   fetchFilters: Function.prototype,
+  fetchState: jest.fn().mockReturnValue(Promise.resolve({ datasource: 'dataSourceId' })),
   project,
   dataSourceTags: [],
   filters: [],

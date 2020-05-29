@@ -1,9 +1,6 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import {
-  DATA_SOURCE_STATE_IS_PUBLIC,
-  DATA_SOURCE_STATE_TAGS,
-} from '../../../modules/dataSourceState/dataSourceState.constants';
+import { DATA_SOURCE_STATE_IS_PUBLIC } from '../../../modules/dataSourceState/dataSourceState.constants';
 
 export default defineMessages({
   subTitle: {
@@ -37,10 +34,6 @@ export default defineMessages({
   nameStateNameNotUniqueError: {
     id: 'dataSourceState.editState.nameStateNameNotUniqueError',
     defaultMessage: 'A state with this name already exists in data source.',
-  },
-  [DATA_SOURCE_STATE_TAGS]: {
-    id: `dataSourceState.editState.${DATA_SOURCE_STATE_TAGS}`,
-    defaultMessage: 'Tags',
   },
   [DATA_SOURCE_STATE_IS_PUBLIC]: {
     id: `shared.components.dataSourceStateForm.${[DATA_SOURCE_STATE_IS_PUBLIC]}`,

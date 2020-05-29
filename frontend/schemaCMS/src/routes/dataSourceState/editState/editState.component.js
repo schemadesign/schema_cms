@@ -1,19 +1,25 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useEffectOnce } from 'react-use';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
 import { Form } from 'schemaUI';
-import { groupBy, toPairs, map, prop, pipe } from 'ramda';
+import { pick } from 'ramda';
 
 import messages from './editState.messages';
 import { LinkContainer } from './editState.styles';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions, formatTags, prepareTags } from '../../../shared/utils/helpers';
+import {
+  errorMessageParser,
+  filterMenuOptions,
+  formatTags,
+  getStateInitialValues,
+  getTagCategories,
+} from '../../../shared/utils/helpers';
 import { DATA_SOURCE_STATE_ID, getProjectMenuOptions } from '../../project/project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceStateForm } from '../../../shared/components/dataSourceStateForm';
@@ -22,15 +28,16 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import { contentStyles, NavigationButtons } from '../../../shared/components/navigationStyles';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import {
+  DATA_SOURCE_STATE_ACTIVE_FILTERS,
   DATA_SOURCE_STATE_FILTERS,
   DATA_SOURCE_STATE_IS_PUBLIC,
   DATA_SOURCE_STATE_SCHEMA,
-  DATA_SOURCE_STATE_TAGS,
+  REQUEST_KEYS,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
-import { TagSearch } from '../../../shared/components/tagSearch';
-import { StateFilterList } from '../stateFilterList';
+import { ProjectTabs } from '../../../shared/components/projectTabs';
+import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 
-const { Label, Switch } = Form;
+const { Switch } = Form;
 
 export const EditState = ({
   project,
@@ -41,6 +48,7 @@ export const EditState = ({
   dataSourceTags,
   fetchDataSourceTags,
   fetchFilters,
+  fetchState,
   filters,
 }) => {
   const [loading, setLoading] = useState(true);
@@ -48,41 +56,24 @@ export const EditState = ({
   const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
   const history = useHistory();
+  const { state: locationState = {} } = useLocation();
+  const { stateId } = useParams();
   const intl = useIntl();
   const title = state.name;
   const menuOptions = getProjectMenuOptions(project.id);
-  const tagCategories = pipe(
-    groupBy(prop('categoryName')),
-    toPairs,
-    map(([name, tags]) => ({ name, id: tags[0].category, tags }))
-  )(dataSourceTags);
+  const tagCategories = getTagCategories(dataSourceTags);
 
-  useEffectOnce(() => {
-    (async () => {
-      try {
-        const dataSourceId = state.datasource;
-        await fetchDataSourceTags({ dataSourceId });
-        await fetchFilters({ dataSourceId });
-      } catch (e) {
-        reportError(e);
-        setError(e);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  });
-
-  const { values, handleSubmit, isSubmitting, dirty, ...restFormikProps } = useFormik({
-    initialValues: {
-      ...state,
-      tags: prepareTags(state.tags),
-      filters: state.filters.map(({ filter }) => filter),
-    },
+  const { values, handleSubmit, isSubmitting, dirty, setValues, ...restFormikProps } = useFormik({
+    initialValues: getStateInitialValues(state),
     enableReinitialize: true,
     validationSchema: () => DATA_SOURCE_STATE_SCHEMA,
-    onSubmit: async (formData, { setSubmitting, setErrors }) => {
+    onSubmit: async (data, { setSubmitting, setErrors }) => {
       try {
-        const formattedFilters = state.filters.filter(({ filter }) => values.filters.includes(filter));
+        const formattedFilters = data[DATA_SOURCE_STATE_FILTERS].filter(({ filter }) =>
+          data[DATA_SOURCE_STATE_ACTIVE_FILTERS].includes(filter)
+        );
+        const formData = pick(REQUEST_KEYS, data);
+
         await updateState({
           stateId: state.id,
           formData: { ...formData, tags: formatTags(formData.tags), filters: formattedFilters },
@@ -98,6 +89,29 @@ export const EditState = ({
     },
   });
 
+  useEffectOnce(() => {
+    (async () => {
+      try {
+        const state = await fetchState({ stateId });
+        const dataSourceId = state.datasource;
+        const fetchDataSourceTagsPromise = fetchDataSourceTags({ dataSourceId });
+        const fetchFiltersPromise = fetchFilters({ dataSourceId });
+
+        await Promise.all([fetchDataSourceTagsPromise, fetchFiltersPromise]);
+
+        if (locationState.state) {
+          setValues(getStateInitialValues(locationState.state));
+          history.replace({ state: {} });
+        }
+      } catch (e) {
+        reportError(e);
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  });
+
   const handleCancel = () => history.push(`/datasource/${state.datasource}/state`);
   const handleRemoveState = () => setConfirmationModalOpen(true);
   const handleCancelRemove = () => setConfirmationModalOpen(false);
@@ -105,7 +119,7 @@ export const EditState = ({
     try {
       setRemoveLoading(true);
 
-      await removeState({ stateId: state.id, projectId: project.id });
+      await removeState({ stateId: state.id, dataSourceId: state.datasource });
     } catch (e) {
       setRemoveLoading(false);
       reportError(e);
@@ -116,6 +130,7 @@ export const EditState = ({
     <Fragment>
       <LoadingWrapper loading={loading} error={error}>
         <Helmet title={title} />
+        <ProjectTabs active={SOURCES} url={`/project/${project.id}`} />
         <MobileMenu
           headerTitle={title}
           headerSubtitle={<FormattedMessage {...messages.subTitle} />}
@@ -123,20 +138,12 @@ export const EditState = ({
           active={DATA_SOURCE_STATE_ID}
         />
         <ContextHeader title={title} subtitle={<FormattedMessage {...messages.subTitle} />} />
-        <DataSourceStateForm values={values} intl={intl} {...restFormikProps} />
-        <Label>
-          <FormattedMessage {...messages[DATA_SOURCE_STATE_TAGS]} />
-        </Label>
-        <TagSearch
-          tagCategories={tagCategories}
-          values={values.tags}
-          valuePath="tags"
-          setFieldValue={restFormikProps.setFieldValue}
-        />
-        <StateFilterList
+        <DataSourceStateForm
+          values={values}
+          intl={intl}
           filters={filters}
           state={state}
-          values={values[DATA_SOURCE_STATE_FILTERS]}
+          tagCategories={tagCategories}
           {...restFormikProps}
         />
         <Switch
@@ -188,6 +195,7 @@ EditState.propTypes = {
   updateState: PropTypes.func.isRequired,
   fetchDataSourceTags: PropTypes.func.isRequired,
   fetchFilters: PropTypes.func.isRequired,
+  fetchState: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   dataSourceTags: PropTypes.array.isRequired,
   filters: PropTypes.array.isRequired,

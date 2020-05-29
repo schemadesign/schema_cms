@@ -98,7 +98,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={`${ROUTES.TAG_CATEGORY}/:tagCategoryId`} component={TagCategory} />
 
-            <AuthRoute path={`${ROUTES.STATE}/:stateId`} component={DataSourceState} />
+            <AuthRoute path={`${ROUTES.STATE}`} component={DataSourceState} />
 
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
 

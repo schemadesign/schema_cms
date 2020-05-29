@@ -76,7 +76,7 @@ function* remove({ payload: { stateId, dataSourceId } }) {
     yield api.delete(`${STATES_PATH}/${stateId}`);
     yield put(DataSourceStateRoutines.remove.success());
 
-    browserHistory.push(`/datasources/${dataSourceId}/state`);
+    browserHistory.push(`/datasource/${dataSourceId}/state`);
   } catch (e) {
     reportError(e);
     yield put(DataSourceStateRoutines.remove.failure(e));

@@ -31,6 +31,9 @@ import {
   prop,
   defaultTo,
   groupBy,
+  find,
+  pick,
+  toPairs,
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
 import queryString from 'query-string';
@@ -49,6 +52,13 @@ import {
   OBSERVABLE_USER,
   OBSERVABLEHQ_TYPE,
 } from '../../modules/blockTemplates/blockTemplates.constants';
+import {
+  DATA_SOURCE_STATE_ACTIVE_FILTERS,
+  DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES,
+  DATA_SOURCE_STATE_FILTERS,
+  DATA_SOURCE_STATE_TAGS,
+} from '../../modules/dataSourceState/dataSourceState.constants';
+import { FILTER_TYPE_RANGE } from '../../modules/filter/filter.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
@@ -202,3 +212,46 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
     ),
     flatten
   )(internalConnections);
+
+export const getInitialStateFilterValue = ({ filter, state, filterId, fieldsInfo }) => {
+  const { values } = pipe(
+    propOr([], DATA_SOURCE_STATE_FILTERS),
+    find(propEq('filter', filterId)),
+    defaultTo({ values: [] }),
+    pick(['values'])
+  )(state);
+
+  if (FILTER_TYPE_RANGE === filter.filterType) {
+    const data = { range: [] };
+    if (fieldsInfo.length) {
+      const [min, max] = fieldsInfo;
+      data.range = [parseInt(min, 10), parseInt(max % 1 ? max + 1 : max, 10)];
+    }
+
+    if (values.length) {
+      data.values = values;
+      data[DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES] = values;
+    } else {
+      data.values = data.range;
+      data[DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES] = data.range;
+    }
+
+    return data;
+  }
+
+  return { values, range: [], [DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES]: [] };
+};
+
+export const getStateInitialValues = state => ({
+  ...state,
+  [DATA_SOURCE_STATE_TAGS]: either(is(Array), isNil)(state[DATA_SOURCE_STATE_TAGS])
+    ? prepareTags(state[DATA_SOURCE_STATE_TAGS])
+    : state[DATA_SOURCE_STATE_TAGS],
+  [DATA_SOURCE_STATE_ACTIVE_FILTERS]: state[DATA_SOURCE_STATE_FILTERS].map(({ filter }) => filter),
+});
+
+export const getTagCategories = pipe(
+  groupBy(prop('categoryName')),
+  toPairs,
+  map(([name, tags]) => ({ name, id: tags[0].category, tags }))
+);

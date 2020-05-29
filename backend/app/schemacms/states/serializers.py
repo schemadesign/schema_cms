@@ -52,30 +52,25 @@ class StateSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def update(self, instance, validated_data):
-        with transaction.atomic():
-            instance = super().update(instance, validated_data)
-            if "filters" in self.initial_data:
-                instance.filters.clear()
-                filters = self.initial_data.pop("filters")
-                for filter_ in filters:
-                    filter_instance = ds_models.Filter.objects.get(pk=filter_["filter"])
-                    instance.filters.add(
-                        filter_instance,
-                        through_defaults={
-                            "filter_type": filter_instance.filter_type,
-                            "field": filter_instance.field,
-                            "field_type": filter_instance.field_type,
-                            "condition": {"values": filter_["values"]},
-                        },
-                    )
-
-        return instance
-
     @transaction.atomic()
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
         obj.add_tags(self.initial_data.get("tags", []))
+
+        if "filters" in self.initial_data:
+            obj.filters.clear()
+            filters = self.initial_data.pop("filters")
+            for filter_ in filters:
+                filter_instance = ds_models.Filter.objects.get(pk=filter_["filter"])
+                obj.filters.add(
+                    filter_instance,
+                    through_defaults={
+                        "filter_type": filter_instance.filter_type,
+                        "field": filter_instance.field,
+                        "field_type": filter_instance.field_type,
+                        "condition": {"values": filter_["values"]},
+                    },
+                )
 
         return obj
 
