@@ -103,6 +103,9 @@ class PABlockElementSerializer(ReadOnlySerializer):
 
     def get_value(self, obj):
         if obj.type == ElementType.IMAGE:
+            if not obj.image:
+                return {}
+
             return {"file_name": obj.get_original_file_name()[1], "image": obj.image.url}
 
         if obj.type == ElementType.OBSERVABLE_HQ:
