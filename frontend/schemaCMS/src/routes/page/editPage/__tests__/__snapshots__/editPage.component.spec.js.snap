@@ -361,7 +361,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznYue FgAze"
+    className="sc-fzonjX fYLCou"
   >
     <div
       style={
@@ -383,7 +383,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqzEs bIAvPs"
+          className="sc-fzqOul bXzCNa"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -439,7 +439,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqzEs bIAvPs"
+          className="sc-fzqOul bXzCNa"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -495,7 +495,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqzEs bIAvPs"
+          className="sc-fzqOul bXzCNa"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -551,7 +551,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzonjX bpPKUS"
+          className="sc-fzqzEs eDqSzw"
         >
           <span
             style={
@@ -1107,16 +1107,16 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-fzoMdx jCYlmZ"
+        className="sc-fzoWqW bmxKed"
       >
         <div
-          className="sc-fznzqM VqIcE"
+          className="sc-fznOgF dooqVc"
         >
           <div
-            className="sc-fzoWqW ermTJv"
+            className="sc-fzplgP eEGeIS"
           >
             <span
-              className="sc-fzplgP iZkvEl"
+              className="sc-fznzqM kkGtJK"
             >
               Category: 
             </span>
@@ -1217,10 +1217,10 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzoWqW ermTJv"
+            className="sc-fzplgP eEGeIS"
           >
             <span
-              className="sc-fzplgP iZkvEl"
+              className="sc-fznzqM kkGtJK"
             >
               Category: 
             </span>
@@ -1498,14 +1498,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqLLg kjCvJh"
+        className="sc-fzoxnE byPDEX"
       >
         <div
-          className="sc-fzoxnE haffHf"
+          className="sc-fzoMdx zteUZ"
         />
         1 Block
         <div
-          className="sc-fzoxnE haffHf"
+          className="sc-fzoMdx zteUZ"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -3260,14 +3260,14 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqLLg kjCvJh"
+                          className="sc-fzoxnE byPDEX"
                         >
                           <div
-                            className="sc-fzoxnE haffHf"
+                            className="sc-fzoMdx zteUZ"
                           />
                           3 Sets
                           <div
-                            className="sc-fzoxnE haffHf"
+                            className="sc-fzoMdx zteUZ"
                           >
                             <div
                               className="sc-fzolEj bBhqcC"

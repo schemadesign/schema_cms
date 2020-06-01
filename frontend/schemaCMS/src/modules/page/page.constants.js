@@ -66,11 +66,18 @@ export const INITIAL_VALUES_ADD_BLOCK = {
 const elementValueValidation = () =>
   Yup.mixed()
     .when(ELEMENT_TYPE, {
-      is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, INTERNAL_CONNECTION_TYPE, CODE_TYPE].includes(type),
+      is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, CODE_TYPE].includes(type),
       then: Yup.string()
         .trim()
         .min(1, 'Required')
-        .max(1000, 'Element Value should have maximum 1000 characters')
+        .max(10000, 'Element Value should have maximum 10000 characters')
+        .required('Required'),
+    })
+    .when(ELEMENT_TYPE, {
+      is: type => [INTERNAL_CONNECTION_TYPE].includes(type),
+      then: Yup.string()
+        .trim()
+        .min(1, 'Required')
         .required('Required'),
     })
     .when(ELEMENT_TYPE, {

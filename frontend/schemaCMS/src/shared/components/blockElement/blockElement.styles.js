@@ -158,3 +158,8 @@ export const Label = styled.span`
   margin-bottom: 5px;
   flex: 0 0 auto;
 `;
+
+export const Error = styled.div`
+  padding-top: 3px;
+  color: ${({ theme }) => theme.textField.error};
+`;
