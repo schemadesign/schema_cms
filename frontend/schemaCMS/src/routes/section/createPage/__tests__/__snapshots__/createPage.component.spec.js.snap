@@ -5,11 +5,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
   className="sc-AxjAm StDqN"
 >
   <div
-<<<<<<< HEAD
-    className="sc-fznLxA etfjdJ"
-=======
-    className="sc-fzpisO dxHBCX"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+    className="sc-fznXWL bKtGBD"
   >
     <div
       style={
@@ -26,17 +22,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
     >
       <div>
         <div
-<<<<<<< HEAD
-          className="sc-fznXWL glNYWz"
+          className="sc-fzokvW kJbQFf"
         >
           <h2
-            className="sc-fzplgP cGMpGU"
-=======
-          className="sc-fznyYp ePFTkY"
-        >
-          <h2
-            className="sc-fzoMdx dRncgZ"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fznzqM hdQkRb"
             id="headerTitle"
             style={
               Object {
@@ -50,11 +39,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Create
           </h2>
           <h1
-<<<<<<< HEAD
-            className="sc-fznzqM hdQkRb"
-=======
-            className="sc-fzoWqW fSlkId"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fznOgF keATQD"
             id="headerSubtitle"
             style={
               Object {
@@ -135,23 +120,13 @@ exports[`CreatePage: Component should render correctly 1`] = `
       }
     >
       <div
-<<<<<<< HEAD
-        className="sc-fzokvW kYBkFz"
+        className="sc-fzqzlV igNISb"
       >
         <div
-          className="sc-fznXWL glNYWz"
+          className="sc-fzokvW kJbQFf"
         >
           <h2
-            className="sc-fzplgP cGMpGU"
-=======
-        className="sc-fznLxA gKLGzh"
-      >
-        <div
-          className="sc-fznyYp ePFTkY"
-        >
-          <h2
-            className="sc-fzoMdx dRncgZ"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fznzqM hdQkRb"
             id="headerTitle"
             style={
               Object {
@@ -165,11 +140,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Create
           </h2>
           <h1
-<<<<<<< HEAD
-            className="sc-fznzqM hdQkRb"
-=======
-            className="sc-fzoWqW fSlkId"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fznOgF keATQD"
             id="headerSubtitle"
             style={
               Object {
@@ -187,23 +158,13 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-<<<<<<< HEAD
-        className="sc-fzqzlV jEcrYQ"
+        className="sc-fzqLLg iDalsT"
       >
         <div
-          className="sc-fzqLLg bHnHAc"
+          className="sc-fzoxnE jfGqOq"
         >
           <div
-            className="sc-fzoxnE fCOSnN"
-=======
-        className="sc-fznXWL gMBjkM"
-      >
-        <div
-          className="sc-fzokvW bnyRmj"
-        >
-          <div
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/"
@@ -214,11 +175,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/user/"
@@ -229,11 +186,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/1"
@@ -244,11 +197,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/1/datasource"
@@ -259,11 +208,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/1/state"
@@ -274,11 +219,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/1/tag-categories"
@@ -289,11 +230,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/1/user"
@@ -304,11 +241,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/1/content"
@@ -319,11 +252,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/project/1/templates"
@@ -335,17 +264,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          className="sc-fzqLLg bHnHAc"
+          className="sc-fzoxnE jfGqOq"
         >
           <div
-            className="sc-fzoxnE fCOSnN"
-=======
-          className="sc-fzokvW bnyRmj"
-        >
-          <div
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <a
               href="/settings"
@@ -356,11 +278,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-<<<<<<< HEAD
-            className="sc-fzoxnE fCOSnN"
-=======
-            className="sc-fzqzlV fcwVbI"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzoMdx jeErzL"
           >
             <div
               onClick={[Function]}
@@ -370,17 +288,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          className="sc-fzoMdx HpBKi"
+          className="sc-fzoWqW kbgQQG"
         >
           <a
-            className="sc-fzoWqW joHzJK"
-=======
-          className="sc-fzqLLg pvXxK"
-        >
-          <a
-            className="sc-fzoxnE khddOc"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzplgP eDZJDr"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -388,11 +299,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-<<<<<<< HEAD
-            className="sc-fzoWqW joHzJK"
-=======
-            className="sc-fzoxnE khddOc"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzplgP eDZJDr"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -400,11 +307,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-<<<<<<< HEAD
-            className="sc-fzoWqW joHzJK"
-=======
-            className="sc-fzoxnE khddOc"
->>>>>>> Increase max limit of some elements in page and display error message in markdown
+            className="sc-fzplgP eDZJDr"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
