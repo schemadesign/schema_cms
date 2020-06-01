@@ -221,16 +221,8 @@ exports[`TagSearch: Component should render correctly 1`] = `
 
 exports[`TagSearch: Component should render correctly with no tag categories 1`] = `
 <div
-  className="sc-AxjAm brQPEM"
+  className="sc-Axmtr gaMKzQ"
 >
-  <div
-    className="sc-AxhCb fNqLoA"
-  >
-    <div
-      className="sc-AxhUy ekPPZV"
-    >
-      No tags available
-    </div>
-  </div>
+  No Tags available
 </div>
 `;

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 import { useHistory, useRouteMatch } from 'react-router';
 import Helmet from 'react-helmet';
-import { defaultTo, groupBy, map, pipe, prop } from 'ramda';
 
 import { Container } from './dataSourceTags.styles';
 import messages from './dataSourceTags.messages';
@@ -13,7 +12,7 @@ import reportError from '../../../shared/utils/reportError';
 import { TagSearch } from '../../../shared/components/tagSearch';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions, formatTags } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, formatTags, prepareTags } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
@@ -34,11 +33,7 @@ export const DataSourceTags = ({
   const intl = useIntl();
   const history = useHistory();
   const match = useRouteMatch();
-  const initialValues = pipe(
-    defaultTo([]),
-    map(item => ({ ...item, label: item.value })),
-    groupBy(prop('category'))
-  )(dataSourceTags);
+  const initialValues = prepareTags(dataSourceTags);
   const { values, setFieldValue, handleSubmit, isSubmitting, dirty } = useFormik({
     initialValues,
     enableReinitialize: true,
@@ -94,6 +89,7 @@ export const DataSourceTags = ({
           </NextButton>
         </NavigationContainer>
       </LoadingWrapper>
+      <DataSourceNavigation hideOnDesktop history={history} match={match} dataSource={dataSource} />
     </Container>
   );
 };

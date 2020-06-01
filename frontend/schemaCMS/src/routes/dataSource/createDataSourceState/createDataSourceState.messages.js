@@ -14,9 +14,9 @@ export default defineMessages({
     id: 'datasource.createDataSourceState.cancel',
     defaultMessage: 'Cancel',
   },
-  confirm: {
-    id: 'datasource.createDataSourceState.cancel',
-    defaultMessage: 'Confirm',
+  create: {
+    id: 'datasource.createDataSourceState.create',
+    defaultMessage: 'Create',
   },
   nameStateNameNotUniqueError: {
     id: 'datasource.createDataSourceState.nameStateNameNotUniqueError',

@@ -24,7 +24,7 @@ DropdownIndicator.propTypes = {
 
 export const TagCategories = ({
   name,
-  isSingleSelect,
+  isSingleSelect = false,
   selectedTags,
   tags,
   setFieldValue,
@@ -68,7 +68,7 @@ TagCategories.propTypes = {
   tags: PropTypes.array.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
-  isSingleSelect: PropTypes.bool.isRequired,
+  isSingleSelect: PropTypes.bool,
   customStyles: PropTypes.object.isRequired,
   valuePath: PropTypes.string,
 };

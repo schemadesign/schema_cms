@@ -5,10 +5,8 @@ import {
   CONNECTION_TYPE,
   ELEMENT_TYPE,
   ELEMENT_VALUE,
-  IMAGE_TYPE,
   PLAIN_TEXT_TYPE,
   MARKDOWN_TYPE,
-  INTERNAL_CONNECTION_TYPE,
   OBSERVABLEHQ_TYPE,
   OBSERVABLE_USER,
   OBSERVABLE_NOTEBOOK,
@@ -66,29 +64,17 @@ export const INITIAL_VALUES_ADD_BLOCK = {
 const elementValueValidation = () =>
   Yup.mixed()
     .when(ELEMENT_TYPE, {
-      is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, INTERNAL_CONNECTION_TYPE, CODE_TYPE].includes(type),
+      is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, CODE_TYPE].includes(type),
       then: Yup.string()
         .trim()
-        .min(1, 'Required')
-        .max(1000, 'Element Value should have maximum 1000 characters')
-        .required('Required'),
+        .max(50000, 'Element Value should have maximum 50000 characters'),
     })
     .when(ELEMENT_TYPE, {
       is: CONNECTION_TYPE,
       then: Yup.string()
         .trim()
-        .min(1, 'Required')
         .url('Invalid URL')
-        .max(1000, 'Element Value should have maximum 1000 characters')
-        .required('Required'),
-    })
-    .when(ELEMENT_TYPE, {
-      is: IMAGE_TYPE,
-      then: Yup.object().shape({
-        fileName: Yup.string()
-          .min(1, 'Required')
-          .required('Required'),
-      }),
+        .max(1000, 'Element Value should have maximum 1000 characters'),
     })
     .when(ELEMENT_TYPE, {
       is: OBSERVABLEHQ_TYPE,
@@ -136,13 +122,11 @@ export const PAGE_SCHEMA = Yup.object().shape({
           Yup.object().shape({
             [ELEMENT_VALUE]: elementValueValidation().when(ELEMENT_TYPE, {
               is: CUSTOM_ELEMENT_TYPE,
-              then: Yup.array()
-                .of(
-                  Yup.object().shape({
-                    elements: Yup.array().of(Yup.object().shape({ [ELEMENT_VALUE]: elementValueValidation() })),
-                  })
-                )
-                .min(1, 'Required'),
+              then: Yup.array().of(
+                Yup.object().shape({
+                  elements: Yup.array().of(Yup.object().shape({ [ELEMENT_VALUE]: elementValueValidation() })),
+                })
+              ),
             }),
           })
         ),
@@ -161,7 +145,7 @@ export const ADD_BLOCK_SCHEMA = Yup.object().shape({
     .min(1, 'Required')
     .required('Required'),
   [BLOCK_TEMPLATES_ELEMENTS]: Yup.array().when(BLOCK_TYPE, {
-    is: '0',
     then: blockTemplatesElementsValidation(),
+    is: '0',
   }),
 });

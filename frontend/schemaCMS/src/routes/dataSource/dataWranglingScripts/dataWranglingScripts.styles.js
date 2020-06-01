@@ -22,7 +22,8 @@ export const Empty = styled.div`
 
 export const UploadContainer = styled.div`
   width: 20%;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 export const Error = styled.div`

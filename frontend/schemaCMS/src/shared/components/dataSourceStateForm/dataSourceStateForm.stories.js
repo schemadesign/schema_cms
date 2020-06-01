@@ -2,19 +2,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { DataSourceStateForm } from './dataSourceStateForm.component';
-import { intl } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
 import { state } from '../../../modules/dataSourceState/dataSourceState.mock';
+import { tagCategories } from '../../../modules/tagCategory/tagCategory.mocks';
+import { filters } from '../../../modules/filter/filter.mocks';
 
 export const defaultProps = {
-  intl,
+  tagCategories,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   values: state,
+  filters,
   state,
-  dataSources: [{ name: 'name', id: 'id' }],
 };
 
-storiesOf('DataSourceStateForm', module)
+storiesOf('Shared Components|DataSourceStateForm', module)
   .addDecorator(withTheme())
   .add('Default', () => <DataSourceStateForm {...defaultProps} />);

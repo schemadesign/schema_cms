@@ -1,96 +1,154 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { always } from 'ramda';
-import { Form } from 'schemaUI';
+import { Form, Icons } from 'schemaUI';
 import dayjs from 'dayjs';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import { Container } from './dataSourceStateForm.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './dataSourceStateForm.messages';
 
 import {
-  PROJECT_STATE_DESCRIPTION,
-  PROJECT_STATE_NAME,
-  PROJECT_STATE_SOURCE_URL,
-  PROJECT_STATE_AUTHOR,
-  PROJECT_STATE_CREATED,
-  PROJECT_STATE_IS_PUBLIC,
+  DATA_SOURCE_STATE_DESCRIPTION,
+  DATA_SOURCE_STATE_NAME,
+  DATA_SOURCE_STATE_SOURCE_URL,
+  DATA_SOURCE_STATE_AUTHOR,
+  DATA_SOURCE_STATE_CREATED,
+  DATA_SOURCE_STATE_TAGS,
+  DATA_SOURCE_STATE_IS_PUBLIC,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import { renderWhenTrue } from '../../utils/rendering';
+import { BASE_DATE_FORMAT } from '../../utils/extendedDayjs';
+import { TagSearch } from '../tagSearch';
+import { StateFilterList } from '../stateFilterList';
+import {
+  AvailableCopy,
+  BinIconContainer,
+  SwitchContainer,
+  SwitchContent,
+  SwitchCopy,
+  Switches,
+  SwitchLabel,
+} from '../form/frequentComponents.styles';
 
-const { Switch } = Form;
+const { BinIcon } = Icons;
+const { Switch, Label } = Form;
 
-export class DataSourceStateForm extends PureComponent {
-  static propTypes = {
-    intl: PropTypes.object.isRequired,
-    handleChange: PropTypes.func.isRequired,
-    setFieldValue: PropTypes.func.isRequired,
-    values: PropTypes.object.isRequired,
-    state: PropTypes.object,
-    dataSources: PropTypes.array.isRequired,
-  };
+export const DataSourceStateForm = ({
+  tagCategories,
+  handleChange,
+  values,
+  filters,
+  handleRemoveState,
+  state = {},
+  ...restFormikProps
+}) => {
+  const intl = useIntl();
 
-  static defaultProps = {
-    state: {},
-  };
-
-  renderInput = (value, name) =>
+  const renderInput = (value, name, formattedValue) =>
     renderWhenTrue(
       always(
         <TextInput
-          value={value}
-          onChange={this.props.handleChange}
+          value={formattedValue || value}
+          onChange={handleChange}
           name={name}
-          label={this.props.intl.formatMessage(messages[name])}
+          label={intl.formatMessage(messages[name])}
           fullWidth
           disabled
-          {...this.props}
+          {...restFormikProps}
         />
       )
     )(!!value);
 
-  render() {
-    const { handleChange, intl, values, state } = this.props;
+  const binIcon = handleRemoveState ? (
+    <BinIconContainer id="removeState" onClick={() => handleRemoveState(true)}>
+      <BinIcon />
+    </BinIconContainer>
+  ) : null;
 
-    return (
-      <Container>
-        <TextInput
-          value={values[PROJECT_STATE_NAME]}
-          onChange={handleChange}
-          name={PROJECT_STATE_NAME}
-          label={intl.formatMessage(messages[PROJECT_STATE_NAME])}
-          fullWidth
-          isEdit
-          {...this.props}
-        />
-        <TextInput
-          value={values[PROJECT_STATE_DESCRIPTION]}
-          onChange={handleChange}
-          name={PROJECT_STATE_DESCRIPTION}
-          label={intl.formatMessage(messages[PROJECT_STATE_DESCRIPTION])}
-          fullWidth
-          isEdit
-          multiline
-          {...this.props}
-        />
-        <TextInput
-          value={values[PROJECT_STATE_SOURCE_URL]}
-          onChange={handleChange}
-          name={PROJECT_STATE_SOURCE_URL}
-          label={intl.formatMessage(messages[PROJECT_STATE_SOURCE_URL])}
-          fullWidth
-          isEdit
-          {...this.props}
-        />
-        {this.renderInput(state[PROJECT_STATE_AUTHOR], PROJECT_STATE_AUTHOR)}
-        {this.renderInput(dayjs(state[PROJECT_STATE_CREATED]).format('DD/MM/YYYY'), PROJECT_STATE_CREATED)}
-        <Switch
-          value={values[PROJECT_STATE_IS_PUBLIC]}
-          id={PROJECT_STATE_IS_PUBLIC}
-          onChange={handleChange}
-          label={intl.formatMessage(messages[PROJECT_STATE_IS_PUBLIC])}
-        />
-      </Container>
-    );
-  }
-}
+  return (
+    <Container>
+      <TextInput
+        value={values[DATA_SOURCE_STATE_NAME]}
+        onChange={handleChange}
+        name={DATA_SOURCE_STATE_NAME}
+        label={intl.formatMessage(messages[DATA_SOURCE_STATE_NAME])}
+        fullWidth
+        isEdit
+        {...restFormikProps}
+      />
+      <TextInput
+        value={values[DATA_SOURCE_STATE_DESCRIPTION]}
+        onChange={handleChange}
+        name={DATA_SOURCE_STATE_DESCRIPTION}
+        label={intl.formatMessage(messages[DATA_SOURCE_STATE_DESCRIPTION])}
+        fullWidth
+        isEdit
+        multiline
+        {...restFormikProps}
+      />
+      <TextInput
+        value={values[DATA_SOURCE_STATE_SOURCE_URL]}
+        onChange={handleChange}
+        name={DATA_SOURCE_STATE_SOURCE_URL}
+        label={intl.formatMessage(messages[DATA_SOURCE_STATE_SOURCE_URL])}
+        fullWidth
+        isEdit
+        {...restFormikProps}
+      />
+      {renderInput(values[DATA_SOURCE_STATE_AUTHOR], DATA_SOURCE_STATE_AUTHOR)}
+      {renderInput(
+        values[DATA_SOURCE_STATE_CREATED],
+        DATA_SOURCE_STATE_CREATED,
+        dayjs(values[DATA_SOURCE_STATE_CREATED], BASE_DATE_FORMAT).format('DD/MM/YYYY')
+      )}
+      <Label>
+        <FormattedMessage {...messages[DATA_SOURCE_STATE_TAGS]} />
+      </Label>
+      <TagSearch
+        tagCategories={tagCategories}
+        values={values[DATA_SOURCE_STATE_TAGS]}
+        valuePath="tags"
+        {...restFormikProps}
+      />
+      <StateFilterList filters={filters} state={state} values={values} {...restFormikProps} />
+      <Switches>
+        <SwitchContainer>
+          <SwitchContent>
+            <Switch
+              value={values[DATA_SOURCE_STATE_IS_PUBLIC]}
+              id={DATA_SOURCE_STATE_IS_PUBLIC}
+              onChange={handleChange}
+            />
+            <SwitchCopy>
+              <SwitchLabel htmlFor={DATA_SOURCE_STATE_IS_PUBLIC}>
+                <FormattedMessage {...messages[DATA_SOURCE_STATE_IS_PUBLIC]} />
+              </SwitchLabel>
+              <AvailableCopy>
+                <FormattedMessage
+                  {...messages.pageAvailability}
+                  values={{
+                    availability: intl.formatMessage(
+                      messages[values[DATA_SOURCE_STATE_IS_PUBLIC] ? 'publicCopy' : 'privateCopy']
+                    ),
+                  }}
+                />
+              </AvailableCopy>
+            </SwitchCopy>
+          </SwitchContent>
+          {binIcon}
+        </SwitchContainer>
+      </Switches>
+    </Container>
+  );
+};
+
+DataSourceStateForm.propTypes = {
+  tagCategories: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleRemoveState: PropTypes.func,
+  values: PropTypes.object.isRequired,
+  filters: PropTypes.array.isRequired,
+  state: PropTypes.object,
+};

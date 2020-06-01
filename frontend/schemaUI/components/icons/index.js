@@ -22,6 +22,7 @@ import { CaretIcon } from './caretIcon';
 import { HomeIcon } from './homeIcon';
 import { BinIcon } from './binIcon';
 import { MetadataIcon } from './metadataIcon';
+import { StateIcon } from './stateIcon';
 
 const Icons = {
   ResultIcon,
@@ -48,6 +49,7 @@ const Icons = {
   HomeIcon,
   BinIcon,
   MetadataIcon,
+  StateIcon,
 };
 
 export {
@@ -71,6 +73,7 @@ export {
   HomeIcon,
   BinIcon,
   MetadataIcon,
+  StateIcon,
 };
 
 export default Icons;

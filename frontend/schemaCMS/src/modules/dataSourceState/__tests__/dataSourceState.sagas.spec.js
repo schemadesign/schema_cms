@@ -66,7 +66,7 @@ describe('DataSourceState: sagas', () => {
       .dispatch(DataSourceStateRoutines.create(payload))
       .silentRun();
 
-    expect(browserHistory.push).toBeCalledWith('/state/1/tags');
+    expect(browserHistory.push).toBeCalledWith('/state/1');
   });
 
   it('should put update.success action', async () => {
@@ -104,6 +104,6 @@ describe('DataSourceState: sagas', () => {
       .dispatch(DataSourceStateRoutines.remove(payload))
       .silentRun();
 
-    expect(browserHistory.push).toBeCalledWith('/datasources/dataSourceId/state');
+    expect(browserHistory.push).toBeCalledWith('/datasource/dataSourceId/state');
   });
 });

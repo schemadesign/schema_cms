@@ -45,7 +45,7 @@ function* create({ payload: { dataSourceId, formData } }) {
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}${STATES_PATH}`, formData);
     yield put(DataSourceStateRoutines.create.success(data));
 
-    browserHistory.push(`/state/${data.id}/tags`);
+    browserHistory.push(`/state/${data.id}`);
   } catch (e) {
     reportError(e);
     yield put(DataSourceStateRoutines.create.failure(e));
@@ -76,7 +76,7 @@ function* remove({ payload: { stateId, dataSourceId } }) {
     yield api.delete(`${STATES_PATH}/${stateId}`);
     yield put(DataSourceStateRoutines.remove.success());
 
-    browserHistory.push(`/datasources/${dataSourceId}/state`);
+    browserHistory.push(`/datasource/${dataSourceId}/state`);
   } catch (e) {
     reportError(e);
     yield put(DataSourceStateRoutines.remove.failure(e));

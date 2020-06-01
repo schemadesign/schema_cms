@@ -14,7 +14,9 @@ export const DataSourceStateRoutines = {
 
 export const INITIAL_STATE = new Immutable({
   states: [],
-  state: {},
+  state: {
+    filters: [],
+  },
 });
 
 const setStates = (state = INITIAL_STATE, { payload }) => state.set('states', payload);

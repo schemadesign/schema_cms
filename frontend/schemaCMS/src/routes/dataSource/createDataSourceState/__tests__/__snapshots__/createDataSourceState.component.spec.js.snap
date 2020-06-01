@@ -1,0 +1,513 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateDataSourceState: Component should render correctly 1`] = `
+<form
+  className="sc-AxjAm StDqN"
+  onSubmit={[Function]}
+>
+  <div
+    className="sc-AxiKw lkawiC"
+  >
+    <div
+      className="sc-AxhCb cQCqeT"
+    >
+      <h2
+        className="sc-AxhUy bsvLvB"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        State
+      </h2>
+      <h1
+        className="sc-AxgMl kxAXFr"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Create
+      </h1>
+    </div>
+    <div
+      className="sc-AxheI fniENP"
+    />
+  </div>
+  <div
+    className="sc-fzokOt feUZWe"
+  >
+    <div
+      className="sc-fzqBZW fPjuQm"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value=""
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzqNJr noQGu"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzqBZW fPjuQm"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Description
+        </label>
+        <textarea
+          id="description"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+          value=""
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzqNJr noQGu"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzqBZW fPjuQm"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="sourceUrl"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Source URL
+        </label>
+        <input
+          id="sourceUrl"
+          name="sourceUrl"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value=""
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzqNJr noQGu"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Tags
+    </label>
+    <div
+      className="sc-fznZeY eizqoG"
+    >
+      No Tags available
+    </div>
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Filters
+    </label>
+    <div
+      className="sc-fznZeY eizqoG"
+    >
+      No Filters available
+    </div>
+    <div
+      className="sc-fzoiQi hbbwvh"
+    >
+      <div
+        className="sc-fzqARJ clXtQI"
+      >
+        <div
+          className="sc-fzoNJl cHszPy"
+        >
+          <div>
+            <input
+              checked={false}
+              id="isPublic"
+              onChange={[Function]}
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                }
+              }
+              type="checkbox"
+            />
+            <label
+              htmlFor="isPublic"
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#2F2F36",
+                    "borderRadius": 20,
+                    "boxSizing": "border-box",
+                    "cursor": "pointer",
+                    "height": 24,
+                    "padding": 2,
+                    "transition": "background 200ms ease-in-out",
+                    "width": 44,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#FFF",
+                      "borderRadius": "50%",
+                      "height": 20,
+                      "transform": "translateX(0)",
+                      "transition": "transform 200ms ease-in-out",
+                      "width": 20,
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            className="sc-fzoyTs fKSkws"
+          >
+            <label
+              className="sc-fzqNqU fjnSB"
+              htmlFor="isPublic"
+            >
+              Make it Public
+            </label>
+            <span
+              className="sc-fzpmMD bZzUta"
+            >
+              This State is currently Private
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-Axmtr eHJOSG"
+  >
+    <div
+      className="sc-fzozJi iyAgAo"
+    >
+      <div
+        className="sc-AxmLO hyqMyW"
+      >
+        <div
+          className="sc-AxirZ jlhnGW"
+        >
+          <button
+            className="sc-fzoLsD jQiKvR"
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="sc-fzoLsD jQiKvR"
+            disabled={true}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+            type="submit"
+          >
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;

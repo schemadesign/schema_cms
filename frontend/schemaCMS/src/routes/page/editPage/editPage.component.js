@@ -5,13 +5,18 @@ import { useEffectOnce } from 'react-use';
 import { useHistory, useParams, useLocation } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
-import { isEmpty, pick, pathOr, groupBy, prop, map, pipe, defaultTo } from 'ramda';
+import { isEmpty, pick, pathOr, defaultTo } from 'ramda';
 
 import { Container } from './editPage.styles';
 import messages from './editPage.messages';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions, prepareForPostingPageData } from '../../../shared/utils/helpers';
+import {
+  errorMessageParser,
+  filterMenuOptions,
+  prepareForPostingPageData,
+  prepareTags,
+} from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { PageForm } from '../../../shared/components/pageForm';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -90,11 +95,7 @@ export const EditPage = ({
   const initialValues = {
     ...INITIAL_VALUES,
     ...pick(FORM_VALUES, page),
-    [PAGE_TAGS]: pipe(
-      defaultTo([]),
-      map(item => ({ ...item, label: item.value })),
-      groupBy(prop('category'))
-    )(page[PAGE_TAGS]),
+    [PAGE_TAGS]: prepareTags(page[PAGE_TAGS]),
     [PAGE_TEMPLATE]: defaultTo(0, page[PAGE_TEMPLATE]),
   };
   const mainPage = pathOr({}, ['section', 'mainPage'], page);

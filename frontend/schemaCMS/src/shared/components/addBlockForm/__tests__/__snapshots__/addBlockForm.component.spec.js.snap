@@ -303,7 +303,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
                 }
               }
             >
-              Blank
+              (blank)
             </div>
           </div>
           <div
@@ -342,7 +342,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
                 }
               }
             >
-              Blank
+              (blank)
             </div>
             <div
               id="select-item-1"
@@ -898,7 +898,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
                 }
               }
             >
-              Blank
+              (blank)
             </div>
             <div
               id="select-item-1"

@@ -218,9 +218,7 @@ class PageViewSet(DetailViewSet):
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
-            d_models.Prefetch(
-                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
-            )
+            d_models.Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
         )
     )
 

@@ -8,16 +8,13 @@ export const Container = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
   padding: 0 20px;
   z-index: 1000;
   background-color: ${({ theme: { stepper } }) => stepper.background};
 
   svg {
     cursor: pointer;
+    transform: scale(0.8);
   }
 
   ${media.desktop`
@@ -25,7 +22,18 @@ export const Container = styled.div`
     background-color: transparent;
     padding: 0;
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'fixed')};
+
+    svg {
+      transform: scale(1);
+    }
   `};
+`;
+
+export const InnerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 const disabledStyles = css`
@@ -52,12 +60,14 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding: 3px;
 
   ${statusButtonStyles}
 
   ${media.desktop`
     width: 60px;
     height: 60px;
+    padding: 0px;
   `};
 `;
 

@@ -1076,7 +1076,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           }
         >
-          Blank
+          (blank)
         </div>
       </div>
       <div
@@ -1182,7 +1182,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           }
         >
-          Blank
+          (blank)
         </div>
       </div>
     </section>

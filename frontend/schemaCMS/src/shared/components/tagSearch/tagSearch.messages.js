@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   noTags: {
     id: 'shared.components.tagSearch.noTags',
-    defaultMessage: 'No tags available',
+    defaultMessage: 'No Tags available',
   },
   category: {
     id: 'shared.components.tagSearch.category',

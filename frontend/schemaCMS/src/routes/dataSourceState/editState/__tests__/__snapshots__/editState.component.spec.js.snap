@@ -1,0 +1,957 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditState: Component should render correctly 1`] = `
+Array [
+  <div
+    className="sc-fzoaKM hyXHRq"
+    id="tabsContainer"
+  >
+    <div
+      className="sc-fzpkqZ bQPMZv"
+    >
+      <div
+        className="sc-fznAgC iNwcnF"
+      >
+        <a
+          className="sc-fznLPX IXRsc"
+          href="/project/1"
+          id="settingsTab"
+          onClick={[Function]}
+        >
+          Settings
+        </a>
+      </div>
+      <div
+        className="sc-fznAgC gVdGSW"
+      >
+        <a
+          className="sc-fznLPX IXRsc"
+          href="/project/1/datasource"
+          id="sourcesTab"
+          onClick={[Function]}
+        >
+          Sources
+        </a>
+      </div>
+      <div
+        className="sc-fznAgC iNwcnF"
+      >
+        <a
+          className="sc-fznLPX IXRsc"
+          href="/project/1/tag-categories"
+          id="tag-categoriesTab"
+          onClick={[Function]}
+        >
+          Tags
+        </a>
+      </div>
+      <div
+        className="sc-fznAgC iNwcnF"
+      >
+        <a
+          className="sc-fznLPX IXRsc"
+          href="/project/1/content"
+          id="contentTab"
+          onClick={[Function]}
+        >
+          Content
+        </a>
+      </div>
+      <div
+        className="sc-fznAgC iNwcnF"
+      >
+        <a
+          className="sc-fznLPX IXRsc"
+          href="/project/1/templates"
+          id="templatesTab"
+          onClick={[Function]}
+        >
+          Templates
+        </a>
+      </div>
+      <div
+        className="sc-fznAgC iNwcnF"
+      >
+        <a
+          className="sc-fznLPX IXRsc"
+          href="/project/1/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-AxhCb fgDJVC"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-AxhUy kMyssT"
+        >
+          <h2
+            className="sc-fzpans kyzoMb"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          />
+          <h1
+            className="sc-fzplWN eQxyjC"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Edit State
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-AxgMl hjZtvp"
+      >
+        <div
+          className="sc-AxhUy kMyssT"
+        >
+          <h2
+            className="sc-fzpans kyzoMb"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          />
+          <h1
+            className="sc-fzplWN eQxyjC"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Edit State
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-AxheI bHUlNw"
+      >
+        <div
+          className="sc-Axmtr jgrPWY"
+        >
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO fgtQMX"
+          >
+            <a
+              href="/project/1/state"
+              id="stateNavBtn"
+              onClick={[Function]}
+            >
+              States
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-Axmtr jgrPWY"
+        >
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-AxmLO cJQjHy"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzozJi jsZIuq"
+        >
+          <a
+            className="sc-fzoLsD dIpfbw"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fzoLsD dIpfbw"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fzoLsD dIpfbw"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  <div
+    className="sc-fznxsB jPLWsd"
+  >
+    <div
+      className="sc-fznJRM hMAcGk"
+    >
+      <h2
+        className="sc-fznWqX bKYpVc"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      />
+      <h1
+        className="sc-fzoiQi kWApJK"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Edit State
+      </h1>
+    </div>
+    <div
+      className="sc-fzqARJ iQINDi"
+    />
+  </div>,
+  <div
+    className="sc-fzqNqU krLFqG"
+  >
+    <div
+      className="sc-fzoyTs FXPlp"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzoNJl fwCLEm"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzoyTs FXPlp"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Description
+        </label>
+        <textarea
+          id="description"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzoNJl fwCLEm"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzoyTs FXPlp"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="sourceUrl"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Source URL
+        </label>
+        <input
+          id="sourceUrl"
+          name="sourceUrl"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontFamily": "inherit",
+              "fontSize": "18px",
+              "fontWeight": "inherit",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "maxWidth": "100%",
+              "minWidth": 60,
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 2,
+            }
+          }
+        >
+          <div
+            className="sc-fzoNJl fwCLEm"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Tags
+    </label>
+    <div
+      className="sc-AxiKw iJWEeW"
+    >
+      No Tags available
+    </div>
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Filters
+    </label>
+    <div
+      className="sc-AxiKw iJWEeW"
+    >
+      No Filters available
+    </div>
+    <div
+      className="sc-fzqPZZ eYLLnG"
+    >
+      <div
+        className="sc-fzoxKX emUUPI"
+      >
+        <div
+          className="sc-fzpkJw fkIOqD"
+        >
+          <div>
+            <input
+              id="isPublic"
+              onChange={[Function]}
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                }
+              }
+              type="checkbox"
+            />
+            <label
+              htmlFor="isPublic"
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#2F2F36",
+                    "borderRadius": 20,
+                    "boxSizing": "border-box",
+                    "cursor": "pointer",
+                    "height": 24,
+                    "padding": 2,
+                    "transition": "background 200ms ease-in-out",
+                    "width": 44,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#FFF",
+                      "borderRadius": "50%",
+                      "height": 20,
+                      "transform": "translateX(0)",
+                      "transition": "transform 200ms ease-in-out",
+                      "width": 20,
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            className="sc-fzoYkl fyQALM"
+          >
+            <label
+              className="sc-fzoKki jA-DpxQ"
+              htmlFor="isPublic"
+            >
+              Make it Public
+            </label>
+            <span
+              className="sc-fznMnq hcbuzG"
+            >
+              This State is currently Private
+            </span>
+          </div>
+        </div>
+        <div
+          className="sc-fznzOf eCsiAV"
+          id="removeState"
+          onClick={[Function]}
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "20px",
+                "width": "20px",
+              }
+            }
+            viewBox="-47 0 512 512"
+          >
+            <path
+              d="M416.875 114.441L405.57 80.555a31.527 31.527 0 00-29.941-21.578h-95.012V28.043C280.617 12.582 268.047 0 252.59 0h-87.008c-15.453 0-28.027 12.582-28.027 28.043v30.934H42.547a31.528 31.528 0 00-29.945 21.578L1.297 114.44a25.426 25.426 0 003.484 22.856 25.427 25.427 0 0020.578 10.539h11.817L63.184 469.44C65.117 493.305 85.367 512 109.293 512h204.863c23.922 0 44.176-18.695 46.106-42.563l26.008-321.601h6.543A25.434 25.434 0 00413.39 137.3a25.434 25.434 0 003.484-22.86zM167.555 30h83.062v28.977h-83.062zm162.804 437.02c-.68 8.402-7.796 14.98-16.203 14.98H109.293c-8.406 0-15.523-6.578-16.203-14.98L67.273 147.836h288.899zM31.793 117.836l9.27-27.79c.21-.64.808-1.07 1.484-1.07h333.082c.676 0 1.27.43 1.484 1.07l9.27 27.79zm0 0"
+            />
+            <path
+              d="M282.516 465.957c.265.016.527.02.793.02 7.925 0 14.55-6.211 14.964-14.22L312.36 181.36c.43-8.273-5.93-15.332-14.199-15.761-8.293-.442-15.328 5.925-15.762 14.199l-14.082 270.398c-.43 8.274 5.926 15.332 14.2 15.762zm0 0M120.566 451.793c.438 7.996 7.055 14.184 14.965 14.184.274 0 .555-.008.832-.024 8.27-.45 14.61-7.52 14.16-15.793L135.77 179.762c-.45-8.274-7.52-14.614-15.793-14.16-8.27.449-14.61 7.52-14.16 15.793zm0 0M209.254 465.977c8.285 0 15-6.715 15-15V180.578c0-8.285-6.715-15-15-15s-15 6.715-15 15v270.399c0 8.285 6.715 15 15 15zm0 0"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fzqBZW gRryLC"
+  >
+    <div
+      className="sc-fzoyAV fPdCEj"
+    >
+      <div
+        className="sc-fzqNJr nUvfE"
+      >
+        <button
+          className="sc-fzoLag bKaewg"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          className="sc-fzoLag bKaewg"
+          disabled={true}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>,
+]
+`;
