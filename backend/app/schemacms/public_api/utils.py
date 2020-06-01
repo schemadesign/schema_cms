@@ -70,8 +70,13 @@ def custom_in_html(element_id, element_data):
 
 
 def image_in_html(element):
-    file_name = element.get_original_file_name()[1]
-    image = element.image.url
+    if not element.image:
+        file_name = ""
+        image = ""
+    else:
+        file_name = element.get_original_file_name()[1]
+        image = element.image.url
+
     html_value = (
         f"<div id='image-{element.id}' class='element image'>"
         f"<figure>"
