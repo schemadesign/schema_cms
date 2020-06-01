@@ -20,24 +20,36 @@ exports[`FileUpload: Component should render correctly 1`] = `
     <div
       style={
         Object {
+          "alignItems": "center",
           "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
           "color": "#FFF",
           "cursor": "pointer",
-          "display": "inline-block",
+          "display": "flex",
           "fill": "#FFF",
           "fontSize": 0,
+          "height": 60,
+          "justifyContent": "center",
           "margin": "0",
           "minHeight": "48px",
           "opacity": 1,
           "outline": "none",
           "padding": "0",
+          "paddingBottom": 5,
           "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          "width": 60,
         }
       }
     >
-      <Component />
+      <Component
+        customStyles={
+          Object {
+            "height": 30,
+            "width": 30,
+          }
+        }
+      />
     </div>
   </label>
   <input
@@ -188,24 +200,36 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
       <div
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "#1d1d20",
             "border": "none",
             "borderRadius": "48px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
             "fontSize": 0,
+            "height": 60,
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "opacity": 1,
             "outline": "none",
             "padding": "0",
+            "paddingBottom": 5,
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            "width": 60,
           }
         }
       >
-        <Component />
+        <Component
+          customStyles={
+            Object {
+              "height": 30,
+              "width": 30,
+            }
+          }
+        />
       </div>
     </label>
   </div>
@@ -279,24 +303,36 @@ exports[`FileUpload: Component should render with file name 1`] = `
       <div
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "#1d1d20",
             "border": "none",
             "borderRadius": "48px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
             "fontSize": 0,
+            "height": 60,
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "opacity": 1,
             "outline": "none",
             "padding": "0",
+            "paddingBottom": 5,
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            "width": 60,
           }
         }
       >
-        <Component />
+        <Component
+          customStyles={
+            Object {
+              "height": 30,
+              "width": 30,
+            }
+          }
+        />
       </div>
     </label>
   </div>
@@ -371,24 +407,36 @@ exports[`FileUpload: Component should render with label 1`] = `
       <div
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "#1d1d20",
             "border": "none",
             "borderRadius": "48px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
             "fontSize": 0,
+            "height": 60,
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "opacity": 1,
             "outline": "none",
             "padding": "0",
+            "paddingBottom": 5,
             "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            "width": 60,
           }
         }
       >
-        <Component />
+        <Component
+          customStyles={
+            Object {
+              "height": 30,
+              "width": 30,
+            }
+          }
+        />
       </div>
     </label>
   </div>

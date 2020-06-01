@@ -20,6 +20,12 @@ export const inputStyles = {
 export const getButtonStyles = disabled => ({
   fontSize: 0,
   opacity: disabled ? 0.5 : 1,
+  display: 'flex',
+  width: 60,
+  height: 60,
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingBottom: 5,
 });
 
 export const getValueStyles = disabled => ({

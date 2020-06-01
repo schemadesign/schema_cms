@@ -4,7 +4,7 @@ import { Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 import { split, last, pipe, equals, path, propEq, pathEq, complement, both, either } from 'ramda';
 
-import { Container, Button, ButtonContainer, PageTitle } from './dataSourceNavigation.styles';
+import { Container, InnerContainer, Button, ButtonContainer, PageTitle } from './dataSourceNavigation.styles';
 import messages from './dataSourceNavigation.messages';
 import {
   FILTERS_PAGE,
@@ -17,19 +17,19 @@ import {
   TAGS_PAGE,
 } from '../../../modules/dataSource/dataSource.constants';
 
-const { FieldIcon, FilterIcon, TagIcon, UploadIcon, ResultIcon, MetadataIcon } = Icons;
+const { FieldIcon, FilterIcon, TagIcon, UploadIcon, ResultIcon, MetadataIcon, StateIcon } = Icons;
 
-const defaultIconSize = { width: 54, height: 54 };
+const defaultIconStyles = { width: 30, height: 30 };
 
 const listIcons = [
-  { Icon: UploadIcon, page: SOURCE_PAGE, id: 'sourceBtn', iconSize: defaultIconSize },
-  { Icon: FieldIcon, page: PREVIEW_PAGE, id: 'fieldsBtn', iconSize: defaultIconSize },
-  { Icon: ResultIcon, page: STEPS_PAGE, id: 'stepsBtn', iconSize: defaultIconSize },
-  { Icon: ResultIcon, page: RESULT_PAGE, id: 'resultsBtn', iconSize: defaultIconSize },
-  { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn', iconSize: defaultIconSize },
-  { Icon: TagIcon, page: TAGS_PAGE, id: 'tagsBtn', iconSize: defaultIconSize },
-  { Icon: TagIcon, page: STATES_PAGE, id: 'statesBtn', iconSize: defaultIconSize },
-  { Icon: MetadataIcon, page: METADATA_PAGE, id: 'metaDataBtn', iconSize: { width: 30, height: 30 } },
+  { Icon: UploadIcon, page: SOURCE_PAGE, id: 'sourceBtn', iconStyles: defaultIconStyles },
+  { Icon: FieldIcon, page: PREVIEW_PAGE, id: 'fieldsBtn', iconStyles: defaultIconStyles },
+  { Icon: ResultIcon, page: STEPS_PAGE, id: 'stepsBtn', iconStyles: { width: 35, height: 35, marginTop: 1 } },
+  { Icon: ResultIcon, page: RESULT_PAGE, id: 'resultsBtn', iconStyles: { width: 35, height: 35, marginTop: 1 } },
+  { Icon: FilterIcon, page: FILTERS_PAGE, id: 'filtersBtn', iconStyles: { width: 28, height: 28 } },
+  { Icon: TagIcon, page: TAGS_PAGE, id: 'tagsBtn', iconStyles: defaultIconStyles },
+  { Icon: StateIcon, page: STATES_PAGE, id: 'statesBtn', iconStyles: defaultIconStyles },
+  { Icon: MetadataIcon, page: METADATA_PAGE, id: 'metaDataBtn', iconStyles: defaultIconStyles },
 ];
 
 export class DataSourceNavigation extends PureComponent {
@@ -64,14 +64,14 @@ export class DataSourceNavigation extends PureComponent {
   goToPage = page => () => this.props.history.push(`/datasource/${this.props.dataSource.id}/${page}`);
 
   renderButtons = ({ dataSource }) =>
-    listIcons.map(({ Icon, page, id, iconSize }, index) => (
+    listIcons.map(({ Icon, page, id, iconStyles }, index) => (
       <ButtonContainer key={index}>
         <Button
           onClick={this.goToPage(page)}
           active={this.getIsActive(page)}
           disabled={this.getIsDisabled({ dataSource, page })}
         >
-          <Icon id={id} customStyles={iconSize} />
+          <Icon id={id} customStyles={iconStyles} />
         </Button>
         <PageTitle>
           <FormattedMessage {...messages[page]} />
@@ -80,6 +80,10 @@ export class DataSourceNavigation extends PureComponent {
     ));
 
   render() {
-    return <Container hideOnDesktop={this.props.hideOnDesktop}>{this.renderButtons(this.props)}</Container>;
+    return (
+      <Container hideOnDesktop={this.props.hideOnDesktop}>
+        <InnerContainer>{this.renderButtons(this.props)}</InnerContainer>
+      </Container>
+    );
   }
 }

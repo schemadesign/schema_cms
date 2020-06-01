@@ -50,7 +50,7 @@ export class FileUploadComponent extends PureComponent {
           ...getButtonStyles(this.props.disabled),
         }}
       >
-        <UploadIcon />
+        <UploadIcon customStyles={{ width: 30, height: 30 }} />
       </div>
     ),
   };
@@ -117,7 +117,15 @@ export class FileUploadComponent extends PureComponent {
           placeholder,
           disabled,
         })}
-        <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" disabled={disabled} {...filteredProps} />
+        <input
+          style={inputStyles}
+          aria-hidden
+          id={id}
+          multiple={multiple}
+          type="file"
+          disabled={disabled}
+          {...filteredProps}
+        />
       </div>
     );
   }
