@@ -7,6 +7,7 @@ import {
   DATA_SOURCE_STATE_AUTHOR,
   DATA_SOURCE_STATE_CREATED,
   DATA_SOURCE_STATE_TAGS,
+  DATA_SOURCE_STATE_IS_PUBLIC,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 
 export default defineMessages({
@@ -35,7 +36,23 @@ export default defineMessages({
     defaultMessage: 'Created',
   },
   [DATA_SOURCE_STATE_TAGS]: {
-    id: `dataSourceState.editState.${DATA_SOURCE_STATE_TAGS}`,
+    id: `shared.components.dataSourceStateForm.${DATA_SOURCE_STATE_TAGS}`,
     defaultMessage: 'Tags',
+  },
+  [DATA_SOURCE_STATE_IS_PUBLIC]: {
+    id: `shared.components.dataSourceStateForm.${DATA_SOURCE_STATE_IS_PUBLIC}`,
+    defaultMessage: 'Make it Public',
+  },
+  pageAvailability: {
+    id: 'shared.components.dataSourceStateForm.pageAvailability',
+    defaultMessage: 'This State is currently {availability}',
+  },
+  privateCopy: {
+    id: 'shared.components.dataSourceStateForm.privateCopy',
+    defaultMessage: 'Private',
+  },
+  publicCopy: {
+    id: 'shared.components.dataSourceStateForm.publicCopy',
+    defaultMessage: 'Public',
   },
 });

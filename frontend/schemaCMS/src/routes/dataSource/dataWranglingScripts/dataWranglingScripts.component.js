@@ -344,9 +344,9 @@ export class DataWranglingScripts extends PureComponent {
                 <FormattedMessage {...messages.save} />
               </NextButton>
             </NavigationContainer>
-            <DataSourceNavigation {...this.props} hideOnDesktop />
           </Fragment>
         </LoadingWrapper>
+        <DataSourceNavigation {...this.props} hideOnDesktop />
       </DndProvider>
     );
   }

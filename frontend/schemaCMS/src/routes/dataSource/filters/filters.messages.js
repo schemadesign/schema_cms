@@ -14,8 +14,8 @@ export default defineMessages({
     id: 'dataSource.filters.save',
     defaultMessage: 'Save',
   },
-  filters: {
-    id: 'dataSource.view.filters.filters',
-    defaultMessage: '{filters, plural,one {# Filter} other {# Filters}}',
+  filter: {
+    id: 'dataSource.view.filters.filter',
+    defaultMessage: 'filter',
   },
 });

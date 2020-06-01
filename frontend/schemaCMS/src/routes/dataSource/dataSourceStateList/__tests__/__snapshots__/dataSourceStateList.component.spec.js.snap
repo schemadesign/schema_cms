@@ -7,6 +7,148 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="States"
   />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="datasource.dataSourceStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="States"
+        id="datasource.dataSourceStateList.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
+  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -47,14 +189,27 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       }
     />
   </ContextHeader>
-  <styled.div>
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createStateDesktopBtn"
-      onClick={[Function]}
-    />
-  </styled.div>
+  <CounterHeader
+    copy="state"
+    count={2}
+    right={
+      <ForwardRef(styled.div)>
+        <PlusButton
+          customStyles={
+            Object {
+              "height": 40,
+              "minHeight": 40,
+              "width": 40,
+            }
+          }
+          hideOnDesktop={false}
+          id="createStateDesktopBtn"
+          onClick={[Function]}
+          type="button"
+        />
+      </ForwardRef(styled.div)>
+    }
+  />
   <LoadingWrapper
     error={null}
     loading={false}
@@ -158,19 +313,29 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
-  <NavigationContainer
-    contentStyles={null}
-    fixed={true}
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "id": "1",
+        "name": "name",
+      }
+    }
     hideOnDesktop={true}
-    right={false}
-  >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createStateBtn"
-      onClick={[Function]}
-    />
-  </NavigationContainer>
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+        "url": "/",
+      }
+    }
+  />
 </styled.div>
 `;
 
@@ -180,6 +345,148 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
     defer={true}
     encodeSpecialCharacters={true}
     title="States"
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="datasource.dataSourceStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="States"
+        id="datasource.dataSourceStateList.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -221,14 +528,27 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       }
     />
   </ContextHeader>
-  <styled.div>
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createStateDesktopBtn"
-      onClick={[Function]}
-    />
-  </styled.div>
+  <CounterHeader
+    copy="state"
+    count={0}
+    right={
+      <ForwardRef(styled.div)>
+        <PlusButton
+          customStyles={
+            Object {
+              "height": 40,
+              "minHeight": 40,
+              "width": 40,
+            }
+          }
+          hideOnDesktop={false}
+          id="createStateDesktopBtn"
+          onClick={[Function]}
+          type="button"
+        />
+      </ForwardRef(styled.div)>
+    }
+  />
   <LoadingWrapper
     error={null}
     loading={false}
@@ -243,19 +563,29 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
   >
     <styled.section />
   </LoadingWrapper>
-  <NavigationContainer
-    contentStyles={null}
-    fixed={true}
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "id": "1",
+        "name": "name",
+      }
+    }
     hideOnDesktop={true}
-    right={false}
-  >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createStateBtn"
-      onClick={[Function]}
-    />
-  </NavigationContainer>
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+        "url": "/",
+      }
+    }
+  />
 </styled.div>
 `;
 
@@ -265,6 +595,148 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
     defer={true}
     encodeSpecialCharacters={true}
     title="States"
+  />
+  <MobileMenu
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="datasource.dataSourceStateList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="States"
+        id="datasource.dataSourceStateList.title"
+        values={Object {}}
+      />
+    }
+    options={
+      Array [
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Projects"
+            id="project.view.projectsListPage"
+            values={Object {}}
+          />,
+          "to": "/project/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersPageNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Users"
+            id="project.view.usersPage"
+            values={Object {}}
+          />,
+          "to": "/user/",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "projectDetailsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project details"
+            id="project.view.projectDetails"
+            values={Object {}}
+          />,
+          "to": "/project/1",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "dataSourceNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Data Sources"
+            id="project.view.projectDataSources"
+            values={Object {}}
+          />,
+          "to": "/project/1/datasource",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "stateNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="States"
+            id="project.view.states"
+            values={Object {}}
+          />,
+          "to": "/project/1/state",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "tagsNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Tags"
+            id="project.view.tags"
+            values={Object {}}
+          />,
+          "to": "/project/1/tag-categories",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "usersNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Project Users"
+            id="project.view.projectUsersPage"
+            values={Object {}}
+          />,
+          "to": "/project/1/user",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+            "editor",
+          ],
+          "id": "contentNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Content"
+            id="project.view.content"
+            values={Object {}}
+          />,
+          "to": "/project/1/content",
+          "type": "link_item",
+        },
+        Object {
+          "allowedRoles": Array [
+            "admin",
+          ],
+          "id": "templatesNavBtn",
+          "label": <FormattedMessage
+            defaultMessage="Templates"
+            id="project.view.templates"
+            values={Object {}}
+          />,
+          "to": "/project/1/templates",
+          "type": "link_item",
+        },
+      ]
+    }
   />
   <ContextHeader
     subtitle={
@@ -306,14 +778,27 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       }
     />
   </ContextHeader>
-  <styled.div>
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createStateDesktopBtn"
-      onClick={[Function]}
-    />
-  </styled.div>
+  <CounterHeader
+    copy="state"
+    count={2}
+    right={
+      <ForwardRef(styled.div)>
+        <PlusButton
+          customStyles={
+            Object {
+              "height": 40,
+              "minHeight": 40,
+              "width": 40,
+            }
+          }
+          hideOnDesktop={false}
+          id="createStateDesktopBtn"
+          onClick={[Function]}
+          type="button"
+        />
+      </ForwardRef(styled.div)>
+    }
+  />
   <LoadingWrapper
     error={null}
     loading={true}
@@ -417,18 +902,28 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
-  <NavigationContainer
-    contentStyles={null}
-    fixed={true}
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "id": "1",
+        "name": "name",
+      }
+    }
     hideOnDesktop={true}
-    right={false}
-  >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createStateBtn"
-      onClick={[Function]}
-    />
-  </NavigationContainer>
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+        "url": "/",
+      }
+    }
+  />
 </styled.div>
 `;

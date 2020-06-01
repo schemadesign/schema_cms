@@ -4,17 +4,21 @@ import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Typography } from 'schemaUI';
 
-import { Container, PlusButtonWrapper } from './dataSourceStateList.styles';
+import { Container } from './dataSourceStateList.styles';
 import messages from './dataSourceStateList.messages';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { PlusButton } from '../../../shared/components/navigation';
 import { Description, descriptionStyles, HeaderItem, HeaderList, titleStyles } from '../../project/list/list.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getProjectMenuOptions } from '../../project/project.constants';
+import { CounterHeader } from '../../../shared/components/counterHeader';
+import { mobilePlusStyles, PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
 
 const { P } = Typography;
 
@@ -87,21 +91,38 @@ export class DataSourceStateList extends PureComponent {
   renderList = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   render() {
-    const { states, dataSource, match, history } = this.props;
+    const { states, dataSource, match, history, userRole, project, intl } = this.props;
     const { loading, error } = this.state;
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getProjectMenuOptions(project.id);
+    const stateCopy = intl.formatMessage(messages.state);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <ContextHeader
-          title={<FormattedMessage {...messages.title} />}
-          subtitle={<FormattedMessage {...messages.subTitle} />}
-        >
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+        />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation history={history} match={match} dataSource={dataSource} />
         </ContextHeader>
-        <PlusButtonWrapper>
-          <PlusButton id="createStateDesktopBtn" onClick={this.handleCreateState} />
-        </PlusButtonWrapper>
+        <CounterHeader
+          count={states.length}
+          copy={stateCopy}
+          right={
+            <PlusContainer>
+              <PlusButton
+                id="createStateDesktopBtn"
+                customStyles={mobilePlusStyles}
+                onClick={this.handleCreateState}
+                type="button"
+              />
+            </PlusContainer>
+          }
+        />
         <LoadingWrapper
           loading={loading}
           error={error}
@@ -110,9 +131,7 @@ export class DataSourceStateList extends PureComponent {
         >
           {this.renderList(states)}
         </LoadingWrapper>
-        <NavigationContainer fixed hideOnDesktop>
-          <PlusButton id="createStateBtn" onClick={this.handleCreateState} />
-        </NavigationContainer>
+        <DataSourceNavigation hideOnDesktop history={history} match={match} dataSource={dataSource} />
       </Container>
     );
   }
