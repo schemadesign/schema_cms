@@ -79,9 +79,15 @@ class CustomElement(BaseElement):
 
 class ImageElement(BaseElement):
     def to_representation(self, value):
+        if not value:
+            return {}
+
         return {"file": value.url, "file_name": self.get_file_name(value.name)}
 
     def to_internal_value(self, data):
+        if not data:
+            return None
+
         file = data["file"]
         file_name = data["file_name"]
 
