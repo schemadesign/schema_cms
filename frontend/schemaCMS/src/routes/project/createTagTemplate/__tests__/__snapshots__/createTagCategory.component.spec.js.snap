@@ -8,14 +8,14 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createTagCategory.subTitle"
+        id="project.createTagTemplate.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Tag Category"
-        id="project.createTagCategory.subTitle"
+        id="project.createTagTemplate.subTitle"
         values={Object {}}
       />
     }
@@ -150,14 +150,14 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createTagCategory.subTitle"
+        id="project.createTagTemplate.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Tag Category"
-        id="project.createTagCategory.subTitle"
+        id="project.createTagTemplate.subTitle"
         values={Object {}}
       />
     }
@@ -261,7 +261,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Cancel"
-        id="project.createTagCategory.cancel"
+        id="project.createTagTemplate.cancel"
         values={Object {}}
       />
     </BackButton>
@@ -272,7 +272,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Save"
-        id="project.createTagCategory.saveTag"
+        id="project.createTagTemplate.saveTag"
         values={Object {}}
       />
     </NextButton>

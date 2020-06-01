@@ -38,18 +38,6 @@ Array [
       >
         <a
           className="sc-fznLPX IXRsc"
-          href="/project/1/tag-categories"
-          id="tag-categoriesTab"
-          onClick={[Function]}
-        >
-          Tags
-        </a>
-      </div>
-      <div
-        className="sc-fznAgC iNwcnF"
-      >
-        <a
-          className="sc-fznLPX IXRsc"
           href="/project/1/content"
           id="contentTab"
           onClick={[Function]}

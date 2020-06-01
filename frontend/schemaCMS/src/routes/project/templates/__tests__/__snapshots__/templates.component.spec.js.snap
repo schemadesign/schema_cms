@@ -205,12 +205,12 @@ exports[`Templates: Component should render correctly 1`] = `
           },
           Object {
             "header": Object {
-              "defaultMessage": "Filter Templates",
-              "id": "project.templates.filter",
+              "defaultMessage": "Tag Templates",
+              "id": "project.templates.tag",
             },
-            "id": "filterTemplates",
-            "to": "/project/projectId/filter-templates",
-            "value": 0,
+            "id": "tagTemplates",
+            "to": "/project/projectId/tag-templates",
+            "value": undefined,
           },
           Object {
             "header": Object {

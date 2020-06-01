@@ -7,152 +7,47 @@ exports[`TagCategories: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Tag Categories"
   />
-  <MobileMenu
-    active="tagsNavBtn"
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Categories"
-        id="project.tagCategories.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="Tag"
-        id="project.tagCategories.title"
-        values={Object {}}
-      />
-    }
-    options={
+  <ProjectBreadcrumbs
+    items={
       Array [
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
             values={Object {}}
           />,
-          "to": "/project/",
-          "type": "link_item",
         },
         Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "stateNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="States"
-            id="project.view.states"
-            values={Object {}}
-          />,
-          "to": "/project/1/state",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "h3": <FormattedMessage
             defaultMessage="Templates"
-            id="project.view.templates"
+            id="shared.components.projectBreadcrumbs.templates"
             values={Object {}}
           />,
-          "to": "/project/1/templates",
-          "type": "link_item",
+          "path": "/project/1/templates",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": <FormattedMessage
+            defaultMessage="Tags Template"
+            id="shared.components.projectBreadcrumbs.tagsTemplate"
+            values={Object {}}
+          />,
+          "path": "/project/1/tags-templates",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
         },
       ]
     }
-  />
-  <ProjectTabs
-    active="tag-categories"
-    url="/project/1"
   />
   <ContextHeader
     subtitle={
@@ -182,12 +77,6 @@ exports[`TagCategories: Component should render correctly 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <CounterHeader
-      copy="Tag Category"
-      count={2}
-      customPlural="Tag Categories"
-      moveToTop={true}
-    />
     <styled.section>
       <Styled(Component)
         footerComponent={
@@ -280,152 +169,47 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
     encodeSpecialCharacters={true}
     title="Tag Categories"
   />
-  <MobileMenu
-    active="tagsNavBtn"
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Categories"
-        id="project.tagCategories.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="Tag"
-        id="project.tagCategories.title"
-        values={Object {}}
-      />
-    }
-    options={
+  <ProjectBreadcrumbs
+    items={
       Array [
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
             values={Object {}}
           />,
-          "to": "/project/",
-          "type": "link_item",
         },
         Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "stateNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="States"
-            id="project.view.states"
-            values={Object {}}
-          />,
-          "to": "/project/1/state",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "h3": <FormattedMessage
             defaultMessage="Templates"
-            id="project.view.templates"
+            id="shared.components.projectBreadcrumbs.templates"
             values={Object {}}
           />,
-          "to": "/project/1/templates",
-          "type": "link_item",
+          "path": "/project/1/templates",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": <FormattedMessage
+            defaultMessage="Tags Template"
+            id="shared.components.projectBreadcrumbs.tagsTemplate"
+            values={Object {}}
+          />,
+          "path": "/project/1/tags-templates",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
         },
       ]
     }
-  />
-  <ProjectTabs
-    active="tag-categories"
-    url="/project/1"
   />
   <ContextHeader
     subtitle={
@@ -455,12 +239,6 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
     noData={false}
     noDataContent={null}
   >
-    <CounterHeader
-      copy="Tag Category"
-      count={2}
-      customPlural="Tag Categories"
-      moveToTop={true}
-    />
     <styled.section>
       <Styled(Component)
         footerComponent={
@@ -553,152 +331,47 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
     encodeSpecialCharacters={true}
     title="Tag Categories"
   />
-  <MobileMenu
-    active="tagsNavBtn"
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Categories"
-        id="project.tagCategories.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="Tag"
-        id="project.tagCategories.title"
-        values={Object {}}
-      />
-    }
-    options={
+  <ProjectBreadcrumbs
+    items={
       Array [
         Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
             values={Object {}}
           />,
-          "to": "/project/",
-          "type": "link_item",
         },
         Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "stateNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="States"
-            id="project.view.states"
-            values={Object {}}
-          />,
-          "to": "/project/1/state",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "h3": <FormattedMessage
             defaultMessage="Templates"
-            id="project.view.templates"
+            id="shared.components.projectBreadcrumbs.templates"
             values={Object {}}
           />,
-          "to": "/project/1/templates",
-          "type": "link_item",
+          "path": "/project/1/templates",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": <FormattedMessage
+            defaultMessage="Tags Template"
+            id="shared.components.projectBreadcrumbs.tagsTemplate"
+            values={Object {}}
+          />,
+          "path": "/project/1/tags-templates",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
         },
       ]
     }
-  />
-  <ProjectTabs
-    active="tag-categories"
-    url="/project/1"
   />
   <ContextHeader
     subtitle={
@@ -728,12 +401,6 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <CounterHeader
-      copy="Tag Category"
-      count={2}
-      customPlural="Tag Categories"
-      moveToTop={true}
-    />
     <styled.section>
       <Styled(Component)
         footerComponent={

@@ -75,6 +75,6 @@ describe('TagCategory: Component', () => {
       .at(0)
       .simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/tag-categories');
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/tag-templates');
   });
 });
