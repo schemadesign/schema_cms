@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'project.templates.state',
     defaultMessage: 'State Templates',
   },
+  tag: {
+    id: 'project.templates.tag',
+    defaultMessage: 'Tag Templates',
+  },
 });

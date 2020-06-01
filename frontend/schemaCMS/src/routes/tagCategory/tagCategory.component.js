@@ -29,7 +29,7 @@ const getBreadcrumbsItems = (project, { name, id }) => [
     h3: project.title,
   },
   {
-    path: `/project/${project.id}/tag-categories`,
+    path: `/project/${project.id}/tag-templates`,
     span: tabMessage,
     h3: tagsMessage,
   },

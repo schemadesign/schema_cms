@@ -58,10 +58,10 @@ export class Templates extends PureComponent {
         id: 'pageTemplates',
       },
       {
-        header: messages.filter,
-        value: templates.filters,
-        to: `/project/${projectId}/filter-templates`,
-        id: 'filterTemplates',
+        header: messages.tag,
+        value: templates.tags,
+        to: `/project/${projectId}/tag-templates`,
+        id: 'tagTemplates',
       },
       {
         header: messages.state,

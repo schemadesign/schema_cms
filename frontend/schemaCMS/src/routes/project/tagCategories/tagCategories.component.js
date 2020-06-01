@@ -7,17 +7,39 @@ import messages from './tagCategories.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
+import { getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
-import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
-import { getProjectMenuOptions, PROJECT_TAG_CATEGORIES_ID } from '../project.constants';
-import { TAG_CATEGORIES } from '../../../shared/components/projectTabs/projectTabs.constants';
-import { ProjectTabs } from '../../../shared/components/projectTabs';
-import { CounterHeader } from '../../../shared/components/counterHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { CardHeader } from '../../../shared/components/cardHeader';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
+import {
+  templatesMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  tagsMessage,
+  tagsTemplateMessage,
+  tabMessage,
+} from '../../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = project => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/templates`,
+    span: tabMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/tags-templates`,
+    active: true,
+    span: tagsMessage,
+    h3: tagsTemplateMessage,
+  },
+];
 
 export class TagCategories extends PureComponent {
   static propTypes = {
@@ -78,16 +100,10 @@ export class TagCategories extends PureComponent {
   };
 
   renderContent = () => {
-    const { tagCategories = [], intl } = this.props;
+    const { tagCategories = [] } = this.props;
 
     return (
       <Fragment>
-        <CounterHeader
-          moveToTop
-          copy={intl.formatMessage(messages.tagCategory)}
-          customPlural={intl.formatMessage(messages.tagCategories)}
-          count={tagCategories.length}
-        />
         <ListContainer>{tagCategories.map(this.renderTagCategory)}</ListContainer>
         <NavigationContainer fixed>
           <BackArrowButton id="backBtn" hideOnDesktop onClick={this.handleShowProject} />
@@ -99,21 +115,14 @@ export class TagCategories extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { project, userRole, match } = this.props;
+    const { project } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const menuOptions = getProjectMenuOptions(project.id);
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <MobileMenu
-          headerTitle={headerTitle}
-          headerSubtitle={headerSubtitle}
-          options={filterMenuOptions(menuOptions, userRole)}
-          active={PROJECT_TAG_CATEGORIES_ID}
-        />
-        <ProjectTabs active={TAG_CATEGORIES} url={`/project/${match.params.projectId}`} />
+        <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton onClick={this.handleCreateTag} />
         </ContextHeader>

@@ -7,7 +7,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { compose } from 'ramda';
 import { withFormik } from 'formik';
 
-import { CreateTagCategory } from './createTagCategory.component';
+import { CreateTagTemplate } from './createTagTemplate.component';
 import { TagCategoryRoutines } from '../../../modules/tagCategory';
 import { selectUserRole } from '../../../modules/userProfile';
 import {
@@ -18,7 +18,7 @@ import {
 } from '../../../modules/tagCategory/tagCategory.constants';
 import reportError from '../../../shared/utils/reportError';
 import { errorMessageParser, getMatchParam, mapAndAddOrder } from '../../../shared/utils/helpers';
-import messages from './createTagCategory.messages';
+import messages from './createTagTemplate.messages';
 import { selectProject } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
@@ -70,4 +70,4 @@ export default compose(
       }
     },
   })
-)(CreateTagCategory);
+)(CreateTagTemplate);
