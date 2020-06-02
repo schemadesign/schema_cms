@@ -211,17 +211,6 @@ exports[`CreateSection: Component should render correctly 1`] = `
             className="sc-Axmtr fdTiXf"
           >
             <a
-              href="/project/projectId/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
-            </a>
-          </div>
-          <div
-            className="sc-Axmtr fdTiXf"
-          >
-            <a
               href="/project/projectId/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}

@@ -23,6 +23,7 @@ import { Form as FormUI } from 'schemaUI';
 import { useEffectOnce } from 'react-use';
 import { useParams, useLocation, useHistory } from 'react-router';
 import { useFormik } from 'formik';
+import { asMutable } from 'seamless-immutable';
 
 import { Form, RangeInput, RangeValues } from './stateFilter.styles';
 import messages from './stateFilter.messages';
@@ -51,6 +52,7 @@ import {
 } from '../../../modules/filter/filter.constants';
 import { RangeSlider } from '../../../shared/components/rangeSlider';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { MultiSelect } from '../../../shared/components/form/multiSelect/multiSelect.component';
 
 const { CheckboxGroup, Checkbox, Label, Switch } = FormUI;
 
@@ -111,12 +113,8 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
     setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, [value]);
   };
 
-  const handleCheckboxChange = e => {
-    const { value, checked } = e.target;
-    const setValues = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)));
-
-    setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, setValues(checked));
-  };
+  const handleMultiSelectChange = value =>
+    setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, value.map(({ value }) => value));
 
   const handleRangeChange = e => {
     const { target } = e;
@@ -234,28 +232,26 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
     />
   );
 
-  const renderCheckbox = (name, index) => (
-    <Checkbox key={index} id={`checkbox-${index}`} value={name}>
-      {name}
-    </Checkbox>
-  );
+  const mutableFieldsInfo = asMutable(fieldsInfo);
+  const options = mutableFieldsInfo.map(item => ({ value: item, label: item }));
+  const value = values[DATA_SOURCE_STATE_FILTER_VALUES].map(item => ({ value: item, label: item }));
+  const isLastOption = options.length - mutableFieldsInfo.length === 1;
 
-  const renderCheckboxes = () => (
-    <Fragment>
-      <Label>
-        <FormattedMessage {...messages[DATA_SOURCE_STATE_FILTER_VALUES]} />
-      </Label>
-      <CheckboxGroup
-        onChange={handleCheckboxChange}
-        name={DATA_SOURCE_STATE_FILTER_VALUES}
-        customStyles={{ borderTop: 'none' }}
-        value={values[DATA_SOURCE_STATE_FILTER_VALUES]}
-      >
-        {fieldsInfo.map(renderCheckbox)}
-      </CheckboxGroup>
-    </Fragment>
-  );
-
+  const renderMultiSelect = () => {
+    return (
+      <Fragment>
+        <Label>
+          <FormattedMessage {...messages[DATA_SOURCE_STATE_FILTER_VALUES]} />
+        </Label>
+        <MultiSelect
+          options={options}
+          value={value}
+          onChange={handleMultiSelectChange}
+          closeMenuOnSelect={isLastOption}
+        />
+      </Fragment>
+    );
+  };
   const renderSwitch = () => (
     <Switch
       value={values[DATA_SOURCE_STATE_FILTER_VALUES][0]}
@@ -268,7 +264,7 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
   const renderValue = cond([
     [propEq('filterType', FILTER_TYPE_RANGE), renderRange],
     [propEq('filterType', FILTER_TYPE_SELECT), renderSelect],
-    [propEq('filterType', FILTER_TYPE_CHECKBOX), renderCheckboxes],
+    [propEq('filterType', FILTER_TYPE_CHECKBOX), renderMultiSelect],
     [propEq('filterType', FILTER_TYPE_BOOL), renderSwitch],
     [T, renderInput],
   ]);
