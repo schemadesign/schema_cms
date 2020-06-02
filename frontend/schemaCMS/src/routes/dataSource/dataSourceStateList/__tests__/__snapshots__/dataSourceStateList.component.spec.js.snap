@@ -82,20 +82,6 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
-          ],
-          "id": "stateNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="States"
-            id="project.view.states"
-            values={Object {}}
-          />,
-          "to": "/project/1/state",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
           ],
           "id": "tagsNavBtn",
           "label": <FormattedMessage
@@ -421,20 +407,6 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
         Object {
           "allowedRoles": Array [
             "admin",
-            "editor",
-          ],
-          "id": "stateNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="States"
-            id="project.view.states"
-            values={Object {}}
-          />,
-          "to": "/project/1/state",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
           ],
           "id": "tagsNavBtn",
           "label": <FormattedMessage
@@ -666,20 +638,6 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             values={Object {}}
           />,
           "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "stateNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="States"
-            id="project.view.states"
-            values={Object {}}
-          />,
-          "to": "/project/1/state",
           "type": "link_item",
         },
         Object {

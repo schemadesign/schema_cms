@@ -3,17 +3,17 @@
 exports[`EditState: Component should render correctly 1`] = `
 Array [
   <div
-    className="sc-fzoaKM hyXHRq"
+    className="sc-fzomuh eGtsA-d"
     id="tabsContainer"
   >
     <div
-      className="sc-fzpkqZ bQPMZv"
+      className="sc-fznAgC dYqEsc"
     >
       <div
-        className="sc-fznAgC iNwcnF"
+        className="sc-fznLPX gSvuEk"
       >
         <a
-          className="sc-fznLPX IXRsc"
+          className="sc-fzoaKM eryeO"
           href="/project/1"
           id="settingsTab"
           onClick={[Function]}
@@ -22,10 +22,10 @@ Array [
         </a>
       </div>
       <div
-        className="sc-fznAgC gVdGSW"
+        className="sc-fznLPX jvVeGb"
       >
         <a
-          className="sc-fznLPX IXRsc"
+          className="sc-fzoaKM eryeO"
           href="/project/1/datasource"
           id="sourcesTab"
           onClick={[Function]}
@@ -34,10 +34,10 @@ Array [
         </a>
       </div>
       <div
-        className="sc-fznAgC iNwcnF"
+        className="sc-fznLPX gSvuEk"
       >
         <a
-          className="sc-fznLPX IXRsc"
+          className="sc-fzoaKM eryeO"
           href="/project/1/content"
           id="contentTab"
           onClick={[Function]}
@@ -46,10 +46,10 @@ Array [
         </a>
       </div>
       <div
-        className="sc-fznAgC iNwcnF"
+        className="sc-fznLPX gSvuEk"
       >
         <a
-          className="sc-fznLPX IXRsc"
+          className="sc-fzoaKM eryeO"
           href="/project/1/templates"
           id="templatesTab"
           onClick={[Function]}
@@ -58,10 +58,10 @@ Array [
         </a>
       </div>
       <div
-        className="sc-fznAgC iNwcnF"
+        className="sc-fznLPX gSvuEk"
       >
         <a
-          className="sc-fznLPX IXRsc"
+          className="sc-fzoaKM eryeO"
           href="/project/1/user"
           id="usersTab"
           onClick={[Function]}
@@ -268,17 +268,6 @@ Array [
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-AxmLO fgtQMX"
-          >
-            <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
             </a>
           </div>
           <div
@@ -781,13 +770,13 @@ Array [
       No Filters available
     </div>
     <div
-      className="sc-fzqPZZ eYLLnG"
+      className="sc-fzoxKX leBZQz"
     >
       <div
-        className="sc-fzoxKX emUUPI"
+        className="sc-fzoKki iMDgfq"
       >
         <div
-          className="sc-fzpkJw fkIOqD"
+          className="sc-fznzOf dFkYHY"
         >
           <div>
             <input
@@ -838,23 +827,23 @@ Array [
             </label>
           </div>
           <div
-            className="sc-fzoYkl fyQALM"
+            className="sc-fzpkJw equNfj"
           >
             <label
-              className="sc-fzoKki jA-DpxQ"
+              className="sc-fzoYkl hWjkVf"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-fznMnq hcbuzG"
+              className="sc-fzoant iXQrWS"
             >
               This State is currently Private
             </span>
           </div>
         </div>
         <div
-          className="sc-fznzOf eCsiAV"
+          className="sc-fznMnq HCtiM"
           id="removeState"
           onClick={[Function]}
         >

@@ -441,95 +441,99 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         Colors
       </div>
       <div
-        className=" css-2b097c-container"
-        onKeyDown={[Function]}
+        className="sc-fzozJi jxgYyc"
       >
         <div
-          className=" css-17k7d72-control"
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
+          className=" css-2b097c-container"
+          onKeyDown={[Function]}
         >
           <div
-            className=" css-193kkzd-ValueContainer"
+            className=" css-17k7d72-control"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
           >
             <div
-              className=" css-1wa3eu0-placeholder"
-            >
-              Select...
-            </div>
-            <div
-              className="css-14m14bb-Input"
+              className=" css-193kkzd-ValueContainer"
             >
               <div
-                className=""
-                style={
-                  Object {
-                    "display": "inline-block",
-                  }
-                }
+                className=" css-1wa3eu0-placeholder"
               >
-                <input
-                  aria-autocomplete="list"
-                  autoCapitalize="none"
-                  autoComplete="off"
-                  autoCorrect="off"
-                  disabled={false}
-                  id="react-select-2-input"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  spellCheck="false"
-                  style={
-                    Object {
-                      "background": 0,
-                      "border": 0,
-                      "boxSizing": "content-box",
-                      "color": "inherit",
-                      "fontSize": "inherit",
-                      "label": "input",
-                      "opacity": 1,
-                      "outline": 0,
-                      "padding": 0,
-                      "width": "1px",
-                    }
-                  }
-                  tabIndex="0"
-                  type="text"
-                  value=""
-                />
+                Select...
+              </div>
+              <div
+                className="css-14m14bb-Input"
+              >
                 <div
+                  className=""
                   style={
                     Object {
-                      "height": 0,
-                      "left": 0,
-                      "overflow": "scroll",
-                      "position": "absolute",
-                      "top": 0,
-                      "visibility": "hidden",
-                      "whiteSpace": "pre",
+                      "display": "inline-block",
                     }
                   }
                 >
-                  
+                  <input
+                    aria-autocomplete="list"
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    disabled={false}
+                    id="react-select-2-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    spellCheck="false"
+                    style={
+                      Object {
+                        "background": 0,
+                        "border": 0,
+                        "boxSizing": "content-box",
+                        "color": "inherit",
+                        "fontSize": "inherit",
+                        "label": "input",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "1px",
+                      }
+                    }
+                    tabIndex="0"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className=" css-1hb7zxy-IndicatorsContainer"
-          >
-            <span
-              className=" css-43ykx9-indicatorSeparator"
-            />
             <div
-              aria-hidden="true"
-              className=" css-tlfecz-indicatorContainer"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
+              className=" css-1hb7zxy-IndicatorsContainer"
             >
-              0
-              /
-              4
+              <span
+                className=" css-43ykx9-indicatorSeparator"
+              />
+              <div
+                aria-hidden="true"
+                className=" css-tlfecz-indicatorContainer"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+              >
+                0
+                /
+                4
+              </div>
             </div>
           </div>
         </div>
@@ -545,95 +549,99 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         Countries
       </div>
       <div
-        className=" css-2b097c-container"
-        onKeyDown={[Function]}
+        className="sc-fzozJi jxgYyc"
       >
         <div
-          className=" css-17k7d72-control"
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
+          className=" css-2b097c-container"
+          onKeyDown={[Function]}
         >
           <div
-            className=" css-193kkzd-ValueContainer"
+            className=" css-17k7d72-control"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
           >
             <div
-              className=" css-1wa3eu0-placeholder"
-            >
-              Select...
-            </div>
-            <div
-              className="css-14m14bb-Input"
+              className=" css-193kkzd-ValueContainer"
             >
               <div
-                className=""
-                style={
-                  Object {
-                    "display": "inline-block",
-                  }
-                }
+                className=" css-1wa3eu0-placeholder"
               >
-                <input
-                  aria-autocomplete="list"
-                  autoCapitalize="none"
-                  autoComplete="off"
-                  autoCorrect="off"
-                  disabled={false}
-                  id="react-select-3-input"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  spellCheck="false"
-                  style={
-                    Object {
-                      "background": 0,
-                      "border": 0,
-                      "boxSizing": "content-box",
-                      "color": "inherit",
-                      "fontSize": "inherit",
-                      "label": "input",
-                      "opacity": 1,
-                      "outline": 0,
-                      "padding": 0,
-                      "width": "1px",
-                    }
-                  }
-                  tabIndex="0"
-                  type="text"
-                  value=""
-                />
+                Select...
+              </div>
+              <div
+                className="css-14m14bb-Input"
+              >
                 <div
+                  className=""
                   style={
                     Object {
-                      "height": 0,
-                      "left": 0,
-                      "overflow": "scroll",
-                      "position": "absolute",
-                      "top": 0,
-                      "visibility": "hidden",
-                      "whiteSpace": "pre",
+                      "display": "inline-block",
                     }
                   }
                 >
-                  
+                  <input
+                    aria-autocomplete="list"
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    disabled={false}
+                    id="react-select-3-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    spellCheck="false"
+                    style={
+                      Object {
+                        "background": 0,
+                        "border": 0,
+                        "boxSizing": "content-box",
+                        "color": "inherit",
+                        "fontSize": "inherit",
+                        "label": "input",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "1px",
+                      }
+                    }
+                    tabIndex="0"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className=" css-1hb7zxy-IndicatorsContainer"
-          >
-            <span
-              className=" css-43ykx9-indicatorSeparator"
-            />
             <div
-              aria-hidden="true"
-              className=" css-tlfecz-indicatorContainer"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
+              className=" css-1hb7zxy-IndicatorsContainer"
             >
-              0
-              /
-              1
+              <span
+                className=" css-43ykx9-indicatorSeparator"
+              />
+              <div
+                aria-hidden="true"
+                className=" css-tlfecz-indicatorContainer"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+              >
+                0
+                /
+                1
+              </div>
             </div>
           </div>
         </div>
@@ -709,7 +717,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzplWN dSyLlY"
+          className="sc-fznyAO hciYNw"
           id="filterName-0"
           onClick={[Function]}
         >
@@ -795,7 +803,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzplWN dSyLlY"
+          className="sc-fznyAO hciYNw"
           id="filterName-1"
           onClick={[Function]}
         >
@@ -881,7 +889,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzplWN dSyLlY"
+          className="sc-fznyAO hciYNw"
           id="filterName-2"
           onClick={[Function]}
         >
@@ -927,13 +935,13 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznyAO cGTQdW"
+    className="sc-fznKkj jzAVAz"
   >
     <div
-      className="sc-fznKkj gCFnhA"
+      className="sc-fznZeY dEuXik"
     >
       <div
-        className="sc-fzqBZW fPxPmL"
+        className="sc-fzqNJr cFQAzi"
       >
         <div>
           <input
@@ -985,16 +993,16 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-fzokOt eBZAuu"
+          className="sc-fzqBZW kizXDr"
         >
           <label
-            className="sc-fznZeY fOlpei"
+            className="sc-fzokOt eDgQNZ"
             htmlFor="isPublic"
           >
             Make it Public
           </label>
           <span
-            className="sc-fzoyAV dBxnsX"
+            className="sc-fzoLag dfxCT"
           >
             This State is currently Private
           </span>

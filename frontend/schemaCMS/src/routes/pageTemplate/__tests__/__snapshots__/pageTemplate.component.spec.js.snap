@@ -211,17 +211,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
-            </a>
-          </div>
-          <div
-            className="sc-AxheI jTLCNQ"
-          >
-            <a
               href="/project/1/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}

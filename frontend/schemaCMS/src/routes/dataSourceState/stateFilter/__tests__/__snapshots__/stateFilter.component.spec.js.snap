@@ -206,17 +206,6 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fzpans bekPA"
-          >
-            <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
-            </a>
-          </div>
-          <div
             className="sc-fzpans crRsct"
           >
             <a
@@ -611,17 +600,6 @@ Array [
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fzpans bekPA"
-          >
-            <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
             </a>
           </div>
           <div
@@ -1022,17 +1000,6 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fzpans bekPA"
-          >
-            <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
-            </a>
-          </div>
-          <div
             className="sc-fzpans crRsct"
           >
             <a
@@ -1427,17 +1394,6 @@ Array [
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fzpans bekPA"
-          >
-            <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
             </a>
           </div>
           <div

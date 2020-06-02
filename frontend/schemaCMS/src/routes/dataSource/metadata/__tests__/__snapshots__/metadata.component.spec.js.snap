@@ -207,17 +207,6 @@ exports[`Metadata: Component should render correctly 1`] = `
             className="sc-fzoLsD kppjAR"
           >
             <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
-            </a>
-          </div>
-          <div
-            className="sc-fzoLsD kppjAR"
-          >
-            <a
               href="/project/1/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}
