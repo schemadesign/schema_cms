@@ -50,13 +50,6 @@ export const getProjectMenuOptions = projectId => [
     allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
   },
   {
-    label: <FormattedMessage {...messages.states} />,
-    to: `/project/${projectId}/state`,
-    id: DATA_SOURCE_STATE_ID,
-    type: LINK_ITEM,
-    allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
-  },
-  {
     label: <FormattedMessage {...messages.tags} />,
     to: `/project/${projectId}/tag-categories`,
     id: PROJECT_TAG_CATEGORIES_ID,

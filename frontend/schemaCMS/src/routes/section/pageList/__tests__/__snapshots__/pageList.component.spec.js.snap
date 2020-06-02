@@ -211,17 +211,6 @@ exports[`PageList: Component should render correctly 1`] = `
             className="sc-Axmtr fdTiXf"
           >
             <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
-            </a>
-          </div>
-          <div
-            className="sc-Axmtr fdTiXf"
-          >
-            <a
               href="/project/1/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}

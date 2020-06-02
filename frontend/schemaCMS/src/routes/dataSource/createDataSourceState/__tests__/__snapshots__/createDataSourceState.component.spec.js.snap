@@ -368,13 +368,13 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       No Filters available
     </div>
     <div
-      className="sc-fzoiQi hbbwvh"
+      className="sc-fzqARJ hXitkL"
     >
       <div
-        className="sc-fzqARJ clXtQI"
+        className="sc-fzqNqU ixUdhn"
       >
         <div
-          className="sc-fzoNJl cHszPy"
+          className="sc-fzoXWK Vwzte"
         >
           <div>
             <input
@@ -426,16 +426,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fzoyTs fKSkws"
+            className="sc-fzoNJl iQUriS"
           >
             <label
-              className="sc-fzqNqU fjnSB"
+              className="sc-fzoyTs bkzHbn"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-fzpmMD bZzUta"
+              className="sc-fznxKY jgBhRa"
             >
               This State is currently Private
             </span>

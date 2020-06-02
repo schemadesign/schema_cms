@@ -211,17 +211,6 @@ exports[`EditPage: Component should render correctly 1`] = `
             className="sc-AxheI jTLCNQ"
           >
             <a
-              href="/project/1/state"
-              id="stateNavBtn"
-              onClick={[Function]}
-            >
-              States
-            </a>
-          </div>
-          <div
-            className="sc-AxheI jTLCNQ"
-          >
-            <a
               href="/project/1/tag-categories"
               id="tagsNavBtn"
               onClick={[Function]}
@@ -361,7 +350,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzonjX fYLCou"
+    className="sc-fzqzEs gdNgjo"
   >
     <div
       style={
@@ -383,7 +372,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqOul bXzCNa"
+          className="sc-fzoCCn fFEuqk"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -439,7 +428,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqOul bXzCNa"
+          className="sc-fzoCCn fFEuqk"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -495,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqOul bXzCNa"
+          className="sc-fzoCCn fFEuqk"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -551,7 +540,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzqzEs eDqSzw"
+          className="sc-fzqOul iUcPHS"
         >
           <span
             style={
@@ -1123,95 +1112,99 @@ exports[`EditPage: Component should render correctly 1`] = `
             Colors
           </div>
           <div
-            className=" css-2b097c-container"
-            onKeyDown={[Function]}
+            className="sc-fzonjX eBcDVl"
           >
             <div
-              className=" css-17k7d72-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
+              className=" css-2b097c-container"
+              onKeyDown={[Function]}
             >
               <div
-                className=" css-193kkzd-ValueContainer"
+                className=" css-17k7d72-control"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
               >
                 <div
-                  className=" css-1wa3eu0-placeholder"
-                >
-                  Select...
-                </div>
-                <div
-                  className="css-14m14bb-Input"
+                  className=" css-193kkzd-ValueContainer"
                 >
                   <div
-                    className=""
-                    style={
-                      Object {
-                        "display": "inline-block",
-                      }
-                    }
+                    className=" css-1wa3eu0-placeholder"
                   >
-                    <input
-                      aria-autocomplete="list"
-                      autoCapitalize="none"
-                      autoComplete="off"
-                      autoCorrect="off"
-                      disabled={false}
-                      id="react-select-2-input"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      spellCheck="false"
-                      style={
-                        Object {
-                          "background": 0,
-                          "border": 0,
-                          "boxSizing": "content-box",
-                          "color": "inherit",
-                          "fontSize": "inherit",
-                          "label": "input",
-                          "opacity": 1,
-                          "outline": 0,
-                          "padding": 0,
-                          "width": "1px",
-                        }
-                      }
-                      tabIndex="0"
-                      type="text"
-                      value=""
-                    />
+                    Select...
+                  </div>
+                  <div
+                    className="css-14m14bb-Input"
+                  >
                     <div
+                      className=""
                       style={
                         Object {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "scroll",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                          "whiteSpace": "pre",
+                          "display": "inline-block",
                         }
                       }
                     >
-                      
+                      <input
+                        aria-autocomplete="list"
+                        autoCapitalize="none"
+                        autoComplete="off"
+                        autoCorrect="off"
+                        disabled={false}
+                        id="react-select-2-input"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        spellCheck="false"
+                        style={
+                          Object {
+                            "background": 0,
+                            "border": 0,
+                            "boxSizing": "content-box",
+                            "color": "inherit",
+                            "fontSize": "inherit",
+                            "label": "input",
+                            "opacity": 1,
+                            "outline": 0,
+                            "padding": 0,
+                            "width": "1px",
+                          }
+                        }
+                        tabIndex="0"
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        style={
+                          Object {
+                            "height": 0,
+                            "left": 0,
+                            "overflow": "scroll",
+                            "position": "absolute",
+                            "top": 0,
+                            "visibility": "hidden",
+                            "whiteSpace": "pre",
+                          }
+                        }
+                      >
+                        
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className=" css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className=" css-43ykx9-indicatorSeparator"
-                />
                 <div
-                  aria-hidden="true"
-                  className=" css-tlfecz-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
+                  className=" css-1hb7zxy-IndicatorsContainer"
                 >
-                  0
-                  /
-                  4
+                  <span
+                    className=" css-43ykx9-indicatorSeparator"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className=" css-tlfecz-indicatorContainer"
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                  >
+                    0
+                    /
+                    4
+                  </div>
                 </div>
               </div>
             </div>
@@ -1227,95 +1220,99 @@ exports[`EditPage: Component should render correctly 1`] = `
             Countries
           </div>
           <div
-            className=" css-2b097c-container"
-            onKeyDown={[Function]}
+            className="sc-fzonjX eBcDVl"
           >
             <div
-              className=" css-17k7d72-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
+              className=" css-2b097c-container"
+              onKeyDown={[Function]}
             >
               <div
-                className=" css-193kkzd-ValueContainer"
+                className=" css-17k7d72-control"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
               >
                 <div
-                  className=" css-1wa3eu0-placeholder"
-                >
-                  Select...
-                </div>
-                <div
-                  className="css-14m14bb-Input"
+                  className=" css-193kkzd-ValueContainer"
                 >
                   <div
-                    className=""
-                    style={
-                      Object {
-                        "display": "inline-block",
-                      }
-                    }
+                    className=" css-1wa3eu0-placeholder"
                   >
-                    <input
-                      aria-autocomplete="list"
-                      autoCapitalize="none"
-                      autoComplete="off"
-                      autoCorrect="off"
-                      disabled={false}
-                      id="react-select-3-input"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      spellCheck="false"
-                      style={
-                        Object {
-                          "background": 0,
-                          "border": 0,
-                          "boxSizing": "content-box",
-                          "color": "inherit",
-                          "fontSize": "inherit",
-                          "label": "input",
-                          "opacity": 1,
-                          "outline": 0,
-                          "padding": 0,
-                          "width": "1px",
-                        }
-                      }
-                      tabIndex="0"
-                      type="text"
-                      value=""
-                    />
+                    Select...
+                  </div>
+                  <div
+                    className="css-14m14bb-Input"
+                  >
                     <div
+                      className=""
                       style={
                         Object {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "scroll",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                          "whiteSpace": "pre",
+                          "display": "inline-block",
                         }
                       }
                     >
-                      
+                      <input
+                        aria-autocomplete="list"
+                        autoCapitalize="none"
+                        autoComplete="off"
+                        autoCorrect="off"
+                        disabled={false}
+                        id="react-select-3-input"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        spellCheck="false"
+                        style={
+                          Object {
+                            "background": 0,
+                            "border": 0,
+                            "boxSizing": "content-box",
+                            "color": "inherit",
+                            "fontSize": "inherit",
+                            "label": "input",
+                            "opacity": 1,
+                            "outline": 0,
+                            "padding": 0,
+                            "width": "1px",
+                          }
+                        }
+                        tabIndex="0"
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        style={
+                          Object {
+                            "height": 0,
+                            "left": 0,
+                            "overflow": "scroll",
+                            "position": "absolute",
+                            "top": 0,
+                            "visibility": "hidden",
+                            "whiteSpace": "pre",
+                          }
+                        }
+                      >
+                        
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className=" css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className=" css-43ykx9-indicatorSeparator"
-                />
                 <div
-                  aria-hidden="true"
-                  className=" css-tlfecz-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
+                  className=" css-1hb7zxy-IndicatorsContainer"
                 >
-                  0
-                  /
-                  1
+                  <span
+                    className=" css-43ykx9-indicatorSeparator"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className=" css-tlfecz-indicatorContainer"
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                  >
+                    0
+                    /
+                    1
+                  </div>
                 </div>
               </div>
             </div>

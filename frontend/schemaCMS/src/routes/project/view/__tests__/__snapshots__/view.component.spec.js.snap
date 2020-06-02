@@ -78,20 +78,6 @@ exports[`View: Component should render content correctly 1`] = `
           Object {
             "allowedRoles": Array [
               "admin",
-              "editor",
-            ],
-            "id": "stateNavBtn",
-            "label": <FormattedMessage
-              defaultMessage="States"
-              id="project.view.states"
-              values={Object {}}
-            />,
-            "to": "/project/100/state",
-            "type": "link_item",
-          },
-          Object {
-            "allowedRoles": Array [
-              "admin",
             ],
             "id": "tagsNavBtn",
             "label": <FormattedMessage
@@ -167,15 +153,6 @@ exports[`View: Component should render content correctly 1`] = `
               "id": "projectDataSources",
               "to": "/project/100/datasource",
               "value": 3,
-            },
-            Object {
-              "header": Object {
-                "defaultMessage": "States",
-                "id": "project.view.states",
-              },
-              "id": "dataSourceStates",
-              "to": "/project/100/state",
-              "value": undefined,
             },
             Object {
               "header": Object {
@@ -811,20 +788,6 @@ exports[`View: Component should render content correctly for editor 1`] = `
           Object {
             "allowedRoles": Array [
               "admin",
-              "editor",
-            ],
-            "id": "stateNavBtn",
-            "label": <FormattedMessage
-              defaultMessage="States"
-              id="project.view.states"
-              values={Object {}}
-            />,
-            "to": "/project/100/state",
-            "type": "link_item",
-          },
-          Object {
-            "allowedRoles": Array [
-              "admin",
             ],
             "id": "tagsNavBtn",
             "label": <FormattedMessage
@@ -900,15 +863,6 @@ exports[`View: Component should render content correctly for editor 1`] = `
               "id": "projectDataSources",
               "to": "/project/100/datasource",
               "value": 3,
-            },
-            Object {
-              "header": Object {
-                "defaultMessage": "States",
-                "id": "project.view.states",
-              },
-              "id": "dataSourceStates",
-              "to": "/project/100/state",
-              "value": undefined,
             },
             Object {
               "header": Object {
@@ -1230,20 +1184,6 @@ exports[`View: Component should render correctly 1`] = `
           Object {
             "allowedRoles": Array [
               "admin",
-              "editor",
-            ],
-            "id": "stateNavBtn",
-            "label": <FormattedMessage
-              defaultMessage="States"
-              id="project.view.states"
-              values={Object {}}
-            />,
-            "to": "/project/100/state",
-            "type": "link_item",
-          },
-          Object {
-            "allowedRoles": Array [
-              "admin",
             ],
             "id": "tagsNavBtn",
             "label": <FormattedMessage
@@ -1319,15 +1259,6 @@ exports[`View: Component should render correctly 1`] = `
               "id": "projectDataSources",
               "to": "/project/100/datasource",
               "value": 3,
-            },
-            Object {
-              "header": Object {
-                "defaultMessage": "States",
-                "id": "project.view.states",
-              },
-              "id": "dataSourceStates",
-              "to": "/project/100/state",
-              "value": undefined,
             },
             Object {
               "header": Object {
