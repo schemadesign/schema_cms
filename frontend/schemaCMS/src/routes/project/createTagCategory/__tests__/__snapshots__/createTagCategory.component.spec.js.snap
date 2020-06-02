@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateDataSourceTag: Component should render correctly 1`] = `
+exports[`CreateTagCategory: Component should render correctly 1`] = `
 <styled.form
   onSubmit={[Function]}
 >
@@ -8,14 +8,14 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createTagTemplate.subTitle"
+        id="project.createTagCategory.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Tag Category"
-        id="project.createTagTemplate.subTitle"
+        id="project.createTagCategory.subTitle"
         values={Object {}}
       />
     }
@@ -150,14 +150,14 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createTagTemplate.subTitle"
+        id="project.createTagCategory.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Tag Category"
-        id="project.createTagTemplate.subTitle"
+        id="project.createTagCategory.subTitle"
         values={Object {}}
       />
     }
@@ -261,7 +261,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Cancel"
-        id="project.createTagTemplate.cancel"
+        id="project.createTagCategory.cancel"
         values={Object {}}
       />
     </BackButton>
@@ -272,7 +272,7 @@ exports[`CreateDataSourceTag: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Save"
-        id="project.createTagTemplate.saveTag"
+        id="project.createTagCategory.saveTag"
         values={Object {}}
       />
     </NextButton>

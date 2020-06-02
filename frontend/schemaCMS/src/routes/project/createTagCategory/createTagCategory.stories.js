@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { CreateTagTemplate } from './createTagTemplate.component';
+import { CreateTagCategory } from './createTagCategory.component';
 import { intl, history } from '../../../.storybook/helpers';
 import { withTheme } from '../../../.storybook/decorators';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
@@ -32,4 +32,4 @@ export const defaultProps = {
 
 storiesOf('Project|CreateTagCategory', module)
   .addDecorator(withTheme())
-  .add('Default', () => <CreateTagTemplate {...defaultProps} />);
+  .add('Default', () => <CreateTagCategory {...defaultProps} />);
