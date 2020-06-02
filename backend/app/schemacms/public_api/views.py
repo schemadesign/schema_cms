@@ -181,7 +181,7 @@ class PADataSourceView(
         "retrieve": serializers.PADataSourceDetailRecordsSerializer,
     }
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
-    filterset_fields = ["tags__value", "tags_category__name"]
+    filterset_fields = ["tags__value", "tags__category__name"]
 
     @decorators.action(detail=True, url_path="meta", methods=["get"])
     def meta(self, request, **kwargs):
