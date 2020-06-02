@@ -7,6 +7,48 @@ exports[`TagCategories: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Tag Categories"
   />
+  <ProjectBreadcrumbs
+    items={
+      Array [
+        Object {
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "h3": <FormattedMessage
+            defaultMessage="Templates"
+            id="shared.components.projectBreadcrumbs.templates"
+            values={Object {}}
+          />,
+          "path": "/project/1/templates",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": <FormattedMessage
+            defaultMessage="Tags Template"
+            id="shared.components.projectBreadcrumbs.tagsTemplate"
+            values={Object {}}
+          />,
+          "path": "/project/1/tags-templates",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+  />
   <MobileMenu
     active="tagsNavBtn"
     headerSubtitle={
@@ -136,10 +178,6 @@ exports[`TagCategories: Component should render correctly 1`] = `
       ]
     }
   />
-  <ProjectTabs
-    active="tag-categories"
-    url="/project/1"
-  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -168,12 +206,6 @@ exports[`TagCategories: Component should render correctly 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <CounterHeader
-      copy="Tag Category"
-      count={2}
-      customPlural="Tag Categories"
-      moveToTop={true}
-    />
     <styled.section>
       <Styled(Component)
         footerComponent={
@@ -266,6 +298,48 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
     encodeSpecialCharacters={true}
     title="Tag Categories"
   />
+  <ProjectBreadcrumbs
+    items={
+      Array [
+        Object {
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "h3": <FormattedMessage
+            defaultMessage="Templates"
+            id="shared.components.projectBreadcrumbs.templates"
+            values={Object {}}
+          />,
+          "path": "/project/1/templates",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": <FormattedMessage
+            defaultMessage="Tags Template"
+            id="shared.components.projectBreadcrumbs.tagsTemplate"
+            values={Object {}}
+          />,
+          "path": "/project/1/tags-templates",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+  />
   <MobileMenu
     active="tagsNavBtn"
     headerSubtitle={
@@ -395,10 +469,6 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
       ]
     }
   />
-  <ProjectTabs
-    active="tag-categories"
-    url="/project/1"
-  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -427,12 +497,6 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
     noData={false}
     noDataContent={null}
   >
-    <CounterHeader
-      copy="Tag Category"
-      count={2}
-      customPlural="Tag Categories"
-      moveToTop={true}
-    />
     <styled.section>
       <Styled(Component)
         footerComponent={
@@ -525,6 +589,48 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
     encodeSpecialCharacters={true}
     title="Tag Categories"
   />
+  <ProjectBreadcrumbs
+    items={
+      Array [
+        Object {
+          "h3": "project title",
+          "path": "/project/1/",
+          "span": <FormattedMessage
+            defaultMessage="Project"
+            id="shared.components.projectBreadcrumbs.project"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "h3": <FormattedMessage
+            defaultMessage="Templates"
+            id="shared.components.projectBreadcrumbs.templates"
+            values={Object {}}
+          />,
+          "path": "/project/1/templates",
+          "span": <FormattedMessage
+            defaultMessage="Tab"
+            id="shared.components.projectBreadcrumbs.tab"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "active": true,
+          "h3": <FormattedMessage
+            defaultMessage="Tags Template"
+            id="shared.components.projectBreadcrumbs.tagsTemplate"
+            values={Object {}}
+          />,
+          "path": "/project/1/tags-templates",
+          "span": <FormattedMessage
+            defaultMessage="Tags"
+            id="shared.components.projectBreadcrumbs.tags"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+  />
   <MobileMenu
     active="tagsNavBtn"
     headerSubtitle={
@@ -654,10 +760,6 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
       ]
     }
   />
-  <ProjectTabs
-    active="tag-categories"
-    url="/project/1"
-  />
   <ContextHeader
     subtitle={
       <FormattedMessage
@@ -686,12 +788,6 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <CounterHeader
-      copy="Tag Category"
-      count={2}
-      customPlural="Tag Categories"
-      moveToTop={true}
-    />
     <styled.section>
       <Styled(Component)
         footerComponent={

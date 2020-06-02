@@ -6,3 +6,4 @@ local.env
 .vscode
 __pycache__
 dist
+backend/functions/public_api/node_modules

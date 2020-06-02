@@ -67,8 +67,8 @@ export class Project extends PureComponent {
     const pageTemplatesPath = `${path}/page-templates`;
     const createPageTemplatePath = `${path}/page-templates/create`;
     const createSectionPath = `${path}/section/create`;
-    const tagCategoriesPath = `${path}/tag-categories`;
-    const createTagCategoriesPath = `${tagCategoriesPath}/create`;
+    const tagTemplatesPath = `${path}/tag-templates`;
+    const createTagCategoriesPath = `${tagTemplatesPath}/create`;
 
     return (
       <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
@@ -88,7 +88,7 @@ export class Project extends PureComponent {
               <Route exact path={pageTemplatesPath} component={PageTemplates} />
               <Route exact path={createPageTemplatePath} component={CreatePageTemplate} />
               <Route exact path={createSectionPath} component={CreateSection} />
-              <Route exact path={tagCategoriesPath} component={TagCategories} />
+              <Route exact path={tagTemplatesPath} component={TagCategories} />
               <Route exact path={createTagCategoriesPath} component={CreateTagCategory} />
               <Route path="*" component={NotFound} />
             </Switch>

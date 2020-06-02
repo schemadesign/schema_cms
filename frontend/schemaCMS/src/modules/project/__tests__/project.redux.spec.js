@@ -13,7 +13,7 @@ describe('Project: redux', () => {
     templates: {
       blocks: 0,
       pages: 0,
-      filters: 0,
+      tags: 0,
       states: 0,
     },
   });

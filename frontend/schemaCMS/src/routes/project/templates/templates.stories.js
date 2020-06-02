@@ -19,7 +19,7 @@ export const defaultProps = {
     blocks: 0,
     pages: 0,
     states: 0,
-    filters: 0,
+    tags: 0,
   },
   fetchTemplates: Function.prototype,
 };

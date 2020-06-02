@@ -81,12 +81,12 @@ exports[`Project: Component should render correctly when loading wrapper content
   <Route
     component={[Function]}
     exact={true}
-    path="/project/tag-categories"
+    path="/project/tag-templates"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/project/tag-categories/create"
+    path="/project/tag-templates/create"
   />
   <Route
     component={[Function]}

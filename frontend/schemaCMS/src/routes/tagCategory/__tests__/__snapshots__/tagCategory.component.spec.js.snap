@@ -53,7 +53,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
             id="shared.components.projectBreadcrumbs.tags"
             values={Object {}}
           />,
-          "path": "/project/1/tag-categories",
+          "path": "/project/1/tag-templates",
           "span": <FormattedMessage
             defaultMessage="Tab"
             id="shared.components.projectBreadcrumbs.tab"
@@ -309,7 +309,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
             id="shared.components.projectBreadcrumbs.tags"
             values={Object {}}
           />,
-          "path": "/project/1/tag-categories",
+          "path": "/project/1/tag-templates",
           "span": <FormattedMessage
             defaultMessage="Tab"
             id="shared.components.projectBreadcrumbs.tab"

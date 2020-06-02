@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateDataSourceTag: Component should render correctly 1`] = `
+exports[`CreateTagCategory: Component should render correctly 1`] = `
 <styled.form
   onSubmit={[Function]}
 >

@@ -54,7 +54,7 @@ describe('Tag Category: sagas', () => {
         .dispatch(TagCategoryRoutines.createTagCategory(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/tag-categories');
+      expect(browserHistory.push).toBeCalledWith('/project/1/tag-templates');
     });
   });
 
@@ -102,7 +102,7 @@ describe('Tag Category: sagas', () => {
         .dispatch(TagCategoryRoutines.updateTagCategory(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/tag-categories');
+      expect(browserHistory.push).toBeCalledWith('/project/1/tag-templates');
     });
   });
 
@@ -124,7 +124,7 @@ describe('Tag Category: sagas', () => {
         .dispatch(TagCategoryRoutines.removeTagCategory(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/tag-categories');
+      expect(browserHistory.push).toBeCalledWith('/project/1/tag-templates');
     });
   });
 });
