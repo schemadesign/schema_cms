@@ -46,7 +46,15 @@ class PADataSourceListSerializer(ReadOnlySerializer):
         fields = ("id", "type", "name", "meta", "tags")
 
     def get_tags(self, obj):
-        return [tag.value for tag in obj.tags.all()]
+        res = {}
+
+        for category, tag in obj.tags.values_list("category__name", "value"):
+            if category not in res:
+                res[category] = [tag]
+            else:
+                res[category].append(tag)
+
+        return res
 
     def get_meta(self, obj):
         custom_data = (
@@ -190,7 +198,15 @@ class PAPageSerializer(ReadOnlySerializer):
         return obj.created_by.get_full_name()
 
     def get_tags(self, obj):
-        return [tag.value for tag in obj.tags.all()]
+        res = {}
+
+        for category, tag in obj.tags.values_list("category__name", "value"):
+            if category not in res:
+                res[category] = [tag]
+            else:
+                res[category].append(tag)
+
+        return res
 
 
 class PAPageDetailSerializer(PAPageSerializer):

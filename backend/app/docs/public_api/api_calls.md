@@ -26,8 +26,8 @@ Content-Type: application/json
          "created": "2020-01-28T13:53:02.848594+00:00"
       },
       "data_sources": [
-         {"name": "TestDS2", "type": "file", "id": 2},
-         {"name": "TestDS1", "type": "file", "id": 1}
+         {"name": "TestDS2", "type": "file", "id": 2, "tags": {"category_1": ["value1", "value2"]}},
+         {"name": "TestDS1", "type": "file", "id": 1, "tags": {}}
       ], 
       "content": {
          "sections": [
@@ -42,6 +42,10 @@ Content-Type: application/json
                 "slug": "page-name",
                 "template": "New Page Template",
                 "description": "New page test.",
+                "tags": {
+                    "category_1": ["value1", "value2"],
+                    "category_2": ["value3", "value4"]
+                },               
                 "keywords": "new;page",
                 "created_by": "Jan Kowalsky",
                 "updated": "2020-05-05"
@@ -76,8 +80,8 @@ Content-Type: application/json
      "created": "2020-01-28T13:53:02.848594+00:00"
   },
   "data_sources": [
-     {"name": "TestDS2", "type": "file", "id": 2},
-     {"name": "TestDS1", "type": "file", "id": 1}
+     {"name": "TestDS2", "type": "file", "id": 2, "tags": {"category_1": ["value1", "value2"]}},
+     {"name": "TestDS1", "type": "file", "id": 1, "tags": {}}
   ], 
   "content": {
      "sections": [
@@ -93,6 +97,10 @@ Content-Type: application/json
             "template": "New Page Template",
             "description": "New page test.",
             "keywords": "new;page",
+            "tags": {
+                "category_1": ["value1", "value2"],
+                "category_2": ["value3", "value4"]
+            },
             "created_by": "Jan Kowalsky",
             "updated": "2020-05-05"
           },
@@ -125,14 +133,19 @@ Content-Type: application/json
         "name": "TestDS1",
         "created_by": "Jan Kowalsky",
         "updated": "2020-04-03",
-        "created": "2020-04-03"
+        "created": "2020-04-03",
+        "tags": {
+        "category_1": ["value1", "value2"],
+        "category_2": ["value3", "value4"]
+        }, 
       },
       {
         "id": 2,
         "name": "TestDS2",
         "created_by": "Jan Kowalsky",
         "updated": "2020-04-07",
-        "created": "2020-04-07"
+        "created": "2020-04-07",
+        "tags": {}
       }
     ]
 }
@@ -171,7 +184,11 @@ Content-Type: application/json
         "description": "New page test.",
         "keywords": "new;page;test",
         "created_by": "Jan Kowalsky",
-        "updated": "2020-05-05"
+        "updated": "2020-05-05",
+        "tags": {
+            "category_1": ["value1", "value2"],
+            "category_2": ["value3", "value4"]
+        }
       }
     ]
 }
@@ -234,7 +251,10 @@ Content-Type: application/json
     "keywords": "new;page;test",
     "created_by": "Jan Kowalsky",
     "updated": "2020-04-07",
-    "tags": ["test", "tag", "value"],
+    "tags": {
+        "category_1": ["value1", "value2"],
+        "category_2": ["value3", "value4"]
+    }, 
     "blocks": [
         {
           "id": 1,
