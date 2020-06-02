@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Form } from './createTagTemplate.styles';
-import messages from './createTagTemplate.messages';
+import { Form } from './createTagCategory.styles';
+import messages from './createTagCategory.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -39,7 +39,7 @@ const getBreadcrumbsItems = project => [
   },
 ];
 
-export class CreateTagTemplate extends PureComponent {
+export class CreateTagCategory extends PureComponent {
   static propTypes = {
     userRole: PropTypes.string.isRequired,
     project: PropTypes.object.isRequired,

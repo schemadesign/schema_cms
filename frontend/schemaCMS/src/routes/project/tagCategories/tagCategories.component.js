@@ -7,7 +7,7 @@ import messages from './tagCategories.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -21,6 +21,8 @@ import {
   tagsTemplateMessage,
   tabMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
+import { getProjectMenuOptions, PROJECT_TAG_CATEGORIES_ID } from '../project.constants';
 
 const getBreadcrumbsItems = project => [
   {
@@ -115,14 +117,21 @@ export class TagCategories extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { project } = this.props;
+    const { project, userRole } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const menuOptions = getProjectMenuOptions(project.id);
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
+        <MobileMenu
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          options={filterMenuOptions(menuOptions, userRole)}
+          active={PROJECT_TAG_CATEGORIES_ID}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton onClick={this.handleCreateTag} />
         </ContextHeader>

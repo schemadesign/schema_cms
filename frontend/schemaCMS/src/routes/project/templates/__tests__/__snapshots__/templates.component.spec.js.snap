@@ -210,7 +210,7 @@ exports[`Templates: Component should render correctly 1`] = `
             },
             "id": "tagTemplates",
             "to": "/project/projectId/tag-templates",
-            "value": undefined,
+            "value": 0,
           },
           Object {
             "header": Object {

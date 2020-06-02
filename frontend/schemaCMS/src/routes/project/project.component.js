@@ -18,7 +18,7 @@ import { PageTemplates } from './pageTemplates';
 import { CreatePageTemplate } from './createPageTemplate';
 import { CreateSection } from './createSection';
 import { TagCategories } from './tagCategories';
-import { CreateTagTemplate } from './createTagTemplate';
+import { CreateTagCategory } from './createTagCategory';
 import reportError from '../../shared/utils/reportError';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 
@@ -89,7 +89,7 @@ export class Project extends PureComponent {
               <Route exact path={createPageTemplatePath} component={CreatePageTemplate} />
               <Route exact path={createSectionPath} component={CreateSection} />
               <Route exact path={tagTemplatesPath} component={TagCategories} />
-              <Route exact path={createTagCategoriesPath} component={CreateTagTemplate} />
+              <Route exact path={createTagCategoriesPath} component={CreateTagCategory} />
               <Route path="*" component={NotFound} />
             </Switch>
           ) : null
