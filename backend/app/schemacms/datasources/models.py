@@ -406,7 +406,7 @@ class DataSourceJobStep(SoftDeleteObject, models.Model):
 
 class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="filters")
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=100)
     filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())
     field = models.TextField()
     field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
