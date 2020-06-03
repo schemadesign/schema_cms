@@ -4,6 +4,8 @@ from rest_framework import serializers
 from . import models
 from ..datasources import models as ds_models
 from ..utils.validators import CustomUniqueTogetherValidator
+from ..utils.serializers import NestedRelatedModelSerializer
+from ..datasources.serializers import RawDataSourceSerializer
 
 
 class InStateFilterSerializer(serializers.ModelSerializer):
@@ -27,6 +29,9 @@ class StateSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField(read_only=True)
     filters = serializers.SerializerMethodField(read_only=True)
     tags = StateTagSerializer(read_only=True, many=True)
+    datasource = NestedRelatedModelSerializer(
+        serializer=RawDataSourceSerializer(), queryset=ds_models.DataSource.objects.all()
+    )
 
     class Meta:
         model = models.State

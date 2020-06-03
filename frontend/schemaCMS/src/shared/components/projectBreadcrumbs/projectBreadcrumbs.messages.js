@@ -66,4 +66,12 @@ export default defineMessages({
     id: 'shared.components.projectBreadcrumbs.tagsTemplate',
     defaultMessage: 'Tags Template',
   },
+  dataSource: {
+    id: 'shared.components.projectBreadcrumbs.dataSource',
+    defaultMessage: 'Data Source',
+  },
+  state: {
+    id: 'shared.components.projectBreadcrumbs.state',
+    defaultMessage: 'State',
+  },
 });
