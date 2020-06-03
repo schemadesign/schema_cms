@@ -66,7 +66,7 @@ export const blockTemplatesElementsValidation = () =>
         [ELEMENT_NAME]: Yup.string()
           .trim()
           .min(1, 'Element Name should have at least 1 character')
-          .max(25, 'Element Name should have maximum 25 characters')
+          .max(100, 'Element Name should have maximum 100 characters')
           .required('Required'),
         [ELEMENT_TYPE]: Yup.string()
           .min(1, 'Required')
@@ -92,7 +92,7 @@ export const BLOCK_TEMPLATES_SCHEMA = Yup.object().shape({
   [BLOCK_TEMPLATES_NAME]: Yup.string()
     .trim()
     .min(1, 'Block Template Name should have at least 1 character')
-    .max(25, 'Block Template Name should have maximum 25 characters')
+    .max(100, 'Block Template Name should have maximum 100 characters')
     .required('Required'),
   [BLOCK_TEMPLATES_ELEMENTS]: blockTemplatesElementsValidation(),
 });

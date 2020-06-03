@@ -10,7 +10,7 @@ export const METADATA_SCHEMA = Yup.object({
       [METADATA_KEY]: Yup.string()
         .trim()
         .min(1, 'Name should have at least 1 character')
-        .max(25, 'Name should have maximum 25 characters')
+        .max(100, 'Name should have maximum 100 characters')
         .required('Required'),
       [METADATA_VALUE]: Yup.string()
         .trim()

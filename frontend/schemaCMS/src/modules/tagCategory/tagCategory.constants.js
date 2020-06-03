@@ -27,7 +27,7 @@ export const TAG_CATEGORY_SCHEMA = Yup.object().shape({
   [TAG_CATEGORY_NAME]: Yup.string()
     .trim()
     .min(1, 'Tag Category name should have at least 1 character')
-    .max(25, 'Tag Category name should have maximum 25 characters')
+    .max(100, 'Tag Category name should have maximum 100 characters')
     .required('Required'),
   [TAG_CATEGORY_TAGS]: Yup.array()
     .of(

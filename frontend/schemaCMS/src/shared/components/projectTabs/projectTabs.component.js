@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Tabs } from '../tabs';
 import { Container } from './projectTabs.styles';
-import { CONTENT, SETTINGS, SOURCES, USERS, TEMPLATES, TAG_CATEGORIES } from './projectTabs.constants';
+import { CONTENT, SETTINGS, SOURCES, USERS, TEMPLATES } from './projectTabs.constants';
 import messages from './projectTabs.messages';
 import { UserContext } from '../../utils/userProvider';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
