@@ -67,7 +67,7 @@ const elementValueValidation = () =>
       is: type => [PLAIN_TEXT_TYPE, MARKDOWN_TYPE, CODE_TYPE].includes(type),
       then: Yup.string()
         .trim()
-        .max(50000, 'Element Value should have maximum 50000 characters'),
+        .max(50000, 'Element Value should have maximum 50 000 characters'),
     })
     .when(ELEMENT_TYPE, {
       is: CONNECTION_TYPE,

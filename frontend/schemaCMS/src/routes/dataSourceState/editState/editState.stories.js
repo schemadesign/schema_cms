@@ -11,12 +11,16 @@ export const defaultProps = {
   updateState: Function.prototype,
   fetchDataSourceTags: Function.prototype,
   fetchFilters: Function.prototype,
-  fetchState: jest.fn().mockReturnValue(Promise.resolve({ datasource: 'dataSourceId' })),
+  fetchState: jest.fn().mockReturnValue(Promise.resolve({ datasource: { id: 'dataSourceId' } })),
   project,
   dataSourceTags: [],
   filters: [],
   state: {
     filters: [],
+    datasource: {
+      id: 1,
+      name: 'dataSourceName',
+    },
   },
   userRole: ROLES.ADMIN,
 };

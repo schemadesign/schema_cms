@@ -13,6 +13,7 @@ export const defaultProps = {
   draggableIcon: <div>icon</div>,
   removeBlock: Function.prototype,
   handleChange: Function.prototype,
+  setFieldValue: Function.prototype,
   blockTemplates,
   formikFieldPath: 'formikFieldPath',
   pagerUrlOptions,

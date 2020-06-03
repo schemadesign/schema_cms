@@ -5,7 +5,7 @@ import { useHistory, useLocation, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
-import { pick } from 'ramda';
+import { pick, propOr } from 'ramda';
 
 import messages from './editState.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
@@ -29,8 +29,41 @@ import {
   DATA_SOURCE_STATE_SCHEMA,
   REQUEST_KEYS,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
-import { ProjectTabs } from '../../../shared/components/projectTabs';
-import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
+import {
+  stateMessage,
+  ProjectBreadcrumbs,
+  projectMessage,
+  tabMessage,
+  dataSourceMessage,
+} from '../../../shared/components/projectBreadcrumbs';
+
+const getBreadcrumbsItems = (project, dataSource, stateName) => [
+  {
+    path: `/project/${project.id}/`,
+    span: projectMessage,
+    h3: project.title,
+  },
+  {
+    path: `/project/${project.id}/datasource`,
+    span: tabMessage,
+    h3: dataSourceMessage,
+  },
+  {
+    path: `/datasource/${dataSource.id}`,
+    span: dataSourceMessage,
+    h3: dataSource.name,
+  },
+  {
+    path: `/datasource/${dataSource.id}/state`,
+    span: tabMessage,
+    h3: stateMessage,
+  },
+  {
+    path: `/project/${project.id}/content`,
+    span: stateMessage,
+    h3: stateName,
+  },
+];
 
 export const EditState = ({
   project,
@@ -55,6 +88,7 @@ export const EditState = ({
   const title = state.name;
   const menuOptions = getProjectMenuOptions(project.id);
   const tagCategories = getTagCategories(dataSourceTags);
+  const dataSource = propOr({ name: '', id: '' }, 'datasource', state);
 
   const { values, handleSubmit, isSubmitting, dirty, setValues, ...restFormikProps } = useFormik({
     initialValues: getStateInitialValues(state),
@@ -86,7 +120,7 @@ export const EditState = ({
     (async () => {
       try {
         const state = await fetchState({ stateId });
-        const dataSourceId = state.datasource;
+        const dataSourceId = state.datasource.id;
         const fetchDataSourceTagsPromise = fetchDataSourceTags({ dataSourceId });
         const fetchFiltersPromise = fetchFilters({ dataSourceId });
 
@@ -105,14 +139,14 @@ export const EditState = ({
     })();
   });
 
-  const handleCancel = () => history.push(`/datasource/${state.datasource}/state`);
+  const handleCancel = () => history.push(`/datasource/${dataSource.id}/state`);
   const handleRemoveState = () => setConfirmationModalOpen(true);
   const handleCancelRemove = () => setConfirmationModalOpen(false);
   const handleConfirmRemove = async () => {
     try {
       setRemoveLoading(true);
 
-      await removeState({ stateId: state.id, dataSourceId: state.datasource });
+      await removeState({ stateId: state.id, dataSourceId: dataSource.id });
     } catch (e) {
       setRemoveLoading(false);
       reportError(e);
@@ -123,7 +157,7 @@ export const EditState = ({
     <Fragment>
       <LoadingWrapper loading={loading} error={error}>
         <Helmet title={title} />
-        <ProjectTabs active={SOURCES} url={`/project/${project.id}`} />
+        <ProjectBreadcrumbs items={getBreadcrumbsItems(project, dataSource, state.name)} />
         <MobileMenu
           headerTitle={title}
           headerSubtitle={<FormattedMessage {...messages.subTitle} />}

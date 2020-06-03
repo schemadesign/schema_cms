@@ -25,6 +25,8 @@ export const contentMessage = <FormattedMessage {...messages.content} />;
 export const pageBlockMessage = <FormattedMessage {...messages.pageBlock} />;
 export const tagsMessage = <FormattedMessage {...messages.tags} />;
 export const tagsTemplateMessage = <FormattedMessage {...messages.tagsTemplate} />;
+export const dataSourceMessage = <FormattedMessage {...messages.dataSource} />;
+export const stateMessage = <FormattedMessage {...messages.state} />;
 
 const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index) =>
   renderWhenTrueOtherwise(
