@@ -6,7 +6,17 @@ from django.conf import settings
 from django.db.models import Prefetch
 from django.shortcuts import render, get_object_or_404
 from django.urls import NoReverseMatch
-from rest_framework import decorators, mixins, permissions, reverse, response, renderers, views, viewsets
+from rest_framework import (
+    decorators,
+    filters,
+    mixins,
+    permissions,
+    reverse,
+    response,
+    renderers,
+    views,
+    viewsets,
+)
 
 from . import serializers, records_reader
 from ..datasources.models import DataSource, Filter
@@ -53,17 +63,24 @@ class PAProjectView(
     queryset = (
         Project.objects.select_related("owner",)
         .prefetch_related(
-            "data_sources",
+            Prefetch("data_sources", queryset=DataSource.objects.all().order_by("-created")),
             Prefetch("sections", queryset=Section.objects.prefetch_related("pages")),
             "sections__pages__created_by",
         )
         .all()
         .order_by("id")
     )
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "title"]
 
     @decorators.action(detail=True, url_path="datasources", methods=["get"])
     def datasources(self, request, **kwargs):
-        data_sources = self.get_object().data_sources.all().order_by("created")
+        ordering = request.query_params.get("ordering", "-created")
+
+        if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
+            ordering = "-created"
+
+        data_sources = self.get_object().data_sources.all().order_by(ordering)
 
         page = self.paginate_queryset(data_sources)
         if page is not None:
@@ -75,7 +92,12 @@ class PAProjectView(
 
     @decorators.action(detail=True, url_path="pages", methods=["get"])
     def pages(self, request, **kwargs):
-        pages = Page.objects.filter(section__project=self.get_object()).order_by("created")
+        ordering = request.query_params.get("ordering")
+
+        if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
+            ordering = "-created"
+
+        pages = Page.objects.filter(section__project=self.get_object()).order_by(ordering)
 
         page = self.paginate_queryset(pages)
         if page is not None:
@@ -95,6 +117,9 @@ class PASectionView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
         .prefetch_related("pages", "pages__created_by")
         .order_by("created")
     )
+
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
 
 
 class PABlocksView(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
@@ -151,8 +176,9 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
         )
         .order_by("created")
     )
-    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
     filterset_fields = ["tags__value", "tags__category__name"]
+    ordering_fields = ["created", "modified", "name"]
 
     @decorators.action(detail=True, url_path="html", methods=["get"])
     def html(self, request, **kwargs):
@@ -180,8 +206,9 @@ class PADataSourceView(
         "list": serializers.PADataSourceListSerializer,
         "retrieve": serializers.PADataSourceDetailRecordsSerializer,
     }
-    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
-    filterset_fields = ["tags__value", "tags__category__name"]
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
+    filterset_fields = ["tags__value", "tags__category__name", "project"]
+    ordering_fields = ["created", "modified", "name"]
 
     @decorators.action(detail=True, url_path="meta", methods=["get"])
     def meta(self, request, **kwargs):
