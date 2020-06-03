@@ -2,23 +2,7 @@ import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
-import {
-  always,
-  append,
-  cond,
-  equals,
-  ifElse,
-  propEq,
-  reject,
-  T,
-  map,
-  identity,
-  propOr,
-  update,
-  concat,
-  findIndex,
-  lte,
-} from 'ramda';
+import { always, cond, equals, ifElse, propEq, T, map, identity, propOr, update, concat, findIndex, lte } from 'ramda';
 import { Form as FormUI } from 'schemaUI';
 import { useEffectOnce } from 'react-use';
 import { useParams, useLocation, useHistory } from 'react-router';
@@ -54,7 +38,7 @@ import { RangeSlider } from '../../../shared/components/rangeSlider';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { MultiSelect } from '../../../shared/components/form/multiSelect/multiSelect.component';
 
-const { CheckboxGroup, Checkbox, Label, Switch } = FormUI;
+const { Label, Switch } = FormUI;
 
 export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole, project, filter }) => {
   const [loading, setLoading] = useState(true);

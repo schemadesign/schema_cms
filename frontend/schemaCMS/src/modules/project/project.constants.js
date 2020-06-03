@@ -34,7 +34,7 @@ export const PROJECT_SCHEMA = Yup.object().shape({
   [PROJECT_TITLE]: Yup.string()
     .trim()
     .min(1, 'Project Name should have at least 1 characters')
-    .max(50, 'Project Name should have maximum 50 characters')
+    .max(100, 'Project Name should have maximum 100 characters')
     .required('Required'),
   [PROJECT_DESCRIPTION]: Yup.string()
     .trim()

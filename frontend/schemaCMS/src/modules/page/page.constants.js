@@ -90,7 +90,7 @@ export const PAGE_SCHEMA = Yup.object().shape({
   [PAGE_NAME]: Yup.string()
     .trim()
     .min(1, 'Page Name should have at least 1 characters')
-    .max(25, 'Page Name should have maximum 25 characters')
+    .max(100, 'Page Name should have maximum 100 characters')
     .required('Required'),
   [PAGE_DISPLAY_NAME]: Yup.string()
     .trim()
@@ -99,7 +99,7 @@ export const PAGE_SCHEMA = Yup.object().shape({
       /^[a-zA-Z0-9-_/]+$/,
       'Page URL Display Name should have only letters, numbers, slashes, underscores or dashes'
     )
-    .max(25, 'Page URL Display Name should have maximum 25 characters'),
+    .max(100, 'Page URL Display Name should have maximum 100 characters'),
   [PAGE_DESCRIPTION]: Yup.string()
     .trim()
     .max(1000, 'Page Description should have maximum 1000 characters'),
@@ -116,7 +116,7 @@ export const PAGE_SCHEMA = Yup.object().shape({
         [BLOCK_NAME]: Yup.string()
           .trim()
           .min(1, 'Block Name should have at least 1 character')
-          .max(25, 'Block Name should have maximum 25 characters')
+          .max(100, 'Block Name should have maximum 100 characters')
           .required('Required'),
         [BLOCK_ELEMENTS]: Yup.array().of(
           Yup.object().shape({
@@ -138,7 +138,7 @@ export const ADD_BLOCK_SCHEMA = Yup.object().shape({
   [BLOCK_NAME]: Yup.string()
     .trim()
     .min(1, 'Block Name should have at least 1 characters')
-    .max(25, 'Block Name should have maximum 25 characters')
+    .max(100, 'Block Name should have maximum 100 characters')
     .required('Required'),
   [BLOCK_TYPE]: Yup.string()
     .trim()

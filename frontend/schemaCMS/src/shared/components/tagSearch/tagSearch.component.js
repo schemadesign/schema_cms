@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { useTheme } from 'styled-components';
 import { always, defaultTo } from 'ramda';
 
 import { Container, TagsContainer, NoTags } from './tagSearch.styles';

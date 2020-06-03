@@ -12,6 +12,6 @@ export const SECTIONS_SCHEMA = Yup.object().shape({
   [SECTIONS_NAME]: Yup.string()
     .trim()
     .min(1, 'Section Name should have at least 1 character')
-    .max(25, 'Section Name should have maximum 25 characters')
+    .max(100, 'Section Name should have maximum 100 characters')
     .required('Required'),
 });

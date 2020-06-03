@@ -39,7 +39,7 @@ export const DATA_SOURCE_STATE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_STATE_NAME]: Yup.string()
     .trim()
     .min(1, 'State name should have at least 1 characters')
-    .max(25, 'State name should have maximum 25 characters')
+    .max(100, 'State name should have maximum 100 characters')
     .required('Required'),
   [DATA_SOURCE_STATE_DESCRIPTION]: Yup.string()
     .trim()

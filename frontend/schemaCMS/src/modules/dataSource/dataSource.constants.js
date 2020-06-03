@@ -35,7 +35,7 @@ export const DATA_SOURCE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_NAME]: Yup.string()
     .trim()
     .min(3, 'Data source Name should have at least 3 characters')
-    .max(25, 'Data source Name should have maximum 25 characters')
+    .max(100, 'Data source Name should have maximum 100 characters')
     .required('Required'),
   [DATA_SOURCE_TYPE]: Yup.string().required('Required'),
   [DATA_SOURCE_FILE]: Yup.mixed()
