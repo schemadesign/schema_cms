@@ -112,8 +112,8 @@ def embed_video_in_html(element):
     height = element.params.get("height", 480)
 
     html_value = (
-        f"<div id='code-{element.id}' class='element video'>"
-        f"<iframe width='{width}' height='{height}' src='{element.video}'"
+        f"<div id='code-{element.id}' class='element embed_video'>"
+        f"<iframe width='{width}' height='{height}' src='{element.embed_video}'"
         f"frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'"
         f"allowfullscreen>"
         f"</iframe>"

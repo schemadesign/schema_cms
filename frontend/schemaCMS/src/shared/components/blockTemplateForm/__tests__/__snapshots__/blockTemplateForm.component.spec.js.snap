@@ -835,6 +835,26 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                           }
                         }
                       >
+                        Embed Video
+                      </div>
+                      <div
+                        id="select-item-9"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "border": "1px solid  #2F2F36",
+                            "borderTop": "none",
+                            "color": "#71737e",
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "padding": "20px 10px",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
                         Custom Element
                       </div>
                     </div>
@@ -1366,6 +1386,26 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                         onMouseOver={[Function]}
                         style={
                           Object {
+                            "border": "1px solid  #2F2F36",
+                            "borderTop": "none",
+                            "color": "#71737e",
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "padding": "20px 10px",
+                            "textOverflow": "ellipsis",
+                            "whiteSpace": "nowrap",
+                          }
+                        }
+                      >
+                        Embed Video
+                      </div>
+                      <div
+                        id="select-item-9"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
                             "backgroundColor": "#FFF",
                             "border": "1px solid  #2F2F36",
                             "borderTop": "none",
@@ -1739,6 +1779,26 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                               }
                             >
                               ObservableHQ
+                            </div>
+                            <div
+                              id="select-item-8"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Embed Video
                             </div>
                           </div>
                         </div>

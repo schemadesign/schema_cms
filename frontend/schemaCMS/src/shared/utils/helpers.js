@@ -47,7 +47,6 @@ import {
   ELEMENT_VALUE,
   IMAGE_TYPE,
   FILE_TYPE,
-  EMBED_VIDEO_TYPE,
   OBSERVABLE_CELL,
   OBSERVABLE_NOTEBOOK,
   OBSERVABLE_PARAMS,
@@ -172,7 +171,6 @@ export const getValuePath = ({ blockPath, index, elementValue = ELEMENT_VALUE })
 const getDefaultValue = cond([
   [equals(IMAGE_TYPE), always({})],
   [equals(FILE_TYPE), always({})],
-  [equals(EMBED_VIDEO_TYPE), always({})],
   [equals(CUSTOM_ELEMENT_TYPE), always([])],
   [
     equals(OBSERVABLEHQ_TYPE),

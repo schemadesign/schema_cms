@@ -25,14 +25,13 @@ export const INTERNAL_CONNECTION_TYPE = 'internal_connection';
 export const CUSTOM_ELEMENT_TYPE = 'custom_element';
 export const OBSERVABLEHQ_TYPE = 'observable_hq';
 export const FILE_TYPE = 'file';
-export const EMBED_VIDEO_TYPE = 'video';
+export const EMBED_VIDEO_TYPE = 'embed_video';
 
 export const OBSERVABLE_USER = 'observableUser';
 export const OBSERVABLE_NOTEBOOK = 'observableNotebook';
 export const OBSERVABLE_CELL = 'observableCell';
 export const OBSERVABLE_PARAMS = 'observableParams';
 
-export const EMBED_VIDEO_URL = 'video';
 export const EMBED_VIDEO_WIDTH = 'width';
 export const EMBED_VIDEO_HEIGHT = 'height';
 

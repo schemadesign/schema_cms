@@ -14,7 +14,7 @@ import {
   PLAIN_TEXT_TYPE,
   OBSERVABLEHQ_TYPE,
   EMBED_VIDEO_WIDTH,
-  EMBED_VIDEO_URL,
+  EMBED_VIDEO_TYPE,
   EMBED_VIDEO_HEIGHT,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
@@ -91,8 +91,8 @@ export default defineMessages({
     id: `shared.components.blockElement.${OBSERVABLEHQ_TYPE}`,
     defaultMessage: 'ObservableHQ',
   },
-  [EMBED_VIDEO_URL]: {
-    id: `shared.components.blockElement.${EMBED_VIDEO_URL}`,
+  [EMBED_VIDEO_TYPE]: {
+    id: `shared.components.blockElement.${EMBED_VIDEO_TYPE}`,
     defaultMessage: 'Embed Video',
   },
   [EMBED_VIDEO_WIDTH]: {

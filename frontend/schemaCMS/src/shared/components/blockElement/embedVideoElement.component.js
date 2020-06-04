@@ -9,7 +9,7 @@ import { getCustomInputStyles, customStyles, editIconStyles, InputContainer, Lab
 import messages from './blockElement.messages';
 import { getValuePath } from '../../utils/helpers';
 import {
-  EMBED_VIDEO_URL,
+  EMBED_VIDEO_TYPE,
   EMBED_VIDEO_HEIGHT,
   EMBED_VIDEO_WIDTH,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
@@ -19,17 +19,17 @@ const { EditIcon } = Icons;
 export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...restFormikProps }) => (
   <Fragment>
     <Label>
-      <FormattedMessage {...messages[EMBED_VIDEO_URL]} />
+      <FormattedMessage {...messages[EMBED_VIDEO_TYPE]} />
     </Label>
     <InputContainer>
       <TextInput
         name={getValuePath({ blockPath, index })}
-        value={element.value[EMBED_VIDEO_URL] || ''}
+        value={element.value || ''}
         fullWidth
         customInputStyles={getCustomInputStyles(useTheme())}
         customStyles={customStyles}
         onChange={handleChange}
-        multiline
+        debounceValue
         {...restFormikProps}
       />
       <EditIcon customStyles={editIconStyles} />
@@ -39,13 +39,13 @@ export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...
     </Label>
     <InputContainer>
       <TextInput
-        name={getValuePath({ blockPath, index })}
-        value={element.value[EMBED_VIDEO_HEIGHT] || ''}
+        name={getValuePath({ blockPath, index, elementValue: `params.${EMBED_VIDEO_HEIGHT}` })}
+        value={element.params[EMBED_VIDEO_HEIGHT] || ''}
         fullWidth
         customInputStyles={getCustomInputStyles(useTheme())}
         customStyles={customStyles}
         onChange={handleChange}
-        multiline
+        debounceValue
         {...restFormikProps}
       />
       <EditIcon customStyles={editIconStyles} />
@@ -55,13 +55,13 @@ export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...
     </Label>
     <InputContainer>
       <TextInput
-        name={getValuePath({ blockPath, index })}
-        value={element.value[EMBED_VIDEO_WIDTH] || ''}
+        name={getValuePath({ blockPath, index, elementValue: `params.${EMBED_VIDEO_WIDTH}` })}
+        value={element.params[EMBED_VIDEO_WIDTH] || ''}
         fullWidth
         customInputStyles={getCustomInputStyles(useTheme())}
         customStyles={customStyles}
         onChange={handleChange}
-        multiline
+        debounceValue
         {...restFormikProps}
       />
       <EditIcon customStyles={editIconStyles} />
