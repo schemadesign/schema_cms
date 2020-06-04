@@ -28,6 +28,7 @@ import {
   OBSERVABLE_NOTEBOOK,
   OBSERVABLE_USER,
   CUSTOM_ELEMENT_TYPE,
+  FILE_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
@@ -41,6 +42,15 @@ export const textElement = {
 export const imageElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_TYPE]: IMAGE_TYPE,
+  [ELEMENT_VALUE]: {
+    fileName: 'fileName',
+  },
+  [ELEMENT_ID]: 1,
+};
+
+export const fileElement = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_TYPE]: FILE_TYPE,
   [ELEMENT_VALUE]: {
     fileName: 'fileName',
   },
