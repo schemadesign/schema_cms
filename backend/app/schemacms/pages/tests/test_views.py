@@ -548,7 +548,7 @@ class TestListCreatePage:
                     "elements": [
                         {
                             "name": "Test Element",
-                            "type": "video",
+                            "type": "embed_video",
                             "order": 0,
                             "value": "https://test-video.url.com/video",
                             "params": {},

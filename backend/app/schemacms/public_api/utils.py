@@ -107,7 +107,7 @@ def code_in_html(element):
     return html_value
 
 
-def video_in_html(element):
+def embed_video_in_html(element):
     width = element.params.get("width", 640)
     height = element.params.get("height", 480)
 

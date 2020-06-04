@@ -145,7 +145,7 @@ class PageBlockElement(Element):
     internal_connection = models.TextField(blank=True, default="", max_length=1000)
     plain_text = models.TextField(blank=True, default="", max_length=1000)
     code = models.TextField(blank=True, default="", max_length=1000)
-    video = models.TextField(blank=True, default="", max_length=1000)
+    embed_video = models.TextField(blank=True, default="", max_length=1000)
     image = models.ImageField(
         null=True,
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
@@ -198,7 +198,7 @@ class PageBlockElement(Element):
                 constants.ElementType.CODE,
                 constants.ElementType.INTERNAL_CONNECTION,
                 constants.ElementType.CONNECTION,
-                constants.ElementType.VIDEO,
+                constants.ElementType.EMBED_VIDEO,
             ]:
                 element[element_type] = element_value
 

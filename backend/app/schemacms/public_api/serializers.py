@@ -18,7 +18,7 @@ element_to_html_function = {
     ElementType.OBSERVABLE_HQ: lambda: utils.observable_in_html,
     ElementType.IMAGE: lambda: utils.image_in_html,
     ElementType.CUSTOM_ELEMENT: lambda: utils.custom_in_html,
-    ElementType.VIDEO: lambda: utils.video_in_html,
+    ElementType.EMBED_VIDEO: lambda: utils.embed_video_in_html,
 }
 
 
