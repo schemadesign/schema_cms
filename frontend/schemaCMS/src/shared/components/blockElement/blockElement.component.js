@@ -11,6 +11,7 @@ import {
   MARKDOWN_TYPE,
   OBSERVABLEHQ_TYPE,
   CUSTOM_ELEMENT_TYPE,
+  EMBED_VIDEO_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { FileElement } from './fileElement.component';
 import { InternalConnectionElement } from './internalConnectionElement.component';
@@ -18,6 +19,7 @@ import { DefaultElement } from './defaultElement.component';
 import { MarkdownElement } from './markdownElement.component';
 import { ObservableHQElement } from './observableHQElement.component';
 import { CustomElement } from './customElement.component';
+import { EmbedVideoElement } from './embedVideoElement.component';
 
 const { MinusIcon } = Icons;
 
@@ -25,6 +27,7 @@ export const getElementComponent = props =>
   cond([
     [pathEq(['element', 'type'], IMAGE_TYPE), props => <FileElement {...props} accept=".png, .jpg, .jpeg, .gif" />],
     [pathEq(['element', 'type'], FILE_TYPE), FileElement],
+    [pathEq(['element', 'type'], EMBED_VIDEO_TYPE), EmbedVideoElement],
     [pathEq(['element', 'type'], INTERNAL_CONNECTION_TYPE), InternalConnectionElement],
     [pathEq(['element', 'type'], MARKDOWN_TYPE), MarkdownElement],
     [pathEq(['element', 'type'], OBSERVABLEHQ_TYPE), ObservableHQElement],

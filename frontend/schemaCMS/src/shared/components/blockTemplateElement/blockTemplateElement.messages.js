@@ -5,6 +5,7 @@ import {
   CONNECTION_TYPE,
   ELEMENT_TYPE,
   FILE_TYPE,
+  EMBED_VIDEO_TYPE,
   IMAGE_TYPE,
   PARAMS_BLOCK,
   PLAIN_TEXT_TYPE,
@@ -42,6 +43,10 @@ export default defineMessages({
   [FILE_TYPE]: {
     id: `shared.components.blockTemplateElement.${FILE_TYPE}`,
     defaultMessage: 'File',
+  },
+  [EMBED_VIDEO_TYPE]: {
+    id: `shared.components.blockTemplateElement.${EMBED_VIDEO_TYPE}`,
+    defaultMessage: 'Embed Video',
   },
   [CODE_TYPE]: {
     id: `shared.components.blockTemplateElement.${CODE_TYPE}`,
