@@ -5,20 +5,20 @@ exports[`CustomElement: Component should render correctly 1`] = `
   className="sc-AxheI hCJNlC"
 >
   <div
-    className="sc-fznJRM dOdAYw"
+    className="sc-fzoiQi bboBmB"
   >
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzqARJ cFaRpH"
     />
     1 Element
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzqARJ cFaRpH"
     >
       <div
-        className="sc-fzoLag edhcrz"
+        className="sc-fzpjYC bYFNUa"
       >
         <div
-          className="sc-fzoXWK kza-dYs"
+          className="sc-fznxKY oVAET"
         >
           <button
             disabled={false}
@@ -86,7 +86,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
       >
         <div>
           <div
-            className="sc-fznxsB fXkFDe"
+            className="sc-fznWqX inEwYh"
           >
             <svg
               style={
@@ -107,7 +107,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxmLO jqOulK"
+          className="sc-fzoLsD dTEIrR"
           onClick={[Function]}
         >
           <input
@@ -341,7 +341,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzozJi eodxki"
+            className="sc-fzpans bhLtYc"
           >
             <svg
               style={

@@ -350,7 +350,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzowVh gBjPlT"
+    className="sc-fzoVTD jyIGUE"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoVTD hyDqgk"
+          className="sc-fznyYp ghTwFj"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoVTD hyDqgk"
+          className="sc-fznyYp ghTwFj"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoVTD hyDqgk"
+          className="sc-fznyYp ghTwFj"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoJus duzQwC"
+          className="sc-fzpisO esPMDo"
         >
           <span
             style={
@@ -1141,7 +1141,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   className="sc-fzoydu gVJPIu"
                 >
                   <div
-                    className="sc-fznLPX llUwmH"
+                    className="sc-fzomuh csanFi"
                     onClick={[Function]}
                   >
                     <label
@@ -1412,7 +1412,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzoaKM hFPMUE"
+                      className="sc-fzqAui gEWGck"
                     >
                       <svg
                         style={
@@ -1685,7 +1685,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   className="sc-fzoydu gVJPIu"
                 >
                   <div
-                    className="sc-fznLPX llUwmH"
+                    className="sc-fzomuh csanFi"
                     onClick={[Function]}
                   >
                     <label
@@ -1956,7 +1956,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzoaKM hFPMUE"
+                      className="sc-fzqAui gEWGck"
                     >
                       <svg
                         style={
@@ -2082,7 +2082,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                           </div>
                         </div>
                         <div
-                          className="sc-fznLPX ktyzqX"
+                          className="sc-fzomuh fXnosS"
                           onClick={[Function]}
                         >
                           <input
@@ -2316,7 +2316,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzoaKM caQOhY"
+                            className="sc-fzqAui iXKBHw"
                           >
                             <svg
                               style={

@@ -570,7 +570,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               className="sc-fznMAR gaZbdV"
             >
               <div
-                className="sc-fzoxKX bsSaZd"
+                className="sc-fzoYkl gxmYWQ"
                 onClick={[Function]}
               >
                 <label
@@ -841,7 +841,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzoKki fGLGO"
+                  className="sc-fzpkJw dEzRve"
                 >
                   <svg
                     style={
@@ -1113,7 +1113,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               className="sc-fznMAR gaZbdV"
             >
               <div
-                className="sc-fzoxKX bsSaZd"
+                className="sc-fzoYkl gxmYWQ"
                 onClick={[Function]}
               >
                 <label
@@ -1384,7 +1384,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzoKki fGLGO"
+                  className="sc-fzpkJw dEzRve"
                 >
                   <svg
                     style={
@@ -1510,7 +1510,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzoxKX eVa-dZJ"
+                      className="sc-fzoYkl hXBbEY"
                       onClick={[Function]}
                     >
                       <input
@@ -1744,7 +1744,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzoKki cBgPZe"
+                        className="sc-fzpkJw DzfrS"
                       >
                         <svg
                           style={

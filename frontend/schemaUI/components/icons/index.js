@@ -23,6 +23,7 @@ import { HomeIcon } from './homeIcon';
 import { BinIcon } from './binIcon';
 import { MetadataIcon } from './metadataIcon';
 import { StateIcon } from './stateIcon';
+import { InfoIcon } from './infoIcon';
 
 const Icons = {
   ResultIcon,
@@ -50,6 +51,7 @@ const Icons = {
   BinIcon,
   MetadataIcon,
   StateIcon,
+  InfoIcon,
 };
 
 export {
@@ -74,6 +76,7 @@ export {
   BinIcon,
   MetadataIcon,
   StateIcon,
+  InfoIcon,
 };
 
 export default Icons;

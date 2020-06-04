@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
-import { useIntl } from 'react-intl';
-import { always, pathOr } from 'ramda';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { always, pathOr, cond, T, equals, not, is } from 'ramda';
 
-import { customLabelStyles, Header, IconsContainer, InputContainer, ElementIcon } from './blockTemplateElement.styles';
+import {
+  customLabelStyles,
+  Header,
+  IconsContainer,
+  InputContainer,
+  ElementIcon,
+  WarningMessage,
+  WarningMessageIcon,
+} from './blockTemplateElement.styles';
 import messages from './blockTemplateElement.messages';
 import { TextInput } from '../form/inputs/textInput';
 import {
@@ -14,13 +22,15 @@ import {
   ELEMENT_NAME,
   ELEMENT_TYPE,
   ELEMENTS_TYPES,
+  FILE_TYPE,
+  IMAGE_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Select } from '../form/select';
-import { renderWhenTrue } from '../../utils/rendering';
+import { renderWhen, renderWhenTrue } from '../../utils/rendering';
 import { CustomElement } from './customElement.component';
 import { binStyles } from '../form/frequentComponents.styles';
 
-const { EditIcon, BinIcon, MinusIcon } = Icons;
+const { EditIcon, BinIcon, MinusIcon, InfoIcon } = Icons;
 
 export const BlockTemplateElement = ({
   element,
@@ -33,9 +43,11 @@ export const BlockTemplateElement = ({
   ...restFormikProps
 }) => {
   const intl = useIntl();
+  const [type, setType] = useState(null);
+  const [warningMessage, setWarningMessage] = useState(null);
   const elementPath = `${BLOCK_TEMPLATES_ELEMENTS}.${index}`;
   const typesOptions = ELEMENTS_TYPES.map(item => ({ label: intl.formatMessage(messages[item]), value: item }));
-  const handleSelectType = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
+  const handleSelectType = value => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
   const renderElements = renderWhenTrue(
     always(
       <CustomElement
@@ -46,6 +58,30 @@ export const BlockTemplateElement = ({
       />
     )
   );
+
+  useEffect(() => {
+    if (type && type.value) {
+      const { value } = type;
+      const message = cond([
+        [equals(FILE_TYPE), always(<FormattedMessage {...messages.warningFile} />)],
+        [equals(IMAGE_TYPE), always(<FormattedMessage {...messages.warningImage} />)],
+        [T, always(null)],
+      ])(value);
+
+      setWarningMessage(message);
+
+      handleSelectType(value);
+    }
+  }, [type]);
+
+  const renderMessage = renderWhen(is(Object), () => (
+    <WarningMessage>
+      <WarningMessageIcon>
+        <InfoIcon />
+      </WarningMessageIcon>
+      {warningMessage}
+    </WarningMessage>
+  ));
 
   return (
     <AccordionPanel autoOpen={element[ELEMENT_AUTO_OPEN]}>
@@ -81,11 +117,12 @@ export const BlockTemplateElement = ({
             value={element[ELEMENT_TYPE]}
             id="elementTypeSelect"
             options={typesOptions}
-            onSelect={handleSelectType}
+            onSelect={setType}
             placeholder={intl.formatMessage(messages.typePlaceholder)}
             customLabelStyles={customLabelStyles}
             {...restFormikProps}
           />
+          {renderMessage(warningMessage)}
         </InputContainer>
         {renderElements(element[ELEMENT_TYPE] === CUSTOM_ELEMENT_TYPE)}
       </AccordionDetails>

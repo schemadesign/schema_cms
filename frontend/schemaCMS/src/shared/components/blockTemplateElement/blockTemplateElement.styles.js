@@ -67,3 +67,11 @@ export const ElementIcon = styled.div`
 export const customLabelStyles = {
   borderTop: 'none',
 };
+
+export const WarningMessage = styled.div`
+  display: flex;
+`;
+
+export const WarningMessageIcon = styled.div`
+  margin-right: 10px;
+`;

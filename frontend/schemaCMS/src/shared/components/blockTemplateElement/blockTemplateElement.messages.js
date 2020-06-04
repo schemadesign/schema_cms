@@ -79,4 +79,12 @@ export default defineMessages({
     id: 'shared.components.blockTemplateElement.elements',
     defaultMessage: 'Element',
   },
+  warningFile: {
+    id: 'shared.components.blockTemplateElement.warningFile',
+    defaultMessage: 'Notice: Files uploaded are available publicly.',
+  },
+  warningImage: {
+    id: 'shared.components.blockTemplateElement.warningImage',
+    defaultMessage: 'Notice: Images uploaded are available publicly.',
+  },
 });

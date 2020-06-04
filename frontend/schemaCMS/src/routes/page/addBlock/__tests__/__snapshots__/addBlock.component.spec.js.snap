@@ -350,7 +350,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzowVh gBjPlT"
+    className="sc-fzoVTD jyIGUE"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoVTD hyDqgk"
+          className="sc-fznyYp ghTwFj"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoVTD hyDqgk"
+          className="sc-fznyYp ghTwFj"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoVTD hyDqgk"
+          className="sc-fznyYp ghTwFj"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoVTD hyDqgk"
+          className="sc-fznyYp ghTwFj"
           href="/page/1"
           onClick={[Function]}
           style={
@@ -596,7 +596,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoJus duzQwC"
+          className="sc-fzpisO esPMDo"
         >
           <span
             style={

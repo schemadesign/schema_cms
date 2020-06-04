@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { BlockTemplateElement } from '../blockTemplateElement.component';
 import { defaultProps } from '../blockTemplateElement.stories';
@@ -23,8 +24,10 @@ describe('BlockTemplateElement: Component', () => {
   it('should set type of element', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
     const wrapper = await render();
-    wrapper.root.findAllByProps({ id: 'elementTypeSelect' })[0].props.onSelect({ value: 'value' });
 
+    act(() => {
+      wrapper.root.findAllByProps({ id: 'elementTypeSelect' })[0].props.onSelect({ value: 'value' });
+    });
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements.0.type', 'value');
   });
 });
