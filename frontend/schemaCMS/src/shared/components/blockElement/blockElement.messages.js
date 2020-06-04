@@ -2,6 +2,7 @@
 import { defineMessages } from 'react-intl';
 import {
   IMAGE_TYPE,
+  FILE_TYPE,
   INTERNAL_CONNECTION_TYPE,
   OBSERVABLE_CELL,
   OBSERVABLE_NOTEBOOK,
@@ -22,6 +23,10 @@ export default defineMessages({
   [`${IMAGE_TYPE}Placeholder`]: {
     id: `shared.components.blockElement.${IMAGE_TYPE}Placeholder`,
     defaultMessage: 'Select image or Drag and Drop it here',
+  },
+  [`${FILE_TYPE}Placeholder`]: {
+    id: `shared.components.blockElement.${FILE_TYPE}Placeholder`,
+    defaultMessage: 'Select file or Drag and Drop it here',
   },
   [INTERNAL_CONNECTION_TYPE]: {
     id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}`,
@@ -63,6 +68,10 @@ export default defineMessages({
     id: `shared.components.blockElement.${IMAGE_TYPE}`,
     defaultMessage: 'Image',
   },
+  [FILE_TYPE]: {
+    id: `shared.components.blockElement.${FILE_TYPE}`,
+    defaultMessage: 'File',
+  },
   [CODE_TYPE]: {
     id: `shared.components.blockElement.${CODE_TYPE}`,
     defaultMessage: 'Code',
@@ -82,5 +91,9 @@ export default defineMessages({
   set: {
     id: 'shared.components.blockElement.set',
     defaultMessage: 'Set',
+  },
+  fileSizeError: {
+    id: 'shared.components.blockElement.fileSizeError',
+    defaultMessage: '{type} should have maximum 50MB',
   },
 });

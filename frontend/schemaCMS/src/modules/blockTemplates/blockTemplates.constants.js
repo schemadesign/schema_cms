@@ -24,6 +24,7 @@ export const CONNECTION_TYPE = 'connection';
 export const INTERNAL_CONNECTION_TYPE = 'internal_connection';
 export const CUSTOM_ELEMENT_TYPE = 'custom_element';
 export const OBSERVABLEHQ_TYPE = 'observable_hq';
+export const FILE_TYPE = 'file';
 
 export const OBSERVABLE_USER = 'observableUser';
 export const OBSERVABLE_NOTEBOOK = 'observableNotebook';
@@ -33,6 +34,7 @@ export const OBSERVABLE_PARAMS = 'observableParams';
 export const CUSTOM_ELEMENTS_TYPES = [
   MARKDOWN_TYPE,
   PLAIN_TEXT_TYPE,
+  FILE_TYPE,
   IMAGE_TYPE,
   CODE_TYPE,
   CONNECTION_TYPE,

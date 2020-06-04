@@ -1285,7 +1285,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                               }
                             }
                           >
-                            Image
+                            File
                           </div>
                           <div
                             id="select-item-3"
@@ -1305,7 +1305,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                               }
                             }
                           >
-                            Code
+                            Image
                           </div>
                           <div
                             id="select-item-4"
@@ -1325,7 +1325,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                               }
                             }
                           >
-                            Connection
+                            Code
                           </div>
                           <div
                             id="select-item-5"
@@ -1345,7 +1345,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                               }
                             }
                           >
-                            Internal Connection
+                            Connection
                           </div>
                           <div
                             id="select-item-6"
@@ -1365,10 +1365,30 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                               }
                             }
                           >
-                            ObservableHQ
+                            Internal Connection
                           </div>
                           <div
                             id="select-item-7"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            ObservableHQ
+                          </div>
+                          <div
+                            id="select-item-8"
                             onClick={[Function]}
                             onMouseOut={[Function]}
                             onMouseOver={[Function]}

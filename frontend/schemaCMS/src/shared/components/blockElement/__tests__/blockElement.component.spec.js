@@ -6,6 +6,7 @@ import { makeContextRenderer } from '../../../utils/testUtils';
 import {
   customElement,
   imageElement,
+  fileElement,
   internalConnectionElement,
   markdownElement,
   observableHQElement,
@@ -21,6 +22,11 @@ describe('BlockElement: Component', () => {
 
   it('should render correctly image element', async () => {
     const wrapper = await render({ element: imageElement });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly image element', async () => {
+    const wrapper = await render({ element: fileElement });
     expect(wrapper).toMatchSnapshot();
   });
 

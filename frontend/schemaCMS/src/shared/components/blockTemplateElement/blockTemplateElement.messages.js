@@ -4,6 +4,7 @@ import {
   CODE_TYPE,
   CONNECTION_TYPE,
   ELEMENT_TYPE,
+  FILE_TYPE,
   IMAGE_TYPE,
   PARAMS_BLOCK,
   PLAIN_TEXT_TYPE,
@@ -37,6 +38,10 @@ export default defineMessages({
   [IMAGE_TYPE]: {
     id: `shared.components.blockTemplateElement.${IMAGE_TYPE}`,
     defaultMessage: 'Image',
+  },
+  [FILE_TYPE]: {
+    id: `shared.components.blockTemplateElement.${FILE_TYPE}`,
+    defaultMessage: 'File',
   },
   [CODE_TYPE]: {
     id: `shared.components.blockTemplateElement.${CODE_TYPE}`,
