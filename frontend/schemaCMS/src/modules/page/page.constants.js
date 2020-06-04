@@ -56,7 +56,6 @@ export const INITIAL_VALUES = {
 };
 
 export const INITIAL_VALUES_ADD_BLOCK = {
-  [BLOCK_NAME]: '',
   [BLOCK_TYPE]: '',
   [BLOCK_TEMPLATES_ELEMENTS]: [],
 };
@@ -135,11 +134,6 @@ export const PAGE_SCHEMA = Yup.object().shape({
 });
 
 export const ADD_BLOCK_SCHEMA = Yup.object().shape({
-  [BLOCK_NAME]: Yup.string()
-    .trim()
-    .min(1, 'Block Name should have at least 1 characters')
-    .max(100, 'Block Name should have maximum 100 characters')
-    .required('Required'),
   [BLOCK_TYPE]: Yup.string()
     .trim()
     .min(1, 'Required')

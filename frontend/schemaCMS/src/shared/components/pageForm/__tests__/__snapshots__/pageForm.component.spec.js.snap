@@ -1092,7 +1092,6 @@ exports[`PageForm: Component should render correctly 1`] = `
                     }
                   }
                   type="text"
-                  value="name"
                 />
                 <div
                   style={
@@ -1115,9 +1114,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                       "whiteSpace": "pre",
                     }
                   }
-                >
-                  name
-                </div>
+                />
                 <div
                   style={
                     Object {
@@ -6536,7 +6533,6 @@ exports[`PageForm: Component should render with page template 1`] = `
                     }
                   }
                   type="text"
-                  value="name"
                 />
                 <div
                   style={
@@ -6559,9 +6555,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                       "whiteSpace": "pre",
                     }
                   }
-                >
-                  name
-                </div>
+                />
                 <div
                   style={
                     Object {

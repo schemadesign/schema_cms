@@ -1,5 +1,4 @@
 import {
-  BLOCK_NAME,
   BLOCK_TYPE,
   PAGE_TEMPLATES_NAME,
   PAGE_TEMPLATES_ALLOW_EDIT,
@@ -12,7 +11,6 @@ export const pageTemplate = {
   createdBy: 'owner',
   blocks: [
     {
-      [BLOCK_NAME]: 'block name',
       [BLOCK_TYPE]: 1,
       key: 1,
       id: 1,
@@ -29,7 +27,6 @@ export const blockPageTemplate = {
   createdBy: 'owner 2',
   blocks: [
     {
-      [BLOCK_NAME]: 'block name',
       [BLOCK_TYPE]: 1,
       key: 1,
       id: 1,

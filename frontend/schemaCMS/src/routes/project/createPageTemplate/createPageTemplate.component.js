@@ -20,7 +20,6 @@ import {
   INITIAL_VALUES,
   PAGE_TEMPLATES_NAME,
   PAGE_TEMPLATES_BLOCKS,
-  BLOCK_NAME,
   BLOCK_TYPE,
   BLOCK_ID,
   getDefaultPageBlock,
@@ -80,7 +79,7 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
           formData: {
             ...formData,
             [PAGE_TEMPLATES_BLOCKS]: formData[PAGE_TEMPLATES_BLOCKS].map((block, index) => ({
-              ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID])(block),
+              ...pick([BLOCK_TYPE, BLOCK_ID])(block),
               order: index,
             })),
           },

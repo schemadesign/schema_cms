@@ -20,7 +20,6 @@ import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/compo
 import {
   BLOCK_ID,
   BLOCK_TYPE,
-  BLOCK_NAME,
   PAGE_TEMPLATES_BLOCKS,
   PAGE_TEMPLATES_SCHEMA,
   BLOCK_KEY,
@@ -98,7 +97,7 @@ export const PageTemplate = memo(
       initialValues: {
         ...pick([PAGE_TEMPLATES_NAME, PAGE_TEMPLATES_ALLOW_EDIT, PAGE_TEMPLATES_IS_AVAILABLE], pageTemplate),
         blocks: pageTemplate[PAGE_TEMPLATES_BLOCKS].map(block => ({
-          ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID], block),
+          ...pick([BLOCK_TYPE, BLOCK_ID], block),
           [BLOCK_KEY]: block[BLOCK_ID],
         })),
       },
@@ -112,7 +111,7 @@ export const PageTemplate = memo(
             formData: {
               ...formData,
               [PAGE_TEMPLATES_BLOCKS]: formData[PAGE_TEMPLATES_BLOCKS].map((block, index) => ({
-                ...pick([BLOCK_NAME, BLOCK_TYPE, BLOCK_ID])(block),
+                ...pick([BLOCK_TYPE, BLOCK_ID])(block),
                 order: index,
               })),
             },

@@ -20,6 +20,7 @@ import {
   contentMessage,
   pageBlockMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 const getBreadcrumbsItems = (project, { id, name }) => [
   {
@@ -63,6 +64,7 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
       <Helmet title={title} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project, section)} />
+      <ContextHeader title={title} subtitle={subtitle} />
       <AddBlockForm
         fetchBlockTemplates={fetchBlockTemplates}
         projectId={projectId}

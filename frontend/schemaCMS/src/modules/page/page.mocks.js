@@ -7,7 +7,6 @@ import {
   PAGE_TEMPLATE,
   PAGE_BLOCKS,
   BLOCK_TYPE,
-  BLOCK_NAME,
   BLOCK_KEY,
   BLOCK_ID,
   BLOCK_ELEMENTS,
@@ -94,7 +93,6 @@ export const customElement = {
 };
 
 export const block = {
-  [BLOCK_NAME]: 'name',
   [BLOCK_TYPE]: 'type',
   [BLOCK_KEY]: 1,
   [BLOCK_ID]: 1,

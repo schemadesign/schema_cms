@@ -49,7 +49,7 @@ describe('Sections: sagas', () => {
     });
   });
 
-  describe('when /FETCH_PAGE_TEMPLATE action is fired', () => {
+  describe('when /FETCH_SECTION action is fired', () => {
     it('should put fetchSection action', async () => {
       const sectionId = 'sectionId';
       const response = {
@@ -62,6 +62,7 @@ describe('Sections: sagas', () => {
 
       await expectSaga(watchSections)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
         .put(SectionsRoutines.fetchSection.success(response.results))
         .dispatch(SectionsRoutines.fetchSection({ sectionId }))
         .silentRun();
@@ -107,7 +108,7 @@ describe('Sections: sagas', () => {
     });
   });
 
-  describe('when /REMOVE_PAGE_TEMPLATE action is fired', () => {
+  describe('when /REMOVE_SECTION action is fired', () => {
     it('should put removeSection action', async () => {
       const sectionId = 'sectionId';
       const response = {

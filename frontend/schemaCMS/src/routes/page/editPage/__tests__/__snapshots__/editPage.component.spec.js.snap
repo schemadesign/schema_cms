@@ -1676,7 +1676,6 @@ exports[`EditPage: Component should render correctly 1`] = `
                         }
                       }
                       type="text"
-                      value="name"
                     />
                     <div
                       style={
@@ -1699,9 +1698,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                           "whiteSpace": "pre",
                         }
                       }
-                    >
-                      name
-                    </div>
+                    />
                     <div
                       style={
                         Object {

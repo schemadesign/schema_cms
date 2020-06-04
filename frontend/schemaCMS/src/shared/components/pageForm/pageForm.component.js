@@ -103,6 +103,7 @@ export const PageForm = ({
       propOr([], [PAGE_BLOCKS]),
       map(({ id, elements, ...block }) => ({
         ...block,
+        name: block.type,
         key: id,
         elements: map(
           pipe(

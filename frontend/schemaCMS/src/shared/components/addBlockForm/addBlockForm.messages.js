@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import { BLOCK_NAME, BLOCK_TYPE } from '../../../modules/page/page.constants';
+import { BLOCK_TYPE } from '../../../modules/page/page.constants';
 
 export default defineMessages({
   title: {
@@ -10,14 +10,6 @@ export default defineMessages({
   subtitle: {
     id: 'page.addBlock.subtitle',
     defaultMessage: 'Add',
-  },
-  [`${BLOCK_NAME}Placeholder`]: {
-    id: `page.addBlock.${BLOCK_NAME}Placeholder`,
-    defaultMessage: 'Name',
-  },
-  [BLOCK_NAME]: {
-    id: `page.addBlock.${BLOCK_NAME}`,
-    defaultMessage: 'Block Name',
   },
   [BLOCK_TYPE]: {
     id: `page.addBlock.${BLOCK_TYPE}`,
