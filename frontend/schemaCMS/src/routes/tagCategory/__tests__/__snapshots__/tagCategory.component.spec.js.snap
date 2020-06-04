@@ -35,50 +35,63 @@ exports[`TagCategory: Component should render correctly 1`] = `
       />
     }
   />
-  <ProjectBreadcrumbs
-    items={
-      Array [
-        Object {
-          "h3": "project title",
-          "path": "/project/1/",
-          "span": <FormattedMessage
-            defaultMessage="Project"
-            id="shared.components.projectBreadcrumbs.project"
-            values={Object {}}
-          />,
-        },
-        Object {
-          "h3": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
-            values={Object {}}
-          />,
-          "path": "/project/1/tag-templates",
-          "span": <FormattedMessage
-            defaultMessage="Tab"
-            id="shared.components.projectBreadcrumbs.tab"
-            values={Object {}}
-          />,
-        },
-        Object {
-          "active": true,
-          "h3": "name",
-          "path": "/tag-category/2",
-          "span": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
-            values={Object {}}
-          />,
-        },
-      ]
-    }
-  />
   <LoadingWrapper
     error={null}
     loading={false}
     noData={false}
     noDataContent={null}
   >
+    <ProjectBreadcrumbs
+      items={
+        Array [
+          Object {
+            "h3": "project title",
+            "path": "/project/1/",
+            "span": <FormattedMessage
+              defaultMessage="Project"
+              id="shared.components.projectBreadcrumbs.project"
+              values={Object {}}
+            />,
+          },
+          Object {
+            "h3": <FormattedMessage
+              defaultMessage="Templates"
+              id="shared.components.projectBreadcrumbs.templates"
+              values={Object {}}
+            />,
+            "path": "/project/1/templates",
+            "span": <FormattedMessage
+              defaultMessage="Tab"
+              id="shared.components.projectBreadcrumbs.tab"
+              values={Object {}}
+            />,
+          },
+          Object {
+            "h3": <FormattedMessage
+              defaultMessage="Tags Template"
+              id="shared.components.projectBreadcrumbs.tagsTemplate"
+              values={Object {}}
+            />,
+            "path": "/project/1/tag-templates",
+            "span": <FormattedMessage
+              defaultMessage="Library"
+              id="shared.components.projectBreadcrumbs.libraryMessage"
+              values={Object {}}
+            />,
+          },
+          Object {
+            "active": true,
+            "h3": "name",
+            "path": "/tag-category/2",
+            "span": <FormattedMessage
+              defaultMessage="Template"
+              id="shared.components.projectBreadcrumbs.template"
+              values={Object {}}
+            />,
+          },
+        ]
+      }
+    />
     <styled.form
       onSubmit={[Function]}
     >
@@ -291,50 +304,63 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
       />
     }
   />
-  <ProjectBreadcrumbs
-    items={
-      Array [
-        Object {
-          "h3": "project title",
-          "path": "/project/1/",
-          "span": <FormattedMessage
-            defaultMessage="Project"
-            id="shared.components.projectBreadcrumbs.project"
-            values={Object {}}
-          />,
-        },
-        Object {
-          "h3": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
-            values={Object {}}
-          />,
-          "path": "/project/1/tag-templates",
-          "span": <FormattedMessage
-            defaultMessage="Tab"
-            id="shared.components.projectBreadcrumbs.tab"
-            values={Object {}}
-          />,
-        },
-        Object {
-          "active": true,
-          "h3": "name",
-          "path": "/tag-category/2",
-          "span": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
-            values={Object {}}
-          />,
-        },
-      ]
-    }
-  />
   <LoadingWrapper
     error={null}
     loading={true}
     noData={false}
     noDataContent={null}
   >
+    <ProjectBreadcrumbs
+      items={
+        Array [
+          Object {
+            "h3": "project title",
+            "path": "/project/1/",
+            "span": <FormattedMessage
+              defaultMessage="Project"
+              id="shared.components.projectBreadcrumbs.project"
+              values={Object {}}
+            />,
+          },
+          Object {
+            "h3": <FormattedMessage
+              defaultMessage="Templates"
+              id="shared.components.projectBreadcrumbs.templates"
+              values={Object {}}
+            />,
+            "path": "/project/1/templates",
+            "span": <FormattedMessage
+              defaultMessage="Tab"
+              id="shared.components.projectBreadcrumbs.tab"
+              values={Object {}}
+            />,
+          },
+          Object {
+            "h3": <FormattedMessage
+              defaultMessage="Tags Template"
+              id="shared.components.projectBreadcrumbs.tagsTemplate"
+              values={Object {}}
+            />,
+            "path": "/project/1/tag-templates",
+            "span": <FormattedMessage
+              defaultMessage="Library"
+              id="shared.components.projectBreadcrumbs.libraryMessage"
+              values={Object {}}
+            />,
+          },
+          Object {
+            "active": true,
+            "h3": "name",
+            "path": "/tag-category/2",
+            "span": <FormattedMessage
+              defaultMessage="Template"
+              id="shared.components.projectBreadcrumbs.template"
+              values={Object {}}
+            />,
+          },
+        ]
+      }
+    />
     <styled.form
       onSubmit={[Function]}
     >

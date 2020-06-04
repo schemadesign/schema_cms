@@ -394,6 +394,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="project title"
           >
             project title
           </h3>
@@ -450,6 +452,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Content"
+                id="shared.components.projectBreadcrumbs.content"
+                values={Object {}}
+              />
             }
           >
             Content
@@ -506,6 +516,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Section
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -514,6 +525,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="Section"
           >
             Section
           </h3>
@@ -562,6 +574,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Block
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -569,6 +582,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Create"
+                id="shared.components.projectBreadcrumbs.createMessage"
+                values={Object {}}
+              />
             }
           >
             Create
@@ -609,6 +629,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Page
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -616,6 +637,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Create"
+                id="shared.components.projectBreadcrumbs.createMessage"
+                values={Object {}}
+              />
             }
           >
             Create

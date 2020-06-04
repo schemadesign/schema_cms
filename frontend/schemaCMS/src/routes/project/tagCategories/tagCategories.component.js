@@ -17,7 +17,7 @@ import {
   templatesMessage,
   ProjectBreadcrumbs,
   projectMessage,
-  tagsMessage,
+  libraryMessage,
   tagsTemplateMessage,
   tabMessage,
 } from '../../../shared/components/projectBreadcrumbs';
@@ -38,7 +38,7 @@ const getBreadcrumbsItems = project => [
   {
     path: `/project/${project.id}/tags-templates`,
     active: true,
-    span: tagsMessage,
+    span: libraryMessage,
     h3: tagsTemplateMessage,
   },
 ];
@@ -83,7 +83,7 @@ export class TagCategories extends PureComponent {
     this.props.history.push(`/project/${projectId}/${TAG_CATEGORIES_PAGE}/create`);
   };
 
-  handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
+  handleShowTemplates = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/templates`);
 
   renderTagCategory = ({ created, createdBy, name, id, tags }, index) => {
     const { history } = this.props;
@@ -108,7 +108,7 @@ export class TagCategories extends PureComponent {
       <Fragment>
         <ListContainer>{tagCategories.map(this.renderTagCategory)}</ListContainer>
         <NavigationContainer fixed>
-          <BackArrowButton id="backBtn" hideOnDesktop onClick={this.handleShowProject} />
+          <BackArrowButton id="backBtn" hideOnDesktop onClick={this.handleShowTemplates} />
           <PlusButton hideOnDesktop onClick={this.handleCreateTag} />
         </NavigationContainer>
       </Fragment>

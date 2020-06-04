@@ -41,8 +41,8 @@ exports[`TagCategories: Component should render correctly 1`] = `
           />,
           "path": "/project/1/tags-templates",
           "span": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
+            defaultMessage="Library"
+            id="shared.components.projectBreadcrumbs.libraryMessage"
             values={Object {}}
           />,
         },
@@ -332,8 +332,8 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
           />,
           "path": "/project/1/tags-templates",
           "span": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
+            defaultMessage="Library"
+            id="shared.components.projectBreadcrumbs.libraryMessage"
             values={Object {}}
           />,
         },
@@ -623,8 +623,8 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
           />,
           "path": "/project/1/tags-templates",
           "span": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
+            defaultMessage="Library"
+            id="shared.components.projectBreadcrumbs.libraryMessage"
             values={Object {}}
           />,
         },
