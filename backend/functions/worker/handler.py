@@ -21,7 +21,6 @@ import scipy as sp
 import sentry_sdk
 from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
-from pyarrow import BufferReader, csv as pa_csv, Table
 
 from common import api, services, settings, types, utils
 import errors
@@ -32,7 +31,6 @@ from image_scraping import image_scraping, is_valid_url, www_to_https  # noqa
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-convert_options = pa_csv.ConvertOptions(strings_can_be_null=True)
 
 if settings.SENTRY_DNS:
     sentry_sdk.init(settings.SENTRY_DNS, integrations=[AwsLambdaIntegration()])
@@ -56,12 +54,7 @@ def map_general_dtypes(dtype):
 
 
 def read_file_to_data_frame(file):
-    buffer = BytesIO()
-    buffer.write(dt.fread(file, na_strings=[""], fill=True).to_csv().encode("utf-8"))
-
-    table = pa_csv.read_csv(BufferReader(buffer.getvalue()), convert_options=convert_options).to_pandas(
-        strings_to_categorical=True
-    )
+    table = dt.fread(file, na_strings=[""], fill=True).to_pandas()
 
     return table
 
