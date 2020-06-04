@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
+import { Typography } from 'schemaUI';
 
 import { media } from '../../../theme/media';
+
+const { H3 } = Typography;
 
 export const Container = styled.div`
   display: none;
@@ -23,4 +26,11 @@ export const Link = styled(RouterLink)`
   &:hover {
     color: ${({ theme }) => theme.link.hover};
   }
+`;
+
+export const Title = styled(H3)`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
 `;

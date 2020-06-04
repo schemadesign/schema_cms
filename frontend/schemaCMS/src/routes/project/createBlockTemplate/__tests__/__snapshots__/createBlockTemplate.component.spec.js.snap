@@ -394,6 +394,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fzowVh eGVeRo"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title=""
           >
             
           </h3>
@@ -450,6 +452,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fzowVh eGVeRo"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Templates"
+                id="shared.components.projectBreadcrumbs.templates"
+                values={Object {}}
+              />
             }
           >
             Templates
@@ -506,6 +516,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
+            className="sc-fzowVh eGVeRo"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -513,6 +524,13 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Block Templates"
+                id="shared.components.projectBreadcrumbs.blockTemplates"
+                values={Object {}}
+              />
             }
           >
             Block Templates
@@ -553,6 +571,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
+            className="sc-fzowVh eGVeRo"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -560,6 +579,13 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Create"
+                id="shared.components.projectBreadcrumbs.createMessage"
+                values={Object {}}
+              />
             }
           >
             Create

@@ -394,6 +394,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`PageList: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="project title"
           >
             project title
           </h3>
@@ -450,6 +452,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`PageList: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Content"
+                id="shared.components.projectBreadcrumbs.content"
+                values={Object {}}
+              />
             }
           >
             Content
@@ -497,6 +507,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </span>
           <h3
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -505,6 +516,7 @@ exports[`PageList: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="Section name"
           >
             Section name
           </h3>

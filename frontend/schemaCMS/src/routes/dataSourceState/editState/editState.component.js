@@ -59,9 +59,9 @@ const getBreadcrumbsItems = (project, dataSource, stateName) => [
     h3: stateMessage,
   },
   {
-    path: `/project/${project.id}/content`,
     span: stateMessage,
     h3: stateName,
+    active: true,
   },
 ];
 
