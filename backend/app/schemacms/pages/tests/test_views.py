@@ -241,7 +241,7 @@ class TestDeletePageTemplatesView:
 class TestListCreateSectionView:
     @staticmethod
     def get_url(pk):
-        return reverse("pages:section_list_create", kwargs=dict(project_pk=pk))
+        return reverse("pages:sections-list", kwargs=dict(project_pk=pk))
 
     def test_list_section(self, api_client, admin, section):
         api_client.force_authenticate(admin)

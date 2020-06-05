@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from rest_framework import permissions, response, viewsets, mixins
+from rest_framework import filters, permissions, response, viewsets, mixins
 
 from . import models, serializers
 from ..datasources.models import DataSource
@@ -18,6 +18,9 @@ class BaseStateView:
 class StateListCreateView(
     BaseStateView, mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet
 ):
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
+
     def initial(self, request, *args, **kwargs):
         super().initial(request, *args, **kwargs)
         self.datasource_obj = self.get_datasource_object(kwargs["datasource_pk"])
@@ -30,12 +33,10 @@ class StateListCreateView(
         return get_object_or_404(DataSource, pk=datasource_pk)
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
+        res = super().list(request, args, kwargs)
+        res.data["project"] = self.datasource_obj.project.project_info
 
-        serializer = self.get_serializer(queryset, many=True)
-        data = {"project": self.datasource_obj.project_info, "results": serializer.data}
-
-        return response.Response(data)
+        return res
 
     def create(self, request, *args, **kwargs):
         request.data["datasource"] = self.datasource_obj.id

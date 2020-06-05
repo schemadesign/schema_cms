@@ -1,4 +1,6 @@
-from rest_framework import decorators, permissions, response, status, viewsets
+import django_filters.rest_framework
+
+from rest_framework import decorators, filters, permissions, response, status, viewsets
 
 from . import models, serializers
 from ..users import permissions as user_permissions
@@ -13,6 +15,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     serializer_class_mapping = {
         "users": serializers.UserSerializer,
     }
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "title"]
 
     def get_queryset(self):
         if self.action == "retrieve":
