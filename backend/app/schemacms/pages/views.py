@@ -1,7 +1,9 @@
 from django.db import models as d_models
 from django.shortcuts import get_object_or_404
 
-from rest_framework import generics, permissions, response
+import django_filters.rest_framework
+
+from rest_framework import generics, filters, mixins, permissions, response, viewsets
 
 from . import models, serializers
 from ..projects.models import Project
@@ -10,38 +12,36 @@ from ..utils.serializers import IDNameSerializer
 from ..utils.permissions import IsAdmin, IsAdminOrIsEditor, IsAdminOrReadOnly
 
 
-class TemplateListCreateView(generics.ListCreateAPIView):
-    project_info = {}
+class BaseListCreateView(generics.ListCreateAPIView):
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
 
-    def get_parent(self):
-        project = generics.get_object_or_404(Project.objects.all(), pk=self.kwargs["project_pk"])
-        self.project_info = project.project_info
-        return project
+    def initial(self, request, *args, **kwargs):
+        super().initial(request, *args, **kwargs)
+        self.project_obj = self.get_project_object(kwargs["project_pk"])
 
     def get_queryset(self):
-        return self.queryset.filter(project=self.get_parent())
+        if self.request.user.is_editor:
+            return super().get_queryset().filter(project=self.project_obj, is_available=True)
+        return super().get_queryset().filter(project=self.project_obj)
 
-    def list(self, request, *args, **kwargs):
-        if self.serializer_class != serializers.SectionListCreateSerializer and request.user.is_editor:
-            queryset = self.get_queryset().filter(is_available=True)
-        else:
-            queryset = self.get_queryset()
-
-        serializer = self.get_serializer(queryset, many=True)
-        data = {"project": self.project_info, "results": serializer.data}
-
-        return response.Response(data)
+    @staticmethod
+    def get_project_object(project_pk):
+        return get_object_or_404(Project, pk=project_pk)
 
     def create(self, request, *args, **kwargs):
         if "project" not in request.data:
             request.data["project"] = kwargs["project_pk"]
         return super().create(request, *args, **kwargs)
 
-    class Meta:
-        abstract = True
+    def list(self, request, *args, **kwargs):
+        res = super().list(request, args, kwargs)
+        res.data["project"] = self.project_obj.project_info
+
+        return res
 
 
-class BlockTemplateListCreteView(TemplateListCreateView):
+class BlockTemplateListCreteView(BaseListCreateView):
     serializer_class = serializers.BlockTemplateSerializer
     queryset = (
         models.BlockTemplate.objects.select_related("project", "created_by")
@@ -59,7 +59,7 @@ class BlockTemplateListCreteView(TemplateListCreateView):
             queryset = self.get_queryset()
 
             serializer = IDNameSerializer(queryset, many=True)
-            data = {"project": self.project_info, "results": serializer.data}
+            data = {"results": serializer.data}
 
             return response.Response(data)
 
@@ -74,7 +74,7 @@ class BlockTemplateViewSet(DetailViewSet):
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
 
 
-class PageTemplateListCreteView(TemplateListCreateView):
+class PageTemplateListCreteView(BaseListCreateView):
     serializer_class = serializers.PageTemplateSerializer
     queryset = (
         models.PageTemplate.objects.all()
@@ -109,7 +109,7 @@ class PageTemplateViewSet(DetailViewSet):
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
 
 
-class SectionListCreateView(TemplateListCreateView):
+class SectionListCreateView(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = (
         models.Section.objects.all()
         .annotate_pages_count()
@@ -119,10 +119,34 @@ class SectionListCreateView(TemplateListCreateView):
     )
     serializer_class = serializers.SectionListCreateSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
-    project_info = {}
+
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
+
+    def initial(self, request, *args, **kwargs):
+        super().initial(request, *args, **kwargs)
+        self.project_obj = self.get_project_object(kwargs["project_pk"])
+
+    def get_queryset(self):
+        return super().get_queryset().filter(project=self.project_obj)
+
+    @staticmethod
+    def get_project_object(project_pk):
+        return get_object_or_404(Project, pk=project_pk)
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
+
+    def list(self, request, *args, **kwargs):
+        res = super().list(request, args, kwargs)
+        res.data["project"] = self.project_obj.project_info
+
+        return res
+
+    def create(self, request, *args, **kwargs):
+        request.data["project"] = kwargs["project_pk"]
+
+        return super().create(request, *args, **kwargs)
 
 
 class SectionInternalConnectionView(generics.ListAPIView):
@@ -172,7 +196,6 @@ class SectionViewSet(DetailViewSet):
 
 class PageListCreateView(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
-    project_info = {}
     serializer_class = serializers.PageSerializer
     queryset = (
         models.Page.objects.all()
@@ -184,6 +207,8 @@ class PageListCreateView(generics.ListCreateAPIView):
         )
         .order_by("-created")
     )
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
 
     def initial(self, request, *args, **kwargs):
         super().initial(request, *args, **kwargs)
@@ -197,12 +222,10 @@ class PageListCreateView(generics.ListCreateAPIView):
         return super().get_queryset().filter(section=self.section_obj)
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
+        res = super().list(request, args, kwargs)
+        res.data["project"] = self.section_obj.project.project_info
 
-        serializer = self.get_serializer(queryset, many=True)
-        data = {"project": self.project_info, "results": serializer.data}
-
-        return response.Response(data)
+        return res
 
     def create(self, request, *args, **kwargs):
         request.data["section"] = kwargs["section_pk"]

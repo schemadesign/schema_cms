@@ -1,10 +1,9 @@
 from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
-from rest_framework import permissions, viewsets, response, mixins
+from rest_framework import filters, permissions, viewsets, response, mixins
 
 from . import models, serializers
 from .permissions import TagPermission
-from ..users.constants import UserRole
 from ..projects.models import Project
 
 
@@ -22,33 +21,36 @@ class BaseTagCategoryView:
 class TagCategoryListCreateViewSet(
     BaseTagCategoryView, mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet
 ):
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
+
     def initial(self, request, *args, **kwargs):
         super().initial(request, *args, **kwargs)
         self.project_obj = self.get_project_object(kwargs["project_pk"])
 
     def get_queryset(self):
-        return super().get_queryset().filter(project=self.project_obj)
+        category_type = self.request.query_params.get("type", None)
+
+        if category_type:
+            filter_kwargs = {f"type__{category_type}": True}
+            queryset = super().get_queryset().filter(project=self.project_obj, **filter_kwargs)
+        else:
+            queryset = super().get_queryset().filter(project=self.project_obj)
+
+        if self.request.user.is_editor:
+            queryset = queryset.filter(is_available=True)
+
+        return queryset
 
     @staticmethod
     def get_project_object(project_pk):
         return get_object_or_404(Project, pk=project_pk)
 
     def list(self, request, *args, **kwargs):
-        category_type = request.query_params.get("type", None)
+        res = super().list(request, args, kwargs)
+        res.data["project"] = self.project_obj.project_info
 
-        if category_type:
-            filter_kwargs = {f"type__{category_type}": True}
-            queryset = self.get_queryset().filter(**filter_kwargs)
-        else:
-            queryset = self.get_queryset()
-
-        if request.user.role == UserRole.EDITOR:
-            queryset = queryset.filter(is_available=True)
-
-        serializer = self.get_serializer(queryset, many=True)
-        data = {"project": self.project_obj.project_info, "results": serializer.data}
-
-        return response.Response(data)
+        return res
 
     def create(self, request, *args, **kwargs):
         request.data["project"] = self.project_obj.id

@@ -11,7 +11,7 @@ router.register(r"block-templates", views.BlockTemplateViewSet)
 router.register(r"page-templates", views.PageTemplateViewSet, basename="page-template")
 router.register(r"sections", views.SectionViewSet)
 router.register(r"pages", views.PageViewSet)
-
+router.register(r"projects/(?P<project_pk>\d+)/sections", views.SectionListCreateView, basename="sections")
 
 urlpatterns = [
     path(
@@ -23,9 +23,6 @@ urlpatterns = [
         "projects/<project_pk>/page-templates",
         views.PageTemplateListCreteView.as_view(),
         name="page_templates_list_create",
-    ),
-    path(
-        "projects/<project_pk>/sections", views.SectionListCreateView.as_view(), name="section_list_create",
     ),
     path(
         "projects/<project_pk>/sections/internal-connections",
