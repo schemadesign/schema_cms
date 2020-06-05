@@ -26,10 +26,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -48,9 +48,97 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        custom element
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="custom element"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            custom element
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -83,20 +171,20 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fznWOq rCtRw"
+          className="sc-fznMAR loJJRP"
         >
           <div
-            className="sc-fzolEj bckDBT"
+            className="sc-fznWOq dyPNPU"
           />
           3 Sets
           <div
-            className="sc-fzolEj bckDBT"
+            className="sc-fznWOq dyPNPU"
           >
             <div
-              className="sc-fzoXWK fpPPfp"
+              className="sc-fzoNJl layush"
             >
               <div
-                className="sc-fzpkJw cgXrxR"
+                className="sc-fzoYkl enxuaW"
               >
                 <button
                   disabled={false}
@@ -160,11 +248,11 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             }
           >
             <div
-              className="sc-fzozJi fLuvkP"
+              className="sc-AxmLO ZcELy"
             >
               <div>
                 <div
-                  className="sc-fznMAR fbmdwh"
+                  className="sc-fznxKY kFsJkJ"
                 >
                   <svg
                     style={
@@ -185,7 +273,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzoLsD iTliBB"
+                className="sc-fzozJi QgIZz"
               >
                 <div
                   style={
@@ -256,10 +344,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxheI eIpVXM"
+                        className="sc-AxgMl ibCwzu"
                       >
                         <div
-                          className="sc-fzqNJr ijtzun"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -417,10 +505,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxheI eIpVXM"
+                        className="sc-AxgMl ibCwzu"
                       >
                         <div
-                          className="sc-fzqNJr ijtzun"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -578,7 +666,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl dQBWvr"
+                        className="sc-AxhUy jjZZih"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -971,7 +1059,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzpans jgrUZw"
+                className="sc-fzoLsD fNlvoI"
               >
                 <svg
                   id="remove-blockPath.elements.0.value.0"
@@ -1008,11 +1096,11 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             }
           >
             <div
-              className="sc-fzozJi fLuvkP"
+              className="sc-AxmLO ZcELy"
             >
               <div>
                 <div
-                  className="sc-fznMAR fbmdwh"
+                  className="sc-fznxKY kFsJkJ"
                 >
                   <svg
                     style={
@@ -1033,7 +1121,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzoLsD iTliBB"
+                className="sc-fzozJi QgIZz"
               >
                 <div
                   style={
@@ -1104,10 +1192,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxheI eIpVXM"
+                        className="sc-AxgMl ibCwzu"
                       >
                         <div
-                          className="sc-fzqNJr ijtzun"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -1265,10 +1353,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxheI eIpVXM"
+                        className="sc-AxgMl ibCwzu"
                       >
                         <div
-                          className="sc-fzqNJr ijtzun"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -1426,7 +1514,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl dQBWvr"
+                        className="sc-AxhUy jjZZih"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -1819,7 +1907,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzpans jgrUZw"
+                className="sc-fzoLsD fNlvoI"
               >
                 <svg
                   id="remove-blockPath.elements.0.value.1"
@@ -1856,11 +1944,11 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
             }
           >
             <div
-              className="sc-fzozJi fLuvkP"
+              className="sc-AxmLO ZcELy"
             >
               <div>
                 <div
-                  className="sc-fznMAR fbmdwh"
+                  className="sc-fznxKY kFsJkJ"
                 >
                   <svg
                     style={
@@ -1881,7 +1969,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzoLsD iTliBB"
+                className="sc-fzozJi QgIZz"
               >
                 <div
                   style={
@@ -1952,10 +2040,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxheI eIpVXM"
+                        className="sc-AxgMl ibCwzu"
                       >
                         <div
-                          className="sc-fzqNJr ijtzun"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -2113,10 +2201,10 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxheI eIpVXM"
+                        className="sc-AxgMl ibCwzu"
                       >
                         <div
-                          className="sc-fzqNJr ijtzun"
+                          className="sc-fzqBZW fPjuQm"
                         >
                           <div
                             style={
@@ -2274,7 +2362,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxgMl dQBWvr"
+                        className="sc-AxhUy jjZZih"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -2667,7 +2755,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzpans jgrUZw"
+                className="sc-fzoLsD fNlvoI"
               >
                 <svg
                   id="remove-blockPath.elements.0.value.2"
@@ -2722,10 +2810,10 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -2744,9 +2832,97 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        name
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -2779,15 +2955,15 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
         className="sc-AxjAm gcayeW"
       >
         <span
-          className="sc-fzplWN emmkij"
+          className="sc-fzpans ZXqeW"
         >
           Embed Video
         </span>
         <div
-          className="sc-AxheI eIpVXM"
+          className="sc-AxgMl ibCwzu"
         >
           <div
-            className="sc-fzqNJr ijtzun"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={
@@ -2854,15 +3030,15 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
           </svg>
         </div>
         <span
-          className="sc-fzplWN emmkij"
+          className="sc-fzpans ZXqeW"
         >
           Attributes
         </span>
         <div
-          className="sc-AxheI eIpVXM"
+          className="sc-AxgMl ibCwzu"
         >
           <div
-            className="sc-fzqNJr ijtzun"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={
@@ -2961,10 +3137,10 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -2983,9 +3159,97 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        name
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -3018,7 +3282,7 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fznKkj dpatIe"
+          className="sc-fznyAO cDDUoP"
         >
           <div
             style={
@@ -3200,10 +3464,10 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -3222,9 +3486,97 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        name
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -3257,7 +3609,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fznKkj dpatIe"
+          className="sc-fznyAO cDDUoP"
         >
           <div
             style={
@@ -3439,10 +3791,10 @@ exports[`BlockElement: Component should render correctly internal connection ele
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -3461,9 +3813,97 @@ exports[`BlockElement: Component should render correctly internal connection ele
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        name
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -3496,10 +3936,10 @@ exports[`BlockElement: Component should render correctly internal connection ele
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxhUy jiqPcu"
+          className="sc-AxhCb hPCEbn"
         >
           <div
-            className="sc-fzokOt twJKM"
+            className="sc-fznZeY gLmmub"
             onClick={[Function]}
           >
             <input
@@ -3550,7 +3990,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxhCb isNoSH"
+                      className="sc-AxiKw cWifHP"
                     >
                       Blog
                     </div>
@@ -3593,7 +4033,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxhCb isNoSH"
+                      className="sc-AxiKw cWifHP"
                     >
                       Blog
                     </div>
@@ -3617,7 +4057,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxhCb isNoSH"
+                      className="sc-AxiKw cWifHP"
                     >
                       news   &gt;   Article 2
                     </div>
@@ -3641,7 +4081,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxhCb isNoSH"
+                      className="sc-AxiKw cWifHP"
                     >
                       News
                     </div>
@@ -3650,7 +4090,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
               </div>
             </div>
             <div
-              className="sc-fzqBZW kmHjxm"
+              className="sc-fzokOt dOYAwr"
             >
               <svg
                 style={
@@ -3702,10 +4142,10 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -3724,9 +4164,97 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        name
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -3759,7 +4287,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxgMl dQBWvr"
+          className="sc-AxhUy jjZZih"
         >
           <div
             className="react-mde react-mde-tabbed-layout"
@@ -4179,10 +4707,10 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -4201,9 +4729,97 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        name
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -4236,18 +4852,18 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-Axmtr fMVWVz"
+          className="sc-AxheI eIpVXM"
         >
           <span
-            className="sc-fzplWN emmkij"
+            className="sc-fzpans ZXqeW"
           >
             ObservableHQ User
           </span>
           <div
-            className="sc-AxheI eIpVXM"
+            className="sc-AxgMl ibCwzu"
           >
             <div
-              className="sc-fzqNJr ijtzun"
+              className="sc-fzqBZW fPjuQm"
             >
               <div
                 style={
@@ -4314,15 +4930,15 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
             </svg>
           </div>
           <span
-            className="sc-fzplWN emmkij"
+            className="sc-fzpans ZXqeW"
           >
             ObservableHQ Notebook
           </span>
           <div
-            className="sc-AxheI eIpVXM"
+            className="sc-AxgMl ibCwzu"
           >
             <div
-              className="sc-fzqNJr ijtzun"
+              className="sc-fzqBZW fPjuQm"
             >
               <div
                 style={
@@ -4389,15 +5005,15 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
             </svg>
           </div>
           <span
-            className="sc-fzplWN emmkij"
+            className="sc-fzpans ZXqeW"
           >
             ObservableHQ Cell
           </span>
           <div
-            className="sc-AxheI eIpVXM"
+            className="sc-AxgMl ibCwzu"
           >
             <div
-              className="sc-fzqNJr ijtzun"
+              className="sc-fzqBZW fPjuQm"
             >
               <div
                 style={
@@ -4464,15 +5080,15 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
             </svg>
           </div>
           <span
-            className="sc-fzplWN emmkij"
+            className="sc-fzpans ZXqeW"
           >
             ObservableHQ Params
           </span>
           <div
-            className="sc-AxheI eIpVXM"
+            className="sc-AxgMl ibCwzu"
           >
             <div
-              className="sc-fzqNJr ijtzun"
+              className="sc-fzqBZW fPjuQm"
             >
               <div
                 style={
@@ -4570,10 +5186,10 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
     }
   >
     <div
-      className="sc-AxirZ jigHkS"
+      className="sc-AxirZ cwpeyg"
     >
       <div
-        className="sc-AxmLO bRGLzF"
+        className="sc-Axmtr cZXvTT"
       >
         <svg
           style={
@@ -4592,9 +5208,97 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxiKw bOTXee"
+        className="sc-fzqBZW jwxHtQ"
       >
-        name
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -4627,10 +5331,10 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxheI eIpVXM"
+          className="sc-AxgMl ibCwzu"
         >
           <div
-            className="sc-fzqNJr ijtzun"
+            className="sc-fzqBZW fPjuQm"
           >
             <div
               style={
