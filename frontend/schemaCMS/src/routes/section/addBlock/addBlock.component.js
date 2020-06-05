@@ -40,13 +40,13 @@ const getBreadcrumbsItems = (project, { id, name }) => [
   },
   {
     path: `/section/${id}/create-page`,
-    span: pageBlockMessage,
+    span: pageMessage,
     h3: createMessage,
   },
   {
     path: `/section/${id}/create-page/add-block`,
     active: true,
-    span: pageMessage,
+    span: pageBlockMessage,
     h3: createMessage,
   },
 ];

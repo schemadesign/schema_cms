@@ -63,7 +63,7 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
     <Container>
       <Helmet title={title} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
-      <ProjectBreadcrumbs items={getBreadcrumbsItems(project, page, section, page)} />
+      <ProjectBreadcrumbs items={getBreadcrumbsItems(project, page.section, page)} />
       <ContextHeader title={title} subtitle={subtitle} />
       <AddBlockForm
         fetchBlockTemplates={fetchBlockTemplates}

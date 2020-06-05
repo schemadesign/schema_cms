@@ -141,7 +141,6 @@ describe('PageForm: Component', () => {
             ],
             id: 1,
             key: 1,
-            name: 'name',
             type: 'type',
           },
         ],
@@ -153,8 +152,8 @@ describe('PageForm: Component', () => {
         keywords: 'keyword;',
         name: 'page name',
         section: { id: 'sectionId', mainPage: { displayName: 'page-name-2', id: 2 }, title: 'Section' },
-        template: 1,
         tags: {},
+        template: 1,
       },
     });
   });

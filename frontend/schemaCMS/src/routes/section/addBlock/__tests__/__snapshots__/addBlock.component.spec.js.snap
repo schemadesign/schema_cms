@@ -571,7 +571,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
               }
             }
           >
-            Block
+            Page
           </span>
           <h3
             className="sc-fzqAui dxjsKW"
@@ -626,7 +626,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
               }
             }
           >
-            Page
+            Block
           </span>
           <h3
             className="sc-fzqAui dxjsKW"
