@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { useParams } from 'react-router';
 import Helmet from 'react-helmet';
 
@@ -20,6 +20,7 @@ import {
   contentMessage,
   pageBlockMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 const getBreadcrumbsItems = (project, section, page) => [
   {
@@ -55,7 +56,7 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
   const { pageId } = useParams();
   const projectId = project.id;
   const title = intl.formatMessage(messages.title);
-  const subtitle = <FormattedMessage {...messages.subtitle} />;
+  const subtitle = intl.formatMessage(messages.subtitle);
   const menuOptions = getProjectMenuOptions(projectId);
 
   return (
@@ -63,12 +64,12 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
       <Helmet title={title} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project, page.section, page)} />
+      <ContextHeader title={title} subtitle={subtitle} />
       <AddBlockForm
         fetchBlockTemplates={fetchBlockTemplates}
         projectId={projectId}
         blockTemplates={blockTemplates}
         backUrl={`/page/${pageId}`}
-        title={title}
       />
     </Container>
   );

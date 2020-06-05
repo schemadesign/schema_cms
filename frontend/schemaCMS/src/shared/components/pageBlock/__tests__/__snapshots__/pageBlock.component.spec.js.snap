@@ -72,7 +72,6 @@ exports[`PageBlock: Component should render correctly 1`] = `
               }
             }
             type="text"
-            value="name"
           />
           <div
             style={
@@ -95,9 +94,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 "whiteSpace": "pre",
               }
             }
-          >
-            name
-          </div>
+          />
           <div
             style={
               Object {

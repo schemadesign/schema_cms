@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Accordion, Form, Icons } from 'schemaUI';
+import { Form, Icons } from 'schemaUI';
 import { append, prepend, remove } from 'ramda';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
@@ -147,44 +147,42 @@ export const PageTemplateForm = ({
           </MobilePlusContainer>
         }
       />
-      <Accordion>
-        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-          {values[PAGE_TEMPLATES_BLOCKS].map((block, index) => (
-            <Draggable
-              key={block[BLOCK_KEY]}
-              accept="box"
-              onMove={handleMove}
-              id={block[BLOCK_KEY]}
-              index={index}
-              count={blocksCount}
-            >
-              {drag => {
-                const draggableIcon = drag(
-                  <div>
-                    <IconWrapper>
-                      <MenuIcon customStyles={menuIconStyles} />
-                    </IconWrapper>
-                  </div>
-                );
+      <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+        {values[PAGE_TEMPLATES_BLOCKS].map((block, index) => (
+          <Draggable
+            key={block[BLOCK_KEY]}
+            accept="box"
+            onMove={handleMove}
+            id={block[BLOCK_KEY]}
+            index={index}
+            count={blocksCount}
+          >
+            {drag => {
+              const draggableIcon = drag(
+                <div>
+                  <IconWrapper>
+                    <MenuIcon customStyles={menuIconStyles} />
+                  </IconWrapper>
+                </div>
+              );
 
-                return (
-                  <PageTemplateBlock
-                    index={index}
-                    block={block}
-                    handleChange={handleChange}
-                    setFieldValue={setFieldValue}
-                    blocksOptions={blocksOptions}
-                    draggableIcon={draggableIcon}
-                    removeBlock={removeBlock}
-                    autoFocus={!!values[BLOCK_TEMPLATES_NAME].length}
-                    {...restFormikProps}
-                  />
-                );
-              }}
-            </Draggable>
-          ))}
-        </DndProvider>
-      </Accordion>
+              return (
+                <PageTemplateBlock
+                  index={index}
+                  block={block}
+                  handleChange={handleChange}
+                  setFieldValue={setFieldValue}
+                  blocksOptions={blocksOptions}
+                  draggableIcon={draggableIcon}
+                  removeBlock={removeBlock}
+                  autoFocus={!!values[BLOCK_TEMPLATES_NAME].length}
+                  {...restFormikProps}
+                />
+              );
+            }}
+          </Draggable>
+        ))}
+      </DndProvider>
       <Switches>
         <SwitchContainer>
           <SwitchContent>

@@ -42,6 +42,7 @@ function* fetchSection({ payload: { sectionId } }) {
 
     const { data } = yield api.get(`${SECTIONS_PATH}/${sectionId}`);
 
+    yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(SectionsRoutines.fetchSection.success(data.results));
   } catch (error) {
     reportError(error);
