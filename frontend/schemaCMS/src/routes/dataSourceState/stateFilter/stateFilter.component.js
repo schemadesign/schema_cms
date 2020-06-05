@@ -27,7 +27,6 @@ import {
   DATA_SOURCE_STATE_FILTER_VALUES,
   DATA_SOURCE_STATE_FILTERS,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
-import { Select } from '../../../shared/components/form/select';
 import {
   FILTER_TYPE_BOOL,
   FILTER_TYPE_CHECKBOX,
@@ -85,17 +84,7 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
     },
   });
 
-  const getStatusOptions = () =>
-    fieldsInfo.map(name => ({
-      value: name,
-      label: name,
-    }));
-
   const handleBack = () => history.push(locationState.backUrl, { state });
-
-  const handleSelectStatus = ({ value }) => {
-    setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, [value]);
-  };
 
   const handleMultiSelectChange = value =>
     setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, value.map(({ value }) => value));
@@ -205,23 +194,15 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
     />
   );
 
-  const renderSelect = () => (
-    <Select
-      label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
-      name={DATA_SOURCE_STATE_FILTER_VALUES}
-      value={values[DATA_SOURCE_STATE_FILTER_VALUES][0] || ''}
-      options={getStatusOptions()}
-      onSelect={handleSelectStatus}
-      placeholder={intl.formatMessage(messages.selectPlaceholder)}
-    />
-  );
+  const renderSelect = isSingleSelect => {
+    const mutableFieldsInfo = asMutable(fieldsInfo);
+    const selectedOptions = values[DATA_SOURCE_STATE_FILTER_VALUES];
+    const isDisabled = isSingleSelect && selectedOptions.length > 0;
+    const options = mutableFieldsInfo.map(item => ({ value: item, label: item, isDisabled }));
+    const value = selectedOptions.map(item => ({ value: item, label: item }));
+    const isLastOption = options.length - selectedOptions.length === 1;
+    const limit = isSingleSelect ? 1 : options.length;
 
-  const mutableFieldsInfo = asMutable(fieldsInfo);
-  const options = mutableFieldsInfo.map(item => ({ value: item, label: item }));
-  const value = values[DATA_SOURCE_STATE_FILTER_VALUES].map(item => ({ value: item, label: item }));
-  const isLastOption = options.length - mutableFieldsInfo.length === 1;
-
-  const renderMultiSelect = () => {
     return (
       <Fragment>
         <Label>
@@ -232,10 +213,12 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
           value={value}
           onChange={handleMultiSelectChange}
           closeMenuOnSelect={isLastOption}
+          limit={limit}
         />
       </Fragment>
     );
   };
+
   const renderSwitch = () => (
     <Switch
       value={values[DATA_SOURCE_STATE_FILTER_VALUES][0]}
@@ -247,8 +230,8 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
 
   const renderValue = cond([
     [propEq('filterType', FILTER_TYPE_RANGE), renderRange],
-    [propEq('filterType', FILTER_TYPE_SELECT), renderSelect],
-    [propEq('filterType', FILTER_TYPE_CHECKBOX), renderMultiSelect],
+    [propEq('filterType', FILTER_TYPE_SELECT), () => renderSelect(true)],
+    [propEq('filterType', FILTER_TYPE_CHECKBOX), () => renderSelect(false)],
     [propEq('filterType', FILTER_TYPE_BOOL), renderSwitch],
     [T, renderInput],
   ]);
