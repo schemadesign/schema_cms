@@ -32,8 +32,7 @@ export const OBSERVABLE_NOTEBOOK = 'observableNotebook';
 export const OBSERVABLE_CELL = 'observableCell';
 export const OBSERVABLE_PARAMS = 'observableParams';
 
-export const EMBED_VIDEO_WIDTH = 'width';
-export const EMBED_VIDEO_HEIGHT = 'height';
+export const EMBED_VIDEO_ATTRIBUTES = 'attributes';
 
 export const CUSTOM_ELEMENTS_TYPES = [
   MARKDOWN_TYPE,

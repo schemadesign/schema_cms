@@ -16,9 +16,6 @@ import {
   BLOCK_TEMPLATES_ELEMENTS,
   blockTemplatesElementsValidation,
   EMBED_VIDEO_TYPE,
-  EMBED_VIDEO_HEIGHT,
-  EMBED_VIDEO_WIDTH,
-  ELEMENT_PARAMS,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -124,19 +121,6 @@ export const PAGE_SCHEMA = Yup.object().shape({
           .required('Required'),
         [BLOCK_ELEMENTS]: Yup.array().of(
           Yup.object().shape({
-            [ELEMENT_PARAMS]: Yup.object().when(ELEMENT_TYPE, {
-              is: EMBED_VIDEO_TYPE,
-              then: Yup.object().shape({
-                [EMBED_VIDEO_HEIGHT]: Yup.number()
-                  .typeError('Height should be a number')
-                  .integer('Height should be an integer')
-                  .positive('Height should be greater than zero'),
-                [EMBED_VIDEO_WIDTH]: Yup.number()
-                  .typeError('Width should be a number')
-                  .integer('Width should be an integer')
-                  .positive('Width should be greater than zero'),
-              }),
-            }),
             [ELEMENT_VALUE]: elementValueValidation().when(ELEMENT_TYPE, {
               is: CUSTOM_ELEMENT_TYPE,
               then: Yup.array().of(

@@ -13,9 +13,8 @@ import {
   MARKDOWN_TYPE,
   PLAIN_TEXT_TYPE,
   OBSERVABLEHQ_TYPE,
-  EMBED_VIDEO_WIDTH,
+  EMBED_VIDEO_ATTRIBUTES,
   EMBED_VIDEO_TYPE,
-  EMBED_VIDEO_HEIGHT,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -95,13 +94,13 @@ export default defineMessages({
     id: `shared.components.blockElement.${EMBED_VIDEO_TYPE}`,
     defaultMessage: 'Embed Video',
   },
-  [EMBED_VIDEO_WIDTH]: {
-    id: `shared.components.blockElement.${EMBED_VIDEO_WIDTH}`,
-    defaultMessage: 'Width',
+  [EMBED_VIDEO_ATTRIBUTES]: {
+    id: `shared.components.blockElement.${EMBED_VIDEO_ATTRIBUTES}`,
+    defaultMessage: 'Attributes',
   },
-  [EMBED_VIDEO_HEIGHT]: {
-    id: `shared.components.blockElement.${EMBED_VIDEO_HEIGHT}`,
-    defaultMessage: 'Height',
+  [`${EMBED_VIDEO_ATTRIBUTES}Placeholder`]: {
+    id: `shared.components.blockElement.${EMBED_VIDEO_ATTRIBUTES}Placeholder`,
+    defaultMessage: 'e.g. width="100%" height="1000px"',
   },
   set: {
     id: 'shared.components.blockElement.set',
