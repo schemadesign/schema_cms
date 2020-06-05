@@ -29,6 +29,10 @@ import {
   OBSERVABLE_USER,
   CUSTOM_ELEMENT_TYPE,
   FILE_TYPE,
+  EMBED_VIDEO_TYPE,
+  ELEMENT_PARAMS,
+  EMBED_VIDEO_HEIGHT,
+  EMBED_VIDEO_WIDTH,
 } from '../blockTemplates/blockTemplates.constants';
 import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
@@ -54,6 +58,17 @@ export const fileElement = {
   [ELEMENT_VALUE]: {
     fileName: 'fileName',
   },
+  [ELEMENT_ID]: 1,
+};
+
+export const embedVideoElement = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_PARAMS]: {
+    [EMBED_VIDEO_HEIGHT]: 1000,
+    [EMBED_VIDEO_WIDTH]: 1000,
+  },
+  [ELEMENT_TYPE]: EMBED_VIDEO_TYPE,
+  [ELEMENT_VALUE]: 'http://youtube',
   [ELEMENT_ID]: 1,
 };
 

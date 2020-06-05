@@ -15,6 +15,7 @@ import {
   CUSTOM_ELEMENT_TYPE,
   BLOCK_TEMPLATES_ELEMENTS,
   blockTemplatesElementsValidation,
+  EMBED_VIDEO_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -70,7 +71,7 @@ const elementValueValidation = () =>
         .max(50000, 'Element Value should have maximum 50 000 characters'),
     })
     .when(ELEMENT_TYPE, {
-      is: CONNECTION_TYPE,
+      is: type => [CONNECTION_TYPE, EMBED_VIDEO_TYPE].includes(type),
       then: Yup.string()
         .trim()
         .url('Invalid URL')

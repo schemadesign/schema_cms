@@ -41,7 +41,7 @@ class InternalElement(BaseElement):
     pass
 
 
-class VideoElement(BaseElement):
+class EmbedVideoElement(BaseElement):
     pass
 
 
@@ -114,5 +114,5 @@ ELEMENTS_TYPES = {
     constants.ElementType.MARKDOWN: MarkdownElement,
     constants.ElementType.OBSERVABLE_HQ: ObservableElement,
     constants.ElementType.PLAIN_TEXT: PlainTextElement,
-    constants.ElementType.VIDEO: VideoElement,
+    constants.ElementType.EMBED_VIDEO: EmbedVideoElement,
 }

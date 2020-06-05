@@ -11,6 +11,7 @@ class InputComponent extends PureComponent {
     customStyles: PropTypes.object,
     theme: PropTypes.object,
     autoWidth: PropTypes.bool,
+    debounceValue: PropTypes.bool,
     autoFocus: PropTypes.bool,
   };
 
@@ -41,12 +42,14 @@ class InputComponent extends PureComponent {
   handleDebounce = debounce(200, this.props.onChange);
 
   handleChange = e => {
-    if (this.props.autoWidth) {
+    if (this.props.autoWidth || this.props.debounceValue) {
       const { value, name, id } = e.target;
       this.setState({ alternativeValue: value, stateValue: value });
 
       return setTimeout(() => {
-        this.setState({ inputWidth: this.spanRef.current.offsetWidth });
+        if (this.props.autoWidth) {
+          this.setState({ inputWidth: this.spanRef.current.offsetWidth });
+        }
         this.handleDebounce({ target: { value, name, id } });
       });
     }
@@ -63,6 +66,7 @@ class InputComponent extends PureComponent {
       onChange,
       value,
       autoFocus,
+      debounceValue,
       ...restProps
     } = this.props;
     const { alternativeValue, inputWidth, stateValue } = this.state;
@@ -76,7 +80,7 @@ class InputComponent extends PureComponent {
           id={restProps.name}
           style={inputWidth ? { ...inputStyles, width: inputWidth + 20 } : inputStyles}
           ref={autoFocus ? this.inputRef : inputRef}
-          value={autoWidth ? stateValue : value}
+          value={autoWidth || debounceValue ? stateValue : value}
           {...filteredProps}
           onChange={this.handleChange}
         />

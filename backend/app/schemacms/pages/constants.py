@@ -13,7 +13,7 @@ class ElementType:
     MARKDOWN = "markdown"
     OBSERVABLE_HQ = "observable_hq"
     PLAIN_TEXT = "plain_text"
-    VIDEO = "video"
+    EMBED_VIDEO = "embed_video"
 
 
 class ObservableFieldType:
@@ -32,7 +32,7 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.MARKDOWN, "Markdown"),
     (ElementType.OBSERVABLE_HQ, "ObservableHQ"),
     (ElementType.PLAIN_TEXT, "Plain Text"),
-    (ElementType.VIDEO, "Video"),
+    (ElementType.EMBED_VIDEO, "Embed Video"),
 )
 
 OBSERVABLE_FIELD_TYPE_CHOICES = (

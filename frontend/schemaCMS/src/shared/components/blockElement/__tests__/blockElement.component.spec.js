@@ -10,6 +10,7 @@ import {
   internalConnectionElement,
   markdownElement,
   observableHQElement,
+  embedVideoElement,
 } from '../../../../modules/page/page.mocks';
 
 describe('BlockElement: Component', () => {
@@ -25,8 +26,13 @@ describe('BlockElement: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly image element', async () => {
+  it('should render correctly file element', async () => {
     const wrapper = await render({ element: fileElement });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly embed video element', async () => {
+    const wrapper = await render({ element: embedVideoElement });
     expect(wrapper).toMatchSnapshot();
   });
 

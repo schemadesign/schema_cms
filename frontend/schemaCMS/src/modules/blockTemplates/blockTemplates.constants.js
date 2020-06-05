@@ -25,11 +25,14 @@ export const INTERNAL_CONNECTION_TYPE = 'internal_connection';
 export const CUSTOM_ELEMENT_TYPE = 'custom_element';
 export const OBSERVABLEHQ_TYPE = 'observable_hq';
 export const FILE_TYPE = 'file';
+export const EMBED_VIDEO_TYPE = 'embed_video';
 
 export const OBSERVABLE_USER = 'observableUser';
 export const OBSERVABLE_NOTEBOOK = 'observableNotebook';
 export const OBSERVABLE_CELL = 'observableCell';
 export const OBSERVABLE_PARAMS = 'observableParams';
+
+export const EMBED_VIDEO_ATTRIBUTES = 'attributes';
 
 export const CUSTOM_ELEMENTS_TYPES = [
   MARKDOWN_TYPE,
@@ -40,6 +43,7 @@ export const CUSTOM_ELEMENTS_TYPES = [
   CONNECTION_TYPE,
   INTERNAL_CONNECTION_TYPE,
   OBSERVABLEHQ_TYPE,
+  EMBED_VIDEO_TYPE,
 ];
 
 export const ELEMENTS_TYPES = [...CUSTOM_ELEMENTS_TYPES, CUSTOM_ELEMENT_TYPE];
