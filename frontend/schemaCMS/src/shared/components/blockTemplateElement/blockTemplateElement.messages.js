@@ -9,6 +9,7 @@ import {
   IMAGE_TYPE,
   PARAMS_BLOCK,
   PLAIN_TEXT_TYPE,
+  STATE_TYPE,
   MARKDOWN_TYPE,
   INTERNAL_CONNECTION_TYPE,
   CUSTOM_ELEMENT_TYPE,
@@ -35,6 +36,10 @@ export default defineMessages({
   [PLAIN_TEXT_TYPE]: {
     id: `shared.components.blockTemplateElement.${PLAIN_TEXT_TYPE}`,
     defaultMessage: 'Plain text',
+  },
+  [STATE_TYPE]: {
+    id: `shared.components.blockTemplateElement.${STATE_TYPE}`,
+    defaultMessage: 'State',
   },
   [IMAGE_TYPE]: {
     id: `shared.components.blockTemplateElement.${IMAGE_TYPE}`,
