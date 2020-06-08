@@ -2,7 +2,7 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { PageRoutines } from './page.redux';
 import api from '../../shared/services/api';
-import { PAGES_PATH, SECTIONS_PATH } from '../../shared/utils/api.constants';
+import { PAGES_PATH, SECTIONS_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { ProjectRoutines } from '../project';
 import reportError from '../../shared/utils/reportError';
@@ -71,11 +71,27 @@ function* removePage({ payload: { pageId, folderId } }) {
   }
 }
 
+function* fetchPageAdditionalData({ payload: { projectId } }) {
+  try {
+    yield put(PageRoutines.fetchPageAdditionalData.request());
+
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}/page-additional-data`);
+
+    yield put(PageRoutines.fetchPageAdditionalData.success(data));
+  } catch (e) {
+    reportError(e);
+    yield put(PageRoutines.fetchPageAdditionalData.failure(e));
+  } finally {
+    yield put(PageRoutines.fetchPageAdditionalData.fulfill());
+  }
+}
+
 export function* watchPage() {
   yield all([
     takeLatest(PageRoutines.fetchPage.TRIGGER, fetchPage),
     takeLatest(PageRoutines.createPage.TRIGGER, createPage),
     takeLatest(PageRoutines.updatePage.TRIGGER, updatePage),
     takeLatest(PageRoutines.removePage.TRIGGER, removePage),
+    takeLatest(PageRoutines.fetchPageAdditionalData.TRIGGER, fetchPageAdditionalData),
   ]);
 }
