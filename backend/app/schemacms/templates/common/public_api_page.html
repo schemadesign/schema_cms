@@ -48,6 +48,10 @@
 			{{ element.html|safe }}
 			{% endif %}
 
+			{% if element.type == "file" %}
+			{{ element.html|safe }}
+			{% endif %}
+
 	{% endfor %}
     {% endfor %}
 </body>

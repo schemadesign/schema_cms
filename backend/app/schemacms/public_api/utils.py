@@ -88,6 +88,23 @@ def image_in_html(element):
     return html_value
 
 
+def file_in_html(element):
+    if not element.file:
+        file_name = ""
+        file = ""
+    else:
+        file_name = element.get_original_file_name(image=False)[1]
+        file = element.file.url
+
+    html_value = (
+        f"<div id='file-{element.id}' class='element file'>"
+        f"<a href='{file}' download>{file_name}</a>"
+        f"</div>"
+    )
+
+    return html_value
+
+
 def plain_text_in_html(element):
     html_value = f"<div id='plain-text-{element.id}' class='element text'><p>{element.plain_text}</p></div>"
 

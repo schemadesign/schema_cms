@@ -320,7 +320,10 @@ class PageSerializer(CustomModelSerializer):
             if "value" in element:
                 element_value = element.pop("value")
 
-                if element_type == constants.ElementType.IMAGE and element_value:
+                if (
+                    element_type in [constants.ElementType.IMAGE, constants.ElementType.FILE]
+                    and element_value
+                ):
                     element[element_type] = element_value
 
                 if element_type in [

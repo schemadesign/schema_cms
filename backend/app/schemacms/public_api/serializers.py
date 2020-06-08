@@ -10,15 +10,16 @@ from . import utils, records_reader
 
 
 element_to_html_function = {
-    ElementType.PLAIN_TEXT: lambda: utils.plain_text_in_html,
-    ElementType.MARKDOWN: lambda: utils.markdown_in_html,
     ElementType.CODE: lambda: utils.code_in_html,
     ElementType.CONNECTION: lambda: utils.connection_in_html,
-    ElementType.INTERNAL_CONNECTION: lambda: utils.internal_connection_in_html,
-    ElementType.OBSERVABLE_HQ: lambda: utils.observable_in_html,
-    ElementType.IMAGE: lambda: utils.image_in_html,
     ElementType.CUSTOM_ELEMENT: lambda: utils.custom_in_html,
     ElementType.EMBED_VIDEO: lambda: utils.embed_video_in_html,
+    ElementType.FILE: lambda: utils.file_in_html,
+    ElementType.IMAGE: lambda: utils.image_in_html,
+    ElementType.INTERNAL_CONNECTION: lambda: utils.internal_connection_in_html,
+    ElementType.MARKDOWN: lambda: utils.markdown_in_html,
+    ElementType.OBSERVABLE_HQ: lambda: utils.observable_in_html,
+    ElementType.PLAIN_TEXT: lambda: utils.plain_text_in_html,
 }
 
 
@@ -110,7 +111,7 @@ class PABlockElementSerializer(ReadOnlySerializer):
         fields = ("id", "name", "type", "order", "value", "html")
 
     def get_value(self, obj):
-        if obj.type == ElementType.IMAGE:
+        if obj.type in [ElementType.IMAGE, ElementType.FILE]:
             if not obj.image:
                 return {}
 

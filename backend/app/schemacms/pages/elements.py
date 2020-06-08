@@ -105,10 +105,15 @@ class ImageElement(BaseElement):
         return file.split("/")[-1]
 
 
+class FileElement(ImageElement):
+    pass
+
+
 ELEMENTS_TYPES = {
     constants.ElementType.CODE: CodeElement,
     constants.ElementType.CONNECTION: CodeElement,
     constants.ElementType.CUSTOM_ELEMENT: CustomElement,
+    constants.ElementType.FILE: FileElement,
     constants.ElementType.IMAGE: ImageElement,
     constants.ElementType.INTERNAL_CONNECTION: InternalElement,
     constants.ElementType.MARKDOWN: MarkdownElement,

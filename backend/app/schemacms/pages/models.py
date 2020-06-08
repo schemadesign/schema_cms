@@ -146,6 +146,11 @@ class PageBlockElement(Element):
     plain_text = models.TextField(blank=True, default="", max_length=1000)
     code = models.TextField(blank=True, default="", max_length=1000)
     embed_video = models.TextField(blank=True, default="", max_length=1000)
+    file = models.FileField(
+        null=True,
+        storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
+        upload_to=file_upload_path,
+    )
     image = models.ImageField(
         null=True,
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
@@ -166,9 +171,9 @@ class PageBlockElement(Element):
 
         return os.path.join(base_path, f"{self.block.page_id}/blocks/{self.block_id}/{filename}")
 
-    def get_original_file_name(self, file_name=None):
+    def get_original_file_name(self, file_name=None, image=True):
         if not file_name:
-            file_name = self.image.name
+            file_name = self.image.name if image else self.file.name
         name, ext = os.path.splitext(os.path.basename(file_name))
         return name, os.path.basename(file_name)
 
@@ -189,7 +194,7 @@ class PageBlockElement(Element):
             element_type = element.get("type")
             element_value = element.pop("value")
 
-            if element_type == constants.ElementType.IMAGE and element_value:
+            if element_type in [constants.ElementType.IMAGE, constants.ElementType.FILE] and element_value:
                 element[element_type] = element_value
 
             if element_type in [
