@@ -120,7 +120,11 @@ exports[`CreatePage: Component should render correctly 1`] = `
       }
     >
       <div
+<<<<<<< HEAD
         className="sc-fzqzlV igNISb"
+=======
+        className="sc-fzqLLg jkZtCj"
+>>>>>>> CMS-1276 fix showing long project name in mobile menu
       >
         <div
           className="sc-fzokvW kJbQFf"

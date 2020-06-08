@@ -120,7 +120,11 @@ exports[`PageList: Component should render correctly 1`] = `
       }
     >
       <div
+<<<<<<< HEAD
         className="sc-AxgMl hjZtvp"
+=======
+        className="sc-AxhUy gLXUEg"
+>>>>>>> CMS-1276 fix showing long project name in mobile menu
       >
         <div
           className="sc-AxhUy kMyssT"
