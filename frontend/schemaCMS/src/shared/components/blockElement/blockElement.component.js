@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cond, pathEq, T } from 'ramda';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 
-import { DetailsContainer, Header, Name, IconContainer } from './blockElement.styles';
+import { DetailsContainer, Header, IconContainer, customInputStyles } from './blockElement.styles';
 import {
   IMAGE_TYPE,
   FILE_TYPE,
@@ -20,8 +20,9 @@ import { MarkdownElement } from './markdownElement.component';
 import { ObservableHQElement } from './observableHQElement.component';
 import { CustomElement } from './customElement.component';
 import { EmbedVideoElement } from './embedVideoElement.component';
+import { TextInput } from '../form/inputs/textInput';
 
-const { MinusIcon } = Icons;
+const { MinusIcon, EditIcon } = Icons;
 
 export const getElementComponent = props =>
   cond([
@@ -36,7 +37,8 @@ export const getElementComponent = props =>
   ])(props);
 
 export const BlockElement = props => {
-  const { element } = props;
+  const { element, handleChange, index, blockPath, ...restFormikProps } = props;
+  const elementPath = `${blockPath}.elements.${index}.name`;
 
   return (
     <AccordionPanel autoOpen>
@@ -45,7 +47,19 @@ export const BlockElement = props => {
           <IconContainer>
             <MinusIcon />
           </IconContainer>
-          <Name>{element.name}</Name>
+          <TextInput
+            name={elementPath}
+            placeholder={'Element Name'}
+            onChange={handleChange}
+            autoWidth
+            fullWidth
+            value={element.name}
+            customInputStyles={customInputStyles}
+            {...restFormikProps}
+          />
+          <IconContainer>
+            <EditIcon />
+          </IconContainer>
         </Header>
       </AccordionHeader>
       <AccordionDetails>
@@ -56,5 +70,8 @@ export const BlockElement = props => {
 };
 
 BlockElement.propTypes = {
+  handleChange: PropTypes.func.isRequired,
   element: PropTypes.object.isRequired,
+  blockPath: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
