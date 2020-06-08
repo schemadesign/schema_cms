@@ -59,7 +59,7 @@ import {
   DATA_SOURCE_STATE_FILTERS,
   DATA_SOURCE_STATE_TAGS,
 } from '../../modules/dataSourceState/dataSourceState.constants';
-import { FILTER_TYPE_RANGE } from '../../modules/filter/filter.constants';
+import { FILTER_TYPE_RANGE, FILTER_TYPE_BOOL } from '../../modules/filter/filter.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
@@ -239,6 +239,10 @@ export const getInitialStateFilterValue = ({ filter, state, filterId, fieldsInfo
     }
 
     return data;
+  }
+
+  if (FILTER_TYPE_BOOL === filter.filterType) {
+    return { values: isEmpty(values) ? false : values, range: [], [DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES]: [] };
   }
 
   return { values, range: [], [DATA_SOURCE_STATE_FILTER_SECONDARY_VALUES]: [] };

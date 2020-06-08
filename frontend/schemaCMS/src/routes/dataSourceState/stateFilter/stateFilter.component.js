@@ -26,6 +26,7 @@ import {
   DATA_SOURCE_STATE_FILTER_TYPE,
   DATA_SOURCE_STATE_FILTER_VALUES,
   DATA_SOURCE_STATE_FILTERS,
+  DATA_SOURCE_STATE_ACTIVE_FILTERS,
 } from '../../../modules/dataSourceState/dataSourceState.constants';
 import {
   FILTER_TYPE_BOOL,
@@ -45,7 +46,11 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
   const params = useParams();
   const filterId = parseInt(params.filterId, 10);
   const { state: locationState = {} } = useLocation();
-  const state = propOr({ name: '', [DATA_SOURCE_STATE_FILTERS]: [] }, 'state', locationState);
+  const state = propOr(
+    { name: '', [DATA_SOURCE_STATE_FILTERS]: [], [DATA_SOURCE_STATE_ACTIVE_FILTERS]: [] },
+    'state',
+    locationState
+  );
   const history = useHistory();
   const intl = useIntl();
   const projectId = project.id;
@@ -221,8 +226,8 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
 
   const renderSwitch = () => (
     <Switch
-      value={values[DATA_SOURCE_STATE_FILTER_VALUES][0]}
-      id={`${DATA_SOURCE_STATE_FILTER_VALUES}.0`}
+      value={values[DATA_SOURCE_STATE_FILTER_VALUES]}
+      id={`${DATA_SOURCE_STATE_FILTER_VALUES}`}
       onChange={handleChange}
       label={intl.formatMessage(messages[DATA_SOURCE_STATE_FILTER_VALUES])}
     />
@@ -238,7 +243,10 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
 
   const renderForm = loading =>
     renderWhenTrue(() => {
-      const { filterType, fieldType } = filter;
+      const { filterType, fieldType, id } = filter;
+      const { activeFilters } = state;
+      const isDirty =
+        ([FILTER_TYPE_RANGE, FILTER_TYPE_BOOL].includes(filterType) && !activeFilters.includes(id)) || dirty;
 
       return (
         <Form onSubmit={handleSubmit}>
@@ -269,7 +277,7 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
           {renderValue({ filterType, fieldType })}
           <NavigationContainer fixed>
             <BackButton type="button" onClick={handleBack} />
-            <NextButton type="submit" disabled={!dirty}>
+            <NextButton type="submit" disabled={!isDirty}>
               <FormattedMessage {...messages.save} />
             </NextButton>
           </NavigationContainer>

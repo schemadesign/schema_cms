@@ -31,7 +31,9 @@ export const Container = styled.div`
 export const HeaderWrapper = styled.div``;
 
 export const MenuHeader = styled.div`
-  height: ${HEADER_HEIGHT}px;
+  ${media.desktop`
+    height: ${HEADER_HEIGHT}px;
+  `}
 `;
 
 export const Content = styled.div`
