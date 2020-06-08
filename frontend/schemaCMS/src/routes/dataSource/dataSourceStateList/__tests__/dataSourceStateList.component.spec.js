@@ -1,16 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import { DataSourceStateList } from '../dataSourceStateList.component';
 import { defaultProps, noStatesProps } from '../dataSourceStateList.stories';
+import { makeContextRenderer } from '../../../../shared/utils/testUtils';
 
 describe('DataSourceStateList: Component', () => {
-  const component = props => <DataSourceStateList {...defaultProps} {...props} />;
+  const render = props => makeContextRenderer(<DataSourceStateList {...defaultProps} {...props} />);
 
-  const render = (props = {}) => shallow(component(props));
-
-  it('should render correctly with loader', () => {
-    const wrapper = render();
+  it('should render correctly with loader', async () => {
+    const wrapper = await render();
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -34,10 +32,10 @@ describe('DataSourceStateList: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call fetchStates on componentDidMount', () => {
+  it('should call fetchStates on componentDidMount', async () => {
     const fetchStates = jest.spyOn(defaultProps, 'fetchStates');
 
-    render({
+    await render({
       fetchStates,
     });
 
