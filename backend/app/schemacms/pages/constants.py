@@ -8,6 +8,7 @@ class ElementType:
     CODE = "code"
     CONNECTION = "connection"
     CUSTOM_ELEMENT = "custom_element"
+    FILE = "file"
     IMAGE = "image"
     INTERNAL_CONNECTION = "internal_connection"
     MARKDOWN = "markdown"
@@ -27,6 +28,7 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
     (ElementType.CUSTOM_ELEMENT, "Custom Element"),
+    (ElementType.FILE, "File"),
     (ElementType.IMAGE, "Image"),
     (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
     (ElementType.MARKDOWN, "Markdown"),
