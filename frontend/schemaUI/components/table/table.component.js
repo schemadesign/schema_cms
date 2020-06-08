@@ -45,7 +45,7 @@ class TableComponent extends PureComponent {
 
     return data.map((value, index) => (
       <th style={this.getHeaderCellStyle(index, lastIndex, numberedRows, countRows, styles)} key={index}>
-        {value}
+        {`${value}`}
       </th>
     ));
   }
@@ -69,7 +69,7 @@ class TableComponent extends PureComponent {
   renderCells = (data, cellStyles) =>
     data.map((value, index) => (
       <td style={cellStyles} key={index}>
-        {value}
+        {`${value}`}
       </td>
     ));
 

@@ -9,7 +9,9 @@ import { project } from '../../../modules/project/project.mocks';
 export const defaultProps = {
   fetchFilter: Function.prototype,
   fetchFieldsInfo: Function.prototype,
-  filter: {},
+  filter: {
+    id: 'id',
+  },
   fieldsInfo: [],
   userRole: ROLES.ADMIN,
   project,
