@@ -51,6 +51,8 @@ export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
   [ELEMENT_AUTO_OPEN]: true,
 };
 
+export const WARNING_TYPES_LIST = [IMAGE_TYPE, FILE_TYPE];
+
 export const getDefaultBlockElement = () => ({ ...BLOCK_TEMPLATE_DEFAULT_ELEMENT, [ELEMENT_KEY]: +Date.now() });
 
 export const INITIAL_VALUES = {

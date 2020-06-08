@@ -87,4 +87,8 @@ export default defineMessages({
     id: 'shared.components.blockTemplateElement.warningImage',
     defaultMessage: 'Notice: Images uploaded are available publicly.',
   },
+  warningMultiple: {
+    id: 'shared.components.blockTemplateElement.warningMultiple',
+    defaultMessage: 'Notice: images & files uploaded are available publicly.',
+  },
 });

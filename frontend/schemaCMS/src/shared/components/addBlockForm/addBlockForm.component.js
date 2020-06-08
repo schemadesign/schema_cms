@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useEffectOnce } from 'react-use';
 import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useLocation } from 'react-router';
 import { Icons } from 'schemaUI';
-import { propEq, find, map, omit, pipe, prepend, always, defaultTo } from 'ramda';
+import { propEq, find, map, omit, pipe, prepend, always, defaultTo, filter, prop, includes } from 'ramda';
 
 import { SelectContainer } from './addBlockForm.styles';
 import { LoadingWrapper } from '../loadingWrapper';
@@ -36,22 +36,29 @@ import { BlockTemplateElements } from '../blockTemplateForm/blockTemplateElement
 import { CounterHeader } from '../counterHeader';
 import {
   BLOCK_TEMPLATES_ELEMENTS,
+  WARNING_TYPES_LIST,
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { renderWhenTrue } from '../../utils/rendering';
+import { PublicWarning } from '../publicWarning';
 
 const { EditIcon } = Icons;
 
 export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, blockTemplates }) => {
   const [loading, setLoading] = useState(true);
+  const [warningTypes, setWarningTypes] = useState();
   const [error, setError] = useState(null);
   const history = useHistory();
   const intl = useIntl();
   const { state = {} } = useLocation();
   const blocksOptions = pipe(
-    map(({ name, id }) => ({
+    map(({ name, id, elements }) => ({
       label: name,
       value: id,
+      warningTypes: pipe(
+        filter(e => includes(prop('type', e), WARNING_TYPES_LIST)),
+        map(e => prop('type', e))
+      )(elements),
     })),
     prepend({ label: intl.formatMessage(messages.blank), value: 0 })
   )(blockTemplates);
@@ -133,6 +140,13 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
     })();
   });
 
+  useEffect(() => {
+    if (values) {
+      const blockOption = find(propEq('value', values.type))(blocksOptions);
+      setWarningTypes(blockOption ? blockOption.warningTypes : blockOption);
+    }
+  }, [values]);
+
   const renderBlockTemplateElements = blockType =>
     renderWhenTrue(
       always(
@@ -177,6 +191,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
             isEdit
             {...restFormikProps}
           />
+          <PublicWarning type={warningTypes} />
         </MobileInputName>
         <SelectContainer>
           <Select
@@ -189,6 +204,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
             placeholder={intl.formatMessage(messages[`${BLOCK_TYPE}Placeholder`])}
             {...restFormikProps}
           />
+          <PublicWarning type={warningTypes} />
         </SelectContainer>
         {renderBlockTemplateElements(values[BLOCK_TYPE])}
         <NavigationContainer fixed>
