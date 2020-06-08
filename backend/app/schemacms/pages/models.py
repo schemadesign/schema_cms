@@ -162,7 +162,7 @@ class PageBlockElement(Element):
     observable_hq = models.OneToOneField(
         "PageBlockObservableElement", on_delete=models.CASCADE, null=True, related_name="block_element"
     )
-    state = models.TextField(blank=True, default="", max_length=1000)
+    state = models.ForeignKey("states.State", null=True, related_name="elements", on_delete=models.SET_NULL)
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
