@@ -87,7 +87,7 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
   const handleBack = () => history.push(locationState.backUrl, { state });
 
   const handleMultiSelectChange = value =>
-    setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, value.map(({ value }) => value));
+    setFieldValue(DATA_SOURCE_STATE_FILTER_VALUES, value ? value.map(({ value }) => value) : []);
 
   const handleRangeChange = e => {
     const { target } = e;
@@ -200,7 +200,7 @@ export const StateFilter = ({ fetchFilter, fetchFieldsInfo, fieldsInfo, userRole
     const isDisabled = isSingleSelect && selectedOptions.length > 0;
     const options = mutableFieldsInfo.map(item => ({ value: item, label: item, isDisabled }));
     const value = selectedOptions.map(item => ({ value: item, label: item }));
-    const isLastOption = options.length - selectedOptions.length === 1;
+    const isLastOption = isSingleSelect || options.length - selectedOptions.length === 1;
     const limit = isSingleSelect ? 1 : options.length;
 
     return (
