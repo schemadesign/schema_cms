@@ -111,6 +111,12 @@ def plain_text_in_html(element):
     return html_value
 
 
+def state_in_html(element):
+    html_value = f"<div id='state-{element.id}' class='element state'><p>{element.state}</p></div>"
+
+    return html_value
+
+
 def markdown_in_html(element):
     formatted_element = markdown.markdown(element.markdown, extensions=MARKDOWN_EXTENSIONS)
     html_value = f"<div id='markdown-{element.id}' class='element markdown'>{formatted_element}</div>"

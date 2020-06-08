@@ -162,6 +162,7 @@ class PageBlockElement(Element):
     observable_hq = models.OneToOneField(
         "PageBlockObservableElement", on_delete=models.CASCADE, null=True, related_name="block_element"
     )
+    state = models.TextField(blank=True, default="", max_length=1000)
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -204,6 +205,7 @@ class PageBlockElement(Element):
                 constants.ElementType.INTERNAL_CONNECTION,
                 constants.ElementType.CONNECTION,
                 constants.ElementType.EMBED_VIDEO,
+                constants.ElementType.STATE,
             ]:
                 element[element_type] = element_value
 

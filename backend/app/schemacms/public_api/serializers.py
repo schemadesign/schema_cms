@@ -7,6 +7,7 @@ from ..datasources import models as ds_models
 from ..pages import models as pa_models
 from ..pages.constants import ElementType
 from ..tags import models as t_models
+from ..utils.serializers import ReadOnlySerializer
 from . import utils, records_reader
 
 
@@ -21,14 +22,8 @@ element_to_html_function = {
     ElementType.MARKDOWN: lambda: utils.markdown_in_html,
     ElementType.OBSERVABLE_HQ: lambda: utils.observable_in_html,
     ElementType.PLAIN_TEXT: lambda: utils.plain_text_in_html,
+    ElementType.STATE: lambda: utils.state_in_html,
 }
-
-
-class ReadOnlySerializer(serializers.ModelSerializer):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields:
-            self.fields[field].read_only = True
 
 
 class PAFilterSerializer(ReadOnlySerializer):

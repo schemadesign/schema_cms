@@ -45,6 +45,10 @@ class EmbedVideoElement(BaseElement):
     pass
 
 
+class StateElement(BaseElement):
+    pass
+
+
 class ObservableElement(BaseElement):
     def get_attribute(self, instance):
         observable_element = getattr(instance, self.element_type)
@@ -113,11 +117,12 @@ ELEMENTS_TYPES = {
     constants.ElementType.CODE: CodeElement,
     constants.ElementType.CONNECTION: CodeElement,
     constants.ElementType.CUSTOM_ELEMENT: CustomElement,
+    constants.ElementType.EMBED_VIDEO: EmbedVideoElement,
     constants.ElementType.FILE: FileElement,
     constants.ElementType.IMAGE: ImageElement,
     constants.ElementType.INTERNAL_CONNECTION: InternalElement,
     constants.ElementType.MARKDOWN: MarkdownElement,
     constants.ElementType.OBSERVABLE_HQ: ObservableElement,
     constants.ElementType.PLAIN_TEXT: PlainTextElement,
-    constants.ElementType.EMBED_VIDEO: EmbedVideoElement,
+    constants.ElementType.STATE: StateElement,
 }

@@ -8,13 +8,14 @@ class ElementType:
     CODE = "code"
     CONNECTION = "connection"
     CUSTOM_ELEMENT = "custom_element"
+    EMBED_VIDEO = "embed_video"
     FILE = "file"
     IMAGE = "image"
     INTERNAL_CONNECTION = "internal_connection"
     MARKDOWN = "markdown"
     OBSERVABLE_HQ = "observable_hq"
     PLAIN_TEXT = "plain_text"
-    EMBED_VIDEO = "embed_video"
+    STATE = "state"
 
 
 class ObservableFieldType:
@@ -28,13 +29,14 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
     (ElementType.CUSTOM_ELEMENT, "Custom Element"),
+    (ElementType.EMBED_VIDEO, "Embed Video"),
     (ElementType.FILE, "File"),
     (ElementType.IMAGE, "Image"),
     (ElementType.INTERNAL_CONNECTION, "Internal Connection"),
     (ElementType.MARKDOWN, "Markdown"),
     (ElementType.OBSERVABLE_HQ, "ObservableHQ"),
     (ElementType.PLAIN_TEXT, "Plain Text"),
-    (ElementType.EMBED_VIDEO, "Embed Video"),
+    (ElementType.STATE, "State"),
 )
 
 OBSERVABLE_FIELD_TYPE_CHOICES = (
