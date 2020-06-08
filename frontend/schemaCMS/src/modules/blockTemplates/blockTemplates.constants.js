@@ -26,6 +26,7 @@ export const CUSTOM_ELEMENT_TYPE = 'custom_element';
 export const OBSERVABLEHQ_TYPE = 'observable_hq';
 export const FILE_TYPE = 'file';
 export const EMBED_VIDEO_TYPE = 'embed_video';
+export const STATE_TYPE = 'state';
 
 export const OBSERVABLE_USER = 'observableUser';
 export const OBSERVABLE_NOTEBOOK = 'observableNotebook';
@@ -44,6 +45,7 @@ export const CUSTOM_ELEMENTS_TYPES = [
   INTERNAL_CONNECTION_TYPE,
   OBSERVABLEHQ_TYPE,
   EMBED_VIDEO_TYPE,
+  STATE_TYPE,
 ];
 
 export const ELEMENTS_TYPES = [...CUSTOM_ELEMENTS_TYPES, CUSTOM_ELEMENT_TYPE];

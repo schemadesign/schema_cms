@@ -15,6 +15,7 @@ import {
   OBSERVABLEHQ_TYPE,
   EMBED_VIDEO_ATTRIBUTES,
   EMBED_VIDEO_TYPE,
+  STATE_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -65,6 +66,10 @@ export default defineMessages({
   [PLAIN_TEXT_TYPE]: {
     id: `shared.components.blockElement.${PLAIN_TEXT_TYPE}`,
     defaultMessage: 'Plain text',
+  },
+  [STATE_TYPE]: {
+    id: `shared.components.blockElement.${STATE_TYPE}`,
+    defaultMessage: 'State',
   },
   [IMAGE_TYPE]: {
     id: `shared.components.blockElement.${IMAGE_TYPE}`,
