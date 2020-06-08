@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 from .elements import ELEMENTS_TYPES
 from . import models, constants
-from ..utils.serializers import CustomModelSerializer, NestedRelatedModelSerializer
+from ..utils.serializers import CustomModelSerializer, NestedRelatedModelSerializer, ReadOnlySerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
@@ -333,6 +333,7 @@ class PageSerializer(CustomModelSerializer):
                     constants.ElementType.INTERNAL_CONNECTION,
                     constants.ElementType.CONNECTION,
                     constants.ElementType.EMBED_VIDEO,
+                    constants.ElementType.STATE,
                 ]:
                     element[element_type] = element_value
 
@@ -418,19 +419,19 @@ class SectionListCreateSerializer(CustomModelSerializer):
         return section.pages_count
 
 
-class PageDisplayNameSerializer(serializers.ModelSerializer):
+class PageDisplayNameSerializer(ReadOnlySerializer):
     class Meta:
         model = models.Page
         fields = ("id", "display_name", "name")
 
 
-class SectionInternalConnectionSerializer(serializers.ModelSerializer):
+class SectionInternalConnectionSerializer(ReadOnlySerializer):
     main_page = MainPageSerializer(read_only=True)
     pages = PageDisplayNameSerializer(read_only=True, many=True)
 
     class Meta:
         model = models.Section
-        fields = ("id", "project", "name", "main_page", "pages")
+        fields = ("id", "name", "main_page", "pages")
 
 
 class SectionPageListView(CustomModelSerializer):

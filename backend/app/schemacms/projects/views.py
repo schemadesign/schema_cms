@@ -1,8 +1,14 @@
 import django_filters.rest_framework
-
+from django.db.models import Prefetch
 from rest_framework import decorators, filters, permissions, response, status, viewsets
 
 from . import models, serializers
+from ..pages.models import Section, PageTemplate, PageBlock
+from ..pages.serializers import SectionInternalConnectionSerializer, PageTemplateSerializer
+from ..states.models import State
+from ..states.serializers import StatePageAdditionalDataSerializer
+from ..tags.models import Tag, TagCategory
+from ..tags.serializers import TagCategorySerializer
 from ..users import permissions as user_permissions
 from ..utils import serializers as utils_serializers
 from ..utils.permissions import IsAdmin
@@ -88,5 +94,63 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         project = self.get_object()
 
         data = {"project": project.project_info, "results": project.templates_count}
+
+        return response.Response(data, status=status.HTTP_200_OK)
+
+    @decorators.action(
+        detail=True, url_path="page-additional-data", methods=["get"], permission_classes=[IsAdmin]
+    )
+    def page_additional_data(self, request, **kwargs):
+        project = self.get_object()
+        category_type = self.request.query_params.get("tag_category_type", None)
+
+        sections = (
+            Section.objects.filter(project=project)
+            .select_related("project", "created_by", "main_page")
+            .prefetch_related("pages")
+            .order_by("-created")
+        )
+
+        if category_type:
+            filter_kwargs = {f"type__{category_type}": True}
+        else:
+            filter_kwargs = {}
+
+        tags = (
+            TagCategory.objects.filter(project=project, **filter_kwargs)
+            .select_related("project", "created_by")
+            .prefetch_related(Prefetch("tags", queryset=Tag.objects.order_by("order")))
+            .order_by("name")
+        )
+
+        page_templates = (
+            PageTemplate.objects.all()
+            .order_by("-created")
+            .select_related("project", "created_by")
+            .prefetch_related(
+                Prefetch(
+                    "pageblock_set",
+                    queryset=PageBlock.objects.prefetch_related("block__elements")
+                    .select_related("block")
+                    .order_by("order"),
+                )
+            )
+        )
+
+        states = State.objects.filter(datasource__project=project, is_public=True).only(
+            "id", "name", "datasource"
+        )
+
+        states_data = StatePageAdditionalDataSerializer(states, many=True).data
+        section_data = SectionInternalConnectionSerializer(sections, many=True).data
+        tags_data = TagCategorySerializer(tags, many=True).data
+        page_templates_data = PageTemplateSerializer(page_templates, many=True).data
+
+        data = {
+            "internal_connections": section_data,
+            "tag_categories": tags_data,
+            "page_templates": page_templates_data,
+            "states": states_data,
+        }
 
         return response.Response(data, status=status.HTTP_200_OK)
