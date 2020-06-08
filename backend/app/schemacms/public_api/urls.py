@@ -15,5 +15,8 @@ router.register(r"sections", views.PASectionView, basename="pa-sections")
 router.register(
     r"pages/(?P<page_pk>\d+)/blocks", views.PABlocksView, basename="pa-blocks",
 )
+router.register(
+    r"projects/(?P<project_pk>\d+)/tags", views.TagCategoryListView, basename="pa-tags",
+)
 
 urlpatterns = router.urls

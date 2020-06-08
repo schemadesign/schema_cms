@@ -7,12 +7,16 @@ from django_extensions.db.models import TimeStampedModel
 from django.contrib.postgres.fields import JSONField
 
 
+def default_category_type():
+    return {"content": False, "dataset": False}
+
+
 class TagCategory(SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey(
         "projects.Project", on_delete=models.CASCADE, related_name="tags_categories", null=True
     )
     name = models.CharField(max_length=100)
-    type = JSONField(blank=True, default=dict)
+    type = JSONField(blank=True, default=default_category_type)
     is_single_select = models.BooleanField(default=False)
     is_available = models.BooleanField(default=True)
     created_by = models.ForeignKey(
