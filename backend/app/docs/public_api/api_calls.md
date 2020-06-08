@@ -111,6 +111,51 @@ Content-Type: application/json
 }
 ```
 
+## Get Project Tags Categories
+**Request**:
+
+`GET` `/projects/<id>/tags`
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 1,
+      "name": "Category 1",
+      "is_single_select": true,
+      "type": {
+          "content": true,
+          "dataset": true
+      },
+      "tags": [
+        "Value 1",
+        "Value 2"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Category 2",
+      "is_single_select": false,
+      "type": {
+          "content": true,
+          "dataset": false
+      },
+      "tags": [
+        "Value 1",
+        "Value 2"
+      ]
+    }
+  ]
+}
+```
 
 ## Get Project Data Sources
 **Request**:

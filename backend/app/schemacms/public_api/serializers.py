@@ -6,6 +6,7 @@ from ..projects import models as pr_models
 from ..datasources import models as ds_models
 from ..pages import models as pa_models
 from ..pages.constants import ElementType
+from ..tags import models as t_models
 from . import utils, records_reader
 
 
@@ -253,3 +254,14 @@ class PAProjectSerializer(ReadOnlySerializer):
 
     def get_content(self, obj):
         return {"sections": PASectionSerializer(obj.sections, many=True).data}
+
+
+class PATagCategorySerializer(ReadOnlySerializer):
+    tags = serializers.SerializerMethodField()
+
+    class Meta:
+        model = t_models.TagCategory
+        fields = ("id", "name", "is_single_select", "type", "tags")
+
+    def get_tags(self, obj):
+        return [t.value for t in obj.tags.all().order_by("value")]
