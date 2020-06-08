@@ -7,14 +7,14 @@ import messages from './blockElement.messages';
 import { getCustomSelectedWrapperStyles, SelectLabel, SelectWrapper, customSelectStyles } from './blockElement.styles';
 import { getValuePath } from '../../utils/helpers';
 import { Select } from '../form/select';
-import { INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { STATE_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-export const InternalConnectionElement = ({ blockPath, element, setFieldValue, index, pagerUrlOptions }) => {
+export const StateElement = ({ blockPath, element, setFieldValue, index, stateOptions }) => {
   const intl = useIntl();
   const theme = useTheme();
   const name = getValuePath({ blockPath, index });
   const handleSelectPageUrl = ({ value }) => setFieldValue(name, value);
-  const options = pagerUrlOptions.map(({ value, label }) => ({ value, label: <SelectLabel>{label}</SelectLabel> }));
+  const options = stateOptions.map(({ value, label }) => ({ value, label: <SelectLabel>{label}</SelectLabel> }));
 
   return (
     <SelectWrapper>
@@ -23,7 +23,7 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
         value={element.value}
         options={options}
         onSelect={handleSelectPageUrl}
-        placeholder={intl.formatMessage(messages[`${INTERNAL_CONNECTION_TYPE}Placeholder`])}
+        placeholder={intl.formatMessage(messages[`${STATE_TYPE}Placeholder`])}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         customStyles={customSelectStyles}
         centerIcon
@@ -32,9 +32,9 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
   );
 };
 
-InternalConnectionElement.propTypes = {
+StateElement.propTypes = {
   element: PropTypes.object.isRequired,
-  pagerUrlOptions: PropTypes.array.isRequired,
+  stateOptions: PropTypes.array.isRequired,
   blockPath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   setFieldValue: PropTypes.func.isRequired,

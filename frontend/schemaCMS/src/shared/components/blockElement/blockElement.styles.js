@@ -23,7 +23,7 @@ export const SelectLabel = styled.div`
   padding: 0 30px 0 10px;
 `;
 
-export const InternalConnectionWrapper = styled.div`
+export const SelectWrapper = styled.div`
   padding-bottom: 30px;
 `;
 

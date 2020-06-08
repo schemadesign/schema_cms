@@ -85,6 +85,7 @@ export const PageForm = ({
   setRemoveModalOpen,
   internalConnections,
   tagCategories,
+  states,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -208,6 +209,7 @@ export const PageForm = ({
     restFormikProps.handleBlur(e);
   };
   const pagerUrlOptions = getPageUrlOptions({ internalConnections, domain, pageId });
+  const stateOptions = states.map(({ id, name, datasource }) => ({ label: `${datasource} > ${name}`, value: id }));
 
   return (
     <Container>
@@ -308,6 +310,7 @@ export const PageForm = ({
                     handleChange={handleChange}
                     setFieldValue={setFieldValue}
                     pagerUrlOptions={pagerUrlOptions}
+                    stateOptions={stateOptions}
                     {...blockAdditionalProps}
                     {...restFormikProps}
                   />
@@ -369,4 +372,5 @@ PageForm.propTypes = {
   domain: PropTypes.string,
   pageId: PropTypes.number,
   tagCategories: PropTypes.array.isRequired,
+  states: PropTypes.array.isRequired,
 };

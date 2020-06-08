@@ -39,6 +39,10 @@ export default defineMessages({
     id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}Placeholder`,
     defaultMessage: 'Select a page',
   },
+  [`${STATE_TYPE}Placeholder`]: {
+    id: `shared.components.blockElement.${STATE_TYPE}Placeholder`,
+    defaultMessage: 'Select a state',
+  },
   [`${OBSERVABLE_USER}Placeholder`]: {
     id: `shared.components.blockElement.${OBSERVABLE_USER}Placeholder`,
     defaultMessage: 'ObservableHQ User',

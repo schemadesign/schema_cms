@@ -52,7 +52,6 @@ const getBreadcrumbsItems = (project, { id, name }) => [
 ];
 
 export const CreatePage = ({ userRole, createPage, project, section, fetchPageAdditionalData, pageAdditionalData }) => {
-  const { tagCategories, internalConnections, pageTemplates } = pageAdditionalData;
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -115,13 +114,11 @@ export const CreatePage = ({ userRole, createPage, project, section, fetchPageAd
           <PageForm
             title={title}
             domain={project.domain}
-            pageTemplates={pageTemplates}
             isValid={isValid}
             setFieldValue={setFieldValue}
             setValues={setValues}
             values={values}
-            internalConnections={internalConnections}
-            tagCategories={tagCategories}
+            {...pageAdditionalData}
             {...restFormikProps}
           />
           <NavigationContainer fixed>

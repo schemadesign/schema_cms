@@ -74,7 +74,6 @@ export const EditPage = ({
   fetchPageAdditionalData,
   pageAdditionalData,
 }) => {
-  const { tagCategories, pageTemplates, internalConnections } = pageAdditionalData;
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -171,13 +170,11 @@ export const EditPage = ({
             domain={project.domain}
             pageId={page.id}
             title={title}
-            pageTemplates={pageTemplates}
             isValid={isValid}
             setRemoveModalOpen={setRemoveModalOpen}
             values={values}
             setValues={setValues}
-            internalConnections={internalConnections}
-            tagCategories={tagCategories}
+            {...pageAdditionalData}
             setFieldValue={setFieldValue}
             {...restFormikProps}
           />

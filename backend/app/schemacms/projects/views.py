@@ -111,7 +111,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         )
 
         tags = (
-            TagCategory.objects.filter(project=project, type__content= True)
+            TagCategory.objects.filter(project=project, type__content=True)
             .select_related("project", "created_by")
             .prefetch_related(Prefetch("tags", queryset=Tag.objects.order_by("order")))
             .order_by("name")
