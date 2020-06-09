@@ -394,7 +394,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -452,7 +452,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -516,7 +516,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -571,7 +571,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

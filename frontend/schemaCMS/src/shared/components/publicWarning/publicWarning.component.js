@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { always, cond, equals, is, T, both, gt, prop } from 'ramda';
+import { always, cond, equals, is, T, both, prop } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { Icons } from 'schemaUI';
 import PropTypes from 'prop-types';

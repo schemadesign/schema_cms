@@ -120,7 +120,7 @@ exports[`EditPage: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxhCb dneupG"
+        className="sc-AxhCb dvZYMB"
       >
         <div
           className="sc-AxiKw bOTXee"
@@ -350,7 +350,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqKVi dvSmuk"
+    className="sc-fzqyvX lbeCeP"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoOEf bxuqIG"
+          className="sc-fzoCUK faPrIH"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -394,6 +394,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fzoOEf ynSgx"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="project title"
           >
             project title
           </h3>
@@ -428,7 +430,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoOEf bxuqIG"
+          className="sc-fzoCUK faPrIH"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -450,6 +452,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fzoOEf ynSgx"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`EditPage: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Content"
+                id="shared.components.projectBreadcrumbs.content"
+                values={Object {}}
+              />
             }
           >
             Content
@@ -484,7 +494,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoOEf bxuqIG"
+          className="sc-fzoCUK faPrIH"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -506,6 +516,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
+            className="sc-fzoOEf ynSgx"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -514,6 +525,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title=""
           >
             
           </h3>
@@ -540,7 +552,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoCUK igrDX"
+          className="sc-fzqKVi ebIQcQ"
         >
           <span
             style={
@@ -553,6 +565,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
+            className="sc-fzoOEf ynSgx"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -561,6 +574,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="page name"
           >
             page name
           </h3>
@@ -1096,23 +1110,23 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-fzppAM edkijn"
+        className="sc-fzpdbB lgpAXL"
       >
         <div
-          className="sc-fzobTh vOQfB"
+          className="sc-fznNTe kCGPxd"
         >
           <div
-            className="sc-fznBtT iRhfKZ"
+            className="sc-fzppAM dxugQl"
           >
             <span
-              className="sc-fznNTe eZMxxn"
+              className="sc-fznBtT bdDLbW"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-fzqyvX lcnPeY"
+            className="sc-fzooss gKCCTW"
           >
             <div
               className=" css-2b097c-container"
@@ -1210,17 +1224,17 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fznBtT iRhfKZ"
+            className="sc-fzppAM dxugQl"
           >
             <span
-              className="sc-fznNTe eZMxxn"
+              className="sc-fznBtT bdDLbW"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-fzqyvX lcnPeY"
+            className="sc-fzooss gKCCTW"
           >
             <div
               className=" css-2b097c-container"
@@ -1495,14 +1509,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoPby cLmfKH"
+        className="sc-fzoCCn vvvqu"
       >
         <div
-          className="sc-fzpdbB ejONir"
+          className="sc-fzoPby jzQxyb"
         />
         1 Block
         <div
-          className="sc-fzpdbB ejONir"
+          className="sc-fzoPby jzQxyb"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -1662,7 +1676,6 @@ exports[`EditPage: Component should render correctly 1`] = `
                         }
                       }
                       type="text"
-                      value="name"
                     />
                     <div
                       style={
@@ -1685,9 +1698,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                           "whiteSpace": "pre",
                         }
                       }
-                    >
-                      name
-                    </div>
+                    />
                     <div
                       style={
                         Object {
@@ -1813,10 +1824,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX jTcEWk"
+                      className="sc-fznLPX hpzGHu"
                     >
                       <div
-                        className="sc-fzoVTD gQedNL"
+                        className="sc-fzoJus laRNWC"
                       >
                         <svg
                           style={
@@ -1835,9 +1846,98 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoaKM hyXHRq"
+                        className="sc-fzoKki dQzjXQ"
                       >
-                        name
+                        <div
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": 0,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <input
+                            id="blocks.0.elements.0.name"
+                            name="blocks.0.elements.0.name"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Element Name"
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "outline": "none",
+                                "padding": 0,
+                                "width": 80,
+                              }
+                            }
+                            type="text"
+                            value="name"
+                          />
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "opacity": 0,
+                                "outline": "none",
+                                "padding": 0,
+                                "position": "fixed",
+                                "visibility": "hidden",
+                                "whiteSpace": "pre",
+                              }
+                            }
+                          >
+                            name
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 2,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fzoJus laRNWC"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
                       </div>
                     </div>
                     <div
@@ -1888,7 +1988,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzowVh iURINb"
+                          className="sc-fzqMdD gUlgVl"
                         >
                           <div
                             className="sc-fzoKki xmNdG"
@@ -2007,10 +2107,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX jTcEWk"
+                      className="sc-fznLPX hpzGHu"
                     >
                       <div
-                        className="sc-fzoVTD gQedNL"
+                        className="sc-fzoJus laRNWC"
                       >
                         <svg
                           style={
@@ -2029,9 +2129,98 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoaKM hyXHRq"
+                        className="sc-fzoKki dQzjXQ"
                       >
-                        name
+                        <div
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": 0,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <input
+                            id="blocks.0.elements.1.name"
+                            name="blocks.0.elements.1.name"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Element Name"
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "outline": "none",
+                                "padding": 0,
+                                "width": 80,
+                              }
+                            }
+                            type="text"
+                            value="name"
+                          />
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "opacity": 0,
+                                "outline": "none",
+                                "padding": 0,
+                                "position": "fixed",
+                                "visibility": "hidden",
+                                "whiteSpace": "pre",
+                              }
+                            }
+                          >
+                            name
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 2,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fzoJus laRNWC"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
                       </div>
                     </div>
                     <div
@@ -2082,7 +2271,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqAui dIvBCb"
+                          className="sc-fzomuh gDFGiY"
                         >
                           <div
                             className="sc-fzqMAW jFSpyd"
@@ -2174,7 +2363,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     }
                                   >
                                     <div
-                                      className="sc-fzomuh fvjgCs"
+                                      className="sc-fzoaKM cSjyXk"
                                     >
                                       news   &gt;   Article 2
                                     </div>
@@ -2198,7 +2387,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     }
                                   >
                                     <div
-                                      className="sc-fzomuh fvjgCs"
+                                      className="sc-fzoaKM cSjyXk"
                                     >
                                       News
                                     </div>
@@ -2222,7 +2411,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     }
                                   >
                                     <div
-                                      className="sc-fzomuh fvjgCs"
+                                      className="sc-fzoaKM cSjyXk"
                                     >
                                       news   &gt;   Article 1
                                     </div>
@@ -2280,10 +2469,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX jTcEWk"
+                      className="sc-fznLPX hpzGHu"
                     >
                       <div
-                        className="sc-fzoVTD gQedNL"
+                        className="sc-fzoJus laRNWC"
                       >
                         <svg
                           style={
@@ -2302,9 +2491,98 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoaKM hyXHRq"
+                        className="sc-fzoKki dQzjXQ"
                       >
-                        name
+                        <div
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": 0,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <input
+                            id="blocks.0.elements.2.name"
+                            name="blocks.0.elements.2.name"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Element Name"
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "outline": "none",
+                                "padding": 0,
+                                "width": 80,
+                              }
+                            }
+                            type="text"
+                            value="name"
+                          />
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "opacity": 0,
+                                "outline": "none",
+                                "padding": 0,
+                                "position": "fixed",
+                                "visibility": "hidden",
+                                "whiteSpace": "pre",
+                              }
+                            }
+                          >
+                            name
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 2,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fzoJus laRNWC"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
                       </div>
                     </div>
                     <div
@@ -2355,7 +2633,296 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqMdD jyIARU"
+                          className="sc-fzomuh gDFGiY"
+                        >
+                          <div
+                            className="sc-fzqMAW jFSpyd"
+                            onClick={[Function]}
+                          >
+                            <input
+                              id="blocks.0.elements.2.value"
+                              name="blocks.0.elements.2.value"
+                              type="hidden"
+                              value={1}
+                            />
+                            <div
+                              style={
+                                Object {
+                                  "color": "#FFF",
+                                  "display": "flex",
+                                  "width": "100%",
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                    "display": "flex",
+                                    "position": "relative",
+                                    "width": "100%",
+                                  }
+                                }
+                              >
+                                <div
+                                  onClick={[Function]}
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#71737e",
+                                      "cursor": "pointer",
+                                      "display": "flex",
+                                      "padding": "20px 10px",
+                                      "width": "100%",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    style={
+                                      Object {
+                                        "cursor": "pointer",
+                                        "overflow": "hidden",
+                                        "textOverflow": "ellipsis",
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    No States available
+                                  </div>
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "WebkitOverflowScrolling": "touch",
+                                      "backgroundColor": "#1d1d20",
+                                      "display": "none",
+                                      "flexDirection": "column",
+                                      "left": "0",
+                                      "maxHeight": "184px",
+                                      "overflowY": "hidden",
+                                      "position": "absolute",
+                                      "top": "calc(100% + 5px)",
+                                      "width": "100%",
+                                      "zIndex": 2,
+                                    }
+                                  }
+                                />
+                              </div>
+                            </div>
+                            <div
+                              className="sc-fzoydu BTftf"
+                            >
+                              <svg
+                                style={
+                                  Object {
+                                    "fill": "#FFF",
+                                    "height": "30px",
+                                    "width": "30px",
+                                  }
+                                }
+                                viewBox="0 0 30 30"
+                              >
+                                <path
+                                  d="M15.117 18L9 12h12z"
+                                  fillRule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "borderTop": "2px solid #FFF",
+                      "overflow": "inherit",
+                      "position": "relative",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#000",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "minHeight": 60,
+                        "paddingRight": 40,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <div
+                      className="sc-fznLPX hpzGHu"
+                    >
+                      <div
+                        className="sc-fzoJus laRNWC"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": 30,
+                              "shapeRendering": "crispEdges",
+                              "width": 30,
+                            }
+                          }
+                          viewBox="0 0 60 60"
+                        >
+                          <path
+                            d="M15 28h30v4H15z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="sc-fzoKki dQzjXQ"
+                      >
+                        <div
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": 0,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <input
+                            id="blocks.0.elements.3.name"
+                            name="blocks.0.elements.3.name"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Element Name"
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "outline": "none",
+                                "padding": 0,
+                                "width": 80,
+                              }
+                            }
+                            type="text"
+                            value="name"
+                          />
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "opacity": 0,
+                                "outline": "none",
+                                "padding": 0,
+                                "position": "fixed",
+                                "visibility": "hidden",
+                                "whiteSpace": "pre",
+                              }
+                            }
+                          >
+                            name
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 2,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fzoJus laRNWC"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                          "fontSize": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 9,
+                          "transform": "rotate(180deg)",
+                          "transformOrigin": "center center",
+                          "transition": "transform 200ms ease-in-out",
+                        }
+                      }
+                    >
+                      <svg
+                        style={
+                          Object {
+                            "fill": "#71737e",
+                            "height": 30,
+                            "margin": "5px",
+                            "userSelect": "none",
+                            "width": 30,
+                          }
+                        }
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M15.117 18L9 12h12z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "#000",
+                        "height": "auto",
+                        "transition": "height 200ms linear, overflow 0s linear 200ms",
+                      }
+                    }
+                  >
+                    <div>
+                      <div
+                        className="sc-fznAgC dlXska"
+                      >
+                        <div
+                          className="sc-fzqAui eqjECk"
                         >
                           <div
                             className="react-mde react-mde-tabbed-layout"
@@ -2772,10 +3339,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX jTcEWk"
+                      className="sc-fznLPX hpzGHu"
                     >
                       <div
-                        className="sc-fzoVTD gQedNL"
+                        className="sc-fzoJus laRNWC"
                       >
                         <svg
                           style={
@@ -2794,9 +3361,98 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoaKM hyXHRq"
+                        className="sc-fzoKki dQzjXQ"
                       >
-                        name
+                        <div
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": 0,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <input
+                            id="blocks.0.elements.4.name"
+                            name="blocks.0.elements.4.name"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Element Name"
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "outline": "none",
+                                "padding": 0,
+                                "width": 80,
+                              }
+                            }
+                            type="text"
+                            value="name"
+                          />
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "opacity": 0,
+                                "outline": "none",
+                                "padding": 0,
+                                "position": "fixed",
+                                "visibility": "hidden",
+                                "whiteSpace": "pre",
+                              }
+                            }
+                          >
+                            name
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 2,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fzoJus laRNWC"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
                       </div>
                     </div>
                     <div
@@ -2847,15 +3503,15 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzoJus eRyPze"
+                          className="sc-fzowVh iURINb"
                         >
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fznLxA hSrtBl"
                           >
                             ObservableHQ User
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzqMdD gUlgVl"
                           >
                             <div
                               className="sc-fzoKki xmNdG"
@@ -2872,8 +3528,8 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 }
                               >
                                 <input
-                                  id="blocks.0.elements.3.value.observableUser"
-                                  name="blocks.0.elements.3.value.observableUser"
+                                  id="blocks.0.elements.4.value.observableUser"
+                                  name="blocks.0.elements.4.value.observableUser"
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   style={
@@ -2926,12 +3582,12 @@ exports[`EditPage: Component should render correctly 1`] = `
                             </svg>
                           </div>
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fznLxA hSrtBl"
                           >
                             ObservableHQ Notebook
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzqMdD gUlgVl"
                           >
                             <div
                               className="sc-fzoKki xmNdG"
@@ -2948,8 +3604,8 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 }
                               >
                                 <input
-                                  id="blocks.0.elements.3.value.observableNotebook"
-                                  name="blocks.0.elements.3.value.observableNotebook"
+                                  id="blocks.0.elements.4.value.observableNotebook"
+                                  name="blocks.0.elements.4.value.observableNotebook"
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   style={
@@ -3002,12 +3658,12 @@ exports[`EditPage: Component should render correctly 1`] = `
                             </svg>
                           </div>
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fznLxA hSrtBl"
                           >
                             ObservableHQ Cell
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzqMdD gUlgVl"
                           >
                             <div
                               className="sc-fzoKki xmNdG"
@@ -3024,8 +3680,8 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 }
                               >
                                 <input
-                                  id="blocks.0.elements.3.value.observableCell"
-                                  name="blocks.0.elements.3.value.observableCell"
+                                  id="blocks.0.elements.4.value.observableCell"
+                                  name="blocks.0.elements.4.value.observableCell"
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   style={
@@ -3078,12 +3734,12 @@ exports[`EditPage: Component should render correctly 1`] = `
                             </svg>
                           </div>
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fznLxA hSrtBl"
                           >
                             ObservableHQ Params
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzqMdD gUlgVl"
                           >
                             <div
                               className="sc-fzoKki xmNdG"
@@ -3100,8 +3756,8 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 }
                               >
                                 <input
-                                  id="blocks.0.elements.3.value.observableParams"
-                                  name="blocks.0.elements.3.value.observableParams"
+                                  id="blocks.0.elements.4.value.observableParams"
+                                  name="blocks.0.elements.4.value.observableParams"
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   style={
@@ -3182,10 +3838,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX jTcEWk"
+                      className="sc-fznLPX hpzGHu"
                     >
                       <div
-                        className="sc-fzoVTD gQedNL"
+                        className="sc-fzoJus laRNWC"
                       >
                         <svg
                           style={
@@ -3204,9 +3860,98 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoaKM hyXHRq"
+                        className="sc-fzoKki dQzjXQ"
                       >
-                        custom element
+                        <div
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": 0,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <input
+                            id="blocks.0.elements.5.name"
+                            name="blocks.0.elements.5.name"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Element Name"
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "outline": "none",
+                                "padding": 0,
+                                "width": 80,
+                              }
+                            }
+                            type="text"
+                            value="custom element"
+                          />
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontFamily": "inherit",
+                                "fontSize": 16,
+                                "fontWeight": "inherit",
+                                "letterSpacing": "normal",
+                                "lineHeight": "24px",
+                                "maxWidth": "100%",
+                                "minWidth": 90,
+                                "opacity": 0,
+                                "outline": "none",
+                                "padding": 0,
+                                "position": "fixed",
+                                "visibility": "hidden",
+                                "whiteSpace": "pre",
+                              }
+                            }
+                          >
+                            custom element
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 2,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="sc-fzoJus laRNWC"
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "fill": "#FFF",
+                              "height": "30px",
+                              "width": "30px",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
                       </div>
                     </div>
                     <div
@@ -3257,14 +4002,14 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzoPby cLmfKH"
+                          className="sc-fzoCCn vvvqu"
                         >
                           <div
-                            className="sc-fzpdbB ejONir"
+                            className="sc-fzoPby jzQxyb"
                           />
                           3 Sets
                           <div
-                            className="sc-fzpdbB ejONir"
+                            className="sc-fzoPby jzQxyb"
                           >
                             <div
                               className="sc-fzolEj bBhqcC"
@@ -3274,7 +4019,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                               >
                                 <button
                                   disabled={false}
-                                  id="add-blocks.0.elements.4.value"
+                                  id="add-blocks.0.elements.5.value"
                                   onClick={[Function]}
                                   style={
                                     Object {
@@ -3334,7 +4079,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzpisO lNqhg"
+                              className="sc-fzoVTD iTRLBY"
                             >
                               <div>
                                 <div
@@ -3359,7 +4104,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznyYp jeeHWn"
+                                className="sc-fzpisO iwDars"
                               >
                                 <div
                                   style={
@@ -3430,7 +4175,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzowVh iURINb"
+                                        className="sc-fzqMdD gUlgVl"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -3447,7 +4192,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.4.value.0.elements.0.value"
+                                              id="blocks.0.elements.5.value.0.elements.0.value"
                                               onBlur={[Function]}
                                               onChange={[Function]}
                                               style={
@@ -3592,7 +4337,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzowVh iURINb"
+                                        className="sc-fzqMdD gUlgVl"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -3609,7 +4354,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.4.value.0.elements.1.value"
+                                              id="blocks.0.elements.5.value.0.elements.1.value"
                                               onBlur={[Function]}
                                               onChange={[Function]}
                                               style={
@@ -3754,7 +4499,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD jyIARU"
+                                        className="sc-fzqAui eqjECk"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -4147,10 +4892,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznLxA fuLtKL"
+                                className="sc-fznyYp kElEBK"
                               >
                                 <svg
-                                  id="remove-blocks.0.elements.4.value.0"
+                                  id="remove-blocks.0.elements.5.value.0"
                                   onClick={[Function]}
                                   style={
                                     Object {
@@ -4184,7 +4929,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzpisO lNqhg"
+                              className="sc-fzoVTD iTRLBY"
                             >
                               <div>
                                 <div
@@ -4209,7 +4954,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznyYp jeeHWn"
+                                className="sc-fzpisO iwDars"
                               >
                                 <div
                                   style={
@@ -4280,7 +5025,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzowVh iURINb"
+                                        className="sc-fzqMdD gUlgVl"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -4297,7 +5042,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.4.value.1.elements.0.value"
+                                              id="blocks.0.elements.5.value.1.elements.0.value"
                                               onBlur={[Function]}
                                               onChange={[Function]}
                                               style={
@@ -4442,7 +5187,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzowVh iURINb"
+                                        className="sc-fzqMdD gUlgVl"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -4459,7 +5204,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.4.value.1.elements.1.value"
+                                              id="blocks.0.elements.5.value.1.elements.1.value"
                                               onBlur={[Function]}
                                               onChange={[Function]}
                                               style={
@@ -4604,7 +5349,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD jyIARU"
+                                        className="sc-fzqAui eqjECk"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -4997,10 +5742,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznLxA fuLtKL"
+                                className="sc-fznyYp kElEBK"
                               >
                                 <svg
-                                  id="remove-blocks.0.elements.4.value.1"
+                                  id="remove-blocks.0.elements.5.value.1"
                                   onClick={[Function]}
                                   style={
                                     Object {
@@ -5034,7 +5779,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzpisO lNqhg"
+                              className="sc-fzoVTD iTRLBY"
                             >
                               <div>
                                 <div
@@ -5059,7 +5804,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznyYp jeeHWn"
+                                className="sc-fzpisO iwDars"
                               >
                                 <div
                                   style={
@@ -5130,7 +5875,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzowVh iURINb"
+                                        className="sc-fzqMdD gUlgVl"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -5147,7 +5892,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.4.value.2.elements.0.value"
+                                              id="blocks.0.elements.5.value.2.elements.0.value"
                                               onBlur={[Function]}
                                               onChange={[Function]}
                                               style={
@@ -5292,7 +6037,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzowVh iURINb"
+                                        className="sc-fzqMdD gUlgVl"
                                       >
                                         <div
                                           className="sc-fzoKki xmNdG"
@@ -5309,7 +6054,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                             }
                                           >
                                             <textarea
-                                              id="blocks.0.elements.4.value.2.elements.1.value"
+                                              id="blocks.0.elements.5.value.2.elements.1.value"
                                               onBlur={[Function]}
                                               onChange={[Function]}
                                               style={
@@ -5454,7 +6199,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqMdD jyIARU"
+                                        className="sc-fzqAui eqjECk"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -5847,10 +6592,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznLxA fuLtKL"
+                                className="sc-fznyYp kElEBK"
                               >
                                 <svg
-                                  id="remove-blocks.0.elements.4.value.2"
+                                  id="remove-blocks.0.elements.5.value.2"
                                   onClick={[Function]}
                                   style={
                                     Object {

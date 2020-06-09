@@ -72,7 +72,6 @@ exports[`PageBlock: Component should render correctly 1`] = `
               }
             }
             type="text"
-            value="name"
           />
           <div
             style={
@@ -95,9 +94,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 "whiteSpace": "pre",
               }
             }
-          >
-            name
-          </div>
+          />
           <div
             style={
               Object {
@@ -206,10 +203,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-Axmtr iTjOUw"
+            className="sc-Axmtr bLSUBW"
           >
             <div
-              className="sc-fznKkj ixvQWm"
+              className="sc-fznyAO izaug"
             >
               <svg
                 style={
@@ -228,9 +225,97 @@ exports[`PageBlock: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-AxmLO cAKCgh"
+              className="sc-AxhCb OYUmu"
             >
-              name
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": 0,
+                    "position": "relative",
+                  }
+                }
+              >
+                <input
+                  id="formikFieldPath.0.elements.0.name"
+                  name="formikFieldPath.0.elements.0.name"
+                  onChange={[Function]}
+                  placeholder="Element Name"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "outline": "none",
+                      "padding": 0,
+                      "width": 80,
+                    }
+                  }
+                  type="text"
+                  value="name"
+                />
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "opacity": 0,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "fixed",
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  name
+                </div>
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="sc-fznyAO izaug"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
@@ -281,7 +366,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzplWN hHHhhs"
+                className="sc-fzpans jotoLJ"
               >
                 <div
                   className="sc-AxhCb qEpns"
@@ -399,10 +484,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-Axmtr iTjOUw"
+            className="sc-Axmtr bLSUBW"
           >
             <div
-              className="sc-fznKkj ixvQWm"
+              className="sc-fznyAO izaug"
             >
               <svg
                 style={
@@ -421,9 +506,97 @@ exports[`PageBlock: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-AxmLO cAKCgh"
+              className="sc-AxhCb OYUmu"
             >
-              name
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": 0,
+                    "position": "relative",
+                  }
+                }
+              >
+                <input
+                  id="formikFieldPath.0.elements.1.name"
+                  name="formikFieldPath.0.elements.1.name"
+                  onChange={[Function]}
+                  placeholder="Element Name"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "outline": "none",
+                      "padding": 0,
+                      "width": 80,
+                    }
+                  }
+                  type="text"
+                  value="name"
+                />
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "opacity": 0,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "fixed",
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  name
+                </div>
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="sc-fznyAO izaug"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
@@ -474,10 +647,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzoLsD gWdCPf"
+                className="sc-fzozJi bchfIJ"
               >
                 <div
-                  className="sc-fznxKY haarsL"
+                  className="sc-fzpmMD hbcWYL"
                   onClick={[Function]}
                 >
                   <input
@@ -528,7 +701,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           }
                         >
                           <div
-                            className="sc-fzozJi gMQSSB"
+                            className="sc-AxmLO iipnXz"
                           >
                             Blog
                           </div>
@@ -571,7 +744,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           }
                         >
                           <div
-                            className="sc-fzozJi gMQSSB"
+                            className="sc-AxmLO iipnXz"
                           >
                             Blog
                           </div>
@@ -595,7 +768,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           }
                         >
                           <div
-                            className="sc-fzozJi gMQSSB"
+                            className="sc-AxmLO iipnXz"
                           >
                             news   &gt;   Article 2
                           </div>
@@ -619,7 +792,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                           }
                         >
                           <div
-                            className="sc-fzozJi gMQSSB"
+                            className="sc-AxmLO iipnXz"
                           >
                             News
                           </div>
@@ -628,7 +801,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fznMAR ePFlqw"
+                    className="sc-fznxKY cbCPJg"
                   >
                     <svg
                       style={
@@ -677,10 +850,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-Axmtr iTjOUw"
+            className="sc-Axmtr bLSUBW"
           >
             <div
-              className="sc-fznKkj ixvQWm"
+              className="sc-fznyAO izaug"
             >
               <svg
                 style={
@@ -699,9 +872,97 @@ exports[`PageBlock: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-AxmLO cAKCgh"
+              className="sc-AxhCb OYUmu"
             >
-              name
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": 0,
+                    "position": "relative",
+                  }
+                }
+              >
+                <input
+                  id="formikFieldPath.0.elements.2.name"
+                  name="formikFieldPath.0.elements.2.name"
+                  onChange={[Function]}
+                  placeholder="Element Name"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "outline": "none",
+                      "padding": 0,
+                      "width": 80,
+                    }
+                  }
+                  type="text"
+                  value="name"
+                />
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "opacity": 0,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "fixed",
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  name
+                </div>
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="sc-fznyAO izaug"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
@@ -752,7 +1013,295 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzpans bUilcI"
+                className="sc-fzozJi bchfIJ"
+              >
+                <div
+                  className="sc-fzpmMD hbcWYL"
+                  onClick={[Function]}
+                >
+                  <input
+                    id="formikFieldPath.0.elements.2.value"
+                    name="formikFieldPath.0.elements.2.value"
+                    type="hidden"
+                    value={1}
+                  />
+                  <div
+                    style={
+                      Object {
+                        "color": "#FFF",
+                        "display": "flex",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                          "display": "flex",
+                          "position": "relative",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "backgroundColor": "#71737e",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "padding": "20px 10px",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                        >
+                          No States available
+                        </div>
+                      </div>
+                      <div
+                        style={
+                          Object {
+                            "WebkitOverflowScrolling": "touch",
+                            "backgroundColor": "#1d1d20",
+                            "display": "none",
+                            "flexDirection": "column",
+                            "left": "0",
+                            "maxHeight": "184px",
+                            "overflowY": "hidden",
+                            "position": "absolute",
+                            "top": "calc(100% + 5px)",
+                            "width": "100%",
+                            "zIndex": 2,
+                          }
+                        }
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="sc-fznxKY cbCPJg"
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "30px",
+                          "width": "30px",
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        d="M15.117 18L9 12h12z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "borderTop": "2px solid #FFF",
+            "overflow": "inherit",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#000",
+              "display": "flex",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "minHeight": 60,
+              "paddingRight": 40,
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="sc-Axmtr bLSUBW"
+          >
+            <div
+              className="sc-fznyAO izaug"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "shapeRendering": "crispEdges",
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M15 28h30v4H15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-AxhCb OYUmu"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": 0,
+                    "position": "relative",
+                  }
+                }
+              >
+                <input
+                  id="formikFieldPath.0.elements.3.name"
+                  name="formikFieldPath.0.elements.3.name"
+                  onChange={[Function]}
+                  placeholder="Element Name"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "outline": "none",
+                      "padding": 0,
+                      "width": 80,
+                    }
+                  }
+                  type="text"
+                  value="name"
+                />
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "opacity": 0,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "fixed",
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  name
+                </div>
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="sc-fznyAO izaug"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fontSize": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 9,
+                "transform": "rotate(180deg)",
+                "transformOrigin": "center center",
+                "transition": "transform 200ms ease-in-out",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#71737e",
+                  "height": 30,
+                  "margin": "5px",
+                  "userSelect": "none",
+                  "width": 30,
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15.117 18L9 12h12z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "height": "auto",
+              "transition": "height 200ms linear, overflow 0s linear 200ms",
+            }
+          }
+        >
+          <div>
+            <div
+              className="sc-AxheI bfpwAA"
+            >
+              <div
+                className="sc-fzoLsD faFaWI"
               >
                 <div
                   className="react-mde react-mde-tabbed-layout"
@@ -1169,10 +1718,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-Axmtr iTjOUw"
+            className="sc-Axmtr bLSUBW"
           >
             <div
-              className="sc-fznKkj ixvQWm"
+              className="sc-fznyAO izaug"
             >
               <svg
                 style={
@@ -1191,9 +1740,97 @@ exports[`PageBlock: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-AxmLO cAKCgh"
+              className="sc-AxhCb OYUmu"
             >
-              name
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": 0,
+                    "position": "relative",
+                  }
+                }
+              >
+                <input
+                  id="formikFieldPath.0.elements.4.name"
+                  name="formikFieldPath.0.elements.4.name"
+                  onChange={[Function]}
+                  placeholder="Element Name"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "outline": "none",
+                      "padding": 0,
+                      "width": 80,
+                    }
+                  }
+                  type="text"
+                  value="name"
+                />
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "opacity": 0,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "fixed",
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  name
+                </div>
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="sc-fznyAO izaug"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
@@ -1244,15 +1881,15 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fznyAO gOYLtg"
+                className="sc-fzplWN hHHhhs"
               >
                 <span
-                  className="sc-fzqNJr hqNmrx"
+                  className="sc-fzqBZW grNAkQ"
                 >
                   ObservableHQ User
                 </span>
                 <div
-                  className="sc-fzplWN hHHhhs"
+                  className="sc-fzpans jotoLJ"
                 >
                   <div
                     className="sc-AxhCb qEpns"
@@ -1269,8 +1906,8 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       }
                     >
                       <input
-                        id="formikFieldPath.0.elements.3.value.observableUser"
-                        name="formikFieldPath.0.elements.3.value.observableUser"
+                        id="formikFieldPath.0.elements.4.value.observableUser"
+                        name="formikFieldPath.0.elements.4.value.observableUser"
                         onChange={[Function]}
                         style={
                           Object {
@@ -1322,12 +1959,12 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   </svg>
                 </div>
                 <span
-                  className="sc-fzqNJr hqNmrx"
+                  className="sc-fzqBZW grNAkQ"
                 >
                   ObservableHQ Notebook
                 </span>
                 <div
-                  className="sc-fzplWN hHHhhs"
+                  className="sc-fzpans jotoLJ"
                 >
                   <div
                     className="sc-AxhCb qEpns"
@@ -1344,8 +1981,8 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       }
                     >
                       <input
-                        id="formikFieldPath.0.elements.3.value.observableNotebook"
-                        name="formikFieldPath.0.elements.3.value.observableNotebook"
+                        id="formikFieldPath.0.elements.4.value.observableNotebook"
+                        name="formikFieldPath.0.elements.4.value.observableNotebook"
                         onChange={[Function]}
                         style={
                           Object {
@@ -1397,12 +2034,12 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   </svg>
                 </div>
                 <span
-                  className="sc-fzqNJr hqNmrx"
+                  className="sc-fzqBZW grNAkQ"
                 >
                   ObservableHQ Cell
                 </span>
                 <div
-                  className="sc-fzplWN hHHhhs"
+                  className="sc-fzpans jotoLJ"
                 >
                   <div
                     className="sc-AxhCb qEpns"
@@ -1419,8 +2056,8 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       }
                     >
                       <input
-                        id="formikFieldPath.0.elements.3.value.observableCell"
-                        name="formikFieldPath.0.elements.3.value.observableCell"
+                        id="formikFieldPath.0.elements.4.value.observableCell"
+                        name="formikFieldPath.0.elements.4.value.observableCell"
                         onChange={[Function]}
                         style={
                           Object {
@@ -1472,12 +2109,12 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   </svg>
                 </div>
                 <span
-                  className="sc-fzqNJr hqNmrx"
+                  className="sc-fzqBZW grNAkQ"
                 >
                   ObservableHQ Params
                 </span>
                 <div
-                  className="sc-fzplWN hHHhhs"
+                  className="sc-fzpans jotoLJ"
                 >
                   <div
                     className="sc-AxhCb qEpns"
@@ -1494,8 +2131,8 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       }
                     >
                       <input
-                        id="formikFieldPath.0.elements.3.value.observableParams"
-                        name="formikFieldPath.0.elements.3.value.observableParams"
+                        id="formikFieldPath.0.elements.4.value.observableParams"
+                        name="formikFieldPath.0.elements.4.value.observableParams"
                         onChange={[Function]}
                         style={
                           Object {
@@ -1575,10 +2212,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-Axmtr iTjOUw"
+            className="sc-Axmtr bLSUBW"
           >
             <div
-              className="sc-fznKkj ixvQWm"
+              className="sc-fznyAO izaug"
             >
               <svg
                 style={
@@ -1597,9 +2234,97 @@ exports[`PageBlock: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-AxmLO cAKCgh"
+              className="sc-AxhCb OYUmu"
             >
-              custom element
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "maxWidth": "100%",
+                    "paddingBottom": 0,
+                    "position": "relative",
+                  }
+                }
+              >
+                <input
+                  id="formikFieldPath.0.elements.5.name"
+                  name="formikFieldPath.0.elements.5.name"
+                  onChange={[Function]}
+                  placeholder="Element Name"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "outline": "none",
+                      "padding": 0,
+                      "width": 80,
+                    }
+                  }
+                  type="text"
+                  value="custom element"
+                />
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "border": "none",
+                      "color": "#FFF",
+                      "fontFamily": "inherit",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "letterSpacing": "normal",
+                      "lineHeight": "24px",
+                      "maxWidth": "100%",
+                      "minWidth": 90,
+                      "opacity": 0,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "fixed",
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  custom element
+                </div>
+                <div
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 2,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="sc-fznyAO izaug"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
@@ -1650,24 +2375,24 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzoydu cUEDKI"
+                className="sc-fzqMAW cXmsfl"
               >
                 <div
-                  className="sc-fzoJMP cOGlUL"
+                  className="sc-fzoydu kXdSvU"
                 />
                 3 Sets
                 <div
-                  className="sc-fzoJMP cOGlUL"
+                  className="sc-fzoydu kXdSvU"
                 >
                   <div
-                    className="sc-fzoant dPuuqC"
+                    className="sc-fznMnq jNfrPW"
                   >
                     <div
-                      className="sc-fzomuh gQSVZs"
+                      className="sc-fzoaKM pVdRD"
                     >
                       <button
                         disabled={false}
-                        id="add-formikFieldPath.0.elements.4.value"
+                        id="add-formikFieldPath.0.elements.5.value"
                         onClick={[Function]}
                         style={
                           Object {
@@ -1727,11 +2452,11 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    className="sc-fznZeY hTsfZt"
+                    className="sc-fznKkj cXJXDF"
                   >
                     <div>
                       <div
-                        className="sc-fzqMAW BQynX"
+                        className="sc-fzqAbL hvzhNL"
                       >
                         <svg
                           style={
@@ -1752,7 +2477,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzokOt hJRzIe"
+                      className="sc-fznZeY bgmSTh"
                     >
                       <div
                         style={
@@ -1823,7 +2548,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzplWN hHHhhs"
+                              className="sc-fzpans jotoLJ"
                             >
                               <div
                                 className="sc-AxhCb qEpns"
@@ -1840,7 +2565,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   }
                                 >
                                   <textarea
-                                    id="formikFieldPath.0.elements.4.value.0.elements.0.value"
+                                    id="formikFieldPath.0.elements.5.value.0.elements.0.value"
                                     onChange={[Function]}
                                     style={
                                       Object {
@@ -1984,7 +2709,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzplWN hHHhhs"
+                              className="sc-fzpans jotoLJ"
                             >
                               <div
                                 className="sc-AxhCb qEpns"
@@ -2001,7 +2726,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   }
                                 >
                                   <textarea
-                                    id="formikFieldPath.0.elements.4.value.0.elements.1.value"
+                                    id="formikFieldPath.0.elements.5.value.0.elements.1.value"
                                     onChange={[Function]}
                                     style={
                                       Object {
@@ -2145,7 +2870,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzpans bUilcI"
+                              className="sc-fzoLsD faFaWI"
                             >
                               <div
                                 className="react-mde react-mde-tabbed-layout"
@@ -2538,10 +3263,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzqBZW hRfopu"
+                      className="sc-fzokOt bBiZyX"
                     >
                       <svg
-                        id="remove-formikFieldPath.0.elements.4.value.0"
+                        id="remove-formikFieldPath.0.elements.5.value.0"
                         onClick={[Function]}
                         style={
                           Object {
@@ -2575,11 +3300,11 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    className="sc-fznZeY hTsfZt"
+                    className="sc-fznKkj cXJXDF"
                   >
                     <div>
                       <div
-                        className="sc-fzqMAW BQynX"
+                        className="sc-fzqAbL hvzhNL"
                       >
                         <svg
                           style={
@@ -2600,7 +3325,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzokOt hJRzIe"
+                      className="sc-fznZeY bgmSTh"
                     >
                       <div
                         style={
@@ -2671,7 +3396,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzplWN hHHhhs"
+                              className="sc-fzpans jotoLJ"
                             >
                               <div
                                 className="sc-AxhCb qEpns"
@@ -2688,7 +3413,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   }
                                 >
                                   <textarea
-                                    id="formikFieldPath.0.elements.4.value.1.elements.0.value"
+                                    id="formikFieldPath.0.elements.5.value.1.elements.0.value"
                                     onChange={[Function]}
                                     style={
                                       Object {
@@ -2832,7 +3557,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzplWN hHHhhs"
+                              className="sc-fzpans jotoLJ"
                             >
                               <div
                                 className="sc-AxhCb qEpns"
@@ -2849,7 +3574,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   }
                                 >
                                   <textarea
-                                    id="formikFieldPath.0.elements.4.value.1.elements.1.value"
+                                    id="formikFieldPath.0.elements.5.value.1.elements.1.value"
                                     onChange={[Function]}
                                     style={
                                       Object {
@@ -2993,7 +3718,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzpans bUilcI"
+                              className="sc-fzoLsD faFaWI"
                             >
                               <div
                                 className="react-mde react-mde-tabbed-layout"
@@ -3386,10 +4111,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzqBZW hRfopu"
+                      className="sc-fzokOt bBiZyX"
                     >
                       <svg
-                        id="remove-formikFieldPath.0.elements.4.value.1"
+                        id="remove-formikFieldPath.0.elements.5.value.1"
                         onClick={[Function]}
                         style={
                           Object {
@@ -3423,11 +4148,11 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    className="sc-fznZeY hTsfZt"
+                    className="sc-fznKkj cXJXDF"
                   >
                     <div>
                       <div
-                        className="sc-fzqMAW BQynX"
+                        className="sc-fzqAbL hvzhNL"
                       >
                         <svg
                           style={
@@ -3448,7 +4173,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzokOt hJRzIe"
+                      className="sc-fznZeY bgmSTh"
                     >
                       <div
                         style={
@@ -3519,7 +4244,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzplWN hHHhhs"
+                              className="sc-fzpans jotoLJ"
                             >
                               <div
                                 className="sc-AxhCb qEpns"
@@ -3536,7 +4261,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   }
                                 >
                                   <textarea
-                                    id="formikFieldPath.0.elements.4.value.2.elements.0.value"
+                                    id="formikFieldPath.0.elements.5.value.2.elements.0.value"
                                     onChange={[Function]}
                                     style={
                                       Object {
@@ -3680,7 +4405,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzplWN hHHhhs"
+                              className="sc-fzpans jotoLJ"
                             >
                               <div
                                 className="sc-AxhCb qEpns"
@@ -3697,7 +4422,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                                   }
                                 >
                                   <textarea
-                                    id="formikFieldPath.0.elements.4.value.2.elements.1.value"
+                                    id="formikFieldPath.0.elements.5.value.2.elements.1.value"
                                     onChange={[Function]}
                                     style={
                                       Object {
@@ -3841,7 +4566,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzpans bUilcI"
+                              className="sc-fzoLsD faFaWI"
                             >
                               <div
                                 className="react-mde react-mde-tabbed-layout"
@@ -4234,10 +4959,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzqBZW hRfopu"
+                      className="sc-fzokOt bBiZyX"
                     >
                       <svg
-                        id="remove-formikFieldPath.0.elements.4.value.2"
+                        id="remove-formikFieldPath.0.elements.5.value.2"
                         onClick={[Function]}
                         style={
                           Object {

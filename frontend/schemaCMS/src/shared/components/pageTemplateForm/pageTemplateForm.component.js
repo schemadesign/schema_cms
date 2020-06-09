@@ -1,13 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-<<<<<<< HEAD
-import { Accordion, Form, Icons } from 'schemaUI';
-import { append, filter, includes, map, pipe, prepend, prop, remove } from 'ramda';
-=======
 import { Form, Icons } from 'schemaUI';
-import { append, prepend, remove } from 'ramda';
->>>>>>> master
+import { append, filter, includes, map, pipe, prepend, prop, remove } from 'ramda';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';

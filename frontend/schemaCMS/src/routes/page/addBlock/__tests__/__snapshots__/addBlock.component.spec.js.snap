@@ -120,7 +120,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxhCb dneupG"
+        className="sc-AxhCb dvZYMB"
       >
         <div
           className="sc-AxiKw bOTXee"
@@ -350,7 +350,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpisO iSYFQc"
+    className="sc-fzqAui hflVXV"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznLxA hnLwQO"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -394,6 +394,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="project title"
           >
             project title
           </h3>
@@ -428,7 +430,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznLxA hnLwQO"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -450,6 +452,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Content"
+                id="shared.components.projectBreadcrumbs.content"
+                values={Object {}}
+              />
             }
           >
             Content
@@ -484,7 +494,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznLxA hnLwQO"
+          className="sc-fzowVh hDBXhX"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -506,6 +516,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Section
           </span>
           <h3
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -514,6 +525,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title=""
           >
             
           </h3>
@@ -540,7 +552,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznLxA hnLwQO"
+          className="sc-fzowVh hDBXhX"
           href="/page/1"
           onClick={[Function]}
           style={
@@ -562,6 +574,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Page
           </span>
           <h3
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -570,6 +583,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="Test"
           >
             Test
           </h3>
@@ -596,7 +610,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznyYp cEeSWj"
+          className="sc-fzqMdD dQdcdV"
         >
           <span
             style={
@@ -609,6 +623,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Block
           </span>
           <h3
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -617,6 +632,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title={
+              <FormattedMessage
+                defaultMessage="Create"
+                id="shared.components.projectBreadcrumbs.createMessage"
+                values={Object {}}
+              />
+            }
           >
             Create
           </h3>
@@ -624,246 +646,55 @@ exports[`AddBlock: Component should render correctly 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="sc-fzoVTD jrmBTr"
+  >
+    <div
+      className="sc-fzpisO fYNUAS"
+    >
+      <h2
+        className="sc-fznyYp exfopK"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Block
+      </h2>
+      <h1
+        className="sc-fznLxA hkqtgn"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Add
+      </h1>
+    </div>
+    <div
+      className="sc-fznXWL glNYWz"
+    />
+  </div>
   <form
     onSubmit={[Function]}
   >
     <div
-      className="sc-fznWqX VKSem"
-    >
-      <div
-        className="sc-fzoiQi kVjVJJ"
-      >
-        <h2
-          className="sc-fzqARJ euGmLc"
-          id="desktopHeaderTitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
-          Block
-        </h2>
-        <h1
-          className="sc-fzqNqU cSnCDr"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          <div
-            className="sc-fzqBkg cuBQll"
-          >
-            <div
-              className="sc-fznMnq evJfZi"
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "maxWidth": "100%",
-                    "paddingBottom": 0,
-                    "paddingRight": 40,
-                    "position": "static",
-                  }
-                }
-              >
-                <input
-                  id="name"
-                  name="name"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  placeholder="Name"
-                  style={
-                    Object {
-                      "backgroundColor": "transparent",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontFamily": "inherit",
-                      "fontSize": 24,
-                      "fontWeight": 600,
-                      "letterSpacing": "normal",
-                      "lineHeight": "24px",
-                      "maxWidth": "100%",
-                      "minWidth": 60,
-                      "outline": "none",
-                      "padding": 0,
-                      "width": 80,
-                    }
-                  }
-                  type="text"
-                  value=""
-                />
-                <div
-                  style={
-                    Object {
-                      "backgroundColor": "transparent",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontFamily": "inherit",
-                      "fontSize": 24,
-                      "fontWeight": 600,
-                      "letterSpacing": "normal",
-                      "lineHeight": "24px",
-                      "maxWidth": "100%",
-                      "minWidth": 60,
-                      "opacity": 0,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "fixed",
-                      "visibility": "hidden",
-                      "whiteSpace": "pre",
-                    }
-                  }
-                >
-                  
-                </div>
-                <div
-                  style={
-                    Object {
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 2,
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <div
-              className="sc-fzqPZZ kfuhuX"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-        </h1>
-      </div>
-      <div
-        className="sc-fzoyTs crHzLr"
-      />
-    </div>
-    <div
-      className="sc-fzoxKX khfKcw"
-    >
-      <div
-        className="sc-fznMnq hkvZxA"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="name"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Block Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-            value=""
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          >
-            <div
-              className="sc-fzoant bcDcyh"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="sc-fzoVTD fwKNiT"
-      />
-    </div>
-    <div
       className="sc-fzoXzr eXJveD"
     >
       <div
-        className="sc-fzqAbL bfInzb"
+        className="sc-fzoxKX bsSaZd"
         onClick={[Function]}
       >
         <label
@@ -1033,7 +864,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzqMAW bBmXa"
+          className="sc-fzoKki fGLGO"
         >
           <svg
             style={
@@ -1053,7 +884,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzomuh eGtsA-d"
       />
     </div>
     <div

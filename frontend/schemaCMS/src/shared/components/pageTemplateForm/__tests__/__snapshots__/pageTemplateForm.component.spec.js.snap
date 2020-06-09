@@ -521,9 +521,6 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                   </div>
                 </div>
               </div>
-              <div
-                className="sc-fzqPZZ gXikXH"
-              />
             </div>
             <div
               className="sc-fzolEj gGfnqQ"
@@ -545,6 +542,9 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </svg>
             </div>
           </div>
+          <div
+            className="sc-fzqBkg cifTAZ"
+          />
         </div>
         <div
           className="sc-fznxKY NngAs"

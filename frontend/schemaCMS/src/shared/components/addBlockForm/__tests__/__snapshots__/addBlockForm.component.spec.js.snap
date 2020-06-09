@@ -5,242 +5,10 @@ exports[`AddBlockForm: Component should render a block template with added eleme
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzoLsD jhlXOi"
-  >
-    <div
-      className="sc-fzpans dhfQNr"
-    >
-      <h2
-        className="sc-fzplWN bVLKoZ"
-        id="desktopHeaderTitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        title
-      </h2>
-      <h1
-        className="sc-fznyAO hCNAkV"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 600,
-            "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
-            "margin": 0,
-          }
-        }
-      >
-        <div
-          className="sc-fzpjYC efXjuy"
-        >
-          <div
-            className="sc-fzoyTs eNtMFT"
-          >
-            <div
-              style={
-                Object {
-                  "display": "flex",
-                  "flexDirection": "column",
-                  "maxWidth": "100%",
-                  "paddingBottom": 0,
-                  "paddingRight": 40,
-                  "position": "static",
-                }
-              }
-            >
-              <input
-                id="name"
-                name="name"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Name"
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "border": "none",
-                    "color": "#FFF",
-                    "fontFamily": "inherit",
-                    "fontSize": 24,
-                    "fontWeight": 600,
-                    "letterSpacing": "normal",
-                    "lineHeight": "24px",
-                    "maxWidth": "100%",
-                    "minWidth": 60,
-                    "outline": "none",
-                    "padding": 0,
-                    "width": 80,
-                  }
-                }
-                type="text"
-                value=""
-              />
-              <div
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "border": "none",
-                    "color": "#FFF",
-                    "fontFamily": "inherit",
-                    "fontSize": 24,
-                    "fontWeight": 600,
-                    "letterSpacing": "normal",
-                    "lineHeight": "24px",
-                    "maxWidth": "100%",
-                    "minWidth": 60,
-                    "opacity": 0,
-                    "outline": "none",
-                    "padding": 0,
-                    "position": "fixed",
-                    "visibility": "hidden",
-                    "whiteSpace": "pre",
-                  }
-                }
-              >
-                
-              </div>
-              <div
-                style={
-                  Object {
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 2,
-                  }
-                }
-              />
-            </div>
-          </div>
-          <div
-            className="sc-fznxsB jQpycp"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </h1>
-    </div>
-    <div
-      className="sc-fznKkj lbPMLS"
-    />
-  </div>
-  <div
-    className="sc-fznJRM fFBVWX"
-  >
-    <div
-      className="sc-fzoyTs FXPlp"
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="name"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Block Name
-        </label>
-        <input
-          id="name"
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontFamily": "inherit",
-              "fontSize": "18px",
-              "fontWeight": "inherit",
-              "letterSpacing": "normal",
-              "lineHeight": "24px",
-              "maxWidth": "100%",
-              "minWidth": 60,
-              "outline": "none",
-              "padding": 0,
-            }
-          }
-          type="text"
-          value=""
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 2,
-            }
-          }
-        >
-          <div
-            className="sc-fzoNJl fwCLEm"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="sc-fzomME jJsQZI"
-    />
-  </div>
-  <div
     className="sc-AxjAm evKEwj"
   >
     <div
-      className="sc-fzpmMD ibJqnl"
+      className="sc-fznJRM dGOQde"
       onClick={[Function]}
     >
       <label
@@ -411,7 +179,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         </div>
       </div>
       <div
-        className="sc-fznxKY jfIEHM"
+        className="sc-fznWqX enRIQg"
       >
         <svg
           style={
@@ -431,21 +199,21 @@ exports[`AddBlockForm: Component should render a block template with added eleme
       </div>
     </div>
     <div
-      className="sc-fzomME jJsQZI"
+      className="sc-fzoYkl iMSPiv"
     />
   </div>
   <div
-    className="sc-fznMnq jvdmIr"
+    className="sc-fzoxKX iXSUEj"
   >
     <div
-      className="sc-fzoant eIIKqH"
+      className="sc-fzoKki jXYIlx"
     />
     0 Elements
     <div
-      className="sc-fzoant eIIKqH"
+      className="sc-fzoKki jXYIlx"
     >
       <div
-        className="sc-fznWqX hyrJMW"
+        className="sc-fzoLag edhcrz"
       >
         <div
           className="sc-fzozJi bjSKTZ"
@@ -568,242 +336,10 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-fzoLsD jhlXOi"
-  >
-    <div
-      className="sc-fzpans dhfQNr"
-    >
-      <h2
-        className="sc-fzplWN bVLKoZ"
-        id="desktopHeaderTitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        title
-      </h2>
-      <h1
-        className="sc-fznyAO hCNAkV"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 600,
-            "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
-            "margin": 0,
-          }
-        }
-      >
-        <div
-          className="sc-fzpjYC efXjuy"
-        >
-          <div
-            className="sc-fzoyTs eNtMFT"
-          >
-            <div
-              style={
-                Object {
-                  "display": "flex",
-                  "flexDirection": "column",
-                  "maxWidth": "100%",
-                  "paddingBottom": 0,
-                  "paddingRight": 40,
-                  "position": "static",
-                }
-              }
-            >
-              <input
-                id="name"
-                name="name"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Name"
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "border": "none",
-                    "color": "#FFF",
-                    "fontFamily": "inherit",
-                    "fontSize": 24,
-                    "fontWeight": 600,
-                    "letterSpacing": "normal",
-                    "lineHeight": "24px",
-                    "maxWidth": "100%",
-                    "minWidth": 60,
-                    "outline": "none",
-                    "padding": 0,
-                    "width": 80,
-                  }
-                }
-                type="text"
-                value=""
-              />
-              <div
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "border": "none",
-                    "color": "#FFF",
-                    "fontFamily": "inherit",
-                    "fontSize": 24,
-                    "fontWeight": 600,
-                    "letterSpacing": "normal",
-                    "lineHeight": "24px",
-                    "maxWidth": "100%",
-                    "minWidth": 60,
-                    "opacity": 0,
-                    "outline": "none",
-                    "padding": 0,
-                    "position": "fixed",
-                    "visibility": "hidden",
-                    "whiteSpace": "pre",
-                  }
-                }
-              >
-                
-              </div>
-              <div
-                style={
-                  Object {
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 2,
-                  }
-                }
-              />
-            </div>
-          </div>
-          <div
-            className="sc-fznxsB jQpycp"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </h1>
-    </div>
-    <div
-      className="sc-fznKkj lbPMLS"
-    />
-  </div>
-  <div
-    className="sc-fznJRM fFBVWX"
-  >
-    <div
-      className="sc-fzoyTs FXPlp"
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="name"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Block Name
-        </label>
-        <input
-          id="name"
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontFamily": "inherit",
-              "fontSize": "18px",
-              "fontWeight": "inherit",
-              "letterSpacing": "normal",
-              "lineHeight": "24px",
-              "maxWidth": "100%",
-              "minWidth": 60,
-              "outline": "none",
-              "padding": 0,
-            }
-          }
-          type="text"
-          value=""
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 2,
-            }
-          }
-        >
-          <div
-            className="sc-fzoNJl fwCLEm"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="sc-fzomME jJsQZI"
-    />
-  </div>
-  <div
     className="sc-AxjAm evKEwj"
   >
     <div
-      className="sc-fzpmMD ibJqnl"
+      className="sc-fznJRM dGOQde"
       onClick={[Function]}
     >
       <label
@@ -973,7 +509,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fznxKY jfIEHM"
+        className="sc-fznWqX enRIQg"
       >
         <svg
           style={
@@ -993,7 +529,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzomME jJsQZI"
+      className="sc-fzoYkl iMSPiv"
     />
   </div>
   <div
