@@ -119,7 +119,7 @@ class PAProjectView(
         if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
             ordering = "-created"
 
-        pages = Page.objects.filter(section__project=self.get_object()).order_by(ordering)
+        pages = Page.objects.filter(section__project=self.get_object(), is_public=True).order_by(ordering)
 
         page = self.paginate_queryset(pages)
         if page is not None:
