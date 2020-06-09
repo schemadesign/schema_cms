@@ -102,7 +102,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     )
     def page_additional_data(self, request, **kwargs):
         project = self.get_object()
-        category_type = self.request.query_params.get("tag_category_type", None)
 
         sections = (
             Section.objects.filter(project=project)
@@ -111,13 +110,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .order_by("-created")
         )
 
-        if category_type:
-            filter_kwargs = {f"type__{category_type}": True}
-        else:
-            filter_kwargs = {}
-
         tags = (
-            TagCategory.objects.filter(project=project, **filter_kwargs)
+            TagCategory.objects.filter(project=project, type__content=True)
             .select_related("project", "created_by")
             .prefetch_related(Prefetch("tags", queryset=Tag.objects.order_by("order")))
             .order_by("name")

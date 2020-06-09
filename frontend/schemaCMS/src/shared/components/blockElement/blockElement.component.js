@@ -12,6 +12,7 @@ import {
   OBSERVABLEHQ_TYPE,
   CUSTOM_ELEMENT_TYPE,
   EMBED_VIDEO_TYPE,
+  STATE_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { FileElement } from './fileElement.component';
 import { InternalConnectionElement } from './internalConnectionElement.component';
@@ -21,6 +22,7 @@ import { ObservableHQElement } from './observableHQElement.component';
 import { CustomElement } from './customElement.component';
 import { EmbedVideoElement } from './embedVideoElement.component';
 import { TextInput } from '../form/inputs/textInput';
+import { StateElement } from './stateElement.component';
 
 const { MinusIcon, EditIcon } = Icons;
 
@@ -33,6 +35,7 @@ export const getElementComponent = props =>
     [pathEq(['element', 'type'], MARKDOWN_TYPE), MarkdownElement],
     [pathEq(['element', 'type'], OBSERVABLEHQ_TYPE), ObservableHQElement],
     [pathEq(['element', 'type'], CUSTOM_ELEMENT_TYPE), CustomElement],
+    [pathEq(['element', 'type'], STATE_TYPE), StateElement],
     [T, DefaultElement],
   ])(props);
 

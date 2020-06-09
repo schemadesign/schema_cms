@@ -26,7 +26,6 @@ import {
   createMessage,
   pageMessage,
 } from '../../../shared/components/projectBreadcrumbs';
-import { OPTION_CONTENT } from '../../../modules/tagCategory/tagCategory.constants';
 
 const getBreadcrumbsItems = (project, { id, name }) => [
   {
@@ -52,18 +51,7 @@ const getBreadcrumbsItems = (project, { id, name }) => [
   },
 ];
 
-export const CreatePage = ({
-  pageTemplates,
-  userRole,
-  createPage,
-  fetchPageTemplates,
-  project,
-  section,
-  fetchInternalConnections,
-  internalConnections,
-  fetchTagCategories,
-  tagCategories,
-}) => {
+export const CreatePage = ({ userRole, createPage, project, section, fetchPageAdditionalData, pageAdditionalData }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -99,10 +87,7 @@ export const CreatePage = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
-        const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
-        const fetchTagCategoriesPromise = fetchTagCategories({ projectId, type: OPTION_CONTENT });
-        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise, fetchTagCategoriesPromise]);
+        await fetchPageAdditionalData({ projectId });
 
         const { page = {} } = state;
 
@@ -129,13 +114,11 @@ export const CreatePage = ({
           <PageForm
             title={title}
             domain={project.domain}
-            pageTemplates={pageTemplates}
             isValid={isValid}
             setFieldValue={setFieldValue}
             setValues={setValues}
             values={values}
-            internalConnections={internalConnections}
-            tagCategories={tagCategories}
+            {...pageAdditionalData}
             {...restFormikProps}
           />
           <NavigationContainer fixed>
@@ -158,14 +141,10 @@ export const CreatePage = ({
 };
 
 CreatePage.propTypes = {
-  pageTemplates: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
   createPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   section: PropTypes.object.isRequired,
-  fetchPageTemplates: PropTypes.func.isRequired,
-  fetchInternalConnections: PropTypes.func.isRequired,
-  internalConnections: PropTypes.array.isRequired,
-  fetchTagCategories: PropTypes.func.isRequired,
-  tagCategories: PropTypes.array.isRequired,
+  pageAdditionalData: PropTypes.object.isRequired,
+  fetchPageAdditionalData: PropTypes.func.isRequired,
 };

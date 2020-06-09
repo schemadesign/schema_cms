@@ -3,6 +3,7 @@ import base64
 from django.core.files.base import ContentFile
 
 from . import constants
+from ..states.models import State
 
 
 class BaseElement:
@@ -46,7 +47,16 @@ class EmbedVideoElement(BaseElement):
 
 
 class StateElement(BaseElement):
-    pass
+    @staticmethod
+    def to_representation(value):
+        return value.id
+
+    def get_attribute(self, instance):
+        return getattr(instance, self.element_type)
+
+    @staticmethod
+    def to_internal_value(data):
+        return State.objects.get(pk=data)
 
 
 class ObservableElement(BaseElement):

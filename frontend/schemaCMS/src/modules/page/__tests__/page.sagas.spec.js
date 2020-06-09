@@ -6,7 +6,7 @@ import { watchPage } from '../page.sagas';
 import { PageRoutines } from '../page.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import browserHistory from '../../../shared/utils/history';
-import { PAGES_PATH } from '../../../shared/utils/api.constants';
+import { PAGES_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
 import { ProjectRoutines } from '../../project';
 
 describe('Page: sagas', () => {
@@ -97,6 +97,23 @@ describe('Page: sagas', () => {
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}`);
+    });
+  });
+
+  describe('fetchPageAdditionalData', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1' };
+      const response = {
+        id: 1,
+      };
+
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}/page-additional-data`).reply(OK, response);
+
+      await expectSaga(watchPage)
+        .withState(defaultState)
+        .put(PageRoutines.fetchPageAdditionalData.success(response))
+        .dispatch(PageRoutines.fetchPageAdditionalData(payload))
+        .silentRun();
     });
   });
 });

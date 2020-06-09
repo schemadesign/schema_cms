@@ -26,13 +26,9 @@ describe('EditPage: Component', () => {
   });
 
   it('should fetch page templates and internal connections', async () => {
-    jest.spyOn(defaultProps, 'fetchPageTemplates');
-    jest.spyOn(defaultProps, 'fetchInternalConnections');
-    jest.spyOn(defaultProps, 'fetchTagCategories');
+    jest.spyOn(defaultProps, 'fetchPageAdditionalData');
     await render();
-    expect(defaultProps.fetchPageTemplates).toHaveBeenCalledWith({ projectId: 1 });
-    expect(defaultProps.fetchInternalConnections).toHaveBeenCalledWith({ projectId: 1 });
-    expect(defaultProps.fetchTagCategories).toHaveBeenCalledWith({ projectId: 1, type: 'content' });
+    expect(defaultProps.fetchPageAdditionalData).toHaveBeenCalledWith({ projectId: 1 });
   });
 
   it('should go back to section', async () => {

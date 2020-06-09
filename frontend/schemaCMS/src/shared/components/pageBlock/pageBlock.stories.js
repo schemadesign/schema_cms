@@ -17,6 +17,7 @@ export const defaultProps = {
   blockTemplates,
   formikFieldPath: 'formikFieldPath',
   pagerUrlOptions,
+  stateOptions: [],
 };
 
 storiesOf('PageBlock', module)

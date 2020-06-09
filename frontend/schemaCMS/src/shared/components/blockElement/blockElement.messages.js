@@ -39,6 +39,18 @@ export default defineMessages({
     id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}Placeholder`,
     defaultMessage: 'Select a page',
   },
+  [`${INTERNAL_CONNECTION_TYPE}NoOptions`]: {
+    id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}NoOptions`,
+    defaultMessage: 'No Internal Connections available',
+  },
+  [`${STATE_TYPE}Placeholder`]: {
+    id: `shared.components.blockElement.${STATE_TYPE}Placeholder`,
+    defaultMessage: 'Select a state',
+  },
+  [`${STATE_TYPE}NoOptions`]: {
+    id: `shared.components.blockElement.${STATE_TYPE}NoOptions`,
+    defaultMessage: 'No States available',
+  },
   [`${OBSERVABLE_USER}Placeholder`]: {
     id: `shared.components.blockElement.${OBSERVABLE_USER}Placeholder`,
     defaultMessage: 'ObservableHQ User',
