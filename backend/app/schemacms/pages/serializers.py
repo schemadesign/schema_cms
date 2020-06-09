@@ -285,7 +285,6 @@ class PageSerializer(CustomModelSerializer):
 
     def save(self, *args, **kwargs):
         blocks = self.initial_data.get("blocks", [])
-        tags = self.initial_data.get("tags", [])
         blocks_to_delete = self.initial_data.pop("delete_blocks", [])
 
         with transaction.atomic():
@@ -301,7 +300,8 @@ class PageSerializer(CustomModelSerializer):
             if blocks:
                 self.create_or_update_blocks(page, blocks)
 
-            page.add_tags(tags)
+            if tags := self.initial_data.get("tags") is not None:
+                page.add_tags(tags)
 
         return page
 
