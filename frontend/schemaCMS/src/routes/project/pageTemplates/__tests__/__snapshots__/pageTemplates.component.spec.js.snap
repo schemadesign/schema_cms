@@ -120,7 +120,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxheI bnXaMj"
+        className="sc-AxheI kCsxHA"
       >
         <div
           className="sc-AxgMl fFPQpl"
@@ -394,6 +394,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fznzOf eGVGIP"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title=""
           >
             
           </h3>
@@ -450,6 +452,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fznzOf eGVGIP"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`PageTemplates: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Templates"
+                id="shared.components.projectBreadcrumbs.templates"
+                values={Object {}}
+              />
             }
           >
             Templates
@@ -497,6 +507,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Library
           </span>
           <h3
+            className="sc-fznzOf eGVGIP"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -504,6 +515,13 @@ exports[`PageTemplates: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Page Templates"
+                id="shared.components.projectBreadcrumbs.pageTemplates"
+                values={Object {}}
+              />
             }
           >
             Page Templates

@@ -1,887 +1,3322 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSourceStateList: Component should render correctly 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="States"
-  />
-  <MobileMenu
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Overview"
-        id="datasource.dataSourceStateList.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="States"
-        id="datasource.dataSourceStateList.title"
-        values={Object {}}
-      />
-    }
-    options={
-      Array [
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
-            values={Object {}}
-          />,
-          "to": "/project/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Templates"
-            id="project.view.templates"
-            values={Object {}}
-          />,
-          "to": "/project/1/templates",
-          "type": "link_item",
-        },
-      ]
-    }
-  />
-  <ContextHeader
-    subtitle={
-      <FormattedMessage
-        defaultMessage="Overview"
-        id="datasource.dataSourceStateList.subTitle"
-        values={Object {}}
-      />
-    }
-    title={
-      <FormattedMessage
-        defaultMessage="States"
-        id="datasource.dataSourceStateList.title"
-        values={Object {}}
-      />
-    }
+<div
+  className="sc-AxjAm StDqN"
+>
+  <div
+    className="sc-fzqNJr gSkTZh"
   >
-    <DataSourceNavigation
-      dataSource={
+    <div
+      style={
         Object {
-          "id": "1",
-          "name": "name",
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
         }
       }
-      hideOnDesktop={false}
-      history={
+    >
+      <div>
+        <div
+          className="sc-fzoyAV lgNqAT"
+        >
+          <h2
+            className="sc-fzoiQi cXcBhp"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            States
+          </h2>
+          <h1
+            className="sc-fzqARJ hkkDqn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
         Object {
-          "goBack": [Function],
-          "push": [Function],
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
         }
       }
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-          },
-          "url": "/",
+    >
+      <div
+        className="sc-fzoLag fwCMNo"
+      >
+        <div
+          className="sc-fzoyAV lgNqAT"
+        >
+          <h2
+            className="sc-fzoiQi cXcBhp"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            States
+          </h2>
+          <h1
+            className="sc-fzqARJ hkkDqn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzoXzr kiaUBq"
+      >
+        <div
+          className="sc-fzpjYC iUtPla"
+        >
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzpjYC iUtPla"
+        >
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fznJRM dVCLTz"
+        >
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
         }
-      }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxmLO ezXQtR"
+  >
+    <div
+      className="sc-fzozJi gfgfVR"
+    >
+      <h2
+        className="sc-fzoLsD EtCaA"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        States
+      </h2>
+      <h1
+        className="sc-fzpans bvmaro"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Overview
+      </h1>
+    </div>
+    <div
+      className="sc-fzplWN kfkaqr"
+    >
+      <div
+        className="sc-fznyAO gIedFz"
+      >
+        <div
+          className="sc-fznKkj fnWcEx"
+        >
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="sourceBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="16 11.879 29 30.121"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Source
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="fieldsBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="15 15 30 30"
+              >
+                <path
+                  d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Fields
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                fill="#fff"
+                id="stepsBtn"
+                stroke="#000"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 35,
+                    "marginTop": 1,
+                    "stroke": "#1d1d20",
+                    "width": 35,
+                  }
+                }
+                viewBox="15 15 35.5 32"
+              >
+                <g
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                    stroke="none"
+                  />
+                  <circle
+                    cx={43}
+                    cy={40}
+                    fill="none"
+                    r={5}
+                    strokeWidth={10}
+                  />
+                  <path
+                    d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Steps
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                fill="#fff"
+                id="resultsBtn"
+                stroke="#000"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 35,
+                    "marginTop": 1,
+                    "stroke": "#1d1d20",
+                    "width": 35,
+                  }
+                }
+                viewBox="15 15 35.5 32"
+              >
+                <g
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                    stroke="none"
+                  />
+                  <circle
+                    cx={43}
+                    cy={40}
+                    fill="none"
+                    r={5}
+                    strokeWidth={10}
+                  />
+                  <path
+                    d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Results
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="filtersBtn"
+                stroke="#FFF"
+                style={
+                  Object {
+                    "height": 28,
+                    "stroke": "#FFF",
+                    "width": 28,
+                  }
+                }
+                viewBox="17.414 16 25.172 28"
+              >
+                <path
+                  d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+                  fill="none"
+                  strokeWidth={2}
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Filters
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="tagsBtn"
+                style={
+                  Object {
+                    "height": 30,
+                    "stroke": "#FFF",
+                    "width": 30,
+                  }
+                }
+                viewBox="14.03 12.241 33.093 33.093"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                  strokeWidth={1.8}
+                  transform="rotate(-45 47.142 -.314)"
+                >
+                  <path
+                    d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                  />
+                  <rect
+                    height={6.3}
+                    rx={3.15}
+                    width={6.3}
+                    x={17.1}
+                    y={5.4}
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Tags
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="statesBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 1000 1000"
+              >
+                <path
+                  d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              States
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="metaDataBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 1000 1000"
+              >
+                <path
+                  d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Metadata
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzqPZZ isTRra"
+  >
+    <div
+      className="sc-fzoxKX jNWnEP"
     />
-  </ContextHeader>
-  <CounterHeader
-    copy="state"
-    count={2}
-    right={
-      <ForwardRef(styled.div)>
-        <PlusButton
-          customStyles={
-            Object {
-              "height": 40,
-              "minHeight": 40,
-              "width": 40,
+    2 states
+    <div
+      className="sc-fzoxKX jNWnEP"
+    >
+      <div
+        className="sc-fzoJMP cHHiiW"
+      >
+        <div
+          className="sc-fzqBkg kWPsqE"
+        >
+          <button
+            disabled={false}
+            id="createStateDesktopBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
             }
-          }
-          hideOnDesktop={false}
-          id="createStateDesktopBtn"
-          onClick={[Function]}
-          type="button"
-        />
-      </ForwardRef(styled.div)>
-    }
-  />
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={false}
-    noDataContent={
-      <FormattedMessage
-        defaultMessage="No States"
-        id="datasource.dataSourceStateList.noData"
-        values={Object {}}
-      />
-    }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxirZ gQtaEc"
   >
-    <styled.section>
-      <Styled(Component)
-        headerComponent={
-          <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)
-              id="headerItem-0"
-            >
-              NaN years ago
-            </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)
-              id="headerItem-1"
-            >
-              —
-            </ForwardRef(styled.li)>
-          </ForwardRef(styled.ul)>
-        }
-        key="0"
+    <div
+      className="sc-AxiKw iVAWOC"
+      onClick={[Function]}
+    >
+      <div
+        className="sc-AxhCb jvjoIm"
+        title="name 1"
       >
-        <Styled(H1)
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
+        name 1
+      </div>
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
           }
-          id="stateName-0"
-          onClick={[Function]}
-        >
-          name 1
-        </Styled(H1)>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
-            }
-          }
-          onClick={[Function]}
-        >
-          <P
-            id="projectDescription-0"
-          >
-            description
-          </P>
-        </styled.div>
-      </Styled(Component)>
-      <Styled(Component)
-        headerComponent={
-          <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)
-              id="headerItem-0"
-            >
-              NaN years ago
-            </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)
-              id="headerItem-1"
-            >
-              —
-            </ForwardRef(styled.li)>
-          </ForwardRef(styled.ul)>
         }
-        key="1"
+        viewBox="0 0 30 30"
       >
-        <Styled(H1)
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-AxiKw iVAWOC"
+      onClick={[Function]}
+    >
+      <div
+        className="sc-AxhCb jvjoIm"
+        title="name 2"
+      >
+        name 2
+      </div>
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
           }
-          id="stateName-1"
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="sc-fznyAO bOucDf"
+  >
+    <div
+      className="sc-fznKkj fnWcEx"
+    >
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
           onClick={[Function]}
         >
-          name 2
-        </Styled(H1)>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
+          <svg
+            id="sourceBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
             }
-          }
-          onClick={[Function]}
-        >
-          <P
-            id="projectDescription-1"
+            viewBox="16 11.879 29 30.121"
           >
-            description
-          </P>
-        </styled.div>
-      </Styled(Component)>
-    </styled.section>
-  </LoadingWrapper>
-  <DataSourceNavigation
-    dataSource={
-      Object {
-        "id": "1",
-        "name": "name",
-      }
-    }
-    hideOnDesktop={true}
-    history={
-      Object {
-        "goBack": [Function],
-        "push": [Function],
-      }
-    }
-    match={
-      Object {
-        "params": Object {
-          "dataSourceId": "1",
-        },
-        "url": "/",
-      }
-    }
-  />
-</styled.div>
+            <path
+              d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Source
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="fieldsBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="15 15 30 30"
+          >
+            <path
+              d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Fields
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="stepsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 35,
+                "marginTop": 1,
+                "stroke": "#1d1d20",
+                "width": 35,
+              }
+            }
+            viewBox="15 15 35.5 32"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Steps
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="resultsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 35,
+                "marginTop": 1,
+                "stroke": "#1d1d20",
+                "width": 35,
+              }
+            }
+            viewBox="15 15 35.5 32"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Results
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="filtersBtn"
+            stroke="#FFF"
+            style={
+              Object {
+                "height": 28,
+                "stroke": "#FFF",
+                "width": 28,
+              }
+            }
+            viewBox="17.414 16 25.172 28"
+          >
+            <path
+              d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+              fill="none"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Filters
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="tagsBtn"
+            style={
+              Object {
+                "height": 30,
+                "stroke": "#FFF",
+                "width": 30,
+              }
+            }
+            viewBox="14.03 12.241 33.093 33.093"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+              strokeWidth={1.8}
+              transform="rotate(-45 47.142 -.314)"
+            >
+              <path
+                d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+              />
+              <rect
+                height={6.3}
+                rx={3.15}
+                width={6.3}
+                x={17.1}
+                y={5.4}
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Tags
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="statesBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 1000 1000"
+          >
+            <path
+              d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          States
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="metaDataBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 1000 1000"
+          >
+            <path
+              d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Metadata
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`DataSourceStateList: Component should render correctly when no tags 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="States"
-  />
-  <MobileMenu
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Overview"
-        id="datasource.dataSourceStateList.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="States"
-        id="datasource.dataSourceStateList.title"
-        values={Object {}}
-      />
-    }
-    options={
-      Array [
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
-            values={Object {}}
-          />,
-          "to": "/project/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Templates"
-            id="project.view.templates"
-            values={Object {}}
-          />,
-          "to": "/project/1/templates",
-          "type": "link_item",
-        },
-      ]
-    }
-  />
-  <ContextHeader
-    subtitle={
-      <FormattedMessage
-        defaultMessage="Overview"
-        id="datasource.dataSourceStateList.subTitle"
-        values={Object {}}
-      />
-    }
-    title={
-      <FormattedMessage
-        defaultMessage="States"
-        id="datasource.dataSourceStateList.title"
-        values={Object {}}
-      />
-    }
+<div
+  className="sc-AxjAm StDqN"
+>
+  <div
+    className="sc-fzqNJr gSkTZh"
   >
-    <DataSourceNavigation
-      dataSource={
+    <div
+      style={
         Object {
-          "id": "1",
-          "name": "name",
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
         }
       }
-      hideOnDesktop={false}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
+    >
+      <div>
+        <div
+          className="sc-fzoyAV lgNqAT"
+        >
+          <h2
+            className="sc-fzoiQi cXcBhp"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            States
+          </h2>
+          <h1
+            className="sc-fzqARJ hkkDqn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
         }
-      }
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-          },
-          "url": "/",
-        }
-      }
-    />
-  </ContextHeader>
-  <CounterHeader
-    copy="state"
-    count={0}
-    right={
-      <ForwardRef(styled.div)>
-        <PlusButton
-          customStyles={
+        type="button"
+      >
+        <svg
+          style={
             Object {
-              "height": 40,
-              "minHeight": 40,
-              "width": 40,
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
             }
           }
-          hideOnDesktop={false}
-          id="createStateDesktopBtn"
-          onClick={[Function]}
-          type="button"
-        />
-      </ForwardRef(styled.div)>
-    }
-  />
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={true}
-    noDataContent={
-      <FormattedMessage
-        defaultMessage="No States"
-        id="datasource.dataSourceStateList.noData"
-        values={Object {}}
-      />
-    }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-fzoLag fwCMNo"
+      >
+        <div
+          className="sc-fzoyAV lgNqAT"
+        >
+          <h2
+            className="sc-fzoiQi cXcBhp"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            States
+          </h2>
+          <h1
+            className="sc-fzqARJ hkkDqn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzoXzr kiaUBq"
+      >
+        <div
+          className="sc-fzpjYC iUtPla"
+        >
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzpjYC iUtPla"
+        >
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fznJRM dVCLTz"
+        >
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxmLO ezXQtR"
   >
-    <styled.section />
-  </LoadingWrapper>
-  <DataSourceNavigation
-    dataSource={
-      Object {
-        "id": "1",
-        "name": "name",
-      }
-    }
-    hideOnDesktop={true}
-    history={
-      Object {
-        "goBack": [Function],
-        "push": [Function],
-      }
-    }
-    match={
-      Object {
-        "params": Object {
-          "dataSourceId": "1",
-        },
-        "url": "/",
-      }
-    }
-  />
-</styled.div>
+    <div
+      className="sc-fzozJi gfgfVR"
+    >
+      <h2
+        className="sc-fzoLsD EtCaA"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        States
+      </h2>
+      <h1
+        className="sc-fzpans bvmaro"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Overview
+      </h1>
+    </div>
+    <div
+      className="sc-fzplWN kfkaqr"
+    >
+      <div
+        className="sc-fznyAO gIedFz"
+      >
+        <div
+          className="sc-fznKkj fnWcEx"
+        >
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="sourceBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="16 11.879 29 30.121"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Source
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="fieldsBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="15 15 30 30"
+              >
+                <path
+                  d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Fields
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                fill="#fff"
+                id="stepsBtn"
+                stroke="#000"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 35,
+                    "marginTop": 1,
+                    "stroke": "#1d1d20",
+                    "width": 35,
+                  }
+                }
+                viewBox="15 15 35.5 32"
+              >
+                <g
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                    stroke="none"
+                  />
+                  <circle
+                    cx={43}
+                    cy={40}
+                    fill="none"
+                    r={5}
+                    strokeWidth={10}
+                  />
+                  <path
+                    d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Steps
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                fill="#fff"
+                id="resultsBtn"
+                stroke="#000"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 35,
+                    "marginTop": 1,
+                    "stroke": "#1d1d20",
+                    "width": 35,
+                  }
+                }
+                viewBox="15 15 35.5 32"
+              >
+                <g
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                    stroke="none"
+                  />
+                  <circle
+                    cx={43}
+                    cy={40}
+                    fill="none"
+                    r={5}
+                    strokeWidth={10}
+                  />
+                  <path
+                    d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Results
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="filtersBtn"
+                stroke="#FFF"
+                style={
+                  Object {
+                    "height": 28,
+                    "stroke": "#FFF",
+                    "width": 28,
+                  }
+                }
+                viewBox="17.414 16 25.172 28"
+              >
+                <path
+                  d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+                  fill="none"
+                  strokeWidth={2}
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Filters
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="tagsBtn"
+                style={
+                  Object {
+                    "height": 30,
+                    "stroke": "#FFF",
+                    "width": 30,
+                  }
+                }
+                viewBox="14.03 12.241 33.093 33.093"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                  strokeWidth={1.8}
+                  transform="rotate(-45 47.142 -.314)"
+                >
+                  <path
+                    d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                  />
+                  <rect
+                    height={6.3}
+                    rx={3.15}
+                    width={6.3}
+                    x={17.1}
+                    y={5.4}
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Tags
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="statesBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 1000 1000"
+              >
+                <path
+                  d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              States
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="metaDataBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 1000 1000"
+              >
+                <path
+                  d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Metadata
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzqPZZ isTRra"
+  >
+    <div
+      className="sc-fzoxKX jNWnEP"
+    />
+    0 states
+    <div
+      className="sc-fzoxKX jNWnEP"
+    >
+      <div
+        className="sc-fzoJMP cHHiiW"
+      >
+        <div
+          className="sc-fzqBkg kWPsqE"
+        >
+          <button
+            disabled={false}
+            id="createStateDesktopBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-Axmtr gaMKzQ"
+  >
+    No States
+  </div>
+  <div
+    className="sc-fznyAO bOucDf"
+  >
+    <div
+      className="sc-fznKkj fnWcEx"
+    >
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="sourceBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="16 11.879 29 30.121"
+          >
+            <path
+              d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Source
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="fieldsBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="15 15 30 30"
+          >
+            <path
+              d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Fields
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="stepsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 35,
+                "marginTop": 1,
+                "stroke": "#1d1d20",
+                "width": 35,
+              }
+            }
+            viewBox="15 15 35.5 32"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Steps
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="resultsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 35,
+                "marginTop": 1,
+                "stroke": "#1d1d20",
+                "width": 35,
+              }
+            }
+            viewBox="15 15 35.5 32"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Results
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="filtersBtn"
+            stroke="#FFF"
+            style={
+              Object {
+                "height": 28,
+                "stroke": "#FFF",
+                "width": 28,
+              }
+            }
+            viewBox="17.414 16 25.172 28"
+          >
+            <path
+              d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+              fill="none"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Filters
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="tagsBtn"
+            style={
+              Object {
+                "height": 30,
+                "stroke": "#FFF",
+                "width": 30,
+              }
+            }
+            viewBox="14.03 12.241 33.093 33.093"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+              strokeWidth={1.8}
+              transform="rotate(-45 47.142 -.314)"
+            >
+              <path
+                d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+              />
+              <rect
+                height={6.3}
+                rx={3.15}
+                width={6.3}
+                x={17.1}
+                y={5.4}
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Tags
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="statesBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 1000 1000"
+          >
+            <path
+              d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          States
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="metaDataBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 1000 1000"
+          >
+            <path
+              d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Metadata
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`DataSourceStateList: Component should render correctly with loader 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="States"
-  />
-  <MobileMenu
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Overview"
-        id="datasource.dataSourceStateList.subTitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="States"
-        id="datasource.dataSourceStateList.title"
-        values={Object {}}
-      />
-    }
-    options={
-      Array [
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
-            values={Object {}}
-          />,
-          "to": "/project/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Templates"
-            id="project.view.templates"
-            values={Object {}}
-          />,
-          "to": "/project/1/templates",
-          "type": "link_item",
-        },
-      ]
-    }
-  />
-  <ContextHeader
-    subtitle={
-      <FormattedMessage
-        defaultMessage="Overview"
-        id="datasource.dataSourceStateList.subTitle"
-        values={Object {}}
-      />
-    }
-    title={
-      <FormattedMessage
-        defaultMessage="States"
-        id="datasource.dataSourceStateList.title"
-        values={Object {}}
-      />
-    }
+<div
+  className="sc-AxjAm StDqN"
+>
+  <div
+    className="sc-fzqNJr gSkTZh"
   >
-    <DataSourceNavigation
-      dataSource={
+    <div
+      style={
         Object {
-          "id": "1",
-          "name": "name",
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
         }
       }
-      hideOnDesktop={false}
-      history={
+    >
+      <div>
+        <div
+          className="sc-fzoyAV lgNqAT"
+        >
+          <h2
+            className="sc-fzoiQi cXcBhp"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            States
+          </h2>
+          <h1
+            className="sc-fzqARJ hkkDqn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
         Object {
-          "goBack": [Function],
-          "push": [Function],
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
         }
       }
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-          },
-          "url": "/",
+    >
+      <div
+        className="sc-fzoLag fwCMNo"
+      >
+        <div
+          className="sc-fzoyAV lgNqAT"
+        >
+          <h2
+            className="sc-fzoiQi cXcBhp"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            States
+          </h2>
+          <h1
+            className="sc-fzqARJ hkkDqn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzoXzr kiaUBq"
+      >
+        <div
+          className="sc-fzpjYC iUtPla"
+        >
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzpjYC iUtPla"
+        >
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fznxsB fnKkxe"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fznJRM dVCLTz"
+        >
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznWqX chwiPQ"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
         }
-      }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxmLO ezXQtR"
+  >
+    <div
+      className="sc-fzozJi gfgfVR"
+    >
+      <h2
+        className="sc-fzoLsD EtCaA"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        States
+      </h2>
+      <h1
+        className="sc-fzpans bvmaro"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Overview
+      </h1>
+    </div>
+    <div
+      className="sc-fzplWN kfkaqr"
+    >
+      <div
+        className="sc-fznyAO gIedFz"
+      >
+        <div
+          className="sc-fznKkj fnWcEx"
+        >
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="sourceBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="16 11.879 29 30.121"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Source
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="fieldsBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="15 15 30 30"
+              >
+                <path
+                  d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Fields
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                fill="#fff"
+                id="stepsBtn"
+                stroke="#000"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 35,
+                    "marginTop": 1,
+                    "stroke": "#1d1d20",
+                    "width": 35,
+                  }
+                }
+                viewBox="15 15 35.5 32"
+              >
+                <g
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                    stroke="none"
+                  />
+                  <circle
+                    cx={43}
+                    cy={40}
+                    fill="none"
+                    r={5}
+                    strokeWidth={10}
+                  />
+                  <path
+                    d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Steps
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                fill="#fff"
+                id="resultsBtn"
+                stroke="#000"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 35,
+                    "marginTop": 1,
+                    "stroke": "#1d1d20",
+                    "width": 35,
+                  }
+                }
+                viewBox="15 15 35.5 32"
+              >
+                <g
+                  fillRule="evenodd"
+                >
+                  <path
+                    d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                    stroke="none"
+                  />
+                  <circle
+                    cx={43}
+                    cy={40}
+                    fill="none"
+                    r={5}
+                    strokeWidth={10}
+                  />
+                  <path
+                    d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Results
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="filtersBtn"
+                stroke="#FFF"
+                style={
+                  Object {
+                    "height": 28,
+                    "stroke": "#FFF",
+                    "width": 28,
+                  }
+                }
+                viewBox="17.414 16 25.172 28"
+              >
+                <path
+                  d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+                  fill="none"
+                  strokeWidth={2}
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Filters
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="tagsBtn"
+                style={
+                  Object {
+                    "height": 30,
+                    "stroke": "#FFF",
+                    "width": 30,
+                  }
+                }
+                viewBox="14.03 12.241 33.093 33.093"
+              >
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                  strokeWidth={1.8}
+                  transform="rotate(-45 47.142 -.314)"
+                >
+                  <path
+                    d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+                  />
+                  <rect
+                    height={6.3}
+                    rx={3.15}
+                    width={6.3}
+                    x={17.1}
+                    y={5.4}
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Tags
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="statesBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 1000 1000"
+              >
+                <path
+                  d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              States
+            </div>
+          </div>
+          <div
+            className="sc-fzokOt gAtMcM"
+          >
+            <div
+              className="sc-fznZeY iXVIUH"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                id="metaDataBtn"
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                viewBox="0 0 1000 1000"
+              >
+                <path
+                  d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-fzqBZW fOtemn"
+            >
+              Metadata
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzqPZZ isTRra"
+  >
+    <div
+      className="sc-fzoxKX jNWnEP"
     />
-  </ContextHeader>
-  <CounterHeader
-    copy="state"
-    count={2}
-    right={
-      <ForwardRef(styled.div)>
-        <PlusButton
-          customStyles={
-            Object {
-              "height": 40,
-              "minHeight": 40,
-              "width": 40,
+    2 states
+    <div
+      className="sc-fzoxKX jNWnEP"
+    >
+      <div
+        className="sc-fzoJMP cHHiiW"
+      >
+        <div
+          className="sc-fzqBkg kWPsqE"
+        >
+          <button
+            disabled={false}
+            id="createStateDesktopBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 40,
+                "margin": "0",
+                "minHeight": 40,
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 40,
+              }
             }
-          }
-          hideOnDesktop={false}
-          id="createStateDesktopBtn"
-          onClick={[Function]}
-          type="button"
-        />
-      </ForwardRef(styled.div)>
-    }
-  />
-  <LoadingWrapper
-    error={null}
-    loading={true}
-    noData={false}
-    noDataContent={
-      <FormattedMessage
-        defaultMessage="No States"
-        id="datasource.dataSourceStateList.noData"
-        values={Object {}}
-      />
-    }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": 40,
+                  "minHeight": 40,
+                  "shapeRendering": "crispEdges",
+                  "width": 40,
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxirZ gQtaEc"
   >
-    <styled.section>
-      <Styled(Component)
-        headerComponent={
-          <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)
-              id="headerItem-0"
-            >
-              NaN years ago
-            </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)
-              id="headerItem-1"
-            >
-              —
-            </ForwardRef(styled.li)>
-          </ForwardRef(styled.ul)>
-        }
-        key="0"
+    <div
+      className="sc-AxiKw iVAWOC"
+      onClick={[Function]}
+    >
+      <div
+        className="sc-AxhCb jvjoIm"
+        title="name 1"
       >
-        <Styled(H1)
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
+        name 1
+      </div>
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
           }
-          id="stateName-0"
-          onClick={[Function]}
-        >
-          name 1
-        </Styled(H1)>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
-            }
-          }
-          onClick={[Function]}
-        >
-          <P
-            id="projectDescription-0"
-          >
-            description
-          </P>
-        </styled.div>
-      </Styled(Component)>
-      <Styled(Component)
-        headerComponent={
-          <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)
-              id="headerItem-0"
-            >
-              NaN years ago
-            </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)
-              id="headerItem-1"
-            >
-              —
-            </ForwardRef(styled.li)>
-          </ForwardRef(styled.ul)>
         }
-        key="1"
+        viewBox="0 0 30 30"
       >
-        <Styled(H1)
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-AxiKw iVAWOC"
+      onClick={[Function]}
+    >
+      <div
+        className="sc-AxhCb jvjoIm"
+        title="name 2"
+      >
+        name 2
+      </div>
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
           }
-          id="stateName-1"
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="sc-fznyAO bOucDf"
+  >
+    <div
+      className="sc-fznKkj fnWcEx"
+    >
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
           onClick={[Function]}
         >
-          name 2
-        </Styled(H1)>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
+          <svg
+            id="sourceBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
             }
-          }
-          onClick={[Function]}
-        >
-          <P
-            id="projectDescription-1"
+            viewBox="16 11.879 29 30.121"
           >
-            description
-          </P>
-        </styled.div>
-      </Styled(Component)>
-    </styled.section>
-  </LoadingWrapper>
-  <DataSourceNavigation
-    dataSource={
-      Object {
-        "id": "1",
-        "name": "name",
-      }
-    }
-    hideOnDesktop={true}
-    history={
-      Object {
-        "goBack": [Function],
-        "push": [Function],
-      }
-    }
-    match={
-      Object {
-        "params": Object {
-          "dataSourceId": "1",
-        },
-        "url": "/",
-      }
-    }
-  />
-</styled.div>
+            <path
+              d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Source
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="fieldsBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="15 15 30 30"
+          >
+            <path
+              d="M15 45V15h30v30H15zm9-9.334h-7V43h7v-7.334zm19 0H26V43h17v-7.334zm0-9.333H25.999L26 33.666h17v-7.333zm-19.001 0h-7L17 33.666h7l-.001-7.333zM43 17H25.999v7.333H43V17zm-19.001 0h-7v7.333h7V17z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Fields
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="stepsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 35,
+                "marginTop": 1,
+                "stroke": "#1d1d20",
+                "width": 35,
+              }
+            }
+            viewBox="15 15 35.5 32"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Steps
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            fill="#fff"
+            id="resultsBtn"
+            stroke="#000"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 35,
+                "marginTop": 1,
+                "stroke": "#1d1d20",
+                "width": 35,
+              }
+            }
+            viewBox="15 15 35.5 32"
+          >
+            <g
+              fillRule="evenodd"
+            >
+              <path
+                d="M15 45V15h30v30H15zm14-9.334H17V43h12v-7.334zm14 0H31V43h12v-7.334zm0-9.333H30.999L31 33.666h12v-7.333zm-14.001 0h-12L17 33.666h12l-.001-7.333zM43 17H30.999v7.333H43V17zm-14.001 0h-12v7.333h12V17z"
+                stroke="none"
+              />
+              <circle
+                cx={43}
+                cy={40}
+                fill="none"
+                r={5}
+                strokeWidth={10}
+              />
+              <path
+                d="M43.42 41.872c-1.173-.03-1.864-.746-1.84-1.92.024-1.183.774-1.763 1.933-1.87 1.147.163 1.87.778 1.836 1.959-.033 1.17-.756 1.86-1.93 1.83m7.081-.6v-2.548c-2.414-.738-2.412-.737-1.336-2.595.044-.076.006-.2.006-.138l-1.53-1.873c-2.153 1.275-2.153 1.275-2.965-1.06-.39-.02-.807-.06-1.223-.057-.412.002-.824.046-1.206.07-.65 2.143-.65 2.143-2.94 1.185-.29.27-.611.545-.9.849-.281.294-.53.618-.769.903 1.223 1.97 1.223 1.97-1.137 2.74v2.434l2.28.644-1.169 2.149 1.705 1.822c2.379-1.249 2.379-1.249 2.87 1.204h2.559c.576-2.424.576-2.424 2.865-1.215l1.684-1.736c-1.227-2.314-1.227-2.314 1.206-2.779"
+                stroke="none"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Results
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="filtersBtn"
+            stroke="#FFF"
+            style={
+              Object {
+                "height": 28,
+                "stroke": "#FFF",
+                "width": 28,
+              }
+            }
+            viewBox="17.414 16 25.172 28"
+          >
+            <path
+              d="M42.586 16H17.414L26 24.586V44h8V24.586L42.586 16z"
+              fill="none"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Filters
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="tagsBtn"
+            style={
+              Object {
+                "height": 30,
+                "stroke": "#FFF",
+                "width": 30,
+              }
+            }
+            viewBox="14.03 12.241 33.093 33.093"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+              strokeWidth={1.8}
+              transform="rotate(-45 47.142 -.314)"
+            >
+              <path
+                d="M0 0h23.938L29.7 4.5v8.1l-5.762 4.5H0z"
+              />
+              <rect
+                height={6.3}
+                rx={3.15}
+                width={6.3}
+                x={17.1}
+                y={5.4}
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Tags
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="statesBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 1000 1000"
+          >
+            <path
+              d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          States
+        </div>
+      </div>
+      <div
+        className="sc-fzokOt gAtMcM"
+      >
+        <div
+          className="sc-fznZeY iXVIUH"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            id="metaDataBtn"
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            viewBox="0 0 1000 1000"
+          >
+            <path
+              d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-fzqBZW fOtemn"
+        >
+          Metadata
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;

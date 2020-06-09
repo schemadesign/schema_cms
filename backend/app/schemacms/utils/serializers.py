@@ -3,6 +3,13 @@ from rest_framework import response, serializers, status
 from ..users.models import User
 
 
+class ReadOnlySerializer(serializers.ModelSerializer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].read_only = True
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

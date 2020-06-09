@@ -50,6 +50,10 @@ export class MobileMenu extends PureComponent {
     logoutModalOpen: false,
   };
 
+  componentWillUnmount() {
+    document.documentElement.classList.remove('hideScroll');
+  }
+
   handleToggleMenu = () => handleToggleMenu(this);
 
   handleLogout = () => {

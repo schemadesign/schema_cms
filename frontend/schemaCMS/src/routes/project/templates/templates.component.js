@@ -63,12 +63,6 @@ export class Templates extends PureComponent {
         to: `/project/${projectId}/tag-templates`,
         id: 'tagTemplates',
       },
-      {
-        header: messages.state,
-        value: templates.states,
-        to: `/project/${projectId}/state-templates`,
-        id: 'stateTemplates',
-      },
     ];
 
     return <StatisticCards statistics={statistics} history={this.props.history} />;

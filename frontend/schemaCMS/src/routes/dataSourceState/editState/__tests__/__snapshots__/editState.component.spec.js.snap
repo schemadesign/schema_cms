@@ -47,6 +47,7 @@ Array [
             Project
           </span>
           <h3
+            className="sc-fzomuh bUSbHp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -55,6 +56,7 @@ Array [
                 "margin": 0,
               }
             }
+            title="project title"
           >
             project title
           </h3>
@@ -103,6 +105,7 @@ Array [
             Tab
           </span>
           <h3
+            className="sc-fzomuh bUSbHp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -110,6 +113,13 @@ Array [
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Data Source"
+                id="shared.components.projectBreadcrumbs.dataSource"
+                values={Object {}}
+              />
             }
           >
             Data Source
@@ -159,6 +169,7 @@ Array [
             Data Source
           </span>
           <h3
+            className="sc-fzomuh bUSbHp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -167,6 +178,7 @@ Array [
                 "margin": 0,
               }
             }
+            title="dataSourceName"
           >
             dataSourceName
           </h3>
@@ -215,6 +227,7 @@ Array [
             Tab
           </span>
           <h3
+            className="sc-fzomuh bUSbHp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -222,6 +235,13 @@ Array [
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="State"
+                id="shared.components.projectBreadcrumbs.state"
+                values={Object {}}
+              />
             }
           >
             State
@@ -248,17 +268,8 @@ Array [
           }
         }
       >
-        <a
-          className="sc-fzoaKM koKAGd"
-          href="/project/1/content"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "display": "flex",
-              "flexDirection": "column",
-            }
-          }
+        <div
+          className="sc-fznLPX dCkfEv"
         >
           <span
             style={
@@ -271,6 +282,7 @@ Array [
             State
           </span>
           <h3
+            className="sc-fzomuh bUSbHp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -279,10 +291,11 @@ Array [
                 "margin": 0,
               }
             }
+            title=""
           >
             
           </h3>
-        </a>
+        </div>
       </div>
     </div>
   </div>,
@@ -400,7 +413,7 @@ Array [
       }
     >
       <div
-        className="sc-AxgMl hjZtvp"
+        className="sc-AxgMl JoQBG"
       >
         <div
           className="sc-AxhUy kMyssT"

@@ -4,7 +4,6 @@ import { useEffectOnce } from 'react-use';
 import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useLocation } from 'react-router';
-import { Icons } from 'schemaUI';
 import { propEq, find, map, omit, pipe, prepend, always, defaultTo, filter, prop, includes } from 'ramda';
 
 import { SelectContainer } from './addBlockForm.styles';
@@ -12,20 +11,9 @@ import { LoadingWrapper } from '../loadingWrapper';
 import reportError from '../../utils/reportError';
 import { BackButton, NavigationContainer, NextButton, PlusButton } from '../navigation';
 import messages from './addBlockForm.messages';
-import { ContextHeader } from '../contextHeader';
-import {
-  IconsContainer,
-  inputContainerStyles,
-  inputStyles,
-  MobileInputName,
-  mobilePlusStyles,
-  PlusContainer,
-  Subtitle,
-} from '../form/frequentComponents.styles';
-import { TextInput } from '../form/inputs/textInput';
+import { mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
 import {
   ADD_BLOCK_SCHEMA,
-  BLOCK_NAME,
   BLOCK_TYPE,
   INITIAL_VALUES_ADD_BLOCK,
   PAGE_BLOCKS,
@@ -42,15 +30,14 @@ import {
 import { renderWhenTrue } from '../../utils/rendering';
 import { PublicWarning } from '../publicWarning';
 
-const { EditIcon } = Icons;
-
-export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, blockTemplates }) => {
+export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTemplates }) => {
   const [loading, setLoading] = useState(true);
   const [warningTypes, setWarningTypes] = useState();
   const [error, setError] = useState(null);
   const history = useHistory();
   const intl = useIntl();
   const { state = {} } = useLocation();
+  const blankMessage = intl.formatMessage(messages.blank);
   const blocksOptions = pipe(
     map(({ name, id, elements }) => ({
       label: name,
@@ -60,23 +47,23 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
         map(e => prop('type', e))
       )(elements),
     })),
-    prepend({ label: intl.formatMessage(messages.blank), value: 0 })
+    prepend({ label: blankMessage, value: 0 })
   )(blockTemplates);
 
   const { handleSubmit, handleChange, values, isValid, dirty, setFieldValue, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES_ADD_BLOCK,
     enableReinitialize: true,
     validationSchema: () => ADD_BLOCK_SCHEMA,
-    onSubmit: ({ name, type, elements: customElements }) => {
+    onSubmit: ({ type, elements: customElements }) => {
       try {
         const blockTemplate = pipe(
           find(propEq('id', type)),
           defaultTo({
             elements: customElements,
-            name,
+            name: blankMessage,
           })
         )(blockTemplates);
-        const { name: blockName, id, elements: templateElements, ...rest } = blockTemplate;
+        const { name, id, elements: templateElements, ...rest } = blockTemplate;
         const page = state.page || {};
         const blocks = page[PAGE_BLOCKS] || [];
 
@@ -89,7 +76,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
 
         const updatedPage = {
           ...page,
-          [PAGE_BLOCKS]: [...blocks, { ...rest, name, key: Date.now(), type: blockName, block: id, elements }],
+          [PAGE_BLOCKS]: [...blocks, { ...rest, name, key: Date.now(), type: name, block: id, elements }],
         };
 
         history.push(backUrl, { page: updatedPage });
@@ -105,24 +92,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
 
     setFieldValue(BLOCK_TEMPLATES_ELEMENTS, elements);
   };
-  const nameInput = (
-    <Subtitle>
-      <TextInput
-        onChange={handleChange}
-        name={BLOCK_NAME}
-        value={values[BLOCK_NAME]}
-        customInputStyles={inputStyles}
-        customStyles={inputContainerStyles}
-        autoWidth
-        fullWidth
-        placeholder={intl.formatMessage(messages[`${BLOCK_NAME}Placeholder`])}
-        {...restFormikProps}
-      />
-      <IconsContainer>
-        <EditIcon />
-      </IconsContainer>
-    </Subtitle>
-  );
+
   const handleSelectType = ({ value }) => {
     setFieldValue(BLOCK_TYPE, value);
   };
@@ -168,7 +138,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
           />
           <BlockTemplateElements
             handleChange={handleChange}
-            values={values}
+            values={{ ...values, name: blankMessage }}
             isValid={isValid}
             setFieldValue={setFieldValue}
             {...restFormikProps}
@@ -180,19 +150,6 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, title, b
   return (
     <LoadingWrapper loading={loading} error={error}>
       <form onSubmit={handleSubmit}>
-        <ContextHeader title={title} subtitle={nameInput} />
-        <MobileInputName>
-          <TextInput
-            onChange={handleChange}
-            name={BLOCK_NAME}
-            value={values[BLOCK_NAME]}
-            label={<FormattedMessage {...messages[BLOCK_NAME]} />}
-            fullWidth
-            isEdit
-            {...restFormikProps}
-          />
-          <PublicWarning type={warningTypes} />
-        </MobileInputName>
         <SelectContainer>
           <Select
             label={intl.formatMessage(messages[BLOCK_TYPE])}
@@ -225,5 +182,4 @@ AddBlockForm.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   projectId: PropTypes.number.isRequired,
   backUrl: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };

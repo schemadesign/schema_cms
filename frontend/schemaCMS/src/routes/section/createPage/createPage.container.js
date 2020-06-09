@@ -7,28 +7,22 @@ import { compose } from 'ramda';
 
 import { CreatePage } from './createPage.component';
 import { selectUserRole } from '../../../modules/userProfile';
-import { PageTemplatesRoutines, selectPageTemplates } from '../../../modules/pageTemplates';
-import { PageRoutines } from '../../../modules/page';
+import { PageRoutines, selectPageAdditonalData } from '../../../modules/page';
 import { selectProject } from '../../../modules/project';
-import { SectionsRoutines, selectInternalConnections, selectSection } from '../../../modules/sections';
-import { selectTagCategories, TagCategoryRoutines } from '../../../modules/tagCategory';
+import { selectSection } from '../../../modules/sections';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   project: selectProject,
-  pageTemplates: selectPageTemplates,
   section: selectSection,
-  internalConnections: selectInternalConnections,
-  tagCategories: selectTagCategories,
+  pageAdditionalData: selectPageAdditonalData,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       createPage: promisifyRoutine(PageRoutines.createPage),
-      fetchPageTemplates: promisifyRoutine(PageTemplatesRoutines.fetchPageTemplates),
-      fetchInternalConnections: promisifyRoutine(SectionsRoutines.fetchInternalConnections),
-      fetchTagCategories: promisifyRoutine(TagCategoryRoutines.fetchTagCategories),
+      fetchPageAdditionalData: promisifyRoutine(PageRoutines.fetchPageAdditionalData),
     },
     dispatch
   ),

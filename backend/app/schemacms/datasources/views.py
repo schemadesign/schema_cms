@@ -4,7 +4,17 @@ import os
 from django.db import transaction
 from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
-from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
+from rest_framework import (
+    decorators,
+    filters,
+    mixins,
+    permissions,
+    response,
+    status,
+    viewsets,
+    generics,
+    parsers,
+)
 
 from . import constants, models, serializers
 from .permissions import DataSourceListPermission
@@ -38,6 +48,8 @@ class BaseDataSourceView:
 
 class DataSourceListView(BaseDataSourceView, mixins.ListModelMixin, viewsets.GenericViewSet):
     permission_classes = (permissions.IsAuthenticated, DataSourceListPermission)
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
 
     def initial(self, request, *args, **kwargs):
         super().initial(request, *args, **kwargs)
@@ -51,25 +63,15 @@ class DataSourceListView(BaseDataSourceView, mixins.ListModelMixin, viewsets.Gen
         return get_object_or_404(Project, pk=project_pk)
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-
         if "raw_list" in request.query_params:
             serializer_ = IDNameSerializer(self.project_obj.data_sources, many=True)
             response_ = dict(project=self.project_obj.project_info, results=serializer_.data)
             return response.Response(response_, status=status.HTTP_200_OK)
 
-        page = self.paginate_queryset(queryset)
+        res = super().list(request, args, kwargs)
+        res.data["project"] = self.project_obj.project_info
 
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            response_ = self.get_paginated_response(serializer.data)
-            response_.data["project"] = self.project_obj.project_info
-            return response_
-
-        serializer = self.get_serializer(queryset, many=True)
-        data = {"project": self.project_obj.project_info, "results": serializer.data}
-
-        return response.Response(data)
+        return res
 
 
 class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewsets.ModelViewSet):

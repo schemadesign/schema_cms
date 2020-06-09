@@ -1,14 +1,14 @@
 import collections
 import json
 
-import django_filters.rest_framework
 from django.conf import settings
 from django.db.models import Prefetch
 from django.shortcuts import render, get_object_or_404
 from django.urls import NoReverseMatch
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import (
     decorators,
-    filters,
+    filters as drf_filters,
     mixins,
     permissions,
     reverse,
@@ -18,10 +18,11 @@ from rest_framework import (
     viewsets,
 )
 
-from . import serializers, records_reader
+from . import filters, serializers, records_reader
 from ..datasources.models import DataSource, Filter
 from ..pages.models import Section, Page, PageBlock, PageBlockElement, CustomElementSet
 from ..projects.models import Project
+from ..tags.models import TagCategory
 from ..utils.serializers import ActionSerializerViewSetMixin
 
 
@@ -50,6 +51,26 @@ class PARootView(views.APIView):
         return response.Response(ret)
 
 
+class TagCategoryListView(mixins.ListModelMixin, viewsets.GenericViewSet):
+    renderer_classes = [renderers.JSONRenderer]
+    permission_classes = ()
+    queryset = TagCategory.objects.prefetch_related("tags").select_related("project").order_by("name")
+    serializer_class = serializers.PATagCategorySerializer
+    filter_backends = [drf_filters.OrderingFilter]
+    ordering_fields = ["created", "modified", "name"]
+
+    def initial(self, request, *args, **kwargs):
+        super().initial(request, *args, **kwargs)
+        self.project_obj = self.get_project_object(kwargs["project_pk"])
+
+    def get_queryset(self):
+        return super().get_queryset().filter(project=self.project_obj)
+
+    @staticmethod
+    def get_project_object(project_pk):
+        return get_object_or_404(Project, pk=project_pk)
+
+
 class PAProjectView(
     ActionSerializerViewSetMixin, mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
 ):
@@ -70,7 +91,8 @@ class PAProjectView(
         .all()
         .order_by("id")
     )
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
+    filterset_class = filters.ProjectFilterSet
     ordering_fields = ["created", "modified", "title"]
 
     @decorators.action(detail=True, url_path="datasources", methods=["get"])
@@ -118,7 +140,8 @@ class PASectionView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
         .order_by("created")
     )
 
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
+    filterset_class = filters.SectionFilterSet
     ordering_fields = ["created", "modified", "name"]
 
 
@@ -176,8 +199,8 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
         )
         .order_by("created")
     )
-    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
-    filterset_fields = ["tags__value", "tags__category__name"]
+    filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
+    filterset_class = filters.PageFilterSet
     ordering_fields = ["created", "modified", "name"]
 
     @decorators.action(detail=True, url_path="html", methods=["get"])
@@ -206,8 +229,8 @@ class PADataSourceView(
         "list": serializers.PADataSourceListSerializer,
         "retrieve": serializers.PADataSourceDetailRecordsSerializer,
     }
-    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
-    filterset_fields = ["tags__value", "tags__category__name", "project"]
+    filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
+    filterset_class = filters.DataSourceFilterSet
     ordering_fields = ["created", "modified", "name"]
 
     @decorators.action(detail=True, url_path="meta", methods=["get"])

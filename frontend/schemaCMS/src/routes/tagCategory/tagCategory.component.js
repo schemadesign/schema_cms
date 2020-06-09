@@ -18,8 +18,11 @@ import { TAG_CATEGORIES_PAGE } from '../../modules/project/project.constants';
 import {
   ProjectBreadcrumbs,
   tabMessage,
-  tagsMessage,
+  templatesMessage,
   projectMessage,
+  libraryMessage,
+  tagsTemplateMessage,
+  templateMessage,
 } from '../../shared/components/projectBreadcrumbs';
 
 const getBreadcrumbsItems = (project, { name, id }) => [
@@ -29,13 +32,18 @@ const getBreadcrumbsItems = (project, { name, id }) => [
     h3: project.title,
   },
   {
-    path: `/project/${project.id}/tag-templates`,
+    path: `/project/${project.id}/templates`,
     span: tabMessage,
-    h3: tagsMessage,
+    h3: templatesMessage,
+  },
+  {
+    path: `/project/${project.id}/tag-templates`,
+    span: libraryMessage,
+    h3: tagsTemplateMessage,
   },
   {
     path: `/tag-category/${id}`,
-    span: tagsMessage,
+    span: templateMessage,
     h3: name,
     active: true,
   },
@@ -115,8 +123,8 @@ export class TagCategory extends PureComponent {
       <Container>
         <MobileMenu {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <ProjectBreadcrumbs items={getBreadcrumbsItems(project, tagCategory)} />
         <LoadingWrapper loading={loading} error={error}>
+          <ProjectBreadcrumbs items={getBreadcrumbsItems(project, tagCategory)} />
           <Form onSubmit={handleSubmit}>
             <TagCategoryForm openRemoveCategoryModal={this.openRemoveCategoryModal} {...this.props} />
             <NavigationContainer fixed>

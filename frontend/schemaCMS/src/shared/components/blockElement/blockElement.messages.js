@@ -13,6 +13,9 @@ import {
   MARKDOWN_TYPE,
   PLAIN_TEXT_TYPE,
   OBSERVABLEHQ_TYPE,
+  EMBED_VIDEO_ATTRIBUTES,
+  EMBED_VIDEO_TYPE,
+  STATE_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export default defineMessages({
@@ -35,6 +38,18 @@ export default defineMessages({
   [`${INTERNAL_CONNECTION_TYPE}Placeholder`]: {
     id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}Placeholder`,
     defaultMessage: 'Select a page',
+  },
+  [`${INTERNAL_CONNECTION_TYPE}NoOptions`]: {
+    id: `shared.components.blockElement.${INTERNAL_CONNECTION_TYPE}NoOptions`,
+    defaultMessage: 'No Internal Connections available',
+  },
+  [`${STATE_TYPE}Placeholder`]: {
+    id: `shared.components.blockElement.${STATE_TYPE}Placeholder`,
+    defaultMessage: 'Select a state',
+  },
+  [`${STATE_TYPE}NoOptions`]: {
+    id: `shared.components.blockElement.${STATE_TYPE}NoOptions`,
+    defaultMessage: 'No States available',
   },
   [`${OBSERVABLE_USER}Placeholder`]: {
     id: `shared.components.blockElement.${OBSERVABLE_USER}Placeholder`,
@@ -64,6 +79,10 @@ export default defineMessages({
     id: `shared.components.blockElement.${PLAIN_TEXT_TYPE}`,
     defaultMessage: 'Plain text',
   },
+  [STATE_TYPE]: {
+    id: `shared.components.blockElement.${STATE_TYPE}`,
+    defaultMessage: 'State',
+  },
   [IMAGE_TYPE]: {
     id: `shared.components.blockElement.${IMAGE_TYPE}`,
     defaultMessage: 'Image',
@@ -87,6 +106,18 @@ export default defineMessages({
   [OBSERVABLEHQ_TYPE]: {
     id: `shared.components.blockElement.${OBSERVABLEHQ_TYPE}`,
     defaultMessage: 'ObservableHQ',
+  },
+  [EMBED_VIDEO_TYPE]: {
+    id: `shared.components.blockElement.${EMBED_VIDEO_TYPE}`,
+    defaultMessage: 'Embed Video',
+  },
+  [EMBED_VIDEO_ATTRIBUTES]: {
+    id: `shared.components.blockElement.${EMBED_VIDEO_ATTRIBUTES}`,
+    defaultMessage: 'Attributes',
+  },
+  [`${EMBED_VIDEO_ATTRIBUTES}Placeholder`]: {
+    id: `shared.components.blockElement.${EMBED_VIDEO_ATTRIBUTES}Placeholder`,
+    defaultMessage: 'e.g. width="100%" height="1000px"',
   },
   set: {
     id: 'shared.components.blockElement.set',

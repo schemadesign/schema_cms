@@ -10,6 +10,8 @@ import {
   internalConnectionElement,
   markdownElement,
   observableHQElement,
+  embedVideoElement,
+  stateElement,
 } from '../../../../modules/page/page.mocks';
 
 describe('BlockElement: Component', () => {
@@ -25,13 +27,23 @@ describe('BlockElement: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly image element', async () => {
+  it('should render correctly file element', async () => {
     const wrapper = await render({ element: fileElement });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly embed video element', async () => {
+    const wrapper = await render({ element: embedVideoElement });
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly internal connection element', async () => {
     const wrapper = await render({ element: internalConnectionElement });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly internal connection element', async () => {
+    const wrapper = await render({ element: stateElement });
     expect(wrapper).toMatchSnapshot();
   });
 

@@ -241,7 +241,7 @@ class TestDeletePageTemplatesView:
 class TestListCreateSectionView:
     @staticmethod
     def get_url(pk):
-        return reverse("pages:section_list_create", kwargs=dict(project_pk=pk))
+        return reverse("pages:sections-list", kwargs=dict(project_pk=pk))
 
     def test_list_section(self, api_client, admin, section):
         api_client.force_authenticate(admin)
@@ -548,9 +548,48 @@ class TestListCreatePage:
                     "elements": [
                         {
                             "name": "Test Element",
-                            "type": "video",
+                            "type": "embed_video",
                             "order": 0,
                             "value": "https://test-video.url.com/video",
+                            "params": {},
+                        }
+                    ],
+                },
+            ],
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(section.id), data=payload, format="json")
+        page = pages_models.Page.objects.get(id=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == page_serializer.PageSerializer(page).data
+        assert page.is_template is False
+
+    def test_create_page_with_state_element(
+        self, api_client, admin, project, section_factory, block_template, state
+    ):
+        section = section_factory(project=project)
+
+        payload = {
+            "name": "Test",
+            "section": section.id,
+            "display_name": "Display Name",
+            "description": "description",
+            "keywords": "word;word1",
+            "is_public": True,
+            "blocks": [
+                {
+                    "block": block_template.id,
+                    "name": "Test Block",
+                    "type": "test",
+                    "order": 1,
+                    "elements": [
+                        {
+                            "name": "Test Element",
+                            "type": "state",
+                            "order": 0,
+                            "value": state.id,
                             "params": {},
                         }
                     ],

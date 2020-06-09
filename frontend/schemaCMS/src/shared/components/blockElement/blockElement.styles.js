@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { media } from '../../../theme/media';
 
 const ICON_CONTAINER_WIDTH = 50;
+const ICON_SIZE = 30;
 
 export const DetailsContainer = styled.div`
   ${media.desktop`
@@ -13,17 +14,17 @@ export const DetailsContainer = styled.div`
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-`;
 
-export const Name = styled.div``;
+  max-width: calc(100% - ${ICON_CONTAINER_WIDTH}px - ${ICON_SIZE}px);
+`;
 
 export const SelectLabel = styled.div`
   white-space: pre-wrap;
   padding: 0 30px 0 10px;
+  word-break: break-word;
 `;
 
-export const InternalConnectionWrapper = styled.div`
+export const SelectWrapper = styled.div`
   padding-bottom: 30px;
 `;
 
@@ -99,7 +100,7 @@ export const IconContainer = styled.div`
   align-items: center;
 
   ${media.desktop`
-    width: ${ICON_CONTAINER_WIDTH}px;
+    min-width: ${ICON_CONTAINER_WIDTH}px;
   `}
 `;
 
@@ -163,3 +164,8 @@ export const Error = styled.div`
   padding-top: 3px;
   color: ${({ theme }) => theme.textField.error};
 `;
+
+export const customInputStyles = {
+  fontSize: 16,
+  minWidth: 90,
+};

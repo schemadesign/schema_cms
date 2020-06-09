@@ -7,3 +7,8 @@ export const selectPage = createSelector(
   selectPageDomain,
   prop('page')
 );
+
+export const selectPageAdditonalData = createSelector(
+  selectPageDomain,
+  prop('pageAdditionalData')
+);

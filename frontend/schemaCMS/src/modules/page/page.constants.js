@@ -5,6 +5,7 @@ import {
   CONNECTION_TYPE,
   ELEMENT_TYPE,
   ELEMENT_VALUE,
+  ELEMENT_NAME,
   PLAIN_TEXT_TYPE,
   MARKDOWN_TYPE,
   OBSERVABLEHQ_TYPE,
@@ -15,6 +16,7 @@ import {
   CUSTOM_ELEMENT_TYPE,
   BLOCK_TEMPLATES_ELEMENTS,
   blockTemplatesElementsValidation,
+  EMBED_VIDEO_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -56,7 +58,6 @@ export const INITIAL_VALUES = {
 };
 
 export const INITIAL_VALUES_ADD_BLOCK = {
-  [BLOCK_NAME]: '',
   [BLOCK_TYPE]: '',
   [BLOCK_TEMPLATES_ELEMENTS]: [],
 };
@@ -70,7 +71,7 @@ const elementValueValidation = () =>
         .max(50000, 'Element Value should have maximum 50 000 characters'),
     })
     .when(ELEMENT_TYPE, {
-      is: CONNECTION_TYPE,
+      is: type => [CONNECTION_TYPE, EMBED_VIDEO_TYPE].includes(type),
       then: Yup.string()
         .trim()
         .url('Invalid URL')
@@ -120,6 +121,9 @@ export const PAGE_SCHEMA = Yup.object().shape({
           .required('Required'),
         [BLOCK_ELEMENTS]: Yup.array().of(
           Yup.object().shape({
+            [ELEMENT_NAME]: Yup.string()
+              .trim()
+              .max(100, 'Element Name should have maximum 100 characters'),
             [ELEMENT_VALUE]: elementValueValidation().when(ELEMENT_TYPE, {
               is: CUSTOM_ELEMENT_TYPE,
               then: Yup.array().of(
@@ -135,11 +139,6 @@ export const PAGE_SCHEMA = Yup.object().shape({
 });
 
 export const ADD_BLOCK_SCHEMA = Yup.object().shape({
-  [BLOCK_NAME]: Yup.string()
-    .trim()
-    .min(1, 'Block Name should have at least 1 characters')
-    .max(100, 'Block Name should have maximum 100 characters')
-    .required('Required'),
   [BLOCK_TYPE]: Yup.string()
     .trim()
     .min(1, 'Required')

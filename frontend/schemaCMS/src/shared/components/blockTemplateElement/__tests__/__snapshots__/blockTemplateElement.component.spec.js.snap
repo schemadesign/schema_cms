@@ -464,6 +464,46 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
                     }
                   }
                 >
+                  Embed Video
+                </div>
+                <div
+                  id="select-item-9"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  State
+                </div>
+                <div
+                  id="select-item-10"
+                  onClick={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  style={
+                    Object {
+                      "border": "1px solid  #2F2F36",
+                      "borderTop": "none",
+                      "color": "#71737e",
+                      "cursor": "pointer",
+                      "overflow": "hidden",
+                      "padding": "20px 10px",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
                   Custom Element
                 </div>
               </div>

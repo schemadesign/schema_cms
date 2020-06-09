@@ -120,7 +120,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxhCb dneupG"
+        className="sc-AxhCb dvZYMB"
       >
         <div
           className="sc-AxiKw bOTXee"
@@ -394,6 +394,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="project title"
           >
             project title
           </h3>
@@ -450,6 +452,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Templates"
+                id="shared.components.projectBreadcrumbs.templates"
+                values={Object {}}
+              />
             }
           >
             Templates
@@ -506,6 +516,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -513,6 +524,13 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Block Templates"
+                id="shared.components.projectBreadcrumbs.blockTemplates"
+                values={Object {}}
+              />
             }
           >
             Block Templates
@@ -553,6 +571,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
+            className="sc-fzpisO dlsDYr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -561,6 +580,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title="block name"
           >
             block name
           </h3>
@@ -1406,6 +1426,46 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                               }
                             }
                           >
+                            Embed Video
+                          </div>
+                          <div
+                            id="select-item-9"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            State
+                          </div>
+                          <div
+                            id="select-item-10"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
                             Custom Element
                           </div>
                         </div>
@@ -1941,6 +2001,46 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                             onMouseOver={[Function]}
                             style={
                               Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Embed Video
+                          </div>
+                          <div
+                            id="select-item-9"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            State
+                          </div>
+                          <div
+                            id="select-item-10"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
                                 "backgroundColor": "#FFF",
                                 "border": "1px solid  #2F2F36",
                                 "borderTop": "none",
@@ -2317,6 +2417,46 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                                   }
                                 >
                                   ObservableHQ
+                                </div>
+                                <div
+                                  id="select-item-8"
+                                  onClick={[Function]}
+                                  onMouseOut={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "border": "1px solid  #2F2F36",
+                                      "borderTop": "none",
+                                      "color": "#71737e",
+                                      "cursor": "pointer",
+                                      "overflow": "hidden",
+                                      "padding": "20px 10px",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                >
+                                  Embed Video
+                                </div>
+                                <div
+                                  id="select-item-9"
+                                  onClick={[Function]}
+                                  onMouseOut={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "border": "1px solid  #2F2F36",
+                                      "borderTop": "none",
+                                      "color": "#71737e",
+                                      "cursor": "pointer",
+                                      "overflow": "hidden",
+                                      "padding": "20px 10px",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                >
+                                  State
                                 </div>
                               </div>
                             </div>

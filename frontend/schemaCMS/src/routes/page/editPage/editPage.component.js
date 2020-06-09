@@ -40,7 +40,6 @@ import {
   sectionMessage,
   tabMessage,
 } from '../../../shared/components/projectBreadcrumbs';
-import { OPTION_CONTENT } from '../../../modules/tagCategory/tagCategory.constants';
 
 const getBreadcrumbsItems = (project, section, page) => [
   {
@@ -70,14 +69,10 @@ export const EditPage = ({
   project,
   updatePage,
   page,
-  fetchPageTemplates,
-  fetchInternalConnections,
-  internalConnections,
-  pageTemplates,
   userRole,
   removePage,
-  fetchTagCategories,
-  tagCategories,
+  fetchPageAdditionalData,
+  pageAdditionalData,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
@@ -142,10 +137,7 @@ export const EditPage = ({
   useEffectOnce(() => {
     (async () => {
       try {
-        const fetchPageTemplatesPromise = fetchPageTemplates({ projectId });
-        const fetchInternalConnectionsPromise = fetchInternalConnections({ projectId });
-        const fetchTagCategoriesPromise = fetchTagCategories({ projectId, type: OPTION_CONTENT });
-        await Promise.all([fetchPageTemplatesPromise, fetchInternalConnectionsPromise, fetchTagCategoriesPromise]);
+        await fetchPageAdditionalData({ projectId });
 
         const { page = {} } = state;
 
@@ -178,13 +170,11 @@ export const EditPage = ({
             domain={project.domain}
             pageId={page.id}
             title={title}
-            pageTemplates={pageTemplates}
             isValid={isValid}
             setRemoveModalOpen={setRemoveModalOpen}
             values={values}
             setValues={setValues}
-            internalConnections={internalConnections}
-            tagCategories={tagCategories}
+            {...pageAdditionalData}
             setFieldValue={setFieldValue}
             {...restFormikProps}
           />
@@ -226,15 +216,11 @@ export const EditPage = ({
 };
 
 EditPage.propTypes = {
-  pageTemplates: PropTypes.array.isRequired,
   userRole: PropTypes.string.isRequired,
   updatePage: PropTypes.func.isRequired,
-  fetchPageTemplates: PropTypes.func.isRequired,
-  fetchInternalConnections: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
-  internalConnections: PropTypes.array.isRequired,
-  fetchTagCategories: PropTypes.func.isRequired,
-  tagCategories: PropTypes.array.isRequired,
+  fetchPageAdditionalData: PropTypes.func.isRequired,
+  pageAdditionalData: PropTypes.object.isRequired,
 };

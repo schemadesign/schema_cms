@@ -38,7 +38,7 @@ export class FieldDetail extends PureComponent {
     return (
       <Item key={index}>
         <Label>{this.props.intl.formatMessage(messages[id])}</Label>
-        <Value title={titleValue}>{roundedValue}</Value>
+        <Value title={titleValue}>{`${roundedValue}`}</Value>
         {this.renderEditIcon(isEditable)}
       </Item>
     );

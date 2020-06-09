@@ -3,6 +3,7 @@ import base64
 from django.core.files.base import ContentFile
 
 from . import constants
+from ..states.models import State
 
 
 class BaseElement:
@@ -41,8 +42,21 @@ class InternalElement(BaseElement):
     pass
 
 
-class VideoElement(BaseElement):
+class EmbedVideoElement(BaseElement):
     pass
+
+
+class StateElement(BaseElement):
+    @staticmethod
+    def to_representation(value):
+        return value.id
+
+    def get_attribute(self, instance):
+        return getattr(instance, self.element_type)
+
+    @staticmethod
+    def to_internal_value(data):
+        return State.objects.get(pk=data)
 
 
 class ObservableElement(BaseElement):
@@ -105,14 +119,20 @@ class ImageElement(BaseElement):
         return file.split("/")[-1]
 
 
+class FileElement(ImageElement):
+    pass
+
+
 ELEMENTS_TYPES = {
     constants.ElementType.CODE: CodeElement,
     constants.ElementType.CONNECTION: CodeElement,
     constants.ElementType.CUSTOM_ELEMENT: CustomElement,
+    constants.ElementType.EMBED_VIDEO: EmbedVideoElement,
+    constants.ElementType.FILE: FileElement,
     constants.ElementType.IMAGE: ImageElement,
     constants.ElementType.INTERNAL_CONNECTION: InternalElement,
     constants.ElementType.MARKDOWN: MarkdownElement,
     constants.ElementType.OBSERVABLE_HQ: ObservableElement,
     constants.ElementType.PLAIN_TEXT: PlainTextElement,
-    constants.ElementType.VIDEO: VideoElement,
+    constants.ElementType.STATE: StateElement,
 }

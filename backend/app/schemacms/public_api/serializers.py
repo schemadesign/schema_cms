@@ -6,27 +6,24 @@ from ..projects import models as pr_models
 from ..datasources import models as ds_models
 from ..pages import models as pa_models
 from ..pages.constants import ElementType
+from ..tags import models as t_models
+from ..utils.serializers import ReadOnlySerializer
 from . import utils, records_reader
 
 
 element_to_html_function = {
-    ElementType.PLAIN_TEXT: lambda: utils.plain_text_in_html,
-    ElementType.MARKDOWN: lambda: utils.markdown_in_html,
     ElementType.CODE: lambda: utils.code_in_html,
     ElementType.CONNECTION: lambda: utils.connection_in_html,
-    ElementType.INTERNAL_CONNECTION: lambda: utils.internal_connection_in_html,
-    ElementType.OBSERVABLE_HQ: lambda: utils.observable_in_html,
-    ElementType.IMAGE: lambda: utils.image_in_html,
     ElementType.CUSTOM_ELEMENT: lambda: utils.custom_in_html,
-    ElementType.VIDEO: lambda: utils.video_in_html,
+    ElementType.EMBED_VIDEO: lambda: utils.embed_video_in_html,
+    ElementType.FILE: lambda: utils.file_in_html,
+    ElementType.IMAGE: lambda: utils.image_in_html,
+    ElementType.INTERNAL_CONNECTION: lambda: utils.internal_connection_in_html,
+    ElementType.MARKDOWN: lambda: utils.markdown_in_html,
+    ElementType.OBSERVABLE_HQ: lambda: utils.observable_in_html,
+    ElementType.PLAIN_TEXT: lambda: utils.plain_text_in_html,
+    ElementType.STATE: lambda: utils.state_in_html,
 }
-
-
-class ReadOnlySerializer(serializers.ModelSerializer):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields:
-            self.fields[field].read_only = True
 
 
 class PAFilterSerializer(ReadOnlySerializer):
@@ -110,7 +107,7 @@ class PABlockElementSerializer(ReadOnlySerializer):
         fields = ("id", "name", "type", "order", "value", "html")
 
     def get_value(self, obj):
-        if obj.type == ElementType.IMAGE:
+        if obj.type in [ElementType.IMAGE, ElementType.FILE]:
             if not obj.image:
                 return {}
 
@@ -252,3 +249,14 @@ class PAProjectSerializer(ReadOnlySerializer):
 
     def get_content(self, obj):
         return {"sections": PASectionSerializer(obj.sections, many=True).data}
+
+
+class PATagCategorySerializer(ReadOnlySerializer):
+    tags = serializers.SerializerMethodField()
+
+    class Meta:
+        model = t_models.TagCategory
+        fields = ("id", "name", "is_single_select", "type", "tags")
+
+    def get_tags(self, obj):
+        return [t.value for t in obj.tags.all().order_by("value")]

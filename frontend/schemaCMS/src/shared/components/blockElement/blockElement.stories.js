@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { BlockElement } from './blockElement.component';
-import { textElement } from '../../../modules/page/page.mocks';
+import { textElement, stateOptions } from '../../../modules/page/page.mocks';
 import { withTheme } from '../../../.storybook/decorators';
 import { pagerUrlOptions } from '../../../modules/sections/sections.mocks';
 
@@ -14,6 +14,7 @@ export const defaultProps = {
   setFieldValue: Function.prototype,
   validateForm: Function.prototype,
   pagerUrlOptions,
+  stateOptions,
 };
 
 storiesOf('BlockElement', module)

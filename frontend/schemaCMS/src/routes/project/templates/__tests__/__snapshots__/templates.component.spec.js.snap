@@ -198,15 +198,6 @@ exports[`Templates: Component should render correctly 1`] = `
             "to": "/project/projectId/tag-templates",
             "value": 0,
           },
-          Object {
-            "header": Object {
-              "defaultMessage": "State Templates",
-              "id": "project.templates.state",
-            },
-            "id": "stateTemplates",
-            "to": "/project/projectId/state-templates",
-            "value": 0,
-          },
         ]
       }
     />

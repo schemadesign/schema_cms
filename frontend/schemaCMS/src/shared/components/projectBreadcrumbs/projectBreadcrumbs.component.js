@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Breadcrumbs, LinkItem, Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { Link, ActiveItem, Container } from './projectBreadcrumbs.styles';
+import { Link, ActiveItem, Container, Title } from './projectBreadcrumbs.styles';
 import messages from './projectBreadcrumbs.messages';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
-const { H3, Span } = Typography;
+const { Span } = Typography;
 
 export const projectMessage = <FormattedMessage {...messages.project} />;
 export const tabMessage = <FormattedMessage {...messages.tab} />;
@@ -33,7 +33,7 @@ const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index
     () => (
       <ActiveItem key={index}>
         <Span>{span}</Span>
-        <H3>{h3}</H3>
+        <Title title={h3}>{h3}</Title>
       </ActiveItem>
     ),
     () => (
@@ -42,7 +42,7 @@ const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index
         render={styles => (
           <Link style={styles} to={path}>
             <Span>{span}</Span>
-            <H3>{h3}</H3>
+            <Title title={h3}>{h3}</Title>
           </Link>
         )}
       />

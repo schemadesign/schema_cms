@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import { pick, propEq, propOr, pipe, find } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 
-import { Container, Form, getCustomHomeIconStyles } from './pageList.styles';
+import { Container, Form, getCustomHomeIconStyles, CardFooter } from './pageList.styles';
 import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
@@ -69,6 +69,8 @@ export const Page = ({ created, createdBy, name, id, templateName, mainPage, set
   const list = [whenCreated, createdBy];
   const active = mainPage === id;
   const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
+  const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
+  const footerComponent = <CardFooter>{templateCopy}</CardFooter>;
 
   const header = (
     <CardHeader
@@ -80,7 +82,7 @@ export const Page = ({ created, createdBy, name, id, templateName, mainPage, set
   );
 
   return (
-    <ListItem headerComponent={header} footerComponent={templateName || intl.formatMessage(messages.blankTemplate)}>
+    <ListItem headerComponent={header} footerComponent={footerComponent}>
       <ListItemTitle id={`page-${id}`} onClick={() => history.push(`/page/${id}`)}>
         {name}
       </ListItemTitle>

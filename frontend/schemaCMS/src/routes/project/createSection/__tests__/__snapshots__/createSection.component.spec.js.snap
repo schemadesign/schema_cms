@@ -120,7 +120,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxhUy bTHPQP"
+        className="sc-AxhUy gLXUEg"
       >
         <div
           className="sc-AxhCb ccMvAG"
@@ -394,6 +394,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Project
           </span>
           <h3
+            className="sc-fznxKY hQZpAW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -402,6 +403,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
+            title=""
           >
             
           </h3>
@@ -450,6 +452,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
+            className="sc-fznxKY hQZpAW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -457,6 +460,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Content"
+                id="shared.components.projectBreadcrumbs.content"
+                values={Object {}}
+              />
             }
           >
             Content
@@ -497,6 +507,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </span>
           <h3
+            className="sc-fznxKY hQZpAW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -504,6 +515,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
                 "fontWeight": 600,
                 "margin": 0,
               }
+            }
+            title={
+              <FormattedMessage
+                defaultMessage="Create"
+                id="shared.components.projectBreadcrumbs.createMessage"
+                values={Object {}}
+              />
             }
           >
             Create

@@ -4,7 +4,7 @@ from rest_framework import serializers
 from . import models
 from ..datasources import models as ds_models
 from ..utils.validators import CustomUniqueTogetherValidator
-from ..utils.serializers import NestedRelatedModelSerializer
+from ..utils.serializers import NestedRelatedModelSerializer, ReadOnlySerializer
 from ..datasources.serializers import RawDataSourceSerializer
 
 
@@ -85,3 +85,11 @@ class StateSerializer(serializers.ModelSerializer):
     def get_filters(self, state):
         state_filters = models.InStateFilter.objects.filter(state=state)
         return InStateFilterSerializer(state_filters, many=True).data
+
+
+class StatePageAdditionalDataSerializer(ReadOnlySerializer):
+    datasource = serializers.CharField(source="datasource.name")
+
+    class Meta:
+        model = models.State
+        fields = ("id", "name", "datasource")

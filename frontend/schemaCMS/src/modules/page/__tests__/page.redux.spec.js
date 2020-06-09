@@ -6,6 +6,12 @@ import { reducer as pageReducer, PageRoutines } from '../page.redux';
 describe('Page: redux', () => {
   const state = Immutable({
     page: { description: '', displayName: '', isPublic: false, keywords: '', name: '', template: '' },
+    pageAdditionalData: {
+      internalConnections: [],
+      tagCategories: [],
+      states: [],
+      pageTemplates: [],
+    },
   });
 
   describe('reducer', () => {
@@ -33,6 +39,15 @@ describe('Page: redux', () => {
 
       const resultState = pageReducer(state, PageRoutines.updatePage.success(page));
       expect(resultState.page).to.deep.equal(page);
+    });
+  });
+
+  describe('when PAGE/FETCH_PAGE_ADDITIONAL_DATA success action is received', () => {
+    it('should set page additional data', () => {
+      const pageAdditionalData = { data: 'data' };
+
+      const resultState = pageReducer(state, PageRoutines.fetchPageAdditionalData.success(pageAdditionalData));
+      expect(resultState.pageAdditionalData).to.deep.equal(pageAdditionalData);
     });
   });
 });

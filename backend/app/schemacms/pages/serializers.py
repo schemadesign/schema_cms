@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 from .elements import ELEMENTS_TYPES
 from . import models, constants
-from ..utils.serializers import CustomModelSerializer, NestedRelatedModelSerializer
+from ..utils.serializers import CustomModelSerializer, NestedRelatedModelSerializer, ReadOnlySerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
@@ -285,7 +285,6 @@ class PageSerializer(CustomModelSerializer):
 
     def save(self, *args, **kwargs):
         blocks = self.initial_data.get("blocks", [])
-        tags = self.initial_data.get("tags", [])
         blocks_to_delete = self.initial_data.pop("delete_blocks", [])
 
         with transaction.atomic():
@@ -301,7 +300,8 @@ class PageSerializer(CustomModelSerializer):
             if blocks:
                 self.create_or_update_blocks(page, blocks)
 
-            page.add_tags(tags)
+            if tags := self.initial_data.get("tags") is not None:
+                page.add_tags(tags)
 
         return page
 
@@ -320,7 +320,10 @@ class PageSerializer(CustomModelSerializer):
             if "value" in element:
                 element_value = element.pop("value")
 
-                if element_type == constants.ElementType.IMAGE and element_value:
+                if (
+                    element_type in [constants.ElementType.IMAGE, constants.ElementType.FILE]
+                    and element_value
+                ):
                     element[element_type] = element_value
 
                 if element_type in [
@@ -329,7 +332,8 @@ class PageSerializer(CustomModelSerializer):
                     constants.ElementType.CODE,
                     constants.ElementType.INTERNAL_CONNECTION,
                     constants.ElementType.CONNECTION,
-                    constants.ElementType.VIDEO,
+                    constants.ElementType.EMBED_VIDEO,
+                    constants.ElementType.STATE,
                 ]:
                     element[element_type] = element_value
 
@@ -415,19 +419,19 @@ class SectionListCreateSerializer(CustomModelSerializer):
         return section.pages_count
 
 
-class PageDisplayNameSerializer(serializers.ModelSerializer):
+class PageDisplayNameSerializer(ReadOnlySerializer):
     class Meta:
         model = models.Page
         fields = ("id", "display_name", "name")
 
 
-class SectionInternalConnectionSerializer(serializers.ModelSerializer):
+class SectionInternalConnectionSerializer(ReadOnlySerializer):
     main_page = MainPageSerializer(read_only=True)
     pages = PageDisplayNameSerializer(read_only=True, many=True)
 
     class Meta:
         model = models.Section
-        fields = ("id", "project", "name", "main_page", "pages")
+        fields = ("id", "name", "main_page", "pages")
 
 
 class SectionPageListView(CustomModelSerializer):

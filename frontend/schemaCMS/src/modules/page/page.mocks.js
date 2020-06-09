@@ -7,7 +7,6 @@ import {
   PAGE_TEMPLATE,
   PAGE_BLOCKS,
   BLOCK_TYPE,
-  BLOCK_NAME,
   BLOCK_KEY,
   BLOCK_ID,
   BLOCK_ELEMENTS,
@@ -22,6 +21,7 @@ import {
   ELEMENT_ID,
   ELEMENT_VALUE,
   INTERNAL_CONNECTION_TYPE,
+  STATE_TYPE,
   MARKDOWN_TYPE,
   OBSERVABLEHQ_TYPE,
   OBSERVABLE_CELL,
@@ -29,6 +29,9 @@ import {
   OBSERVABLE_USER,
   CUSTOM_ELEMENT_TYPE,
   FILE_TYPE,
+  EMBED_VIDEO_TYPE,
+  ELEMENT_PARAMS,
+  EMBED_VIDEO_ATTRIBUTES,
 } from '../blockTemplates/blockTemplates.constants';
 import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
@@ -57,10 +60,27 @@ export const fileElement = {
   [ELEMENT_ID]: 1,
 };
 
+export const embedVideoElement = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_PARAMS]: {
+    [EMBED_VIDEO_ATTRIBUTES]: 'width=100%',
+  },
+  [ELEMENT_TYPE]: EMBED_VIDEO_TYPE,
+  [ELEMENT_VALUE]: 'http://youtube',
+  [ELEMENT_ID]: 1,
+};
+
 export const internalConnectionElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_TYPE]: INTERNAL_CONNECTION_TYPE,
   [ELEMENT_VALUE]: 'http://domain.com/blog',
+  [ELEMENT_ID]: 1,
+};
+
+export const stateElement = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_TYPE]: STATE_TYPE,
+  [ELEMENT_VALUE]: 1,
   [ELEMENT_ID]: 1,
 };
 
@@ -94,11 +114,17 @@ export const customElement = {
 };
 
 export const block = {
-  [BLOCK_NAME]: 'name',
   [BLOCK_TYPE]: 'type',
   [BLOCK_KEY]: 1,
   [BLOCK_ID]: 1,
-  [BLOCK_ELEMENTS]: [textElement, internalConnectionElement, markdownElement, observableHQElement, customElement],
+  [BLOCK_ELEMENTS]: [
+    textElement,
+    internalConnectionElement,
+    stateElement,
+    markdownElement,
+    observableHQElement,
+    customElement,
+  ],
 };
 
 export const page = {
@@ -121,3 +147,9 @@ export const page = {
     },
   },
 };
+
+export const stateOptions = [
+  { label: 'DataSource   >   State 1', value: 1 },
+  { label: 'DataSource   >   State 2', value: 2 },
+  { label: 'DataSource   >   State 3', value: 3 },
+];
