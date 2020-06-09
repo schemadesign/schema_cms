@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Select, { components } from 'react-select';
 import { useTheme } from 'styled-components';
 
-import { Container, getCustomSelectStyles } from './multiSelect.styles';
+import { Container } from './multiSelect.styles';
+import { getCustomSelectStyles } from '../reactSelect.styles';
 
 const DropdownIndicator = ({ selectProps, ...restProps }) => {
   return (

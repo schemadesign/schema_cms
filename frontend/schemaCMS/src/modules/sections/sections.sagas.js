@@ -1,6 +1,8 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import reportError from '../../shared/utils/reportError';
+import { stringifyUrl } from 'query-string';
+import { decamelizeKeys } from 'humps';
 
+import reportError from '../../shared/utils/reportError';
 import { SectionsRoutines } from './sections.redux';
 import api from '../../shared/services/api';
 import { SECTIONS_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
@@ -36,11 +38,13 @@ function* fetchInternalConnections({ payload: { projectId } }) {
   }
 }
 
-function* fetchSection({ payload: { sectionId } }) {
+function* fetchSection({ payload: { sectionId, ...query } }) {
   try {
     yield put(SectionsRoutines.fetchSection.request());
+    const formattedQuery = decamelizeKeys(query);
+    const url = stringifyUrl({ url: `${SECTIONS_PATH}/${sectionId}`, query: formattedQuery });
 
-    const { data } = yield api.get(`${SECTIONS_PATH}/${sectionId}`);
+    const { data } = yield api.get(url);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(SectionsRoutines.fetchSection.success(data.results));
