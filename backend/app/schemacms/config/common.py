@@ -197,7 +197,7 @@ class Common(Configuration):
 
     # Django Rest Framework
     REST_FRAMEWORK = {
-        "DEFAULT_PAGINATION_CLASS": "schemacms.utils.pagination.PageNumberPagination",
+        "DEFAULT_PAGINATION_CLASS": "schemacms.utils.pagination.StandardResultsSetPagination",
         "PAGE_SIZE": int(os.getenv("DJANGO_PAGINATION_LIMIT", 50)),
         "DATETIME_FORMAT": "%Y-%m-%dT%H:%M:%S%z",
         "DEFAULT_RENDERER_CLASSES": (
