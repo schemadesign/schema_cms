@@ -21,6 +21,7 @@ import {
   ELEMENT_ID,
   ELEMENT_VALUE,
   INTERNAL_CONNECTION_TYPE,
+  STATE_TYPE,
   MARKDOWN_TYPE,
   OBSERVABLEHQ_TYPE,
   OBSERVABLE_CELL,
@@ -30,8 +31,7 @@ import {
   FILE_TYPE,
   EMBED_VIDEO_TYPE,
   ELEMENT_PARAMS,
-  EMBED_VIDEO_HEIGHT,
-  EMBED_VIDEO_WIDTH,
+  EMBED_VIDEO_ATTRIBUTES,
 } from '../blockTemplates/blockTemplates.constants';
 import { SECTIONS_MAIN_PAGE } from '../sections/sections.constants';
 
@@ -63,8 +63,7 @@ export const fileElement = {
 export const embedVideoElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_PARAMS]: {
-    [EMBED_VIDEO_HEIGHT]: 1000,
-    [EMBED_VIDEO_WIDTH]: 1000,
+    [EMBED_VIDEO_ATTRIBUTES]: 'width=100%',
   },
   [ELEMENT_TYPE]: EMBED_VIDEO_TYPE,
   [ELEMENT_VALUE]: 'http://youtube',
@@ -75,6 +74,13 @@ export const internalConnectionElement = {
   [ELEMENT_NAME]: 'name',
   [ELEMENT_TYPE]: INTERNAL_CONNECTION_TYPE,
   [ELEMENT_VALUE]: 'http://domain.com/blog',
+  [ELEMENT_ID]: 1,
+};
+
+export const stateElement = {
+  [ELEMENT_NAME]: 'name',
+  [ELEMENT_TYPE]: STATE_TYPE,
+  [ELEMENT_VALUE]: 1,
   [ELEMENT_ID]: 1,
 };
 
@@ -111,7 +117,14 @@ export const block = {
   [BLOCK_TYPE]: 'type',
   [BLOCK_KEY]: 1,
   [BLOCK_ID]: 1,
-  [BLOCK_ELEMENTS]: [textElement, internalConnectionElement, markdownElement, observableHQElement, customElement],
+  [BLOCK_ELEMENTS]: [
+    textElement,
+    internalConnectionElement,
+    stateElement,
+    markdownElement,
+    observableHQElement,
+    customElement,
+  ],
 };
 
 export const page = {
@@ -134,3 +147,9 @@ export const page = {
     },
   },
 };
+
+export const stateOptions = [
+  { label: 'DataSource   >   State 1', value: 1 },
+  { label: 'DataSource   >   State 2', value: 2 },
+  { label: 'DataSource   >   State 3', value: 3 },
+];

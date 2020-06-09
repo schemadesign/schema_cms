@@ -30,6 +30,7 @@ export const defaultProps = {
   project,
   internalConnections,
   tagCategories,
+  states: [],
 };
 
 storiesOf('PageForm', module)

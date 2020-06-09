@@ -52,6 +52,7 @@ import {
   OBSERVABLE_PARAMS,
   OBSERVABLE_USER,
   OBSERVABLEHQ_TYPE,
+  STATE_TYPE,
 } from '../../modules/blockTemplates/blockTemplates.constants';
 import {
   DATA_SOURCE_STATE_ACTIVE_FILTERS,
@@ -171,6 +172,7 @@ export const getValuePath = ({ blockPath, index, elementValue = ELEMENT_VALUE })
 const getDefaultValue = cond([
   [equals(IMAGE_TYPE), always({})],
   [equals(FILE_TYPE), always({})],
+  [equals(STATE_TYPE), always(null)],
   [equals(CUSTOM_ELEMENT_TYPE), always([])],
   [
     equals(OBSERVABLEHQ_TYPE),

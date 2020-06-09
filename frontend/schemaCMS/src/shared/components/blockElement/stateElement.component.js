@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
+import { isEmpty } from 'ramda';
 
 import messages from './blockElement.messages';
 import { getCustomSelectedWrapperStyles, SelectLabel, SelectWrapper, customSelectStyles } from './blockElement.styles';
@@ -15,6 +16,8 @@ export const StateElement = ({ blockPath, element, setFieldValue, index, stateOp
   const name = getValuePath({ blockPath, index });
   const handleSelectPageUrl = ({ value }) => setFieldValue(name, value);
   const options = stateOptions.map(({ value, label }) => ({ value, label: <SelectLabel>{label}</SelectLabel> }));
+  const placeholderCopy = isEmpty(options) ? 'NoOptions' : 'Placeholder';
+  const placeholder = intl.formatMessage(messages[`${STATE_TYPE}${placeholderCopy}`]);
 
   return (
     <SelectWrapper>
@@ -23,7 +26,7 @@ export const StateElement = ({ blockPath, element, setFieldValue, index, stateOp
         value={element.value}
         options={options}
         onSelect={handleSelectPageUrl}
-        placeholder={intl.formatMessage(messages[`${STATE_TYPE}Placeholder`])}
+        placeholder={placeholder}
         customSelectedWrapperStyles={getCustomSelectedWrapperStyles(theme)}
         customStyles={customSelectStyles}
         centerIcon

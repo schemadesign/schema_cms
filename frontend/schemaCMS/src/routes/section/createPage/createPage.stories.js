@@ -22,6 +22,7 @@ export const defaultProps = {
     internalConnections,
     tagCategories,
     pageTemplates,
+    states: [],
   },
 };
 

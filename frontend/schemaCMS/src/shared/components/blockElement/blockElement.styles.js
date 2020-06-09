@@ -21,6 +21,7 @@ export const Header = styled.div`
 export const SelectLabel = styled.div`
   white-space: pre-wrap;
   padding: 0 30px 0 10px;
+  word-break: break-word;
 `;
 
 export const SelectWrapper = styled.div`

@@ -3990,7 +3990,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxiKw cWifHP"
+                      className="sc-AxiKw iBsrpQ"
                     >
                       Blog
                     </div>
@@ -4033,7 +4033,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxiKw cWifHP"
+                      className="sc-AxiKw iBsrpQ"
                     >
                       Blog
                     </div>
@@ -4057,7 +4057,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxiKw cWifHP"
+                      className="sc-AxiKw iBsrpQ"
                     >
                       news   &gt;   Article 2
                     </div>
@@ -4081,9 +4081,360 @@ exports[`BlockElement: Component should render correctly internal connection ele
                     }
                   >
                     <div
-                      className="sc-AxiKw cWifHP"
+                      className="sc-AxiKw iBsrpQ"
                     >
                       News
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-fzokOt dOYAwr"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M15.117 18L9 12h12z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BlockElement: Component should render correctly internal connection element 2`] = `
+<div
+  style={
+    Object {
+      "borderTop": "2px solid #FFF",
+      "overflow": "inherit",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#000",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "minHeight": 60,
+        "paddingRight": 40,
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="sc-AxirZ cwpeyg"
+    >
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 30,
+              "shapeRendering": "crispEdges",
+              "width": 30,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M15 28h30v4H15z"
+          />
+        </svg>
+      </div>
+      <div
+        className="sc-fzqBZW jwxHtQ"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": 0,
+              "position": "relative",
+            }
+          }
+        >
+          <input
+            id="blockPath.elements.0.name"
+            name="blockPath.elements.0.name"
+            onChange={[Function]}
+            placeholder="Element Name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "outline": "none",
+                "padding": 0,
+                "width": 80,
+              }
+            }
+            type="text"
+            value="name"
+          />
+          <div
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": 16,
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 90,
+                "opacity": 0,
+                "outline": "none",
+                "padding": 0,
+                "position": "fixed",
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            name
+          </div>
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-Axmtr cZXvTT"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "fontSize": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 9,
+          "transform": "rotate(180deg)",
+          "transformOrigin": "center center",
+          "transition": "transform 200ms ease-in-out",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#000",
+        "height": "auto",
+        "transition": "height 200ms linear, overflow 0s linear 200ms",
+      }
+    }
+  >
+    <div>
+      <div
+        className="sc-AxjAm gcayeW"
+      >
+        <div
+          className="sc-AxhCb hPCEbn"
+        >
+          <div
+            className="sc-fznZeY gLmmub"
+            onClick={[Function]}
+          >
+            <input
+              id="blockPath.elements.0.value"
+              name="blockPath.elements.0.value"
+              type="hidden"
+              value={1}
+            />
+            <div
+              style={
+                Object {
+                  "color": "#FFF",
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "display": "flex",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#71737e",
+                      "cursor": "pointer",
+                      "display": "flex",
+                      "padding": "20px 10px",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    <div
+                      className="sc-AxiKw iBsrpQ"
+                    >
+                      DataSource   &gt;   State 1
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "backgroundColor": "#1d1d20",
+                      "display": "none",
+                      "flexDirection": "column",
+                      "left": "0",
+                      "maxHeight": "184px",
+                      "overflowY": "hidden",
+                      "position": "absolute",
+                      "top": "calc(100% + 5px)",
+                      "width": "100%",
+                      "zIndex": 2,
+                    }
+                  }
+                >
+                  <div
+                    id="select-item-0"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFF",
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "1px solid  #2F2F36",
+                        "color": "#000",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    <div
+                      className="sc-AxiKw iBsrpQ"
+                    >
+                      DataSource   &gt;   State 1
+                    </div>
+                  </div>
+                  <div
+                    id="select-item-1"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    <div
+                      className="sc-AxiKw iBsrpQ"
+                    >
+                      DataSource   &gt;   State 2
+                    </div>
+                  </div>
+                  <div
+                    id="select-item-2"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    <div
+                      className="sc-AxiKw iBsrpQ"
+                    >
+                      DataSource   &gt;   State 3
                     </div>
                   </div>
                 </div>

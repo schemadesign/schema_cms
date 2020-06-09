@@ -209,7 +209,7 @@ export const PageForm = ({
     restFormikProps.handleBlur(e);
   };
   const pagerUrlOptions = getPageUrlOptions({ internalConnections, domain, pageId });
-  const stateOptions = states.map(({ id, name, datasource }) => ({ label: `${datasource} > ${name}`, value: id }));
+  const stateOptions = states.map(({ id, name, datasource }) => ({ label: `${datasource}   >   ${name}`, value: id }));
 
   return (
     <Container>
