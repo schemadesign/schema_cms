@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoIcon: Component should render correctly 1`] = `
+<info.svg
+  style={
+    Object {
+      "fill": "#FFF",
+      "height": "20px",
+      "width": "20px",
+    }
+  }
+/>
+`;
+
+exports[`InfoIcon: Component should render with custom styles 1`] = `
+<info.svg
+  style={
+    Object {
+      "fill": "blue",
+      "height": "20px",
+      "width": "20px",
+    }
+  }
+/>
+`;
