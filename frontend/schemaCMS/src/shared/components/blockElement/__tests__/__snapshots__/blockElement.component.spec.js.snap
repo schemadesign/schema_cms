@@ -3073,7 +3073,7 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
                   }
                 }
                 type="text"
-                value=""
+                value="width=100%"
               />
               <div
                 style={
