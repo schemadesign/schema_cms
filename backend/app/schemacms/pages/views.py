@@ -185,12 +185,7 @@ class SectionInternalConnectionView(generics.ListAPIView):
 
 
 class SectionViewSet(DetailViewSet):
-    queryset = (
-        models.Section.objects.all()
-        .annotate_pages_count()
-        .select_related("project", "created_by")
-        .prefetch_related("pages")
-    )
+    queryset = models.Section.objects.all().annotate_pages_count().select_related("project", "created_by")
     serializer_class = serializers.SectionDetailSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
 
@@ -204,7 +199,7 @@ class SectionViewSet(DetailViewSet):
                 .prefetch_related(Prefetch("pages", queryset=models.Page.objects.all().order_by(pages_order)))
             )
 
-        return super().get_queryset()
+        return super().get_queryset().prefetch_related("pages")
 
 
 class PageListCreateView(generics.ListCreateAPIView):
