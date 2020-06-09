@@ -300,7 +300,7 @@ class PageSerializer(CustomModelSerializer):
             if blocks:
                 self.create_or_update_blocks(page, blocks)
 
-            if tags := self.initial_data.get("tags") is not None:
+            if (tags := self.initial_data.get("tags")) is not None:
                 page.add_tags(tags)
 
         return page
