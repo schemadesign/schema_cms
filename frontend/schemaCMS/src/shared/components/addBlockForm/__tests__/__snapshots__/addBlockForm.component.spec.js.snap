@@ -232,6 +232,9 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzomME jJsQZI"
+    />
   </div>
   <div
     className="sc-AxjAm evKEwj"
@@ -427,6 +430,9 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         </svg>
       </div>
     </div>
+    <div
+      className="sc-fzomME jJsQZI"
+    />
   </div>
   <div
     className="sc-fznMnq jvdmIr"
@@ -789,6 +795,9 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzomME jJsQZI"
+    />
   </div>
   <div
     className="sc-AxjAm evKEwj"
@@ -983,6 +992,9 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </svg>
       </div>
     </div>
+    <div
+      className="sc-fzomME jJsQZI"
+    />
   </div>
   <div
     className="sc-AxhUy htqvZZ"

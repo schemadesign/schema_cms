@@ -23,8 +23,11 @@ const { MinusIcon } = Icons;
 
 export const getElementComponent = props =>
   cond([
-    [pathEq(['element', 'type'], IMAGE_TYPE), props => <FileElement {...props} accept=".png, .jpg, .jpeg, .gif" />],
-    [pathEq(['element', 'type'], FILE_TYPE), FileElement],
+    [
+      pathEq(['element', 'type'], IMAGE_TYPE),
+      props => <FileElement {...props} accept=".png, .jpg, .jpeg, .gif" type={IMAGE_TYPE} />,
+    ],
+    [pathEq(['element', 'type'], FILE_TYPE), props => <FileElement {...props} type={FILE_TYPE} />],
     [pathEq(['element', 'type'], INTERNAL_CONNECTION_TYPE), InternalConnectionElement],
     [pathEq(['element', 'type'], MARKDOWN_TYPE), MarkdownElement],
     [pathEq(['element', 'type'], OBSERVABLEHQ_TYPE), ObservableHQElement],

@@ -526,23 +526,23 @@ exports[`PageForm: Component should render correctly 1`] = `
     Tags
   </label>
   <div
-    className="sc-fzomuh gDFGiY"
+    className="sc-fzqzlV YTsri"
   >
     <div
-      className="sc-fzowVh dJcpsq"
+      className="sc-fzoMdx gycmNe"
     >
       <div
-        className="sc-fzqAui jduGpN"
+        className="sc-fzqLLg fIEUmz"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzoxnE cEonnW"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzplgP iVoHEx"
       >
         <div
           className=" css-2b097c-container"
@@ -640,17 +640,17 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqAui jduGpN"
+        className="sc-fzqLLg fIEUmz"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzoxnE cEonnW"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzplgP iVoHEx"
       >
         <div
           className=" css-2b097c-container"
@@ -925,14 +925,14 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznLPX foCcXB"
+    className="sc-fznXWL NQOey"
   >
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzokvW gJQBQy"
     />
     1 Block
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzokvW gJQBQy"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -2711,14 +2711,14 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznLPX foCcXB"
+                      className="sc-fznXWL NQOey"
                     >
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzokvW gJQBQy"
                       />
                       3 Sets
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzokvW gJQBQy"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
@@ -5970,23 +5970,23 @@ exports[`PageForm: Component should render with page template 1`] = `
     Tags
   </label>
   <div
-    className="sc-fzomuh gDFGiY"
+    className="sc-fzqzlV YTsri"
   >
     <div
-      className="sc-fzowVh dJcpsq"
+      className="sc-fzoMdx gycmNe"
     >
       <div
-        className="sc-fzqAui jduGpN"
+        className="sc-fzqLLg fIEUmz"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzoxnE cEonnW"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzplgP iVoHEx"
       >
         <div
           className=" css-2b097c-container"
@@ -6084,17 +6084,17 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqAui jduGpN"
+        className="sc-fzqLLg fIEUmz"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzoxnE cEonnW"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzplgP iVoHEx"
       >
         <div
           className=" css-2b097c-container"
@@ -6369,14 +6369,14 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznLPX foCcXB"
+    className="sc-fznXWL NQOey"
   >
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzokvW gJQBQy"
     />
     1 Block
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzokvW gJQBQy"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -8155,14 +8155,14 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznLPX foCcXB"
+                      className="sc-fznXWL NQOey"
                     >
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzokvW gJQBQy"
                       />
                       3 Sets
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzokvW gJQBQy"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"

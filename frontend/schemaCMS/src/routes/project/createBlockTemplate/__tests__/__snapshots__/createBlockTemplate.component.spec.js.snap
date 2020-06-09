@@ -350,7 +350,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqMdD fwVoet"
+    className="sc-fzowVh gBjPlT"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoJus iirZhm"
+          className="sc-fzoVTD hyDqgk"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoJus iirZhm"
+          className="sc-fzoVTD hyDqgk"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoJus iirZhm"
+          className="sc-fzoVTD hyDqgk"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzowVh jNMYDn"
+          className="sc-fzoJus duzQwC"
         >
           <span
             style={
@@ -1430,6 +1430,9 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                       </svg>
                     </div>
                   </div>
+                  <div
+                    className="sc-fzqMdD fRMNNm"
+                  />
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Accordion, Form, Icons } from 'schemaUI';
-import { append, prepend, remove } from 'ramda';
+import { append, filter, includes, map, pipe, prepend, prop, remove } from 'ramda';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
@@ -41,7 +41,7 @@ import {
   PAGE_TEMPLATES_NAME,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 import { CounterHeader } from '../counterHeader';
-import { BLOCK_TEMPLATES_NAME } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { BLOCK_TEMPLATES_NAME, WARNING_TYPES_LIST } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Draggable } from '../draggable';
 import { PageTemplateBlock } from '../pageTemplateBlock';
 
@@ -112,7 +112,14 @@ export const PageTemplateForm = ({
     </BinIconContainer>
   ) : null;
   const blocksCount = values[PAGE_TEMPLATES_BLOCKS].length;
-  const blocksOptions = blockTemplates.map(({ name, id }) => ({ label: name, value: id }));
+  const blocksOptions = blockTemplates.map(({ name, id, elements }) => ({
+    label: name,
+    value: id,
+    warningTypes: pipe(
+      filter(e => includes(prop('type', e), WARNING_TYPES_LIST)),
+      map(e => prop('type', e))
+    )(elements),
+  }));
 
   return (
     <Container>

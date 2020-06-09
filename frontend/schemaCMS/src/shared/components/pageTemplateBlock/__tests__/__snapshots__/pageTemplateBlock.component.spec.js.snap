@@ -315,6 +315,9 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          className="sc-fznJRM fzFSIN"
+        />
       </div>
     </div>
   </div>

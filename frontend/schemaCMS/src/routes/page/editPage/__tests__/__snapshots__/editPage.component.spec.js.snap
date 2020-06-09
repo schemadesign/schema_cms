@@ -350,7 +350,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqzEs gdNgjo"
+    className="sc-fzqKVi dvSmuk"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoCCn fFEuqk"
+          className="sc-fzoOEf bxuqIG"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoCCn fFEuqk"
+          className="sc-fzoOEf bxuqIG"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzoCCn fFEuqk"
+          className="sc-fzoOEf bxuqIG"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzqOul iUcPHS"
+          className="sc-fzoCUK igrDX"
         >
           <span
             style={
@@ -1096,23 +1096,23 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-fzoWqW bmxKed"
+        className="sc-fzppAM edkijn"
       >
         <div
-          className="sc-fznOgF dooqVc"
+          className="sc-fzobTh vOQfB"
         >
           <div
-            className="sc-fzplgP eEGeIS"
+            className="sc-fznBtT iRhfKZ"
           >
             <span
-              className="sc-fznzqM kkGtJK"
+              className="sc-fznNTe eZMxxn"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-fzonjX eBcDVl"
+            className="sc-fzqyvX lcnPeY"
           >
             <div
               className=" css-2b097c-container"
@@ -1210,17 +1210,17 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzplgP eEGeIS"
+            className="sc-fznBtT iRhfKZ"
           >
             <span
-              className="sc-fznzqM kkGtJK"
+              className="sc-fznNTe eZMxxn"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-fzonjX eBcDVl"
+            className="sc-fzqyvX lcnPeY"
           >
             <div
               className=" css-2b097c-container"
@@ -1495,14 +1495,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoxnE byPDEX"
+        className="sc-fzoPby cLmfKH"
       >
         <div
-          className="sc-fzoMdx zteUZ"
+          className="sc-fzpdbB ejONir"
         />
         1 Block
         <div
-          className="sc-fzoMdx zteUZ"
+          className="sc-fzpdbB ejONir"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -3257,14 +3257,14 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzoxnE byPDEX"
+                          className="sc-fzoPby cLmfKH"
                         >
                           <div
-                            className="sc-fzoMdx zteUZ"
+                            className="sc-fzpdbB ejONir"
                           />
                           3 Sets
                           <div
-                            className="sc-fzoMdx zteUZ"
+                            className="sc-fzpdbB ejONir"
                           >
                             <div
                               className="sc-fzolEj bBhqcC"

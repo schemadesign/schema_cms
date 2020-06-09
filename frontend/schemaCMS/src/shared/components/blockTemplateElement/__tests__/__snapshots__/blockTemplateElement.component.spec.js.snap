@@ -489,6 +489,9 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
             </svg>
           </div>
         </div>
+        <div
+          className="sc-fzqBkg cifTAZ"
+        />
       </div>
     </div>
   </div>

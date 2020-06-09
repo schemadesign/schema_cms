@@ -350,7 +350,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzomuh jgoMCq"
+    className="sc-fzqzlV craMmE"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzoxnE VPBIF"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzoxnE VPBIF"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzoxnE VPBIF"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzqAui UFkpp"
+          className="sc-fzqLLg gCCdqX"
         >
           <span
             style={
@@ -1316,6 +1316,9 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                       </svg>
                     </div>
                   </div>
+                  <div
+                    className="sc-fzomuh eGtsA-d"
+                  />
                 </div>
               </div>
             </div>

@@ -860,6 +860,9 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   </svg>
                 </div>
               </div>
+              <div
+                className="sc-fznzOf hfODEb"
+              />
             </div>
           </div>
         </div>
@@ -1403,6 +1406,9 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   </svg>
                 </div>
               </div>
+              <div
+                className="sc-fznzOf hfODEb"
+              />
             </div>
             <div
               className="sc-fzqBkg dUpVnI"

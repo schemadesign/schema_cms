@@ -746,6 +746,9 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                   </svg>
                 </div>
               </div>
+              <div
+                className="sc-fzqPZZ gXikXH"
+              />
             </div>
           </div>
         </div>

@@ -8,10 +8,11 @@ import { Error } from './blockElement.styles';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, getValuePath } from '../../utils/helpers';
 import { renderWhenTrue } from '../../utils/rendering';
+import { PublicWarning } from '../publicWarning';
 
 const MAX_SIZE = 50 * 1024 * 1024;
 
-export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', index, ...restFormikProps }) => {
+export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', index, type, ...restFormikProps }) => {
   const intl = useIntl();
   const [error, setError] = useState(false);
   const name = getValuePath({ blockPath, index });
@@ -66,6 +67,7 @@ export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', i
         {...restFormikProps}
       />
       {renderFileSizeError(error)}
+      <PublicWarning type={type} />
     </Fragment>
   );
 };
@@ -73,6 +75,7 @@ export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', i
 FileElement.propTypes = {
   element: PropTypes.object.isRequired,
   blockPath: PropTypes.string.isRequired,
+  type: PropTypes.string,
   index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,

@@ -477,7 +477,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 className="sc-fzoLsD gWdCPf"
               >
                 <div
-                  className="sc-fzpjYC bsFNQH"
+                  className="sc-fznxKY haarsL"
                   onClick={[Function]}
                 >
                   <input
@@ -628,7 +628,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fznxsB cWbeWr"
+                    className="sc-fznMAR ePFlqw"
                   >
                     <svg
                       style={
@@ -1650,20 +1650,20 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzqPZZ isTRra"
+                className="sc-fzoydu cUEDKI"
               >
                 <div
-                  className="sc-fzoxKX jNWnEP"
+                  className="sc-fzoJMP cOGlUL"
                 />
                 3 Sets
                 <div
-                  className="sc-fzoxKX jNWnEP"
+                  className="sc-fzoJMP cOGlUL"
                 >
                   <div
-                    className="sc-fznMAR kBWyhm"
+                    className="sc-fzoant dPuuqC"
                   >
                     <div
-                      className="sc-fzoant comYpj"
+                      className="sc-fzomuh gQSVZs"
                     >
                       <button
                         disabled={false}
@@ -1731,7 +1731,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fzqBkg qXSlK"
+                        className="sc-fzqMAW BQynX"
                       >
                         <svg
                           style={
@@ -2579,7 +2579,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fzqBkg qXSlK"
+                        className="sc-fzqMAW BQynX"
                       >
                         <svg
                           style={
@@ -3427,7 +3427,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fzqBkg qXSlK"
+                        className="sc-fzqMAW BQynX"
                       >
                         <svg
                           style={

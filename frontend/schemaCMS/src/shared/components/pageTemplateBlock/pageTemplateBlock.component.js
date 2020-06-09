@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
-import { propEq, propOr, find, pipe } from 'ramda';
+import { propEq, propOr, find } from 'ramda';
 
 import { customLabelStyles, Header, IconsContainer, InputContainer, Type } from './pageTemplateBlock.styles';
 import messages from './pageTemplateBlock.messages';
@@ -15,6 +15,7 @@ import {
   PAGE_TEMPLATES_BLOCKS,
 } from '../../../modules/pageTemplates/pageTemplates.constants';
 import { binStyles } from '../form/frequentComponents.styles';
+import { PublicWarning } from '../publicWarning';
 
 const { EditIcon, BinIcon } = Icons;
 
@@ -31,11 +32,12 @@ export const PageTemplateBlock = ({
 }) => {
   const intl = useIntl();
   const elementPath = `${PAGE_TEMPLATES_BLOCKS}.${index}`;
-  const handleSelectBlock = ({ value }) => setFieldValue(`${elementPath}.${BLOCK_TYPE}`, value);
-  const type = pipe(
-    find(propEq('value', block[BLOCK_TYPE])),
-    propOr('', 'label')
-  )(blocksOptions);
+  const handleSelectBlock = ({ value }) => {
+    return setFieldValue(`${elementPath}.${BLOCK_TYPE}`, value);
+  };
+  const selectedBlock = find(propEq('value', block[BLOCK_TYPE]))(blocksOptions);
+  const typeLabel = propOr('', 'label')(selectedBlock);
+  const type = propOr([], 'warningTypes')(selectedBlock);
 
   return (
     <AccordionPanel autoOpen={block[BLOCK_AUTO_OPEN]}>
@@ -57,7 +59,7 @@ export const PageTemplateBlock = ({
             <BinIcon id={`removeBlock-${index}`} customStyles={binStyles} onClick={() => removeBlock(index)} />
           </IconsContainer>
         </Header>
-        <Type>{type}</Type>
+        <Type>{typeLabel}</Type>
       </AccordionHeader>
       <AccordionDetails>
         <InputContainer>
@@ -72,6 +74,7 @@ export const PageTemplateBlock = ({
             customLabelStyles={customLabelStyles}
             {...restFormikProps}
           />
+          <PublicWarning type={type} />
         </InputContainer>
       </AccordionDetails>
     </AccordionPanel>

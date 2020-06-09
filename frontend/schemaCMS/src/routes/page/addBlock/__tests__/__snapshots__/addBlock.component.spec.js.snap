@@ -350,7 +350,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoVTD jyIGUE"
+    className="sc-fzpisO iSYFQc"
   >
     <div
       style={
@@ -372,7 +372,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznyYp ghTwFj"
+          className="sc-fznLxA hnLwQO"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -428,7 +428,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznyYp ghTwFj"
+          className="sc-fznLxA hnLwQO"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -484,7 +484,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznyYp ghTwFj"
+          className="sc-fznLxA hnLwQO"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -540,7 +540,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznyYp ghTwFj"
+          className="sc-fznLxA hnLwQO"
           href="/page/1"
           onClick={[Function]}
           style={
@@ -596,7 +596,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzpisO esPMDo"
+          className="sc-fznyYp cEeSWj"
         >
           <span
             style={
@@ -855,6 +855,9 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoVTD fwKNiT"
+      />
     </div>
     <div
       className="sc-fzoXzr eXJveD"
@@ -1049,6 +1052,9 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </svg>
         </div>
       </div>
+      <div
+        className="sc-fzoVTD fwKNiT"
+      />
     </div>
     <div
       className="sc-fznZeY hSVMU"
