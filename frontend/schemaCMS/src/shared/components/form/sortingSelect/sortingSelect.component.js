@@ -27,21 +27,22 @@ export const SortingSelect = ({ sortingElements, addDateOptions = false, updateF
   const dateOptions = addDateOptions ? [CREATED, MODIFIED] : [];
   const options = [...sortingElements, ...dateOptions].map(item => ({ label: capitalize(item), value: item }));
 
-  const handleOrderChange = data => {
-    const isAscending = direction === ASCENDING;
-    const sortDirection = isAscending ? DESCENDING : ASCENDING;
-    const params = data ? { ...restParams, sortBy: data.value, sortDirection } : restParams;
+  const updateUrl = params => {
     const stringfied = stringify(params);
     history.push(`?${stringfied}`);
     updateFunction();
+  };
+
+  const handleOrderChange = data => {
+    const params = data ? { ...restParams, sortBy: data.value, sortDirection: direction } : restParams;
+    updateUrl(params);
     setSort(data);
   };
 
   const toogleDirection = () => {
-    const params = { ...restParams, sortBy: sort.value, sortDirection: direction };
-    const stringfied = stringify(params);
-    history.push(`?${stringfied}`);
-    updateFunction();
+    const sortDirection = direction === ASCENDING ? DESCENDING : ASCENDING;
+    const params = { ...restParams, sortBy: sort.value, sortDirection };
+    updateUrl(params);
     setDirection(sortDirection);
   };
 
@@ -58,10 +59,7 @@ export const SortingSelect = ({ sortingElements, addDateOptions = false, updateF
           isClearable
         />
       </SelectWrapper>
-      <CaretIcon
-        customStyles={getCarestStyles({ direction, disabled: isNil(sort) })}
-        onClick={() => toogleDirection()}
-      />
+      <CaretIcon customStyles={getCarestStyles({ direction, disabled: isNil(sort) })} onClick={toogleDirection} />
     </Container>
   );
 };

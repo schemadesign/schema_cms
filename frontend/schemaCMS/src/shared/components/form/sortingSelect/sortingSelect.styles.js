@@ -19,5 +19,5 @@ export const getCarestStyles = ({ direction, disabled }) => ({
   width: 40,
   height: 40,
   transition: 'transform 200ms ease-in-out',
-  transform: `rotate(${direction === ASCENDING ? 0 : 180}deg)`,
+  transform: `rotate(${direction === ASCENDING ? 180 : 0}deg)`,
 });

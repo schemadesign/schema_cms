@@ -54,7 +54,7 @@ describe('Sections: sagas', () => {
       const sectionId = 'sectionId';
       const response = {
         id: 1,
-        results: [],
+        results: {},
         project: {},
       };
 
@@ -63,8 +63,26 @@ describe('Sections: sagas', () => {
       await expectSaga(watchSections)
         .withState(defaultState)
         .put(ProjectRoutines.setProject.trigger(response.project))
-        .put(SectionsRoutines.fetchSection.success(response.results))
+        .put(SectionsRoutines.fetchSection.success({ ...response.results, isQuery: false }))
         .dispatch(SectionsRoutines.fetchSection({ sectionId }))
+        .silentRun();
+    });
+
+    it('should put fetchSection action with query', async () => {
+      const sectionId = 'sectionId';
+      const response = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
+      mockApi.get(`${SECTIONS_PATH}/${sectionId}?pages_order=name`).reply(OK, response);
+
+      await expectSaga(watchSections)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(SectionsRoutines.fetchSection.success({ ...response.results, isQuery: true }))
+        .dispatch(SectionsRoutines.fetchSection({ sectionId, pagesOrder: 'name' }))
         .silentRun();
     });
   });

@@ -793,7 +793,116 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzqNqU hCexrb"
+      className="sc-fzoJus jIeUVi"
+    >
+      <div
+        className="sc-fzoVTD dCNHvA"
+      >
+        <div
+          className=" css-2b097c-container"
+          onKeyDown={[Function]}
+        >
+          <div
+            className=" css-17k7d72-control"
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+          >
+            <div
+              className=" css-193kkzd-ValueContainer"
+            >
+              <div
+                className=" css-1wa3eu0-placeholder"
+              >
+                Select...
+              </div>
+              <div
+                className="css-14m14bb-Input"
+              >
+                <div
+                  className=""
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-autocomplete="list"
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    disabled={false}
+                    id="react-select-2-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    spellCheck="false"
+                    style={
+                      Object {
+                        "background": 0,
+                        "border": 0,
+                        "boxSizing": "content-box",
+                        "color": "inherit",
+                        "fontSize": "inherit",
+                        "label": "input",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "1px",
+                      }
+                    }
+                    tabIndex="0"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className=" css-1hb7zxy-IndicatorsContainer"
+            />
+          </div>
+        </div>
+      </div>
+      <svg
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "default",
+            "fill": "#FFF",
+            "height": 40,
+            "opacity": 0.5,
+            "pointerEvents": "none",
+            "transform": "rotate(180deg)",
+            "transition": "transform 200ms ease-in-out",
+            "width": 40,
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M15.117 18L9 12h12z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-fzqNqU efRvsg"
     >
       <div
         className="sc-fzoyTs dqNOWe"

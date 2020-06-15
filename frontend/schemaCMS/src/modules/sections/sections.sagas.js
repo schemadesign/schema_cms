@@ -44,7 +44,6 @@ function* fetchSection({ payload: { sectionId, ...query } }) {
     yield put(SectionsRoutines.fetchSection.request());
     const formattedQuery = decamelizeKeys(query);
     const url = stringifyUrl({ url: `${SECTIONS_PATH}/${sectionId}`, query: formattedQuery });
-
     const { data } = yield api.get(url);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));

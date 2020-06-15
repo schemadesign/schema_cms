@@ -9,6 +9,7 @@ import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   fetchBlockTemplates: Function.prototype,
+  fetchSection: Function.prototype,
   blockTemplates,
   project,
   section: {
