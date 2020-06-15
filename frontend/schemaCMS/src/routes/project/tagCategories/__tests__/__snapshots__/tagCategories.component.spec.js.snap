@@ -50,7 +50,6 @@ exports[`TagCategories: Component should render correctly 1`] = `
     }
   />
   <MobileMenu
-    active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Categories"
@@ -120,19 +119,6 @@ exports[`TagCategories: Component should render correctly 1`] = `
             values={Object {}}
           />,
           "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {
@@ -341,7 +327,6 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
     }
   />
   <MobileMenu
-    active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Categories"
@@ -411,19 +396,6 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
             values={Object {}}
           />,
           "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {
@@ -632,7 +604,6 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
     }
   />
   <MobileMenu
-    active="tagsNavBtn"
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Categories"
@@ -702,19 +673,6 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
             values={Object {}}
           />,
           "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {

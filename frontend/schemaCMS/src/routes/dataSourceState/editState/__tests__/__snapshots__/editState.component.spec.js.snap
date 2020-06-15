@@ -502,17 +502,6 @@ Array [
             className="sc-AxmLO cJQjHy"
           >
             <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
-            </a>
-          </div>
-          <div
-            className="sc-AxmLO cJQjHy"
-          >
-            <a
               href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}

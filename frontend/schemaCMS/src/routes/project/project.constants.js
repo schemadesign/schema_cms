@@ -10,7 +10,6 @@ export const PROJECTS_ID = 'projectsNavBtn';
 export const PROJECT_DETAILS_ID = 'projectDetailsNavBtn';
 export const PROJECT_DATASOURCE_ID = 'dataSourceNavBtn';
 export const DATA_SOURCE_STATE_ID = 'stateNavBtn';
-export const PROJECT_TAG_CATEGORIES_ID = 'tagsNavBtn';
 export const PROJECT_CONTENT_ID = 'contentNavBtn';
 export const PROJECT_USERS_ID = 'usersNavBtn';
 export const USERS_PAGE_ID = 'usersPageNavBtn';
@@ -48,13 +47,6 @@ export const getProjectMenuOptions = projectId => [
     id: PROJECT_DATASOURCE_ID,
     type: LINK_ITEM,
     allowedRoles: [ROLES.ADMIN, ROLES.EDITOR],
-  },
-  {
-    label: <FormattedMessage {...messages.tags} />,
-    to: `/project/${projectId}/tag-categories`,
-    id: PROJECT_TAG_CATEGORIES_ID,
-    type: LINK_ITEM,
-    allowedRoles: [ROLES.ADMIN],
   },
   {
     label: <FormattedMessage {...messages.projectUsersPage} />,

@@ -79,19 +79,6 @@ exports[`View: Component should render content correctly 1`] = `
             "allowedRoles": Array [
               "admin",
             ],
-            "id": "tagsNavBtn",
-            "label": <FormattedMessage
-              defaultMessage="Tags"
-              id="project.view.tags"
-              values={Object {}}
-            />,
-            "to": "/project/100/tag-categories",
-            "type": "link_item",
-          },
-          Object {
-            "allowedRoles": Array [
-              "admin",
-            ],
             "id": "usersNavBtn",
             "label": <FormattedMessage
               defaultMessage="Project Users"
@@ -789,19 +776,6 @@ exports[`View: Component should render content correctly for editor 1`] = `
             "allowedRoles": Array [
               "admin",
             ],
-            "id": "tagsNavBtn",
-            "label": <FormattedMessage
-              defaultMessage="Tags"
-              id="project.view.tags"
-              values={Object {}}
-            />,
-            "to": "/project/100/tag-categories",
-            "type": "link_item",
-          },
-          Object {
-            "allowedRoles": Array [
-              "admin",
-            ],
             "id": "usersNavBtn",
             "label": <FormattedMessage
               defaultMessage="Project Users"
@@ -1179,19 +1153,6 @@ exports[`View: Component should render correctly 1`] = `
               values={Object {}}
             />,
             "to": "/project/100/datasource",
-            "type": "link_item",
-          },
-          Object {
-            "allowedRoles": Array [
-              "admin",
-            ],
-            "id": "tagsNavBtn",
-            "label": <FormattedMessage
-              defaultMessage="Tags"
-              id="project.view.tags"
-              values={Object {}}
-            />,
-            "to": "/project/100/tag-categories",
             "type": "link_item",
           },
           Object {

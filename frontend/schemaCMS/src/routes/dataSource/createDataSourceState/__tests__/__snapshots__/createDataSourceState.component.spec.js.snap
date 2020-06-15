@@ -212,17 +212,6 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             className="sc-fzoXzr eDxZoa"
           >
             <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
-            </a>
-          </div>
-          <div
-            className="sc-fzoXzr eDxZoa"
-          >
-            <a
               href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}

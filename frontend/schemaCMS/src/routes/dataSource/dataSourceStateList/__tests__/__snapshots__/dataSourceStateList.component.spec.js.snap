@@ -211,17 +211,6 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             className="sc-fznxsB fnKkxe"
           >
             <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
-            </a>
-          </div>
-          <div
-            className="sc-fznxsB fnKkxe"
-          >
-            <a
               href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}
@@ -1335,17 +1324,6 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             className="sc-fznxsB fnKkxe"
           >
             <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
-            </a>
-          </div>
-          <div
-            className="sc-fznxsB fnKkxe"
-          >
-            <a
               href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}
@@ -2402,17 +2380,6 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fznxsB fnKkxe"
-          >
-            <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
             </a>
           </div>
           <div

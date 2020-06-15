@@ -22,7 +22,7 @@ import {
   tabMessage,
 } from '../../../shared/components/projectBreadcrumbs';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { getProjectMenuOptions, PROJECT_TAG_CATEGORIES_ID } from '../project.constants';
+import { getProjectMenuOptions } from '../project.constants';
 
 const getBreadcrumbsItems = project => [
   {
@@ -130,7 +130,6 @@ export class TagCategories extends PureComponent {
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
           options={filterMenuOptions(menuOptions, userRole)}
-          active={PROJECT_TAG_CATEGORIES_ID}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton onClick={this.handleCreateTag} />
