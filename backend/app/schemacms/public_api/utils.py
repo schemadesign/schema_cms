@@ -131,11 +131,14 @@ def code_in_html(element):
 
 
 def embed_video_in_html(element):
+    if not element.embed_video:
+        return f"<div id='embed-video-{element.id}' class='element embed_video'>" f"</div>"
+
     attributes = element.params.get("attributes", "")
 
     html_value = (
-        f"<div id='code-{element.id}' class='element embed_video'>"
-        f"<iframe src='{element.embed_video}' {attributes}"
+        f"<div id='embed-video-{element.id}' class='element embed_video'>"
+        f"<iframe src='{element.embed_video}' {attributes}>"
         f"</iframe>"
         f"</div>"
     )
