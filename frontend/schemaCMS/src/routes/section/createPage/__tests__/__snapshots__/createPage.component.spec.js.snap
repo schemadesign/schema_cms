@@ -1119,7 +1119,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
           className="sc-fzowVh dJcpsq"
         >
           <div
-            className="sc-fzqAui jduGpN"
+            className="sc-fzqAui bVNREn"
           >
             <span
               className="sc-fzqMdD bzbiOK"
@@ -1227,7 +1227,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzqAui jduGpN"
+            className="sc-fzqAui bVNREn"
           >
             <span
               className="sc-fzqMdD bzbiOK"

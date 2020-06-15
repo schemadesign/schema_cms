@@ -1116,7 +1116,7 @@ exports[`EditPage: Component should render correctly 1`] = `
           className="sc-fznzqM VqIcE"
         >
           <div
-            className="sc-fzoWqW ermTJv"
+            className="sc-fzoWqW fLBIBl"
           >
             <span
               className="sc-fzplgP iZkvEl"
@@ -1224,7 +1224,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzoWqW ermTJv"
+            className="sc-fzoWqW fLBIBl"
           >
             <span
               className="sc-fzplgP iZkvEl"

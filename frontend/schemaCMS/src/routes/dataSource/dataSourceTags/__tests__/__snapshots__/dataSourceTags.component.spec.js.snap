@@ -698,7 +698,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       className="sc-AxhUy hsJwAh"
     >
       <div
-        className="sc-AxiKw hVHjKp"
+        className="sc-AxiKw jBynnv"
       >
         <span
           className="sc-AxhCb ixUJzq"
@@ -806,7 +806,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxiKw hVHjKp"
+        className="sc-AxiKw jBynnv"
       >
         <span
           className="sc-AxhCb ixUJzq"
