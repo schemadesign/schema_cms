@@ -6,6 +6,351 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
   onSubmit={[Function]}
 >
   <div
+    className="sc-fzokOt hfgXGB"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-fzqBZW kvyVsY"
+        >
+          <h2
+            className="sc-fznJRM ekaysg"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            State
+          </h2>
+          <h1
+            className="sc-fznWqX hnYFYn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Create
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-fzqNJr dkSRca"
+      >
+        <div
+          className="sc-fzqBZW kvyVsY"
+        >
+          <h2
+            className="sc-fznJRM ekaysg"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            State
+          </h2>
+          <h1
+            className="sc-fznWqX hnYFYn"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Create
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-fzoyAV ifNcas"
+      >
+        <div
+          className="sc-fzoLag gbRzxn"
+        >
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/project/1"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/project/1/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/project/1/tag-categories"
+              id="tagsNavBtn"
+              onClick={[Function]}
+            >
+              Tags
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/project/1/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/project/1/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/project/1/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzoLag gbRzxn"
+        >
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzoXzr eDxZoa"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzpjYC fuEpwo"
+        >
+          <a
+            className="sc-fznxsB kdIvPf"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fznxsB kdIvPf"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fznxsB kdIvPf"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
     className="sc-AxiKw lkawiC"
   >
     <div
@@ -47,10 +392,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     />
   </div>
   <div
-    className="sc-fzokOt feUZWe"
+    className="sc-fzoNJl dVYGGS"
   >
     <div
-      className="sc-fzqBZW fPjuQm"
+      className="sc-fzoXWK fQayrT"
     >
       <div
         style={
@@ -114,7 +459,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqNJr noQGu"
+            className="sc-fzpmMD hMxsPt"
           >
             <svg
               style={
@@ -136,7 +481,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzqBZW fPjuQm"
+      className="sc-fzoXWK fQayrT"
     >
       <div
         style={
@@ -218,7 +563,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqNJr noQGu"
+            className="sc-fzpmMD hMxsPt"
           >
             <svg
               style={
@@ -240,7 +585,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzqBZW fPjuQm"
+      className="sc-fzoXWK fQayrT"
     >
       <div
         style={
@@ -304,7 +649,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqNJr noQGu"
+            className="sc-fzpmMD hMxsPt"
           >
             <svg
               style={
@@ -368,13 +713,13 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       No Filters available
     </div>
     <div
-      className="sc-fzqARJ hXitkL"
+      className="sc-fzoYkl exyXue"
     >
       <div
-        className="sc-fzqNqU ixUdhn"
+        className="sc-fzpkJw ZdCvW"
       >
         <div
-          className="sc-fzoXWK Vwzte"
+          className="sc-fzoant bstqWp"
         >
           <div>
             <input
@@ -426,16 +771,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fzoNJl iQUriS"
+            className="sc-fznMnq cVhWGN"
           >
             <label
-              className="sc-fzoyTs bkzHbn"
+              className="sc-fznzOf hTiEMf"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-fznxKY jgBhRa"
+              className="sc-fzqAbL dgweLY"
             >
               This State is currently Private
             </span>
