@@ -85,7 +85,14 @@ class PAProjectView(
         Project.objects.select_related("owner",)
         .prefetch_related(
             Prefetch("data_sources", queryset=DataSource.objects.all().order_by("-created")),
-            Prefetch("sections", queryset=Section.objects.prefetch_related("pages")),
+            Prefetch(
+                "sections",
+                queryset=(
+                    Section.objects.prefetch_related(
+                        Prefetch("pages", queryset=Page.objects.filter(is_public=True))
+                    ).filter(is_public=True)
+                ),
+            ),
             "sections__pages__created_by",
         )
         .all()
@@ -119,7 +126,9 @@ class PAProjectView(
         if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
             ordering = "-created"
 
-        pages = Page.objects.filter(section__project=self.get_object(), is_public=True).order_by(ordering)
+        pages = Page.objects.filter(
+            section__project=self.get_object(), section__is_public=True, is_public=True
+        ).order_by(ordering)
 
         page = self.paginate_queryset(pages)
         if page is not None:
