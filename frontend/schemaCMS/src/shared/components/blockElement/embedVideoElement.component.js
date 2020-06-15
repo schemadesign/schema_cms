@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Icons } from 'schemaUI';
 import { useTheme } from 'styled-components';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { pathOr } from 'ramda';
 
 import { TextInput } from '../form/inputs/textInput';
 import { getCustomInputStyles, customStyles, editIconStyles, InputContainer, Label } from './blockElement.styles';
@@ -14,6 +15,7 @@ const { EditIcon } = Icons;
 
 export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...restFormikProps }) => {
   const intl = useIntl();
+  const attributes = pathOr('', ['params', EMBED_VIDEO_ATTRIBUTES], element);
 
   return (
     <Fragment>
@@ -39,7 +41,7 @@ export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...
       <InputContainer>
         <TextInput
           name={getValuePath({ blockPath, index, elementValue: `params.${EMBED_VIDEO_ATTRIBUTES}` })}
-          value={element.params[EMBED_VIDEO_ATTRIBUTES] || ''}
+          value={attributes}
           fullWidth
           placeholder={intl.formatMessage(messages[`${EMBED_VIDEO_ATTRIBUTES}Placeholder`])}
           customInputStyles={getCustomInputStyles(useTheme())}
