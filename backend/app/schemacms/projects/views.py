@@ -118,7 +118,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         )
 
         page_templates = (
-            PageTemplate.objects.all()
+            PageTemplate.objects.filter(project=project)
             .order_by("-created")
             .select_related("project", "created_by")
             .prefetch_related(
