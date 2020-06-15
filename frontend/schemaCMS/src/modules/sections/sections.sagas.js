@@ -1,6 +1,7 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 import { stringifyUrl } from 'query-string';
 import { decamelizeKeys } from 'humps';
+import { isEmpty } from 'ramda';
 
 import reportError from '../../shared/utils/reportError';
 import { SectionsRoutines } from './sections.redux';
@@ -47,7 +48,7 @@ function* fetchSection({ payload: { sectionId, ...query } }) {
     const { data } = yield api.get(url);
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
-    yield put(SectionsRoutines.fetchSection.success(data.results));
+    yield put(SectionsRoutines.fetchSection.success({ ...data.results, isQuery: !isEmpty(query) }));
   } catch (error) {
     reportError(error);
     yield put(SectionsRoutines.fetchSection.failure(error));

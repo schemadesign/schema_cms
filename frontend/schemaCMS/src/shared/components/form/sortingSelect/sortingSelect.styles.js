@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ASCENDING } from './sortingSelect.component';
+import { ASCENDING } from '../../../utils/helpers';
 
 export const Container = styled.div`
   width: 200px;

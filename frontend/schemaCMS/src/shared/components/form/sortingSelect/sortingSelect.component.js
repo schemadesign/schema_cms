@@ -9,11 +9,10 @@ import { useLocation, useHistory } from 'react-router';
 
 import { Container, SelectWrapper, getCarestStyles } from './sortingSelect.styles';
 import { getCustomSelectStyles } from '../reactSelect.styles';
+import { ASCENDING, DESCENDING } from '../../../utils/helpers';
 
 const CREATED = 'created';
 const MODIFIED = 'modified';
-export const ASCENDING = 'ascending';
-const DESCENDING = 'descending';
 const { CaretIcon } = Icons;
 
 export const SortingSelect = ({ sortingElements, addDateOptions = false, updateFunction }) => {
@@ -30,20 +29,19 @@ export const SortingSelect = ({ sortingElements, addDateOptions = false, updateF
 
   const handleOrderChange = data => {
     const isAscending = direction === ASCENDING;
-    const sortDirection = direction === ASCENDING ? DESCENDING : ASCENDING;
+    const sortDirection = isAscending ? DESCENDING : ASCENDING;
     const params = data ? { ...restParams, sortBy: data.value, sortDirection } : restParams;
     const stringfied = stringify(params);
     history.push(`?${stringfied}`);
-    updateFunction(isAscending ? sortBy : `-${sortBy}`);
+    updateFunction();
     setSort(data);
   };
 
   const toogleDirection = () => {
-    const isAscending = direction === ASCENDING;
     const params = { ...restParams, sortBy: sort.value, sortDirection: direction };
     const stringfied = stringify(params);
     history.push(`?${stringfied}`);
-    updateFunction(isAscending ? sortBy : `-${sortBy}`);
+    updateFunction();
     setDirection(sortDirection);
   };
 

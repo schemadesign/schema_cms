@@ -36,7 +36,8 @@ const reorderPages = payload =>
     evolve({ pages: pages => move(findIndex(propEq('id', payload.mainPage), pages), 0, pages) })
   )(payload);
 
-const setSection = (state = INITIAL_STATE, { payload }) => state.set('section', reorderPages(payload));
+const setSection = (state = INITIAL_STATE, { payload }) =>
+  state.set('section', payload.isQuery ? payload : reorderPages(payload));
 
 export const reducer = createReducer(INITIAL_STATE, {
   [SectionsRoutines.fetchSections.SUCCESS]: setSections,

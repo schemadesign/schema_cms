@@ -6,13 +6,14 @@ import Helmet from 'react-helmet';
 import { useFormik } from 'formik';
 import { pick, propEq, propOr, pipe, find } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
+import { useEffectOnce } from 'react-use';
 
 import { Container, Form, getCustomHomeIconStyles, CardFooter } from './pageList.styles';
 import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, getUrlParams } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
   BackArrowButton,
@@ -172,6 +173,23 @@ export const PageList = ({
       }
     },
   });
+
+  const fetchSectionFunc = async () => {
+    try {
+      const urlParams = getUrlParams(history);
+      setLoading(true);
+      await fetchSection({ sectionId, ...urlParams });
+      setLoading(false);
+    } catch (e) {
+      reportError(e);
+      setError(e);
+    }
+  };
+
+  useEffectOnce(() => {
+    fetchSectionFunc();
+  });
+
   const handleConfirmRemove = async () => {
     try {
       setRemoveLoading(true);
@@ -200,16 +218,6 @@ export const PageList = ({
       </IconsContainer>
     </Subtitle>
   );
-  const filterSection = async pagesOrder => {
-    try {
-      setLoading(true);
-      await fetchSection({ pagesOrder, sectionId });
-      setLoading(false);
-    } catch (e) {
-      reportError(e);
-      setError(e);
-    }
-  };
 
   return (
     <Container>
@@ -236,7 +244,7 @@ export const PageList = ({
             {...restFormikProps}
           />
         </MobileInputName>
-        <SortingSelect updateFunction={filterSection} sortingElements={[PAGE_NAME]} addDateOptions />
+        <SortingSelect updateFunction={fetchSectionFunc} sortingElements={[PAGE_NAME]} addDateOptions />
         <LoadingWrapper loading={loading} error={error}>
           <CounterHeader
             copy={intl.formatMessage(messages.page)}

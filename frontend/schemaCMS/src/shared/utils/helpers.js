@@ -36,7 +36,7 @@ import {
   toPairs,
 } from 'ramda';
 import { camelize, decamelize } from 'humps';
-import queryString from 'query-string';
+import { parse } from 'query-string';
 import debounce from 'lodash.debounce';
 import { sizes } from '../../theme/media';
 import { META_PENDING, META_PROCESSING } from '../../modules/dataSource/dataSource.constants';
@@ -61,6 +61,9 @@ import {
   DATA_SOURCE_STATE_TAGS,
 } from '../../modules/dataSourceState/dataSourceState.constants';
 import { FILTER_TYPE_RANGE, FILTER_TYPE_BOOL } from '../../modules/filter/filter.constants';
+
+export const ASCENDING = 'ascending';
+export const DESCENDING = 'descending';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
@@ -108,7 +111,7 @@ export const getEventFiles = data => pathOr(data, ['currentTarget', 'files'])(da
 
 export const getQueryParams = pipe(
   pathOr('', ['location', 'search']),
-  queryString.parse
+  parse
 );
 
 const byRole = userRole => item => includes(userRole, item.allowedRoles);
@@ -263,3 +266,16 @@ export const getTagCategories = pipe(
   toPairs,
   map(([name, tags]) => ({ name, id: tags[0].category, tags }))
 );
+
+export const getUrlParams = history => {
+  const search = pathOr({}, ['location', 'search'], history);
+  const { sortBy, sortDirection, ...restParams } = parse(search);
+  const params = { ...restParams };
+
+  if (sortBy) {
+    const isAscending = sortDirection === ASCENDING;
+    params.pagesOrder = isAscending ? sortBy : `-${sortBy}`;
+  }
+
+  return params;
+};

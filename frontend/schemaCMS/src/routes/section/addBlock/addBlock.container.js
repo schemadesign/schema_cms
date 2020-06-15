@@ -9,7 +9,7 @@ import { AddBlock } from './addBlock.component';
 import { BlockTemplatesRoutines, selectBlockTemplates } from '../../../modules/blockTemplates';
 import { selectProject } from '../../../modules/project';
 import { selectUserRole } from '../../../modules/userProfile';
-import { selectSection } from '../../../modules/sections';
+import { selectSection, SectionsRoutines } from '../../../modules/sections';
 
 const mapStateToProps = createStructuredSelector({
   blockTemplates: selectBlockTemplates,
@@ -22,6 +22,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
+      fetchSection: promisifyRoutine(SectionsRoutines.fetchSection),
     },
     dispatch
   ),
