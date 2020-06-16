@@ -13,6 +13,7 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   updateSection: Function.prototype,
   removeSection: Function.prototype,
+  fetchSection: Function.prototype,
 };
 
 storiesOf('PageList', module)

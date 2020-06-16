@@ -21,6 +21,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       updateSection: promisifyRoutine(SectionsRoutines.updateSection),
       removeSection: promisifyRoutine(SectionsRoutines.removeSection),
+      fetchSection: promisifyRoutine(SectionsRoutines.fetchSection),
     },
     dispatch
   ),

@@ -51,7 +51,15 @@ const getBreadcrumbsItems = (project, { id, name }) => [
   },
 ];
 
-export const CreatePage = ({ userRole, createPage, project, section, fetchPageAdditionalData, pageAdditionalData }) => {
+export const CreatePage = ({
+  userRole,
+  createPage,
+  project,
+  section,
+  fetchPageAdditionalData,
+  pageAdditionalData,
+  fetchSection,
+}) => {
   const intl = useIntl();
   const { sectionId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -87,6 +95,12 @@ export const CreatePage = ({ userRole, createPage, project, section, fetchPageAd
   useEffectOnce(() => {
     (async () => {
       try {
+        if (!section.id) {
+          const { project } = await fetchSection({ sectionId });
+          await fetchPageAdditionalData({ projectId: project });
+          return;
+        }
+
         await fetchPageAdditionalData({ projectId });
 
         const { page = {} } = state;
@@ -147,4 +161,5 @@ CreatePage.propTypes = {
   section: PropTypes.object.isRequired,
   pageAdditionalData: PropTypes.object.isRequired,
   fetchPageAdditionalData: PropTypes.func.isRequired,
+  fetchSection: PropTypes.func.isRequired,
 };

@@ -41,6 +41,12 @@ describe('CreatePage: Component', () => {
     expect(defaultProps.fetchPageAdditionalData).toHaveBeenCalledWith({ projectId: 1 });
   });
 
+  it('should fetch page templates and section', async () => {
+    jest.spyOn(defaultProps, 'fetchSection');
+    await render({ section: {} });
+    expect(defaultProps.fetchSection).toHaveBeenCalledWith({ sectionId: 'sectionId' });
+  });
+
   it('should go back to section', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();

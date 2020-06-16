@@ -26,6 +26,13 @@ describe('PageList: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render correctly', async () => {
+    jest.spyOn(defaultProps, 'fetchSection');
+    await render();
+
+    expect(defaultProps.fetchSection).toHaveBeenCalledWith({ sectionId: 'sectionId' });
+  });
+
   it('should go back to content', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();

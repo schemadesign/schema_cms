@@ -1,5 +1,6 @@
 from django.db import models as d_models
 from django.shortcuts import get_object_or_404
+from django.db.models import Prefetch
 
 import django_filters.rest_framework
 
@@ -184,14 +185,21 @@ class SectionInternalConnectionView(generics.ListAPIView):
 
 
 class SectionViewSet(DetailViewSet):
-    queryset = (
-        models.Section.objects.all()
-        .annotate_pages_count()
-        .select_related("project", "created_by")
-        .prefetch_related("pages")
-    )
+    queryset = models.Section.objects.all().annotate_pages_count().select_related("project", "created_by")
     serializer_class = serializers.SectionDetailSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
+
+    def get_queryset(self):
+        pages_order = self.request.query_params.get("pages_order")
+
+        if pages_order:
+            return (
+                super()
+                .get_queryset()
+                .prefetch_related(Prefetch("pages", queryset=models.Page.objects.all().order_by(pages_order)))
+            )
+
+        return super().get_queryset().prefetch_related("pages")
 
 
 class PageListCreateView(generics.ListCreateAPIView):

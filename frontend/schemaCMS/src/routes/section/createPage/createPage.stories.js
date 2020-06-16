@@ -18,6 +18,7 @@ export const defaultProps = {
     name: 'Section',
   },
   fetchPageAdditionalData: Function.prototype,
+  fetchSection: Function.prototype,
   pageAdditionalData: {
     internalConnections,
     tagCategories,
