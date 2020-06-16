@@ -118,17 +118,16 @@ Array [
       }
     >
       <div
-<<<<<<< HEAD
-        className="sc-AxhUy kiRyKQ"
+        className="sc-AxhCb iZpTah"
       >
         <div
-          className="sc-AxhCb hNWLGi"
+          className="sc-AxiKw fZZSOK"
         >
           <div
-            className="sc-AxiKw bOTXee"
+            className="sc-AxirZ ktnnZK"
           >
             <h2
-              className="sc-fzozJi iZfRyZ"
+              className="sc-AxmLO jtQYHk"
               id="headerTitle"
               style={
                 Object {
@@ -137,44 +136,12 @@ Array [
                   "fontWeight": 100,
                   "margin": 0,
                 }
-=======
-        className="sc-AxiKw jzopiF"
-      >
-        <div
-          className="sc-AxirZ ktnnZK"
-        >
-          <h2
-            className="sc-AxmLO jtQYHk"
-            id="headerTitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 100,
-                "margin": 0,
-              }
-            }
-          >
-            Block
-          </h2>
-          <h1
-            className="sc-fzozJi iZfRyZ"
-            id="headerSubtitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
->>>>>>> Add tests for sorting select
               }
             >
               Block
             </h2>
             <h1
-              className="sc-fzoLsD irsToz"
+              className="sc-fzozJi iZfRyZ"
               id="headerSubtitle"
               style={
                 Object {
@@ -191,13 +158,6 @@ Array [
             </h1>
           </div>
         </div>
-<<<<<<< HEAD
-=======
-      </div>
-      <div
-        className="sc-AxhCb dWpeUh"
-      >
->>>>>>> Add tests for sorting select
         <div
           className="sc-AxhUy enWa-Dj"
         >
@@ -249,20 +209,6 @@ Array [
             className="sc-AxgMl hCNTzW"
           >
             <a
-<<<<<<< HEAD
-=======
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
-            </a>
-          </div>
-          <div
-            className="sc-AxgMl hCNTzW"
-          >
-            <a
->>>>>>> Add tests for sorting select
               href="/project/1/user"
               id="usersNavBtn"
               onClick={[Function]}

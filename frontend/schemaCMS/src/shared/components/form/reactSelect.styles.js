@@ -44,6 +44,7 @@ export const getCustomSelectStyles = theme => ({
   option: (styles, { isFocused, isDisabled }) => {
     return {
       ...styles,
+      minHeight: 62,
       fontSize: 18,
       display: 'flex',
       alignItems: 'center',
