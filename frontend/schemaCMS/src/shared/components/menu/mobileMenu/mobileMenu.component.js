@@ -147,8 +147,8 @@ export class MobileMenu extends PureComponent {
           customStyles={menuStyles}
           closeButtonProps={closeButtonProps}
         >
-          <MenuHeader>{headerContent}</MenuHeader>
           <Content>
+            <MenuHeader>{headerContent}</MenuHeader>
             <List>{options.map(this.renderOptions)}</List>
             <List>{fixedMenuItems.map(this.renderOptions)}</List>
             <HelperList>{HELPER_LINKS.map(this.renderOptions)}</HelperList>

@@ -76,19 +76,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "allowedRoles": Array [
             "admin",
           ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/projectId/tag-categories",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
           "id": "usersNavBtn",
           "label": <FormattedMessage
             defaultMessage="Project Users"
@@ -1032,19 +1019,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             values={Object {}}
           />,
           "to": "/project/projectId/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/projectId/tag-categories",
           "type": "link_item",
         },
         Object {

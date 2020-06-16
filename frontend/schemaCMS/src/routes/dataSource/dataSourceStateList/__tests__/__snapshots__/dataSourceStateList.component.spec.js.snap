@@ -2,7 +2,7 @@
 
 exports[`DataSourceStateList: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-AxjAm eyXBQq"
 >
   <div
     className="sc-fzqNJr gSkTZh"
@@ -103,9 +103,9 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       style={
         Object {
           "backgroundColor": "#000",
+          "bottom": 0,
           "color": "#FFF",
           "maxWidth": null,
-          "minHeight": "100vh",
           "padding": "18px 20px 27px",
           "position": "absolute",
           "right": 0,
@@ -120,46 +120,46 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-fzoLag fwCMNo"
+        className="sc-fzoXzr hWWZOu"
       >
         <div
-          className="sc-fzoyAV lgNqAT"
+          className="sc-fzoLag jcLfOH"
         >
-          <h2
-            className="sc-fzoiQi cXcBhp"
-            id="headerTitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 100,
-                "margin": 0,
-              }
-            }
+          <div
+            className="sc-fzoyAV lgNqAT"
           >
-            States
-          </h2>
-          <h1
-            className="sc-fzqARJ hkkDqn"
-            id="headerSubtitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
+            <h2
+              className="sc-fzoiQi cXcBhp"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
               }
-            }
-          >
-            Overview
-          </h1>
+            >
+              States
+            </h2>
+            <h1
+              className="sc-fzqARJ hkkDqn"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
         </div>
-      </div>
-      <div
-        className="sc-fzoXzr kiaUBq"
-      >
         <div
           className="sc-fzpjYC iUtPla"
         >
@@ -205,17 +205,6 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fznxsB fnKkxe"
-          >
-            <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
             </a>
           </div>
           <div
@@ -1126,7 +1115,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
 
 exports[`DataSourceStateList: Component should render correctly when no tags 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-AxjAm eyXBQq"
 >
   <div
     className="sc-fzqNJr gSkTZh"
@@ -1227,9 +1216,9 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       style={
         Object {
           "backgroundColor": "#000",
+          "bottom": 0,
           "color": "#FFF",
           "maxWidth": null,
-          "minHeight": "100vh",
           "padding": "18px 20px 27px",
           "position": "absolute",
           "right": 0,
@@ -1244,46 +1233,46 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       }
     >
       <div
-        className="sc-fzoLag fwCMNo"
+        className="sc-fzoXzr hWWZOu"
       >
         <div
-          className="sc-fzoyAV lgNqAT"
+          className="sc-fzoLag jcLfOH"
         >
-          <h2
-            className="sc-fzoiQi cXcBhp"
-            id="headerTitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 100,
-                "margin": 0,
-              }
-            }
+          <div
+            className="sc-fzoyAV lgNqAT"
           >
-            States
-          </h2>
-          <h1
-            className="sc-fzqARJ hkkDqn"
-            id="headerSubtitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
+            <h2
+              className="sc-fzoiQi cXcBhp"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
               }
-            }
-          >
-            Overview
-          </h1>
+            >
+              States
+            </h2>
+            <h1
+              className="sc-fzqARJ hkkDqn"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
         </div>
-      </div>
-      <div
-        className="sc-fzoXzr kiaUBq"
-      >
         <div
           className="sc-fzpjYC iUtPla"
         >
@@ -1329,17 +1318,6 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fznxsB fnKkxe"
-          >
-            <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
             </a>
           </div>
           <div
@@ -2199,7 +2177,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
 
 exports[`DataSourceStateList: Component should render correctly with loader 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-AxjAm eyXBQq"
 >
   <div
     className="sc-fzqNJr gSkTZh"
@@ -2300,9 +2278,9 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       style={
         Object {
           "backgroundColor": "#000",
+          "bottom": 0,
           "color": "#FFF",
           "maxWidth": null,
-          "minHeight": "100vh",
           "padding": "18px 20px 27px",
           "position": "absolute",
           "right": 0,
@@ -2317,46 +2295,46 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       }
     >
       <div
-        className="sc-fzoLag fwCMNo"
+        className="sc-fzoXzr hWWZOu"
       >
         <div
-          className="sc-fzoyAV lgNqAT"
+          className="sc-fzoLag jcLfOH"
         >
-          <h2
-            className="sc-fzoiQi cXcBhp"
-            id="headerTitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 100,
-                "margin": 0,
-              }
-            }
+          <div
+            className="sc-fzoyAV lgNqAT"
           >
-            States
-          </h2>
-          <h1
-            className="sc-fzqARJ hkkDqn"
-            id="headerSubtitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
+            <h2
+              className="sc-fzoiQi cXcBhp"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
               }
-            }
-          >
-            Overview
-          </h1>
+            >
+              States
+            </h2>
+            <h1
+              className="sc-fzqARJ hkkDqn"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
         </div>
-      </div>
-      <div
-        className="sc-fzoXzr kiaUBq"
-      >
         <div
           className="sc-fzpjYC iUtPla"
         >
@@ -2402,17 +2380,6 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fznxsB fnKkxe"
-          >
-            <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
             </a>
           </div>
           <div

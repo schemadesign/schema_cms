@@ -55,23 +55,23 @@ exports[`MobileMenu: Component should render correctly 1`] = `
   >
     <styled.div>
       <styled.div>
-        <Styled(H2)
-          id="headerTitle"
-        >
-          <div>
-            Header Title
-          </div>
-        </Styled(H2)>
-        <Styled(H1)
-          id="headerSubtitle"
-        >
-          <div>
-            Header SubTitle
-          </div>
-        </Styled(H1)>
+        <styled.div>
+          <Styled(H2)
+            id="headerTitle"
+          >
+            <div>
+              Header Title
+            </div>
+          </Styled(H2)>
+          <Styled(H1)
+            id="headerSubtitle"
+          >
+            <div>
+              Header SubTitle
+            </div>
+          </Styled(H1)>
+        </styled.div>
       </styled.div>
-    </styled.div>
-    <styled.div>
       <styled.div>
         <styled.div
           active={false}

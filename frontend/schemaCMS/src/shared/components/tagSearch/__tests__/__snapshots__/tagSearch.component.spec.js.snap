@@ -8,7 +8,7 @@ exports[`TagSearch: Component should render correctly 1`] = `
     className="sc-AxhCb fNqLoA"
   >
     <div
-      className="sc-AxirZ eEbZpF"
+      className="sc-AxirZ gMFktb"
     >
       <span
         className="sc-AxiKw jMeOOO"
@@ -116,7 +116,7 @@ exports[`TagSearch: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-AxirZ eEbZpF"
+      className="sc-AxirZ gMFktb"
     >
       <span
         className="sc-AxiKw jMeOOO"

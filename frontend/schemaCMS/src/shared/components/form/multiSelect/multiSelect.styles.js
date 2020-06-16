@@ -47,7 +47,6 @@ export const getCustomSelectStyles = theme => ({
   option: (styles, { isFocused, isDisabled }) => {
     return {
       ...styles,
-      height: 62,
       fontSize: 18,
       display: 'flex',
       alignItems: 'center',
@@ -55,6 +54,7 @@ export const getCustomSelectStyles = theme => ({
       color: isFocused && !isDisabled ? theme.background : theme.secondaryText,
       borderBottom: `1px solid ${theme.select.border}`,
       width: '100%',
+      wordBreak: 'break-word',
       ':active': { background: theme.text },
     };
   },

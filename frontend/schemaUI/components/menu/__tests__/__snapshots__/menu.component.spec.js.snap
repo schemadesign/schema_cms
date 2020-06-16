@@ -5,9 +5,9 @@ exports[`Menu: Component should render correctly 1`] = `
   style={
     Object {
       "backgroundColor": "#000",
+      "bottom": 0,
       "color": "#FFF",
       "maxWidth": "360px",
-      "minHeight": "100vh",
       "padding": "18px 20px 27px",
       "position": "fixed",
       "right": 0,
@@ -43,9 +43,9 @@ exports[`Menu: Component should render opened 1`] = `
   style={
     Object {
       "backgroundColor": "#000",
+      "bottom": 0,
       "color": "#FFF",
       "maxWidth": "360px",
-      "minHeight": "100vh",
       "padding": "18px 20px 27px",
       "position": "fixed",
       "right": 0,
@@ -80,9 +80,9 @@ exports[`Menu: Component should with custom styles 1`] = `
   style={
     Object {
       "backgroundColor": "black",
+      "bottom": 0,
       "color": "#FFF",
       "maxWidth": "360px",
-      "minHeight": "100vh",
       "padding": "18px 20px 27px",
       "position": "fixed",
       "right": 0,

@@ -101,9 +101,9 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       style={
         Object {
           "backgroundColor": "#000",
+          "bottom": 0,
           "color": "#FFF",
           "maxWidth": null,
-          "minHeight": "100vh",
           "padding": "18px 20px 27px",
           "position": "absolute",
           "right": 0,
@@ -118,44 +118,44 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-fzplWN kpyLoY"
+        className="sc-fznyAO hmNazU"
       >
         <div
-          className="sc-fzpans kkFAbe"
+          className="sc-fzplWN cqllMP"
         >
-          <h2
-            className="sc-fzqNJr ewLMGs"
-            id="headerTitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 100,
-                "margin": 0,
-              }
-            }
-          />
-          <h1
-            className="sc-fzoyAV iLlFdi"
-            id="headerSubtitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
+          <div
+            className="sc-fzpans kkFAbe"
           >
-            Tags
-          </h1>
+            <h2
+              className="sc-fzqNJr ewLMGs"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            />
+            <h1
+              className="sc-fzoyAV iLlFdi"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Tags
+            </h1>
+          </div>
         </div>
-      </div>
-      <div
-        className="sc-fznyAO eXaVhU"
-      >
         <div
           className="sc-fznKkj iXhgXu"
         >
@@ -201,17 +201,6 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fznZeY erzAfB"
-          >
-            <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
             </a>
           </div>
           <div
@@ -698,7 +687,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       className="sc-AxhUy hsJwAh"
     >
       <div
-        className="sc-AxiKw hVHjKp"
+        className="sc-AxiKw jBynnv"
       >
         <span
           className="sc-AxhCb ixUJzq"
@@ -806,7 +795,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxiKw hVHjKp"
+        className="sc-AxiKw jBynnv"
       >
         <span
           className="sc-AxhCb ixUJzq"

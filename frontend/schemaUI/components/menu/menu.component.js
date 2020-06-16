@@ -11,6 +11,7 @@ export class MenuComponent extends PureComponent {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     customStyles: PropTypes.object,
     open: PropTypes.bool,
+    isDesktop: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
     closeButtonProps: PropTypes.shape({
       customStyles: PropTypes.object,
@@ -21,6 +22,7 @@ export class MenuComponent extends PureComponent {
   static defaultProps = {
     customStyles: {},
     open: false,
+    isDesktop: false,
     onClose: () => {},
     closeButtonProps: {
       customStyles: {},
@@ -40,8 +42,8 @@ export class MenuComponent extends PureComponent {
   };
 
   render() {
-    const { customStyles, children, theme, open } = this.props;
-    const { closeButtonStyles, containerStyles, hideStyles, showStyles } = getStyles(theme);
+    const { customStyles, children, theme, open, isDesktop } = this.props;
+    const { closeButtonStyles, containerStyles, hideStyles, showStyles } = getStyles({ theme, isDesktop });
     const animationStyles = open ? showStyles : hideStyles;
     const styles = { ...containerStyles, ...customStyles, ...animationStyles };
 

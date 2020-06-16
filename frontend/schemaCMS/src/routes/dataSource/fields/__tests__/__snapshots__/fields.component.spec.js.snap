@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Fields: Component should render correctly 1`] = `
-<Fragment>
+<styled.div>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
@@ -70,19 +70,6 @@ exports[`Fields: Component should render correctly 1`] = `
             values={Object {}}
           />,
           "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "tagsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Tags"
-            id="project.view.tags"
-            values={Object {}}
-          />,
-          "to": "/project/1/tag-categories",
           "type": "link_item",
         },
         Object {
@@ -411,5 +398,5 @@ exports[`Fields: Component should render correctly 1`] = `
     }
     userRole="admin"
   />
-</Fragment>
+</styled.div>
 `;

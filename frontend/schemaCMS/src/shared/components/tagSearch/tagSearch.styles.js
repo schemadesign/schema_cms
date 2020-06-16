@@ -7,6 +7,10 @@ export const Container = styled.div`
 export const Title = styled.div`
   font-size: 15px;
   padding: 20px 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const Category = styled.span`

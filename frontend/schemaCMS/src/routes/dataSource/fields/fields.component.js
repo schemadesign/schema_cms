@@ -10,6 +10,7 @@ import { DataSourceNavigation } from '../../../shared/components/dataSourceNavig
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { getProjectMenuOptions } from '../../project/project.constants';
+import { Container } from './fields.styles';
 
 export class Fields extends PureComponent {
   static propTypes = {
@@ -28,7 +29,7 @@ export class Fields extends PureComponent {
     const menuOptions = getProjectMenuOptions(this.props.dataSource.project.id);
 
     return (
-      <Fragment>
+      <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <MobileMenu
           headerTitle={headerTitle}
@@ -40,7 +41,7 @@ export class Fields extends PureComponent {
         </ContextHeader>
         <DataPreview {...this.props} />
         <DataSourceNavigation {...this.props} hideOnDesktop />
-      </Fragment>
+      </Container>
     );
   }
 }

@@ -431,7 +431,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       className="sc-Axmtr jCVQya"
     >
       <div
-        className="sc-AxgMl cluyNW"
+        className="sc-AxgMl guGtQI"
       >
         <span
           className="sc-AxheI foOaNn"
@@ -539,7 +539,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxgMl cluyNW"
+        className="sc-AxgMl guGtQI"
       >
         <span
           className="sc-AxheI foOaNn"

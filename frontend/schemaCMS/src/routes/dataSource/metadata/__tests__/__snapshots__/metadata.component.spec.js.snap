@@ -101,9 +101,9 @@ exports[`Metadata: Component should render correctly 1`] = `
       style={
         Object {
           "backgroundColor": "#000",
+          "bottom": 0,
           "color": "#FFF",
           "maxWidth": null,
-          "minHeight": "100vh",
           "padding": "18px 20px 27px",
           "position": "absolute",
           "right": 0,
@@ -118,44 +118,44 @@ exports[`Metadata: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-Axmtr cfNjVv"
+        className="sc-AxmLO dvTVuW"
       >
         <div
-          className="sc-AxheI fniENP"
+          className="sc-Axmtr bwYVDg"
         >
-          <h2
-            className="sc-fznyAO dFXsby"
-            id="headerTitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 100,
-                "margin": 0,
-              }
-            }
-          />
-          <h1
-            className="sc-fznKkj hlIEaX"
-            id="headerSubtitle"
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
+          <div
+            className="sc-AxheI fniENP"
           >
-            Metadata
-          </h1>
+            <h2
+              className="sc-fznyAO dFXsby"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            />
+            <h1
+              className="sc-fznKkj hlIEaX"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Metadata
+            </h1>
+          </div>
         </div>
-      </div>
-      <div
-        className="sc-AxmLO hdWmnu"
-      >
         <div
           className="sc-fzozJi cXstQc"
         >
@@ -201,17 +201,6 @@ exports[`Metadata: Component should render correctly 1`] = `
               onClick={[Function]}
             >
               Data Sources
-            </a>
-          </div>
-          <div
-            className="sc-fzoLsD kppjAR"
-          >
-            <a
-              href="/project/1/tag-categories"
-              id="tagsNavBtn"
-              onClick={[Function]}
-            >
-              Tags
             </a>
           </div>
           <div
