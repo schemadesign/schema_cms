@@ -143,6 +143,7 @@ export class DesktopHeader extends PureComponent {
               onClose={this.handleToggleMenu}
               customStyles={menuStyles(isMenuOpen)}
               closeButtonProps={closeButtonProps}
+              isDesktop
             >
               <H2>
                 <FormattedMessage {...messages.title} />

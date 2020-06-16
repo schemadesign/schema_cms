@@ -1,15 +1,15 @@
 import { defaultTheme } from '../../utils/theme';
 
-export const getStyles = (theme = defaultTheme) => ({
+export const getStyles = ({ theme = defaultTheme, isDesktop }) => ({
   containerStyles: {
     backgroundColor: theme.menu.background,
     color: theme.menu.text,
     position: 'fixed',
     top: 0,
+    bottom: isDesktop ? 'auto' : 0,
     right: 0,
     width: '100%',
     maxWidth: '360px',
-    minHeight: '100vh',
     padding: '18px 20px 27px',
     transition: 'transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms',
     textAlign: 'left',

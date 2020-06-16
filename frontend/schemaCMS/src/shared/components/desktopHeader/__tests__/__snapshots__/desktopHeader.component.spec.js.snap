@@ -85,6 +85,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
             "zIndex": 9999,
           }
         }
+        isDesktop={true}
         onClose={[Function]}
       >
         <H2>
@@ -221,6 +222,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
             "zIndex": 9999,
           }
         }
+        isDesktop={true}
         onClose={[Function]}
       >
         <H2>

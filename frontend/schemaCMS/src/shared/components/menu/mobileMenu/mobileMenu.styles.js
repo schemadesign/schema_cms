@@ -6,7 +6,6 @@ import { ifElse, equals } from 'ramda';
 import { media } from '../../../../theme/media';
 
 const HEADER_HEIGHT = 54;
-const CONTENT_PADDING = 40;
 
 const getItemTextColor = ({ active, theme }) =>
   ifElse(
@@ -31,20 +30,20 @@ export const Container = styled.div`
 export const HeaderWrapper = styled.div``;
 
 export const MenuHeader = styled.div`
+  padding-right: 50px;
+
   ${media.desktop`
     height: ${HEADER_HEIGHT}px;
-  `}
+  `};
 `;
 
 export const Content = styled.div`
   overflow: auto;
-  max-height: calc(100vh - 134px);
-  padding: ${CONTENT_PADDING}px 0;
   -webkit-overflow-scrolling: touch;
+  max-height: 100%;
 
   ${media.desktop`
     padding-bottom: 20px;
-    max-height: calc(100vh - ${2 * CONTENT_PADDING + HEADER_HEIGHT}px);
   `};
 `;
 
