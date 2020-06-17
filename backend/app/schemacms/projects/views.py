@@ -97,9 +97,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
         return response.Response(data, status=status.HTTP_200_OK)
 
-    @decorators.action(
-        detail=True, url_path="page-additional-data", methods=["get"], permission_classes=[IsAdmin]
-    )
+    @decorators.action(detail=True, url_path="page-additional-data", methods=["get"])
     def page_additional_data(self, request, **kwargs):
         project = self.get_object()
 

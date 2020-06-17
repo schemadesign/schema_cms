@@ -237,6 +237,12 @@ class TestDeletePageTemplatesView:
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert not pages_models.Page.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
 
+    def test_editor_cant_delete_page_template(self, api_client, editor, page_template):
+        api_client.force_authenticate(editor)
+        response = api_client.delete(self.get_url(page_template.pk))
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
 
 class TestListCreateSectionView:
     @staticmethod
@@ -257,10 +263,17 @@ class TestListCreateSectionView:
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["results"]) == 1
 
-    def test_create_section(self, api_client, admin, project):
+    def test_create_section_as_admin(self, api_client, admin, project):
+        self.create_section(api_client, admin, project)
+
+    def test_create_section_as_project_editor(self, api_client, editor, project):
+        project.editors.add(editor)
+        self.create_section(api_client, editor, project)
+
+    def create_section(self, api_client, user, project):
         payload = {"name": "Test Name"}
 
-        api_client.force_authenticate(admin)
+        api_client.force_authenticate(user)
         response = api_client.post(self.get_url(project.id), data=payload, format="json")
         section = pages_models.Section.objects.get(id=response.data["id"])
 
@@ -273,25 +286,46 @@ class TestUpdateDeleteSectionView:
     def get_url(pk):
         return reverse("pages:section-detail", kwargs=dict(pk=pk))
 
-    def test_retrieve_section(self, api_client, admin, section):
-        api_client.force_authenticate(admin)
+    def test_retrieve_section_as_admin(self, api_client, admin, section):
+        self.retrieve_section(api_client, admin, section)
+
+    def test_retrieve_section_as_project_editor(self, api_client, editor, section):
+        section.project.editors.add(editor)
+        self.retrieve_section(api_client, editor, section)
+
+    def retrieve_section(self, api_client, user, section):
+        api_client.force_authenticate(user)
         response = api_client.get(self.get_url(section.id))
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.SectionDetailSerializer(section).data
 
-    def test_update_section(self, api_client, admin, section):
+    def test_update_section_as_admin(self, api_client, admin, section):
+        self.update_section(api_client, admin, section)
+
+    def test_update_section_as_project_editor(self, api_client, editor, section):
+        section.project.editors.add(editor)
+        self.update_section(api_client, editor, section)
+
+    def update_section(self, api_client, user, section):
         new_name = "New Section Name"
         payload = {"name": new_name}
 
-        api_client.force_authenticate(admin)
+        api_client.force_authenticate(user)
         response = api_client.patch(self.get_url(section.id), data=payload, format="json")
 
         assert response.status_code == status.HTTP_200_OK
 
-    def test_delete_section(self, api_client, admin, section):
+    def test_delete_section_as_admin(self, api_client, admin, section):
+        self.delete_section(api_client, admin, section)
+
+    def test_delete_section_as_project_editor(self, api_client, editor, section):
+        section.project.editors.add(editor)
+        self.delete_section(api_client, editor, section)
+
+    def delete_section(self, api_client, user, section):
         section_id = section.id
-        api_client.force_authenticate(admin)
+        api_client.force_authenticate(user)
         response = api_client.delete(self.get_url(section.id))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
@@ -329,16 +363,30 @@ class TestListCreatePage:
     def get_url(pk):
         return reverse("pages:page_list_create", kwargs=dict(section_pk=pk))
 
-    def test_list_pages(self, api_client, admin, page):
-        api_client.force_authenticate(admin)
+    def test_list_pages_as_admin(self, api_client, admin, page):
+        self.list_pages(api_client, admin, page)
+
+    def test_list_pages_as_project_editor(self, api_client, editor, page):
+        page.project.editors.add(editor)
+        self.list_pages(api_client, editor, page)
+
+    def list_pages(self, api_client, user, page):
+        api_client.force_authenticate(user)
         response = api_client.get(self.get_url(page.section_id))
 
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["results"]) == 1
 
-    def test_create_page_without_blocks(
-        self, api_client, admin, project, page_template_factory, section_factory
+    def test_create_page_as_admin(self, api_client, admin, project, page_template_factory, section_factory):
+        self.create_page(api_client, admin, project, page_template_factory, section_factory)
+
+    def test_create_page_as_project_editor(
+        self, api_client, editor, project, page_template_factory, section_factory
     ):
+        project.editors.add(editor)
+        self.create_page(api_client, editor, project, page_template_factory, section_factory)
+
+    def create_page(self, api_client, user, project, page_template_factory, section_factory):
         section = section_factory(project=project)
         page_template = page_template_factory(project=project)
 
@@ -352,7 +400,7 @@ class TestListCreatePage:
             "is_public": True,
         }
 
-        api_client.force_authenticate(admin)
+        api_client.force_authenticate(user)
         response = api_client.post(self.get_url(section.id), data=payload, format="json")
         page = pages_models.Page.objects.get(id=response.data["id"])
 
@@ -611,18 +659,32 @@ class TestUpdateDeletePageView:
     def get_url(pk):
         return reverse("pages:page-detail", kwargs=dict(pk=pk))
 
-    def test_retrieve_page(self, api_client, admin, page):
-        api_client.force_authenticate(admin)
+    def test_retrieve_page_as_admin(self, api_client, admin, page):
+        self.retrieve_page(api_client, admin, page)
+
+    def test_retrieve_page_as_project_editor(self, api_client, editor, page):
+        page.project.editors.add(editor)
+        self.retrieve_page(api_client, editor, page)
+
+    def retrieve_page(self, api_client, user, page):
+        api_client.force_authenticate(user)
         response = api_client.get(self.get_url(page.id))
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.PageSerializer(page).data
 
-    def test_update_page(self, api_client, admin, page):
+    def test_update_page_as_admin(self, api_client, admin, page):
+        self.update_page(api_client, admin, page)
+
+    def test_update_page_as_project_editor(self, api_client, editor, page):
+        page.project.editors.add(editor)
+        self.update_page(api_client, editor, page)
+
+    def update_page(self, api_client, user, page):
         new_name = "New Page Name"
         payload = {"name": new_name}
 
-        api_client.force_authenticate(admin)
+        api_client.force_authenticate(user)
         response = api_client.patch(self.get_url(page.id), data=payload, format="json")
         page.refresh_from_db()
 
@@ -662,9 +724,16 @@ class TestUpdateDeletePageView:
         assert page.pageblock_set.count() == 1
         assert element.name == new_element_name
 
-    def test_delete_page(self, api_client, admin, page):
+    def test_delete_page_as_admin(self, api_client, admin, page):
+        self.delete_page(api_client, admin, page)
+
+    def test_delete_page_as_project_editor(self, api_client, editor, page):
+        page.project.editors.add(editor)
+        self.delete_page(api_client, editor, page)
+
+    def delete_page(self, api_client, user, page):
         page_id = page.id
-        api_client.force_authenticate(admin)
+        api_client.force_authenticate(user)
         response = api_client.delete(self.get_url(page.id))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
