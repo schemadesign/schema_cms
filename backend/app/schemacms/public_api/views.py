@@ -274,8 +274,12 @@ class PADataSourceView(
         ds = self.get_object()
         items = ds.active_job.meta_data.shape[0]
 
+        fields_names = ds.active_job.meta_data.fields_names
+        filters = records_reader.set_filters(request.query_params, fields_names)
+        filter_query = records_reader.create_query_string(filters)
+
         file = records_reader.read_parquet_file(ds, columns)
 
-        res = records_reader.get_paginated_list(file, items, page, page_size, orient)
+        res = records_reader.get_paginated_list(file, items, page, page_size, orient, filter_query)
 
         return response.Response(res)

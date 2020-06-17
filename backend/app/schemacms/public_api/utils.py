@@ -1,5 +1,7 @@
 import markdown
 
+from django.urls import reverse
+
 
 MARKDOWN_EXTENSIONS = [
     "sane_lists",
@@ -112,9 +114,18 @@ def plain_text_in_html(element):
 
 
 def state_in_html(element):
-    html_value = f"<div id='state-{element.id}' class='element state'><p>{element.state}</p></div>"
+    value = generate_state_element_url(element.state)
+
+    html_value = f"<div id='state-{element.id}' class='element state'><p>{value}</p></div>"
 
     return html_value
+
+
+def generate_state_element_url(state):
+    datasource = state.datasource
+
+    url = reverse("public_api:pa-datasources-records", args=[datasource.id])
+    return f"{url}?{state.build_filters_query_params()}"
 
 
 def markdown_in_html(element):

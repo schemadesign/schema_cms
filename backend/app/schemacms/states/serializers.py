@@ -45,6 +45,7 @@ class StateSerializer(serializers.ModelSerializer):
             "is_public",
             "created",
             "tags",
+            "fields",
             "filters",
         )
         validators = [
@@ -60,7 +61,9 @@ class StateSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
-        obj.add_tags(self.initial_data.get("tags", []))
+
+        if (tags := self.initial_data.get("tags")) is not None:
+            obj.add_tags(tags)
 
         if "filters" in self.initial_data:
             obj.filters.clear()
