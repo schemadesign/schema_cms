@@ -1,5 +1,7 @@
 import json
+from urllib import parse
 
+from django.conf import settings
 from rest_framework import serializers
 
 from ..projects import models as pr_models
@@ -107,6 +109,11 @@ class PABlockElementSerializer(ReadOnlySerializer):
         fields = ("id", "name", "type", "order", "value", "html")
 
     def get_value(self, obj):
+        if obj.type == ElementType.STATE:
+            if not obj.state:
+                return None
+            return parse.urljoin(settings.PUBLIC_API_URL, utils.generate_state_element_url(obj.state))
+
         if obj.type in [ElementType.IMAGE, ElementType.FILE]:
             if not obj.image:
                 return {}
