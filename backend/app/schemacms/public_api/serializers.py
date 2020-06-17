@@ -65,6 +65,8 @@ class PADataSourceListSerializer(ReadOnlySerializer):
             "created": obj.created.strftime("%Y-%m-%d"),
             "updated": obj.modified.strftime("%Y-%m-%d"),
             "custom_data": custom_data,
+            "source_file": obj.file.url,
+            "result_file": obj.active_job.result.url,
         }
 
 
