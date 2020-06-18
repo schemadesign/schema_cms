@@ -36,6 +36,34 @@ export const section = {
   created: '2020-03-09T10:41:17+0000',
 };
 
+export const pages = {
+  count: 11,
+  results: [
+    {
+      createdBy: 'owner',
+      created: '2020-03-09T10:41:17+0000',
+      name: 'page name',
+      id: 1,
+      templateName: 'templateName',
+      [PAGE_DISPLAY_NAME]: 'page-name',
+    },
+    {
+      createdBy: 'owner',
+      created: '2020-03-09T10:41:17+0000',
+      name: 'page name 2',
+      id: 2,
+      templateName: null,
+    },
+    {
+      createdBy: 'owner',
+      created: '2020-03-09T10:41:17+0000',
+      name: 'page name 3',
+      id: 3,
+      templateName: null,
+    },
+  ],
+};
+
 export const sections = [
   section,
   {
