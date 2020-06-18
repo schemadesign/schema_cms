@@ -88,6 +88,11 @@ export const blockTemplatesElementsValidation = () =>
                   [ELEMENT_TYPE]: Yup.string()
                     .trim()
                     .required('Required'),
+                  [ELEMENT_NAME]: Yup.string()
+                    .trim()
+                    .min(1, 'Element Name should have at least 1 character')
+                    .max(100, 'Element Name should have maximum 100 characters')
+                    .required('Required'),
                 })
               )
               .required('Required'),

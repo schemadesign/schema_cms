@@ -42,6 +42,7 @@ export const BlockTemplateElement = ({
         values={pathOr([], ['params', 'elements'], element)}
         valuePath={`${elementPath}.params.elements`}
         {...restFormikProps}
+        handleChange={handleChange}
         setFieldValue={setFieldValue}
       />
     )

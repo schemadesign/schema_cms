@@ -67,3 +67,9 @@ export const ElementIcon = styled.div`
 export const customLabelStyles = {
   borderTop: 'none',
 };
+
+export const ElementInputs = styled.div`
+  width: 100%;
+  max-width: calc(100% - ${2 * ICON_SIZE}px);
+  padding: 10px 0;
+`;

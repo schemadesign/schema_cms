@@ -9,6 +9,7 @@ export const defaultProps = {
   valuePath: 'valuePath',
   values: [{ type: PLAIN_TEXT_TYPE, id: 1 }],
   setFieldValue: Function.prototype,
+  handleChange: Function.prototype,
 };
 
 storiesOf('CustomElement', module)

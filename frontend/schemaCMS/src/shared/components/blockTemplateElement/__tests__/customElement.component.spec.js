@@ -27,7 +27,7 @@ describe('CustomElement: Component', () => {
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('valuePath', [
       { id: 1, order: 0, type: 'plain_text' },
-      { key: expect.any(Number), order: 1, type: '' },
+      { key: expect.any(Number), order: 1, type: '', name: '' },
     ]);
   });
 
