@@ -76,6 +76,23 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         return self.file
 
     @property
+    def formatted_meta(self):
+        custom_data = (
+            {d["key"]: d["value"] for d in self.description.data} if hasattr(self, "description") else {}
+        )
+
+        return {
+            "id": self.id,
+            "name": self.name,
+            "created_by": self.created_by.get_full_name(),
+            "created": self.created.strftime("%Y-%m-%d"),
+            "updated": self.modified.strftime("%Y-%m-%d"),
+            "custom_data": custom_data,
+            "source_file": self.file.url if self.file else None,
+            "result_file": self.active_job.result.url if self.active_job and self.active_job.result else None,
+        }
+
+    @property
     def meta_file_processing_type(self):
         return constants.WorkerProcessType.DATASOURCE_META_PROCESSING
 

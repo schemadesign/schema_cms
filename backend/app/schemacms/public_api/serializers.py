@@ -1,5 +1,4 @@
 import json
-from urllib import parse
 
 from django.conf import settings
 from rest_framework import serializers
@@ -56,20 +55,7 @@ class PADataSourceListSerializer(ReadOnlySerializer):
         return res
 
     def get_meta(self, obj):
-        custom_data = (
-            {d["key"]: d["value"] for d in obj.description.data} if hasattr(obj, "description") else {}
-        )
-
-        return {
-            "id": obj.id,
-            "name": obj.name,
-            "created_by": obj.created_by.get_full_name(),
-            "created": obj.created.strftime("%Y-%m-%d"),
-            "updated": obj.modified.strftime("%Y-%m-%d"),
-            "custom_data": custom_data,
-            "source_file": obj.file.url if obj.file else None,
-            "result_file": obj.active_job.result.url if obj.active_job.result else None,
-        }
+        return obj.formatted_meta
 
 
 class PADataSourceDetailNoRecordsSerializer(PADataSourceListSerializer):
@@ -114,7 +100,11 @@ class PABlockElementSerializer(ReadOnlySerializer):
         if obj.type == ElementType.STATE:
             if not obj.state:
                 return None
-            return parse.urljoin(settings.PUBLIC_API_URL, utils.generate_state_element_url(obj.state))
+
+            return {
+                "meta": obj.state.formatted_meta,
+                "url": f"{settings.PUBLIC_API_URL}{utils.generate_state_element_url(obj.state)}",
+            }
 
         if obj.type in [ElementType.IMAGE, ElementType.FILE]:
             if not obj.image:

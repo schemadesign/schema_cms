@@ -61,7 +61,6 @@ def generate_query_for_range(key, value):
 
 
 def generate_query_for_list(key, value):
-    breakpoint()
     params = f"`{key}` in {value['value']}"
 
     return params

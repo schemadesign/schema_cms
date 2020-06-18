@@ -32,6 +32,16 @@ class State(SoftDeleteObject, TimeStampedModel):
         ]
         ordering = ("created",)
 
+    @property
+    def formatted_meta(self):
+        return dict(
+            name=self.name,
+            datasource=self.datasource.formatted_meta,
+            description=self.description,
+            source_url=self.source_url,
+            author=self.author.get_full_name(),
+        )
+
     def add_tags(self, tags_list):
         self.tags.all().delete()
 

@@ -33,10 +33,14 @@ def internal_connection_in_html(element):
 
 
 def observable_in_html(element):
-    obs_user = element.observable_hq.observable_user
-    obs_notebook = element.observable_hq.observable_notebook
-    obs_params = element.observable_hq.observable_params
-    obs_cell = element.observable_hq.observable_cell
+    obs_user, obs_notebook, obs_params, obs_cell = None, None, None, None
+
+    if element.observable_hq:
+        obs_user = element.observable_hq.observable_user
+        obs_notebook = element.observable_hq.observable_notebook
+        obs_params = element.observable_hq.observable_params
+        obs_cell = element.observable_hq.observable_cell
+
     script_cdn_url = "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"
 
     html_value = (
@@ -114,17 +118,14 @@ def plain_text_in_html(element):
 
 
 def state_in_html(element):
-    value = generate_state_element_url(element.state)
-
-    html_value = f"<div id='state-{element.id}' class='element state'><p>{value}</p></div>"
-
-    return html_value
+    return ""
 
 
 def generate_state_element_url(state):
     datasource = state.datasource
 
-    url = reverse("public_api:pa-datasources-records", args=[datasource.id])
+    url = reverse("public_api:pa-datasources-records", args=[datasource.id]).split("/public-api/")[1]
+
     return f"{url}?{state.build_filters_query_params()}"
 
 
