@@ -6,7 +6,7 @@ import { isEmpty } from 'ramda';
 import reportError from '../../shared/utils/reportError';
 import { SectionsRoutines } from './sections.redux';
 import api from '../../shared/services/api';
-import { SECTIONS_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { SECTIONS_PATH, PROJECTS_PATH, INITIAL_PAGE_SIZE } from '../../shared/utils/api.constants';
 import { ProjectRoutines } from '../project';
 
 function* fetchSections({ payload: { projectId } }) {
@@ -53,6 +53,23 @@ function* fetchSection({ payload: { sectionId, ...query } }) {
     yield put(SectionsRoutines.fetchSection.failure(error));
   } finally {
     yield put(SectionsRoutines.fetchSection.fulfill());
+  }
+}
+
+function* fetchPages({ payload: { sectionId, ...query } }) {
+  try {
+    yield put(SectionsRoutines.fetchPages.request());
+    const formattedQuery = decamelizeKeys({ ...query, pageSize: INITIAL_PAGE_SIZE });
+    const url = stringifyUrl({ url: `${SECTIONS_PATH}/${sectionId}/pages`, query: formattedQuery });
+    const { data } = yield api.get(url);
+
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(SectionsRoutines.fetchPages.success({ ...data, isQuery: !isEmpty(query) }));
+  } catch (error) {
+    reportError(error);
+    yield put(SectionsRoutines.fetchPages.failure(error));
+  } finally {
+    yield put(SectionsRoutines.fetchPages.fulfill());
   }
 }
 
@@ -104,6 +121,7 @@ function* removeSection({ payload: { sectionId } }) {
 export function* watchSections() {
   yield all([
     takeLatest(SectionsRoutines.fetchSections.TRIGGER, fetchSections),
+    takeLatest(SectionsRoutines.fetchPages.TRIGGER, fetchPages),
     takeLatest(SectionsRoutines.fetchInternalConnections.TRIGGER, fetchInternalConnections),
     takeLatest(SectionsRoutines.fetchSection.TRIGGER, fetchSection),
     takeLatest(SectionsRoutines.createSection.TRIGGER, createSection),

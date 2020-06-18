@@ -19,3 +19,4 @@ export const PAGE_TEMPLATES_PATH = '/page-templates';
 export const SECTIONS_PATH = '/sections';
 export const TAGS_PATH = '/tags';
 export const METADATA_PATH = '/description';
+export const INITIAL_PAGE_SIZE = 10;

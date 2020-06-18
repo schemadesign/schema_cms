@@ -274,7 +274,7 @@ export const getUrlParams = history => {
 
   if (sortBy) {
     const isAscending = sortDirection === ASCENDING;
-    params.pagesOrder = isAscending ? sortBy : `-${sortBy}`;
+    params.ordering = isAscending ? sortBy : `-${sortBy}`;
   }
 
   return params;

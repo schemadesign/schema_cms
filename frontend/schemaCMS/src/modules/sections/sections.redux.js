@@ -14,6 +14,7 @@ export const SectionsRoutines = {
   createSection: createRoutine(`${PREFIX}CREATE_SECTION`),
   updateSection: createRoutine(`${PREFIX}UPDATE_SECTION`),
   removeSection: createRoutine(`${PREFIX}REMOVE_SECTION`),
+  fetchPages: createRoutine(`${PREFIX}FETCH_PAGES`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -21,6 +22,10 @@ export const INITIAL_STATE = new Immutable({
     pages: [],
     [SECTIONS_NAME]: '',
     [SECTIONS_PUBLISH]: false,
+  },
+  pages: {
+    count: 0,
+    results: [],
   },
   sections: [],
   internalConnections: [],
@@ -36,12 +41,15 @@ const reorderPages = payload =>
     evolve({ pages: pages => move(findIndex(propEq('id', payload.mainPage), pages), 0, pages) })
   )(payload);
 
-const setSection = (state = INITIAL_STATE, { payload }) =>
-  state.set('section', payload.isQuery ? payload : reorderPages(payload));
+const setSection = (state = INITIAL_STATE, { payload }) => state.set('section', payload);
+
+const setPages = (state = INITIAL_STATE, { payload }) =>
+  state.set('pages', payload.isQuery ? payload : reorderPages(payload));
 
 export const reducer = createReducer(INITIAL_STATE, {
   [SectionsRoutines.fetchSections.SUCCESS]: setSections,
   [SectionsRoutines.fetchInternalConnections.SUCCESS]: setInternalConnections,
   [SectionsRoutines.fetchSection.SUCCESS]: setSection,
+  [SectionsRoutines.fetchPages.SUCCESS]: setPages,
   [SectionsRoutines.updateSection.SUCCESS]: setSection,
 });

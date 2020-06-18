@@ -6,7 +6,7 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { PageList } from './pageList.component';
-import { SectionsRoutines, selectSection } from '../../../modules/sections';
+import { SectionsRoutines, selectPages, selectSection } from '../../../modules/sections';
 import { selectUserRole } from '../../../modules/userProfile';
 import { selectProject } from '../../../modules/project';
 
@@ -14,6 +14,7 @@ const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
   section: selectSection,
   project: selectProject,
+  pages: selectPages,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -22,6 +23,7 @@ export const mapDispatchToProps = dispatch => ({
       updateSection: promisifyRoutine(SectionsRoutines.updateSection),
       removeSection: promisifyRoutine(SectionsRoutines.removeSection),
       fetchSection: promisifyRoutine(SectionsRoutines.fetchSection),
+      fetchPages: promisifyRoutine(SectionsRoutines.fetchPages),
     },
     dispatch
   ),

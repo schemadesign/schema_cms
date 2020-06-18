@@ -17,3 +17,8 @@ export const selectSection = createSelector(
   selectSectionsDomain,
   prop('section')
 );
+
+export const selectPages = createSelector(
+  selectSectionsDomain,
+  prop('pages')
+);
