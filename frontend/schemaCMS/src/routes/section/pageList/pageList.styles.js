@@ -31,18 +31,25 @@ export const Pagination = styled.div`
   }
 
   li {
-    margin: 10px;
-  }
-
-  .selected {
+    margin: 6px;
     border-radius: 50%;
     width: 20px;
     height: 20px;
+  }
+
+  .previous,
+  .next {
+    border: none;
+    width: auto;
+  }
+
+  .selected,
+  & li:not(.previous):not(.next):hover {
     background-color: ${colors.white};
     color: ${colors.black};
   }
 
-  button {
-    padding: 2px;
+  a {
+    padding: 4px;
   }
 `;

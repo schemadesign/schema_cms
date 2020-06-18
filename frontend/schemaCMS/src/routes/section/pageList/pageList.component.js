@@ -64,6 +64,7 @@ import { PAGE_DISPLAY_NAME, PAGE_NAME } from '../../../modules/page/page.constan
 import { SortingSelect } from '../../../shared/components/form/sortingSelect/sortingSelect.component';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { EditIcon, BinIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
@@ -137,7 +138,7 @@ export const PageList = ({
   userRole,
 }) => {
   const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [error, setError] = useState(null);
   const { mainPage } = section;
   const [updateLoading, setUpdateLoading] = useState(false);
@@ -180,6 +181,8 @@ export const PageList = ({
     },
   });
 
+  const pageCount = pages.count / INITIAL_PAGE_SIZE;
+
   const fetchSectionFunc = async () => {
     try {
       const urlParams = getUrlParams(history);
@@ -214,6 +217,18 @@ export const PageList = ({
     history.push(`?${stringify(urlParams)}`);
     fetchSectionFunc();
   };
+
+  const renderPagination = renderWhenTrue(() => (
+    <Pagination>
+      <ReactPaginate
+        pageCount={pageCount}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={2}
+        onPageChange={handlePageChange}
+        forcePage={page}
+      />
+    </Pagination>
+  ));
 
   const nameInput = (
     <Subtitle>
@@ -286,15 +301,7 @@ export const PageList = ({
               />
             ))}
           </ListContainer>
-          <Pagination>
-            <ReactPaginate
-              pageCount={pages.count / INITIAL_PAGE_SIZE}
-              pageRangeDisplayed={2}
-              marginPagesDisplayed={2}
-              onPageChange={handlePageChange}
-              forcePage={page}
-            />
-          </Pagination>
+          {renderPagination(pageCount > 1)}
           <Switches>
             <SwitchContainer>
               <SwitchContent>
