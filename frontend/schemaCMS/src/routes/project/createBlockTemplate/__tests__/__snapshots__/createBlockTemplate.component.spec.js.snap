@@ -339,7 +339,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzomuh jgoMCq"
+    className="sc-fzqAui hflVXV"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -483,7 +483,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqMdD kYfsQV"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -505,7 +505,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -547,7 +547,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzqAui UFkpp"
+          className="sc-fzqMdD dQdcdV"
         >
           <span
             style={
@@ -560,7 +560,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-fzowVh eGVeRo"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -1156,7 +1156,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                   className="sc-fzoydu gVJPIu"
                 >
                   <div
-                    className="sc-fznLPX llUwmH"
+                    className="sc-fzoaKM fWnZUl"
                     onClick={[Function]}
                   >
                     <label
@@ -1466,7 +1466,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      className="sc-fzoaKM hFPMUE"
+                      className="sc-fzomuh MPWBf"
                     >
                       <svg
                         style={

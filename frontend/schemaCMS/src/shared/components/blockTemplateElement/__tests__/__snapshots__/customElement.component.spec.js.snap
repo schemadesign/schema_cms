@@ -5,20 +5,20 @@ exports[`CustomElement: Component should render correctly 1`] = `
   className="sc-AxheI hCJNlC"
 >
   <div
-    className="sc-fznJRM dOdAYw"
+    className="sc-fznWqX jvqfTb"
   >
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     />
     1 Element
     <div
-      className="sc-fznWqX ieLPDX"
+      className="sc-fzoiQi fTUSEt"
     >
       <div
-        className="sc-fzoLag edhcrz"
+        className="sc-fzoXzr kozlLJ"
       >
         <div
-          className="sc-fzoXWK kza-dYs"
+          className="sc-fzpmMD PQZfb"
         >
           <button
             disabled={false}
@@ -86,7 +86,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
       >
         <div>
           <div
-            className="sc-fznxsB fXkFDe"
+            className="sc-fznJRM bqunVi"
           >
             <svg
               style={
@@ -107,297 +107,372 @@ exports[`CustomElement: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxmLO jqOulK"
-          onClick={[Function]}
+          className="sc-AxmLO beSeWJ"
         >
-          <input
-            id="valuePath.0"
-            name="valuePath.0"
-            type="hidden"
-            value="plain_text"
-          />
           <div
-            style={
-              Object {
-                "color": "#FFF",
-                "display": "flex",
-                "width": "100%",
-              }
-            }
+            className="sc-fzozJi cPpeDz"
+            onClick={[Function]}
           >
-            <div
+            <input
               id="valuePath.0"
+              name="valuePath.0"
+              type="hidden"
+              value="plain_text"
+            />
+            <div
               style={
                 Object {
-                  "cursor": "pointer",
+                  "color": "#FFF",
                   "display": "flex",
-                  "position": "relative",
                   "width": "100%",
                 }
               }
             >
               <div
-                onClick={[Function]}
+                id="valuePath.0"
                 style={
                   Object {
                     "cursor": "pointer",
                     "display": "flex",
+                    "position": "relative",
                     "width": "100%",
                   }
                 }
               >
                 <div
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Plain text
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "WebkitOverflowScrolling": "touch",
-                    "backgroundColor": "#1d1d20",
-                    "display": "none",
-                    "flexDirection": "column",
-                    "left": "0",
-                    "maxHeight": "184px",
-                    "overflowY": "hidden",
-                    "position": "absolute",
-                    "top": "calc(100% + 5px)",
-                    "width": "100%",
-                    "zIndex": 2,
-                  }
-                }
-              >
-                <div
-                  id="select-item-0"
                   onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
                   style={
                     Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "1px solid  #2F2F36",
-                      "color": "#71737e",
                       "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                      "display": "flex",
+                      "width": "100%",
                     }
                   }
                 >
-                  Markdown
+                  <div
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Plain text
+                  </div>
                 </div>
                 <div
-                  id="select-item-1"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFF",
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#000",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                      "WebkitOverflowScrolling": "touch",
+                      "backgroundColor": "#1d1d20",
+                      "display": "none",
+                      "flexDirection": "column",
+                      "left": "0",
+                      "maxHeight": "184px",
+                      "overflowY": "hidden",
+                      "position": "absolute",
+                      "top": "calc(100% + 5px)",
+                      "width": "100%",
+                      "zIndex": 2,
                     }
                   }
                 >
-                  Plain text
-                </div>
-                <div
-                  id="select-item-2"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  <div
+                    id="select-item-0"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "1px solid  #2F2F36",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  File
-                </div>
-                <div
-                  id="select-item-3"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  >
+                    Markdown
+                  </div>
+                  <div
+                    id="select-item-1"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFF",
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#000",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  Image
-                </div>
-                <div
-                  id="select-item-4"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  >
+                    Plain text
+                  </div>
+                  <div
+                    id="select-item-2"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  Code
-                </div>
-                <div
-                  id="select-item-5"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  >
+                    File
+                  </div>
+                  <div
+                    id="select-item-3"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  Connection
-                </div>
-                <div
-                  id="select-item-6"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  >
+                    Image
+                  </div>
+                  <div
+                    id="select-item-4"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  Internal Connection
-                </div>
-                <div
-                  id="select-item-7"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  >
+                    Code
+                  </div>
+                  <div
+                    id="select-item-5"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  ObservableHQ
-                </div>
-                <div
-                  id="select-item-8"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  >
+                    Connection
+                  </div>
+                  <div
+                    id="select-item-6"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  Embed Video
-                </div>
-                <div
-                  id="select-item-9"
-                  onClick={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  style={
-                    Object {
-                      "border": "1px solid  #2F2F36",
-                      "borderTop": "none",
-                      "color": "#71737e",
-                      "cursor": "pointer",
-                      "overflow": "hidden",
-                      "padding": "20px 10px",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
+                  >
+                    Internal Connection
+                  </div>
+                  <div
+                    id="select-item-7"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
                     }
-                  }
-                >
-                  State
+                  >
+                    ObservableHQ
+                  </div>
+                  <div
+                    id="select-item-8"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Embed Video
+                  </div>
+                  <div
+                    id="select-item-9"
+                    onClick={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "border": "1px solid  #2F2F36",
+                        "borderTop": "none",
+                        "color": "#71737e",
+                        "cursor": "pointer",
+                        "overflow": "hidden",
+                        "padding": "20px 10px",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    State
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              className="sc-fzoLsD eMjNCI"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M15.117 18L9 12h12z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
           </div>
           <div
-            className="sc-fzozJi eodxki"
+            className="sc-fznxKY kkmTAu"
           >
-            <svg
+            <div
               style={
                 Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "maxWidth": "100%",
+                  "paddingBottom": 0,
+                  "position": "relative",
                 }
               }
-              viewBox="0 0 30 30"
             >
-              <path
-                d="M15.117 18L9 12h12z"
-                fillRule="evenodd"
+              <input
+                id="valuePath.0.name"
+                name="valuePath.0.name"
+                onChange={[Function]}
+                placeholder="Name"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "outline": "none",
+                    "padding": 0,
+                    "width": 80,
+                  }
+                }
+                type="text"
               />
-            </svg>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "color": "#FFF",
+                    "fontFamily": "inherit",
+                    "fontSize": "18px",
+                    "fontWeight": "inherit",
+                    "letterSpacing": "normal",
+                    "lineHeight": "24px",
+                    "maxWidth": "100%",
+                    "minWidth": 60,
+                    "opacity": 0,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "fixed",
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 2,
+                  }
+                }
+              />
+            </div>
           </div>
         </div>
         <div

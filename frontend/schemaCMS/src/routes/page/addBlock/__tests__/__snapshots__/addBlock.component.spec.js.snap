@@ -339,7 +339,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznLPX kxUDhz"
+    className="sc-fzoaKM feXNyN"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzomuh biOhdi"
+          className="sc-fzqAui ftZhkp"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fzqAui dxjsKW"
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzomuh biOhdi"
+          className="sc-fzqAui ftZhkp"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fzqAui dxjsKW"
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -483,7 +483,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzomuh biOhdi"
+          className="sc-fzqAui ftZhkp"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -505,7 +505,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-fzqAui dxjsKW"
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -541,7 +541,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzomuh biOhdi"
+          className="sc-fzqAui ftZhkp"
           href="/page/1"
           onClick={[Function]}
           style={
@@ -563,7 +563,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-fzqAui dxjsKW"
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -599,7 +599,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoaKM fphyjl"
+          className="sc-fzomuh guXnuO"
         >
           <span
             style={
@@ -612,7 +612,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Block
           </span>
           <h3
-            className="sc-fzqAui dxjsKW"
+            className="sc-fzqMdD cyMazC"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -636,13 +636,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqMdD eoFjaa"
+    className="sc-fzowVh jGfnsY"
   >
     <div
-      className="sc-fzowVh kuGhAF"
+      className="sc-fzoJus jxumoA"
     >
       <h2
-        className="sc-fzoJus kYjoBX"
+        className="sc-fzoVTD FFTXJ"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -656,7 +656,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         Block
       </h2>
       <h1
-        className="sc-fzoVTD FFTXJ"
+        className="sc-fzpisO haAOOl"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -673,7 +673,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fzpisO ciFKdv"
+      className="sc-fznyYp ePFTkY"
     />
   </div>
   <form

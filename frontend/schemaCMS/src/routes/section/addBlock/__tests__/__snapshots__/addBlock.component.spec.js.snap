@@ -337,7 +337,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fznAgC cBHJpy"
+    className="sc-fznLPX kxUDhz"
   >
     <div
       style={
@@ -359,7 +359,7 @@ Array [
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzomuh biOhdi"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -381,7 +381,7 @@ Array [
             Project
           </span>
           <h3
-            className="sc-fzomuh bUSbHp"
+            className="sc-fzqAui dxjsKW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -417,7 +417,7 @@ Array [
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzomuh biOhdi"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -439,7 +439,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-fzomuh bUSbHp"
+            className="sc-fzqAui dxjsKW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -481,7 +481,7 @@ Array [
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzomuh biOhdi"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -503,7 +503,7 @@ Array [
             Section
           </span>
           <h3
-            className="sc-fzomuh bUSbHp"
+            className="sc-fzqAui dxjsKW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -539,7 +539,7 @@ Array [
         }
       >
         <a
-          className="sc-fzoaKM koKAGd"
+          className="sc-fzomuh biOhdi"
           href="/section/1/create-page"
           onClick={[Function]}
           style={
@@ -561,7 +561,7 @@ Array [
             Page
           </span>
           <h3
-            className="sc-fzomuh bUSbHp"
+            className="sc-fzqAui dxjsKW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -603,7 +603,7 @@ Array [
         }
       >
         <div
-          className="sc-fznLPX dCkfEv"
+          className="sc-fzoaKM fphyjl"
         >
           <span
             style={
@@ -616,7 +616,7 @@ Array [
             Block
           </span>
           <h3
-            className="sc-fzomuh bUSbHp"
+            className="sc-fzqAui dxjsKW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -640,13 +640,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fzqAui cBuoVu"
+    className="sc-fzqMdD eoFjaa"
   >
     <div
-      className="sc-fzqMdD fRtdRb"
+      className="sc-fzowVh kuGhAF"
     >
       <h2
-        className="sc-fzowVh cjhPAW"
+        className="sc-fzoJus kYjoBX"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -660,7 +660,7 @@ Array [
         Block
       </h2>
       <h1
-        className="sc-fzoJus kYjoBX"
+        className="sc-fzoVTD FFTXJ"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -677,7 +677,7 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-fzoVTD fwKNiT"
+      className="sc-fzpisO ciFKdv"
     />
   </div>,
   <form

@@ -55,7 +55,7 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxmLO eRTYCZ"
+        className="sc-fzozJi kFXChY"
       >
         <div
           style={
@@ -199,7 +199,7 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
         className="sc-AxhCb czPhVR"
       >
         <div
-          className="sc-fzpans bkupDd"
+          className="sc-fzplWN loPQEM"
           onClick={[Function]}
         >
           <label
@@ -510,7 +510,7 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzplWN eObYBF"
+            className="sc-fznyAO huspmh"
           >
             <svg
               style={

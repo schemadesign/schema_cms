@@ -14,18 +14,20 @@ import {
   ElementsContainer,
   customElementSelectStyles,
   RemoveIcon,
+  ElementInputs,
 } from './blockTemplateElement.styles';
 import messages from './blockTemplateElement.messages';
-import { CUSTOM_ELEMENTS_TYPES } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { CUSTOM_ELEMENTS_TYPES, ELEMENT_NAME } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Select } from '../form/select';
 import { IconWrapper, menuIconStyles, mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
 import { CounterHeader } from '../counterHeader';
 import { PlusButton } from '../navigation';
 import { mapAndAddOrder } from '../../utils/helpers';
+import { TextInput } from '../form/inputs/textInput';
 
 const { MenuIcon, MinusIcon } = Icons;
 
-export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikProps }) => {
+export const CustomElement = ({ values, valuePath, setFieldValue, handleChange, ...restFormikProps }) => {
   const orderedValues = mapAndAddOrder(values);
   const intl = useIntl();
   const elementOptions = CUSTOM_ELEMENTS_TYPES.map(type => ({
@@ -33,7 +35,10 @@ export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikP
     value: type,
   }));
   const addElement = () =>
-    setFieldValue(valuePath, orderedValues.concat({ type: '', key: Date.now(), order: orderedValues.length }));
+    setFieldValue(
+      valuePath,
+      orderedValues.concat({ type: '', key: Date.now(), order: orderedValues.length, name: '' })
+    );
   const removeElement = index => setFieldValue(valuePath, remove(index, 1, orderedValues));
   const handleElementSelect = (value, index) => setFieldValue(`${valuePath}.${index}.type`, value);
   const handleMove = (dragIndex, hoverIndex) => {
@@ -79,17 +84,28 @@ export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikP
               return (
                 <ElementContainer>
                   {draggableIcon}
-                  <Select
-                    name={`${valuePath}.${index}`}
-                    value={element.type}
-                    options={elementOptions}
-                    id={`${valuePath}.${index}`}
-                    onSelect={({ value }) => handleElementSelect(value, index)}
-                    placeholder={intl.formatMessage(messages.typePlaceholder)}
-                    centerIcon
-                    customStyles={customElementSelectStyles}
-                    {...restFormikProps}
-                  />
+                  <ElementInputs>
+                    <Select
+                      name={`${valuePath}.${index}`}
+                      value={element.type}
+                      options={elementOptions}
+                      id={`${valuePath}.${index}`}
+                      onSelect={({ value }) => handleElementSelect(value, index)}
+                      placeholder={intl.formatMessage(messages.typePlaceholder)}
+                      centerIcon
+                      customStyles={customElementSelectStyles}
+                      {...restFormikProps}
+                    />
+                    <TextInput
+                      name={`${valuePath}.${index}.${ELEMENT_NAME}`}
+                      placeholder={intl.formatMessage(messages.namePlaceholder)}
+                      onChange={handleChange}
+                      fullWidth
+                      autoWidth
+                      value={element[ELEMENT_NAME]}
+                      {...restFormikProps}
+                    />
+                  </ElementInputs>
                   <RemoveIcon onClick={() => removeElement(index)} id={`remove-${valuePath}.${index}`}>
                     <MinusIcon />
                   </RemoveIcon>
@@ -106,5 +122,6 @@ export const CustomElement = ({ values, valuePath, setFieldValue, ...restFormikP
 CustomElement.propTypes = {
   valuePath: PropTypes.string.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   values: PropTypes.array.isRequired,
 };

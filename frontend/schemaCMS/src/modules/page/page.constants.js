@@ -130,9 +130,6 @@ export const PAGE_SCHEMA = Yup.object().shape({
                 Yup.object().shape({
                   elements: Yup.array().of(
                     Yup.object().shape({
-                      [ELEMENT_NAME]: Yup.string()
-                        .trim()
-                        .max(100, 'Element Name should have maximum 100 characters'),
                       [ELEMENT_VALUE]: elementValueValidation(),
                     })
                   ),
