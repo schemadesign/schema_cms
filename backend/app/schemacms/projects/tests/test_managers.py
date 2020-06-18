@@ -16,16 +16,20 @@ class TestProjectQuerySet:
         with django_assert_num_queries(0):
             assert project_refreshed.data_source_count == expected
 
-    def test_annotate_templates_count(
-        self, django_assert_num_queries, faker, project, block_template_factory, page_template_factory
-    ):
-        expected_block_templates = faker.pyint(min_value=0, max_value=3)
-        expected_page_templates = faker.pyint(min_value=0, max_value=3)
-        block_template_factory.create_batch(expected_block_templates, project=project)
-        page_template_factory.create_batch(expected_page_templates, project=project)
+    def test_annotate_pages_count(self, django_assert_num_queries, faker, project, page_factory):
+        expected = faker.pyint(min_value=0, max_value=3)
+        page_factory.create_batch(expected, project=project)
 
-        project_refreshed = models.Project.objects.all().annotate_templates_count().get(pk=project.pk)
+        project_refreshed = models.Project.objects.all().annotate_pages_count().get(pk=project.pk)
 
         with django_assert_num_queries(0):
-            assert project_refreshed.block_templates == expected_block_templates
-            assert project_refreshed.page_templates == expected_page_templates
+            assert project_refreshed.pages_count == expected
+
+    def test_annotate_states_count(self, django_assert_num_queries, faker, project, state_factory):
+        expected = faker.pyint(min_value=0, max_value=3)
+        state_factory.create_batch(expected, datasource__project=project)
+
+        project_refreshed = models.Project.objects.all().annotate_states_count().get(pk=project.pk)
+
+        with django_assert_num_queries(0):
+            assert project_refreshed.states_count == expected

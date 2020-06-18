@@ -67,9 +67,9 @@ class Project(
     @functional.cached_property
     def templates_count(self):
         return {
-            "blocks": self.block_templates,
-            "pages": self.page_templates,
-            "tags": self.tags_count,
+            "blocks": self.blocktemplate_set.count(),
+            "pages": self.page_set.templates().count(),
+            "tags": self.tags_categories.count(),
             "states": 0,
         }
 

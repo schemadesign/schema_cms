@@ -1,44 +1,57 @@
 import softdelete.models
 from django.db import models
+from django.db.models.functions import Coalesce
 
 from ..utils.managers import generate_soft_delete_manager
 
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_data_source_count(self):
+        from ..datasources.models import DataSource
+
+        subquery = (
+            DataSource.objects.order_by()
+            .values("project")
+            .filter(project=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
         return self.annotate(
-            data_source_count=models.Count(
-                "data_sources", filter=models.Q(data_sources__deleted_at__isnull=True), distinct=True
+            data_source_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
 
     def annotate_states_count(self):
+        from ..states.models import State
+
+        subquery = (
+            State.objects.order_by()
+            .values("datasource__project")
+            .filter(datasource__project=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
         return self.annotate(
-            states_count=models.Count(
-                "data_sources__states",
-                filter=models.Q(data_sources__states__deleted_at__isnull=True),
-                distinct=True,
+            states_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
 
-    def annotate_templates_count(self):
-        return self.annotate(
-            block_templates=models.Count(
-                "blocktemplate", filter=models.Q(blocktemplate__deleted_at__isnull=True), distinct=True,
-            ),
-            page_templates=models.Count(
-                "page", filter=models.Q(page__deleted_at__isnull=True, page__is_template=True), distinct=True
-            ),
-            tags_count=models.Count(
-                "tags_categories", filter=models.Q(tags_categories__deleted_at__isnull=True), distinct=True
-            ),
-        )
-
     def annotate_pages_count(self):
+        from ..pages.models import Page
+
+        subquery = (
+            Page.objects.order_by()
+            .values("project")
+            .filter(project=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
         return self.annotate(
-            pages_count=models.Count(
-                "page", filter=models.Q(page__deleted_at__isnull=True, page__is_template=False), distinct=True
-            ),
+            pages_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
+            )
         )
 
 
