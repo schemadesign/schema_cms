@@ -33,7 +33,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         return (
             queryset.annotate_data_source_count()
             .annotate_states_count()
-            .annotate_templates_count()
             .annotate_pages_count()
             .select_related("owner")
             .prefetch_related("editors", "blocktemplate_set", "page_set")

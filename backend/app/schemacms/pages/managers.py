@@ -13,6 +13,9 @@ class PageManager(softdelete.models.SoftDeleteManager):
     def get_queryset(self):
         return super().get_queryset().filter(is_template=False)
 
+    def templates(self):
+        return super().get_queryset().filter(is_template=True)
+
 
 class SectionQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_pages_count(self):
