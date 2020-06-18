@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cond, pathEq, T } from 'ramda';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
+import { useIntl } from 'react-intl';
 
 import { DetailsContainer, Header, IconContainer, customInputStyles } from './blockElement.styles';
 import {
@@ -23,6 +24,7 @@ import { CustomElement } from './customElement.component';
 import { EmbedVideoElement } from './embedVideoElement.component';
 import { TextInput } from '../form/inputs/textInput';
 import { StateElement } from './stateElement.component';
+import messages from './blockElement.messages';
 
 const { MinusIcon, EditIcon } = Icons;
 
@@ -42,17 +44,18 @@ export const getElementComponent = props =>
 export const BlockElement = props => {
   const { element, handleChange, index, blockPath, ...restFormikProps } = props;
   const elementPath = `${blockPath}.elements.${index}.name`;
+  const intl = useIntl();
 
   return (
     <AccordionPanel autoOpen>
       <AccordionHeader>
-        <Header>
+        <Header icons={2}>
           <IconContainer>
             <MinusIcon />
           </IconContainer>
           <TextInput
             name={elementPath}
-            placeholder={'Element Name'}
+            placeholder={intl.formatMessage(messages.elementNamePlaceholder)}
             onChange={handleChange}
             autoWidth
             fullWidth

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { media } from '../../../theme/media';
 
 const ICON_CONTAINER_WIDTH = 50;
-const ICON_SIZE = 30;
+const ICON_SIZE = 40;
 
 export const DetailsContainer = styled.div`
   ${media.desktop`
@@ -15,7 +15,7 @@ export const Header = styled.div`
   display: flex;
   flex-direction: row;
 
-  max-width: calc(100% - ${ICON_CONTAINER_WIDTH}px - ${ICON_SIZE}px);
+  max-width: ${({ icons }) => `calc(100% - ${icons * ICON_SIZE}px)`};
 `;
 
 export const SelectLabel = styled.div`
@@ -145,6 +145,7 @@ export const SetElementContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: calc(100% - 70px);
 `;
 
 export const RemoveContainer = styled.div`

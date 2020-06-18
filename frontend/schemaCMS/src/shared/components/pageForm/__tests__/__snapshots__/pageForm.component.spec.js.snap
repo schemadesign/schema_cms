@@ -1240,7 +1240,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -1523,7 +1523,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -1909,7 +1909,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -2198,7 +2198,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -2779,7 +2779,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -3278,7 +3278,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -3544,7 +3544,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqAbL gUsXa-d"
                           >
                             <div
                               style={
@@ -3570,7 +3570,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.0.elements.0.name"
+                                        name="blocks.0.elements.5.value.0.elements.0.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -3732,7 +3829,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.0.elements.1.name"
+                                        name="blocks.0.elements.5.value.0.elements.1.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -3894,7 +4088,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Markdown
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.0.elements.2.name"
+                                        name="blocks.0.elements.5.value.0.elements.2.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -4394,7 +4685,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqAbL gUsXa-d"
                           >
                             <div
                               style={
@@ -4420,7 +4711,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.1.elements.0.name"
+                                        name="blocks.0.elements.5.value.1.elements.0.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -4582,7 +4970,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.1.elements.1.name"
+                                        name="blocks.0.elements.5.value.1.elements.1.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -4744,7 +5229,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Markdown
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.1.elements.2.name"
+                                        name="blocks.0.elements.5.value.1.elements.2.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -5244,7 +5826,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqAbL gUsXa-d"
                           >
                             <div
                               style={
@@ -5270,7 +5852,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.2.elements.0.name"
+                                        name="blocks.0.elements.5.value.2.elements.0.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -5432,7 +6111,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.2.elements.1.name"
+                                        name="blocks.0.elements.5.value.2.elements.1.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -5594,7 +6370,104 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Markdown
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.2.elements.2.name"
+                                        name="blocks.0.elements.5.value.2.elements.2.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -7415,7 +8288,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -7698,7 +8571,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -8084,7 +8957,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -8373,7 +9246,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -8954,7 +9827,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -9453,7 +10326,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               >
                 <div
-                  className="sc-fzoxKX fCIjRA"
+                  className="sc-fzoxKX ePvKdo"
                 >
                   <div
                     className="sc-fzoant jtXLqR"
@@ -9719,7 +10592,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqAbL gUsXa-d"
                           >
                             <div
                               style={
@@ -9745,7 +10618,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.0.elements.0.name"
+                                        name="blocks.0.elements.5.value.0.elements.0.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -9907,7 +10877,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.0.elements.1.name"
+                                        name="blocks.0.elements.5.value.0.elements.1.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -10069,7 +11136,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Markdown
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.0.elements.2.name"
+                                        name="blocks.0.elements.5.value.0.elements.2.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -10569,7 +11733,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqAbL gUsXa-d"
                           >
                             <div
                               style={
@@ -10595,7 +11759,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.1.elements.0.name"
+                                        name="blocks.0.elements.5.value.1.elements.0.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -10757,7 +12018,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.1.elements.1.name"
+                                        name="blocks.0.elements.5.value.1.elements.1.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -10919,7 +12277,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Markdown
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.1.elements.2.name"
+                                        name="blocks.0.elements.5.value.1.elements.2.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -11419,7 +12874,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqAbL jXfQvz"
+                            className="sc-fzqAbL gUsXa-d"
                           >
                             <div
                               style={
@@ -11445,7 +12900,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.2.elements.0.name"
+                                        name="blocks.0.elements.5.value.2.elements.0.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -11607,7 +13159,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Plain text
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.2.elements.1.name"
+                                        name="blocks.0.elements.5.value.2.elements.1.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
@@ -11769,7 +13418,104 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Markdown
+                                <div
+                                  className="sc-fzoxKX kyIIyM"
+                                >
+                                  <div
+                                    className="sc-fzokOt ihUAFl"
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "display": "flex",
+                                          "flexDirection": "column",
+                                          "maxWidth": "100%",
+                                          "paddingBottom": 0,
+                                          "position": "relative",
+                                        }
+                                      }
+                                    >
+                                      <input
+                                        id="blocks.0.elements.5.value.2.elements.2.name"
+                                        name="blocks.0.elements.5.value.2.elements.2.name"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="Element Name"
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "width": 80,
+                                          }
+                                        }
+                                        type="text"
+                                        value="name"
+                                      />
+                                      <div
+                                        style={
+                                          Object {
+                                            "backgroundColor": "transparent",
+                                            "border": "none",
+                                            "color": "#FFF",
+                                            "fontFamily": "inherit",
+                                            "fontSize": 16,
+                                            "fontWeight": "inherit",
+                                            "letterSpacing": "normal",
+                                            "lineHeight": "24px",
+                                            "maxWidth": "100%",
+                                            "minWidth": 90,
+                                            "opacity": 0,
+                                            "outline": "none",
+                                            "padding": 0,
+                                            "position": "fixed",
+                                            "visibility": "hidden",
+                                            "whiteSpace": "pre",
+                                          }
+                                        }
+                                      >
+                                        name
+                                      </div>
+                                      <div
+                                        style={
+                                          Object {
+                                            "position": "absolute",
+                                            "right": 0,
+                                            "top": 2,
+                                          }
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="sc-fzoant jtXLqR"
+                                  >
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "30px",
+                                          "width": "30px",
+                                        }
+                                      }
+                                      viewBox="0 0 30 30"
+                                    >
+                                      <path
+                                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                                 <div
                                   onClick={[Function]}
                                   style={
