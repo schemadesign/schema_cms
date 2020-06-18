@@ -9,16 +9,25 @@ import { useIntl } from 'react-intl';
 import { pathOr, pipe, map, remove } from 'ramda';
 
 import { getValuePath, mapAndAddOrder, setDefaultValue } from '../../utils/helpers';
-import { BLOCK_ID, BLOCK_KEY } from '../../../modules/page/page.constants';
+import { BLOCK_ID, BLOCK_KEY, BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
 import { IconWrapper, menuIconStyles, mobilePlusStyles, PlusContainer } from '../form/frequentComponents.styles';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
 import { PlusButton } from '../navigation';
 import { getElementComponent } from './blockElement.component';
-import { SetElement, SetElementContent, RemoveContainer } from './blockElement.styles';
+import {
+  SetElement,
+  SetElementContent,
+  RemoveContainer,
+  customInputStyles,
+  IconContainer,
+  Header,
+} from './blockElement.styles';
 import messages from './blockElement.messages';
+import { TextInput } from '../form/inputs/textInput';
+import { ELEMENT_NAME } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-const { MenuIcon, CloseIcon } = Icons;
+const { MenuIcon, CloseIcon, EditIcon } = Icons;
 
 export const CustomElement = ({ element, blockPath, handleChange, index, setFieldValue, ...restFormikProps }) => {
   const intl = useIntl();
@@ -37,7 +46,8 @@ export const CustomElement = ({ element, blockPath, handleChange, index, setFiel
   const addSet = () => {
     const elements = pipe(
       pathOr([], ['params', 'elements']),
-      map(setDefaultValue)
+      map(setDefaultValue),
+      map(item => ({ ...item, name: intl.formatMessage(messages[item.type]) }))
     )(element);
 
     setFieldValue(valuePath, [...value, { key: Date.now(), elements, order: value.length }]);
@@ -95,7 +105,23 @@ export const CustomElement = ({ element, blockPath, handleChange, index, setFiel
                     <SetElementContent>
                       {block.elements.map((item, index) => (
                         <AccordionPanel key={index}>
-                          <AccordionHeader>{intl.formatMessage(messages[item.type])}</AccordionHeader>
+                          <AccordionHeader>
+                            <Header icons={1}>
+                              <TextInput
+                                name={`${valuePath}.${parentIndex}.${BLOCK_ELEMENTS}.${index}.${ELEMENT_NAME}`}
+                                placeholder={intl.formatMessage(messages.elementNamePlaceholder)}
+                                onChange={handleChange}
+                                autoWidth
+                                fullWidth
+                                value={item[ELEMENT_NAME]}
+                                customInputStyles={customInputStyles}
+                                {...restFormikProps}
+                              />
+                              <IconContainer>
+                                <EditIcon />
+                              </IconContainer>
+                            </Header>
+                          </AccordionHeader>
                           <AccordionDetails>
                             {getElementComponent({
                               element: item,
