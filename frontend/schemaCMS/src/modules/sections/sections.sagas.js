@@ -95,6 +95,7 @@ function* updateSection({ payload: { sectionId, formData } }) {
     const { data } = yield api.patch(`${SECTIONS_PATH}/${sectionId}`, formData);
 
     yield put(SectionsRoutines.updateSection.success(data));
+    yield fetchPages({ payload: { sectionId } });
   } catch (error) {
     reportError(error);
     yield put(SectionsRoutines.updateSection.failure(error));

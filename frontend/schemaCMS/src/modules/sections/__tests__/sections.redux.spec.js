@@ -2,12 +2,16 @@ import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
 import { reducer as sectionsReducer, SectionsRoutines } from '../sections.redux';
-import { section as sectionMock } from '../sections.mocks';
+import { section as sectionMock, pages as pagesMock } from '../sections.mocks';
 
 describe('Sections: redux', () => {
   const state = Immutable({
     section: { isPublic: false, name: '', pages: [] },
     sections: [],
+    pages: {
+      count: 0,
+      results: [],
+    },
     internalConnections: [],
   });
 
@@ -27,6 +31,15 @@ describe('Sections: redux', () => {
       const resultState = sectionsReducer(state, SectionsRoutines.fetchSections.success(sections));
 
       expect(resultState.sections).to.deep.equal(sections);
+    });
+  });
+
+  describe('when SECTIONS/FETCH_PAGES_SUCCESS action is received', () => {
+    it('should set pages', () => {
+      const pages = [{ data: 'data' }];
+      const resultState = sectionsReducer(state, SectionsRoutines.fetchPages.success(pages));
+
+      expect(resultState.pages).to.deep.equal(pages);
     });
   });
 
@@ -61,6 +74,7 @@ describe('Sections: redux', () => {
 
     it('should move main page to beginning of pages', () => {
       const section = sectionMock;
+      const pages = pagesMock;
       const resultState = sectionsReducer(state, SectionsRoutines.updateSection.success(section));
 
       expect(resultState.section).to.deep.equal({
