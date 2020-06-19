@@ -8,6 +8,7 @@ from django_extensions.db import models as ext_models
 
 from . import constants, managers
 from ..users import constants as users_constants
+from ..pages.models import PageTemplate
 
 
 class Project(
@@ -68,7 +69,7 @@ class Project(
     def templates_count(self):
         return {
             "blocks": self.blocktemplate_set.count(),
-            "pages": self.page_set.templates().count(),
+            "pages": PageTemplate.objects.filter(project=self).count(),
             "tags": self.tags_categories.count(),
             "states": 0,
         }
