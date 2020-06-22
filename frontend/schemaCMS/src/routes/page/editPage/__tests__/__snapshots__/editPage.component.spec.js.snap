@@ -1599,7 +1599,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-fzoJMP jUvWfT"
+                className="sc-fzoJMP dsppYC"
               >
                 <div
                   className="sc-fzoYHE kEgiTH"
@@ -1741,7 +1741,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzpkqZ epPYYh"
+                className="sc-fzpkqZ fevEne"
               >
                 type
               </div>
