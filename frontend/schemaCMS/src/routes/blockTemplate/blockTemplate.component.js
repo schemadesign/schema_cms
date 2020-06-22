@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useFormik } from 'formik';
@@ -65,8 +65,9 @@ export const BlockTemplate = memo(
     updateBlockTemplate,
     fetchBlockTemplate,
     removeBlockTemplate,
+    fetchProject,
     userRole,
-    blockTemplate: { name, elements, isAvailable, allowEdit },
+    blockTemplate: { name, elements, isAvailable, allowEdit, project: projectId },
     project,
   }) => {
     const { blockTemplateId } = useParams();
@@ -133,6 +134,13 @@ export const BlockTemplate = memo(
         }
       })();
     });
+
+    useEffect(() => {
+      if (projectId) {
+        fetchProject({ projectId });
+      }
+    }, [projectId]);
+
     const title = <FormattedMessage {...messages.title} />;
     const subtitle = <FormattedMessage {...messages.subtitle} />;
 
@@ -198,4 +206,5 @@ BlockTemplate.propTypes = {
   fetchBlockTemplate: PropTypes.func.isRequired,
   updateBlockTemplate: PropTypes.func.isRequired,
   removeBlockTemplate: PropTypes.func.isRequired,
+  fetchProject: PropTypes.func.isRequired,
 };
