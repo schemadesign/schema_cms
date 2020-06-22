@@ -66,7 +66,7 @@ export const CustomElement = ({ values, valuePath, setFieldValue, handleChange, 
         {orderedValues.map((element, index) => (
           <Draggable
             key={element.key || element.id}
-            accept="box"
+            accept="custom"
             onMove={handleMove}
             id={element.key || element.id}
             index={index}
