@@ -1,7 +1,13 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectSectionsDomain, selectSection, selectSections, selectInternalConnections } from '../sections.selectors';
+import {
+  selectSectionsDomain,
+  selectSection,
+  selectSections,
+  selectInternalConnections,
+  selectPages,
+} from '../sections.selectors';
 import { internalConnections, section, sections } from '../sections.mocks';
 
 describe('Sections: selectors', () => {
@@ -34,6 +40,12 @@ describe('Sections: selectors', () => {
   describe('selectSection', () => {
     it('should select a section', () => {
       expect(selectSection(state)).to.equal(state.sections.section);
+    });
+  });
+
+  describe('selectPages', () => {
+    it('should select pages', () => {
+      expect(selectPages(state)).to.equal(state.sections.pages);
     });
   });
 });

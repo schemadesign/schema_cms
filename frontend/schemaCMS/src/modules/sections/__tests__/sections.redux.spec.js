@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
 import { reducer as sectionsReducer, SectionsRoutines } from '../sections.redux';
-import { section as sectionMock, pages as pagesMock } from '../sections.mocks';
+import { section as sectionMock } from '../sections.mocks';
 
 describe('Sections: redux', () => {
   const state = Immutable({
@@ -64,6 +64,15 @@ describe('Sections: redux', () => {
     });
   });
 
+  describe('when SECTIONS/FETCH_PAGES_SUCCESS action is received', () => {
+    it('should set page', () => {
+      const pages = { data: 'data' };
+      const resultState = sectionsReducer(state, SectionsRoutines.fetchPages.success(pages));
+
+      expect(resultState.pages).to.deep.equal(pages);
+    });
+  });
+
   describe('when SECTIONS/UPDATE_SECTION_SUCCESS action is received', () => {
     it('should update section', () => {
       const section = { data: 'data' };
@@ -72,9 +81,8 @@ describe('Sections: redux', () => {
       expect(resultState.section).to.deep.equal(section);
     });
 
-    it('should move main page to beginning of pages', () => {
+    it('should move main page to beginning of pages (reversed order)', () => {
       const section = sectionMock;
-      const pages = pagesMock;
       const resultState = sectionsReducer(state, SectionsRoutines.updateSection.success(section));
 
       expect(resultState.section).to.deep.equal({
@@ -86,13 +94,6 @@ describe('Sections: redux', () => {
         name: 'Section name',
         pages: [
           {
-            createdBy: 'owner',
-            created: '2020-03-09T10:41:17+0000',
-            name: 'page name 3',
-            id: 3,
-            templateName: null,
-          },
-          {
             created: '2020-03-09T10:41:17+0000',
             createdBy: 'owner',
             displayName: 'page-name',
@@ -101,6 +102,13 @@ describe('Sections: redux', () => {
             templateName: 'templateName',
           },
           { created: '2020-03-09T10:41:17+0000', createdBy: 'owner', id: 2, name: 'page name 2', templateName: null },
+          {
+            createdBy: 'owner',
+            created: '2020-03-09T10:41:17+0000',
+            name: 'page name 3',
+            id: 3,
+            templateName: null,
+          },
         ],
         pagesCount: 1,
         slug: 'section-name',

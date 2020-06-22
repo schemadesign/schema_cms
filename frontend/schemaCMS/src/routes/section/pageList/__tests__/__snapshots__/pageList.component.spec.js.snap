@@ -103,9 +103,9 @@ exports[`PageList: Component should render correctly 1`] = `
       style={
         Object {
           "backgroundColor": "#000",
+          "bottom": 0,
           "color": "#FFF",
           "maxWidth": null,
-          "minHeight": "100vh",
           "padding": "18px 20px 27px",
           "position": "absolute",
           "right": 0,
