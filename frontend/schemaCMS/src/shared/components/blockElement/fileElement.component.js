@@ -17,7 +17,7 @@ import {
 import { Uploader } from '../form/uploader';
 import { getEventFiles, getValuePath } from '../../utils/helpers';
 import { renderWhenTrue } from '../../utils/rendering';
-import { IMAGE_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { IMAGE_TYPE, ELEMENT_PARAMS } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { TextInput } from '../form/inputs/textInput';
 import { FILE, FILE_NAME, FILE_ALT } from '../../../modules/page/page.constants';
 
@@ -36,6 +36,8 @@ export const FileElement = ({
   const intl = useIntl();
   const [error, setError] = useState(false);
   const name = getValuePath({ blockPath, index });
+  const altValue = pathOr('', [ELEMENT_PARAMS, FILE_ALT], element);
+  const altPath = getValuePath({ blockPath, index, elementValue: `${ELEMENT_PARAMS}.${FILE_ALT}` });
   const handleUploadChange = data => {
     const uploadFile = getEventFiles(data);
 
@@ -82,8 +84,8 @@ export const FileElement = ({
         </Label>
         <InputContainer>
           <TextInput
-            name={`${name}.${FILE_ALT}`}
-            value={element.value.alt || ''}
+            name={altPath}
+            value={altValue}
             fullWidth
             customInputStyles={getCustomInputStyles(useTheme())}
             customStyles={customStyles}

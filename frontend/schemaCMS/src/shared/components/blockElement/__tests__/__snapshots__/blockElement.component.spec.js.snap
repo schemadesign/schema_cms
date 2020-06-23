@@ -3782,7 +3782,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
               }
             >
               <textarea
-                id="blockPath.elements.0.value.alt"
+                id="blockPath.elements.0.params.alt"
                 onChange={[Function]}
                 style={
                   Object {
