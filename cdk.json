@@ -3,6 +3,7 @@
     "context": {
         "installation_mode": "full",
         "domain_name": "schema-test.appt5n.com",
+        "cert_arn": "arn:aws:acm:us-west-2:022528540894:certificate/1d301d7e-236e-40f4-9512-2816672773e3",
         "github_token_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:github-token-82UijJ",
         "django_debug": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_DEBUG-78dycE",
         "django_social_auth_auth0_key_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SOCIAL_AUTH_AUTH0_KEY-Bxbju2",

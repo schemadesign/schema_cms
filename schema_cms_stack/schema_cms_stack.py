@@ -30,6 +30,8 @@ LAMBDA_AUTH_TOKEN_ENV_NAME = "LAMBDA_AUTH_TOKEN"
 JOB_PROCESSING_MAX_RETRIES = 3
 JOB_PROCESSING_MEMORY_SIZES = [512, 1280, 3008]
 
+CERT_ARN = "cert_arn"
+
 INSTALLATION_MODE_CONTEXT_KEY = "installation_mode"
 DOMAIN_NAME_CONTEXT_KEY = "domain_name"
 
@@ -102,8 +104,11 @@ class CertsStack(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        domain_name = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
-        self.cert = aws_certificatemanager.Certificate(self, "cert", domain_name=domain_name)
+        cert_arn = self.node.try_get_context(CERT_ARN)
+
+        self.cert = aws_certificatemanager.Certificate.from_certificate_arn(
+            self, "cert", certificate_arn=cert_arn
+        )
 
 
 class API(core.Stack):
@@ -153,18 +158,16 @@ class API(core.Stack):
         self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, "job_processing_dead_letter_sqs",)
         self.job_processing_queues = [
             self._create_job_processing_queue(
+                scope=scope, name="job_processing_sqs", dead_letter_queue=self.job_processing_dead_letter_sqs,
+            ),
+            self._create_job_processing_queue(
                 scope=scope,
-                name=f"job_processing_sqs",
+                name="job_processing_sqs_ext",
                 dead_letter_queue=self.job_processing_dead_letter_sqs,
             ),
             self._create_job_processing_queue(
                 scope=scope,
-                name=f"job_processing_sqs_ext",
-                dead_letter_queue=self.job_processing_dead_letter_sqs,
-            ),
-            self._create_job_processing_queue(
-                scope=scope,
-                name=f"job_processing_sqs_max",
+                name="job_processing_sqs_max",
                 dead_letter_queue=self.job_processing_dead_letter_sqs,
             ),
         ]
@@ -645,9 +648,9 @@ class CIPipeline(core.Stack):
             )
             extra_inputs.append(output)
         return aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
-            action_name=f"prepare_lambda_worker_changes",
+            action_name="prepare_lambda_worker_changes",
             stack_name=scope.lambda_worker.stack_name,
-            change_set_name=f"lambdaWorkerStagedChangeSet",
+            change_set_name="lambdaWorkerStagedChangeSet",
             template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
             parameter_overrides=parameter_overrides,
             extra_inputs=extra_inputs,
