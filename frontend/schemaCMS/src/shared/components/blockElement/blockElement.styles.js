@@ -81,6 +81,10 @@ export const MarkdownContainer = styled.div`
   .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p:hover {
     color: ${({ theme }) => theme.secondaryText};
   }
+
+  .mde-preview .mde-preview-content pre {
+    background-color: ${({ theme }) => theme.secondaryText};
+  }
 `;
 
 export const InputContainer = styled.div`
