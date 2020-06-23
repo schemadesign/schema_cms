@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from '../../../theme/media';
 
 const ICON_SIZE = 30;
-const TYPE_MAX_WIDTH = 100;
+const TYPE_MAX_WIDTH = 240;
 
 export const Header = styled.div`
   display: flex;

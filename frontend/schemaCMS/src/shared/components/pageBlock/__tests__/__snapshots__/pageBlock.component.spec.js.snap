@@ -26,7 +26,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-AxjAm bVRHRE"
+      className="sc-AxjAm jkAchJ"
     >
       <div
         className="sc-AxirZ bnSjNE"
@@ -148,7 +148,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-AxiKw bJsLtd"
+      className="sc-AxiKw ivdQru"
     >
       type
     </div>
