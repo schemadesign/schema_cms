@@ -63,7 +63,7 @@ class State(SoftDeleteObject, TimeStampedModel):
         return "&".join(params)
 
     def get_tags(self) -> list:
-        res = []
+        res = {}
 
         for category, tag in self.tags.values_list("category__name", "value"):
             if category not in res:
