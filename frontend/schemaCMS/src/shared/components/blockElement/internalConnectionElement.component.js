@@ -8,14 +8,22 @@ import messages from './blockElement.messages';
 import { getCustomSelectedWrapperStyles, SelectLabel, SelectWrapper, customSelectStyles } from './blockElement.styles';
 import { getValuePath } from '../../utils/helpers';
 import { Select } from '../form/select';
-import { INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { ELEMENT_PARAMS, INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export const InternalConnectionElement = ({ blockPath, element, setFieldValue, index, pagerUrlOptions }) => {
   const intl = useIntl();
   const theme = useTheme();
   const name = getValuePath({ blockPath, index });
-  const handleSelectPageUrl = ({ value }) => setFieldValue(name, value);
-  const options = pagerUrlOptions.map(({ value, label }) => ({ value, label: <SelectLabel>{label}</SelectLabel> }));
+  const params = getValuePath({ blockPath, index, elementValue: ELEMENT_PARAMS });
+  const handleSelectPageUrl = ({ value, pageId }) => {
+    setFieldValue(name, value);
+    setFieldValue(params, { pageId });
+  };
+  const options = pagerUrlOptions.map(({ value, label, id: pageId }) => ({
+    value,
+    label: <SelectLabel>{label}</SelectLabel>,
+    pageId,
+  }));
   const placeholderCopy = isEmpty(options) ? 'NoOptions' : 'Placeholder';
   const placeholder = intl.formatMessage(messages[`${INTERNAL_CONNECTION_TYPE}${placeholderCopy}`]);
 

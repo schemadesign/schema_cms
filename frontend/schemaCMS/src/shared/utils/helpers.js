@@ -214,6 +214,7 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
           map(({ displayName, name, id }) => ({
             value: `${domain + getMainPageDisplayName({ mainPage, id })}/${displayName}`,
             label: ifMainPage(() => `${mainPage.name}   >   ${name}`, always(name))({ mainPage, id }),
+            id: id,
           }))(pages)
       )
     ),

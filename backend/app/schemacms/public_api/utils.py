@@ -149,7 +149,7 @@ def embed_video_in_html(element):
     attributes = element.params.get("attributes", "")
 
     html_value = (
-        f"<div id='embed-video-{element.id}' class='element embed_video'>"
+        f"<div id='embed-video-{element.id}' class='element embed-video'>"
         f"<iframe src='{element.embed_video}' {attributes}>"
         f"</iframe>"
         f"</div>"
