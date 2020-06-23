@@ -3649,7 +3649,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                           <span
                             className="sc-fznLxA hSrtBl"
                           >
-                            ObservableHQ Cell
+                            ObservableHQ Cells
                           </span>
                           <div
                             className="sc-fzqMdD gUlgVl"

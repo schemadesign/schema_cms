@@ -3100,7 +3100,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                       <span
                         className="sc-fzoydu kxhvpV"
                       >
-                        ObservableHQ Cell
+                        ObservableHQ Cells
                       </span>
                       <div
                         className="sc-fznzOf kpsyvs"
@@ -9275,7 +9275,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                       <span
                         className="sc-fzoydu kxhvpV"
                       >
-                        ObservableHQ Cell
+                        ObservableHQ Cells
                       </span>
                       <div
                         className="sc-fznzOf kpsyvs"

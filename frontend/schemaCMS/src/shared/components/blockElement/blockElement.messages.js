@@ -62,7 +62,7 @@ export default defineMessages({
   },
   [`${OBSERVABLE_CELL}Placeholder`]: {
     id: `shared.components.blockElement.${OBSERVABLE_CELL}Placeholder`,
-    defaultMessage: 'ObservableHQ Cell',
+    defaultMessage: 'ObservableHQ Cells',
   },
   [`${OBSERVABLE_PARAMS}Placeholder`]: {
     id: `shared.components.blockElement.${OBSERVABLE_PARAMS}Placeholder`,

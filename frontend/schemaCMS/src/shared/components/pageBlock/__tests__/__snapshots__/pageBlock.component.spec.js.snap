@@ -2036,7 +2036,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 <span
                   className="sc-fzqBZW grNAkQ"
                 >
-                  ObservableHQ Cell
+                  ObservableHQ Cells
                 </span>
                 <div
                   className="sc-fzpans jotoLJ"
