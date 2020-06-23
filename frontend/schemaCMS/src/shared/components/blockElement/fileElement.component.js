@@ -2,16 +2,37 @@ import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { pathOr, always } from 'ramda';
 import { useIntl, FormattedMessage } from 'react-intl';
+import { useTheme } from 'styled-components';
+import { Icons } from 'schemaUI';
 
 import messages from './blockElement.messages';
-import { Error } from './blockElement.styles';
+import {
+  Error,
+  customStyles,
+  InputContainer,
+  getCustomInputStyles,
+  editIconStyles,
+  Label,
+} from './blockElement.styles';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, getValuePath } from '../../utils/helpers';
 import { renderWhenTrue } from '../../utils/rendering';
+import { IMAGE_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { TextInput } from '../form/inputs/textInput';
+import { FILE, FILE_NAME, FILE_ALT } from '../../../modules/page/page.constants';
 
 const MAX_SIZE = 50 * 1024 * 1024;
+const { EditIcon } = Icons;
 
-export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', index, ...restFormikProps }) => {
+export const FileElement = ({
+  blockPath,
+  handleChange,
+  element,
+  setFieldValue,
+  accept = '*',
+  index,
+  ...restFormikProps
+}) => {
   const intl = useIntl();
   const [error, setError] = useState(false);
   const name = getValuePath({ blockPath, index });
@@ -37,8 +58,8 @@ export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', i
     reader.addEventListener(
       'load',
       ({ target: { result } }) => {
-        setFieldValue(`${name}.file`, result);
-        setFieldValue(`${name}.fileName`, pathOr('', ['name'], file));
+        setFieldValue(`${name}.${FILE}`, result);
+        setFieldValue(`${name}.${FILE_NAME}`, pathOr('', ['name'], file));
       },
       false
     );
@@ -53,12 +74,35 @@ export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', i
       )
     )(error);
 
+  const renderAlt = renderWhenTrue(
+    always(
+      <Fragment>
+        <Label>
+          <FormattedMessage {...messages[FILE_ALT]} />
+        </Label>
+        <InputContainer>
+          <TextInput
+            name={`${name}.${FILE_ALT}`}
+            value={element.value.alt || ''}
+            fullWidth
+            customInputStyles={getCustomInputStyles(useTheme())}
+            customStyles={customStyles}
+            onChange={handleChange}
+            multiline
+            {...restFormikProps}
+          />
+          <EditIcon customStyles={editIconStyles} />
+        </InputContainer>
+      </Fragment>
+    )
+  );
+
   return (
     <Fragment>
       <Uploader
         name={name}
         id={name}
-        fileNames={pathOr('', ['value', 'fileName'], element)}
+        fileNames={pathOr('', ['value', FILE_NAME], element)}
         onChange={handleUploadChange}
         accept={accept}
         label={intl.formatMessage(messages[element.type])}
@@ -66,6 +110,7 @@ export const FileElement = ({ blockPath, element, setFieldValue, accept = '*', i
         {...restFormikProps}
       />
       {renderFileSizeError(error)}
+      {renderAlt(element.type === IMAGE_TYPE)}
     </Fragment>
   );
 };

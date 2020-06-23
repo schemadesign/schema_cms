@@ -17,6 +17,7 @@ import {
   EMBED_VIDEO_TYPE,
   STATE_TYPE,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { FILE_ALT } from '../../../modules/page/page.constants';
 
 export default defineMessages({
   [IMAGE_TYPE]: {
@@ -130,5 +131,9 @@ export default defineMessages({
   elementNamePlaceholder: {
     id: 'shared.components.blockElement.elementNamePlaceholder',
     defaultMessage: 'Element Name',
+  },
+  [FILE_ALT]: {
+    id: `shared.components.blockElement.${FILE_ALT}`,
+    defaultMessage: 'Alt',
   },
 });

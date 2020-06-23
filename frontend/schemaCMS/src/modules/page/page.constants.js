@@ -35,6 +35,10 @@ export const BLOCK_ELEMENTS = 'elements';
 export const BLOCK_KEY = 'key';
 export const BLOCK_ID = 'id';
 
+export const FILE = 'file';
+export const FILE_NAME = 'fileName';
+export const FILE_ALT = 'alt';
+
 export const FORM_VALUES = [
   PAGE_NAME,
   PAGE_DISPLAY_NAME,
