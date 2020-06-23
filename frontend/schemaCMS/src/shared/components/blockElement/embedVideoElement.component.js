@@ -9,13 +9,17 @@ import { TextInput } from '../form/inputs/textInput';
 import { getCustomInputStyles, customStyles, editIconStyles, InputContainer, Label } from './blockElement.styles';
 import messages from './blockElement.messages';
 import { getValuePath } from '../../utils/helpers';
-import { EMBED_VIDEO_TYPE, EMBED_VIDEO_ATTRIBUTES } from '../../../modules/blockTemplates/blockTemplates.constants';
+import {
+  EMBED_VIDEO_TYPE,
+  EMBED_VIDEO_ATTRIBUTES,
+  ELEMENT_PARAMS,
+} from '../../../modules/blockTemplates/blockTemplates.constants';
 
 const { EditIcon } = Icons;
 
 export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...restFormikProps }) => {
   const intl = useIntl();
-  const attributes = pathOr('', ['params', EMBED_VIDEO_ATTRIBUTES], element);
+  const attributes = pathOr('', [ELEMENT_PARAMS, EMBED_VIDEO_ATTRIBUTES], element);
 
   return (
     <Fragment>
@@ -40,7 +44,7 @@ export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...
       </Label>
       <InputContainer>
         <TextInput
-          name={getValuePath({ blockPath, index, elementValue: `params.${EMBED_VIDEO_ATTRIBUTES}` })}
+          name={getValuePath({ blockPath, index, elementValue: `${ELEMENT_PARAMS}.${EMBED_VIDEO_ATTRIBUTES}` })}
           value={attributes}
           fullWidth
           placeholder={intl.formatMessage(messages[`${EMBED_VIDEO_ATTRIBUTES}Placeholder`])}

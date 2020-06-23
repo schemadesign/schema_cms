@@ -17,6 +17,8 @@ import {
   BLOCK_TEMPLATES_ELEMENTS,
   blockTemplatesElementsValidation,
   EMBED_VIDEO_TYPE,
+  ELEMENT_PARAMS,
+  IMAGE_TYPE,
 } from '../blockTemplates/blockTemplates.constants';
 
 export const PAGE_NAME = 'name';
@@ -34,6 +36,10 @@ export const BLOCK_TYPE = 'type';
 export const BLOCK_ELEMENTS = 'elements';
 export const BLOCK_KEY = 'key';
 export const BLOCK_ID = 'id';
+
+export const FILE = 'file';
+export const FILE_NAME = 'fileName';
+export const FILE_ALT = 'alt';
 
 export const FORM_VALUES = [
   PAGE_NAME,
@@ -124,6 +130,14 @@ export const PAGE_SCHEMA = Yup.object().shape({
             [ELEMENT_NAME]: Yup.string()
               .trim()
               .max(100, 'Element Name should have maximum 100 characters'),
+            [ELEMENT_PARAMS]: Yup.object().when(ELEMENT_TYPE, {
+              is: IMAGE_TYPE,
+              then: Yup.object().shape({
+                [FILE_ALT]: Yup.string()
+                  .trim()
+                  .max(1000, 'Alt should have maximum 1000 characters'),
+              }),
+            }),
             [ELEMENT_VALUE]: elementValueValidation().when(ELEMENT_TYPE, {
               is: CUSTOM_ELEMENT_TYPE,
               then: Yup.array().of(
