@@ -35,6 +35,7 @@ class State(SoftDeleteObject, TimeStampedModel):
     @property
     def formatted_meta(self):
         return dict(
+            id=self.id,
             name=self.name,
             datasource=self.datasource.formatted_meta,
             description=self.description,
@@ -48,7 +49,7 @@ class State(SoftDeleteObject, TimeStampedModel):
         for tag in tags_list:
             StateTag.objects.create(state=self, category_id=tag["category"], value=tag["value"])
 
-    def build_filters_query_params(self):
+    def build_filters_query_params(self) -> str:
         params = []
         for filter_ in self.instatefilter_set.all():
             key = filter_.field
@@ -60,6 +61,17 @@ class State(SoftDeleteObject, TimeStampedModel):
             params.append(f"columns={','.join(self.fields)}")
 
         return "&".join(params)
+
+    def get_tags(self) -> list:
+        res = []
+
+        for category, tag in self.tags.values_list("category__name", "value"):
+            if category not in res:
+                res[category] = [tag]
+            else:
+                res[category].append(tag)
+
+        return res
 
 
 class InStateFilter(SoftDeleteObject):
