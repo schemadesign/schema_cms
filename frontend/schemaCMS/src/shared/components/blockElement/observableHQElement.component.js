@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'react-mde/lib/styles/css/react-mde-all.css';
 import { FormattedMessage } from 'react-intl';
 import { useTheme } from 'styled-components';
 import { Icons } from 'schemaUI';

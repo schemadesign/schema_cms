@@ -2362,7 +2362,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkJw xfjUO"
+                      className="sc-fzpkJw iFnJhc"
                     >
                       <div
                         className="react-mde react-mde-tabbed-layout"
@@ -3939,7 +3939,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fzpkJw iFnJhc"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -4789,7 +4789,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fzpkJw iFnJhc"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -5639,7 +5639,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fzpkJw iFnJhc"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -8537,7 +8537,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkJw xfjUO"
+                      className="sc-fzpkJw iFnJhc"
                     >
                       <div
                         className="react-mde react-mde-tabbed-layout"
@@ -10114,7 +10114,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fzpkJw iFnJhc"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -10964,7 +10964,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fzpkJw iFnJhc"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"
@@ -11814,7 +11814,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                               >
                                 <div>
                                   <div
-                                    className="sc-fzpkJw xfjUO"
+                                    className="sc-fzpkJw iFnJhc"
                                   >
                                     <div
                                       className="react-mde react-mde-tabbed-layout"

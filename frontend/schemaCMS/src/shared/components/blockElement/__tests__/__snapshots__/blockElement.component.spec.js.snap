@@ -666,7 +666,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxhUy jjZZih"
+                        className="sc-AxhUy cVxChT"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -1514,7 +1514,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxhUy jjZZih"
+                        className="sc-AxhUy cVxChT"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -2362,7 +2362,7 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-AxhUy jjZZih"
+                        className="sc-AxhUy cVxChT"
                       >
                         <div
                           className="react-mde react-mde-tabbed-layout"
@@ -4733,7 +4733,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-AxhUy jjZZih"
+          className="sc-AxhUy cVxChT"
         >
           <div
             className="react-mde react-mde-tabbed-layout"

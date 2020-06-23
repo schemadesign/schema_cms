@@ -1301,7 +1301,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzoLsD faFaWI"
+                className="sc-fzoLsD gxJSGS"
               >
                 <div
                   className="react-mde react-mde-tabbed-layout"
@@ -2870,7 +2870,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzoLsD faFaWI"
+                              className="sc-fzoLsD gxJSGS"
                             >
                               <div
                                 className="react-mde react-mde-tabbed-layout"
@@ -3718,7 +3718,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzoLsD faFaWI"
+                              className="sc-fzoLsD gxJSGS"
                             >
                               <div
                                 className="react-mde react-mde-tabbed-layout"
@@ -4566,7 +4566,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                         >
                           <div>
                             <div
-                              className="sc-fzoLsD faFaWI"
+                              className="sc-fzoLsD gxJSGS"
                             >
                               <div
                                 className="react-mde react-mde-tabbed-layout"

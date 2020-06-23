@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactMde from 'react-mde';
-import * as Showdown from 'showdown';
 import 'react-mde/lib/styles/css/react-mde-all.css';
 import { useDebounce } from 'react-use';
 import { always, path, split } from 'ramda';
+import MarkdownIt from 'markdown-it';
+import MarkdownItFootnote from 'markdown-it-footnote';
 
 import { getValuePath } from '../../utils/helpers';
 import { MarkdownContainer, Error } from './blockElement.styles';
 import { renderWhenTrue } from '../../utils/rendering';
 
-const converter = new Showdown.Converter({
-  tables: true,
-  simplifiedAutoLink: true,
-  strikethrough: true,
-  tasklists: true,
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
 });
+md.use(MarkdownItFootnote);
 
 export const MarkdownElement = ({ element, blockPath, setFieldValue, index, errors }) => {
   const [value, setValue] = useState(element.value);
@@ -40,7 +41,7 @@ export const MarkdownElement = ({ element, blockPath, setFieldValue, index, erro
         onChange={setValue}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
-        generateMarkdownPreview={markdown => Promise.resolve(converter.makeHtml(markdown))}
+        generateMarkdownPreview={markdown => Promise.resolve(md.render(markdown))}
       />
       {renderError(errorMessage)}
     </MarkdownContainer>

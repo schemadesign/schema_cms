@@ -2911,7 +2911,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         className="sc-fznAgC dlXska"
                       >
                         <div
-                          className="sc-fzqAui eqjECk"
+                          className="sc-fzqAui itjcSe"
                         >
                           <div
                             className="react-mde react-mde-tabbed-layout"
@@ -4488,7 +4488,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqAui eqjECk"
+                                        className="sc-fzqAui itjcSe"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -5338,7 +5338,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqAui eqjECk"
+                                        className="sc-fzqAui itjcSe"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
@@ -6188,7 +6188,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                   >
                                     <div>
                                       <div
-                                        className="sc-fzqAui eqjECk"
+                                        className="sc-fzqAui itjcSe"
                                       >
                                         <div
                                           className="react-mde react-mde-tabbed-layout"
