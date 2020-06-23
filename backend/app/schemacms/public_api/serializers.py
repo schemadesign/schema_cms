@@ -103,6 +103,7 @@ class PABlockElementSerializer(ReadOnlySerializer):
 
             return {
                 "meta": obj.state.formatted_meta,
+                "tags": obj.state.get_tags(),
                 "url": f"{settings.PUBLIC_API_URL}{utils.generate_state_element_url(obj.state)}",
             }
 
