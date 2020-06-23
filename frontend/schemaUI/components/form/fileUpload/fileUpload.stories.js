@@ -16,6 +16,7 @@ const withLabel = {
 const withFileName = {
   id: 'id',
   label: 'label',
+  isRemovable: true,
   fileNames: ['name.csv'],
 };
 

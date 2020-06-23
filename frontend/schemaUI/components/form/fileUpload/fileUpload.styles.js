@@ -8,6 +8,11 @@ export const iconContainerStyles = {
   top: 0,
 };
 
+export const customBinStyles = {
+  marginLeft: 20,
+  minWidth: 20,
+};
+
 export const inputStyles = {
   visibility: 'hidden',
   position: 'absolute',
@@ -33,7 +38,9 @@ export const getValueStyles = disabled => ({
   lineHeight: '24px',
   width: 'calc(100% - 70px)',
   paddingBottom: 30,
-  display: 'block',
+  display: 'flex',
+  alignItems: 'center',
+  wordBreak: 'break-word',
   cursor: disabled ? 'cursor' : 'pointer',
   opacity: disabled ? 0.5 : 1,
 });

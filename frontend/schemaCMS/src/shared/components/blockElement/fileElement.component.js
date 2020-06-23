@@ -41,6 +41,11 @@ export const FileElement = ({
   const handleUploadChange = data => {
     const uploadFile = getEventFiles(data);
 
+    if (!uploadFile) {
+      setFieldValue(name, {});
+      return;
+    }
+
     if (!uploadFile.length) {
       return;
     }
@@ -109,6 +114,7 @@ export const FileElement = ({
         accept={accept}
         label={intl.formatMessage(messages[element.type])}
         placeholder={intl.formatMessage(messages[`${element.type}Placeholder`])}
+        isRemovable
         {...restFormikProps}
       />
       {renderFileSizeError(error)}

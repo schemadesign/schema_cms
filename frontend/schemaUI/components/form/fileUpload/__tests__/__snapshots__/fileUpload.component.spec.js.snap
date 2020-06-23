@@ -89,13 +89,15 @@ exports[`FileUpload: Component should render with custom icon 1`] = `
     htmlFor="id"
     style={
       Object {
+        "alignItems": "center",
         "cursor": "pointer",
-        "display": "block",
+        "display": "flex",
         "fontSize": 18,
         "lineHeight": "24px",
         "opacity": 1,
         "paddingBottom": 30,
         "width": "calc(100% - 70px)",
+        "wordBreak": "break-word",
       }
     }
   >
@@ -166,14 +168,16 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
     htmlFor="id"
     style={
       Object {
+        "alignItems": "center",
         "backgroundColor": "green",
         "cursor": "pointer",
-        "display": "block",
+        "display": "flex",
         "fontSize": 18,
         "lineHeight": "24px",
         "opacity": 1,
         "paddingBottom": 30,
         "width": "calc(100% - 70px)",
+        "wordBreak": "break-word",
       }
     }
   >
@@ -270,13 +274,15 @@ exports[`FileUpload: Component should render with file name 1`] = `
     htmlFor="id"
     style={
       Object {
+        "alignItems": "center",
         "cursor": "pointer",
-        "display": "block",
+        "display": "flex",
         "fontSize": 18,
         "lineHeight": "24px",
         "opacity": 1,
         "paddingBottom": 30,
         "width": "calc(100% - 70px)",
+        "wordBreak": "break-word",
       }
     }
   >
@@ -374,13 +380,15 @@ exports[`FileUpload: Component should render with label 1`] = `
     htmlFor="id"
     style={
       Object {
+        "alignItems": "center",
         "cursor": "pointer",
-        "display": "block",
+        "display": "flex",
         "fontSize": 18,
         "lineHeight": "24px",
         "opacity": 1,
         "paddingBottom": 30,
         "width": "calc(100% - 70px)",
+        "wordBreak": "break-word",
       }
     }
   >
