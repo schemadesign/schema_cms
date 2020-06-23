@@ -7,8 +7,10 @@ import { useFormik } from 'formik';
 import { pick, propEq, propOr, pipe, find } from 'ramda';
 import { Form as FormUI, Icons } from 'schemaUI';
 import { useEffectOnce } from 'react-use';
+import { parse, stringify } from 'query-string';
+import ReactPaginate from 'react-paginate';
 
-import { Container, Form, getCustomHomeIconStyles, CardFooter } from './pageList.styles';
+import { Container, Form, getCustomHomeIconStyles, CardFooter, Pagination } from './pageList.styles';
 import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
@@ -61,6 +63,8 @@ import {
 import { PAGE_DISPLAY_NAME, PAGE_NAME } from '../../../modules/page/page.constants';
 import { SortingSelect } from '../../../shared/components/form/sortingSelect/sortingSelect.component';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { EditIcon, BinIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
@@ -125,15 +129,18 @@ const getBreadcrumbsItems = (project, { id, name }) => [
 
 export const PageList = ({
   section,
+  pages,
   project: { id: projectId, title: projectTitle, domain },
   removeSection,
   updateSection,
   fetchSection,
+  fetchPages,
   userRole,
 }) => {
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(0);
   const [error, setError] = useState(null);
-  const { pages = [], mainPage } = section;
+  const { mainPage } = section;
   const [updateLoading, setUpdateLoading] = useState(false);
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
@@ -146,7 +153,7 @@ export const PageList = ({
   const displayName = pipe(
     find(propEq('id', mainPage)),
     propOr('', PAGE_DISPLAY_NAME)
-  )(pages);
+  )(pages.results);
   const pageUrl = `${domain}${displayName ? `/${displayName}` : ''}`;
   const visitPage = domain ? (
     <Fragment>
@@ -174,11 +181,13 @@ export const PageList = ({
     },
   });
 
+  const pageCount = pages.count / INITIAL_PAGE_SIZE;
+
   const fetchSectionFunc = async () => {
     try {
       const urlParams = getUrlParams(history);
       setLoading(true);
-      await fetchSection({ sectionId, ...urlParams });
+      await fetchPages({ sectionId, ...urlParams });
       setLoading(false);
     } catch (e) {
       reportError(e);
@@ -187,6 +196,7 @@ export const PageList = ({
   };
 
   useEffectOnce(() => {
+    fetchSection({ sectionId });
     fetchSectionFunc();
   });
 
@@ -200,6 +210,26 @@ export const PageList = ({
       setRemoveLoading(false);
     }
   };
+
+  const handlePageChange = ({ selected: page }) => {
+    const urlParams = { ...parse(history.location.search), page: page + 1 };
+    setPage(page);
+    history.push(`?${stringify(urlParams)}`);
+    fetchSectionFunc();
+  };
+
+  const renderPagination = renderWhenTrue(() => (
+    <Pagination>
+      <ReactPaginate
+        pageCount={pageCount}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={2}
+        onPageChange={handlePageChange}
+        forcePage={page}
+      />
+    </Pagination>
+  ));
+
   const nameInput = (
     <Subtitle>
       <TextInput
@@ -248,7 +278,7 @@ export const PageList = ({
         <LoadingWrapper loading={loading} error={error}>
           <CounterHeader
             copy={intl.formatMessage(messages.page)}
-            count={pages.length}
+            count={pages.results.length}
             right={
               <MobilePlusContainer>
                 <PlusButton
@@ -261,7 +291,7 @@ export const PageList = ({
             }
           />
           <ListContainer>
-            {pages.map((page, index) => (
+            {pages.results.map((page, index) => (
               <Page
                 key={index}
                 index={index}
@@ -271,6 +301,7 @@ export const PageList = ({
               />
             ))}
           </ListContainer>
+          {renderPagination(pageCount > 1)}
           <Switches>
             <SwitchContainer>
               <SwitchContent>
@@ -337,6 +368,8 @@ PageList.propTypes = {
   updateSection: PropTypes.func.isRequired,
   removeSection: PropTypes.func.isRequired,
   fetchSection: PropTypes.func.isRequired,
+  fetchPages: PropTypes.func.isRequired,
   section: PropTypes.object.isRequired,
+  pages: PropTypes.object.isRequired,
   project: PropTypes.object.isRequired,
 };

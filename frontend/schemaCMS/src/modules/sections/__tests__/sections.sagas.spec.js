@@ -87,6 +87,44 @@ describe('Sections: sagas', () => {
     });
   });
 
+  describe('when /FETCH_PAGES action is fired', () => {
+    it('should put fetchPages action', async () => {
+      const sectionId = 'sectionId';
+      const response = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
+      mockApi.get(`${SECTIONS_PATH}/${sectionId}/pages?page_size=10`).reply(OK, response);
+
+      await expectSaga(watchSections)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(SectionsRoutines.fetchPages.success({ ...response, isQuery: false }))
+        .dispatch(SectionsRoutines.fetchPages({ sectionId }))
+        .silentRun();
+    });
+
+    it('should put fetchPages action with query', async () => {
+      const sectionId = 'sectionId';
+      const response = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
+      mockApi.get(`${SECTIONS_PATH}/${sectionId}/pages?page_size=10&pages_order=name`).reply(OK, response);
+
+      await expectSaga(watchSections)
+        .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(SectionsRoutines.fetchPages.success({ ...response, isQuery: true }))
+        .dispatch(SectionsRoutines.fetchPages({ sectionId, pagesOrder: 'name' }))
+        .silentRun();
+    });
+  });
+
   describe('when /CREATE_PAGE_TEMPLATE action is fired', () => {
     it('should put createSection action', async () => {
       const projectId = 'projectId';
@@ -116,7 +154,14 @@ describe('Sections: sagas', () => {
         id: 1,
       };
 
+      const pagesResponse = {
+        id: 1,
+        results: {},
+        project: {},
+      };
+
       mockApi.patch(`${SECTIONS_PATH}/${sectionId}`, formData).reply(OK, response);
+      mockApi.get(`${SECTIONS_PATH}/${sectionId}/pages?page_size=10`).reply(OK, pagesResponse);
 
       await expectSaga(watchSections)
         .withState(defaultState)
