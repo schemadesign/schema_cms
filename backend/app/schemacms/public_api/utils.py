@@ -77,16 +77,16 @@ def custom_in_html(element_id, element_data):
 
 def image_in_html(element):
     if not element.image:
-        file_name = ""
+        alt = ""
         image = ""
     else:
-        file_name = element.get_original_file_name()[1]
         image = element.image.url
+        alt = element.params.get("alt")
 
     html_value = (
         f"<div id='image-{element.id}' class='element image'>"
         f"<figure>"
-        f"<img src='{image}' alt='{file_name}'>"
+        f"<img src='{image}' alt='{alt}'>"
         f"</figure>"
         f"</div>"
     )
