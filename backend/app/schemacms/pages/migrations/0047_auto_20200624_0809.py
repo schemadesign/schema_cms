@@ -15,7 +15,8 @@ def add_names_to_block_templates_elements(apps, schema_editor):
             for e in custom_element.params.get("elements", []):
                 if "name" not in e:
                     e["name"] = e["type"]
-                    elements_list.append(e)
+
+                elements_list.append(e)
 
             custom_element.params = {"elements": elements_list}
             custom_element.save()
