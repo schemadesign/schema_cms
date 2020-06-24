@@ -195,7 +195,10 @@ class PageBlockElement(Element):
             element_type = element.get("type")
             element_value = element.pop("value")
 
-            if element_type in [constants.ElementType.IMAGE, constants.ElementType.FILE] and element_value:
+            if (
+                element_type in [constants.ElementType.IMAGE, constants.ElementType.FILE]
+                and element_value is not False
+            ):
                 element[element_type] = element_value
 
             if element_type in [
