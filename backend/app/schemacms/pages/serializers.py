@@ -51,7 +51,7 @@ class BlockElementSerializer(BaseElementSerializer):
 
 
 class PageBlockElementSerializer(BaseElementSerializer):
-    value = ElementValueField(read_only=False)
+    value = ElementValueField(read_only=False, allow_null=True)
     delete_elements_sets = serializers.ListField(required=False, write_only=True)
 
     class Meta:
