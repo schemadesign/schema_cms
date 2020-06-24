@@ -1,5 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { ifElse, equals, always } from 'ramda';
 
 import {
   getButtonStyles,
@@ -8,9 +9,10 @@ import {
   inputStyles,
   getValueStyles,
   containerStyles,
+  customBinStyles,
 } from './fileUpload.styles';
 import { getStyles } from '../../button/button.styles';
-import { UploadIcon } from '../../icons/uploadIcon';
+import { UploadIcon, BinIcon } from '../../icons';
 import { withStyles } from '../../styles/withStyles';
 import { Label } from '../label';
 import { BUTTON } from '../../button/button.constants';
@@ -33,10 +35,12 @@ export class FileUploadComponent extends PureComponent {
     customLabelStyles: PropTypes.object,
     customIconContainerStyles: PropTypes.object,
     iconComponent: PropTypes.element,
+    isRemovable: PropTypes.bool,
   };
 
   static defaultProps = {
     disabled: false,
+    isRemovable: false,
     customStyles: {},
     customInputStyles: {},
     customLabelStyles: {},
@@ -61,6 +65,17 @@ export class FileUploadComponent extends PureComponent {
     </label>
   );
 
+  clearInput = e => {
+    e.preventDefault();
+    this.props.onChange(null);
+  };
+
+  renderBin = ifElse(
+    equals(true),
+    always(<BinIcon customStyles={customBinStyles} onClick={this.clearInput} />),
+    always(null)
+  );
+
   renderTextField = ({
     fileNames = [],
     label,
@@ -77,6 +92,7 @@ export class FileUploadComponent extends PureComponent {
       </Label>
       <label htmlFor={id} style={{ ...getValueStyles(disabled), ...customInputStyles }}>
         {(fileNames.length && fileNames) || placeholder || DEFAULT_TEXT_VALUE}
+        {this.renderBin(!!fileNames.length && this.props.isRemovable)}
       </label>
       <div style={{ ...iconContainerStyles, ...customIconContainerStyles }}>
         {this.iconComponent({ id, label, disabled })}

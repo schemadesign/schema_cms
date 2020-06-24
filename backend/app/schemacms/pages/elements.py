@@ -56,6 +56,9 @@ class StateElement(BaseElement):
 
     @staticmethod
     def to_internal_value(data):
+        if not data:
+            return None
+
         return State.objects.get(pk=data)
 
 

@@ -51,7 +51,7 @@ class BlockElementSerializer(BaseElementSerializer):
 
 
 class PageBlockElementSerializer(BaseElementSerializer):
-    value = ElementValueField(read_only=False)
+    value = ElementValueField(read_only=False, allow_null=True)
     delete_elements_sets = serializers.ListField(required=False, write_only=True)
 
     class Meta:
@@ -322,7 +322,7 @@ class PageSerializer(CustomModelSerializer):
 
                 if (
                     element_type in [constants.ElementType.IMAGE, constants.ElementType.FILE]
-                    and element_value
+                    and element_value is not False
                 ):
                     element[element_type] = element_value
 

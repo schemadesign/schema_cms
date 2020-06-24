@@ -17,6 +17,7 @@ export class Uploader extends PureComponent {
     errors: PropTypes.object,
     touched: PropTypes.object,
     checkOnlyErrors: PropTypes.bool,
+    isRemovable: PropTypes.bool,
     onChange: PropTypes.func,
   };
 
@@ -24,19 +25,27 @@ export class Uploader extends PureComponent {
     errors: {},
     touched: {},
     checkOnlyErrors: false,
+    isRemovable: false,
   };
 
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
 
   render() {
-    const { errors, touched, checkOnlyErrors, fileNames, label, id, onChange, ...restProps } = this.props;
+    const { errors, touched, checkOnlyErrors, fileNames, label, id, onChange, isRemovable, ...restProps } = this.props;
     const isError = !!errors[restProps.name];
     const isTouched = touched[restProps.name];
     const error = checkOnlyErrors ? isError : isError && isTouched;
 
     return (
       <Container>
-        <FileUpload fileNames={fileNames} label={label} id={id} onChange={onChange} {...restProps} />
+        <FileUpload
+          fileNames={fileNames}
+          label={label}
+          id={id}
+          onChange={onChange}
+          isRemovable={isRemovable}
+          {...restProps}
+        />
         <DropZone inputId={id} onChange={onChange} {...restProps} hidden />
         {this.renderError(error)}
       </Container>

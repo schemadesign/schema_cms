@@ -267,6 +267,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
+    isRemovable={false}
     jobsState={
       Object {
         "lastJobStatus": "success",
@@ -730,6 +731,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "formatMessage": [Function],
       }
     }
+    isRemovable={false}
     jobsState={
       Object {
         "lastJobStatus": "success",
