@@ -5,14 +5,17 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models
 from django.utils import functional
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
+
 from softdelete.models import SoftDeleteObject
 from storages.backends.s3boto3 import S3Boto3Storage
+
+from model_clone import CloneMixin
 
 from . import constants, managers
 from ..utils.models import file_upload_path
 
 
-class Element(SoftDeleteObject):
+class Element(CloneMixin, SoftDeleteObject):
     name = models.CharField(max_length=constants.ELEMENT_NAME_MAX_LENGTH, blank=True, default="")
     type = models.CharField(max_length=25, choices=constants.ELEMENT_TYPE_CHOICES)
     order = models.PositiveIntegerField(default=0)
@@ -25,7 +28,7 @@ class Element(SoftDeleteObject):
         return f"{self.name}"
 
 
-class Content(SoftDeleteObject, TimeStampedModel):
+class Content(CloneMixin, SoftDeleteObject, TimeStampedModel):
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
@@ -43,6 +46,8 @@ class Content(SoftDeleteObject, TimeStampedModel):
 
 
 class BlockTemplate(Content):
+    _clone_many_to_one_or_one_to_many_fields = ["elements", "project", "created_by"]
+
     class Meta:
         constraints = [
             models.UniqueConstraint(
@@ -58,6 +63,8 @@ class BlockTemplate(Content):
 
 class BlockTemplateElement(Element):
     template = models.ForeignKey(BlockTemplate, on_delete=models.CASCADE, related_name="elements")
+
+    _clone_many_to_one_or_one_to_many_fields = ["template"]
 
 
 class Section(SoftDeleteObject, TimeStampedModel):

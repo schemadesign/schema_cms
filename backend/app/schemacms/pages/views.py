@@ -1,10 +1,11 @@
 from django.db import models as d_models
 from django.shortcuts import get_object_or_404
 from django.db.models import Prefetch
+from django.utils import timezone
 
 import django_filters.rest_framework
 
-from rest_framework import generics, filters, mixins, permissions, response, viewsets
+from rest_framework import decorators, generics, filters, mixins, permissions, response, status, viewsets
 
 from . import models, serializers
 from ..projects.models import Project
@@ -73,6 +74,18 @@ class BlockTemplateViewSet(DetailViewSet):
     )
     serializer_class = serializers.BlockTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
+
+    @decorators.action(detail=True, url_path="copy", methods=["post"])
+    def copy_block(self, request, **kwargs):
+        block = self.get_object()
+        copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
+
+        try:
+            new_block = block.make_clone(attrs={"name": f"Block Template ID #{block.id} copy({copy_time})"})
+        except Exception as e:
+            return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
+
+        return response.Response({"id": new_block.id}, status=status.HTTP_200_OK)
 
 
 class PageTemplateListCreteView(BaseListCreateView):
