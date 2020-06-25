@@ -49,6 +49,7 @@ class BlockTemplateElementFactory(factory.django.DjangoModelFactory):
 
     name = factory.Faker("text", max_nb_chars=constants.ELEMENT_NAME_MAX_LENGTH)
     template = factory.SubFactory(BlockTemplateFactory)
+    type = constants.ElementType.CODE
 
 
 class PageTemplateFactory(factory.django.DjangoModelFactory):

@@ -750,3 +750,39 @@ class TestUpdateDeletePageView:
 
         assert response.status_code == status.HTTP_200_OK
         assert page.pageblock_set.count() == 0
+
+
+class TestCopyBlockTemplate:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:blocktemplate-copy-block", kwargs=dict(pk=pk))
+
+    @pytest.mark.freeze_time("2020-01-02 10:00:00")
+    def test_copy_as_admin(self, admin, api_client, block_template_factory, block_template_element_factory):
+        block = block_template_factory()
+        block_template_element_factory.create_batch(4, template=block)
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(block.id), format="json")
+        copied_block = pages_models.BlockTemplate.objects.get(pk=response.data["id"])
+        copied_block_elements = copied_block.elements.all().order_by("name")
+        block_elements = block.elements.all().order_by("name")
+
+        assert response.status_code == status.HTTP_200_OK
+        assert copied_block.name == f"Block Template ID #{block.id} copy(2020-01-02, 10:00:00.000000)"
+        assert len(block_elements) == len(copied_block_elements)
+        assert block_elements[0].id != copied_block_elements[0].id
+        assert block_elements[0].type == copied_block_elements[0].type
+        assert block_elements[0].name == copied_block_elements[0].name
+        assert copied_block_elements[0].template == copied_block
+
+    def test_copy_not_allowed_as_editor(
+        self, editor, api_client, block_template_factory, block_template_element_factory
+    ):
+        block = block_template_factory()
+        block_template_element_factory.create_batch(4, template=block)
+
+        api_client.force_authenticate(editor)
+        response = api_client.post(self.get_url(block.id), format="json")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
