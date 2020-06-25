@@ -6,6 +6,7 @@ import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
+import { useIntl } from 'react-intl';
 
 import { menuIconStyles, IconWrapper } from '../form/frequentComponents.styles';
 import {
@@ -16,10 +17,12 @@ import {
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateElement } from '../blockTemplateElement';
 import { Draggable } from '../draggable';
+import messages from './blockTemplateForm.messages';
 
 const { MenuIcon } = Icons;
 
 export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, values, ...restFormikProps }) => {
+  const intl = useIntl();
   const removeElement = index => {
     const removedElement = values[BLOCK_TEMPLATES_ELEMENTS][index];
     const newValues = { ...values };
@@ -45,8 +48,12 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
 
   return (
-    <Accordion>
-      <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+    <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+      <Accordion
+        collapseCopy={intl.formatMessage(messages.collapseCopy)}
+        expandCopy={intl.formatMessage(messages.expandCopy)}
+        newOpen
+      >
         {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
           <Draggable
             key={element[ELEMENT_KEY]}
@@ -80,8 +87,8 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
             }}
           </Draggable>
         ))}
-      </DndProvider>
-    </Accordion>
+      </Accordion>
+    </DndProvider>
   );
 };
 

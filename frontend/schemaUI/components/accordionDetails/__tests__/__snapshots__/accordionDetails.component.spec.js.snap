@@ -6,7 +6,6 @@ exports[`AccordionDetails: Component should render correctly 1`] = `
     open={true}
   >
     <AccordionDetailsContentComponent
-      autoHeight={0}
       customDetailsStyles={Object {}}
       open={true}
     >
@@ -15,6 +14,7 @@ exports[`AccordionDetails: Component should render correctly 1`] = `
           Object {
             "backgroundColor": "#000",
             "height": 0,
+            "overflow": "hidden",
             "transition": "height 200ms linear, overflow 0s linear 200ms",
           }
         }

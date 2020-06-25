@@ -149,7 +149,6 @@ export const SetElementContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: calc(100% - 70px);
 `;
 
 export const RemoveContainer = styled.div`
@@ -174,3 +173,7 @@ export const customInputStyles = {
   fontSize: 16,
   minWidth: 90,
 };
+
+export const AccordionWrapper = styled.div`
+  width: 100%;
+`;

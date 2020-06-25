@@ -15,7 +15,7 @@ import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
 import { PlusButton } from '../navigation';
 import { getElementComponent } from './blockElement.component';
-import { SetElement, SetElementContent, RemoveContainer } from './blockElement.styles';
+import { SetElement, SetElementContent, RemoveContainer, AccordionWrapper } from './blockElement.styles';
 import messages from './blockElement.messages';
 
 const { MenuIcon, CloseIcon } = Icons;
@@ -91,25 +91,30 @@ export const CustomElement = ({ element, blockPath, handleChange, index, setFiel
               return (
                 <SetElement>
                   {draggableIcon}
-                  <Accordion>
+                  <AccordionWrapper>
                     <SetElementContent>
-                      {block.elements.map((item, index) => (
-                        <AccordionPanel key={index}>
-                          <AccordionHeader>{item.name}</AccordionHeader>
-                          <AccordionDetails>
-                            {getElementComponent({
-                              element: item,
-                              setFieldValue,
-                              index,
-                              handleChange,
-                              blockPath: `${valuePath}.${parentIndex}`,
-                              ...restFormikProps,
-                            })}
-                          </AccordionDetails>
-                        </AccordionPanel>
-                      ))}
+                      <Accordion
+                        collapseCopy={intl.formatMessage(messages.collapseCopy)}
+                        expandCopy={intl.formatMessage(messages.expandCopy)}
+                      >
+                        {block.elements.map((item, index) => (
+                          <AccordionPanel key={index} index={index}>
+                            <AccordionHeader>{item.name}</AccordionHeader>
+                            <AccordionDetails>
+                              {getElementComponent({
+                                element: item,
+                                setFieldValue,
+                                index,
+                                handleChange,
+                                blockPath: `${valuePath}.${parentIndex}`,
+                                ...restFormikProps,
+                              })}
+                            </AccordionDetails>
+                          </AccordionPanel>
+                        ))}
+                      </Accordion>
                     </SetElementContent>
-                  </Accordion>
+                  </AccordionWrapper>
                   <RemoveContainer>
                     <CloseIcon
                       customStyles={{ width: 40, height: 40 }}

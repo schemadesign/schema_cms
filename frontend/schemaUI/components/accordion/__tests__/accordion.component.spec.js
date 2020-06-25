@@ -7,22 +7,24 @@ import { AccordionHeader } from '../../accordionHeader';
 import { AccordionDetails } from '../../accordionDetails';
 
 describe('Accordion: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    newOpen: true,
+  };
 
   const component = props => (
     <Accordion {...defaultProps} {...props}>
-      <AccordionPanel>
+      <AccordionPanel index={1}>
         <AccordionHeader>First Panel</AccordionHeader>
         <AccordionDetails>First Details</AccordionDetails>
       </AccordionPanel>
-      <AccordionPanel>
+      <AccordionPanel index={2}>
         <AccordionHeader>Second Panel</AccordionHeader>
         <AccordionDetails>Second Details</AccordionDetails>
       </AccordionPanel>
     </Accordion>
   );
 
-  const render = (props = {}) => shallow(component(props)).dive();
+  const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();

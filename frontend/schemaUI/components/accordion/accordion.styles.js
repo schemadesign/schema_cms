@@ -4,4 +4,10 @@ export const getStyles = () => ({
     height: 40,
     userSelect: 'none',
   },
+
+  expandButtonStyles: {
+    padding: '10px 0 20px',
+    textDecoration: 'underline',
+    cursor: 'pointer',
+  },
 });

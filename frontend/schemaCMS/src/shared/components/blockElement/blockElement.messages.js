@@ -136,4 +136,12 @@ export default defineMessages({
     id: `shared.components.blockElement.${FILE_ALT}`,
     defaultMessage: 'Alt',
   },
+  collapseCopy: {
+    id: 'shared.components.blockElement.collapseCopy',
+    defaultMessage: 'Collapse Set',
+  },
+  expandCopy: {
+    id: 'shared.components.blockElement.expandCopy',
+    defaultMessage: 'Expand Set',
+  },
 });

@@ -1,22 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Accordion: Component should render correctly 1`] = `
-Array [
-  <Component>
-    <Component>
-      First Panel
+<Fragment>
+  <ContextProvider
+    value={
+      Object {
+        "accordionsState": Object {
+          "1": false,
+          "2": false,
+        },
+        "customDetailsStyles": Object {},
+        "customHeaderStyles": Object {},
+        "customPanelStyles": Object {},
+        "icon": <Unknown
+          customStyles={
+            Object {
+              "height": 40,
+              "userSelect": "none",
+              "width": 40,
+            }
+          }
+        />,
+        "newOpen": true,
+        "setAccordionState": [Function],
+      }
+    }
+  >
+    <Component
+      index={1}
+    >
+      <Component>
+        First Panel
+      </Component>
+      <AccordionDetails>
+        First Details
+      </AccordionDetails>
     </Component>
-    <AccordionDetails>
-      First Details
-    </AccordionDetails>
-  </Component>,
-  <Component>
-    <Component>
-      Second Panel
+    <Component
+      index={2}
+    >
+      <Component>
+        Second Panel
+      </Component>
+      <AccordionDetails>
+        Second Details
+      </AccordionDetails>
     </Component>
-    <AccordionDetails>
-      Second Details
-    </AccordionDetails>
-  </Component>,
-]
+  </ContextProvider>
+   
+</Fragment>
 `;

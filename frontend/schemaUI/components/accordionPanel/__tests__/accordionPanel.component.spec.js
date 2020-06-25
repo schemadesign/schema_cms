@@ -6,7 +6,9 @@ import { context } from '../accordionPanel.stories';
 import AccordionPanelContext from '../accordionPanel.context';
 
 describe('AccordionPanel: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    index: 1,
+  };
 
   const component = props => (
     <AccordionPanelContext.Provider value={context}>
