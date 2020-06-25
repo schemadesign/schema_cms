@@ -118,7 +118,7 @@ export default defineMessages({
   },
   [`${EMBED_VIDEO_ATTRIBUTES}Placeholder`]: {
     id: `shared.components.blockElement.${EMBED_VIDEO_ATTRIBUTES}Placeholder`,
-    defaultMessage: 'e.g. width="100%" height="1000px"',
+    defaultMessage: 'e.g. width=100% height=1000',
   },
   set: {
     id: 'shared.components.blockElement.set',
