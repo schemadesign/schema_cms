@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { BlockTemplates } from '../blockTemplates.component';
 import { defaultProps } from '../blockTemplates.stories';
@@ -59,5 +60,15 @@ describe('BlockTemplates: Component', () => {
     wrapper.root.findByProps({ id: 'blockTemplateTitle-1' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/block-template/1');
+  });
+
+  it('should call copy block template', async () => {
+    jest.spyOn(defaultProps, 'copyBlockTemplate');
+    const wrapper = await render();
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'blockTemplateCopyButton-1' }).props.onClick();
+    });
+
+    expect(defaultProps.copyBlockTemplate).toHaveBeenCalledWith({ projectId: 'projectId', blockTemplateId: 1 });
   });
 });

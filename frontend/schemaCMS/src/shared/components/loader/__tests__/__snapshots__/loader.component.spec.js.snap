@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader: Component should render correctly 1`] = `
+<div
+  className="sc-AxjAm dANutn"
+>
+  <div />
+  <div />
+  <div />
+  <div />
+</div>
+`;

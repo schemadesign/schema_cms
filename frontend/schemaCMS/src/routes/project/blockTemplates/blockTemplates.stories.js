@@ -10,6 +10,7 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   blockTemplates,
   fetchBlockTemplates: Function.prototype,
+  copyBlockTemplate: Function.prototype,
   project: {
     id: 1,
   },

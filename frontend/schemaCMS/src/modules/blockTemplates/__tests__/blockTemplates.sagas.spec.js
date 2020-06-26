@@ -121,4 +121,30 @@ describe('BlockTemplates: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when /COPY_BLOCK_TEMPLATE action is fired', () => {
+    it('should put copyBlockTemplate action', async () => {
+      const blockTemplateId = 'blockTemplateId';
+      const projectId = 'projectId';
+      const response = {
+        id: 1,
+      };
+
+      const responseList = {
+        id: 1,
+        results: [],
+        project: {},
+      };
+
+      mockApi.post(`${BLOCK_TEMPLATES_PATH}/${blockTemplateId}/copy`).reply(OK, response);
+      mockApi.get(`${PROJECTS_PATH}/${projectId}${BLOCK_TEMPLATES_PATH}`).reply(OK, responseList);
+
+      await expectSaga(watchBlockTemplates)
+        .withState(defaultState)
+        .put(BlockTemplatesRoutines.copyBlockTemplate.success(response))
+        .put(BlockTemplatesRoutines.fetchBlockTemplates.success(responseList.results))
+        .dispatch(BlockTemplatesRoutines.copyBlockTemplate({ blockTemplateId, projectId }))
+        .silentRun();
+    });
+  });
 });

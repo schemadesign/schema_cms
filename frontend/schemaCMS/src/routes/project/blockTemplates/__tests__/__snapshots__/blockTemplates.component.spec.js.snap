@@ -5,7 +5,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
   className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-AxhUy bGjTfb"
+    className="sc-AxgMl kEUmFl"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-AxgMl fFPQpl"
+          className="sc-AxheI fniENP"
         >
           <h2
-            className="sc-fzplWN eQxyjC"
+            className="sc-fznyAO dFXsby"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Block Templates
           </h2>
           <h1
-            className="sc-fznyAO dFXsby"
+            className="sc-fznKkj hlIEaX"
             id="headerSubtitle"
             style={
               Object {
@@ -120,16 +120,16 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-Axmtr hUmGBz"
+        className="sc-AxmLO dvTVuW"
       >
         <div
-          className="sc-AxheI dUMtsD"
+          className="sc-Axmtr bwYVDg"
         >
           <div
-            className="sc-AxgMl fFPQpl"
+            className="sc-AxheI fniENP"
           >
             <h2
-              className="sc-fzplWN eQxyjC"
+              className="sc-fznyAO dFXsby"
               id="headerTitle"
               style={
                 Object {
@@ -143,7 +143,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
               Block Templates
             </h2>
             <h1
-              className="sc-fznyAO dFXsby"
+              className="sc-fznKkj hlIEaX"
               id="headerSubtitle"
               style={
                 Object {
@@ -161,10 +161,10 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxmLO cZlyyh"
+          className="sc-fzozJi cXstQc"
         >
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/projectId"
@@ -197,7 +197,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/projectId/datasource"
@@ -208,7 +208,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/projectId/user"
@@ -219,7 +219,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/projectId/content"
@@ -230,7 +230,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/projectId/templates"
@@ -242,10 +242,10 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxmLO cZlyyh"
+          className="sc-fzozJi cXstQc"
         >
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/settings"
@@ -256,7 +256,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <div
               onClick={[Function]}
@@ -266,10 +266,10 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzoLsD hiCoJg"
+          className="sc-fzpans cCWWfw"
         >
           <a
-            className="sc-fzpans TNlMA"
+            className="sc-fzplWN jUkJod"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -277,7 +277,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fzpans TNlMA"
+            className="sc-fzplWN jUkJod"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -285,7 +285,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fzpans TNlMA"
+            className="sc-fzplWN jUkJod"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -339,7 +339,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoKki fIgmuj"
+    className="sc-fznzOf ENHbE"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkJw eApjBb"
+          className="sc-fzoant fVEmZd"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fznzOf eGVGIP"
+            className="sc-fzomME ggEgBQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkJw eApjBb"
+          className="sc-fzoant fVEmZd"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fznzOf eGVGIP"
+            className="sc-fzomME ggEgBQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -483,7 +483,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoYkl hIOqjs"
+          className="sc-fznMnq fbsjCR"
         >
           <span
             style={
@@ -496,7 +496,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fznzOf eGVGIP"
+            className="sc-fzomME ggEgBQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -520,13 +520,13 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznJRM fWcXoV"
+    className="sc-fznWqX VKSem"
   >
     <div
-      className="sc-fznWqX izhnMz"
+      className="sc-fzoiQi kVjVJJ"
     >
       <h2
-        className="sc-fzoiQi kWApJK"
+        className="sc-fzqARJ euGmLc"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -540,7 +540,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         Block Templates
       </h2>
       <h1
-        className="sc-fzqARJ euGmLc"
+        className="sc-fzqNqU cSnCDr"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -557,10 +557,10 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fzqNqU hFpwJZ"
+      className="sc-fzoyTs crHzLr"
     >
       <div
-        className="sc-fznxsB ikVhPc"
+        className="sc-fznJRM hUAWpU"
       >
         <button
           disabled={false}
@@ -606,21 +606,21 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqPZZ dYZeMh"
+    className="sc-fzoxKX eqjPQc"
   >
     <div
-      className="sc-fzoxKX iTjTnT"
+      className="sc-fzoKki fwmznp"
     />
     3 Block Templates
     <div
-      className="sc-fzoxKX iTjTnT"
+      className="sc-fzoKki fwmznp"
     />
   </div>
   <section
-    className="sc-fznxKY cinfQm"
+    className="sc-fznMAR dqZyIO"
   >
     <div
-      className="sc-fzoyTs dGguFW"
+      className="sc-fzoNJl jGLQvM"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -653,28 +653,52 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-AxirZ faeQuU"
           >
-            <ul
-              className="sc-fznMAR dwokPX"
+            <div
+              className="sc-fzqBkg fFYWEf"
             >
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-0"
+              <ul
+                className="sc-fznWOq iILJxw"
               >
-                in 3 months
-              </li>
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-1"
+                <li
+                  className="sc-fzolEj kzHfOB"
+                  id="headerItem-0"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="sc-fzolEj kzHfOB"
+                  id="headerItem-1"
+                >
+                  owner
+                </li>
+              </ul>
+            </div>
+            <div
+              className="sc-fzoYkl bNXWyt"
+              id="blockTemplateCopyButton-1"
+              onClick={[Function]}
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "20px",
+                    "width": "20px",
+                  }
+                }
+                viewBox="0 0 512 512"
               >
-                owner
-              </li>
-            </ul>
+                <path
+                  d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
         <h1
-          className="sc-fzoNJl iNXeca"
+          className="sc-fzoXWK hViLwC"
           id="blockTemplateTitle-1"
           onClick={[Function]}
           style={
@@ -704,7 +728,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoyTs dGguFW"
+      className="sc-fzoNJl jGLQvM"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -737,28 +761,52 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-AxirZ faeQuU"
           >
-            <ul
-              className="sc-fznMAR dwokPX"
+            <div
+              className="sc-fzqBkg fFYWEf"
             >
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-0"
+              <ul
+                className="sc-fznWOq iILJxw"
               >
-                in 3 months
-              </li>
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-1"
+                <li
+                  className="sc-fzolEj kzHfOB"
+                  id="headerItem-0"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="sc-fzolEj kzHfOB"
+                  id="headerItem-1"
+                >
+                  owner 2
+                </li>
+              </ul>
+            </div>
+            <div
+              className="sc-fzoYkl bNXWyt"
+              id="blockTemplateCopyButton-2"
+              onClick={[Function]}
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "20px",
+                    "width": "20px",
+                  }
+                }
+                viewBox="0 0 512 512"
               >
-                owner 2
-              </li>
-            </ul>
+                <path
+                  d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
         <h1
-          className="sc-fzoNJl iNXeca"
+          className="sc-fzoXWK hViLwC"
           id="blockTemplateTitle-2"
           onClick={[Function]}
           style={
@@ -788,7 +836,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoyTs dGguFW"
+      className="sc-fzoNJl jGLQvM"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -821,28 +869,52 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-AxirZ faeQuU"
           >
-            <ul
-              className="sc-fznMAR dwokPX"
+            <div
+              className="sc-fzqBkg fFYWEf"
             >
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-0"
+              <ul
+                className="sc-fznWOq iILJxw"
               >
-                in 3 months
-              </li>
-              <li
-                className="sc-fznWOq frgEXS"
-                id="headerItem-1"
+                <li
+                  className="sc-fzolEj kzHfOB"
+                  id="headerItem-0"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="sc-fzolEj kzHfOB"
+                  id="headerItem-1"
+                >
+                  owner 3
+                </li>
+              </ul>
+            </div>
+            <div
+              className="sc-fzoYkl bNXWyt"
+              id="blockTemplateCopyButton-3"
+              onClick={[Function]}
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "20px",
+                    "width": "20px",
+                  }
+                }
+                viewBox="0 0 512 512"
               >
-                owner 3
-              </li>
-            </ul>
+                <path
+                  d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
         <h1
-          className="sc-fzoNJl iNXeca"
+          className="sc-fzoXWK hViLwC"
           id="blockTemplateTitle-3"
           onClick={[Function]}
           style={
@@ -873,13 +945,13 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </section>
   <div
-    className="sc-fzqNJr fhMLFD"
+    className="sc-fzoyAV jiDcgh"
   >
     <div
-      className="sc-fzoLag hbFwVz"
+      className="sc-fzoXzr hBAcwN"
     >
       <div
-        className="sc-fzoyAV huHdwS"
+        className="sc-fzoLag dqeAwy"
       >
         <button
           disabled={false}
@@ -921,7 +993,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           </svg>
         </button>
         <div
-          className="sc-fznxsB guWwxz"
+          className="sc-fznJRM eANuNT"
         >
           <button
             disabled={false}

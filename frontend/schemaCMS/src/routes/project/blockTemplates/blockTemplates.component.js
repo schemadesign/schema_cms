@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 
-import { Container } from './blockTemplates.styles';
+import { Container, ListHeader } from './blockTemplates.styles';
 import messages from './blockTemplates.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
@@ -17,6 +17,7 @@ import { ListContainer, ListItem, ListItemTitle } from '../../../shared/componen
 import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { CounterHeader } from '../../../shared/components/counterHeader';
+import { CopyButton } from '../../../shared/components/copyButton';
 import {
   blockTemplatesMessage,
   libraryMessage,
@@ -45,11 +46,35 @@ const getBreadcrumbsItems = project => [
   },
 ];
 
-const BlockTemplate = ({ created, createdBy, name, id, elements }) => {
+const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elements, projectId }) => {
   const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
-  const header = <CardHeader list={list} />;
+
+  const copyBlockTemplateAction = async () => {
+    try {
+      setLoading(true);
+      await copyBlockTemplate({ blockTemplateId: id, projectId });
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const header = (
+    <ListHeader>
+      <CardHeader list={list} />
+      <CopyButton
+        name={`blockTemplateCopyButton-${id}`}
+        loading={loading}
+        error={error}
+        action={copyBlockTemplateAction}
+      />
+    </ListHeader>
+  );
   const footer = <FormattedMessage {...messages.elementsCounter} values={{ elements: elements.length }} />;
 
   return (
@@ -67,9 +92,11 @@ BlockTemplate.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   elements: PropTypes.array.isRequired,
+  copyBlockTemplate: PropTypes.func.isRequired,
+  projectId: PropTypes.string.isRequired,
 };
 
-export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole, project }) => {
+export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTemplates, userRole, project }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
@@ -109,7 +136,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, blockTemplates, userRole, 
             <CounterHeader moveToTop copy={intl.formatMessage(messages.blockTemplate)} count={blockTemplates.length} />
             <ListContainer>
               {blockTemplates.map((block, index) => (
-                <BlockTemplate key={index} {...block} />
+                <BlockTemplate key={index} projectId={projectId} copyBlockTemplate={copyBlockTemplate} {...block} />
               ))}
             </ListContainer>
           </Fragment>
@@ -131,5 +158,6 @@ BlockTemplates.propTypes = {
   userRole: PropTypes.string.isRequired,
   blockTemplates: PropTypes.array.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,
+  copyBlockTemplate: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
 };
