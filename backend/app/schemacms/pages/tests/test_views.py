@@ -173,8 +173,8 @@ class TestUpdatePageTemplatesView:
         page_template.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert len(page_template.pageblock_set.all()) == 4
-        assert page_template.pageblock_set.get(pk=blocks[0].id).name == new_block_name
+        assert len(page_template.page_blocks.all()) == 4
+        assert page_template.page_blocks.get(pk=blocks[0].id).name == new_block_name
 
     def test_deleting_page_blocks(self, api_client, admin, page_template, page_block_factory):
         blocks = page_block_factory.create_batch(3, page=page_template)
@@ -701,8 +701,8 @@ class TestUpdateDeletePageView:
         page.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert page.pageblock_set.count() == 1
-        assert page.pageblock_set.get(pk=page_block.id).name == new_block_name
+        assert page.page_blocks.count() == 1
+        assert page.page_blocks.get(pk=page_block.id).name == new_block_name
 
     def test_update_page_block_element(
         self, api_client, admin, page, block_template, page_block_factory, page_block_element_factory
@@ -718,10 +718,10 @@ class TestUpdateDeletePageView:
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(page.id), data=payload, format="json")
-        element = page.pageblock_set.get(pk=page_block.id).elements.get(pk=page_block_element.id)
+        element = page.page_blocks.get(pk=page_block.id).elements.get(pk=page_block_element.id)
 
         assert response.status_code == status.HTTP_200_OK
-        assert page.pageblock_set.count() == 1
+        assert page.page_blocks.count() == 1
         assert element.name == new_element_name
 
     def test_delete_page_as_admin(self, api_client, admin, page):
@@ -749,7 +749,7 @@ class TestUpdateDeletePageView:
         page.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert page.pageblock_set.count() == 0
+        assert page.page_blocks.count() == 0
 
 
 class TestCopyBlockTemplate:

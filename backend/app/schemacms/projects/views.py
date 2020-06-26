@@ -120,7 +120,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .select_related("project", "created_by")
             .prefetch_related(
                 Prefetch(
-                    "pageblock_set",
+                    "page_blocks",
                     queryset=PageBlock.objects.prefetch_related("block__elements")
                     .select_related("block")
                     .order_by("order"),

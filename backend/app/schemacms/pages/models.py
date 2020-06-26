@@ -2,8 +2,8 @@ import os
 
 from django.conf import settings
 from django.contrib.postgres import fields as pg_fields
-from django.db import models
-from django.utils import functional
+from django.db import models, transaction
+from django.utils import functional, timezone
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
 
 from softdelete.models import SoftDeleteObject
@@ -112,6 +112,8 @@ class Page(Content):
 
     objects = managers.PageManager()
 
+    _clone_many_to_one_or_one_to_many_fields = ["tags"]
+
     class Meta:
         ordering = ("-created",)
 
@@ -119,13 +121,27 @@ class Page(Content):
         return PageBlock.objects.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
 
     def delete_blocks(self, blocks: list):
-        self.pageblock_set.filter(id__in=blocks).delete()
+        self.page_blocks.filter(id__in=blocks).delete()
 
     def add_tags(self, tags_list):
         self.tags.all().delete()
 
         for tag in tags_list:
             PageTag.objects.create(page=self, category_id=tag["category"], value=tag["value"])
+
+    @transaction.atomic()
+    def copy_page(self):
+
+        copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
+        new_page = self.make_clone(attrs={"name": f"Page ID #{self.id} copy({copy_time})"})
+
+        for block in self.page_blocks.all():
+            c_block = block.make_clone(attrs={"page": new_page})
+
+            for element in block.elements.all():
+                element.clone(c_block)
+
+        return new_page
 
 
 class PageTemplate(Page):
@@ -135,9 +151,9 @@ class PageTemplate(Page):
         proxy = True
 
 
-class PageBlock(SoftDeleteObject):
+class PageBlock(CloneMixin, SoftDeleteObject):
     block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
-    page = models.ForeignKey("Page", on_delete=models.CASCADE)
+    page = models.ForeignKey("Page", on_delete=models.CASCADE, related_name="page_blocks")
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
     order = models.PositiveIntegerField(default=0)
 
@@ -166,10 +182,10 @@ class PageBlockElement(Element):
     custom_element_set = models.ForeignKey(
         "CustomElementSet", on_delete=models.CASCADE, related_name="elements", null=True
     )
-    observable_hq = models.OneToOneField(
-        "PageBlockObservableElement", on_delete=models.CASCADE, null=True, related_name="block_element"
-    )
+    observable_hq = models.OneToOneField("PageBlockObservableElement", on_delete=models.CASCADE, null=True)
     state = models.ForeignKey("states.State", null=True, related_name="elements", on_delete=models.SET_NULL)
+
+    _clone_one_to_one_fields = ["observable_hq"]
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -241,8 +257,55 @@ class PageBlockElement(Element):
             element_instance.observable_hq = hq_element
             element_instance.save(update_fields=["observable_hq"])
 
+    def clone(self, block=None):
+        block = block if block else self.block
+        if self.custom_element_set:
+            return None
 
-class CustomElementSet(SoftDeleteObject):
+        if self.type == constants.ElementType.OBSERVABLE_HQ:
+            return self.clone_observable_element(block)
+
+        elif self.type == constants.ElementType.CUSTOM_ELEMENT:
+            return self.clone_custom_element(block)
+        else:
+            return self.clone_simple_element(block)
+
+    def clone_simple_element(self, block=None, elements_set=None):
+
+        attrs = {"block": block}
+
+        if elements_set:
+            attrs["custom_element_set"] = elements_set
+
+        return self.make_clone(attrs=attrs)
+
+    def clone_observable_element(self, block=None, elements_set=None):
+        new_obs = self.observable_hq.make_clone()
+
+        attrs = {"block": block, "observable_hq": new_obs}
+
+        if elements_set:
+            attrs["custom_element_set"] = elements_set
+
+        return self.make_clone(attrs=attrs)
+
+    def clone_custom_element(self, block=None):
+        block = block if block else self.block
+        new_ele = self.make_clone(attrs={"block": block})
+
+        for element_set in self.elements_sets.all():
+            new_set = element_set.make_clone(attrs={"custom_element": new_ele})
+
+            for set_element in element_set.elements.all():
+                if set_element.type == constants.ElementType.OBSERVABLE_HQ:
+                    set_element.clone_observable_element(block=block, elements_set=new_set)
+                else:
+                    set_element.clone_simple_element(block=block, elements_set=new_set)
+
+        return new_ele
+
+
+class CustomElementSet(CloneMixin, SoftDeleteObject):
     custom_element = models.ForeignKey(
         PageBlockElement, on_delete=models.CASCADE, related_name="elements_sets"
     )
@@ -252,7 +315,7 @@ class CustomElementSet(SoftDeleteObject):
         return f"{self.id}"
 
 
-class PageBlockObservableElement(SoftDeleteObject):
+class PageBlockObservableElement(CloneMixin, SoftDeleteObject):
     observable_user = models.TextField(blank=True, default="", max_length=1000)
     observable_notebook = models.TextField(blank=True, default="", max_length=1000)
     observable_cell = models.TextField(blank=True, default="", max_length=1000)
@@ -270,7 +333,7 @@ class PageBlockObservableElement(SoftDeleteObject):
         }
 
 
-class PageTag(SoftDeleteObject):
+class PageTag(CloneMixin, SoftDeleteObject):
     page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="tags")
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
     value = models.CharField(max_length=150)

@@ -209,7 +209,7 @@ class PageTemplateSerializer(CustomModelSerializer):
 
     @staticmethod
     def get_blocks(template):
-        blocks = template.pageblock_set.all()
+        blocks = template.page_blocks.all()
         return PageTemplateBlockSerializer(blocks, many=True).data
 
 
@@ -384,7 +384,7 @@ class PageSerializer(CustomModelSerializer):
     @staticmethod
     def get_blocks(obj):
         blocks = (
-            obj.pageblock_set.all()
+            obj.page_blocks.all()
             .prefetch_related(
                 django_models.Prefetch(
                     "elements",

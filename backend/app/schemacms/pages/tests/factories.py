@@ -94,4 +94,4 @@ class CustomElementSetFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "pages.CustomElementSet"
 
-    block = factory.SubFactory(PageBlockElementFactory)
+    custom_element = factory.SubFactory(PageBlockElementFactory)

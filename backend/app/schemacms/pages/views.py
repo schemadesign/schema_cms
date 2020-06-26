@@ -96,7 +96,7 @@ class PageTemplateListCreteView(BaseListCreateView):
         .select_related("project", "created_by")
         .prefetch_related(
             d_models.Prefetch(
-                "pageblock_set",
+                "page_blocks",
                 queryset=models.PageBlock.objects.prefetch_related("block__elements")
                 .select_related("block")
                 .order_by("order"),
@@ -112,7 +112,7 @@ class PageTemplateViewSet(DetailViewSet):
         .select_related("project", "created_by")
         .prefetch_related(
             d_models.Prefetch(
-                "pageblock_set",
+                "page_blocks",
                 queryset=models.PageBlock.objects.prefetch_related("block__elements")
                 .select_related("block")
                 .order_by("order"),
@@ -223,7 +223,7 @@ class PageListCreateView(generics.ListCreateAPIView):
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             d_models.Prefetch(
-                "pageblock_set", queryset=models.PageBlock.objects.select_related("block").order_by("order")
+                "page_blocks", queryset=models.PageBlock.objects.select_related("block").order_by("order")
             )
         )
         .order_by("-created")
@@ -262,7 +262,7 @@ class PageViewSet(DetailViewSet):
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
-            d_models.Prefetch("pageblock_set", queryset=models.PageBlock.objects.select_related("block"))
+            d_models.Prefetch("page_blocks", queryset=models.PageBlock.objects.select_related("block"))
         )
     )
 
@@ -282,3 +282,14 @@ class PageViewSet(DetailViewSet):
             section.pages.all_with_deleted().filter(id__in=current_pages).update(deleted_at=None)
         else:
             super().perform_destroy(instance)
+
+    @decorators.action(detail=True, url_path="copy", methods=["post"])
+    def copy_page(self, request, **kwargs):
+        page = self.get_object()
+
+        try:
+            new_page = page.copy_page()
+        except Exception as e:
+            return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
+
+        return response.Response({"id": new_page.id}, status=status.HTTP_200_OK)
