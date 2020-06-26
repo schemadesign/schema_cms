@@ -10,6 +10,8 @@ export const defaultProps = {
   setFieldValue: Function.prototype,
   setValues: Function.prototype,
   setRemoveModalOpen: Function.prototype,
+  copyBlockTemplate: Function.prototype,
+  blockTemplateId: 'blockTemplateId',
   values: blockTemplate,
   isValid: true,
   title: <span>title</span>,

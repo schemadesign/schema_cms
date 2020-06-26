@@ -119,7 +119,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-AxmLO fPRjRV"
+            className="sc-AxmLO jZWyjN"
           >
             <svg
               style={
@@ -136,6 +136,26 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 fillRule="evenodd"
               />
             </svg>
+            <div
+              className="sc-fzpkJw eDZffW"
+              id="blockTemplateCopyButton"
+              onClick={[Function]}
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "20px",
+                    "width": "20px",
+                  }
+                }
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </h1>
