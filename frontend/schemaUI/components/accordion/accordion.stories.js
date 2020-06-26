@@ -7,17 +7,20 @@ import { AccordionDetails } from '../accordionDetails';
 import { AccordionPanel } from '../accordionPanel';
 import { withTheme } from '../../.storybook/decorators';
 
-export const defaultProps = {};
+export const defaultProps = {
+  collapseCopy: 'Collapse button',
+  expandCopy: 'Expand button',
+};
 
 class TestComponent extends PureComponent {
   render() {
     return (
       <Accordion {...defaultProps}>
-        <AccordionPanel autoOpen>
+        <AccordionPanel index={1}>
           <AccordionHeader>First Panel</AccordionHeader>
           <AccordionDetails>First Details</AccordionDetails>
         </AccordionPanel>
-        <AccordionPanel>
+        <AccordionPanel index={2}>
           <AccordionHeader>Second Panel</AccordionHeader>
           <AccordionDetails>Second Details</AccordionDetails>
         </AccordionPanel>

@@ -18,7 +18,7 @@ describe('BlockTemplateForm: Component', () => {
     wrapper.root.findAllByProps({ id: 'createElement' })[0].props.onClick();
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements', [
-      { autoOpen: true, key: expect.any(Number), name: '', params: {}, type: '' },
+      { key: expect.any(Number), name: '', params: {}, type: '' },
       { id: 1, key: 1, name: 'element name', type: 'plain_text' },
       {
         id: 2,

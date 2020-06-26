@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AccordionPanel: Component should render correctly 1`] = `
-<Component>
+<Component
+  index={1}
+>
   <AccordionPanelComponent
-    autoOpen={false}
+    index={1}
   >
     <div
       style={
         Object {
           "borderTop": "2px solid #FFF",
-          "overflow": "hidden",
           "position": "relative",
           "width": "100%",
         }

@@ -10,7 +10,6 @@ export const ELEMENT_NAME = 'name';
 export const ELEMENT_TYPE = 'type';
 export const ELEMENT_ID = 'id';
 export const ELEMENT_PARAMS = 'params';
-export const ELEMENT_AUTO_OPEN = 'autoOpen';
 export const ELEMENT_KEY = 'key';
 export const ELEMENT_VALUE = 'value';
 
@@ -54,7 +53,6 @@ export const BLOCK_TEMPLATE_DEFAULT_ELEMENT = {
   [ELEMENT_TYPE]: '',
   [ELEMENT_NAME]: '',
   [ELEMENT_PARAMS]: {},
-  [ELEMENT_AUTO_OPEN]: true,
 };
 
 export const getDefaultBlockElement = () => ({ ...BLOCK_TEMPLATE_DEFAULT_ELEMENT, [ELEMENT_KEY]: +Date.now() });

@@ -281,8 +281,12 @@ export const PageForm = ({
         count={blocksCount}
         right={<PlusContainer>{plusButton}</PlusContainer>}
       />
-      <Accordion>
-        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+
+      <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+        <Accordion
+          collapseCopy={intl.formatMessage(messages.collapseCopy)}
+          expandCopy={intl.formatMessage(messages.expandCopy)}
+        >
           {values[PAGE_BLOCKS].map((block, index) => (
             <Draggable
               key={block[BLOCK_KEY] || block[BLOCK_ID]}
@@ -318,8 +322,8 @@ export const PageForm = ({
               }}
             </Draggable>
           ))}
-        </DndProvider>
-      </Accordion>
+        </Accordion>
+      </DndProvider>
       <Switches>
         <SwitchContainer>
           <SwitchContent>

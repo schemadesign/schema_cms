@@ -23,4 +23,12 @@ export default defineMessages({
     id: `dataSource.metadata.${METADATA_KEY}Placeholder`,
     defaultMessage: 'Name',
   },
+  collapseCopy: {
+    id: 'dataSource.metadata.collapseCopy',
+    defaultMessage: 'Collapse Metadata',
+  },
+  expandCopy: {
+    id: 'dataSource.metadata.expandCopy',
+    defaultMessage: 'Expand Metadata',
+  },
 });

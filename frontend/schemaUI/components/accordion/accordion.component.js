@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { pickAll, identity, pipe, ifElse, map, isNil, always, equals, complement, pickBy, isEmpty } from 'ramda';
 
 import { getStyles } from './accordion.styles';
 import AccordionContext from './accordion.context';
@@ -7,26 +8,108 @@ import { CaretIcon } from '../icons';
 
 export class Accordion extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
     arrowIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     customIconStyles: PropTypes.object,
     customPanelStyles: PropTypes.object,
     customHeaderStyles: PropTypes.object,
     customDetailsStyles: PropTypes.object,
+    customExpandButtonStyles: PropTypes.object,
+    collapseCopy: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    expandCopy: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    newOpen: PropTypes.bool,
   };
 
   static defaultProps = {
     customPanelStyles: {},
     customHeaderStyles: {},
     customDetailsStyles: {},
+    newOpen: false,
+  };
+
+  state = {
+    accordionsState: {},
+    isAnyOpen: false,
+  };
+
+  componentDidMount() {
+    const temporaryAccordionState = {};
+    this.props.children.forEach(({ props }) => {
+      temporaryAccordionState[props.index] = false;
+    });
+
+    this.setState({
+      accordionsState: temporaryAccordionState,
+      isAnyOpen: false,
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.children.length !== this.props.children.length) {
+      const newKeys = this.props.children.map(({ key }) => key);
+      const accordionsState = pipe(
+        pickAll(newKeys),
+        map(ifElse(isNil, always(this.props.newOpen), identity))
+      )(this.state.accordionsState);
+      const isAnyOpen = this.getIsAnyOpen(accordionsState);
+
+      this.setState({
+        accordionsState,
+        isAnyOpen,
+        register: false,
+      });
+    }
+  }
+
+  getIsAnyOpen = pipe(
+    pickBy(equals(true)),
+    complement(isEmpty)
+  );
+
+  toggleOpenAccordion = () => {
+    const isAnyOpen = this.getIsAnyOpen(this.state.accordionsState);
+    const accordionsState = map(() => !isAnyOpen)(this.state.accordionsState);
+
+    this.setState({ accordionsState, isAnyOpen: !isAnyOpen });
+  };
+
+  setAccordionState = (key, value) => {
+    const accordionsState = { ...this.state.accordionsState };
+    accordionsState[key] = value;
+    const isAnyOpen = this.getIsAnyOpen(accordionsState);
+
+    this.setState({ accordionsState, isAnyOpen });
   };
 
   render() {
-    const { children, arrowIcon = null, customIconStyles, ...rest } = this.props;
-    const { iconStyles } = getStyles();
+    const {
+      children,
+      arrowIcon = null,
+      customIconStyles,
+      collapseCopy,
+      expandCopy,
+      customExpandButtonStyles,
+      ...rest
+    } = this.props;
+    const { accordionsState, isAnyOpen } = this.state;
+    const { iconStyles, expandButtonStyles } = getStyles();
     const icon = arrowIcon || <CaretIcon customStyles={{ ...iconStyles, ...customIconStyles }} />;
-    const context = { icon, ...rest };
+    const context = {
+      icon,
+      accordionsState,
+      setAccordionState: this.setAccordionState,
+      ...rest,
+    };
 
-    return <AccordionContext.Provider value={context}>{children}</AccordionContext.Provider>;
+    return (
+      <Fragment>
+        {collapseCopy && expandCopy && !!children ? (
+          <div style={{ ...expandButtonStyles, ...customExpandButtonStyles }} onClick={this.toggleOpenAccordion}>
+            {isAnyOpen ? collapseCopy : expandCopy}
+          </div>
+        ) : null}
+        <AccordionContext.Provider value={context}>{children}</AccordionContext.Provider>{' '}
+      </Fragment>
+    );
   }
 }

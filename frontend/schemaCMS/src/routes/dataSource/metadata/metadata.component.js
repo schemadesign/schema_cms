@@ -111,9 +111,13 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
-          <Accordion>
+          <Accordion
+            collapseCopy={intl.formatMessage(messages.collapseCopy)}
+            expandCopy={intl.formatMessage(messages.expandCopy)}
+            newOpen
+          >
             {values[METADATA].map(({ key, value, id }, index) => (
-              <AccordionPanel key={id} autoOpen>
+              <AccordionPanel key={id} index={id}>
                 <AccordionHeader>
                   <Header>
                     <TextInput

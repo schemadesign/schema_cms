@@ -83,4 +83,12 @@ export default defineMessages({
     id: 'shared.components.pageForm.blocks',
     defaultMessage: 'Block',
   },
+  collapseCopy: {
+    id: 'shared.components.pageForm.collapseCopy',
+    defaultMessage: 'Collapse Blocks',
+  },
+  expandCopy: {
+    id: 'shared.components.pageForm.expandCopy',
+    defaultMessage: 'Expand Blocks',
+  },
 });

@@ -902,6 +902,18 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
       </div>
       <span>
         <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "padding": "10px 0 20px",
+              "textDecoration": "underline",
+            }
+          }
+        >
+          Expand Elements
+        </div>
+        <div
           style={
             Object {
               "alignItems": "center",
@@ -919,7 +931,6 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             style={
               Object {
                 "borderTop": "2px solid #FFF",
-                "overflow": "hidden",
                 "position": "relative",
                 "width": "100%",
               }
@@ -1141,6 +1152,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 Object {
                   "backgroundColor": "#000",
                   "height": 0,
+                  "overflow": "hidden",
                   "transition": "height 200ms linear, overflow 0s linear 200ms",
                 }
               }
@@ -1503,7 +1515,6 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             style={
               Object {
                 "borderTop": "2px solid #FFF",
-                "overflow": "hidden",
                 "position": "relative",
                 "width": "100%",
               }
@@ -1725,6 +1736,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 Object {
                   "backgroundColor": "#000",
                   "height": 0,
+                  "overflow": "hidden",
                   "transition": "height 200ms linear, overflow 0s linear 200ms",
                 }
               }
@@ -2569,6 +2581,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+         
       </span>
       <div
         className="sc-fzoXzr cvxsFE"

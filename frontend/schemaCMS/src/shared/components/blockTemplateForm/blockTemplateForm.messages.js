@@ -26,4 +26,12 @@ export default defineMessages({
     id: 'shared.components.blockTemplateForm.availableForEditors',
     defaultMessage: 'This Template is currently {negative}available for Editors',
   },
+  collapseCopy: {
+    id: 'shared.components.blockTemplateForm.collapseCopy',
+    defaultMessage: 'Collapse Elements',
+  },
+  expandCopy: {
+    id: 'shared.components.blockTemplateForm.expandCopy',
+    defaultMessage: 'Expand Elements',
+  },
 });

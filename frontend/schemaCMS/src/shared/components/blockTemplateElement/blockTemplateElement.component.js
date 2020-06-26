@@ -10,10 +10,10 @@ import { TextInput } from '../form/inputs/textInput';
 import {
   BLOCK_TEMPLATES_ELEMENTS,
   CUSTOM_ELEMENT_TYPE,
-  ELEMENT_AUTO_OPEN,
   ELEMENT_NAME,
   ELEMENT_TYPE,
   ELEMENTS_TYPES,
+  ELEMENT_KEY,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Select } from '../form/select';
 import { renderWhenTrue } from '../../utils/rendering';
@@ -49,7 +49,7 @@ export const BlockTemplateElement = ({
   );
 
   return (
-    <AccordionPanel autoOpen={element[ELEMENT_AUTO_OPEN]}>
+    <AccordionPanel index={element[ELEMENT_KEY]}>
       <AccordionHeader>
         <Header>
           <IconsContainer>
