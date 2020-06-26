@@ -27,4 +27,5 @@ const setBlockTemplate = (state = INITIAL_STATE, { payload }) => state.set('bloc
 export const reducer = createReducer(INITIAL_STATE, {
   [BlockTemplatesRoutines.fetchBlockTemplates.SUCCESS]: setBlockTemplates,
   [BlockTemplatesRoutines.fetchBlockTemplate.SUCCESS]: setBlockTemplate,
+  [BlockTemplatesRoutines.updateBlockTemplate.SUCCESS]: setBlockTemplate,
 });

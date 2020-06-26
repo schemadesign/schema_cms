@@ -26,6 +26,7 @@ import {
   tabMessage,
   templatesMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import reportError from '../../../shared/utils/reportError';
 
 const getBreadcrumbsItems = project => [
   {
@@ -56,8 +57,10 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
   const copyBlockTemplateAction = async () => {
     try {
       setLoading(true);
+      setError(false);
       await copyBlockTemplate({ blockTemplateId: id, projectId });
-    } catch {
+    } catch (e) {
+      reportError(e);
       setError(true);
     } finally {
       setLoading(false);

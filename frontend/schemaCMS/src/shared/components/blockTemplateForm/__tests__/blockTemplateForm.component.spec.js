@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { BlockTemplateForm } from '../blockTemplateForm.component';
 import { defaultProps } from '../blockTemplateForm.stories';
@@ -60,5 +61,28 @@ describe('BlockTemplateForm: Component', () => {
     wrapper.root.findByProps({ id: 'removeBlock' }).props.onClick();
 
     expect(defaultProps.setRemoveModalOpen).toHaveBeenCalledWith(true);
+  });
+
+  it('should call copyBlockTemplate', async () => {
+    jest.spyOn(defaultProps, 'copyBlockTemplate');
+    const wrapper = await render();
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'blockTemplateCopyButton' }).props.onClick();
+    });
+
+    expect(defaultProps.copyBlockTemplate).toHaveBeenCalledWith({ blockTemplateId: 'blockTemplateId' });
+  });
+
+  it('should call copyBlockTemplate from modal', async () => {
+    jest.spyOn(defaultProps, 'copyBlockTemplate');
+    const wrapper = await render({ dirty: true });
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'blockTemplateCopyButton' }).props.onClick();
+      await wrapper.root.findByProps({ id: 'confirmCopyBtn' }).props.onClick();
+    });
+
+    expect(defaultProps.copyBlockTemplate).toHaveBeenCalledWith({ blockTemplateId: 'blockTemplateId' });
   });
 });

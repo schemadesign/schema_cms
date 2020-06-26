@@ -118,7 +118,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzoLsD lcIYva"
+            className="sc-fzoLsD hUaQTG"
           >
             <svg
               style={
@@ -6358,7 +6358,7 @@ exports[`PageForm: Component should render with page template 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzoLsD lcIYva"
+            className="sc-fzoLsD hUaQTG"
           >
             <svg
               style={

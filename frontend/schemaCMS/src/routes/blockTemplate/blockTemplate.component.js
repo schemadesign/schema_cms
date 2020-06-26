@@ -65,6 +65,7 @@ export const BlockTemplate = memo(
     updateBlockTemplate,
     fetchBlockTemplate,
     removeBlockTemplate,
+    copyBlockTemplate,
     fetchProject,
     userRole,
     blockTemplate: { name, elements, isAvailable, allowEdit, project: projectId },
@@ -110,7 +111,6 @@ export const BlockTemplate = memo(
           formData.elements = formData.elements.map((data, index) => ({ ...data, order: index }));
           await updateBlockTemplate({ blockTemplateId, formData });
           setUpdateLoading(false);
-          history.push(`/project/${project.id}/block-templates`);
         } catch (errors) {
           reportError(errors);
           const { formatMessage } = intl;
@@ -153,8 +153,11 @@ export const BlockTemplate = memo(
           <form onSubmit={handleSubmit}>
             <BlockTemplateForm
               title={title}
+              blockTemplateId={blockTemplateId}
               setRemoveModalOpen={setRemoveModalOpen}
               isValid={isValid}
+              dirty={dirty}
+              copyBlockTemplate={copyBlockTemplate}
               {...restFormikProps}
             />
             <NavigationContainer fixed>
@@ -207,4 +210,5 @@ BlockTemplate.propTypes = {
   updateBlockTemplate: PropTypes.func.isRequired,
   removeBlockTemplate: PropTypes.func.isRequired,
   fetchProject: PropTypes.func.isRequired,
+  copyBlockTemplate: PropTypes.func.isRequired,
 };

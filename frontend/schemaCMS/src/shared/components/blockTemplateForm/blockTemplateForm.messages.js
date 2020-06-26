@@ -34,4 +34,16 @@ export default defineMessages({
     id: 'shared.components.blockTemplateForm.expandCopy',
     defaultMessage: 'Expand Elements',
   },
+  copyConfirmTitle: {
+    id: 'shared.components.blockTemplateForm.copyConfirmTitle',
+    defaultMessage: 'There are unsaved data. Do you want to copy without it?',
+  },
+  cancelCopy: {
+    id: 'shared.components.blockTemplateForm.cancelCopy',
+    defaultMessage: 'Cancel',
+  },
+  confirmCopy: {
+    id: 'shared.components.blockTemplateForm.confirmCopy',
+    defaultMessage: 'Copy',
+  },
 });
