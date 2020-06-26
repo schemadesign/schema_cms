@@ -10,6 +10,7 @@ export const BlockTemplatesRoutines = {
   createBlockTemplate: createRoutine(`${PREFIX}CREATE_BLOCK_TEMPLATE`),
   updateBlockTemplate: createRoutine(`${PREFIX}UPDATE_BLOCK_TEMPLATE`),
   removeBlockTemplate: createRoutine(`${PREFIX}REMOVE_BLOCK_TEMPLATE`),
+  copyBlockTemplate: createRoutine(`${PREFIX}COPY_BLOCK_TEMPLATE`),
 };
 
 export const INITIAL_STATE = new Immutable({

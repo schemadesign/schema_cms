@@ -20,6 +20,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchBlockTemplates: promisifyRoutine(BlockTemplatesRoutines.fetchBlockTemplates),
+      copyBlockTemplate: promisifyRoutine(BlockTemplatesRoutines.copyBlockTemplate),
     },
     dispatch
   ),
