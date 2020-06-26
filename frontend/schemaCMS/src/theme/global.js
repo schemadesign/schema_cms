@@ -30,4 +30,9 @@ export const GlobalStyle = createGlobalStyle`
      -webkit-text-fill-color: ${({ theme }) => theme.text};
     box-shadow: 0 0 0 50px ${({ theme }) => theme.border} inset;
   }
+
+  input[placeholder]::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.5;
+  }
 `;
