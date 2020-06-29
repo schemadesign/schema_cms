@@ -31,4 +31,16 @@ export default defineMessages({
     id: 'shared.components.pageTemplateForm.availableForEditors',
     defaultMessage: 'This Template is currently {negative}available for Editors',
   },
+  copyConfirmTitle: {
+    id: 'shared.components.pageTemplateForm.copyConfirmTitle',
+    defaultMessage: 'There are unsaved data. Do you want to copy without it?',
+  },
+  cancelCopy: {
+    id: 'shared.components.pageTemplateForm.cancelCopy',
+    defaultMessage: 'Cancel',
+  },
+  confirmCopy: {
+    id: 'shared.components.pageTemplateForm.confirmCopy',
+    defaultMessage: 'Copy',
+  },
 });

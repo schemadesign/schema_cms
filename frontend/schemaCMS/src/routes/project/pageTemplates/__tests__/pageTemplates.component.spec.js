@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { PageTemplates } from '../pageTemplates.component';
 import { defaultProps } from '../pageTemplates.stories';

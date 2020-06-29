@@ -11,9 +11,12 @@ export const defaultProps = {
   setFieldValue: Function.prototype,
   setValues: Function.prototype,
   setRemoveModalOpen: Function.prototype,
+  copyPageTemplate: Function.prototype,
+  pageTemplateId: 'pageTemplateId',
   blockTemplates,
   values: pageTemplate,
   isValid: true,
+  dirty: false,
   title: <span>title</span>,
 };
 

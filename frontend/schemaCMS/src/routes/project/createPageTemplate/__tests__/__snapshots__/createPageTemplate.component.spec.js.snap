@@ -339,7 +339,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoaKM feXNyN"
+    className="sc-fzqAui hflVXV"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqAui ftZhkp"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fzqMdD cyMazC"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqAui ftZhkp"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fzqMdD cyMazC"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -483,7 +483,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzqAui ftZhkp"
+          className="sc-fzowVh hDBXhX"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -505,7 +505,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fzqMdD cyMazC"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -547,7 +547,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzomuh guXnuO"
+          className="sc-fzqMdD dQdcdV"
         >
           <span
             style={
@@ -560,7 +560,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-fzqMdD cyMazC"
+            className="sc-fzoJus iEZvSV"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
