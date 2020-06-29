@@ -631,11 +631,7 @@ exports[`PageList: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-<<<<<<< HEAD
-              className="sc-fzqMAW VSGek"
-=======
-              className="sc-fzoydu gohVwV"
->>>>>>> Add copy mechanism to page list
+              className="sc-fzoydu bgHInt"
             >
               <svg
                 style={

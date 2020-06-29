@@ -73,6 +73,7 @@ export const EditPage = ({
   removePage,
   fetchPageAdditionalData,
   pageAdditionalData,
+  copyPage,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
@@ -171,6 +172,8 @@ export const EditPage = ({
             pageId={page.id}
             title={title}
             isValid={isValid}
+            dirty={dirty}
+            copyPage={copyPage}
             setRemoveModalOpen={setRemoveModalOpen}
             values={values}
             setValues={setValues}
@@ -219,6 +222,7 @@ EditPage.propTypes = {
   userRole: PropTypes.string.isRequired,
   updatePage: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
+  copyPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
   fetchPageAdditionalData: PropTypes.func.isRequired,

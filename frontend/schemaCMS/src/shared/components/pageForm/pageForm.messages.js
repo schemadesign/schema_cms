@@ -91,4 +91,16 @@ export default defineMessages({
     id: 'shared.components.pageForm.expandCopy',
     defaultMessage: 'Expand Blocks',
   },
+  copyConfirmTitle: {
+    id: 'shared.components.pageForm.copyConfirmTitle',
+    defaultMessage: 'There are unsaved data. Do you want to copy without it?',
+  },
+  cancelCopy: {
+    id: 'shared.components.pageForm.cancelCopy',
+    defaultMessage: 'Cancel',
+  },
+  confirmCopy: {
+    id: 'shared.components.pageForm.confirmCopy',
+    defaultMessage: 'Copy',
+  },
 });

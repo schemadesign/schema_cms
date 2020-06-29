@@ -18,6 +18,7 @@ import {
   prop,
   filter,
   complement,
+  always,
 } from 'ramda';
 import { asMutable } from 'seamless-immutable';
 import { DndProvider } from 'react-dnd';
@@ -68,6 +69,8 @@ import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
 import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
 import { TagSearch } from '../tagSearch';
+import { CopyButton } from '../copyButton';
+import { renderWhenTrue } from '../../utils/rendering';
 
 const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch, Label } = Form;
@@ -79,7 +82,9 @@ export const PageForm = ({
   domain = '',
   pageId = null,
   handleChange,
+  dirty = false,
   setValues,
+  copyPage,
   setFieldValue,
   pageTemplates,
   setRemoveModalOpen,
@@ -91,6 +96,9 @@ export const PageForm = ({
   const intl = useIntl();
   const history = useHistory();
   const { url } = useRouteMatch();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [copyModalOpen, setCopyModalOpen] = useState(false);
   const [changeTemplateModalOpen, setChangeTemplateModalOpen] = useState(false);
   const [temporaryPageTemplate, setTemporaryPageTemplate] = useState(null);
   const pageTemplatesOptions = pipe(
@@ -140,6 +148,28 @@ export const PageForm = ({
     setBlocks(temporaryPageTemplate);
     setFieldValue(PAGE_TEMPLATE, temporaryPageTemplate);
   };
+  const copyPageFunc = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+      await copyPage({ pageId });
+    } catch (e) {
+      reportError(e);
+      setError(true);
+    } finally {
+      setLoading(false);
+      setCopyModalOpen(false);
+    }
+  };
+
+  const copyButtonAction = async () => {
+    if (dirty) {
+      setCopyModalOpen(true);
+      return;
+    }
+
+    copyPageFunc();
+  };
   const binIcon = setRemoveModalOpen ? (
     <BinIconContainer id="removePage" onClick={() => setRemoveModalOpen(true)}>
       <BinIcon />
@@ -151,6 +181,9 @@ export const PageForm = ({
       <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
     </Fragment>
   ) : null;
+  const renderCopyButton = renderWhenTrue(
+    always(<CopyButton name="pageCopyButton" loading={loading} error={error} action={copyButtonAction} />)
+  );
   const nameInput = (
     <Subtitle>
       <TextInput
@@ -167,6 +200,7 @@ export const PageForm = ({
       />
       <IconsContainer>
         <EditIcon />
+        {renderCopyButton(!!pageId)}
       </IconsContainer>
     </Subtitle>
   );
@@ -359,6 +393,19 @@ export const PageForm = ({
           </NextButton>
         </ModalActions>
       </Modal>
+      <Modal ariaHideApp={false} isOpen={copyModalOpen} contentLabel="Confirm Copy" style={modalStyles}>
+        <ModalTitle>
+          <FormattedMessage {...messages.copyConfirmTitle} />
+        </ModalTitle>
+        <ModalActions>
+          <BackButton onClick={() => setCopyModalOpen(false)} disabled={loading}>
+            <FormattedMessage {...messages.cancelCopy} />
+          </BackButton>
+          <NextButton id="confirmCopyBtn" onClick={copyPageFunc} loading={loading} disabled={loading}>
+            <FormattedMessage {...messages.confirmCopy} />
+          </NextButton>
+        </ModalActions>
+      </Modal>
     </Container>
   );
 };
@@ -368,6 +415,7 @@ PageForm.propTypes = {
   setFieldValue: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
   setRemoveModalOpen: PropTypes.func,
+  copyPage: PropTypes.func,
   values: PropTypes.object.isRequired,
   internalConnections: PropTypes.array.isRequired,
   pageTemplates: PropTypes.array.isRequired,
@@ -377,4 +425,5 @@ PageForm.propTypes = {
   pageId: PropTypes.number,
   tagCategories: PropTypes.array.isRequired,
   states: PropTypes.array.isRequired,
+  dirty: PropTypes.bool,
 };

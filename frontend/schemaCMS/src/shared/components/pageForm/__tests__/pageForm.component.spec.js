@@ -158,4 +158,27 @@ describe('PageForm: Component', () => {
       },
     });
   });
+
+  it('should call copyPage', async () => {
+    jest.spyOn(defaultProps, 'copyPage');
+    const wrapper = await render({ pageId: 1 });
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'pageCopyButton' }).props.onClick();
+    });
+
+    expect(defaultProps.copyPage).toHaveBeenCalledWith({ pageId: 1 });
+  });
+
+  it('should call copyPage from modal', async () => {
+    jest.spyOn(defaultProps, 'copyPage');
+    const wrapper = await render({ dirty: true, pageId: 1 });
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'pageCopyButton' }).props.onClick();
+      await wrapper.root.findByProps({ id: 'confirmCopyBtn' }).props.onClick();
+    });
+
+    expect(defaultProps.copyPage).toHaveBeenCalledWith({ pageId: 1 });
+  });
 });
