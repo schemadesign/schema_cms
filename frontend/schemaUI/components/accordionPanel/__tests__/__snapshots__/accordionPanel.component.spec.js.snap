@@ -2,10 +2,10 @@
 
 exports[`AccordionPanel: Component should render correctly 1`] = `
 <Component
-  index={1}
+  id={1}
 >
   <AccordionPanelComponent
-    index={1}
+    id={1}
   >
     <div
       style={

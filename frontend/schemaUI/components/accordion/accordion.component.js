@@ -35,7 +35,7 @@ export class Accordion extends PureComponent {
   componentDidMount() {
     const temporaryAccordionState = {};
     this.props.children.forEach(({ props }) => {
-      temporaryAccordionState[props.index] = false;
+      temporaryAccordionState[props.id] = false;
     });
 
     this.setState({
@@ -46,9 +46,9 @@ export class Accordion extends PureComponent {
 
   componentDidUpdate(prevProps) {
     if (prevProps.children.length !== this.props.children.length) {
-      const newKeys = this.props.children.map(({ key }) => key);
+      const newIds = this.props.children.map(({ props }) => props.id);
       const accordionsState = pipe(
-        pickAll(newKeys),
+        pickAll(newIds),
         map(ifElse(isNil, always(this.props.newOpen), identity))
       )(this.state.accordionsState);
       const isAnyOpen = this.getIsAnyOpen(accordionsState);
@@ -73,9 +73,9 @@ export class Accordion extends PureComponent {
     this.setState({ accordionsState, isAnyOpen: !isAnyOpen });
   };
 
-  setAccordionState = (key, value) => {
+  setAccordionState = (id, value) => {
     const accordionsState = { ...this.state.accordionsState };
-    accordionsState[key] = value;
+    accordionsState[id] = value;
     const isAnyOpen = this.getIsAnyOpen(accordionsState);
 
     this.setState({ accordionsState, isAnyOpen });

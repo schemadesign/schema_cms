@@ -5,7 +5,9 @@ import { AccordionPanel } from './accordionPanel.component';
 import { withTheme } from '../../.storybook/decorators';
 import AccordionPanelContext from './accordionPanel.context';
 
-const defaultProps = {};
+const defaultProps = {
+  id: 1,
+};
 
 export const context = {
   open: true,

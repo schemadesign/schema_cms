@@ -8,7 +8,7 @@ import { Header, IconsContainer, Type, getCustomIconStyles } from './pageBlock.s
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageBlock.messages';
 import { BlockElement } from '../blockElement';
-import { BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS } from '../../../modules/page/page.constants';
+import { BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS, BLOCK_ID, BLOCK_KEY } from '../../../modules/page/page.constants';
 import { binStyles } from '../form/frequentComponents.styles';
 
 const { EditIcon, BinIcon } = Icons;
@@ -29,7 +29,7 @@ export const PageBlock = ({
   const blockName = `${blockPath}.${BLOCK_NAME}`;
 
   return (
-    <AccordionPanel index={index}>
+    <AccordionPanel id={block[BLOCK_KEY] || block[BLOCK_ID]}>
       <AccordionHeader>
         <Header>
           <IconsContainer>{draggableIcon}</IconsContainer>

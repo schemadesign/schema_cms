@@ -27,7 +27,7 @@ exports[`Accordion: Component should render correctly 1`] = `
     }
   >
     <Component
-      index={1}
+      id={1}
     >
       <Component>
         First Panel
@@ -37,7 +37,7 @@ exports[`Accordion: Component should render correctly 1`] = `
       </AccordionDetails>
     </Component>
     <Component
-      index={2}
+      id={2}
     >
       <Component>
         Second Panel

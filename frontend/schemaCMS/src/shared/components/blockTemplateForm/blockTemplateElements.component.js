@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Icons } from 'schemaUI';
+import { Accordion, Icons, AccordionPanel } from 'schemaUI';
 import PropTypes from 'prop-types';
 import { append, remove } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
@@ -56,8 +56,8 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
       >
         {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
           <Draggable
-            key={element[ELEMENT_KEY]}
             accept="box"
+            key={element[ELEMENT_KEY]}
             onMove={handleMove}
             id={element[ELEMENT_KEY]}
             index={index}
@@ -73,16 +73,18 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
               );
 
               return (
-                <BlockTemplateElement
-                  index={index}
-                  element={element}
-                  handleChange={handleChange}
-                  setFieldValue={setFieldValue}
-                  draggableIcon={draggableIcon}
-                  removeElement={removeElement}
-                  autoFocus={!!values[BLOCK_TEMPLATES_NAME].length}
-                  {...restFormikProps}
-                />
+                <AccordionPanel id={element[ELEMENT_KEY]}>
+                  <BlockTemplateElement
+                    index={index}
+                    element={element}
+                    handleChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    draggableIcon={draggableIcon}
+                    removeElement={removeElement}
+                    autoFocus={!!values[BLOCK_TEMPLATES_NAME].length}
+                    {...restFormikProps}
+                  />
+                </AccordionPanel>
               );
             }}
           </Draggable>

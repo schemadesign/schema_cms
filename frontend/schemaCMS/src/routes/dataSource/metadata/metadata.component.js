@@ -117,7 +117,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
             newOpen
           >
             {values[METADATA].map(({ key, value, id }, index) => (
-              <AccordionPanel key={id} index={id}>
+              <AccordionPanel key={id} id={id}>
                 <AccordionHeader>
                   <Header>
                     <TextInput

@@ -10,11 +10,11 @@ import AccordionPanelContext from './accordionPanel.context';
 export class AccordionPanelComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    index: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
   };
 
   render() {
-    const { children, theme, index } = this.props;
+    const { children, theme, id } = this.props;
     const { containerStyles } = getStyles(theme);
 
     return (
@@ -24,8 +24,8 @@ export class AccordionPanelComponent extends PureComponent {
             <AccordionPanelContext.Provider
               value={{
                 ...rest,
-                open: accordionsState[index],
-                togglePanel: () => setAccordionState(index, !accordionsState[index]),
+                open: accordionsState[id],
+                togglePanel: () => setAccordionState(id, !accordionsState[id]),
               }}
             >
               <div style={{ ...containerStyles, ...customPanelStyles }}>{children}</div>
