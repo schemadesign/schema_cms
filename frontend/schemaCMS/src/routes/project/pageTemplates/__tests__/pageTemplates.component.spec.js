@@ -59,4 +59,14 @@ describe('PageTemplates: Component', () => {
 
     expect(mockPushHistory).toHaveBeenCalledWith('/page-template/1');
   });
+
+  it('should call copy page template', async () => {
+    jest.spyOn(defaultProps, 'copyPageTemplate');
+    const wrapper = await render();
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'pageTemplateCopyButton-1' }).props.onClick();
+    });
+
+    expect(defaultProps.copyPageTemplate).toHaveBeenCalledWith({ projectId: 'projectId', pageTemplateId: 1 });
+  });
 });

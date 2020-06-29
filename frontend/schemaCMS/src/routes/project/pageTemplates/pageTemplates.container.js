@@ -20,6 +20,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchPageTemplates: promisifyRoutine(PageTemplatesRoutines.fetchPageTemplates),
+      copyPageTemplate: promisifyRoutine(PageTemplatesRoutines.copyPageTemplate),
     },
     dispatch
   ),
