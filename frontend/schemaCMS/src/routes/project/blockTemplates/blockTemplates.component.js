@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 
-import { Container, ListHeader } from './blockTemplates.styles';
+import { Container } from './blockTemplates.styles';
 import messages from './blockTemplates.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
@@ -68,15 +68,17 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
   };
 
   const header = (
-    <ListHeader>
-      <CardHeader list={list} />
-      <CopyButton
-        name={`blockTemplateCopyButton-${id}`}
-        loading={loading}
-        error={error}
-        action={copyBlockTemplateAction}
-      />
-    </ListHeader>
+    <CardHeader
+      list={list}
+      icon={
+        <CopyButton
+          name={`blockTemplateCopyButton-${id}`}
+          loading={loading}
+          error={error}
+          action={copyBlockTemplateAction}
+        />
+      }
+    />
   );
   const footer = <FormattedMessage {...messages.elementsCounter} values={{ elements: elements.length }} />;
 

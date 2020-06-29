@@ -15,6 +15,7 @@ export const CardFooter = styled.div`
 export const getCustomHomeIconStyles = ({ active }) => ({
   opacity: active ? 1 : 0.3,
   cursor: 'pointer',
+  marginRight: 10,
 });
 
 export const Pagination = styled.div`
@@ -52,4 +53,9 @@ export const Pagination = styled.div`
   a {
     padding: 4px;
   }
+`;
+
+export const CardHeaderIcons = styled.div`
+  display: flex;
+  justify-content: center;
 `;

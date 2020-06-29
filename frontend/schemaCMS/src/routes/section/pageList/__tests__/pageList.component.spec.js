@@ -33,6 +33,17 @@ describe('PageList: Component', () => {
     expect(defaultProps.fetchSection).toHaveBeenCalledWith({ sectionId: 'sectionId' });
   });
 
+  it('should copy page', async () => {
+    jest.spyOn(defaultProps, 'copyPage');
+    const wrapper = await render();
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'pageCopyButton-1' }).props.onClick();
+    });
+
+    expect(defaultProps.copyPage).toHaveBeenCalledWith({ pageId: 2, sectionId: 'sectionId' });
+  });
+
   it('should go back to content', async () => {
     const wrapper = await render();
     wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
@@ -65,6 +76,8 @@ describe('PageList: Component', () => {
     const props = {
       ...section.pages[0],
       setFieldValue: Function.prototype,
+      copyPage: Function.prototype,
+      sectionId: 'sectionId',
       mainPage: null,
       index: 1,
     };
@@ -80,6 +93,8 @@ describe('PageList: Component', () => {
     const props = {
       ...section.pages[0],
       setFieldValue: Function.prototype,
+      copyPage: Function.prototype,
+      sectionId: 'sectionId',
       mainPage: 1,
       index: 1,
     };

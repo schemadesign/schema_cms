@@ -6,6 +6,7 @@ import { PAGES_PATH, SECTIONS_PATH, PROJECTS_PATH } from '../../shared/utils/api
 import browserHistory from '../../shared/utils/history';
 import { ProjectRoutines } from '../project';
 import reportError from '../../shared/utils/reportError';
+import { SectionsRoutines } from '../sections';
 
 function* fetchPage({ payload: { pageId } }) {
   try {
@@ -71,6 +72,25 @@ function* removePage({ payload: { pageId, folderId } }) {
   }
 }
 
+function* copyPage({ payload: { pageId, sectionId } }) {
+  try {
+    yield put(PageRoutines.copyPage.request());
+
+    yield api.post(`${PAGES_PATH}/${pageId}/copy`);
+
+    if (sectionId) {
+      yield put(SectionsRoutines.fetchPages.trigger({ sectionId }));
+    }
+
+    yield put(PageRoutines.copyPage.success());
+  } catch (e) {
+    reportError(e);
+    yield put(PageRoutines.copyPage.failure(e));
+  } finally {
+    yield put(PageRoutines.copyPage.fulfill());
+  }
+}
+
 function* fetchPageAdditionalData({ payload: { projectId } }) {
   try {
     yield put(PageRoutines.fetchPageAdditionalData.request());
@@ -92,6 +112,7 @@ export function* watchPage() {
     takeLatest(PageRoutines.createPage.TRIGGER, createPage),
     takeLatest(PageRoutines.updatePage.TRIGGER, updatePage),
     takeLatest(PageRoutines.removePage.TRIGGER, removePage),
+    takeLatest(PageRoutines.copyPage.TRIGGER, copyPage),
     takeLatest(PageRoutines.fetchPageAdditionalData.TRIGGER, fetchPageAdditionalData),
   ]);
 }

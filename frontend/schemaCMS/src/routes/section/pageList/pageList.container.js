@@ -9,6 +9,7 @@ import { PageList } from './pageList.component';
 import { SectionsRoutines, selectPages, selectSection } from '../../../modules/sections';
 import { selectUserRole } from '../../../modules/userProfile';
 import { selectProject } from '../../../modules/project';
+import { PageRoutines } from '../../../modules/page/page.redux';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
@@ -24,6 +25,7 @@ export const mapDispatchToProps = dispatch => ({
       removeSection: promisifyRoutine(SectionsRoutines.removeSection),
       fetchSection: promisifyRoutine(SectionsRoutines.fetchSection),
       fetchPages: promisifyRoutine(SectionsRoutines.fetchPages),
+      copyPage: promisifyRoutine(PageRoutines.copyPage),
     },
     dispatch
   ),
