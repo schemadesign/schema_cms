@@ -7,7 +7,7 @@ import AccordionPanelContext from '../accordionPanel.context';
 
 describe('AccordionPanel: Component', () => {
   const defaultProps = {
-    index: 1,
+    id: 1,
   };
 
   const component = props => (

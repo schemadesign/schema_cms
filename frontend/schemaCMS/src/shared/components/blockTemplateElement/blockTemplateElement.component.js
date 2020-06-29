@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
+import { AccordionDetails, AccordionHeader, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
 import { always, pathOr } from 'ramda';
 
@@ -13,7 +13,6 @@ import {
   ELEMENT_NAME,
   ELEMENT_TYPE,
   ELEMENTS_TYPES,
-  ELEMENT_KEY,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Select } from '../form/select';
 import { renderWhenTrue } from '../../utils/rendering';
@@ -49,7 +48,7 @@ export const BlockTemplateElement = ({
   );
 
   return (
-    <AccordionPanel index={element[ELEMENT_KEY]}>
+    <Fragment>
       <AccordionHeader>
         <Header>
           <IconsContainer>
@@ -90,7 +89,7 @@ export const BlockTemplateElement = ({
         </InputContainer>
         {renderElements(element[ELEMENT_TYPE] === CUSTOM_ELEMENT_TYPE)}
       </AccordionDetails>
-    </AccordionPanel>
+    </Fragment>
   );
 };
 

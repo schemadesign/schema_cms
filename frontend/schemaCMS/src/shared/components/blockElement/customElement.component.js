@@ -98,7 +98,7 @@ export const CustomElement = ({ element, blockPath, handleChange, index, setFiel
                         expandCopy={intl.formatMessage(messages.expandCopy)}
                       >
                         {block.elements.map((item, index) => (
-                          <AccordionPanel key={index} index={index}>
+                          <AccordionPanel key={index} id={index}>
                             <AccordionHeader>{item.name}</AccordionHeader>
                             <AccordionDetails>
                               {getElementComponent({

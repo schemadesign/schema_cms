@@ -13,11 +13,11 @@ describe('Accordion: Component', () => {
 
   const component = props => (
     <Accordion {...defaultProps} {...props}>
-      <AccordionPanel index={1}>
+      <AccordionPanel id={1}>
         <AccordionHeader>First Panel</AccordionHeader>
         <AccordionDetails>First Details</AccordionDetails>
       </AccordionPanel>
-      <AccordionPanel index={2}>
+      <AccordionPanel id={2}>
         <AccordionHeader>Second Panel</AccordionHeader>
         <AccordionDetails>Second Details</AccordionDetails>
       </AccordionPanel>

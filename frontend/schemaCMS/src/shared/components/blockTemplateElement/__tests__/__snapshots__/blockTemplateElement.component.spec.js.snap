@@ -1,15 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlockTemplateElement: Component should render correctly 1`] = `
-<div
-  style={
-    Object {
-      "borderTop": "2px solid #FFF",
-      "position": "relative",
-      "width": "100%",
-    }
-  }
->
+Array [
   <div
     style={
       Object {
@@ -169,7 +161,6 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      onClick={[Function]}
       style={
         Object {
           "cursor": "pointer",
@@ -183,7 +174,7 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
         }
       }
     />
-  </div>
+  </div>,
   <div
     style={
       Object {
@@ -531,6 +522,6 @@ exports[`BlockTemplateElement: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
