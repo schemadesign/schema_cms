@@ -786,3 +786,60 @@ class TestCopyBlockTemplate:
         response = api_client.post(self.get_url(block.id), format="json")
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
+
+
+class TestCopyPage:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:page-copy-page", kwargs=dict(pk=pk))
+
+    @pytest.mark.freeze_time("2020-01-02 10:00:00")
+    def test_copy_as_admin(
+        self,
+        admin,
+        api_client,
+        page_factory,
+        page_block_factory,
+        page_block_element_factory,
+        page_tag_factory,
+    ):
+
+        self.copy_page(
+            admin, api_client, page_factory, page_block_factory, page_block_element_factory, page_tag_factory
+        )
+
+    @pytest.mark.freeze_time("2020-01-02 10:00:00")
+    def test_copy_as_editor(
+        self,
+        editor,
+        api_client,
+        page_factory,
+        page_block_factory,
+        page_block_element_factory,
+        page_tag_factory,
+    ):
+        self.copy_page(
+            editor, api_client, page_factory, page_block_factory, page_block_element_factory, page_tag_factory
+        )
+
+    def copy_page(
+        self, user, api_client, page_factory, page_block_factory, page_block_element_factory, page_tag_factory
+    ):
+        page = page_factory()
+
+        if user.role == "editor":
+            page.project.editors.add(user)
+            page.project.save()
+
+        page_tag_factory.create_batch(3, page=page)
+        blocks = page_block_factory.create_batch(3, page=page)
+
+        for elements_count, block in enumerate(blocks):
+            page_block_element_factory.create_batch(elements_count, block=block)
+
+        api_client.force_authenticate(user)
+        response = api_client.post(self.get_url(page.id), format="json")
+        copied_page = pages_models.Page.objects.get(pk=response.data["id"])
+
+        assert response.status_code == status.HTTP_200_OK
+        assert copied_page.name == f"Page ID #{page.id} copy(2020-01-02, 10:00:00.000000)"

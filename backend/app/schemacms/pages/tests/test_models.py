@@ -111,3 +111,55 @@ class TestPageBlockElementClone:
         assert element.elements_sets.all()[1].elements.count() == 2
         assert element_sets[0].elements.count() == 3
         assert element_sets[1].elements.count() == 2
+
+    def test_custom_element_with_observable(
+        self, page_block_factory, page_block_element_factory, custom_element_set_factory, observable_element
+    ):
+        block_1 = page_block_factory()
+        block_2 = page_block_factory()
+
+        element = page_block_element_factory(block=block_1, type=ElementType.CUSTOM_ELEMENT)
+
+        custom_element_set = custom_element_set_factory(custom_element=element)
+
+        set_element = page_block_element_factory(
+            block=block_1,
+            type=ElementType.OBSERVABLE_HQ,
+            custom_element_set=custom_element_set,
+            observable_hq=observable_element,
+        )
+
+        copied_element = element.clone(block_2)
+        copied_element_set = copied_element.elements_sets.all()[0]
+        element.refresh_from_db()
+
+        copied_observable = copied_element_set.elements.all()[0]
+
+        assert copied_observable.type == set_element.type
+        assert copied_observable.custom_element_set.id != custom_element_set.id
+        assert copied_observable.observable_hq.observable_user == observable_element.observable_user
+        assert copied_observable.observable_hq.observable_notebook == observable_element.observable_notebook
+        assert copied_observable.observable_hq.observable_params == observable_element.observable_params
+        assert copied_observable.observable_hq.observable_cell == observable_element.observable_cell
+
+
+class TestPageClone:
+    @pytest.mark.freeze_time("2020-01-02 10:00:00")
+    def test_page_clone(self, page_factory, page_block_factory, page_block_element_factory, page_tag_factory):
+        page = page_factory(is_public=True)
+
+        page_tag_factory.create_batch(3, page=page)
+        blocks = page_block_factory.create_batch(3, page=page)
+
+        for elements_count, block in enumerate(blocks):
+            page_block_element_factory.create_batch(elements_count, block=block)
+
+        copied_page = page.copy_page()
+        copied_page_blocks = copied_page.page_blocks.all()
+
+        assert copied_page.name == f"Page ID #{page.id} copy(2020-01-02, 10:00:00.000000)"
+        assert copied_page.page_blocks.count() == page.page_blocks.count()
+        assert copied_page.tags.count() == page.tags.count()
+        assert copied_page_blocks[0].elements.count() == 0
+        assert copied_page_blocks[1].elements.count() == 1
+        assert copied_page_blocks[2].elements.count() == 2
