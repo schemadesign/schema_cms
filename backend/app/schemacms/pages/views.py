@@ -122,6 +122,17 @@ class PageTemplateViewSet(DetailViewSet):
     serializer_class = serializers.PageTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
 
+    @decorators.action(detail=True, url_path="copy", methods=["post"])
+    def copy_template(self, request, **kwargs):
+        template = self.get_object()
+
+        try:
+            new_page = template.copy_template()
+        except Exception as e:
+            return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
+
+        return response.Response({"id": new_page.id}, status=status.HTTP_200_OK)
+
 
 class SectionListCreateView(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = (

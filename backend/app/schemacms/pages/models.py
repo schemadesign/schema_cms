@@ -150,6 +150,17 @@ class PageTemplate(Page):
     class Meta:
         proxy = True
 
+    @transaction.atomic()
+    def copy_template(self):
+
+        copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
+        new_page = self.make_clone(attrs={"name": f"Page Template ID #{self.id} copy({copy_time})"})
+
+        for block in self.page_blocks.all():
+            block.make_clone(attrs={"page": new_page})
+
+        return new_page
+
 
 class PageBlock(CloneMixin, SoftDeleteObject):
     block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)

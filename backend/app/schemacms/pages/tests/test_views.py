@@ -788,6 +788,31 @@ class TestCopyBlockTemplate:
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
 
+class TestCopyPageTemplate:
+    @staticmethod
+    def get_url(pk):
+        return reverse("pages:page-template-copy-template", kwargs=dict(pk=pk))
+
+    @pytest.mark.freeze_time("2020-01-02 10:00:00")
+    def test_copy_as_admin(self, admin, api_client, page_template):
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(page_template.id), format="json")
+        copied_template = pages_models.PageTemplate.objects.get(pk=response.data["id"])
+
+        assert response.status_code == status.HTTP_200_OK
+        assert copied_template.id != page_template.id
+        assert (
+            copied_template.name == f"Page Template ID #{page_template.id} copy(2020-01-02, 10:00:00.000000)"
+        )
+
+    @pytest.mark.freeze_time("2020-01-02 10:00:00")
+    def test_copy_as_editor(self, editor, api_client, page_template):
+        api_client.force_authenticate(editor)
+        response = api_client.post(self.get_url(page_template.id), format="json")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
+
 class TestCopyPage:
     @staticmethod
     def get_url(pk):
