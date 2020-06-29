@@ -4,7 +4,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
 import { useHistory, useRouteMatch } from 'react-router';
 import { useEffectOnce } from 'react-use';
-import { useFormik } from 'formik';
+import { useFormik, yupToFormErrors, validateYupSchema } from 'formik';
 import { remove } from 'ramda';
 import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useTheme } from 'styled-components';
@@ -58,7 +58,15 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
   } = useFormik({
     initialValues: { [METADATA]: metadata.map((item, index) => ({ ...item, id: index })) },
     enableReinitialize: true,
-    validationSchema: () => METADATA_SCHEMA,
+    validate: values => {
+      try {
+        validateYupSchema(values, METADATA_SCHEMA, true, values);
+      } catch (err) {
+        return yupToFormErrors(err);
+      }
+
+      return {};
+    },
     onSubmit: async (data, { setSubmitting, setErrors }) => {
       try {
         await updateMetadata({ dataSourceId: dataSource.id, formData: data[METADATA] });
