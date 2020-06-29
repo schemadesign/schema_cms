@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { PageTemplateForm } from '../pageTemplateForm.component';
 import { defaultProps } from '../pageTemplateForm.stories';
@@ -29,5 +30,28 @@ describe('PageTemplateForm: Component', () => {
     wrapper.root.findByProps({ id: 'removePage' }).props.onClick();
 
     expect(defaultProps.setRemoveModalOpen).toHaveBeenCalledWith(true);
+  });
+
+  it('should call copyPageTemplate', async () => {
+    jest.spyOn(defaultProps, 'copyPageTemplate');
+    const wrapper = await render();
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'pageTemplateCopyButton' }).props.onClick();
+    });
+
+    expect(defaultProps.copyPageTemplate).toHaveBeenCalledWith({ pageTemplateId: 'pageTemplateId' });
+  });
+
+  it('should call copyBlockTemplate from modal', async () => {
+    jest.spyOn(defaultProps, 'copyPageTemplate');
+    const wrapper = await render({ dirty: true });
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'pageTemplateCopyButton' }).props.onClick();
+      await wrapper.root.findByProps({ id: 'confirmCopyBtn' }).props.onClick();
+    });
+
+    expect(defaultProps.copyPageTemplate).toHaveBeenCalledWith({ pageTemplateId: 'pageTemplateId' });
   });
 });

@@ -25,6 +25,8 @@ import {
   templatesMessage,
   ProjectBreadcrumbs,
 } from '../../../shared/components/projectBreadcrumbs';
+import { CopyButton } from '../../../shared/components/copyButton';
+import reportError from '../../../shared/utils/reportError';
 
 const getBreadcrumbsItems = project => [
   {
@@ -45,11 +47,38 @@ const getBreadcrumbsItems = project => [
   },
 ];
 
-const PageTemplate = ({ created, createdBy, name, id, blocks }) => {
+const PageTemplate = ({ created, createdBy, name, id, blocks, copyPageTemplate, projectId }) => {
   const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
-  const header = <CardHeader list={list} />;
+  const copyPageTemplateAction = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+      await copyPageTemplate({ pageTemplateId: id, projectId });
+    } catch (e) {
+      reportError(e);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const header = (
+    <CardHeader
+      list={list}
+      icon={
+        <CopyButton
+          name={`pageTemplateCopyButton-${id}`}
+          loading={loading}
+          error={error}
+          action={copyPageTemplateAction}
+        />
+      }
+    />
+  );
   const footer = <FormattedMessage {...messages.blocksCounter} values={{ blocks: blocks.length }} />;
 
   return (
@@ -67,9 +96,11 @@ PageTemplate.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   blocks: PropTypes.array.isRequired,
+  projectId: PropTypes.string.isRequired,
+  copyPageTemplate: PropTypes.func.isRequired,
 };
 
-export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, project }) => {
+export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, project, copyPageTemplate }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
@@ -85,6 +116,7 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
       try {
         await fetchPageTemplates({ projectId });
       } catch (e) {
+        reportError(e);
         setError(e);
       } finally {
         setLoading(false);
@@ -108,7 +140,7 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
           <CounterHeader moveToTop copy={intl.formatMessage(messages.pageTemplate)} count={pageTemplates.length} />
           <ListContainer>
             {pageTemplates.map((page, index) => (
-              <PageTemplate key={index} {...page} />
+              <PageTemplate key={index} copyPageTemplate={copyPageTemplate} projectId={projectId} {...page} />
             ))}
           </ListContainer>
         </Fragment>
@@ -129,5 +161,6 @@ PageTemplates.propTypes = {
   userRole: PropTypes.string.isRequired,
   pageTemplates: PropTypes.array.isRequired,
   fetchPageTemplates: PropTypes.func.isRequired,
+  copyPageTemplate: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
 };

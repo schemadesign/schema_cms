@@ -16,6 +16,7 @@ export const defaultProps = {
   updatePageTemplate: Function.prototype,
   fetchPageTemplate: jest.fn().mockReturnValue(Promise.resolve({ project: 'projectId' })),
   fetchBlockTemplates: Function.prototype,
+  copyPageTemplate: Function.prototype,
   removePageTemplate: jest.fn().mockReturnValue(Promise.resolve({})),
 };
 

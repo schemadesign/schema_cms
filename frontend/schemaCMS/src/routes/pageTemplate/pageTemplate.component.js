@@ -72,6 +72,7 @@ export const PageTemplate = memo(
     pageTemplate,
     blockTemplates,
     project,
+    copyPageTemplate,
   }) => {
     const { pageTemplateId } = useParams();
     const history = useHistory();
@@ -117,7 +118,6 @@ export const PageTemplate = memo(
             },
           });
           setUpdateLoading(false);
-          history.push(`/project/${project.id}/page-templates`);
         } catch (errors) {
           reportError(errors);
           const { formatMessage } = intl;
@@ -158,6 +158,9 @@ export const PageTemplate = memo(
               blockTemplates={blockTemplates}
               setRemoveModalOpen={setRemoveModalOpen}
               isValid={isValid}
+              dirty={dirty}
+              pageTemplateId={pageTemplateId}
+              copyPageTemplate={copyPageTemplate}
               {...restFormikProps}
             />
             <NavigationContainer fixed>
@@ -211,4 +214,5 @@ PageTemplate.propTypes = {
   updatePageTemplate: PropTypes.func.isRequired,
   fetchBlockTemplates: PropTypes.func.isRequired,
   removePageTemplate: PropTypes.func.isRequired,
+  copyPageTemplate: PropTypes.func.isRequired,
 };

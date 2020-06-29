@@ -82,6 +82,25 @@ function* removePageTemplate({ payload: { pageTemplateId } }) {
   }
 }
 
+function* copyPageTemplate({ payload: { pageTemplateId, projectId } }) {
+  try {
+    yield put(PageTemplatesRoutines.copyPageTemplate.request());
+
+    yield api.post(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}/copy`);
+
+    if (projectId) {
+      yield put(PageTemplatesRoutines.fetchPageTemplates.trigger({ projectId }));
+    }
+
+    yield put(PageTemplatesRoutines.copyPageTemplate.success());
+  } catch (error) {
+    reportError(error);
+    yield put(PageTemplatesRoutines.copyPageTemplate.failure(error));
+  } finally {
+    yield put(PageTemplatesRoutines.copyPageTemplate.fulfill());
+  }
+}
+
 export function* watchPageTemplates() {
   yield all([
     takeLatest(PageTemplatesRoutines.fetchPageTemplates.TRIGGER, fetchPageTemplates),
@@ -89,5 +108,6 @@ export function* watchPageTemplates() {
     takeLatest(PageTemplatesRoutines.createPageTemplate.TRIGGER, createPageTemplate),
     takeLatest(PageTemplatesRoutines.updatePageTemplate.TRIGGER, updatePageTemplate),
     takeLatest(PageTemplatesRoutines.removePageTemplate.TRIGGER, removePageTemplate),
+    takeLatest(PageTemplatesRoutines.copyPageTemplate.TRIGGER, copyPageTemplate),
   ]);
 }

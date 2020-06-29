@@ -106,4 +106,26 @@ describe('PageTemplates: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when /COPY_PAGE_TEMPLATE action is fired', () => {
+    it('should put copyPageTemplate action', async () => {
+      const pageTemplateId = 'pageTemplateId';
+      const projectId = 'projectId';
+      const responseList = {
+        id: 1,
+        results: [],
+        project: {},
+      };
+
+      mockApi.post(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}/copy`).reply(OK);
+      mockApi.get(`${PROJECTS_PATH}/${projectId}${PAGE_TEMPLATES_PATH}`).reply(OK, responseList);
+
+      await expectSaga(watchPageTemplates)
+        .withState(defaultState)
+        .put(PageTemplatesRoutines.copyPageTemplate.success())
+        .put(PageTemplatesRoutines.fetchPageTemplates.trigger({ projectId }))
+        .dispatch(PageTemplatesRoutines.copyPageTemplate({ pageTemplateId, projectId }))
+        .silentRun();
+    });
+  });
 });

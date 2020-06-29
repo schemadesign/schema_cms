@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Form, Icons } from 'schemaUI';
-import { append, prepend, remove } from 'ramda';
+import { append, prepend, remove, always } from 'ramda';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
@@ -10,7 +10,7 @@ import { asMutable } from 'seamless-immutable';
 
 import { Container } from './pageTemplateForm.styles';
 import { ContextHeader } from '../contextHeader';
-import { PlusButton } from '../navigation';
+import { PlusButton, BackButton, NextButton } from '../navigation';
 import {
   AvailableCopy,
   BinIconContainer,
@@ -44,6 +44,10 @@ import { CounterHeader } from '../counterHeader';
 import { BLOCK_TEMPLATES_NAME } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { Draggable } from '../draggable';
 import { PageTemplateBlock } from '../pageTemplateBlock';
+import { Modal, ModalActions, ModalTitle, modalStyles } from '../modal/modal.styles';
+import { CopyButton } from '../copyButton';
+import { renderWhenTrue } from '../../utils/rendering';
+import reportError from '../../utils/reportError';
 
 const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch } = Form;
@@ -57,9 +61,42 @@ export const PageTemplateForm = ({
   setRemoveModalOpen,
   isValid,
   blockTemplates,
+  pageTemplateId,
+  dirty,
+  copyPageTemplate,
   ...restFormikProps
 }) => {
   const intl = useIntl();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [copyModalOpen, setCopyModalOpen] = useState(false);
+
+  const copyPageTemplateFunc = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+      await copyPageTemplate({ pageTemplateId });
+    } catch (e) {
+      reportError(e);
+      setError(true);
+    } finally {
+      setLoading(false);
+      setCopyModalOpen(false);
+    }
+  };
+
+  const copyButtonAction = async () => {
+    if (dirty) {
+      setCopyModalOpen(true);
+      return;
+    }
+
+    copyPageTemplateFunc();
+  };
+
+  const renderCopyButton = renderWhenTrue(
+    always(<CopyButton name="pageTemplateCopyButton" loading={loading} error={error} action={copyButtonAction} />)
+  );
 
   const nameInput = (
     <Subtitle>
@@ -77,6 +114,7 @@ export const PageTemplateForm = ({
       />
       <IconsContainer>
         <EditIcon />
+        {renderCopyButton(!!pageTemplateId)}
       </IconsContainer>
     </Subtitle>
   );
@@ -214,6 +252,19 @@ export const PageTemplateForm = ({
           </SwitchCopy>
         </SwitchContainer>
       </Switches>
+      <Modal ariaHideApp={false} isOpen={copyModalOpen} contentLabel="Confirm Copy" style={modalStyles}>
+        <ModalTitle>
+          <FormattedMessage {...messages.copyConfirmTitle} />
+        </ModalTitle>
+        <ModalActions>
+          <BackButton onClick={() => setCopyModalOpen(false)} disabled={loading}>
+            <FormattedMessage {...messages.cancelCopy} />
+          </BackButton>
+          <NextButton id="confirmCopyBtn" onClick={copyPageTemplateFunc} loading={loading} disabled={loading}>
+            <FormattedMessage {...messages.confirmCopy} />
+          </NextButton>
+        </ModalActions>
+      </Modal>
     </Container>
   );
 };
@@ -227,4 +278,7 @@ PageTemplateForm.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   isValid: PropTypes.bool.isRequired,
   title: PropTypes.node.isRequired,
+  pageTemplateId: PropTypes.string,
+  copyPageTemplate: PropTypes.func,
+  dirty: PropTypes.bool,
 };

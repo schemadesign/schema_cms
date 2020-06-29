@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 
 import { PageTemplates } from '../pageTemplates.component';
 import { defaultProps } from '../pageTemplates.stories';
@@ -58,5 +59,15 @@ describe('PageTemplates: Component', () => {
     wrapper.root.findByProps({ id: 'pageTemplateTitle-1' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/page-template/1');
+  });
+
+  it('should call copy page template', async () => {
+    jest.spyOn(defaultProps, 'copyPageTemplate');
+    const wrapper = await render();
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'pageTemplateCopyButton-1' }).props.onClick();
+    });
+
+    expect(defaultProps.copyPageTemplate).toHaveBeenCalledWith({ projectId: 'projectId', pageTemplateId: 1 });
   });
 });

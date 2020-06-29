@@ -11,6 +11,7 @@ export const PageTemplatesRoutines = {
   createPageTemplate: createRoutine(`${PREFIX}CREATE_PAGE_TEMPLATE`),
   updatePageTemplate: createRoutine(`${PREFIX}UPDATE_PAGE_TEMPLATE`),
   removePageTemplate: createRoutine(`${PREFIX}REMOVE_PAGE_TEMPLATE`),
+  copyPageTemplate: createRoutine(`${PREFIX}COPY_PAGE_TEMPLATE`),
 };
 
 export const INITIAL_STATE = new Immutable({

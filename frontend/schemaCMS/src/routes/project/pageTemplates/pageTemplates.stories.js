@@ -13,6 +13,7 @@ export const defaultProps = {
     id: 1,
   },
   fetchPageTemplates: Function.prototype,
+  copyPageTemplate: Function.prototype,
 };
 
 storiesOf('PageTemplates', module)
