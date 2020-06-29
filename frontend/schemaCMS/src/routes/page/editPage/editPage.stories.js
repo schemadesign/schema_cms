@@ -14,6 +14,7 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   updatePage: Function.prototype,
   removePage: Function.prototype,
+  copyPage: Function.prototype,
   project,
   page,
   fetchPageAdditionalData: Function.prototype,

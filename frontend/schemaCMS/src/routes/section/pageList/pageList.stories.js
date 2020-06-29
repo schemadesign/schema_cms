@@ -16,6 +16,7 @@ export const defaultProps = {
   removeSection: Function.prototype,
   fetchSection: Function.prototype,
   fetchPages: Function.prototype,
+  copyPage: Function.prototype,
 };
 
 storiesOf('PageList', module)

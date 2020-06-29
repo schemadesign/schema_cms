@@ -10,7 +10,7 @@ import { useEffectOnce } from 'react-use';
 import { parse, stringify } from 'query-string';
 import ReactPaginate from 'react-paginate';
 
-import { Container, Form, getCustomHomeIconStyles, CardFooter, Pagination } from './pageList.styles';
+import { Container, Form, getCustomHomeIconStyles, CardFooter, Pagination, CardHeaderIcons } from './pageList.styles';
 import messages from './pageList.messages';
 import { getProjectMenuOptions, PROJECT_CONTENT_ID } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
@@ -65,13 +65,27 @@ import { SortingSelect } from '../../../shared/components/form/sortingSelect/sor
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { CopyButton } from '../../../shared/components/copyButton';
 
 const { EditIcon, BinIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
 
-export const Page = ({ created, createdBy, name, id, templateName, mainPage, setFieldValue, index }) => {
+export const Page = ({
+  created,
+  sectionId,
+  copyPage,
+  createdBy,
+  name,
+  id,
+  templateName,
+  mainPage,
+  setFieldValue,
+  index,
+}) => {
   const history = useHistory();
   const intl = useIntl();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
   const active = mainPage === id;
@@ -79,11 +93,25 @@ export const Page = ({ created, createdBy, name, id, templateName, mainPage, set
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
   const footerComponent = <CardFooter>{templateCopy}</CardFooter>;
 
+  const copyPageAction = async () => {
+    try {
+      setLoading(true);
+      await copyPage({ pageId: id, sectionId });
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const header = (
     <CardHeader
       list={list}
       icon={
-        <HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />
+        <CardHeaderIcons>
+          <HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />
+          <CopyButton name={`pageCopyButton-${index}`} loading={loading} error={error} action={copyPageAction} />
+        </CardHeaderIcons>
       }
     />
   );
@@ -104,8 +132,10 @@ Page.propTypes = {
   id: PropTypes.number.isRequired,
   templateName: PropTypes.string,
   setFieldValue: PropTypes.func.isRequired,
+  copyPage: PropTypes.func.isRequired,
   mainPage: PropTypes.number,
   index: PropTypes.number.isRequired,
+  sectionId: PropTypes.string.isRequired,
 };
 
 const getBreadcrumbsItems = (project, { id, name }) => [
@@ -136,6 +166,7 @@ export const PageList = ({
   fetchSection,
   fetchPages,
   userRole,
+  copyPage,
 }) => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
@@ -296,6 +327,8 @@ export const PageList = ({
                 key={index}
                 index={index}
                 mainPage={values[SECTIONS_MAIN_PAGE]}
+                sectionId={sectionId}
+                copyPage={copyPage}
                 setFieldValue={restFormikProps.setFieldValue}
                 {...page}
               />
@@ -369,6 +402,7 @@ PageList.propTypes = {
   removeSection: PropTypes.func.isRequired,
   fetchSection: PropTypes.func.isRequired,
   fetchPages: PropTypes.func.isRequired,
+  copyPage: PropTypes.func.isRequired,
   section: PropTypes.object.isRequired,
   pages: PropTypes.object.isRequired,
   project: PropTypes.object.isRequired,

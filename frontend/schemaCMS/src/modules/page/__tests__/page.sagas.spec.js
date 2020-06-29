@@ -8,6 +8,7 @@ import mockApi from '../../../shared/utils/mockApi';
 import browserHistory from '../../../shared/utils/history';
 import { PAGES_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
 import { ProjectRoutines } from '../../project';
+import { SectionsRoutines } from '../../sections';
 
 describe('Page: sagas', () => {
   const defaultState = Immutable({
@@ -97,6 +98,23 @@ describe('Page: sagas', () => {
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}`);
+    });
+  });
+
+  describe('copyPage', () => {
+    it('should dispatch a success action', async () => {
+      const sectionId = 'sectionId';
+      const pageId = 'pageId';
+      const payload = { sectionId, pageId };
+
+      mockApi.post(`${PAGES_PATH}/${pageId}/copy`).reply(OK);
+
+      await expectSaga(watchPage)
+        .withState(defaultState)
+        .put(PageRoutines.copyPage.success())
+        .put(SectionsRoutines.fetchPages.trigger({ sectionId }))
+        .dispatch(PageRoutines.copyPage(payload))
+        .silentRun();
     });
   });
 

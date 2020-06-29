@@ -5,7 +5,7 @@ exports[`PageList: Component should render correctly 1`] = `
   className="sc-AxjAm StDqN"
 >
   <div
-    className="sc-AxhUy bGjTfb"
+    className="sc-AxgMl kEUmFl"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`PageList: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-AxgMl fFPQpl"
+          className="sc-AxheI fniENP"
         >
           <h2
-            className="sc-fzplWN eQxyjC"
+            className="sc-fznyAO dFXsby"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </h2>
           <h1
-            className="sc-fznyAO dFXsby"
+            className="sc-fznKkj hlIEaX"
             id="headerSubtitle"
             style={
               Object {
@@ -120,16 +120,16 @@ exports[`PageList: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-Axmtr hUmGBz"
+        className="sc-AxmLO dvTVuW"
       >
         <div
-          className="sc-AxheI dUMtsD"
+          className="sc-Axmtr bwYVDg"
         >
           <div
-            className="sc-AxgMl fFPQpl"
+            className="sc-AxheI fniENP"
           >
             <h2
-              className="sc-fzplWN eQxyjC"
+              className="sc-fznyAO dFXsby"
               id="headerTitle"
               style={
                 Object {
@@ -143,7 +143,7 @@ exports[`PageList: Component should render correctly 1`] = `
               Section
             </h2>
             <h1
-              className="sc-fznyAO dFXsby"
+              className="sc-fznKkj hlIEaX"
               id="headerSubtitle"
               style={
                 Object {
@@ -161,10 +161,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxmLO cZlyyh"
+          className="sc-fzozJi cXstQc"
         >
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/"
@@ -175,7 +175,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/user/"
@@ -186,7 +186,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/1"
@@ -197,7 +197,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/1/datasource"
@@ -208,7 +208,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/1/user"
@@ -219,7 +219,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi hYAjnG"
+            className="sc-fzoLsD LsguM"
           >
             <a
               href="/project/1/content"
@@ -230,7 +230,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/project/1/templates"
@@ -242,10 +242,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-AxmLO cZlyyh"
+          className="sc-fzozJi cXstQc"
         >
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <a
               href="/settings"
@@ -256,7 +256,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzozJi bEoyPT"
+            className="sc-fzoLsD kppjAR"
           >
             <div
               onClick={[Function]}
@@ -266,10 +266,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzoLsD hiCoJg"
+          className="sc-fzpans cCWWfw"
         >
           <a
-            className="sc-fzpans TNlMA"
+            className="sc-fzplWN jUkJod"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -277,7 +277,7 @@ exports[`PageList: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fzpans TNlMA"
+            className="sc-fzplWN jUkJod"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -285,7 +285,7 @@ exports[`PageList: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fzpans TNlMA"
+            className="sc-fzplWN jUkJod"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -339,7 +339,7 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqAui hflVXV"
+    className="sc-fzqMdD fwVoet"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzowVh hDBXhX"
+          className="sc-fzoJus iirZhm"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fzoJus iEZvSV"
+            className="sc-fzoVTD hVjhKf"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzowVh hDBXhX"
+          className="sc-fzoJus iirZhm"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fzoJus iEZvSV"
+            className="sc-fzoVTD hVjhKf"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -483,7 +483,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzqMdD dQdcdV"
+          className="sc-fzowVh jNMYDn"
         >
           <span
             style={
@@ -496,7 +496,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-fzoJus iEZvSV"
+            className="sc-fzoVTD hVjhKf"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -518,13 +518,13 @@ exports[`PageList: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fznJRM fWcXoV"
+      className="sc-fznWqX VKSem"
     >
       <div
-        className="sc-fznWqX izhnMz"
+        className="sc-fzoiQi kVjVJJ"
       >
         <h2
-          className="sc-fzoiQi kWApJK"
+          className="sc-fzqARJ euGmLc"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -538,7 +538,7 @@ exports[`PageList: Component should render correctly 1`] = `
           Section
         </h2>
         <h1
-          className="sc-fzqARJ euGmLc"
+          className="sc-fzqNqU cSnCDr"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -552,10 +552,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqAbL jowhOw"
+            className="sc-fzqMAW fkUcXE"
           >
             <div
-              className="sc-fznLPX eppHyY"
+              className="sc-fzoaKM iVMnFK"
             >
               <div
                 style={
@@ -631,7 +631,7 @@ exports[`PageList: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzqMAW VSGek"
+              className="sc-fzoydu bgHInt"
             >
               <svg
                 style={
@@ -653,10 +653,10 @@ exports[`PageList: Component should render correctly 1`] = `
         </h1>
       </div>
       <div
-        className="sc-fzqNqU hFpwJZ"
+        className="sc-fzoyTs crHzLr"
       >
         <div
-          className="sc-fznxsB ikVhPc"
+          className="sc-fznJRM hUAWpU"
         >
           <button
             disabled={false}
@@ -703,10 +703,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoydu kVlKwf"
+      className="sc-fzoJMP hrhxsQ"
     >
       <div
-        className="sc-fznLPX gLqlma"
+        className="sc-fzoaKM jlpaHo"
       >
         <div
           style={
@@ -770,7 +770,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoaKM jwkshV"
+              className="sc-fzomuh dIZiTO"
             >
               <svg
                 style={
@@ -793,10 +793,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoVTD hCcdGU"
+      className="sc-fzpisO kiaRwQ"
     >
       <div
-        className="sc-fzpisO boBRLU"
+        className="sc-fznyYp beqPDL"
       >
         <div
           className=" css-2b097c-container"
@@ -902,20 +902,20 @@ exports[`PageList: Component should render correctly 1`] = `
       </svg>
     </div>
     <div
-      className="sc-fzoyTs dYVZCu"
+      className="sc-fzoNJl fgsglM"
     >
       <div
-        className="sc-fzoNJl hnQQWs"
+        className="sc-fzoXWK jhgDpI"
       />
       3 pages
       <div
-        className="sc-fzoNJl hnQQWs"
+        className="sc-fzoXWK jhgDpI"
       >
         <div
-          className="sc-fzoYHE fqvfWR"
+          className="sc-fzpkqZ dkTgUy"
         >
           <div
-            className="sc-fznxsB ikVhPc"
+            className="sc-fznJRM hUAWpU"
           >
             <button
               disabled={false}
@@ -964,10 +964,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <section
-      className="sc-fznWOq bOeEsF"
+      className="sc-fzolEj eKonpq"
     >
       <div
-        className="sc-fzoXWK cDPKiM"
+        className="sc-fzpmMD npcgb"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1000,50 +1000,75 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzqPZZ kxJcBh"
+              className="sc-fzoxKX ixknuM"
             >
               <ul
-                className="sc-fzolEj eWyqUb"
+                className="sc-fzqBkg vmfPg"
               >
                 <li
-                  className="sc-fzqBkg iQhKNS"
+                  className="sc-fzqPZZ bqcGuw"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-fzqBkg iQhKNS"
+                  className="sc-fzqPZZ bqcGuw"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-fzoxKX ja-DdBK"
+                className="sc-fzoKki fatNHo"
               >
-                <svg
-                  id="homeIcon-0"
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                      "fill": "#FFF",
-                      "height": "20px",
-                      "opacity": 0.3,
-                      "width": "20px",
-                    }
-                  }
-                  viewBox="0 0 512 512"
+                <div
+                  className="sc-AxhUy jziZFx"
                 >
-                  <path
-                    d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
-                  />
-                </svg>
+                  <svg
+                    id="homeIcon-0"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fill": "#FFF",
+                        "height": "20px",
+                        "marginRight": 10,
+                        "opacity": 0.3,
+                        "width": "20px",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                    />
+                  </svg>
+                  <div
+                    className="sc-fzqzlV iNAGed"
+                    id="pageCopyButton-0"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "20px",
+                          "width": "20px",
+                        }
+                      }
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <h1
-            className="sc-fzpmMD kizIJ"
+            className="sc-fznxKY jmDaA-d"
             id="page-1"
             onClick={[Function]}
             style={
@@ -1077,7 +1102,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoXWK cDPKiM"
+        className="sc-fzpmMD npcgb"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1110,50 +1135,75 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzqPZZ kxJcBh"
+              className="sc-fzoxKX ixknuM"
             >
               <ul
-                className="sc-fzolEj eWyqUb"
+                className="sc-fzqBkg vmfPg"
               >
                 <li
-                  className="sc-fzqBkg iQhKNS"
+                  className="sc-fzqPZZ bqcGuw"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-fzqBkg iQhKNS"
+                  className="sc-fzqPZZ bqcGuw"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-fzoxKX ja-DdBK"
+                className="sc-fzoKki fatNHo"
               >
-                <svg
-                  id="homeIcon-1"
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                      "fill": "#FFF",
-                      "height": "20px",
-                      "opacity": 0.3,
-                      "width": "20px",
-                    }
-                  }
-                  viewBox="0 0 512 512"
+                <div
+                  className="sc-AxhUy jziZFx"
                 >
-                  <path
-                    d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
-                  />
-                </svg>
+                  <svg
+                    id="homeIcon-1"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fill": "#FFF",
+                        "height": "20px",
+                        "marginRight": 10,
+                        "opacity": 0.3,
+                        "width": "20px",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                    />
+                  </svg>
+                  <div
+                    className="sc-fzqzlV iNAGed"
+                    id="pageCopyButton-1"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "20px",
+                          "width": "20px",
+                        }
+                      }
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <h1
-            className="sc-fzpmMD kizIJ"
+            className="sc-fznxKY jmDaA-d"
             id="page-2"
             onClick={[Function]}
             style={
@@ -1187,7 +1237,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoXWK cDPKiM"
+        className="sc-fzpmMD npcgb"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1220,50 +1270,75 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzqPZZ kxJcBh"
+              className="sc-fzoxKX ixknuM"
             >
               <ul
-                className="sc-fzolEj eWyqUb"
+                className="sc-fzqBkg vmfPg"
               >
                 <li
-                  className="sc-fzqBkg iQhKNS"
+                  className="sc-fzqPZZ bqcGuw"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-fzqBkg iQhKNS"
+                  className="sc-fzqPZZ bqcGuw"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-fzoxKX ja-DdBK"
+                className="sc-fzoKki fatNHo"
               >
-                <svg
-                  id="homeIcon-2"
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                      "fill": "#FFF",
-                      "height": "20px",
-                      "opacity": 1,
-                      "width": "20px",
-                    }
-                  }
-                  viewBox="0 0 512 512"
+                <div
+                  className="sc-AxhUy jziZFx"
                 >
-                  <path
-                    d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
-                  />
-                </svg>
+                  <svg
+                    id="homeIcon-2"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "fill": "#FFF",
+                        "height": "20px",
+                        "marginRight": 10,
+                        "opacity": 1,
+                        "width": "20px",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                    />
+                  </svg>
+                  <div
+                    className="sc-fzqzlV iNAGed"
+                    id="pageCopyButton-2"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "20px",
+                          "width": "20px",
+                        }
+                      }
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <h1
-            className="sc-fzpmMD kizIJ"
+            className="sc-fznxKY jmDaA-d"
             id="page-3"
             onClick={[Function]}
             style={
@@ -1356,13 +1431,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </ul>
     </div>
     <div
-      className="sc-fzoKki derPXV"
+      className="sc-fzoYkl exyXue"
     >
       <div
-        className="sc-fzoYkl cIaRKd"
+        className="sc-fzpkJw ZdCvW"
       >
         <div
-          className="sc-fznMnq jQhSEV"
+          className="sc-fzoant bstqWp"
         >
           <div>
             <input
@@ -1414,20 +1489,20 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fznzOf dlIABk"
+            className="sc-fznMnq cVhWGN"
           >
             <label
-              className="sc-fzpkJw fVmGWg"
+              className="sc-fznzOf hTiEMf"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-fzomME ifrTSc"
+              className="sc-fzqAbL dgweLY"
             >
               This Section is currently Public
               <span
-                className="sc-fzpkqZ blGzFM"
+                className="sc-fznAgC kRGdXv"
               />
               Visit Page: 
               <a
@@ -1439,7 +1514,7 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzoant bSMjLQ"
+          className="sc-fzomME jBkAbS"
           id="removeSection"
           onClick={[Function]}
         >
@@ -1464,13 +1539,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzqNJr fhMLFD"
+      className="sc-fzoyAV jiDcgh"
     >
       <div
-        className="sc-fzoLag hbFwVz"
+        className="sc-fzoXzr hBAcwN"
       >
         <div
-          className="sc-fzoyAV huHdwS"
+          className="sc-fzoLag dqeAwy"
         >
           <button
             disabled={false}
@@ -1513,7 +1588,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </svg>
           </button>
           <button
-            className="sc-fzoXzr jJhsFy"
+            className="sc-fzpjYC jlDbJV"
             disabled={true}
             id="updateSection"
             style={

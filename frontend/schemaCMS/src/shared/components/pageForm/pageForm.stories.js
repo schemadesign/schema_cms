@@ -18,6 +18,7 @@ export const defaultProps = {
   validateForm: Function.prototype,
   setRemoveModalOpen: Function.prototype,
   handleBlur: Function.prototype,
+  copyPage: Function.prototype,
   values: {
     ...page,
     [PAGE_TAGS]: {},
