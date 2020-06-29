@@ -189,7 +189,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
         .prefetch_related(
             "tags",
             Prefetch(
-                "pageblock_set",
+                "page_blocks",
                 queryset=PageBlock.objects.prefetch_related(
                     Prefetch(
                         "elements",
@@ -200,7 +200,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
                 ).order_by("order"),
             ),
             Prefetch(
-                "pageblock_set__elements__elements_sets",
+                "page_blocks__elements__elements_sets",
                 queryset=CustomElementSet.objects.prefetch_related(
                     Prefetch("elements", queryset=PageBlockElement.objects.order_by("order"))
                 ).order_by("order"),

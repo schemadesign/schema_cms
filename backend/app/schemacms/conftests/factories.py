@@ -29,5 +29,6 @@ pytest_factoryboy.register(pages_factories.CustomElementSetFactory, "custom_elem
 pytest_factoryboy.register(pages_factories.PageBlockElementFactory, "page_block_element")
 pytest_factoryboy.register(pages_factories.SectionFactory, "section")
 pytest_factoryboy.register(pages_factories.PageFactory, "page")
+pytest_factoryboy.register(pages_factories.PageTagFactory, "page_tag")
 pytest_factoryboy.register(tags_factories.TagFactory, "tag")
 pytest_factoryboy.register(tags_factories.TagCategoryFactory, "tag_category")

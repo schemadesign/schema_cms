@@ -3,6 +3,7 @@ import factory
 from schemacms.users.tests.factories import UserFactory
 from schemacms.pages import constants
 from schemacms.projects.tests.factories import ProjectFactory
+from schemacms.tags.tests.factories import TagCategoryFactory
 
 
 class SectionFactory(factory.django.DjangoModelFactory):
@@ -94,4 +95,13 @@ class CustomElementSetFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "pages.CustomElementSet"
 
-    block = factory.SubFactory(PageBlockElementFactory)
+    custom_element = factory.SubFactory(PageBlockElementFactory)
+
+
+class PageTagFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "pages.PageTag"
+
+    page = factory.SubFactory(PageFactory)
+    category = factory.SubFactory(TagCategoryFactory)
+    value = factory.Faker("text", max_nb_chars=150)

@@ -222,7 +222,7 @@ class PAPageDetailSerializer(PAPageSerializer):
         fields = PAPageSerializer.Meta.fields + ("blocks",)
 
     def get_blocks(self, obj):
-        blocks = obj.pageblock_set.all()
+        blocks = obj.page_blocks.all()
 
         return PAPageBlockSerializer(blocks, many=True).data
 
