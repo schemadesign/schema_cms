@@ -432,6 +432,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     >
       <div
         className="sc-AxgMl guGtQI"
+        title="Colors"
       >
         <span
           className="sc-AxheI foOaNn"
@@ -540,6 +541,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       </div>
       <div
         className="sc-AxgMl guGtQI"
+        title="Countries"
       >
         <span
           className="sc-AxheI foOaNn"
@@ -720,6 +722,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           className="sc-fznyAO hciYNw"
           id="filterName-0"
           onClick={[Function]}
+          title="Filter First Name"
         >
           Filter First Name
         </div>
@@ -806,6 +809,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           className="sc-fznyAO hciYNw"
           id="filterName-1"
           onClick={[Function]}
+          title="Filter Last Name"
         >
           Filter Last Name
         </div>
@@ -892,6 +896,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           className="sc-fznyAO hciYNw"
           id="filterName-2"
           onClick={[Function]}
+          title="Filter Birthday"
         >
           Filter Birthday
         </div>

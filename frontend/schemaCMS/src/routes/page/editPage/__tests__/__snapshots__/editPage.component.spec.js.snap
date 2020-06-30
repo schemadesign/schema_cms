@@ -1126,6 +1126,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         >
           <div
             className="sc-fzplgP gvkHZM"
+            title="Colors"
           >
             <span
               className="sc-fznzqM kkGtJK"
@@ -1234,6 +1235,7 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
           <div
             className="sc-fzplgP gvkHZM"
+            title="Countries"
           >
             <span
               className="sc-fznzqM kkGtJK"
@@ -1773,6 +1775,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               </div>
               <div
                 className="sc-fzpkqZ fevEne"
+                title="type"
               >
                 type
               </div>

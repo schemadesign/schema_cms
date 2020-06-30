@@ -1096,6 +1096,7 @@ exports[`PageList: Component should render correctly 1`] = `
         >
           <div
             className="sc-AxiKw jDtazu"
+            title="templateName"
           >
             templateName
           </div>
@@ -1231,6 +1232,7 @@ exports[`PageList: Component should render correctly 1`] = `
         >
           <div
             className="sc-AxiKw jDtazu"
+            title="(blank)"
           >
             (blank)
           </div>
@@ -1366,6 +1368,7 @@ exports[`PageList: Component should render correctly 1`] = `
         >
           <div
             className="sc-AxiKw jDtazu"
+            title="(blank)"
           >
             (blank)
           </div>

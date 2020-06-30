@@ -49,7 +49,7 @@ export const PageBlock = ({
             ) : null}
           </IconsContainer>
         </Header>
-        <Type>{block[BLOCK_TYPE]}</Type>
+        <Type title={block[BLOCK_TYPE]}>{block[BLOCK_TYPE]}</Type>
       </AccordionHeader>
       <AccordionDetails>
         <Accordion customIconStyles={getCustomIconStyles(theme)}>

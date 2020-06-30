@@ -67,7 +67,11 @@ export class List extends PureComponent {
     </HeaderList>
   );
 
-  renderFooter = (index, slug) => <Footer id={`apiPath-${index}`}>{generateApiUrl(slug)}</Footer>;
+  renderFooter = (index, url) => (
+    <Footer id={`apiPath-${index}`} title={url}>
+      {url}
+    </Footer>
+  );
 
   renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner }, index) {
     const { firstName = '—', lastName = '' } = owner || {};
@@ -78,7 +82,8 @@ export class List extends PureComponent {
 
     const handleShowProject = this.handleShowProject(id);
     const header = this.renderHeader([whenCreated, statusValue, user]);
-    const footer = this.renderFooter(index, slug);
+    const url = generateApiUrl(slug);
+    const footer = this.renderFooter(index, url);
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
