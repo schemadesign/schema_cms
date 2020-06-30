@@ -141,38 +141,33 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
         Object {
           "h3": "project title",
           "path": "/project/1/",
-          "span": <FormattedMessage
-            defaultMessage="Project"
-            id="shared.components.projectBreadcrumbs.project"
-            values={Object {}}
-          />,
+          "span": Object {
+            "defaultMessage": "Project",
+            "id": "shared.components.projectBreadcrumbs.project",
+          },
         },
         Object {
-          "h3": <FormattedMessage
-            defaultMessage="Tags"
-            id="shared.components.projectBreadcrumbs.tags"
-            values={Object {}}
-          />,
+          "h3": Object {
+            "defaultMessage": "Tags",
+            "id": "shared.components.projectBreadcrumbs.tags",
+          },
           "path": "/project/1/tag-categories",
-          "span": <FormattedMessage
-            defaultMessage="Tab"
-            id="shared.components.projectBreadcrumbs.tab"
-            values={Object {}}
-          />,
+          "span": Object {
+            "defaultMessage": "Tab",
+            "id": "shared.components.projectBreadcrumbs.tab",
+          },
         },
         Object {
           "active": true,
-          "h3": <FormattedMessage
-            defaultMessage="Create"
-            id="shared.components.projectBreadcrumbs.createMessage"
-            values={Object {}}
-          />,
+          "h3": Object {
+            "defaultMessage": "Create",
+            "id": "shared.components.projectBreadcrumbs.createMessage",
+          },
           "path": "/project/1/tag-categories/create",
-          "span": <FormattedMessage
-            defaultMessage="Template"
-            id="shared.components.projectBreadcrumbs.template"
-            values={Object {}}
-          />,
+          "span": Object {
+            "defaultMessage": "Template",
+            "id": "shared.components.projectBreadcrumbs.template",
+          },
         },
       ]
     }

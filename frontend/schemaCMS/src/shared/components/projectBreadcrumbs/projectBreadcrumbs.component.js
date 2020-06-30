@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Breadcrumbs, LinkItem, Typography } from 'schemaUI';
-import { FormattedMessage } from 'react-intl';
+import { useIntl } from 'react-intl';
+import { is, identity, ifElse } from 'ramda';
 
 import { Link, ActiveItem, Container, Title } from './projectBreadcrumbs.styles';
 import messages from './projectBreadcrumbs.messages';
@@ -9,31 +10,36 @@ import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { Span } = Typography;
 
-export const projectMessage = <FormattedMessage {...messages.project} />;
-export const tabMessage = <FormattedMessage {...messages.tab} />;
-export const templateMessage = <FormattedMessage {...messages.template} />;
-export const templatesMessage = <FormattedMessage {...messages.templates} />;
-export const blockTemplatesMessage = <FormattedMessage {...messages.blockTemplates} />;
-export const libraryMessage = <FormattedMessage {...messages.libraryMessage} />;
-export const createMessage = <FormattedMessage {...messages.createMessage} />;
-export const pageTemplatesMessage = <FormattedMessage {...messages.pageTemplates} />;
-export const filterTemplatesMessage = <FormattedMessage {...messages.filterTemplates} />;
-export const stateTemplatesMessage = <FormattedMessage {...messages.stateTemplates} />;
-export const sectionMessage = <FormattedMessage {...messages.section} />;
-export const pageMessage = <FormattedMessage {...messages.page} />;
-export const contentMessage = <FormattedMessage {...messages.content} />;
-export const pageBlockMessage = <FormattedMessage {...messages.pageBlock} />;
-export const tagsMessage = <FormattedMessage {...messages.tags} />;
-export const tagsTemplateMessage = <FormattedMessage {...messages.tagsTemplate} />;
-export const dataSourceMessage = <FormattedMessage {...messages.dataSource} />;
-export const stateMessage = <FormattedMessage {...messages.state} />;
+export const projectMessage = messages.project;
+export const tabMessage = messages.tab;
+export const templateMessage = messages.template;
+export const templatesMessage = messages.templates;
+export const blockTemplatesMessage = messages.blockTemplates;
+export const libraryMessage = messages.libraryMessage;
+export const createMessage = messages.createMessage;
+export const pageTemplatesMessage = messages.pageTemplates;
+export const filterTemplatesMessage = messages.filterTemplates;
+export const stateTemplatesMessage = messages.stateTemplates;
+export const sectionMessage = messages.section;
+export const pageMessage = messages.page;
+export const contentMessage = messages.content;
+export const pageBlockMessage = messages.pageBlock;
+export const tagsMessage = messages.tags;
+export const tagsTemplateMessage = messages.tagsTemplate;
+export const dataSourceMessage = messages.dataSource;
+export const stateMessage = messages.state;
 
-const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index) =>
-  renderWhenTrueOtherwise(
+const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index) => {
+  const { formatMessage } = useIntl();
+  const getCopy = ifElse(is(String), identity, message => formatMessage(message));
+  const title = getCopy(h3);
+  const header = getCopy(span);
+
+  return renderWhenTrueOtherwise(
     () => (
       <ActiveItem key={index}>
-        <Span>{span}</Span>
-        <Title title={h3}>{h3}</Title>
+        <Span>{header}</Span>
+        <Title title={title}>{title}</Title>
       </ActiveItem>
     ),
     () => (
@@ -41,13 +47,14 @@ const BreadcrumbItem = ({ path = '', active = false, span = '', h3 = '' }, index
         key={index}
         render={styles => (
           <Link style={styles} to={path}>
-            <Span>{span}</Span>
-            <Title title={h3}>{h3}</Title>
+            <Span>{header}</Span>
+            <Title title={title}>{title}</Title>
           </Link>
         )}
       />
     )
   )(active);
+};
 
 BreadcrumbItem.propTypes = {
   path: PropTypes.string,
@@ -56,13 +63,11 @@ BreadcrumbItem.propTypes = {
   h3: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
-export const ProjectBreadcrumbs = ({ items }) => {
-  return (
-    <Container>
-      <Breadcrumbs>{items.map(BreadcrumbItem)}</Breadcrumbs>
-    </Container>
-  );
-};
+export const ProjectBreadcrumbs = ({ items }) => (
+  <Container>
+    <Breadcrumbs>{items.map(BreadcrumbItem)}</Breadcrumbs>
+  </Container>
+);
 
 ProjectBreadcrumbs.propTypes = {
   items: PropTypes.array.isRequired,
