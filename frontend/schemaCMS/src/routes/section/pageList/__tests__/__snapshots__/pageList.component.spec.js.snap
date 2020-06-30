@@ -450,13 +450,7 @@ exports[`PageList: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
-            title={
-              <FormattedMessage
-                defaultMessage="Content"
-                id="shared.components.projectBreadcrumbs.content"
-                values={Object {}}
-              />
-            }
+            title="Content"
           >
             Content
           </h3>

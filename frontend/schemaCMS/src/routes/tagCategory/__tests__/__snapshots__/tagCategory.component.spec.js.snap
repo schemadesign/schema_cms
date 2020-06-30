@@ -47,47 +47,41 @@ exports[`TagCategory: Component should render correctly 1`] = `
           Object {
             "h3": "project title",
             "path": "/project/1/",
-            "span": <FormattedMessage
-              defaultMessage="Project"
-              id="shared.components.projectBreadcrumbs.project"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Project",
+              "id": "shared.components.projectBreadcrumbs.project",
+            },
           },
           Object {
-            "h3": <FormattedMessage
-              defaultMessage="Templates"
-              id="shared.components.projectBreadcrumbs.templates"
-              values={Object {}}
-            />,
+            "h3": Object {
+              "defaultMessage": "Templates",
+              "id": "shared.components.projectBreadcrumbs.templates",
+            },
             "path": "/project/1/templates",
-            "span": <FormattedMessage
-              defaultMessage="Tab"
-              id="shared.components.projectBreadcrumbs.tab"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Tab",
+              "id": "shared.components.projectBreadcrumbs.tab",
+            },
           },
           Object {
-            "h3": <FormattedMessage
-              defaultMessage="Tags Template"
-              id="shared.components.projectBreadcrumbs.tagsTemplate"
-              values={Object {}}
-            />,
+            "h3": Object {
+              "defaultMessage": "Tags Template",
+              "id": "shared.components.projectBreadcrumbs.tagsTemplate",
+            },
             "path": "/project/1/tag-templates",
-            "span": <FormattedMessage
-              defaultMessage="Library"
-              id="shared.components.projectBreadcrumbs.libraryMessage"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Library",
+              "id": "shared.components.projectBreadcrumbs.libraryMessage",
+            },
           },
           Object {
             "active": true,
             "h3": "name",
             "path": "/tag-category/2",
-            "span": <FormattedMessage
-              defaultMessage="Template"
-              id="shared.components.projectBreadcrumbs.template"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Template",
+              "id": "shared.components.projectBreadcrumbs.template",
+            },
           },
         ]
       }
@@ -316,47 +310,41 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
           Object {
             "h3": "project title",
             "path": "/project/1/",
-            "span": <FormattedMessage
-              defaultMessage="Project"
-              id="shared.components.projectBreadcrumbs.project"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Project",
+              "id": "shared.components.projectBreadcrumbs.project",
+            },
           },
           Object {
-            "h3": <FormattedMessage
-              defaultMessage="Templates"
-              id="shared.components.projectBreadcrumbs.templates"
-              values={Object {}}
-            />,
+            "h3": Object {
+              "defaultMessage": "Templates",
+              "id": "shared.components.projectBreadcrumbs.templates",
+            },
             "path": "/project/1/templates",
-            "span": <FormattedMessage
-              defaultMessage="Tab"
-              id="shared.components.projectBreadcrumbs.tab"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Tab",
+              "id": "shared.components.projectBreadcrumbs.tab",
+            },
           },
           Object {
-            "h3": <FormattedMessage
-              defaultMessage="Tags Template"
-              id="shared.components.projectBreadcrumbs.tagsTemplate"
-              values={Object {}}
-            />,
+            "h3": Object {
+              "defaultMessage": "Tags Template",
+              "id": "shared.components.projectBreadcrumbs.tagsTemplate",
+            },
             "path": "/project/1/tag-templates",
-            "span": <FormattedMessage
-              defaultMessage="Library"
-              id="shared.components.projectBreadcrumbs.libraryMessage"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Library",
+              "id": "shared.components.projectBreadcrumbs.libraryMessage",
+            },
           },
           Object {
             "active": true,
             "h3": "name",
             "path": "/tag-category/2",
-            "span": <FormattedMessage
-              defaultMessage="Template"
-              id="shared.components.projectBreadcrumbs.template"
-              values={Object {}}
-            />,
+            "span": Object {
+              "defaultMessage": "Template",
+              "id": "shared.components.projectBreadcrumbs.template",
+            },
           },
         ]
       }

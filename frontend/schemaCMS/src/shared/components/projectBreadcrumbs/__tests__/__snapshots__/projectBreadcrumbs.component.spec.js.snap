@@ -113,13 +113,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
               "margin": 0,
             }
           }
-          title={
-            <FormattedMessage
-              defaultMessage="Templates"
-              id="shared.components.projectBreadcrumbs.templates"
-              values={Object {}}
-            />
-          }
+          title="Templates"
         >
           Templates
         </h3>
@@ -177,13 +171,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
               "margin": 0,
             }
           }
-          title={
-            <FormattedMessage
-              defaultMessage="Block Templates"
-              id="shared.components.projectBreadcrumbs.blockTemplates"
-              values={Object {}}
-            />
-          }
+          title="Block Templates"
         >
           Block Templates
         </h3>
@@ -232,13 +220,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
               "margin": 0,
             }
           }
-          title={
-            <FormattedMessage
-              defaultMessage="Create"
-              id="shared.components.projectBreadcrumbs.createMessage"
-              values={Object {}}
-            />
-          }
+          title="Create"
         >
           Create
         </h3>

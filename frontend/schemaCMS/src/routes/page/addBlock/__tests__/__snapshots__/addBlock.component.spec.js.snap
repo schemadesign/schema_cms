@@ -450,13 +450,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
-            title={
-              <FormattedMessage
-                defaultMessage="Content"
-                id="shared.components.projectBreadcrumbs.content"
-                values={Object {}}
-              />
-            }
+            title="Content"
           >
             Content
           </h3>
@@ -621,13 +615,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
                 "margin": 0,
               }
             }
-            title={
-              <FormattedMessage
-                defaultMessage="Create"
-                id="shared.components.projectBreadcrumbs.createMessage"
-                values={Object {}}
-              />
-            }
+            title="Create"
           >
             Create
           </h3>
