@@ -165,7 +165,7 @@ export const Label = styled.span`
 `;
 
 export const Error = styled.div`
-  padding-top: 3px;
+  padding: 3px 0 15px;
   color: ${({ theme }) => theme.textField.error};
 `;
 
