@@ -28,7 +28,6 @@ export const Pagination = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    cursor: pointer;
   }
 
   li {
@@ -36,12 +35,23 @@ export const Pagination = styled.div`
     border-radius: 50%;
     width: 20px;
     height: 20px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
   }
 
   .previous,
   .next {
     border: none;
     width: auto;
+    border-radius: 5px;
+    padding: 2px;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  }
+
+  .previous:not(.disabled):hover,
+  .next:not(.disabled):hover {
+    background-color: ${colors.white};
+    color: ${colors.black};
   }
 
   .selected,
@@ -52,6 +62,12 @@ export const Pagination = styled.div`
 
   a {
     padding: 4px;
+  }
+
+  .disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
   }
 `;
 

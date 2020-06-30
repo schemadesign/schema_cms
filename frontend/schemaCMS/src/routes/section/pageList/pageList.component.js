@@ -252,11 +252,12 @@ export const PageList = ({
   const renderPagination = renderWhenTrue(() => (
     <Pagination>
       <ReactPaginate
-        pageCount={pageCount}
+        pageCount={Math.ceil(pageCount)}
         pageRangeDisplayed={2}
         marginPagesDisplayed={2}
         onPageChange={handlePageChange}
         forcePage={page}
+        disabledClassName={'disabled'}
       />
     </Pagination>
   ));
