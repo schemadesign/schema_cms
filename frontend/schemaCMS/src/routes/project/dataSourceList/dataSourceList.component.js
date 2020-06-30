@@ -26,6 +26,7 @@ export const DataSourceList = ({
   dataSources = [],
   userRole,
   uploadingDataSources,
+  copyDataSource,
 }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -62,7 +63,14 @@ export const DataSourceList = ({
   const renderList = renderWhenTrue(() => (
     <ListContainer>
       {dataSources.map((dataSource, index) => (
-        <DataSourceCard uploadingDataSources={uploadingDataSources} index={index} key={index} {...dataSource} />
+        <DataSourceCard
+          uploadingDataSources={uploadingDataSources}
+          copyDataSource={copyDataSource}
+          index={index}
+          key={index}
+          projectId={projectId}
+          {...dataSource}
+        />
       ))}
     </ListContainer>
   ));
@@ -101,4 +109,5 @@ DataSourceList.propTypes = {
   cancelFetchListLoop: PropTypes.func.isRequired,
   dataSources: PropTypes.array.isRequired,
   uploadingDataSources: PropTypes.array.isRequired,
+  copyDataSource: PropTypes.func.isRequired,
 };

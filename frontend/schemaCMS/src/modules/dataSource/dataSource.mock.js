@@ -8,6 +8,20 @@ export const dataSources = [
     id: 17,
     name: 'name',
     activeJob: null,
+    fileName: 'fileName',
+    jobsState: {
+      lastJobStatus: JOB_STATE_SUCCESS,
+    },
+    metaData: {
+      status: META_SUCCESS,
+    },
+  },
+  {
+    created: '2019-09-09T11:23:40+0000',
+    createdBy: { firstName: 'firstName', lastName: 'lastName' },
+    id: 17,
+    name: 'name',
+    activeJob: null,
     jobsState: {
       lastJobStatus: JOB_STATE_FAILURE,
     },

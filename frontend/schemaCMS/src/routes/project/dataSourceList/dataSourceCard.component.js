@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Icons } from 'schemaUI';
 import { always, cond, equals, find, propEq, propOr, T } from 'ramda';
@@ -9,7 +9,6 @@ import { useTheme } from 'styled-components';
 import { ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import {
   Header,
-  HeaderIcon,
   Loading,
   MetaData,
   MetaDataName,
@@ -24,8 +23,10 @@ import { META_FAILED, PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../mo
 import { isProcessingData } from '../../../shared/utils/helpers';
 import { JOB_STATE_FAILURE } from '../../../modules/job/job.constants';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
+import { CopyButton } from '../../../shared/components/copyButton';
+import reportError from '../../../shared/utils/reportError';
 
-const { IntersectIcon, CsvIcon } = Icons;
+const { CsvIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
 export const DataSourceCard = ({
@@ -39,6 +40,8 @@ export const DataSourceCard = ({
   jobsState = {},
   fileName,
   index,
+  copyDataSource,
+  projectId,
 }) => {
   const history = useHistory();
   const intl = useIntl();
@@ -53,6 +56,21 @@ export const DataSourceCard = ({
   const fileUploadingError = !!propOr(false, 'error', fileUploading);
   const isUploading = !!fileUploading;
   const uploadProgress = fileUploading && fileUploading.progress;
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const copyDataSourceAction = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+      await copyDataSource({ dataSourceId: id, projectId });
+    } catch (e) {
+      reportError(e);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const getDataSourcePage = cond([
     [equals(null), always(SOURCE_PAGE)],
@@ -73,9 +91,12 @@ export const DataSourceCard = ({
           </HeaderItem>
         ))}
       </HeaderList>
-      <HeaderIcon>
-        <IntersectIcon />
-      </HeaderIcon>
+      <CopyButton
+        name={`dataSourceCopyButton-${index}`}
+        loading={loading}
+        error={error}
+        action={copyDataSourceAction}
+      />
     </Header>
   );
   const renderMetaData = data => {
@@ -200,5 +221,7 @@ DataSourceCard.propTypes = {
   jobsState: PropTypes.object.isRequired,
   fileName: PropTypes.string,
   index: PropTypes.number.isRequired,
+  projectId: PropTypes.string.isRequired,
   uploadingDataSources: PropTypes.array.isRequired,
+  copyDataSource: PropTypes.func.isRequired,
 };
