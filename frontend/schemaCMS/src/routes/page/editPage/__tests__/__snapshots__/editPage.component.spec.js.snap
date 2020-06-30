@@ -1424,7 +1424,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                     "position": "absolute",
                     "top": "calc(100% + 5px)",
                     "width": "100%",
-                    "zIndex": 2,
+                    "zIndex": 99,
                   }
                 }
               >
@@ -2358,7 +2358,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                       "position": "absolute",
                                       "top": "calc(100% + 5px)",
                                       "width": "100%",
-                                      "zIndex": 2,
+                                      "zIndex": 99,
                                     }
                                   }
                                 >
@@ -2720,7 +2720,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                       "position": "absolute",
                                       "top": "calc(100% + 5px)",
                                       "width": "100%",
-                                      "zIndex": 2,
+                                      "zIndex": 99,
                                     }
                                   }
                                 />

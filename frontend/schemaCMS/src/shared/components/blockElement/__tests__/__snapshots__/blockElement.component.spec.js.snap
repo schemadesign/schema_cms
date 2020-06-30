@@ -4199,7 +4199,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                       "position": "absolute",
                       "top": "calc(100% + 5px)",
                       "width": "100%",
-                      "zIndex": 2,
+                      "zIndex": 99,
                     }
                   }
                 >
@@ -4550,7 +4550,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
                       "position": "absolute",
                       "top": "calc(100% + 5px)",
                       "width": "100%",
-                      "zIndex": 2,
+                      "zIndex": 99,
                     }
                   }
                 >
