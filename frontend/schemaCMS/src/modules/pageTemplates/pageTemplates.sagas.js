@@ -58,7 +58,7 @@ function* updatePageTemplate({ payload: { pageTemplateId, formData } }) {
 
     const { data } = yield api.patch(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`, formData);
 
-    yield put(PageTemplatesRoutines.updatePageTemplate.success(data.results));
+    yield put(PageTemplatesRoutines.updatePageTemplate.success(data));
   } catch (error) {
     reportError(error);
     yield put(PageTemplatesRoutines.updatePageTemplate.failure(error));

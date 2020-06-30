@@ -76,14 +76,13 @@ describe('PageTemplates: sagas', () => {
       const formData = {};
       const response = {
         id: 1,
-        results: [],
       };
 
       mockApi.patch(`${PAGE_TEMPLATES_PATH}/${pageTemplateId}`, formData).reply(OK, response);
 
       await expectSaga(watchPageTemplates)
         .withState(defaultState)
-        .put(PageTemplatesRoutines.updatePageTemplate.success(response.results))
+        .put(PageTemplatesRoutines.updatePageTemplate.success(response))
         .dispatch(PageTemplatesRoutines.updatePageTemplate({ pageTemplateId, formData }))
         .silentRun();
     });
