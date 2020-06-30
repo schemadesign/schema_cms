@@ -533,6 +533,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     >
       <div
         className="sc-fzqAui bVNREn"
+        title="Colors"
       >
         <span
           className="sc-fzqMdD bzbiOK"
@@ -641,6 +642,7 @@ exports[`PageForm: Component should render correctly 1`] = `
       </div>
       <div
         className="sc-fzqAui bVNREn"
+        title="Countries"
       >
         <span
           className="sc-fzqMdD bzbiOK"
@@ -1180,6 +1182,7 @@ exports[`PageForm: Component should render correctly 1`] = `
           </div>
           <div
             className="sc-fzqBkg bqXSjZ"
+            title="type"
           >
             type
           </div>
@@ -6773,6 +6776,7 @@ exports[`PageForm: Component should render with page template 1`] = `
     >
       <div
         className="sc-fzqAui bVNREn"
+        title="Colors"
       >
         <span
           className="sc-fzqMdD bzbiOK"
@@ -6881,6 +6885,7 @@ exports[`PageForm: Component should render with page template 1`] = `
       </div>
       <div
         className="sc-fzqAui bVNREn"
+        title="Countries"
       >
         <span
           className="sc-fzqMdD bzbiOK"
@@ -7420,6 +7425,7 @@ exports[`PageForm: Component should render with page template 1`] = `
           </div>
           <div
             className="sc-fzqBkg bqXSjZ"
+            title="type"
           >
             type
           </div>

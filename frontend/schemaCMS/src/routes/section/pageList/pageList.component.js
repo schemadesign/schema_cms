@@ -91,7 +91,7 @@ export const Page = ({
   const active = mainPage === id;
   const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
-  const footerComponent = <CardFooter>{templateCopy}</CardFooter>;
+  const footerComponent = <CardFooter title={templateCopy}>{templateCopy}</CardFooter>;
 
   const copyPageAction = async () => {
     try {

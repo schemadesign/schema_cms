@@ -9,6 +9,7 @@ exports[`TagSearch: Component should render correctly 1`] = `
   >
     <div
       className="sc-AxirZ gMFktb"
+      title="Colors"
     >
       <span
         className="sc-AxiKw jMeOOO"
@@ -117,6 +118,7 @@ exports[`TagSearch: Component should render correctly 1`] = `
     </div>
     <div
       className="sc-AxirZ gMFktb"
+      title="Countries"
     >
       <span
         className="sc-AxiKw jMeOOO"

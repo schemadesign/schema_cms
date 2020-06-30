@@ -148,6 +148,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
     </div>
     <div
       className="sc-AxiKw ivdQru"
+      title="type"
     >
       type
     </div>

@@ -19,7 +19,7 @@ export const TagCategories = ({ name, isSingleSelect = false, selectedTags, tags
 
   return (
     <Fragment>
-      <Title>
+      <Title title={name}>
         <Category>
           <FormattedMessage {...messages.category} />
         </Category>

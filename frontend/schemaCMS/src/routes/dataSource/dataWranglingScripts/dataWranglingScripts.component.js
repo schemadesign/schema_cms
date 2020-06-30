@@ -179,7 +179,7 @@ export class DataWranglingScripts extends PureComponent {
       <CheckboxContent>
         {draggableIcon}
         <Link to={this.getScriptLink({ id, type })}>
-          <StepName id={`checkboxName-${index}`} drag={!!draggableIcon}>
+          <StepName id={`checkboxName-${index}`} title={name} drag={!!draggableIcon}>
             {name}
           </StepName>
           <Dot />

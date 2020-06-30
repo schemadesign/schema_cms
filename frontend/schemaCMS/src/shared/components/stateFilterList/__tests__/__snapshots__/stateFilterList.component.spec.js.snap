@@ -74,6 +74,7 @@ Array [
           className="sc-AxhCb iniznJ"
           id="filterName-0"
           onClick={[Function]}
+          title="Filter First Name"
         >
           Filter First Name
         </div>
@@ -171,6 +172,7 @@ Array [
           className="sc-AxhCb iniznJ"
           id="filterName-1"
           onClick={[Function]}
+          title="Filter Last Name"
         >
           Filter Last Name
         </div>
@@ -257,6 +259,7 @@ Array [
           className="sc-AxhCb iniznJ"
           id="filterName-2"
           onClick={[Function]}
+          title="Filter Birthday"
         >
           Filter Birthday
         </div>
