@@ -155,6 +155,25 @@ function* fetchOne({ payload: { dataSourceId } }) {
   }
 }
 
+function* copyDataSource({ payload: { dataSourceId, projectId } }) {
+  try {
+    yield put(DataSourceRoutines.copyDataSource.request());
+
+    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/copy`);
+
+    if (projectId) {
+      yield put(DataSourceRoutines.fetchList.trigger({ projectId }));
+    }
+
+    yield put(DataSourceRoutines.copyDataSource.success());
+  } catch (error) {
+    reportError(error);
+    yield put(DataSourceRoutines.copyDataSource.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.copyDataSource.fulfill());
+  }
+}
+
 const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
   either(
     isEmpty,
@@ -311,5 +330,6 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.fetchFieldsInfo.TRIGGER, fetchFieldsInfo),
     takeLatest(DataSourceRoutines.revertToJob.TRIGGER, revertToJob),
     takeLatest(DataSourceRoutines.fetchPreview.TRIGGER, fetchPreview),
+    takeLatest(DataSourceRoutines.copyDataSource.TRIGGER, copyDataSource),
   ]);
 }
