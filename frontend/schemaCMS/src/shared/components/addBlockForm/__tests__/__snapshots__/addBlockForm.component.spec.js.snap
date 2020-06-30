@@ -90,7 +90,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
                 "position": "absolute",
                 "top": "calc(100% + 5px)",
                 "width": "100%",
-                "zIndex": 2,
+                "zIndex": 99,
               }
             }
           >
@@ -432,7 +432,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
                 "position": "absolute",
                 "top": "calc(100% + 5px)",
                 "width": "100%",
-                "zIndex": 2,
+                "zIndex": 99,
               }
             }
           >

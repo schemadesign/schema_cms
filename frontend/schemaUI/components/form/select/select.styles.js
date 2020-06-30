@@ -45,7 +45,7 @@ export const getStyles = (theme = defaultTheme) => ({
     width: '100%',
     top: 'calc(100% + 5px)',
     left: '0',
-    zIndex: 2,
+    zIndex: 99,
     backgroundColor: theme.select.background,
     WebkitOverflowScrolling: 'touch',
   }),
