@@ -117,18 +117,29 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
-        defaultMessage="Source"
-        id="dataSource.source.subTitle"
-        values={Object {}}
-      />
+      <ForwardRef(styled.div)>
+        <ForwardRef(styled.div)>
+          <FormattedMessage
+            defaultMessage="Source"
+            id="dataSource.source.subTitle"
+            values={Object {}}
+          />
+        </ForwardRef(styled.div)>
+        <CopyButton
+          action={[Function]}
+          error={false}
+          loading={false}
+          name="dataSourceCopyButton"
+        />
+      </ForwardRef(styled.div)>
     }
   >
     <DataSourceNavigation
+      copyDataSource={[Function]}
       dataSource={
         Object {
           "fileName": "fileName",
-          "id": "dataSourceIdId",
+          "id": "dataSourceId",
           "jobs": Array [],
           "metaData": Object {},
           "project": Object {
@@ -344,10 +355,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <WithTheme(SourceFormComponent)
+      copyDataSource={[Function]}
       dataSource={
         Object {
           "fileName": "fileName",
-          "id": "dataSourceIdId",
+          "id": "dataSourceId",
           "jobs": Array [],
           "metaData": Object {},
           "project": Object {
@@ -596,10 +608,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     </NavigationContainer>
   </styled.form>
   <DataSourceNavigation
+    copyDataSource={[Function]}
     dataSource={
       Object {
         "fileName": "fileName",
-        "id": "dataSourceIdId",
+        "id": "dataSourceId",
         "jobs": Array [],
         "metaData": Object {},
         "project": Object {
@@ -946,6 +959,74 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       </NextButton>
     </styled.div>
   </Styled(Modal)>
+  <Styled(Modal)
+    ariaHideApp={false}
+    contentLabel="Confirm Copy"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="There are unsaved data. Do you want to copy without it?"
+        id="dataSource.source.copyConfirmTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.source.cancelCopy"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="confirmCopyBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Copy"
+          id="dataSource.source.confirmCopy"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </Fragment>
 `;
 
@@ -1066,14 +1147,19 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
-        defaultMessage="Source"
-        id="dataSource.source.subTitle"
-        values={Object {}}
-      />
+      <ForwardRef(styled.div)>
+        <ForwardRef(styled.div)>
+          <FormattedMessage
+            defaultMessage="Source"
+            id="dataSource.source.subTitle"
+            values={Object {}}
+          />
+        </ForwardRef(styled.div)>
+      </ForwardRef(styled.div)>
     }
   >
     <DataSourceNavigation
+      copyDataSource={[Function]}
       dataSource={
         Object {
           "project": Object {
@@ -1290,6 +1376,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     onSubmit={[Function]}
   >
     <WithTheme(SourceFormComponent)
+      copyDataSource={[Function]}
       dataSource={
         Object {
           "project": Object {
@@ -1518,6 +1605,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     </NavigationContainer>
   </styled.form>
   <DataSourceNavigation
+    copyDataSource={[Function]}
     dataSource={
       Object {
         "project": Object {
@@ -1860,6 +1948,74 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         <FormattedMessage
           defaultMessage="Yes"
           id="dataSource.source.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+  <Styled(Modal)
+    ariaHideApp={false}
+    contentLabel="Confirm Copy"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="There are unsaved data. Do you want to copy without it?"
+        id="dataSource.source.copyConfirmTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.source.cancelCopy"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="confirmCopyBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Copy"
+          id="dataSource.source.confirmCopy"
           values={Object {}}
         />
       </NextButton>

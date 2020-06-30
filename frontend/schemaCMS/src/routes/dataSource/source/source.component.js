@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 
-import { Form, Link } from './source.styles';
+import { Form, Link, HeaderSubtitle, HeaderSubtitleWrapper } from './source.styles';
 import messages from './source.messages';
 import { DATA_SOURCE_RUN_LAST_JOB } from '../../../modules/dataSource/dataSource.constants';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
@@ -19,6 +19,7 @@ import { DataSourceNavigation } from '../../../shared/components/dataSourceNavig
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../../project/project.constants';
 import reportError from '../../../shared/utils/reportError';
+import { CopyButton } from '../../../shared/components/copyButton';
 
 export class Source extends PureComponent {
   static propTypes = {
@@ -26,6 +27,7 @@ export class Source extends PureComponent {
     dirty: PropTypes.bool.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    copyDataSource: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     match: PropTypes.shape({
@@ -46,6 +48,18 @@ export class Source extends PureComponent {
     confirmationRemoveModalOpen: false,
     confirmationRunJobModalOpen: false,
     removeLoading: false,
+    copyLoading: false,
+    copyError: false,
+    copyModalOpen: false,
+  };
+
+  copyButtonAction = async () => {
+    if (this.props.dirty) {
+      this.setState({ copyModalOpen: true });
+      return;
+    }
+
+    this.handleCopyDataSourceFunc();
   };
 
   handleOpenModal = modalState => this.setState({ [modalState]: true });
@@ -92,6 +106,18 @@ export class Source extends PureComponent {
 
   handlePastVersionsClick = () => browserHistory.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/job`);
 
+  handleCopyDataSourceFunc = async () => {
+    try {
+      this.setState({ copyLoading: true, copyError: false });
+      await this.props.copyDataSource({ dataSourceId: this.props.dataSource.id });
+    } catch (e) {
+      reportError(e);
+      this.setState({ copyError: true });
+    } finally {
+      this.setState({ copyLoading: false, copyModalOpen: false });
+    }
+  };
+
   renderLinks = renderWhenTrue(
     always(
       <LinkContainer>
@@ -105,12 +131,36 @@ export class Source extends PureComponent {
     )
   );
 
+  renderCopyButton = id =>
+    renderWhenTrue(
+      always(
+        <CopyButton
+          name="dataSourceCopyButton"
+          loading={this.state.copyLoading}
+          error={this.state.copyError}
+          action={this.copyButtonAction}
+        />
+      )
+    )(!!id);
+
   render() {
     const { dataSource, intl, handleSubmit, dirty, isSubmitting, values, userRole, ...restProps } = this.props;
-    const { confirmationRemoveModalOpen, confirmationRunJobModalOpen, removeLoading } = this.state;
+    const {
+      confirmationRemoveModalOpen,
+      confirmationRunJobModalOpen,
+      removeLoading,
+      copyLoading,
+      copyModalOpen,
+    } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const menuOptions = getProjectMenuOptions(dataSource.project.id);
+    const desktopSubtitle = (
+      <HeaderSubtitleWrapper>
+        <HeaderSubtitle>{headerSubtitle}</HeaderSubtitle>
+        {this.renderCopyButton(dataSource.id)}
+      </HeaderSubtitleWrapper>
+    );
 
     return (
       <Fragment>
@@ -120,7 +170,7 @@ export class Source extends PureComponent {
           headerSubtitle={headerSubtitle}
           options={filterMenuOptions(menuOptions, userRole)}
         />
-        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
+        <ContextHeader title={headerTitle} subtitle={desktopSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>
         <Form onSubmit={handleSubmit}>
@@ -168,6 +218,24 @@ export class Source extends PureComponent {
             </BackButton>
             <NextButton id="confirmRunLastJob" type="button" onClick={this.handleRunLastJob(true)}>
               <FormattedMessage {...messages.confirmRunLastJob} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
+        <Modal ariaHideApp={false} isOpen={copyModalOpen} contentLabel="Confirm Copy" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.copyConfirmTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={() => this.setState({ copyModalOpen: false })} disabled={copyLoading}>
+              <FormattedMessage {...messages.cancelCopy} />
+            </BackButton>
+            <NextButton
+              id="confirmCopyBtn"
+              onClick={this.handleCopyDataSourceFunc}
+              loading={copyLoading}
+              disabled={copyLoading}
+            >
+              <FormattedMessage {...messages.confirmCopy} />
             </NextButton>
           </ModalActions>
         </Modal>

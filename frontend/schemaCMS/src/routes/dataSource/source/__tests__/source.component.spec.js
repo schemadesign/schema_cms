@@ -5,6 +5,8 @@ import { Source } from '../source.component';
 import { defaultProps } from '../source.stories';
 import { Form, Link } from '../source.styles';
 import browserHistory from '../../../../shared/utils/history';
+import { CopyButton } from '../../../../shared/components/copyButton';
+import { MobileMenu } from '../../../../shared/components/menu/mobileMenu';
 
 describe('SourceComponent: Component', () => {
   const component = props => <Source {...defaultProps} {...props} />;
@@ -69,7 +71,7 @@ describe('SourceComponent: Component', () => {
     wrapper.find('#confirmRemoveDataSource').simulate('click');
 
     expect(defaultProps.removeDataSource).toHaveBeenCalledWith({
-      dataSourceId: 'dataSourceIdId',
+      dataSourceId: 'dataSourceId',
       projectId: 'projectId',
     });
   });

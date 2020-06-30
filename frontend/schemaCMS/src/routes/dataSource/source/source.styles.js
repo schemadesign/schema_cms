@@ -38,3 +38,11 @@ export const Link = styled(LinkTypography)`
     margin-bottom: 0;
   }
 `;
+
+export const HeaderSubtitleWrapper = styled.div`
+  display: flex;
+`;
+
+export const HeaderSubtitle = styled.div`
+  margin-right: 10px;
+`;
