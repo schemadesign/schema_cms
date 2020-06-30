@@ -47,7 +47,7 @@ export const BlockElement = props => {
   const intl = useIntl();
 
   return (
-    <AccordionPanel index={element.id}>
+    <AccordionPanel id={element.id}>
       <AccordionHeader>
         <Header icons={2}>
           <IconContainer>
