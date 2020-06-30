@@ -27,4 +27,5 @@ const setPageTemplate = (state = INITIAL_STATE, { payload }) => state.set('pageT
 export const reducer = createReducer(INITIAL_STATE, {
   [PageTemplatesRoutines.fetchPageTemplates.SUCCESS]: setPageTemplates,
   [PageTemplatesRoutines.fetchPageTemplate.SUCCESS]: setPageTemplate,
+  [PageTemplatesRoutines.updatePageTemplate.SUCCESS]: setPageTemplate,
 });

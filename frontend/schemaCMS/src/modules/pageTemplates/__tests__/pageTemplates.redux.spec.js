@@ -31,9 +31,18 @@ describe('PageTemplates: redux', () => {
   });
 
   describe('when PAGE_TEMPLATES/FETCH_PAGE_TEMPLATE_SUCCESS action is received', () => {
-    it('should set page templates', () => {
+    it('should set page template', () => {
       const pageTemplate = { data: 'data' };
       const resultState = pageTemplatesReducer(state, PageTemplatesRoutines.fetchPageTemplate.success(pageTemplate));
+
+      expect(resultState.pageTemplate).to.deep.equal(pageTemplate);
+    });
+  });
+
+  describe('when PAGE_TEMPLATES/UPDATE_PAGE_TEMPLATE_SUCCESS action is received', () => {
+    it('should set page template', () => {
+      const pageTemplate = { data: 'data' };
+      const resultState = pageTemplatesReducer(state, PageTemplatesRoutines.updatePageTemplate.success(pageTemplate));
 
       expect(resultState.pageTemplate).to.deep.equal(pageTemplate);
     });
