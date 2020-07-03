@@ -77,7 +77,6 @@ class BaseResources(core.Stack):
             removal_policy=core.RemovalPolicy.DESTROY,
         )
 
-        self.vpc = aws_ec2.Vpc(self, "vpc", nat_gateways=1)
         self.cluster = aws_ecs.Cluster(
             self, "worker-cluster", cluster_name="schema-ecs-cluster", vpc=self.vpc
         )

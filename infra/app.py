@@ -15,7 +15,7 @@ def get_stack_name(base_name: str, prefix: str) -> str:
 
 app = core.App()
 
-BaseStack(app, get_stack_name("BaseStack", ENV_SETTINGS.project_name), props=ENV_SETTINGS)
+BaseStack(app, "base", props=ENV_SETTINGS)
 # EnvMainStack(app, get_stack_name("MainStack", ENV_SETTINGS.project_name), props=ENV_SETTINGS)
 
 app.synth()
