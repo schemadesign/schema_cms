@@ -651,7 +651,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 className="sc-fzoLsD gWdCPf"
               >
                 <div
-                  className="sc-fznxsB ialExs"
+                  className="sc-fznxsB jsLAzo"
                   onClick={[Function]}
                 >
                   <input
@@ -1058,7 +1058,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
                 className="sc-fzoLsD gWdCPf"
               >
                 <div
-                  className="sc-fznxsB ialExs"
+                  className="sc-fznxsB jsLAzo"
                   onClick={[Function]}
                 >
                   <input

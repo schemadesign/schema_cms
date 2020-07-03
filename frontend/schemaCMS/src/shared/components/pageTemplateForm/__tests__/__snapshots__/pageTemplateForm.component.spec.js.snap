@@ -377,7 +377,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-fzpmMD jEMBbG"
+        className="sc-fzpmMD qwtcw"
       >
         <div
           className="sc-fznxKY NngAs"
@@ -406,10 +406,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fznMAR fMEHel"
+          className="sc-fznMAR MHlQt"
         >
           <div
-            className="sc-fznWOq gchGtI"
+            className="sc-fznWOq bXOaes"
             onClick={[Function]}
           >
             <input

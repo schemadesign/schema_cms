@@ -8,7 +8,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     className="sc-AxjAm evKEwj"
   >
     <div
-      className="sc-fznJRM dGOQde"
+      className="sc-fznJRM dpUWXO"
       onClick={[Function]}
     >
       <label
@@ -350,7 +350,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     className="sc-AxjAm evKEwj"
   >
     <div
-      className="sc-fznJRM dGOQde"
+      className="sc-fznJRM dpUWXO"
       onClick={[Function]}
     >
       <label

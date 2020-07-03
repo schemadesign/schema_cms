@@ -2,7 +2,7 @@
 
 exports[`PageBlockTemplate: Component should render correctly 1`] = `
 <div
-  className="sc-AxirZ jEdZgm"
+  className="sc-AxirZ gCweXQ"
 >
   <div
     className="sc-AxiKw dPWazA"
@@ -12,10 +12,10 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
     </span>
   </div>
   <div
-    className="sc-AxhCb hrRkyx"
+    className="sc-AxhCb bFTrZ"
   >
     <div
-      className="sc-AxhUy hpMxju"
+      className="sc-AxhUy fkYdcS"
       onClick={[Function]}
     >
       <input

@@ -671,7 +671,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
       className="sc-fzoXzr eXJveD"
     >
       <div
-        className="sc-fzoxKX bsSaZd"
+        className="sc-fzoxKX fYTCLF"
         onClick={[Function]}
       >
         <label

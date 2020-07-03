@@ -1170,7 +1170,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   className="sc-fzoydu gVJPIu"
                 >
                   <div
-                    className="sc-fzoaKM fWnZUl"
+                    className="sc-fzoaKM jsiFHl"
                     onClick={[Function]}
                   >
                     <label
@@ -1754,7 +1754,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   className="sc-fzoydu gVJPIu"
                 >
                   <div
-                    className="sc-fzoaKM fWnZUl"
+                    className="sc-fzoaKM jsiFHl"
                     onClick={[Function]}
                   >
                     <label
@@ -2194,7 +2194,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                           className="sc-fznLPX ddivKI"
                         >
                           <div
-                            className="sc-fzoaKM iJhgKZ"
+                            className="sc-fzoaKM drmhYh"
                             onClick={[Function]}
                           >
                             <input
