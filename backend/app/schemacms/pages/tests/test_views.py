@@ -361,7 +361,7 @@ class TestUpdateDeleteSectionView:
 class TestListCreatePage:
     @staticmethod
     def get_url(pk):
-        return reverse("pages:page_list_create", kwargs=dict(section_pk=pk))
+        return reverse("pages:pages-list", kwargs=dict(section_pk=pk))
 
     def test_list_pages_as_admin(self, api_client, admin, page):
         self.list_pages(api_client, admin, page)
@@ -405,7 +405,7 @@ class TestListCreatePage:
         page = pages_models.Page.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == page_serializer.PageSerializer(page).data
+        assert response.data == page_serializer.PageDetailSerializer(page).data
         assert page.is_template is False
         assert section.project == page_template.project == page.project
 
@@ -452,7 +452,7 @@ class TestListCreatePage:
         page = pages_models.Page.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == page_serializer.PageSerializer(page).data
+        assert response.data == page_serializer.PageDetailSerializer(page).data
         assert page.is_template is False
 
     def test_create_page_with_observable_element(
@@ -496,7 +496,7 @@ class TestListCreatePage:
         page = pages_models.Page.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == page_serializer.PageSerializer(page).data
+        assert response.data == page_serializer.PageDetailSerializer(page).data
 
     def test_create_page_with_custom_element(
         self, api_client, admin, project, section_factory, block_template
@@ -573,7 +573,7 @@ class TestListCreatePage:
         page = pages_models.Page.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == page_serializer.PageSerializer(page).data
+        assert response.data == page_serializer.PageDetailSerializer(page).data
 
     def test_create_page_with_video_element(
         self, api_client, admin, project, section_factory, block_template
@@ -611,7 +611,7 @@ class TestListCreatePage:
         page = pages_models.Page.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == page_serializer.PageSerializer(page).data
+        assert response.data == page_serializer.PageDetailSerializer(page).data
         assert page.is_template is False
 
     def test_create_page_with_state_element(
@@ -650,7 +650,7 @@ class TestListCreatePage:
         page = pages_models.Page.objects.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == page_serializer.PageSerializer(page).data
+        assert response.data == page_serializer.PageDetailSerializer(page).data
         assert page.is_template is False
 
 
@@ -671,7 +671,7 @@ class TestUpdateDeletePageView:
         response = api_client.get(self.get_url(page.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["results"] == page_serializer.PageSerializer(page).data
+        assert response.data["results"] == page_serializer.PageDetailSerializer(page).data
 
     def test_update_page_as_admin(self, api_client, admin, page):
         self.update_page(api_client, admin, page)

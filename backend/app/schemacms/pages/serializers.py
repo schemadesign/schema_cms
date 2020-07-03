@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 from .elements import ELEMENTS_TYPES
 from . import models, constants
-from ..utils.serializers import CustomModelSerializer, NestedRelatedModelSerializer, ReadOnlySerializer
+from ..utils.serializers import CustomModelSerializer, ReadOnlySerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
@@ -233,9 +233,7 @@ class MainPageSerializer(serializers.ModelSerializer):
 
 
 class PageSectionSerializer(serializers.ModelSerializer):
-    main_page = NestedRelatedModelSerializer(
-        serializer=MainPageSerializer(), queryset=models.Page.objects.all()
-    )
+    main_page = MainPageSerializer(read_only=True)
 
     class Meta:
         model = models.Section
@@ -250,12 +248,8 @@ class PageTagSerializer(serializers.ModelSerializer):
         fields = ("category", "category_name", "value")
 
 
-class PageSerializer(CustomModelSerializer):
-    blocks = serializers.SerializerMethodField()
+class PageBaseSerializer(CustomModelSerializer):
     tags = PageTagSerializer(read_only=True, many=True)
-    section = NestedRelatedModelSerializer(
-        serializer=PageSectionSerializer(), queryset=models.Section.objects.all()
-    )
 
     class Meta:
         model = models.Page
@@ -270,7 +264,6 @@ class PageSerializer(CustomModelSerializer):
             "tags",
             "created_by",
             "created",
-            "blocks",
             "is_public",
         )
         validators = [
@@ -282,6 +275,10 @@ class PageSerializer(CustomModelSerializer):
                 message="Page with this name already exist in section.",
             )
         ]
+
+    def to_representation(self, obj):
+        self.fields["section"] = PageSectionSerializer()
+        return super().to_representation(obj)
 
     def save(self, *args, **kwargs):
         blocks = self.initial_data.get("blocks", [])
@@ -397,6 +394,29 @@ class PageSerializer(CustomModelSerializer):
         )
 
         return PageBlockSerializer(blocks, many=True).data
+
+
+class PageCreateSerializer(PageBaseSerializer):
+    blocks = serializers.SerializerMethodField()
+
+    class Meta:
+        model = models.Page
+        fields = PageBaseSerializer.Meta.fields + ("blocks",)
+
+
+class PageListSerializer(PageBaseSerializer):
+    template_name = serializers.CharField(source="template.name", read_only=True)
+
+    class Meta(PageBaseSerializer.Meta):
+        fields = PageBaseSerializer.Meta.fields + ("template_name",)
+
+
+class PageDetailSerializer(PageBaseSerializer):
+    blocks = serializers.SerializerMethodField()
+
+    class Meta:
+        model = models.Page
+        fields = PageBaseSerializer.Meta.fields + ("blocks",)
 
 
 class SectionListCreateSerializer(CustomModelSerializer):
