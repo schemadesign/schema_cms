@@ -61,9 +61,9 @@ describe('Helpers', () => {
     const pageUrlOptions = getPageUrlOptions(data);
 
     expect(pageUrlOptions).toEqual([
-      { label: 'Blog', value: 'http://domain.com/blog', id: 1 },
-      { label: 'news   >   Article 2', value: 'http://domain.com/News/article-2', id: 2 },
-      { label: 'News', value: 'http://domain.com/news', id: 3 },
+      { label: ['Section 1', 'Blog'], url: 'http://domain.com/blog', id: 1 },
+      { label: ['Section 2', 'news', 'Article 2'], url: 'http://domain.com/News/article-2', id: 2 },
+      { label: ['Section 2', 'News'], url: 'http://domain.com/news', id: 3 },
     ]);
   });
 });

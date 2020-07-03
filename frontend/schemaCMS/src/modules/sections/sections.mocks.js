@@ -101,7 +101,7 @@ export const internalConnections = [
 ];
 
 export const pagerUrlOptions = [
-  { label: 'Blog', value: 'http://domain.com/blog' },
-  { label: 'news   >   Article 2', value: 'http://domain.com/News/article-2' },
-  { label: 'News', value: 'http://domain.com/news' },
+  { label: ['Section 1', 'Blog'], url: 'http://domain.com/blog', id: 1 },
+  { label: ['Section 2', 'News', 'Article 2'], url: 'http://domain.com/news/article-2', id: 2 },
+  { label: ['Section 2', 'News'], url: 'http://domain.com/news', id: 3 },
 ];

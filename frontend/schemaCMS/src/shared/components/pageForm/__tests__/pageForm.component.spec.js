@@ -99,7 +99,13 @@ describe('PageForm: Component', () => {
           {
             elements: [
               { id: 1, name: 'name', type: 'plain_text', value: 'plain text value' },
-              { id: 1, name: 'name', type: 'internal_connection', value: 'http://domain.com/blog' },
+              {
+                id: 1,
+                name: 'name',
+                params: { pageId: 1 },
+                type: 'internal_connection',
+                value: 'http://domain.com/blog',
+              },
               { id: 1, name: 'name', type: 'state', value: 1 },
               { id: 1, name: 'name', type: 'markdown', value: '**Hello world!!!**' },
               {

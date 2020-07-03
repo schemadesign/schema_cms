@@ -210,11 +210,14 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
         evolve({
           pages: filter(complement(propEq('id', pageId))),
         }),
-        ({ mainPage, pages }) =>
+        ({ mainPage, pages, name: sectionName }) =>
           map(({ displayName, name, id }) => ({
-            value: `${domain + getMainPageDisplayName({ mainPage, id })}/${displayName}`,
-            label: ifMainPage(() => `${mainPage.name}   >   ${name}`, always(name))({ mainPage, id }),
-            id: id,
+            url: `${domain + getMainPageDisplayName({ mainPage, id })}/${displayName}`,
+            label: ifMainPage(() => [sectionName, mainPage.name, name], always([sectionName, name]))({
+              mainPage,
+              id,
+            }),
+            id,
           }))(pages)
       )
     ),

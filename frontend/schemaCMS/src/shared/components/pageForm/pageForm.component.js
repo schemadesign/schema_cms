@@ -242,6 +242,7 @@ export const PageForm = ({
     setFieldValue(PAGE_DISPLAY_NAME, values[PAGE_DISPLAY_NAME].toLowerCase());
     restFormikProps.handleBlur(e);
   };
+
   const pagerUrlOptions = getPageUrlOptions({ internalConnections, domain, pageId });
   const stateOptions = states.map(({ id, name, datasource }) => ({ label: `${datasource}   >   ${name}`, value: id }));
 

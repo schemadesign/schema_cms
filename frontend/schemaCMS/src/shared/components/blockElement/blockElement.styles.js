@@ -24,6 +24,13 @@ export const SelectLabel = styled.div`
   word-break: break-word;
 `;
 
+export const LabelItem = styled.span`
+  &:not(:last-child):after {
+    content: '>';
+    padding: 0 15px;
+  }
+`;
+
 export const SelectWrapper = styled.div`
   padding-bottom: 30px;
 `;

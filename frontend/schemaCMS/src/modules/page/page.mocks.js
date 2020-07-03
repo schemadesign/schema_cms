@@ -75,6 +75,9 @@ export const internalConnectionElement = {
   [ELEMENT_TYPE]: INTERNAL_CONNECTION_TYPE,
   [ELEMENT_VALUE]: 'http://domain.com/blog',
   [ELEMENT_ID]: 1,
+  [ELEMENT_PARAMS]: {
+    pageId: 1,
+  },
 };
 
 export const stateElement = {

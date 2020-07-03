@@ -526,24 +526,24 @@ exports[`PageForm: Component should render correctly 1`] = `
     Tags
   </label>
   <div
-    className="sc-fzomuh gDFGiY"
+    className="sc-fzqAui dIvBCb"
   >
     <div
-      className="sc-fzowVh dJcpsq"
+      className="sc-fzoJus ieRDYv"
     >
       <div
-        className="sc-fzqAui bVNREn"
+        className="sc-fzqMdD ljcFCL"
         title="Colors"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzowVh ggwFSE"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzpisO ciFKdv"
       >
         <div
           className=" css-2b097c-container"
@@ -641,18 +641,18 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqAui bVNREn"
+        className="sc-fzqMdD ljcFCL"
         title="Countries"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzowVh ggwFSE"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzpisO ciFKdv"
       >
         <div
           className=" css-2b097c-container"
@@ -927,14 +927,14 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznLPX foCcXB"
+    className="sc-fzoaKM kWPKBr"
   >
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzomuh gKGDkY"
     />
     1 Block
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzomuh gKGDkY"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -1257,7 +1257,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -1351,7 +1351,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -1419,7 +1419,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznzOf kpsyvs"
+                      className="sc-fznMnq kqJPrZ"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -1540,7 +1540,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -1634,7 +1634,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -1702,7 +1702,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl bERzha"
+                      className="sc-fzpkJw cBLWQJ"
                     >
                       <div
                         className="sc-fznJRM lfNtYk"
@@ -1712,7 +1712,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                           id="blocks.0.elements.1.value"
                           name="blocks.0.elements.1.value"
                           type="hidden"
-                          value="http://domain.com/blog"
+                          value={1}
                         />
                         <div
                           style={
@@ -1755,7 +1755,20 @@ exports[`PageForm: Component should render correctly 1`] = `
                                   }
                                 }
                               >
-                                Select a page
+                                <div
+                                  className="sc-fzoKki bQnMNe"
+                                >
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 1
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Blog
+                                  </span>
+                                </div>
                               </div>
                             </div>
                             <div
@@ -1782,9 +1795,10 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 onMouseOver={[Function]}
                                 style={
                                   Object {
+                                    "backgroundColor": "#FFF",
                                     "border": "1px solid  #2F2F36",
                                     "borderTop": "1px solid  #2F2F36",
-                                    "color": "#71737e",
+                                    "color": "#000",
                                     "cursor": "pointer",
                                     "overflow": "hidden",
                                     "padding": "20px 10px",
@@ -1796,7 +1810,16 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  Blog
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 1
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Blog
+                                  </span>
                                 </div>
                               </div>
                               <div
@@ -1820,7 +1843,21 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  news   &gt;   Article 2
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 2
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    news
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Article 2
+                                  </span>
                                 </div>
                               </div>
                               <div
@@ -1844,7 +1881,16 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  News
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 2
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    News
+                                  </span>
                                 </div>
                               </div>
                               <div
@@ -1868,7 +1914,21 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  news   &gt;   Article 1
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 2
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    news
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Article 1
+                                  </span>
                                 </div>
                               </div>
                             </div>
@@ -1926,7 +1986,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -2020,7 +2080,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -2088,7 +2148,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl bERzha"
+                      className="sc-fzpkJw cBLWQJ"
                     >
                       <div
                         className="sc-fznJRM lfNtYk"
@@ -2215,7 +2275,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -2309,7 +2369,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -2377,7 +2437,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkJw iFnJhc"
+                      className="sc-fznzOf ketXED"
                     >
                       <div
                         className="react-mde react-mde-tabbed-layout"
@@ -2796,7 +2856,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -2890,7 +2950,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -2958,15 +3018,15 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznMnq kqJPrZ"
+                      className="sc-fzoant ceMild"
                     >
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ User
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -3037,12 +3097,12 @@ exports[`PageForm: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ Notebook
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -3113,12 +3173,12 @@ exports[`PageForm: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ Cells
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -3189,12 +3249,12 @@ exports[`PageForm: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ Params
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -3295,7 +3355,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -3389,7 +3449,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -3457,14 +3517,14 @@ exports[`PageForm: Component should render correctly 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznLPX foCcXB"
+                      className="sc-fzoaKM kWPKBr"
                     >
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzomuh gKGDkY"
                       />
                       3 Sets
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzomuh gKGDkY"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
@@ -3534,7 +3594,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -3559,10 +3619,10 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzoYHE dRYvqS"
+                            className="sc-fzpkqZ bhGzvd"
                           >
                             <div
-                              className="sc-fzqAbL jXfQvz"
+                              className="sc-fzqMAW dGusDL"
                             >
                               <div
                                 onClick={[Function]}
@@ -3645,7 +3705,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -3807,7 +3867,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -3969,7 +4029,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fzpkJw iFnJhc"
+                                      className="sc-fznzOf ketXED"
                                     >
                                       <div
                                         className="react-mde react-mde-tabbed-layout"
@@ -4364,7 +4424,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.5.value.0"
@@ -4401,7 +4461,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -4426,10 +4486,10 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzoYHE dRYvqS"
+                            className="sc-fzpkqZ bhGzvd"
                           >
                             <div
-                              className="sc-fzqAbL jXfQvz"
+                              className="sc-fzqMAW dGusDL"
                             >
                               <div
                                 onClick={[Function]}
@@ -4512,7 +4572,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -4674,7 +4734,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -4836,7 +4896,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fzpkJw iFnJhc"
+                                      className="sc-fznzOf ketXED"
                                     >
                                       <div
                                         className="react-mde react-mde-tabbed-layout"
@@ -5231,7 +5291,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.5.value.1"
@@ -5268,7 +5328,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -5293,10 +5353,10 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzoYHE dRYvqS"
+                            className="sc-fzpkqZ bhGzvd"
                           >
                             <div
-                              className="sc-fzqAbL jXfQvz"
+                              className="sc-fzqMAW dGusDL"
                             >
                               <div
                                 onClick={[Function]}
@@ -5379,7 +5439,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -5541,7 +5601,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -5703,7 +5763,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fzpkJw iFnJhc"
+                                      className="sc-fznzOf ketXED"
                                     >
                                       <div
                                         className="react-mde react-mde-tabbed-layout"
@@ -6098,7 +6158,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.5.value.2"
@@ -6769,24 +6829,24 @@ exports[`PageForm: Component should render with page template 1`] = `
     Tags
   </label>
   <div
-    className="sc-fzomuh gDFGiY"
+    className="sc-fzqAui dIvBCb"
   >
     <div
-      className="sc-fzowVh dJcpsq"
+      className="sc-fzoJus ieRDYv"
     >
       <div
-        className="sc-fzqAui bVNREn"
+        className="sc-fzqMdD ljcFCL"
         title="Colors"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzowVh ggwFSE"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzpisO ciFKdv"
       >
         <div
           className=" css-2b097c-container"
@@ -6884,18 +6944,18 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqAui bVNREn"
+        className="sc-fzqMdD ljcFCL"
         title="Countries"
       >
         <span
-          className="sc-fzqMdD bzbiOK"
+          className="sc-fzowVh ggwFSE"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-fzoVTD fwKNiT"
+        className="sc-fzpisO ciFKdv"
       >
         <div
           className=" css-2b097c-container"
@@ -7170,14 +7230,14 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznLPX foCcXB"
+    className="sc-fzoaKM kWPKBr"
   >
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzomuh gKGDkY"
     />
     1 Block
     <div
-      className="sc-fzoaKM dkrGen"
+      className="sc-fzomuh gKGDkY"
     >
       <div
         className="sc-fzplWN bYVwsL"
@@ -7500,7 +7560,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -7594,7 +7654,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -7662,7 +7722,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznzOf kpsyvs"
+                      className="sc-fznMnq kqJPrZ"
                     >
                       <div
                         className="sc-fzokOt hhpuAT"
@@ -7783,7 +7843,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -7877,7 +7937,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -7945,7 +8005,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl bERzha"
+                      className="sc-fzpkJw cBLWQJ"
                     >
                       <div
                         className="sc-fznJRM lfNtYk"
@@ -7955,7 +8015,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                           id="blocks.0.elements.1.value"
                           name="blocks.0.elements.1.value"
                           type="hidden"
-                          value="http://domain.com/blog"
+                          value={1}
                         />
                         <div
                           style={
@@ -7998,7 +8058,20 @@ exports[`PageForm: Component should render with page template 1`] = `
                                   }
                                 }
                               >
-                                Select a page
+                                <div
+                                  className="sc-fzoKki bQnMNe"
+                                >
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 1
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Blog
+                                  </span>
+                                </div>
                               </div>
                             </div>
                             <div
@@ -8025,9 +8098,10 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 onMouseOver={[Function]}
                                 style={
                                   Object {
+                                    "backgroundColor": "#FFF",
                                     "border": "1px solid  #2F2F36",
                                     "borderTop": "1px solid  #2F2F36",
-                                    "color": "#71737e",
+                                    "color": "#000",
                                     "cursor": "pointer",
                                     "overflow": "hidden",
                                     "padding": "20px 10px",
@@ -8039,7 +8113,16 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  Blog
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 1
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Blog
+                                  </span>
                                 </div>
                               </div>
                               <div
@@ -8063,7 +8146,21 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  news   &gt;   Article 2
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 2
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    news
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Article 2
+                                  </span>
                                 </div>
                               </div>
                               <div
@@ -8087,7 +8184,16 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  News
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 2
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    News
+                                  </span>
                                 </div>
                               </div>
                               <div
@@ -8111,7 +8217,21 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 <div
                                   className="sc-fzoKki bQnMNe"
                                 >
-                                  news   &gt;   Article 1
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Section 2
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    news
+                                  </span>
+                                  <span
+                                    className="sc-fzoYkl bmaeQk"
+                                  >
+                                    Article 1
+                                  </span>
                                 </div>
                               </div>
                             </div>
@@ -8169,7 +8289,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -8263,7 +8383,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -8331,7 +8451,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzoYkl bERzha"
+                      className="sc-fzpkJw cBLWQJ"
                     >
                       <div
                         className="sc-fznJRM lfNtYk"
@@ -8458,7 +8578,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -8552,7 +8672,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -8620,7 +8740,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fzpkJw iFnJhc"
+                      className="sc-fznzOf ketXED"
                     >
                       <div
                         className="react-mde react-mde-tabbed-layout"
@@ -9039,7 +9159,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -9133,7 +9253,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -9201,15 +9321,15 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznMnq kqJPrZ"
+                      className="sc-fzoant ceMild"
                     >
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ User
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -9280,12 +9400,12 @@ exports[`PageForm: Component should render with page template 1`] = `
                         </svg>
                       </div>
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ Notebook
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -9356,12 +9476,12 @@ exports[`PageForm: Component should render with page template 1`] = `
                         </svg>
                       </div>
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ Cells
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -9432,12 +9552,12 @@ exports[`PageForm: Component should render with page template 1`] = `
                         </svg>
                       </div>
                       <span
-                        className="sc-fzoydu kxhvpV"
+                        className="sc-fzoJMP dJkZyK"
                       >
                         ObservableHQ Params
                       </span>
                       <div
-                        className="sc-fznzOf kpsyvs"
+                        className="sc-fznMnq kqJPrZ"
                       >
                         <div
                           className="sc-fzokOt hhpuAT"
@@ -9538,7 +9658,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                   className="sc-fzoxKX ePvKdo"
                 >
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -9632,7 +9752,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-fzoant jtXLqR"
+                    className="sc-fzomME IimET"
                   >
                     <svg
                       style={
@@ -9700,14 +9820,14 @@ exports[`PageForm: Component should render with page template 1`] = `
                     className="sc-fzqPZZ WAKDE"
                   >
                     <div
-                      className="sc-fznLPX foCcXB"
+                      className="sc-fzoaKM kWPKBr"
                     >
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzomuh gKGDkY"
                       />
                       3 Sets
                       <div
-                        className="sc-fzoaKM dkrGen"
+                        className="sc-fzomuh gKGDkY"
                       >
                         <div
                           className="sc-fzplWN bYVwsL"
@@ -9777,7 +9897,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -9802,10 +9922,10 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzoYHE dRYvqS"
+                            className="sc-fzpkqZ bhGzvd"
                           >
                             <div
-                              className="sc-fzqAbL jXfQvz"
+                              className="sc-fzqMAW dGusDL"
                             >
                               <div
                                 onClick={[Function]}
@@ -9888,7 +10008,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -10050,7 +10170,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -10212,7 +10332,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fzpkJw iFnJhc"
+                                      className="sc-fznzOf ketXED"
                                     >
                                       <div
                                         className="react-mde react-mde-tabbed-layout"
@@ -10607,7 +10727,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.5.value.0"
@@ -10644,7 +10764,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -10669,10 +10789,10 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzoYHE dRYvqS"
+                            className="sc-fzpkqZ bhGzvd"
                           >
                             <div
-                              className="sc-fzqAbL jXfQvz"
+                              className="sc-fzqMAW dGusDL"
                             >
                               <div
                                 onClick={[Function]}
@@ -10755,7 +10875,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -10917,7 +11037,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -11079,7 +11199,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fzpkJw iFnJhc"
+                                      className="sc-fznzOf ketXED"
                                     >
                                       <div
                                         className="react-mde react-mde-tabbed-layout"
@@ -11474,7 +11594,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.5.value.1"
@@ -11511,7 +11631,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                         }
                       >
                         <div
-                          className="sc-fzomME ijDAlb"
+                          className="sc-fzqAbL bgMEdT"
                         >
                           <div>
                             <div
@@ -11536,10 +11656,10 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzoYHE dRYvqS"
+                            className="sc-fzpkqZ bhGzvd"
                           >
                             <div
-                              className="sc-fzqAbL jXfQvz"
+                              className="sc-fzqMAW dGusDL"
                             >
                               <div
                                 onClick={[Function]}
@@ -11622,7 +11742,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -11784,7 +11904,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fznzOf kpsyvs"
+                                      className="sc-fznMnq kqJPrZ"
                                     >
                                       <div
                                         className="sc-fzokOt hhpuAT"
@@ -11946,7 +12066,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                                 >
                                   <div>
                                     <div
-                                      className="sc-fzpkJw iFnJhc"
+                                      className="sc-fznzOf ketXED"
                                     >
                                       <div
                                         className="react-mde react-mde-tabbed-layout"
@@ -12341,7 +12461,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                             </div>
                           </div>
                           <div
-                            className="sc-fzqMAW hWIxWe"
+                            className="sc-fzoydu eBrysX"
                           >
                             <svg
                               id="remove-blocks.0.elements.5.value.2"
