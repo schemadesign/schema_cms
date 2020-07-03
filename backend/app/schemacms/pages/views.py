@@ -1,4 +1,3 @@
-from django.db import models as d_models
 from django.shortcuts import get_object_or_404
 from django.db.models import Prefetch
 from django.utils import timezone
@@ -10,7 +9,7 @@ from rest_framework import decorators, generics, filters, mixins, permissions, r
 from . import models, serializers
 from ..projects.models import Project
 from ..utils.views import DetailViewSet
-from ..utils.serializers import IDNameSerializer
+from ..utils.serializers import IDNameSerializer, ActionSerializerViewSetMixin
 from ..utils.permissions import IsAdmin, IsAdminOrIsEditor, IsAdminOrReadOnly
 
 
@@ -48,9 +47,7 @@ class BlockTemplateListCreteView(BaseListCreateView):
     queryset = (
         models.BlockTemplate.objects.select_related("project", "created_by")
         .prefetch_related(
-            d_models.Prefetch(
-                "elements", queryset=models.BlockTemplateElement.objects.all().order_by("order")
-            )
+            Prefetch("elements", queryset=models.BlockTemplateElement.objects.all().order_by("order"))
         )
         .order_by("-created")
     )
@@ -70,7 +67,7 @@ class BlockTemplateListCreteView(BaseListCreateView):
 
 class BlockTemplateViewSet(DetailViewSet):
     queryset = models.BlockTemplate.objects.select_related("project", "created_by").prefetch_related(
-        d_models.Prefetch("elements", queryset=models.BlockTemplateElement.objects.order_by("order"))
+        Prefetch("elements", queryset=models.BlockTemplateElement.objects.order_by("order"))
     )
     serializer_class = serializers.BlockTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
@@ -95,7 +92,7 @@ class PageTemplateListCreteView(BaseListCreateView):
         .order_by("-created")
         .select_related("project", "created_by")
         .prefetch_related(
-            d_models.Prefetch(
+            Prefetch(
                 "page_blocks",
                 queryset=models.PageBlock.objects.prefetch_related("block__elements")
                 .select_related("block")
@@ -111,7 +108,7 @@ class PageTemplateViewSet(DetailViewSet):
         models.PageTemplate.objects.all()
         .select_related("project", "created_by")
         .prefetch_related(
-            d_models.Prefetch(
+            Prefetch(
                 "page_blocks",
                 queryset=models.PageBlock.objects.prefetch_related("block__elements")
                 .select_related("block")
@@ -226,17 +223,19 @@ class SectionViewSet(DetailViewSet):
         return super().get_queryset().prefetch_related("pages")
 
 
-class PageListCreateView(generics.ListCreateAPIView):
+class PageListCreateView(
+    ActionSerializerViewSetMixin, mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet
+):
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
-    serializer_class = serializers.PageSerializer
+    serializer_class = serializers.PageListSerializer
+    serializer_class_mapping = {
+        "list": serializers.PageListSerializer,
+        "create": serializers.PageCreateSerializer,
+    }
     queryset = (
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
-        .prefetch_related(
-            d_models.Prefetch(
-                "page_blocks", queryset=models.PageBlock.objects.select_related("block").order_by("order")
-            )
-        )
+        .prefetch_related(Prefetch("tags", queryset=models.PageTag.objects.select_related("category")))
         .order_by("-created")
     )
     filter_backends = [filters.OrderingFilter]
@@ -273,11 +272,12 @@ class PageViewSet(DetailViewSet):
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
-            d_models.Prefetch("page_blocks", queryset=models.PageBlock.objects.select_related("block"))
+            Prefetch("page_blocks", queryset=models.PageBlock.objects.select_related("block")),
+            Prefetch("tags", queryset=models.PageTag.objects.select_related("category")),
         )
     )
 
-    serializer_class = serializers.PageSerializer
+    serializer_class = serializers.PageDetailSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
 
     def perform_destroy(self, instance):
