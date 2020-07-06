@@ -7,10 +7,6 @@
   },
   "env_config": {
     "dev": {
-      "hosted_zone": {
-        "id": "",
-        "name": ""
-      },
       "certificate": "arn:aws:acm:us-west-2:022528540894:certificate/656efb63-7a21-4a81-96a9-5ed4680fda28",
       "domains": {
         "admin": "schema-test.appt5n.com",

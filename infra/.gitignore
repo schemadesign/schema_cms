@@ -1,0 +1,9 @@
+.DS_Store
+.env
+cdk.out
+.idea
+local.env
+.vscode
+__pycache__
+node_modules
+dist

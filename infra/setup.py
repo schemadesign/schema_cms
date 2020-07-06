@@ -9,14 +9,14 @@ AWS_CDK_VERSION = "1.45.0"
 
 
 setuptools.setup(
-    name="SchemaCMS",
+    name="SchemaCMSInfra",
     version="0.0.1",
     description="Schema CMS",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="author",
-    package_dir={"": "infra"},
-    packages=setuptools.find_packages(where="infra"),
+    package_dir={"": "."},
+    packages=setuptools.find_packages(where="."),
     install_requires=[
         "aws-cdk.cx-api=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.core=={version}".format(version=AWS_CDK_VERSION),

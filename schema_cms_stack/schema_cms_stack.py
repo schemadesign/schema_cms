@@ -383,7 +383,7 @@ class CIPipeline(core.Stack):
             ],
         )
 
-        fe_build_spec = aws_codebuild.BuildSpec.from_source_filename("buildspec-frontend.yaml")
+        fe_build_spec = aws_codebuild.BuildSpec.from_source_filename("frontend.yaml")
         build_fe_project = aws_codebuild.PipelineProject(
             self,
             "build_fe_project",
@@ -415,7 +415,7 @@ class CIPipeline(core.Stack):
             action_name="build_fe", input=source_output, project=build_fe_project, run_order=2,
         )
 
-        app_build_spec = aws_codebuild.BuildSpec.from_source_filename("buildspec-app.yaml")
+        app_build_spec = aws_codebuild.BuildSpec.from_source_filename("app.yaml")
         build_app_project = aws_codebuild.PipelineProject(
             self,
             "build_app_project",

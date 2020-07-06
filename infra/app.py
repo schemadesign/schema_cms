@@ -2,7 +2,8 @@
 
 from aws_cdk import core
 
-from stacks.base.stack import BaseStack
+from stacks.base.stack import CodeCommitStack
+from stacks.ci.stack import CiStack
 from config.base import load_infra_envs
 
 
@@ -15,8 +16,9 @@ def get_stack_name(base_name: str, prefix: str) -> str:
 
 app = core.App()
 
-BaseStack(app, "base", props=ENV_SETTINGS)
-# EnvMainStack(app, get_stack_name("MainStack", ENV_SETTINGS.project_name), props=ENV_SETTINGS)
+CodeCommitStack(app, get_stack_name("code-commit", ENV_SETTINGS.project_name), props=ENV_SETTINGS)
+# BaseResourcesStack(app, "base", props=ENV_SETTINGS)
+CiStack(app, get_stack_name("ci", ENV_SETTINGS.project_name), props=ENV_SETTINGS)
 
 app.synth()
 

@@ -9,7 +9,7 @@ class BaseECR(Construct):
 
     @staticmethod
     def get_backend_repository_name(env_settings: EnvSettings):
-        return f"{env_settings.project_name}-backend"
+        return f"{env_settings.project_name}-app"
 
     @staticmethod
     def get_nginx_repository_name(env_settings: EnvSettings):

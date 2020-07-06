@@ -10,7 +10,6 @@ from config.base import EnvSettings
 
 
 class BaseResources(Construct):
-    code_commit: BaseCodeCommit = None
     ecr: BaseECR = None
     vpc: Vpc = None
     cluster: Cluster = None
@@ -19,7 +18,6 @@ class BaseResources(Construct):
     def __init__(self, scope: Construct, id: str, props: EnvSettings):
         super().__init__(scope, id)
 
-        self.code_commit = BaseCodeCommit(self, "CodeCommit", props)
         self.ecr = BaseECR(self, "ECRBase", props)
 
         self.vpc = Vpc(self, "vpc", nat_gateways=1)
@@ -38,3 +36,12 @@ class BaseResources(Construct):
         )
 
         self.app_bucket = Bucket(self, "schemacms", versioned=True)
+
+
+class CodeCommitResources(Construct):
+    code_commit: BaseCodeCommit = None
+
+    def __init__(self, scope: Construct, id: str, props: EnvSettings):
+        super().__init__(scope, id)
+
+        self.code_commit = BaseCodeCommit(self, "CodeCommit", props)
