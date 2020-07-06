@@ -6,6 +6,7 @@ from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from rest_framework import (
     decorators,
+    exceptions,
     filters,
     mixins,
     permissions,
@@ -244,6 +245,14 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
             data = self.get_serializer(ds.description).data if hasattr(ds, "description") else {"data": []}
 
         if request.method in ["POST", "PATCH"]:
+            keys = []
+
+            for v in request.data["data"]:
+                if v["key"] not in keys:
+                    keys.append(v["key"])
+                else:
+                    raise exceptions.ValidationError("Duplicated keys sent", code="duplicatedKeys")
+
             description = ds.add_description(request.data)
             data = self.get_serializer(description).data
 
