@@ -31,7 +31,7 @@ class FrontendCiConfig(Construct):
         build_stage.add_action(self.create_build_action("frontend", build_project, input_artifact, props))
 
     def create_build_project(self, props: EnvSettings, repos: dict):
-        spec = BuildSpec.from_source_filename("buildspecs/frontend.yaml")
+        spec = BuildSpec.from_source_filename("./buildspecs/frontend.yaml")
         project = PipelineProject(
             self,
             "FrontendBuildProject",

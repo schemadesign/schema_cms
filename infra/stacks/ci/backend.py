@@ -32,7 +32,7 @@ class BackendCiConfig(Construct):
         build_stage.add_action(self.create_build_action("backend", build_project, input_artifact, props))
 
     def create_build_project(self, props: EnvSettings, repo: Repository):
-        spec = BuildSpec.from_source_filename("buildspecs/app.yaml")
+        spec = BuildSpec.from_source_filename("./buildspecs/app.yaml")
         project = PipelineProject(
             self,
             "BackendBuildProject",
