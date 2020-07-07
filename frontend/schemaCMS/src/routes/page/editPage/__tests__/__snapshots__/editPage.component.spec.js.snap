@@ -1342,7 +1342,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         className="sc-fznWqX hpKwwB"
       >
         <div
-          className="sc-fzqMAW cIPleX"
+          className="sc-fzqMAW bmUZvz"
           onClick={[Function]}
         >
           <label
@@ -2292,7 +2292,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                           className="sc-fzqAui dIvBCb"
                         >
                           <div
-                            className="sc-fzqMAW jFSpyd"
+                            className="sc-fzqMAW fFVypJ"
                             onClick={[Function]}
                           >
                             <input
@@ -2691,7 +2691,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                           className="sc-fzqAui dIvBCb"
                         >
                           <div
-                            className="sc-fzqMAW jFSpyd"
+                            className="sc-fzqMAW fFVypJ"
                             onClick={[Function]}
                           >
                             <input

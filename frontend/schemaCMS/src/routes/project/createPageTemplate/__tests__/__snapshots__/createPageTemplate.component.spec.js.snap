@@ -924,7 +924,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoJMP gaXoey"
+            className="sc-fzoJMP kFWJmc"
           >
             <div
               className="sc-fzoYHE kEgiTH"
@@ -953,10 +953,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzpkqZ ksOFEJ"
+              className="sc-fzpkqZ bxmotp"
             >
               <div
-                className="sc-fznAgC bygmhg"
+                className="sc-fznAgC jzilTA"
                 onClick={[Function]}
               >
                 <input

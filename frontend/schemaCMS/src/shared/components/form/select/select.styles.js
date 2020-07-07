@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 30px;
+  padding-right: 30px;
   position: relative;
   font-size: 18px;
   cursor: pointer;

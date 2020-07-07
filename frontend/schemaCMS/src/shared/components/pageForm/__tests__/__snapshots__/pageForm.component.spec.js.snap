@@ -755,7 +755,7 @@ exports[`PageForm: Component should render correctly 1`] = `
     className="sc-AxirZ ccgdVl"
   >
     <div
-      className="sc-fznJRM dGOQde"
+      className="sc-fznJRM dpUWXO"
       onClick={[Function]}
     >
       <label
@@ -1705,7 +1705,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                       className="sc-fzpkJw cBLWQJ"
                     >
                       <div
-                        className="sc-fznJRM lfNtYk"
+                        className="sc-fznJRM kSinuE"
                         onClick={[Function]}
                       >
                         <input
@@ -2151,7 +2151,7 @@ exports[`PageForm: Component should render correctly 1`] = `
                       className="sc-fzpkJw cBLWQJ"
                     >
                       <div
-                        className="sc-fznJRM lfNtYk"
+                        className="sc-fznJRM kSinuE"
                         onClick={[Function]}
                       >
                         <input
@@ -7058,7 +7058,7 @@ exports[`PageForm: Component should render with page template 1`] = `
     className="sc-AxirZ ccgdVl"
   >
     <div
-      className="sc-fznJRM dGOQde"
+      className="sc-fznJRM dpUWXO"
       onClick={[Function]}
     >
       <label
@@ -8008,7 +8008,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                       className="sc-fzpkJw cBLWQJ"
                     >
                       <div
-                        className="sc-fznJRM lfNtYk"
+                        className="sc-fznJRM kSinuE"
                         onClick={[Function]}
                       >
                         <input
@@ -8454,7 +8454,7 @@ exports[`PageForm: Component should render with page template 1`] = `
                       className="sc-fzpkJw cBLWQJ"
                     >
                       <div
-                        className="sc-fznJRM lfNtYk"
+                        className="sc-fznJRM kSinuE"
                         onClick={[Function]}
                       >
                         <input

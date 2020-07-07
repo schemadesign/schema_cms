@@ -110,7 +110,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
           className="sc-AxmLO beSeWJ"
         >
           <div
-            className="sc-fzozJi cPpeDz"
+            className="sc-fzozJi TcTuH"
             onClick={[Function]}
           >
             <input

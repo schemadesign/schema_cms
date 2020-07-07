@@ -4129,7 +4129,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
           className="sc-AxhUy jiqPcu"
         >
           <div
-            className="sc-fzoLag cjPgqC"
+            className="sc-fzoLag gXHloy"
             onClick={[Function]}
           >
             <input
@@ -4521,7 +4521,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
           className="sc-AxhUy jiqPcu"
         >
           <div
-            className="sc-fzoLag cjPgqC"
+            className="sc-fzoLag gXHloy"
             onClick={[Function]}
           >
             <input

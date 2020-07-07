@@ -1319,7 +1319,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         className="sc-AxiKw dFgtuZ"
       >
         <div
-          className="sc-fznWqX cAtUUZ"
+          className="sc-fznWqX cSlXnJ"
           onClick={[Function]}
         >
           <label

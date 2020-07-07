@@ -6,7 +6,6 @@ export const Header = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   width: 100%;
   border-top: 1px solid ${({ theme }) => theme.text};
 `;
@@ -18,7 +17,7 @@ export const IconsContainer = styled.div`
 
 export const InputContainer = styled.div`
   padding-left: 0;
-  width: 100%;
+  width: calc(100% - 81px);
 `;
 
 export const customSelectStyles = css`
