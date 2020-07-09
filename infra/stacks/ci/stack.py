@@ -1,11 +1,13 @@
 from typing import List
-from aws_cdk.core import App, Stack
+
 from aws_cdk.aws_ecr import Repository
 from aws_cdk.aws_lambda import Function
+from aws_cdk.core import App, Stack
+
 from config.base import EnvSettings
+from stacks.ci.resources.entrypoint import CiEntrypoint
+from stacks.ci.resources.pipeline import CIPipeline
 from ..base.resources.ecr import BaseECR
-from .entrypoint import CiEntrypoint
-from .pipeline import CIPipeline
 
 
 class CiStack(Stack):

@@ -29,7 +29,7 @@ class CDKConfig(Construct):
                 build_image=LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
             ),
-            build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/app.yaml"),
+            build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/cdk.yaml"),
             cache=Cache.local(LocalCacheMode.CUSTOM),
         )
 

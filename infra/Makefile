@@ -12,7 +12,7 @@ deploy-components-infra:
 	$(AWS_VAULT) cdk deploy -e *components;
 
 deploy-pipeline-infra:
-	$(AWS_VAULT) cdk deploy -e *ci-cd;
+	$(AWS_VAULT) cdk deploy -e *cicd;
 
 deploy-api:
 	$(AWS_VAULT) cdk deploy -e *api;

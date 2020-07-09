@@ -1,5 +1,3 @@
-from aws_cdk.core import Construct
-from aws_cdk.aws_s3 import Bucket
 from aws_cdk.aws_codebuild import (
     Artifacts,
     BuildSpec,
@@ -8,6 +6,8 @@ from aws_cdk.aws_codebuild import (
     Project,
     Source,
 )
+from aws_cdk.aws_s3 import Bucket
+from aws_cdk.core import Construct
 
 from config.base import EnvSettings
 

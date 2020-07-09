@@ -1,15 +1,17 @@
 from aws_cdk.aws_codepipeline import Artifact, Pipeline, StageProps
-from aws_cdk.aws_codepipeline_actions import S3SourceAction, S3Trigger, ManualApprovalAction
-from aws_cdk.core import Construct
 from aws_cdk.aws_codepipeline_actions import (
     CloudFormationCreateReplaceChangeSetAction,
     CloudFormationExecuteChangeSetAction
 )
+from aws_cdk.aws_codepipeline_actions import S3SourceAction, S3Trigger, ManualApprovalAction
+from aws_cdk.core import Construct
+
 from config.base import EnvSettings
 from .api import ApiCiConfig
-from .entrypoint import CiEntrypoint
-from .workers import WorkersCiConfig
 from .cdk import CDKConfig
+from .entrypoint import CiEntrypoint
+from .image_resize import ImageResizeLambdaCiConfig
+from .workers import WorkersCiConfig
 
 
 class CIPipeline(Construct):
@@ -59,19 +61,22 @@ class CIPipeline(Construct):
 
     def configure_pipeline(self, pipeline: Pipeline, repos: dict, functions):
         source_output_artifact = CIPipeline.get_output_artifact()
+        build_stage = pipeline.stages[1]
+        deploy_stage = pipeline.stages[2]
 
-        cdk_config = CDKConfig(self, "CDKConfig", pipeline.stages[1], source_output_artifact)
+        cdk_config = CDKConfig(self, "CDKConfig", build_stage, source_output_artifact)
 
-        ApiCiConfig(self, "ApiConfig", pipeline.stages[1], repos, source_output_artifact)
-        WorkersCiConfig(self, "WorkersConfig", pipeline.stages[1], source_output_artifact, functions)
+        ApiCiConfig(self, "ApiConfig", build_stage, repos, source_output_artifact)
+        ImageResizeLambdaCiConfig(self, "ImageResizeConfig", build_stage, source_output_artifact)
+        WorkersCiConfig(self, "WorkersConfig", build_stage, source_output_artifact, functions)
 
-        pipeline.stages[2].add_action(self.create_prepare_change_set_action(cdk_config.cdk_artifact))
-        pipeline.stages[2].add_action(self.create_execute_change_set_action())
+        deploy_stage.add_action(self.create_prepare_change_set_action(cdk_config.cdk_artifact))
+        deploy_stage.add_action(self.create_execute_change_set_action())
 
     @staticmethod
     def create_prepare_change_set_action(cdk_artifact: Artifact):
         return CloudFormationCreateReplaceChangeSetAction(
-            action_name="prepare-api-changes",
+            action_name="prepare-app-changes",
             stack_name="schema-cms-api",
             change_set_name="APIStagedChangeSet",
             admin_permissions=True,
@@ -82,7 +87,7 @@ class CIPipeline(Construct):
     @staticmethod
     def create_execute_change_set_action():
         return CloudFormationExecuteChangeSetAction(
-            action_name="execute-api-changes",
+            action_name="execute-app-changes",
             stack_name="schema-cms-api",
             change_set_name="APIStagedChangeSet",
             run_order=3,

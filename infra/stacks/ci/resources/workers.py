@@ -1,10 +1,10 @@
 from typing import List
-from aws_cdk.core import Construct
-from aws_cdk.aws_codepipeline import IStage
 
 from aws_cdk.aws_codebuild import PipelineProject, BuildEnvironment, LinuxBuildImage, BuildSpec, Artifacts
+from aws_cdk.aws_codepipeline import IStage
 from aws_cdk.aws_codepipeline_actions import CodeBuildAction, CloudFormationCreateReplaceChangeSetAction
 from aws_cdk.aws_lambda import Function
+from aws_cdk.core import Construct
 
 
 class WorkersCiConfig(Construct):
