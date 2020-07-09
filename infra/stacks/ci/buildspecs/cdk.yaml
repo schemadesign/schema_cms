@@ -3,15 +3,15 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 10
-      python: 3.7
+      nodejs: 12
+      python: 3.8
   pre_build:
     commands:
       - echo install AWS CDK...
-      - npm install -g aws-cdk@1.21.1
+      - npm install -g aws-cdk@1.45.0
       - cdk --version
-      - pip install -r requirements.txt
-      - pip freeze
+      - pip install pipenv
+      - pipenv install -e .
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"

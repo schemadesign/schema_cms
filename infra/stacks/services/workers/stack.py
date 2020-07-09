@@ -44,7 +44,6 @@ class LambdaWorkerStack(Stack):
         ]
 
     def _create_lambda_fn(self, memory_size: int, queue: Queue):
-
         is_app_only = self.node.try_get_context("is_app_only")
 
         if is_app_only:
