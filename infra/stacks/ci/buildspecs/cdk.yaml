@@ -11,7 +11,8 @@ phases:
       - npm install -g aws-cdk@1.45.0
       - cdk --version
       - pip install pipenv
-      - pipenv install -e .
+      - pipenv lock -r > requirements.txt
+      - pip install -r requirements.txt
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
