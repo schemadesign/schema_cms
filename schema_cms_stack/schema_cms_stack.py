@@ -447,7 +447,7 @@ class CIPipeline(core.Stack):
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
             ),
             build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "backend/functions/buildspec-image-resize-lambda.yaml"
+                "backend/functions/image_resize.yaml"
             ),
         )
 
@@ -624,7 +624,7 @@ class CIPipeline(core.Stack):
                     build_image=aws_codebuild.LinuxBuildImage.STANDARD_3_0
                 ),
                 build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                    "backend/functions/buildspec-lambda-worker.yaml"
+                    "backend/functions/workers.yaml"
                 ),
             )
             output = aws_codepipeline.Artifact()

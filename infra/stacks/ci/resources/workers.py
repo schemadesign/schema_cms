@@ -1,32 +1,38 @@
-from typing import List
+from typing import List, Tuple
 
-from aws_cdk.aws_codebuild import PipelineProject, BuildEnvironment, LinuxBuildImage, BuildSpec, Artifacts
-from aws_cdk.aws_codepipeline import IStage
+from aws_cdk.aws_codebuild import PipelineProject, BuildEnvironment, LinuxBuildImage, BuildSpec
+from aws_cdk.aws_codepipeline import IStage, Artifact
 from aws_cdk.aws_codepipeline_actions import CodeBuildAction, CloudFormationCreateReplaceChangeSetAction
 from aws_cdk.aws_lambda import Function
 from aws_cdk.core import Construct
 
 
 class WorkersCiConfig(Construct):
-    input_artifact: Artifacts = None
+    input_artifact: Artifact = None
+    cdk_artifact = Artifact = None
+    actions_with_outputs = []
 
     def __init__(
         self,
         scope: Construct,
         id: str,
         build_stage: IStage,
-        input_artifact: Artifacts,
+        input_artifact: Artifact,
+        cdk_artifact: Artifact,
         functions: List[Function],
     ):
         super().__init__(scope, id)
 
         self.input_artifact = input_artifact
+        self.cdk_artifact = cdk_artifact
         build_projects = self.create_build_projects(functions)
 
-        build_actions = []
-        for project, function_name in build_projects:
-            build_actions.append(
-                build_stage.add_action(self.crate_build_action(function_name, project, self.input_artifact))
+        for project, function_name, code in build_projects:
+            action, output = self.crate_build_action(function_name, project)
+            build_stage.add_action(action)
+
+            self.actions_with_outputs.append(
+                (action, output, code)
             )
 
     def create_build_projects(self, functions: List[Function]):
@@ -39,36 +45,40 @@ class WorkersCiConfig(Construct):
                 f"WorkerBuild-{function_name}",
                 project_name=f"schema-cms-build-{function_name}",
                 environment=BuildEnvironment(build_image=LinuxBuildImage.STANDARD_3_0),
-                build_spec=BuildSpec.from_source_filename("backend/functions/buildspec-lambda-worker.yaml"),
+                build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/workers.yaml"),
             )
 
-            projects.append((project, function_name))
+            projects.append((project, function_name, code))
 
         return projects
 
-    @staticmethod
-    def crate_build_action(name: str, project: PipelineProject, input_artifact: Artifacts):
-        return CodeBuildAction(action_name=f"build-{name}", project=project, input=input_artifact, run_order=1)
+    def crate_build_action(self, name: str, project: PipelineProject):
+        output = Artifact()
 
-    def prepare_workers_changes(self, build_actions):
+        action = CodeBuildAction(
+            action_name=f"build-{name}", project=project, input=self.input_artifact, outputs=[output], run_order=1)
+
+        return action, output
+
+    def prepare_workers_changes(self, functions, **change_set_kwargs):
         params_overrides = {}
         extra_inputs = []
 
-        for (_, output, _, code) in build_actions:
+        for action, output, code, function in zip(self.actions_with_outputs, functions):
             params_overrides.update(
-                **code.assign(
-                    bucket_name=output.s3_location.bucket_name,
-                    object_key=output.s3_location.object_key,
-                    object_version=output.s3_location.object_version,
-                )
+                    function.code.from_cfn_parameters(
+                        bucket_name=output.s3_location.bucket_name,
+                        object_key=output.s3_location.object_key,
+                        object_version=output.s3_location.object_version
+                    )
             )
             extra_inputs.append(output)
 
         return CloudFormationCreateReplaceChangeSetAction(
-            action_name="prepare_worker_changes",
+            action_name="prepare-worker-changes",
             stack_name="schema-cms-lambda-workers",
             change_set_name="lambdaWorkerStagedChangeSet",
-            template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+            template_path=self.cdk_artifact.at_path("cdk.out/schema-cms-lambda-workers.template.json"),
             parameter_overrides=params_overrides,
             extra_inputs=extra_inputs,
             **change_set_kwargs,

@@ -27,7 +27,7 @@ class ImageResizeLambdaCiConfig(Construct):
             f"ImageResizeLambdaBuild",
             project_name=f"schema-cms-build-image-resize-lambda",
             environment=BuildEnvironment(build_image=LinuxBuildImage.STANDARD_3_0),
-            build_spec=BuildSpec.from_source_filename("backend/functions/buildspec-image-resize-lambda.yaml"),
+            build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/image_resize.yaml"),
         )
 
         return project

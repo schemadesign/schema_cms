@@ -23,8 +23,8 @@ class CDKConfig(Construct):
 
         project = PipelineProject(
             self,
-            "build_cdk_project",
-            project_name="schema_cms_stack_ci",
+            "CDKStackBuild",
+            project_name="schema-cms-build-stack",
             environment=BuildEnvironment(
                 build_image=LinuxBuildImage.STANDARD_2_0,
                 privileged=True,

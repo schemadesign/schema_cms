@@ -36,7 +36,7 @@ class ApiCiConfig(Construct):
     def create_backend_build_project(self, repo: Repository):
         project = PipelineProject(
             self,
-            "BackendBuildProject",
+            "BackendBuild",
             project_name=f"schema-cms-build-backend",
             build_spec=self.backend_spec,
             environment=BuildEnvironment(

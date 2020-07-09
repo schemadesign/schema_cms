@@ -33,7 +33,7 @@ class CiEntrypoint(Construct):
     def create_build_project(self, props: EnvSettings):
         project = Project(
             self,
-            "Project",
+            "BuildEntrypoint",
             project_name="SchemaCMS",
             description="Run this project to deploy SchemaCMS selected version",
             cache=Cache.local(LocalCacheMode.SOURCE),
