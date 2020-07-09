@@ -87,7 +87,7 @@ class CIPipeline(Construct):
             stack_name="schema-cms-api",
             change_set_name="APIStagedChangeSet",
             admin_permissions=True,
-            template_path=cdk_artifact.at_path("cdk.out/schema-cms-api.template.json"),
+            template_path=cdk_artifact.at_path("./infra/cdk.out/schema-cms-api.template.json"),
             run_order=2,
         )
 

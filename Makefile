@@ -1,3 +1,6 @@
+SELF_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+include $(SELF_DIR)/base.mk
+
 .PHONY: install
 
 SCHEMA_UI_PATH="./frontend/schemaUI"
