@@ -22,7 +22,7 @@ phases:
       - pipenv run cdk synth -c app_image_tag=$VERSION
 artifacts:
   files:
-    - 'cdk.out/**/*'
+    - './infra/cdk.out/**/*'
   name: cdk-out
 cache:
   paths:
