@@ -55,15 +55,19 @@ class ApiStack(Stack):
 
         self.django_secret_key = EcsSecret.from_secrets_manager(django_secret)
 
+        tag_from_context = self.node.try_get_context("app_image_tag")
+        tag = tag_from_context if tag_from_context != "undefined" else None
+
         api_image = ContainerImage.from_ecr_repository(
             repository=Repository.from_repository_name(
                 self, id="BackendRepository", repository_name=BaseECR.get_backend_repository_name()
-            )
+            ),
+            tag=tag
         )
         nginx_image = ContainerImage.from_ecr_repository(
             repository=Repository.from_repository_name(
                 self, id="NginxRepository", repository_name=BaseECR.get_nginx_repository_name()
-            )
+            ), tag=tag
         )
 
         self.api = ApplicationLoadBalancedFargateService(

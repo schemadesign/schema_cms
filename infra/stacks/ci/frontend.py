@@ -51,7 +51,7 @@ class FrontendCiConfig(Construct):
 
     @staticmethod
     def create_build_action(name: str, project: PipelineProject, input_artifact: Artifacts):
-        return CodeBuildAction(action_name=f"build-{name}", project=project, input=input_artifact)
+        return CodeBuildAction(action_name=f"build-{name}", project=project, input=input_artifact, run_order=1)
 
     @staticmethod
     def create_deploy_action(name: str, project: PipelineProject, input_artifact: Artifacts):

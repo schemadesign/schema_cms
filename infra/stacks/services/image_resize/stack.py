@@ -59,7 +59,7 @@ class ImageResizeStack(Stack):
         code = Code.from_asset(path="../backend/functions/image_resize/.serverless/main.zip")
         image_resize_lambda = Function(
             self,
-            "ImageResizeLambda",
+            "image-resize-lambda",
             function_name="schema-cms-image-resize",
             code=code,
             handler="index.handler",

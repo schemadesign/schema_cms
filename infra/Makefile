@@ -11,14 +11,15 @@ deploy-base-infra:
 deploy-components-infra:
 	$(AWS_VAULT) cdk deploy -e *components;
 
-deploy-api-infra:
-	$(AWS_VAULT) cdk deploy -e *api;
-
-deploy-image-resize-infra:
-	$(AWS_VAULT) cdk deploy -e *resize;
-
-deploy-workers-infra:
-	$(AWS_VAULT) cdk deploy -e *workers;
-
 deploy-pipeline-infra:
 	$(AWS_VAULT) cdk deploy -e *pipeline;
+
+deploy-api:
+	$(AWS_VAULT) cdk deploy -e *api;
+
+deploy-image-resize:
+	$(AWS_VAULT) cdk deploy -e *resize;
+
+deploy-workers:
+	$(AWS_VAULT) cdk deploy -e *workers;
+

@@ -1,12 +1,14 @@
-from aws_cdk.core import Construct
-from aws_cdk.aws_secretsmanager import Secret
 from aws_cdk.aws_codepipeline import Artifact, Pipeline, StageProps
-from aws_cdk.aws_codepipeline_actions import S3SourceAction, S3Trigger, GitHubSourceAction, GitHubTrigger
+from aws_cdk.aws_codepipeline_actions import S3SourceAction, S3Trigger, ManualApprovalAction
+from aws_cdk.core import Construct
+from aws_cdk.aws_codebuild import PipelineProject
+
 from config.base import EnvSettings
-from .entrypoint import CiEntrypoint
 from .backend import BackendCiConfig
+from .entrypoint import CiEntrypoint
 from .frontend import FrontendCiConfig
-from .lambdas import LambdasCiConfig
+from .workers import WorkersCiConfig
+from .cdk import CDKConfig
 
 
 class CIPipeline(Construct):
@@ -39,20 +41,6 @@ class CIPipeline(Construct):
             )
         ]
 
-        # if props.env_stage == "dev":
-        #     oauth_token = Secret.from_secret_arn(self, "gh-token", secret_arn=props.arns["gh_token"])
-        #
-        #     source_actions.append(GitHubSourceAction(
-        #             action_name="github_source",
-        #             owner="schemadesign",
-        #             repo="schema_cms",
-        #             branch="master",
-        #             trigger=GitHubTrigger.WEBHOOK,
-        #             output=self.get_output_artifact(props, "github"),
-        #             oauth_token=oauth_token.secret_value,
-        #         )
-        #     )
-
         pipeline = Pipeline(
             self,
             "Pipeline",
@@ -60,7 +48,9 @@ class CIPipeline(Construct):
             stages=[
                 StageProps(stage_name="Source", actions=source_actions,),
                 StageProps(stage_name=self.build_stage_name, actions=[]),
-                # StageProps(stage_name=self.deploy_stage_name, actions=[])
+                StageProps(stage_name=self.deploy_stage_name, actions=[
+                    ManualApprovalAction(action_name="approve_changes", run_order=1)
+                ])
             ],
         )
 
@@ -69,9 +59,12 @@ class CIPipeline(Construct):
     def configure_pipeline(self, pipeline: Pipeline, repos: dict, functions):
         source_output_artifact = CIPipeline.get_output_artifact()
 
+        cdk_config = CDKConfig(self, "CDKConfig", pipeline.stages[1], source_output_artifact)
+
         BackendCiConfig(
-            self, "BackendConfig", pipeline.stages[1], repos["app"], source_output_artifact,
+            self, "BackendConfig", pipeline.stages, repos["app"], source_output_artifact, cdk_config.cdk_artifact
         )
 
         FrontendCiConfig(self, "FrontendConfig", pipeline.stages[1], repos, source_output_artifact)
-        LambdasCiConfig(self, "WorkersConfig", pipeline.stages[1], source_output_artifact, functions)
+        WorkersCiConfig(self, "WorkersConfig", pipeline.stages[1], source_output_artifact, functions)
+

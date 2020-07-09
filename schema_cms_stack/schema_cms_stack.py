@@ -466,7 +466,7 @@ class CIPipeline(core.Stack):
             environment=aws_codebuild.BuildEnvironment(
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
             ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename("buildspec-cdk.yaml"),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename("cdk.yaml"),
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.CUSTOM),
         )
 
