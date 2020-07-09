@@ -13,30 +13,22 @@ from aws_cdk.aws_codepipeline_actions import CodeBuildAction
 from aws_cdk.aws_ecr import Repository
 from aws_cdk.core import Construct
 
-from config.base import EnvSettings
-
 
 class BackendCiConfig(Construct):
     def __init__(
-        self,
-        scope: Construct,
-        id: str,
-        build_stage: IStage,
-        props: EnvSettings,
-        repo: Repository,
-        input_artifact: Artifacts,
+        self, scope: Construct, id: str, build_stage: IStage, repo: Repository, input_artifact: Artifacts,
     ):
         super().__init__(scope, id)
 
-        build_project = self.create_build_project(props, repo)
-        build_stage.add_action(self.create_build_action("backend", build_project, input_artifact, props))
+        build_project = self.create_build_project(repo)
+        build_stage.add_action(self.create_build_action("backend", build_project, input_artifact))
 
-    def create_build_project(self, props: EnvSettings, repo: Repository):
+    def create_build_project(self, repo: Repository):
         spec = BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/app.yaml")
         project = PipelineProject(
             self,
             "BackendBuildProject",
-            project_name=f"{props.project_name}-build-backend",
+            project_name=f"schema-cms-build-backend",
             build_spec=spec,
             environment=BuildEnvironment(
                 environment_variables={
@@ -54,17 +46,9 @@ class BackendCiConfig(Construct):
         return project
 
     @staticmethod
-    def create_build_action(
-        name: str, project: PipelineProject, input_artifact: Artifacts, props: EnvSettings
-    ):
-        return CodeBuildAction(
-            action_name=f"{props.project_name}-build-{name}", project=project, input=input_artifact
-        )
+    def create_build_action(name: str, project: PipelineProject, input_artifact: Artifacts):
+        return CodeBuildAction(action_name=f"build-{name}", project=project, input=input_artifact)
 
     @staticmethod
-    def create_deploy_action(
-        name: str, project: PipelineProject, input_artifact: Artifacts, props: EnvSettings
-    ):
-        return CodeBuildAction(
-            action_name=f"{props.project_name}-deploy-{name}", project=project, input=input_artifact
-        )
+    def create_deploy_action(name: str, project: PipelineProject, input_artifact: Artifacts):
+        return CodeBuildAction(action_name=f"deploy-{name}", project=project, input=input_artifact)

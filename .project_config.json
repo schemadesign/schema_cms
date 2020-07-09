@@ -9,8 +9,29 @@
     "dev": {
       "certificate": "arn:aws:acm:us-west-2:022528540894:certificate/656efb63-7a21-4a81-96a9-5ed4680fda28",
       "domains": {
-        "admin": "schema-test.appt5n.com",
-        "api": "api.schema-test.appt5n.com"
+        "api": "schema-test.appt5n.com",
+        "webapp": "schema-test.appt5n.com",
+        "public_api": "api.schema-test.appt5n.com"
+      },
+      "lambdas_sizes": [512, 1280, 3008],
+      "arns": {
+        "sentry_dns": "arn:aws:secretsmanager:us-west-2:022528540894:secret:SENTRY_DNS-uk9pQw",
+        "lambda_auth_token": "arn:aws:secretsmanager:us-west-2:022528540894:secret:LAMBDA_AUTH_TOKEN-32yZOF",
+        "gh_token": "arn:aws:secretsmanager:us-west-2:022528540894:secret:github-token-82UijJ"
+      }
+    },
+    "prod": {
+      "certificate": "arn:aws:acm:us-west-2:410575072407:certificate/d5dbca22-36cb-4d70-8fda-6f5bf4cca7f1",
+      "domains": {
+        "api": "schemacms.com",
+        "webapp": "schemacms.com",
+        "public_api": "api.schemacms.com"
+      },
+      "lambdas_sizes": [512, 1280, 3008],
+      "arns": {
+        "sentry_dns": "arn:aws:secretsmanager:us-west-2:410575072407:secret:SENTRY_DNS-ltYVN1",
+        "lambda_auth_token": "arn:aws:secretsmanager:us-west-2:410575072407:secret:LAMBDA_AUTH_TOKEN-9eWnQg",
+        "gh_token": "arn:aws:secretsmanager:us-west-2:410575072407:secret:github-token-uxGvlL"
       }
     }
   }

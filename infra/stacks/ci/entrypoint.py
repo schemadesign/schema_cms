@@ -1,6 +1,5 @@
 from aws_cdk.core import Construct
 from aws_cdk.aws_s3 import Bucket
-from aws_cdk.aws_codecommit import Repository
 from aws_cdk.aws_codebuild import (
     Artifacts,
     BuildSpec,
@@ -25,13 +24,13 @@ class CiEntrypoint(Construct):
     def get_artifacts_identifier(env_settings: EnvSettings):
         return f"{env_settings.project_name}-entrypoint"
 
-    def __init__(self, scope: Construct, id: str, props: EnvSettings, repo: Repository):
+    def __init__(self, scope: Construct, id: str, props: EnvSettings):
         super().__init__(scope, id)
 
         self.artifacts_bucket = Bucket(self, "ArtifactsBucket", versioned=True)
-        self.code_build_project = self.create_build_project(props, repo)
+        self.code_build_project = self.create_build_project(props)
 
-    def create_build_project(self, props: EnvSettings, repo):
+    def create_build_project(self, props: EnvSettings):
         project = Project(
             self,
             "Project",

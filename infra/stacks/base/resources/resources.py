@@ -1,16 +1,16 @@
-from aws_cdk.core import Construct
 from aws_cdk.aws_ec2 import Vpc, InstanceType, InstanceSize, InstanceClass
 from aws_cdk.aws_ecs import Cluster
 from aws_cdk.aws_rds import DatabaseInstance, DatabaseInstanceEngine
-from aws_cdk.aws_s3 import Bucket
-from .code_commit import BaseCodeCommit
+from aws_cdk.core import Construct, CfnOutput
 
-from .ecr import BaseECR
 from config.base import EnvSettings
+from .ecr import BaseECR
+from .kms import BaseKMS
 
 
 class BaseResources(Construct):
     ecr: BaseECR = None
+    key: BaseKMS = None
     vpc: Vpc = None
     cluster: Cluster = None
     db: DatabaseInstance = None
@@ -18,30 +18,34 @@ class BaseResources(Construct):
     def __init__(self, scope: Construct, id: str, props: EnvSettings):
         super().__init__(scope, id)
 
-        self.ecr = BaseECR(self, "ECRBase", props)
+        self.ecr = BaseECR(self, "ECR")
 
-        self.vpc = Vpc(self, "vpc", nat_gateways=1)
-        self.cluster = Cluster(self, "worker-cluster", cluster_name="schema-ecs-cluster", vpc=self.vpc)
+        self.key = BaseKMS(self, "KMS")
+
+        self.vpc = Vpc(self, "Vpc", nat_gateways=1)
+
+        self.cluster = Cluster(self, "WorkersCluster", cluster_name="schema-ecs-cluster", vpc=self.vpc)
 
         self.db = DatabaseInstance(
             self,
-            "db",
+            "DataBase",
             master_username="root",
-            database_name="gistdb",
+            database_name=props.data_base_name,
             engine=DatabaseInstanceEngine.POSTGRES,
             storage_encrypted=True,
             allocated_storage=50,
-            instance_class=InstanceType.of(InstanceClass.BURSTABLE2, InstanceSize.SMALL),
+            instance_type=InstanceType.of(InstanceClass.BURSTABLE2, InstanceSize.SMALL),
             vpc=self.vpc,
         )
 
-        self.app_bucket = Bucket(self, "schemacms", versioned=True)
+        if self.db.secret:
+            CfnOutput(
+                self,
+                id="DbSecretOutput",
+                export_name=self.get_database_secret_arn_output_export_name(),
+                value=self.db.secret.secret_arn,
+            )
 
-
-class CodeCommitResources(Construct):
-    code_commit: BaseCodeCommit = None
-
-    def __init__(self, scope: Construct, id: str, props: EnvSettings):
-        super().__init__(scope, id)
-
-        self.code_commit = BaseCodeCommit(self, "CodeCommit", props)
+    @staticmethod
+    def get_database_secret_arn_output_export_name():
+        return "schema-cms-databaseSecretArn"

@@ -17,25 +17,19 @@ from config.base import EnvSettings
 
 class FrontendCiConfig(Construct):
     def __init__(
-        self,
-        scope: Construct,
-        id: str,
-        build_stage: IStage,
-        props: EnvSettings,
-        repos: dict,
-        input_artifact: Artifacts,
+        self, scope: Construct, id: str, build_stage: IStage, repos: dict, input_artifact: Artifacts,
     ):
         super().__init__(scope, id)
 
-        build_project = self.create_build_project(props, repos)
-        build_stage.add_action(self.create_build_action("frontend", build_project, input_artifact, props))
+        build_project = self.create_build_project(repos)
+        build_stage.add_action(self.create_build_action("frontend", build_project, input_artifact))
 
-    def create_build_project(self, props: EnvSettings, repos: dict):
+    def create_build_project(self, repos: dict):
         spec = BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/frontend.yaml")
         project = PipelineProject(
             self,
             "FrontendBuildProject",
-            project_name=f"{props.project_name}-build-frontend",
+            project_name=f"schema-cms-build-frontend",
             environment=BuildEnvironment(
                 environment_variables={
                     "NGINX_REPOSITORY_URI": BuildEnvironmentVariable(value=repos["nginx"].repository_uri),
@@ -56,17 +50,9 @@ class FrontendCiConfig(Construct):
         return project
 
     @staticmethod
-    def create_build_action(
-        name: str, project: PipelineProject, input_artifact: Artifacts, props: EnvSettings
-    ):
-        return CodeBuildAction(
-            action_name=f"{props.project_name}-build-{name}", project=project, input=input_artifact
-        )
+    def create_build_action(name: str, project: PipelineProject, input_artifact: Artifacts):
+        return CodeBuildAction(action_name=f"build-{name}", project=project, input=input_artifact)
 
     @staticmethod
-    def create_deploy_action(
-        name: str, project: PipelineProject, input_artifact: Artifacts, props: EnvSettings
-    ):
-        return CodeBuildAction(
-            action_name=f"{props.project_name}-deploy-{name}", project=project, input=input_artifact
-        )
+    def create_deploy_action(name: str, project: PipelineProject, input_artifact: Artifacts):
+        return CodeBuildAction(action_name=f"deploy-{name}", project=project, input=input_artifact)

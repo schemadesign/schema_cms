@@ -7,8 +7,9 @@ DEFAULT_REGION = "eu-west-1"
 
 @dataclass
 class DomainsEnvs:
-    admin: str
     api: str
+    public_api: str
+    webapp: str
 
 
 @dataclass
@@ -18,6 +19,9 @@ class EnvSettings:
     project_env_name: str
     certificate_arn: str
     domains: DomainsEnvs
+    lambdas_sizes: list
+    arns: list
+    data_base_name: str = "schemacms"
 
 
 def load_infra_envs(config_file_path):
@@ -29,9 +33,15 @@ def load_infra_envs(config_file_path):
     env_settings = config.pop("env_config").get(env_stage)
     domains = DomainsEnvs(**env_settings.get("domains"))
     certificate = env_settings.get("certificate")
-
+    lambdas_sizes = env_settings.get("lambdas_sizes")
+    arns = env_settings.get("arns")
     project_env_name = f"{config.get('project_name')}-{env_stage}"
 
     return EnvSettings(
-        project_env_name=project_env_name, domains=domains, certificate_arn=certificate, **config,
+        project_env_name=project_env_name,
+        domains=domains,
+        certificate_arn=certificate,
+        lambdas_sizes=lambdas_sizes,
+        arns=arns,
+        **config,
     )

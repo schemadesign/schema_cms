@@ -12,7 +12,7 @@ phases:
       - echo Build lambda worker function package
       - mkdir -p backend/functions/build
       - cd backend/functions/worker
-      - npm install && node_modules/serverless/bin/serverless package
+      - npm install && node_modules/.bin/sls package
       - unzip .serverless/main.zip -d ${OLDPATH}/backend/functions/build
   post_build:
     commands:

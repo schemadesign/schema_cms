@@ -25,8 +25,8 @@ phases:
         if expr "${PUSH_IMAGES}" = "1"; then
           set -e
           docker pull $APP_REPOSITORY_URI:$VERSION
-          docker tag $APP_REPOSITORY_URI:$VERSION backend
-          docker tag $WEBAPP_REPOSITORY_URI:$VERSION frontend
+          docker tag $APP_REPOSITORY_URI:$VERSION schema_cms_backend
+          docker tag $WEBAPP_REPOSITORY_URI:$VERSION schema_cms_frontend
           docker pull $NGINX_REPOSITORY_URI:latest || true
           echo "Building nginx Docker image..."
           docker build -t $NGINX_REPOSITORY_URI:$VERSION --cache-from $NGINX_REPOSITORY_URI:latest ./nginx/

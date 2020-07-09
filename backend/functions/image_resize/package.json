@@ -11,14 +11,13 @@
   "dependencies": {
     "mocha": "^6.1.4",
     "nyc": "^14.0.0",
-    "sharp": "^0.21.3",
+    "sharp": "^0.25.4",
     "sinon": "^7.3.2"
   },
   "devDependencies": {
     "aws-sdk": "^2.437.0",
     "aws-sdk-mock": "^4.4.0",
-    "serverless": "1.53.0",
-    "serverless-localstack": "^0.4.19",
+    "serverless": "^1.74.1",
     "serverless-plugin-include-dependencies": "^4.0.0"
   },
   "scripts": {
