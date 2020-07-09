@@ -3,7 +3,7 @@ from typing import List, Tuple
 from aws_cdk.aws_codebuild import PipelineProject, BuildEnvironment, LinuxBuildImage, BuildSpec
 from aws_cdk.aws_codepipeline import IStage, Artifact
 from aws_cdk.aws_codepipeline_actions import CodeBuildAction, CloudFormationCreateReplaceChangeSetAction
-from aws_cdk.aws_lambda import Function
+from aws_cdk.aws_lambda import Function, AssetCode
 from aws_cdk.core import Construct
 
 
@@ -27,12 +27,12 @@ class WorkersCiConfig(Construct):
         self.cdk_artifact = cdk_artifact
         build_projects = self.create_build_projects(functions)
 
-        for project, function_name, code in build_projects:
+        for project, function_name, code , function in build_projects:
             action, output = self.crate_build_action(function_name, project)
             build_stage.add_action(action)
 
             self.actions_with_outputs.append(
-                (action, output, code)
+                (action, output, code, function)
             )
 
     def create_build_projects(self, functions: List[Function]):
@@ -48,7 +48,7 @@ class WorkersCiConfig(Construct):
                 build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/workers.yaml"),
             )
 
-            projects.append((project, function_name, code))
+            projects.append((project, function_name, code, function))
 
         return projects
 
@@ -60,17 +60,18 @@ class WorkersCiConfig(Construct):
 
         return action, output
 
-    def prepare_workers_changes(self, functions, **change_set_kwargs):
+    def prepare_workers_changes(self, **change_set_kwargs):
         params_overrides = {}
         extra_inputs = []
 
-        for action, output, code, function in zip(self.actions_with_outputs, functions):
+        for action, output, code, function in self.actions_with_outputs:
+
             params_overrides.update(
-                    function.code.from_cfn_parameters(
-                        bucket_name=output.s3_location.bucket_name,
-                        object_key=output.s3_location.object_key,
-                        object_version=output.s3_location.object_version
-                    )
+                **code.assign(
+                    bucket_name=output.s3_location.bucket_name,
+                    object_version=output.s3_location.object_version,
+                    object_key=output.s3_location.object_key
+                )
             )
             extra_inputs.append(output)
 

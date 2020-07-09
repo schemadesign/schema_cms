@@ -72,7 +72,7 @@ class CIPipeline(Construct):
         workers = WorkersCiConfig(self, "WorkersConfig", build_stage, source_output_artifact, cdk_artifact, functions)
 
         deploy_stage.add_action(self.create_prepare_change_set_action(cdk_artifact))
-        deploy_stage.add_action(self.create_execute_change_set_action(functions))
+        deploy_stage.add_action(self.create_execute_change_set_action())
         deploy_stage.add_action(
             workers.prepare_workers_changes(
                 admin_permissions=True,

@@ -44,7 +44,14 @@ class LambdaWorkerStack(Stack):
         ]
 
     def _create_lambda_fn(self, memory_size: int, queue: Queue):
-        code = Code.from_asset(path="../backend/functions/worker/.serverless/main.zip")
+
+        is_app_only = self.node.try_get_context("is_app_only")
+
+        if is_app_only:
+            code = Code.from_asset(path="../backend/functions/worker/.serverless/main.zip")
+        else:
+            code = Code.from_cfn_parameters()
+
 
         function = Function(
             self,
