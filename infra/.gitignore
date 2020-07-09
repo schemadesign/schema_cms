@@ -7,3 +7,4 @@ local.env
 __pycache__
 node_modules
 dist
+SchemaCMSInfra.egg-info

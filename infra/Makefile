@@ -2,8 +2,7 @@ SELF_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include $(SELF_DIR)/../base.mk
 
 install:
-	pipenv install -e .
-
+	pipenv install
 
 deploy-base-infra:
 	$(AWS_VAULT) cdk deploy -e *base;
