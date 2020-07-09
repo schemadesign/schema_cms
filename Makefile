@@ -59,8 +59,7 @@ export VERSION
 
 
 
-deploy-base:
-	cd $(SELF_DIR)infra;\
-	$(AWS_VAULT) cdk deploy *base;
+install-infra:
+
 
 
