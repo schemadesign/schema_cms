@@ -34,7 +34,7 @@ class BaseResources(Construct):
             engine=DatabaseInstanceEngine.POSTGRES,
             storage_encrypted=True,
             allocated_storage=50,
-            instance_type=InstanceType.of(InstanceClass.BURSTABLE2, InstanceSize.SMALL),
+            instance_class=InstanceType.of(InstanceClass.BURSTABLE2, InstanceSize.SMALL),
             vpc=self.vpc,
         )
 
