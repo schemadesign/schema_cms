@@ -1,4 +1,3 @@
-from aws_cdk.core import Construct
 from aws_cdk.aws_codebuild import (
     Artifacts,
     BuildSpec,
@@ -12,7 +11,7 @@ from aws_cdk.aws_codebuild import (
 from aws_cdk.aws_codepipeline import IStage
 from aws_cdk.aws_codepipeline_actions import CodeBuildAction
 
-from config.base import EnvSettings
+from aws_cdk.core import Construct
 
 
 class FrontendCiConfig(Construct):
@@ -52,7 +51,3 @@ class FrontendCiConfig(Construct):
     @staticmethod
     def create_build_action(name: str, project: PipelineProject, input_artifact: Artifacts):
         return CodeBuildAction(action_name=f"build-{name}", project=project, input=input_artifact, run_order=1)
-
-    @staticmethod
-    def create_deploy_action(name: str, project: PipelineProject, input_artifact: Artifacts):
-        return CodeBuildAction(action_name=f"deploy-{name}", project=project, input=input_artifact)

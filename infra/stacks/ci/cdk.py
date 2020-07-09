@@ -26,7 +26,8 @@ class CDKConfig(Construct):
             "build_cdk_project",
             project_name="schema_cms_stack_ci",
             environment=BuildEnvironment(
-                build_image=LinuxBuildImage.STANDARD_2_0
+                build_image=LinuxBuildImage.STANDARD_2_0,
+                privileged=True,
             ),
             build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/app.yaml"),
             cache=Cache.local(LocalCacheMode.CUSTOM),

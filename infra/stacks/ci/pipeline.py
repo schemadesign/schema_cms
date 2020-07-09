@@ -1,8 +1,10 @@
 from aws_cdk.aws_codepipeline import Artifact, Pipeline, StageProps
 from aws_cdk.aws_codepipeline_actions import S3SourceAction, S3Trigger, ManualApprovalAction
 from aws_cdk.core import Construct
-from aws_cdk.aws_codebuild import PipelineProject
-
+from aws_cdk.aws_codepipeline_actions import (
+    CloudFormationCreateReplaceChangeSetAction,
+    CloudFormationExecuteChangeSetAction
+)
 from config.base import EnvSettings
 from .backend import BackendCiConfig
 from .entrypoint import CiEntrypoint
@@ -62,9 +64,31 @@ class CIPipeline(Construct):
         cdk_config = CDKConfig(self, "CDKConfig", pipeline.stages[1], source_output_artifact)
 
         BackendCiConfig(
-            self, "BackendConfig", pipeline.stages, repos["app"], source_output_artifact, cdk_config.cdk_artifact
+            self, "BackendConfig", pipeline.stages[1], repos["app"], source_output_artifact
         )
 
         FrontendCiConfig(self, "FrontendConfig", pipeline.stages[1], repos, source_output_artifact)
         WorkersCiConfig(self, "WorkersConfig", pipeline.stages[1], source_output_artifact, functions)
 
+        pipeline.stages[2].add_action(self.create_prepare_change_set_action(cdk_config.cdk_artifact))
+        pipeline.stages[2].add_action(self.create_execute_change_set_action())
+
+    @staticmethod
+    def create_prepare_change_set_action(cdk_artifact: Artifact):
+        return CloudFormationCreateReplaceChangeSetAction(
+            action_name="prepare-api-changes",
+            stack_name="schema-cms-api",
+            change_set_name="APIStagedChangeSet",
+            admin_permissions=True,
+            template_path=cdk_artifact.at_path("cdk.out/schema-cms-api.template.json"),
+            run_order=2,
+        )
+
+    @staticmethod
+    def create_execute_change_set_action():
+        return CloudFormationExecuteChangeSetAction(
+            action_name="execute-api-changes",
+            stack_name="schema-cms-api",
+            change_set_name="APIStagedChangeSet",
+            run_order=3,
+        )
