@@ -43,5 +43,5 @@ class CDKConfig(Construct):
             input=input_artifact,
             outputs=[self.cdk_artifact],
             extra_inputs=[],
-            run_order=2
+            run_order=3
         )

@@ -6,9 +6,8 @@ from aws_cdk.aws_codepipeline_actions import (
     CloudFormationExecuteChangeSetAction
 )
 from config.base import EnvSettings
-from .backend import BackendCiConfig
+from .api import ApiCiConfig
 from .entrypoint import CiEntrypoint
-from .frontend import FrontendCiConfig
 from .workers import WorkersCiConfig
 from .cdk import CDKConfig
 
@@ -46,7 +45,7 @@ class CIPipeline(Construct):
         pipeline = Pipeline(
             self,
             "Pipeline",
-            pipeline_name=f"schema-cms-ci",
+            pipeline_name=f"schema-cms-pipeline",
             stages=[
                 StageProps(stage_name="Source", actions=source_actions,),
                 StageProps(stage_name=self.build_stage_name, actions=[]),
@@ -63,11 +62,7 @@ class CIPipeline(Construct):
 
         cdk_config = CDKConfig(self, "CDKConfig", pipeline.stages[1], source_output_artifact)
 
-        BackendCiConfig(
-            self, "BackendConfig", pipeline.stages[1], repos["app"], source_output_artifact
-        )
-
-        FrontendCiConfig(self, "FrontendConfig", pipeline.stages[1], repos, source_output_artifact)
+        ApiCiConfig(self, "ApiConfig", pipeline.stages[1], repos, source_output_artifact)
         WorkersCiConfig(self, "WorkersConfig", pipeline.stages[1], source_output_artifact, functions)
 
         pipeline.stages[2].add_action(self.create_prepare_change_set_action(cdk_config.cdk_artifact))

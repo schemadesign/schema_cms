@@ -31,6 +31,6 @@ image_resize = image_resize = ImageResizeStack(app, "schema-cms-image-resize", p
 workers = LambdaWorkerStack(
     app, "schema-cms-lambda-workers", props=ENV_SETTINGS, queues=components.data_processing_queues,
 )
-pipeline = CiStack(app, "schema-cms-pipeline", props=ENV_SETTINGS, functions=workers.functions)
+pipeline = CiStack(app, "schema-cms-ci-cd", props=ENV_SETTINGS, functions=workers.functions)
 
 app.synth()
