@@ -51,9 +51,19 @@ class ApiStack(Stack):
 
         self.domain_name = props.domains.api
 
-        django_secret = Secret(self, "DjangoSecretKey")
+        django_secret = Secret(self, "DjangoSecretKey", secret_name="SCHEMA_CMS_DJANGO_SECRET_KEY")
+        lambda_auth_token_secret = Secret(self, "LambdaAuthToken", secret_name="SCHEMA_CMS_LAMBDA_AUTH_TOKEN")
+
+        if lambda_auth_token_secret.secret_arn:
+            CfnOutput(
+                self,
+                id="lambdaAuthTokenArnOutput",
+                export_name=self.get_lambda_auth_token_arn_output_export_name(),
+                value=lambda_auth_token_secret.secret_arn
+            )
 
         self.django_secret_key = EcsSecret.from_secrets_manager(django_secret)
+        self.lambda_auth_token = EcsSecret.from_secrets_manager(lambda_auth_token_secret)
 
         tag_from_context = self.node.try_get_context("app_image_tag")
         tag = tag_from_context if tag_from_context != "undefined" else None
@@ -111,6 +121,7 @@ class ApiStack(Stack):
                     Secret.from_secret_arn(self, id="DbSecret", secret_arn=self.db_secret_arn)
                 ),
                 "DJANGO_SECRET_KEY": self.django_secret_key,
+                "LAMBDA_AUTH_TOKEN": self.lambda_auth_token
             },
             cpu=512,
             memory_limit_mib=1024,
@@ -153,3 +164,7 @@ class ApiStack(Stack):
     @staticmethod
     def get_app_bucket_arn_output_export_name():
         return "schema-cms-appBucketArn"
+
+    @staticmethod
+    def get_lambda_auth_token_arn_output_export_name():
+        return "schema-cms-lambdaAuthTokenArn"

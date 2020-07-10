@@ -5,20 +5,20 @@ install:
 	pipenv install
 
 deploy-base-infra:
-	$(AWS_VAULT) cdk deploy -e *base;
+	pipenv run $(AWS_VAULT) cdk deploy -e *base;
 
 deploy-components-infra:
-	$(AWS_VAULT) cdk deploy -e *components;
+	pipenv run $(AWS_VAULT) cdk deploy -e *components;
 
 deploy-pipeline-infra:
-	$(AWS_VAULT) cdk deploy -e *cicd;
+	pipenv run $(AWS_VAULT) cdk deploy -e *cicd;
 
 deploy-api:
-	$(AWS_VAULT) cdk deploy -e *api;
+	pipenv run $(AWS_VAULT) cdk deploy -e *api;
 
 deploy-image-resize:
-	$(AWS_VAULT) cdk deploy -e *resize;
+	pipenv run $(AWS_VAULT) cdk deploy -e *resize;
 
 deploy-workers:
-	$(AWS_VAULT) cdk deploy -e *workers;
+	pipenv run $(AWS_VAULT) cdk deploy -e *workers;
 

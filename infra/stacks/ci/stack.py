@@ -11,7 +11,7 @@ from ..base.resources.ecr import BaseECR
 
 
 class CiStack(Stack):
-    def __init__(self, scope: App, id: str, props: EnvSettings, functions: List[Function]):
+    def __init__(self, scope: App, id: str, props: EnvSettings, functions: List[Function], ir_function: Function):
         super().__init__(scope, id)
 
         backend_repo = self.retrieve_backend_ecr_repository()
@@ -21,7 +21,7 @@ class CiStack(Stack):
         ecr_repos = {"nginx": nginx_repo, "app": backend_repo, "webapp": webapp_repo}
         entrypoint = CiEntrypoint(self, "Entrypoint", props)
 
-        CIPipeline(self, "PipelineConfig", props, entrypoint, ecr_repos, functions)
+        CIPipeline(self, "PipelineConfig", props, entrypoint, ecr_repos, functions, ir_function)
 
     def retrieve_backend_ecr_repository(self):
         return Repository.from_repository_name(

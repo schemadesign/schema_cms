@@ -16,7 +16,6 @@
       "lambdas_sizes": [512, 1280, 3008],
       "arns": {
         "sentry_dns": "arn:aws:secretsmanager:us-west-2:022528540894:secret:SENTRY_DNS-uk9pQw",
-        "lambda_auth_token": "arn:aws:secretsmanager:us-west-2:022528540894:secret:LAMBDA_AUTH_TOKEN-32yZOF",
         "gh_token": "arn:aws:secretsmanager:us-west-2:022528540894:secret:github-token-82UijJ"
       }
     },
@@ -30,7 +29,6 @@
       "lambdas_sizes": [512, 1280, 3008],
       "arns": {
         "sentry_dns": "arn:aws:secretsmanager:us-west-2:410575072407:secret:SENTRY_DNS-ltYVN1",
-        "lambda_auth_token": "arn:aws:secretsmanager:us-west-2:410575072407:secret:LAMBDA_AUTH_TOKEN-9eWnQg",
         "gh_token": "arn:aws:secretsmanager:us-west-2:410575072407:secret:github-token-uxGvlL"
       }
     }

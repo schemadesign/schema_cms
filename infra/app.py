@@ -27,10 +27,12 @@ api = ApiStack(
     vpc=base.resources.vpc,
     db=base.resources.db,
 )
-image_resize = image_resize = ImageResizeStack(app, "schema-cms-image-resize", props=ENV_SETTINGS)
+image_resize = ImageResizeStack(app, "schema-cms-image-resize", props=ENV_SETTINGS)
 workers = LambdaWorkerStack(
-    app, "schema-cms-lambda-workers", props=ENV_SETTINGS, queues=components.data_processing_queues,
+    app, "schema-cms-workers", props=ENV_SETTINGS, queues=components.data_processing_queues,
 )
-pipeline = CiStack(app, "schema-cms-cicd", props=ENV_SETTINGS, functions=workers.functions)
+pipeline = CiStack(
+    app, "schema-cms-cicd", props=ENV_SETTINGS, functions=workers.functions, ir_function=image_resize.function_code
+)
 
 app.synth()

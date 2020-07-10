@@ -102,5 +102,5 @@ class ApiCiConfig(Construct):
             action_name="execute-app-changes",
             stack_name="schema-cms-api",
             change_set_name="APIStagedChangeSet",
-            run_order=3,
+            run_order=4,
         )

@@ -1,13 +1,17 @@
-
 from aws_cdk.aws_codebuild import PipelineProject, BuildEnvironment, LinuxBuildImage, BuildSpec
 from aws_cdk.aws_codepipeline import IStage, Artifact
-from aws_cdk.aws_codepipeline_actions import CodeBuildAction
+from aws_cdk.aws_codepipeline_actions import (
+    CodeBuildAction,
+    CloudFormationCreateReplaceChangeSetAction,
+    CloudFormationExecuteChangeSetAction
+)
+from aws_cdk.aws_lambda import Code
 from aws_cdk.core import Construct
 
 
 class ImageResizeLambdaCiConfig(Construct):
     input_artifact: Artifact = None
-    image_resize_lambda_build_output: Artifact = Artifact()
+    output: Artifact = Artifact()
 
     def __init__(
         self,
@@ -37,6 +41,33 @@ class ImageResizeLambdaCiConfig(Construct):
             action_name=f"build-{name}",
             project=project,
             input=input_artifact,
-            outputs=[self.image_resize_lambda_build_output],
+            outputs=[self.output],
             run_order=1
+        )
+
+    def prepare_image_resize_lambda_changes(self, cdk_artifact: Artifact, function_code: Code):
+        return CloudFormationCreateReplaceChangeSetAction(
+            action_name="prepare-image-resize-lambda-changes",
+            stack_name="schema-cms-image-resize",
+            change_set_name="imageResizeLambdaStagedChangeSet",
+            admin_permissions=True,
+            template_path=cdk_artifact.at_path("infra/cdk.out/schema-cms-image-resize.template.json"),
+            run_order=2,
+            parameter_overrides={
+                **function_code.assign(
+                    bucket_name=self.output.s3_location.bucket_name,
+                    object_key=self.output.s3_location.object_key,
+                    object_version=self.output.s3_location.object_version,
+                )
+            },
+            extra_inputs=[self.output],
+        )
+
+    @staticmethod
+    def execute_image_resize_lambda_changes():
+        return CloudFormationExecuteChangeSetAction(
+                action_name="execute-image-resize-lambda_changes",
+                stack_name="schema-cms-image-resize",
+                change_set_name="imageResizeLambdaStagedChangeSet",
+                run_order=3,
         )

@@ -15,15 +15,15 @@ class ImageResizeStack(Stack):
         super().__init__(scope, id)
         self.domain = props.domains.api
 
-        (self.image_resize_lambda, self.function_code, self.api_gateway,) = self.create_lambda()
+        (self.function, self.function_code, self.api_gateway,) = self.create_lambda()
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
-        self.image_resize_lambda.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
-        self.image_resize_lambda.add_environment(
+        self.function.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
+        self.function.add_environment(
             key="REDIRECT_URL", value=self.image_bucket.bucket_website_url
         )
-        self.image_resize_lambda.add_environment(key="CORS_ORIGIN", value=f"https://{self.domain}")
-        self.image_resize_lambda.add_environment(key="ALLOWED_DIMENSIONS", value="150x150,1024x1024")
-        self.image_bucket.grant_read_write(self.image_resize_lambda.role)
+        self.function.add_environment(key="CORS_ORIGIN", value=f"https://{self.domain}")
+        self.function.add_environment(key="ALLOWED_DIMENSIONS", value="150x150,1024x1024")
+        self.image_bucket.grant_read_write(self.function.role)
 
         if self.image_bucket.bucket_arn:
             CfnOutput(
@@ -63,7 +63,7 @@ class ImageResizeStack(Stack):
         else:
             code = Code.from_cfn_parameters()
 
-        image_resize_lambda = Function(
+        function = Function(
             self,
             "image-resize-lambda",
             function_name="schema-cms-image-resize",
@@ -76,10 +76,10 @@ class ImageResizeStack(Stack):
         )
 
         api_gateway = LambdaRestApi(
-            self, "ImageResizeLambdaApi", rest_api_name="schema-cms-image-resize", handler=image_resize_lambda
+            self, "ImageResizeLambdaApi", rest_api_name="schema-cms-image-resize", handler=function
         )
 
-        return image_resize_lambda, code, api_gateway
+        return function, code, api_gateway
 
     @staticmethod
     def get_image_resize_bucket_arn_output_export_name():

@@ -83,7 +83,7 @@ class WorkersCiConfig(Construct):
             action_name="prepare-workers-changes",
             stack_name="schema-cms-lambda-workers",
             change_set_name="lambdaWorkerStagedChangeSet",
-            template_path=self.cdk_artifact.at_path("infra/cdk.out/schema-cms-lambda-workers.template.json"),
+            template_path=self.cdk_artifact.at_path("infra/cdk.out/schema-cms-workers.template.json"),
             parameter_overrides=params_overrides,
             extra_inputs=extra_inputs,
             **change_set_kwargs,

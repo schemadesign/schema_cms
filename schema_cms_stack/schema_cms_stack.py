@@ -270,8 +270,8 @@ class LambdaWorker(core.Stack):
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "IMAGE_SCRAPING_FETCH_TIMEOUT": "15",
-                "AWS_IMAGE_STORAGE_BUCKET_NAME": scope.image_resize_lambda.image_bucket.bucket_name,
-                "AWS_IMAGE_STATIC_URL": scope.image_resize_lambda.image_bucket.bucket_website_url,
+                "AWS_IMAGE_STORAGE_BUCKET_NAME": scope.function.image_bucket.bucket_name,
+                "AWS_IMAGE_STATIC_URL": scope.function.image_bucket.bucket_website_url,
                 "BACKEND_URL": BACKEND_URL.format(domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)),
                 "SENTRY_DNS": self.get_secret("sentry_dns_arn", name + "-secret").secret_value.to_string(),
                 LAMBDA_AUTH_TOKEN_ENV_NAME: scope.api.api_lambda_token,
@@ -282,7 +282,7 @@ class LambdaWorker(core.Stack):
         )
         lambda_fn.add_event_source(aws_lambda_event_sources.SqsEventSource(queue, batch_size=1))
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
-        scope.image_resize_lambda.image_bucket.grant_read_write(lambda_fn.role)
+        scope.function.image_bucket.grant_read_write(lambda_fn.role)
         return lambda_fn, lambda_code
 
     def get_secret(self, secret_arn, secret_suffix):

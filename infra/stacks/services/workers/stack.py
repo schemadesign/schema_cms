@@ -35,7 +35,9 @@ class LambdaWorkerStack(Stack):
 
         self.sentry_dns = Secret.from_secret_arn(self, id="sentry-dns", secret_arn=props.arns["sentry_dns"])
         self.lambda_auth_token = Secret.from_secret_arn(
-            self, id="lambda-auth-token", secret_arn=props.arns["lambda_auth_token"]
+            self,
+            id="lambda-auth-token",
+            secret_arn=Fn.import_value(ApiStack.get_lambda_auth_token_arn_output_export_name())
         )
 
         self.functions = [
