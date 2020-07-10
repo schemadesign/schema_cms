@@ -5,20 +5,20 @@ install:
 	pipenv install
 
 deploy-base-infra:
-	pipenv run $(AWS_VAULT) cdk deploy -e *base;
+	pipenv run $(AWS_VAULT) cdk deploy -e schema-cms-base;
 
 deploy-components-infra:
-	pipenv run $(AWS_VAULT) cdk deploy -e *components;
+	pipenv run $(AWS_VAULT) cdk deploy -e schema-cms-components;
 
 deploy-pipeline-infra:
-	pipenv run $(AWS_VAULT) cdk deploy -e *cicd;
+	pipenv run $(AWS_VAULT) cdk deploy -e schema-cms-cicd;
 
 deploy-api:
-	pipenv run $(AWS_VAULT) cdk deploy -e *api;
+	pipenv run $(AWS_VAULT) cdk deploy -e schema-cms-api;
 
 deploy-image-resize:
-	pipenv run $(AWS_VAULT) cdk deploy -e *resize;
+	pipenv run $(AWS_VAULT) cdk deploy -e schema-cms-image-resize;
 
 deploy-workers:
-	pipenv run $(AWS_VAULT) cdk deploy -e *workers;
+	pipenv run $(AWS_VAULT) cdk deploy -c is_app_only=true -e schema-cms-workers;
 

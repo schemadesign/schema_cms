@@ -58,7 +58,7 @@ class ImageResizeStack(Stack):
     def create_lambda(self):
         is_app_only = self.node.try_get_context("is_app_only")
 
-        if is_app_only:
+        if is_app_only == "true":
             code = Code.from_asset(path="../backend/functions/image_resize/.serverless/main.zip")
         else:
             code = Code.from_cfn_parameters()

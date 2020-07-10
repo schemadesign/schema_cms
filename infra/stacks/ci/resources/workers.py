@@ -81,7 +81,7 @@ class WorkersCiConfig(Construct):
 
         return CloudFormationCreateReplaceChangeSetAction(
             action_name="prepare-workers-changes",
-            stack_name="schema-cms-lambda-workers",
+            stack_name="schema-cms-workers",
             change_set_name="lambdaWorkerStagedChangeSet",
             template_path=self.cdk_artifact.at_path("infra/cdk.out/schema-cms-workers.template.json"),
             parameter_overrides=params_overrides,
@@ -92,8 +92,8 @@ class WorkersCiConfig(Construct):
     @staticmethod
     def execute_workers_changes():
         return CloudFormationExecuteChangeSetAction(
-            action_name="execute-lambda-workers-changes",
-            stack_name="schema-cms-lambda-workers",
+            action_name="execute-workers-changes",
+            stack_name="schema-cms-workers",
             change_set_name="lambdaWorkerStagedChangeSet",
             run_order=5,
         )
