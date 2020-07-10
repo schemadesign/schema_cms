@@ -19,7 +19,7 @@ phases:
       - echo Build started on `date`
       - echo Synchesize CDK stack...
       - cd infra
-      - pipenv run cdk synth -c app_image_tag=$VERSION
+      - pipenv run npm run cdk synth -c app_image_tag=$VERSION
 artifacts:
   files:
     - './infra/cdk.out/**/*'

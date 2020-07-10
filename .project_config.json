@@ -1,4 +1,5 @@
 {
+  "project_name": "schema-cms",
   "env_stage": "dev",
   "aws": {
     "profile": "schemacms-dev",

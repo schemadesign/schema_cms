@@ -35,13 +35,7 @@ def load_infra_envs(config_file_path):
     certificate = env_settings.get("certificate")
     lambdas_sizes = env_settings.get("lambdas_sizes")
     arns = env_settings.get("arns")
-    project_env_name = f"{config.get('project_name')}-{env_stage}"
 
     return EnvSettings(
-        project_env_name=project_env_name,
-        domains=domains,
-        certificate_arn=certificate,
-        lambdas_sizes=lambdas_sizes,
-        arns=arns,
-        **config,
+        domains=domains, certificate_arn=certificate, lambdas_sizes=lambdas_sizes, arns=arns, **config,
     )

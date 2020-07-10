@@ -16,7 +16,7 @@ class SQSComponent(Construct):
         super().__init__(scope, id)
 
         self.lambdas_sizes = props.lambdas_sizes
-        self.dead_letter_queue = self._create_job_processing_dead_letter_queue(props.project_name)
+        self.dead_letter_queue = self._create_job_processing_dead_letter_queue("schema-cms")
         self.queues_list = [
             self._create_job_processing_queue(props.project_name, size) for size in self.lambdas_sizes
         ]
