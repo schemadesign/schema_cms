@@ -17,20 +17,20 @@ class CiEntrypoint(Construct):
     code_build_project: Project = None
 
     @staticmethod
-    def get_artifacts_name(env_settings: EnvSettings):
-        return f"{env_settings.project_name}-entrypoint"
+    def get_artifacts_name(envs: EnvSettings):
+        return f"{envs.project_name}-entrypoint"
 
     @staticmethod
-    def get_artifacts_identifier(env_settings: EnvSettings):
-        return f"{env_settings.project_name}-entrypoint"
+    def get_artifacts_identifier(envs: EnvSettings):
+        return f"{envs.project_name}-entrypoint"
 
-    def __init__(self, scope: Construct, id: str, props: EnvSettings):
+    def __init__(self, scope: Construct, id: str, envs: EnvSettings):
         super().__init__(scope, id)
 
         self.artifacts_bucket = Bucket(self, "ArtifactsBucket", versioned=True)
-        self.code_build_project = self.create_build_project(props)
+        self.code_build_project = self.create_build_project(envs)
 
-    def create_build_project(self, props: EnvSettings):
+    def create_build_project(self, envs: EnvSettings):
         project = Project(
             self,
             "BuildEntrypoint",
@@ -40,8 +40,8 @@ class CiEntrypoint(Construct):
             build_spec=self.create_build_spec(),
             source=Source.git_hub(owner="schemadesign", repo="schema_cms",),
             artifacts=Artifacts.s3(
-                identifier=self.get_artifacts_identifier(props),
-                name=self.get_artifacts_name(props),
+                identifier=self.get_artifacts_identifier(envs),
+                name=self.get_artifacts_name(envs),
                 bucket=self.artifacts_bucket,
                 include_build_id=False,
                 path="",

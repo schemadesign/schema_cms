@@ -1,9 +1,10 @@
 from urllib import parse
 
-from aws_cdk.core import Stack, App, Duration, CfnOutput
 from aws_cdk.aws_apigateway import LambdaRestApi
-from aws_cdk.aws_s3 import Bucket, RedirectProtocol, RoutingRule, RoutingRuleCondition, ReplaceKey
 from aws_cdk.aws_lambda import Function, Runtime, Code, Tracing
+from aws_cdk.aws_s3 import Bucket, RedirectProtocol, RoutingRule, RoutingRuleCondition, ReplaceKey
+from aws_cdk.aws_ssm import StringParameter
+from aws_cdk.core import Stack, App, Duration, CfnOutput
 
 from config.base import EnvSettings
 
@@ -11,11 +12,14 @@ from config.base import EnvSettings
 class ImageResizeStack(Stack):
     domain: str = None
 
-    def __init__(self, scope: App, id: str, props: EnvSettings):
+    def __init__(self, scope: App, id: str, envs: EnvSettings):
         super().__init__(scope, id)
-        self.domain = props.domains.app
 
-        (self.function, self.function_code, self.api_gateway,) = self.create_lambda()
+        self.domain = StringParameter.from_string_parameter_name(
+            self, "DomainNameParameter", string_parameter_name="/schema-cms-app/DOMAIN_NAME"
+        ).string_value
+
+        (self.function, self.function_code, self.api_gateway,) = self.create_lambda(envs)
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
         self.function.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
         self.function.add_environment(key="REDIRECT_URL", value=self.image_bucket.bucket_website_url)
@@ -27,7 +31,7 @@ class ImageResizeStack(Stack):
             CfnOutput(
                 self,
                 id="AppBucketOutput",
-                export_name=self.get_image_resize_bucket_arn_output_export_name(),
+                export_name=self.get_image_resize_bucket_arn_output_export_name(envs),
                 value=self.image_bucket.bucket_arn,
             )
 
@@ -53,7 +57,7 @@ class ImageResizeStack(Stack):
             ],
         )
 
-    def create_lambda(self):
+    def create_lambda(self, envs: EnvSettings):
         is_app_only = self.node.try_get_context("is_app_only")
 
         if is_app_only == "true":
@@ -64,7 +68,7 @@ class ImageResizeStack(Stack):
         function = Function(
             self,
             "image-resize-lambda",
-            function_name="schema-cms-image-resize",
+            function_name=f"{envs.project_name}-image-resize",
             code=code,
             handler="index.handler",
             runtime=Runtime.NODEJS_12_X,
@@ -74,11 +78,11 @@ class ImageResizeStack(Stack):
         )
 
         api_gateway = LambdaRestApi(
-            self, "ImageResizeLambdaApi", rest_api_name="schema-cms-image-resize", handler=function
+            self, "ImageResizeLambdaApi", rest_api_name=f"{envs.project_name}-image-resize", handler=function
         )
 
         return function, code, api_gateway
 
     @staticmethod
-    def get_image_resize_bucket_arn_output_export_name():
-        return "schema-cms-imageResizeBucketArn"
+    def get_image_resize_bucket_arn_output_export_name(envs: EnvSettings):
+        return f"{envs.project_name}-imageResizeBucketArn"

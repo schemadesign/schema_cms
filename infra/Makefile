@@ -6,20 +6,20 @@ install:
 	pipenv install
 
 deploy-base-infra:
-	pipenv run $(AWS_VAULT) npm run cdk deploy -e schema-cms-base;
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -e schema-cms-base;
 
 deploy-pipeline-infra:
-	pipenv run $(AWS_VAULT) npm run cdk deploy -c installation_mode=full -e schema-cms-cicd;
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c installation_mode=full -e schema-cms-cicd;
 
 deploy-components:
-	pipenv run $(AWS_VAULT) npm run cdk deploy -e schema-cms-components;
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -e schema-cms-components;
 
 deploy-api:
-	pipenv run $(AWS_VAULT) npm run cdk deploy -e schema-cms-api;
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -e schema-cms-api;
 
 deploy-image-resize:
-	pipenv run $(AWS_VAULT) npm run cdk deploy -c is_app_only=true -e schema-cms-image-resize;
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c is_app_only=true -e schema-cms-image-resize;
 
 deploy-workers:
-	pipenv run $(AWS_VAULT) npm run cdk deploy -c is_app_only=true -e schema-cms-workers;
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c is_app_only=true -e schema-cms-workers;
 

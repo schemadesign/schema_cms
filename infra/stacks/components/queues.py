@@ -12,13 +12,13 @@ class SQSComponent(Construct):
     lambdas_sizes: str = None
     queues_list: List[Queue] = None
 
-    def __init__(self, scope: Construct, id: str, props: EnvSettings):
+    def __init__(self, scope: Construct, id: str, envs: EnvSettings):
         super().__init__(scope, id)
 
-        self.lambdas_sizes = props.lambdas_sizes
-        self.dead_letter_queue = self._create_job_processing_dead_letter_queue("schema-cms")
+        self.lambdas_sizes = envs.lambdas_sizes
+        self.dead_letter_queue = self._create_job_processing_dead_letter_queue(envs.project_name)
         self.queues_list = [
-            self._create_job_processing_queue(props.project_name, size) for size in self.lambdas_sizes
+            self._create_job_processing_queue(envs.project_name, size) for size in self.lambdas_sizes
         ]
 
     def _create_job_processing_queue(self, project_name: str, lambda_size: int):

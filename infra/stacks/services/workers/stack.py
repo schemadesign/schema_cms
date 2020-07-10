@@ -1,16 +1,17 @@
 from typing import List
 
-from aws_cdk.aws_s3 import Bucket
-from aws_cdk.core import App, Stack, Duration, Fn
 from aws_cdk.aws_lambda import Code, Function, Runtime, Tracing
 from aws_cdk.aws_lambda_event_sources import SqsEventSource
+from aws_cdk.aws_s3 import Bucket
 from aws_cdk.aws_secretsmanager import Secret
 from aws_cdk.aws_sqs import Queue
+from aws_cdk.aws_ssm import StringParameter
+from aws_cdk.core import App, Stack, Duration, Fn
 
 from config.base import EnvSettings
+from stacks.components.stack import ComponentsStack
 from stacks.services.api.stack import ApiStack
 from stacks.services.image_resize.stack import ImageResizeStack
-from stacks.components.stack import ComponentsStack
 
 
 class LambdaWorkerStack(Stack):
@@ -22,33 +23,38 @@ class LambdaWorkerStack(Stack):
     functions: List[Function] = None
     sentry_dns: Secret = None
 
-    def __init__(self, scope: App, id: str, props: EnvSettings, components: ComponentsStack):
+    def __init__(self, scope: App, id: str, envs: EnvSettings, components: ComponentsStack):
         super().__init__(scope, id)
 
+        self.backend_domain_name = StringParameter.from_string_parameter_name(
+            self, "DomainNameParameter", string_parameter_name="/schema-cms-app/DOMAIN_NAME"
+        ).string_value
+        self.backend_url = f"https://{self.backend_domain_name}/api/v1/"
+
         self.job_processing_queues = components.data_processing_queues
-        self.backend_url = f"https://{props.domains.app}/api/v1/"
+
         self.app_bucket = Bucket.from_bucket_arn(
-            self, id="App", bucket_arn=Fn.import_value(ApiStack.get_app_bucket_arn_output_export_name())
+            self, id="App", bucket_arn=Fn.import_value(ApiStack.get_app_bucket_arn_output_export_name(envs))
         )
         self.resize_lambda_image_bucket = Bucket.from_bucket_arn(
             self,
             id="Images",
-            bucket_arn=Fn.import_value(ImageResizeStack.get_image_resize_bucket_arn_output_export_name()),
+            bucket_arn=Fn.import_value(ImageResizeStack.get_image_resize_bucket_arn_output_export_name(envs)),
         )
 
-        self.sentry_dns = Secret.from_secret_arn(self, id="sentry-dns", secret_arn=props.arns["sentry_dns"])
+        self.sentry_dns = Secret.from_secret_arn(self, id="sentry-dns", secret_arn=envs.sentry_dns_arn)
         self.lambda_auth_token = Secret.from_secret_arn(
             self,
             id="lambda-auth-token",
-            secret_arn=Fn.import_value(ApiStack.get_lambda_auth_token_arn_output_export_name()),
+            secret_arn=Fn.import_value(ApiStack.get_lambda_auth_token_arn_output_export_name(envs)),
         )
 
         self.functions = [
-            self._create_lambda_fn(memory_size=memory_size, queue=queue)
-            for memory_size, queue in zip(props.lambdas_sizes, self.job_processing_queues)
+            self._create_lambda_fn(envs, memory_size, queue)
+            for memory_size, queue in zip(envs.lambdas_sizes, self.job_processing_queues)
         ]
 
-    def _create_lambda_fn(self, memory_size: int, queue: Queue):
+    def _create_lambda_fn(self, envs: EnvSettings, memory_size: int, queue: Queue):
         is_app_only = self.node.try_get_context("is_app_only")
 
         if is_app_only == "true":
@@ -59,7 +65,7 @@ class LambdaWorkerStack(Stack):
         function = Function(
             self,
             f"data-processing-worker-{memory_size}",
-            function_name=f"schema-cms-data-processing-{memory_size}",
+            function_name=f"{envs.project_name}-data-processing-{memory_size}",
             code=code,
             runtime=Runtime.PYTHON_3_8,
             handler="handler.main",

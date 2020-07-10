@@ -15,12 +15,12 @@ class BaseResources(Construct):
     cluster: Cluster = None
     db: DatabaseInstance = None
 
-    def __init__(self, scope: Construct, id: str, props: EnvSettings):
+    def __init__(self, scope: Construct, id: str, envs: EnvSettings):
         super().__init__(scope, id)
 
-        self.ecr = BaseECR(self, "ECR")
+        self.ecr = BaseECR(self, "ECR", envs)
 
-        self.key = BaseKMS(self, "KMS")
+        self.key = BaseKMS(self, "KMS", envs)
 
         self.vpc = Vpc(self, "Vpc", nat_gateways=1)
 
@@ -30,7 +30,7 @@ class BaseResources(Construct):
             self,
             "DataBase",
             master_username="root",
-            database_name=props.data_base_name,
+            database_name=envs.data_base_name,
             engine=DatabaseInstanceEngine.POSTGRES,
             storage_encrypted=True,
             allocated_storage=50,
@@ -42,10 +42,10 @@ class BaseResources(Construct):
             CfnOutput(
                 self,
                 id="DbSecretOutput",
-                export_name=self.get_database_secret_arn_output_export_name(),
+                export_name=self.get_database_secret_arn_output_export_name(envs),
                 value=self.db.secret.secret_arn,
             )
 
     @staticmethod
-    def get_database_secret_arn_output_export_name():
-        return "schema-cms-databaseSecretArn"
+    def get_database_secret_arn_output_export_name(envs: EnvSettings):
+        return f"{envs.project_name}-databaseSecretArn"

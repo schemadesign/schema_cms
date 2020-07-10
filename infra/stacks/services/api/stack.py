@@ -15,6 +15,7 @@ from aws_cdk.aws_s3 import Bucket
 from aws_cdk.aws_secretsmanager import Secret
 from aws_cdk.aws_sqs import Queue
 from aws_cdk.core import App, Stack, Fn, CfnOutput
+from aws_cdk.aws_ssm import StringParameter
 
 from config.base import EnvSettings
 from stacks.base.resources.ecr import BaseECR
@@ -35,13 +36,13 @@ class ApiStack(Stack):
         self,
         scope: App,
         id: str,
-        props: EnvSettings,
+        envs: EnvSettings,
         components: ComponentsStack,
         base_resources: BaseResources,
     ):
         super().__init__(scope, id)
 
-        self.db_secret_arn = Fn.import_value(BaseResources.get_database_secret_arn_output_export_name())
+        self.db_secret_arn = Fn.import_value(BaseResources.get_database_secret_arn_output_export_name(envs))
 
         self.job_processing_queues = components.data_processing_queues
         self.vpc = base_resources.vpc
@@ -53,13 +54,19 @@ class ApiStack(Stack):
             CfnOutput(
                 self,
                 id="AppBucketOutput",
-                export_name=self.get_app_bucket_arn_output_export_name(),
+                export_name=self.get_app_bucket_arn_output_export_name(envs),
                 value=self.app_bucket.bucket_arn,
             )
 
         self.pages_bucket = Bucket(self, "Pages", public_read_access=True)
 
-        self.domain_name = props.domains.app
+        self.domain_name = StringParameter.from_string_parameter_name(
+            self, "DomainNameParameter", string_parameter_name="/schema-cms-app/DOMAIN_NAME"
+        ).string_value
+
+        self.certificate_arn = StringParameter.from_string_parameter_name(
+            self, "CertificateArnParameter", string_parameter_name="/schema-cms-app/CERTIFICATE_ARN"
+        ).string_value
 
         django_secret = Secret(self, "DjangoSecretKey", secret_name="SCHEMA_CMS_DJANGO_SECRET_KEY")
         lambda_auth_token_secret = Secret(self, "LambdaAuthToken", secret_name="SCHEMA_CMS_LAMBDA_AUTH_TOKEN")
@@ -68,7 +75,7 @@ class ApiStack(Stack):
             CfnOutput(
                 self,
                 id="lambdaAuthTokenArnOutput",
-                export_name=self.get_lambda_auth_token_arn_output_export_name(),
+                export_name=self.get_lambda_auth_token_arn_output_export_name(envs),
                 value=lambda_auth_token_secret.secret_arn,
             )
 
@@ -80,13 +87,13 @@ class ApiStack(Stack):
 
         api_image = ContainerImage.from_ecr_repository(
             repository=Repository.from_repository_name(
-                self, id="BackendRepository", repository_name=BaseECR.get_backend_repository_name()
+                self, id="BackendRepository", repository_name=BaseECR.get_backend_repository_name(envs)
             ),
             tag=tag,
         )
         nginx_image = ContainerImage.from_ecr_repository(
             repository=Repository.from_repository_name(
-                self, id="NginxRepository", repository_name=BaseECR.get_nginx_repository_name()
+                self, id="NginxRepository", repository_name=BaseECR.get_nginx_repository_name(envs)
             ),
             tag=tag,
         )
@@ -94,7 +101,7 @@ class ApiStack(Stack):
         self.api = ApplicationLoadBalancedFargateService(
             self,
             "ApiService",
-            service_name="schema-cms-api-service",
+            service_name=f"{envs.project_name}-api-service",
             cluster=Cluster.from_cluster_attributes(
                 self,
                 id="WorkersCluster",
@@ -108,7 +115,7 @@ class ApiStack(Stack):
             desired_count=1,
             cpu=512,
             memory_limit_mib=1024,
-            certificate=Certificate.from_certificate_arn(self, "Cert", certificate_arn=props.certificate_arn),
+            certificate=Certificate.from_certificate_arn(self, "Cert", certificate_arn=self.certificate_arn),
             domain_name=self.domain_name,
             domain_zone=PrivateHostedZone(self, "zone", vpc=self.vpc, zone_name=self.domain_name,),
         )
@@ -119,17 +126,14 @@ class ApiStack(Stack):
             command=["sh", "-c", "/bin/chamber exec $CHAMBER_SERVICE_NAME -- ./scripts/run.sh"],
             logging=AwsLogDriver(stream_prefix="backend-container"),
             environment={
-                "POSTGRES_DB": props.data_base_name,
+                "POSTGRES_DB": envs.data_base_name,
                 "AWS_STORAGE_BUCKET_NAME": self.app_bucket.bucket_name,
                 "AWS_STORAGE_PAGES_BUCKET_NAME": self.pages_bucket.bucket_name,
                 "SQS_WORKER_QUEUE_URL": self.job_processing_queues[0].queue_url,
                 "SQS_WORKER_EXT_QUEUE_URL": self.job_processing_queues[1].queue_url,
                 "SQS_WORKER_MAX_QUEUE_URL": self.job_processing_queues[2].queue_url,
-                "DJANGO_HOST": f"https://{props.domains.app}",
-                "DJANGO_WEBAPP_HOST": f"https://{props.domains.webapp}",
-                "PUBLIC_API_URL": f"https://{props.domains.public_api}/",
                 "CHAMBER_SERVICE_NAME": "schema-cms-app",
-                "CHAMBER_KMS_KEY_ALIAS": "schema-cms",
+                "CHAMBER_KMS_KEY_ALIAS": envs.project_name,
             },
             secrets={
                 "DB_CONNECTION": EcsSecret.from_secrets_manager(
@@ -158,7 +162,7 @@ class ApiStack(Stack):
         self.api.task_definition.add_to_task_role_policy(
             PolicyStatement(
                 actions=["kms:Get*", "kms:Describe*", "kms:List*", "kms:Decrypt"],
-                resources=[Fn.import_value(BaseKMS.get_kms_arn_output_export_name())],
+                resources=[Fn.import_value(BaseKMS.get_kms_arn_output_export_name(envs))],
             )
         )
 
@@ -177,9 +181,9 @@ class ApiStack(Stack):
         secret.grant_read(self.api.service.task_definition.task_role)
 
     @staticmethod
-    def get_app_bucket_arn_output_export_name():
-        return "schema-cms-appBucketArn"
+    def get_app_bucket_arn_output_export_name(envs: EnvSettings):
+        return f"{envs.project_name}-appBucketArn"
 
     @staticmethod
-    def get_lambda_auth_token_arn_output_export_name():
-        return "schema-cms-lambdaAuthTokenArn"
+    def get_lambda_auth_token_arn_output_export_name(envs: EnvSettings):
+        return f"{envs.project_name}-lambdaAuthTokenArn"

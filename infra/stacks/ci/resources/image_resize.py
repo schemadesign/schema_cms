@@ -3,10 +3,12 @@ from aws_cdk.aws_codepipeline import IStage, Artifact
 from aws_cdk.aws_codepipeline_actions import (
     CodeBuildAction,
     CloudFormationCreateReplaceChangeSetAction,
-    CloudFormationExecuteChangeSetAction
+    CloudFormationExecuteChangeSetAction,
 )
 from aws_cdk.aws_lambda import Code
 from aws_cdk.core import Construct
+
+from config.base import EnvSettings
 
 
 class ImageResizeLambdaCiConfig(Construct):
@@ -14,22 +16,18 @@ class ImageResizeLambdaCiConfig(Construct):
     output: Artifact = Artifact()
 
     def __init__(
-        self,
-        scope: Construct,
-        id: str,
-        build_stage: IStage,
-        input_artifact: Artifact,
+        self, scope: Construct, id: str, envs: EnvSettings, build_stage: IStage, input_artifact: Artifact,
     ):
         super().__init__(scope, id)
-        build_project = self.create_build_project()
+        build_project = self.create_build_project(envs)
 
         build_stage.add_action(self.crate_build_action("image-resize-lambda", build_project, input_artifact))
 
-    def create_build_project(self):
+    def create_build_project(self, envs: EnvSettings):
         project = PipelineProject(
             self,
-            f"ImageResizeLambdaBuild",
-            project_name=f"schema-cms-build-image-resize-lambda",
+            "ImageResizeLambdaBuild",
+            project_name=f"{envs.project_name}-build-image-resize-lambda",
             environment=BuildEnvironment(build_image=LinuxBuildImage.STANDARD_3_0),
             build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/image_resize.yaml"),
         )
@@ -42,13 +40,15 @@ class ImageResizeLambdaCiConfig(Construct):
             project=project,
             input=input_artifact,
             outputs=[self.output],
-            run_order=1
+            run_order=1,
         )
 
-    def prepare_image_resize_lambda_changes(self, cdk_artifact: Artifact, function_code: Code):
+    def prepare_image_resize_lambda_changes(
+        self, envs: EnvSettings, cdk_artifact: Artifact, function_code: Code
+    ):
         return CloudFormationCreateReplaceChangeSetAction(
             action_name="prepare-image-resize-lambda-changes",
-            stack_name="schema-cms-image-resize",
+            stack_name=f"{envs.project_name}-image-resize",
             change_set_name="imageResizeLambdaStagedChangeSet",
             admin_permissions=True,
             template_path=cdk_artifact.at_path("infra/cdk.out/schema-cms-image-resize.template.json"),
@@ -64,10 +64,10 @@ class ImageResizeLambdaCiConfig(Construct):
         )
 
     @staticmethod
-    def execute_image_resize_lambda_changes():
+    def execute_image_resize_lambda_changes(envs: EnvSettings):
         return CloudFormationExecuteChangeSetAction(
-                action_name="execute-image-resize-lambda_changes",
-                stack_name="schema-cms-image-resize",
-                change_set_name="imageResizeLambdaStagedChangeSet",
-                run_order=3,
+            action_name="execute-image-resize-lambda_changes",
+            stack_name=f"{envs.project_name}-image-resize",
+            change_set_name="imageResizeLambdaStagedChangeSet",
+            run_order=3,
         )

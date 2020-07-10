@@ -19,27 +19,27 @@ FULL_INSTALLATION_MODE = "full"
 class App(App):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
-        self.base = BaseResourcesStack(app, "schema-cms-base", props=ENV_SETTINGS)
-        self.components = ComponentsStack(app, "schema-cms-components", props=ENV_SETTINGS)
+        self.base = BaseResourcesStack(self, "schema-cms-base", envs=ENV_SETTINGS)
+        self.components = ComponentsStack(self, "schema-cms-components", envs=ENV_SETTINGS)
         self.api = ApiStack(
-            app,
+            self,
             "schema-cms-api",
-            props=ENV_SETTINGS,
+            envs=ENV_SETTINGS,
             components=self.components,
             base_resources=self.base.resources,
         )
-        self.image_resize = ImageResizeStack(app, "schema-cms-image-resize", props=ENV_SETTINGS)
+        self.image_resize = ImageResizeStack(self, "schema-cms-image-resize", envs=ENV_SETTINGS)
         self.workers = LambdaWorkerStack(
-            app, "schema-cms-workers", props=ENV_SETTINGS, components=self.component
+            self, "schema-cms-workers", envs=ENV_SETTINGS, components=self.components
         )
 
         installation_mode = self.node.try_get_context("installation_mode")
 
         if installation_mode == FULL_INSTALLATION_MODE:
             self.pipeline = CiStack(
-                app,
+                self,
                 "schema-cms-cicd",
-                props=ENV_SETTINGS,
+                envs=ENV_SETTINGS,
                 functions=self.workers.functions,
                 ir_function=self.image_resize.function_code,
             )

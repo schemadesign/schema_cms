@@ -8,14 +8,7 @@ define GetFromCfg
 $(shell node -p "require('$(CONFIG_FILE)').$(1)")
 endef
 
-export ENV_STAGE ?= $(call GetFromCfg,env_stage)
-
 export AWS_DEFAULT_REGION ?= $(call GetFromCfg,aws.region)
-
-export CERTIFICATE_ARN := $(call GetFromCfg,env_config.$(ENV_STAGE).certificate)
-
-export ADMIN_PANEL_DOMAIN := $(call GetFromCfg,env_config.$(ENV_STAGE).domains.admin_panel)
-export API_DOMAIN := $(call GetFromCfg,env_config.$(ENV_STAGE).domains.api)
 
 ifeq ($(CI),true)
 	AWS_VAULT =

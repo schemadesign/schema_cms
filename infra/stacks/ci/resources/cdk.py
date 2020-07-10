@@ -11,24 +11,23 @@ from aws_cdk.aws_codepipeline import IStage, Artifact
 from aws_cdk.aws_codepipeline_actions import CodeBuildAction
 from aws_cdk.core import Construct
 
+from config.base import EnvSettings
+
 
 class CDKConfig(Construct):
     build_action: CodeBuildAction = None
     cdk_artifact: Artifact = Artifact()
 
     def __init__(
-            self, scope: Construct, id: str, build_stage: IStage, input_artifact: Artifacts,
+        self, scope: Construct, id: str, envs: EnvSettings, build_stage: IStage, input_artifact: Artifacts,
     ):
         super().__init__(scope, id)
 
         project = PipelineProject(
             self,
             "CDKStackBuild",
-            project_name="schema-cms-build-stack",
-            environment=BuildEnvironment(
-                build_image=LinuxBuildImage.STANDARD_4_0,
-                privileged=True,
-            ),
+            project_name=f"{envs.project_name}-build-stack",
+            environment=BuildEnvironment(build_image=LinuxBuildImage.STANDARD_4_0, privileged=True,),
             build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/cdk.yaml"),
             cache=Cache.local(LocalCacheMode.CUSTOM),
         )
@@ -43,5 +42,5 @@ class CDKConfig(Construct):
             input=input_artifact,
             outputs=[self.cdk_artifact],
             extra_inputs=[],
-            run_order=3
+            run_order=3,
         )

@@ -10,7 +10,6 @@ phases:
       - pip install pipenv
       - echo install AWS CDK...
       - make install-infra-cdk
-      - cdk --version
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
@@ -19,7 +18,7 @@ phases:
       - echo Build started on `date`
       - echo Synchesize CDK stack...
       - cd infra
-      - pipenv run npm run cdk synth -c app_image_tag=$VERSION
+      - pipenv run node_modules/.bin/cdk synth -c app_image_tag=$VERSION
 artifacts:
   files:
     - './infra/cdk.out/**/*'

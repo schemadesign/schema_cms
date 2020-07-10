@@ -5,10 +5,12 @@ from aws_cdk.aws_codepipeline import IStage, Artifact
 from aws_cdk.aws_codepipeline_actions import (
     CodeBuildAction,
     CloudFormationCreateReplaceChangeSetAction,
-    CloudFormationExecuteChangeSetAction
+    CloudFormationExecuteChangeSetAction,
 )
 from aws_cdk.aws_lambda import Function
 from aws_cdk.core import Construct
+
+from config.base import EnvSettings
 
 
 class WorkersCiConfig(Construct):
@@ -20,6 +22,7 @@ class WorkersCiConfig(Construct):
         self,
         scope: Construct,
         id: str,
+        envs: EnvSettings,
         build_stage: IStage,
         input_artifact: Artifact,
         cdk_artifact: Artifact,
@@ -29,17 +32,15 @@ class WorkersCiConfig(Construct):
 
         self.input_artifact = input_artifact
         self.cdk_artifact = cdk_artifact
-        build_projects = self.create_build_projects(functions)
+        build_projects = self.create_build_projects(envs, functions)
 
-        for project, function_name, code , function in build_projects:
+        for project, function_name, code, function in build_projects:
             action, output = self.crate_build_action(function_name, project)
             build_stage.add_action(action)
 
-            self.actions_with_outputs.append(
-                (action, output, code, function)
-            )
+            self.actions_with_outputs.append((action, output, code, function))
 
-    def create_build_projects(self, functions: List[Function]):
+    def create_build_projects(self, envs: EnvSettings, functions: List[Function]):
         projects = []
 
         for (function, code) in functions:
@@ -47,7 +48,7 @@ class WorkersCiConfig(Construct):
             project = PipelineProject(
                 self,
                 f"WorkerBuild-{function_name}",
-                project_name=f"schema-cms-build-{function_name}",
+                project_name=f"{envs.project_name}-build-{function_name}",
                 environment=BuildEnvironment(build_image=LinuxBuildImage.STANDARD_3_0),
                 build_spec=BuildSpec.from_source_filename("./infra/stacks/ci/buildspecs/workers.yaml"),
             )
@@ -60,11 +61,16 @@ class WorkersCiConfig(Construct):
         output = Artifact()
 
         action = CodeBuildAction(
-            action_name=f"build-{name}", project=project, input=self.input_artifact, outputs=[output], run_order=1)
+            action_name=f"build-{name}",
+            project=project,
+            input=self.input_artifact,
+            outputs=[output],
+            run_order=1,
+        )
 
         return action, output
 
-    def prepare_workers_changes(self, **change_set_kwargs):
+    def prepare_workers_changes(self, envs: EnvSettings, **change_set_kwargs):
         params_overrides = {}
         extra_inputs = []
 
@@ -74,14 +80,14 @@ class WorkersCiConfig(Construct):
                 **code.assign(
                     bucket_name=output.s3_location.bucket_name,
                     object_version=output.s3_location.object_version,
-                    object_key=output.s3_location.object_key
+                    object_key=output.s3_location.object_key,
                 )
             )
             extra_inputs.append(output)
 
         return CloudFormationCreateReplaceChangeSetAction(
             action_name="prepare-workers-changes",
-            stack_name="schema-cms-workers",
+            stack_name=f"{envs.project_name}-workers",
             change_set_name="lambdaWorkerStagedChangeSet",
             template_path=self.cdk_artifact.at_path("infra/cdk.out/schema-cms-workers.template.json"),
             parameter_overrides=params_overrides,
@@ -90,10 +96,10 @@ class WorkersCiConfig(Construct):
         )
 
     @staticmethod
-    def execute_workers_changes():
+    def execute_workers_changes(envs: EnvSettings):
         return CloudFormationExecuteChangeSetAction(
             action_name="execute-workers-changes",
-            stack_name="schema-cms-workers",
+            stack_name=f"{envs.project_name}-workers",
             change_set_name="lambdaWorkerStagedChangeSet",
             run_order=5,
         )

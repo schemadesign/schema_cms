@@ -2,25 +2,12 @@ import json
 from dataclasses import dataclass
 
 
-DEFAULT_REGION = "us-west-2"
-
-
-@dataclass
-class DomainsEnvs:
-    app: str
-    public_api: str
-    webapp: str
-
-
 @dataclass
 class EnvSettings:
     project_name: str
-    env_stage: str
-    project_env_name: str
-    certificate_arn: str
-    domains: DomainsEnvs
     lambdas_sizes: list
-    arns: list
+    sentry_dns_arn: str
+    gh_token_arn: str
     data_base_name: str = "schemacms"
 
 
@@ -29,13 +16,4 @@ def load_infra_envs(config_file_path):
         config = json.load(config_file)
         config.pop("aws")
 
-    env_stage = config.get("env_stage")
-    env_settings = config.pop("env_config").get(env_stage)
-    domains = DomainsEnvs(**env_settings.get("domains"))
-    certificate = env_settings.get("certificate")
-    lambdas_sizes = env_settings.get("lambdas_sizes")
-    arns = env_settings.get("arns")
-
-    return EnvSettings(
-        domains=domains, certificate_arn=certificate, lambdas_sizes=lambdas_sizes, arns=arns, **config,
-    )
+    return EnvSettings(**config)
