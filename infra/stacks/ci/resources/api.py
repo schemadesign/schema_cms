@@ -13,7 +13,7 @@ from aws_cdk.aws_codepipeline import IStage, Artifact
 from aws_cdk.aws_codepipeline_actions import (
     CodeBuildAction,
     CloudFormationCreateReplaceChangeSetAction,
-    CloudFormationExecuteChangeSetAction
+    CloudFormationExecuteChangeSetAction,
 )
 from aws_cdk.aws_ecr import Repository
 from aws_cdk.core import Construct
@@ -25,7 +25,12 @@ class ApiCiConfig(Construct):
     input_artifact: Artifact = None
 
     def __init__(
-            self, scope: Construct, id: str, build_stage: IStage, repos: List[Repository], input_artifact: Artifact
+        self,
+        scope: Construct,
+        id: str,
+        build_stage: IStage,
+        repos: List[Repository],
+        input_artifact: Artifact,
     ):
         super().__init__(scope, id)
 
@@ -41,7 +46,7 @@ class ApiCiConfig(Construct):
         project = PipelineProject(
             self,
             "BackendBuild",
-            project_name=f"schema-cms-build-backend",
+            project_name="schema-cms-build-backend",
             build_spec=self.backend_spec,
             environment=BuildEnvironment(
                 environment_variables={
@@ -62,7 +67,7 @@ class ApiCiConfig(Construct):
         project = PipelineProject(
             self,
             "FrontendBuildProject",
-            project_name=f"schema-cms-build-frontend",
+            project_name="schema-cms-build-frontend",
             environment=BuildEnvironment(
                 environment_variables={
                     "NGINX_REPOSITORY_URI": BuildEnvironmentVariable(value=repos["nginx"].repository_uri),
@@ -83,7 +88,9 @@ class ApiCiConfig(Construct):
         return project
 
     def create_build_action(self, name: str, project: PipelineProject, order: int):
-        return CodeBuildAction(action_name=f"build-{name}", project=project, input=self.input_artifact, run_order=order)
+        return CodeBuildAction(
+            action_name=f"build-{name}", project=project, input=self.input_artifact, run_order=order
+        )
 
     @staticmethod
     def prepare_api_changes(cdk_artifact: Artifact):
