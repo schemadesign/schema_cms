@@ -13,14 +13,12 @@ class ImageResizeStack(Stack):
 
     def __init__(self, scope: App, id: str, props: EnvSettings):
         super().__init__(scope, id)
-        self.domain = props.domains.api
+        self.domain = props.domains.app
 
         (self.function, self.function_code, self.api_gateway,) = self.create_lambda()
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
         self.function.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
-        self.function.add_environment(
-            key="REDIRECT_URL", value=self.image_bucket.bucket_website_url
-        )
+        self.function.add_environment(key="REDIRECT_URL", value=self.image_bucket.bucket_website_url)
         self.function.add_environment(key="CORS_ORIGIN", value=f"https://{self.domain}")
         self.function.add_environment(key="ALLOWED_DIMENSIONS", value="150x150,1024x1024")
         self.image_bucket.grant_read_write(self.function.role)

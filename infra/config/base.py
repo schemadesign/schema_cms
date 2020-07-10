@@ -2,12 +2,12 @@ import json
 from dataclasses import dataclass
 
 
-DEFAULT_REGION = "eu-west-1"
+DEFAULT_REGION = "us-west-2"
 
 
 @dataclass
 class DomainsEnvs:
-    api: str
+    app: str
     public_api: str
     webapp: str
 

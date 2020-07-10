@@ -9,7 +9,7 @@ AWS_CDK_VERSION = "1.45.0"
 
 
 setuptools.setup(
-    name="SchemaCMSInfra",
+    name="schema-cms-infra",
     version="0.0.1",
     description="Schema CMS",
     long_description=long_description,

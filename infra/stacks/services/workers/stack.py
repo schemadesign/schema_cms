@@ -10,9 +10,11 @@ from aws_cdk.aws_sqs import Queue
 from config.base import EnvSettings
 from stacks.services.api.stack import ApiStack
 from stacks.services.image_resize.stack import ImageResizeStack
+from stacks.components.stack import ComponentsStack
 
 
 class LambdaWorkerStack(Stack):
+    job_processing_queues: List[Queue] = None
     app_bucket: Bucket = None
     resize_lambda_image_bucket: Bucket = None
     backend_url: str = ""
@@ -20,10 +22,11 @@ class LambdaWorkerStack(Stack):
     functions: List[Function] = None
     sentry_dns: Secret = None
 
-    def __init__(self, scope: App, id: str, props: EnvSettings, queues: List[Queue]):
+    def __init__(self, scope: App, id: str, props: EnvSettings, components: ComponentsStack):
         super().__init__(scope, id)
 
-        self.backend_url = f"https://{props.domains.api}/api/v1/"
+        self.job_processing_queues = components.data_processing_queues
+        self.backend_url = f"https://{props.domains.app}/api/v1/"
         self.app_bucket = Bucket.from_bucket_arn(
             self, id="App", bucket_arn=Fn.import_value(ApiStack.get_app_bucket_arn_output_export_name())
         )
@@ -37,12 +40,12 @@ class LambdaWorkerStack(Stack):
         self.lambda_auth_token = Secret.from_secret_arn(
             self,
             id="lambda-auth-token",
-            secret_arn=Fn.import_value(ApiStack.get_lambda_auth_token_arn_output_export_name())
+            secret_arn=Fn.import_value(ApiStack.get_lambda_auth_token_arn_output_export_name()),
         )
 
         self.functions = [
             self._create_lambda_fn(memory_size=memory_size, queue=queue)
-            for memory_size, queue in zip(props.lambdas_sizes, queues)
+            for memory_size, queue in zip(props.lambdas_sizes, self.job_processing_queues)
         ]
 
     def _create_lambda_fn(self, memory_size: int, queue: Queue):
@@ -52,7 +55,6 @@ class LambdaWorkerStack(Stack):
             code = Code.from_asset(path="../backend/functions/worker/.serverless/main.zip")
         else:
             code = Code.from_cfn_parameters()
-
 
         function = Function(
             self,

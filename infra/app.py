@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from aws_cdk import core
+from aws_cdk.core import App
 
 from stacks.base.stack import BaseResourcesStack
 from stacks.ci.stack import CiStack
@@ -13,26 +13,38 @@ from config.base import load_infra_envs
 
 
 ENV_SETTINGS = load_infra_envs("../.project_config.json")
+FULL_INSTALLATION_MODE = "full"
 
 
-app = core.App()
+class App(App):
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
+        self.base = BaseResourcesStack(app, "schema-cms-base", props=ENV_SETTINGS)
+        self.components = ComponentsStack(app, "schema-cms-components", props=ENV_SETTINGS)
+        self.api = ApiStack(
+            app,
+            "schema-cms-api",
+            props=ENV_SETTINGS,
+            components=self.components,
+            base_resources=self.base.resources,
+        )
+        self.image_resize = ImageResizeStack(app, "schema-cms-image-resize", props=ENV_SETTINGS)
+        self.workers = LambdaWorkerStack(
+            app, "schema-cms-workers", props=ENV_SETTINGS, components=self.component
+        )
 
-base = BaseResourcesStack(app, "schema-cms-base", props=ENV_SETTINGS)
-components = ComponentsStack(app, "schema-cms-components", props=ENV_SETTINGS)
-api = ApiStack(
-    app,
-    "schema-cms-api",
-    props=ENV_SETTINGS,
-    queues=components.data_processing_queues,
-    vpc=base.resources.vpc,
-    db=base.resources.db,
-)
-image_resize = ImageResizeStack(app, "schema-cms-image-resize", props=ENV_SETTINGS)
-workers = LambdaWorkerStack(
-    app, "schema-cms-workers", props=ENV_SETTINGS, queues=components.data_processing_queues,
-)
-pipeline = CiStack(
-    app, "schema-cms-cicd", props=ENV_SETTINGS, functions=workers.functions, ir_function=image_resize.function_code
-)
+        installation_mode = self.node.try_get_context("installation_mode")
+
+        if installation_mode == FULL_INSTALLATION_MODE:
+            self.pipeline = CiStack(
+                app,
+                "schema-cms-cicd",
+                props=ENV_SETTINGS,
+                functions=self.workers.functions,
+                ir_function=self.image_resize.function_code,
+            )
+
+
+app = App()
 
 app.synth()

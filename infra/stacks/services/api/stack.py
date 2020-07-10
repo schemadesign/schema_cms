@@ -20,22 +20,32 @@ from config.base import EnvSettings
 from stacks.base.resources.ecr import BaseECR
 from stacks.base.resources.kms import BaseKMS
 from stacks.base.resources.resources import BaseResources
+from stacks.components.stack import ComponentsStack
 
 
 class ApiStack(Stack):
+    vpc: Vpc = None
+    db: DatabaseInstance = None
     job_processing_queues: List[Queue] = None
     app_bucket: Bucket = None
     pages_bucket: Bucket = None
     domain_name: str = ""
 
     def __init__(
-        self, scope: App, id: str, props: EnvSettings, queues: List[Queue], vpc: Vpc, db: DatabaseInstance
+        self,
+        scope: App,
+        id: str,
+        props: EnvSettings,
+        components: ComponentsStack,
+        base_resources: BaseResources,
     ):
         super().__init__(scope, id)
 
         self.db_secret_arn = Fn.import_value(BaseResources.get_database_secret_arn_output_export_name())
 
-        self.job_processing_queues = queues
+        self.job_processing_queues = components.data_processing_queues
+        self.vpc = base_resources.vpc
+        self.db = base_resources.db
 
         self.app_bucket = Bucket(self, "App", versioned=True)
 
@@ -49,7 +59,7 @@ class ApiStack(Stack):
 
         self.pages_bucket = Bucket(self, "Pages", public_read_access=True)
 
-        self.domain_name = props.domains.api
+        self.domain_name = props.domains.app
 
         django_secret = Secret(self, "DjangoSecretKey", secret_name="SCHEMA_CMS_DJANGO_SECRET_KEY")
         lambda_auth_token_secret = Secret(self, "LambdaAuthToken", secret_name="SCHEMA_CMS_LAMBDA_AUTH_TOKEN")
@@ -59,7 +69,7 @@ class ApiStack(Stack):
                 self,
                 id="lambdaAuthTokenArnOutput",
                 export_name=self.get_lambda_auth_token_arn_output_export_name(),
-                value=lambda_auth_token_secret.secret_arn
+                value=lambda_auth_token_secret.secret_arn,
             )
 
         self.django_secret_key = EcsSecret.from_secrets_manager(django_secret)
@@ -72,12 +82,13 @@ class ApiStack(Stack):
             repository=Repository.from_repository_name(
                 self, id="BackendRepository", repository_name=BaseECR.get_backend_repository_name()
             ),
-            tag=tag
+            tag=tag,
         )
         nginx_image = ContainerImage.from_ecr_repository(
             repository=Repository.from_repository_name(
                 self, id="NginxRepository", repository_name=BaseECR.get_nginx_repository_name()
-            ), tag=tag
+            ),
+            tag=tag,
         )
 
         self.api = ApplicationLoadBalancedFargateService(
@@ -85,7 +96,11 @@ class ApiStack(Stack):
             "ApiService",
             service_name="schema-cms-api-service",
             cluster=Cluster.from_cluster_attributes(
-                self, id="WorkersCluster", cluster_name="schema-ecs-cluster", vpc=vpc, security_groups=[],
+                self,
+                id="WorkersCluster",
+                cluster_name="schema-ecs-cluster",
+                vpc=self.vpc,
+                security_groups=[],
             ),
             task_image_options=ApplicationLoadBalancedTaskImageOptions(
                 image=nginx_image, container_name="nginx", container_port=80, enable_logging=True,
@@ -95,7 +110,7 @@ class ApiStack(Stack):
             memory_limit_mib=1024,
             certificate=Certificate.from_certificate_arn(self, "Cert", certificate_arn=props.certificate_arn),
             domain_name=self.domain_name,
-            domain_zone=PrivateHostedZone(self, "zone", vpc=vpc, zone_name=self.domain_name,),
+            domain_zone=PrivateHostedZone(self, "zone", vpc=self.vpc, zone_name=self.domain_name,),
         )
 
         self.api.task_definition.add_container(
@@ -110,7 +125,7 @@ class ApiStack(Stack):
                 "SQS_WORKER_QUEUE_URL": self.job_processing_queues[0].queue_url,
                 "SQS_WORKER_EXT_QUEUE_URL": self.job_processing_queues[1].queue_url,
                 "SQS_WORKER_MAX_QUEUE_URL": self.job_processing_queues[2].queue_url,
-                "DJANGO_HOST": f"https://{props.domains.api}",
+                "DJANGO_HOST": f"https://{props.domains.app}",
                 "DJANGO_WEBAPP_HOST": f"https://{props.domains.webapp}",
                 "PUBLIC_API_URL": f"https://{props.domains.public_api}/",
                 "CHAMBER_SERVICE_NAME": "schema-cms-app",
@@ -121,7 +136,7 @@ class ApiStack(Stack):
                     Secret.from_secret_arn(self, id="DbSecret", secret_arn=self.db_secret_arn)
                 ),
                 "DJANGO_SECRET_KEY": self.django_secret_key,
-                "LAMBDA_AUTH_TOKEN": self.lambda_auth_token
+                "LAMBDA_AUTH_TOKEN": self.lambda_auth_token,
             },
             cpu=512,
             memory_limit_mib=1024,
@@ -135,7 +150,7 @@ class ApiStack(Stack):
         for queue in self.job_processing_queues:
             queue.grant_send_messages(self.api.service.task_definition.task_role)
 
-        self.api.service.connections.allow_to(db.connections, Port.tcp(5432))
+        self.api.service.connections.allow_to(self.db.connections, Port.tcp(5432))
         self.api.task_definition.add_to_task_role_policy(
             PolicyStatement(actions=["ses:SendRawEmail", "ses:SendBulkTemplatedEmail"], resources=["*"],)
         )
