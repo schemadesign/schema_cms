@@ -1,9 +1,13 @@
-from typing import List, Tuple
+from typing import List
 
 from aws_cdk.aws_codebuild import PipelineProject, BuildEnvironment, LinuxBuildImage, BuildSpec
 from aws_cdk.aws_codepipeline import IStage, Artifact
-from aws_cdk.aws_codepipeline_actions import CodeBuildAction, CloudFormationCreateReplaceChangeSetAction
-from aws_cdk.aws_lambda import Function, AssetCode
+from aws_cdk.aws_codepipeline_actions import (
+    CodeBuildAction,
+    CloudFormationCreateReplaceChangeSetAction,
+    CloudFormationExecuteChangeSetAction
+)
+from aws_cdk.aws_lambda import Function
 from aws_cdk.core import Construct
 
 
@@ -76,13 +80,22 @@ class WorkersCiConfig(Construct):
             extra_inputs.append(output)
 
         return CloudFormationCreateReplaceChangeSetAction(
-            action_name="prepare-worker-changes",
+            action_name="prepare-workers-changes",
             stack_name="schema-cms-lambda-workers",
             change_set_name="lambdaWorkerStagedChangeSet",
-            template_path=self.cdk_artifact.at_path("./infra/cdk.out/schema-cms-lambda-workers.template.json"),
+            template_path=self.cdk_artifact.at_path("infra/cdk.out/schema-cms-lambda-workers.template.json"),
             parameter_overrides=params_overrides,
             extra_inputs=extra_inputs,
             **change_set_kwargs,
+        )
+
+    @staticmethod
+    def execute_workers_changes():
+        return CloudFormationExecuteChangeSetAction(
+            action_name="execute-lambda-workers-changes",
+            stack_name="schema-cms-lambda-workers",
+            change_set_name="lambdaWorkerStagedChangeSet",
+            run_order=5,
         )
 
     @staticmethod

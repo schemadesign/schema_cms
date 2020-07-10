@@ -131,7 +131,7 @@ class ApiStack(Stack):
 
         self.api.task_definition.add_to_task_role_policy(
             PolicyStatement(
-                actions=["kms:Get*", "kms:Describe*", "kms:List*", "kms:Decrypt",],
+                actions=["kms:Get*", "kms:Describe*", "kms:List*", "kms:Decrypt"],
                 resources=[Fn.import_value(BaseKMS.get_kms_arn_output_export_name())],
             )
         )

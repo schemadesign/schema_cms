@@ -67,35 +67,18 @@ class CIPipeline(Construct):
         cdk_config = CDKConfig(self, "CDKConfig", build_stage, source_output_artifact)
         cdk_artifact = cdk_config.cdk_artifact
 
-        ApiCiConfig(self, "ApiConfig", build_stage, repos, source_output_artifact)
+        api = ApiCiConfig(self, "ApiConfig", build_stage, repos, source_output_artifact)
         ImageResizeLambdaCiConfig(self, "ImageResizeConfig", build_stage, source_output_artifact)
         workers = WorkersCiConfig(self, "WorkersConfig", build_stage, source_output_artifact, cdk_artifact, functions)
 
-        deploy_stage.add_action(self.create_prepare_change_set_action(cdk_artifact))
-        deploy_stage.add_action(self.create_execute_change_set_action())
+        deploy_stage.add_action(api.prepare_api_changes(cdk_artifact))
         deploy_stage.add_action(
             workers.prepare_workers_changes(
                 admin_permissions=True,
                 run_order=2,
             )
         )
+        deploy_stage.add_action(api.execute_api_changes())
+        deploy_stage.add_action(workers.execute_workers_changes())
 
-    @staticmethod
-    def create_prepare_change_set_action(cdk_artifact: Artifact):
-        return CloudFormationCreateReplaceChangeSetAction(
-            action_name="prepare-app-changes",
-            stack_name="schema-cms-api",
-            change_set_name="APIStagedChangeSet",
-            admin_permissions=True,
-            template_path=cdk_artifact.at_path("./infra/cdk.out/schema-cms-api.template.json"),
-            run_order=2,
-        )
 
-    @staticmethod
-    def create_execute_change_set_action():
-        return CloudFormationExecuteChangeSetAction(
-            action_name="execute-app-changes",
-            stack_name="schema-cms-api",
-            change_set_name="APIStagedChangeSet",
-            run_order=3,
-        )

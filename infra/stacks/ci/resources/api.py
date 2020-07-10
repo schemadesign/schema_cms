@@ -10,7 +10,11 @@ from aws_cdk.aws_codebuild import (
     LinuxBuildImage,
 )
 from aws_cdk.aws_codepipeline import IStage, Artifact
-from aws_cdk.aws_codepipeline_actions import CodeBuildAction
+from aws_cdk.aws_codepipeline_actions import (
+    CodeBuildAction,
+    CloudFormationCreateReplaceChangeSetAction,
+    CloudFormationExecuteChangeSetAction
+)
 from aws_cdk.aws_ecr import Repository
 from aws_cdk.core import Construct
 
@@ -81,3 +85,22 @@ class ApiCiConfig(Construct):
     def create_build_action(self, name: str, project: PipelineProject, order: int):
         return CodeBuildAction(action_name=f"build-{name}", project=project, input=self.input_artifact, run_order=order)
 
+    @staticmethod
+    def prepare_api_changes(cdk_artifact: Artifact):
+        return CloudFormationCreateReplaceChangeSetAction(
+            action_name="prepare-app-changes",
+            stack_name="schema-cms-api",
+            change_set_name="APIStagedChangeSet",
+            admin_permissions=True,
+            template_path=cdk_artifact.at_path("infra/cdk.out/schema-cms-api.template.json"),
+            run_order=2,
+        )
+
+    @staticmethod
+    def execute_api_changes():
+        return CloudFormationExecuteChangeSetAction(
+            action_name="execute-app-changes",
+            stack_name="schema-cms-api",
+            change_set_name="APIStagedChangeSet",
+            run_order=3,
+        )
