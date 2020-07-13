@@ -46,7 +46,13 @@ fe-up:
 	$(MAKE) -C $(BASE_DIR)/frontend start
 
 down:
-	docker-compose -p schema-cms down
+	$(DOCKER_COMPOSE) down
+
+exec:
+	$(DOCKER_COMPOSE) exec backend bash
+
+attach:
+	docker attach schema-cms_backend_1
 
 clean:
 	# remove created images
