@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 from aws_cdk.aws_lambda import Code, Function, Runtime, Tracing
 from aws_cdk.aws_lambda_event_sources import SqsEventSource
@@ -20,7 +20,7 @@ class LambdaWorkerStack(Stack):
     resize_lambda_image_bucket: Bucket = None
     backend_url: str = ""
     lambda_auth_token: Secret = None
-    functions: List[Function] = None
+    functions: List[Tuple[Function, Code]] = None
 
     def __init__(self, scope: App, id: str, envs: EnvSettings, components: ComponentsStack):
         super().__init__(scope, id)
