@@ -6,8 +6,6 @@ from dataclasses import dataclass
 class EnvSettings:
     project_name: str
     lambdas_sizes: list
-    sentry_dns_arn: str
-    gh_token_arn: str
     data_base_name: str = "schemacms"
 
 
