@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { useHistory, useRouteMatch } from 'react-router';
 import { useEffectOnce } from 'react-use';
 import { useFormik, yupToFormErrors, validateYupSchema } from 'formik';
-import { remove } from 'ramda';
+import { always, ifElse, isEmpty, remove } from 'ramda';
 import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useTheme } from 'styled-components';
 
@@ -95,6 +95,14 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
       }
     })();
   });
+  const accordionProps = ifElse(
+    isEmpty,
+    always({}),
+    always({
+      collapseCopy: intl.formatMessage(messages.collapseCopy),
+      expandCopy: intl.formatMessage(messages.expandCopy),
+    })
+  )(values[METADATA]);
 
   const accordionCopyProps = getPropsWhenNotEmpty(values[METADATA], {
     collapseCopy: intl.formatMessage(messages.collapseCopy),
@@ -124,7 +132,11 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
+<<<<<<< HEAD
           <Accordion {...accordionCopyProps}>
+=======
+          <Accordion {...accordionProps} newOpen>
+>>>>>>> Render accordion details on open and fix showing collapse button
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
                 <AccordionHeader>

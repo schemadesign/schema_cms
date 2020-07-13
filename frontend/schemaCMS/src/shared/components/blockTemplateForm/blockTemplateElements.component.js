@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, Icons, AccordionPanel } from 'schemaUI';
 import PropTypes from 'prop-types';
-import { append, remove } from 'ramda';
+import { always, append, ifElse, isEmpty, remove } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
@@ -48,6 +48,7 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
   };
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
 
+<<<<<<< HEAD
   const accordionCopyProps = getPropsWhenNotEmpty(values[BLOCK_TEMPLATES_ELEMENTS], {
     collapseCopy: intl.formatMessage(messages.collapseCopy),
     expandCopy: intl.formatMessage(messages.expandCopy),
@@ -56,6 +57,20 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
   return (
     <DndProvider backend={MultiBackend} options={HTML5toTouch}>
       <Accordion {...accordionCopyProps} newOpen>
+=======
+  const accordionProps = ifElse(
+    isEmpty,
+    always({}),
+    always({
+      collapseCopy: intl.formatMessage(messages.collapseCopy),
+      expandCopy: intl.formatMessage(messages.expandCopy),
+    })
+  )(values[BLOCK_TEMPLATES_ELEMENTS]);
+
+  return (
+    <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+      <Accordion {...accordionProps} newOpen>
+>>>>>>> Render accordion details on open and fix showing collapse button
         {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
           <Draggable
             accept="box"
