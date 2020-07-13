@@ -3,6 +3,7 @@ version: '3.7'
 services:
   db:
     image: postgres:9.6.8
+    container_name: schema-cms-db
     env_file: local.env
     volumes:
       - db_data:/var/lib/postgresql/data
@@ -11,6 +12,7 @@ services:
 
   localstack:
     image: localstack/localstack:0.11.3
+    container_name: schema-cms-localstack
     ports:
       - "4566:4566"
     environment:
@@ -29,6 +31,7 @@ services:
 
   backend:
     image: schema_cms_backend
+    container_name: schema-cms-backend
     build:
       context: backend/app
     entrypoint: ["./scripts/entrypoint.sh"]
@@ -51,6 +54,7 @@ services:
 
   workerlambda:
     image: schema_cms_workerlambda
+    container_name: schema-cms-worker
     build:
       context: backend/functions/worker
     command: handler.main
@@ -72,12 +76,14 @@ services:
 
   mailcatcher:
     image: schickling/mailcatcher
+    container_name: schema-cms-mailcatcher
     ports:
     - 1080:1080
 
   documentation:
     restart: always
-    image: schema_cms_backend:latest
+    image: schema_cms_backend
+    container_name: schema-cms-docs
     command: "mkdocs serve"
     volumes:
     - ./backend/app:/app

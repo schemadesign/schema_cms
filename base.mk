@@ -52,7 +52,7 @@ exec:
 	$(DOCKER_COMPOSE) exec backend bash
 
 attach:
-	docker attach schema-cms_backend_1
+	docker attach schema-cms-backend
 
 clean:
 	# remove created images
