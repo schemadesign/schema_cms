@@ -19,12 +19,4 @@ describe('BlockTemplateElement: Component', () => {
 
     expect(defaultProps.removeElement).toHaveBeenCalledWith(0);
   });
-
-  it('should set type of element', async () => {
-    jest.spyOn(defaultProps, 'setFieldValue');
-    const wrapper = await render();
-    wrapper.root.findAllByProps({ id: 'elementTypeSelect' })[0].props.onSelect({ value: 'value' });
-
-    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('elements.0.type', 'value');
-  });
 });

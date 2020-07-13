@@ -1491,7 +1491,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqAui bdGLLv"
+        className="sc-fzqAui jMeWGj"
       >
         <div
           className="sc-fzqMdD dQscoX"
@@ -1553,18 +1553,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <span>
-        <div
-          onClick={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
-              "padding": "10px 0 20px",
-              "textDecoration": "underline",
-            }
-          }
-        >
-          Expand Blocks
-        </div>
          
       </span>
       <div

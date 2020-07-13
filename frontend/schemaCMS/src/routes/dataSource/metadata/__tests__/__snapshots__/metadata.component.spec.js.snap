@@ -681,7 +681,7 @@ exports[`Metadata: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqPZZ isTRra"
+    className="sc-fzqPZZ hOPNKe"
   >
     <div
       className="sc-fzoxKX jNWnEP"
@@ -940,99 +940,7 @@ exports[`Metadata: Component should render correctly 1`] = `
           }
         }
       >
-        <div>
-          <div
-            className="sc-AxhUy kYXQlU"
-          >
-            <div
-              className="sc-fzoaKM jlpaHo"
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "maxWidth": "100%",
-                    "paddingBottom": "2px",
-                    "position": "relative",
-                  }
-                }
-              >
-                <textarea
-                  id="metadata.0.value"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  style={
-                    Object {
-                      "background": "#000",
-                      "backgroundColor": "#71737e",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontSize": "18px",
-                      "height": 0,
-                      "lineHeight": "24px",
-                      "outline": "none",
-                      "padding": "10px 30px 10px 20px",
-                      "resize": "none",
-                    }
-                  }
-                  value="value 1"
-                />
-                <textarea
-                  aria-hidden={true}
-                  readOnly={true}
-                  style={
-                    Object {
-                      "background": "#000",
-                      "backgroundColor": "#71737e",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontSize": "18px",
-                      "height": 0,
-                      "left": 0,
-                      "lineHeight": "24px",
-                      "outline": "none",
-                      "overflow": "hidden",
-                      "padding": "10px 30px 10px 20px",
-                      "position": "absolute",
-                      "resize": "none",
-                      "top": 0,
-                      "visibility": "hidden",
-                    }
-                  }
-                  tabIndex={-1}
-                />
-                <div
-                  style={
-                    Object {
-                      "position": "absolute",
-                      "right": -30,
-                      "top": -40,
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "position": "absolute",
-                  "right": 5,
-                  "top": 5,
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
+        <div />
       </div>
     </div>
     <div
@@ -1219,99 +1127,7 @@ exports[`Metadata: Component should render correctly 1`] = `
           }
         }
       >
-        <div>
-          <div
-            className="sc-AxhUy kYXQlU"
-          >
-            <div
-              className="sc-fzoaKM jlpaHo"
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "maxWidth": "100%",
-                    "paddingBottom": "2px",
-                    "position": "relative",
-                  }
-                }
-              >
-                <textarea
-                  id="metadata.1.value"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  style={
-                    Object {
-                      "background": "#000",
-                      "backgroundColor": "#71737e",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontSize": "18px",
-                      "height": 0,
-                      "lineHeight": "24px",
-                      "outline": "none",
-                      "padding": "10px 30px 10px 20px",
-                      "resize": "none",
-                    }
-                  }
-                  value="value 2"
-                />
-                <textarea
-                  aria-hidden={true}
-                  readOnly={true}
-                  style={
-                    Object {
-                      "background": "#000",
-                      "backgroundColor": "#71737e",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontSize": "18px",
-                      "height": 0,
-                      "left": 0,
-                      "lineHeight": "24px",
-                      "outline": "none",
-                      "overflow": "hidden",
-                      "padding": "10px 30px 10px 20px",
-                      "position": "absolute",
-                      "resize": "none",
-                      "top": 0,
-                      "visibility": "hidden",
-                    }
-                  }
-                  tabIndex={-1}
-                />
-                <div
-                  style={
-                    Object {
-                      "position": "absolute",
-                      "right": -30,
-                      "top": -40,
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "position": "absolute",
-                  "right": 5,
-                  "top": 5,
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
+        <div />
       </div>
     </div>
     <div
@@ -1498,99 +1314,7 @@ exports[`Metadata: Component should render correctly 1`] = `
           }
         }
       >
-        <div>
-          <div
-            className="sc-AxhUy kYXQlU"
-          >
-            <div
-              className="sc-fzoaKM jlpaHo"
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "maxWidth": "100%",
-                    "paddingBottom": "2px",
-                    "position": "relative",
-                  }
-                }
-              >
-                <textarea
-                  id="metadata.2.value"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  style={
-                    Object {
-                      "background": "#000",
-                      "backgroundColor": "#71737e",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontSize": "18px",
-                      "height": 0,
-                      "lineHeight": "24px",
-                      "outline": "none",
-                      "padding": "10px 30px 10px 20px",
-                      "resize": "none",
-                    }
-                  }
-                  value="value 3"
-                />
-                <textarea
-                  aria-hidden={true}
-                  readOnly={true}
-                  style={
-                    Object {
-                      "background": "#000",
-                      "backgroundColor": "#71737e",
-                      "border": "none",
-                      "color": "#FFF",
-                      "fontSize": "18px",
-                      "height": 0,
-                      "left": 0,
-                      "lineHeight": "24px",
-                      "outline": "none",
-                      "overflow": "hidden",
-                      "padding": "10px 30px 10px 20px",
-                      "position": "absolute",
-                      "resize": "none",
-                      "top": 0,
-                      "visibility": "hidden",
-                    }
-                  }
-                  tabIndex={-1}
-                />
-                <div
-                  style={
-                    Object {
-                      "position": "absolute",
-                      "right": -30,
-                      "top": -40,
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "position": "absolute",
-                  "right": 5,
-                  "top": 5,
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
+        <div />
       </div>
     </div>
      

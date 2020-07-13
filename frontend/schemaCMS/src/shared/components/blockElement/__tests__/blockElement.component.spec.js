@@ -13,6 +13,8 @@ import {
   embedVideoElement,
   stateElement,
 } from '../../../../modules/page/page.mocks';
+import { CustomElement } from '../customElement.component';
+import { FileElement } from '../fileElement.component';
 
 describe('BlockElement: Component', () => {
   const render = props => makeContextRenderer(<BlockElement {...defaultProps} {...props} />);
@@ -58,7 +60,7 @@ describe('BlockElement: Component', () => {
   });
 
   it('should render correctly custom element', async () => {
-    const wrapper = await render({ element: customElement });
+    const wrapper = await makeContextRenderer(<CustomElement {...defaultProps} element={customElement} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -66,7 +68,7 @@ describe('BlockElement: Component', () => {
     jest.spyOn(defaultProps, 'setFieldValue');
     jest.spyOn(defaultProps, 'validateForm');
     jest.useFakeTimers();
-    const wrapper = await render({ element: customElement });
+    const wrapper = await makeContextRenderer(<CustomElement {...defaultProps} element={customElement} />);
     wrapper.root.findByProps({ id: 'remove-blockPath.elements.0.value.0' }).props.onClick();
 
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.deleteElementsSets', [1]);
@@ -96,7 +98,7 @@ describe('BlockElement: Component', () => {
 
   it('should add elements set', async () => {
     jest.spyOn(defaultProps, 'setFieldValue');
-    const wrapper = await render({ element: customElement });
+    const wrapper = await makeContextRenderer(<CustomElement {...defaultProps} element={customElement} />);
     wrapper.root.findByProps({ id: 'add-blockPath.elements.0.value' }).props.onClick();
     expect(defaultProps.setFieldValue).toHaveBeenCalledWith('blockPath.elements.0.value', [
       {
@@ -136,7 +138,7 @@ describe('BlockElement: Component', () => {
     const dummyFileReader = { addEventListener, readAsDataURL };
     window.FileReader = jest.fn(() => dummyFileReader);
     jest.spyOn(defaultProps, 'setFieldValue');
-    const wrapper = await render({ element: imageElement });
+    const wrapper = await makeContextRenderer(<FileElement {...defaultProps} element={imageElement} />);
     wrapper.root
       .findByProps({ id: `${defaultProps.blockPath}.elements.${defaultProps.index}.value` })
       .props.onChange({ currentTarget: { files: [{ name: 'name' }] } });
