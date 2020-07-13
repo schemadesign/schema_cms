@@ -12,11 +12,11 @@ services:
   localstack:
     image: localstack/localstack:0.11.3
     ports:
-      - "4569:4569"
-      - "4572:4572"
+      - "4566:4566"
     environment:
       - SERVICES=dynamodb,s3
       - DATA_DIR=/tmp/localstack/data
+      - HOST_TMP_FOLDER=/tmp
       - DOCKER_HOST=unix:///var/run/docker.sock
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=foo

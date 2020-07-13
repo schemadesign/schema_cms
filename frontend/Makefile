@@ -13,3 +13,7 @@ install:
 	@echo "Installing Schema CMS"
 	yarn --cwd $(SCHEMA_CMS_PATH)
 	yarn --cwd $(SCHEMA_CMS_PATH) link schemaUI
+
+
+start:
+	yarn --cwd $(SCHEMA_CMS_PATH) start

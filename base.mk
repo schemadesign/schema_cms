@@ -42,6 +42,9 @@ aws-shell:
 up:
 	$(DOCKER_COMPOSE) up --build --force-recreate
 
+fe-up:
+	$(MAKE) -C $(BASE_DIR)/frontend start
+
 down:
 	docker-compose -p schema-cms down
 
