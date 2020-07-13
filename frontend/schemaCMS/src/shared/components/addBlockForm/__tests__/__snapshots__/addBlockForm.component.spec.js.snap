@@ -200,7 +200,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     </div>
   </div>
   <div
-    className="sc-fzoxKX iXSUEj"
+    className="sc-fzoxKX kyReib"
   >
     <div
       className="sc-fzoKki jXYIlx"
@@ -262,18 +262,6 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     </div>
   </div>
   <span>
-    <div
-      onClick={[Function]}
-      style={
-        Object {
-          "cursor": "pointer",
-          "padding": "10px 0 20px",
-          "textDecoration": "underline",
-        }
-      }
-    >
-      Expand Elements
-    </div>
      
   </span>
   <div

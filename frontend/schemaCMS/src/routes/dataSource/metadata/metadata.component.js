@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { useHistory, useRouteMatch } from 'react-router';
 import { useEffectOnce } from 'react-use';
 import { useFormik, yupToFormErrors, validateYupSchema } from 'formik';
-import { remove } from 'ramda';
+import { always, ifElse, isEmpty, remove } from 'ramda';
 import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useTheme } from 'styled-components';
 
@@ -95,6 +95,14 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
       }
     })();
   });
+  const accordionProps = ifElse(
+    isEmpty,
+    always({}),
+    always({
+      collapseCopy: intl.formatMessage(messages.collapseCopy),
+      expandCopy: intl.formatMessage(messages.expandCopy),
+    })
+  )(values[METADATA]);
 
   return (
     <Container>
@@ -119,11 +127,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
-          <Accordion
-            collapseCopy={intl.formatMessage(messages.collapseCopy)}
-            expandCopy={intl.formatMessage(messages.expandCopy)}
-            newOpen
-          >
+          <Accordion {...accordionProps} newOpen>
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
                 <AccordionHeader>
