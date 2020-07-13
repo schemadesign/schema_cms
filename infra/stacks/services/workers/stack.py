@@ -21,7 +21,6 @@ class LambdaWorkerStack(Stack):
     backend_url: str = ""
     lambda_auth_token: Secret = None
     functions: List[Function] = None
-    sentry_dns: Secret = None
 
     def __init__(self, scope: App, id: str, envs: EnvSettings, components: ComponentsStack):
         super().__init__(scope, id)
@@ -29,6 +28,7 @@ class LambdaWorkerStack(Stack):
         self.backend_domain_name = StringParameter.from_string_parameter_name(
             self, "DomainNameParameter", string_parameter_name="/schema-cms-app/DOMAIN_NAME"
         ).string_value
+
         self.backend_url = f"https://{self.backend_domain_name}/api/v1/"
 
         self.job_processing_queues = components.data_processing_queues
@@ -42,7 +42,6 @@ class LambdaWorkerStack(Stack):
             bucket_arn=Fn.import_value(ImageResizeStack.get_image_resize_bucket_arn_output_export_name(envs)),
         )
 
-        self.sentry_dns = Secret.from_secret_arn(self, id="sentry-dns", secret_arn=envs.sentry_dns_arn)
         self.lambda_auth_token = Secret.from_secret_arn(
             self,
             id="lambda-auth-token",
@@ -75,7 +74,6 @@ class LambdaWorkerStack(Stack):
                 "AWS_IMAGE_STORAGE_BUCKET_NAME": self.resize_lambda_image_bucket.bucket_name,
                 "AWS_IMAGE_STATIC_URL": self.resize_lambda_image_bucket.bucket_website_url,
                 "BACKEND_URL": self.backend_url,
-                "SENTRY_DNS": self.sentry_dns.secret_value.to_string(),
                 "LAMBDA_AUTH_TOKEN": self.lambda_auth_token.secret_value.to_string(),
             },
             memory_size=memory_size,

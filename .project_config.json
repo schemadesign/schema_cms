@@ -4,7 +4,5 @@
     "profile": "schemacms-dev",
     "region": "us-west-2"
   },
-  "sentry_dns_arn": "arn:aws:secretsmanager:us-west-2:410575072407:secret:SENTRY_DNS-ltYVN1",
-  "gh_token_arn": "arn:aws:secretsmanager:us-west-2:410575072407:secret:github-token-uxGvlL",
   "lambdas_sizes": [512, 1280, 3008]
 }
