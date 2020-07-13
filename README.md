@@ -28,43 +28,18 @@ Docker is used for develop, test and improve an environment.
 ## Installation
 
 ### Easy way
-`make install` & ☕
+`make setup` & ☕
 
 You will find more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app` and `./docs`
 
 ### Step-by-step guide
-Build docker images:
-```shell script
-docker-compose build
-```
-Build lambdas dependencies:
-```shell script
-cd ./backend/functions/worker && npm install
-cd ./backend/functions/public_api && npm install
-```
-
-Build frontend:
-```shell script
-yarn --cwd ./frontend/schemaUI
-yarn --cwd ./frontend/schemaUI build
-yarn --cwd ./frontend/schemaUI link
-yarn --cwd $(SCHEMA_CMS_PATH)
-yarn --cwd $(SCHEMA_CMS_PATH) link schemaUI
-```
-Create docker volumes
-```shell script
-docker volume create --name=localstack_data
-docker volume create --name=schema_cms_db_data
-```
-
 Run backend - `Before you run app make sure that you have latest local.env file`
 ```shell script
-docker-compose up
+make up
 ```
-
 Run frontend
 ```shell script
-yarn --cwd ./frontend/schemaCMS start
+make fe-up
 ```
 
 ## Development
