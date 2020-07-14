@@ -1,6 +1,6 @@
 FROM segment/chamber:2 AS chamber
 
-FROM python:3.8.3-slim-buster
+FROM python:3.8.4-slim-buster
 
 ARG PIPENV_INSTALL_COMMAND="pipenv install --system --dev"
 
