@@ -54,6 +54,12 @@ exec:
 attach:
 	docker attach schema-cms-backend
 
+migrate:
+	$(DOCKER_COMPOSE) run backend ./manage.py migrate
+
+makemigrations:
+	$(DOCKER_COMPOSE) run backend ./manage.py makemigrations
+
 clean:
 	# remove created images
 	@docker-compose -p schema-cms down --remove-orphans --rmi all 2>/dev/null \
