@@ -22,8 +22,10 @@
 Docker is used for develop, test and improve an environment.
 1. Install [docker](https://docs.docker.com/install/)
 2. Install [docker-compose](https://docs.docker.com/compose/install/) if you are using Linux
-3. Install [npm](https://www.npmjs.com/)
-4. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+3. Install [python8](https://www.python.org/downloads/)
+4. Install [pipenv](https://github.com/pypa/pipenv#installation)
+5. Install [npm](https://www.npmjs.com/)
+6. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
 ## Installation
 
@@ -32,7 +34,7 @@ Docker is used for develop, test and improve an environment.
 
 You will find more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app` and `./docs`
 
-### Step-by-step guide
+## Running
 Run backend - `Before you run app make sure that you have latest local.env file`
 ```shell script
 make up
@@ -48,8 +50,6 @@ Backend in running on `localhost:8000`
 MailCatcher in running on `localhost:1080`
 
 Documentations in running on `localhost:8001`
-
-Public-Api in running on `localhost:8002`
 
 Frontend in running on `localhost:3000`
 
