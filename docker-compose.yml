@@ -16,7 +16,7 @@ services:
     ports:
       - "4566:4566"
     environment:
-      - SERVICES=dynamodb,s3
+      - SERVICES=s3
       - DATA_DIR=/tmp/localstack/data
       - HOST_TMP_FOLDER=/tmp
       - DOCKER_HOST=unix:///var/run/docker.sock
