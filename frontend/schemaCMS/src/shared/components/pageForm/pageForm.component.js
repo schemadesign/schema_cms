@@ -19,7 +19,6 @@ import {
   filter,
   complement,
   always,
-  ifElse,
 } from 'ramda';
 import { asMutable } from 'seamless-immutable';
 import { DndProvider } from 'react-dnd';
@@ -68,7 +67,7 @@ import { BackButton, NextButton, PlusButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
-import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
+import { getPropsWhenNotEmpty, getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
 import { TagSearch } from '../tagSearch';
 import { CopyButton } from '../copyButton';
 import { renderWhenTrue } from '../../utils/rendering';
@@ -246,14 +245,10 @@ export const PageForm = ({
 
   const pagerUrlOptions = getPageUrlOptions({ internalConnections, domain, pageId });
   const stateOptions = states.map(({ id, name, datasource }) => ({ label: `${datasource}   >   ${name}`, value: id }));
-  const accordionProps = ifElse(
-    isEmpty,
-    always({}),
-    always({
-      collapseCopy: intl.formatMessage(messages.collapseCopy),
-      expandCopy: intl.formatMessage(messages.expandCopy),
-    })
-  )(values[PAGE_BLOCKS]);
+  const accordionCopyProps = getPropsWhenNotEmpty(values[PAGE_BLOCKS], {
+    collapseCopy: intl.formatMessage(messages.collapseCopy),
+    expandCopy: intl.formatMessage(messages.expandCopy),
+  });
 
   return (
     <Container>
@@ -327,7 +322,7 @@ export const PageForm = ({
       />
 
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        <Accordion {...accordionProps}>
+        <Accordion {...accordionCopyProps}>
           {values[PAGE_BLOCKS].map((block, index) => (
             <Draggable
               key={block[BLOCK_KEY] || block[BLOCK_ID]}

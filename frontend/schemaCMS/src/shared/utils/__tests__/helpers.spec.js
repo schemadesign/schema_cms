@@ -1,4 +1,10 @@
-import { errorMessageParser, generateApiUrl, getPageUrlOptions, handleToggleMenu } from '../helpers';
+import {
+  errorMessageParser,
+  generateApiUrl,
+  getPageUrlOptions,
+  getPropsWhenNotEmpty,
+  handleToggleMenu,
+} from '../helpers';
 import { internalConnections } from '../../../modules/sections/sections.mocks';
 
 describe('Helpers', () => {
@@ -69,5 +75,21 @@ describe('Helpers', () => {
       },
       { label: [{ name: 'Section 2' }, { isDraft: undefined, name: 'News' }], url: 'http://domain.com/news', id: 3 },
     ]);
+  });
+
+  it('should get props when values are empty', () => {
+    const props = { prop: 'value' };
+    const values = [{ id: 'id' }];
+    const pageUrlOptions = getPropsWhenNotEmpty(values, props);
+
+    expect(pageUrlOptions).toEqual({ prop: 'value' });
+  });
+
+  it('should get empty object when values are empty', () => {
+    const props = { prop: 'value' };
+    const values = [];
+    const pageUrlOptions = getPropsWhenNotEmpty(values, props);
+
+    expect(pageUrlOptions).toEqual({});
   });
 });

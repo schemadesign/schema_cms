@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { useHistory, useRouteMatch } from 'react-router';
 import { useEffectOnce } from 'react-use';
 import { useFormik, yupToFormErrors, validateYupSchema } from 'formik';
-import { always, ifElse, isEmpty, remove } from 'ramda';
+import { remove } from 'ramda';
 import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useTheme } from 'styled-components';
 
@@ -21,7 +21,7 @@ import {
 } from './metadata.styles';
 import messages from './metadata.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, getPropsWhenNotEmpty } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
@@ -95,14 +95,11 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
       }
     })();
   });
-  const accordionProps = ifElse(
-    isEmpty,
-    always({}),
-    always({
-      collapseCopy: intl.formatMessage(messages.collapseCopy),
-      expandCopy: intl.formatMessage(messages.expandCopy),
-    })
-  )(values[METADATA]);
+
+  const accordionCopyProps = getPropsWhenNotEmpty(values[METADATA], {
+    collapseCopy: intl.formatMessage(messages.collapseCopy),
+    expandCopy: intl.formatMessage(messages.expandCopy),
+  });
 
   return (
     <Container>
@@ -127,7 +124,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
-          <Accordion {...accordionProps} newOpen>
+          <Accordion {...accordionCopyProps}>
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
                 <AccordionHeader>
