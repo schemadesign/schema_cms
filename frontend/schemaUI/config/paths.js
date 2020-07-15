@@ -54,7 +54,7 @@ module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appBuild: resolveApp('dist'),
-  appPackageJson: resolveApp('package.json'),
+  appPackageJson: resolveApp('manifest.json'),
   appSrc: resolveApp('components'),
   appTsConfig: resolveApp('tsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),

@@ -20,7 +20,7 @@ exports.config = {
   // Define which test specs should run. The pattern is relative to the directory
   // from which `wdio` was called. Notice that, if you are calling `wdio` from an
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
-  // directory is where your package.json resides, so `wdio` will be called from there.
+  // directory is where your manifest.json resides, so `wdio` will be called from there.
   //
   specs: ['./test/features/**/*.feature'],
   // Patterns to exclude.
