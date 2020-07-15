@@ -43,7 +43,7 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
     <SelectWrapper>
       <Select
         name={name}
-        value={element.params.pageId}
+        value={element.params ? element.params.pageId : 0}
         options={options}
         onSelect={handleSelectPageUrl}
         placeholder={placeholder}
