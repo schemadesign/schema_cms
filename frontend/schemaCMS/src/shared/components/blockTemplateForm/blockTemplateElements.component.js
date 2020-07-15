@@ -48,16 +48,6 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
   };
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
 
-<<<<<<< HEAD
-  const accordionCopyProps = getPropsWhenNotEmpty(values[BLOCK_TEMPLATES_ELEMENTS], {
-    collapseCopy: intl.formatMessage(messages.collapseCopy),
-    expandCopy: intl.formatMessage(messages.expandCopy),
-  });
-
-  return (
-    <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-      <Accordion {...accordionCopyProps} newOpen>
-=======
   const accordionProps = ifElse(
     isEmpty,
     always({}),
@@ -70,7 +60,6 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
   return (
     <DndProvider backend={MultiBackend} options={HTML5toTouch}>
       <Accordion {...accordionProps} newOpen>
->>>>>>> Render accordion details on open and fix showing collapse button
         {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
           <Draggable
             accept="box"

@@ -21,7 +21,7 @@ import {
 } from './metadata.styles';
 import messages from './metadata.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions, getPropsWhenNotEmpty } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
@@ -132,11 +132,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
-<<<<<<< HEAD
           <Accordion {...accordionCopyProps}>
-=======
-          <Accordion {...accordionProps} newOpen>
->>>>>>> Render accordion details on open and fix showing collapse button
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
                 <AccordionHeader>
