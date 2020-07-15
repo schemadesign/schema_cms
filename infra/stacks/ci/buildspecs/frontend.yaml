@@ -12,7 +12,8 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --no-include-email)
-      - VERSION=$(cat VERSION)
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
   build:
     commands:

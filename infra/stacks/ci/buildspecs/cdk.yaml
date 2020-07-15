@@ -10,7 +10,8 @@ phases:
       - pip install pipenv
       - echo install AWS CDK...
       - make install-infra-cdk
-      - VERSION=$(cat VERSION)
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
   build:
     commands:

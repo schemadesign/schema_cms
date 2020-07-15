@@ -48,7 +48,9 @@ class CiEntrypoint(Construct):
         return BuildSpec.from_object(
             value={
                 "version": "0.2",
-                "phases": {"build": {"commands": ["make version > VERSION"]}},
+                "phases": {
+                    "build": {"commands": ["echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7 > VERSION"]}
+                },
                 "artifacts": {"files": ["**/*"]},
             }
         )
