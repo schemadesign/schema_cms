@@ -90,7 +90,10 @@ class CIPipeline(Construct):
         deploy_stage.add_action(api.execute_api_changes(envs))
         deploy_stage.add_action(workers.execute_workers_changes(envs))
 
-        PRTestConfig(self, "PRBuildConfig", self.ecr_repos)
+        pr_hooks = self.node.try_get_context("pr_hooks")
+
+        if pr_hooks == "true":
+            PRTestConfig(self, "PRBuildConfig", self.ecr_repos)
 
     def retrieve_backend_ecr_repository(self, envs: EnvSettings):
         return Repository.from_repository_name(
