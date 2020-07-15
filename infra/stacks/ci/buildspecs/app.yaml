@@ -12,8 +12,6 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --no-include-email)
-      - ls
-      - cat VERSION
       - VERSION=$(cat VERSION)
       - echo "Build version:$VERSION"
   build:

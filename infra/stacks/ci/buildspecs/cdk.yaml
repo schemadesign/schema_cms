@@ -10,7 +10,7 @@ phases:
       - pip install pipenv
       - echo install AWS CDK...
       - make install-infra-cdk
-      - VERSION=$(make version)
+      - VERSION=$(cat VERSION)
       - echo "Build version:$VERSION"
   build:
     commands:
