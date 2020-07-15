@@ -23,6 +23,7 @@ build:
 	$(MAKE) -C backend/functions/image_resize pack
 
 deploy-infra:
+	$(MAKE) -C $(SELF_DIR)infra bootstrap
 	$(MAKE) -C $(SELF_DIR)infra deploy-base-infra
 	$(MAKE) -C $(SELF_DIR)infra deploy-pipeline-infra
 

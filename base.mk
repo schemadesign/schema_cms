@@ -29,7 +29,6 @@ export VERSION
 
 CMD_ARGUMENTS ?= $(cmd)
 
-
 version:
 	@echo $(VERSION)
 

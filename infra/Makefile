@@ -5,6 +5,11 @@ install:
 	npm install aws-cdk@1.45.0
 	pipenv install
 
+
+bootstrap:
+	chmod +x ./cdk-bootstrap.sh
+	pipenv run $(AWS_VAULT) ./cdk-bootstrap.sh
+
 deploy-base-infra:
 	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -e schema-cms-base;
 

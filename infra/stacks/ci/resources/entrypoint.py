@@ -1,11 +1,4 @@
-from aws_cdk.aws_codebuild import (
-    Artifacts,
-    BuildSpec,
-    Cache,
-    LocalCacheMode,
-    Project,
-    Source,
-)
+from aws_cdk.aws_codebuild import Artifacts, BuildSpec, Cache, LocalCacheMode, Project, Source
 from aws_cdk.aws_s3 import Bucket
 from aws_cdk.core import Construct
 
@@ -38,7 +31,7 @@ class CiEntrypoint(Construct):
             description="Run this project to deploy SchemaCMS selected version",
             cache=Cache.local(LocalCacheMode.SOURCE),
             build_spec=self.create_build_spec(),
-            source=Source.git_hub(owner="schemadesign", repo="schema_cms",),
+            source=Source.git_hub(owner="schemadesign", repo="schema_cms"),
             artifacts=Artifacts.s3(
                 identifier=self.get_artifacts_identifier(envs),
                 name=self.get_artifacts_name(envs),
