@@ -283,3 +283,5 @@ export const getUrlParams = history => {
 
   return params;
 };
+
+export const getPropsWhenNotEmpty = (values, props) => ifElse(isEmpty, always({}), always(props))(values);
