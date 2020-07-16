@@ -12,7 +12,8 @@
   },
   "permissions": [
     "activeTab",
-    "declarativeContent"
+    "declarativeContent",
+    "storage"
   ],
   "manifest_version": 2
 }
