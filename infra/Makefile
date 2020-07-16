@@ -14,7 +14,7 @@ deploy-base-infra:
 	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -e schema-cms-base;
 
 deploy-pipeline-infra:
-	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c installation_mode=full -c pr_hooks=false -e schema-cms-cicd;
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c installation_mode=full -e schema-cms-cicd;
 
 deploy-components:
 	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -e schema-cms-components;
@@ -28,3 +28,5 @@ deploy-image-resize:
 deploy-workers:
 	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c is_app_only=true -e schema-cms-workers;
 
+deploy-repo-pr-checks:
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c installation_mode=full -e schema-cms-pr-checks;

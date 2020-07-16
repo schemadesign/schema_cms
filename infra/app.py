@@ -3,7 +3,7 @@
 from aws_cdk.core import App
 
 from stacks.base.stack import BaseResourcesStack
-from stacks.ci.stack import CiStack
+from stacks.ci.stack import CiStack, PRTestStack
 from stacks.components.stack import ComponentsStack
 from stacks.services.api.stack import ApiStack
 from stacks.services.workers.stack import LambdaWorkerStack
@@ -43,6 +43,7 @@ class App(App):
                 functions=self.workers.functions,
                 ir_function=self.image_resize.function_code,
             )
+            self.repo_pr_checks = PRTestStack(self, "schema-cms-pr-checks", envs=ENV_SETTINGS)
 
 
 app = App()

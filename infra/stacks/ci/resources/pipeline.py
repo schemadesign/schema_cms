@@ -9,7 +9,6 @@ from .api import ApiCiConfig
 from .cdk import CDKConfig
 from .entrypoint import CiEntrypoint
 from .image_resize import ImageResizeLambdaCiConfig
-from .pr_test import PRTestConfig
 from .workers import WorkersCiConfig
 
 
@@ -89,11 +88,6 @@ class CIPipeline(Construct):
         deploy_stage.add_action(image_resize.execute_image_resize_lambda_changes(envs))
         deploy_stage.add_action(api.execute_api_changes(envs))
         deploy_stage.add_action(workers.execute_workers_changes(envs))
-
-        pr_hooks = self.node.try_get_context("pr_hooks")
-
-        if pr_hooks == "true":
-            PRTestConfig(self, "PRBuildConfig", self.ecr_repos)
 
     def retrieve_backend_ecr_repository(self, envs: EnvSettings):
         return Repository.from_repository_name(

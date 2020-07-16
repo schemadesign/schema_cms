@@ -1,7 +1,7 @@
 {
   "project_name": "schema-cms",
   "aws": {
-    "profile": "paulson-schemacms",
+    "profile": "",
     "region": "us-west-2"
   },
   "lambdas_sizes": [512, 1280, 3008]

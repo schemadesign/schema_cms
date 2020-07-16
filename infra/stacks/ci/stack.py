@@ -6,6 +6,7 @@ from aws_cdk.core import App, Stack
 from config.base import EnvSettings
 from stacks.ci.resources.entrypoint import CiEntrypoint
 from stacks.ci.resources.pipeline import CIPipeline
+from stacks.ci.resources.pr_test import PRTestConfig
 
 
 class CiStack(Stack):
@@ -17,3 +18,10 @@ class CiStack(Stack):
         entrypoint = CiEntrypoint(self, "Entrypoint", envs)
 
         CIPipeline(self, "PipelineConfig", envs, entrypoint, functions, ir_function)
+
+
+class PRTestStack(Stack):
+    def __init__(self, scope: App, id: str, envs: EnvSettings):
+        super().__init__(scope, id)
+
+        PRTestConfig(self, "PRBuildConfig", envs)
