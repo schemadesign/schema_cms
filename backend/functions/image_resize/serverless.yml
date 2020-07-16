@@ -2,29 +2,16 @@ service: image-handler
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
 
 plugins:
-  - serverless-localstack
   - serverless-plugin-include-dependencies
 
 package:
   individually: true
   exclude:
     - .git/**
-    - node_modules/**  # no need to add this yourself, serverless-plugin-include-dependencies does it for you
-
-
-custom:
-  localstack:
-    stages:
-      - local
-    host: http://localstack
-    lambda:
-      mountCode: False
-  stages:
-    - local
-    - prod
+    - node_modules/**
 
 functions:
   main:
@@ -35,9 +22,6 @@ functions:
           method: get
     environment:
       AWS_STORAGE_BUCKET_NAME: schemacms
-#      AWS_ACCESS_KEY_ID: foo
-#      AWS_SECRET_ACCESS_KEY: bar
-#      AWS_DEFAULT_REGION: us-east-1
     iamRoleStatements:
       - Effect: "Allow"
         Action:

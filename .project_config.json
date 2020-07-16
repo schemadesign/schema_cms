@@ -1,0 +1,8 @@
+{
+  "project_name": "schema-cms",
+  "aws": {
+    "profile": "",
+    "region": "us-west-2"
+  },
+  "lambdas_sizes": [512, 1280, 3008]
+}

@@ -22,49 +22,26 @@
 Docker is used for develop, test and improve an environment.
 1. Install [docker](https://docs.docker.com/install/)
 2. Install [docker-compose](https://docs.docker.com/compose/install/) if you are using Linux
-3. Install [npm](https://www.npmjs.com/)
-4. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+3. Install [python8](https://www.python.org/downloads/)
+4. Install [pipenv](https://github.com/pypa/pipenv#installation)
+5. Install [npm](https://www.npmjs.com/)
+6. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
 ## Installation
 
 ### Easy way
-`make install` & ☕
+`make setup` & ☕
 
 You will find more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app` and `./docs`
 
-### Step-by-step guide
-Build docker images:
-```shell script
-docker-compose build
-```
-Build lambdas dependencies:
-```shell script
-cd ./backend/functions/worker && npm install
-cd ./backend/functions/public_api && npm install
-```
-
-Build frontend:
-```shell script
-yarn --cwd ./frontend/schemaUI
-yarn --cwd ./frontend/schemaUI build
-yarn --cwd ./frontend/schemaUI link
-yarn --cwd $(SCHEMA_CMS_PATH)
-yarn --cwd $(SCHEMA_CMS_PATH) link schemaUI
-```
-Create docker volumes
-```shell script
-docker volume create --name=localstack_data
-docker volume create --name=schema_cms_db_data
-```
-
+## Running
 Run backend - `Before you run app make sure that you have latest local.env file`
 ```shell script
-docker-compose up
+make up
 ```
-
 Run frontend
 ```shell script
-yarn --cwd ./frontend/schemaCMS start
+make fe-up
 ```
 
 ## Development
@@ -73,8 +50,6 @@ Backend in running on `localhost:8000`
 MailCatcher in running on `localhost:1080`
 
 Documentations in running on `localhost:8001`
-
-Public-Api in running on `localhost:8002`
 
 Frontend in running on `localhost:3000`
 

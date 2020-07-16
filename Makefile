@@ -1,35 +1,37 @@
-.PHONY: install
+SELF_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+include $(SELF_DIR)/base.mk
 
-SCHEMA_UI_PATH="./frontend/schemaUI"
-SCHEMA_CMS_PATH="./frontend/schemaCMS"
-WORKER_LAMBDA_PATH="./backend/functions/worker"
+.PHONY: shell help build rebuild service login test clean prune version
 
-install:
-	@echo "Installing SchemaUI"
-	yarn --cwd $(SCHEMA_UI_PATH)
-	yarn --cwd $(SCHEMA_UI_PATH) build
-	yarn --cwd $(SCHEMA_UI_PATH) link
+install: install-infra-cdk
+	$(MAKE) -C $(SELF_DIR)/backend/app install
+	$(MAKE) -C $(SELF_DIR)/backend/functions/worker install
+	$(MAKE) -C $(SELF_DIR)/backend/functions/image_resize install
+	$(MAKE) -C $(SELF_DIR)/frontend install
 
-	@echo "Installing Schema CMS"
-	yarn --cwd $(SCHEMA_CMS_PATH)
-	yarn --cwd $(SCHEMA_CMS_PATH) link schemaUI
+setup-docker:
+	docker volume create --name=schema-cms-backend-db-data
+	docker volume create --name=schema-cms-localstack-data
 
-	@echo "Installing Lambdas dependencies"
-	cd $(PUBLIC_API_LAMBDA_PATH) && npm install
-	cd ./
+setup: install setup-docker
 
-	@echo "Installing Schema CMS Backend"
-	docker volume create --name=localstack_data
-	docker volume create --name=schema_cms_db_data
-	docker-compose up
+build:
+	@echo Build version: $(VERSION)
+	$(MAKE) -C backend/app build
+	$(MAKE) -C nginx build
+	$(MAKE) -C backend/functions/worker pack
+	$(MAKE) -C backend/functions/image_resize pack
 
-clean_localstack_volume:
-	@echo "Cleaning localstack data"
-	docker volume rm localstack_data
-	docker volume create --name=localstack_data
+deploy-infra:
+	$(MAKE) -C $(SELF_DIR)infra bootstrap
+	$(MAKE) -C $(SELF_DIR)infra deploy-base-infra
+	$(MAKE) -C $(SELF_DIR)infra deploy-pipeline-infra
 
-clean_db_volume:
-	@echo "Cleaning db data"
-	docker volume rm schema_cms_db_data
-	docker volume create --name=schema_cms_db_data
+deploy-components:
+	$(MAKE) -C $(SELF_DIR)infra deploy-components
+
+deploy-app:
+	$(MAKE) -C $(SELF_DIR)infra deploy-api
+	$(MAKE) -C $(SELF_DIR)infra deploy-image-resize
+	$(MAKE) -C $(SELF_DIR)infra deploy-workers
 

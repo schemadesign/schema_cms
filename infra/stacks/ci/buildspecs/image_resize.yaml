@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+  pre_build:
+    commands:
+      - OLDPATH=$(pwd)
+  build:
+    commands:
+      - echo Build lambda worker function package
+      - mkdir -p backend/functions/build
+      - cd backend/functions/image_resize/
+      - npm install && node_modules/.bin/sls package
+      - unzip .serverless/main.zip -d ${OLDPATH}/backend/functions/build
+  post_build:
+    commands:
+      - cd ${OLDPATH}
+artifacts:
+  name: lambda-image-resize
+  files:
+    - '**/*'
+  base-directory: backend/functions/build

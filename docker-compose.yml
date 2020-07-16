@@ -3,25 +3,26 @@ version: '3.7'
 services:
   db:
     image: postgres:9.6.8
+    container_name: schema-cms-db
     env_file: local.env
     volumes:
-      - schema_cms_db_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
   localstack:
-    image: localstack/localstack:0.10.8
+    image: localstack/localstack:0.11.3
+    container_name: schema-cms-localstack
     ports:
-      - "4569:4569"
-      - "4572:4572"
+      - "4566:4566"
     environment:
-      - SERVICES=dynamodb,s3
+      - SERVICES=s3
       - DATA_DIR=/tmp/localstack/data
+      - HOST_TMP_FOLDER=/tmp
       - DOCKER_HOST=unix:///var/run/docker.sock
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=foo
       - AWS_SECRET_ACCESS_KEY=bar
-      - AWS_STORAGE_BUCKET_NAME=schemacms
     volumes:
       - "localstack_data:/tmp/localstack/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -30,6 +31,7 @@ services:
 
   backend:
     image: schema_cms_backend
+    container_name: schema-cms-backend
     build:
       context: backend/app
     entrypoint: ["./scripts/entrypoint.sh"]
@@ -52,6 +54,7 @@ services:
 
   workerlambda:
     image: schema_cms_workerlambda
+    container_name: schema-cms-worker
     build:
       context: backend/functions/worker
     command: handler.main
@@ -73,12 +76,14 @@ services:
 
   mailcatcher:
     image: schickling/mailcatcher
+    container_name: schema-cms-mailcatcher
     ports:
     - 1080:1080
 
   documentation:
     restart: always
-    image: schema_cms_backend:latest
+    image: schema_cms_backend
+    container_name: schema-cms-docs
     command: "mkdocs serve"
     volumes:
     - ./backend/app:/app
@@ -87,6 +92,8 @@ services:
 
 volumes:
   localstack_data:
-    external: true
-  schema_cms_db_data:
-    external: true
+    external:
+      name: "schema-cms-localstack-data"
+  db_data:
+    external:
+      name: "schema-cms-backend-db-data"
