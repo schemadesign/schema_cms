@@ -107,7 +107,7 @@ class PABlockElementSerializer(ReadOnlySerializer):
                 "url": f"{settings.PUBLIC_API_URL}{utils.generate_state_element_url(obj.state)}",
             }
 
-        if obj.type in [ElementType.IMAGE, ElementType.FILE]:
+        if obj.type == ElementType.IMAGE:
             if not obj.image:
                 return {}
 
@@ -115,6 +115,15 @@ class PABlockElementSerializer(ReadOnlySerializer):
                 "file_name": obj.get_original_file_name()[1],
                 "image": obj.image.url,
                 "alt": obj.params.get("alt"),
+            }
+
+        if obj.type == ElementType.FILE:
+            if not obj.file:
+                return {}
+
+            return {
+                "file_name": obj.get_original_file_name(image=False)[1],
+                "file": obj.file.url,
             }
 
         if obj.type == ElementType.OBSERVABLE_HQ:
