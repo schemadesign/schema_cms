@@ -1,7 +1,7 @@
 const schemaObject = {
     SCHEMA_PREVIEW: null,
     get getSchemaVariable() {
-    return this.SCHEMA_PREVIEW;
+        return this.SCHEMA_PREVIEW;
     },
     set setSchemaVariable(schemaPreviewValue) {
         this.SCHEMA_PREVIEW = schemaPreviewValue
