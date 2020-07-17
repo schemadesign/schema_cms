@@ -59,6 +59,9 @@ migrate:
 makemigrations:
 	$(DOCKER_COMPOSE) run backend ./manage.py makemigrations
 
+pytest:
+	$(DOCKER_COMPOSE) run backend pytest
+
 clean:
 	# remove created images
 	@docker-compose -p schema-cms down --remove-orphans --rmi all 2>/dev/null \
