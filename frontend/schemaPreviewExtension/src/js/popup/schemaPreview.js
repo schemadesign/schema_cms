@@ -10,9 +10,9 @@ export default function () {
   toggleSwitch.addEventListener('change', ()=> {
     chrome.storage.sync.get('SCHEMA_PREVIEW', function(data) {
       if(!data.SCHEMA_PREVIEW) {
-        return chrome.storage.sync.set({'SCHEMA_PREVIEW': true});
+        return chrome.storage.sync.set({'SCHEMA_PREVIEW': true, DATA_ID: 2});
       }
-      return chrome.storage.sync.set({'SCHEMA_PREVIEW': false});
+      return chrome.storage.sync.set({'SCHEMA_PREVIEW': false, DATA_ID: 1});
     });
   })
 
