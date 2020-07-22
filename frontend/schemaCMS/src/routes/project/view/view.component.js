@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, cond, path, propEq, T } from 'ramda';
+import { always, cond, identity, path, propEq, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -70,6 +70,7 @@ export class View extends PureComponent {
   state = {
     removeLoading: false,
     confirmationModalOpen: false,
+    publishConfirmationModalOpen: false,
   };
 
   getStatusOptions = intl =>
@@ -97,8 +98,29 @@ export class View extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
+  handleCancelPublish = () => this.setState({ publishConfirmationModalOpen: false });
+
   handleSelectStatus = setFieldValue => ({ value: selectedStatus }) => {
     setFieldValue(PROJECT_STATUS, selectedStatus);
+  };
+
+  handleSelect = () => this.handleSelectStatus(this.props.setFieldValue);
+
+  handleConfirmPublish = () => {
+    this.props.setFieldValue(PROJECT_STATUS, 'published');
+    this.setState({
+      publishConfirmationModalOpen: false,
+    });
+  };
+
+  handleStatusSelect = ({ value }) => {
+    if (value === 'published') {
+      return this.setState({
+        publishConfirmationModalOpen: true,
+      });
+    }
+
+    return this.props.setFieldValue(PROJECT_STATUS, value);
   };
 
   renderInput = ({ field, multiline }) => (
@@ -117,13 +139,13 @@ export class View extends PureComponent {
     </InputContainer>
   );
 
-  renderSelect = ({ field }) => (
+  renderSelect = ({ field, onSelect = this.handleSelect }) => (
     <Select
       customStyles={selectContainerStyles}
       name={field}
       value={this.props.values[field]}
       options={this.getStatusOptions(this.props.intl)}
-      onSelect={this.handleSelectStatus(this.props.setFieldValue)}
+      onSelect={onSelect}
     />
   );
 
@@ -138,11 +160,11 @@ export class View extends PureComponent {
     [T, this.renderValue],
   ]);
 
-  renderDetail = ({ id, label, order, fullWidth, ...rest }, index) => (
+  renderDetail = ({ id, label, order, fullWidth, onSelect = identity, ...rest }, index) => (
     <DetailItem order={order} key={index} fullWidth={fullWidth}>
       <DetailWrapper id={id}>
         <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
-        {this.renderDetailValue({ id, ...rest, isAdmin: this.props.isAdmin })}
+        {this.renderDetailValue({ id, ...rest, isAdmin: this.props.isAdmin, onSelect })}
       </DetailWrapper>
     </DetailItem>
   );
@@ -200,6 +222,7 @@ export class View extends PureComponent {
         mobileOrder: 3,
         editable: true,
         select: true,
+        onSelect: this.handleStatusSelect,
       },
       {
         label: this.formatMessage(messages.domainField),
@@ -270,7 +293,7 @@ export class View extends PureComponent {
 
   render() {
     const { project, userRole, isAdmin } = this.props;
-    const { confirmationModalOpen, removeLoading } = this.state;
+    const { confirmationModalOpen, removeLoading, publishConfirmationModalOpen } = this.state;
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
     const projectId = getMatchParam(this.props, 'projectId');
@@ -316,6 +339,33 @@ export class View extends PureComponent {
             <NextButton
               id="projectConfirmationRemovalModalConfirmBtn"
               onClick={this.handleConfirmRemove}
+              loading={removeLoading}
+              disabled={removeLoading}
+            >
+              <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
+        <Modal
+          id="projectPublishConfirmationRemovalModal"
+          isOpen={publishConfirmationModalOpen}
+          contentLabel="Confirm Publish"
+          style={modalStyles}
+        >
+          <ModalTitle id="projectPublishConfirmationRemovalModalTitle">
+            <FormattedMessage {...messages.publishTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton
+              id="projectConfirmationRemovalModalCancelBtn"
+              onClick={this.handleCancelPublish}
+              disabled={removeLoading}
+            >
+              <FormattedMessage {...messages.cancelRemoval} />
+            </BackButton>
+            <NextButton
+              id="projectPublishConfirmationRemovalModalConfirmBtn"
+              onClick={this.handleConfirmPublish}
               loading={removeLoading}
               disabled={removeLoading}
             >
