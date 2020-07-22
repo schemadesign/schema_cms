@@ -1,19 +1,25 @@
 export default function () {
+  chrome.tabs.sendMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
   let toggleSwitch = document.getElementById('switch-button');
 
-  window.onload = function(){
-    chrome.storage.sync.get('SCHEMA_PREVIEW', (data) => {
-      toggleSwitch.checked = data.SCHEMA_PREVIEW;
-    })
-  };
+  let toggleSwitchValue = false;
+  window.addEventListener("message", function(event) {
+    console.log('popup', event.data.params)
+    if (event.source != window)
+      return;
+    toggleSwitchValue = event.data.params.SCHEMA_PREVIEW;
+  });
 
   toggleSwitch.addEventListener('change', ()=> {
-    chrome.storage.sync.get('SCHEMA_PREVIEW', function(data) {
-      if(!data.SCHEMA_PREVIEW) {
-        return chrome.storage.sync.set({'SCHEMA_PREVIEW': true, DATA_ID: 2});
-      }
-      return chrome.storage.sync.set({'SCHEMA_PREVIEW': false, DATA_ID: 1});
-    });
+    console.log('click')
+    if (!toggleSwitchValue) {
+      console.log('toggle')
+      toggleSwitch.checked = toggleSwitchValue;
+      return window.postMessage({ type: 'variables', params: {'SCHEMA_PREVIEW': true, 'DATA_ID': 2} }, "*");
+    }
+    console.log('toggle')
+    toggleSwitch.checked = toggleSwitchValue;
+    return window.postMessage({ type: 'variables', params: {'SCHEMA_PREVIEW': false, 'DATA_ID': 1} }, "*");
   })
 
 };
