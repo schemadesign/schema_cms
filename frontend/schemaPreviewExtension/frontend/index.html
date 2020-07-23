@@ -8,14 +8,38 @@
 <div>Schema value: <p id="schemaValue"></p></div>
 <div>Data id: <p id="dataId"></p></div>
 <div id="dataContent"></div>
-<script>
+</body>
+</html>
 
-    chrome.runtime.onMessage.addListener(
-        function(message, callback) {
-                chrome.tabs.executeScript({
-                    file: 'contentScript.js'
-                });
-        });
+<script>
+    const schemaValue = document.getElementById('schemaValue');
+    const dataId = document.getElementById('dataId');
+    const dataContent = document.getElementById('dataContent');
+
+    window.onload = function() {
+        fetch(`http://localhost:8000/public-api/datasources/1`)
+            .then(response => response.json())
+            .then(data => {
+                dataContent.innerText = JSON.stringify(data);
+                dataId.innerText = 1;
+                schemaValue.innerText = false;
+            })
+    }
+
+    window.addEventListener("message", function(event) {
+        if (event.source != window)
+            return;
+        schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
+        schemaObject.setDataId = event.data.DATA_ID;
+
+        return fetch(`http://localhost:8000/public-api/datasources/${schemaObject.getDataId}`)
+            .then(response => response.json())
+            .then(data => {
+                dataContent.innerText = JSON.stringify(data);
+                dataId.innerText = schemaObject.getDataId;
+                schemaValue.innerText = schemaObject.getSchemaVariable;
+            })
+    }, false);
 
     const schemaObject = {
         SCHEMA_PREVIEW: null,
@@ -33,35 +57,4 @@
             this.DATA_ID = dataId
         }
     };
-
-    const schemaValue = document.getElementById('schemaValue');
-    const dataId = document.getElementById('dataId');
-    const dataContent = document.getElementById('dataContent');
-
-    window.onload = function() {
-        fetch(`http://localhost:8000/public-api/datasources/1`)
-            .then(response => response.json())
-            .then(data => {
-                dataContent.innerText = JSON.stringify(data);
-            })
-    }
-
-    window.addEventListener("message", function(event) {
-        console.log('index', event)
-        if (event.source != window)
-            return;
-
-        schemaObject.setSchemaVariable = event.data.params.SCHEMA_PREVIEW;
-        schemaObject.setDataId = event.data.params.DATA_ID;
-        schemaValue.innerText = schemaObject.getSchemaVariable;
-        dataId.innerText = schemaObject.getDataId;
-
-        fetch(`http://localhost:8000/public-api/datasources/${schemaObject.getDataId}`)
-            .then(response => response.json())
-            .then(data => {
-                dataContent.innerText = JSON.stringify(data);
-            })
-    });
 </script>
-</body>
-</html>
