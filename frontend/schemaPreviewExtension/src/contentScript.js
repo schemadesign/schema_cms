@@ -1,13 +1,6 @@
-var port = chrome.runtime.connect();
 
-window.addEventListener("message", function(event) {
-    // We only accept messages from ourselves
-    if (event.source != window)
-        return;
+const processMessage = function(request, sender) {
+    return window.postMessage({ type: "SCHEMA_CMS", PREVIEW_MODE: request.isPreviewMode, DATA_ID: request.dataId }, "*");
 
-    if (event.data.type && (event.data.type == "FROM_PAGE")) {
-        console.log("Content script received: " + event.data.text);
-        window.postMessage({ type: 'variables', params: {'SCHEMA_PREVIEW': true, 'DATA_ID': 2} }, "*");
-        port.postMessage(event.data.text);
-    }
-}, false);
+}
+chrome.runtime.onMessage.addListener(processMessage);
