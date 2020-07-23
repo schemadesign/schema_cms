@@ -29,16 +29,19 @@
     window.addEventListener("message", function(event) {
         if (event.source != window)
             return;
-        schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
-        schemaObject.setDataId = event.data.DATA_ID;
+        if (event.data.type === 'SCHEMA_CMS') {
+            schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
+            schemaObject.setDataId = event.data.DATA_ID;
 
-        return fetch(`http://localhost:8000/public-api/datasources/${schemaObject.getDataId}`)
-            .then(response => response.json())
-            .then(data => {
-                dataContent.innerText = JSON.stringify(data);
-                dataId.innerText = schemaObject.getDataId;
-                schemaValue.innerText = schemaObject.getSchemaVariable;
-            })
+            return fetch(`http://localhost:8000/public-api/datasources/${schemaObject.getDataId}`)
+                .then(response => response.json())
+                .then(data => {
+                    dataContent.innerText = JSON.stringify(data);
+                    dataId.innerText = schemaObject.getDataId;
+                    schemaValue.innerText = schemaObject.getSchemaVariable;
+                })
+        }
+            return
     }, false);
 
     const schemaObject = {
