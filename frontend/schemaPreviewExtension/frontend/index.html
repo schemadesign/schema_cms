@@ -3,11 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .data-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        #dataContent {
+            width: 500px;
+            height: 500px;
+            margin-top: 20px;
+        }
+
+        .schema-value {
+            text-align: center;
+            width: 100px;
+        }
+
+        .data-value {
+            text-align: center;
+            width: 100px;
+        }
+        .value {
+            text-align: center;
+        }
+        .checkbox {
+            text-align: center;
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
-<div>Schema value: <p id="schemaValue"></p></div>
-<div>Data id: <p id="dataId"></p></div>
-<div id="dataContent"></div>
+<div class="content-wrapper">
+    <div class="data-wrapper">
+        <div class="schema-value">Schema value: <p id="schemaValue" class="value"></p></div>
+        <div class="data-value">Data id: <p id="dataId" class="value"></p></div>
+        <div class="checkbox">
+            <label for="checkbox">Fake content</label>
+            <input type="checkbox" id="checkbox" name="checkbox" value="off">
+        </div>
+    </div>
+    <div id="dataContent"></div>
+</div>
+
 </body>
 </html>
 
@@ -15,6 +66,7 @@
     const schemaValue = document.getElementById('schemaValue');
     const dataId = document.getElementById('dataId');
     const dataContent = document.getElementById('dataContent');
+    const checkbox = document.getElementById('checkbox');
     const API_URL = 'https://api.schemacms.com';
     const PUBLISHED_PAGE = '245';
     const UNPUBLISHED_PAGE = '246';
@@ -23,8 +75,8 @@
         fetch(`${API_URL}/pages/${PUBLISHED_PAGE}`)
             .then(response => response.json())
             .then(data => {
-                dataContent.innerText = JSON.stringify(data);
-                dataId.innerText = 1;
+                dataContent.innerText = JSON.stringify(data, null, 4);
+                dataId.innerText = PUBLISHED_PAGE;
                 schemaValue.innerText = false;
             })
     };
@@ -34,13 +86,13 @@
             return;
         if (event.data.type === 'SCHEMA_CMS') {
             schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
-            schemaObject.setDataId = event.data.DATA_ID;
+            let checkboxValue = checkbox.checked ? UNPUBLISHED_PAGE : PUBLISHED_PAGE;
 
-            return fetch(`${API_URL}/pages/${UNPUBLISHED_PAGE}`)
+            return fetch(`${API_URL}/pages/${checkboxValue}`)
                 .then(response => response.json())
                 .then(data => {
-                    dataContent.innerText = JSON.stringify(data);
-                    dataId.innerText = schemaObject.getDataId;
+                    dataContent.innerText = JSON.stringify(data, null, 4);
+                    dataId.innerText = checkboxValue;
                     schemaValue.innerText = schemaObject.getSchemaVariable;
                 })
         }
