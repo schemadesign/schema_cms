@@ -5,6 +5,7 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models, transaction
 from django.utils import functional, timezone
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
+from django_fsm import FSMField
 
 from softdelete.models import SoftDeleteObject
 from storages.backends.s3boto3 import S3Boto3Storage
@@ -109,6 +110,11 @@ class Page(Content):
     allow_edit = models.BooleanField(default=False)
     blocks = models.ManyToManyField(BlockTemplate, through="PageBlock")
     is_template = models.BooleanField(default=True)
+    is_draft = models.BooleanField(default=True, editable=False, db_index=True)
+    published_version = models.OneToOneField(
+        "self", on_delete=models.SET_NULL, related_name="draft_version", null=True, editable=False,
+    )
+    state = FSMField(choices=constants.PAGE_STATE_CHOICES, default=constants.PageState.DRAFT)
 
     objects = managers.PageManager()
 
@@ -120,7 +126,10 @@ class Page(Content):
     def create_or_update_block(self, block):
         return PageBlock.objects.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
 
-    def delete_blocks(self, blocks: list):
+    def delete_blocks(self, blocks: list = None):
+        if not blocks:
+            self.page_blocks.all().delete()
+
         self.page_blocks.filter(id__in=blocks).delete()
 
     def add_tags(self, tags_list):
@@ -130,10 +139,14 @@ class Page(Content):
             PageTag.objects.create(page=self, category_id=tag["category"], value=tag["value"])
 
     @transaction.atomic()
-    def copy_page(self):
+    def copy_page(self, attrs: dict = None):
 
         copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
-        new_page = self.make_clone(attrs={"name": f"Page ID #{self.id} copy({copy_time})"})
+
+        if not attrs:
+            attrs = {"name": f"Page ID #{self.id} copy({copy_time})"}
+
+        new_page = self.make_clone(attrs=attrs)
 
         for block in self.page_blocks.all():
             c_block = block.make_clone(attrs={"page": new_page})
