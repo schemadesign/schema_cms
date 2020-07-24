@@ -4,11 +4,11 @@ export default () => {
   let toggleSwitchValue = null;
 
   window.onload = () => {
-    chrome.storage.local.get("isPreviewMode", function(value){
+    chrome.storage.local.get("isPreviewMode", (value) => {
       toggleSwitchValue = value.isPreviewMode;
       toggleSwitch.checked = toggleSwitchValue;
     });
-    return chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    return chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: toggleSwitchValue, dataId: 0 });
     });
   }
