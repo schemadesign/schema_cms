@@ -40,10 +40,6 @@
         .value {
             text-align: center;
         }
-        .checkbox {
-            text-align: center;
-            width: 100px;
-        }
     </style>
 </head>
 <body>
@@ -51,10 +47,6 @@
     <div class="data-wrapper">
         <div class="schema-value">Schema value: <p id="schemaValue" class="value"></p></div>
         <div class="data-value">Data id: <p id="dataId" class="value"></p></div>
-        <div class="checkbox">
-            <label for="checkbox">Fake content</label>
-            <input type="checkbox" id="checkbox" name="checkbox" value="off">
-        </div>
     </div>
     <div id="dataContent"></div>
 </div>
@@ -66,7 +58,6 @@
     const schemaValue = document.getElementById('schemaValue');
     const dataId = document.getElementById('dataId');
     const dataContent = document.getElementById('dataContent');
-    const checkbox = document.getElementById('checkbox');
     const API_URL = 'https://api.schemacms.com';
     const PUBLISHED_PAGE = '245';
     const UNPUBLISHED_PAGE = '246';
@@ -86,13 +77,13 @@
             return;
         if (event.data.type === 'SCHEMA_CMS') {
             schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
-            let checkboxValue = checkbox.checked ? UNPUBLISHED_PAGE : PUBLISHED_PAGE;
+            let pageValue = event.data.PREVIEW_MODE ? UNPUBLISHED_PAGE : PUBLISHED_PAGE;
 
-            return fetch(`${API_URL}/pages/${checkboxValue}`)
+            return fetch(`${API_URL}/pages/${pageValue}`)
                 .then(response => response.json())
                 .then(data => {
                     dataContent.innerText = JSON.stringify(data, null, 4);
-                    dataId.innerText = checkboxValue;
+                    dataId.innerText = pageValue;
                     schemaValue.innerText = schemaObject.getSchemaVariable;
                 })
         }
