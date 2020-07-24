@@ -15,16 +15,19 @@
     const schemaValue = document.getElementById('schemaValue');
     const dataId = document.getElementById('dataId');
     const dataContent = document.getElementById('dataContent');
+    const API_URL = 'https://api.schemacms.com';
+    const PUBLISHED_PAGE = '245';
+    const UNPUBLISHED_PAGE = '246';
 
     window.onload = function() {
-        fetch(`http://localhost:8000/public-api/datasources/1`)
+        fetch(`${API_URL}/pages/${PUBLISHED_PAGE}`)
             .then(response => response.json())
             .then(data => {
                 dataContent.innerText = JSON.stringify(data);
                 dataId.innerText = 1;
                 schemaValue.innerText = false;
             })
-    }
+    };
 
     window.addEventListener("message", function(event) {
         if (event.source != window)
@@ -33,7 +36,7 @@
             schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
             schemaObject.setDataId = event.data.DATA_ID;
 
-            return fetch(`http://localhost:8000/public-api/datasources/${schemaObject.getDataId}`)
+            return fetch(`${API_URL}/pages/${UNPUBLISHED_PAGE}`)
                 .then(response => response.json())
                 .then(data => {
                     dataContent.innerText = JSON.stringify(data);
