@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .data-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        #dataContent {
+            width: 500px;
+            height: 500px;
+            margin-top: 20px;
+        }
+
+        .schema-value {
+            text-align: center;
+            width: 100px;
+        }
+
+        .data-value {
+            text-align: center;
+            width: 100px;
+        }
+        .value {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="content-wrapper">
+    <div class="data-wrapper">
+        <div class="schema-value">Schema value: <p id="schemaValue" class="value"></p></div>
+        <div class="data-value">Data id: <p id="dataId" class="value"></p></div>
+    </div>
+    <div id="dataContent"></div>
+</div>
+
+</body>
+</html>
+
+<script>
+    const schemaValue = document.getElementById('schemaValue');
+    const dataId = document.getElementById('dataId');
+    const dataContent = document.getElementById('dataContent');
+    const API_URL = 'https://api.schemacms.com';
+    const PUBLISHED_PAGE = '245';
+    const UNPUBLISHED_PAGE = '246';
+
+    window.onload = function() {
+        fetch(`${API_URL}/pages/${PUBLISHED_PAGE}`)
+            .then(response => response.json())
+            .then(data => {
+                dataContent.innerText = JSON.stringify(data, null, 4);
+                dataId.innerText = PUBLISHED_PAGE;
+                schemaValue.innerText = false;
+            })
+    };
+
+    window.addEventListener("message", function(event) {
+        if (event.source != window)
+            return;
+        if (event.data.type === 'SCHEMA_CMS') {
+            schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
+            let pageValue = event.data.PREVIEW_MODE ? UNPUBLISHED_PAGE : PUBLISHED_PAGE;
+
+            return fetch(`${API_URL}/pages/${pageValue}`)
+                .then(response => response.json())
+                .then(data => {
+                    dataContent.innerText = JSON.stringify(data, null, 4);
+                    dataId.innerText = pageValue;
+                    schemaValue.innerText = schemaObject.getSchemaVariable;
+                })
+        }
+            return
+    }, false);
+
+    const schemaObject = {
+        SCHEMA_PREVIEW: null,
+        DATA_ID: null,
+        get getSchemaVariable() {
+            return this.SCHEMA_PREVIEW;
+        },
+        set setSchemaVariable(schemaPreviewValue) {
+            this.SCHEMA_PREVIEW = schemaPreviewValue
+        },
+        get getDataId() {
+            return this.DATA_ID;
+        },
+        set setDataId(dataId) {
+            this.DATA_ID = dataId
+        }
+    };
+</script>

@@ -1,18 +1,20 @@
 export default function () {
-  let toggleSwitch = document.getElementById('switch-button');
 
-  window.onload = function(){
-    chrome.storage.sync.get('SCHEMA_PREVIEW', (data) => {
-      toggleSwitch.checked = data.SCHEMA_PREVIEW;
-    })
-  };
+  let toggleSwitch = document.getElementById('switch-button');
+  let toggleSwitchValue = false;
 
   toggleSwitch.addEventListener('change', ()=> {
-    chrome.storage.sync.get('SCHEMA_PREVIEW', function(data) {
-      if(!data.SCHEMA_PREVIEW) {
-        return chrome.storage.sync.set({'SCHEMA_PREVIEW': true});
-      }
-      return chrome.storage.sync.set({'SCHEMA_PREVIEW': false});
+    if (!toggleSwitchValue) {
+      toggleSwitchValue = true;
+      toggleSwitch.checked = toggleSwitchValue;
+      return chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: true, dataId: 2 });
+      });
+    }
+    toggleSwitchValue = false;
+    toggleSwitch.checked = toggleSwitchValue;
+    return chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: false, dataId: 1 });
     });
   })
 
