@@ -1,20 +1,34 @@
-export default function () {
+export default () => {
 
   let toggleSwitch = document.getElementById('switch-button');
-  let toggleSwitchValue = false;
+  let toggleSwitchValue = null;
+
+  window.onload = () => {
+    chrome.storage.local.get("isPreviewMode", (value) => {
+      toggleSwitchValue = value.isPreviewMode;
+      toggleSwitch.checked = toggleSwitchValue;
+    });
+    return chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: toggleSwitchValue, dataId: 0 });
+    });
+  }
 
   toggleSwitch.addEventListener('change', ()=> {
     if (!toggleSwitchValue) {
       toggleSwitchValue = true;
       toggleSwitch.checked = toggleSwitchValue;
-      return chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: true, dataId: 2 });
+      chrome.storage.local.set({ "isPreviewMode": toggleSwitchValue }, () => {
+      });
+      return chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: toggleSwitchValue, dataId: 2 });
       });
     }
     toggleSwitchValue = false;
     toggleSwitch.checked = toggleSwitchValue;
-    return chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: false, dataId: 1 });
+    chrome.storage.local.set({ "isPreviewMode": toggleSwitchValue }, () => {
+    });
+    return chrome.tabs.query({ active: true, currentWindow: true }, (tabs)  =>{
+      chrome.tabs.sendMessage(tabs[0].id, { isPreviewMode: toggleSwitchValue, dataId: 1 });
     });
   })
 

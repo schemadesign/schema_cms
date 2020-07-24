@@ -62,7 +62,7 @@
     const PUBLISHED_PAGE = '245';
     const UNPUBLISHED_PAGE = '246';
 
-    window.onload = function() {
+    window.onload = () => {
         fetch(`${API_URL}/pages/${PUBLISHED_PAGE}`)
             .then(response => response.json())
             .then(data => {
@@ -72,7 +72,7 @@
             })
     };
 
-    window.addEventListener("message", function(event) {
+    window.addEventListener("message", (event) => {
         if (event.source != window)
             return;
         if (event.data.type === 'SCHEMA_CMS') {
