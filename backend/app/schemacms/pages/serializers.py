@@ -403,6 +403,13 @@ class PageCreateSerializer(PageBaseSerializer):
         model = models.Page
         fields = PageBaseSerializer.Meta.fields + ("blocks",)
 
+    # def save(self, *args, **kwargs):
+    #     page = super().save(*args, **kwargs)
+    #
+    #     page.copy_page(attrs={"is_draft": False, "published_version": page})
+    #
+    #     return page
+
 
 class PageListSerializer(PageBaseSerializer):
     template_name = serializers.CharField(source="template.name", read_only=True)
