@@ -4,7 +4,6 @@ export default () => {
   let toggleSwitchValue = null;
 
   window.onload = () => {
-    console.log('popup', chrome.storage.local, chrome.tabs)
     chrome.storage.local.get("isPreviewMode", (value) => {
       toggleSwitchValue = value.isPreviewMode;
       toggleSwitch.checked = toggleSwitchValue;
