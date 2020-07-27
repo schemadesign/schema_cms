@@ -63,6 +63,7 @@
     const UNPUBLISHED_PAGE = '246';
 
     window.onload = () => {
+        window.postMessage({ type: "FROM_PAGE" }, "*");
         fetch(`${API_URL}/pages/${PUBLISHED_PAGE}`)
             .then(response => response.json())
             .then(data => {
@@ -87,8 +88,7 @@
                     schemaValue.innerText = schemaObject.getSchemaVariable;
                 })
         }
-            return
-    }, false);
+     }, false);
 
     const schemaObject = {
         SCHEMA_PREVIEW: null,
