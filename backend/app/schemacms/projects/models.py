@@ -84,5 +84,5 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     @transition(
         field=status, source=constants.ProjectStatus.PUBLISHED, target=constants.ProjectStatus.IN_PROGRESS
     )
-    def move_to_in_process(self):
+    def in_progress(self):
         pass

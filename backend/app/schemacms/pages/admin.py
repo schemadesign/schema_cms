@@ -107,7 +107,7 @@ class SectionAdmin(SoftDeleteObjectAdmin):
 
 @admin.register(models.Page)
 class PageAdmin(SoftDeleteObjectAdmin):
-    list_display = ("name", "section", "project", "deleted_at", "is_template")
+    list_display = ("name", "section", "project", "deleted_at", "is_draft")
     fields = (
         "project",
         "section",
@@ -119,7 +119,7 @@ class PageAdmin(SoftDeleteObjectAdmin):
         "is_public",
         "deleted_at",
     )
-    list_filter = ("project", "section", "deleted_at")
+    list_filter = ("project", "section", "deleted_at", "is_draft")
     readonly_on_update_fields = ("project",)
 
     def soft_undelete(self, request, queryset):

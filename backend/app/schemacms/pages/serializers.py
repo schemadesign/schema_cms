@@ -5,6 +5,7 @@ from .elements import ELEMENTS_TYPES
 from . import models, constants
 from ..utils.serializers import CustomModelSerializer, ReadOnlySerializer
 from ..utils.validators import CustomUniqueTogetherValidator
+from ..projects.constants import ProjectStatus
 
 
 class ElementValueField(serializers.Field):
@@ -300,6 +301,10 @@ class PageBaseSerializer(CustomModelSerializer):
             if (tags := self.initial_data.get("tags")) is not None:
                 page.add_tags(tags)
 
+            if page.project.status == ProjectStatus.PUBLISHED:
+                page.project.in_progress()
+                page.project.save()
+
         return page
 
     def create_or_update_blocks(self, page, blocks):
@@ -403,12 +408,16 @@ class PageCreateSerializer(PageBaseSerializer):
         model = models.Page
         fields = PageBaseSerializer.Meta.fields + ("blocks",)
 
-    # def save(self, *args, **kwargs):
-    #     page = super().save(*args, **kwargs)
-    #
-    #     page.copy_page(attrs={"is_draft": False, "published_version": page})
-    #
-    #     return page
+    @transaction.atomic()
+    def save(self, *args, **kwargs):
+        page = super().save(*args, **kwargs)
+
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
+
+        return page
 
 
 class PageListSerializer(PageBaseSerializer):
@@ -424,6 +433,22 @@ class PageDetailSerializer(PageBaseSerializer):
     class Meta:
         model = models.Page
         fields = PageBaseSerializer.Meta.fields + ("blocks",)
+
+    @transaction.atomic()
+    def save(self, *args, **kwargs):
+        page = super().save(*args, **kwargs)
+
+        self.update_published_version_state(page)
+
+        return page
+
+    @staticmethod
+    def update_published_version_state(page: models.Page):
+        published_version: models.Page = page.published_version
+
+        if published_version.state == constants.PageState.PUBLISHED:
+            published_version.wait_to_republish()
+            published_version.save()
 
 
 class SectionListCreateSerializer(CustomModelSerializer):
