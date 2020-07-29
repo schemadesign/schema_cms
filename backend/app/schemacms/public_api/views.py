@@ -21,6 +21,7 @@ from rest_framework import (
 from . import filters, serializers, records_reader
 from ..datasources.models import DataSource, Filter
 from ..pages.models import Section, Page, PageBlock, PageBlockElement, CustomElementSet
+from ..pages.constants import PageState
 from ..projects.models import Project
 from ..tags.models import TagCategory
 from ..utils.serializers import ActionSerializerViewSetMixin
@@ -89,7 +90,14 @@ class PAProjectView(
                 "sections",
                 queryset=(
                     Section.objects.prefetch_related(
-                        Prefetch("pages", queryset=Page.objects.filter(is_public=True))
+                        Prefetch(
+                            "pages",
+                            queryset=Page.objects.filter(
+                                is_public=True,
+                                is_draft=False,
+                                state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+                            ),
+                        )
                     ).filter(is_public=True)
                 ),
             ),
@@ -145,7 +153,16 @@ class PASectionView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     permission_classes = ()
     queryset = (
         Section.objects.filter(is_public=True)
-        .prefetch_related("pages", "pages__created_by")
+        .prefetch_related(
+            Prefetch(
+                "pages",
+                queryset=Page.objects.select_related("created_by").filter(
+                    is_public=True,
+                    is_draft=False,
+                    state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+                ),
+            )
+        )
         .order_by("created")
     )
 
@@ -184,8 +201,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
     queryset = (
-        Page.objects.filter(is_public=True)
-        .select_related("created_by")
+        Page.objects.select_related("created_by")
         .prefetch_related(
             "tags",
             Prefetch(
@@ -211,6 +227,31 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
     filterset_class = filters.PageFilterSet
     ordering_fields = ["created", "modified", "name"]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        if self.action == "list":
+            return queryset.filter(
+                is_public=True,
+                is_draft=False,
+                state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+            )
+
+        if self.action == "retrieve":
+            return queryset.filter(
+                is_public=True,
+                is_draft=True,
+                published_version__state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+            )
+
+    def retrieve(self, request, *args, **kwargs):
+        has_to_be_draft = request.query_params.get("draft")
+
+        instance = self.get_object() if has_to_be_draft == "true" else self.get_object().published_version
+        serializer = self.get_serializer(instance)
+
+        return response.Response(serializer.data)
 
     @decorators.action(detail=True, url_path="html", methods=["get"])
     def html(self, request, **kwargs):

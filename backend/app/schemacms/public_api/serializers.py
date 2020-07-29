@@ -187,6 +187,7 @@ class PATemplateSerializer(ReadOnlySerializer):
 
 
 class PAPageSerializer(ReadOnlySerializer):
+    id = serializers.SerializerMethodField()
     created_by = serializers.SerializerMethodField()
     updated = serializers.DateTimeField(source="modified", format="%Y-%m-%d")
     tags = serializers.SerializerMethodField()
@@ -222,6 +223,9 @@ class PAPageSerializer(ReadOnlySerializer):
                 res[category].append(tag)
 
         return res
+
+    def get_id(self, obj):
+        return obj.id if obj.is_draft else obj.draft_version.id
 
 
 class PAPageDetailSerializer(PAPageSerializer):
