@@ -5,7 +5,7 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models, transaction
 from django.utils import functional, timezone
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
-from django_fsm import FSMField
+from django_fsm import FSMField, transition
 
 from softdelete.models import SoftDeleteObject
 from storages.backends.s3boto3 import S3Boto3Storage
@@ -129,14 +129,42 @@ class Page(Content):
     def delete_blocks(self, blocks: list = None):
         if not blocks:
             self.page_blocks.all().delete()
-
-        self.page_blocks.filter(id__in=blocks).delete()
+        else:
+            self.page_blocks.filter(id__in=blocks).delete()
 
     def add_tags(self, tags_list):
         self.tags.all().delete()
 
         for tag in tags_list:
             PageTag.objects.create(page=self, category_id=tag["category"], value=tag["value"])
+
+    @transition(field=state, source="*", target=constants.PageState.PUBLISHED)
+    def publish(self):
+        draft: Page = self.draft_version
+
+        self.name = draft.name
+        self.section = draft.section
+        self.template = draft.template
+        self.display_name = draft.display_name
+        self.description = draft.description
+        self.keywords = draft.keywords
+        self.slug = draft.slug
+        self.is_public = draft.is_public
+        self.allow_edit = draft.allow_edit
+
+        self.delete_blocks()
+
+        for block in draft.page_blocks.all():
+            c_block = block.make_clone(attrs={"page": self})
+
+            for element in block.elements.all():
+                element.clone(c_block)
+
+    @transition(
+        field=state, source=constants.PageState.PUBLISHED, target=constants.PageState.WAITING_TO_REPUBLISH
+    )
+    def wait_to_republish(self):
+        pass
 
     @transaction.atomic()
     def copy_page(self, attrs: dict = None):
