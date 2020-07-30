@@ -53,6 +53,11 @@ def copy_elements(element, block):
         return copy_simple_element(element, block)
 
 
+def copy_tags(tags, page_id):
+    for tag in tags:
+        create_copy_of_instance(tag, attrs={"page_id": page_id})
+
+
 def copy_page(obj, attrs):
     new_page = create_copy_of_instance(obj, attrs=attrs)
 
@@ -72,18 +77,25 @@ def create_published_pages(apps, schema_editor):
     with transaction.atomic():
         for page in Page.objects.using(db_alias).filter(is_draft=True):
             published_instance = copy_page(page, attrs={"is_draft": False, "state": "published"})
+            copy_tags(page.tags.all(), published_instance.id)
             page.published_version = published_instance
             page.save()
 
 
 def reverse(apps, schema_editor):
     Page = apps.get_model("pages", "Page")
+    BlockElement = apps.get_model("pages", "PageBlockElement")
     db_alias = schema_editor.connection.alias
 
     pages = Page.objects.using(db_alias).filter(is_draft=False)
 
     for page in pages:
-        page.page_blocks.all().delete
+        for block in page.page_blocks.all():
+            BlockElement.objects.filter(block_id=block.id).delete()
+            block.delete()
+
+        page.tags.all().delete()
+        page.delete()
 
 
 class Migration(migrations.Migration):

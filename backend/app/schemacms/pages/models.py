@@ -154,12 +154,16 @@ class Page(Content):
         self.modified = draft.modified
 
         self.delete_blocks()
+        self.tags.all().delete()
 
         for block in draft.page_blocks.all():
             c_block = block.make_clone(attrs={"page": self})
 
             for element in block.elements.all():
                 element.clone(c_block)
+
+        for tag in draft.tags.all():
+            tag.make_clone(attrs={"page": self})
 
     @transition(
         field=state, source=constants.PageState.PUBLISHED, target=constants.PageState.WAITING_TO_REPUBLISH
