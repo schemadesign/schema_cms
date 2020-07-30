@@ -6,11 +6,9 @@ from django.db import models, transaction
 from django.utils import functional, timezone
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
 from django_fsm import FSMField, transition
-
+from model_clone import CloneMixin
 from softdelete.models import SoftDeleteObject
 from storages.backends.s3boto3 import S3Boto3Storage
-
-from model_clone import CloneMixin
 
 from . import constants, managers
 from ..utils.models import file_upload_path

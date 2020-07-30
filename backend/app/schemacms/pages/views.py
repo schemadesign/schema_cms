@@ -1,16 +1,14 @@
-from django.shortcuts import get_object_or_404
-from django.db.models import Prefetch
-from django.utils import timezone
-
 import django_filters.rest_framework
-
+from django.db.models import Prefetch
+from django.shortcuts import get_object_or_404
+from django.utils import timezone
 from rest_framework import decorators, generics, filters, mixins, permissions, response, status, viewsets
 
 from . import models, serializers
 from ..projects.models import Project
-from ..utils.views import DetailViewSet
-from ..utils.serializers import IDNameSerializer, ActionSerializerViewSetMixin
 from ..utils.permissions import IsAdmin, IsAdminOrIsEditor, IsAdminOrReadOnly
+from ..utils.serializers import IDNameSerializer, ActionSerializerViewSetMixin
+from ..utils.views import DetailViewSet
 
 
 class BaseListCreateView(generics.ListCreateAPIView):
