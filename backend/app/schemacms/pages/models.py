@@ -73,7 +73,7 @@ class Section(SoftDeleteObject, TimeStampedModel):
     name = models.CharField(max_length=constants.SECTION_NAME_MAX_LENGTH)
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
-    is_public = models.BooleanField(default=False)
+    is_public = models.BooleanField(default=True)
     main_page = models.OneToOneField(
         "pages.Page", on_delete=models.SET_NULL, null=True, related_name="main_page"
     )
@@ -106,7 +106,7 @@ class Page(Content):
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
-    is_public = models.BooleanField(default=False)
+    is_public = models.BooleanField(default=True)
     allow_edit = models.BooleanField(default=False)
     blocks = models.ManyToManyField(BlockTemplate, through="PageBlock")
     is_template = models.BooleanField(default=True)
