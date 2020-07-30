@@ -408,6 +408,8 @@ class TestListCreatePage:
         assert response.data == page_serializer.PageDetailSerializer(page).data
         assert page.is_template is False
         assert section.project == page_template.project == page.project
+        assert page.published_version is not None
+        assert page.published_version.is_draft is False
 
     def test_create_page_with_text_elements(
         self, api_client, admin, project, section_factory, block_template
@@ -682,7 +684,13 @@ class TestUpdateDeletePageView:
 
     def update_page(self, api_client, user, page):
         new_name = "New Page Name"
+        old_name = page.name
         payload = {"name": new_name}
+
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
 
         api_client.force_authenticate(user)
         response = api_client.patch(self.get_url(page.id), data=payload, format="json")
@@ -690,11 +698,17 @@ class TestUpdateDeletePageView:
 
         assert response.status_code == status.HTTP_200_OK
         assert page.name == new_name
+        assert page.published_version.name == old_name
 
     def test_update_page_block(self, api_client, admin, page, block_template, page_block_factory):
         page_block = page_block_factory(block=block_template, page=page)
         new_block_name = "New Block Name"
         payload = {"blocks": [{"id": page_block.id, "name": new_block_name}]}
+
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(page.id), data=payload, format="json")
@@ -715,6 +729,11 @@ class TestUpdateDeletePageView:
                 {"id": page_block.id, "elements": [{"id": page_block_element.id, "name": new_element_name}]}
             ]
         }
+
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(page.id), data=payload, format="json")
@@ -743,6 +762,11 @@ class TestUpdateDeletePageView:
         page_block = page_block_factory(block=block_template, page=page)
 
         payload = {"delete_blocks": [page_block.id]}
+
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(page.id), data=payload, format="json")
