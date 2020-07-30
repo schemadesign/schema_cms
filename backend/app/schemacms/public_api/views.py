@@ -246,9 +246,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
             )
 
     def retrieve(self, request, *args, **kwargs):
-        has_to_be_draft = request.query_params.get("draft")
-
-        instance = self.get_object() if has_to_be_draft == "true" else self.get_object().published_version
+        instance = self.get_object().published_version
         serializer = self.get_serializer(instance)
 
         return response.Response(serializer.data)
@@ -262,6 +260,13 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
         context = {"page": json.loads(js)}
 
         return render(request, "common/public_api_page.html", context)
+
+    @decorators.action(detail=True, url_path="draft", methods=["get"])
+    def draft(self, request, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+
+        return response.Response(serializer.data)
 
 
 class PADataSourceView(
