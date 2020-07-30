@@ -211,7 +211,7 @@ class PageTemplate(Page):
 class PageBlock(CloneMixin, SoftDeleteObject):
     block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
     page = models.ForeignKey("Page", on_delete=models.CASCADE, related_name="page_blocks")
-    name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
+    name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH, blank=True, default="")
     order = models.PositiveIntegerField(default=0)
 
     def __str__(self):

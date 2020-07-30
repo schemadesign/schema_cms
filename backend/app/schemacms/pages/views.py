@@ -236,7 +236,7 @@ class PageListCreateView(
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(Prefetch("tags", queryset=models.PageTag.objects.select_related("category")))
-        # .filter(is_draft=True)
+        .filter(is_draft=True)
         .order_by("-created")
     )
     filter_backends = [filters.OrderingFilter]
