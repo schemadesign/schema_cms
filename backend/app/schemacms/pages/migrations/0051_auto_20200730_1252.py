@@ -79,7 +79,9 @@ def create_published_pages(apps, schema_editor):
     db_alias = schema_editor.connection.alias
 
     with transaction.atomic():
-        for page in Page.objects.using(db_alias).filter(is_draft=True):
+        for page in Page.objects.using(db_alias).filter(
+            is_draft=True, is_template=False, published_version__isnull=True
+        ):
             published_instance = copy_page(page, attrs={"is_draft": False, "state": "published"})
             copy_tags(page.tags.all(), published_instance.id)
             page.published_version = published_instance
@@ -91,7 +93,7 @@ def reverse(apps, schema_editor):
     BlockElement = apps.get_model("pages", "PageBlockElement")
     db_alias = schema_editor.connection.alias
 
-    pages = Page.objects.using(db_alias).filter(is_draft=False)
+    pages = Page.objects.using(db_alias).filter(is_draft=False, is_template=False)
 
     for page in pages:
         for block in page.page_blocks.all():
