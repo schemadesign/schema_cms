@@ -38,9 +38,7 @@ describe('View: Component', () => {
 
     const wrapper = await render();
 
-    wrapper
-      .find('#deleteProjectDesktopBtn')
-      .simulate('click');
+    wrapper.find('#deleteProjectDesktopBtn').simulate('click');
 
     expect(wrapper.state().confirmationModalOpen).toBeTruthy();
 
@@ -83,9 +81,7 @@ describe('View: Component', () => {
 
     const wrapper = await render();
 
-    wrapper
-      .find('#deleteProjectDesktopBtn')
-      .simulate('click');
+    wrapper.find('#deleteProjectDesktopBtn').simulate('click');
 
     expect(wrapper.state().confirmationModalOpen).toBeTruthy();
 
