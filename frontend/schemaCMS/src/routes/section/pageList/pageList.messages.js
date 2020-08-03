@@ -39,6 +39,10 @@ export default defineMessages({
     id: 'section.pageList.removeTitle',
     defaultMessage: 'Are you sure you want to remove this section?',
   },
+  draft: {
+    id: 'section.pageList.draft',
+    defaultMessage: 'Draft',
+  },
   [SECTIONS_PUBLISH]: {
     id: `section.pageList.${SECTIONS_PUBLISH}`,
     defaultMessage: 'Make it Public',

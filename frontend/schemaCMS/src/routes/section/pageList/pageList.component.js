@@ -25,7 +25,7 @@ import {
   PlusButton,
 } from '../../../shared/components/navigation';
 import { CounterHeader } from '../../../shared/components/counterHeader';
-import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
+import { ListContainer, ListItem, ListItemTitle, FooterContainer } from '../../../shared/components/listComponents';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { CardHeader } from '../../../shared/components/cardHeader';
 import {
@@ -50,6 +50,7 @@ import {
   Switches,
   SwitchLabel,
   CopySeparator,
+  Draft,
 } from '../../../shared/components/form/frequentComponents.styles';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
@@ -76,6 +77,7 @@ export const Page = ({
   copyPage,
   createdBy,
   name,
+  isChanged,
   id,
   templateName,
   mainPage,
@@ -91,7 +93,6 @@ export const Page = ({
   const active = mainPage === id;
   const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
-  const footerComponent = <CardFooter title={templateCopy}>{templateCopy}</CardFooter>;
 
   const copyPageAction = async () => {
     try {
@@ -103,6 +104,12 @@ export const Page = ({
       setLoading(false);
     }
   };
+
+  const renderDraft = renderWhenTrue(() => (
+    <Draft>
+      <FormattedMessage {...messages.draft} />
+    </Draft>
+  ));
 
   const header = (
     <CardHeader
@@ -116,8 +123,15 @@ export const Page = ({
     />
   );
 
+  const renderFooterComponent = () => (
+    <FooterContainer>
+      <CardFooter title={templateCopy}>{templateCopy}</CardFooter>
+      {renderDraft(isChanged)}
+    </FooterContainer>
+  );
+
   return (
-    <ListItem headerComponent={header} footerComponent={footerComponent}>
+    <ListItem headerComponent={header} footerComponent={renderFooterComponent()}>
       <ListItemTitle id={`page-${id}`} onClick={() => history.push(`/page/${id}`)}>
         {name}
       </ListItemTitle>
@@ -129,6 +143,7 @@ Page.propTypes = {
   created: PropTypes.string.isRequired,
   createdBy: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  isChanged: PropTypes.bool.isRequired,
   id: PropTypes.number.isRequired,
   templateName: PropTypes.string,
   setFieldValue: PropTypes.func.isRequired,
