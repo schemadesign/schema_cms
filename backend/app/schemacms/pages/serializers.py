@@ -251,6 +251,7 @@ class PageTagSerializer(serializers.ModelSerializer):
 
 class PageBaseSerializer(CustomModelSerializer):
     tags = PageTagSerializer(read_only=True, many=True)
+    is_changed = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Page
@@ -266,6 +267,7 @@ class PageBaseSerializer(CustomModelSerializer):
             "created_by",
             "created",
             "is_public",
+            "is_changed",
         )
         validators = [
             CustomUniqueTogetherValidator(
@@ -399,6 +401,13 @@ class PageBaseSerializer(CustomModelSerializer):
         )
 
         return PageBlockSerializer(blocks, many=True).data
+
+    @staticmethod
+    def get_is_changed(obj: models.Page):
+        return obj.published_version.state in [
+            constants.PageState.DRAFT,
+            constants.PageState.WAITING_TO_REPUBLISH,
+        ]
 
 
 class PageCreateSerializer(PageBaseSerializer):

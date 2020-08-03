@@ -371,6 +371,11 @@ class TestListCreatePage:
         self.list_pages(api_client, editor, page)
 
     def list_pages(self, api_client, user, page):
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
+
         api_client.force_authenticate(user)
         response = api_client.get(self.get_url(page.section_id))
 
@@ -669,6 +674,11 @@ class TestUpdateDeletePageView:
         self.retrieve_page(api_client, editor, page)
 
     def retrieve_page(self, api_client, user, page):
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
+
         api_client.force_authenticate(user)
         response = api_client.get(self.get_url(page.id))
 
