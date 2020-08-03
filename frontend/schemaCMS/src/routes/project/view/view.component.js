@@ -357,7 +357,7 @@ export class View extends PureComponent {
           </ModalTitle>
           <ModalActions>
             <BackButton
-              id="projectConfirmationRemovalModalCancelBtn"
+              id="projectConfirmationPublishModalCancelBtn"
               onClick={this.handleCancelPublish}
               disabled={removeLoading}
             >

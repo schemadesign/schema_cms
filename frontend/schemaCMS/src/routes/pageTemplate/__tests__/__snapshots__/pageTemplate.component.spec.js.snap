@@ -339,7 +339,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqAui hflVXV"
+    className="sc-fzqMdD fwVoet"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzowVh hDBXhX"
+          className="sc-fzoJus iirZhm"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fzoJus iEZvSV"
+            className="sc-fzoVTD hVjhKf"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzowVh hDBXhX"
+          className="sc-fzoJus iirZhm"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fzoJus iEZvSV"
+            className="sc-fzoVTD hVjhKf"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -477,7 +477,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzowVh hDBXhX"
+          className="sc-fzoJus iirZhm"
           href="/project/1/page-templates"
           onClick={[Function]}
           style={
@@ -499,7 +499,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fzoJus iEZvSV"
+            className="sc-fzoVTD hVjhKf"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -535,7 +535,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzqMdD dQdcdV"
+          className="sc-fzowVh jNMYDn"
         >
           <span
             style={
@@ -548,7 +548,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-fzoJus iEZvSV"
+            className="sc-fzoVTD hVjhKf"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -609,7 +609,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               className="sc-fzqBkg cuBQll"
             >
               <div
-                className="sc-fznMnq evJfZi"
+                className="sc-fzoant inBwfy"
               >
                 <div
                   style={
@@ -703,7 +703,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   />
                 </svg>
                 <div
-                  className="sc-fzoaKM kmULuk"
+                  className="sc-fzomuh cdeFr"
                   id="pageTemplateCopyButton"
                   onClick={[Function]}
                 >
@@ -780,7 +780,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         className="sc-fzoxKX khfKcw"
       >
         <div
-          className="sc-fznMnq hkvZxA"
+          className="sc-fzoant jVHttY"
         >
           <div
             style={
@@ -844,7 +844,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-fzoant bcDcyh"
+                className="sc-fzomME hvRnYb"
               >
                 <svg
                   style={
@@ -867,14 +867,14 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzqAbL wXuMO"
+        className="sc-fzqMAW iKmpZO"
       >
         <div
-          className="sc-fzqMAW jcClHB"
+          className="sc-fzoydu kXdSvU"
         />
         1 Block
         <div
-          className="sc-fzqMAW jcClHB"
+          className="sc-fzoydu kXdSvU"
         >
           <div
             className="sc-fzoYkl eHwuAj"
@@ -944,10 +944,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoJMP kFWJmc"
+            className="sc-fzoYHE jZJGjT"
           >
             <div
-              className="sc-fzoYHE kEgiTH"
+              className="sc-fzpkqZ knrwlY"
             >
               <div>
                 <div
@@ -973,10 +973,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzpkqZ bxmotp"
+              className="sc-fznAgC jOpUyq"
             >
               <div
-                className="sc-fznAgC jzilTA"
+                className="sc-fznLPX dqYich"
                 onClick={[Function]}
               >
                 <input
@@ -1110,7 +1110,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fznLPX hemSOC"
+                  className="sc-fzoaKM caQOhY"
                 >
                   <svg
                     style={
@@ -1131,7 +1131,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzoYHE kEgiTH"
+              className="sc-fzpkqZ knrwlY"
             >
               <svg
                 style={
