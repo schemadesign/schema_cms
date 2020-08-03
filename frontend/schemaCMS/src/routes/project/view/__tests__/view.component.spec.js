@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
 import { defaultProps } from '../view.stories';
-import { BackButton, NextButton } from '../../../../shared/components/navigation';
+import { NextButton } from '../../../../shared/components/navigation';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
 
 describe('View: Component', () => {
@@ -43,7 +43,7 @@ describe('View: Component', () => {
     expect(wrapper.state().confirmationModalOpen).toBeTruthy();
 
     wrapper
-      .find(NextButton)
+      .find('#projectConfirmationRemovalModalConfirmBtn')
       .last()
       .simulate('click');
 
@@ -85,7 +85,7 @@ describe('View: Component', () => {
 
     expect(wrapper.state().confirmationModalOpen).toBeTruthy();
 
-    wrapper.find(BackButton).simulate('click');
+    wrapper.find('#projectConfirmationRemovalModalCancelBtn').simulate('click');
 
     expect(wrapper.state().confirmationModalOpen).toBeFalsy();
   });

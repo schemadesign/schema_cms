@@ -494,18 +494,18 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpkJw kLVpQa"
+    className="sc-fznzOf ekXTWt"
   >
     <div
-      className="sc-fznzOf iwqDEW"
+      className="sc-fznMnq eNWOpn"
     />
     2 sections
     <div
-      className="sc-fznzOf iwqDEW"
+      className="sc-fznMnq eNWOpn"
     />
   </div>
   <section
-    className="sc-fzoYkl gNiAub"
+    className="sc-fzpkJw bIpaRQ"
   >
     <div
       className="sc-fzqBkg chLNes"
