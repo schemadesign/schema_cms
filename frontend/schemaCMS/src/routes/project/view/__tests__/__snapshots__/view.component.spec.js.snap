@@ -398,6 +398,7 @@ exports[`View: Component should render content correctly 1`] = `
 ",
                 ]
               }
+              id="projectStatusSelect"
               name="status"
               onSelect={[Function]}
               options={
@@ -696,7 +697,7 @@ exports[`View: Component should render content correctly 1`] = `
   </Styled(Modal)>
   <Styled(Modal)
     contentLabel="Confirm Publish"
-    id="projectPublishConfirmationRemovalModal"
+    id="projectPublishConfirmationModal"
     isOpen={false}
     style={
       Object {
@@ -731,7 +732,7 @@ exports[`View: Component should render content correctly 1`] = `
     }
   >
     <Styled(H1)
-      id="projectPublishConfirmationRemovalModalTitle"
+      id="projectPublishConfirmationModalTitle"
     >
       <FormattedMessage
         defaultMessage="Are you sure you want to publish this project?"
@@ -753,7 +754,7 @@ exports[`View: Component should render content correctly 1`] = `
       </BackButton>
       <NextButton
         disabled={false}
-        id="projectPublishConfirmationRemovalModalConfirmBtn"
+        id="projectPublishConfirmationModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -1150,7 +1151,7 @@ exports[`View: Component should render content correctly for editor 1`] = `
   </Styled(Modal)>
   <Styled(Modal)
     contentLabel="Confirm Publish"
-    id="projectPublishConfirmationRemovalModal"
+    id="projectPublishConfirmationModal"
     isOpen={false}
     style={
       Object {
@@ -1185,7 +1186,7 @@ exports[`View: Component should render content correctly for editor 1`] = `
     }
   >
     <Styled(H1)
-      id="projectPublishConfirmationRemovalModalTitle"
+      id="projectPublishConfirmationModalTitle"
     >
       <FormattedMessage
         defaultMessage="Are you sure you want to publish this project?"
@@ -1207,7 +1208,7 @@ exports[`View: Component should render content correctly for editor 1`] = `
       </BackButton>
       <NextButton
         disabled={false}
-        id="projectPublishConfirmationRemovalModalConfirmBtn"
+        id="projectPublishConfirmationModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -1620,6 +1621,7 @@ exports[`View: Component should render correctly 1`] = `
 ",
                 ]
               }
+              id="projectStatusSelect"
               name="status"
               onSelect={[Function]}
               options={
@@ -1918,7 +1920,7 @@ exports[`View: Component should render correctly 1`] = `
   </Styled(Modal)>
   <Styled(Modal)
     contentLabel="Confirm Publish"
-    id="projectPublishConfirmationRemovalModal"
+    id="projectPublishConfirmationModal"
     isOpen={false}
     style={
       Object {
@@ -1953,7 +1955,7 @@ exports[`View: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)
-      id="projectPublishConfirmationRemovalModalTitle"
+      id="projectPublishConfirmationModalTitle"
     >
       <FormattedMessage
         defaultMessage="Are you sure you want to publish this project?"
@@ -1975,7 +1977,7 @@ exports[`View: Component should render correctly 1`] = `
       </BackButton>
       <NextButton
         disabled={false}
-        id="projectPublishConfirmationRemovalModalConfirmBtn"
+        id="projectPublishConfirmationModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >

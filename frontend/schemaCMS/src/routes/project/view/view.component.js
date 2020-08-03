@@ -36,7 +36,7 @@ import {
   PROJECT_DESCRIPTION,
   PROJECT_DOMAIN,
   PROJECT_OWNER,
-  PROJECT_STATUS,
+  PROJECT_STATUS, PROJECT_STATUSES,
   PROJECT_STATUSES_LIST,
   PROJECT_TITLE,
 } from '../../../modules/project/project.constants';
@@ -107,14 +107,14 @@ export class View extends PureComponent {
   handleSelect = () => this.handleSelectStatus(this.props.setFieldValue);
 
   handleConfirmPublish = () => {
-    this.props.setFieldValue(PROJECT_STATUS, 'published');
+    this.props.setFieldValue(PROJECT_STATUS, PROJECT_STATUSES.PUBLISHED);
     this.setState({
       publishConfirmationModalOpen: false,
     });
   };
 
   handleStatusSelect = ({ value }) => {
-    if (value === 'published') {
+    if (value === PROJECT_STATUSES.PUBLISHED) {
       return this.setState({
         publishConfirmationModalOpen: true,
       });
@@ -142,6 +142,7 @@ export class View extends PureComponent {
   renderSelect = ({ field, onSelect = this.handleSelect }) => (
     <Select
       customStyles={selectContainerStyles}
+      id="projectStatusSelect"
       name={field}
       value={this.props.values[field]}
       options={this.getStatusOptions(this.props.intl)}
@@ -347,12 +348,12 @@ export class View extends PureComponent {
           </ModalActions>
         </Modal>
         <Modal
-          id="projectPublishConfirmationRemovalModal"
+          id="projectPublishConfirmationModal"
           isOpen={publishConfirmationModalOpen}
           contentLabel="Confirm Publish"
           style={modalStyles}
         >
-          <ModalTitle id="projectPublishConfirmationRemovalModalTitle">
+          <ModalTitle id="projectPublishConfirmationModalTitle">
             <FormattedMessage {...messages.publishTitle} />
           </ModalTitle>
           <ModalActions>
@@ -364,7 +365,7 @@ export class View extends PureComponent {
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
             <NextButton
-              id="projectPublishConfirmationRemovalModalConfirmBtn"
+              id="projectPublishConfirmationModalConfirmBtn"
               onClick={this.handleConfirmPublish}
               loading={removeLoading}
               disabled={removeLoading}
