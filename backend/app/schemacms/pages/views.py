@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework import decorators, generics, filters, mixins, permissions, response, status, viewsets
 
-from . import models, serializers
+from . import models, serializers, constants
 from ..projects.models import Project
 from ..utils.permissions import IsAdmin, IsAdminOrIsEditor, IsAdminOrReadOnly
 from ..utils.serializers import IDNameSerializer, ActionSerializerViewSetMixin
@@ -303,3 +303,20 @@ class PageViewSet(DetailViewSet):
             return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
 
         return response.Response({"id": new_page.id}, status=status.HTTP_200_OK)
+
+    @decorators.action(detail=True, url_path="publish", methods=["get"])
+    def publish(self, request, **kwargs):
+        page = self.get_object()
+
+        try:
+            if page.published_version.state in [
+                constants.PageState.DRAFT,
+                constants.PageState.WAITING_TO_REPUBLISH,
+            ]:
+                page.publish()
+                page.save()
+
+        except Exception as e:
+            return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
+
+        return response.Response({"message": f"Page {page.id} published"}, status=status.HTTP_200_OK)
