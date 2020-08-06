@@ -23,3 +23,6 @@ class BaseUserManagement:
 
     def get_logout_url(self, return_to=None) -> str:
         raise NotImplementedError
+
+    def get_user_auth0_instances(self, user_email):
+        raise NotImplementedError

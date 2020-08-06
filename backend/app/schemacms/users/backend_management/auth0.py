@@ -51,7 +51,28 @@ class Auth0UserManagement(base.BaseUserManagement):
     def delete_user(self, user) -> bool:
         if not user.external_id:
             return False
-        return self.proxy.users.delete(user.external_id)
+
+        ids_to_delete = self.get_user_auth0_instances(user.email)
+        ids_to_delete.add(user.external_id)
+
+        try:
+            for external_id in ids_to_delete:
+                self.proxy.users.delete(external_id)
+        except Exception as e:
+            return f"Unable to remove user from Auth0 - {e}"
+
+        return True
+
+    def get_user_auth0_instances(self, user_email):
+        instances = self.proxy.users_by_email.search_users_by_email(email=user_email, fields=["identities"])
+
+        external_ids = set()
+
+        for instance in instances:
+            for identity in instance["identities"]:
+                external_ids.add(f"{identity['provider']}|{identity['user_id']}")
+
+        return external_ids
 
     def password_change_url(self, user: models.User):
         login_url = self.get_login_url()

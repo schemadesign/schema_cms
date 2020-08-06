@@ -45,7 +45,7 @@ def update_external_id(backend, details, user=None, *args, **kwargs):
     if not user.last_login and details.get("email_verified"):
         user.is_active = True
 
-    if backend.name == "auth0":
+    if backend.name == "auth0" and details["user_id"].startswith("auth0"):
         user.source = constants.UserSource.AUTH0
         user.external_id = details.get("user_id")
         backend.strategy.storage.user.changed(user)

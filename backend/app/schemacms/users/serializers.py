@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from .models import User
-from schemacms.authorization import constants as auth_constants
+from ..authorization import constants as auth_constants
 
 
 class UserSerializer(serializers.ModelSerializer):

@@ -66,7 +66,9 @@ class TestUpdateExternalId:
     def test_set_user_is_active_flag(self, backend, user_factory):
         user = user_factory(is_active=False, last_login=None)
 
-        pipeline.update_external_id(backend=backend, details={"email_verified": True}, user=user)
+        details = {"user_id": "auth0|123", "email_verified": True}
+
+        pipeline.update_external_id(backend=backend, details=details, user=user)
 
         assert user.is_active is True
 
