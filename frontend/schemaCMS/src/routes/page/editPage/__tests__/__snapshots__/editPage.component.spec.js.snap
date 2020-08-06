@@ -6879,6 +6879,32 @@ exports[`EditPage: Component should render correctly 1`] = `
           <button
             className="sc-fzqNJr ggxWJG"
             disabled={true}
+            id="publishPage"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+            type="button"
+          >
+            Publish
+          </button>
+          <button
+            className="sc-fzqNJr ggxWJG"
+            disabled={true}
             id="savePage"
             style={
               Object {

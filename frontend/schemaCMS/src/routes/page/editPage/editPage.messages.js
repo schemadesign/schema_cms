@@ -16,7 +16,7 @@ export default defineMessages({
   },
   publish: {
     id: 'page.editPage.publish',
-    defaultMessage: 'Save & Publish',
+    defaultMessage: 'Publish',
   },
   back: {
     id: 'page.editPage.back',

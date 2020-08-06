@@ -40,7 +40,6 @@ import {
   sectionMessage,
   tabMessage,
 } from '../../../shared/components/projectBreadcrumbs';
-import { PROJECT_STATUS, PROJECT_STATUSES } from '../../../modules/project/project.constants';
 
 const getBreadcrumbsItems = (project, section, page) => [
   {
@@ -113,7 +112,6 @@ export const EditPage = ({
     onSubmit: async (data, { setErrors }) => {
       try {
         setUpdateLoading(true);
-        setPublishModalOpen(false);
         const formData = prepareForPostingPageData(data);
 
         await updatePage({ formData, pageId });
@@ -142,9 +140,9 @@ export const EditPage = ({
     try {
       const formData = prepareForPostingPageData(data);
       setPublishLoading(true);
-      await handleSubmit();
       await publishPage({ pageId, formData });
       setPublishModalOpen(false);
+      setPublishLoading(false);
     } catch (e) {
       reportError(e);
       setPublishLoading(false);
@@ -204,8 +202,8 @@ export const EditPage = ({
             <NextButton
               id="publishPage"
               type="button"
-              loading={updateLoading}
-              disabled={!isValid || !dirty || updateLoading}
+              loading={publishLoading}
+              disabled={!page.isChanged}
               onClick={() => setPublishModalOpen(true)}
             >
               <FormattedMessage {...messages.publish} />
@@ -250,8 +248,8 @@ export const EditPage = ({
           <NextButton
             id="confirmPublishBtn"
             onClick={handleConfirmPublish}
-            loading={removeLoading}
-            disabled={removeLoading}
+            loading={publishLoading}
+            disabled={publishLoading}
           >
             <FormattedMessage {...messages.confirmPublish} />
           </NextButton>
