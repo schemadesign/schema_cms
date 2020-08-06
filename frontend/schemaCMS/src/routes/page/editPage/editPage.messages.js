@@ -14,6 +14,10 @@ export default defineMessages({
     id: 'page.editPage.create',
     defaultMessage: 'Save',
   },
+  publish: {
+    id: 'page.editPage.publish',
+    defaultMessage: 'Save & Publish',
+  },
   back: {
     id: 'page.editPage.back',
     defaultMessage: 'Back',
@@ -22,13 +26,25 @@ export default defineMessages({
     id: 'page.editPage.cancelRemoval',
     defaultMessage: 'Cancel',
   },
+  cancelPublish: {
+    id: 'page.editPage.cancelPublish',
+    defaultMessage: 'Cancel',
+  },
   confirmRemoval: {
     id: 'page.editPage.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  confirmPublish: {
+    id: 'page.editPage.confirmPublish',
     defaultMessage: 'Confirm',
   },
   removeTitle: {
     id: 'page.editPage.removeTitle',
     defaultMessage: 'Are you sure you want to remove this page?',
+  },
+  publishTitle: {
+    id: 'page.editPage.publishTitle',
+    defaultMessage: 'Are you sure you want to publish this page?',
   },
   namePageNameUniqueError: {
     id: 'page.editPage.namePageNameUniqueError',

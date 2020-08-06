@@ -18,6 +18,7 @@ export const PageRoutines = {
   updatePage: createRoutine(`${PREFIX}UPDATE_PAGE`),
   removePage: createRoutine(`${PREFIX}REMOVE_PAGE`),
   copyPage: createRoutine(`${PREFIX}COPY_PAGE`),
+  publishPage: createRoutine(`${PREFIX}PUBLISH_PAGE`),
   fetchPageAdditionalData: createRoutine(`${PREFIX}FETCH_PAGE_ADDITIONAL_DATA`),
 };
 
@@ -44,5 +45,6 @@ const setPageAdditionalData = (state = INITIAL_STATE, { payload }) => state.set(
 export const reducer = createReducer(INITIAL_STATE, {
   [PageRoutines.updatePage.success]: setPage,
   [PageRoutines.fetchPage.success]: setPage,
+  [PageRoutines.publishPage.success]: setPage,
   [PageRoutines.fetchPageAdditionalData.success]: setPageAdditionalData,
 });
