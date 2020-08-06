@@ -26,6 +26,7 @@ class PageFactory(factory.django.DjangoModelFactory):
     display_name = factory.Faker("text", max_nb_chars=constants.PAGE_DISPLAY_NAME_MAX_LENGTH)
     is_template = False
     is_public = False
+    is_draft = True
 
     @factory.post_generation
     def template(self, create, extracted, **kwargs):

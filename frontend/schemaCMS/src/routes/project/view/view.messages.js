@@ -93,6 +93,10 @@ export default defineMessages({
     id: 'project.view.removeTitle',
     defaultMessage: 'Are you sure you want to delete this project?',
   },
+  publishTitle: {
+    id: 'project.view.publishTitle',
+    defaultMessage: 'Are you sure you want to publish this project?',
+  },
   cancelRemoval: {
     id: 'project.view.cancelRemoval',
     defaultMessage: 'Cancel',

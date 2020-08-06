@@ -56,6 +56,22 @@ function* updatePage({ payload: { pageId, formData } }) {
   }
 }
 
+function* publishPage({ payload: { pageId } }) {
+  try {
+    yield put(PageRoutines.publishPage.request());
+    yield api.get(`${PAGES_PATH}/${pageId}/publish`);
+    const {
+      data: { results },
+    } = yield api.post(`${PAGES_PATH}/${pageId}`);
+    yield put(PageRoutines.publishPage.success(results));
+  } catch (e) {
+    reportError(e);
+    yield put(PageRoutines.publishPage.failure(e));
+  } finally {
+    yield put(PageRoutines.publishPage.fulfill());
+  }
+}
+
 function* removePage({ payload: { pageId, folderId } }) {
   try {
     yield put(PageRoutines.removePage.request());
@@ -112,6 +128,7 @@ export function* watchPage() {
     takeLatest(PageRoutines.createPage.TRIGGER, createPage),
     takeLatest(PageRoutines.updatePage.TRIGGER, updatePage),
     takeLatest(PageRoutines.removePage.TRIGGER, removePage),
+    takeLatest(PageRoutines.publishPage.TRIGGER, publishPage),
     takeLatest(PageRoutines.copyPage.TRIGGER, copyPage),
     takeLatest(PageRoutines.fetchPageAdditionalData.TRIGGER, fetchPageAdditionalData),
   ]);

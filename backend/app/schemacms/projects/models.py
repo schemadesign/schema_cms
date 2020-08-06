@@ -1,22 +1,19 @@
-import django_fsm
-import softdelete.models
 from django.conf import settings
 from django.db import models
 from django.utils import functional
 from django.utils.translation import ugettext as _
-from django_extensions.db import models as ext_models
+from django_extensions.db.models import TimeStampedModel, TitleSlugDescriptionModel
+from django_fsm import FSMField, transition
+
+from softdelete.models import SoftDeleteObject
 
 from . import constants, managers
-from ..users import constants as users_constants
 from ..pages.models import PageTemplate
+from ..users import constants as users_constants
 
 
-class Project(
-    softdelete.models.SoftDeleteObject, ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
-):
-    status = django_fsm.FSMField(
-        choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
-    )
+class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
+    status = FSMField(choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS)
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="projects", null=True
     )
@@ -77,3 +74,15 @@ class Project(
     @functional.cached_property
     def project_info(self):
         return {"id": self.id, "title": self.title, "domain": self.domain}
+
+    @transition(
+        field=status, source=constants.ProjectStatus.IN_PROGRESS, target=constants.ProjectStatus.PUBLISHED
+    )
+    def publish(self):
+        pass
+
+    @transition(
+        field=status, source=constants.ProjectStatus.PUBLISHED, target=constants.ProjectStatus.IN_PROGRESS
+    )
+    def in_progress(self):
+        pass

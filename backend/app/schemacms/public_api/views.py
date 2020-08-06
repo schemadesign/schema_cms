@@ -20,7 +20,8 @@ from rest_framework import (
 
 from . import filters, serializers, records_reader
 from ..datasources.models import DataSource, Filter
-from ..pages.models import Section, Page, PageBlock, PageBlockElement, CustomElementSet
+from ..pages.models import Section, Page, PageBlock, PageBlockElement
+from ..pages.constants import PageState
 from ..projects.models import Project
 from ..tags.models import TagCategory
 from ..utils.serializers import ActionSerializerViewSetMixin
@@ -89,7 +90,14 @@ class PAProjectView(
                 "sections",
                 queryset=(
                     Section.objects.prefetch_related(
-                        Prefetch("pages", queryset=Page.objects.filter(is_public=True))
+                        Prefetch(
+                            "pages",
+                            queryset=Page.objects.filter(
+                                is_public=True,
+                                is_draft=False,
+                                state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+                            ),
+                        )
                     ).filter(is_public=True)
                 ),
             ),
@@ -145,7 +153,16 @@ class PASectionView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     permission_classes = ()
     queryset = (
         Section.objects.filter(is_public=True)
-        .prefetch_related("pages", "pages__created_by")
+        .prefetch_related(
+            Prefetch(
+                "pages",
+                queryset=Page.objects.select_related("created_by").filter(
+                    is_public=True,
+                    is_draft=False,
+                    state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+                ),
+            )
+        )
         .order_by("created")
     )
 
@@ -183,44 +200,50 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     serializer_class = serializers.PAPageDetailSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
-    queryset = (
-        Page.objects.filter(is_public=True)
-        .select_related("created_by")
-        .prefetch_related(
-            "tags",
-            Prefetch(
-                "page_blocks",
-                queryset=PageBlock.objects.prefetch_related(
-                    Prefetch(
-                        "elements",
-                        queryset=PageBlockElement.objects.order_by("order").exclude(
-                            custom_element_set__isnull=False
-                        ),
-                    )
-                ).order_by("order"),
-            ),
-            Prefetch(
-                "page_blocks__elements__elements_sets",
-                queryset=CustomElementSet.objects.prefetch_related(
-                    Prefetch("elements", queryset=PageBlockElement.objects.order_by("order"))
-                ).order_by("order"),
-            ),
-        )
-        .order_by("created")
-    )
+    queryset = Page.objects.select_related("created_by").prefetch_related("tags",).order_by("created")
     filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
     filterset_class = filters.PageFilterSet
     ordering_fields = ["created", "modified", "name"]
 
+    def get_queryset(self):
+        if self.action == "list":
+            self.queryset = self.queryset.filter(
+                is_public=True,
+                is_draft=False,
+                state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+            )
+
+        if self.action in ["retrieve", "html"]:
+            self.queryset = self.queryset.filter(
+                is_public=True,
+                is_draft=True,
+                published_version__state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+            )
+
+        return super().get_queryset()
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object().published_version
+        serializer = self.get_serializer(instance)
+
+        return response.Response(serializer.data)
+
     @decorators.action(detail=True, url_path="html", methods=["get"])
     def html(self, request, **kwargs):
-        page = self.get_object()
+        page = self.get_object().published_version
         serializer = self.get_serializer(page)
 
         js = json.dumps(serializer.data)
         context = {"page": json.loads(js)}
 
         return render(request, "common/public_api_page.html", context)
+
+    @decorators.action(detail=True, url_path="draft", methods=["get"])
+    def draft(self, request, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+
+        return response.Response(serializer.data)
 
 
 class PADataSourceView(

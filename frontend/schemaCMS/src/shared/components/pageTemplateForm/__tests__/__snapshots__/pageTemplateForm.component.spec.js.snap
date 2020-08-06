@@ -44,7 +44,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           className="sc-fzoyAV eyiWjf"
         >
           <div
-            className="sc-fzoiQi BszgU"
+            className="sc-fzqARJ hvnAXS"
           >
             <div
               style={
@@ -137,7 +137,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               />
             </svg>
             <div
-              className="sc-fzoKki hyocKu"
+              className="sc-fzoYkl bNXWyt"
               id="pageTemplateCopyButton"
               onClick={[Function]}
             >
@@ -214,7 +214,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     className="sc-fzoXzr kEiSBj"
   >
     <div
-      className="sc-fzoiQi hHNbeu"
+      className="sc-fzqARJ iTuwok"
     >
       <div
         style={
@@ -277,7 +277,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzqARJ ZwPPx"
+            className="sc-fzqNqU ijEFoa"
           >
             <svg
               style={
@@ -300,14 +300,14 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoyTs bYsZxt"
+    className="sc-fzoNJl gHUVVD"
   >
     <div
-      className="sc-fzoNJl hnQQWs"
+      className="sc-fzoXWK jhgDpI"
     />
     1 Block
     <div
-      className="sc-fzoNJl hnQQWs"
+      className="sc-fzoXWK jhgDpI"
     >
       <div
         className="sc-fznxsB giYuRR"
@@ -377,10 +377,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-fzpmMD qwtcw"
+        className="sc-fznxKY iKCmrk"
       >
         <div
-          className="sc-fznxKY NngAs"
+          className="sc-fznMAR guOnZI"
         >
           <div>
             <div
@@ -406,10 +406,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fznMAR MHlQt"
+          className="sc-fznWOq iMEZUu"
         >
           <div
-            className="sc-fznWOq bXOaes"
+            className="sc-fzolEj eTORkX"
             onClick={[Function]}
           >
             <input
@@ -543,7 +543,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-fzolEj gGfnqQ"
+              className="sc-fzqBkg djHZbf"
             >
               <svg
                 style={
@@ -564,7 +564,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fznxKY NngAs"
+          className="sc-fznMAR guOnZI"
         >
           <svg
             style={

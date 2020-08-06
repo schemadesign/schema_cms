@@ -339,7 +339,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpkJw Vwizf"
+    className="sc-fznzOf ENHbE"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznMnq igPuqx"
+          className="sc-fzoant fVEmZd"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fzoant irwasq"
+            className="sc-fzomME ggEgBQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fznMnq igPuqx"
+          className="sc-fzoant fVEmZd"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fzoant irwasq"
+            className="sc-fzomME ggEgBQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -477,7 +477,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fznzOf hMHxmQ"
+          className="sc-fznMnq fbsjCR"
         >
           <span
             style={
@@ -490,7 +490,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fzoant irwasq"
+            className="sc-fzomME ggEgBQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -594,18 +594,18 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqPZZ dYZeMh"
+    className="sc-fzoxKX eqjPQc"
   >
     <div
-      className="sc-fzoxKX iTjTnT"
+      className="sc-fzoKki fwmznp"
     />
     3 Block Templates
     <div
-      className="sc-fzoxKX iTjTnT"
+      className="sc-fzoKki fwmznp"
     />
   </div>
   <section
-    className="sc-fznxKY cinfQm"
+    className="sc-fznMAR dqZyIO"
   >
     <div
       className="sc-fzoyTs dGguFW"
@@ -641,29 +641,29 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-fzqBkg fFYWEf"
           >
             <ul
-              className="sc-fznMAR dwokPX"
+              className="sc-fznWOq iILJxw"
             >
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-1"
               >
                 owner
               </li>
             </ul>
             <div
-              className="sc-fzqBkg cifTAZ"
+              className="sc-fzqPZZ gXikXH"
             >
               <div
-                className="sc-fzoKki hyocKu"
+                className="sc-fzoYkl bNXWyt"
                 id="blockTemplateCopyButton-1"
                 onClick={[Function]}
               >
@@ -749,29 +749,29 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-fzqBkg fFYWEf"
           >
             <ul
-              className="sc-fznMAR dwokPX"
+              className="sc-fznWOq iILJxw"
             >
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-1"
               >
                 owner 2
               </li>
             </ul>
             <div
-              className="sc-fzqBkg cifTAZ"
+              className="sc-fzqPZZ gXikXH"
             >
               <div
-                className="sc-fzoKki hyocKu"
+                className="sc-fzoYkl bNXWyt"
                 id="blockTemplateCopyButton-2"
                 onClick={[Function]}
               >
@@ -857,29 +857,29 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-fzqBkg fFYWEf"
           >
             <ul
-              className="sc-fznMAR dwokPX"
+              className="sc-fznWOq iILJxw"
             >
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-1"
               >
                 owner 3
               </li>
             </ul>
             <div
-              className="sc-fzqBkg cifTAZ"
+              className="sc-fzqPZZ gXikXH"
             >
               <div
-                className="sc-fzoKki hyocKu"
+                className="sc-fzoYkl bNXWyt"
                 id="blockTemplateCopyButton-3"
                 onClick={[Function]}
               >

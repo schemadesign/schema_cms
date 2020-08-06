@@ -1,16 +1,14 @@
-from django.shortcuts import get_object_or_404
-from django.db.models import Prefetch
-from django.utils import timezone
-
 import django_filters.rest_framework
-
+from django.db.models import Prefetch
+from django.shortcuts import get_object_or_404
+from django.utils import timezone
 from rest_framework import decorators, generics, filters, mixins, permissions, response, status, viewsets
 
-from . import models, serializers
+from . import models, serializers, constants
 from ..projects.models import Project
-from ..utils.views import DetailViewSet
-from ..utils.serializers import IDNameSerializer, ActionSerializerViewSetMixin
 from ..utils.permissions import IsAdmin, IsAdminOrIsEditor, IsAdminOrReadOnly
+from ..utils.serializers import IDNameSerializer, ActionSerializerViewSetMixin
+from ..utils.views import DetailViewSet
 
 
 class BaseListCreateView(generics.ListCreateAPIView):
@@ -236,6 +234,7 @@ class PageListCreateView(
         models.Page.objects.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(Prefetch("tags", queryset=models.PageTag.objects.select_related("category")))
+        .filter(is_draft=True)
         .order_by("-created")
     )
     filter_backends = [filters.OrderingFilter]
@@ -304,3 +303,20 @@ class PageViewSet(DetailViewSet):
             return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
 
         return response.Response({"id": new_page.id}, status=status.HTTP_200_OK)
+
+    @decorators.action(detail=True, url_path="publish", methods=["get"])
+    def publish(self, request, **kwargs):
+        page = self.get_object().published_version
+
+        try:
+            if page.state in [
+                constants.PageState.DRAFT,
+                constants.PageState.WAITING_TO_REPUBLISH,
+            ]:
+                page.publish()
+                page.save()
+
+        except Exception as e:
+            return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
+
+        return response.Response({"message": f"Page {page.id} published"}, status=status.HTTP_200_OK)

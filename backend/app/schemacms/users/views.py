@@ -3,11 +3,10 @@ from django.db import transaction
 from django_filters import rest_framework as django_filters
 from rest_framework import decorators, mixins, permissions, response, status, serializers, viewsets
 
-from schemacms.authorization import constants as auth_constants
-from schemacms.users import signals
-from .constants import UserRole, ErrorCode
-from . import models as user_models, permissions as user_permissions, serializers as user_serializers
+from . import models as user_models, permissions as user_permissions, serializers as user_serializers, signals
 from .backend_management import user_mgtm_backend
+from .constants import UserRole, ErrorCode
+from ..authorization import constants as auth_constants
 
 
 class UserViewSet(

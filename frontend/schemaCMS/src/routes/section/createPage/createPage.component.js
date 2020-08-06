@@ -71,6 +71,7 @@ export const CreatePage = ({
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const projectId = project.id;
   const menuOptions = getProjectMenuOptions(projectId);
+
   const { handleSubmit, isValid, dirty, setFieldValue, setValues, values, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: () => PAGE_SCHEMA,

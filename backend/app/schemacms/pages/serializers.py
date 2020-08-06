@@ -5,6 +5,7 @@ from .elements import ELEMENTS_TYPES
 from . import models, constants
 from ..utils.serializers import CustomModelSerializer, ReadOnlySerializer
 from ..utils.validators import CustomUniqueTogetherValidator
+from ..projects.constants import ProjectStatus
 
 
 class ElementValueField(serializers.Field):
@@ -250,6 +251,7 @@ class PageTagSerializer(serializers.ModelSerializer):
 
 class PageBaseSerializer(CustomModelSerializer):
     tags = PageTagSerializer(read_only=True, many=True)
+    is_changed = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Page
@@ -265,6 +267,7 @@ class PageBaseSerializer(CustomModelSerializer):
             "created_by",
             "created",
             "is_public",
+            "is_changed",
         )
         validators = [
             CustomUniqueTogetherValidator(
@@ -299,6 +302,10 @@ class PageBaseSerializer(CustomModelSerializer):
 
             if (tags := self.initial_data.get("tags")) is not None:
                 page.add_tags(tags)
+
+            if page.project.status == ProjectStatus.PUBLISHED:
+                page.project.in_progress()
+                page.project.save()
 
         return page
 
@@ -395,6 +402,13 @@ class PageBaseSerializer(CustomModelSerializer):
 
         return PageBlockSerializer(blocks, many=True).data
 
+    @staticmethod
+    def get_is_changed(obj: models.Page):
+        return obj.published_version.state in [
+            constants.PageState.DRAFT,
+            constants.PageState.WAITING_TO_REPUBLISH,
+        ]
+
 
 class PageCreateSerializer(PageBaseSerializer):
     blocks = serializers.SerializerMethodField()
@@ -402,6 +416,17 @@ class PageCreateSerializer(PageBaseSerializer):
     class Meta:
         model = models.Page
         fields = PageBaseSerializer.Meta.fields + ("blocks",)
+
+    @transaction.atomic()
+    def save(self, *args, **kwargs):
+        page = super().save(*args, **kwargs)
+
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
+
+        return page
 
 
 class PageListSerializer(PageBaseSerializer):
@@ -417,6 +442,22 @@ class PageDetailSerializer(PageBaseSerializer):
     class Meta:
         model = models.Page
         fields = PageBaseSerializer.Meta.fields + ("blocks",)
+
+    @transaction.atomic()
+    def save(self, *args, **kwargs):
+        page = super().save(*args, **kwargs)
+
+        self.update_published_version_state(page)
+
+        return page
+
+    @staticmethod
+    def update_published_version_state(page: models.Page):
+        published_version: models.Page = page.published_version
+
+        if published_version.state == constants.PageState.PUBLISHED:
+            published_version.wait_to_republish()
+            published_version.save()
 
 
 class SectionListCreateSerializer(CustomModelSerializer):
