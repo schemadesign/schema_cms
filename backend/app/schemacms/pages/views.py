@@ -306,10 +306,10 @@ class PageViewSet(DetailViewSet):
 
     @decorators.action(detail=True, url_path="publish", methods=["get"])
     def publish(self, request, **kwargs):
-        page = self.get_object()
+        page = self.get_object().published_version
 
         try:
-            if page.published_version.state in [
+            if page.state in [
                 constants.PageState.DRAFT,
                 constants.PageState.WAITING_TO_REPUBLISH,
             ]:
