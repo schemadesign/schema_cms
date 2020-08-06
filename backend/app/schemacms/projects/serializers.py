@@ -1,11 +1,8 @@
-from django.db import transaction
 from rest_framework import serializers
 
-from . import constants, models
+from . import models
 from ..utils.serializers import NestedRelatedModelSerializer, UserSerializer
 from ..utils.validators import CustomUniqueValidator
-from ..pages.models import Page
-from ..pages.constants import PageState
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -44,21 +41,6 @@ class ProjectSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         project = models.Project(owner=self.context["request"].user, **validated_data)
         project.save()
-
-        return project
-
-    @transaction.atomic()
-    def update(self, instance, validated_data):
-        project = super().update(instance, validated_data)
-
-        if "status" in validated_data and validated_data["status"] == constants.ProjectStatus.PUBLISHED:
-            pages_to_publish = Page.objects.filter(
-                project=project, is_draft=False, state__in=[PageState.DRAFT, PageState.WAITING_TO_REPUBLISH]
-            )
-
-            for page in pages_to_publish:
-                page.publish()
-                page.save()
 
         return project
 
