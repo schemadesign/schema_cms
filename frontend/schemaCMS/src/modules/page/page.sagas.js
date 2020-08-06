@@ -56,10 +56,10 @@ function* updatePage({ payload: { pageId, formData } }) {
   }
 }
 
-function* publishPage({ payload: { pageId } }) {
+function* publishPage({ payload: { pageId, formData } }) {
   try {
     yield put(PageRoutines.publishPage.request());
-    const { data } = yield api.get(`${PAGES_PATH}/${pageId}/publish`);
+    const { data } = yield api.get(`${PAGES_PATH}/${pageId}/publish`, formData);
 
     yield put(PageRoutines.publishPage.success(data));
   } catch (e) {

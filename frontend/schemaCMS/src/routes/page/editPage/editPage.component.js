@@ -143,7 +143,7 @@ export const EditPage = ({
       const formData = prepareForPostingPageData(data);
       setPublishLoading(true);
       await handleSubmit();
-      await publishPage({ pageId }, formData);
+      await publishPage({ pageId, formData });
       setPublishModalOpen(false);
     } catch (e) {
       reportError(e);
