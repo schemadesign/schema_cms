@@ -42,15 +42,6 @@ describe('Page: redux', () => {
     });
   });
 
-  describe('when PAGE/PUBLISH_PAGE success action is received', () => {
-    it('should set page', () => {
-      const page = { data: 'data' };
-
-      const resultState = pageReducer(state, PageRoutines.publishPage.success(page));
-      expect(resultState.page).to.deep.equal(page);
-    });
-  });
-
   describe('when PAGE/FETCH_PAGE_ADDITIONAL_DATA success action is received', () => {
     it('should set page additional data', () => {
       const pageAdditionalData = { data: 'data' };

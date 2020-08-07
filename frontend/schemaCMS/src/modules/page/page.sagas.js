@@ -60,10 +60,8 @@ function* publishPage({ payload: { pageId } }) {
   try {
     yield put(PageRoutines.publishPage.request());
     yield api.post(`${PAGES_PATH}/${pageId}/publish`);
-    const {
-      data: { results },
-    } = yield api.get(`${PAGES_PATH}/${pageId}`);
-    yield put(PageRoutines.publishPage.success(results));
+    yield fetchPage({ payload: { pageId } });
+    yield put(PageRoutines.publishPage.success());
   } catch (e) {
     reportError(e);
     yield put(PageRoutines.publishPage.failure(e));

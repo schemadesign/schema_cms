@@ -120,20 +120,15 @@ describe('Page: sagas', () => {
 
   describe('publishPage', () => {
     it('should dispatch a success action', async () => {
-      const response = {
-        id: 1,
-        results: {},
-      };
       const payload = {
         pageId: 1,
       };
 
       mockApi.post(`${PAGES_PATH}/${payload.pageId}/publish`).reply(OK);
-      mockApi.get(`${PAGES_PATH}/${payload.pageId}`).reply(OK, response);
 
       await expectSaga(watchPage)
         .withState(defaultState)
-        .put(PageRoutines.publishPage.success(response.results))
+        .put(PageRoutines.publishPage.success())
         .dispatch(PageRoutines.publishPage(payload))
         .silentRun();
     });

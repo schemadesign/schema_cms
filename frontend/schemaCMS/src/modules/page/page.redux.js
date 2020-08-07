@@ -45,6 +45,5 @@ const setPageAdditionalData = (state = INITIAL_STATE, { payload }) => state.set(
 export const reducer = createReducer(INITIAL_STATE, {
   [PageRoutines.updatePage.success]: setPage,
   [PageRoutines.fetchPage.success]: setPage,
-  [PageRoutines.publishPage.success]: setPage,
   [PageRoutines.fetchPageAdditionalData.success]: setPageAdditionalData,
 });
