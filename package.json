@@ -1,0 +1,22 @@
+{
+  "name": "schema_cms",
+  "version": "1.0.0",
+  "description": "This is the Schema CMS project",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schemadesign/schema_cms.git"
+  },
+  "keywords": [
+    "schemacms",
+    "cms"
+  ],
+  "author": "Schema Design",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schemadesign/schema_cms/issues"
+  },
+  "homepage": "https://github.com/schemadesign/schema_cms#readme"
+}
