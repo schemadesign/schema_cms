@@ -16,11 +16,19 @@ import { getValuePath } from '../../utils/helpers';
 import { Select } from '../form/select';
 import { ELEMENT_PARAMS, INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-export const InternalConnectionElement = ({ blockPath, element, setFieldValue, index, pagerUrlOptions }) => {
+export const InternalConnectionElement = ({
+  blockPath,
+  element,
+  setFieldValue,
+  index,
+  pagerUrlOptions,
+  initialValues,
+}) => {
   const intl = useIntl();
   const theme = useTheme();
   const name = getValuePath({ blockPath, index });
   const params = getValuePath({ blockPath, index, elementValue: ELEMENT_PARAMS });
+  const { isPublic } = initialValues;
   const handleSelectPageUrl = ({ value, url }) => {
     setFieldValue(name, url);
     setFieldValue(params, { pageId: value });
@@ -30,7 +38,7 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
     label: (
       <SelectLabel>
         {label.map((name, index) => (
-          <LabelItem key={index}>{name}</LabelItem>
+          <LabelItem key={index}>{`${name} ${!isPublic && index === 1 ? '(draft)' : ''}`}</LabelItem>
         ))}
       </SelectLabel>
     ),
@@ -61,4 +69,5 @@ InternalConnectionElement.propTypes = {
   blockPath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   setFieldValue: PropTypes.func.isRequired,
+  initialValues: PropTypes.object.isRequired,
 };
