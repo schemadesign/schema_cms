@@ -1,3 +1,4 @@
+## 1.0.0 (August 10, 2020) - First Release
 ## 1.5.3 (August 11, 2020) - Fixes
 
 Fix rendering of accordions details, and fix collapsing button display
