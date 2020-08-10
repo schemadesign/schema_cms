@@ -200,7 +200,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     serializer_class = serializers.PAPageDetailSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
-    queryset = Page.objects.select_related("created_by").prefetch_related("tags",).order_by("created")
+    queryset = Page.objects.select_related("created_by").prefetch_related("tags").order_by("created")
     filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
     filterset_class = filters.PageFilterSet
     ordering_fields = ["created", "modified", "name"]

@@ -20,7 +20,7 @@ class DataSourceFilterSet(FilterSet):
 
 
 class PageFilterSet(FilterSet):
-    id__in = NumberInFilter(field_name="id", lookup_expr="in")
+    id__in = NumberInFilter(field_name="draft_version", lookup_expr="in")
 
     class Meta:
         model = Page
