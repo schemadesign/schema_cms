@@ -304,7 +304,7 @@ class PageViewSet(DetailViewSet):
 
         return response.Response({"id": new_page.id}, status=status.HTTP_200_OK)
 
-    @decorators.action(detail=True, url_path="publish", methods=["get"])
+    @decorators.action(detail=True, url_path="publish", methods=["post"])
     def publish(self, request, **kwargs):
         page = self.get_object().published_version
 

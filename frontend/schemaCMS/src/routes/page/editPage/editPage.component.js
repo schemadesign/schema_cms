@@ -136,11 +136,10 @@ export const EditPage = ({
       setRemoveLoading(false);
     }
   };
-  const handleConfirmPublish = async data => {
+  const handleConfirmPublish = async () => {
     try {
-      const formData = prepareForPostingPageData(data);
       setPublishLoading(true);
-      await publishPage({ pageId, formData });
+      await publishPage({ pageId });
       setPublishModalOpen(false);
       setPublishLoading(false);
     } catch (e) {
