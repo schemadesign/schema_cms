@@ -20,7 +20,18 @@ export class AccordionDetailsContentComponent extends PureComponent {
   state = {
     height: 0,
     overflow: 'hidden',
+    open: false,
   };
+
+  static getDerivedStateFromProps({ open }) {
+    if (open) {
+      return {
+        open,
+      };
+    }
+
+    return null;
+  }
 
   componentDidUpdate({ open: prevOpen = false }) {
     const { open } = this.props;
@@ -37,6 +48,10 @@ export class AccordionDetailsContentComponent extends PureComponent {
 
       setTimeout(() => {
         this.setState({ height: 0, overflow: 'hidden' });
+
+        setTimeout(() => {
+          this.setState({ open: false });
+        }, ANIMATION_DURATION);
       }, ANIMATION_DURATION / 2);
     }
   }
@@ -47,12 +62,12 @@ export class AccordionDetailsContentComponent extends PureComponent {
 
   render() {
     const { children, customDetailsStyles, theme } = this.props;
-    const { overflow, height } = this.state;
+    const { overflow, height, open } = this.state;
     const { containerStyles } = getStyles(theme);
 
     return (
       <div style={{ ...containerStyles, ...customDetailsStyles, overflow, height }}>
-        <div ref={this.innerRef}>{children}</div>
+        <div ref={this.innerRef}>{open ? children : null}</div>
       </div>
     );
   }

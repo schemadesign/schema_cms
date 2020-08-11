@@ -4,7 +4,7 @@ import { media } from '../../../theme/media';
 export const Container = styled.div`
   color: ${({ theme }) => theme.secondaryText};
   text-align: center;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   min-height: 43px;
   display: flex;
   flex-direction: row;
@@ -13,7 +13,7 @@ export const Container = styled.div`
 
   ${media.desktop`
     margin-top: ${({ moveToTop }) => (moveToTop ? -35 : 0)}px;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
   `}
 `;
 export const Element = styled.div`
