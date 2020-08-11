@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
-import { isEmpty } from 'ramda';
+import { isEmpty, equals } from 'ramda';
 
 import messages from './blockElement.messages';
 import {
@@ -16,19 +16,11 @@ import { getValuePath } from '../../utils/helpers';
 import { Select } from '../form/select';
 import { ELEMENT_PARAMS, INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
 
-export const InternalConnectionElement = ({
-  blockPath,
-  element,
-  setFieldValue,
-  index,
-  pagerUrlOptions,
-  initialValues,
-}) => {
+export const InternalConnectionElement = ({ blockPath, element, setFieldValue, index, pagerUrlOptions }) => {
   const intl = useIntl();
   const theme = useTheme();
   const name = getValuePath({ blockPath, index });
   const params = getValuePath({ blockPath, index, elementValue: ELEMENT_PARAMS });
-  const { isPublic } = initialValues;
   const handleSelectPageUrl = ({ value, url }) => {
     setFieldValue(name, url);
     setFieldValue(params, { pageId: value });
@@ -37,9 +29,13 @@ export const InternalConnectionElement = ({
     value: id,
     label: (
       <SelectLabel>
-        {label.map((name, index) => (
-          <LabelItem key={index}>{`${name} ${!isPublic && index === 1 ? '(draft)' : ''}`}</LabelItem>
-        ))}
+        {label.map((element, index) => {
+          const isPageLabel = equals(1);
+          if (isPageLabel(index)) {
+            return <LabelItem key={index}>{element.isDraft ? `${element.name} (draft)` : element.name}</LabelItem>;
+          }
+          return <LabelItem key={index}>{element}</LabelItem>;
+        })}
       </SelectLabel>
     ),
     url,
@@ -69,5 +65,4 @@ InternalConnectionElement.propTypes = {
   blockPath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   setFieldValue: PropTypes.func.isRequired,
-  initialValues: PropTypes.object.isRequired,
 };
