@@ -902,3 +902,11 @@ class TestCopyPage:
 
         assert response.status_code == status.HTTP_200_OK
         assert copied_page.name == f"Page ID #{page.id} copy(2020-01-02, 10:00:00.000000)"
+        assert copied_page.is_draft is True
+        assert copied_page.published_version.is_draft is False
+        assert copied_page.published_version.name == copied_page.name
+        assert (
+            page.page_blocks.count()
+            == copied_page.page_blocks.count()
+            == copied_page.published_version.page_blocks.count()
+        )

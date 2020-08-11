@@ -73,7 +73,7 @@ class User(AbstractUser):
             mail.send_message(
                 email=self.email,
                 template=mail.EmailTemplate.INVITATION,
-                subject="Invitation",
+                subject="Welcome to Schema CMS!",
                 merge_data_dict={"url": url},
             )
             return True

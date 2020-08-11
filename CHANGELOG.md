@@ -1,3 +1,7 @@
+## 1.5.2 (August 11, 2020) - Hotfix
+Fix an issue where copying a page creates only a draft
+Invitation email subject changed
+
 ## 1.5.1 (August 10, 2020) - Hotfix
 
 Fix an issue preventing to fetch pages with IN condition from public API
