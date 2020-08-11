@@ -190,9 +190,16 @@ class FileSourceProcessor(SourceProcessor):
 @dataclass
 class GoogleSheetProcessor(SourceProcessor):
     def read(self):
-        extra_params = "export?format=csv&gid=0"
+        url, params = self.datasource.google_sheet.rsplit("/", 1)
 
-        sheet_url = self.datasource.google_sheet.rsplit("/", 1)[0] + "/" + extra_params
+        if params.find("gid=") != -1:
+            gid = params.rsplit("gid=", 1)[1]
+        else:
+            gid = "0"
+
+        extra_params = f"export?format=csv&gid={gid}"
+        sheet_url = url + "/" + extra_params
+
         data_frame = read_file_to_data_frame(sheet_url)
 
         return data_frame
