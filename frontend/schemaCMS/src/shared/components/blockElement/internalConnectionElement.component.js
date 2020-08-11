@@ -30,13 +30,13 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
     value: id,
     label: (
       <SelectLabel>
-        {label.map((element, index) => {
+        {label.map(({ name, isDraft }, index) => {
           const renderWhenDraft = ifElse(
-            () => element.isDraft,
-            () => <LabelItem key={index}>{`${element.name} (draft)`}</LabelItem>,
-            () => <LabelItem key={index}>{element.name}</LabelItem>
+            () => isDraft,
+            () => <LabelItem key={index}>{`${name} (draft)`}</LabelItem>,
+            () => <LabelItem key={index}>{name}</LabelItem>
           );
-          return ifElse(isPageLabel, renderWhenDraft, () => <LabelItem key={index}>{element}</LabelItem>)(index);
+          return ifElse(isPageLabel, renderWhenDraft, () => <LabelItem key={index}>{name}</LabelItem>)(index);
         })}
       </SelectLabel>
     ),
