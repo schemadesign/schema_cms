@@ -95,6 +95,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "type",
             "file",
             "file_name",
+            "google_sheet",
             "created",
             "modified",
             "meta_data",
@@ -106,8 +107,6 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
-            "type": {"required": True, "allow_null": False},
-            "file": {"required": False, "allow_null": True},
             "run_last_job": {"required": False, "allow_null": False, "allow_blank": False},
         }
         validators = [
@@ -161,7 +160,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         if (tags := self.initial_data.get("tags")) is not None:
             obj.add_tags(tags)
 
-        if self.validated_data.get("file", None):
+        if self.validated_data.get("file", None) or self.validated_data.get("google_sheet", None):
             copy_steps = self.initial_data.get("run_last_job", False)
             obj.schedule_update_meta(copy_steps)
 

@@ -72,6 +72,10 @@ services:
       - ./backend/functions/worker:/var/task:ro,delegated
     ports:
       - "9001:9001"
+
+    stdin_open: true
+    tty: true
+
     restart: on-failure
 
   mailcatcher:

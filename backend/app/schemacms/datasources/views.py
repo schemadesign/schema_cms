@@ -360,7 +360,6 @@ class DataSourceJobDetailViewSet(
     )
     def update_meta(self, request, *args, **kwargs):
         job = self.get_object()
-
         serializer = self.get_serializer(data=request.data, context=job)
         serializer.is_valid(raise_exception=True)
         job.update_meta(**serializer.validated_data)
