@@ -1,3 +1,7 @@
+## 1.5.4 (August 11, 2020) - Fixes
+
+Fix internal connection ID's displaying in public api response
+
 ## 1.5.3 (August 11, 2020) - Fixes
 
 Fix rendering of accordions details, and fix collapsing button display
