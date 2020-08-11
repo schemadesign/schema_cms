@@ -45,6 +45,7 @@
 <body>
 <div class="content-wrapper">
     <div class="data-wrapper">
+        <div class="schema-value">Page Title: <p id="schemaTitle" class="value"></p></div>
         <div class="schema-value">Schema value: <p id="schemaValue" class="value"></p></div>
         <div class="data-value">Data id: <p id="dataId" class="value"></p></div>
     </div>
@@ -55,20 +56,19 @@
 </html>
 
 <script>
-    const schemaValue = document.getElementById('schemaValue');
     const dataId = document.getElementById('dataId');
+    const titleEl = document.getElementById('schemaTitle');
     const dataContent = document.getElementById('dataContent');
     const API_URL = 'https://api.schemacms.com';
-    const PUBLISHED_PAGE = '245';
-    const UNPUBLISHED_PAGE = '246';
+    const PAGE_TEST = '245';
 
     window.onload = () => {
-        fetch(`${API_URL}/pages/${PUBLISHED_PAGE}`)
+        fetch(`${API_URL}/pages/${PAGE_TEST}`)
             .then(response => response.json())
             .then(data => {
+                titleEl.innerText = data.name;
                 dataContent.innerText = JSON.stringify(data, null, 4);
-                dataId.innerText = PUBLISHED_PAGE;
-                schemaValue.innerText = false;
+                dataId.innerText = PAGE_TEST;
             })
     };
 
@@ -76,34 +76,17 @@
         if (event.source != window)
             return;
         if (event.data.type === 'SCHEMA_CMS') {
-            schemaObject.setSchemaVariable = event.data.PREVIEW_MODE;
-            let pageValue = event.data.PREVIEW_MODE ? UNPUBLISHED_PAGE : PUBLISHED_PAGE;
+            const isPreview = event.data.PREVIEW_MODE;
+            let pageValue = isPreview ? `${PAGE_TEST}/draft` : PAGE_TEST;
 
             return fetch(`${API_URL}/pages/${pageValue}`)
                 .then(response => response.json())
                 .then(data => {
+                    titleEl.innerText = data.name;
                     dataContent.innerText = JSON.stringify(data, null, 4);
                     dataId.innerText = pageValue;
-                    schemaValue.innerText = schemaObject.getSchemaVariable;
                 })
         }
             return
     }, false);
-
-    const schemaObject = {
-        SCHEMA_PREVIEW: null,
-        DATA_ID: null,
-        get getSchemaVariable() {
-            return this.SCHEMA_PREVIEW;
-        },
-        set setSchemaVariable(schemaPreviewValue) {
-            this.SCHEMA_PREVIEW = schemaPreviewValue
-        },
-        get getDataId() {
-            return this.DATA_ID;
-        },
-        set setDataId(dataId) {
-            this.DATA_ID = dataId
-        }
-    };
 </script>
