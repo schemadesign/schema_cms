@@ -220,6 +220,7 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
               mainPage,
               id,
             }),
+            id,
           }))(pages)
       )
     ),
