@@ -299,6 +299,12 @@ class PageViewSet(DetailViewSet):
 
         try:
             new_page = page.copy_page()
+
+            published_version = new_page.copy_page(attrs={"is_draft": False})
+
+            new_page.published_version = published_version
+            new_page.save()
+
         except Exception as e:
             return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
 
