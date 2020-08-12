@@ -68,7 +68,7 @@ import { BackButton, NextButton, PlusButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
-import { getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
+import { getPropsWhenNotEmpty, getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
 import { TagSearch } from '../tagSearch';
 import { CopyButton } from '../copyButton';
 import { renderWhenTrue } from '../../utils/rendering';

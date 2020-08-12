@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, Icons, AccordionPanel } from 'schemaUI';
 import PropTypes from 'prop-types';
-import { always, append, ifElse, isEmpty, remove } from 'ramda';
+import { append, remove } from 'ramda';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
@@ -48,18 +48,14 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
   };
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
 
-  const accordionProps = ifElse(
-    isEmpty,
-    always({}),
-    always({
-      collapseCopy: intl.formatMessage(messages.collapseCopy),
-      expandCopy: intl.formatMessage(messages.expandCopy),
-    })
-  )(values[BLOCK_TEMPLATES_ELEMENTS]);
+  const accordionCopyProps = getPropsWhenNotEmpty(values[BLOCK_TEMPLATES_ELEMENTS], {
+    collapseCopy: intl.formatMessage(messages.collapseCopy),
+    expandCopy: intl.formatMessage(messages.expandCopy),
+  });
 
   return (
     <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-      <Accordion {...accordionProps} newOpen>
+      <Accordion {...accordionCopyProps} newOpen>
         {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
           <Draggable
             accept="box"

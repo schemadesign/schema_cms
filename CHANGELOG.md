@@ -12,21 +12,6 @@ Invitation email subject changed
 Fix an issue preventing to fetch pages with IN condition from public API
 
 ## 1.5.0 (August 10, 2020) - First Release
-## 1.0.0 (August 10, 2020) - First Release
-## 1.5.3 (August 11, 2020) - Fixes
-
-Fix rendering of accordions details, and fix collapsing button display
-
-## 1.5.2 (August 11, 2020) - Hotfix
-
-Fix an issue where copying a page creates only a draft
-Invitation email subject changed
-
-## 1.5.1 (August 10, 2020) - Hotfix
-
-Fix an issue preventing to fetch pages with IN condition from public API
-
-## 1.5.0 (August 10, 2020) - First Release
 
 ### Backend & Frontend
 
