@@ -12,7 +12,7 @@ export default defineMessages({
   },
   create: {
     id: 'page.editPage.create',
-    defaultMessage: 'Save',
+    defaultMessage: 'Save draft',
   },
   publish: {
     id: 'page.editPage.publish',

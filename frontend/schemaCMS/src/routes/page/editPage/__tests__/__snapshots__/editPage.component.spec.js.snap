@@ -2015,7 +2015,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             }
             type="submit"
           >
-            Save
+            Save draft
           </button>
         </div>
       </div>
