@@ -279,19 +279,14 @@ class PageViewSet(DetailViewSet):
     serializer_class = serializers.PageDetailSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
 
-    def perform_destroy(self, instance):
+    def perform_destroy(self, instance: models.Page):
         section = instance.section
-        current_pages = list(section.pages.values_list("id", flat=True))
-        current_pages.remove(instance.id)
 
         if section.main_page == instance:
-            instance.delete()
-            section.deleted_at = None
             section.main_page = None
             section.save()
-            section.pages.all_with_deleted().filter(id__in=current_pages).update(deleted_at=None)
-        else:
-            super().perform_destroy(instance)
+
+        super().perform_destroy(instance.published_version)
 
     @decorators.action(detail=True, url_path="copy", methods=["post"])
     def copy_page(self, request, **kwargs):
