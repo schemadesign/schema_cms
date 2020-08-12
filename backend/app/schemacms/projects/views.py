@@ -3,7 +3,7 @@ from django.db.models import Prefetch
 from rest_framework import decorators, filters, permissions, response, status, viewsets
 
 from . import models, serializers
-from ..pages.models import Section, PageTemplate, PageBlock
+from ..pages.models import Section, PageTemplate, PageBlock, Page
 from ..pages.serializers import SectionInternalConnectionSerializer, PageTemplateSerializer
 from ..states.models import State
 from ..states.serializers import StatePageAdditionalDataSerializer
@@ -103,7 +103,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         sections = (
             Section.objects.filter(project=project)
             .select_related("project", "created_by", "main_page")
-            .prefetch_related("pages")
+            .prefetch_related(Prefetch("pages", queryset=Page.objects.filter(is_draft=True)))
             .order_by("-created")
         )
 
