@@ -1,13 +1,16 @@
 # Dependency directories
 node_modules/
 
-# File with credentials
-creds.json
-/test/pages/Constants/credentials.constants.js
+# Files with sensitive data
+/test/credentials/credentials.js
+
+# Gmail API
+/test/GmailAPI/gmail.api.credentials.js
+/test/GmailAPI/token.json
 
 # Folder with reports
 allure-results
+allure-report
 
-package-lock.json
-
+# Cruft
 .idea

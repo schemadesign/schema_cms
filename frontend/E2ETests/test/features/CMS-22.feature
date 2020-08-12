@@ -6,13 +6,17 @@ Feature: CMS-22
 
   Background: User uploaded a CSV file
     Given I am on Login page
-    And  I have logged in as an admin with valid login and valid password
-    And I have entered project details page
-    And I have entered sources tab
-    And I chose to upload a valid CSV file
-    And newly created data source is displayed on list
+    And  I have logged in as an 'admin' with 'valid' login and 'valid' password
+    And I am on 'homepage' page
+    And I choose to see project settings
+    And I choose to see a list of data sources
+    And I am on 'datasource' page
+    And I chose to upload a 'valid' CSV file
+    And I am on 'datasource' page
+    And I can see status of file updating on the tile
+    And newly created data source is displayed on the list
     And I chose to see data source preview
-    And I am on data source preview page
+    And I am on 'datasource preview' page
 
 
   Scenario: User can see list of predefined scripts
@@ -37,7 +41,7 @@ Feature: CMS-22
     Then the script is moved to the list of selected scripts
     And the script is no longer on the default list
 
-  @Test
+
   Scenario: User can preview a script
     Given I have navigated to Steps page
     When I chose to preview a script
@@ -52,7 +56,7 @@ Feature: CMS-22
 
   Scenario: User can upload custom script
     Given I have navigated to Steps page
-    When I chose to process data source with uploaded script
+    When I choose to upload a custom script
     Then uploaded script is at the top of the list
 
 
@@ -60,7 +64,7 @@ Feature: CMS-22
     Given I have navigated to Steps page
     And I chose to process data source with <scriptType> script
     When I choose to see data source preview
-    Then I am on data source results page
+    Then I am on 'datasource results' page
     And data in table is <dataFormat>
 
     Examples:
