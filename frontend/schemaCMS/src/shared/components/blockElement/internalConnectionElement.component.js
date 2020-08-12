@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
-import { isEmpty, equals, ifElse } from 'ramda';
+import { isEmpty } from 'ramda';
 
 import messages from './blockElement.messages';
 import {
@@ -25,19 +25,13 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
     setFieldValue(name, url);
     setFieldValue(params, { pageId: value });
   };
-  const isPageLabel = equals(1);
   const options = pagerUrlOptions.map(({ url, label, id }) => ({
     value: id,
     label: (
       <SelectLabel>
-        {label.map(({ name, isDraft }, index) => {
-          const renderWhenDraft = ifElse(
-            () => isDraft,
-            () => <LabelItem key={index}>{`${name} (draft)`}</LabelItem>,
-            () => <LabelItem key={index}>{name}</LabelItem>
-          );
-          return ifElse(isPageLabel, renderWhenDraft, () => <LabelItem key={index}>{name}</LabelItem>)(index);
-        })}
+        {label.map((name, index) => (
+          <LabelItem key={index}>{name}</LabelItem>
+        ))}
       </SelectLabel>
     ),
     url,

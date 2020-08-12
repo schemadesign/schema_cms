@@ -67,13 +67,13 @@ describe('Helpers', () => {
     const pageUrlOptions = getPageUrlOptions(data);
 
     expect(pageUrlOptions).toEqual([
-      { label: [{ name: 'Section 1' }, { isDraft: undefined, name: 'Blog' }], url: 'http://domain.com/blog', id: 1 },
+      { label: ['Section 1', 'Blog'], url: 'http://domain.com/blog', id: 1 },
       {
-        label: [{ name: 'Section 2' }, 'news', { isDraft: undefined, name: 'Article 2' }],
+        label: ['Section 2', 'news', 'Article 2'],
         url: 'http://domain.com/News/article-2',
         id: 2,
       },
-      { label: [{ name: 'Section 2' }, { isDraft: undefined, name: 'News' }], url: 'http://domain.com/news', id: 3 },
+      { label: ['Section 2', 'News'], url: 'http://domain.com/news', id: 3 },
     ]);
   });
 
