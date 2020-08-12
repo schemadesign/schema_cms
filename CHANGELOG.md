@@ -1,3 +1,7 @@
+## 1.6.0 (August 12, 2020) - Change 
+
+Change 'Save' to 'Save draft' text button on the page form
+
 ## 1.5.4 (August 12, 2020) - Fixes
 
 Fix an issue with deleting pages
