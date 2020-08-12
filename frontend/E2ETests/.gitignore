@@ -3,7 +3,7 @@ node_modules/
 
 # File with credentials
 creds.json
-/test/constants/credentials.constants.js
+/test/pages/Constants/credentials.constants.js
 
 # Folder with reports
 allure-results
