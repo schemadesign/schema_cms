@@ -2,6 +2,10 @@
 
 Change 'Save' to 'Save draft' text button on the page form
 
+## 1.5.4 (August 12, 2020) - Fixes
+
+Fix an issue with deleting pages
+
 ## 1.5.3 (August 11, 2020) - Fixes
 
 Fix rendering of accordions details, and fix collapsing button display
