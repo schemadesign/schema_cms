@@ -143,7 +143,7 @@ class TestPageBlockElementClone:
         assert copied_observable.observable_hq.observable_cell == observable_element.observable_cell
 
 
-class TestPageClone:
+class TestPageMethods:
     @pytest.mark.freeze_time("2020-01-02 10:00:00")
     def test_page_clone(self, page_factory, page_block_factory, page_block_element_factory, page_tag_factory):
         page = page_factory(is_public=True)
@@ -163,3 +163,18 @@ class TestPageClone:
         assert copied_page_blocks[0].elements.count() == 0
         assert copied_page_blocks[1].elements.count() == 1
         assert copied_page_blocks[2].elements.count() == 2
+
+    def test_create_xml_file(self, page):
+        xml_elements_list = list(page.create_xml_item())
+
+        assert len(xml_elements_list) == 5
+        assert xml_elements_list[0].tag == "title"
+        assert xml_elements_list[0].text == page.name
+        assert xml_elements_list[1].tag == "link"
+        assert xml_elements_list[1].text == page.link
+        assert xml_elements_list[2].tag == "description"
+        assert xml_elements_list[2].text == page.description
+        assert xml_elements_list[3].tag == "pubDate"
+        assert xml_elements_list[3].text == page.created.strftime("%Y-%m-%d, %H:%M:%S.%f")
+        assert xml_elements_list[4].tag == "modDate"
+        assert xml_elements_list[4].text == page.modified.strftime("%Y-%m-%d, %H:%M:%S.%f")
