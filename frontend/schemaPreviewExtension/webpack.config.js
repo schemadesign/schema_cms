@@ -44,6 +44,18 @@ var options = {
         test: /\.html$/,
         loader: "html-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1000,
+              name: 'img/[name].[ext]',
+            }
+          }
+        ]
       }
     ]
   },
@@ -71,6 +83,9 @@ var options = {
       filename: "popup.html",
       chunks: ["popup"]
     }),
+    new CopyWebpackPlugin([
+      {from:'src/img',to:'img'}
+    ]),
     new WriteFilePlugin()
   ]
 };
