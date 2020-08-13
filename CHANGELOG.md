@@ -1,3 +1,8 @@
+## 1.7.0 (August 13, 2020) - Release
+
+Clean up the Chrome extension and add proper URL for fetching page drafts in the example
+Added proper icons and usage of Storage in the extension
+
 ## 1.6.0 (August 12, 2020) - Change 
 
 Change 'Save' to 'Save draft' text button on the page form
