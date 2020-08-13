@@ -4,11 +4,15 @@
   "browser_action": {
     "default_popup": "popup.html"
   },
+  "icons": {
+    "16": "img/favicon-16x16.png",
+    "32": "img/favicon-32x32.png",
+    "192": "img/android-chrome-192x192.png",
+    "512": "img/android-chrome-512x512.png"
+  },
   "permissions": [
     "activeTab",
-    "declarativeContent",
-    "storage",
-    "tabs"
+    "storage"
   ],
   "content_scripts": [{
     "matches": ["<all_urls>"],
