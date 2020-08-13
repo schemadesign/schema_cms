@@ -19,7 +19,9 @@ class SectionQuerySet(softdelete.models.SoftDeleteQuerySet):
         return self.annotate(
             pages_count=models.Count(
                 "pages",
-                filter=models.Q(pages__deleted_at__isnull=True, pages__is_template=False),
+                filter=models.Q(
+                    pages__deleted_at__isnull=True, pages__is_template=False, pages__is_draft=True
+                ),
                 distinct=True,
             )
         )

@@ -1,6 +1,6 @@
 from django.db import transaction
 
-from schemacms.users.backend_management import user_mgtm_backend
+from .backend_management import user_mgtm_backend
 
 
 def remove_from_projects(sender, user, **kwargs):

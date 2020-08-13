@@ -1,6 +1,7 @@
 import json
 
 from django.conf import settings
+from django.db.models import Prefetch
 from rest_framework import serializers
 
 from ..projects import models as pr_models
@@ -187,6 +188,7 @@ class PATemplateSerializer(ReadOnlySerializer):
 
 
 class PAPageSerializer(ReadOnlySerializer):
+    id = serializers.SerializerMethodField()
     created_by = serializers.SerializerMethodField()
     updated = serializers.DateTimeField(source="modified", format="%Y-%m-%d")
     tags = serializers.SerializerMethodField()
@@ -223,6 +225,9 @@ class PAPageSerializer(ReadOnlySerializer):
 
         return res
 
+    def get_id(self, obj):
+        return obj.id if obj.is_draft else obj.draft_version.id
+
 
 class PAPageDetailSerializer(PAPageSerializer):
     blocks = serializers.SerializerMethodField()
@@ -231,7 +236,24 @@ class PAPageDetailSerializer(PAPageSerializer):
         fields = PAPageSerializer.Meta.fields + ("blocks",)
 
     def get_blocks(self, obj):
-        blocks = obj.page_blocks.all()
+        blocks = (
+            obj.page_blocks.all()
+            .prefetch_related(
+                Prefetch(
+                    "elements",
+                    queryset=pa_models.PageBlockElement.objects.all()
+                    .order_by("order")
+                    .exclude(custom_element_set__isnull=False),
+                ),
+                Prefetch(
+                    "elements__elements_sets",
+                    queryset=pa_models.CustomElementSet.objects.prefetch_related(
+                        Prefetch("elements", queryset=pa_models.PageBlockElement.objects.order_by("order"))
+                    ).order_by("order"),
+                ),
+            )
+            .order_by("order")
+        )
 
         return PAPageBlockSerializer(blocks, many=True).data
 

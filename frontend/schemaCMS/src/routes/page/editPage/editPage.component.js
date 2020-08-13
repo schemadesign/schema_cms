@@ -74,12 +74,15 @@ export const EditPage = ({
   fetchPageAdditionalData,
   pageAdditionalData,
   copyPage,
+  publishPage,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [removeModalOpen, setRemoveModalOpen] = useState(false);
+  const [publishModalOpen, setPublishModalOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
+  const [publishLoading, setPublishLoading] = useState(false);
   const [updateLoading, setUpdateLoading] = useState(false);
   const { pageId } = useParams();
   const history = useHistory();
@@ -109,7 +112,6 @@ export const EditPage = ({
     onSubmit: async (data, { setErrors }) => {
       try {
         setUpdateLoading(true);
-
         const formData = prepareForPostingPageData(data);
 
         await updatePage({ formData, pageId });
@@ -132,6 +134,17 @@ export const EditPage = ({
     } catch (e) {
       reportError(e);
       setRemoveLoading(false);
+    }
+  };
+  const handleConfirmPublish = async () => {
+    try {
+      setPublishLoading(true);
+      await publishPage({ pageId });
+      setPublishModalOpen(false);
+      setPublishLoading(false);
+    } catch (e) {
+      reportError(e);
+      setPublishLoading(false);
     }
   };
 
@@ -186,6 +199,15 @@ export const EditPage = ({
               <FormattedMessage {...messages.back} />
             </BackButton>
             <NextButton
+              id="publishPage"
+              type="button"
+              loading={publishLoading}
+              disabled={!page.isChanged}
+              onClick={() => setPublishModalOpen(true)}
+            >
+              <FormattedMessage {...messages.publish} />
+            </NextButton>
+            <NextButton
               id="savePage"
               type="submit"
               loading={updateLoading}
@@ -214,6 +236,24 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
+      <Modal ariaHideApp={false} isOpen={publishModalOpen} contentLabel="Confirm Publishing" style={modalStyles}>
+        <ModalTitle>
+          <FormattedMessage {...messages.publishTitle} />
+        </ModalTitle>
+        <ModalActions>
+          <BackButton onClick={() => setPublishModalOpen(false)} disabled={publishLoading}>
+            <FormattedMessage {...messages.cancelPublish} />
+          </BackButton>
+          <NextButton
+            id="confirmPublishBtn"
+            onClick={handleConfirmPublish}
+            loading={publishLoading}
+            disabled={publishLoading}
+          >
+            <FormattedMessage {...messages.confirmPublish} />
+          </NextButton>
+        </ModalActions>
+      </Modal>
     </Container>
   );
 };
@@ -222,6 +262,7 @@ EditPage.propTypes = {
   userRole: PropTypes.string.isRequired,
   updatePage: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
+  publishPage: PropTypes.func.isRequired,
   copyPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,

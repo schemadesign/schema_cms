@@ -23,6 +23,7 @@ export const mapDispatchToProps = dispatch => ({
       updatePage: promisifyRoutine(PageRoutines.updatePage),
       removePage: promisifyRoutine(PageRoutines.removePage),
       copyPage: promisifyRoutine(PageRoutines.copyPage),
+      publishPage: promisifyRoutine(PageRoutines.publishPage),
       fetchPageAdditionalData: promisifyRoutine(PageRoutines.fetchPageAdditionalData),
     },
     dispatch

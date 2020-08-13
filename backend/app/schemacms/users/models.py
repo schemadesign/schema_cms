@@ -2,15 +2,15 @@ import uuid
 
 import anymail.exceptions
 import sentry_sdk
-from django.utils.translation import ugettext_lazy as _
-from django.db import models, transaction
 from django.contrib.auth.models import AbstractUser
+from django.db import models, transaction
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils.translation import ugettext_lazy as _
 from rest_framework_jwt.settings import api_settings
 
-from schemacms import mail
-from schemacms.authorization import tokens
 from . import backend_management, constants, signals, managers
+from .. import mail
+from ..authorization import tokens
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER

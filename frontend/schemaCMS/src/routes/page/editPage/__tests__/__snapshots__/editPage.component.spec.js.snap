@@ -339,7 +339,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoPby fXEcjh"
+    className="sc-fzpdbB gipIsd"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzppAM jYnVHJ"
+          className="sc-fznBtT kAbsTJ"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fznBtT fZTKEO"
+            className="sc-fznNTe dVrHOT"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzppAM jYnVHJ"
+          className="sc-fznBtT kAbsTJ"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fznBtT fZTKEO"
+            className="sc-fznNTe dVrHOT"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -477,7 +477,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzppAM jYnVHJ"
+          className="sc-fznBtT kAbsTJ"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -499,7 +499,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-fznBtT fZTKEO"
+            className="sc-fznNTe dVrHOT"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -535,7 +535,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzpdbB hBYrmJ"
+          className="sc-fzppAM ixxfLN"
         >
           <span
             style={
@@ -548,7 +548,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-fznBtT fZTKEO"
+            className="sc-fznNTe dVrHOT"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -572,13 +572,13 @@ exports[`EditPage: Component should render correctly 1`] = `
       className="sc-fznJRM kbYvOa"
     >
       <div
-        className="sc-fznzOf fSHxtL"
+        className="sc-fznMnq nBYCa"
       >
         <div
-          className="sc-fznMnq exVthr"
+          className="sc-fzoant fOODvr"
         >
           <h2
-            className="sc-fzoant fbpREY"
+            className="sc-fzomME fwtrJy"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -592,7 +592,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </h2>
           <h1
-            className="sc-fzomME fwtrJy"
+            className="sc-fzqAbL dBIhJK"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -609,7 +609,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               className="sc-fznxKY jsPLDi"
             >
               <div
-                className="sc-fzoKki dQzjXQ"
+                className="sc-fzoYkl lkKfnf"
               >
                 <div
                   style={
@@ -703,7 +703,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   />
                 </svg>
                 <div
-                  className="sc-fzqOul dHqgrr"
+                  className="sc-fzoCCn fDIWOJ"
                   id="pageCopyButton"
                   onClick={[Function]}
                 >
@@ -727,14 +727,14 @@ exports[`EditPage: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-fzqAbL zYCzw"
+          className="sc-fzqMAW kpVixs"
         />
       </div>
       <div
         className="sc-fznWOq gIoHOn"
       >
         <div
-          className="sc-fzoKki xmNdG"
+          className="sc-fzoYkl esRVnN"
         >
           <div
             style={
@@ -798,7 +798,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-fzoYkl jOapoA"
+                className="sc-fzpkJw jHmouL"
               >
                 <svg
                   style={
@@ -821,7 +821,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoKki xmNdG"
+        className="sc-fzoYkl esRVnN"
       >
         <div
           style={
@@ -885,7 +885,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoYkl jOapoA"
+              className="sc-fzpkJw jHmouL"
             >
               <svg
                 style={
@@ -907,7 +907,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoKki xmNdG"
+        className="sc-fzoYkl esRVnN"
       >
         <div
           style={
@@ -989,7 +989,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoYkl jOapoA"
+              className="sc-fzpkJw jHmouL"
             >
               <svg
                 style={
@@ -1011,7 +1011,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoKki xmNdG"
+        className="sc-fzoYkl esRVnN"
       >
         <div
           style={
@@ -1075,7 +1075,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoYkl jOapoA"
+              className="sc-fzpkJw jHmouL"
             >
               <svg
                 style={
@@ -1113,24 +1113,24 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-fzplgP dCbwlQ"
+        className="sc-fznzqM kVlndz"
       >
         <div
-          className="sc-fznYue eUPxsr"
+          className="sc-fzonjX hTrhpb"
         >
           <div
-            className="sc-fznzqM dIbWoz"
+            className="sc-fznOgF cfDpEr"
             title="Colors"
           >
             <span
-              className="sc-fznOgF bIcINm"
+              className="sc-fznYue flrquV"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-fzqzEs ejSgor"
+            className="sc-fzqOul JAzeZ"
           >
             <div
               className=" css-2b097c-container"
@@ -1228,18 +1228,18 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fznzqM dIbWoz"
+            className="sc-fznOgF cfDpEr"
             title="Countries"
           >
             <span
-              className="sc-fznOgF bIcINm"
+              className="sc-fznYue flrquV"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-fzqzEs ejSgor"
+            className="sc-fzqOul JAzeZ"
           >
             <div
               className=" css-2b097c-container"
@@ -1342,7 +1342,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         className="sc-fznWqX hpKwwB"
       >
         <div
-          className="sc-fzqMAW bmUZvz"
+          className="sc-fzoydu RsEWG"
           onClick={[Function]}
         >
           <label
@@ -1493,7 +1493,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-fzoydu jZeCeP"
+            className="sc-fzoJMP cdAIGg"
           >
             <svg
               style={
@@ -1514,14 +1514,14 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoMdx jaZfJV"
+        className="sc-fzoWqW cSBDbx"
       >
         <div
-          className="sc-fzoWqW kZlavh"
+          className="sc-fzplgP bCwKPk"
         />
         1 Block
         <div
-          className="sc-fzoWqW kZlavh"
+          className="sc-fzplgP bCwKPk"
         >
           <div
             className="sc-fzolEj bBhqcC"
@@ -1626,10 +1626,10 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-fzoJMP dsppYC"
+                className="sc-fzoYHE ctCACN"
               >
                 <div
-                  className="sc-fzoYHE kEgiTH"
+                  className="sc-fzpkqZ knrwlY"
                 >
                   <div>
                     <div
@@ -1655,7 +1655,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzoKki dQzjXQ"
+                  className="sc-fzoYkl lkKfnf"
                 >
                   <div
                     style={
@@ -1727,7 +1727,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-fzoYHE kEgiTH"
+                  className="sc-fzpkqZ knrwlY"
                 >
                   <svg
                     style={
@@ -1768,7 +1768,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-fzpkqZ fevEne"
+                className="sc-fznAgC hDtiKd"
                 title="type"
               >
                 type
@@ -1841,10 +1841,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX bgwysC"
+                      className="sc-fzoaKM lnDGRQ"
                     >
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -1863,7 +1863,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoKki dQzjXQ"
+                        className="sc-fzoYkl lkKfnf"
                       >
                         <div
                           style={
@@ -1938,7 +1938,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -2003,13 +2003,13 @@ exports[`EditPage: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznAgC dlXska"
+                        className="sc-fznLPX bubgIb"
                       >
                         <div
-                          className="sc-fzowVh iURINb"
+                          className="sc-fzoJus eRyPze"
                         >
                           <div
-                            className="sc-fzoKki xmNdG"
+                            className="sc-fzoYkl esRVnN"
                           >
                             <div
                               style={
@@ -2124,10 +2124,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX bgwysC"
+                      className="sc-fzoaKM lnDGRQ"
                     >
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -2146,7 +2146,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoKki dQzjXQ"
+                        className="sc-fzoYkl lkKfnf"
                       >
                         <div
                           style={
@@ -2221,7 +2221,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -2286,13 +2286,13 @@ exports[`EditPage: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznAgC dlXska"
+                        className="sc-fznLPX bubgIb"
                       >
                         <div
-                          className="sc-fzqAui dIvBCb"
+                          className="sc-fzqMdD jvlZtL"
                         >
                           <div
-                            className="sc-fzqMAW fFVypJ"
+                            className="sc-fzoydu hoXtno"
                             onClick={[Function]}
                           >
                             <input
@@ -2381,20 +2381,20 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     }
                                   >
                                     <div
-                                      className="sc-fzoaKM cSjyXk"
+                                      className="sc-fzomuh brOEZn"
                                     >
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         Section 2
                                       </span>
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         news
                                       </span>
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         Article 2
                                       </span>
@@ -2419,15 +2419,15 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     }
                                   >
                                     <div
-                                      className="sc-fzoaKM cSjyXk"
+                                      className="sc-fzomuh brOEZn"
                                     >
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         Section 2
                                       </span>
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         News
                                       </span>
@@ -2452,20 +2452,20 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     }
                                   >
                                     <div
-                                      className="sc-fzoaKM cSjyXk"
+                                      className="sc-fzomuh brOEZn"
                                     >
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         Section 2
                                       </span>
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         news
                                       </span>
                                       <span
-                                        className="sc-fzomuh kyGGUK"
+                                        className="sc-fzqAui kHCJzl"
                                       >
                                         Article 1
                                       </span>
@@ -2475,7 +2475,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                               </div>
                             </div>
                             <div
-                              className="sc-fzoydu BTftf"
+                              className="sc-fzoJMP hYwkIM"
                             >
                               <svg
                                 style={
@@ -2523,10 +2523,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX bgwysC"
+                      className="sc-fzoaKM lnDGRQ"
                     >
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -2545,7 +2545,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoKki dQzjXQ"
+                        className="sc-fzoYkl lkKfnf"
                       >
                         <div
                           style={
@@ -2620,7 +2620,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -2685,13 +2685,13 @@ exports[`EditPage: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznAgC dlXska"
+                        className="sc-fznLPX bubgIb"
                       >
                         <div
-                          className="sc-fzqAui dIvBCb"
+                          className="sc-fzqMdD jvlZtL"
                         >
                           <div
-                            className="sc-fzqMAW fFVypJ"
+                            className="sc-fzoydu hoXtno"
                             onClick={[Function]}
                           >
                             <input
@@ -2764,7 +2764,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                               </div>
                             </div>
                             <div
-                              className="sc-fzoydu BTftf"
+                              className="sc-fzoJMP hYwkIM"
                             >
                               <svg
                                 style={
@@ -2812,10 +2812,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX bgwysC"
+                      className="sc-fzoaKM lnDGRQ"
                     >
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -2834,7 +2834,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoKki dQzjXQ"
+                        className="sc-fzoYkl lkKfnf"
                       >
                         <div
                           style={
@@ -2909,7 +2909,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -2974,10 +2974,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznAgC dlXska"
+                        className="sc-fznLPX bubgIb"
                       >
                         <div
-                          className="sc-fzqMdD jWEzXa"
+                          className="sc-fzowVh hjobKE"
                         >
                           <div
                             className="react-mde react-mde-tabbed-layout"
@@ -3393,10 +3393,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX bgwysC"
+                      className="sc-fzoaKM lnDGRQ"
                     >
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -3415,7 +3415,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoKki dQzjXQ"
+                        className="sc-fzoYkl lkKfnf"
                       >
                         <div
                           style={
@@ -3490,7 +3490,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -3555,21 +3555,21 @@ exports[`EditPage: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznAgC dlXska"
+                        className="sc-fznLPX bubgIb"
                       >
                         <div
-                          className="sc-fzoJus eRyPze"
+                          className="sc-fzoVTD iznjJw"
                         >
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fzokvW ieRFwb"
                           >
                             ObservableHQ User
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzoJus eRyPze"
                           >
                             <div
-                              className="sc-fzoKki xmNdG"
+                              className="sc-fzoYkl esRVnN"
                             >
                               <div
                                 style={
@@ -3637,15 +3637,15 @@ exports[`EditPage: Component should render correctly 1`] = `
                             </svg>
                           </div>
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fzokvW ieRFwb"
                           >
                             ObservableHQ Notebook
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzoJus eRyPze"
                           >
                             <div
-                              className="sc-fzoKki xmNdG"
+                              className="sc-fzoYkl esRVnN"
                             >
                               <div
                                 style={
@@ -3713,15 +3713,15 @@ exports[`EditPage: Component should render correctly 1`] = `
                             </svg>
                           </div>
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fzokvW ieRFwb"
                           >
                             ObservableHQ Cells
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzoJus eRyPze"
                           >
                             <div
-                              className="sc-fzoKki xmNdG"
+                              className="sc-fzoYkl esRVnN"
                             >
                               <div
                                 style={
@@ -3789,15 +3789,15 @@ exports[`EditPage: Component should render correctly 1`] = `
                             </svg>
                           </div>
                           <span
-                            className="sc-fznXWL ieDLar"
+                            className="sc-fzokvW ieRFwb"
                           >
                             ObservableHQ Params
                           </span>
                           <div
-                            className="sc-fzowVh iURINb"
+                            className="sc-fzoJus eRyPze"
                           >
                             <div
-                              className="sc-fzoKki xmNdG"
+                              className="sc-fzoYkl esRVnN"
                             >
                               <div
                                 style={
@@ -3892,10 +3892,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   >
                     <div
-                      className="sc-fznLPX bgwysC"
+                      className="sc-fzoaKM lnDGRQ"
                     >
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -3914,7 +3914,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </svg>
                       </div>
                       <div
-                        className="sc-fzoKki dQzjXQ"
+                        className="sc-fzoYkl lkKfnf"
                       >
                         <div
                           style={
@@ -3989,7 +3989,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        className="sc-fzoVTD jZQBNk"
+                        className="sc-fzpisO jCXLmQ"
                       >
                         <svg
                           style={
@@ -4054,17 +4054,17 @@ exports[`EditPage: Component should render correctly 1`] = `
                   >
                     <div>
                       <div
-                        className="sc-fznAgC dlXska"
+                        className="sc-fznLPX bubgIb"
                       >
                         <div
-                          className="sc-fzoMdx jaZfJV"
+                          className="sc-fzoWqW cSBDbx"
                         >
                           <div
-                            className="sc-fzoWqW kZlavh"
+                            className="sc-fzplgP bCwKPk"
                           />
                           3 Sets
                           <div
-                            className="sc-fzoWqW kZlavh"
+                            className="sc-fzplgP bCwKPk"
                           >
                             <div
                               className="sc-fzolEj bBhqcC"
@@ -4134,7 +4134,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzpisO lNqhg"
+                              className="sc-fznyYp fryKXv"
                             >
                               <div>
                                 <div
@@ -4159,10 +4159,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fzqzlV hQyTvI"
+                                className="sc-fzqLLg gvEHD"
                               >
                                 <div
-                                  className="sc-fznyYp jeeHWn"
+                                  className="sc-fznLxA bKPNwW"
                                 >
                                   <div
                                     onClick={[Function]}
@@ -4245,10 +4245,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzowVh iURINb"
+                                          className="sc-fzoJus eRyPze"
                                         >
                                           <div
-                                            className="sc-fzoKki xmNdG"
+                                            className="sc-fzoYkl esRVnN"
                                           >
                                             <div
                                               style={
@@ -4407,10 +4407,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzowVh iURINb"
+                                          className="sc-fzoJus eRyPze"
                                         >
                                           <div
-                                            className="sc-fzoKki xmNdG"
+                                            className="sc-fzoYkl esRVnN"
                                           >
                                             <div
                                               style={
@@ -4569,7 +4569,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzqMdD jWEzXa"
+                                          className="sc-fzowVh hjobKE"
                                         >
                                           <div
                                             className="react-mde react-mde-tabbed-layout"
@@ -4964,7 +4964,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznLxA fuLtKL"
+                                className="sc-fznXWL itmbJh"
                               >
                                 <svg
                                   id="remove-blocks.0.elements.5.value.0"
@@ -5001,7 +5001,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzpisO lNqhg"
+                              className="sc-fznyYp fryKXv"
                             >
                               <div>
                                 <div
@@ -5026,10 +5026,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fzqzlV hQyTvI"
+                                className="sc-fzqLLg gvEHD"
                               >
                                 <div
-                                  className="sc-fznyYp jeeHWn"
+                                  className="sc-fznLxA bKPNwW"
                                 >
                                   <div
                                     onClick={[Function]}
@@ -5112,10 +5112,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzowVh iURINb"
+                                          className="sc-fzoJus eRyPze"
                                         >
                                           <div
-                                            className="sc-fzoKki xmNdG"
+                                            className="sc-fzoYkl esRVnN"
                                           >
                                             <div
                                               style={
@@ -5274,10 +5274,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzowVh iURINb"
+                                          className="sc-fzoJus eRyPze"
                                         >
                                           <div
-                                            className="sc-fzoKki xmNdG"
+                                            className="sc-fzoYkl esRVnN"
                                           >
                                             <div
                                               style={
@@ -5436,7 +5436,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzqMdD jWEzXa"
+                                          className="sc-fzowVh hjobKE"
                                         >
                                           <div
                                             className="react-mde react-mde-tabbed-layout"
@@ -5831,7 +5831,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznLxA fuLtKL"
+                                className="sc-fznXWL itmbJh"
                               >
                                 <svg
                                   id="remove-blocks.0.elements.5.value.1"
@@ -5868,7 +5868,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                             }
                           >
                             <div
-                              className="sc-fzpisO lNqhg"
+                              className="sc-fznyYp fryKXv"
                             >
                               <div>
                                 <div
@@ -5893,10 +5893,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fzqzlV hQyTvI"
+                                className="sc-fzqLLg gvEHD"
                               >
                                 <div
-                                  className="sc-fznyYp jeeHWn"
+                                  className="sc-fznLxA bKPNwW"
                                 >
                                   <div
                                     onClick={[Function]}
@@ -5979,10 +5979,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzowVh iURINb"
+                                          className="sc-fzoJus eRyPze"
                                         >
                                           <div
-                                            className="sc-fzoKki xmNdG"
+                                            className="sc-fzoYkl esRVnN"
                                           >
                                             <div
                                               style={
@@ -6141,10 +6141,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzowVh iURINb"
+                                          className="sc-fzoJus eRyPze"
                                         >
                                           <div
-                                            className="sc-fzoKki xmNdG"
+                                            className="sc-fzoYkl esRVnN"
                                           >
                                             <div
                                               style={
@@ -6303,7 +6303,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                     >
                                       <div>
                                         <div
-                                          className="sc-fzqMdD jWEzXa"
+                                          className="sc-fzowVh hjobKE"
                                         >
                                           <div
                                             className="react-mde react-mde-tabbed-layout"
@@ -6698,7 +6698,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                                 </div>
                               </div>
                               <div
-                                className="sc-fznLxA fuLtKL"
+                                className="sc-fznXWL itmbJh"
                               >
                                 <svg
                                   id="remove-blocks.0.elements.5.value.2"
@@ -6875,6 +6875,32 @@ exports[`EditPage: Component should render correctly 1`] = `
             type="button"
           >
             Back
+          </button>
+          <button
+            className="sc-fzqNJr ggxWJG"
+            disabled={true}
+            id="publishPage"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+            type="button"
+          >
+            Publish
           </button>
           <button
             className="sc-fzqNJr ggxWJG"

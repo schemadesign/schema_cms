@@ -339,7 +339,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoKki fIgmuj"
+    className="sc-fzoYkl fKfLDA"
   >
     <div
       style={
@@ -361,7 +361,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkJw eApjBb"
+          className="sc-fznzOf JkGvs"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -383,7 +383,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fznzOf eGVGIP"
+            className="sc-fznMnq cawyWW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -419,7 +419,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpkJw eApjBb"
+          className="sc-fznzOf JkGvs"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -441,7 +441,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fznzOf eGVGIP"
+            className="sc-fznMnq cawyWW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -477,7 +477,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoYkl hIOqjs"
+          className="sc-fzpkJw dOJVSr"
         >
           <span
             style={
@@ -490,7 +490,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fznzOf eGVGIP"
+            className="sc-fznMnq cawyWW"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -594,18 +594,18 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqPZZ dYZeMh"
+    className="sc-fzoxKX eqjPQc"
   >
     <div
-      className="sc-fzoxKX iTjTnT"
+      className="sc-fzoKki fwmznp"
     />
     2 Page Templates
     <div
-      className="sc-fzoxKX iTjTnT"
+      className="sc-fzoKki fwmznp"
     />
   </div>
   <section
-    className="sc-fznxKY cinfQm"
+    className="sc-fznMAR dqZyIO"
   >
     <div
       className="sc-fzoyTs dGguFW"
@@ -641,29 +641,29 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-fzqBkg fFYWEf"
           >
             <ul
-              className="sc-fznMAR dwokPX"
+              className="sc-fznWOq iILJxw"
             >
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-1"
               >
                 owner
               </li>
             </ul>
             <div
-              className="sc-fzqBkg cifTAZ"
+              className="sc-fzqPZZ gXikXH"
             >
               <div
-                className="sc-fznMnq bEnfYM"
+                className="sc-fzoant clXZJk"
                 id="pageTemplateCopyButton-1"
                 onClick={[Function]}
               >
@@ -749,29 +749,29 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj grkndc"
+            className="sc-fzqBkg fFYWEf"
           >
             <ul
-              className="sc-fznMAR dwokPX"
+              className="sc-fznWOq iILJxw"
             >
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-fznWOq frgEXS"
+                className="sc-fzolEj kzHfOB"
                 id="headerItem-1"
               >
                 owner 2
               </li>
             </ul>
             <div
-              className="sc-fzqBkg cifTAZ"
+              className="sc-fzqPZZ gXikXH"
             >
               <div
-                className="sc-fznMnq bEnfYM"
+                className="sc-fzoant clXZJk"
                 id="pageTemplateCopyButton-2"
                 onClick={[Function]}
               >

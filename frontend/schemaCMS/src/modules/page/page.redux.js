@@ -18,6 +18,7 @@ export const PageRoutines = {
   updatePage: createRoutine(`${PREFIX}UPDATE_PAGE`),
   removePage: createRoutine(`${PREFIX}REMOVE_PAGE`),
   copyPage: createRoutine(`${PREFIX}COPY_PAGE`),
+  publishPage: createRoutine(`${PREFIX}PUBLISH_PAGE`),
   fetchPageAdditionalData: createRoutine(`${PREFIX}FETCH_PAGE_ADDITIONAL_DATA`),
 };
 

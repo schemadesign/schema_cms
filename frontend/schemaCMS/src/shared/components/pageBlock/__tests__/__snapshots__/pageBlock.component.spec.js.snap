@@ -2417,20 +2417,20 @@ exports[`PageBlock: Component should render correctly 1`] = `
               className="sc-AxheI bfpwAA"
             >
               <div
-                className="sc-fzoxKX iXSUEj"
+                className="sc-fzoKki bjmzmJ"
               >
                 <div
-                  className="sc-fzoKki jXYIlx"
+                  className="sc-fzoYkl VylFO"
                 />
                 3 Sets
                 <div
-                  className="sc-fzoKki jXYIlx"
+                  className="sc-fzoYkl VylFO"
                 >
                   <div
                     className="sc-fznWOq llBzbR"
                   >
                     <div
-                      className="sc-fzomME cnijjN"
+                      className="sc-fzqAbL ekjLPB"
                     >
                       <button
                         disabled={false}

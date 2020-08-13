@@ -5,11 +5,10 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models, transaction
 from django.utils import functional, timezone
 from django_extensions.db.models import AutoSlugField, TimeStampedModel
-
+from django_fsm import FSMField, transition
+from model_clone import CloneMixin
 from softdelete.models import SoftDeleteObject
 from storages.backends.s3boto3 import S3Boto3Storage
-
-from model_clone import CloneMixin
 
 from . import constants, managers
 from ..utils.models import file_upload_path
@@ -72,7 +71,7 @@ class Section(SoftDeleteObject, TimeStampedModel):
     name = models.CharField(max_length=constants.SECTION_NAME_MAX_LENGTH)
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
-    is_public = models.BooleanField(default=False)
+    is_public = models.BooleanField(default=True)
     main_page = models.OneToOneField(
         "pages.Page", on_delete=models.SET_NULL, null=True, related_name="main_page"
     )
@@ -105,10 +104,15 @@ class Page(Content):
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
-    is_public = models.BooleanField(default=False)
+    is_public = models.BooleanField(default=True)
     allow_edit = models.BooleanField(default=False)
     blocks = models.ManyToManyField(BlockTemplate, through="PageBlock")
     is_template = models.BooleanField(default=True)
+    is_draft = models.BooleanField(default=True, editable=False, db_index=True)
+    published_version = models.OneToOneField(
+        "self", on_delete=models.SET_NULL, related_name="draft_version", null=True, editable=False,
+    )
+    state = FSMField(choices=constants.PAGE_STATE_CHOICES, default=constants.PageState.DRAFT)
 
     objects = managers.PageManager()
 
@@ -120,8 +124,11 @@ class Page(Content):
     def create_or_update_block(self, block):
         return PageBlock.objects.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
 
-    def delete_blocks(self, blocks: list):
-        self.page_blocks.filter(id__in=blocks).delete()
+    def delete_blocks(self, blocks: list = None):
+        if not blocks:
+            self.page_blocks.all().delete()
+        else:
+            self.page_blocks.filter(id__in=blocks).delete()
 
     def add_tags(self, tags_list):
         self.tags.all().delete()
@@ -129,11 +136,48 @@ class Page(Content):
         for tag in tags_list:
             PageTag.objects.create(page=self, category_id=tag["category"], value=tag["value"])
 
+    @transition(field=state, source="*", target=constants.PageState.PUBLISHED)
+    def publish(self):
+        draft: Page = self.draft_version
+
+        self.name = draft.name
+        self.section = draft.section
+        self.template = draft.template
+        self.display_name = draft.display_name
+        self.description = draft.description
+        self.keywords = draft.keywords
+        self.slug = draft.slug
+        self.is_public = draft.is_public
+        self.allow_edit = draft.allow_edit
+        self.modified = draft.modified
+
+        self.delete_blocks()
+        self.tags.all().delete()
+
+        for block in draft.page_blocks.all():
+            c_block = block.make_clone(attrs={"page": self})
+
+            for element in block.elements.all():
+                element.clone(c_block)
+
+        for tag in draft.tags.all():
+            tag.make_clone(attrs={"page": self})
+
+    @transition(
+        field=state, source=constants.PageState.PUBLISHED, target=constants.PageState.WAITING_TO_REPUBLISH
+    )
+    def wait_to_republish(self):
+        pass
+
     @transaction.atomic()
-    def copy_page(self):
+    def copy_page(self, attrs: dict = None):
 
         copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
-        new_page = self.make_clone(attrs={"name": f"Page ID #{self.id} copy({copy_time})"})
+
+        if not attrs:
+            attrs = {"name": f"Page ID #{self.id} copy({copy_time})"}
+
+        new_page = self.make_clone(attrs=attrs)
 
         for block in self.page_blocks.all():
             c_block = block.make_clone(attrs={"page": new_page})
@@ -165,7 +209,7 @@ class PageTemplate(Page):
 class PageBlock(CloneMixin, SoftDeleteObject):
     block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
     page = models.ForeignKey("Page", on_delete=models.CASCADE, related_name="page_blocks")
-    name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH)
+    name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH, blank=True, default="")
     order = models.PositiveIntegerField(default=0)
 
     def __str__(self):

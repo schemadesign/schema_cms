@@ -13,6 +13,7 @@ import { tagCategories } from '../../../modules/tagCategory/tagCategory.mocks';
 export const defaultProps = {
   userRole: ROLES.ADMIN,
   updatePage: Function.prototype,
+  publishPage: Function.prototype,
   removePage: Function.prototype,
   copyPage: Function.prototype,
   project,

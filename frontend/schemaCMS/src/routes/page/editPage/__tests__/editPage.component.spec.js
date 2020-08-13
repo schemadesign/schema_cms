@@ -38,6 +38,21 @@ describe('EditPage: Component', () => {
     expect(mockPushHistory).toHaveBeenCalledWith('/section/sectionId');
   });
 
+  it('should publish the page', async () => {
+    jest.spyOn(defaultProps, 'publishPage');
+    const wrapper = await render();
+
+    act(() => {
+      wrapper.root.findByProps({ id: 'publishPage' }).props.onClick();
+    });
+    act(() => {
+      wrapper.root.findByProps({ id: 'confirmPublishBtn' }).props.onClick();
+    });
+
+    await Promise.resolve();
+    expect(defaultProps.publishPage).toHaveBeenCalledWith({ pageId: 'pageId' });
+  });
+
   it('should remove page and redirect to content', async () => {
     jest.spyOn(defaultProps, 'removePage');
     const wrapper = await render();

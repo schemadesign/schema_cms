@@ -48,7 +48,7 @@ down:
 	$(DOCKER_COMPOSE) down
 
 exec:
-	$(DOCKER_COMPOSE) exec backend bash
+	$(DOCKER_COMPOSE) run backend bash
 
 attach:
 	docker attach schema-cms-backend
