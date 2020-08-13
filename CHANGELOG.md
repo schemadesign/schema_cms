@@ -1,3 +1,7 @@
+## 1.9.0 (August 17, 2020) - Change
+
+Add state of the page to the page name
+
 ## 1.8.0 (August 17, 2020) - Added 
 
 Added Frontend link field in pages form
