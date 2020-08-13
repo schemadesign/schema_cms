@@ -12,9 +12,7 @@
   },
   "permissions": [
     "activeTab",
-    "declarativeContent",
-    "storage",
-    "tabs"
+    "storage"
   ],
   "content_scripts": [{
     "matches": ["<all_urls>"],
