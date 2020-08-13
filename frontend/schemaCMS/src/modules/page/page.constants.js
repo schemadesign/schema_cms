@@ -49,6 +49,7 @@ export const FORM_VALUES = [
   PAGE_DESCRIPTION,
   PAGE_TEMPLATE,
   PAGE_BLOCKS,
+  PAGE_LINK,
   PAGE_IS_PUBLIC,
 ];
 
@@ -115,6 +116,9 @@ export const PAGE_SCHEMA = Yup.object().shape({
   [PAGE_KEYWORDS]: Yup.string()
     .trim()
     .max(1000, 'Page Keywords should have maximum 1000 characters'),
+  [PAGE_LINK]: Yup.string()
+    .trim()
+    .url('The link field needs to be a valid URL'),
   [PAGE_TEMPLATE]: Yup.string()
     .min(1, 'Required')
     .required('Required'),

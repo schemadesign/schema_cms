@@ -7,6 +7,7 @@ import {
   PAGE_TEMPLATE,
   PAGE_DISPLAY_NAME,
   PAGE_DESCRIPTION,
+  PAGE_LINK,
   PAGE_KEYWORDS,
 } from './page.constants';
 
@@ -29,6 +30,7 @@ export const INITIAL_STATE = new Immutable({
     [PAGE_DISPLAY_NAME]: '',
     [PAGE_DESCRIPTION]: '',
     [PAGE_KEYWORDS]: '',
+    [PAGE_LINK]: '',
     [PAGE_IS_PUBLIC]: false,
   },
   pageAdditionalData: {
