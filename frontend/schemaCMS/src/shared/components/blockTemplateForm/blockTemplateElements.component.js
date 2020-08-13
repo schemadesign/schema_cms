@@ -18,6 +18,7 @@ import {
 import { BlockTemplateElement } from '../blockTemplateElement';
 import { Draggable } from '../draggable';
 import messages from './blockTemplateForm.messages';
+import { getPropsWhenNotEmpty } from '../../utils/helpers';
 
 const { MenuIcon } = Icons;
 
@@ -47,13 +48,14 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
   };
   const elementsCount = values[BLOCK_TEMPLATES_ELEMENTS].length;
 
+  const accordionCopyProps = getPropsWhenNotEmpty(values[BLOCK_TEMPLATES_ELEMENTS], {
+    collapseCopy: intl.formatMessage(messages.collapseCopy),
+    expandCopy: intl.formatMessage(messages.expandCopy),
+  });
+
   return (
     <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-      <Accordion
-        collapseCopy={intl.formatMessage(messages.collapseCopy)}
-        expandCopy={intl.formatMessage(messages.expandCopy)}
-        newOpen
-      >
+      <Accordion {...accordionCopyProps} newOpen>
         {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
           <Draggable
             accept="box"

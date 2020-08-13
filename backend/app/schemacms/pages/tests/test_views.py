@@ -762,11 +762,18 @@ class TestUpdateDeletePageView:
 
     def delete_page(self, api_client, user, page):
         page_id = page.id
+
+        published_version = page.copy_page(attrs={"is_draft": False})
+
+        page.published_version = published_version
+        page.save()
+
         api_client.force_authenticate(user)
         response = api_client.delete(self.get_url(page.id))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert not pages_models.Page.objects.filter(pk=page_id, deleted_at__isnull=True).exists()
+        assert not pages_models.Page.objects.filter(pk=published_version.id, deleted_at__isnull=True).exists()
 
     def test_delete_page_block(self, api_client, admin, page, block_template, page_block_factory):
         page_block = page_block_factory(block=block_template, page=page)
@@ -902,3 +909,11 @@ class TestCopyPage:
 
         assert response.status_code == status.HTTP_200_OK
         assert copied_page.name == f"Page ID #{page.id} copy(2020-01-02, 10:00:00.000000)"
+        assert copied_page.is_draft is True
+        assert copied_page.published_version.is_draft is False
+        assert copied_page.published_version.name == copied_page.name
+        assert (
+            page.page_blocks.count()
+            == copied_page.page_blocks.count()
+            == copied_page.published_version.page_blocks.count()
+        )

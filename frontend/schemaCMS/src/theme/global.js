@@ -12,10 +12,10 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${({ theme }) => theme.typography.p.fontFamily};
+    overflow-x: hidden;
   }
 
   html, body {
-    overflow-x: hidden;
     position: relative;
   }
 

@@ -21,7 +21,7 @@ import {
 } from './metadata.styles';
 import messages from './metadata.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
-import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
+import { errorMessageParser, filterMenuOptions, getPropsWhenNotEmpty } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
@@ -96,6 +96,11 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     })();
   });
 
+  const accordionCopyProps = getPropsWhenNotEmpty(values[METADATA], {
+    collapseCopy: intl.formatMessage(messages.collapseCopy),
+    expandCopy: intl.formatMessage(messages.expandCopy),
+  });
+
   return (
     <Container>
       <Helmet title={intl.formatMessage(messages.pageTitle)} />
@@ -119,11 +124,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
-          <Accordion
-            collapseCopy={intl.formatMessage(messages.collapseCopy)}
-            expandCopy={intl.formatMessage(messages.expandCopy)}
-            newOpen
-          >
+          <Accordion {...accordionCopyProps}>
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
                 <AccordionHeader>
