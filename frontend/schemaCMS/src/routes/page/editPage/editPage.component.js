@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useEffectOnce } from 'react-use';
-import { useHistory, useParams, useLocation } from 'react-router';
+import { useHistory, useParams, useLocation, Prompt } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
 import { isEmpty, pick, pathOr, defaultTo } from 'ramda';
@@ -84,6 +84,9 @@ export const EditPage = ({
   const [removeLoading, setRemoveLoading] = useState(false);
   const [publishLoading, setPublishLoading] = useState(false);
   const [updateLoading, setUpdateLoading] = useState(false);
+  const [leavingPageModalOpen, setLeavingPageModalOpen] = useState(false);
+  const [leavingPageLoading, setLeavingPageLoading] = useState(false);
+  const [customLocation, setCustomLocation] = useState(false);
   const { pageId } = useParams();
   const history = useHistory();
   const { state = {} } = useLocation();
@@ -142,6 +145,19 @@ export const EditPage = ({
       await publishPage({ pageId });
       setPublishModalOpen(false);
       setPublishLoading(false);
+    } catch (e) {
+      reportError(e);
+      setPublishLoading(false);
+    }
+  };
+
+  const handleConfirmLeavePage = async () => {
+    try {
+      setPublishLoading(true);
+      history.push(customLocation);
+      setPublishLoading(false);
+      setLeavingPageModalOpen(false);
+      setCustomLocation(false);
     } catch (e) {
       reportError(e);
       setPublishLoading(false);
@@ -254,6 +270,40 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
+      <Modal ariaHideApp={false} isOpen={leavingPageModalOpen} contentLabel="Confirm Leaving Page" style={modalStyles}>
+        <ModalTitle>
+          <FormattedMessage {...messages.leavingPageTitle} />
+        </ModalTitle>
+        <ModalActions>
+          <BackButton
+            onClick={() => {
+              setLeavingPageModalOpen(false);
+              setCustomLocation(false);
+            }}
+            disabled={leavingPageLoading}
+          >
+            <FormattedMessage {...messages.cancelLeavePage} />
+          </BackButton>
+          <NextButton
+            id="confirmLeavingPageBtn"
+            onClick={handleConfirmLeavePage}
+            loading={leavingPageLoading}
+            disabled={leavingPageLoading}
+          >
+            <FormattedMessage {...messages.confirmPublish} />
+          </NextButton>
+        </ModalActions>
+      </Modal>
+      <Prompt
+        when={dirty}
+        message={location => {
+          if (!customLocation) {
+            setCustomLocation(location);
+            setLeavingPageModalOpen(true);
+            return false;
+          }
+        }}
+      />
     </Container>
   );
 };

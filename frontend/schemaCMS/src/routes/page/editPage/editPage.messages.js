@@ -34,6 +34,10 @@ export default defineMessages({
     id: 'page.editPage.confirmRemoval',
     defaultMessage: 'Confirm',
   },
+  cancelLeavePage: {
+    id: 'page.editPage.cancelLeavePage',
+    defaultMessage: 'Cancel',
+  },
   confirmPublish: {
     id: 'page.editPage.confirmPublish',
     defaultMessage: 'Confirm',
@@ -45,6 +49,10 @@ export default defineMessages({
   publishTitle: {
     id: 'page.editPage.publishTitle',
     defaultMessage: 'Are you sure you want to publish this page?',
+  },
+  leavingPageTitle: {
+    id: 'page.editPage.leavingPageTitle',
+    defaultMessage: 'You have unsaved changes. Are you sure you want to leave?',
   },
   namePageNameUniqueError: {
     id: 'page.editPage.namePageNameUniqueError',
