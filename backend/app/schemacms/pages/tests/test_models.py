@@ -164,10 +164,14 @@ class TestPageMethods:
         assert copied_page_blocks[1].elements.count() == 1
         assert copied_page_blocks[2].elements.count() == 2
 
+    @pytest.mark.freeze_time("2020-08-13 10:00:00")
     def test_create_xml_file(self, page):
+        page.description = "Test Desc"
+        page.save()
+
         xml_elements_list = list(page.create_xml_item())
 
-        assert len(xml_elements_list) == 5
+        assert len(xml_elements_list) == 4
         assert xml_elements_list[0].tag == "title"
         assert xml_elements_list[0].text == page.name
         assert xml_elements_list[1].tag == "link"
@@ -175,6 +179,4 @@ class TestPageMethods:
         assert xml_elements_list[2].tag == "description"
         assert xml_elements_list[2].text == page.description
         assert xml_elements_list[3].tag == "pubDate"
-        assert xml_elements_list[3].text == page.created.strftime("%a, %d %b %Y %H:%M:%S")
-        assert xml_elements_list[4].tag == "modDate"
-        assert xml_elements_list[4].text == page.modified.strftime("%a, %d %b %Y %H:%M:%S")
+        assert xml_elements_list[3].text == "Thu, 13 Aug 2020 10:00:00 +0000"

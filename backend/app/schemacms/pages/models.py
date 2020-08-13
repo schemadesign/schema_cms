@@ -195,8 +195,12 @@ class Page(Content):
         etree.SubElement(item, "title").text = self.name
         etree.SubElement(item, "link").text = self.link
         etree.SubElement(item, "description").text = self.description
-        etree.SubElement(item, "pubDate").text = self.created.strftime("%a, %d %b %Y %H:%M:%S")
-        etree.SubElement(item, "modDate").text = self.modified.strftime("%a, %d %b %Y %H:%M:%S")
+
+        ctime = self.modified.ctime()
+        pub_date = f"{ctime[0:3]}, {self.modified.day:02d} {ctime[4:7]}" + self.modified.strftime(
+            " %Y %H:%M:%S %z"
+        )
+        etree.SubElement(item, "pubDate").text = pub_date
 
         return item
 

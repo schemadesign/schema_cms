@@ -105,6 +105,7 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
         pass
 
     def create_xlm_file(self):
+        feed = etree.Element("rss", **{"version": "2.0"})
         channel = etree.Element("channel")
         etree.SubElement(channel, "title").text = self.title
         etree.SubElement(channel, "link").text = self.domain
@@ -117,7 +118,9 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
         for page in pages:
             channel.append(page.create_xml_item())
 
-        xml_file_in_bytes = BytesIO(etree.tostring(channel))
+        feed.append(channel)
+
+        xml_file_in_bytes = BytesIO(etree.tostring(feed))
 
         key = f"rss/{self.id}/{self.title.lower().replace(' ', '-')}-rss.xml"
 
