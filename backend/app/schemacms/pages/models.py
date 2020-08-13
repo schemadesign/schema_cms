@@ -1,5 +1,7 @@
 import os
 
+from lxml import etree
+
 from django.conf import settings
 from django.contrib.postgres import fields as pg_fields
 from django.db import models, transaction
@@ -150,7 +152,7 @@ class Page(Content):
         self.slug = draft.slug
         self.is_public = draft.is_public
         self.allow_edit = draft.allow_edit
-        self.modified = draft.modified
+        self.modified = timezone.now()
 
         self.delete_blocks()
         self.tags.all().delete()
@@ -187,6 +189,16 @@ class Page(Content):
                 element.clone(c_block)
 
         return new_page
+
+    def create_xml_item(self):
+        item = etree.Element("item")
+        etree.SubElement(item, "title").text = self.name
+        etree.SubElement(item, "link").text = self.link
+        etree.SubElement(item, "description").text = self.description
+        etree.SubElement(item, "pubDate").text = self.created.strftime("%Y-%m-%d, %H:%M:%S.%f")
+        etree.SubElement(item, "modDate").text = self.modified.strftime("%Y-%m-%d, %H:%M:%S.%f")
+
+        return item
 
 
 class PageTemplate(Page):

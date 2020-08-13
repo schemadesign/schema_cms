@@ -317,6 +317,8 @@ class PageViewSet(DetailViewSet):
                 page.publish()
                 page.save()
 
+                page.project.create_xlm_file()
+
         except Exception as e:
             return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
 
