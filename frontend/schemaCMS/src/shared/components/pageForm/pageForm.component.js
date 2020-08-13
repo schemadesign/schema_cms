@@ -60,6 +60,7 @@ import {
   BLOCK_KEY,
   BLOCK_ID,
   PAGE_TAGS,
+  PAGE_LINK,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
@@ -292,6 +293,15 @@ export const PageForm = ({
         fullWidth
         isEdit
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
+        {...restFormikProps}
+      />
+      <TextInput
+        onChange={handleChange}
+        name={PAGE_LINK}
+        value={values[PAGE_LINK]}
+        fullWidth
+        isEdit
+        label={<FormattedMessage {...messages[PAGE_LINK]} />}
         {...restFormikProps}
       />
       <Label>

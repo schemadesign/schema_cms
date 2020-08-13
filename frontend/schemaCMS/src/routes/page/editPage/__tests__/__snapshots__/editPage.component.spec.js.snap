@@ -1096,6 +1096,92 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoYkl esRVnN"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="link"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Frontend page Link
+          </label>
+          <input
+            id="link"
+            name="link"
+            onBlur={[Function]}
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontFamily": "inherit",
+                "fontSize": "18px",
+                "fontWeight": "inherit",
+                "letterSpacing": "normal",
+                "lineHeight": "24px",
+                "maxWidth": "100%",
+                "minWidth": 60,
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 2,
+              }
+            }
+          >
+            <div
+              className="sc-fzpkJw jHmouL"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
       <label
         style={
           Object {
