@@ -8,10 +8,3 @@ chrome.runtime.onMessage.addListener((request, sender) => {
     "*"
   );
 });
-
-window.addEventListener('message', (event) => {
-    if (event.data.type && (event.data.type == "FROM_PAGE")) {
-        chrome.storage.local.set({ "isPreviewMode": false });
-    }
-})
-
