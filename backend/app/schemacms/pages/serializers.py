@@ -268,6 +268,7 @@ class PageBaseSerializer(CustomModelSerializer):
             "created",
             "is_public",
             "is_changed",
+            "link",
         )
         validators = [
             CustomUniqueTogetherValidator(

@@ -113,6 +113,7 @@ class Page(Content):
         "self", on_delete=models.SET_NULL, related_name="draft_version", null=True, editable=False,
     )
     state = FSMField(choices=constants.PAGE_STATE_CHOICES, default=constants.PageState.DRAFT)
+    link = models.URLField(blank=True, default="")
 
     objects = managers.PageManager()
 
