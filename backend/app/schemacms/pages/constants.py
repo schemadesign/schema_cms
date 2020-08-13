@@ -18,13 +18,6 @@ class ElementType:
     STATE = "state"
 
 
-class ObservableFieldType:
-    OBSERVABLE_USER = "observable_user"
-    OBSERVABLE_NOTEBOOK = "observable_notebook"
-    OBSERVABLE_CELL = "observable_cell"
-    OBSERVABLE_PARAMS = "observable_params"
-
-
 ELEMENT_TYPE_CHOICES = (
     (ElementType.CODE, "Code"),
     (ElementType.CONNECTION, "Connection"),
@@ -39,9 +32,30 @@ ELEMENT_TYPE_CHOICES = (
     (ElementType.STATE, "State"),
 )
 
+
+class ObservableFieldType:
+    OBSERVABLE_USER = "observable_user"
+    OBSERVABLE_NOTEBOOK = "observable_notebook"
+    OBSERVABLE_CELL = "observable_cell"
+    OBSERVABLE_PARAMS = "observable_params"
+
+
 OBSERVABLE_FIELD_TYPE_CHOICES = (
     (ObservableFieldType.OBSERVABLE_USER, "ObservableHQ User"),
     (ObservableFieldType.OBSERVABLE_NOTEBOOK, "ObservableHQ Notebook"),
     (ObservableFieldType.OBSERVABLE_CELL, "ObservableHQ Cell"),
     (ObservableFieldType.OBSERVABLE_PARAMS, "ObservableHQ Params"),
+)
+
+
+class PageState:
+    DRAFT = "draft"
+    PUBLISHED = "published"
+    WAITING_TO_REPUBLISH = "waiting_to_republish"
+
+
+PAGE_STATE_CHOICES = (
+    (PageState.DRAFT, "draft"),
+    (PageState.PUBLISHED, "published"),
+    (PageState.WAITING_TO_REPUBLISH, "waiting to republish"),
 )

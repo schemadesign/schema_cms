@@ -7,10 +7,10 @@ class EmailTemplate:
 
 
 def send_message(email, template, subject="", merge_data_dict=None):
-    if settings.DEBUG:
-        body = f"[DEBUG] Template name: {template}, context: {merge_data_dict['url']}"
-    else:
-        body = f"Welcome in SchemaCMS app! Please set your password to start work {merge_data_dict['url']}"
+    body = (
+        f"Welcome to Schema CMS! Please click the following link to set your password and get started:\n"
+        f"{merge_data_dict['url']}"
+    )
 
     message = mail.send_mail(
         subject=subject, message=body, recipient_list=[email], from_email=settings.DEFAULT_FROM_EMAIL

@@ -44,7 +44,8 @@ class ProjectSerializer(serializers.ModelSerializer):
 
         return project
 
-    def get_meta(self, project):
+    @staticmethod
+    def get_meta(project):
         return {
             "data_sources": project.data_source_count,
             "states": project.states_count,

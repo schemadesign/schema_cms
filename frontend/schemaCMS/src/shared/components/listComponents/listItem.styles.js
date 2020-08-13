@@ -35,3 +35,7 @@ export const ListItemContent = styled.div`
 export const ListItemDescription = styled.div`
   margin-bottom: 10px;
 `;
+
+export const FooterContainer = styled.div`
+  display: flex;
+`;

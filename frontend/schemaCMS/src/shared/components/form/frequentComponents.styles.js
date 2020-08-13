@@ -121,3 +121,9 @@ export const IconWrapper = styled.div`
 `;
 
 export const menuIconStyles = { width: 10, marginRight: 20 };
+
+export const Draft = styled.div`
+  color: ${({ theme }) => theme.secondaryText};
+  font-weight: bold;
+  font-size: 14px;
+`;

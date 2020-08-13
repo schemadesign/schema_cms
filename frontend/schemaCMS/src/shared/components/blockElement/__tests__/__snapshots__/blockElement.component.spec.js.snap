@@ -171,20 +171,20 @@ exports[`BlockElement: Component should render correctly custom element 1`] = `
         className="sc-AxjAm gcayeW"
       >
         <div
-          className="sc-fzolEj cQPeIb"
+          className="sc-fzqBkg gAWJZo"
         >
           <div
-            className="sc-fzqBkg gmgHfw"
+            className="sc-fzqPZZ etcPdO"
           />
           3 Sets
           <div
-            className="sc-fzqBkg gmgHfw"
+            className="sc-fzqPZZ etcPdO"
           >
             <div
               className="sc-fzpmMD kmLmQu"
             >
               <div
-                className="sc-fznzOf jZukxq"
+                className="sc-fznMnq jJaEfz"
               >
                 <button
                   disabled={false}

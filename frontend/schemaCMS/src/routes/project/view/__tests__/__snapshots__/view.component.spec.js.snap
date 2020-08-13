@@ -398,6 +398,7 @@ exports[`View: Component should render content correctly 1`] = `
 ",
                 ]
               }
+              id="projectStatusSelect"
               name="status"
               onSelect={[Function]}
               options={
@@ -683,6 +684,77 @@ exports[`View: Component should render content correctly 1`] = `
       <NextButton
         disabled={false}
         id="projectConfirmationRemovalModalConfirmBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.view.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+  <Styled(Modal)
+    contentLabel="Confirm Publish"
+    id="projectPublishConfirmationModal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)
+      id="projectPublishConfirmationModalTitle"
+    >
+      <FormattedMessage
+        defaultMessage="Are you sure you want to publish this project?"
+        id="project.view.publishTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        id="projectConfirmationPublishModalCancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.view.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="projectPublishConfirmationModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -1066,6 +1138,77 @@ exports[`View: Component should render content correctly for editor 1`] = `
       <NextButton
         disabled={false}
         id="projectConfirmationRemovalModalConfirmBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.view.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+  <Styled(Modal)
+    contentLabel="Confirm Publish"
+    id="projectPublishConfirmationModal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)
+      id="projectPublishConfirmationModalTitle"
+    >
+      <FormattedMessage
+        defaultMessage="Are you sure you want to publish this project?"
+        id="project.view.publishTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        id="projectConfirmationPublishModalCancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.view.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="projectPublishConfirmationModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -1478,6 +1621,7 @@ exports[`View: Component should render correctly 1`] = `
 ",
                 ]
               }
+              id="projectStatusSelect"
               name="status"
               onSelect={[Function]}
               options={
@@ -1763,6 +1907,77 @@ exports[`View: Component should render correctly 1`] = `
       <NextButton
         disabled={false}
         id="projectConfirmationRemovalModalConfirmBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.view.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+  <Styled(Modal)
+    contentLabel="Confirm Publish"
+    id="projectPublishConfirmationModal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)
+      id="projectPublishConfirmationModalTitle"
+    >
+      <FormattedMessage
+        defaultMessage="Are you sure you want to publish this project?"
+        id="project.view.publishTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        id="projectConfirmationPublishModalCancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.view.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="projectPublishConfirmationModalConfirmBtn"
         loading={false}
         onClick={[Function]}
       >
