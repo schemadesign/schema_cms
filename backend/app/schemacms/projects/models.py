@@ -122,7 +122,11 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
         key = f"rss/{self.id}/{self.title.lower().replace(' ', '-')}-rss.xml"
 
         s3.put_object(
-            Body=xml_file_in_bytes, Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key, ACL="public-read"
+            Body=xml_file_in_bytes,
+            Bucket=settings.AWS_STORAGE_BUCKET_NAME,
+            Key=key,
+            ACL="public-read",
+            ContentType="text/xml",
         )
 
         self.xml_file = key
