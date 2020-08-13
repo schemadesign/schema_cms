@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
-import { always, cond, isEmpty, propEq, T, equals, ifElse } from 'ramda';
+import { cond, isEmpty, propEq, T, equals, ifElse } from 'ramda';
 
 import messages from './blockElement.messages';
 import {
@@ -26,14 +26,12 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
     setFieldValue(params, { pageId: value });
   };
 
-  const renderOptions = (index, element) => {
-    return cond([
-      [propEq('isDraft', true), () => <LabelItem key={index}>{`${element.name} (draft)`}</LabelItem>],
+  const renderOptions = (index, element) =>
+    cond([
       [propEq('isPublished', true), () => <LabelItem key={index}>{`${element.name} (published)`}</LabelItem>],
       [propEq('isHidden', true), () => <LabelItem key={index}>{`${element.name} (hidden)`}</LabelItem>],
       [T, () => <LabelItem key={index}>{element.name}</LabelItem>],
     ])(element);
-  };
 
   const isPageLabel = equals(1);
 
