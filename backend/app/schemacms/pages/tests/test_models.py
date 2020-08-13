@@ -175,6 +175,6 @@ class TestPageMethods:
         assert xml_elements_list[2].tag == "description"
         assert xml_elements_list[2].text == page.description
         assert xml_elements_list[3].tag == "pubDate"
-        assert xml_elements_list[3].text == page.created.strftime("%Y-%m-%d, %H:%M:%S.%f")
+        assert xml_elements_list[3].text == page.created.strftime("%a, %d %b %Y %H:%M:%S")
         assert xml_elements_list[4].tag == "modDate"
-        assert xml_elements_list[4].text == page.modified.strftime("%Y-%m-%d, %H:%M:%S.%f")
+        assert xml_elements_list[4].text == page.modified.strftime("%a, %d %b %Y %H:%M:%S")

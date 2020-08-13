@@ -126,7 +126,7 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
             Bucket=settings.AWS_STORAGE_BUCKET_NAME,
             Key=key,
             ACL="public-read",
-            ContentType="text/xml",
+            ContentType="application/rss+xml",
         )
 
         self.xml_file = key

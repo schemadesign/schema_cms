@@ -195,8 +195,8 @@ class Page(Content):
         etree.SubElement(item, "title").text = self.name
         etree.SubElement(item, "link").text = self.link
         etree.SubElement(item, "description").text = self.description
-        etree.SubElement(item, "pubDate").text = self.created.strftime("%Y-%m-%d, %H:%M:%S.%f")
-        etree.SubElement(item, "modDate").text = self.modified.strftime("%Y-%m-%d, %H:%M:%S.%f")
+        etree.SubElement(item, "pubDate").text = self.created.strftime("%a, %d %b %Y %H:%M:%S")
+        etree.SubElement(item, "modDate").text = self.modified.strftime("%a, %d %b %Y %H:%M:%S")
 
         return item
 
