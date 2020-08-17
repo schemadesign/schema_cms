@@ -152,6 +152,7 @@ class Page(Content):
         self.slug = draft.slug
         self.is_public = draft.is_public
         self.allow_edit = draft.allow_edit
+        self.link = draft.link
         self.modified = timezone.now()
 
         self.delete_blocks()
