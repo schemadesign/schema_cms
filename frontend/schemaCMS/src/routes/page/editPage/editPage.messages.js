@@ -34,6 +34,10 @@ export default defineMessages({
     id: 'page.editPage.confirmRemoval',
     defaultMessage: 'Confirm',
   },
+  confirmRemovalMessage: {
+    id: 'page.editPage.confirmRemovalMessage',
+    defaultMessage: 'Confirm Removal',
+  },
   cancelLeavePage: {
     id: 'page.editPage.cancelLeavePage',
     defaultMessage: 'Cancel',
@@ -41,6 +45,10 @@ export default defineMessages({
   confirmPublish: {
     id: 'page.editPage.confirmPublish',
     defaultMessage: 'Confirm',
+  },
+  confirmPublishing: {
+    id: 'page.editPage.confirmPublishing',
+    defaultMessage: 'Confirm Publishing',
   },
   confirmLeavingPage: {
     id: 'page.editPage.confirmLeavingPage',

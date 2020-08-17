@@ -169,6 +169,11 @@ export const EditPage = ({
     }
   };
 
+  const handleBackButtonClick = () => {
+    setLeavingPageModalOpen(false);
+    setCustomLocation(false);
+  };
+
   useEffectOnce(() => {
     (async () => {
       try {
@@ -239,7 +244,12 @@ export const EditPage = ({
           </NavigationContainer>
         </form>
       </LoadingWrapper>
-      <Modal ariaHideApp={false} isOpen={removeModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+      <Modal
+        ariaHideApp={false}
+        isOpen={removeModalOpen}
+        contentLabel={messages.confirmRemovalMessage}
+        style={modalStyles}
+      >
         <ModalTitle>
           <FormattedMessage {...messages.removeTitle} />
         </ModalTitle>
@@ -257,7 +267,12 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
-      <Modal ariaHideApp={false} isOpen={publishModalOpen} contentLabel="Confirm Publishing" style={modalStyles}>
+      <Modal
+        ariaHideApp={false}
+        isOpen={publishModalOpen}
+        contentLabel={messages.confirmPublishing}
+        style={modalStyles}
+      >
         <ModalTitle>
           <FormattedMessage {...messages.publishTitle} />
         </ModalTitle>
@@ -285,13 +300,7 @@ export const EditPage = ({
           <FormattedMessage {...messages.leavingPageTitle} />
         </ModalTitle>
         <ModalActions>
-          <BackButton
-            onClick={() => {
-              setLeavingPageModalOpen(false);
-              setCustomLocation(false);
-            }}
-            disabled={leavingPageLoading}
-          >
+          <BackButton onClick={handleBackButtonClick} disabled={leavingPageLoading}>
             <FormattedMessage {...messages.cancelLeavePage} />
           </BackButton>
           <NextButton
