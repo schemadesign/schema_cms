@@ -313,7 +313,7 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
-      <Prompt when={dirty} message={handlePromptMessage} />
+      <Prompt when={dirty} message={location => handlePromptMessage(location)} />
     </Container>
   );
 };
