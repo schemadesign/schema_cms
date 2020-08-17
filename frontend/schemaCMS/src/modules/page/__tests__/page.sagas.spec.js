@@ -120,9 +120,19 @@ describe('Page: sagas', () => {
 
   describe('publishPage', () => {
     it('should dispatch a success action', async () => {
+      const response = {
+        id: 1,
+        project: {
+          id: 1,
+        },
+        results: {},
+      };
+
       const payload = {
         pageId: 1,
       };
+
+      mockApi.get(`/pages/${payload.pageId}`).reply(OK, response);
 
       mockApi.post(`${PAGES_PATH}/${payload.pageId}/publish`).reply(OK);
 

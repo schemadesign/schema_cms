@@ -44,6 +44,12 @@ class ProjectSerializer(serializers.ModelSerializer):
 
         return project
 
+    def save(self, **kwargs):
+        project = super().save(**kwargs)
+        project.create_xlm_file()
+
+        return project
+
     @staticmethod
     def get_meta(project):
         return {

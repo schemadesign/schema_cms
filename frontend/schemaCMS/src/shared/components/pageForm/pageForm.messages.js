@@ -8,6 +8,7 @@ import {
   PAGE_TEMPLATE,
   PAGE_IS_PUBLIC,
   PAGE_TAGS,
+  PAGE_LINK,
 } from '../../../modules/page/page.constants';
 
 export default defineMessages({
@@ -46,6 +47,10 @@ export default defineMessages({
   [PAGE_TAGS]: {
     id: `shared.components.pageForm.${PAGE_TAGS}`,
     defaultMessage: 'Tags',
+  },
+  [PAGE_LINK]: {
+    id: `shared.components.pageForm.${PAGE_LINK}`,
+    defaultMessage: 'Frontend page Link',
   },
   pageAvailability: {
     id: 'shared.components.pageForm.pageAvailability',

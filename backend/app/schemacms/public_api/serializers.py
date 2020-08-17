@@ -283,6 +283,7 @@ class PAProjectSerializer(ReadOnlySerializer):
             "owner": obj.owner.get_full_name(),
             "created": obj.created.strftime("%Y-%m-%d"),
             "updated": obj.modified.strftime("%Y-%m-%d"),
+            "xml_file": obj.xml_file.url.rsplit("?", 1)[0] if obj.xml_file else None,
         }
 
     def get_content(self, obj):

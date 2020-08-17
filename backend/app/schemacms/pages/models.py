@@ -1,5 +1,7 @@
 import os
 
+from lxml import etree
+
 from django.conf import settings
 from django.contrib.postgres import fields as pg_fields
 from django.db import models, transaction
@@ -113,6 +115,7 @@ class Page(Content):
         "self", on_delete=models.SET_NULL, related_name="draft_version", null=True, editable=False,
     )
     state = FSMField(choices=constants.PAGE_STATE_CHOICES, default=constants.PageState.DRAFT)
+    link = models.URLField(blank=True, default="")
 
     objects = managers.PageManager()
 
@@ -149,7 +152,8 @@ class Page(Content):
         self.slug = draft.slug
         self.is_public = draft.is_public
         self.allow_edit = draft.allow_edit
-        self.modified = draft.modified
+        self.link = draft.link
+        self.modified = timezone.now()
 
         self.delete_blocks()
         self.tags.all().delete()
@@ -186,6 +190,20 @@ class Page(Content):
                 element.clone(c_block)
 
         return new_page
+
+    def create_xml_item(self):
+        item = etree.Element("item")
+        etree.SubElement(item, "title").text = self.name
+        etree.SubElement(item, "link").text = self.link
+        etree.SubElement(item, "description").text = self.description
+
+        ctime = self.modified.ctime()
+        pub_date = f"{ctime[0:3]}, {self.modified.day:02d} {ctime[4:7]}" + self.modified.strftime(
+            " %Y %H:%M:%S %z"
+        )
+        etree.SubElement(item, "pubDate").text = pub_date
+
+        return item
 
 
 class PageTemplate(Page):

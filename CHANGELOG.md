@@ -1,3 +1,9 @@
+## 1.8.0 (August 17, 2020) - Added 
+
+Added Frontend link field in pages form
+
+Added RSS feature to the project endpoint, so now we generate RSS XML on project level and upload in S3
+
 ## 1.7.0 (August 13, 2020) - Release
 
 Clean up the Chrome extension and add proper URL for fetching page drafts in the example

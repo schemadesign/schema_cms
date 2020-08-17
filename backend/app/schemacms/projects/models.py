@@ -1,15 +1,23 @@
+import os
+from io import BytesIO
+
 from django.conf import settings
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils import functional
 from django.utils.translation import ugettext as _
 from django_extensions.db.models import TimeStampedModel, TitleSlugDescriptionModel
 from django_fsm import FSMField, transition
 
+from lxml import etree
 from softdelete.models import SoftDeleteObject
 
 from . import constants, managers
 from ..pages.models import PageTemplate
+from ..pages.constants import PageState
 from ..users import constants as users_constants
+from ..utils.models import file_upload_path
+from ..utils.services import s3
 
 
 class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
@@ -19,6 +27,9 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     )
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects", blank=True)
     domain = models.URLField(blank=True, default="")
+    xml_file = models.FileField(
+        null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["xml"])]
+    )
 
     objects = managers.ProjectManager()
 
@@ -28,6 +39,12 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
 
     def __str__(self):
         return self.title
+
+    def relative_path_to_save(self, filename):
+        base_path = self.file.storage.location
+        if not (self.id and self.project_id):
+            raise ValueError("Project is not set")
+        return os.path.join(base_path, f"/rss/{self.id}/{filename}")
 
     def user_has_access(self, user):
         return user.is_admin or self.editors.filter(pk=user.id).exists()
@@ -86,3 +103,35 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     )
     def in_progress(self):
         pass
+
+    def create_xlm_file(self):
+        feed = etree.Element("rss", **{"version": "2.0"})
+        channel = etree.Element("channel")
+        etree.SubElement(channel, "title").text = self.title
+        etree.SubElement(channel, "link").text = self.domain
+        etree.SubElement(channel, "description").text = self.description
+
+        pages = self.page_set.filter(
+            is_public=True, section__is_public=True, is_draft=False, state=PageState.PUBLISHED
+        ).order_by("-modified")
+
+        for page in pages:
+            channel.append(page.create_xml_item())
+
+        feed.append(channel)
+
+        xml_file_in_bytes = BytesIO(etree.tostring(feed))
+
+        key = f"rss/{self.id}/{self.title.lower().replace(' ', '-')}-rss.xml"
+
+        s3.put_object(
+            Body=xml_file_in_bytes,
+            Bucket=settings.AWS_STORAGE_BUCKET_NAME,
+            Key=key,
+            ACL="public-read",
+            ContentType="application/rss+xml",
+        )
+
+        self.xml_file = key
+
+        return self.save(update_fields=["xml_file"])

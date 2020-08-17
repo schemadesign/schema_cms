@@ -45,8 +45,8 @@ describe('EditPage: Component', () => {
     act(() => {
       wrapper.root.findByProps({ id: 'publishPage' }).props.onClick();
     });
-    act(() => {
-      wrapper.root.findByProps({ id: 'confirmPublishBtn' }).props.onClick();
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'confirmPublishBtn' }).props.onClick();
     });
 
     await Promise.resolve();
