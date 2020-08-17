@@ -155,12 +155,17 @@ export const EditPage = ({
     try {
       setPublishLoading(true);
       history.push(customLocation);
-      setPublishLoading(false);
-      setLeavingPageModalOpen(false);
-      setCustomLocation(false);
     } catch (e) {
       reportError(e);
       setPublishLoading(false);
+    }
+  };
+
+  const handlePromptMessage = location => {
+    if (!customLocation) {
+      setCustomLocation(location);
+      setLeavingPageModalOpen(true);
+      return false;
     }
   };
 
@@ -299,16 +304,7 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
-      <Prompt
-        when={dirty}
-        message={location => {
-          if (!customLocation) {
-            setCustomLocation(location);
-            setLeavingPageModalOpen(true);
-            return false;
-          }
-        }}
-      />
+      <Prompt when={dirty} message={handlePromptMessage} />
     </Container>
   );
 };
