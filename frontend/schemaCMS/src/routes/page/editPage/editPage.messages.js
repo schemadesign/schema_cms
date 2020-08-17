@@ -42,6 +42,10 @@ export default defineMessages({
     id: 'page.editPage.confirmPublish',
     defaultMessage: 'Confirm',
   },
+  confirmLeavingPage: {
+    id: 'page.editPage.confirmLeavingPage',
+    defaultMessage: 'Confirm leaving page',
+  },
   removeTitle: {
     id: 'page.editPage.removeTitle',
     defaultMessage: 'Are you sure you want to remove this page?',

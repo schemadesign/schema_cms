@@ -270,7 +270,12 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
-      <Modal ariaHideApp={false} isOpen={leavingPageModalOpen} contentLabel="Confirm Leaving Page" style={modalStyles}>
+      <Modal
+        ariaHideApp={false}
+        isOpen={leavingPageModalOpen}
+        contentLabel={messages.confirmLeavingPage}
+        style={modalStyles}
+      >
         <ModalTitle>
           <FormattedMessage {...messages.leavingPageTitle} />
         </ModalTitle>
