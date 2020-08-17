@@ -247,7 +247,7 @@ export const EditPage = ({
       <Modal
         ariaHideApp={false}
         isOpen={removeModalOpen}
-        contentLabel={messages.confirmRemovalMessage}
+        contentLabel={intl.formatMessage(messages.confirmRemovalMessage)}
         style={modalStyles}
       >
         <ModalTitle>
@@ -270,7 +270,7 @@ export const EditPage = ({
       <Modal
         ariaHideApp={false}
         isOpen={publishModalOpen}
-        contentLabel={messages.confirmPublishing}
+        contentLabel={intl.formatMessage(messages.confirmPublishing)}
         style={modalStyles}
       >
         <ModalTitle>
@@ -293,7 +293,7 @@ export const EditPage = ({
       <Modal
         ariaHideApp={false}
         isOpen={leavingPageModalOpen}
-        contentLabel={messages.confirmLeavingPage}
+        contentLabel={intl.formatMessage(messages.confirmLeavingPage)}
         style={modalStyles}
       >
         <ModalTitle>
