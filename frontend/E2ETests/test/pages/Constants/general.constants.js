@@ -1,0 +1,11 @@
+export const VALID = 'valid';
+export const INVALID = 'invalid';
+export const EMPTY = 'empty';
+export const DELETE = 'delete';
+export const ADMIN = 'admin';
+export const EDITOR = 'editor';
+export const VALUE = 'value';
+export const ALT = 'alt';
+export const RESET = 'reset';
+export const INVITED = 'invited';
+export const RANDOM = 'random';

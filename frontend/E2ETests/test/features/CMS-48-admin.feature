@@ -9,22 +9,17 @@ Feature: CMS-48-Admin
 
 
     Scenario: User can see Projects page with all its elements
-        When I log in as admin with valid login and valid password
-        Then I am on Projects page
-        And top header is displayed
+        When I log in as an 'admin' with 'valid' login and 'valid' password
+        Then I am on 'homepage' page
         And I can see Projects page with all its elements
 
 
-    Scenario: User can open menu
-        Given I have logged in as an admin with valid login and valid password
-        When I open menu
-        Then I can see menu with all its content
-
-    
     Scenario: User can close menu
-        Given I have logged in as an admin with valid login and valid password
+        Given I have logged in as an 'admin' with 'valid' login and 'valid' password
         And I have opened menu
+        And I can see menu with all its content
         When I close menu
-        Then I am on Projects page
+        Then menu is no longer displayed
+
 
 
